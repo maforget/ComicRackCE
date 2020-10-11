@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE8F3F7B-4464-40B4-9951-020FC0913BFD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>cYo.Projects.ComicRack.Plugins</RootNamespace>
+    <AssemblyName>ComicRack.Plugins</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IronPython, Version=2.7.5.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules, Version=2.7.5.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Automation\IApplication.cs" />
+    <Compile Include="Automation\IBrowser.cs" />
+    <Compile Include="Automation\IOpenBooksManager.cs" />
+    <Compile Include="ComicBookExpressionMatcher.cs" />
+    <Compile Include="ComicBookPluginMatcher.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="CommandCollection.cs" />
+    <Compile Include="Controls\HtmlComicPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UIComicPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IPluginConfig.cs" />
+    <Compile Include="IPluginEnvironment.cs" />
+    <Compile Include="PluginEngine.cs" />
+    <Compile Include="PluginEnvironment.cs" />
+    <Compile Include="PluginInitializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PythonCommand.cs" />
+    <Compile Include="PythonPluginInitializer.cs" />
+    <Compile Include="XmlPluginInitializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComicRack.Engine\ComicRack.Engine.csproj">
+      <Project>{973066bf-3dc7-49df-a704-951a86dbcb8f}</Project>
+      <Name>ComicRack.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cYo.Common\cYo.Common.csproj">
+      <Project>{198a3787-dde7-43f0-86e7-d915414f0ff4}</Project>
+      <Name>cYo.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp">
+      <Version>4.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <!-- <ItemGroup> -->
+  <!-- <EmbeddedResource Include="Controls\HtmlComicPageControl.resources" /> -->
+  <!-- </ItemGroup> -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

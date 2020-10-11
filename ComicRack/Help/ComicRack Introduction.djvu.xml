@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<ComicInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Title>A Quick Guide</Title>
+  <Series>ComicRack Introduction</Series>
+  <Summary>This manual introduces the new user to the ComicRack software, and makes them feel comfortable using and exploring it.</Summary>
+  <PageCount>19</PageCount>
+  <LanguageISO>en</LanguageISO>
+  <AgeRating>Everyone</AgeRating>
+  <BlackAndWhite>No</BlackAndWhite>
+  <Manga>No</Manga>
+  <Pages>
+    <Page Image="0" ImageSize="43781" ImageWidth="1413" ImageHeight="2000" Type="FrontCover" />
+    <Page Image="1" ImageSize="37768" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="2" ImageSize="55869" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="3" ImageSize="74403" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="4" ImageSize="62640" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="5" ImageSize="40457" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="6" ImageSize="60571" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="7" ImageSize="86757" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="8" ImageSize="83906" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="9" ImageSize="49535" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="10" ImageSize="56221" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="11" ImageSize="46951" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="12" ImageSize="63218" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="13" ImageSize="80708" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="14" ImageSize="64476" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="15" ImageSize="74577" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="16" ImageSize="49021" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="17" ImageSize="71545" ImageWidth="1413" ImageHeight="2000" />
+    <Page Image="18" ImageSize="25011" ImageWidth="1413" ImageHeight="2000" />
+  </Pages>
+</ComicInfo>

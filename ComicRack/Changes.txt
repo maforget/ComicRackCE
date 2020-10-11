@@ -1,0 +1,3350 @@
+Build 0.9.178:
+
+* NEW: ComicRack now fully supports HiDPI Screens (Surface Pro, Retina etc.)
+* NEW: Added new format values {numberonly} and {volumeonly} for caption/filename formatting (see example in comicrack.ini CaptionFormat)
+
+* CHANGE: Removed usage of default ComicRack.ini if alternate configuration is specified
+
+Build 0.9.177:
+
+* CHANGE: Upped .NET version to 4.5
+* CHANGE: Added background saving of cache index. Should help with lost cache items when ComicRack crashes
+* CHANGE: Extended search depth to find connected USB devices
+* CHANGE: Added column header to group list
+* CHANGE: Added group size to group list
+* CHANGE: Double click on group header list splitter closes the list
+
+* BUGFIX: Fixed some spelling errors
+* BUGFIX: Multiple Comics Dialog showed custom fields in tab mode even if turned off
+* BUGFIX: Fixed spinner positions when switching between panel/tab style in dialogs
+* BUGFIX: Fixed mousewheel scrolling in browser in some cases
+* BUGFIX: Fixed possible failure to create first thumbnails immediately after startup of application  
+
+Build 0.9.176:
+
+* NEW: Optional side panel in comic browser to show all group headers
+* NEW: Option in preferences to force all stacks in a list to the same layout
+
+* BUGFIX: Fixed possible failed installation of plugins during restart
+* BUGFIX: Fixed setting invalid temp path in comicrack.ini
+* BUGFIX: Fixed display of custom values in multi comic dialog
+
+Build 0.9.175:
+
+* NEW: Added WifiSyncReceiveTimeout, WifiSyncSendTimeout, WifiSyncConnectionTimeout, WifiSyncConnectionRetries values to ComicRack.ini
+
+* BUGFIX: Fixed Ctrl-I shortcut in Browser
+* BUGFIX: Fixed missing Undo entries for Quick Rating
+* BUGFIX: Fixed possible null exceptions for syncing lists (Dialog and syncing)
+* BUGFIX: Fixed position of Designer/Query button in Smartlist Dialogs
+
+Build 0.9.174:
+
+* BUGFIX: Fixed name parser bug for some years
+* BUGFIX: Fixed opening files from Quickopen
+
+Build 0.9.173:
+
+* NEW: Quick Rating dialog with Twitter support like in the mobile versions
+* NEW: Added sorting by Story Arc to device syncing
+* NEW: Option to adjust the width for exported double pages
+* NEW: Option to keep the original image file names in exported/converted comics
+* NEW: You can now also drag&drop selected books into library folders and create a list there (and not only on the top level)
+* NEW: Designer/Query button in Smartlist Editor to switch between the two editing modes
+* NEW: Dropping a book onto a folder while pressing Alt will insert a Series based smartlist instead of a reading list
+* NEW: Dropping a book onto a smartlist will add a Series based query entry to the smartlist
+* NEW: Dropping a stack onto a folder while pressing Alt will insert a smartlist based on the stack criteria
+* NEW: Dropping a stack onto a smartlist will add a stack based query entry to the smartlist
+* NEW: Dropping a Search Browser entry into the library browser will now create/add a smartlist entry (Alt modifies to create a reading list)
+* NEW: Quick Search for Library lists
+
+* CHANGE: Removed the "Custom" prefix for custom field headers in detail mode
+* CHANGE: Sorting folder now uses the same sorting as in lists (ignoring the, etc.)
+* CHANGE: Activated copies will recheck state once a month
+* CHANGE: Name parser now understands YYYY/MM constructs
+* CHANGE: Current changes are now used as defaults for new sync settings
+
+* BUGFIX: Fixed possible exceptions when detecting devices
+* BUGFIX: Fixed parsing "four covers" in file name
+* BUGFIX: Fixed reordering of devices in sync dialog
+
+Build 0.9.172:
+
+* NEW: Setting the quality to 0 for WebP will switch to the lossless compressor
+
+* BUGFIX: Fixed non working quality slider for WebP
+* BUGFIX: Revert of original counter bugfix, as it broke all kinds of other counters
+* BUGFIX: Implemented new counter bugfix
+* BUGFIX: Recompiled Google's WebP libraries to remove msvctr100 dependency
+* BUGFIX: Fixed conversion of WebP to Jpeg
+* BUGFIX: Fixed initial setup for MS SQL server
+* BUGFIX: Fixed sync of WebP Comics to devices not supporting WebP
+
+Build 0.9.171:
+
+* NEW: Added WebP support for viewer/converter/sync
+* NEW: If device supports it, webp is used for optimized sync (30% less space with better image quality)
+* NEW: SyncWebP and SyncOptimizedWebP setting comicrack.ini to turn WebP for sycning on/off (default is on for optimized sync)
+* NEW: Paired devices can now initiate a sync even if they're manually setup (needs CRA 1.77+, CRIOS 1.0.6+)
+* NEW: Added new advanced setting to manually enter wireless ip address and test them (alternative to editing comicrack.ini)
+* NEW: Speed up of comic export/conversion through parallelization (can be controlled with ParallelConversions in ComicRack.ini)
+
+* BUGFIX: Fixed possible parsing errors of smartlist query language
+* BUGFIX: Fixed matcher for custom values to work properly with empty values
+* BUGFIX: Fixed slow updates of the sql database
+* BUGFIX: Fixed counter display in devices dialog
+
+Build 0.9.170:
+
+* NEW: SyncResampling setting in ComicRack.ini
+* NEW: Option in Preferences/Behavior/Application to set default value for checked field
+* NEW: Network folders are now sorted (can be turned off in ComicRack.ini with SortNetworkFolders)
+* NEW: Added autocomplete to custom values in Multi Comics Dialog
+
+* BUGFIX: If data source connection failes on start up no changes are saved to the local db part
+* BUGFIX: Reading comicrack.ini files from alternate configurations (-ac)
+* BUGFIX: Fixed default cover image for fileless entries
+* BUGFIX: Explicitly closing the sql database when shutting down
+* BUGFIX: Fixed paste of custom values in Multi Comic Dialog
+
+Build 0.9.169:
+
+* NEW: Implemented a way for mobile devices to detect if CRW is available (CRA 1.76+)
+* NEW: Added Scan Information to Tile display
+
+* CHANGE: Sync optimization now defauls to no sharpening
+* CHANGE: Some layout optimizations
+
+* BUGFIX: Fixed possible exception when opening empty comic list with the "Open..." command
+
+Build 0.9.168:
+
+* CHANGE: Sync now keeps at least 128 MB free on devices (defined in ComicRack.ini)
+* CHANGE: Changed grouping of custom values to use a name grouper
+* CHANGE: Sorting custom values now correctly handles numbers
+
+* BUGFIX: Fixed Wireless device detection on Windows XP
+* BUGFIX: Fixed deselecting "Only show selected" in Device Editor
+* BUGFIX: Fixed possible setting of page type to wrong page in reader with keyboard shortcuts
+
+Build 0.9.167:
+
+* BUGFIX: Fixed Smartlist Editor bug
+* BUGFIX: Fixed possible exception in browser inline editing
+
+Build 0.9.166:
+
+* NEW: New hook to run scripts on shutdown (with option to cancel shutdown)
+* NEW: Added Flick Left/Right for Windows 8
+
+* CHANGE: Better Matcher Selector in Smartlist Editor
+* CHANGE: Needs CRA 1.74+ for sync
+
+* BUGFIX: Fixed thumbnail updates in the database (bug had all kinds of ugly side-effects)
+
+Build 0.9.165:
+
+* BUGFIX: Fixed non working commands line parameters
+* BUGFIX: Fixed wrong application folder initialization
+* BUGFIX: Fixed in some cases missing/wrong located UI elements in Preferences Dialog
+
+Build 0.9.164:
+
+* NEW: Support for shared database (MSSQL and MySQL supported)
+* NEW: Added support for custom book values with API support
+* NEW: Added new compression engine SharpZip
+
+* CHANGE: ComicRack.ini has new settings to choose the engine for each file type (CbzUses, CbrUses, Cb7Uses, CbtUses)
+
+* BUGFIX: Added Frequent jumplist for Windows 7+
+* BUGFIX: Fixed the Alternate Series setting for syncing
+* BUGFIX: "Released" no longer displays the time
+* BUGFIX: Added missing "Opening Database" message to the splash screen
+* BUGFIX: Faster initial update of smartlist live counters (if caching disabled)
+* BUGFIX: Fixed Smartlist User Scripts (like "All books starting with...")
+* BUGFIX: Updated missing Wiki links
+
+Build 0.9.163:
+
+* CHANGE: Better 3D cover rendering for ultra wide covers
+* CHANGE: Relased does no longer display the time
+* CHANGE: Empty "is" clause for date matchers now works as expected
+* CHANGE: Faster response to sync requests if paired with multiple devices
+* CHANGE: Faster initial search for devices
+* CHANGE: Pairing dialog no longer shows already paired devices
+
+* BUGFIX: Fixed some thumbnail size issues in browser with ultrawide covers
+* BUGFIX: Fixed pasting of device sync settings
+* BUGFIX: Multipe running ComicRack instances in different user accounts can now wireless sync at same time
+
+Build 0.9.162:
+
+* NEW: Added Week Smartlist matcher
+* NEW: Added "Series: Last Released" property
+* NEW: Progress dialog now shows detailed information during sync
+* NEW: Option in Preferences to display all cover thumbnails in the browser with same size
+* NEW: Reader Tabs can now be closed with a middle click
+
+* CHANGE: Needs CRA versions 1.68+ for synchronization
+* CHANGE: Better 3D books rendering if book has double cover
+* CHANGE: Expression matcher no longer breaks early on error
+* CHANGE: Remapped default open eComic shortcuts to correctly handle the shift modifier (open in new tab)
+* CHANGE: Most date matchers now ignore the time part
+
+* BUGFIX: Fixed some smartlist caching issues
+* BUGFIX: Fixed some wrong entries in publisher icons
+* BUGFIX: Fixed sorting problems on multi processor machines
+* BUGFIX: Fixed list values in the search browser
+* BUGFIX: Fixed handling empty values for numeric matchers
+* BUGFIX: OK button is now disabled in the text based smartlist editor if there's an error in the definition
+
+Build 0.9.161:
+
+* NEW: Added Released Date to Catalog fields
+* NEW: Added UseNativeCbz setting in ComicRack.ini to toggle between native and 7Zip based CBZ support
+* NEW: Option in Devices Dialog to only show the selected lists
+* NEW: You can now copy sync setups between paired devices
+
+* CHANGE: Added Time is now always editable (and not only for fileless entries)
+* CHANGE: Added day to default caption format
+* CHANGE: Format strings now support all fields (DefaultCaptionFormat etc.)
+* CHANGE: Book Dialog overview no longer shows dates not set (opened etc.)
+* CHANGE: During sync the Win7+ Task icon now shows the Device icon
+* CHANGE: Switched Published Grouper to default Date Grouper
+* CHANGE: Some visual tweaks
+* CHANGE: Some code hardening
+
+* BUGFIX: Group sorting for Published
+* BUGFIX: Selecting Unspecified in Search Browser did not work as expected
+* BUGFIX: Fixed Autonumber script error for numbers greater 100
+* BUGFIX: Fixed Apply button in listlayout editor
+
+Build 0.9.160:
+
+* NEW: Added Day field for published date
+* NEW: Added Week of Year column to browser
+* NEW: Collapsed/Expanded states of Groups are now remembered
+
+* CHANGE: Changes in duplicate matcher to always handle month/year
+* CHANGE: Updated Publisher Icons
+
+* BUGFIX: Expanded Cover Detail View mode did only work in English/German
+* BUGFIX: Fixed sort order for combined stacking/grouping
+* BUGFIX: Changed "Is bigger" to "Is Greater" in query syntax
+* BUGFIX: Missing numeric spinner for Month column in browser
+* BUGFIX: Better handling of number spinners in the browser
+* BUGFIX: Fixed inline editing of Format, Main Character, Scan Information, Series Group and Story Arc in detail view
+* BUGFIX: Fixed Apply button in Book Dialog
+* BUGFIX: Fixed Workspace storage
+* BUGFIX: Some code hardening
+
+Build 0.9.159:
+
+* NEW: Apply button in Comic Book Dialog
+* NEW: You can now enter Smartlist query expressions in the quicksearch text field
+* NEW: New Expanded Cover Detail View mode (turned on by moving Cover column left/right most in detail list)
+* NEW: Items can now be reordered in the Workspaces/List Layouts/List Columns with the Mouse (additionally to the up/down buttons)
+* NEW: Up to three Stacking/Grouping criteria can be combined by selecting the type in the menu while pressing Ctrl
+
+* CHANGE: Import reading list now supports selecting multiple files
+* CHANGE: Adjustments in "Fit columns"
+* CHANGE: Some visual and size tweaks to group headers
+* CHANGE: Fixed hires mouse wheel scrolling (if supported by mouse)
+
+* BUGFIX: Fixed escaping of '"', '[' and ']' in the smart list query language parsers
+* BUGFIX: Some missing translations
+
+Build 0.9.158:
+
+* CHANGE: Ctrl+Del does now exactly the same as Del and hitting OK (all defaults of the checkboxes are used)
+* CHANGE: Checking "Remove also from Library" is now remembered in the remove/delete dialog
+* CHANGE: Wikipedia search menu entry is now at the bottom of context menus
+* CHANGE: Removed Maximum limits from renumber script
+
+* BUGFIX: Further layout fixes when using big fonts
+* BUGFIX: Hopefully fixed possible lock during fast paging
+* BUGFIX: Fixed USB Sync with Windows 7 (introduced with Windows 8 fix)
+
+Build 0.9.157:
+
+* NEW: Books can now be removed from Smart Lists (reset is in smart list editor)
+* NEW: Added new Publisher Icons
+* NEW: Option to cancel wireless syncs from the device
+* NEW: New command in Comic Dialog to order pages by different criteria
+* NEW: Publisher Icons can now be extended with an applicable year range (see Publisher.zip DC Icon)
+* NEW: New setting in export to rotate double pages by 90°
+* NEW: Setting in Advanced Preferences to limit the system memory ComicRack is using
+* NEW: Implemented a query language (like SQL) for Smartlists.
+* NEW: Added Copy/Paste support for Smartllists and the new query language
+* NEW: Added simple text based Smartlist editor (press ctrl while clicking "Edit")
+* NEW: Reordering of devices in the Device Dialog with drag & drop
+
+* CHANGE: New dialog for removing books
+* CHANGE: For synching Android Client 1.67 and up is required
+* CHANGE: Switched CBZ handling to the SevenZip engine (higher compatibility)
+* CHANGE: Moved the Gauge settings from the Library view to the Library Settings in Preferences
+* CHANGE: Better description for collapsed smartlist groups
+* CHANGE: Rewrote selection/focus display of items
+* CHANGE: First line in detail groups is always gray
+* CHANGE: Better drawing of checkboxes in lists
+
+* BUGFIX: Fixed USB syncing on Windows 8
+* BUGFIX: Fixed sorting of Stacks by Rating/Community Rating/Read Percentage
+* BUGFIX: Fixed Shift+Ctrl Mouse selection in lists
+* BUGFIX: Fixed update problems in preview
+* BUGFIX: Fixed updates of Opened Time/Last Page when Track Current Page option is turned off
+* BUGFIX: Fixed sorting of special Number values (-1, .1, 1/2, 1A,  etc.)
+* BUGFIX: Collapsing groups in the smartlist editor no longer jumps to the top
+* BUGFIX: Fixed limiting Smartlists. Till refresh always the same items are returned
+* BUGFIX: Fixed handling of Windows 8 and high DPI settings
+* BUGFIX: Fixed cache for Temporary list after restart
+
+Build 0.9.156:
+
+* NEW: Sync overlay icon for lists
+* NEW: "Sync with..." context menu command in library browser to quickly change syncing for a list
+* NEW: Added "Add to List" command to the folder view for books already in the library
+* NEW: Added "Track current Page" command in Reading Menu to turn on/off tracking of current pages when reading
+* NEW: Groups in Smartlist Editor can be collapsed
+* NEW: Create page thumbnails for portable devices (can be turned off in ComicRack.ini)
+
+* CHANGE: New "PageCachingDelay" setting in ComicRack.ini to set the delay for page caching
+* CHANGE: Custom List backgrounds now use the 3D cover view
+* CHANGE: For wireless sync needs ComicRack for Android 1.64+
+
+* BUGFIX: Smartlist editor no longer jumps back to the top when adding/removing rules
+* BUGFIX: "Clear internet cache" did not work
+* BUGFIX: Fixed alternating line background in list details view
+
+Build 0.9.155:
+
+* CHANGE: For synching Android Client 1.63 and up is required
+
+* BUGFIX: Fixed missing Main Character/Series Group/Story Arc in the Search Browser
+* BUGFIX: Fixed missing autocomplete for Series Group/Story Arc in Multiple Comics Dialog
+* BUGFIX: Fixed error synching empty smart lists
+* BUGFIX: Fixed crash when switching away from a script in the Smartlist Editor
+* BUGFIX: Fixed possible crash in splash dialog
+* BUGFIX: Fixed possible crash when opening the page context menu
+* BUGFIX: Fixed possible crash in page animation
+* BUGFIX: Fixed handling of memory caches > 2 GB
+* BUGFIX: Fixed possible crash in disk cache
+* BUGFIX: Hardened cleaning up of memory caches
+* BUGFIX: Hardened wireless sync communication
+* BUGFIX: Hardened Clipboard handling
+
+Build 0.9.154:
+
+* NEW: Added new script hook to execute scripts during startup (see sample scripts)
+* NEW: Added script commands ComicRack.Application.Restart()/ScanFolders()/SynchronizeDevices()
+* NEW: Option to keep last read eComic from series on device during sync ("But keep last read")
+* NEW: SyncKeepLastRead setting in ComicRack.ini
+* NEW: When exporting Reading Lists from Smart Lists you now can select to export as single entries (and not smart list)
+* NEW: Scripts can now set/get/delete custom values for books with book.SetCustomValue(key,value)/GetCustomValue(key)/DeleteCustomValue(key)
+
+* CHANGE: Redesign of sync options (may not be compatible in all cases with old settings)
+* CHANGE: Synching limited lists now interleaves by sort order
+* CHANGE: Synched lists now default to "sort by series"
+* CHANGE: Removed "Reverse" option for synching
+* CHANGE: For synching Android Client 1.62 and up is required
+
+* BUGFIX: Fixed missing translations in Script Preferences
+* BUGFIX: Fixed localization when scroll groups where toggled to tab groups in dialogs
+* BUGFIX: Fixed possible crash when scripts delayed startup process
+* BUGFIX: Fixed adding own smartlists to quick open
+* BUGFIX: Fixed saving of SeriesGroup & StoryArc in files
+* BUGFIX: Fixed performance issues when smartlist caching is turned on
+* BUGFIX: Fixed '&' display at various places
+* BUGFIX: Fixed various spelling mistakes in the german language pack
+* BUGFIX: Fixed possible exception when stepping through a list history with deleted lists
+* BUGFIX: Fixed encoding for "Export comic list" script
+* BUGFIX: Fixed missing icon for "Temporary Folder" in duplicate list command
+* BUGFIX: Fixed enabling of list settings in device dialog
+
+Build 0.9.153:
+
+* NEW: Duplicate list command now has a drop down list of the folders the duplicated list should be stored in
+
+* CHANGE: Limit by Series now sorts first by number, then by series
+* CHANGE: Limit by Alternate Series now sorts first by alternate number, then by alternate series
+* CHANGE: Duplicate list command now tries to find a good name for the new list
+* CHANGE: Comic Open Dialogs now generally remember the last filter selection
+
+* BUGFIX: Fixed proposed name of backup file
+* BUGFIX: Menu alphabetizer works with accents and umlauts
+* BUGFIX: Setup now correctly detects .NET 4 client profile installation and installs the full version
+
+Build 0.9.152:
+
+* NEW: Sync lists can now be limited by book count or size (size is only estimate when optimized or webcomic)
+
+* CHANGE: Needs at least ComicRack for Android 1.55 or up
+
+* BUGFIX: Fixed sending progress info during wireless sync
+* BUGFIX: Fixed handling of missing files during wireless sync (locked transfer)
+* BUGFIX: Fixed quicksearch support for the new meta data introduced in 0.9.151
+* BUGFIX: Some layout adjustments in the comic book dialog
+
+Build 0.9.151:
+
+* NEW: Added Story Arc, Series Group, Main Character and Review meta data
+* NEW: Implemented data and check update from sync client
+
+* CHANGE: Updated 7z to version 9.20
+* CHANGE: Updated ZipSharp to 0.86
+* CHANGE: Keep wireless sync client alive during long conversions (WebComics)
+
+* BUGFIX: Fixed "+" and "!" modifier with webcomics (broke Freak Angels.cbw)
+
+Build 0.9.150:
+
+* NEW: Commands in sync dialog to select/deselect all lists in a folder
+
+* CHANGE: Added name of the book to sync conversion errors
+* CHANGE: ComicRack now works without KB2533523 installed
+* CHANGE: New SyncQueueLength setting in ComicRack.ini (defaults to 50)
+* CHANGE: New SyncWifiTimeout setting in ComicRack.ini (defaults to 60)
+* CHANGE: Better "Open Random" function (better randomization, each book only once in open sequence)
+* CHANGE: Much faster wireless protocol (needs Android version 1.43+)
+
+* BUGFIX: Fixed menu commands for toggling sidebar and small preview
+* BUGFIX: Fixed various sync issues
+* BUGFIX: Sync conversion now honors the temp folder setting in ComicRack.ini
+* BUGFIX: Added missing help references for sync dialogs
+* BUGFIX: Fixed possible lock when opening books
+* BUGFIX: Fixed Search Browser selection still active when closing Search Browser
+* BUGFIX: Fixed entries in Search Browser when selecting empty list
+* BUGFIX: Fixed selection drawing in Search Browser
+
+Build 0.9.149:
+
+* NEW: Scripts can now show the information dialog for books (ComicRack.Application.ShowComicInfo(books))
+* NEW: Synchronizing page type changes back from the Android app
+* NEW: You can now drag/drop books somewhere on the main window to open them (caption, menu etc.)
+* NEW: WebComic parser now supports file:// Uris. This allows to make filesystem based webcomics
+* NEW: WebComic parser has predefined variables "ComicFileName" and "ComicFilePath" for relative image paths
+* NEW: Multi-image layouts for WebComics (see wiki for new Compositing element)
+* NEW: New pattern options for WebComics (see wiki)
+
+* CHANGE: Optimized WebComic engine
+
+* BUGFIX: Various code hardenings
+* BUGFIX: Fixed Search Browser shadow values and translations
+* BUGFIX: Fixed serious serialization bug of smartlists with cascading matcher groups
+* BUGFIX: Fixed wireless synchronizing of very large books
+* BUGFIX: Fixed traling '.'s in the Uri parser
+
+Build 0.9.148:
+
+* CHANGES: Better version control of the Android Client
+
+* BUGFIX: Fixed loading of JPEG images in 32 bit mode with non standard EXIF-chunks
+* BUGFIX: Fixed initial position of Tasks Window
+
+Build 0.9.147:
+
+* NEW: New property "Checked" for books
+* NEW: Option to sync only checked books
+
+* CHANGE: Custom IPs are now also used when searching for pair devices
+* CHANGE: Smartlists with limit criteria are no longer randomized
+* CHANGE: Browser Scraper now supports self refering last pages
+
+* BUGFIX: Using folders as source for syncing was broken (first sync cleared everything on the device)
+
+Build 0.9.146:
+
+* NEW: Support for wifi sync requests from the Android client
+* NEW: Better synchronization logic with multiple concurrent devices
+* NEW: Implemented size optimization for sync (used values are in comicrack.ini)
+* NEW: ExtraWifiDeviceAddresses setting in ComicRack.ini to specify a list of wifi device ip addresses (only if autodetection does not work)
+
+* CHANGE: Hidden Mac files are now ignored from scanning (can be changed in ComicRack.ini with MacCompatibleScanning)
+* CHANGE: Gracefully handle missing WPD API (e.g. Windows Server 2K3)
+* CHANGE: Export rescaling now default to BestQuality (which does make a difference)
+* CHANGE: Export quality slider now has a value tooltip
+* CHANGE: Sync entries now default to optimize false (as there is a slight quality reduction)
+* CHANGE: Optimized conversion/transfer process during sync to speed up slow connections (e.g. wireless)
+
+* BUGFIX: Fixed rename script (thanks to stonepaw)
+* BUGFIX: Sort lists in library browser did not work correctly
+
+Build 0.9.145:
+
+* NEW: Sync devices can now be renamed
+* NEW: Wireless synchronization
+
+* CHANGE: Better Device Editor
+* CHANGE: Sync now gracefully handles XML errors and just resyncs the file
+
+* BUGFIX: Various synchronization issues
+
+Build 0.9.144:
+
+* NEW: USB Synchronization with ComicRack for Android devices
+
+* CHANGE: Same style of Library view throughout the whole program
+* CHANGE: Images from WebComics are now also cached in the internet cache
+
+* BUGFIX: Fixed Library Path initialization for scripts
+* BUGFIX: Fixed Tab for inline editing in browser view
+* BUGFIX: Bookmarks are trimmed before used as filenames
+
+Build 0.9.143:
+
+* NEW: Library gauges can now be customized
+* NEW: Added Quick Introduction Manual (Opened the first time ComicRack is started & new Menu Entry in Help)
+* NEW: Support for .xml sidecar files for initial book information (currently only read, not updated)
+* NEW: "Web..." command in Book Context Menu to show website
+* NEW: Added new "Black" background texture
+
+* CHANGE: Better image caching in reader to minimize animation stuttering
+* CHANGE: Statusbar now also shows the name of the selected list
+* CHANGE: Stock background/paper textures have a fixed layout (can not be changed)
+
+* BUGFIX: The WebComic parser now honors the html-base element
+* BUGFIX: Del, Ctr-C, Ctr-V, Ctrl-Z, Ctrl-X, Ctrl-A now work as expected in list inline editing
+* BUGFIX: Better search code for ghostscript (thanks to forkicks)
+* BUGFIX: Correct enabling/disabling of context menu items with keyboard shortcuts
+* BUGFIX: Query Cache updates did not cascade properly to dependent lists
+* BUGFIX: All plugin scripts now run in their own context
+* BUGFIX: Fixed Formats.zip and Special.zip
+* BUGFIX: MouseSwitchesToFullLibrary in ComicRack.ini is working again
+
+Build 0.9.142:
+
+* NEW: "Scan Information" field
+* NEW: Folder combine mode can now be set to empty (additionally to and,or)
+
+* CHANGE: Resources, ComicRack.ini and lists are now looked up in startup, %PROGRAMDATA% and %APPDATA%
+* CHANGE: Nicer display of sort arrows and drop down button in column headers
+* CHANGE: Added a question dialog before clearing data for books
+* CHANGE: Nicer Gap Information arrows
+* CHANGE: (Shift-)Tab now also changes edit fields in detailed view (additional to Alt-Left, Alt-Right)
+
+* BUGFIX: Fixed some errors in german translation pack
+* BUGFIX: White line at bottom in fullscreen when Aero OpenGl workaround is enabled
+* BUGFIX: Possible bugfix for initial server timeout with large libraries
+* BUGFIX: Alphabet groups in context menus where not sorted and sometimes too long
+* BUGFIX: Fixed alphabet groups in Value Editor Dialog context menu
+* BUGFIX: Browser Scraper refresh
+* BUGFIX: Fixed scrolling when clicking on header in detail browsers
+
+Build 0.9.141:
+
+* NEW: Added DoNotResetZoomOnBookOpen setting in ComicRack.ini to disable resetting zoom when opening a new book
+* NEW: Added "Clear Data" command for Books
+
+* CHANGE: Keyboard shortcut editor now supports directly pressing the keys instead of selecting them from the list
+* CHANGE: Again new "Unknown" Icon
+* CHANGE: New Publisher/Imprint/Format/Special icon sets
+* CHANGE: Selection of time/date format in detailed list
+* CHANGE: Tags field is also used for lookup in Special Icons
+* CHANGE: Names found in Format icon sets are now added to the default format list
+* CHANGE: Names in the age rating icon sets are now added to the default Age Rating List
+* CHANGE: Extended Manga field with "Yes (Right to Left)"
+* CHANGE: Support for MangaRightToLeft icon in Special Icon set
+* CHANGE: Quick search ínput field gets bigger when focused
+
+* BUGFIX: Fixed multiple Wikipedia result entries in text context menus
+* BUGFIX: Wiki was asked for results for empty texts
+* BUGFIX: Possible exception for control visibility tests
+* BUGFIX: Possible null exception during history next/prev
+* BUGFIX: Possible exception in animation interpolation code
+* BUGFIX: Possible thread sync exception
+* BUGFIX: Possible exception in Sync Browser command
+* BUGFIX: Possible exception during enumeration of books in book conversion
+* BUGFIX: Possible exception in dialog animation/update
+* BUGFIX: Possible lock in animation dispose on close
+* BUGFIX: Fixed black background for custom stack thumbnails (introduced in 0.9.140)
+* BUGFIX: Format lookup now uses ShadowFormat
+* BUGFIX: Book Dialog now correctly displays icons for changes in completed, black&white and manga in account
+
+Build 0.9.140:
+
+* NEW: Added "Icons" column in comic list to show all the icons (format, publisher ect.)
+
+* CHANGE: Reduced possible thickness of 3D book display
+* CHANGE: Book scripts with icons and configuration commands get a configuration dropdown menu
+* CHANGE: Fixed bottom margin of explorer view if no plugin pane is visible
+* CHANGE: Further speedup of list drawing (see OptimizedListScrolling in ComicRack.ini to turn off)
+* CHANGE: Optimized library tree rebuilding
+* CHANGE: Further optimizations for query cacher execution and update logic
+* CHANGE: Changed the default for "Reset zoom to 100% on page change" to false
+* CHANGE: During page change there is now a quick zoom out/in (can be changed in preferences/behavior)
+* CHANGE: Smoother part scrolling on fast machines
+* CHANGE: Name parser now always correctly handles c2c
+* CHANGE: Icon Lookups for Publisher etc. are now case insensitive
+* CHANGE: When opening a new book zoom is reset to 100%
+* CHANGE: Added Hardcover to the standard formats list
+* CHANGE: Added "Set to all" button to list layout editor
+* CHANGE: If only a single book is selected in the list, the file name is displayed in the statusbar
+* CHANGE: Icon packages are now read in alphabetically, so later packages can overwrite values from earlier ones
+
+* BUGFIX: Fixed help menu initialization (multiple copies of same entries possible)
+* BUGFIX: Possible null exception when using recursive lists
+* BUGFIX: Fixed hang when setting page in the reader to a filtered page type
+* BUGFIX: Text Matchers with empty values did not work correctly after a restart
+* BUGFIX: Fixed some spelling errors in the German Language Pack
+* BUGFIX: Fixed very longstanding part scrolling bug where visible part jumps left/right when reaching top/bottom border during scrolling
+* BUGFIX: Fixed severe Smartlist editor layout bug (introduced in 0.9.137)
+* BUGFIX: Browse Scraper for WebComics did miss the last page
+
+Build 0.9.139:
+
+* NEW: Script Console now also logs output for Web Comic Scraper
+* NEW: ComicRack.ini setting "NumericLibraryGauges" to turn on/off numbers in library gauges
+* NEW: Added Australian Age Ratings
+* NEW: Added ComicRack Online Manual
+* NEW: Support for separators in custom help menu entries
+* NEW: "HelpLink" entry in Package.ini to create a help menu entry for the plugin
+* NEW: Added bunch of new icons
+* NEW: Added bow shadow to thumbnails (ThumbnailPageBow setting in ComicRack.ini to disable)
+* NEW: Autotuning system for getting good defaults for the system (see ComicRack.ini DisableAutoTuneSystem setting)
+
+* CHANGE: Better drawing of library gauges if not enough display space
+* CHANGE: Update to Iron Python 2.7
+* CHANGE: Support for multiple icon resource files
+* CHANGE: Support for custom resources in %PROGRAMDATA%\cYo\ComicRack\ (same path structure as in install folder)
+* CHANGE: Smart List Editor only allows to select lists without circular references
+* CHANGE: Library browser displays lists with circular references with red text
+* CHANGE: Changed default memory thumbnail cache to 50 MB
+* CHANGE: Removed main menu gradient
+* CHANGE: Much nicer and consistent display of toolbars/menus in Windows XP
+* CHANGE: Added fallback for older ghostscript versions
+* CHANGE: Fixed Top/Bottom paddings for sizable containers (more consistent user interface)
+* CHANGE: Moved selection of help system from preferences to Help menu
+* CHANGE: "Characters" in Comic Book Dialog is now 2 lines high
+* CHANGE: Nicer Splash/About screen
+* CHANGE: Due to hardware development changed the OpenGl texture memory default to 128MB
+* CHANGE: Slight adjustment to rating star sizes
+* CHANGE: Moved Network start to the end of initialization process
+* CHANGE: Made startup percent display a little more realistic
+* CHANGE: Optimization of Comic/Multipe Comic Dialog initialization
+* CHANGE: Faster initial preferences dialog startup
+* CHANGE: Some optimizations drawing thumbnails in the list
+* CHANGE: 3D book thickness now depends on the actual page count
+* CHANGE: Added small shadow below 3D books
+* CHANGE: Turning mouse wheel over cover image in Comic Info Dialog moves to next/prev comic in list
+* CHANGE: Moved text into the background for 3D covers
+* CHANGE: Blending animations wait till cache has actually loaded all required pages
+* CHANGE: New "Unknown cover" icon
+* CHANGE: Internal page cache management reworked
+
+* BUGFIX: Fixed sorting by Series/Format (introduced in 0.9.137)
+* BUGFIX: Possible fix for parallel query execution exception
+* BUGFIX: Fixed possible exception in retrieving PendingItemInfos
+* BUGFIX: Correct display of file format (e.g. CBZ instead of Zip);
+* BUGFIX: Navigation Panel highlighted wrong pages in true left/right reading mode
+* BUGFIX: Fixed recursion protection in query caching
+* BUGFIX: Fixed initial update of Cache/Gauges when Library Browser is scrolled
+* BUGFIX: Possible null exception in query book statistic creation
+* BUGFIX: Proper icon update during edit in Comic Book Dialog
+* BUGFIX: Possible exception in book browser inline editor
+* BUGFIX: Possible exception with clipboard
+* BUGFIX: Possible exception with MarkAsRead/Unread
+* BUGFIX: Further hardening of StoreWorkspace
+* BUGFIX: Toggle Click did not work on Remote Library Tabs and newly added list tabs
+* BUGFIX: Fixed skewed numbers on page thumbnails (introduced in 0.9.137)
+* BUGFIX: Fixed stupid bug calculating the read percentage for series
+* BUGFIX: Fixed massive page cache trashing problem in dual page display and comics with more pages than cache size
+* BUGFIX: Fixed possible exception when loading of remote library fails
+
+Build 0.9.138:
+
+* NEW: Added Delete command to Rules Editor
+* NEW: Option to turn on/off gauges in the Library Browser (Preferences/Behavior/Application)
+* NEW: "IsRecentInDays" setting in ComicRack.ini to define the recent value ComicRack uses (Gauges, recently added/read)
+
+* CHANGE: Initial default list creation uses settings from ComicRack.ini
+
+* BUGFIX: Comic Book Dialog now correctly handles invalid Added Dates
+* BUGFIX: Date Grouper now correctly handles some invalid and future dates
+* BUGFIX: New Book entries where initially not editable
+* BUGFIX: Fixed locking of query caches
+* BUGFIX: Fixed possible exception when deleting files from disk
+* BUGFIX: Fixed possible exception during workspace storage
+* BUGFIX: Fixed layout problem in Library Preferences
+* BUGFIX: Fixed drawing disabled state of spin button down arrow
+* BUGFIX: Fixed missing GUI refresh in some cases when changing preferences
+
+Build 0.9.137:
+
+* NEW: Support to edit Added/Opened for fileless entries
+* NEW: Support for faster query execution through internal caching
+* NEW: Gauges for new/unread/total books in a list (if query caching is enabled)
+* NEW: QueryCacheMode setting in ComicRack.ini to set how query caching works
+* NEW: BackgroundQueryCacheUpdate setting ComicRack.ini to enable/disable backgound query caching
+* NEW: Customization of texts displayed in Tile mode
+* NEW: Clicking on selected tabs toggles between browser/reader
+* NEW: Full support for {field} values in all smartlist matchers
+* NEW: Added expression matcher e.g. "{Rating} < {CommunityRating}" (python syntax)
+* NEW: Added expression editor (double click in match text fields)
+* NEW: Option to hide/show sample script in the scripts list
+* NEW: Added touch panning support to tabbar for easier tabs scrolling on touch devices
+* NEW: Series Stats: Published
+* NEW: Notes entry field in Smart List Dialog can be shown and hidden
+* NEW: If everything fails when opening an old database, a backup of the failed database is made before creating a new one
+* NEW: Rating stars are now displayed below thumbnails/tiles and can be edited with mouse clicks
+* NEW: RatingStarsBelowThumbnails setting in ComicRack.ini to define how thumbnail rating stars are displayed
+* NEW: Series matchers for highest/lowest Count
+* NEW: App wide support for the "Series completed" field
+* NEW: Help system now supports definition of custom menu entries (see readme.txt in help folder)
+* NEW: Filename parser now correctly handles "ctc", "23p", "12-1965" and some other stuff
+* NEW: Publisher, Imprint, Format and Age Rating icons in various places
+* NEW: GetComicPublisherIcon(book), GetComicImprintIcon(book), GetComicAgeRatingIcon(book) and GetComicFormatIcon(book) script methods
+* NEW: Yes/No values are now displayed as checkboxes in the list (and can be clicked to change values)
+* NEW: Column for displaying and turning on/off the proposed setting
+* NEW: Spin buttons in comic list to change numeric values (turn off in ComicRack.ini with DisableListSpinButtons)
+* NEW: Visual Gap Information column in details mode ("Gap Information")
+* NEW: "Has been Read" column with checkbox
+* NEW: Sidebar button in browser view for quicker open/close on touch displays
+* NEW: Added support for gamma color adjustments per comic and in general
+* NEW: Move Top/Bottom commands for ordered comic lists
+* NEW: "Apply current Order" command for ordered comic lists
+
+* CHANGE: No update to file info for standard page infos
+* CHANGE: Added support to date grouper for future dates
+* CHANGE: Added Up/Down spinners to numeric input fields in Comic Dialogs
+* CHANGE: Better layout in Folder Editor
+* CHANGE: Blank pages now use the BlankPageColor setting in ComicRack.ini (defaults to White)
+* CHANGE: Renamed "Flow scrolling" to "Inertial scrolling"
+* CHANGE: Slight design adjustment in reader settings
+* CHANGE: Reduction of toolbar flicker when opening book in fill dock mode
+* CHANGE: Search Browser ignores casing of values (can be set in ComicRack.ini with setting SearchBrowserCaseSensitive)
+* CHANGE: Multline message display during startup
+* CHANGE: Reworked smartlist editor with Cut/Copy/Paste/Move Up/Move Down for rules
+* CHANGE: Reworked new/edit dialogs for (folder) lists
+* CHANGE: Format is only added to captions if the series does not contain it
+* CHANGE: Number columns now also display count values if they are only proposed
+* CHANGE: Stacks now display the average (community) rating of the stack
+* CHANGE: Bookmarks on stack now display how many of the books in the stack have been read
+* CHANGE: Better zoom-gesture handling with slow touch displays
+* CHANGE: Better shadows during page turning animation
+* CHANGE: When removing eComics from a list, the nearest eComic gets selected
+* CHANGE: Added mousewheel support to small comic preview
+* CHANGE: All list creation commands in the library browser now add the new item directly after the selected one
+* CHANGE: Pressing F5 in the comic browser now always refreshes the list
+* CHANGE: Some sorting and grouping performance optimizations
+* CHANGE: Changed default age rating list to the ESRB system
+* CHANGE: Group name compression is now turned off by default (can be turned on again with EnableGroupNameCompression in ComicRack.ini)
+* CHANGE: Changed the file size grouper to more reasonable ranges
+* CHANGE: Allow only numeric keys for number files in Comic Dialogs
+* CHANGE: Better responsiveness of application if background scan adds lots of eComics to a big selected list
+* CHANGE: Pages tab only visible if a comic is open
+* CHANGE: Database restore/backup now also saves any custom thumbnails
+* CHANGE: Minimum size for quickopen
+* CHANGE: Implemented multiprocessor support for some query operations
+* CHANGE: "Shown in list" command now disables any filters in the target list if the book is initally not found
+* CHANGE: Optimized mouse selection in big lists
+* CHANGE: Changed "Comic" and "eComic" in all text to the more consistent "Book"
+* CHANGE: Reworking of some message texts
+* CHANGE: Reader Toolbar buttons are only displayed if it makes actually sense
+* CHANGE: Optimized background command enabling/disabling
+* CHANGE: Python script initializer now also recognizes "# @Key" as script parameters
+* CHANGE: Optimized background animation threads
+* CHANGE: Reworked colors tab in the comic dialog with paging buttons
+* CHANGE: Renamed "Move to Start/End" to "Move to Top/Bottom"
+
+* BUGFIX: Fixed initial reader resize delay in fill mode
+* BUGFIX: "Pages" was shown in Paste Dialog for non fileless entries
+* BUGFIX: Fixed scroll-position bug when opening large stacks (introduced in 0.9.136)
+* BUGFIX: Correct sharing of dependent smart lists
+* BUGFIX: "Count" smartlist operator did not use proposed values
+* BUGFIX: Changed calculation of Read Percentage for Series Statistics
+* BUGFIX: Collection field drop down items where not sorted in the multiple comics dialog
+* BUGFIX: Double Click on expand/collapse in Library View does no longer opens the editor
+* BUGFIX: Fixed English field names in Search/Replace dialog
+* BUGFIX: ISBN could not be edited inline
+* BUGFIX: Missing smartlist matcher for Notes
+* BUGFIX: If multiple values are edited inline (Ctrl-Long Click) the focues item is also changed
+* BUGFIX: Fixed possible failure in script initializations
+* BUGFIX: Fixed possible multiselecting bug with the mouse (all items from start selected)
+* BUGFIX: Fixed wrong names for "Series: First/Last book" matchers
+* BUGFIX: Missing text/tooltip for Add Tab toolbar button
+* BUGFIX: Missing tooltips for page layout and docking button
+* BUGFIX: Fixed selection state in the library browser when moving lists with the mouse to a new location
+* BUGFIX: Fixed copy/paste of lists in the library browser
+* BUGFIX: Software filter does not longer interfere with blend animations
+* BUGFIX: Some context menu issues in remote Libraries
+* BUGFIX: Ratings could be edited for remote Libraries with clicking in the comic list
+* BUGFIX: Ratings could be edited for remote Libraries in the Comic Book Dialog
+* BUGFIX: General editing shield on the serverside (even if clients make changes)
+* BUGFIX: Availability of database only entries in paste/multiple edit dialogs
+* BUGFIX: "Commit Proposed" script correctly handles EnableProposed
+* BUGFIX: Correct handling of ISBN and Book Notes field in Multiple Comics Editor
+* BUGFIX: Comic list was not updated when selector in Search Browser was changed
+* BUGFIX: Fixed some undo captions and missing undo entries
+* BUGFIX: Autosize column did set the column width to 0 if no value was defined
+* BUGFIX: Hot item did not change when list was scrolled
+* BUGFIX: Any startup error messages are no longer hidden by the splash screen
+* BUGFIX: Config Script Hook not initialized when defined after main script
+* BUGFIX: Fixed parsing of default genre list
+* BUGFIX: Fixed Info, Page Type, Page Rotation commands in main menu
+* BUGFIX: Fixed Bookmark commands
+* BUGFIX: Plus Tab was displayed in the main window when reader was undocked
+* BUGFIX: Navigation buttons where visible in browser windows
+* BUGFIX: Keyboard definitions for Toggle Browser did not toggle minimal gui in full docking mode
+* BUGFIX: Filepath grouper is now case insensitive
+* BUGFIX: Fixed not working shift-select in Search Browser
+* BUGFIX: It was possible to initiate a reorder drag&drop for stacked lists
+
+Build 0.9.136:
+
+* NEW: Added "Random eComic" as new keyboard command (defaults to L)
+* NEW: Page count can be edited for fileless entries
+
+* CHANGE: Support for multi line notes in library lists
+* CHANGE: Better format for library browser tooltips with long lines
+* CHANGE: Smoother switching/openeing/closing of eComics in fill docking mode
+* CHANGE: Proper support for "Marked as Read/Unread" for fileless entries
+* CHANGE: Turned off drawing of ratings for stacks with custom thumbnails
+
+* BUGFIX: Possible missing/wrong scrollbars when groups are collapsed in the list view
+* BUGFIX: Smartlist entry "Series: Start of Gap" was labeled "Series: End of Gap" in English locale
+* BUGFIX: Correct hiding of main menu with minimal gui turned on in fill docking
+* BUGFIX: Possible Access Violation in resize images
+* BUGFIX: Fixed custom thumbnails most recent list when using icon files
+
+Build 0.9.135:
+
+* NEW: Support for Statistic Series Values (Book Count, Page Count, Pages Read Count, Read Percentage, First Number,
+       Last Number, First Year, Last Year, Running Time Years, Average Rating, Average Community Rating, Gaps, 
+	   Last Added, Last Opened, Is End of Gap, Is Start of Gap) for smartlists and columns
+* NEW: ISBN Number
+* NEW: Catalog Quicksearch category
+* NEW: List of open eComics in Page Context Menu
+* NEW: Added Position properties to pages (Near/Far) to set anchors for non cover to cover scans
+* NEW: Added Collapse/Expand all Groups command to the view menu
+* NEW: Double click on the group arrow collapses/expands all groups
+* NEW: Added Select All/Reset Background commands to view context menus for comic/page lists
+* NEW: Notes field for lists/smart lists (displayed as tooltip)
+* NEW: Setting custom thumbnails for stacks
+
+* CHANGE: XML Format optimizations
+* CHANGE: Groups for My Rating, Community rating now use the rounded values
+* CHANGE: minimal GUI also hides toolbar in dock=fill
+* CHANGE: Toggle Browser toggles minimal GUI when Comic Reader is in separate window/dock=fill
+* CHANGE: New aspect ratio for list tiles
+* CHANGE: Ratings/Status images are now displayed to the right of the cover in tiles mode
+* CHANGE: Export/Convert/Update File Info commands now work if one of the selected items a filebacked eComic
+* CHANGE: Better Trimming for Date columns
+* CHANGE: Additional render settings to ghostscript
+
+* BUGFIX: Resize columns did not ignore Community Rating
+* BUGFIX: Possible null exception when rendering pages
+* BUGFIX: Added generic english language flag for localization list
+* BUGFIX: Fixed delete file when exporting remote eComics
+* BUGFIX: Quicksearch All now also matches catalog entries
+* BUGFIX: Fixed "Advertisment" in interface and xml
+* BUGFIX: Fixed Ctrl-A shortcut in lists when no item is selected
+* BUGFIX: Wrong stacking in detail mode
+* BUGFIX: Fixed huge performance issue with stacking and big stacks
+
+Build 0.9.134:
+
+* NEW: Command "Close all to the right" in tab context menu
+* NEW: Nice animation for hiding/showing menus/toolbars (can be turned off by DisableMenuHideShowAnimation in ComicRack.ini)
+* NEW: Out of the box support for the default Ghostscript 9.0 installer
+* NEW: "QuickInfoHtml" and "QuickInfoUI" scripting hooks for adding custom panels to the Quick Open View
+
+* CHANGE: Packages are sorted by type/name
+* CHANGE: Scripts are now grouped by functional categories
+* CHANGE: Option to define special actions for tap, double tap (if not defined uses mouse click definitions)
+* CHANGE: Double Tap now defaults to "Toggle Zoom", Double Mouse Click to "Toggle Fullscreen"
+* CHANGE: Removed Alt-Enter for "Toggle Fullscreen"
+* CHANGE: Nicer single page pageturn animation
+* CHANGE: Optimized Panel animations
+* CHANGE: Better handling of thumbnail page curl for two page thumbnails
+* CHANGE: Color of thumbnail page curls can now be changed (ThumbnailPageCurlColor setting in ComicRack.ini)
+* CHANGE: Changed activation - simply reactivate if you've donated
+
+* BUGFIX: Info dirty flag was not set to database entries if modify files was turned off
+* BUGFIX: Behavior settings where not saved if preferences where switched to tab layout
+* BUGFIX: Fixed navigation overlay hide/show with mouse movement
+* BUGFIX: Fixed scrolling of comic list while inplace editing
+* BUGFIX: Fixed group selection problem in book view
+* BUGFIX: Fixed the "ask for filename" option in export comics
+
+Build 0.9.133:
+
+* CHANGE: Local autoconnect does no longer ask for passwords
+* CHANGE: Scripts are now grouped by packages in the Preferences Dialog
+* CHANGE: Only scripts with valid hooks are displayed
+* CHANGE: Added SAFER option to Ghostscript support
+* CHANGE: Modified OpenGL initialization to get around some fullscreen bugs
+* CHANGE: Reworked how the Navigation Overlay works
+* CHANGE: Redesign Overlay options in Preferences
+* CHANGE: Gesture 8 now defaults to "Toggle Navigation Overlay"
+* CHANGE: Alt-Enter maps now to toggle fullscreen
+* CHANGE: Own Quick Open lists now precede the built in defaults
+* CHANGE: Moved network statistics into the pending tasks dialog
+* CHANGE: Pending Tasks are now grouped
+* CHANGE: Added custom rating control to rating context menus
+* CHANGE: ComicRack closes the browser if comics are opened through explorer
+* CHANGE: New setting HideBrowserIfShellOpen in ComicRack.ini to control above behavior
+* CHANGE: Slight layout changes in preferences dialog
+* CHANGE: Inner shadow in quick open box
+
+* BUGFIX: Quick Open Box should only display eComics (linked)
+* BUGFIX: No multi select for quick open
+* BUGFIX: Quick Open Box did not support drag&drop
+* BUGFIX: Fixed initial state of validation button in donation dialog
+* BUGFIX: After hiding visible part overlay with [x] turning it back on did not work without a restart
+* BUGFIX: Fixed "Show only..." options in the comic browser
+* BUGFIX: If connected to multiple shares from the same library, quickopen contained duplicate entries
+* BUGFIX: Closing remote libraries did not refresh the quickopen box
+* BUGFIX: Fixed fullscreen button
+
+Build 0.9.132:
+
+* BUGFIX: Fixed rendering of Quick Open caption in classic style
+* BUGFIX: Fixed empty folder browser
+* BUGFIX: Fixed possible null exceptions in OpenNextComic
+* BUGFIX: "Book Location_s_"
+
+Build 0.9.131:
+
+* NEW: Added Quick Open feature when no comic open (with additions to preferences and smart list editor)
+* NEW: Added "window.external.Config" string value for HtmlInfoPanels to store configuration data
+* NEW: Added new fields for paper catalog management (plus support throughout the application)
+* NEW: Double click on background in Multiple Comics/Paste Data/Export Dialogs/Preferences toggles between scroll/tab layout
+* NEW: Support for scripts to draw overlays on thumbnails (see sample.py)
+* NEW: Support for script local localization (simply put a language resource zip in the script package e.g. de.zp, fr.zip)
+* NEW: Added a close button to the visible part overlay to hide it
+* NEW: ComicRack.ini setting to hide close button on visible part overay (HideVisiblePartOverlayClose)
+* NEW: New Quick Open settings in ComicRack.ini
+* NEW: '+' Tab to add new reader tabs
+* NEW: ComicRack now also reads %ALLUSERSPROFILE%\cYo\ComicRack\ComicRack.ini after it read the default ComicRack.ini
+
+* CHANGE: Moved javascript script engine to "window.external.ComicRack"
+* CHANGE: "HtmlInfoContextMenu" setting in ComicRack.ini to enable context menu in HtmlInfoPanels
+* CHANGE: "EnableHtmlScriptErrors" setting in ComicRack.ini to enable script error display in HtmlInfoPanels
+* CHANGE: Better drawing of star ratings on thumbnails
+* CHANGE: Option to "always save changes" when closing ComicRack
+* CHANGE: Moved history browse buttons to list (so they are available even when the library browser is collapsed)
+* CHANGE: Cue Text for quicksearch that displays current selected quicksearch type
+* CHANGE: Double Click on "fileless" entries opens info dialog
+* CHANGE: Redesign Multiple Comics Dialog
+* CHANGE: Redesign Paste Data Dialog
+* CHANGE: Redesign Smartlist Dialog
+* CHANGE: Export dialog remembers panel states
+* CHANGE: Fixed validation spam
+* CHANGE: New default is to not allow file updates
+* CHANGE: Update file status is only displayed if updating files is allowed
+* CHANGE: Changed default for "Always display Browser Docking Grip" to off
+* CHANGE: Slight Overlay Preferences layout change
+* CHANGE: Read Next/Prev eComic do work with the list the current comic was opened from
+* CHANGE: ComicRack leaves fullscreen when switching to a different application
+* CHANGE: UserLists.txt is now %ALLUSERSPROFILE%\cYo\ComicRack\DefaultLists.txt
+
+* BUGFIX: Missing localization for list editor
+* BUGFIX: Fixed "window.external.ComicRack.OpenBooks.OpenFile" script API call and changed the call in sample.py
+* BUGFIX: Fixed inappropriate animations during workspace changes
+* BUGFIX: Fixed info panel size handling when changing workspaces
+* BUGFIX: Fixed clicking with right mouse button on rating
+* BUGFIX: Missing text in comic preview if no/unlinked comic is selected
+* BUGFIX: Fixed iso code matching for languages
+* BUGFIX: Some handling errors with fileless comics
+* BUGFIX: Possible exception in workspace setting
+* BUGFIX: Fixed update problem with preview panels
+* BUGFIX: Fixed some spelling problems
+* BUGFIX: Removed not working edit option from List View Configuration Dialog
+* BUGFIX: Fixed blending transition
+
+Build 0.9.130:
+
+* NEW: Import/Export of keyboard layouts with recent files list
+* NEW: Command to reset the keyboard layout to its default
+* NEW: Dialog to edit sequence/delete workspace/list layout settings
+* NEW: GetComicThumbnail(book, page) script command
+* NEW: Violet marker for fileless eComics
+* NEW: Added "OfValues" setting in ComicRack.ini to define "of"s for the name parser
+* NEW: Added Linked matcher, grouper, comparer
+* NEW: Page margin can now be set in the Display Config Dialog
+* NEW: Added script command ComicRack.OpenBooks.OpenComic(string file,...) to the OpenBooks script object (see samples)
+* NEW: HtmlInfoPanel now support javascript scriptability via the window.external object (see samples)
+* NEW: New ComicRack.Browser.SelectComics command to select books in the current list
+
+* CHANGE: Custom thumbnail button now also has a reset option and recent files list
+* CHANGE: "Copy Data" now also puts the XML representation into the clipboard
+* CHANGE: Redesign of Shares UI
+* CHANGE: Splash screen now fades in/out
+* CHANGE: Consolidated some Plugin APIs
+* CHANGE: Disabled the context menu in html info panels
+* CHANGE: Localize method for scripts also tries to open default text resources
+* CHANGE: Quicksearch filters are now saved (type and text)
+* CHANGE: Added % tooltips to trackbars in Comic Display Settings dialog
+* CHANTE: New Books script now automatically selects all new comics (if visible in list)
+
+* BUGFIX: Fixed german text in NewComics.py
+* BUGFIX: Fixed NewComics.py Script (generated series where 1 book too short)
+* BUGFIX: Fixed possible exception in execute process
+* BUGFIX: Missing refresh after background connection process
+* BUGFIX: Fixed possible exception in multiple comics editor regarding float properties
+* BUGFIX: Fixed layout bug when switching closed info panels between bottom/right
+* BUGFIX: IgnoredArticles (the, der, etc.) where turned off by default
+* BUGFIX: Preview panels did not update when comic changed
+
+Build 0.9.129:
+
+* NEW: Thumbnail image can be set for "fileless" comics (drag&drop or "Thumbnail..." button)
+* NEW: "ComicBook ComicRack.App.AddNewBook (showDialog)" script command to add new books to the library
+* NEW: "bool ComicRack.App.RemoveBook (book)" script command to remove a book from the library
+* NEW: "bool ComicRack.App.SetCustomBookThumbnail(book, bitmap)" script command to change thumbnail image
+* NEW: New commandline switch -cdb to force a database consolidation (instead of every 50th run)
+* NEW: New "Toggle Zoom" command to quickly zoom in/out of the comic (defaults to double click)
+* NEW: Gestures show touch region when used (ShowGestureHint setting in ComicRack.ini)
+* NEW: Thumbnails can now display ratings either with stars or numeric (new setting in preferences)
+* NEW: Non blocking remote library connecting
+* NEW: Auto connection option for local shares (on by default)
+* NEW: -dfv (DisableFoldersView in ComicRack.ini) to disable Folders View (if not needed or wanted)
+* NEW: Script to add a range of comics (NewComicy.py)
+* NEW: New "NewBooks" script hook to add additional new commands (see NewComics.py)
+* NEW: New list view filters for "Show only eComics" and "Show only fileless"
+
+* CHANGE: Added missing "Community Rating" to Search Browser and Smartlist operators
+* CHANGE: Use "My Rating" and "Community Rating" labels throughout the software
+* CHANGE: Yellow stars for "My Rating", Blue Stars for "Community Rating"
+* CHANGE: Thumbnails display both ratings
+* CHANGE: Moved CommunityRating into ComicInfo.xml
+* CHANGE: Move to recycle bin only available if not "fileless"
+* CHANGE: Creating missing books is now optional when importing lists
+* CHANGE: List import now also facilitates the file name parser
+* CHANGE: Added progress dialog for long reading list imports
+* CHANGE: Language matcher for smartlists now correctly handles 2 letter iso codes
+* CHANGE: Different page layout settings for portrait/landscape (with tablet autorotate support)
+* CHANGE: Nagivation overlay now supports drag scrolling in the thumbnail area
+* CHANGE: Bigger Navigation overlay buttons for easier touch usage
+* CHANGE: Gesture Area sizes extended to 80 and made value a ComicRack.ini setting (GestureAreaSize)
+* CHANGE: Moved Toggle Fullscreen button into the toolbar
+* CHANGE: New default keyboard layout (toggle fullscreen is no longer double click)
+* CHANGE: Support for Double Gestures (double click/tap into a gesture area)
+* CHANGE: Right click on toolbar split buttons opens dropdown (makes touch interaction easier)
+* CHANGE: Rating menus now round to the nearest star
+* CHANGE: Small redesign of the Remote Connection Dialog
+* CHANGE: List view filter settings (read, unread, only doubles, etc.) are now saved
+
+* BUGFIX: Fixed "existant" text
+* BUGFIX: Missing Translation for "My Rating" and "Community Rating"
+* BUGFIX: Fixed rating selection in Search Browser
+* BUGFIX: Missing books always created database entries when import lists (even when cancelled)
+* BUGFIX: It was possible to open multiple dialogs with keyboard shortcuts
+* BUGFIX: Fixed performance issue with software filter and optimized memory images
+* BUGFIX: It was possible to invoke the smartlist editor for remote libraries with a double click
+* BUGFIX: Splitter handles where not correctly drawn when resized
+
+Build 0.9.128:
+
+* BUGFIX: Possible null exceptions in page menu / view updates
+* BUGFIX: Not operator for list was not correctly handled in smartlist editor dialog
+
+Build 0.9.127:
+
+* BUGFIX: Multiple Comics Dialog did not handle fractional ratings correctly
+
+Build 0.9.126:
+
+* NEW: DjVu read/write support for DjVu documents and single images in archive&web formats
+* NEW: ComicRack.ini settings for DjVu format
+* NEW: Reordering of Tabs with the mouse
+* NEW: Added "File Size" operator for smart lists
+* NEW: "14, 2-, 4-5, -78" like page selection for export
+* NEW: Added "Community Rating" field
+* NEW: Ratings can now be set in the browser in details view by clicking into the stars
+* NEW: "Not" operator for smart lists sources
+* NEW: ComicRack.App.GetLibraryBooks() script command to get all books from the library
+* NEW: Ability to add new "fileless" Comic book entries into the database
+
+* CHANGE: Language Combobox in Multiple Comics Dialog now works the same was as the one in the Comic Dialog
+* CHANGE: Context help support for external/internal display of manuals (pdf, djvu)
+* CHANGE: Rating now supports fractions (1.1, 4.9)
+* CHANGE: Redesign of first Comic Book Dialog Tab, Multiple Comics Dialog
+* CHANGE: Various optimizations in the list browser (especially with long lists)
+* CHANGE: Filename parser now correctly handles "vol."
+* CHANGE: "-schk" command line switch to display context help keys (for creating mappings)
+* CHANGE: Huge performance gain when using smart lists with lots of rules on huge lists
+* CHANGE: Fixed keyboard shortcuts for custom workspaces/list layouts
+* CHANGE: Added "Letterers" to the Search Browser
+* CHANGE: Reading list import creates new "empty" entries for not found books
+
+* BUGFIX: Fixed null exception when no book is open and a numeric key is pressed not handled by the reader
+* BUGFIX: Possible solution to matrix exceptions
+* BUGFIX: More robust broadcast code
+* BUGFIX: Better handling of initial folder browser exceptions
+* BUGFIX: Fixed wrongful deletion of output files (Cbz/cbz casing)
+* BUGFIX: Delete file in File Browser did not remove the book from the list
+* BUGFIX: Fixed flicker of html info panel
+* BUGFIX: Missing "*.crplugin" in Open plugin dialog
+* BUGFIX: Plugin file filter was not localizable
+* BUGFIX: Various spelling mistakes
+* BUGFIX: Fixed double tap handling in the reader
+* BUGFIX: "Not" construct did not work as expected in Search Browser with multiple selections
+* BUGFIX: Fixed possible start of multiple concurrent instances
+
+Build 0.9.125:
+
+* NEW: Package Files now support KeepFiles=File1,Folder1,... style entry for cleaner upgrades
+* NEW: .crplugin files can be dropped into the main window
+* NEW: A very simple Weblink panel (turned off by default)
+* NEW: Info Panels can now be docked right/bottom
+
+* CHANGE: Import list now also ignores "and" in Series
+* CHANGE: HtmlInfoPanels can now render urls (the script has to return "!" + url)
+* CHANGE: Smoother thumbnail fading
+* CHANGE: Renamed "Info" to "Details" in Comic Book Dialog
+
+* BUGFIX: Missed translation for Quality settings in sharing
+* BUGFIX: "<Empty>" in list layout editor was not translatable
+* BUGFIX: Cover/Rating line entries in list layout editor did display nothing
+* BUGFIX: "Each List has own" typo
+* BUGFIX: Missing "Web" from Browser Columns
+* BUGFIX: Removed nonworking "Use System Colors" option
+* BUGFIX: Fixed restart after plugin install via explorer
+* BUGFIX: "Location", "Web" not localizable in Search Browser
+* BUGFIX: Quicksearch "All" did not include Teams, Locations
+
+Build 0.9.124:
+
+* NEW: Added scriptable comic info panels to the comic browser (HTML and coded UIs)
+* NEW: Server Activity icon in the taskbar
+* NEW: Server Statistics Dialog (button in library preferences or clicking on the Activity icon)
+* NEW: Served image quality settings for Shares.
+* NEW: New file type .crplugin for ComicRack plugins (simply change the .zip to .crplugin)
+
+* CHANGE: List value editor popups now have also a simple Text tab
+* CHANGE: If the eComic is remote, captions are displayed instead of filenames
+* CHANGE: Removed limitation of 5 script toolbar buttons
+* CHANGE: Different icon for Temporary Folder
+* CHANGE: Removed Parallel Query implementations
+* CHANGE: Added shortcuts to stack buttons (Alt-C, Alt-N, Alt-P). Translators have to add them in their packages.
+* CHANGE: Connecting to remote libraries is now handled in a progress dialog
+* CHANGE: Plugin Packages with the extension *.crplugin can now be install with a double click from the explorer
+
+* BUGFIX: Book matching for imported reading lists did not work as expected in some cases
+* BUGFIX: Better/faster tear down of tabs interface
+* BUGFIX: Copy Path/Show in browser was available for remote eComics in the tab context menu
+* BUGFIX: Pagelist in Comic Book Dialog did not use the correct page cache keys for remote eComics
+* BUGFIX: Error in group matcher if ParallelQueries was turned on
+* BUGFIX: Bookmark main menu did not display bookmark entries
+* BUGFIX: Open Next/Prev comic now correctly works (even with multiple libraries open)
+* BUGFIX: Sync to browser now correctly works with multiple open libraries
+* BUGFIX: Added missing wiki help link for Smart List Dialog
+* BUGFIX: Remote Libraries correctly display List-layout presets in the toolbar menu
+* BUGFIX: Library Browser View settings are now correctly saved for remote libraries
+* BUGFIX: After a restart the most recent list for remote servers was reverted
+
+Build 0.9.123:
+
+* NEW: Scanner supports comicrackscanner.ini file to finetune scanning (options = IgnoreFolder, IgnoreSubFolders)
+* NEW: Option in settings to always open eComics in new Tab
+* NEW: ComicCountAlpha setting in ComicRack.ini to change the strength of the comic count display
+* NEW: Option to enable parallel sorting in ComicRack.ini (EnableParallelSort)
+
+* CHANGE: Added "Open remote Library" to the toolbar menu
+* CHANGE: Paths can now be added to the Preferences/eComic Folders list with drag and drop
+* CHANGE: Added an open button to the Preferences/eComic Folders
+* CHANGE: Open Remote Server dialog no longer displays ip/uri information
+* CHANGE: Smoother fade in out About Dialog
+* CHANGE: Default is parallel sort turned off
+
+* BUGFIX: Fixed multi threading in itemview grouping
+* BUGFIX: Search Browser did not handle multi value Teams, Locations
+* BUGFIX: Fixed export of WebComics
+* BUGFIX: Fixed PDF export
+* BUGFIX: Wrong initial states for Preferences/eComic Folder buttons
+* BUGFIX: In some circumstances multiple concurrent scans could run (should fix duplicate entries)
+* BUGFIX: Pending Tasks Dialog could be resized too small
+* BUGFIX: "Export eComics" now correctly handles all cases for exporting remote eComics
+* BUGFIX: Broke special Index Scraper feature in 0.9.122 (notable in Freak Angels WebComic)
+* BUGFIX: Fixed expanding of group boxes in various locations
+* BUGFIX: Scripts/Script Settings/Add Folder did not work
+* BUGFIX: Package installer did not work with 32 bit png package images
+
+Build 0.9.122:
+
+* NEW: Windows 7 MultiTouch (Zoom/Pan/Rotate)
+* NEW: -ws "workspace name" command line switch to force ComicRack to use this workspace setting
+* NEW: Added locations/teams to meta data
+
+* CHANGE: Switched Project to .NET 4.0
+* CHANGE: Caption File Name Format for exports can now be defined in ComicRack.ini
+* CHANGE: Caption format can now be defined in export (leaving empty means the default)
+* CHANGE: Default mapping for Ctrl-Mouse Wheel in reader zooms in/out
+* CHANGE: Added default keyboard mapping for browse flicks
+* CHANGE: Some multiprocessor optimizations
+* CHANGE: Zoom now works on the expected center (and not always on the screen center)
+* CHANGE: Tile View now supports Stacks
+* CHANGE: Rewrote matching of imported reading lists
+* CHANGE: Dragging over tabs changes to this tab
+* CHANGE: Open last only opens if there was an eComic opened last time
+
+* BUGFIX: Server did communicate wrong id to clients -> not working caching on clients
+* BUGFIX: Expand/Collapse in Library did select the node
+* BUGFIX: Fixed missing "Unspecified" entry in Search Browser (introduced in 0.9.121)
+* BUGFIX: Context Sensitive help only when hitting unmodified F1
+* BUGFIX: Forgot a private IP range
+* BUGFIX: Possible delay when selecting library entries with the mouse
+* BUGFIX: Multi value pop-up sizing in multimonitor situations
+* BUGFIX: Fixed stack navigation bug (next/prev not working sometimes)
+* BUGFIX: Fixed '&' in bookmark menu entries
+* BUGFIX: Fixed huge memory leak in background database saving
+* BUGFIX: Fixed huge memory leak when sharing full databases
+
+Build 0.9.121:
+
+* NEW: Option for not adding removed files to the library again (e.g. by scanning)
+* NEW: ConfigScript Hook to write configuration scripts (and config button in Preferences)
+
+* CHANGE: Added Wiki icon for top level wiki search menu entries
+* CHANGE: Moved initial Server connection into progress dialog with cancel button
+
+* BUGFIX: Fixed erratic scrolling behavior in Smartlist Matcher Selection Combobox
+* BUGFIX: Fixed various bugs in Search Browser (scrolling, refresh, selection)
+* BUGFIX: "Cut" in extended textbox popup menus
+* BUGFIX: Fixed cancel of export/conversion tasks
+* BUGFIX: Fixed Idle operation Timeout for remote connections
+* BUGFIX: Fixed possible cache conflicts for different remote libraries
+* BUGFIX: Fixed left/right scrolling blend-in with textured background
+* BUGFIX: Longstanding fixes for some part scrolling situations
+
+Build 0.9.120:
+
+* NEW: Global sharpening setting
+* NEW: During opening eComics, the status bar displays an update animation
+* NEW: "Include in Updates" for WebComics 
+
+* CHANGE: BrowseScraper now supports multiple levels
+* CHANGE: Scraper ignores \r or \n in URLs
+* CHANGE: Implemented reconnect for dropped remote connections (survives even client hibernate)
+* CHANGE: Installer now checks for the correct service pack needed by ComicRack
+
+* BUGFIX: Fixed "Not" in the Search Browser
+* BUGFIX: Fixed sorting of Comboboxes in Multiple Comics Dialog
+* BUGFIX: Fixed possible exception in position code of itemview
+* BUGFIX: Fixed possible null exception in remote connection code
+* BUGFIX: Fixed massive memory/threads leak in local broadcast receiving code
+* BUGFIX: Fixed performance issue when using auto adjusted background color and optimized images
+
+Build 0.9.119:
+
+* NEW: ComicRack can now run multiple shares with different settings at the same time
+* NEW: Network clients can now export eComics locally if the server allows it
+
+* CHANGE: Own Server is now displayed in the Server list (but can not be connected to)
+* CHANGE: Fixed going through some proxies with the services
+* CHANGE: InternetServerPort can now be set with command line (-isp) and ComicRack.ini
+* CHANGE: PrivateServerPort can now be set with command line (-psp) and ComicRack.ini
+* CHANGE: Removed Alt+Fx keyboard shortcuts
+* CHANGE: Button in Export Dialog from "Add..." to "Save..."
+* CHANGE: Open Remote Dialog now displays local shares and internet shares (including the share settings)
+* CHANGE: Scraper now ignores multiple matches with the same link on a page (makes regexes easier)
+
+* BUGFIX: Fixed spelling "Updating"
+* BUGFIX: Final fix for setting page types in RTL mode
+* BUGFIX: Fixed possible progress bar drawing overflow for WebComic updates in Pending Tasks
+* BUGFIX: "Filter" in Open Remote Dialog was not localizable
+* BUGFIX: "eComics" in Page Menu was not localizable
+* BUGFIX: Alt+F4 did not do default Windows action
+* BUGFIX: Handling OpenGL error in blending animations
+* BUGFIX: Pressing End on the Browser Tabs could crash ComicRack
+* BUGFIX: Catch of possible clipboard errors
+
+Build 0.9.118:
+
+* NEW: Search link in comic list
+* NEW: Search is now scriptable (see sample.py)
+* NEW: Tile/Center/Stretch/Zoom for paper and background textures
+* NEW: WebComic now has an index based scraper and a browse based scraper
+* NEW: Name info parser supports initial cover count
+* NEW: WebComics support automatic searching for new content (startup)
+* NEW: Command to search for updates for WebComics
+* NEW: Added Internet Address to eComics
+* NEW: Own internet cache with settings in preferences
+* NEW: Context sensitive help linked to the ComicRack wiki
+* NEW: Public directory of Internet shared servers
+
+* CHANGE: Repositioned View button in ComicBook Dialog
+* CHANGE: Crash Dialog is always displayed. Only submit button is disabled for some errors
+* CHANGE: Better caching for WebComics
+* CHANGE: Autohide cursor delay is now 5 sec and can be changed in ComicRack.ini (AutoHideCursorDelay)
+* CHANGE: eComics opened from explorer open in a new tab
+* CHANGE: Shadow was too big for small pages
+* CHANGE: Added -dbr (DisableBroadcast) switch to turn off network broadcasting
+* CHANGE: NetworkTimeout is 5 min and configurable in ComicRack.Ini (OperationTimeout)
+* CHANGE: Added ReadInternet to IApplication interface for Python scripts
+* CHANGE: New state images for covers (star theme)
+* CHANGE: New 3D display for Comic Book (Dialog, Open Overlay)
+* CHANGE: Only full scans are effected by the autoremove setting (better performance for intermediate scans)
+* CHANGE: Open Remote Server Dialog now supports browsing of public servers
+
+* BUGFIX: Fixed handling authentication proxies
+* BUGFIX: Setting page types in Reader while RTL is turned on
+* BUGFIX: Missing "Search..." entry in wiki menu if direct connection to the Internet failed
+* BUGFIX: Handle possible exception in visible part overlay rendering
+* BUGFIX: Switching to software renderer when opengl renderer failed did not work (exception)
+* BUGFIX: Fixed possible exception on displaying news at startup
+* BUGFIX: Fixed switching to software renderer during blending animation
+* BUGFIX: Fixed possible exception when copy/drag invalid imaged from the page view
+* BUGFIX: Fixed wrong update of Comic Search Browser
+* BUGFIX: Bugfix for ContextMenu Class and invisible items
+* BUGFIX: Autohide was not correctly turned off when leaving fullscreen
+* BUGFIX: Pages/Published columns where not translatable
+* BUGFIX: Favorites was initially expanded when opening shared libraries
+* BUGFIX: Clicking on the Read Info Activity Icon in the statusbar did not show the Pending Tasks Dialog
+* BUGFIX: Fixed non working quicksearch type
+
+Build 0.9.117:
+
+* CHANGE: Optimized caching for slow providers (WebComic)
+* CHANGE: Python stuff no longer sends Crash Reports
+
+* BUGFIX: Preferences Dialog did not correctly draw in Windows Classic style
+* BUGFIX: Fixed Right to left reading modes
+* BUGFIX: Crash when creating a new Smartlist at the top level
+* BUGFIX: Fixed possible crash when ini file is in use
+
+Build 0.9.116:
+
+* NEW: Items in the Library Browser display the last item count
+* NEW: Added smart wikipedia links to textbox/combobox popmenus in Comic Dialogs
+* NEW: Scripts with icons are now added to the browser toolbar
+* NEW: Added undo/redo to the browser toolbar
+* NEW: Open stacks now have a prev/next button to change stacks
+* NEW: A Search and Replace Script
+* NEW: Added browser navigation
+* NEW: Custom texturing for paper
+* NEW: Support for Recent lists in Vista/Win7
+* NEW: Win7 Taskbar Icon displays activity overlay
+* NEW: ComicRack.ini values can now also be specified on the commandline (/Name:value)
+* NEW: Pages can now be grouped by Bookmarks
+* NEW: ComicRack now supports elevated changing of file extensions
+* NEW: Setting to prohibit page browsing when reaching page margins during scroll
+* NEW: Added support for the new WebComic format
+* NEW: Dialog for donations
+* NEW: Added favorites to library browser
+
+* CHANGE: Big redesign of the main toolbar/tabbar
+* CHANGE: Big upgrade in pdf rendering quality (try reading an eBook)
+* CHANGE: Right mouse down + wheel maps to Tab, Shift-Tab (change tab in reader)
+* CHANGE: Mousewheel over tabs changes current tab
+* CHANGE: New GhostscriptExecutable setting ComicRack.ini to manually specify ghostscript
+* CHANGE: Apply button in Comic Display Settings
+* CHANGE: Tap gestures are now supported by the keyboard editor
+* CHANGE: Keyboard editor now supports 3 shortcuts for each action
+* CHANGE: Upon OpenGL problems, ComicRack turns off hardware acceleration and continues
+* CHANGE: Smartlists can now support all entries in the library as references
+* CHANGE: library browser now supports Ctrl+Drag to make copies of lists
+* CHANGE: No more limits on the count of rules in smartlists (but a max of 5 nested groups)
+* CHANGE: Matcher selection in the Smartlists editor displays used Matchers first
+* CHANGE: Next/Previous navigation in Smart List Editor
+* CHANGE: Changed the way textboxes suggest values (now with dropdown)
+* CHANGE: Same values are now always initially checked in the Multiple Comics Editor
+* CHANGE: Context Menu/Edit Item in browser now allows to directly edit a column
+* CHANGE: Optimized keyboard navigation in Library Browser
+* CHANGE: Browser toolbar dynamically shows/hides labels depending on available space
+* CHANGE: Sort in Library Browser now puts folders first
+* CHANGE: Long book names are ellipsed in the GUI
+* CHANGE: Filename checking now supports full unicode range
+* CHANGE: Volume Groups now correctly support V1234
+* CHANGE: Added tootip to "!" buttons
+* CHANGE: Better tile fontsizing
+* CHANGE: Added filename to tile infos
+* CHANGE: Continous server ping for sharing
+* CHANGE: New Smartlist now immediately opens up the Smart List Dialog
+* CHANGE: Smart List Editor now supports changing the name of the list
+* CHANGE: Smart List text matchers now support {Field} as values (e.g. {ShadowSeries})
+* CHANGE: Changed default caption format (number, volume before title)
+* CHANGE: Proper tabstops for tile texts
+* CHANGE: Nicer theme for configuration dialogs
+* CHANGE: ComicRack can now pass authentication proxies
+* CHANGE: Optimized generation of auto complete lists
+* CHANGE: All Covers are now displayed to the right in forced double page mode
+* CHANGE: "Duplicate List" Command now correctly creates smartlists for "Show all, unread, duplicates, etc."
+* CHANGE: "Show Duplicates" is now a separatley available matcher
+* CHANGE: Optmized update of of Search Browser
+* CHANGE: Comic Book Reading lists now support smartl lists
+* CHANGE: Small sort optimization
+* CHANGE: The Package list in the Preferences/Scripts now directly supports drag&drop of package files
+* CHANGE: Total rework of the keyboard shortcut layout
+* CHANGE: More failure tolerant searching from cbls
+* CHANGE: Various icon updates
+* CHANGE: rotate toolbar button now also displays autorotation state with an overlay
+* CHANGE: Texture selection in Comic Display Settings shows the small samples of the texture
+* CHANGE: Nicer page numbers for thumbnails
+* CHANGE: New option to include filenames in exported reading lists (off by default)
+
+* BUGFIX: Fixed authentication for sharing Libraries
+* BUGFIX: Save Workspace did not use the entered name
+* BUGFIX: Fixed possible exceptions in image memory handling
+* BUGFIX: Shortcut keys generation for scripts
+* BUGFIX: Autoscroll did no longer work in the browser
+* BUGFIX: Fixed building of "Show in List" menu
+* BUGFIX: Fixed star ratings display in dialogs
+* BUGFIX: Fixed too conservative thumbnail memory management
+* BUGFIX: Fixed multiple undo steps
+* BUGFIX: Jpegs with info chunks > 32k did hang ComicRack
+* BUGFIX: eComic Bookmarks are only added during export if eComics are combined
+* BUGFIX: Fixed list scrolling if a group containing the focused item was collapsed
+* BUGFIX: Fixed handling of non windows filenames in comic archives
+* BUGFIX: Duplicate finder did not honor ShadowFormat
+* BUGFIX: Fixed oversized panel expansions (grip no longer visible)
+* BUGFIX: It was possible to connect to the same remote library multiple times
+* BUGFIX: Fixed the broadcaster code for computers with multiple ipv4 addressed
+* BUGFIX: Fixed tab sequence in Smartlist editor
+* BUGFIX: Select in list now works also if list is stacked
+* BUGFIX: background zoom (with textures) was no correctly animated
+* BUGFIX: Greatly enhanced startup times on machines with broken network access
+* BUGFIX: Split double pages in export did not honor manga type (right to left)
+* BUGFIX: Rotating with animation now has correct clipping
+* BUGFIX: Fixed display of pagenumbers for forced two page mode
+* BUGFIX: Page Type popup menu for forced dual pages with one empty page
+* BUGFIX: "Editable" was enabled even if Library was not shared
+* BUGFIX: Fixed texturing bug for OpenGl software renderer (especially the VMWare breed)
+* BUGFIX: Fixed handling of "Never use as Cover thumbnail"
+* BUGFIX: Fixed a 3.5 SP1 requirement
+* BUGFIX: Exporter falls back to CBZ if format selection is "same as original" and a not writable format is encountered
+* BUGFIX: Navigating back in two page display did move to the start of the page and not the end
+* BUGFIX: Fixed dragging pages out of the page browser if page was not sorted by page.
+* BUGFIX: Open With command in explorer showed "ComicRack.exe" instead of "ComicRack"
+* BUGFIX: Registering filetypes did not refresh the shell
+* BUGFIX: Removed jagginess of Navigation Overlay buttons
+* BUGFIX: Copy Page did not copy the raw image but add shadows, bows etc.
+
+Build 0.9.115:
+
+* BUGFIX: Added missing Microsoft.Dynamic.dll to the setup
+* BUGFIX: Fixed debug output for scripts
+* BUGFIX: Selecting/deselecting sctipts did not work
+* BUGFIX: Fixed blurry software filter
+
+Build 0.9.114:
+
+* NEW: Border/Shadow for pages
+* NEW: Textures for comic background
+* NEW: Remove Dialogs remember settings (Move to Recycle Bin, Remove from Database)
+* NEW: Script section in Preferences Dialog to Install/Uninstall script packages
+* NEW: Moved all important Comic Display Settings (border, background etc.) into own dialog
+
+* CHANGE: Temporary list automatically expands when adding the first items
+* CHANGE: Better duplicate icon
+* CHANGE: Inner Cover is no longer a single displayed page
+* CHANGE: Added black frame when drawing realistic pages
+* CHANGE: Combined all page ornaments in setting "Realistic Pages"
+* CHANGE: Pressing Shift-Del removes without showing the dialog
+* CHANGE: Added description to scripts (with tooltip)
+* CHANGE: Upgrade to IronPython 2.6
+* CHANGE: Deferred initialization of Python (faster startup)
+* CHANGE: Added uninstall option to completely remove database/cache/settings
+* CHANGE: Changed default display mode to fit width
+* CHANGE: Changed default to force two pages in two page display mode
+* CHANGE: Special single page paging transition if force two pages is not turned on
+* CHANGE: Comic Display Settings (border, background etc.) are now part of the workspace
+* CHANGE: When saving workspaces you can decide what settings are included
+
+* BUGFIX: Rotation text in toolbar was not correctly translated/displayed
+* BUGFIX: Copy/Paste Lists did not work
+* BUGFIX: Browser editing of Publisher/Imprint fixed
+* BUGFIX: Backcover type is now correctly handled
+* BUGFIX: Fixed focus handling for browser in-place editing 
+* BUGFIX: Fixed wrong display of search tooltip in browser (ESC etc.)
+* BUGFIX: Possible exceptions when clearing cache if cache paths are locked by other apps
+* BUGFIX: Possible exception if no DotNet SP is installed (Collect)
+* BUGFIX: Possible null exception in browser context menu
+* BUGFIX: Possible null exception in handling of memory optimized images
+* BUGFIX: Delete in smart list editor removed wrong entries in some cases
+* BUGFIX: Fixed "&" drawing in search browser
+* BUGFIX: Fixed Grouping/comparing for Modify and Creation dates
+* BUGFIX: Update problem in library browser (sort etc.)
+* BUGFIX: Fixed possible double page drawing problem with last page in eComics
+* BUGFIX: Fixed window position when ComicRack was exited in fullscreen mode
+* BUGFIX: Fixed bug combining comics, if the comics have not been read
+* BUGFIX: Fixed memory cache corruption bug
+* BUGFIX: Fixed opening multiple eComics during startup
+
+Build 0.9.113:
+
+* CHANGE: "Long Click" for editing is no longer that sensitive to mouse movements
+* CHANGE: Changed Ctrl-Right/Left to Alt-Right/Left in lists
+
+* BUGFIX: In-place editing of items in the list always changed the currently selected item
+* BUGFIX: "Show in List" was available in the file browser and did crash the app
+* BUGFIX: Fixed wrong page browsing in combination with filter criteria (deleted etc.)
+
+Build 0.9.112:
+
+* NEW: Added High Quality 2nd pass software filters to the OpenGl renderer
+* NEW: "Show in list" command
+* NEW: "Duplicate List" command to generate new Smartlists from current selection (quick search, search browser)
+* NEW: Added Page Turn effect
+* NEW: Forced double page layout mode
+* NEW: New setting to turn off dog-ears for thumbnails
+* NEW: Navigation overlay can be docked to top or bottom
+* NEW: Two styles for the Magnifier (glass/simple)
+* NEW: Numeric keypad now changes pages in the reader (if not redefined for custom shortcuts)
+* NEW: Grouping constructs in Smartlist (like ITunes 9)
+* NEW: Reading lists can be opened like eComics (import to temporary container, last eComic opened)
+* NEW: LimitMemory setting in ComicRack.ini (-lm command switch) to limit the memory ComicRack uses
+* NEW: Setting to do page blending during fast paging
+* NEW: 16/24 bit OpenGl compression mode for low powered systems
+* NEW: ComicRack.ini setting DisableGhostscript to always use the built in PDF parser
+* NEW: "Edit (F2)" command in Comic Browser as an alternative to long click
+* NEW: Ctrl-Left/Ctrl-Right now moves to another editable column while in list edit mode
+* NEW: Current Page Overlay now can optionally display the page names (can be set in Preferences)
+* NEW: Single scripts can be disabled/enabled in the preferences dialog
+* NEW: Various ComicRack.ini settings for tuning the Page Bow effect
+* NEW: Views remember states (scrolling, open stacks, quicksearch) when switching between them
+* NEW: Setting in preferences to turn off local search settings for each list
+* NEW: Magnifier can be activated with a "long" click
+* NEW: ReaderResize hook for scripts (see sample.py)
+* NEW: Bookmark Count Matcher for Smartlists
+* NEW: List/Smartlists can be opened in a new tab
+* NEW: MaximumQueueThreads setting in ComicRack.ini to set the maximum count of background threads for queues
+
+* CHANGE: Limited the number of entries in the "Add to List" popup menu (ListMenuSize in ComicRack.ini)
+* CHANGE: Optimized Memory management for images together with OpenGl (Optimized Page Cache defaults now to true)
+* CHANGE: List switching is now faster
+* CHANGE: Updated inet links to the new ComicRack site
+* CHANGE: Better layout for the news dialog
+* CHANGE: Single mouse click does no longer show the Library (if docking is fill). Can be changed in ComicRack.ini
+* CHANGE: Added scrollbars to Notes/Summary textboxes
+* CHANGE: Moved startup news fetching into the background
+* CHANGE: Small initial delay before showing navigation overlay
+* CHANGE: New Comic Lists now default to no grouping and sorted by position
+* CHANGE: Treeviews & comic lists now support scrolling during drag & drop
+* CHANGE: The pages column now displays plain numbers (no Page(s) anymore)
+* CHANGE: Some internal memory and image copy optimizations
+* CHANGE: Better display update during fast paging
+* CHANGE: Various caching optimizations
+* CHANGE: Some changes to grouping/sorting of behavior settings in the Preferences Dialog
+* CHANGE: Made working with ghostscript faster
+* CHANGE: Page type/rotation context menus now correctly work with two page display
+* CHANGE: Preferences Dialog now displays detailed information about the memory cache state
+* CHANGE: Changed some global keyboard shortcuts to make F2 free for rename
+* CHANGE: Faster access to cached page images while working on non cached images
+* CHANGE: Hardware Filtering is now turned off by default (can be turned on in Preferences)
+* CHANGE: Adjust background color is now the default
+* CHANGE: Removed the old and dated background for library/network/file browser
+* CHANGE: Optimized creation of rotated/color adjusted images if original already in cache
+* CHANGE: Moved "Edit List Layout" button to the left
+* CHANGE: Much nicer display/position of comic tab tooltips
+* CHANGE: Moved all magnfier settings into the magnifier drop down in the toolbar
+
+* BUGFIX: Sorting in Search Browser was not article agnostic
+* BUGFIX: New ComicCaptionFormat did produce captions starting with a space.
+* BUGFIX: "Add to List" command did show current list
+* BUGFIX: Visible part overlay was created in the background even when turned off
+* BUGFIX: Fixed library tabs display if tabs had not enough space
+* BUGFIX: Reset to 100% zoom option now also resets when opening a new book
+* BUGFIX: Fixed small preview bug for corrupt eComics
+* BUGFIX: Fixed Move Prev/Next eComic sometimes not working
+* BUGFIX: Performance improvement in low memory situations
+* BUGFIX: Fixed drawing of page bows in the magnifier
+* BUGFIX: Bug in freeing OpenGl textures (wrong calculation of used texture memory)
+* BUGFIX: Sort bug for special characters
+* BUGFIX: Moving pages did not mark eComic as dirty
+* BUGFIX: Fixed database optimization
+* BUGFIX: Fixed possible Access Violation in Fast BilinearHQ routine
+* BUGFIX: Current page overlay did only display one page number in two page mode
+* BUGFIX: Rotating pages in the viewer multiple times with the same value did not work
+* BUGFIX: Fixed Double Page Autoscrolling
+* BUGFIX: Clicking on [x] in a tab always closed the selected tab
+* BUGFIX: Disk Cache was not used for full pages
+* BUGFIX: Fixed mouse cursor flicker when magnifier is visible
+* BUGFIX: Fixed page drag&drop cursor (no overlays and effects where shown)
+* BUGFIX: Fixed display of non filepath entries in the folder view
+* BUGFIX: Fixed alphabetizing with article and with foreign letters
+* BUGFIX: Fixed "GetServerLibraryText" bug when refreshing remote libraries
+* BUGFIX: Fixed drawing bug for battery status
+* BUGFIX: Fixed drawing of node label while editing tree nodes
+* BUGFIX: Fixed FastBicubic resize for 32bit images
+* BUGFIX: Fixed library drag&drop bug
+
+Build 0.9.111:
+
+* NEW: ComicCaptionFormat setting in ComicRack.ini to customize the Comic Captions display
+* NEW: Added Format parsing to proposed values (Annual, King/Giant size, sketch, Director's cut, b&w)
+
+* BUGFIX: "Add to list" command was visible even when no lists where available
+* BUGFIX: Whitepoint was not correctly handled together with other adjustments
+* BUGFIX: Exception in the info dialog with chinese eComics
+* BUGFIX: Fixed "V" prefix for proposed volume values in Comic Dialogs
+* BUGFIX: Fixed parsing of hardware options (command line and .ini)
+* BUGFIX: Fixed "Paste Data..."
+
+Build 0.9.110:
+
+* NEW: Up/Down selects previous/next item in inplace editing of the browser
+* NEW: "Add to List" command in comic browser
+* NEW: Searchbrowser item selection with keys
+* NEW: Added Volumes selection to the Search Browser
+
+* CHANGE: New layout for Preferences Dialog (same as export)
+* CHANGE: Double click on group header in flow layout dialogs closes/opens the group
+* CHANGE: Clicking on prev/next in Comic dialog keeps the focus in the current text box
+* CHANGE: Added shadow to 3D cover
+* CHANGE: Adapted look for searchbrowser items
+* CHANGE: Pages can be selected with typing numbers in the page browser
+* CHANGE: Used languages are now at the top of the language selection combobox
+* CHANGE: Changed file update queue to last come/first served
+* CHANGE: Search Browser value selectors are now sorted
+* CHANGE: Tweaked the new Filename parser
+
+* BUGFIX: Fixed bookmark menu in undocked reader
+* BUGFIX: Trashing of image/thumbnail cache on slow processors during eComic file info update
+* BUGFIX: Fixed selection in Comic Dialog when browsing with keyboard shortcuts
+* BUGFIX: Fixed writing of shadow values in Comic Dialog when browsing with keyboard shortcuts
+* BUGFIX: Searchbrowser was empty if visible after startup
+* BUGFIX: Fixed duplicate finder (some duplicates where skipped)
+* BUGFIX: Default Genre Lists was not read correctly
+
+Build 0.9.109 (Dev):
+
+* NEW: Support for anamorphic scaling to add some tolerance for full page display
+* NEW: Option to change the 3D cover display in info dialog (either clicking on the cover or in Preferences)
+
+* BUGFIX: Iron Python scripting bugs did send error reports
+* BUGFIX: Fixed rescaling issue of navigation panel
+* BUGFIX: Fixed drag&drop from browser with multiple selections (introduced in 0.9.106)
+* BUGFIX: Fixed switching between different cover thumbnails (introduced in 0.9.106)
+* BUGFIX: Fixed possible exception in pending task info retrieval
+* BUGFIX: Empty tab did show empty tool tip
+* BUGFIX: Page numbers where not correctly centered
+
+Build 0.9.108 (Dev):
+
+* BUGFIX: Fixed selection of lists in sharing dialog and smart list source selection
+* BUGFIX: Fixed possible exception with image cache handling
+* BUGFIX: Fixed possible null exception in export
+
+Build 0.9.107 (Dev):
+
+* BUGFIX: Fixed possible key not found exception in ProcessingQueue
+* BUGFIX: Possible fix for Application.Restart exception
+
+Build 0.9.106 (Dev):
+
+* NEW: Undo for editing eComic info of Library items
+* NEW: Added battery and current time info to Navigation Panel
+* NEW: Speed of mouse wheel can be set in preferences
+* NEW: Bookmarks setting in ComicRack.ini to define colors of bookmarks
+* NEW: Option to auto hide main menu
+* NEW: Added "Directory" matcher
+* NEW: Smartlists can now be scripted in Python
+* NEW: Command to manually update eComics if automatic update is turned off (default)
+* NEW: File Creation column for eComics
+* NEW: Edit dialogs remember last window position during session
+* NEW: Sort by state column
+* NEW: CBT files are now also updated with ComicInfo.xml
+* NEW: ThumbnailQuality setting in ComicRack.ini
+* NEW: InterpolationMethod settings for thumbnail and export in ComicRack.ini
+
+* CHANGE: Switched to IronPython 2.0
+* CHANGE: Switched RAR to 7z engine
+* CHANGE: New cache that supports changes of modification dates/file sizes (Write info no longer has to cheat)
+* CHANGE: Optimized -dso switch
+* CHANGE: Navigation Panel adapts to viewer size (percentage size can be set in ComicRack.ini)
+* CHANGE: Nicer page layout in Navigation Panel
+* CHANGE: Highlight effect for clickable pages in Navigation Panel
+* CHANGE: Nicer text for the "OpenGL has crashed" warning
+* CHANGE: Sorting by file/path/series/alternate series handles numbers correctly
+* CHANGE: Nicer process icon display in status bar
+* CHANGE: "Opening book..." message also shows the 3D cover
+* CHANGE: Cache settings now also display the current amount of cache space used
+* CHANGE: Pages created for thumbnails are no longer cached by default (can be changed in ComicRack.ini)
+* CHANGE: Comic Book dialog now uses thumbnail image (faster)
+* CHANGE: Option to turn automatic updating of eComics on
+* CHANGE: No restart required to switch between software and hardware renderer
+* CHANGE: Whole OpenGL section rewritten for better display quality and speed (see ComicRack.ini for new settings/switches)
+* CHANGE: Mip mapping is now turned on by default
+* CHANGE: Optimized reading eComics from disk
+* CHANGE: Optimized display update frequency in reader
+* CHANGE: Optimized page precaching
+* CHANGE: Optimized startup time with large databases
+* CHANGE: Optimized speed of cache updates
+* CHANGE: Optimized list sorting
+* CHANGE: Optimized loading of images
+* CHANGE: Moved docking command back to the main view
+* CHANGE: Closing stacks is now in the same screen area as "Display all"
+* CHANGE: Nicer cover view in ComicBook dialog
+* CHANGE: Same selection handling as windows explorer. Use Alt-click to initiate a long click edit with multiple selections
+* CHANGE: Optimized texts, size and layout of tile display
+
+* BUGFIX: Fixed deleting of old files during convert eComics
+* BUGFIX: Fixed scrolling in Navigation Panel during thumbnail update
+* BUGFIX: Missing "Size" translation in pages view
+* BUGFIX: No tool tips for pages view column headers
+* BUGFIX: Possible exception in marking pages as deleted
+* BUGFIX: Possible lock with background scanner
+* BUGFIX: Fixed possible exception when navigating empty lists
+* BUGFIX: Exported files had wrong page rotation info for rotated pages
+* BUGFIX: Fixed negative current page count
+* BUGFIX: Sorting of groups did not ignore articles
+* BUGFIX: Fixed initial sorting of images in eComics
+* BUGFIX: Fixed bug in navigation bar when using slider with filtered pages
+* BUGFIX: Closed some holes in atomic processing logic of cache entries
+* BUGFIX: Removed tool tip for thumbnail slider (problems in Vista if ComicRack is maximized)
+* BUGFIX: Fixed "Find Duplicates" (broken since 0.9.102)
+* BUGFIX: Fixed English texts in "Page Rotation" menus
+* BUGFIX: Fixed possible readwriter lock release error in eComic readers
+* BUGFIX: Big icons in Preferences Dialog displayed tool tips
+* BUGFIX: Possible access violation in OpenGL renderer
+* BUGFIX: It was not possible to turn off sorting in lists
+* BUGFIX: Comic Dialog set the eComic data dirty even if nothing was edited
+* BUGFIX: File Modified time was displayed in UTC
+* BUGFIX: Sort bug with ignored articles
+* BUGFIX: Alternate Series was not editable in the list
+* BUGFIX: Auto complete did not work in list edit fields
+* BUGFIX: Some German translation errors
+* BUGFIX: Fixed selection rectangle around thumbnail texts
+* BUGFIX: When exporting with embedded info, shadow values where not copied
+* BUGFIX: Export page saved 32 bit images
+* BUGFIX: Copy page did copy a 32bit image to the clipboard
+* BUGFIX: ComicRack Window did not move to visible area on startup if resolution/screens changed
+
+Build 0.9.105 (Dev):
+
+* BUGFIX: Possible exception in ExecuteProcess
+* BUGFIX: Possible null exception in GetOpenBooks
+* BUGFIX: Possible exception in lock cleanups
+
+Build 0.9.104 (Dev):
+
+* BUGFIX: Scanner exception (introduced in 0.9.103)
+
+Build 0.9.103 (Dev):
+
+* BUGFIX: Fixed thread lock in Tabs
+* BUGFIX: Fixed exception during editing Comic lists
+* BUGFIX: Fixed exception during scanning
+* BUGFIX: Fixed storage of local client list layouts when browsing remote libraries
+
+Build 0.9.102 (Dev):
+
+* NEW: Keyboard zoom stepping is configurable in ComicRack.ini
+* NEW: "Open random eComic" Command
+* NEW: Grouping and stacking based on Directory
+* NEW: -hwfmm switch and ForceMipMap setting in ComicRack.ini to force mip mapping of page images
+* NEW: -db switch and DatabasePath setting in ComicRack.ini to force a different database path (e.g. shared databases)
+* NEW: -cp switch and CachePath setting in ComicRack.ini to force a different cache path
+* NEW: Y, Shift-Y keyboard shortcuts to rotate page
+* NEW: TempPath setting in ComicRack.ini
+
+* CHANGE: Switched the whole project to .NET 3.5
+* CHANGE: Optmized idle processing
+* CHANGE: Changed the limit on disk cache sizes to 1TB
+
+* BUGFIX: Fixed possible stack overflow when reader undocked and ComicRack starts in the system tray (introduced in 0.9.100)
+* BUGFIX: Spelling error in rename script
+* BUGFIX: Fixed compatibility with Windows 7 Beta 1
+
+Build 0.9.101:
+
+* CHANGE: The "Open remote server library" dialog preselects the last used server
+* CHANGE: Better icons for open/last states
+* CHANGE: Multiple covers selector on thumbnails is now only visible if eComic is selected
+
+* BUGFIX: Correct handling of lists that do not have anything in common in the Multiple Comics Dialog
+* BUGFIX: Fixed possible exception when finding open books
+* BUGFIX: Fixed location of oversized navigation panel
+* BUGFIX: Commandline switches also defined in the ComicRack.ini file did not work
+* BUGFIX: Automatic Contrast Enhancement did cancel out White Point Adjustments
+* BUGFIX: Fixed sorting of Published groups
+* BUGFIX: file name parser matched years at the beginning of the name
+* BUGFIX: Opening first eComic in remote library activated the main library
+* BUGFIX: Fixed possible exception in tab caption update
+
+Build 0.9.100:
+
+* NEW: Permanent rotation of pages
+* NEW: Smartlists can now be based on other lists (smart and dumb)
+* NEW: "Show Duplicates" View mode
+* NEW: "Not" option for the search browser (to filter by "Not Series, Character etc.")
+* NEW: Marker for last opened/open books in lists
+* NEW: "Open Remote Library" command for manual connection to shared Libraries
+* NEW: Manual close of remote Libraries
+* NEW: Option to combine multiple eComics into a single one during export/convert
+* NEW: Option to hide the Browser Docking Grip when browser is hidden
+* NEW: If multiple books are selected and one column value is edited, all selected items are updated with this value
+* NEW: "Published" smartlist selector
+* NEW: 64 bit support for CBR/RAR (without calling unrar.exe)
+
+* CHANGE: New ComicRack.ini file to keep all custom settings in one place
+* CHANGE: Visible part is set to top if browsing multiple pages at once
+* CHANGE: Articles to be ignored when grouping and sorting can be defined in ComicRack.ini
+* CHANGE: Incremental editor for list properties (Character, Author etc.) in the multiple books editor
+* CHANGE: Nicer rating star in list
+* CHANGE: Numerical (explorer like sort) for page names, file names, folder names
+* CHANGE: Display file sizes of selected comics in list
+* CHANGE: New and improved filename parser (legacy mode can be turned on in ComicRack.ini)
+* CHANGE: Changed the default cache sizes to 500 MB
+
+* BUGFIX: Wrong separator in library/files/pages tabbar dropdown
+* BUGFIX: Cursor down did not always change to next page with "Fit Height"
+* BUGFIX: "Cover Artist" matcher was not translatable
+* BUGFIX: Tabs did not update when eComic caption changed
+* BUGFIX: Black tooltip in eComic list on XP systems
+* BUGFIX: Fixed "Del" key during rename of library folder/list items
+* BUGFIX: Fixed bookmark navigation if pages where filtered
+* BUGFIX: Fixed focus bug in multiple item selection in book list
+* BUGFIX: Fixed sorting by "Published"
+* BUGFIX: Fixed possible partial left over files when export fails
+* BUGFIX: Pages with bookmarks where not correctly exported/converted
+* BUGFIX: Comic info was not correctly updated when exporting and replacing eComics
+
+Build 0.9.99:
+
+* BUGFIX: Page bow shadow gradient at the bottom
+* BUGFIX: Stupid bug breaking part scrolling (introduced in 0.9.98)
+
+Build 0.9.98:
+
+* NEW: Comic Covers can be set as list backgrounds
+* NEW: Size limiting for smart lists
+* NEW: eComic file size info in statusbar
+
+* CHANGE: Again rewrote the scrolling/flow methods and enabled smooth scrolling for non hardware renderer
+* CHANGE: Tile thumbnails for reader tabs
+* CHANGE: Autoscrolling is now off by default (space key works always anyways)
+* CHANGE: Some threading optimizations
+* CHANGE: Switching fields in the Smart List editor tries to keep current values
+* CHANGE: New category selection in the Preferences Dialog
+
+* BUGFIX: tabs to small
+* BUGFIX: Spelling error "Libray" in tabs
+* BUGFIX: calculation of nearest visible part when scrolling
+* BUGFIX: Flow scrolling had some issues on slow computers
+* BUGFIX: Editing of "Alternate Number" was not working in list view
+* BUGFIX: Wrong background color in list tooltips on vista
+* BUGFIX: Fixed broken whitepoint setting
+* BUGFIX: Missing info refresh for exported eComics
+
+Build 0.9.97:
+
+* CHANGE: Some visual tuning for the tab bars
+
+* BUGFIX: Fixed possible exception in navigation panel mouse handling
+* BUGFIX: Fixed possible lock in reader
+* BUGFIX: Fixed multiline in Notes/Summary editors
+
+Build 0.9.96:
+
+* NEW: Reworked Reader Tabs
+* NEW: Smart detection of OpenGL related crashes and optional disabling of hardware acceleration on restart
+* NEW: Ctrl+Double Click / Middle Button Double Click opens in new tab
+* NEW: Smooth scrolling for non part autoscrolling (cursor/wheel) when hardware is enabled
+
+* CHANGE: Crash Dialog localized
+* CHANGE: Crash Dialog now tries to restart the application
+* CHANGE: Page transitions don't block fast paging anymore
+* CHANGE: "Wait on Page change" is now the default
+* CHANGE: If "Wait on Page change" is turned on, scrolling also pauses at the beginning of the new page
+* CHANGE: Nicer 3D backdrop for the page browser
+
+* BUGFIX: Fixed possible exception in visible part overlay creation
+* BUGFIX: Fixed possible exception in disposing of OpenGL renderer
+* BUGFIX: Fixed page filter issues in combination with two page/navigation overlay
+* BUGFIX: Fixed initial navigation overlay positioning
+* BUGFIX: Fixed multithreading issues in panel renderer
+* BUGFIX: Fixed some DPI 120 scaling issues
+
+Build 0.9.95:
+
+* BUGFIX: Better handling of redraw errors (no blank screen)
+* BUGFIX: 0.9.94 had no correct manifest
+* BUGFIX: Fixed recurse problems in software renderer
+
+Build 0.9.94:
+
+* NEW: New OpenGL renderer with nice animation effects
+* NEW: Rewrite of whole Export/Save/Convert
+* NEW: New all in one navigation overlay with thumbnails and slider
+* NEW: "Recent Columns" menu entry in list view popups
+* NEW: Sharpening of display
+* NEW: Direct page move commands in the page context menu
+* NEW: Pending Tasks Dialog now includes the option to abort user tasks (export, scan)
+* NEW: Pending Tasks Dialog now includes state information about the tasks
+* NEW: Simple one click paging with clicks in the readers corners
+
+* CHANGE: Better click/selection handling for all checked lists
+* CHANGE: Removed overlay color schema
+* CHANGE: Expandable views slide in/out (option to turn off in preferences)
+* CHANGE: Sorted column headers have a different background color
+* CHANGE: Start up splash in secondary thread (more fluent start up)
+* CHANGE: Fixed flicker in Pending Tasks Dialog
+* CHANGE: Fixed flicker in Converison Error Dialog
+* CHANGE: Tasks in Pending Tasks Dialog are now listed in the "real" sequence
+* CHANGE: Slight re-layout of list context menu
+* CHANGE: More appropriate delete command icon
+* CHANGE: Updated Main edit menu
+* CHANGE: Re-layout of Preferences Dialog to make room for new settings
+* CHANGE: Changed default for page memory optimization to false
+* CHANGE: New design for overlay panels (black glass)
+* CHANGE: New design for Magnifier
+* CHANGE: Autoremove during scanning only remove files if the hosting drive/network is connected
+* CHANGE: Reworked the "Minimal Userinterface" stuff
+* CHANGE: Value tooltips for color adjustement sliders in Comic Book Dialog
+* CHANGE: ComicRack now default to "close minimizes to system tray"
+* CHANGE: "Close to system tray" displays a notifcation
+* CHANGE: Added "eComic Open" to the page context menu
+* CHANGE: Option to reset zoom level to 100% on page changes
+
+* BUGFIX: Removed invalid dispose checks
+* BUGFIX: Light blue background of eComic info in Comic Book Dialog
+* BUGFIX: Fixed border for tiles
+* BUGFIX: Fixed possible path too long exceptions in background watchers
+* BUGFIX: Fixed cancel in bookmark dialog
+* BUGFIX: Thumbnail size slider visible when list hidden
+* BUGFIX: Click in reader was very sensitive
+* BUGFIX: Fixed optional page transition pauses
+* BUGFIX: sort arrows on column headers did not adapt to text alignment
+* BUGFIX: Fixed delay when opening eComics with large libraries open
+* BUGFIX: Automatically generated series names where not trimmed
+* BUGFIX: Wrong name for CB7 export format
+* BUGFIX: Background queues where always displayed without the current working item
+* BUGFIX: If detached reader was full-screen, Export image dialog was hidden
+* BUGFIX: Headers in Pending Tasks Dialog where not translatable
+* BUGFIX: Letterer was missing from smartlists and quick search
+* BUGFIX: Load page information overlay was not always shown
+* BUGFIX: Fixed application lock while opening SLOW comic sources (Network etc.)
+* BUGFIX: Fixed getting images from rar/cbr starting with '-'
+* BUGFIX: Fixed panel alginment bug
+* BUGFIX: Keyboard shortcut for "Page Width (adaptive)" did not work
+* BUGFIX: Page loading bug when two page display and page filter is turned on together (workaround)
+
+Build 0.9.93:
+
+* NEW: Keyboard shortcuts for script commands
+
+* CHANGE: Some visual upgrades for List Views and Tree Views
+
+* BUGFIX: Drawing bugs in List View (introduced in 0.9.91)
+* BUGFIX: Possible deadlock in retrieving page info
+
+Build 0.9.92:
+
+* BUGFIX: Fixed number comparing for eComics
+* BUGFIX: Fixed series comparing if format present
+* BUGFIX: "All Files" and "All suported Files" in Open eComics Dialog where not localizable
+* BUGFIX: "Export reading list" did not check if the list name was a valid filename
+* BUGFIX: Fixed restart bug in Prefrences Dialog and share settings
+
+Build 0.9.91:
+
+* NEW: "Export eComic" command in eComic list
+* NEW: XMLless script definition (directly in python files)
+* NEW: Copy/Paste for Lists/Smart Lists in the Library tree
+* NEW: Exporting/Importing of Reading Lists (new file type .cbl)
+
+* CHANGE: Layout of Multiple Comics Dialog
+* CHANGE: search shortcut is now the nicer Ctrl-F
+
+* BUGFIX: Character data was not correctly transferred to ComicInfo data
+* BUGFIX: Another possible lock in page handling
+* BUGFIX: Format in multiple comics editor was not localizable
+* BUGFIX: Fixed reading of ComicInfo.xml (introduced in 0.9.90)
+* BUGFIX: Fixed layout bug in Smart List Editor
+* BUGFIX: Initial "New" caption for new Lists was not localizable
+* BUGFIX: Save/Load Dialog filter texts where not localizable
+
+Build 0.9.90:
+
+* NEW: New Script hook 'Editor' to add script commands to the Comic Book Dialog
+
+* CHANGE: Embedded info update only for CBZ, CB7 (and not ZIP, 7z)
+* CHANGE: Default Genres, Formats and Age Ratings in one file 'DefaultLists.txt'
+* CHANGE: Support for "UserLists.txt" to add own defaults
+* CHANGE: Search is shown in the pending tasks dialog
+
+* BUGFIX: Possible deadlock in Page handling
+* BUGFIX: Page views did not display pages if eComic was not found (even if stored in database)
+* BUGFIX: Fixed possible corrupt thumbnails (multithreading issue)
+
+Build 0.9.89:
+
+* NEW: Drag&Drop/Copy&Paste of page thumbnails into the Windows file system (Desktop, Explorer)
+* NEW: Published Column (consists of year/month)
+* NEW: Context Menu for reader tabs (close/close all but this/copy path/reveal in explorer)
+* NEW: 32/64 bit info in splash/about dialog
+* NEW: List selector for list properties (Genre, artists etc.)
+* NEW: Characters property
+* NEW: Added info about the translation quality of language packs to the preferences dialog
+
+* CHANGE: eComic List edit controls now always have the size of the value cell
+* CHANGE: After reaching last page, the next eComic is opened on the first page
+* CHANGE: Always show splash on same screen as main window
+* CHANGE: New header/column/arrange/stack menus layout
+* CHANGE: New Comic Book Dialog layout
+* CHANGE: Big rewrite of page information storage (faster and less memory)
+* CHANGE: Extended the search browser with some new fields
+* CHANGE: Added some missing Smart List operators (Editor, Cover Artist etc.)
+* CHANGE: Genre is now a multiple entries text field
+* CHANGE: Added "Pending Tasks..." command (till now you had to click on the activity icons in the status bar)
+* CHANGE: Added status icons to the Pending Tasks Dialog
+* CHANGE: Added separate activity icon for reading information from eComics
+* CHANGE: Performance optimization of Next/Previous button in Comic Book Dialog for huge libraries
+* CHANGE: Load page overlay shows correct page number(s) in Two Page Display
+
+* BUGFIX: Converted eComic archives always had image entries with extension ".jpg"
+* BUGFIX: Column Width in Preferences/Behavior was too small (some texts did not fit)
+* BUGFIX: Hunted down some small memory leaks
+* BUGFIX: Comic Book Dialog was not shown correctly when invoked from detached reader
+* BUGFIX: Possible missing thumbnails in Pages View when opening an eComic with changed page order
+* BUGFIX: Changed pages in the Comic Book dialog where always applied even when exiting with "Cancel"
+* BUGFIX: Fixed reset to Proposed Value in Comic Book Dialog
+* BUGFIX: Search Browser did not use proposed values for some entries
+* BUGFIX: Embedded eComic Information was always updated even with no change
+* BUGFIX: Fixed overwrite bug of empty page count
+
+Build 0.9.88:
+
+* CHANGE: Removed change watching in the file browser (needs to be manually updated with refresh)
+* CHANGE: More responsive working with file lists (scanning, showing in file browser)
+* CHANGE: RAR support now defaults to unrar.exe for 32bit
+
+* BUGFIX: "Last Page Read" was always set to the current page (introduced in 0.9.86)
+* BUGFIX: Small Preview had Auto Rotate Double Pages turned on
+* BUGFIX: Small Preview changed the Current Page/Last Page Read values
+* BUGFIX: Missing info retrieval for eComics during scan (if not displayed in list)
+* BUGFIX: Fixed drawing of rating control
+* BUGFIX: Abort button while getting huge lists of files did not work as expected
+* BUGFIX: Fixed visibility of undocked reader while starting with no open eComic
+* BUGFIX: Refresh did not work in file browser
+* BUGFIX: Added missing "Write info to eComic" entries to Pending Tasks Dialog
+
+Build 0.9.87:
+
+* NEW: Autorotate double pages option (mainly for Tablet PCs)
+
+* BUGFIX: Fixed possible corruption of CBZ files
+* BUGFIX: Fixed Writing Proposed Values for Series entry (actually was updated with Proposed Title)
+* BUGFIX: Missing DefaultComicAgeRatings.txt
+
+Build 0.9.86:
+
+* NEW: Age Rating for eComics
+* NEW: Recently used list for quick search
+* NEW: Database Backup functionality in Preferences/Advanced/Extra
+* NEW: ComicRack system optimizations during setup
+
+* CHANGE: Removed Key property for page infos (reduction of memory usage)
+* CHANGE: Added Tags to quick search "Descriptive"
+* CHANGE: Page info overlay now shows from/to page for dual pages
+
+* BUGFIX: Load/Create Thumbnail only if visible in the list
+* BUGFIX: Do not read ComicInfo from files if the DB copy is still dirty
+* BUGFIX: Fixed "Last Page Read" for double page spreads
+* BUGFIX: Missing Rotation command translations
+* BUGFIX: Fixed browser arrow directions in "True right/left reading"
+* BUGFIX: Fixed possible error with country flags initialization
+* BUGFIX: Fixed possible shut down exception when displaying final progress bar
+* BUGFIX: Tags where not covers in quick search "All"
+* BUGFIX: Bookmark Set/Remove was available for remote eComics
+* BUGFIX: Missing cleanup code for quick search control
+* BUGFIX: Tab Sequence Comic Book Dialog/Pages
+
+Build 0.9.85:
+
+* BUGFIX: Shadow Title was actually Series
+* BUGFIX: Background filesystem watcher also reacted to temporary renames
+
+Build 0.9.84:
+
+* NEW: Added commands for browsing to Previous/Next Bookmark
+* NEW: New Zoom Tool (Zoom In, Zoom Out, Custom...)
+* NEW: Rotate Tool (Rotate Left, Right, ...)
+* NEW: Added Title, Format to proposable values
+* NEW: Added "File Format" to list columns and smart operators
+* NEW: Option to also turn off Tabs in Minimal User Interface
+* NEW: Country flags for translation list
+* NEW: Shift-PgUp / Shift-PgDn to adjust double pages
+
+* CHANGE: Minimal User Interface Shortcut is now F9
+* CHANGE: Optimized background update of archive embedded info
+* CHANGE: Embedded archive info now always written
+* CHANGE: Drop down lists are now sorted
+* CHANGE: Fixed Number/of GUI inconsistencies in Comic Book / Multiple Comic Book dialogs
+* CHANGE: Previous/Next in Comic Dialog also syncs the current list
+* CHANGE: External Reader Window only visible if an eComic is open
+* CHANGE: Browser opens when last eComics is closed
+* CHANGE: Multithreading optimizations
+* CHANGE: Icons for Bookmark operations
+* CHANGE: New Group Header clicking behavior: Click on Arrow->Collapse, Click on Label->Select all items in group
+* CHANGE: Cover, Inner Cover and Back Cover are always displayed as single pages
+* CHANGE: Clicking "Abort" in the background operation warning box always cancels closing ComicRack
+
+* BUGFIX: Fixed Copy/Paste (introduced in 0.9.81 with the parse comic path feature)
+* BUGFIX: Incomplete read/write sync when updating cbz/cb7 files
+* BUGFIX: Possible arithmetic exception in mousewheel handling
+* BUGFIX: Fixed possible exception in Preferences Dialog while scanning
+* BUGFIX: Tab sequence in search browser
+* BUGFIX: Fixed possible timeout exception in read/write sync
+* BUGFIX: Fixed long standing bug of displaying part overlay even if everything is visible
+* BUGFIX: Fixed "Page Back" with double pages
+* BUGFIX: Fixed wrong storing of external reader bounds in some cases
+* BUGFIX: "Reveal in Explorer" did not work with comic files containing commas in the path
+
+Build 0.9.83:
+
+* NEW: CB7, 7z write support
+* NEW: Dynamic CB7 tag information update
+
+* CHANGE: In two page display mode, "Page Back" moves back two pages
+* CHANGE: New tabs open up on first position
+* CHANGE: Books selected in the overflow menu are moved to the first position
+* CHANGE: In archive contained Comic Info is always parsed if file has been externally modified
+
+* BUGFIX: Hard to read "Nothing selected" text in eComic preview
+* BUGFIX: Shift-Tab did not work
+* BUGFIX: Path parser script was initialized too late (it was only called in effect for imports)
+* BUGFIX: Fixed reading of packed localization packages (introduced in 0.9.82)
+
+Build 0.9.82:
+
+* NEW: Bookmarks
+* NEW: Experimental support for info update in ZIP archives (command line switch -ziu)
+* NEW: cb7, 7z read support
+
+* CHANGE: Removed Control Panel, Recycle Bin & Network from file browser
+* CHANGE: Removed "Open Error" messagebox
+* CHANGE: Changed hashing for image cache
+* CHANGE: Read/Write synchronization for eComics
+
+* BUGFIX: Fixed Unicode bugs in the folder browser
+* BUGFIX: Fixed Unicode filename bug in 64-bit cbr support
+* BUGFIX: Fixed wrong display of "could not open file" message
+* BUGFIX: Fixed invalid hook bug for scripts (introduced in 0.9.81)
+
+Build 0.9.81:
+
+* NEW: Ctrl-K sets focus to the quick search box
+* NEW: Arrow down in the quick search box opens the search menu
+* NEW: Proposed values (the ones generated from the filename) can be disabled for each eComic
+* NEW: Optional two page separator (mimics the bow shadows)
+* NEW: Option to switch display between multiple covers for eComics
+* NEW: Scriptable 'ParseComicPath' event to optionally override default value parsing
+* NEW: Scriptable 'BookOpend' event
+
+* CHANGE: "Views..." button in the Pages tab of the Comic Book Dialog
+* CHANGE: Reader now displays an error message if the book is missing
+
+* BUGFIX: Fixed wrong "Recent comics" list (always was one open operation late)
+* BUGFIX: Fixed missing live update of image info in Comic dialog pages list
+* BUGFIX: Fixed overflow of tabs
+* BUGFIX: Lock detection less rigid
+* BUGFIX: Fixed long standing bug displaying "Not Found" thumbnail for valid items in the pages lists
+
+Build 0.9.80:
+
+* CHANGE: Removed the whole hashing stuff from the database (was only used for scanning anyway)
+* CHANGE: C[h]number is now recognized as series number
+* CHANGE: Added cancel to news retrieval
+* CHANGE: "Right To Left" is stored in workspaces
+* CHANGE: If an eComic is opened, "Right to Left" is set only if the Manga property for the eComic is defined
+
+* BUGFIX: Fixed the locks during background database backup
+* BUGFIX: Fixed possible exception when deleting files from the folder view
+
+Build 0.9.79:
+
+* CHANGE: "Right to Left" is set to true if a Manga eComic is opened
+* CHANGE: "Auto Scroll double pages" stored in workspace
+
+* BUGFIX: Fixed "Right To Left" reader setting
+* BUGFIX: Fixed "Autoscroll double pages" reader setting
+
+Build 0.9.78:
+
+* CHANGE: Removed writing data to CBZ/Zip files (corrupted file occured)
+
+* BUGFIX: Show comic in browser did switch back to reader if already in browser
+
+Build 0.9.77:
+
+* NEW: Native 64 Bit build for XP64/Vista64
+* NEW: Option to auto hide menu/toolbar when switching to full screen
+* NEW: Support for AFPL Ghostscript
+* NEW: Background tasks information dialog (click on one of the background indicators)
+* NEW: Setup supports setting file associations
+* NEW: Link to the ComicRack Doku Wiki in the Help Menu
+
+* CHANGE: Big performance boost when removing multiple comics from huge lists
+* CHANGE: Hiding/Showing of toolbar/menu/statusbar is now a separate command
+* CHANGE: ComicRack generated CBZ files are now backward compatible with some legacy programs (e.g. CDisplay)
+* CHANGE: ComicInfo.xml is now updated/added to cbz/zip files
+* CHANGE: New Hash algorithm for eComics
+
+* BUGFIX: Fixed missing navigation arrows (introduced in 0.9.76)
+* BUGFIX: Duplicate use of 'D' as default shortcut key
+* BUGFIX: Fixed possible exception in "Copy Page to Clipboard"
+* BUGFIX: Fixed possible exception in "Remove List"
+* BUGFIX: Fixed "show browser" in integrated mode
+* BUGFIX: Fixed problems when switching to undocked reader while being in full screen
+* BUGFIX: Fixed "show in browser" command
+* BUGFIX: Fixed wrong lock detection during crash dialog
+* BUGFIX: Fixed possible access violation when deleting files
+* BUGFIX: Fixed selection of Library Tab when opening eComics
+* BUGFIX: Folder view displayed the Desktop folder of the default user
+* BUGFIX: Fixed mouse cursor during file move operation when files are dropped to a different application
+
+Build 0.9.76:
+
+* NEW: "Filled" docking mode has now integrated tabbar and reader
+* NEW: Load overlay
+* NEW: Move Page Start / Move Page End keyboard commands
+* NEW: Added fit only if oversized page layout option
+* NEW: List row height can now be changed
+
+* CHANGE: Entries in the folder browser are sorted by system defaults
+* CHANGE: Removed auto rotate page layout option
+* CHANGE: Rewrote part layout for left to right/double page
+* CHANGE: Double click on navigation arrows moves to last/first page
+* CHANGE: Moved List Config toolbar stuff into proper place above lists
+* CHANGE: Moved size slider into status bar
+* CHANGE: visual feedback for navigation arrows
+* CHANGE: Some animation optimizations
+* CHANGE: Magnify Icon displays on/off state
+
+* BUGFIX: Fixed missing previous/next buttons in comic info dialog
+* BUGFIX: Missing page overlay update when flipping left/right pages
+* BUGFIX: "Original Size" keyboard command did actually a Fit All
+* BUGFIX: Comic Book dialog did not show the current page in the color adjustment tab
+* BUGFIX: Fixed missing update of image sizes
+* BUGFIX: Fixed wrong folder icons on Vista
+* BUGFIX: Wrong background color in magnifier if autocolor was turned on
+* BUGFIX: Some keyboard shortcuts did not work in separated reader
+* BUGFIX: Possible null exception in SizeableContainer control
+* BUGFIX: Hardened "Show in Explorer"
+* BUGFIX: Hardened handling of invalid file names
+* BUGFIX: Fixed possible null exception in item selection
+* BUGFIX: Fixed possible error when opening Preferences Dialog while background scan is running
+
+Build 0.9.75:
+
+* CHANGE: Fine tuned background page retrieval
+* CHANGE: RenameFile changed to not support paths (but correctly works with files like 'Continue... 01 (2006)')
+* CHANGE: Changed the behavior of the reader tab bar (visibility in various modes)
+* CHANGE: Changed the reader tab bar to be really a "tab" bar
+
+* BUGFIX: Optimized memory cache settings could not be edited
+* BUGFIX: Further hardening of page drawing
+* BUGFIX: Further hardening of slider drawing
+* BUGFIX: Fixed magnifier border
+* BUGFIX: Possible exception in collection class
+* BUGFIX: Possible null exception in find services
+* BUGFIX: Possible selection of invalid folders in preferences and files to library
+* BUGFIX: Possible exception when creating drag&drop cursors from lists
+* BUGFIX: Overwriting an already open file with "Save as..." killed the file content
+
+Build 0.9.74:
+
+* CHANGE: Optimized server/client library transfer
+* CHANGE: "smoothed" part scrolling on fast machines
+
+* BUGFIX: Displaying info of remote comics did no longer work (introduced in 0.9.73)
+* BUGFIX: Fixed slow client/server thumbnail retrieving (introduced in 0.9.72)
+* BUGFIX: Copy/Paste commands where enabled in remote library lists
+* BUGFIX: Fixed possible null exception in page type context menu
+* BUGFIX: Fixed too early timeout in client
+* BUGFIX: Hardened service queries
+* BUGFIX: Hardened about dialog fade in/out
+* BUGFIX: Fixed handling of '&&' in menu translations
+
+Build 0.9.73:
+
+* NEW: Smooth scrolling for part navigation
+
+* CHANGE: Zooming in/out in the reader tries to retain the current screen center
+* CHANGE: New dynamic part repositioning when scrolling with mouse
+
+* BUGFIX: Fixed mouse panning if page is rotated
+* BUGFIX: "Two page" switch in context menu did not work
+* BUGFIX: Fixed broken mouse click handling (introduced in 0.9.72)
+
+Build 0.9.72:
+
+* CHANGE: Page Info memory optimizations
+
+* BUGFIX: Page reordering information was not correctly used in client/server protocol
+* BUGFIX: fixed broken mouse hit test for panels (introduced in 0.9.71)
+
+Build 0.9.71:
+
+* NEW: True and faked Manga mode (read right/left or only flip double pages)
+
+* CHANGE: Scanner ignores System/Hidden files
+
+* BUGFIX: Fixed possible out of range exceptions when clearing lists in multithreading conditions
+* BUGFIX: Fixed possible null exception in library renaming
+* BUGFIX: Fixed possible exception in panel mouse hittest
+* BUGFIX: Hardened custom tab strip renderer (visual style exceptions)
+* BUGFIX: Hardened background page retrieval (out of context disposals)
+* BUGFIX: Hardened browser interaction in news dialog
+
+Build 0.9.70:
+
+* CHANGE: Less massive rating star image
+
+* BUGFIX: New scanner failed on non existing folders (it had to happen...)
+* BUGFIX: Preference Dialog crashed on Ok/Apply if empty Tab in reader was present
+
+Build 0.9.69:
+
+* NEW: Caption shows filename of open eComic
+
+* CHANGE: Scanning now starts immediately without collecting file names
+
+* BUGFIX: Changes of page infos where not reflected (cover etc.)
+* BUGFIX: Fixed possible lock situation in image memory handling
+* BUGFIX: Fixed possible null exceptions in comic browsers
+* BUGFIX: Fixed possible animation exceptions during shutdown
+* BUGFIX: "Stop" was not translatable
+* BUGFIX: Scan/Stop did not correctly change text when clicking
+
+Build 0.9.68:
+
+* BUGFIX: Fixed new overlay lock bug introduced with animation fix in 0.9.67
+* BUGFIX: Hardened drawing of custom trackbars (possible visual styles exception)
+
+Build 0.9.67:
+
+* CHANGE: News reader also marks message as unread again if content of message has changed
+* CHANGE: Thumbnail label font scales with size
+
+* BUGFIX: Changed lock for the CbrProvider - may solve the locks there
+* BUGFIX: Apply button in Smart List Editor was on wrong location
+* BUGFIX: changed lock mechanism for overlay panels ("object in use elsewhere")
+* BUGFIX: Fixed animation redraw bug for left/right arrows (since 0.9.64)
+* BUGFIX: Fixed color transformation for non truecolor source images (since 0.9.66)
+
+Build 0.9.66:
+
+* NEW: New settings to fine tune memory cache performance
+* NEW: Regular expression operator for smartlists
+* NEW: Apply button for smart list editor
+
+* CHANGE: Quicksearch in lists (pressing keys) ignores the format prefix for eComics
+* CHANGE: Aggressive memory management for in memory caches (with options)
+* CHANGE: Removed thumbnails drawing quality setting
+* CHANGE: Tiles are limiting the font size to 14 (larger tiles show now more information)
+
+* BUGFIX: "Count" was missing for Smart Lists
+* BUGFIX: Setting disk cache size limit did not work as expected
+* BUGFIX: Another possible lock in Animate
+* BUGFIX: Fixed possible null exception in item states
+* BUGFIX: final fix for regex code in "in List" operator
+* BUGFIX: Fixed further possible wrong lock detections
+* BUGFIX: Fixed possible duplicate file key bug in library
+* BUGFIX: Fixed possible exception in drawing blurred images
+* BUGFIX: Behavior group captions in Preferences Dialog where empty in English
+* BUGFIX: Fixed Zoom (Z, Shift-Z) commands (behavior and crash)
+
+Build 0.9.65:
+
+* CHANGE: Slight layout changes of Comic Book Dialog, because notes are now also saved in eComics
+
+* BUGFIX: eComic Lists crashed when a referenced eComic was deleted from the database
+* BUGFIX: Comic Dialog crashed when a book referencing a non valid eBook file was opened
+* BUGFIX: False lock alarms in heavy load conditions
+* BUGFIX: Double Page display was broken (introduced in 0.9.64)
+* BUGFIX: Scrolling (mouse/cursor) was broken in manga mode (introduced in 0.9.64)
+* BUGFIX: "In list" matcher failed when text included regular expression constructs
+
+Build 0.9.64:
+
+* CHANGE: Thumbnail drawing now defaults to the much faster "fast" mode
+* CHANGE: Part navigation honors double pages
+* CHANGE: Manga mode does not reverse left/right navigation by default (can be changed in settings)
+
+* BUGFIX: "Browse Comics->..." command now works correctly for list values (e.g. multiple Writers)
+* BUGFIX: Possible division by zero in plain trackbar drawing code
+* BUGFIX: Possible exception when out of range zoom values are stored in the workspace
+* BUGFIX: Possible null exception when opening eComics with non valid names
+* BUGFIX: Possible GDI+ exception in custom TreeView (Library etc.) (.NET bug)
+* BUGFIX: Possible lock in overlay renderers and animators
+* BUGFIX: Possible crash when shutting down with open secondary browser windows
+* BUGFIX: Fixed double entries in search browser
+
+Build 0.9.63:
+
+* NEW: "in list" matcher mode for string
+* NEW: "True" Manga mode for reading (full mirroring of left/right part navigation)
+* NEW: Crash and lock watchdog with user confirmable report feedback
+
+* CHANGE: Search Browser correctly handles list entries (,;) for Artists and Genres
+* CHANGE: Memory optimizations of the 2nd level thumbnail cache
+
+* BUGFIX: ComicRack had problems when Proposed Text was empty (possible crashes in editors)
+* BUGFIX: Fixed missing thumbnails in pages view in some conditions (update to 0.9.61 fix for same problem)
+* BUGFIX: missing proposed series for number only filenames (introduced in 0.9.62)
+* BUGFIX: fixed explorer integration for running ComicRack instance (broken since 0.9.61)
+* BUGFIX: fixed some possible lock situations
+
+Build 0.9.62:
+
+* CHANGE: Slight improvements of shadow value detection
+* CHANGE: Some performance optimizations for startup
+* CHANGE: Multiple Comics Dialog uses shadow properties
+
+* BUGFIX: Illegal command line options crashed ComicRack
+* BUGFIX: Turning off sorting was not remembered
+* BUGFIX: Problems with stack sorting (on close, list switch etc).
+* BUGFIX: When grouped AND stacked, opening the stack showed all items
+* BUGFIX: User Interface culture was set to regional culture (formats)
+* BUGFIX: ComicRack crashed if no valid top level culture was available (like nn for Norway)
+
+Build 0.9.61:
+
+* NEW: "Original Size" scaling mode
+* NEW: All mouse buttons are assignable
+* NEW: keyboard shortcuts editor with ctrl/alt/shift support and localizable key names
+* NEW: New keyboard commands in the reader
+* NEW: Each stack has its own view configuration
+* NEW: Support Format (Annuals, 1/2 etc), B&W and Manga data for eComics
+* NEW: Fast manga toggle command in the menu
+* NEW: conversion between cbz/cbt/cbr without recompressing the images (also a lot faster)
+* NEW: saving to cbz/cbt without recompression (also faster)
+
+* CHANGE: Moved workspaces menu
+* CHANGE: Better delay mechanism for page transitions
+* CHANGE: Mouse cursor hides when magnifier visible
+* CHANGE: Changed some initial startup defaults
+* CHANGE: undocked reader displays book information in the caption
+* CHANGE: If Stacker and Grouper are the same, the grouper is switched to alphabetic
+* CHANGE: Update IronPython to version 1.1
+* CHANGE: Real progress bars on some lengthy book operations (update etc.) and not only marquees
+* CHANGE: Group headers now display the count of stacked items when stacking is turned on
+* CHANGE: Remove initial page counting from GhostView PDF provider (too slow)
+* CHANGE: Background refresh process always updates page counts (and not only for fast providers)
+* CHANGE: Less memory needed to store page infos
+
+* BUGFIX: Wrong "Missing Thumbnail" image in page views under some conditions (e.g. PDF files)
+* BUGFIX: Volume grouping captions where one volume count to high
+* BUGFIX: "Reset" buttons not translatable
+* BUGFIX: "Reader in own Window" tooltip not translatable
+* BUGFIX: Slightly wrong offset for non rectangular magnifiers
+* BUGFIX: Rename only checked filename and not path for execution
+* BUGFIX: Broke positional drag&drop in comic lists some time ago
+* BUGFIX: Wrong insert position if moving existing items back
+* BUGFIX: Missing error message when opening invalid files (could even lead to crash)
+* BUGFIX: Alphabet Grouper was broken (always returned 0-9)
+* BUGFIX: Multi Comic Dialog manga flag did not work in non English localizations
+* BUGFIX: Small Preview was always generated even if not visible
+* BUGFIX: Tags where not saved when edited with "slow click"
+* BUGFIX: "Page failed to load..." was not translatable
+* BUGFIX: "Stack by" context menu was still available in open stacks
+* BUGFIX: "Open With..." handlers where not correctly created
+* BUGFIX: Fixed performance problems with large file list drag&drop from explorer
+* BUGFIX: Fixed drag&drop of library list items to the end of the list
+* BUGFIX: "New List" on list drag&drop not translatable
+* BUGFIX: Fixed missing page count update in Comic Dialog
+* BUGFIX: Fixed visible tab bar on initial startup after setup
+* BUGFIX: Fixed Next/Prev page commands (actually did part movement before)
+* BUGFIX: Browser did not hide on Open if comic was already open (even in different tab)
+* BUGFIX: Sort/Group/Stacker menus did not display '&' in items
+* BUGFIX: Tooltip on notify icon not localizable
+
+Build 0.9.60:
+
+* NEW: Donation link in splash and menu
+* NEW: Reader can be undocked into separate window
+* NEW: Support for Mouse Wheel tilt in Reader & ListView
+* NEW: Mouse Wheel always scrolls the window under the mouse cursor
+* NEW: Option to add eComics to the library when reading (defaults to off)
+* NEW: Adaptive fitting mode for double page spreads
+* NEW: Multi Column sorting
+
+* CHANGE: Bigger Preferences Dialog
+* CHANGE: Comic Book Dialog page editor is now the same as in the main page viewer
+* CHANGE: Added layout menu to header columns menus
+* CHANGE: Volumes are now correctly grouped up to 1000
+* CHANGE: Optimized library scanning (specially if files where moved)
+* CHANGE: Optimized working with folders of eComics not in the library
+* CHAMGE: Redesigned reader menu
+* CHANGE: eComics hashes are now created in the background (speeds up scanning and opening)
+* CHANGE: Default for scanning is now "Don't Remove missing" and "Don't track files"
+          (they have a severe performance hit on the scan).
+* CHANGE: Even with tracking files turned off, there's some simple name/size/date based tracking
+          without using hashes. Turning it on, uses hashes (performance hit)
+* CHANGE: Correct Alt-Menu shortcuts for all languages
+
+* BUGFIX: OK/Cancel buttons not correctly set for Enter/Cancel keys (now fixed for real)
+* BUGFIX: Some missing translations
+* BUGFIX: Is before/after in smartlists was reversed
+* BUGFIX: Could not change positions of top level library folders item
+* BUGFIX: RSS news reader did not work with newsfeeds without item IDs - so no latest news update
+* BUGFIX: Fixed "Black Rectangle" when dragging with display color depths < 32 bit
+* BUGFIX: Refresh thumbnail did not refresh page cache
+* BUGFIX: Again some spelling corrections
+* BUGFIX: Fixed hash creation bug in scanner
+* BUGFIX: Scan button was not enable after adding first path to library
+* BUGFIX: Non database eComics did not correctly save page type/index information
+* BUGFIX: Cover thumbnails where not centered in the focus rectangle
+* BUGFIX: Script optimization logic was reversed
+* BUGFIX: Fixed missing wait cursors in various places
+* BUGFIX: Fixed page export bug if comic name included some illegal characters (e.g. '/')
+* BUGFIX: 'Page' in generated "Page Export" filename was not translated
+
+Build 0.9.59:
+
+* NEW: Column Tool Tips
+* NEW: Polish localization (thanks to marwinek)
+* NEW: Portuguese localization (thanks to Clayton Aguiar) 
+
+* CHANGE: "Mark as deleted" now toggles the delete state
+* CHANGE: Added category to news display
+* CHANGE: ComicRack can better cope with illegal translation strings
+
+* BUGFIX: Missing text for the scan button in Preferences/English version
+* BUGFIX: Some texts where not localizable
+* BUGFIX: Some spelling errors corrected (english/german)
+* BUGFIX: "Open in new Window" was broken (introduced in 0.9.57)
+* BUGFIX: OK/Cancel buttons not correctly set for Enter/Cancel keys
+
+Build 0.9.58:
+
+* NEW: Full localization/globalization support
+* NEW: German localization
+* NEW: Month Grouper
+* NEW: Restart Command
+
+* CHANGE: removed text from Part overlays
+* CHANGE: Updated web links to the new site
+
+* BUGFIX: Wrong message if original database had a problem and the backup could not be found
+* BUGFIX: Activity icons for Convert/Update did not include the last background item working
+* BUGFIX: Unspecified in the Search Browser did not work for numeric values (e.g. Month)
+
+Build 0.9.57:
+
+* NEW: Assignable cover item for Stacks
+* NEW: Full CBT/TAR support (read, save, convert)
+* NEW: Command to quickly sort items in the Library Browser (without the need to reposition manually)
+
+* CHANGE: Stacked Thumbnails only display a stack if there are multiple eComics
+* CHANGE: Added "Page Layout" and "Two Pages" commands to reader context menu
+* CHANGE: Visible Part now correctly updates when scrolling
+* CHANGE: Continuous progress bar during Database loading
+
+* BUGFIX: No "V5" Group for Volumes
+* BUGFIX: Changed default for page transition delay to off (really now)
+
+Build 0.9.56:
+
+* BUGFIX: OEM Conversion for unrar.dll
+
+Build 0.9.55:
+
+* NEW: Added Next/Previous Part Keyboard command (defaults to Space)
+* NEW: Added "Restore Defaults" button to behavior settings
+* NEW: "Manga Style" Smart List operator
+
+* CHANGE: Added proper manifest for Vista UAC
+* CHANGE: Explorer Integration Preferences are disabled when there are insufficient user rights
+* CHANGE: Changed default for page transition delay to off
+
+* BUGFIX: Fixed not restoring scroll positions when opening new eComics or switching tabs
+* BUGFIX: Paste Data did not refresh data from files before changing
+* BUGFIX: Current Page panel was to small for "thick" comics
+* BUGFIX: Fixed display of units in the Smart List Editor
+
+Build 0.9.54:
+
+* NEW: List Layout Management
+* NEW: Size of Info Overlays can now be adjusted
+* NEW: Copy/Paste of selected values to multiple eComics
+
+* CHANGE: Changed the rar code
+* CHANGE: Wheel page transition delay is now time based (1 second)
+* CHANGE: Cursor keys also have a page transition delay
+* CHANGE: Added tooltips to trackbars in Preferences Dialog
+* CHANGE: Moved Workspaces Menu entry
+* CHANGE: Cleaned up Toolbar
+* CHANGE: New Folder, New List and New Smart List commands are now Dialog based
+
+* BUGFIX: Using "Open in new Window" in the File Browser did open two windows
+* BUGFIX: Minimize to Notification Area did not remember maximized state
+* BUGFIX: Not drawn '&' in tree node names
+* BUGFIX: Fixed wrong culture on background threads
+
+Build 0.9.53:
+
+* NEW: Optional delay before browsing to the next page when using the mousewheel
+* NEW: New fitting mode "Best Fit"
+* NEW: Automatic Background color option
+* NEW: If there's a problem with the database, ComicRack tries to restore a previous version. If this fails,
+       it creates a new one.
+
+* CHANGE: Saving eComics did save the "Crumbled Paper" page on error conditions instead of erroring out
+* CHANGE: Changed "System Tray" to "Notification Area"
+
+* BUGFIX: Missing initial filling of folder eComic list if sidebar was hidden
+* BUGFIX: Folder Favorites item was not drawn till thumbnail was created
+* BUGFIX: Paths in Favorite items where cut at the end (instead of ellipsis)
+* BUGFIX: Fixed incompatibility issue with Windows 2000
+* BUGFIX: Could drag&drop library nodes into itself (crash)
+* BUGFIX: Fixed possible bug when closing editors
+* BUGFIX: ComicRack does now get over a corrupt Database at startup
+
+Build 0.9.52:
+
+* NEW: Added "Manga Style" setting to Multiple Comics Dialog
+
+* CHANGE: Speedup of cache initialization and hit/update logic
+* CHANGE: Redesign of Multiple Comics Dialog
+* CHANGE: Library consolidation is only done every 50th startup
+* CHANGE: Moved Favorites functionality into the Folder browser
+* CHANGE: Separate background queues for slow thumbnails (have to be created) and fast thumbnails
+          (already in disk cache). This means, that new thumbnail creation does no longer block loading of
+          already cached thumbnails.
+
+Build 0.9.51:
+
+* NEW: Key assignable exit command for the reader (default is Q)
+* NEW: "Mark as deleted" command in the pages browser
+
+* CHANGE: Save Workspace now supports selecting an existing Workspace to update
+* CHANGE: Pressing [x] in Quicksearch sets the input focus to the Quicksearch textbox
+* CHANGE: "Include Subfolder" settings are stored
+* CHANGE: Current selected Browser is stored (Library, Folders, Favs, Pages)
+* CHANGE: Separate on/off switches for current page and visible page part overlays
+* CHANGE: Next open restores all open tabs (and not only last file)
+* CHANGE: Cache is always trimmed and not only on shutdown
+* CHANGE: All lists (and not only the library) get refreshed when the library changes
+* CHANGE: Writing meta info to comic files does no longer change the modified time
+* CHANGE: Scanning also hashes all files not previously hashed
+
+* BUGFIX: Fixed failed restore of docking state
+* BUGFIX: No favorites item was initially selected (empty view)
+* BUGFIX: Newly added items where initially added with an "Added" value of "Never" to the list
+* BUGFIX: When directly starting a second instance, the restored old one tried to open a null file
+* BUGFIX: "Track moved files" for scanning was broken
+* BUGFIX: Hash algorithm for files was broken (switched over to SHA1 now)
+* BUGFIX: Crashing bug when dropping a library folder in itself
+* BUGFIX: Drawing bug when a dragover item also was selected
+* BUGFIX: Correct handling of deleting/removing eComics from the library when they are still in use
+* BUGFIX: Paging Arrows where shown even when no eComic was open
+* BUGFIX: Ghostscript resolution was not clamped on the upside
+
+Build 0.9.50:
+
+* BUGFIX: Forgot some keyboard shortcuts in context menus and bars
+
+Build 0.9.49:
+
+* NEW: Workspace management
+* NEW: Export current page image to various formats
+* NEW: Option to autohide Magnifier when mouse is near border (default is on)
+
+* CHANGE: Sort folders in folder view
+* CHANGE: ZIP provider buffer size to 128KB
+* CHANGE: Lock toolbar now also locks the open files tab
+* CHANGE: Added keyboard shortcuts for the open files
+* CHANGE: Changing the Browser tab will correctly set the focus to the list
+* CHANGE: reassignment of all the general key shortcuts to avoid 3-key combinations
+* CHANGE: Open Previous/Next eComic from list now compensates for reverse sorting order
+
+* BUGFIX: Blurred drawing of still loading pages broken (introduced in 0.9.48)
+* BUGFIX: Wrong remove dialog in the main library list (introduced in 0.9.48)
+* BUGFIX: When closing Browser, focus was not moved to the Reader
+* BUGFIX: The "Show..." commands in "Browse" could brake the GUI (nobody using them?)
+* BUGFIX: Viewer kept focus even when browser docking was "Fill"
+
+Build 0.9.48:
+
+* CHANGE: Added "ScriptPath" global variable for Python scripts
+* CHANGE: Reduced Page arrow sizes to 60%
+* CHANGE: Whenever a new eComic is opened, the reader gets the focus (enabling up, down etc.)
+* CHANGE: Showing the Browser does not set the input focus to it anymore
+* CHANGE: Moved loading pages/thumbnails indicator into the statusbar
+
+* BUGFIX: Fixed closing open Stack when exiting ComicRack
+* BUGFIX: Switched RAR to single threading - seems to fix memory curruption problem
+* BUGFIX: Fixed invalid index in reader if image provider failed (0 pages situation)
+* BUGFIX: Fixed index out of range in tab management
+* BUGFIX: Fixed "Image in use" of the tab bar
+* BUGFIX: Removed animating "Gear wheel" to remove other 2nd "Image in use" bug
+* BUGFIX: Fixed skewed thumbnails in the Remove Question Dialog
+* BUGFIX: Comics where not removed from the displayed Smart List when deleted
+
+Build 0.9.47:
+
+* BUGFIX: Fixed possible missing Cover Background for the Pages Browser (introduced in 0.9.46)
+* BUGFIX: Cover creation in pages view could lead to the "crumbled paper" page
+* BUGFIX: Global color adjustments where only set to the open Tab
+* BUGFIX: Possible deadlock when changing book in viewer
+* BUGFIX: Possible trash of cache item even when still in use (remote reading bug)
+* BUGFIX: Main Window positions where only stored on resize and not on move
+* BUGFIX: Possible deadlock after "Reset Pages" in Comic Book Dialog
+* BUGFIX: Possible wrong page thumbnail size after "Reset Pages" in Comic Book Dialog
+* BUGFIX: Small changes and fixes in Pages Context Menu
+
+Build 0.9.46:
+
+* NEW: Tab support for Reader (multiple eComics open at the same time)
+* NEW: Support for One Shots. Just enter "-" as the Number
+* NEW: Library Browser remembers last selected list or folder
+
+* CHANGE: Relayout of the main interface
+* CHANGE: Removed the overlap option for the browser
+* CHANGE: Some performance improvements for the page creation with ghostscript
+* CHANGE: Display of "Unknown Size" instead of "Size: 0 Bytes" if page size is unknown
+* CHANGE: Added Top/Bottom Buttons and auto repeat functionality to Up/Down Buttons to Page Editor
+* CHANGE: New default color theme
+* CHANGE: "Use System Colors" in Preferences to switch back to system themes (blues, green, sliver)
+* CHANGE: Some general redesign of the Preferences Dialog
+* CHANGE: Again redesign of Comic Book Dialog
+* CHANGE: "Opaque" to "Opacity" in Magnifier Setup
+* CHANGE: Removed "Copy" from the main Edit Menu as this is no universal command
+* CHANGE: Better page/image mapping validation on load
+* CHANGE: Secondary windows also minimize the main window
+* CHANGE: Reader now initially defaults to fit width
+* CHANGE: Removed the Comic Info Overlay in the Reader
+* CHANGE: Added Reset Button to color controls in Preferences (removed in 0.9.26)
+
+* BUGFIX: Fixed restoring current instance from system tray when ComicRack is started again
+* BUGFIX: Navigation Bar was partially hidden by new splitters in some cases
+* BUGFIX: Crash when switching from XP/Vista mode to Classic while running
+* BUGFIX: Fixed ugly icons in keyboard editor on XP
+* BUGFIX: Renamed "View" to "Views" in Page Viewer
+* BUGFIX: Displayed length of entries in the Search Browser was too short
+* BUGFIX: Main/Context Rating Menu for the current comic did not work
+* BUGFIX: Toolbar/Menu commands Rating/Show info only worked with the eComic in the Reader
+* BUGFIX: Forgot to remove "Increase Width" from the Display menu (introduced in 0.9.43)
+* BUGFIX: Comic Book Dialog Enter/Esc did not work for OK/Cancel
+* BUGFIX: Wrong shortcut "Ctrl-I" on page context menu in Page Browser
+* BUGFIX: Page Type Menu in Page Browser was broken when multiple pages where selected
+* BUGFIX: Main Menu command "Refresh" did not work in Page Browser
+* BUGFIX: 100% processor usage bug in background processing (in some special cases)
+* BUGFIX: Could not get pages from remote server in seldom cases (multithreading issue)
+* BUGFIX: Trackbar could crash with zero devision bug
+* BUGFIX: Finally fixed the changing size bug when switching from "Loading Thumbnail..." to real thumbnail
+* BUGFIX: Fixed overlapping text in tile renderer
+* BUGFIX: Wrong handling of reader keybordshortcuts if additional modifier was pressed (shift, ctrl etc.)
+* BUGFIX: Fixed wrong focus problem after application start
+* BUGFIX: Fixed Internet links in the help menu to also work with Internet explorer
+* BUGFIX: Fixed long stalls when connection to remote server is broken
+
+Build 0.9.45:
+
+* NEW: Option to put ComicRack into the System Tray when closing with the [X] button
+* NEW: Built optional Ghostscript support into the PDF parser. This should enable ComicRack
+       to read all PDF files out there, if Ghostscript is installed on the system (this means
+       also eBook reading :))
+
+* CHANGE: Small redesign of Magnifier setup
+* CHANGE: General change of the splitter architecture.
+          Splitters are now always visible. One click expands/collapses the panel.
+* CHANGE: Added tray context menu and changed open to a double click
+
+* BUGFIX: Fixed non square magnifier on rotated pages
+* BUGFIX: Comic Info Overlays displayed page information instead of comic information (introduces in 0.9.44)
+* BUGFIX: Fixed taskbar status when starting minimized and "Minimize to System Tray" is turned on
+
+Build 0.9.44:
+
+* CHANGE: Merged Color Adjustment/Pages Tab in the Comic Dialog
+* CHANGE: Comic Dialog now reads thumbnails in the background (no more hangs when using over slow network)
+* CHANGE: Remove dialogs only use cached thumbnails (no more hangs when using over slow network)
+
+* BUGFIX: Fixed wrong ghosting color for textboxes
+* BUGFIX: Fixed missing background thumbnail processing if one thumbnail was used multipe times
+* BUGFIX: Fixed wrong icon in secondary browser windows (was still the old RC icon)
+* BUGFIX: ComicRack should now properly run on x64 systems
+
+Build 0.9.43:
+
+* NEW: Language Property for eComics
+* NEW: Detailed Magnifier Control (width, height, opaque, zoom)
+
+* CHANGE: Much better multi resolution handling for thumbnails
+* CHANGE: Added "Unspecified" entries to the Search Browser
+* CHANGE: Added "Imprint" to Search Browser
+* CHANGE: Dropdowns in Comic Dialogs are now sized appropriately
+
+* BUGFIX: Fixed Double Click on Browser Arrows in the Reader
+* BUGFIX: Changed tooltip texts for browser buttons
+* BUGFIX: Fixed stack close button for long stack names
+* BUGFIX: Fixed eaten click in Magnifier
+* BUGFIX: Browser arrows in preview
+* BUGFIX: When preview was in zoom mode next/previous button actually did part navigation
+
+Build 0.9.42:
+
+* NEW: Proper File Open/Save Dialogs in Vista
+* NEW: Proper Folder Browser Dialogs in Vista
+* NEW: Vista Dialogs have links to Library/Favorites
+* NEW: Dynamic paging arrows in the reader (move mouse to middle of left/right border)
+
+* CHANGE: Renamed the format names in file save/close
+* CHANGE: Magnifier is now fully opaque
+* CHANGE: Adapted navigation icons to new navigation overlay
+* CHANGE: Removed Animation option from Preferences
+
+* BUGFIX: Fixed "jumping cursor" in quick search
+* BUGFIX: Fixed wrong key name "Next" for "PageDown" in Keyboard preferences
+
+Build 0.9.41:
+
+* NEW: Option to enable/disable the navigation bar
+
+* BUGFIX: Final Fix for the auto hiding of the navigation bar
+
+Build 0.9.40:
+
+* BUGFIX: Fixed tab sequence in page editor
+* BUGFIX: Fixed missing click positioning on the navigation bar
+* BUGFIX: Fixed keyboard focus problem when navbar auto hides
+
+Build 0.9.39:
+
+* NEW: Full resolution Thumbnails (better looking and better performance)
+* NEW: Very basic page editor in Comic Book dialog with option to reset page sequence
+* NEW: Navigation Bar for all pages at bottom of reader (shows when mouse it moved to bottom)
+
+* CHANGE: Renamed "Sync Browser" to "Show in Browser"
+* CHANGE: "Show in Browser" shows the browser if currently hidden
+* CHANGE: Finally fixed the ugly resize flickering of the library/files treeview
+
+* BUGFIX: Fixed mouse selection performance problem introduced with stacking (0.9.38)
+* BUGFIX: Fixed changing of viewmode when selecting Read/Unread etc in view menu (introduced in 0.9.28)
+* BUGFIX: Fixed shadow border for browsers
+
+Build 0.9.38:
+
+* NEW: Stacking of eComic Thumbnails in the list
+* NEW: Sync Browser Command
+* NEW: Positional drag&drop in smartlist tree (allows to change order)
+
+* CHANGE: Multiple Comics Editor has count in the caption
+* CHANGE: Changed the order of the Group/Arrange buttons in the listbar
+
+* BUGFIX: Page Type Menu was available in reader/page list even if eComic was remote
+* BUGFIX: Fixed wrong font in library tabs
+
+Build 0.9.37:
+
+* NEW: Page Type selector in the Reader Context Menu
+
+* CHANGE: Title now sorts by Title/Volume/Number
+
+* BUGFIX: Side Pane view state was not stored
+* BUGFIX: Severe bug in how reordered/deleted pages where NOT handles during convert
+* BUGFIX: Broke "Open last page" in 0.9.36
+* BUGFIX: Various bugs in exporters
+* BUGFIX: Broke direct navigation (double click) in Pages list if some pages where hidden in 0.9.36
+
+Build 0.9.36:
+
+* NEW: Added statusbar animation for background file updates
+* NEW: Added check if some background tasks are still running when closing ComicRack
+* NEW: Added position marker when manually reordering a list with drag&drop (sort by position, grouping turned off)
+* NEW: Reordering of pages
+* NEW: Page Filter is now also used in the Reader (allowes to hide curtain types of pages)
+* NEW: Batch conversion of eComics to CBZ/PDF format
+
+* CHANGE: Added a deleted flag to pages
+* CHANGE: New statusbar animation while scanning eComics
+* CHANGE: Nicer cover images for the delete dialog
+* CHANGE: smaller line heights in detail mode
+* CHANGE: Column separators in detail mode
+* CHANGE: PDF/CBZ export does not export pages flagged as deleted
+* CHANGE: PDF/CBZ export does honor page reordering
+* CHANGE: New overlay image for missing/deleted pages
+
+* BUGFIX: Volume Group Headers where off by 1
+* BUGFIX: Fixed column autosize for Rating and State
+* BUGFIX: When grouped, last items in list where out of scrolling range (introduced in 0.9.34)
+* BUGFIX: Adding eComics to the Library did not read the Page count (introduced in 0.9.34)
+* BUGFIX: Ctrl+Wheel did not work in Page List
+* BUGFIX: Fixed wrong vertical scrollbar in lists
+* BUGFIX: Remove files did not work  as expected in the files list
+* BUGFIX: Fixed locking of eComic files in some special cases
+
+Build 0.9.35:
+
+* NEW: Ctrl+Mouse Wheel sizes items in list
+
+* CHANGE: Moved Penciller & Imprint to second page of Comic Dialog
+
+* BUGFIX: Drawing of rating stars in detail mode fixed
+* BUGFIX: Stupid crashing bug in small preview because of "gearwheel" fix (introduced in 0.9.34)
+
+Build 0.9.34:
+
+* NEW: Rating Context menus now with stars (pretty)
+* NEW: Text messages of progress during startup
+* NEW: Genre Combo Box with "real" separators
+* NEW: "Hot" effect for column headers
+* NEW: Display of eComic state ("Missing File" for now) in own column and overlay
+* NEW: Blur effect for non ready pages in the reader
+
+* CHANGE: Rewrote the file meta info storage 
+* CHANGE: Removed rounded edges on toolbars
+* CHANGE: Rewrote shutdown process to support all circumstances (close, logoff, shutdown).
+          ComicRack no longer blocks shutdown.
+* CHANGE: Deferred compilation of scripts to speed up startup
+* CHANGE: Better image and better scaling used for rating stars when drawing thumbnails
+* CHANGE: Recent file menu shows also disk cached covers (and not only in memory)
+* CHANGE: Again slight redesign of quicksearch box
+* CHANGE: Some eComic commands are now only visible if they are useful (e.g. "mark as read"
+          for an eComic not in the library)
+* CHANGE: Gradient shadows for the covers/pages (easier on the eyes)
+* CHANGE: Nicer error page (not the red monster anymore :))
+* CHANGE: Found a workaround for the "gearwheel" performance problem -> default is now animate
+
+* BUGFIX: Drawing of columns was not correct when horizontally scrolled
+* BUGFIX: Metadata was in some cases still written to eComic files even if turned off in 
+       advanced settings
+* BUGFIX: File explorer did not remember last folder
+* BUGFIX: Fixed wrong "Nothing Selected" text in Small Preview
+* BUGFIX: Small Preview still displayed unselected books
+* BUGFIX: Fixed wrong scaling in "Adjust Color" page preview
+* BUGFIX: Fixed part overlay was not updated if visible and new part count was 1
+* BUGFIX: Fixed unneeded update of page after first OK in Prefrences dialog
+
+Build 0.9.33:
+
+* CHANGE: ComicRack now prohibits the system to shutdown while running. This solves a lot of
+          the problems of lost configuration settings (view settings, list settings etc.)
+
+Build 0.9.32:
+
+* CHANGE: List optimizations
+
+* BUGFIX: Even when Text was turned off for thumbnails, a small selection was drawn
+* BUGFIX: Wrong tooltip for the Fill button of the browser
+* BUGFIX: Column Autosize in Pages List was broken
+* BUGFIX: Layout changes where not saved anymore (introduces in 0.9.29)
+
+Build 0.9.31:
+
+* NEW: Fade in of thumbnails
+
+* CHANGE: With all the new visual stuff for thumbnails (fade in, page curl, peek into inside of comics)
+          I came to the conclusion that the performance hit of 512 pixel thumbnails is just too big.
+          Switched back to 256 pixels.
+
+Build 0.9.30:
+
+* NEW: Background saving of changed data
+
+* BUGFIX: Fixed crossthread bug in combination with the optional python script console
+* BUGFIX: Fixed gray lines in quicksearch textbox
+
+Build 0.9.29:
+
+* NEW: Full Browser mode (totally hidden reader)
+* NEW: Optional automatic open of previous/next comic when reaching beginning/end while reading
+* NEW: Grouping by Year
+* NEW: Mouse Buttons Left, 4 and 5 are now assignable in the reader
+
+* CHANGE: View button text is static now
+* CHANGE: Nicer looking quicksearch
+* CHANGE: Show Browser Menu/Popup command
+
+* BUGFIX: Some parts of the Comic Book Dialog where enabled even when remote
+* BUGFIX: Wrong icon for Show Previous Comic in Keyboard shortcut editor
+* BUGFIX: Finally fixed the data loss when ComicRack was forced to close with a shutdown or logoff
+
+Build 0.9.28:
+
+* NEW: Tags property for eComics
+* NEW: Imprint property for eComics
+* NEW: Added Script output window (display with -showscriptconsole or -scc command line switch)
+* NEW: Disabling of script compilations (-disablescriptoptimization or -dso command line switch)
+       This allows to dynamically edit scripts while comicrack is running
+* NEW: Script settings in preferences (enable/disable, library paths)
+* NEW: User definable keyboard shortcuts for the reader
+* NEW: Auto Fit all columns command
+
+* CHANGE: New layout of commands in Main Menu
+* CHANGE: New layout for Comic Properties Dialog
+* CHANGE: Converted Autonumber Wizard & Commit Proposed to scripts
+* CHANGE: Textfields will use the proposed (gray) values as initial text to edit
+* CHANGE: Better mouse selection in the browsers (no "empty space" selection anymore)
+* CHANGE: Made cursor & wheel scrolling more usable (speed and accuracy)
+* CHANGE: Some keyboard shortcuts
+* CHANGE: Moved Unread/read/reading filter into the view menu of the browser
+* CHANGE: Combined all the quicksearch stuff into one control
+* CHANGE: Removed the list options button from the browser toolbar
+
+* BUGFIX: Fixed wrong hiding of cursor (introduced in 0.9.27)
+* BUGFIX: If last opened comicbook was deleted, it was re-added to the library during next start
+
+Build 0.9.27:
+
+* NEW: Drag & Drop of books directly into explorer (desktop etc.) to copy files
+* NEW: Basic Python Scripting engine
+
+* BUGFIX: Fixed fullscreen on vista (cursor and slow switching)
+* BUGFIX: Inkers where only stored in the database and not in xml files or comic files.
+
+Build 0.9.26:
+
+* NEW: Separated high quality setting for thumbnail/page display, because High quality can have a severe
+       performance impact on drawing the thumbnail list (but it is still nice to display pages in the
+       reader in high quality)
+* NEW: "Browse Comic" command to quickly switch the comic browser to values of the selected comics
+
+* CHANGE: Removed Reset button for color adjustments in Preferenced Dialog. You now can reset the values
+          with a doubleclick on the slider.
+* CHANGE: Last Opened file is now a user setting. So remote readers do not change the this anymore.
+* CHANGE: New default definitions for Read/Reading/Not Read smartlists (now working with %)
+
+* BUGFIX: Fixed installer to include the proper config file (not App.Config but ComicRack.exe.config)
+* BUGFIX: Fixed some multithreading issues
+* BUGFIX: Fixed Drag cursor for lists
+* BUGFIX: Library was not saved when ComicRack was forced to exit during computer shutdown / logoff
+* BUGFIX: Wrong size of "Loading thumbnail..." thumbnail in some cases
+
+Build 0.9.25:
+
+* NEW: App.config file with UseLocalSettings switch. Setting this to true will store all settings
+       in the application\Data folder and make the application portable (USB stick etc.)
+
+* CHANGE: Server does not send error image anymore
+
+* BUGFIX: Thumbnail page curl did not uncover current page, but last page read
+* BUGFIX: Fixed "Mark As Read". Wonder if I get this command ever right (see .24, .11)
+* BUGFIX: ComicRack crashed when no eComic Folder in Preferences/Library was defined and a click into
+       the list happened.
+
+Build 0.9.24:
+
+* NEW: Added Manga Style property to comics for flipped two page display (manga reading mode)
+
+* CHANGE: Single click list checkboxes
+* CHANGE: Sorting by year now also sorts by series if year/month same
+* CHANGE: New maximum Thumbnail image size is 512 (small performance hit, but nice anyways :))
+* CHANGE: Cover Thumbnails now honor the high quality settings
+* CHANGE: Moved Hide sidebar into the main menu and changed the keyboard shortcuts
+
+* BUGFIX: Mark as read did only work with not read comics
+* BUGFIX: Removed invalid shortcut Ctrl-I from "Invert selection" command
+
+Build 0.9.23:
+
+* NEW: Added cover images to the delete dialog boxes
+* NEW: Page forward in Two Page display mode advances two pages
+
+* CHANGE: Changed the icon for ComicRack (was about time)
+* CHANGE: page curl effect uncovers the current read page in the comic
+
+* BUGFIX: color names did not include needed spaces (wherever colors are to choose)
+
+Build 0.9.22:
+
+* NEW: Global filter for image keys never to use as cover thumbnail
+* NEW: Added Read/Unread/Reading filter to quicksearch dropdown
+
+* CHANGE: Restructured the Advanced Preferences Tab to make space for new settings
+* CHANGE: Moved image caches to local non roaming profile (better for corporate environments)
+
+* BUGFIX: Fixed possible deadlock in cache/drawing
+* BUGFIX: Fixed link to website in start menu
+* BUGFIX: Fixed installer for Vista
+* BUGFIX: Fixed performance for thumbnail mode list resizes
+* BUGFIX: Fixed Alternate Series in Search Browser
+* BUGFIX: Wrong second (uncovered) page displayed in lists in rare situations
+* BUGFIX: Open previous comic from list did not work in reader
+
+Build 0.9.21:
+
+* BUGFIX: Fixed sorting on column header clicks
+* BUGFIX: Fixed hilite/selected state for non cover thumbnail items
+* BUGFIX: Fixed wrong text color for selected favorites folder items
+* BUGFIX: Fixed vista/xp shell32 incompatibility
+
+Build 0.9.20:
+
+* NEW: Added startup progress indicator to the splash screen
+* NEW: Count of group items displayed in group headers
+* NEW: Text for thumbnails is now selectable
+* NEW: Library tree remembers collapsed/expanded states
+* NEW: Page Curl effect for thumbnail/tiles
+
+* CHANGE: Tile Background less transparent
+* CHANGE: More fluent initial window display
+* CHANGE: Better guessing of non loaded thumbnail sizes (less flicker and movement)
+* CHANGE: List selection code optimizations (less redrawing, faster)
+* CHANGE: Switched list fonts to default icon fonts of os (looks better on vista)
+* CHANGE: Smaller/nicer sort arrows in column headers
+
+* BUGFIX: Default List "Recently Added" was incorrectly named "Recently AddedTime" on inital install
+* BUGFIX: Fixed slow preview in Comic Book Dialog introduced with the full page change in 0.9.18
+* BUGFIX: Fixed some cbr/rar issues on Vista (and maybe XP)
+* BUGFIX: Hack for correct drawing of browser tabs on vista
+* BUGFIX: correct IPv6 handling in Vista for server code
+* BUGFIX: Fixed handling of incorrect windows explorer objects (e.g. Nokia Phone Browser)
+* BUGFIX: Fixed vertial scrolling during column resize or header dragging
+* BUGFIX: Fixed incorrect restoring of panel sizes on startup
+* BUGFIX: Thumbnails in lists did not honor the high quality setting
+
+Build 0.9.19:
+
+* NEW: Command to hide/show the Sidebar in Library/Explorer/Favorites
+* NEW: Hot tracking effect in browsers
+
+* CHANGE: Switched Number & Alternate Number to Text (allowing now 0.5, 12a etc)
+* CHANGE: Comic Book Dialog remembers last active tab
+* CHANGE: Added Cancel button to Progress Dialog when getting big file lists in explorer
+* CHANGE: Keyboard shortcuts for switching list modes
+* CHANGE: Removed Searchbar and moved the items into a dropdown menu
+* CHANGE: Some changes in how thumbnails & tiles look (I hope for the better :))
+
+* BUGFIX: Proposed Textbox background incorrectly displayed & as _
+* BUGFIX: Preferences Dialog now correctly accepts Enter/Escape for OK/Cancel
+* BUGFIX: Month, Alternate Count, Alternate Series and Alternate Number was not editable in the details mode (long click edit)
+
+Build 0.9.18:
+
+* NEW: Scroll mode now automatically switches to next/previous page
+
+* CHANGE: Better Page Type Context Menus & Filter Drop Down in Pages Browser
+* CHANGE: Extended List Options Dialog with some new options
+* CHANGE: Better handling of quick search with big lists
+* CHANGE: Comic Book Dialog now always uses the full scale page image in the color settings
+
+Build 0.9.17:
+
+* BUGFIX: Crashing bug when clicking on a non valid folder in explorer view (e.g. My Computer)
+* BUGFIX: Killed scrolling in image preview for color adjustment preview in version 0.9.16
+* BUGFIX: Fixed multi-selection with keyboard-only in comics lists
+* BUGFIX: 0.9.15 optimizations actually broke writing info back to eComics - that's what i call optimizations...
+
+Build 0.9.16:
+
+* NEW: Global Color Adjustment Settings
+* NEW: Auto Contrast option
+* NEW: Apply Button in Preferences
+* NEW: "Next/Previous from List" commands added to Viewer Context Menu
+
+* CHANGE: Default key shortcuts for messageboxes with checkboxes (press Alt to see the shortcut)
+* CHANGE: Small close button for comic preview
+
+* BUGFIX: Show View commands always toggled browser visibility (now only if selected view already visible)
+* BUGFIX: Fixed the pixel bug on the left side of the first entry in the comic list
+* BUGFIX: Bad hash code for color adjustment values that could lead to wrong images loaded from cache
+
+Build 0.9.15:
+
+* CHANGE: Optmizations when displaying folders with eComics which are not in the Library
+* CHANGE: Update to unrar.dll 3.70 - seems this fixes some problems
+* CHANGE: ComicInfo.xml in cbr/cbz files is now only read when the eComic is opened for reading or added to the database
+* CHANGE: Folder/File list in file browser is now built on first selection and not on application start
+* CHANGE: Embedded information in eComics only updated when the information really changes
+* CHANGE: Less foreground updates during scanning
+
+* BUGFIX: Image sizes where not displayed correctly for files not in the database
+* BUGFIX: Library entry could be removed in the Library Browser
+
+Build 0.9.14:
+
+* NEW: Search Browser has now selectable columns (Genre, Year, Penciller etc)
+* NEW: Magnifier Tool
+* NEW: Default Genre list taken from Genre.txt
+
+* CHANGE: Small changes in News Reader Dialog
+* CHANGE: Faster disk cache initialization on startup
+* CHANGE: Mousewheel has same behavior as up/down keys
+* CHANGE: Column headers have now the same alignment as the column
+
+* BUGFIX: Fixed missing image size in page display for PDF files
+* BUGFIX: Fixed shortcut for full screen command
+* BUGFIX: Selection bug in Search Browser
+* BUGFIX: Search Browser was empty when initially visible
+* BUGFIX: Shutdown exception till the first time a folder in Eplorer View got selected.
+       This basically lead to not being able to store some preferences
+* BUGFIX: Network sharing had problems with multiple nics in the server
+* BUGFIX: Fixed Font bug in textboxes
+
+Build 0.9.13:
+
+* NEW: Added option to disable writing embedded meta info to eComic files.
+* NEW: News Reader for ComicRack news
+* NEW: Hitting space advances to next page
+* NEW: Alternate keyboard mode where cursor keys scroll instead of display the next/previous part
+
+* CHANGE: Meta Info from eComics is only read when adding to library or opening an edit dialog
+          This should also lead to faster startup times
+* CHANGE: Embedded Meta Info is now written delayed in the background
+		  This speeds up changing info of large batches of files
+* CHANGE: Fixed unnecessary list updates when background scan added comics
+          This greatly speeds up adding of lots of comics
+* CHANGE: Smoothed the stick scrolling
+		  
+* BUGFIX: Fixed wrong date grouping when ComicRack passed 00:00
+
+Build 0.9.12:
+
+* NEW: Added a trackball like control to the lists for easier scrolling with pens
+
+* BUGFIX: Fixed crash when adding Favorites Folder containing no files
+
+Build 0.9.11:
+
+* NEW: Added "Change" button to the library folders in preferences
+* NEW: Added "Read Percentage" to the Smart List fields
+* NEW: Min/Max state of reader is correctly saved/restored
+* NEW: Storing list setups for remote libraries
+* NEW: Added "Include Subfolders" option to File/Favorites browser
+
+* CHANGE: New Align Images
+* CHANGE: Moved docking commands into the browser caption
+* CHANGE: Speedup in resizing cover thumbnails
+
+* BUGFIX: Fixed some sizing bugs when docking and/or resizing browser
+* BUGFIX: "Mark Page Read" correctly sets the last read page
+* BUGFIX: Fixed some navigation/part bugs
+
+Build 0.9.10:
+
+* NEW: Added Month to meta data
+* NEW: Added "Full Screen" Button to the toolbar
+* NEW: Browser can now be docked left/right/bottom
+* NEW: Option to close browser when opening a new eComic
+
+* CHANGE: Switched over to unrar.dll 3.60.100.215 - maybe this fixed some cbr issues
+* CHANGE: Removed non working Library Folder from Preferences Dialog
+
+* BUGFIX: Fixed background scan crash with non existing paths
+* BUGFIX: Fixed writing of meta comic information to files
+
+Build 0.9.9:
+
+* BUGFIX: Fixed Socket error on computers not connected to a network
+* BUGFIX: Fixed Enter/Escape for Ok/Cancel in Preferences Dialog
+* BUGFIX: Fixed All/Any selection in Smart List Editor
+* BUGFIX: ComicRack was not restored from tray if a second instance was started
+
+Build 0.9.8:
+
+* NEW: Optional minimizing to system tray
+
+* CHANGE: Changed the shared image transfer to a zip based data protocol (some speedup on slow networks)
+
+* BUGFIX: Fixed scan on startup option
+* BUGFIX: Fixed multithreading scanning & update bugs
+* BUGFIX: Fixed update of small preview when shown
+* BUGFIX: Fixed shell icons retrieval in Folder View
+* BUGFIX: Fixed some multithreading and priority issues on single processor machines
+* BUGFIX: Fixed server not reacting to client broadcasts
+
+Build 0.9.7:
+
+* NEW: Match All/Any for smart lists
+* NEW: Added password to sharing
+* NEW: ComicRack can now open comics even if they have the wrong extension (cbr/cbz comes to mind)
+* NEW: Drawing horizontal bookmarks in detail mode
+* NEW: Additional view modes and information for the pages browser
+* NEW: It is now possible to tag page images based on content (Cover, Letters, Story etc.)
+
+* CHANGE: Reduced the scrolling speed of the mouse wheel
+
+* BUGFIX: Forgot to add matchers for the alternate properties
+* BUGFIX: Fixed Program/Document icons for XP
+* BUGFIX: Fixed some drawing glitches in the user interface
+
+Build 0.9.6:
+
+* NEW: Sharing of Comic Library in the local network
+* NEW: Alternate Series, Alternate Number, Alternate Count meta data for comics
+
+* CHANGE: Grouping and sorting now tries to work with more tolerance (ignoring articles, typos, spaces etc)
+* CHANGE: Finer granularity in date groupings
+* CHANGE: Some labels in the GUI
+
+* BUGFIX: Cursor also hidden in non fullscreen
+* BUGFIX: Dismissing the page context menu does not open the GUI anymore (fix of bug reintroduced in 0.9.5)
+* BUGFIX: All open windows from the file browser showed the same content
+* BUGFIX: Duplicate Title in comic info drawing (Tile Mode, Comics Dialog)
+
+Build 0.9.5:
+
+* NEW: Search Bar
+* NEW: Small eComic Preview during browsing
+* NEW: Opening of lists as separate windows
+
+* CHANGE: Medium scale rewrite of the User Interface
+* CHANGE: Dynamic zooming in all display modes
+
+* BUGFIX: Crash when selecting Transparent as the background color for the display
+
+Build 0.9.4:
+
+* NEW: Panning of pages with the mouse in zoom modes (hold & drag)
+* NEW: Publisher entry for smart lists
+* NEW: Size column and grouping for the lists
+* NEW: Added command to open next/previous item from current list
+
+* CHANGE: Page Up/Down changes to next/previous page regardless of zoom mode
+* CHANGE: Dismissing the page context menu does not open the GUI anymore
+
+* BUGFIX: Part navigation roll over on last page fixed
+* BUGFIX: Redraw bug of the main splitter
+
+Build 0.9.3:
+
+* NEW: New Memory Cache-Manager for thumbnails and images with precaching
+       (improves speed and memory usage)
+* NEW: Error Page if page image could not be loaded
+* NEW: New Animation Switch in Preferences
+       The moving little gearwheels can have a serious performance impact on broken 
+       graphics drivers. That's why this defaults to off.
+* NEW: Color Schemas for overlays
+
+* CHANGE: Update to unrar 3.60 dll - hope this fixes some ugly bugs
+* CHANGE: New format for the Disk-Cache (not compatible with pre 0.9.3)
+          You should manually delete the old cache folder 
+          'C:\Document Settings\<User>\Application Data\cYo\ComicRack\Cache'
+* CHANGE: Moved the overlays to new default locations
+
+* BUGFIX: Unregister of File-Types did not work
+* BUGFIX: Color adjustment was always calculated, even if not needed
+* BUGFIX: Comics not updated correctly in browser
+* BUGFIX: Comic Information was written to eComics even when no information has changed
+* BUGFIX: Comic Information was not correctly imported into the database
+* BUGFIX: Fixed Selection drawing bug
+
+Build 0.9.2:
+
+* NEW: Added "Move To Last Page Read" Command
+* NEW: Added true positional drag & drop in lists
+* NEW: Added Page Up/Down for browsing
+* NEW: Support for reading ComicInfo.xml in archives
+* NEW: Two menu entries for ComicRack Blog and User Forum
+
+* CHANGE: Default information file in eComics is now ComicInfo.xml (without any path)
+
+* BUGFIX: Preliminary Fix for the "Black pages" bug
+* BUGFIX: Page Part Overlay not always shown when it should have (resize, zoom mode change)
+* BUGFIX: Switched back to 1.3 sharpPdf library as the 2.x beta broke the pdf export
+* BUGFIX: Wrong names for new lists/folders in the database view
+* BUGFIX: Incomplete serialization of the xml information
+* BUGFIX: Resize of the Database-Panel if main window is too small
+
+Build 0.9.1:
+
+* NEW: "All Supported Files" and "All Files" Filter to the Open Dialog
+* NEW: Display of proposed settings in background of textboxes in the Comic Dialog
+* NEW: Copy & Paste of view setup in database view
+* NEW: White Point Correction
+* NEW: Register Shell-Extensions in Preferences
+* NEW: Save as Zip Compressed Comic (CBZ)
+* NEW: View Options Dialog to provide an alternative way to turn on/off columns
+* NEW: Icon for Comics
+
+* CHANGE: Moved Database & Settings from "Application Data\cYo\ComicRack\Version" to 
+          "Application Data\cYo\ComicRack"
+* CHANGE: Sort order in Dialog Formats
+* CHANGE: Nice About Dialog fade
+
+* BUGFIX: Wrong Count in ComicBrowser (Genre, Author, Series)
+* BUGFIX: Range Editor in Smart Lists did not work
+* BUGFIX: Could not delete Folders in Database-Treeview
+* BUGFIX: Correct disable of group/arrange buttons in Pages View
+
+Build 0.9.0:
+
+* INITIAL RELEASE

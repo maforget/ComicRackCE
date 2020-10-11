@@ -1,0 +1,95 @@
+﻿;
+; This file contains all the defaults for various lists in ComicRack
+; 
+; You can add your own entries here (but the next ComicRack setup will overwrite this file),
+; or you can add a file %ALLUSERSPROFILE%\cYo\ComicRack\DefaultLists.txt and add your
+; defaults there. You only need to add sections you are actually using.
+
+[Age Ratings]
+Adults Only 18+
+Early Childhood
+Everyone
+Everyone 10+
+Kids to Adults
+Mature 17+
+Teen
+Rating Pending
+
+[Book Formats]
+1/2
+Annual
+Black & White
+Director's Cut
+Epilogue
+Giant
+King
+Minus 1
+Sketch
+Special
+Preview
+Prologue
+Trade Paper Back
+One Shot
+Web Comic
+Hardcover
+
+[Book Genres]
+Super-Hero
+	Traditional
+	Team
+	Heroines
+	Teen Heroes
+	Vigilantes/Ant-Heroes
+	Nostalgia
+	Alternative/Postmodern
+	Parodie
+Fantasy
+	Sword and Sorcery
+	Magic and Mysticism
+	Fantastic Worlds
+	Modern Mythology
+	Anthropomorphic
+Horror/Supernatural
+Science Fiction
+Action Adventure
+Humor
+	Teen
+	Kid's Cartoons
+	Satire
+	Sick
+Manga
+Crime
+Real-Life
+Historical Fiction
+Literature
+Myths and Legends
+Nonfiction
+Educational
+
+[Book Ages]
+Platinum (1897-1937)
+Golden (1938-55)
+Silver (1956-69)
+Bronze (1970-79)
+Modern (1980-Now)
+
+[Book Conditions]
+Mint (MT)
+Near Mint/Mint (NM/M)
+Near Mint (NM)
+Very Fine/Near Mint (VF/NM)
+Very Fine (VF)
+Fine/Very Fine (FN/VF)
+Fine (FN)
+Very Good/Fine (VG/FN)
+Good/Very Good (GD/VG)
+Good (GD)
+Fair/Good (FR/GD)
+Fair (FR)
+Poor (PR)
+
+[Book Collection Status]
+In Collection
+Wanted
+For Sale
+On Order

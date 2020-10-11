@@ -1,0 +1,645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{973066BF-3DC7-49DF-A704-951A86DBCB8F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>cYo.Projects.ComicRack.Engine</RootNamespace>
+    <AssemblyName>ComicRack.Engine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="sharpPDF, Version=1.0.3755.1862, Culture=neutral, PublicKeyToken=ff55e618a43684c3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\sharpPDF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BookChangedEventArgs.cs" />
+    <Compile Include="BookEventArgs.cs" />
+    <Compile Include="BookPageEventArgs.cs" />
+    <Compile Include="BookPageRetrievalCompletedEventArgs.cs" />
+    <Compile Include="CacheManager.cs" />
+    <Compile Include="ComicBook.cs" />
+    <Compile Include="ComicBookAddedComparer.cs" />
+    <Compile Include="ComicBookAddedMatcher.cs" />
+    <Compile Include="ComicBookAgeRatingComparer.cs" />
+    <Compile Include="ComicBookAgeRatingMatcher.cs" />
+    <Compile Include="ComicBookAllPropertiesMatcher.cs" />
+    <Compile Include="ComicBookAlternateCountComparer.cs" />
+    <Compile Include="ComicBookAlternateCountMatcher.cs" />
+    <Compile Include="ComicBookAlternateNumberComparer.cs" />
+    <Compile Include="ComicBookAlternateNumberMatcher.cs" />
+    <Compile Include="ComicBookAlternateSeriesComparer.cs" />
+    <Compile Include="ComicBookAlternateSeriesMatcher.cs" />
+    <Compile Include="ComicBookBlackAndWhiteComparer.cs" />
+    <Compile Include="ComicBookBlackAndWhiteMatcher.cs" />
+    <Compile Include="ComicBookBookAgeComparer.cs" />
+    <Compile Include="ComicBookBookAgeMatcher.cs" />
+    <Compile Include="ComicBookBookCollectionStatusComparer.cs" />
+    <Compile Include="ComicBookBookCollectionStatusMatcher.cs" />
+    <Compile Include="ComicBookBookConditionComparer.cs" />
+    <Compile Include="ComicBookBookConditionMatcher.cs" />
+    <Compile Include="ComicBookBookLocationComparer.cs" />
+    <Compile Include="ComicBookBookLocationMatcher.cs" />
+    <Compile Include="ComicBookBookmarkCountComparer.cs" />
+    <Compile Include="ComicBookBookmarkCountMatcher.cs" />
+    <Compile Include="ComicBookBookNotesMatcher.cs" />
+    <Compile Include="ComicBookBookOwnerComparer.cs" />
+    <Compile Include="ComicBookBookOwnerMatcher.cs" />
+    <Compile Include="ComicBookBookPriceComparer.cs" />
+    <Compile Include="ComicBookBookPriceMatcher.cs" />
+    <Compile Include="ComicBookBookStoreComparer.cs" />
+    <Compile Include="ComicBookBookStoreMatcher.cs" />
+    <Compile Include="ComicBookCharactersComparer.cs" />
+    <Compile Include="ComicBookCharactersMatcher.cs" />
+    <Compile Include="ComicBookCheckedComparer.cs" />
+    <Compile Include="ComicBookCheckedMatcher.cs" />
+    <Compile Include="ComicBookCollection.cs" />
+    <Compile Include="ComicBookColoristComparer.cs" />
+    <Compile Include="ComicBookColoristMatcher.cs" />
+    <Compile Include="ComicBookCommunityRatingComparer.cs" />
+    <Compile Include="ComicBookCommunityRatingMatcher.cs" />
+    <Compile Include="ComicBookContainer.cs" />
+    <Compile Include="ComicBookContainerUndo.cs" />
+    <Compile Include="ComicBookCountComparer.cs" />
+    <Compile Include="ComicBookCountMatcher.cs" />
+    <Compile Include="ComicBookCoverArtistComparer.cs" />
+    <Compile Include="ComicBookCoverArtistMatcher.cs" />
+    <Compile Include="ComicBookCreationComparer.cs" />
+    <Compile Include="ComicBookCreationMatcher.cs" />
+    <Compile Include="ComicBookCustomValuesMatcher.cs" />
+    <Compile Include="ComicBookDateMatcher.cs" />
+    <Compile Include="ComicBookDayComparer.cs" />
+    <Compile Include="ComicBookDayMatcher.cs" />
+    <Compile Include="ComicBookDirectoryComparer.cs" />
+    <Compile Include="ComicBookDirectoryMatcher.cs" />
+    <Compile Include="ComicBookDublicateComparer.cs" />
+    <Compile Include="ComicBookDuplicateMatcher.cs" />
+    <Compile Include="ComicBookEditorComparer.cs" />
+    <Compile Include="ComicBookEditorMatcher.cs" />
+    <Compile Include="ComicBookFactory.cs" />
+    <Compile Include="ComicBookFileComparer.cs" />
+    <Compile Include="ComicBookFileFormatComparer.cs" />
+    <Compile Include="ComicBookFileFormatMatcher.cs" />
+    <Compile Include="ComicBookFileMatcher.cs" />
+    <Compile Include="ComicBookFileNameComparer.cs" />
+    <Compile Include="ComicBookFileRenameEventArgs.cs" />
+    <Compile Include="ComicBookFileSizeMatcher.cs" />
+    <Compile Include="ComicBookFilterType.cs" />
+    <Compile Include="ComicBookFormatComparer.cs" />
+    <Compile Include="ComicBookFormatMatcher.cs" />
+    <Compile Include="ComicBookFullPathMatcher.cs" />
+    <Compile Include="ComicBookGenreComparer.cs" />
+    <Compile Include="ComicBookGenreMatcher.cs" />
+    <Compile Include="ComicBookGroupAdded.cs" />
+    <Compile Include="ComicBookGroupAgeRating.cs" />
+    <Compile Include="ComicBookGroupAlternateCount.cs" />
+    <Compile Include="ComicBookGroupAlternateNumber.cs" />
+    <Compile Include="ComicBookGroupAlternateSeries.cs" />
+    <Compile Include="ComicBookGroupBlackAndWhite.cs" />
+    <Compile Include="ComicBookGroupBookAge.cs" />
+    <Compile Include="ComicBookGroupBookCollectionStatus.cs" />
+    <Compile Include="ComicBookGroupBookCondition.cs" />
+    <Compile Include="ComicBookGroupBookLocation.cs" />
+    <Compile Include="ComicBookGroupBookOwner.cs" />
+    <Compile Include="ComicBookGroupBookPrice.cs" />
+    <Compile Include="ComicBookGroupBookStore.cs" />
+    <Compile Include="ComicBookGroupCharacters.cs" />
+    <Compile Include="ComicBookGroupChecked.cs" />
+    <Compile Include="ComicBookGroupColorist.cs" />
+    <Compile Include="ComicBookGroupCommunityRating.cs" />
+    <Compile Include="ComicBookGroupCount.cs" />
+    <Compile Include="ComicBookGroupCoverArtist.cs" />
+    <Compile Include="ComicBookGroupCreation.cs" />
+    <Compile Include="ComicBookGroupDay.cs" />
+    <Compile Include="ComicBookGroupDirectory.cs" />
+    <Compile Include="ComicBookGroupEditor.cs" />
+    <Compile Include="ComicBookGroupEnableProposed.cs" />
+    <Compile Include="ComicBookGroupFileFormat.cs" />
+    <Compile Include="ComicBookGroupFileName.cs" />
+    <Compile Include="ComicBookGroupFormat.cs" />
+    <Compile Include="ComicBookGroupGenre.cs" />
+    <Compile Include="ComicBookGroupHasBeenRead.cs" />
+    <Compile Include="ComicBookGroupImprint.cs" />
+    <Compile Include="ComicBookGroupInker.cs" />
+    <Compile Include="ComicBookGroupLanguage.cs" />
+    <Compile Include="ComicBookGroupLetterer.cs" />
+    <Compile Include="ComicBookGroupLinked.cs" />
+    <Compile Include="ComicBookGroupLocations.cs" />
+    <Compile Include="ComicBookGroupMainCharacterOrTeam.cs" />
+    <Compile Include="ComicBookGroupManga.cs" />
+    <Compile Include="ComicBookGroupMatcher.cs" />
+    <Compile Include="ComicBookGroupModified.cs" />
+    <Compile Include="ComicBookGroupMonth.cs" />
+    <Compile Include="ComicBookGroupNumber.cs" />
+    <Compile Include="ComicBookGroupOpenCount.cs" />
+    <Compile Include="ComicBookGroupOpened.cs" />
+    <Compile Include="ComicBookGroupPages.cs" />
+    <Compile Include="ComicBookGroupPenciller.cs" />
+    <Compile Include="ComicBookGroupPublished.cs" />
+    <Compile Include="ComicBookGroupPublisher.cs" />
+    <Compile Include="ComicBookGroupRating.cs" />
+    <Compile Include="ComicBookGroupRatingBase.cs" />
+    <Compile Include="ComicBookGroupReadPercentage.cs" />
+    <Compile Include="ComicBookGroupReleased.cs" />
+    <Compile Include="ComicBookGroupScanInformation.cs" />
+    <Compile Include="ComicBookGroupSeries.cs" />
+    <Compile Include="ComicBookGroupSeriesComplete.cs" />
+    <Compile Include="ComicBookGroupSeriesGroup.cs" />
+    <Compile Include="ComicBookGroupSize.cs" />
+    <Compile Include="ComicBookGroupStoryArc.cs" />
+    <Compile Include="ComicBookGroupTeams.cs" />
+    <Compile Include="ComicBookGroupTitle.cs" />
+    <Compile Include="ComicBookGroupVolume.cs" />
+    <Compile Include="ComicBookGroupWeb.cs" />
+    <Compile Include="ComicBookGroupWeek.cs" />
+    <Compile Include="ComicBookGroupWriter.cs" />
+    <Compile Include="ComicBookGroupYear.cs" />
+    <Compile Include="ComicBookHasBeenReadComparer.cs" />
+    <Compile Include="ComicBookHasCustomValuesMatcher.cs" />
+    <Compile Include="ComicBookImprintComparer.cs" />
+    <Compile Include="ComicBookImprintMatcher.cs" />
+    <Compile Include="ComicBookInkerComparer.cs" />
+    <Compile Include="ComicBookInkerMatcher.cs" />
+    <Compile Include="ComicBookISBNComparer.cs" />
+    <Compile Include="ComicBookISBNMatcher.cs" />
+    <Compile Include="ComicBookIsLinkedMatcher.cs" />
+    <Compile Include="ComicBookLanguageComparer.cs" />
+    <Compile Include="ComicBookLanguageMatcher.cs" />
+    <Compile Include="ComicBookLettererComparer.cs" />
+    <Compile Include="ComicBookLettererMatcher.cs" />
+    <Compile Include="ComicBookLinkedComparer.cs" />
+    <Compile Include="ComicBookLocationsComparer.cs" />
+    <Compile Include="ComicBookLocationsMatcher.cs" />
+    <Compile Include="ComicBookMainCharacterOrTeamComparer.cs" />
+    <Compile Include="ComicBookMainCharacterOrTeamMatcher.cs" />
+    <Compile Include="ComicBookMangaComparer.cs" />
+    <Compile Include="ComicBookMangaMatcher.cs" />
+    <Compile Include="ComicBookMatcher.cs" />
+    <Compile Include="ComicBookMatcherCollection.cs" />
+    <Compile Include="ComicBookMatcherHintAttribute.cs" />
+    <Compile Include="ComicBookModifiedComparer.cs" />
+    <Compile Include="ComicBookModifiedInfoMatcher.cs" />
+    <Compile Include="ComicBookModifiedMatcher.cs" />
+    <Compile Include="ComicBookMonthComparer.cs" />
+    <Compile Include="ComicBookMonthMatcher.cs" />
+    <Compile Include="ComicBookNavigator.cs" />
+    <Compile Include="ComicBookNewPagesComparer.cs" />
+    <Compile Include="ComicBookNewPagesMatcher.cs" />
+    <Compile Include="ComicBookNotesMatcher.cs" />
+    <Compile Include="ComicBookNumberComparer.cs" />
+    <Compile Include="ComicBookNumberMatcher.cs" />
+    <Compile Include="ComicBookNumericMatcher.cs" />
+    <Compile Include="ComicBookOpenCountComparer.cs" />
+    <Compile Include="ComicBookOpenedComparer.cs" />
+    <Compile Include="ComicBookOpenedMatcher.cs" />
+    <Compile Include="ComicBookPageCountComparer.cs" />
+    <Compile Include="ComicBookPageCountMatcher.cs" />
+    <Compile Include="ComicBookPencillerComparer.cs" />
+    <Compile Include="ComicBookPencillerMatcher.cs" />
+    <Compile Include="ComicBookPublishedComparer.cs" />
+    <Compile Include="ComicBookPublishedMatcher.cs" />
+    <Compile Include="ComicBookPublisherComparer.cs" />
+    <Compile Include="ComicBookPublisherMatcher.cs" />
+    <Compile Include="ComicBookRatingComparer.cs" />
+    <Compile Include="ComicBookRatingMatcher.cs" />
+    <Compile Include="ComicBookReadPercentageComparer.cs" />
+    <Compile Include="ComicBookReadPercentageMatcher.cs" />
+    <Compile Include="ComicBookReleasedComparer.cs" />
+    <Compile Include="ComicBookReleasedMatcher.cs" />
+    <Compile Include="ComicBookReviewComparer.cs" />
+    <Compile Include="ComicBookReviewMatcher.cs" />
+    <Compile Include="ComicBookScanInformationComparer.cs" />
+    <Compile Include="ComicBookScanInformationMatcher.cs" />
+    <Compile Include="ComicBookSeriesComparer.cs" />
+    <Compile Include="ComicBookSeriesCompleteComparer.cs" />
+    <Compile Include="ComicBookSeriesCompleteMatcher.cs" />
+    <Compile Include="ComicBookSeriesEnableProposedComparer.cs" />
+    <Compile Include="ComicBookSeriesGroupComparer.cs" />
+    <Compile Include="ComicBookSeriesGroupMatcher.cs" />
+    <Compile Include="ComicBookSeriesMatcher.cs" />
+    <Compile Include="ComicBookSeriesStatistics.cs" />
+    <Compile Include="ComicBookSeriesStatsAverageCommunityRatingComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsAverageRatingComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsCountComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsGapCountComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsLastAddedTimeComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsLastOpenedTimeComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsLastReleasedTimeComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsMaxNumberComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsMaxYearComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsMinNumberComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsMinYearComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsPageCountComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsPageReadCountComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsReadPercentageComparer.cs" />
+    <Compile Include="ComicBookSeriesStatsRunningTimeYearsComparer.cs" />
+    <Compile Include="ComicBookSizeComparer.cs" />
+    <Compile Include="ComicBookStatsGroupAverageCommunityRating.cs" />
+    <Compile Include="ComicBookStatsGroupAverageRating.cs" />
+    <Compile Include="ComicBookStatsGroupCount.cs" />
+    <Compile Include="ComicBookStatsGroupGapCount.cs" />
+    <Compile Include="ComicBookStatsGroupLastAddedTime.cs" />
+    <Compile Include="ComicBookStatsGroupLastOpenedTime.cs" />
+    <Compile Include="ComicBookStatsGroupLastReleasedTime.cs" />
+    <Compile Include="ComicBookStatsGroupMaxYear.cs" />
+    <Compile Include="ComicBookStatsGroupMinYear.cs" />
+    <Compile Include="ComicBookStatsGroupPageCount.cs" />
+    <Compile Include="ComicBookStatsGroupPageReadCount.cs" />
+    <Compile Include="ComicBookStatsGroupReadPercentage.cs" />
+    <Compile Include="ComicBookStatsGroupRunningTimeYears.cs" />
+    <Compile Include="ComicBookStatusComparer.cs" />
+    <Compile Include="ComicBookStoryArcComparer.cs" />
+    <Compile Include="ComicBookStoryArcMatcher.cs" />
+    <Compile Include="ComicBookStringGrouper.cs" />
+    <Compile Include="ComicBookStringMatcher.cs" />
+    <Compile Include="ComicBookSummaryMatcher.cs" />
+    <Compile Include="ComicBookTagsComparer.cs" />
+    <Compile Include="ComicBookTagsMatcher.cs" />
+    <Compile Include="ComicBookTeamsComparer.cs" />
+    <Compile Include="ComicBookTeamsMatcher.cs" />
+    <Compile Include="ComicBookTitleComparer.cs" />
+    <Compile Include="ComicBookTitleMatcher.cs" />
+    <Compile Include="ComicBookValueMatcher.cs" />
+    <Compile Include="ComicBookVolumeComparer.cs" />
+    <Compile Include="ComicBookVolumeMatcher.cs" />
+    <Compile Include="ComicBookWebComparer.cs" />
+    <Compile Include="ComicBookWeekComparer.cs" />
+    <Compile Include="ComicBookWeekMatcher.cs" />
+    <Compile Include="ComicBookWriterComparer.cs" />
+    <Compile Include="ComicBookWriterMatcher.cs" />
+    <Compile Include="ComicBookYearComparer.cs" />
+    <Compile Include="ComicBookYearMatcher.cs" />
+    <Compile Include="ComicBookYesNoMatcher.cs" />
+    <Compile Include="ComicDateFormat.cs" />
+    <Compile Include="ComicInfo.cs" />
+    <Compile Include="ComicNameInfo.cs" />
+    <Compile Include="ComicPageBookmarkComparer.cs" />
+    <Compile Include="ComicPageInfo.cs" />
+    <Compile Include="ComicPageInfoCollection.cs" />
+    <Compile Include="ComicPageInfoConverter.cs" />
+    <Compile Include="ComicPageInfoGroupImageSize.cs" />
+    <Compile Include="ComicPageInfoImageHeightComparer.cs" />
+    <Compile Include="ComicPageInfoImageSizeComparer.cs" />
+    <Compile Include="ComicPageInfoImageWidthComparer.cs" />
+    <Compile Include="ComicPageInfoTypeComparer.cs" />
+    <Compile Include="ComicPagePosition.cs" />
+    <Compile Include="ComicPagePositionComparer.cs" />
+    <Compile Include="ComicPageRotationComparer.cs" />
+    <Compile Include="ComicPageType.cs" />
+    <Compile Include="ComicScanner.cs" />
+    <Compile Include="ComicScanNotifyEventArgs.cs" />
+    <Compile Include="ComicScanOptions.cs" />
+    <Compile Include="ComicsEditModeExtension.cs" />
+    <Compile Include="ComicsEditModes.cs" />
+    <Compile Include="ComicValueType.cs" />
+    <Compile Include="CompareSeriesOptions.cs" />
+    <Compile Include="ContainerBookChangedEventArgs.cs" />
+    <Compile Include="Controls\ComicPageContainerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ComicPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ListStyles.cs" />
+    <Compile Include="Controls\MagnifySetupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MenuRenderer.cs" />
+    <Compile Include="Controls\RatingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchBrowserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ThumbnailControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CreateBookOption.cs" />
+    <Compile Include="CreateComicProviderEventArgs.cs" />
+    <Compile Include="DatabaseManager.cs" />
+    <Compile Include="Database\ComicDatabase.cs" />
+    <Compile Include="Database\ComicFolderCombineMode.cs" />
+    <Compile Include="Database\ComicIdListItem.cs" />
+    <Compile Include="Database\ComicLibrary.cs" />
+    <Compile Include="Database\ComicLibraryListItem.cs" />
+    <Compile Include="Database\ComicListChangedEventHandler.cs" />
+    <Compile Include="Database\ComicListItem.cs" />
+    <Compile Include="Database\ComicListItemChange.cs" />
+    <Compile Include="Database\ComicListItemChangedEventArgs.cs" />
+    <Compile Include="Database\ComicListItemCollection.cs" />
+    <Compile Include="Database\ComicListItemExtension.cs" />
+    <Compile Include="Database\ComicListItemFolder.cs" />
+    <Compile Include="Database\ComicReadingList.cs" />
+    <Compile Include="Database\ComicReadingListContainer.cs" />
+    <Compile Include="Database\ComicReadingListItem.cs" />
+    <Compile Include="Database\ComicSmartListItem.cs" />
+    <Compile Include="Database\ComicSmartListLimitSelectionType.cs" />
+    <Compile Include="Database\ComicSmartListLimitType.cs" />
+    <Compile Include="Database\DisplayListConfig.cs" />
+    <Compile Include="Database\IBlackList.cs" />
+    <Compile Include="Database\ICachedComicBookList.cs" />
+    <Compile Include="Database\IDisplayListConfig.cs" />
+    <Compile Include="Database\QueryCacheMode.cs" />
+    <Compile Include="Database\ShareableComicListItem.cs" />
+    <Compile Include="Database\SmartListSeriesAllCompleteMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesAverageCommunityRatingMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesAverageRatingMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesCountMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesEndOfGapMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesFirstNumberMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesGapsMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesLastAddedTimeMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesLastNumberMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesLastOpenedTimeMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesLastPublishedTimeMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesLastReleasedTimeMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesMaxCountMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesMaxGapSizeMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesMaxYearMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesMinCountMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesMinYearMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesPageCountMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesPagesReadMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesPercentReadMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesRunningTimeYearsMatcher.cs" />
+    <Compile Include="Database\SmartListSeriesStartOfGapMatcher.cs" />
+    <Compile Include="Database\StacksConfig.cs" />
+    <Compile Include="Database\Storage\ComicStorage.cs" />
+    <Compile Include="Database\Storage\ComicStorageBaseSql.cs" />
+    <Compile Include="Database\Storage\ComicStorageMsSql.cs" />
+    <Compile Include="Database\Storage\ComicStorageMySql.cs" />
+    <Compile Include="Database\Storage\IComicStorage.cs" />
+    <Compile Include="Database\ThumbnailConfig.cs" />
+    <Compile Include="Database\TileConfig.cs" />
+    <Compile Include="Database\WatchFolder.cs" />
+    <Compile Include="Database\WatchFolderCollection.cs" />
+    <Compile Include="Display\BrowseEventArgs.cs" />
+    <Compile Include="Display\ComicDisplay.cs" />
+    <Compile Include="Display\ComicDisplayExtensions.cs" />
+    <Compile Include="Display\GestureEventArgs.cs" />
+    <Compile Include="Display\GestureType.cs" />
+    <Compile Include="Display\IComicDisplay.cs" />
+    <Compile Include="Display\IComicDisplayConfig.cs" />
+    <Compile Include="Display\ImageBackgroundMode.cs" />
+    <Compile Include="Display\ImageDisplayOptions.cs" />
+    <Compile Include="Display\ImageFitMode.cs" />
+    <Compile Include="Display\InfoOverlays.cs" />
+    <Compile Include="Display\MagnifierStyle.cs" />
+    <Compile Include="Display\PageLayoutMode.cs" />
+    <Compile Include="Display\PageTransitionEffect.cs" />
+    <Compile Include="Display\PartPageToDisplay.cs" />
+    <Compile Include="Display\RightToLeftReadingMode.cs" />
+    <Compile Include="Drawing\ComicBox3D.cs" />
+    <Compile Include="Drawing\ComicBox3DOptions.cs" />
+    <Compile Include="Drawing\ComicTextBuilder.cs" />
+    <Compile Include="Drawing\ComicTextElements.cs" />
+    <Compile Include="Drawing\PageRendering.cs" />
+    <Compile Include="Drawing\RatingRenderer.cs" />
+    <Compile Include="Drawing\ThumbIconRenderer.cs" />
+    <Compile Include="Drawing\ThumbnailDrawingOptions.cs" />
+    <Compile Include="Drawing\ThumbnailRatingMode.cs" />
+    <Compile Include="Drawing\ThumbRenderer.cs" />
+    <Compile Include="Drawing\ThumbTileRenderer.cs" />
+    <Compile Include="Drawing\ViewItemRenderer.cs" />
+    <Compile Include="EngineConfiguration.cs" />
+    <Compile Include="ICacheSettings.cs" />
+    <Compile Include="IComicBookGroupMatcher.cs" />
+    <Compile Include="IComicBookList.cs" />
+    <Compile Include="IComicBookListProvider.cs" />
+    <Compile Include="IComicBookMatcher.cs" />
+    <Compile Include="IComicBookStatsProvider.cs" />
+    <Compile Include="IComicBookValueMatcher.cs" />
+    <Compile Include="IComicLibraryItem.cs" />
+    <Compile Include="IComicUpdateSettings.cs" />
+    <Compile Include="IEditableComicBookListProvider.cs" />
+    <Compile Include="IEditBookmark.cs" />
+    <Compile Include="IEditPage.cs" />
+    <Compile Include="IEditRating.cs" />
+    <Compile Include="IFilteredComicBookList.cs" />
+    <Compile Include="IGetBookList.cs" />
+    <Compile Include="ImagePartInfo.cs" />
+    <Compile Include="IO\Cache\FileCache.cs" />
+    <Compile Include="IO\Cache\ICustomThumbnail.cs" />
+    <Compile Include="IO\Cache\ImageDiskCache.cs" />
+    <Compile Include="IO\Cache\ImageManager.cs" />
+    <Compile Include="IO\Cache\ImageManagerBase.cs" />
+    <Compile Include="IO\Cache\ImagePool.cs" />
+    <Compile Include="IO\Cache\IPagePool.cs" />
+    <Compile Include="IO\Cache\IThumbnailPool.cs" />
+    <Compile Include="IO\Cache\ResourceThumbnailEventArgs.cs" />
+    <Compile Include="IO\Cache\ThumbnailDiskCache.cs" />
+    <Compile Include="IO\Cache\ThumbnailManager.cs" />
+    <Compile Include="IO\ComicBookImageProvider.cs" />
+    <Compile Include="IO\ComicExporter.cs" />
+    <Compile Include="IO\DoublePageHandling.cs" />
+    <Compile Include="IO\ExportCompression.cs" />
+    <Compile Include="IO\ExportImageProcessingSource.cs" />
+    <Compile Include="IO\ExportNaming.cs" />
+    <Compile Include="IO\ExportSetting.cs" />
+    <Compile Include="IO\ExportSettingCollection.cs" />
+    <Compile Include="IO\ExportTarget.cs" />
+    <Compile Include="IO\IImageKeyProvider.cs" />
+    <Compile Include="IO\ImageKey.cs" />
+    <Compile Include="IO\MemoryOptimizedImage.cs" />
+    <Compile Include="IO\Network\BroadcastData.cs" />
+    <Compile Include="IO\Network\BroadcastType.cs" />
+    <Compile Include="IO\Network\ComicLibraryClient.cs" />
+    <Compile Include="IO\Network\ComicLibraryServer.cs" />
+    <Compile Include="IO\Network\ComicLibraryServerConfig.cs" />
+    <Compile Include="IO\Network\GetListCompletedEventArgs.cs" />
+    <Compile Include="IO\Network\GetListCompletedEventHandler.cs" />
+    <Compile Include="IO\Network\IRemoteComicLibrary.cs" />
+    <Compile Include="IO\Network\IRemoteServerInfo.cs" />
+    <Compile Include="IO\Network\LeanComicRackServer.cs" />
+    <Compile Include="IO\Network\LibraryShareMode.cs" />
+    <Compile Include="IO\Network\RefreshCompletedEventArgs.cs" />
+    <Compile Include="IO\Network\RefreshCompletedEventHandler.cs" />
+    <Compile Include="IO\Network\RegisterCompletedEventArgs.cs" />
+    <Compile Include="IO\Network\RegisterCompletedEventHandler.cs" />
+    <Compile Include="IO\Network\RemoteComicBookProvider.cs" />
+    <Compile Include="IO\Network\ServerInfo.cs" />
+    <Compile Include="IO\Network\ServerOptions.cs" />
+    <Compile Include="IO\Network\ServerRegistration.cs" />
+    <Compile Include="IO\Network\ServerStatistics.cs" />
+    <Compile Include="IO\Network\ShareInformation.cs" />
+    <Compile Include="IO\Network\UnregisterCompletedEventArgs.cs" />
+    <Compile Include="IO\Network\UnregisterCompletedEventHandler.cs" />
+    <Compile Include="IO\PageImage.cs" />
+    <Compile Include="IO\PageKey.cs" />
+    <Compile Include="IO\Provider\CbtComicProvider.cs" />
+    <Compile Include="IO\Provider\DjVuImage.cs" />
+    <Compile Include="IO\Provider\FileFormat.cs" />
+    <Compile Include="IO\Provider\FileFormatAttribute.cs" />
+    <Compile Include="IO\Provider\FileFormatExtensions.cs" />
+    <Compile Include="IO\Provider\FileProviderBase.cs" />
+    <Compile Include="IO\Provider\IDynamicImages.cs" />
+    <Compile Include="IO\Provider\IImageProvider.cs" />
+    <Compile Include="IO\Provider\IInfoStorage.cs" />
+    <Compile Include="IO\Provider\ImageIndexReadyEventArgs.cs" />
+    <Compile Include="IO\Provider\ImageProvider.cs" />
+    <Compile Include="IO\Provider\ImageProviderCapabilities.cs" />
+    <Compile Include="IO\Provider\ImageProviderFactory.cs" />
+    <Compile Include="IO\Provider\ImageProviderStatus.cs" />
+    <Compile Include="IO\Provider\ImageRetrievedEventArgs.cs" />
+    <Compile Include="IO\Provider\IndexRetrievalCompletedEventArgs.cs" />
+    <Compile Include="IO\Provider\InfoLoadingMethod.cs" />
+    <Compile Include="IO\Provider\IStorageProvider.cs" />
+    <Compile Include="IO\Provider\IValidateProvider.cs" />
+    <Compile Include="IO\Provider\KnownFileFormats.cs" />
+    <Compile Include="IO\Provider\NtfsInfoStorage.cs" />
+    <Compile Include="IO\Provider\ProviderFactory.cs" />
+    <Compile Include="IO\Provider\ProviderImageInfo.cs" />
+    <Compile Include="IO\Provider\ProviderInfo.cs" />
+    <Compile Include="IO\Provider\Providers.cs" />
+    <Compile Include="IO\Provider\Readers\Archive\ArchiveComicProvider.cs" />
+    <Compile Include="IO\Provider\Readers\Archive\FileBasedAccessor.cs" />
+    <Compile Include="IO\Provider\Readers\Archive\SevenZipEngine.cs" />
+    <Compile Include="IO\Provider\Readers\Archive\SharpCompressEngine.cs" />
+    <Compile Include="IO\Provider\Readers\Archive\TarSharpZipEngine.cs" />
+    <Compile Include="IO\Provider\Readers\Archive\ZipSharpZipEngine.cs" />
+    <Compile Include="IO\Provider\Readers\Cb7ComicProvider.cs" />
+    <Compile Include="IO\Provider\Readers\Cb7StorageProvider.cs" />
+    <Compile Include="IO\Provider\Readers\CbrComicProvider.cs" />
+    <Compile Include="IO\Provider\Readers\CbzComicProvider.cs" />
+    <Compile Include="IO\Provider\Readers\CombinedComics.cs" />
+    <Compile Include="IO\Provider\Readers\ComicProvider.cs" />
+    <Compile Include="IO\Provider\Readers\DjvuComicProvider.cs" />
+    <Compile Include="IO\Provider\Readers\IComicAccessor.cs" />
+    <Compile Include="IO\Provider\Readers\PdfComicProvider.cs" />
+    <Compile Include="IO\Provider\Readers\Pdf\PdfGhostScript.cs" />
+    <Compile Include="IO\Provider\Readers\Pdf\PdfNative.cs" />
+    <Compile Include="IO\Provider\Readers\WebComicProvider.cs" />
+    <Compile Include="IO\Provider\StorageProgressEventArgs.cs" />
+    <Compile Include="IO\Provider\StorageProvider.cs" />
+    <Compile Include="IO\Provider\WebpImage.cs" />
+    <Compile Include="IO\Provider\Writers\CbtStorageProvider.cs" />
+    <Compile Include="IO\Provider\Writers\CbzStorageProvider.cs" />
+    <Compile Include="IO\Provider\Writers\DjVuStorageProvider.cs" />
+    <Compile Include="IO\Provider\Writers\FolderStorageProvider.cs" />
+    <Compile Include="IO\Provider\Writers\PackedStorageProvider.cs" />
+    <Compile Include="IO\Provider\Writers\PdfStorageProvider.cs" />
+    <Compile Include="IO\Provider\Writers\XmlInfoStorageProvider.cs" />
+    <Compile Include="IO\StoragePageResize.cs" />
+    <Compile Include="IO\StoragePageType.cs" />
+    <Compile Include="IO\StorageSetting.cs" />
+    <Compile Include="IO\ThumbnailImage.cs" />
+    <Compile Include="IO\ThumbnailKey.cs" />
+    <Compile Include="IO\WebComic.cs" />
+    <Compile Include="IRefreshDisplay.cs" />
+    <Compile Include="ISettingsChanged.cs" />
+    <Compile Include="ISharesSettings.cs" />
+    <Compile Include="ItemGroupCount.cs" />
+    <Compile Include="MangaYesNo.cs" />
+    <Compile Include="NetworkManager.cs" />
+    <Compile Include="PackageManager.cs" />
+    <Compile Include="PackedLocalize.cs" />
+    <Compile Include="PageSeekOrigin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QueueManager.cs" />
+    <Compile Include="RefreshInfoOptions.cs" />
+    <Compile Include="ScanItem.cs" />
+    <Compile Include="ScanItemFileOrFolder.cs" />
+    <Compile Include="SearchableAttribute.cs" />
+    <Compile Include="SingleComicGrouper.cs" />
+    <Compile Include="SingleGrouper.cs" />
+    <Compile Include="Sync\DeviceCapabilites.cs" />
+    <Compile Include="Sync\DeviceInfo.cs" />
+    <Compile Include="Sync\DeviceSyncError.cs" />
+    <Compile Include="Sync\DeviceSyncFactory.cs" />
+    <Compile Include="Sync\DeviceSyncSettings.cs" />
+    <Compile Include="Sync\DiskDriveSyncProvider.cs" />
+    <Compile Include="Sync\ExtraSyncInformation.cs" />
+    <Compile Include="Sync\ISyncProvider.cs" />
+    <Compile Include="Sync\PortableDeviceSyncProvider.cs" />
+    <Compile Include="Sync\StorageSync.cs" />
+    <Compile Include="Sync\SyncAppEdition.cs" />
+    <Compile Include="Sync\SyncProviderBase.cs" />
+    <Compile Include="Sync\WirelessSyncProvider.cs" />
+    <Compile Include="SystemPaths.cs" />
+    <Compile Include="ValuesStore.cs" />
+    <Compile Include="YesNo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cYo.Common.Presentation\cYo.Common.Presentation.csproj">
+      <Project>{7da0f747-d112-4793-b4c1-f2e2f2c99cba}</Project>
+      <Name>cYo.Common.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cYo.Common.Windows\cYo.Common.Windows.csproj">
+      <Project>{a775e7f2-2d32-4f25-bf9b-f1c9ee5f5af2}</Project>
+      <Name>cYo.Common.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cYo.Common\cYo.Common.csproj">
+      <Project>{198a3787-dde7-43f0-86e7-d915414f0ff4}</Project>
+      <Name>cYo.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SharpCompress">
+      <Version>0.8.2</Version>
+    </PackageReference>
+    <PackageReference Include="SharpZipLib">
+      <Version>0.86.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <!-- <ItemGroup> -->
+  <!-- <EmbeddedResource Include="Controls\ComicPageContainerControl.resources" /> -->
+  <!-- <EmbeddedResource Include="Controls\MagnifySetupControl.resources" /> -->
+  <!-- <EmbeddedResource Include="Controls\SearchBrowserControl.resources" /> -->
+  <!-- <EmbeddedResource Include="Properties\Resources.resources" /> -->
+  <!-- </ItemGroup> -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

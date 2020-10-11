@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+
+ComicRack searches for scripts in the Script subfolder.
+There can be an arbitrary count of xml and script files.
+
+-->
+
+<ArrayOfCommand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!--
+  
+  Each command is defined like the following block.
+  
+  Hook ...            Place where the script will be put in ComicRack 
+  Key ...             Key used to identify this script
+  Name ...            Name of the menu entry
+  Method ...          Name of the python method to call
+  ScriptFile ...      the actual file containing the script
+
+  Hook can be a list of the following values
+  
+  Library ...         Script is put on library level
+  Books ...           Places where books can be selected (popup menu)
+  Editor ...          Places where books can be editors (Book Dialog)
+  ParseComicPath ...  Parses comic paths for proposed values
+  BookOpened...       Called when a book is opened
+  CreateBookList...   Defines a custom smart list
+  ConfigScript...     A configuration script for another script (key should be the same as the script to config)
+  ComicInfoUI...      A panel info script
+  ComicInfoHtml...    A panel info script (HTML)
+
+  ComicRack Build 0.9.91 and up:
+  
+  The definitions can now be put direcly into a python file and thus eliminating
+  the need for an extra xml file. Definitions are put as special comments above 
+  the script method declaration.
+  
+  An example defintion would be:
+  
+  #@Name  Burn Books...          [Defaults to function name]
+  #@Key   BurnBooks              [Defaults to function name]
+  #@Image BurnImage.png
+  #@Hook  Books
+  def BurnBooks(books)
+
+  The minimum spec is a #@Hook comment line above the script method
+
+  -->
+
+  <Command xsi:type="PythonCommand" Hook="ParseComicPath" Enabled="false">
+    <Name>[Code Sample] Parse Book Path</Name>
+    <Method>ParseComicPath</Method>
+    <ScriptFile>Sample.py</ScriptFile>
+    <Description>A sample script to demonstrate custom parsing of Books to get different proposed values</Description>
+  </Command>
+
+  <Command xsi:type="PythonCommand" Hook="BookOpened" Enabled="false">
+    <Name>[Code Sample] Book Opened</Name>
+    <Method>BookHasBeenOpened</Method>
+    <ScriptFile>Sample.py</ScriptFile>
+    <Description>A sample script to demonstrate hooking into the open book event</Description>
+  </Command>
+
+</ArrayOfCommand>
