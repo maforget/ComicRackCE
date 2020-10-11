@@ -551,6 +551,7 @@
     <Compile Include="IO\Provider\Readers\PdfComicProvider.cs" />
     <Compile Include="IO\Provider\Readers\Pdf\PdfGhostScript.cs" />
     <Compile Include="IO\Provider\Readers\Pdf\PdfNative.cs" />
+    <Compile Include="IO\Provider\Readers\Rar5ComicProvider.cs" />
     <Compile Include="IO\Provider\Readers\WebComicProvider.cs" />
     <Compile Include="IO\Provider\StorageProgressEventArgs.cs" />
     <Compile Include="IO\Provider\StorageProvider.cs" />

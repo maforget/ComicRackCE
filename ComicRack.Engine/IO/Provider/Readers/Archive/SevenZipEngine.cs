@@ -43,6 +43,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 		public SevenZipEngine(int format, bool libraryMode)
 			: base(format)
 		{
+
 			this.libraryMode = libraryMode;
 		}
 
@@ -225,6 +226,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 				return KnownSevenZipFormat.Tar;
 			case 3:
 				return KnownSevenZipFormat.Rar;
+			case 9:
+				return KnownSevenZipFormat.Rar5;
 			default:
 				throw new NotSupportedException("Type if not supported");
 			}

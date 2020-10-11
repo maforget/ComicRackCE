@@ -1,3 +1,5 @@
+* NEW: RAR5 Support
+
 Build 0.9.178:
 
 * NEW: ComicRack now fully supports HiDPI Screens (Surface Pro, Retina etc.)

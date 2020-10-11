@@ -20,6 +20,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 
 		public const int DJVU = 8;
 
+		public const int RAR5 = 9;
+
 		public const int FOLDER = 100;
 
 		public static IEnumerable<byte> GetSignature(int format)
@@ -39,14 +41,28 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 					122
 				};
 			case 3:
-				return new byte[4]
+				return new byte[7]
 				{
 					82,
 					97,
 					114,
-					33
+					33,
+					26,
+					7,
+					0
 				};
-			default:
+			case 9:
+				return new byte[7]
+				{
+					82,
+					97,
+					114,
+					33,
+					26,
+					7,
+					1
+				};
+				default:
 				return null;
 			}
 		}

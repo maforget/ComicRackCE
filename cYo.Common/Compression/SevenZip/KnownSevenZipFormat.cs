@@ -21,6 +21,7 @@ namespace cYo.Common.Compression.SevenZip
 		Tar,
 		Wim,
 		Z,
-		Zip
+		Zip,
+		Rar5
 	}
 }

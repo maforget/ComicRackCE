@@ -122,6 +122,10 @@ namespace cYo.Common.Compression.SevenZip
 			{
 				KnownSevenZipFormat.Zip,
 				new Guid("23170f69-40c1-278a-1000-000110010000")
+			},
+			{
+				KnownSevenZipFormat.Rar5,
+				new Guid("23170f69-40c1-278a-1000-000110CC0000")
 			}
 		};
 
