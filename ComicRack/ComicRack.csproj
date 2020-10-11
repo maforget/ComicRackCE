@@ -681,9 +681,10 @@
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Debug Goto :Exit
 
-del *.pdb
-del Microsoft.WindowsAPICodePack.ShellExtensions.dll
-$(ProjectDir)InsertIcons.exe "$(TargetPath)" "$(ProjectDir)Icons"
+del /Q *.pdb
+del /Q Microsoft.WindowsAPICodePack.ShellExtensions.dll
+CD /D $(SolutionDir)
+InsertIcons.bat
 
 : Exit</PostBuildEvent>
   </PropertyGroup>
