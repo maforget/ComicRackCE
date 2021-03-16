@@ -2316,40 +2316,6 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set;
 		}
 
-		[DefaultValue(null)]
-		[XmlElement("VK")]
-		public string ValidationKey
-		{
-			get;
-			set;
-		}
-
-		[DefaultValue(typeof(DateTime), "01.01.0001")]
-		public DateTime ValidationDate
-		{
-			get;
-			set;
-		}
-
-		[DefaultValue(null)]
-		public string DonationShown
-		{
-			get;
-			set;
-		}
-
-		public bool IsActivated
-		{
-			get
-			{
-				if (!string.IsNullOrEmpty(UserEmail))
-				{
-					return Password.Verify(Environment.MachineName + UserEmail + ValidationDate, ValidationKey);
-				}
-				return false;
-			}
-		}
-
 		public string OpenRemoteFilter
 		{
 			get;
@@ -2633,7 +2599,6 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			QuickOpenThumbnailSize = 128;
 			MaximumMemoryMB = 1024;
 			ShowQuickManual = true;
-			ValidationDate = DateTime.MinValue;
 		}
 
 		public DisplayWorkspace GetWorkspace(string name)
@@ -2703,15 +2668,6 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		{
 			RemoteExplorerViewSettingsList.RemoveAll((RemoteExplorerViewSettings s) => s.Id == id);
 			RemoteExplorerViewSettingsList.Add(new RemoteExplorerViewSettings(id, setting));
-		}
-
-		internal void SetActivated(bool activated = true)
-		{
-			if (activated)
-			{
-				ValidationDate = DateTime.UtcNow;
-			}
-			ValidationKey = (activated ? Password.CreateHash(Environment.MachineName + UserEmail + ValidationDate) : null);
 		}
 
 		public void ResetTwitter()

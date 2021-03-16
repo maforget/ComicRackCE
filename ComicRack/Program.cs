@@ -98,8 +98,6 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public const string DefaultUserForm = "http://comicrack.cyolito.com/user-forum";
 
-		public const string DefaultPayPalPage = "http://comicrack.cyolito.com/donate";
-
 		public const string DefaultLocalizePage = "http://comicrack.cyolito.com/faqs/12-how-to-create-language-packs";
 
 		public const string ComicRackTypeId = "cYo.ComicRack";
@@ -107,8 +105,6 @@ namespace cYo.Projects.ComicRack.Viewer
 		public const string ComicRackDocumentName = "eComic";
 
 		public const int NewsIntervalMinutes = 60;
-
-		public const int ActivationRecheckDays = 30;
 
 		private static ExtendedSettings extendedSettings;
 
@@ -412,11 +408,6 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 		}
 
-		public static void ShowPayPal()
-		{
-			StartDocument("http://comicrack.cyolito.com/donate");
-		}
-
 		public static IEnumerable<ComicBookValueMatcher> GetAvailableComicBookMatchers()
 		{
 			return ComicBookValueMatcher.GetAvailableMatchers().OfType<ComicBookValueMatcher>();
@@ -655,29 +646,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			return result;
 		}
 
-		public static bool ValidateActivation(string userEmail)
-		{
-			Settings.UserEmail = userEmail;
-			bool flag = !string.IsNullOrEmpty(userEmail) && HttpAccess.CallSoap((UserValidation uv) => uv.HasDonated(userEmail));
-			Settings.SetActivated(flag);
-			return flag;
-		}
-
-		public static void AutoValidateActivation()
-		{
-			if (Settings.IsActivated && !(DateTime.Now - Settings.ValidationDate < TimeSpan.FromDays(30.0)))
-			{
-				try
-				{
-					ValidateActivation(Settings.UserEmail);
-				}
-				catch
-				{
-				}
-			}
-		}
-
-		private static void RemoteServerStarted(object sender, NetworkManager.RemoteServerStartedEventArgs e)
+        private static void RemoteServerStarted(object sender, NetworkManager.RemoteServerStartedEventArgs e)
 		{
 			CallMainForm("Remote Server Started", delegate
 			{
@@ -769,7 +738,6 @@ namespace cYo.Projects.ComicRack.Viewer
 			CommandLineParser.Parse(ImageDisplayControl.HardwareSettings);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
-			AutoValidateActivation();
 			DatabaseManager.FirstDatabaseAccess += delegate
 			{
 				StartupProgress(TR.Messages["OpenDatabase", "Opening Database"], -1);

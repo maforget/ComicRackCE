@@ -1,4 +1,8 @@
+Build 0.9.180:
+
 * NEW: RAR5 Support
+
+* CHANGE: Removed everything to do with Validation/Donation/PayPal
 
 Build 0.9.178:
 

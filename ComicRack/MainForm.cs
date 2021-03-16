@@ -897,7 +897,6 @@ namespace cYo.Projects.ComicRack.Viewer
 		{
 			base.OnShown(e);
 			Win7.Initialize();
-			DonationDialog.Show(Form.ActiveForm ?? this, alwaysShow: false);
 			if (!string.IsNullOrEmpty(Program.ExtendedSettings.InstallPlugin))
 			{
 				ShowPreferences(Program.ExtendedSettings.InstallPlugin);
@@ -1440,10 +1439,6 @@ namespace cYo.Projects.ComicRack.Viewer
 				Program.StartDocument("http://comicrack.cyolito.com/user-forum");
 			}, miWebUserForum);
 			commands.Add(ShowAboutDialog, miAbout, tbAbout);
-			commands.Add(delegate
-			{
-				DonationDialog.Show(this, alwaysShow: true);
-			}, miSupport, tbSupport);
 			commands.Add(ShowNews, miNews);
 			commands.Add(SaveWorkspace, tsSaveWorkspace, miSaveWorkspace);
 			commands.Add(EditWorkspace, () => Program.Settings.Workspaces.Count > 0, tsEditWorkspaces, miEditWorkspaces);
@@ -3684,7 +3679,6 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private void tbTools_DropDownOpening(object sender, EventArgs e)
 		{
-			tbSupport.Visible = !Program.Settings.IsActivated;
 			tbUpdateWebComics.Visible = Program.Database.Books.FirstOrDefault((ComicBook cb) => cb.IsDynamicSource) != null;
 		}
 

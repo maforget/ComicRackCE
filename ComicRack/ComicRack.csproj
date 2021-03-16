@@ -169,12 +169,6 @@
     <Compile Include="Dialogs\DeviceSelectDialog.Designer.cs">
       <DependentUpon>DeviceSelectDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\DonationDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\DonationDialog.Designer.cs">
-      <DependentUpon>DonationDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dialogs\EditListDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,11 +323,8 @@
       <DependentUpon>ReaderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Remote\CrashReport.cs" />
-    <Compile Include="Remote\HasDonatedCompletedEventArgs.cs" />
-    <Compile Include="Remote\HasDonatedCompletedEventHandler.cs" />
     <Compile Include="Remote\SubmitReportCompletedEventArgs.cs" />
     <Compile Include="Remote\SubmitReportCompletedEventHandler.cs" />
-    <Compile Include="Remote\UserValidation.cs" />
     <Compile Include="ScriptOutputForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,7 +398,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Dialogs\DonationDialog.resx" DependentUpon="DonationDialog.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

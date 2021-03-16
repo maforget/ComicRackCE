@@ -212,7 +212,6 @@ namespace cYo.Projects.ComicRack.Viewer
 			miWebUserForum = new System.Windows.Forms.ToolStripMenuItem();
 			toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
 			miNews = new System.Windows.Forms.ToolStripMenuItem();
-			miSupport = new System.Windows.Forms.ToolStripMenuItem();
 			toolStripMenuItem25 = new System.Windows.Forms.ToolStripSeparator();
 			miAbout = new System.Windows.Forms.ToolStripMenuItem();
 			statusStrip = new System.Windows.Forms.StatusStrip();
@@ -380,7 +379,6 @@ namespace cYo.Projects.ComicRack.Viewer
 			toolStripMenuItem48 = new System.Windows.Forms.ToolStripSeparator();
 			tbComicDisplaySettings = new System.Windows.Forms.ToolStripMenuItem();
 			tbPreferences = new System.Windows.Forms.ToolStripMenuItem();
-			tbSupport = new System.Windows.Forms.ToolStripMenuItem();
 			tbAbout = new System.Windows.Forms.ToolStripMenuItem();
 			toolStripMenuItem50 = new System.Windows.Forms.ToolStripSeparator();
 			tbShowMainMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -1195,7 +1193,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			miMagnify.ShortcutKeys = System.Windows.Forms.Keys.M | System.Windows.Forms.Keys.Control;
 			miMagnify.Size = new System.Drawing.Size(237, 38);
 			miMagnify.Text = "&Magnifier";
-			helpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[13]
+			helpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[12]
 			{
 		miHelp,
 		miWebHelp,
@@ -1207,7 +1205,6 @@ namespace cYo.Projects.ComicRack.Viewer
 		miWebUserForum,
 		toolStripMenuItem5,
 		miNews,
-		miSupport,
 		toolStripMenuItem25,
 		miAbout
 			});
@@ -1250,10 +1247,6 @@ namespace cYo.Projects.ComicRack.Viewer
 			miNews.Name = "miNews";
 			miNews.Size = new System.Drawing.Size(256, 22);
 			miNews.Text = "&News...";
-			miSupport.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.Heart;
-			miSupport.Name = "miSupport";
-			miSupport.Size = new System.Drawing.Size(256, 22);
-			miSupport.Text = "&Support ComicRack...";
 			toolStripMenuItem25.Name = "toolStripMenuItem25";
 			toolStripMenuItem25.Size = new System.Drawing.Size(253, 6);
 			miAbout.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.About;
@@ -2097,7 +2090,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			tbTools.Size = new System.Drawing.Size(20, 22);
 			tbTools.Text = "Tools";
 			tbTools.DropDownOpening += new System.EventHandler(tbTools_DropDownOpening);
-			toolsContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[24]
+			toolsContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[23]
 			{
 		tbOpenComic,
 		tbOpenRemoteLibrary,
@@ -2117,8 +2110,7 @@ namespace cYo.Projects.ComicRack.Viewer
 		toolStripMenuItem48,
 		tbComicDisplaySettings,
 		tbPreferences,
-		tbSupport,
-		tbAbout,
+        tbAbout,
 		toolStripMenuItem50,
 		tbShowMainMenu,
 		toolStripMenuItem51,
@@ -2244,10 +2236,6 @@ namespace cYo.Projects.ComicRack.Viewer
 			tbPreferences.ShortcutKeys = System.Windows.Forms.Keys.F9 | System.Windows.Forms.Keys.Control;
 			tbPreferences.Size = new System.Drawing.Size(284, 38);
 			tbPreferences.Text = "&Preferences...";
-			tbSupport.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.Heart;
-			tbSupport.Name = "tbSupport";
-			tbSupport.Size = new System.Drawing.Size(284, 38);
-			tbSupport.Text = "&Support ComicRack...";
 			tbAbout.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.About;
 			tbAbout.Name = "tbAbout";
 			tbAbout.ShortcutKeys = System.Windows.Forms.Keys.F1 | System.Windows.Forms.Keys.Alt;
@@ -2582,8 +2570,6 @@ namespace cYo.Projects.ComicRack.Viewer
 		private ToolStripMenuItem miRestart;
 
 		private ToolStripSeparator toolStripMenuItem24;
-
-		private ToolStripMenuItem miSupport;
 
 		private ToolStripSeparator toolStripMenuItem25;
 
@@ -2972,8 +2958,6 @@ namespace cYo.Projects.ComicRack.Viewer
 		private ToolStripMenuItem cmTwoPagesAdaptive;
 
 		private ToolStripSeparator toolStripMenuItem55;
-
-		private ToolStripMenuItem tbSupport;
 
 		private ToolStripSeparator toolStripMenuItem56;
 
