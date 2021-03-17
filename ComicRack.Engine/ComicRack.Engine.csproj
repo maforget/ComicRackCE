@@ -636,6 +636,10 @@
       <Version>0.86.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\MySql.Data.dll" />
+    <Content Include="DLL\sharpPDF.dll" />
+  </ItemGroup>
   <!-- <ItemGroup> -->
   <!-- <EmbeddedResource Include="Controls\ComicPageContainerControl.resources" /> -->
   <!-- <EmbeddedResource Include="Controls\MagnifySetupControl.resources" /> -->

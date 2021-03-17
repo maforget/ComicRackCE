@@ -152,6 +152,10 @@
       <Version>0.86.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\Tao.OpenGl.dll" />
+    <Content Include="DLL\Tao.Platform.Windows.dll" />
+  </ItemGroup>
   <!-- <ItemGroup> -->
   <!-- <EmbeddedResource Include="Ceco\Controls\XHtmlDisplay.resources" /> -->
   <!-- <EmbeddedResource Include="Ceco\Controls\XHtmlLabel.resources" /> -->

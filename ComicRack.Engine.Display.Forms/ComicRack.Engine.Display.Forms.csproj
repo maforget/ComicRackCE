@@ -86,6 +86,9 @@
       <Name>cYo.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\Windows7.Multitouch.dll" />
+  </ItemGroup>
   <!-- <ItemGroup> -->
   <!-- <EmbeddedResource Include="ComicDisplayControl.resources" /> -->
   <!-- <EmbeddedResource Include="ImageDisplayControl.resources" /> -->

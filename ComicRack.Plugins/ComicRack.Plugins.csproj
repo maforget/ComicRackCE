@@ -95,6 +95,13 @@
       <Version>4.0.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\IronPython.dll" />
+    <Content Include="DLL\IronPython.Modules.dll" />
+    <Content Include="DLL\Microsoft.Dynamic.dll" />
+    <Content Include="DLL\Microsoft.Scripting.dll" />
+    <Content Include="DLL\Microsoft.Scripting.Metadata.dll" />
+  </ItemGroup>
   <!-- <ItemGroup> -->
   <!-- <EmbeddedResource Include="Controls\HtmlComicPageControl.resources" /> -->
   <!-- </ItemGroup> -->
