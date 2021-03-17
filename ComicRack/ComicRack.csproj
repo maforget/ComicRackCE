@@ -571,6 +571,7 @@
     <Content Include="Resources\libtiff.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\libwebp32.dll" />
     <Content Include="Resources\libwebp64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
