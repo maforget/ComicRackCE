@@ -2316,6 +2316,28 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set;
 		}
 
+		[DefaultValue(null)]
+		[XmlElement("VK")]
+		public string ValidationKey
+		{
+			get;
+			set;
+		}
+
+		[DefaultValue(typeof(DateTime), "01.01.0001")]
+		public DateTime ValidationDate
+		{
+			get;
+			set;
+		}
+
+		[DefaultValue(null)]
+		public string DonationShown
+		{
+			get;
+			set;
+		}
+
 		public string OpenRemoteFilter
 		{
 			get;
@@ -2599,6 +2621,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			QuickOpenThumbnailSize = 128;
 			MaximumMemoryMB = 1024;
 			ShowQuickManual = true;
+			ValidationDate = DateTime.MinValue;
 		}
 
 		public DisplayWorkspace GetWorkspace(string name)
