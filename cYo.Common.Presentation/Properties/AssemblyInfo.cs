@@ -10,7 +10,6 @@ using System.Security.Permissions;
 
 [assembly: CompilationRelaxations(8)]
 [assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
-[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
 [assembly: AssemblyTitle("cYo.Common.Presentation.Ceco")]
 [assembly: AssemblyDescription("A custom presentation layer")]
 [assembly: AssemblyConfiguration("")]
