@@ -50,8 +50,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Icons\icon1.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <Win32Resource>
@@ -535,6 +534,11 @@
     <Content Include="Help\readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Icons\icon1.ico" />
+    <Content Include="Icons\icon2.ico" />
+    <Content Include="Icons\icon3.ico" />
+    <Content Include="Icons\icon4.ico" />
+    <Content Include="Icons\uninst_103.ico" />
     <Content Include="License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
