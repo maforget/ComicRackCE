@@ -681,7 +681,7 @@
 del /Q *.pdb
 del /Q Microsoft.WindowsAPICodePack.ShellExtensions.dll
 CD /D $(SolutionDir)
-InsertIcons.bat
+:: InsertIcons.bat
 
 : Exit</PostBuildEvent>
   </PropertyGroup>
