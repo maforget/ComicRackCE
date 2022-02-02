@@ -97,7 +97,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public const string DefaultNewsFeed = "http://feeds.feedburner.com/ComicRackNews";
 
-		public const string DefaultUserForm = "http://comicrack.cyolito.com/user-forum";
+		public const string DefaultUserForm = "https://www.reddit.com/r/comicrackusers/";
 
 		public const string DefaultLocalizePage = "http://comicrack.cyolito.com/faqs/12-how-to-create-language-packs";
 

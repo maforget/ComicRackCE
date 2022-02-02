@@ -1437,7 +1437,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			}, miWebHome);
 			commands.Add(delegate
 			{
-				Program.StartDocument("http://comicrack.cyolito.com/user-forum");
+				Program.StartDocument("https://www.reddit.com/r/comicrackusers/");
 			}, miWebUserForum);
 			commands.Add(ShowAboutDialog, miAbout, tbAbout);
 			commands.Add(ShowNews, miNews);
