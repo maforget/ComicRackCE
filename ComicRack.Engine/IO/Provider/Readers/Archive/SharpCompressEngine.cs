@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using cYo.Common.Xml;
-using SharpCompress.Archive;
+using SharpCompress.Archives;
 using SharpCompress.Common;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
@@ -58,8 +58,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 				{
 					if (!entry.IsDirectory)
 					{
-						yield return new ProviderImageInfo(i, entry.FilePath, entry.Size);
-					}
+                        yield return new ProviderImageInfo(i, entry.Key, entry.Size);
+                    }
 					i++;
 				}
 			}
@@ -80,7 +80,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 		{
 			using (IArchive archive = ArchiveFactory.Open(source))
 			{
-				IArchiveEntry archiveEntry = archive.Entries.FirstOrDefault((IArchiveEntry e) => Path.GetFileName(e.FilePath).Equals("ComicInfo.xml", StringComparison.OrdinalIgnoreCase));
+				IArchiveEntry archiveEntry = archive.Entries.FirstOrDefault((IArchiveEntry e) => Path.GetFileName(e.Key).Equals("ComicInfo.xml", StringComparison.OrdinalIgnoreCase));
 				if (archiveEntry == null)
 				{
 					return null;
