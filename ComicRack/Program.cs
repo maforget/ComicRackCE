@@ -91,7 +91,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public const string DefaultCrashUrl = "http://comicrack.cyolito.com/services/CrashReport.php";
 
-		public const string DefaultWiki = "http://comicrack.cyolito.com/documentation/wiki";
+		public const string DefaultWiki = "https://web.archive.org/web/20161013095840/http://comicrack.cyolito.com:80/documentation/wiki";
 
 		public const string DefaultWebSite = "http://comicrack.cyolito.com";
 

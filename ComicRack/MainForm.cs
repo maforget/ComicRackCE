@@ -1424,7 +1424,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				if (!Program.Help.Execute("HelpMain"))
 				{
-					Program.StartDocument("http://comicrack.cyolito.com/documentation/wiki");
+					Program.StartDocument("https://web.archive.org/web/20161013095840/http://comicrack.cyolito.com:80/documentation/wiki");
 				}
 			}, miWebHelp);
 			commands.Add(delegate
