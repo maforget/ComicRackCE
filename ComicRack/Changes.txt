@@ -14,6 +14,7 @@ Build 0.9.180:
 * CHANGE: Updated Changed wiki links to the Wayback Machine
 * CHANGE: Updated Changed the default help system to be online manual
 * CHANGE: Updated Changed download manual links & fix chapter 12 links
+* CHANGE: Updated Help localize ComicRack links
 
 Build 0.9.178:
 

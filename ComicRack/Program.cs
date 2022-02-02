@@ -99,7 +99,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public const string DefaultUserForm = "https://www.reddit.com/r/comicrackusers/";
 
-		public const string DefaultLocalizePage = "http://comicrack.cyolito.com/faqs/12-how-to-create-language-packs";
+		public const string DefaultLocalizePage = "https://web.archive.org/web/20170528182733/http://comicrack.cyolito.com/faqs/12-how-to-create-language-packs";
 
 		public const string ComicRackTypeId = "cYo.ComicRack";
 
