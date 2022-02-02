@@ -41,6 +41,7 @@ using cYo.Projects.ComicRack.Viewer.Menus;
 using cYo.Projects.ComicRack.Viewer.Properties;
 using cYo.Projects.ComicRack.Viewer.Views;
 using Microsoft.Win32;
+using SaveFileDialog = System.Windows.Forms.SaveFileDialog;
 
 namespace cYo.Projects.ComicRack.Viewer
 {

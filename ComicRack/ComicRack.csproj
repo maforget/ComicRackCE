@@ -672,8 +672,8 @@
     <PackageReference Include="linqtotwitter">
       <Version>2.1.9</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.WindowsAPICodePack-Shell">
-      <Version>1.1.0</Version>
+    <PackageReference Include="Microsoft-WindowsAPICodePack-Shell">
+      <Version>1.1.4</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />
@@ -682,7 +682,6 @@
     <PostBuildEvent>if $(ConfigurationName) == Debug Goto :Exit
 
 del /Q *.pdb
-del /Q Microsoft.WindowsAPICodePack.ShellExtensions.dll
 CD /D $(SolutionDir)
 InsertIcons.bat
 
