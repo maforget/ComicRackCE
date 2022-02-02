@@ -200,7 +200,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		private bool autoUpdateComicsFiles;
 
-		private string helpSystem = "ComicRack Wiki";
+		private string helpSystem = "ComicRack Online Manual";
 
 		private bool scripting = true;
 
@@ -999,7 +999,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			}
 		}
 
-		[DefaultValue("ComicRack Wiki")]
+		[DefaultValue("ComicRack Online Manual")]
 		public string HelpSystem
 		{
 			get
