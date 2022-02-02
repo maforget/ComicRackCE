@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>cYo.Projects.ComicRack.Viewer</RootNamespace>
     <AssemblyName>ComicRack</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>4096</FileAlignment>
     <StartupObject>cYo.Projects.ComicRack.Viewer.Program</StartupObject>
     <PublishUrl>publish\</PublishUrl>
@@ -26,6 +26,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -402,7 +403,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ComicListFolderFilesBrowser.resx" DependentUpon="ComicListFolderFilesBrowser.cs" />
-    <EmbeddedResource Include="Views\ComicListLibraryBrowser.resx" DependentUpon="ComicListLibraryBrowser.cs" />
+    <EmbeddedResource Include="Views\ComicListLibraryBrowser.resx" DependentUpon="ComicListLibraryBrowser.cs">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ComicBrowserControl.resx" DependentUpon="ComicBrowserControl.cs" />
   </ItemGroup>
   <ItemGroup>
