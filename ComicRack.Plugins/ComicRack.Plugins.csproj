@@ -32,14 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Dynamic, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>DLL\Microsoft.Dynamic.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>DLL\Microsoft.Scripting.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -87,14 +79,6 @@
     <PackageReference Include="IronPython">
       <Version>2.7.12</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.CSharp">
-      <Version>4.0.0</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DLL\Microsoft.Dynamic.dll" />
-    <Content Include="DLL\Microsoft.Scripting.dll" />
-    <Content Include="DLL\Microsoft.Scripting.Metadata.dll" />
   </ItemGroup>
   <!-- <ItemGroup> -->
   <!-- <EmbeddedResource Include="Controls\HtmlComicPageControl.resources" /> -->
