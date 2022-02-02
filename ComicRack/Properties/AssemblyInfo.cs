@@ -18,7 +18,7 @@ using System.Runtime.Versioning;
 [assembly: AssemblyProduct("ComicRack")]
 [assembly: AssemblyCopyright("©2006-2016 cYo Soft")]
 [assembly: AssemblyTrademark("ComicRack is a TM of cYo Soft")]
-[assembly: AssemblyInformationalVersion("0.9.178")]
+[assembly: AssemblyInformationalVersion("0.9.180")]
 [assembly: AssemblyDelaySign(false)]
 [assembly: AssemblyKeyName("")]
 [assembly: AssemblyVersion("1.0.5915.38777")]
