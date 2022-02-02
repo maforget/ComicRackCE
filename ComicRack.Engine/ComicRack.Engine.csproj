@@ -34,10 +34,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>DLL\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="sharpPDF, Version=1.0.3755.1862, Culture=neutral, PublicKeyToken=ff55e618a43684c3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\sharpPDF.dll</HintPath>
@@ -630,6 +626,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MySql.Data">
+      <Version>6.10.9</Version>
+    </PackageReference>
     <PackageReference Include="SharpCompress">
       <Version>0.30.1</Version>
     </PackageReference>
@@ -638,7 +637,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DLL\MySql.Data.dll" />
     <Content Include="DLL\sharpPDF.dll" />
   </ItemGroup>
   <!-- <ItemGroup> -->
