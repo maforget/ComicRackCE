@@ -120,7 +120,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		public const int DefaultInternetCacheSizeMB = 1000;
 
-		public const string DefaultHelpSystem = "ComicRack Wiki";
+		public const string DefaultHelpSystem = "ComicRack Online Manual";
 
 		public const int MinimumSystemMemory = 64;
 
