@@ -85,11 +85,11 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				return DateTime.MinValue;
 			}
-			if (DateTime.TryParse(MatchValue, out var result))
+			if (DateTime.TryParse(input, out var result))
 			{
 				return result;
 			}
-			int.TryParse(MatchValue, out var result2);
+			int.TryParse(input, out var result2);
 			return DateTime.Now - TimeSpan.FromDays(result2);
 		}
 	}
