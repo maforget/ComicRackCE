@@ -55,6 +55,7 @@ namespace cYo.Common.Windows.Forms
 				ClearTree(tree);
 				try
 				{
+					//TODO: Empty on new Windows 11 install if OneDrive installed, Top node shows OneDrive/Desktop
 					ShellFolder shellFolder = new ShellFolder(Environment.SpecialFolder.Desktop);
 					TreeNode treeNode = new TreeNode(shellFolder.Pidl.DisplayName, 0, 0)
 					{
