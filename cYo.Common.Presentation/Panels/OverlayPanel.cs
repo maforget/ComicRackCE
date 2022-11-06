@@ -379,7 +379,7 @@ namespace cYo.Common.Presentation.Panels
 				}
 				using (ItemMonitor.Lock(surfaceLock))
 				{
-					if (surface != null && surface.Size != value)
+					if (surface != null && surface.Size != value && value.Width > 0 && value.Height > 0)
 					{
 						Bitmap image = new Bitmap(value.Width, value.Height, PixelFormat.Format32bppArgb);
 						using (Graphics graphics = Graphics.FromImage(image))
