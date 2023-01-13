@@ -5,7 +5,7 @@ Build 0.9.180:
 
 * CHANGE: Removed everything to do with Validation/Donation/PayPal
 * CHANGE: Removed Android Validation of apk signature (so we can use the cracked version)
-* CHANGE: Changed to .NET Framework v4.8
+* CHANGE: Updated to .NET Framework v4.8
 * CHANGE: Updated SharpZipLib to v1.33
 * CHANGE: Updated SharpCompress to v0.30.1
 * CHANGE: Updated MySQL.Data to 6.10.9
@@ -14,7 +14,11 @@ Build 0.9.180:
 * CHANGE: Updated Changed wiki links to the Wayback Machine
 * CHANGE: Updated Changed the default help system to be online manual
 * CHANGE: Updated Changed download manual links & fix chapter 12 links
-* CHANGE: Updated Help localize ComicRack links
+* CHANGE: Updated Help localize ComicRack links (we still need access to the Localizer program)
+* CHANGE: Updated default sort to be natural sorting (numeric)
+
+* BUGFIX: Fixed smartlist "in range" for dates, the second field wasn't taken into account.
+* BUGFIX: Fixed possible crash if window size is less than 0 (Usually when using high DPI scaling).
 
 Build 0.9.178:
 
