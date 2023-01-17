@@ -2,8 +2,8 @@ using cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider
 {
-	[FileFormat("eComic (TAR)", 5, ".cbt", EnableUpdate = true)]
-	[FileFormat("TAR Archive", 5, ".tar")]
+	[FileFormat("eComic (TAR)", KnownFileFormats.CBT, ".cbt", EnableUpdate = true)]
+	[FileFormat("TAR Archive", KnownFileFormats.CBT, ".tar")]
 	public class CbtComicProvider : ArchiveComicProvider
 	{
 		public CbtComicProvider()
@@ -11,13 +11,13 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			switch (EngineConfiguration.Default.CbtUses)
 			{
 			default:
-				SetArchive(new SevenZipEngine(5, libraryMode: true));
+				SetArchive(new SevenZipEngine(KnownFileFormats.CBT, libraryMode: true));
 				break;
 			case EngineConfiguration.CbEngines.SevenZipExe:
-				SetArchive(new SevenZipEngine(5, libraryMode: false));
+				SetArchive(new SevenZipEngine(KnownFileFormats.CBT, libraryMode: false));
 				break;
 			case EngineConfiguration.CbEngines.SharpCompress:
-				SetArchive(new SharpCompressEngine(5));
+				SetArchive(new SharpCompressEngine(KnownFileFormats.CBT));
 				break;
 			case EngineConfiguration.CbEngines.SharpZip:
 				SetArchive(new TarSharpZipEngine());

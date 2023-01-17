@@ -3,7 +3,7 @@ using ICSharpCode.SharpZipLib.Zip;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 {
-	[FileFormat("eComic (ZIP)", 2, ".cbz")]
+	[FileFormat("eComic (ZIP)", KnownFileFormats.CBZ, ".cbz")]
 	public class CbzStorageProvider : PackedStorageProvider
 	{
 		private const bool Zip64 = false;

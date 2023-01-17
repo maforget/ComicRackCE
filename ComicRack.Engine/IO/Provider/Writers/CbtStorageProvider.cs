@@ -3,7 +3,7 @@ using ICSharpCode.SharpZipLib.Tar;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 {
-	[FileFormat("eComic (TAR)", 5, ".cbt")]
+	[FileFormat("eComic (TAR)", KnownFileFormats.CBT, ".cbt")]
 	public class CbtStorageProvider : PackedStorageProvider
 	{
 		private const int BufferSize = 131072;

@@ -6,7 +6,7 @@ using cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Pdf;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 {
-	[FileFormat("PDF Document (PDF)", 1, ".pdf")]
+	[FileFormat("PDF Document (PDF)", KnownFileFormats.PDF, ".pdf")]
 	public class PdfComicProvider : ComicProvider
 	{
 		private IComicAccessor pdfReader;

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 {
-	[FileFormat("Book Information", 4, ".xml")]
+	[FileFormat("Book Information", KnownFileFormats.XML, ".xml")]
 	internal class XmlInfoStorageProvider : StorageProvider
 	{
 		protected override ComicInfo OnStore(IImageProvider provider, ComicInfo info, string target, StorageSetting setting)

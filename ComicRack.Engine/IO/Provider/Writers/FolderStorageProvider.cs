@@ -2,7 +2,7 @@ using System.IO;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 {
-	[FileFormat("Image Folder", 100, ".")]
+	[FileFormat("Image Folder", KnownFileFormats.FOLDER, ".")]
 	public class FolderStorageProvider : PackedStorageProvider
 	{
 		private string target;

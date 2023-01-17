@@ -2,8 +2,8 @@
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 {
-    [FileFormat("eComic (RAR5)", 9, ".cbr")]
-    [FileFormat("RAR5 Archive", 9, ".rar")]
+    [FileFormat("eComic (RAR5)", KnownFileFormats.RAR5, ".cbr")]
+    [FileFormat("RAR5 Archive", KnownFileFormats.RAR5, ".rar")]
 	public class Rar5ComicProvider : ArchiveComicProvider
 	{
 		public Rar5ComicProvider()
@@ -11,13 +11,13 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			switch (EngineConfiguration.Default.CbrUses)
 			{
 				default:
-					SetArchive(new SevenZipEngine(9, libraryMode: true));
+					SetArchive(new SevenZipEngine(KnownFileFormats.RAR5, libraryMode: true));
 					break;
 				case EngineConfiguration.CbEngines.SevenZipExe:
-					SetArchive(new SevenZipEngine(9, libraryMode: false));
+					SetArchive(new SevenZipEngine(KnownFileFormats.RAR5, libraryMode: false));
 					break;
 				case EngineConfiguration.CbEngines.SharpCompress:
-					SetArchive(new SharpCompressEngine(9));
+					SetArchive(new SharpCompressEngine(KnownFileFormats.RAR5));
 					break;
 			}
 		}

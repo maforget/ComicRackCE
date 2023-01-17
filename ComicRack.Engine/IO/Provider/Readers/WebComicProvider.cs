@@ -16,7 +16,7 @@ using cYo.Projects.ComicRack.Engine.IO.Cache;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 {
-	[FileFormat("eComic (WebComic)", 7, ".cbw", EnableUpdate = true, Dynamic = true)]
+	[FileFormat("eComic (WebComic)", KnownFileFormats.CBW, ".cbw", EnableUpdate = true, Dynamic = true)]
 	public class WebComicProvider : ComicProvider, IDynamicImages
 	{
 		private readonly List<WebComic.WebComicImage> images = new List<WebComic.WebComicImage>();

@@ -28,19 +28,19 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 		{
 			switch (format)
 			{
-			case 2:
+			case CBZ:
 				return new byte[2]
 				{
 					80,
 					75
 				};
-			case 6:
+			case CB7:
 				return new byte[2]
 				{
 					55,
 					122
 				};
-			case 3:
+			case CBR:
 				return new byte[7]
 				{
 					82,
@@ -51,7 +51,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 					7,
 					0
 				};
-			case 9:
+			case RAR5:
 				return new byte[7]
 				{
 					82,

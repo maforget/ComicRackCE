@@ -218,15 +218,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 		{
 			switch (format)
 			{
-			case 2:
+			case KnownFileFormats.CBZ:
 				return KnownSevenZipFormat.Zip;
-			case 6:
+			case KnownFileFormats.CB7:
 				return KnownSevenZipFormat.SevenZip;
-			case 5:
+			case KnownFileFormats.CBT:
 				return KnownSevenZipFormat.Tar;
-			case 3:
+			case KnownFileFormats.CBR:
 				return KnownSevenZipFormat.Rar;
-			case 9:
+			case KnownFileFormats.RAR5:
 				return KnownSevenZipFormat.Rar5;
 			default:
 				throw new NotSupportedException("Type if not supported");

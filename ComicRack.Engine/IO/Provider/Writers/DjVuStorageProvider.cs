@@ -6,7 +6,7 @@ using cYo.Common.Win32;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 {
-	[FileFormat("DjVu Document (DJVU)", 8, ".djvu")]
+	[FileFormat("DjVu Document (DJVU)", KnownFileFormats.DJVU, ".djvu")]
 	public class DjVuStorageProvider : StorageProvider, IValidateProvider
 	{
 		private static readonly string combineExe = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\djvm.exe");

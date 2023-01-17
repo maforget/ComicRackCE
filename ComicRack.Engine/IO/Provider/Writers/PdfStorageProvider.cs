@@ -5,7 +5,7 @@ using sharpPDF;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 {
-	[FileFormat("PDF Document (PDF)", 1, ".pdf")]
+	[FileFormat("PDF Document (PDF)", KnownFileFormats.PDF, ".pdf")]
 	public class PdfStorageProvider : StorageProvider
 	{
 		protected override ComicInfo OnStore(IImageProvider provider, ComicInfo info, string target, StorageSetting setting)

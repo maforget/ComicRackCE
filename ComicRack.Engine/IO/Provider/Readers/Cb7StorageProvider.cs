@@ -6,7 +6,7 @@ using cYo.Projects.ComicRack.Engine.IO.Provider.Writers;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 {
-	[FileFormat("eComic (7z)", 6, ".cb7")]
+	[FileFormat("eComic (7z)", KnownFileFormats.CB7, ".cb7")]
 	public class Cb7StorageProvider : PackedStorageProvider
 	{
 		private string file;

@@ -12,7 +12,7 @@ using cYo.Common.Win32;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 {
-	[FileFormat("DjVu Document", 8, ".djvu")]
+	[FileFormat("DjVu Document", KnownFileFormats.DJVU, ".djvu")]
 	public class DjvuComicProvider : ComicProvider, IValidateProvider
 	{
 		private static readonly string ListExe = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\djvm.exe");
