@@ -107,7 +107,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			return GetSourceProviderInfos(source).SelectMany((ProviderInfo pi) => pi.Formats);
 		}
 
-		public FileFormat GetSourceFormat(string source)
+		public virtual FileFormat GetSourceFormat(string source)
 		{
 			return GetSourceFormats(source).FirstOrDefault((FileFormat ff) => ff.Supports(source));
 		}
