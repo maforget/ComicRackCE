@@ -2844,7 +2844,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				try
 				{
-					string text = QuickSearch.Trim();
+					string text = QuickSearch?.Trim() ?? "";
 					if (text.StartsWith("NOT", StringComparison.OrdinalIgnoreCase) || text.StartsWith("MATCH", StringComparison.OrdinalIgnoreCase))
 					{
 						quickFilter = ComicBookGroupMatcher.CreateMatcherFromQuery(ComicSmartListItem.TokenizeQuery(text));
