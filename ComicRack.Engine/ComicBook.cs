@@ -400,21 +400,6 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		[Browsable(true)]
-		[DefaultValue("")]
-		[ResetValue(0)]
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set
-			{
-				SetProperty("Tags", ref tags, value);
-			}
-		}
-
 		[DefaultValue(typeof(BitmapAdjustment), "Empty")]
 		public BitmapAdjustment ColorAdjustment
 		{

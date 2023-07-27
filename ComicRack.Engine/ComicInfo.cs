@@ -102,6 +102,8 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private string scanInformation = string.Empty;
 
+		private string tags = string.Empty;
+
 		private volatile int cachedFrontCoverPageIndex = -1;
 
 		private volatile int cachedFrontCoverCount = -1;
@@ -756,7 +758,23 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public int FrontCoverPageIndex
+        [Browsable(true)]
+        [Searchable]
+        [DefaultValue("")]
+        [ResetValue(0)]
+        public string Tags
+        {
+            get
+            {
+                return tags;
+            }
+            set
+            {
+                SetProperty("Tags", ref tags, value);
+            }
+        }
+
+        public int FrontCoverPageIndex
 		{
 			get
 			{
@@ -1276,7 +1294,11 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				Number = ci.Number;
 			}
-			if (!onlyUpdateEmpty || Count == -1)
+            if (!onlyUpdateEmpty || string.IsNullOrEmpty(Tags))
+            {
+                Tags = ci.Tags;
+            }
+            if (!onlyUpdateEmpty || Count == -1)
 			{
 				Count = ci.Count;
 			}
@@ -1389,7 +1411,8 @@ namespace cYo.Projects.ComicRack.Engine
 					Characters = Characters,
 					Teams = Teams,
 					Locations = Locations,
-					ScanInformation = ScanInformation
+					ScanInformation = ScanInformation,
+					Tags = Tags,
 				};
 				Pages.ForEach(delegate(ComicPageInfo cpi)
 				{
@@ -1401,7 +1424,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public bool IsSameContent(ComicInfo ci, bool withPages = true)
 		{
-			if (ci != null && ci.Writer == Writer && ci.Publisher == Publisher && ci.Imprint == Imprint && ci.Inker == Inker && ci.Penciller == Penciller && ci.Title == Title && ci.Number == Number && ci.Count == Count && ci.Summary == Summary && ci.Series == Series && ci.Volume == Volume && ci.AlternateSeries == AlternateSeries && ci.AlternateNumber == AlternateNumber && ci.AlternateCount == AlternateCount && ci.StoryArc == StoryArc && ci.SeriesGroup == SeriesGroup && ci.Year == Year && ci.Month == Month && ci.Day == Day && ci.Notes == Notes && ci.Review == Review && ci.Genre == Genre && ci.Colorist == Colorist && ci.Editor == Editor && ci.Letterer == Letterer && ci.CoverArtist == CoverArtist && ci.Web == Web && ci.LanguageISO == LanguageISO && ci.PageCount == PageCount && ci.Format == Format && ci.AgeRating == AgeRating && ci.BlackAndWhite == BlackAndWhite && ci.Manga == Manga && ci.Characters == Characters && ci.Teams == Teams && ci.MainCharacterOrTeam == MainCharacterOrTeam && ci.Locations == Locations && ci.ScanInformation == ScanInformation)
+			if (ci != null && ci.Writer == Writer && ci.Publisher == Publisher && ci.Imprint == Imprint && ci.Inker == Inker && ci.Penciller == Penciller && ci.Title == Title && ci.Number == Number && ci.Count == Count && ci.Summary == Summary && ci.Series == Series && ci.Volume == Volume && ci.AlternateSeries == AlternateSeries && ci.AlternateNumber == AlternateNumber && ci.AlternateCount == AlternateCount && ci.StoryArc == StoryArc && ci.SeriesGroup == SeriesGroup && ci.Year == Year && ci.Month == Month && ci.Day == Day && ci.Notes == Notes && ci.Review == Review && ci.Genre == Genre && ci.Colorist == Colorist && ci.Editor == Editor && ci.Letterer == Letterer && ci.CoverArtist == CoverArtist && ci.Web == Web && ci.LanguageISO == LanguageISO && ci.PageCount == PageCount && ci.Format == Format && ci.AgeRating == AgeRating && ci.BlackAndWhite == BlackAndWhite && ci.Manga == Manga && ci.Characters == Characters && ci.Teams == Teams && ci.MainCharacterOrTeam == MainCharacterOrTeam && ci.Locations == Locations && ci.ScanInformation == ScanInformation && ci.Tags == Tags)
 			{
 				if (withPages)
 				{
