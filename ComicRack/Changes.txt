@@ -16,6 +16,7 @@ Build 0.9.180:
 * CHANGE: Updated Changed download manual links & fix chapter 12 links
 * CHANGE: Updated Help localize ComicRack links (we still need access to the Localizer program)
 * CHANGE: Updated default sort to be natural sorting (numeric)
+* CHANGE: File Format will be the actual file format of the archive and not simply based on the extension.
 
 * BUGFIX: Fixed smartlist "in range" for dates, the second field wasn't taken into account.
 * BUGFIX: Fixed possible crash if window size is less than 0 (Usually when using high DPI scaling).
