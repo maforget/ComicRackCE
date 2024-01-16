@@ -6,7 +6,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
     public partial class OpenRemoteDialog
 	{
-		protected override void Dispose(bool disposing)
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
 		{
 			if (disposing && components != null)
 			{
@@ -17,253 +22,296 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
-			System.Windows.Forms.ListViewGroup listViewGroup = new System.Windows.Forms.ListViewGroup("Local Shares", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Internet Shares", System.Windows.Forms.HorizontalAlignment.Left);
-			btCancel = new System.Windows.Forms.Button();
-			btOK = new System.Windows.Forms.Button();
-			labelServerAddress = new System.Windows.Forms.Label();
-			flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-			panel1 = new System.Windows.Forms.Panel();
-			cbServer = new System.Windows.Forms.ComboBox();
-			panelList = new System.Windows.Forms.Panel();
-			txPassword = new cYo.Common.Windows.Forms.PasswordTextBox();
-			labelListPassword = new System.Windows.Forms.Label();
-			labelFailedServerList = new System.Windows.Forms.Label();
-			txFilter = new System.Windows.Forms.TextBox();
-			lvServers = new System.Windows.Forms.ListView();
-			colName = new System.Windows.Forms.ColumnHeader();
-			colDescription = new System.Windows.Forms.ColumnHeader();
-			colEdit = new System.Windows.Forms.ColumnHeader();
-			colExport = new System.Windows.Forms.ColumnHeader();
-			imageList = new System.Windows.Forms.ImageList(components);
-			panel2 = new System.Windows.Forms.Panel();
-			btPublic = new System.Windows.Forms.Button();
-			pictureBox1 = new System.Windows.Forms.PictureBox();
-			flowLayoutPanel1.SuspendLayout();
-			panel1.SuspendLayout();
-			panelList.SuspendLayout();
-			panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-			SuspendLayout();
-			btCancel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			btCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			btCancel.Location = new System.Drawing.Point(473, 3);
-			btCancel.Name = "btCancel";
-			btCancel.Size = new System.Drawing.Size(80, 24);
-			btCancel.TabIndex = 2;
-			btCancel.Text = "&Cancel";
-			btOK.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			btOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-			btOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			btOK.Location = new System.Drawing.Point(387, 3);
-			btOK.Name = "btOK";
-			btOK.Size = new System.Drawing.Size(80, 24);
-			btOK.TabIndex = 1;
-			btOK.Text = "&OK";
-			labelServerAddress.AutoSize = true;
-			labelServerAddress.Location = new System.Drawing.Point(3, 6);
-			labelServerAddress.Name = "labelServerAddress";
-			labelServerAddress.Size = new System.Drawing.Size(82, 13);
-			labelServerAddress.TabIndex = 0;
-			labelServerAddress.Text = "Library Address:";
-			flowLayoutPanel1.AutoSize = true;
-			flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			flowLayoutPanel1.Controls.Add(panel1);
-			flowLayoutPanel1.Controls.Add(panelList);
-			flowLayoutPanel1.Controls.Add(panel2);
-			flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			flowLayoutPanel1.Location = new System.Drawing.Point(8, 7);
-			flowLayoutPanel1.Name = "flowLayoutPanel1";
-			flowLayoutPanel1.Size = new System.Drawing.Size(553, 331);
-			flowLayoutPanel1.TabIndex = 7;
-			panel1.Controls.Add(pictureBox1);
-			panel1.Controls.Add(cbServer);
-			panel1.Controls.Add(labelServerAddress);
-			panel1.Controls.Add(txFilter);
-			panel1.Location = new System.Drawing.Point(0, 3);
-			panel1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-			panel1.Name = "panel1";
-			panel1.Size = new System.Drawing.Size(553, 27);
-			panel1.TabIndex = 0;
-			cbServer.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			cbServer.FormattingEnabled = true;
-			cbServer.Location = new System.Drawing.Point(96, 3);
-			cbServer.Name = "cbServer";
-			cbServer.Size = new System.Drawing.Size(304, 21);
-			cbServer.TabIndex = 1;
-			cbServer.SelectedIndexChanged += new System.EventHandler(cbServer_SelectedIndexChanged);
-			cbServer.TextUpdate += new System.EventHandler(cbServer_TextUpdate);
-			panelList.Controls.Add(txPassword);
-			panelList.Controls.Add(labelListPassword);
-			panelList.Controls.Add(labelFailedServerList);
-			panelList.Controls.Add(lvServers);
-			panelList.Location = new System.Drawing.Point(0, 36);
-			panelList.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-			panelList.Name = "panelList";
-			panelList.Size = new System.Drawing.Size(553, 256);
-			panelList.TabIndex = 8;
-			txPassword.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			txPassword.Location = new System.Drawing.Point(423, 229);
-			txPassword.Name = "txPassword";
-			txPassword.Password = null;
-			txPassword.Size = new System.Drawing.Size(130, 20);
-			txPassword.TabIndex = 3;
-			txPassword.UseSystemPasswordChar = true;
-			labelListPassword.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			labelListPassword.Location = new System.Drawing.Point(245, 232);
-			labelListPassword.Name = "labelListPassword";
-			labelListPassword.Size = new System.Drawing.Size(172, 13);
-			labelListPassword.TabIndex = 2;
-			labelListPassword.Text = "Private List Password:";
-			labelListPassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
-			labelFailedServerList.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			labelFailedServerList.BackColor = System.Drawing.SystemColors.Window;
-			labelFailedServerList.ForeColor = System.Drawing.SystemColors.GrayText;
-			labelFailedServerList.Location = new System.Drawing.Point(184, 96);
-			labelFailedServerList.Name = "labelFailedServerList";
-			labelFailedServerList.Size = new System.Drawing.Size(186, 68);
-			labelFailedServerList.TabIndex = 1;
-			labelFailedServerList.Text = "Failed to get the Server List!";
-			labelFailedServerList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			labelFailedServerList.Visible = false;
-			txFilter.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			txFilter.Location = new System.Drawing.Point(444, 3);
-			txFilter.Name = "txFilter";
-			txFilter.Size = new System.Drawing.Size(109, 20);
-			txFilter.TabIndex = 2;
-			txFilter.TextChanged += new System.EventHandler(txFilter_TextChanged);
-			lvServers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[4]
-			{
-				colName,
-				colDescription,
-				colEdit,
-				colExport
-			});
-			lvServers.FullRowSelect = true;
-			listViewGroup.Header = "Local Shares";
-			listViewGroup.Name = "groupLocal";
-			listViewGroup2.Header = "Internet Shares";
-			listViewGroup2.Name = "groupInternet";
-			lvServers.Groups.AddRange(new System.Windows.Forms.ListViewGroup[2]
-			{
-				listViewGroup,
-				listViewGroup2
-			});
-			lvServers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-			lvServers.Location = new System.Drawing.Point(0, 3);
-			lvServers.Name = "lvServers";
-			lvServers.Size = new System.Drawing.Size(553, 224);
-			lvServers.SmallImageList = imageList;
-			lvServers.TabIndex = 0;
-			lvServers.UseCompatibleStateImageBehavior = false;
-			lvServers.View = System.Windows.Forms.View.Details;
-			lvServers.ItemActivate += new System.EventHandler(lvServers_ItemActivate);
-			lvServers.SelectedIndexChanged += new System.EventHandler(lvServers_SelectedIndexChanged);
-			colName.Text = "Name";
-			colName.Width = 119;
-			colDescription.Text = "Description";
-			colDescription.Width = 310;
-			colEdit.Text = "Edit";
-			colEdit.Width = 41;
-			colExport.Text = "Export";
-			colExport.Width = 49;
-			imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-			imageList.ImageSize = new System.Drawing.Size(16, 16);
-			imageList.TransparentColor = System.Drawing.Color.Transparent;
-			panel2.AutoSize = true;
-			panel2.Controls.Add(btPublic);
-			panel2.Controls.Add(btCancel);
-			panel2.Controls.Add(btOK);
-			panel2.Location = new System.Drawing.Point(0, 298);
-			panel2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-			panel2.Name = "panel2";
-			panel2.Size = new System.Drawing.Size(553, 30);
-			panel2.TabIndex = 2;
-			btPublic.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			btPublic.Location = new System.Drawing.Point(0, 3);
-			btPublic.Name = "btPublic";
-			btPublic.Size = new System.Drawing.Size(117, 24);
-			btPublic.TabIndex = 0;
-			btPublic.Text = "Show List";
-			btPublic.Click += new System.EventHandler(btPublic_Click);
-			pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			pictureBox1.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.Search;
-			pictureBox1.Location = new System.Drawing.Point(422, 6);
-			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new System.Drawing.Size(16, 16);
-			pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-			pictureBox1.TabIndex = 6;
-			pictureBox1.TabStop = false;
-			base.AcceptButton = btOK;
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			AutoSize = true;
-			base.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			base.CancelButton = btCancel;
-			base.ClientSize = new System.Drawing.Size(570, 348);
-			base.Controls.Add(flowLayoutPanel1);
-			base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			base.MaximizeBox = false;
-			base.MinimizeBox = false;
-			base.Name = "OpenRemoteDialog";
-			base.ShowIcon = false;
-			base.ShowInTaskbar = false;
-			base.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			Text = "Open Remote Library";
-			flowLayoutPanel1.ResumeLayout(false);
-			flowLayoutPanel1.PerformLayout();
-			panel1.ResumeLayout(false);
-			panel1.PerformLayout();
-			panelList.ResumeLayout(false);
-			panelList.PerformLayout();
-			panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-			ResumeLayout(false);
-			PerformLayout();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Local Shares", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Internet Shares", System.Windows.Forms.HorizontalAlignment.Left);
+            this.btCancel = new System.Windows.Forms.Button();
+            this.btOK = new System.Windows.Forms.Button();
+            this.labelServerAddress = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbServer = new System.Windows.Forms.ComboBox();
+            this.txFilter = new System.Windows.Forms.TextBox();
+            this.panelList = new System.Windows.Forms.Panel();
+            this.txPassword = new cYo.Common.Windows.Forms.PasswordTextBox();
+            this.labelListPassword = new System.Windows.Forms.Label();
+            this.labelFailedServerList = new System.Windows.Forms.Label();
+            this.lvServers = new System.Windows.Forms.ListView();
+            this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colEdit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colExport = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btPublic = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelList.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // btCancel
+            // 
+            this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btCancel.Location = new System.Drawing.Point(473, 3);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(80, 24);
+            this.btCancel.TabIndex = 2;
+            this.btCancel.Text = "&Cancel";
+            // 
+            // btOK
+            // 
+            this.btOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btOK.Location = new System.Drawing.Point(387, 3);
+            this.btOK.Name = "btOK";
+            this.btOK.Size = new System.Drawing.Size(80, 24);
+            this.btOK.TabIndex = 1;
+            this.btOK.Text = "&OK";
+            // 
+            // labelServerAddress
+            // 
+            this.labelServerAddress.AutoSize = true;
+            this.labelServerAddress.Location = new System.Drawing.Point(3, 6);
+            this.labelServerAddress.Name = "labelServerAddress";
+            this.labelServerAddress.Size = new System.Drawing.Size(82, 13);
+            this.labelServerAddress.TabIndex = 0;
+            this.labelServerAddress.Text = "Library Address:";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.panelList);
+            this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 7);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(553, 331);
+            this.flowLayoutPanel1.TabIndex = 7;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.cbServer);
+            this.panel1.Controls.Add(this.labelServerAddress);
+            this.panel1.Controls.Add(this.txFilter);
+            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(553, 27);
+            this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.Search;
+            this.pictureBox1.Location = new System.Drawing.Point(422, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cbServer
+            // 
+            this.cbServer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbServer.FormattingEnabled = true;
+            this.cbServer.Location = new System.Drawing.Point(96, 3);
+            this.cbServer.Name = "cbServer";
+            this.cbServer.Size = new System.Drawing.Size(304, 21);
+            this.cbServer.TabIndex = 1;
+            this.cbServer.SelectedIndexChanged += new System.EventHandler(this.cbServer_SelectedIndexChanged);
+            this.cbServer.TextUpdate += new System.EventHandler(this.cbServer_TextUpdate);
+            // 
+            // txFilter
+            // 
+            this.txFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txFilter.Location = new System.Drawing.Point(444, 3);
+            this.txFilter.Name = "txFilter";
+            this.txFilter.Size = new System.Drawing.Size(109, 20);
+            this.txFilter.TabIndex = 2;
+            this.txFilter.TextChanged += new System.EventHandler(this.txFilter_TextChanged);
+            // 
+            // panelList
+            // 
+            this.panelList.Controls.Add(this.txPassword);
+            this.panelList.Controls.Add(this.labelListPassword);
+            this.panelList.Controls.Add(this.labelFailedServerList);
+            this.panelList.Controls.Add(this.lvServers);
+            this.panelList.Location = new System.Drawing.Point(0, 36);
+            this.panelList.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.panelList.Name = "panelList";
+            this.panelList.Size = new System.Drawing.Size(553, 256);
+            this.panelList.TabIndex = 8;
+            // 
+            // txPassword
+            // 
+            this.txPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txPassword.Location = new System.Drawing.Point(423, 229);
+            this.txPassword.Name = "txPassword";
+            this.txPassword.Password = null;
+            this.txPassword.Size = new System.Drawing.Size(130, 20);
+            this.txPassword.TabIndex = 3;
+            this.txPassword.UseSystemPasswordChar = true;
+            // 
+            // labelListPassword
+            // 
+            this.labelListPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelListPassword.Location = new System.Drawing.Point(245, 232);
+            this.labelListPassword.Name = "labelListPassword";
+            this.labelListPassword.Size = new System.Drawing.Size(172, 13);
+            this.labelListPassword.TabIndex = 2;
+            this.labelListPassword.Text = "Private List Password:";
+            this.labelListPassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelFailedServerList
+            // 
+            this.labelFailedServerList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelFailedServerList.BackColor = System.Drawing.SystemColors.Window;
+            this.labelFailedServerList.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.labelFailedServerList.Location = new System.Drawing.Point(184, 96);
+            this.labelFailedServerList.Name = "labelFailedServerList";
+            this.labelFailedServerList.Size = new System.Drawing.Size(186, 68);
+            this.labelFailedServerList.TabIndex = 1;
+            this.labelFailedServerList.Text = "Failed to get the Server List!";
+            this.labelFailedServerList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelFailedServerList.Visible = false;
+            // 
+            // lvServers
+            // 
+            this.lvServers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colName,
+            this.colDescription,
+            this.colEdit,
+            this.colExport});
+            this.lvServers.FullRowSelect = true;
+            listViewGroup1.Header = "Local Shares";
+            listViewGroup1.Name = "groupLocal";
+            listViewGroup2.Header = "Internet Shares";
+            listViewGroup2.Name = "groupInternet";
+            this.lvServers.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup1,
+            listViewGroup2});
+            this.lvServers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvServers.HideSelection = false;
+            this.lvServers.Location = new System.Drawing.Point(0, 3);
+            this.lvServers.Name = "lvServers";
+            this.lvServers.Size = new System.Drawing.Size(553, 224);
+            this.lvServers.SmallImageList = this.imageList;
+            this.lvServers.TabIndex = 0;
+            this.lvServers.UseCompatibleStateImageBehavior = false;
+            this.lvServers.View = System.Windows.Forms.View.Details;
+            this.lvServers.ItemActivate += new System.EventHandler(this.lvServers_ItemActivate);
+            this.lvServers.SelectedIndexChanged += new System.EventHandler(this.lvServers_SelectedIndexChanged);
+            // 
+            // colName
+            // 
+            this.colName.Text = "Name";
+            this.colName.Width = 119;
+            // 
+            // colDescription
+            // 
+            this.colDescription.Text = "Description";
+            this.colDescription.Width = 310;
+            // 
+            // colEdit
+            // 
+            this.colEdit.Text = "Edit";
+            this.colEdit.Width = 41;
+            // 
+            // colExport
+            // 
+            this.colExport.Text = "Export";
+            this.colExport.Width = 49;
+            // 
+            // imageList
+            // 
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.btPublic);
+            this.panel2.Controls.Add(this.btCancel);
+            this.panel2.Controls.Add(this.btOK);
+            this.panel2.Location = new System.Drawing.Point(0, 298);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(553, 30);
+            this.panel2.TabIndex = 2;
+            // 
+            // btPublic
+            // 
+            this.btPublic.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btPublic.Location = new System.Drawing.Point(0, 3);
+            this.btPublic.Name = "btPublic";
+            this.btPublic.Size = new System.Drawing.Size(117, 24);
+            this.btPublic.TabIndex = 0;
+            this.btPublic.Text = "Show List";
+            this.btPublic.Click += new System.EventHandler(this.btPublic_Click);
+            // 
+            // OpenRemoteDialog
+            // 
+            this.AcceptButton = this.btOK;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CancelButton = this.btCancel;
+            this.ClientSize = new System.Drawing.Size(570, 348);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "OpenRemoteDialog";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Open Remote Library";
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelList.ResumeLayout(false);
+            this.panelList.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
 		}
 		
-		private IContainer components;
-
 		private Button btCancel;
-
 		private Button btOK;
-
 		private Label labelServerAddress;
-
 		private FlowLayoutPanel flowLayoutPanel1;
-
 		private Panel panel1;
-
 		private ComboBox cbServer;
-
 		private ListView lvServers;
-
 		private Panel panel2;
-
 		private Button btPublic;
-
 		private ColumnHeader colName;
-
 		private ColumnHeader colDescription;
-
 		private Panel panelList;
-
 		private TextBox txFilter;
-
 		private ImageList imageList;
-
 		private Label labelFailedServerList;
-
 		private PasswordTextBox txPassword;
-
 		private Label labelListPassword;
-
 		private ColumnHeader colEdit;
-
 		private ColumnHeader colExport;
-
 		private PictureBox pictureBox1;
 	}
 }

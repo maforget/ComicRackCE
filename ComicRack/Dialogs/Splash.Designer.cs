@@ -7,7 +7,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
     public partial class Splash
 	{
-		protected override void Dispose(bool disposing)
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
@@ -20,24 +25,25 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
-			SuspendLayout();
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			base.ClientSize = new System.Drawing.Size(600, 300);
-			Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-			base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			base.MaximizeBox = false;
-			base.MinimizeBox = false;
-			base.Name = "Splash";
-			base.ShowIcon = false;
-			base.ShowInTaskbar = false;
-			base.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-			base.TopMost = true;
-			ResumeLayout(false);
+            this.SuspendLayout();
+            // 
+            // Splash
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(600, 300);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Splash";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.TopMost = true;
+            this.ResumeLayout(false);
+
 		}
 
 		private readonly EventWaitHandle initialized = new EventWaitHandle(initialState: false, EventResetMode.ManualReset);
-
-		private IContainer components;
 	}
 }

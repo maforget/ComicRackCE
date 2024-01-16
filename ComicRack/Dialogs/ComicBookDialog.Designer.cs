@@ -9,7 +9,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
     public partial class ComicBookDialog
 	{
-		protected override void Dispose(bool disposing)
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
@@ -36,1976 +41,2324 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
-			btCancel = new System.Windows.Forms.Button();
-			btOK = new System.Windows.Forms.Button();
-			tabControl = new System.Windows.Forms.TabControl();
-			tabSummary = new System.Windows.Forms.TabPage();
-			btThumbnail = new cYo.Common.Windows.Forms.SplitButton();
-			cmThumbnail = new System.Windows.Forms.ContextMenuStrip(components);
-			miResetThumbnail = new System.Windows.Forms.ToolStripMenuItem();
-			toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-			labelCommunityRating = new System.Windows.Forms.Label();
-			txCommunityRating = new cYo.Projects.ComicRack.Engine.Controls.RatingControl();
-			labelMyRating = new System.Windows.Forms.Label();
-			btLinkFile = new System.Windows.Forms.Button();
-			linkLabel = new System.Windows.Forms.LinkLabel();
-			coverThumbnail = new cYo.Projects.ComicRack.Engine.Controls.ThumbnailControl();
-			whereSeparator = new System.Windows.Forms.Panel();
-			panel1 = new System.Windows.Forms.Panel();
-			labelWhere = new System.Windows.Forms.Label();
-			labelType = new System.Windows.Forms.Label();
-			txRating = new cYo.Projects.ComicRack.Engine.Controls.RatingControl();
-			labelPages = new System.Windows.Forms.Label();
-			lblType = new System.Windows.Forms.Label();
-			lblPath = new System.Windows.Forms.Label();
-			lblPages = new System.Windows.Forms.Label();
-			tabDetails = new System.Windows.Forms.TabPage();
-			txDay = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelDay = new System.Windows.Forms.Label();
-			labelSeriesGroup = new System.Windows.Forms.Label();
-			txSeriesGroup = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelStoryArc = new System.Windows.Forms.Label();
-			txStoryArc = new cYo.Common.Windows.Forms.TextBoxEx();
-			cbSeriesComplete = new System.Windows.Forms.ComboBox();
-			labelSeriesComplete = new System.Windows.Forms.Label();
-			cbEnableDynamicUpdate = new System.Windows.Forms.ComboBox();
-			labelEnableDynamicUpdate = new System.Windows.Forms.Label();
-			txGenre = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelTags = new System.Windows.Forms.Label();
-			cbEnableProposed = new System.Windows.Forms.ComboBox();
-			txTags = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelEnableProposed = new System.Windows.Forms.Label();
-			txVolume = new cYo.Common.Windows.Forms.TextBoxEx();
-			cbAgeRating = new System.Windows.Forms.ComboBox();
-			txEditor = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelEditor = new System.Windows.Forms.Label();
-			txMonth = new cYo.Common.Windows.Forms.TextBoxEx();
-			txYear = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelAgeRating = new System.Windows.Forms.Label();
-			cbFormat = new cYo.Common.Windows.Forms.ComboBoxEx();
-			txColorist = new cYo.Common.Windows.Forms.TextBoxEx();
-			txSeries = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelFormat = new System.Windows.Forms.Label();
-			labelAlternateSeries = new System.Windows.Forms.Label();
-			txAlternateSeries = new cYo.Common.Windows.Forms.TextBoxEx();
-			cbImprint = new System.Windows.Forms.ComboBox();
-			cbBlackAndWhite = new System.Windows.Forms.ComboBox();
-			labelVolume = new System.Windows.Forms.Label();
-			txInker = new cYo.Common.Windows.Forms.TextBoxEx();
-			cbManga = new System.Windows.Forms.ComboBox();
-			labelYear = new System.Windows.Forms.Label();
-			labelMonth = new System.Windows.Forms.Label();
-			labelBlackAndWhite = new System.Windows.Forms.Label();
-			txAlternateCount = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelManga = new System.Windows.Forms.Label();
-			labelSeries = new System.Windows.Forms.Label();
-			labelLanguage = new System.Windows.Forms.Label();
-			labelImprint = new System.Windows.Forms.Label();
-			labelGenre = new System.Windows.Forms.Label();
-			labelColorist = new System.Windows.Forms.Label();
-			txCount = new cYo.Common.Windows.Forms.TextBoxEx();
-			cbLanguage = new cYo.Common.Windows.Forms.LanguageComboBox();
-			cbPublisher = new System.Windows.Forms.ComboBox();
-			txPenciller = new cYo.Common.Windows.Forms.TextBoxEx();
-			txAlternateNumber = new cYo.Common.Windows.Forms.TextBoxEx();
-			txNumber = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelPublisher = new System.Windows.Forms.Label();
-			labelCoverArtist = new System.Windows.Forms.Label();
-			txCoverArtist = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelInker = new System.Windows.Forms.Label();
-			labelAlternateCount = new System.Windows.Forms.Label();
-			txTitle = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelCount = new System.Windows.Forms.Label();
-			labelAlternateNumber = new System.Windows.Forms.Label();
-			labelNumber = new System.Windows.Forms.Label();
-			labelLetterer = new System.Windows.Forms.Label();
-			labelPenciller = new System.Windows.Forms.Label();
-			txLetterer = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelTitle = new System.Windows.Forms.Label();
-			labelWriter = new System.Windows.Forms.Label();
-			txWriter = new cYo.Common.Windows.Forms.TextBoxEx();
-			tabPlot = new System.Windows.Forms.TabPage();
-			tabNotes = new System.Windows.Forms.TabControl();
-			tabPageSummary = new System.Windows.Forms.TabPage();
-			txSummary = new cYo.Common.Windows.Forms.TextBoxEx();
-			tabPageNotes = new System.Windows.Forms.TabPage();
-			txNotes = new cYo.Common.Windows.Forms.TextBoxEx();
-			tabPageReview = new System.Windows.Forms.TabPage();
-			txReview = new cYo.Common.Windows.Forms.TextBoxEx();
-			txMainCharacterOrTeam = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelMainCharacterOrTeam = new System.Windows.Forms.Label();
-			txScanInformation = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelScanInformation = new System.Windows.Forms.Label();
-			txLocations = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelLocations = new System.Windows.Forms.Label();
-			txTeams = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelTeams = new System.Windows.Forms.Label();
-			txWeblink = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelWeb = new System.Windows.Forms.Label();
-			txCharacters = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelCharacters = new System.Windows.Forms.Label();
-			tabCatalog = new System.Windows.Forms.TabPage();
-			labelReleasedTime = new System.Windows.Forms.Label();
-			dtpReleasedTime = new cYo.Common.Windows.Forms.NullableDateTimePicker();
-			labelOpenedTime = new System.Windows.Forms.Label();
-			dtpOpenedTime = new cYo.Common.Windows.Forms.NullableDateTimePicker();
-			labelAddedTime = new System.Windows.Forms.Label();
-			dtpAddedTime = new cYo.Common.Windows.Forms.NullableDateTimePicker();
-			txPagesAsTextSimple = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelPagesAsTextSimple = new System.Windows.Forms.Label();
-			txISBN = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelISBN = new System.Windows.Forms.Label();
-			cbBookLocation = new System.Windows.Forms.ComboBox();
-			labelBookLocation = new System.Windows.Forms.Label();
-			txCollectionStatus = new cYo.Common.Windows.Forms.TextBoxEx();
-			cbBookPrice = new System.Windows.Forms.ComboBox();
-			labelBookPrice = new System.Windows.Forms.Label();
-			txBookNotes = new cYo.Common.Windows.Forms.TextBoxEx();
-			labelBookNotes = new System.Windows.Forms.Label();
-			cbBookAge = new System.Windows.Forms.ComboBox();
-			labelBookAge = new System.Windows.Forms.Label();
-			labelBookCollectionStatus = new System.Windows.Forms.Label();
-			cbBookCondition = new System.Windows.Forms.ComboBox();
-			labelBookCondition = new System.Windows.Forms.Label();
-			cbBookStore = new cYo.Common.Windows.Forms.ComboBoxEx();
-			labelBookStore = new System.Windows.Forms.Label();
-			cbBookOwner = new System.Windows.Forms.ComboBox();
-			labelBookOwner = new System.Windows.Forms.Label();
-			tabCustom = new System.Windows.Forms.TabPage();
-			customValuesData = new System.Windows.Forms.DataGridView();
-			CustomValueName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			CustomValueValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			tabPages = new System.Windows.Forms.TabPage();
-			btResetPages = new cYo.Common.Windows.Forms.SplitButton();
-			cmResetPages = new System.Windows.Forms.ContextMenuStrip(components);
-			miOrderByName = new System.Windows.Forms.ToolStripMenuItem();
-			miOrderByNameNumeric = new System.Windows.Forms.ToolStripMenuItem();
-			btPageView = new System.Windows.Forms.Button();
-			labelPagesInfo = new System.Windows.Forms.Label();
-			pagesView = new cYo.Projects.ComicRack.Viewer.Controls.PagesView();
-			tabColors = new System.Windows.Forms.TabPage();
-			panelImage = new System.Windows.Forms.Panel();
-			labelCurrentPage = new System.Windows.Forms.Label();
-			chkShowImageControls = new System.Windows.Forms.CheckBox();
-			btLastPage = new System.Windows.Forms.Button();
-			btFirstPage = new System.Windows.Forms.Button();
-			btNextPage = new cYo.Common.Windows.Forms.AutoRepeatButton();
-			btPrevPage = new cYo.Common.Windows.Forms.AutoRepeatButton();
-			pageViewer = new cYo.Common.Windows.Forms.BitmapViewer();
-			panelImageControls = new System.Windows.Forms.Panel();
-			labelSaturation = new System.Windows.Forms.Label();
-			labelContrast = new System.Windows.Forms.Label();
-			tbGamma = new cYo.Common.Windows.Forms.TrackBarLite();
-			tbSaturation = new cYo.Common.Windows.Forms.TrackBarLite();
-			labelGamma = new System.Windows.Forms.Label();
-			tbBrightness = new cYo.Common.Windows.Forms.TrackBarLite();
-			tbSharpening = new cYo.Common.Windows.Forms.TrackBarLite();
-			tbContrast = new cYo.Common.Windows.Forms.TrackBarLite();
-			labelSharpening = new System.Windows.Forms.Label();
-			labelBrightness = new System.Windows.Forms.Label();
-			btResetColors = new System.Windows.Forms.Button();
-			btPrev = new System.Windows.Forms.Button();
-			btNext = new System.Windows.Forms.Button();
-			btScript = new cYo.Common.Windows.Forms.SplitButton();
-			toolTip = new System.Windows.Forms.ToolTip(components);
-			btApply = new System.Windows.Forms.Button();
-			tabControl.SuspendLayout();
-			tabSummary.SuspendLayout();
-			cmThumbnail.SuspendLayout();
-			tabDetails.SuspendLayout();
-			tabPlot.SuspendLayout();
-			tabNotes.SuspendLayout();
-			tabPageSummary.SuspendLayout();
-			tabPageNotes.SuspendLayout();
-			tabPageReview.SuspendLayout();
-			tabCatalog.SuspendLayout();
-			tabCustom.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)customValuesData).BeginInit();
-			tabPages.SuspendLayout();
-			cmResetPages.SuspendLayout();
-			tabColors.SuspendLayout();
-			panelImage.SuspendLayout();
-			panelImageControls.SuspendLayout();
-			SuspendLayout();
-			btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			btCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			btCancel.Location = new System.Drawing.Point(415, 483);
-			btCancel.Name = "btCancel";
-			btCancel.Size = new System.Drawing.Size(80, 24);
-			btCancel.TabIndex = 5;
-			btCancel.Text = "&Cancel";
-			btOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-			btOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			btOK.Location = new System.Drawing.Point(329, 483);
-			btOK.Name = "btOK";
-			btOK.Size = new System.Drawing.Size(80, 24);
-			btOK.TabIndex = 4;
-			btOK.Text = "&OK";
-			btOK.Click += new System.EventHandler(btOK_Click);
-			tabControl.Controls.Add(tabSummary);
-			tabControl.Controls.Add(tabDetails);
-			tabControl.Controls.Add(tabPlot);
-			tabControl.Controls.Add(tabCatalog);
-			tabControl.Controls.Add(tabCustom);
-			tabControl.Controls.Add(tabPages);
-			tabControl.Controls.Add(tabColors);
-			tabControl.Location = new System.Drawing.Point(8, 9);
-			tabControl.Name = "tabControl";
-			tabControl.SelectedIndex = 0;
-			tabControl.Size = new System.Drawing.Size(574, 468);
-			tabControl.TabIndex = 0;
-			tabSummary.Controls.Add(btThumbnail);
-			tabSummary.Controls.Add(labelCommunityRating);
-			tabSummary.Controls.Add(txCommunityRating);
-			tabSummary.Controls.Add(labelMyRating);
-			tabSummary.Controls.Add(btLinkFile);
-			tabSummary.Controls.Add(linkLabel);
-			tabSummary.Controls.Add(coverThumbnail);
-			tabSummary.Controls.Add(whereSeparator);
-			tabSummary.Controls.Add(panel1);
-			tabSummary.Controls.Add(labelWhere);
-			tabSummary.Controls.Add(labelType);
-			tabSummary.Controls.Add(txRating);
-			tabSummary.Controls.Add(labelPages);
-			tabSummary.Controls.Add(lblType);
-			tabSummary.Controls.Add(lblPath);
-			tabSummary.Controls.Add(lblPages);
-			tabSummary.Location = new System.Drawing.Point(4, 22);
-			tabSummary.Name = "tabSummary";
-			tabSummary.Padding = new System.Windows.Forms.Padding(3);
-			tabSummary.Size = new System.Drawing.Size(566, 442);
-			tabSummary.TabIndex = 0;
-			tabSummary.Text = "Summary";
-			tabSummary.UseVisualStyleBackColor = true;
-			btThumbnail.ContextMenuStrip = cmThumbnail;
-			btThumbnail.Location = new System.Drawing.Point(372, 347);
-			btThumbnail.Name = "btThumbnail";
-			btThumbnail.Size = new System.Drawing.Size(152, 23);
-			btThumbnail.TabIndex = 13;
-			btThumbnail.Text = "Thumbnail...";
-			btThumbnail.UseVisualStyleBackColor = true;
-			btThumbnail.Visible = false;
-			btThumbnail.ShowContextMenu += new System.EventHandler(btThumbnail_ShowContextMenu);
-			btThumbnail.Click += new System.EventHandler(btThumbnail_Click);
-			cmThumbnail.Items.AddRange(new System.Windows.Forms.ToolStripItem[2]
-			{
-				miResetThumbnail,
-				toolStripMenuItem1
-			});
-			cmThumbnail.Name = "cmKeyboardLayout";
-			cmThumbnail.Size = new System.Drawing.Size(103, 32);
-			miResetThumbnail.Name = "miResetThumbnail";
-			miResetThumbnail.Size = new System.Drawing.Size(102, 22);
-			miResetThumbnail.Text = "&Reset";
-			miResetThumbnail.Click += new System.EventHandler(miResetThumbnail_Click);
-			toolStripMenuItem1.Name = "toolStripMenuItem1";
-			toolStripMenuItem1.Size = new System.Drawing.Size(99, 6);
-			labelCommunityRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelCommunityRating.Location = new System.Drawing.Point(217, 313);
-			labelCommunityRating.Name = "labelCommunityRating";
-			labelCommunityRating.Size = new System.Drawing.Size(149, 20);
-			labelCommunityRating.TabIndex = 7;
-			labelCommunityRating.Text = "Community Rating:";
-			labelCommunityRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			txCommunityRating.DrawText = true;
-			txCommunityRating.Font = new System.Drawing.Font("Arial", 9f, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, 0);
-			txCommunityRating.ForeColor = System.Drawing.SystemColors.GrayText;
-			txCommunityRating.Location = new System.Drawing.Point(372, 312);
-			txCommunityRating.Name = "txCommunityRating";
-			txCommunityRating.Rating = 3f;
-			txCommunityRating.RatingImage = cYo.Projects.ComicRack.Viewer.Properties.Resources.StarBlue;
-			txCommunityRating.Size = new System.Drawing.Size(152, 21);
-			txCommunityRating.TabIndex = 8;
-			txCommunityRating.Text = "3";
-			labelMyRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelMyRating.Location = new System.Drawing.Point(219, 285);
-			labelMyRating.Name = "labelMyRating";
-			labelMyRating.Size = new System.Drawing.Size(147, 20);
-			labelMyRating.TabIndex = 5;
-			labelMyRating.Text = "My Rating:";
-			labelMyRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			btLinkFile.Location = new System.Drawing.Point(372, 373);
-			btLinkFile.Name = "btLinkFile";
-			btLinkFile.Size = new System.Drawing.Size(152, 23);
-			btLinkFile.TabIndex = 14;
-			btLinkFile.Text = "Link to File...";
-			btLinkFile.UseVisualStyleBackColor = true;
-			btLinkFile.Visible = false;
-			btLinkFile.Click += new System.EventHandler(btLinkFile_Click);
-			linkLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			linkLabel.LinkColor = System.Drawing.Color.SteelBlue;
-			linkLabel.Location = new System.Drawing.Point(3, 416);
-			linkLabel.Name = "linkLabel";
-			linkLabel.Size = new System.Drawing.Size(560, 23);
-			linkLabel.TabIndex = 12;
-			linkLabel.TabStop = true;
-			linkLabel.Text = "linkLabel";
-			linkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			linkLabel.VisitedLinkColor = System.Drawing.Color.MediumOrchid;
-			linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(linkLabel_LinkClicked);
-			coverThumbnail.AllowDrop = true;
-			coverThumbnail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-			coverThumbnail.Location = new System.Drawing.Point(21, 19);
-			coverThumbnail.Name = "coverThumbnail";
-			coverThumbnail.Size = new System.Drawing.Size(520, 243);
-			coverThumbnail.TabIndex = 0;
-			coverThumbnail.ThreeD = true;
-			coverThumbnail.Tile = true;
-			coverThumbnail.Click += new System.EventHandler(coverThumbnail_Click);
-			coverThumbnail.DragDrop += new System.Windows.Forms.DragEventHandler(coverThumbnail_DragDrop);
-			coverThumbnail.DragOver += new System.Windows.Forms.DragEventHandler(coverThumbnail_DragOver);
-			whereSeparator.BackColor = System.Drawing.SystemColors.ButtonShadow;
-			whereSeparator.Location = new System.Drawing.Point(19, 360);
-			whereSeparator.Name = "whereSeparator";
-			whereSeparator.Size = new System.Drawing.Size(520, 1);
-			whereSeparator.TabIndex = 9;
-			panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-			panel1.Location = new System.Drawing.Point(23, 268);
-			panel1.Name = "panel1";
-			panel1.Size = new System.Drawing.Size(520, 1);
-			panel1.TabIndex = 0;
-			labelWhere.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelWhere.Location = new System.Drawing.Point(19, 373);
-			labelWhere.Name = "labelWhere";
-			labelWhere.Size = new System.Drawing.Size(68, 17);
-			labelWhere.TabIndex = 10;
-			labelWhere.Text = "Where:";
-			labelWhere.TextAlign = System.Drawing.ContentAlignment.TopRight;
-			labelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelType.Location = new System.Drawing.Point(19, 285);
-			labelType.Name = "labelType";
-			labelType.Size = new System.Drawing.Size(68, 20);
-			labelType.TabIndex = 1;
-			labelType.Text = "Type:";
-			labelType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			txRating.DrawText = true;
-			txRating.Font = new System.Drawing.Font("Arial", 9f, System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, 0);
-			txRating.ForeColor = System.Drawing.SystemColors.GrayText;
-			txRating.Location = new System.Drawing.Point(372, 285);
-			txRating.Name = "txRating";
-			txRating.Rating = 3f;
-			txRating.RatingImage = cYo.Projects.ComicRack.Viewer.Properties.Resources.StarYellow;
-			txRating.Size = new System.Drawing.Size(152, 21);
-			txRating.TabIndex = 6;
-			txRating.Text = "3";
-			labelPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelPages.Location = new System.Drawing.Point(21, 313);
-			labelPages.Name = "labelPages";
-			labelPages.Size = new System.Drawing.Size(66, 20);
-			labelPages.TabIndex = 3;
-			labelPages.Text = "Pages:";
-			labelPages.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-			lblType.Location = new System.Drawing.Point(93, 285);
-			lblType.Name = "lblType";
-			lblType.Size = new System.Drawing.Size(145, 20);
-			lblType.TabIndex = 2;
-			lblType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			lblPath.AutoEllipsis = true;
-			lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-			lblPath.Location = new System.Drawing.Point(93, 373);
-			lblPath.Name = "lblPath";
-			lblPath.Size = new System.Drawing.Size(431, 35);
-			lblPath.TabIndex = 11;
-			lblPath.UseMnemonic = false;
-			lblPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-			lblPages.Location = new System.Drawing.Point(93, 313);
-			lblPages.Name = "lblPages";
-			lblPages.Size = new System.Drawing.Size(105, 20);
-			lblPages.TabIndex = 4;
-			lblPages.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			tabDetails.Controls.Add(txDay);
-			tabDetails.Controls.Add(labelDay);
-			tabDetails.Controls.Add(labelSeriesGroup);
-			tabDetails.Controls.Add(txSeriesGroup);
-			tabDetails.Controls.Add(labelStoryArc);
-			tabDetails.Controls.Add(txStoryArc);
-			tabDetails.Controls.Add(cbSeriesComplete);
-			tabDetails.Controls.Add(labelSeriesComplete);
-			tabDetails.Controls.Add(cbEnableDynamicUpdate);
-			tabDetails.Controls.Add(labelEnableDynamicUpdate);
-			tabDetails.Controls.Add(txGenre);
-			tabDetails.Controls.Add(labelTags);
-			tabDetails.Controls.Add(cbEnableProposed);
-			tabDetails.Controls.Add(txTags);
-			tabDetails.Controls.Add(labelEnableProposed);
-			tabDetails.Controls.Add(txVolume);
-			tabDetails.Controls.Add(cbAgeRating);
-			tabDetails.Controls.Add(txEditor);
-			tabDetails.Controls.Add(labelEditor);
-			tabDetails.Controls.Add(txMonth);
-			tabDetails.Controls.Add(txYear);
-			tabDetails.Controls.Add(labelAgeRating);
-			tabDetails.Controls.Add(cbFormat);
-			tabDetails.Controls.Add(txColorist);
-			tabDetails.Controls.Add(txSeries);
-			tabDetails.Controls.Add(labelFormat);
-			tabDetails.Controls.Add(labelAlternateSeries);
-			tabDetails.Controls.Add(txAlternateSeries);
-			tabDetails.Controls.Add(cbImprint);
-			tabDetails.Controls.Add(cbBlackAndWhite);
-			tabDetails.Controls.Add(labelVolume);
-			tabDetails.Controls.Add(txInker);
-			tabDetails.Controls.Add(cbManga);
-			tabDetails.Controls.Add(labelYear);
-			tabDetails.Controls.Add(labelMonth);
-			tabDetails.Controls.Add(labelBlackAndWhite);
-			tabDetails.Controls.Add(txAlternateCount);
-			tabDetails.Controls.Add(labelManga);
-			tabDetails.Controls.Add(labelSeries);
-			tabDetails.Controls.Add(labelLanguage);
-			tabDetails.Controls.Add(labelImprint);
-			tabDetails.Controls.Add(labelGenre);
-			tabDetails.Controls.Add(labelColorist);
-			tabDetails.Controls.Add(txCount);
-			tabDetails.Controls.Add(cbLanguage);
-			tabDetails.Controls.Add(cbPublisher);
-			tabDetails.Controls.Add(txPenciller);
-			tabDetails.Controls.Add(txAlternateNumber);
-			tabDetails.Controls.Add(txNumber);
-			tabDetails.Controls.Add(labelPublisher);
-			tabDetails.Controls.Add(labelCoverArtist);
-			tabDetails.Controls.Add(txCoverArtist);
-			tabDetails.Controls.Add(labelInker);
-			tabDetails.Controls.Add(labelAlternateCount);
-			tabDetails.Controls.Add(txTitle);
-			tabDetails.Controls.Add(labelCount);
-			tabDetails.Controls.Add(labelAlternateNumber);
-			tabDetails.Controls.Add(labelNumber);
-			tabDetails.Controls.Add(labelLetterer);
-			tabDetails.Controls.Add(labelPenciller);
-			tabDetails.Controls.Add(txLetterer);
-			tabDetails.Controls.Add(labelTitle);
-			tabDetails.Controls.Add(labelWriter);
-			tabDetails.Controls.Add(txWriter);
-			tabDetails.Location = new System.Drawing.Point(4, 22);
-			tabDetails.Name = "tabDetails";
-			tabDetails.Padding = new System.Windows.Forms.Padding(3);
-			tabDetails.Size = new System.Drawing.Size(566, 442);
-			tabDetails.TabIndex = 1;
-			tabDetails.Text = "Details";
-			tabDetails.UseVisualStyleBackColor = true;
-			txDay.Location = new System.Drawing.Point(349, 65);
-			txDay.MaxLength = 4;
-			txDay.Name = "txDay";
-			txDay.PromptText = "";
-			txDay.Size = new System.Drawing.Size(55, 20);
-			txDay.TabIndex = 17;
-			labelDay.AutoSize = true;
-			labelDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelDay.Location = new System.Drawing.Point(349, 51);
-			labelDay.Name = "labelDay";
-			labelDay.Size = new System.Drawing.Size(29, 12);
-			labelDay.TabIndex = 16;
-			labelDay.Text = "Day:";
-			labelSeriesGroup.AutoSize = true;
-			labelSeriesGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelSeriesGroup.Location = new System.Drawing.Point(214, 129);
-			labelSeriesGroup.Name = "labelSeriesGroup";
-			labelSeriesGroup.Size = new System.Drawing.Size(74, 12);
-			labelSeriesGroup.TabIndex = 30;
-			labelSeriesGroup.Text = "Series Group:";
-			txSeriesGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txSeriesGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txSeriesGroup.Location = new System.Drawing.Point(216, 142);
-			txSeriesGroup.Name = "txSeriesGroup";
-			txSeriesGroup.PromptText = "";
-			txSeriesGroup.Size = new System.Drawing.Size(188, 20);
-			txSeriesGroup.TabIndex = 31;
-			txSeriesGroup.Tag = "SeriesGroup";
-			labelStoryArc.AutoSize = true;
-			labelStoryArc.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelStoryArc.Location = new System.Drawing.Point(8, 129);
-			labelStoryArc.Name = "labelStoryArc";
-			labelStoryArc.Size = new System.Drawing.Size(57, 12);
-			labelStoryArc.TabIndex = 28;
-			labelStoryArc.Text = "Story Arc:";
-			txStoryArc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txStoryArc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txStoryArc.Location = new System.Drawing.Point(10, 142);
-			txStoryArc.Name = "txStoryArc";
-			txStoryArc.PromptText = "";
-			txStoryArc.Size = new System.Drawing.Size(200, 20);
-			txStoryArc.TabIndex = 29;
-			txStoryArc.Tag = "StoryArc";
-			cbSeriesComplete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cbSeriesComplete.FormattingEnabled = true;
-			cbSeriesComplete.Location = new System.Drawing.Point(416, 141);
-			cbSeriesComplete.Name = "cbSeriesComplete";
-			cbSeriesComplete.Size = new System.Drawing.Size(139, 21);
-			cbSeriesComplete.TabIndex = 33;
-			cbSeriesComplete.TextChanged += new System.EventHandler(IconTextsChanged);
-			labelSeriesComplete.AutoSize = true;
-			labelSeriesComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelSeriesComplete.Location = new System.Drawing.Point(414, 129);
-			labelSeriesComplete.Name = "labelSeriesComplete";
-			labelSeriesComplete.Size = new System.Drawing.Size(90, 12);
-			labelSeriesComplete.TabIndex = 32;
-			labelSeriesComplete.Text = "Series complete:";
-			cbEnableDynamicUpdate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cbEnableDynamicUpdate.FormattingEnabled = true;
-			cbEnableDynamicUpdate.Location = new System.Drawing.Point(416, 371);
-			cbEnableDynamicUpdate.Name = "cbEnableDynamicUpdate";
-			cbEnableDynamicUpdate.Size = new System.Drawing.Size(139, 21);
-			cbEnableDynamicUpdate.TabIndex = 59;
-			labelEnableDynamicUpdate.AutoSize = true;
-			labelEnableDynamicUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelEnableDynamicUpdate.Location = new System.Drawing.Point(414, 357);
-			labelEnableDynamicUpdate.Name = "labelEnableDynamicUpdate";
-			labelEnableDynamicUpdate.Size = new System.Drawing.Size(103, 12);
-			labelEnableDynamicUpdate.TabIndex = 58;
-			labelEnableDynamicUpdate.Text = "Include in Updates:";
-			txGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txGenre.Location = new System.Drawing.Point(10, 372);
-			txGenre.Name = "txGenre";
-			txGenre.Size = new System.Drawing.Size(392, 20);
-			txGenre.TabIndex = 57;
-			labelTags.AutoSize = true;
-			labelTags.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelTags.Location = new System.Drawing.Point(11, 395);
-			labelTags.Name = "labelTags";
-			labelTags.Size = new System.Drawing.Size(33, 12);
-			labelTags.TabIndex = 60;
-			labelTags.Text = "Tags:";
-			cbEnableProposed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cbEnableProposed.FormattingEnabled = true;
-			cbEnableProposed.Location = new System.Drawing.Point(416, 410);
-			cbEnableProposed.Name = "cbEnableProposed";
-			cbEnableProposed.Size = new System.Drawing.Size(139, 21);
-			cbEnableProposed.TabIndex = 63;
-			cbEnableProposed.SelectedIndexChanged += new System.EventHandler(cbEnableShadowValues_SelectedIndexChanged);
-			txTags.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txTags.Location = new System.Drawing.Point(11, 411);
-			txTags.Name = "txTags";
-			txTags.Size = new System.Drawing.Size(392, 20);
-			txTags.TabIndex = 61;
-			txTags.TextChanged += new System.EventHandler(IconTextsChanged);
-			labelEnableProposed.AutoSize = true;
-			labelEnableProposed.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelEnableProposed.Location = new System.Drawing.Point(414, 395);
-			labelEnableProposed.Name = "labelEnableProposed";
-			labelEnableProposed.Size = new System.Drawing.Size(94, 12);
-			labelEnableProposed.TabIndex = 62;
-			labelEnableProposed.Text = "Proposed Values:";
-			txVolume.Location = new System.Drawing.Point(216, 28);
-			txVolume.Name = "txVolume";
-			txVolume.PromptText = "";
-			txVolume.Size = new System.Drawing.Size(57, 20);
-			txVolume.TabIndex = 3;
-			cbAgeRating.FormattingEnabled = true;
-			cbAgeRating.Location = new System.Drawing.Point(416, 200);
-			cbAgeRating.Name = "cbAgeRating";
-			cbAgeRating.Size = new System.Drawing.Size(139, 21);
-			cbAgeRating.TabIndex = 39;
-			cbAgeRating.TextChanged += new System.EventHandler(IconTextsChanged);
-			txEditor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txEditor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txEditor.Location = new System.Drawing.Point(11, 315);
-			txEditor.Name = "txEditor";
-			txEditor.Size = new System.Drawing.Size(200, 20);
-			txEditor.TabIndex = 53;
-			txEditor.Tag = "Editor";
-			labelEditor.AutoSize = true;
-			labelEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelEditor.Location = new System.Drawing.Point(9, 300);
-			labelEditor.Name = "labelEditor";
-			labelEditor.Size = new System.Drawing.Size(39, 12);
-			labelEditor.TabIndex = 52;
-			labelEditor.Text = "Editor:";
-			txMonth.Location = new System.Drawing.Point(278, 66);
-			txMonth.MaxLength = 2;
-			txMonth.Name = "txMonth";
-			txMonth.PromptText = "";
-			txMonth.Size = new System.Drawing.Size(65, 20);
-			txMonth.TabIndex = 15;
-			txYear.Location = new System.Drawing.Point(216, 66);
-			txYear.MaxLength = 4;
-			txYear.Name = "txYear";
-			txYear.PromptText = "";
-			txYear.Size = new System.Drawing.Size(57, 20);
-			txYear.TabIndex = 13;
-			txYear.TextChanged += new System.EventHandler(IconTextsChanged);
-			labelAgeRating.AutoSize = true;
-			labelAgeRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelAgeRating.Location = new System.Drawing.Point(414, 187);
-			labelAgeRating.Name = "labelAgeRating";
-			labelAgeRating.Size = new System.Drawing.Size(65, 12);
-			labelAgeRating.TabIndex = 38;
-			labelAgeRating.Text = "Age Rating:";
-			cbFormat.FormattingEnabled = true;
-			cbFormat.Location = new System.Drawing.Point(416, 27);
-			cbFormat.Name = "cbFormat";
-			cbFormat.PromptText = null;
-			cbFormat.Size = new System.Drawing.Size(139, 21);
-			cbFormat.TabIndex = 9;
-			cbFormat.TextChanged += new System.EventHandler(IconTextsChanged);
-			txColorist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txColorist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txColorist.Location = new System.Drawing.Point(216, 239);
-			txColorist.Name = "txColorist";
-			txColorist.Size = new System.Drawing.Size(187, 20);
-			txColorist.TabIndex = 43;
-			txColorist.Tag = "Colorist";
-			txSeries.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txSeries.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txSeries.Location = new System.Drawing.Point(11, 28);
-			txSeries.Name = "txSeries";
-			txSeries.PromptText = "";
-			txSeries.Size = new System.Drawing.Size(201, 20);
-			txSeries.TabIndex = 1;
-			txSeries.Tag = "Series";
-			labelFormat.AutoSize = true;
-			labelFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelFormat.Location = new System.Drawing.Point(414, 13);
-			labelFormat.Name = "labelFormat";
-			labelFormat.Size = new System.Drawing.Size(45, 12);
-			labelFormat.TabIndex = 8;
-			labelFormat.Text = "Format:";
-			labelAlternateSeries.AutoSize = true;
-			labelAlternateSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelAlternateSeries.Location = new System.Drawing.Point(9, 89);
-			labelAlternateSeries.Name = "labelAlternateSeries";
-			labelAlternateSeries.Size = new System.Drawing.Size(177, 12);
-			labelAlternateSeries.TabIndex = 20;
-			labelAlternateSeries.Text = "Alternate Series or Storyline Title:";
-			txAlternateSeries.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txAlternateSeries.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txAlternateSeries.Location = new System.Drawing.Point(11, 104);
-			txAlternateSeries.Name = "txAlternateSeries";
-			txAlternateSeries.PromptText = "";
-			txAlternateSeries.Size = new System.Drawing.Size(262, 20);
-			txAlternateSeries.TabIndex = 21;
-			txAlternateSeries.Tag = "AlternateSeries";
-			cbImprint.FormattingEnabled = true;
-			cbImprint.Location = new System.Drawing.Point(416, 103);
-			cbImprint.Name = "cbImprint";
-			cbImprint.Size = new System.Drawing.Size(139, 21);
-			cbImprint.TabIndex = 27;
-			cbImprint.Tag = "Imprint";
-			cbImprint.TextChanged += new System.EventHandler(IconTextsChanged);
-			cbBlackAndWhite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cbBlackAndWhite.FormattingEnabled = true;
-			cbBlackAndWhite.Location = new System.Drawing.Point(416, 312);
-			cbBlackAndWhite.Name = "cbBlackAndWhite";
-			cbBlackAndWhite.Size = new System.Drawing.Size(139, 21);
-			cbBlackAndWhite.TabIndex = 55;
-			cbBlackAndWhite.TextChanged += new System.EventHandler(IconTextsChanged);
-			labelVolume.AutoSize = true;
-			labelVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelVolume.Location = new System.Drawing.Point(216, 13);
-			labelVolume.Name = "labelVolume";
-			labelVolume.Size = new System.Drawing.Size(47, 12);
-			labelVolume.TabIndex = 2;
-			labelVolume.Text = "Volume:";
-			txInker.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txInker.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txInker.Location = new System.Drawing.Point(10, 239);
-			txInker.Name = "txInker";
-			txInker.Size = new System.Drawing.Size(201, 20);
-			txInker.TabIndex = 41;
-			txInker.Tag = "Inker";
-			cbManga.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cbManga.FormattingEnabled = true;
-			cbManga.Location = new System.Drawing.Point(416, 237);
-			cbManga.Name = "cbManga";
-			cbManga.Size = new System.Drawing.Size(139, 21);
-			cbManga.TabIndex = 45;
-			cbManga.TextChanged += new System.EventHandler(IconTextsChanged);
-			labelYear.AutoSize = true;
-			labelYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelYear.Location = new System.Drawing.Point(216, 52);
-			labelYear.Name = "labelYear";
-			labelYear.Size = new System.Drawing.Size(31, 12);
-			labelYear.TabIndex = 12;
-			labelYear.Text = "Year:";
-			labelMonth.AutoSize = true;
-			labelMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelMonth.Location = new System.Drawing.Point(276, 51);
-			labelMonth.Name = "labelMonth";
-			labelMonth.Size = new System.Drawing.Size(41, 12);
-			labelMonth.TabIndex = 14;
-			labelMonth.Text = "Month:";
-			labelBlackAndWhite.AutoSize = true;
-			labelBlackAndWhite.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelBlackAndWhite.Location = new System.Drawing.Point(414, 297);
-			labelBlackAndWhite.Name = "labelBlackAndWhite";
-			labelBlackAndWhite.Size = new System.Drawing.Size(90, 12);
-			labelBlackAndWhite.TabIndex = 54;
-			labelBlackAndWhite.Text = "Black and White:";
-			txAlternateCount.Location = new System.Drawing.Point(349, 104);
-			txAlternateCount.Name = "txAlternateCount";
-			txAlternateCount.PromptText = "";
-			txAlternateCount.Size = new System.Drawing.Size(55, 20);
-			txAlternateCount.TabIndex = 25;
-			labelManga.AutoSize = true;
-			labelManga.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelManga.Location = new System.Drawing.Point(414, 222);
-			labelManga.Name = "labelManga";
-			labelManga.Size = new System.Drawing.Size(43, 12);
-			labelManga.TabIndex = 44;
-			labelManga.Text = "Manga:";
-			labelSeries.AutoSize = true;
-			labelSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelSeries.Location = new System.Drawing.Point(9, 13);
-			labelSeries.Name = "labelSeries";
-			labelSeries.Size = new System.Drawing.Size(41, 12);
-			labelSeries.TabIndex = 0;
-			labelSeries.Text = "Series:";
-			labelLanguage.AutoSize = true;
-			labelLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelLanguage.Location = new System.Drawing.Point(414, 261);
-			labelLanguage.Name = "labelLanguage";
-			labelLanguage.Size = new System.Drawing.Size(57, 12);
-			labelLanguage.TabIndex = 50;
-			labelLanguage.Text = "Language:";
-			labelImprint.AutoSize = true;
-			labelImprint.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelImprint.Location = new System.Drawing.Point(414, 88);
-			labelImprint.Name = "labelImprint";
-			labelImprint.Size = new System.Drawing.Size(45, 12);
-			labelImprint.TabIndex = 26;
-			labelImprint.Text = "Imprint:";
-			labelGenre.AutoSize = true;
-			labelGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelGenre.Location = new System.Drawing.Point(11, 357);
-			labelGenre.Name = "labelGenre";
-			labelGenre.Size = new System.Drawing.Size(39, 12);
-			labelGenre.TabIndex = 56;
-			labelGenre.Text = "Genre:";
-			labelColorist.AutoSize = true;
-			labelColorist.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelColorist.Location = new System.Drawing.Point(214, 224);
-			labelColorist.Name = "labelColorist";
-			labelColorist.Size = new System.Drawing.Size(49, 12);
-			labelColorist.TabIndex = 42;
-			labelColorist.Text = "Colorist:";
-			txCount.Location = new System.Drawing.Point(349, 28);
-			txCount.Name = "txCount";
-			txCount.PromptText = "";
-			txCount.Size = new System.Drawing.Size(55, 20);
-			txCount.TabIndex = 7;
-			cbLanguage.CultureTypes = System.Globalization.CultureTypes.NeutralCultures;
-			cbLanguage.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-			cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cbLanguage.FormattingEnabled = true;
-			cbLanguage.IntegralHeight = false;
-			cbLanguage.Location = new System.Drawing.Point(416, 276);
-			cbLanguage.Name = "cbLanguage";
-			cbLanguage.SelectedCulture = "";
-			cbLanguage.SelectedTwoLetterISOLanguage = "";
-			cbLanguage.Size = new System.Drawing.Size(139, 21);
-			cbLanguage.TabIndex = 51;
-			cbLanguage.TopTwoLetterISOLanguages = null;
-			cbPublisher.FormattingEnabled = true;
-			cbPublisher.Location = new System.Drawing.Point(416, 65);
-			cbPublisher.Name = "cbPublisher";
-			cbPublisher.Size = new System.Drawing.Size(139, 21);
-			cbPublisher.TabIndex = 19;
-			cbPublisher.Tag = "Publisher";
-			cbPublisher.TextChanged += new System.EventHandler(IconTextsChanged);
-			txPenciller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txPenciller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txPenciller.Location = new System.Drawing.Point(216, 200);
-			txPenciller.Name = "txPenciller";
-			txPenciller.Size = new System.Drawing.Size(187, 20);
-			txPenciller.TabIndex = 37;
-			txPenciller.Tag = "Penciller";
-			txAlternateNumber.Location = new System.Drawing.Point(278, 104);
-			txAlternateNumber.Name = "txAlternateNumber";
-			txAlternateNumber.PromptText = "";
-			txAlternateNumber.Size = new System.Drawing.Size(65, 20);
-			txAlternateNumber.TabIndex = 23;
-			txNumber.Location = new System.Drawing.Point(278, 28);
-			txNumber.Name = "txNumber";
-			txNumber.PromptText = "";
-			txNumber.Size = new System.Drawing.Size(65, 20);
-			txNumber.TabIndex = 5;
-			labelPublisher.AutoSize = true;
-			labelPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelPublisher.Location = new System.Drawing.Point(414, 51);
-			labelPublisher.Name = "labelPublisher";
-			labelPublisher.Size = new System.Drawing.Size(56, 12);
-			labelPublisher.TabIndex = 18;
-			labelPublisher.Text = "Publisher:";
-			labelCoverArtist.AutoSize = true;
-			labelCoverArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelCoverArtist.Location = new System.Drawing.Point(214, 262);
-			labelCoverArtist.Name = "labelCoverArtist";
-			labelCoverArtist.Size = new System.Drawing.Size(72, 12);
-			labelCoverArtist.TabIndex = 48;
-			labelCoverArtist.Text = "Cover Artist:";
-			txCoverArtist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txCoverArtist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txCoverArtist.Location = new System.Drawing.Point(216, 277);
-			txCoverArtist.Name = "txCoverArtist";
-			txCoverArtist.Size = new System.Drawing.Size(187, 20);
-			txCoverArtist.TabIndex = 49;
-			txCoverArtist.Tag = "CoverArtist";
-			labelInker.AutoSize = true;
-			labelInker.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelInker.Location = new System.Drawing.Point(11, 224);
-			labelInker.Name = "labelInker";
-			labelInker.Size = new System.Drawing.Size(35, 12);
-			labelInker.TabIndex = 40;
-			labelInker.Text = "Inker:";
-			labelAlternateCount.AutoSize = true;
-			labelAlternateCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelAlternateCount.Location = new System.Drawing.Point(347, 89);
-			labelAlternateCount.Name = "labelAlternateCount";
-			labelAlternateCount.Size = new System.Drawing.Size(19, 12);
-			labelAlternateCount.TabIndex = 24;
-			labelAlternateCount.Text = "of:";
-			txTitle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txTitle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txTitle.Location = new System.Drawing.Point(11, 66);
-			txTitle.Name = "txTitle";
-			txTitle.Size = new System.Drawing.Size(201, 20);
-			txTitle.TabIndex = 11;
-			txTitle.Tag = "Title";
-			labelCount.AutoSize = true;
-			labelCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelCount.Location = new System.Drawing.Point(347, 13);
-			labelCount.Name = "labelCount";
-			labelCount.Size = new System.Drawing.Size(19, 12);
-			labelCount.TabIndex = 6;
-			labelCount.Text = "of:";
-			labelAlternateNumber.AutoSize = true;
-			labelAlternateNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelAlternateNumber.Location = new System.Drawing.Point(276, 89);
-			labelAlternateNumber.Name = "labelAlternateNumber";
-			labelAlternateNumber.Size = new System.Drawing.Size(48, 12);
-			labelAlternateNumber.TabIndex = 22;
-			labelAlternateNumber.Text = "Number:";
-			labelNumber.AutoSize = true;
-			labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelNumber.Location = new System.Drawing.Point(276, 13);
-			labelNumber.Name = "labelNumber";
-			labelNumber.Size = new System.Drawing.Size(48, 12);
-			labelNumber.TabIndex = 4;
-			labelNumber.Text = "Number:";
-			labelLetterer.AutoSize = true;
-			labelLetterer.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelLetterer.Location = new System.Drawing.Point(9, 262);
-			labelLetterer.Name = "labelLetterer";
-			labelLetterer.Size = new System.Drawing.Size(49, 12);
-			labelLetterer.TabIndex = 46;
-			labelLetterer.Text = "Letterer:";
-			labelPenciller.AutoSize = true;
-			labelPenciller.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelPenciller.Location = new System.Drawing.Point(214, 187);
-			labelPenciller.Name = "labelPenciller";
-			labelPenciller.Size = new System.Drawing.Size(53, 12);
-			labelPenciller.TabIndex = 36;
-			labelPenciller.Text = "Penciller:";
-			txLetterer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txLetterer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txLetterer.Location = new System.Drawing.Point(11, 277);
-			txLetterer.Name = "txLetterer";
-			txLetterer.Size = new System.Drawing.Size(200, 20);
-			txLetterer.TabIndex = 47;
-			txLetterer.Tag = "Letterer";
-			labelTitle.AutoSize = true;
-			labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelTitle.Location = new System.Drawing.Point(9, 51);
-			labelTitle.Name = "labelTitle";
-			labelTitle.Size = new System.Drawing.Size(31, 12);
-			labelTitle.TabIndex = 10;
-			labelTitle.Text = "Title:";
-			labelWriter.AutoSize = true;
-			labelWriter.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelWriter.Location = new System.Drawing.Point(9, 187);
-			labelWriter.Name = "labelWriter";
-			labelWriter.Size = new System.Drawing.Size(40, 12);
-			labelWriter.TabIndex = 34;
-			labelWriter.Text = "Writer:";
-			txWriter.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			txWriter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-			txWriter.Location = new System.Drawing.Point(11, 200);
-			txWriter.Name = "txWriter";
-			txWriter.Size = new System.Drawing.Size(200, 20);
-			txWriter.TabIndex = 35;
-			txWriter.Tag = "Writer";
-			tabPlot.Controls.Add(tabNotes);
-			tabPlot.Controls.Add(txMainCharacterOrTeam);
-			tabPlot.Controls.Add(labelMainCharacterOrTeam);
-			tabPlot.Controls.Add(txScanInformation);
-			tabPlot.Controls.Add(labelScanInformation);
-			tabPlot.Controls.Add(txLocations);
-			tabPlot.Controls.Add(labelLocations);
-			tabPlot.Controls.Add(txTeams);
-			tabPlot.Controls.Add(labelTeams);
-			tabPlot.Controls.Add(txWeblink);
-			tabPlot.Controls.Add(labelWeb);
-			tabPlot.Controls.Add(txCharacters);
-			tabPlot.Controls.Add(labelCharacters);
-			tabPlot.Location = new System.Drawing.Point(4, 22);
-			tabPlot.Name = "tabPlot";
-			tabPlot.Size = new System.Drawing.Size(566, 442);
-			tabPlot.TabIndex = 8;
-			tabPlot.Text = "Plot & Notes";
-			tabPlot.UseVisualStyleBackColor = true;
-			tabNotes.Controls.Add(tabPageSummary);
-			tabNotes.Controls.Add(tabPageNotes);
-			tabNotes.Controls.Add(tabPageReview);
-			tabNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold);
-			tabNotes.Location = new System.Drawing.Point(11, 15);
-			tabNotes.Multiline = true;
-			tabNotes.Name = "tabNotes";
-			tabNotes.SelectedIndex = 0;
-			tabNotes.Size = new System.Drawing.Size(539, 233);
-			tabNotes.TabIndex = 0;
-			tabPageSummary.Controls.Add(txSummary);
-			tabPageSummary.Location = new System.Drawing.Point(4, 21);
-			tabPageSummary.Name = "tabPageSummary";
-			tabPageSummary.Padding = new System.Windows.Forms.Padding(3);
-			tabPageSummary.Size = new System.Drawing.Size(531, 208);
-			tabPageSummary.TabIndex = 0;
-			tabPageSummary.Text = "Summary";
-			tabPageSummary.UseVisualStyleBackColor = true;
-			txSummary.AcceptsReturn = true;
-			txSummary.Dock = System.Windows.Forms.DockStyle.Fill;
-			txSummary.FocusSelect = false;
-			txSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txSummary.Location = new System.Drawing.Point(3, 3);
-			txSummary.Multiline = true;
-			txSummary.Name = "txSummary";
-			txSummary.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			txSummary.Size = new System.Drawing.Size(525, 202);
-			txSummary.TabIndex = 2;
-			tabPageNotes.Controls.Add(txNotes);
-			tabPageNotes.Location = new System.Drawing.Point(4, 21);
-			tabPageNotes.Name = "tabPageNotes";
-			tabPageNotes.Padding = new System.Windows.Forms.Padding(3);
-			tabPageNotes.Size = new System.Drawing.Size(521, 208);
-			tabPageNotes.TabIndex = 1;
-			tabPageNotes.Text = "Notes";
-			tabPageNotes.UseVisualStyleBackColor = true;
-			txNotes.AcceptsReturn = true;
-			txNotes.Dock = System.Windows.Forms.DockStyle.Fill;
-			txNotes.FocusSelect = false;
-			txNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txNotes.Location = new System.Drawing.Point(3, 3);
-			txNotes.Multiline = true;
-			txNotes.Name = "txNotes";
-			txNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			txNotes.Size = new System.Drawing.Size(515, 202);
-			txNotes.TabIndex = 10;
-			tabPageReview.Controls.Add(txReview);
-			tabPageReview.Location = new System.Drawing.Point(4, 21);
-			tabPageReview.Name = "tabPageReview";
-			tabPageReview.Padding = new System.Windows.Forms.Padding(3);
-			tabPageReview.Size = new System.Drawing.Size(521, 208);
-			tabPageReview.TabIndex = 2;
-			tabPageReview.Text = "Review";
-			tabPageReview.UseVisualStyleBackColor = true;
-			txReview.AcceptsReturn = true;
-			txReview.Dock = System.Windows.Forms.DockStyle.Fill;
-			txReview.FocusSelect = false;
-			txReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txReview.Location = new System.Drawing.Point(3, 3);
-			txReview.Multiline = true;
-			txReview.Name = "txReview";
-			txReview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			txReview.Size = new System.Drawing.Size(515, 202);
-			txReview.TabIndex = 10;
-			txMainCharacterOrTeam.AcceptsReturn = true;
-			txMainCharacterOrTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txMainCharacterOrTeam.Location = new System.Drawing.Point(286, 278);
-			txMainCharacterOrTeam.Name = "txMainCharacterOrTeam";
-			txMainCharacterOrTeam.Size = new System.Drawing.Size(264, 20);
-			txMainCharacterOrTeam.TabIndex = 4;
-			txMainCharacterOrTeam.Tag = "Teams";
-			labelMainCharacterOrTeam.AutoSize = true;
-			labelMainCharacterOrTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelMainCharacterOrTeam.Location = new System.Drawing.Point(284, 263);
-			labelMainCharacterOrTeam.Name = "labelMainCharacterOrTeam";
-			labelMainCharacterOrTeam.Size = new System.Drawing.Size(130, 12);
-			labelMainCharacterOrTeam.TabIndex = 3;
-			labelMainCharacterOrTeam.Text = "Main Character or Team:";
-			txScanInformation.AcceptsReturn = true;
-			txScanInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txScanInformation.Location = new System.Drawing.Point(11, 412);
-			txScanInformation.Name = "txScanInformation";
-			txScanInformation.Size = new System.Drawing.Size(260, 20);
-			txScanInformation.TabIndex = 10;
-			txScanInformation.Tag = "";
-			labelScanInformation.AutoSize = true;
-			labelScanInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelScanInformation.Location = new System.Drawing.Point(9, 397);
-			labelScanInformation.Name = "labelScanInformation";
-			labelScanInformation.Size = new System.Drawing.Size(95, 12);
-			labelScanInformation.TabIndex = 9;
-			labelScanInformation.Text = "Scan Information:";
-			txLocations.AcceptsReturn = true;
-			txLocations.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txLocations.Location = new System.Drawing.Point(287, 351);
-			txLocations.Name = "txLocations";
-			txLocations.Size = new System.Drawing.Size(263, 20);
-			txLocations.TabIndex = 8;
-			txLocations.Tag = "Locations";
-			labelLocations.AutoSize = true;
-			labelLocations.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelLocations.Location = new System.Drawing.Point(285, 336);
-			labelLocations.Name = "labelLocations";
-			labelLocations.Size = new System.Drawing.Size(58, 12);
-			labelLocations.TabIndex = 7;
-			labelLocations.Text = "Locations:";
-			txTeams.AcceptsReturn = true;
-			txTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txTeams.Location = new System.Drawing.Point(286, 316);
-			txTeams.Name = "txTeams";
-			txTeams.Size = new System.Drawing.Size(264, 20);
-			txTeams.TabIndex = 6;
-			txTeams.Tag = "Teams";
-			labelTeams.AutoSize = true;
-			labelTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelTeams.Location = new System.Drawing.Point(284, 301);
-			labelTeams.Name = "labelTeams";
-			labelTeams.Size = new System.Drawing.Size(42, 12);
-			labelTeams.TabIndex = 5;
-			labelTeams.Text = "Teams:";
-			txWeblink.AcceptsReturn = true;
-			txWeblink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txWeblink.Location = new System.Drawing.Point(287, 412);
-			txWeblink.Name = "txWeblink";
-			txWeblink.Size = new System.Drawing.Size(263, 20);
-			txWeblink.TabIndex = 12;
-			txWeblink.Tag = "";
-			labelWeb.AutoSize = true;
-			labelWeb.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelWeb.Location = new System.Drawing.Point(285, 397);
-			labelWeb.Name = "labelWeb";
-			labelWeb.Size = new System.Drawing.Size(31, 12);
-			labelWeb.TabIndex = 11;
-			labelWeb.Text = "Web:";
-			txCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txCharacters.Location = new System.Drawing.Point(11, 278);
-			txCharacters.Multiline = true;
-			txCharacters.Name = "txCharacters";
-			txCharacters.Size = new System.Drawing.Size(260, 93);
-			txCharacters.TabIndex = 2;
-			txCharacters.Tag = "Characters";
-			txCharacters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(txCharacters_KeyPress);
-			labelCharacters.AutoSize = true;
-			labelCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelCharacters.Location = new System.Drawing.Point(9, 263);
-			labelCharacters.Name = "labelCharacters";
-			labelCharacters.Size = new System.Drawing.Size(65, 12);
-			labelCharacters.TabIndex = 1;
-			labelCharacters.Text = "Characters:";
-			tabCatalog.Controls.Add(labelReleasedTime);
-			tabCatalog.Controls.Add(dtpReleasedTime);
-			tabCatalog.Controls.Add(labelOpenedTime);
-			tabCatalog.Controls.Add(dtpOpenedTime);
-			tabCatalog.Controls.Add(labelAddedTime);
-			tabCatalog.Controls.Add(dtpAddedTime);
-			tabCatalog.Controls.Add(txPagesAsTextSimple);
-			tabCatalog.Controls.Add(labelPagesAsTextSimple);
-			tabCatalog.Controls.Add(txISBN);
-			tabCatalog.Controls.Add(labelISBN);
-			tabCatalog.Controls.Add(cbBookLocation);
-			tabCatalog.Controls.Add(labelBookLocation);
-			tabCatalog.Controls.Add(txCollectionStatus);
-			tabCatalog.Controls.Add(cbBookPrice);
-			tabCatalog.Controls.Add(labelBookPrice);
-			tabCatalog.Controls.Add(txBookNotes);
-			tabCatalog.Controls.Add(labelBookNotes);
-			tabCatalog.Controls.Add(cbBookAge);
-			tabCatalog.Controls.Add(labelBookAge);
-			tabCatalog.Controls.Add(labelBookCollectionStatus);
-			tabCatalog.Controls.Add(cbBookCondition);
-			tabCatalog.Controls.Add(labelBookCondition);
-			tabCatalog.Controls.Add(cbBookStore);
-			tabCatalog.Controls.Add(labelBookStore);
-			tabCatalog.Controls.Add(cbBookOwner);
-			tabCatalog.Controls.Add(labelBookOwner);
-			tabCatalog.Location = new System.Drawing.Point(4, 22);
-			tabCatalog.Name = "tabCatalog";
-			tabCatalog.Padding = new System.Windows.Forms.Padding(3);
-			tabCatalog.Size = new System.Drawing.Size(566, 442);
-			tabCatalog.TabIndex = 9;
-			tabCatalog.Text = "Catalog";
-			tabCatalog.UseVisualStyleBackColor = true;
-			labelReleasedTime.AutoSize = true;
-			labelReleasedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelReleasedTime.Location = new System.Drawing.Point(314, 21);
-			labelReleasedTime.Name = "labelReleasedTime";
-			labelReleasedTime.Size = new System.Drawing.Size(56, 12);
-			labelReleasedTime.TabIndex = 12;
-			labelReleasedTime.Text = "Released:";
-			dtpReleasedTime.CustomFormat = " ";
-			dtpReleasedTime.Location = new System.Drawing.Point(315, 36);
-			dtpReleasedTime.Name = "dtpReleasedTime";
-			dtpReleasedTime.Size = new System.Drawing.Size(235, 20);
-			dtpReleasedTime.TabIndex = 13;
-			dtpReleasedTime.Value = new System.DateTime(0L);
-			labelOpenedTime.AutoSize = true;
-			labelOpenedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelOpenedTime.Location = new System.Drawing.Point(315, 98);
-			labelOpenedTime.Name = "labelOpenedTime";
-			labelOpenedTime.Size = new System.Drawing.Size(77, 12);
-			labelOpenedTime.TabIndex = 16;
-			labelOpenedTime.Text = "Opened/Read:";
-			dtpOpenedTime.CustomFormat = " ";
-			dtpOpenedTime.Location = new System.Drawing.Point(316, 113);
-			dtpOpenedTime.Name = "dtpOpenedTime";
-			dtpOpenedTime.Size = new System.Drawing.Size(234, 20);
-			dtpOpenedTime.TabIndex = 17;
-			dtpOpenedTime.Value = new System.DateTime(0L);
-			labelAddedTime.AutoSize = true;
-			labelAddedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelAddedTime.Location = new System.Drawing.Point(314, 58);
-			labelAddedTime.Name = "labelAddedTime";
-			labelAddedTime.Size = new System.Drawing.Size(98, 12);
-			labelAddedTime.TabIndex = 14;
-			labelAddedTime.Text = "Added/Purchased:";
-			dtpAddedTime.CustomFormat = " ";
-			dtpAddedTime.Location = new System.Drawing.Point(315, 73);
-			dtpAddedTime.Name = "dtpAddedTime";
-			dtpAddedTime.Size = new System.Drawing.Size(235, 20);
-			dtpAddedTime.TabIndex = 15;
-			dtpAddedTime.Value = new System.DateTime(0L);
-			txPagesAsTextSimple.AcceptsReturn = true;
-			txPagesAsTextSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txPagesAsTextSimple.Location = new System.Drawing.Point(167, 73);
-			txPagesAsTextSimple.Name = "txPagesAsTextSimple";
-			txPagesAsTextSimple.Size = new System.Drawing.Size(126, 20);
-			txPagesAsTextSimple.TabIndex = 7;
-			txPagesAsTextSimple.Tag = "PageCountTextSimple";
-			labelPagesAsTextSimple.AutoSize = true;
-			labelPagesAsTextSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelPagesAsTextSimple.Location = new System.Drawing.Point(165, 58);
-			labelPagesAsTextSimple.Name = "labelPagesAsTextSimple";
-			labelPagesAsTextSimple.Size = new System.Drawing.Size(40, 12);
-			labelPagesAsTextSimple.TabIndex = 6;
-			labelPagesAsTextSimple.Text = "Pages:";
-			txISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txISBN.Location = new System.Drawing.Point(11, 73);
-			txISBN.Name = "txISBN";
-			txISBN.Size = new System.Drawing.Size(150, 20);
-			txISBN.TabIndex = 5;
-			txISBN.Tag = "ISBN";
-			labelISBN.AutoSize = true;
-			labelISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelISBN.Location = new System.Drawing.Point(9, 58);
-			labelISBN.Name = "labelISBN";
-			labelISBN.Size = new System.Drawing.Size(35, 12);
-			labelISBN.TabIndex = 4;
-			labelISBN.Text = "ISBN:";
-			cbBookLocation.FormattingEnabled = true;
-			cbBookLocation.Location = new System.Drawing.Point(317, 168);
-			cbBookLocation.Name = "cbBookLocation";
-			cbBookLocation.Size = new System.Drawing.Size(233, 21);
-			cbBookLocation.TabIndex = 21;
-			cbBookLocation.Tag = "BookLocation";
-			labelBookLocation.AutoSize = true;
-			labelBookLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelBookLocation.Location = new System.Drawing.Point(315, 154);
-			labelBookLocation.Name = "labelBookLocation";
-			labelBookLocation.Size = new System.Drawing.Size(80, 12);
-			labelBookLocation.TabIndex = 20;
-			labelBookLocation.Text = "Book Location:";
-			txCollectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txCollectionStatus.Location = new System.Drawing.Point(11, 210);
-			txCollectionStatus.Name = "txCollectionStatus";
-			txCollectionStatus.Size = new System.Drawing.Size(539, 20);
-			txCollectionStatus.TabIndex = 23;
-			txCollectionStatus.Tag = "CollectionStatus";
-			cbBookPrice.FormattingEnabled = true;
-			cbBookPrice.Location = new System.Drawing.Point(167, 34);
-			cbBookPrice.Name = "cbBookPrice";
-			cbBookPrice.Size = new System.Drawing.Size(126, 21);
-			cbBookPrice.TabIndex = 3;
-			cbBookPrice.Tag = "BookPrice";
-			labelBookPrice.AutoSize = true;
-			labelBookPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelBookPrice.Location = new System.Drawing.Point(165, 19);
-			labelBookPrice.Name = "labelBookPrice";
-			labelBookPrice.Size = new System.Drawing.Size(35, 12);
-			labelBookPrice.TabIndex = 2;
-			labelBookPrice.Text = "Price:";
-			txBookNotes.AcceptsReturn = true;
-			txBookNotes.FocusSelect = false;
-			txBookNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f);
-			txBookNotes.Location = new System.Drawing.Point(11, 265);
-			txBookNotes.Multiline = true;
-			txBookNotes.Name = "txBookNotes";
-			txBookNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			txBookNotes.Size = new System.Drawing.Size(539, 157);
-			txBookNotes.TabIndex = 25;
-			txBookNotes.Tag = "BookNotes";
-			labelBookNotes.AutoSize = true;
-			labelBookNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelBookNotes.Location = new System.Drawing.Point(9, 250);
-			labelBookNotes.Name = "labelBookNotes";
-			labelBookNotes.Size = new System.Drawing.Size(120, 12);
-			labelBookNotes.TabIndex = 24;
-			labelBookNotes.Text = "Notes about this Book:";
-			cbBookAge.FormattingEnabled = true;
-			cbBookAge.Location = new System.Drawing.Point(11, 112);
-			cbBookAge.Name = "cbBookAge";
-			cbBookAge.Size = new System.Drawing.Size(150, 21);
-			cbBookAge.TabIndex = 9;
-			cbBookAge.Tag = "BookAge";
-			labelBookAge.AutoSize = true;
-			labelBookAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelBookAge.Location = new System.Drawing.Point(9, 97);
-			labelBookAge.Name = "labelBookAge";
-			labelBookAge.Size = new System.Drawing.Size(29, 12);
-			labelBookAge.TabIndex = 8;
-			labelBookAge.Text = "Age:";
-			labelBookCollectionStatus.AutoSize = true;
-			labelBookCollectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelBookCollectionStatus.Location = new System.Drawing.Point(9, 195);
-			labelBookCollectionStatus.Name = "labelBookCollectionStatus";
-			labelBookCollectionStatus.Size = new System.Drawing.Size(96, 12);
-			labelBookCollectionStatus.TabIndex = 22;
-			labelBookCollectionStatus.Text = "Collection Status:";
-			cbBookCondition.FormattingEnabled = true;
-			cbBookCondition.Location = new System.Drawing.Point(167, 112);
-			cbBookCondition.Name = "cbBookCondition";
-			cbBookCondition.Size = new System.Drawing.Size(126, 21);
-			cbBookCondition.TabIndex = 11;
-			cbBookCondition.Tag = "BookCondition";
-			labelBookCondition.AutoSize = true;
-			labelBookCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelBookCondition.Location = new System.Drawing.Point(165, 98);
-			labelBookCondition.Name = "labelBookCondition";
-			labelBookCondition.Size = new System.Drawing.Size(57, 12);
-			labelBookCondition.TabIndex = 10;
-			labelBookCondition.Text = "Condition:";
-			cbBookStore.FormattingEnabled = true;
-			cbBookStore.Location = new System.Drawing.Point(11, 35);
-			cbBookStore.Name = "cbBookStore";
-			cbBookStore.PromptText = null;
-			cbBookStore.Size = new System.Drawing.Size(150, 21);
-			cbBookStore.TabIndex = 1;
-			cbBookStore.Tag = "BookStore";
-			labelBookStore.AutoSize = true;
-			labelBookStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelBookStore.Location = new System.Drawing.Point(11, 21);
-			labelBookStore.Name = "labelBookStore";
-			labelBookStore.Size = new System.Drawing.Size(36, 12);
-			labelBookStore.TabIndex = 0;
-			labelBookStore.Text = "Store:";
-			cbBookOwner.FormattingEnabled = true;
-			cbBookOwner.Location = new System.Drawing.Point(11, 168);
-			cbBookOwner.Name = "cbBookOwner";
-			cbBookOwner.Size = new System.Drawing.Size(282, 21);
-			cbBookOwner.TabIndex = 19;
-			cbBookOwner.Tag = "BookOwner";
-			labelBookOwner.AutoSize = true;
-			labelBookOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelBookOwner.Location = new System.Drawing.Point(9, 154);
-			labelBookOwner.Name = "labelBookOwner";
-			labelBookOwner.Size = new System.Drawing.Size(42, 12);
-			labelBookOwner.TabIndex = 18;
-			labelBookOwner.Text = "Owner:";
-			tabCustom.Controls.Add(customValuesData);
-			tabCustom.Location = new System.Drawing.Point(4, 22);
-			tabCustom.Name = "tabCustom";
-			tabCustom.Padding = new System.Windows.Forms.Padding(3);
-			tabCustom.Size = new System.Drawing.Size(566, 442);
-			tabCustom.TabIndex = 10;
-			tabCustom.Text = "Custom";
-			tabCustom.UseVisualStyleBackColor = true;
-			customValuesData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			customValuesData.Columns.AddRange(CustomValueName, CustomValueValue);
-			customValuesData.Location = new System.Drawing.Point(11, 16);
-			customValuesData.Name = "customValuesData";
-			customValuesData.Size = new System.Drawing.Size(537, 410);
-			customValuesData.TabIndex = 1;
-			customValuesData.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(customValuesData_EditingControlShowing);
-			CustomValueName.HeaderText = "Name";
-			CustomValueName.Name = "CustomValueName";
-			CustomValueName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			CustomValueValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			CustomValueValue.HeaderText = "Value";
-			CustomValueValue.Name = "CustomValueValue";
-			tabPages.Controls.Add(btResetPages);
-			tabPages.Controls.Add(btPageView);
-			tabPages.Controls.Add(labelPagesInfo);
-			tabPages.Controls.Add(pagesView);
-			tabPages.Location = new System.Drawing.Point(4, 22);
-			tabPages.Name = "tabPages";
-			tabPages.Size = new System.Drawing.Size(566, 442);
-			tabPages.TabIndex = 6;
-			tabPages.Text = "Pages";
-			tabPages.UseVisualStyleBackColor = true;
-			btResetPages.ContextMenuStrip = cmResetPages;
-			btResetPages.Location = new System.Drawing.Point(441, 407);
-			btResetPages.Name = "btResetPages";
-			btResetPages.Size = new System.Drawing.Size(111, 23);
-			btResetPages.TabIndex = 14;
-			btResetPages.Text = "Reset";
-			btResetPages.UseVisualStyleBackColor = true;
-			btResetPages.ShowContextMenu += new System.EventHandler(btResetPages_ShowContextMenu);
-			btResetPages.Click += new System.EventHandler(btResetPages_Click);
-			cmResetPages.Items.AddRange(new System.Windows.Forms.ToolStripItem[2]
-			{
-				miOrderByName,
-				miOrderByNameNumeric
-			});
-			cmResetPages.Name = "cmResetPages";
-			cmResetPages.Size = new System.Drawing.Size(211, 48);
-			cmResetPages.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(cmResetPages_ItemClicked);
-			miOrderByName.Name = "miOrderByName";
-			miOrderByName.Size = new System.Drawing.Size(210, 22);
-			miOrderByName.Text = "Order by Name";
-			miOrderByNameNumeric.Name = "miOrderByNameNumeric";
-			miOrderByNameNumeric.Size = new System.Drawing.Size(210, 22);
-			miOrderByNameNumeric.Text = "Order by Name (numeric)";
-			btPageView.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.SmallArrowDown;
-			btPageView.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			btPageView.Location = new System.Drawing.Point(479, 9);
-			btPageView.Name = "btPageView";
-			btPageView.Size = new System.Drawing.Size(73, 23);
-			btPageView.TabIndex = 2;
-			btPageView.Text = "Pages";
-			btPageView.UseVisualStyleBackColor = true;
-			btPageView.Click += new System.EventHandler(btPageViews_Click);
-			labelPagesInfo.AutoSize = true;
-			labelPagesInfo.Location = new System.Drawing.Point(8, 14);
-			labelPagesInfo.Name = "labelPagesInfo";
-			labelPagesInfo.Size = new System.Drawing.Size(421, 13);
-			labelPagesInfo.TabIndex = 0;
-			labelPagesInfo.Text = "Change the page order with drag & drop or use the context menu to change page types:";
-			labelPagesInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			labelPagesInfo.UseMnemonic = false;
-			pagesView.Bookmark = null;
-			pagesView.CreateBackdrop = false;
-			pagesView.Location = new System.Drawing.Point(11, 38);
-			pagesView.Name = "pagesView";
-			pagesView.Size = new System.Drawing.Size(541, 363);
-			pagesView.TabIndex = 1;
-			tabColors.Controls.Add(panelImage);
-			tabColors.Controls.Add(panelImageControls);
-			tabColors.Location = new System.Drawing.Point(4, 22);
-			tabColors.Name = "tabColors";
-			tabColors.Size = new System.Drawing.Size(566, 442);
-			tabColors.TabIndex = 7;
-			tabColors.Text = "Colors";
-			tabColors.UseVisualStyleBackColor = true;
-			panelImage.Controls.Add(labelCurrentPage);
-			panelImage.Controls.Add(chkShowImageControls);
-			panelImage.Controls.Add(btLastPage);
-			panelImage.Controls.Add(btFirstPage);
-			panelImage.Controls.Add(btNextPage);
-			panelImage.Controls.Add(btPrevPage);
-			panelImage.Controls.Add(pageViewer);
-			panelImage.Dock = System.Windows.Forms.DockStyle.Fill;
-			panelImage.Location = new System.Drawing.Point(0, 0);
-			panelImage.Name = "panelImage";
-			panelImage.Size = new System.Drawing.Size(566, 317);
-			panelImage.TabIndex = 12;
-			labelCurrentPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			labelCurrentPage.Location = new System.Drawing.Point(184, 291);
-			labelCurrentPage.Name = "labelCurrentPage";
-			labelCurrentPage.Size = new System.Drawing.Size(202, 21);
-			labelCurrentPage.TabIndex = 6;
-			labelCurrentPage.Text = "Page Text";
-			labelCurrentPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			chkShowImageControls.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			chkShowImageControls.Appearance = System.Windows.Forms.Appearance.Button;
-			chkShowImageControls.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.DoubleArrow;
-			chkShowImageControls.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			chkShowImageControls.Location = new System.Drawing.Point(416, 291);
-			chkShowImageControls.Name = "chkShowImageControls";
-			chkShowImageControls.Size = new System.Drawing.Size(140, 23);
-			chkShowImageControls.TabIndex = 5;
-			chkShowImageControls.Text = "Image Control";
-			chkShowImageControls.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			chkShowImageControls.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-			chkShowImageControls.UseVisualStyleBackColor = true;
-			chkShowImageControls.CheckedChanged += new System.EventHandler(chkShowColorControls_CheckedChanged);
-			btLastPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-			btLastPage.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.GoLast;
-			btLastPage.Location = new System.Drawing.Point(107, 290);
-			btLastPage.Name = "btLastPage";
-			btLastPage.Size = new System.Drawing.Size(32, 23);
-			btLastPage.TabIndex = 4;
-			btLastPage.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-			btLastPage.UseVisualStyleBackColor = true;
-			btLastPage.Click += new System.EventHandler(btLastPage_Click);
-			btFirstPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-			btFirstPage.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.GoFirst;
-			btFirstPage.Location = new System.Drawing.Point(11, 290);
-			btFirstPage.Name = "btFirstPage";
-			btFirstPage.Size = new System.Drawing.Size(32, 23);
-			btFirstPage.TabIndex = 3;
-			btFirstPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			btFirstPage.UseVisualStyleBackColor = true;
-			btFirstPage.Click += new System.EventHandler(btFirstPage_Click);
-			btNextPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-			btNextPage.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.GoNext;
-			btNextPage.Location = new System.Drawing.Point(75, 290);
-			btNextPage.Name = "btNextPage";
-			btNextPage.Size = new System.Drawing.Size(32, 23);
-			btNextPage.TabIndex = 2;
-			btNextPage.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-			btNextPage.UseVisualStyleBackColor = true;
-			btNextPage.Click += new System.EventHandler(btNextPage_Click);
-			btPrevPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-			btPrevPage.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.GoPrevious;
-			btPrevPage.Location = new System.Drawing.Point(43, 290);
-			btPrevPage.Name = "btPrevPage";
-			btPrevPage.Size = new System.Drawing.Size(32, 23);
-			btPrevPage.TabIndex = 1;
-			btPrevPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			btPrevPage.UseVisualStyleBackColor = true;
-			btPrevPage.Click += new System.EventHandler(btPrevPage_Click);
-			pageViewer.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			pageViewer.AutoScrollMode = cYo.Common.Windows.Forms.AutoScrollMode.Pan;
-			pageViewer.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			pageViewer.ForeColor = System.Drawing.Color.White;
-			pageViewer.Location = new System.Drawing.Point(11, 12);
-			pageViewer.Name = "pageViewer";
-			pageViewer.ScaleMode = cYo.Common.Drawing.ScaleMode.FitWidth;
-			pageViewer.Size = new System.Drawing.Size(545, 275);
-			pageViewer.TabIndex = 0;
-			pageViewer.Text = "Double Click on Color to set White Point";
-			pageViewer.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-			pageViewer.VisibleChanged += new System.EventHandler(pageViewer_VisibleChanged);
-			pageViewer.DoubleClick += new System.EventHandler(pageViewer_DoubleClick);
-			panelImageControls.Controls.Add(labelSaturation);
-			panelImageControls.Controls.Add(labelContrast);
-			panelImageControls.Controls.Add(tbGamma);
-			panelImageControls.Controls.Add(tbSaturation);
-			panelImageControls.Controls.Add(labelGamma);
-			panelImageControls.Controls.Add(tbBrightness);
-			panelImageControls.Controls.Add(tbSharpening);
-			panelImageControls.Controls.Add(tbContrast);
-			panelImageControls.Controls.Add(labelSharpening);
-			panelImageControls.Controls.Add(labelBrightness);
-			panelImageControls.Controls.Add(btResetColors);
-			panelImageControls.Dock = System.Windows.Forms.DockStyle.Bottom;
-			panelImageControls.Location = new System.Drawing.Point(0, 317);
-			panelImageControls.Name = "panelImageControls";
-			panelImageControls.Size = new System.Drawing.Size(566, 125);
-			panelImageControls.TabIndex = 13;
-			panelImageControls.Visible = false;
-			labelSaturation.AutoSize = true;
-			labelSaturation.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			labelSaturation.Location = new System.Drawing.Point(11, 34);
-			labelSaturation.Name = "labelSaturation";
-			labelSaturation.Size = new System.Drawing.Size(57, 12);
-			labelSaturation.TabIndex = 1;
-			labelSaturation.Text = "Saturation";
-			labelContrast.AutoSize = true;
-			labelContrast.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold);
-			labelContrast.Location = new System.Drawing.Point(296, 34);
-			labelContrast.Name = "labelContrast";
-			labelContrast.Size = new System.Drawing.Size(49, 12);
-			labelContrast.TabIndex = 5;
-			labelContrast.Text = "Contrast";
-			tbGamma.Location = new System.Drawing.Point(363, 52);
-			tbGamma.Minimum = -100;
-			tbGamma.Name = "tbGamma";
-			tbGamma.Size = new System.Drawing.Size(192, 18);
-			tbGamma.TabIndex = 8;
-			tbGamma.ThumbSize = new System.Drawing.Size(8, 16);
-			tbGamma.TickFrequency = 16;
-			tbGamma.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
-			tbGamma.Scroll += new System.EventHandler(ColorAdjustment_Scroll);
-			tbGamma.ValueChanged += new System.EventHandler(AdjustmentSliderChanged);
-			tbSaturation.Location = new System.Drawing.Point(78, 28);
-			tbSaturation.Minimum = -100;
-			tbSaturation.Name = "tbSaturation";
-			tbSaturation.Size = new System.Drawing.Size(192, 18);
-			tbSaturation.TabIndex = 2;
-			tbSaturation.ThumbSize = new System.Drawing.Size(8, 16);
-			tbSaturation.TickFrequency = 16;
-			tbSaturation.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
-			tbSaturation.Scroll += new System.EventHandler(ColorAdjustment_Scroll);
-			tbSaturation.ValueChanged += new System.EventHandler(AdjustmentSliderChanged);
-			labelGamma.AutoSize = true;
-			labelGamma.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold);
-			labelGamma.Location = new System.Drawing.Point(296, 58);
-			labelGamma.Name = "labelGamma";
-			labelGamma.Size = new System.Drawing.Size(43, 12);
-			labelGamma.TabIndex = 7;
-			labelGamma.Text = "Gamma";
-			tbBrightness.Location = new System.Drawing.Point(78, 52);
-			tbBrightness.Minimum = -100;
-			tbBrightness.Name = "tbBrightness";
-			tbBrightness.Size = new System.Drawing.Size(192, 18);
-			tbBrightness.TabIndex = 4;
-			tbBrightness.Text = "tbBrightness";
-			tbBrightness.ThumbSize = new System.Drawing.Size(8, 16);
-			tbBrightness.TickFrequency = 16;
-			tbBrightness.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
-			tbBrightness.Scroll += new System.EventHandler(ColorAdjustment_Scroll);
-			tbBrightness.ValueChanged += new System.EventHandler(AdjustmentSliderChanged);
-			tbSharpening.LargeChange = 1;
-			tbSharpening.Location = new System.Drawing.Point(81, 86);
-			tbSharpening.Maximum = 3;
-			tbSharpening.Name = "tbSharpening";
-			tbSharpening.Size = new System.Drawing.Size(189, 18);
-			tbSharpening.TabIndex = 10;
-			tbSharpening.Text = "tbSaturation";
-			tbSharpening.ThumbSize = new System.Drawing.Size(8, 16);
-			tbSharpening.TickFrequency = 1;
-			tbSharpening.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
-			tbSharpening.Scroll += new System.EventHandler(ColorAdjustment_Scroll);
-			tbContrast.Location = new System.Drawing.Point(363, 28);
-			tbContrast.Minimum = -100;
-			tbContrast.Name = "tbContrast";
-			tbContrast.Size = new System.Drawing.Size(192, 18);
-			tbContrast.TabIndex = 6;
-			tbContrast.Text = "tbSaturation";
-			tbContrast.ThumbSize = new System.Drawing.Size(8, 16);
-			tbContrast.TickFrequency = 16;
-			tbContrast.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
-			tbContrast.Scroll += new System.EventHandler(ColorAdjustment_Scroll);
-			tbContrast.ValueChanged += new System.EventHandler(AdjustmentSliderChanged);
-			labelSharpening.AutoSize = true;
-			labelSharpening.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold);
-			labelSharpening.Location = new System.Drawing.Point(11, 92);
-			labelSharpening.Name = "labelSharpening";
-			labelSharpening.Size = new System.Drawing.Size(61, 12);
-			labelSharpening.TabIndex = 9;
-			labelSharpening.Text = "Sharpening";
-			labelBrightness.AutoSize = true;
-			labelBrightness.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75f, System.Drawing.FontStyle.Bold);
-			labelBrightness.Location = new System.Drawing.Point(11, 58);
-			labelBrightness.Name = "labelBrightness";
-			labelBrightness.Size = new System.Drawing.Size(59, 12);
-			labelBrightness.TabIndex = 3;
-			labelBrightness.Text = "Brightness";
-			btResetColors.Location = new System.Drawing.Point(478, 86);
-			btResetColors.Name = "btResetColors";
-			btResetColors.Size = new System.Drawing.Size(77, 24);
-			btResetColors.TabIndex = 11;
-			btResetColors.Text = "Reset";
-			btResetColors.UseVisualStyleBackColor = true;
-			btResetColors.Click += new System.EventHandler(btReset_Click);
-			btPrev.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			btPrev.Location = new System.Drawing.Point(8, 483);
-			btPrev.Name = "btPrev";
-			btPrev.Size = new System.Drawing.Size(80, 24);
-			btPrev.TabIndex = 1;
-			btPrev.Text = "&Previous";
-			btPrev.Click += new System.EventHandler(btPrev_Click);
-			btNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			btNext.Location = new System.Drawing.Point(92, 483);
-			btNext.Name = "btNext";
-			btNext.Size = new System.Drawing.Size(80, 24);
-			btNext.TabIndex = 2;
-			btNext.Text = "&Next";
-			btNext.Click += new System.EventHandler(btNext_Click);
-			btScript.AutoEllipsis = true;
-			btScript.Location = new System.Drawing.Point(188, 484);
-			btScript.Name = "btScript";
-			btScript.Size = new System.Drawing.Size(135, 23);
-			btScript.TabIndex = 3;
-			btScript.Text = "Lorem Ipsum";
-			btScript.UseVisualStyleBackColor = true;
-			btScript.Visible = false;
-			btApply.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			btApply.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			btApply.Location = new System.Drawing.Point(501, 483);
-			btApply.Name = "btApply";
-			btApply.Size = new System.Drawing.Size(80, 24);
-			btApply.TabIndex = 6;
-			btApply.Text = "&Apply";
-			btApply.Click += new System.EventHandler(btApply_Click);
-			base.AcceptButton = btOK;
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.CancelButton = btCancel;
-			base.ClientSize = new System.Drawing.Size(593, 517);
-			base.Controls.Add(btApply);
-			base.Controls.Add(btScript);
-			base.Controls.Add(tabControl);
-			base.Controls.Add(btNext);
-			base.Controls.Add(btCancel);
-			base.Controls.Add(btPrev);
-			base.Controls.Add(btOK);
-			base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			base.MaximizeBox = false;
-			base.MinimizeBox = false;
-			base.Name = "ComicBookDialog";
-			base.ShowIcon = false;
-			base.ShowInTaskbar = false;
-			base.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			Text = "Info";
-			base.DragDrop += new System.Windows.Forms.DragEventHandler(ComicBookDialog_DragDrop);
-			base.DragOver += new System.Windows.Forms.DragEventHandler(ComicBookDialog_DragOver);
-			tabControl.ResumeLayout(false);
-			tabSummary.ResumeLayout(false);
-			cmThumbnail.ResumeLayout(false);
-			tabDetails.ResumeLayout(false);
-			tabDetails.PerformLayout();
-			tabPlot.ResumeLayout(false);
-			tabPlot.PerformLayout();
-			tabNotes.ResumeLayout(false);
-			tabPageSummary.ResumeLayout(false);
-			tabPageSummary.PerformLayout();
-			tabPageNotes.ResumeLayout(false);
-			tabPageNotes.PerformLayout();
-			tabPageReview.ResumeLayout(false);
-			tabPageReview.PerformLayout();
-			tabCatalog.ResumeLayout(false);
-			tabCatalog.PerformLayout();
-			tabCustom.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)customValuesData).EndInit();
-			tabPages.ResumeLayout(false);
-			tabPages.PerformLayout();
-			cmResetPages.ResumeLayout(false);
-			tabColors.ResumeLayout(false);
-			panelImage.ResumeLayout(false);
-			panelImageControls.ResumeLayout(false);
-			panelImageControls.PerformLayout();
-			ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.btCancel = new System.Windows.Forms.Button();
+            this.btOK = new System.Windows.Forms.Button();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabSummary = new System.Windows.Forms.TabPage();
+            this.btThumbnail = new cYo.Common.Windows.Forms.SplitButton();
+            this.cmThumbnail = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.miResetThumbnail = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.labelCommunityRating = new System.Windows.Forms.Label();
+            this.txCommunityRating = new cYo.Projects.ComicRack.Engine.Controls.RatingControl();
+            this.labelMyRating = new System.Windows.Forms.Label();
+            this.btLinkFile = new System.Windows.Forms.Button();
+            this.linkLabel = new System.Windows.Forms.LinkLabel();
+            this.coverThumbnail = new cYo.Projects.ComicRack.Engine.Controls.ThumbnailControl();
+            this.whereSeparator = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelWhere = new System.Windows.Forms.Label();
+            this.labelType = new System.Windows.Forms.Label();
+            this.txRating = new cYo.Projects.ComicRack.Engine.Controls.RatingControl();
+            this.labelPages = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
+            this.lblPath = new System.Windows.Forms.Label();
+            this.lblPages = new System.Windows.Forms.Label();
+            this.tabDetails = new System.Windows.Forms.TabPage();
+            this.txDay = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelDay = new System.Windows.Forms.Label();
+            this.labelSeriesGroup = new System.Windows.Forms.Label();
+            this.txSeriesGroup = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelStoryArc = new System.Windows.Forms.Label();
+            this.txStoryArc = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.cbSeriesComplete = new System.Windows.Forms.ComboBox();
+            this.labelSeriesComplete = new System.Windows.Forms.Label();
+            this.cbEnableDynamicUpdate = new System.Windows.Forms.ComboBox();
+            this.labelEnableDynamicUpdate = new System.Windows.Forms.Label();
+            this.txGenre = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelTags = new System.Windows.Forms.Label();
+            this.cbEnableProposed = new System.Windows.Forms.ComboBox();
+            this.txTags = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelEnableProposed = new System.Windows.Forms.Label();
+            this.txVolume = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.cbAgeRating = new System.Windows.Forms.ComboBox();
+            this.txEditor = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelEditor = new System.Windows.Forms.Label();
+            this.txMonth = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.txYear = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelAgeRating = new System.Windows.Forms.Label();
+            this.cbFormat = new cYo.Common.Windows.Forms.ComboBoxEx();
+            this.txColorist = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.txSeries = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelFormat = new System.Windows.Forms.Label();
+            this.labelAlternateSeries = new System.Windows.Forms.Label();
+            this.txAlternateSeries = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.cbImprint = new System.Windows.Forms.ComboBox();
+            this.cbBlackAndWhite = new System.Windows.Forms.ComboBox();
+            this.labelVolume = new System.Windows.Forms.Label();
+            this.txInker = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.cbManga = new System.Windows.Forms.ComboBox();
+            this.labelYear = new System.Windows.Forms.Label();
+            this.labelMonth = new System.Windows.Forms.Label();
+            this.labelBlackAndWhite = new System.Windows.Forms.Label();
+            this.txAlternateCount = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelManga = new System.Windows.Forms.Label();
+            this.labelSeries = new System.Windows.Forms.Label();
+            this.labelLanguage = new System.Windows.Forms.Label();
+            this.labelImprint = new System.Windows.Forms.Label();
+            this.labelGenre = new System.Windows.Forms.Label();
+            this.labelColorist = new System.Windows.Forms.Label();
+            this.txCount = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.cbLanguage = new cYo.Common.Windows.Forms.LanguageComboBox();
+            this.cbPublisher = new System.Windows.Forms.ComboBox();
+            this.txPenciller = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.txAlternateNumber = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.txNumber = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelPublisher = new System.Windows.Forms.Label();
+            this.labelCoverArtist = new System.Windows.Forms.Label();
+            this.txCoverArtist = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelInker = new System.Windows.Forms.Label();
+            this.labelAlternateCount = new System.Windows.Forms.Label();
+            this.txTitle = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelCount = new System.Windows.Forms.Label();
+            this.labelAlternateNumber = new System.Windows.Forms.Label();
+            this.labelNumber = new System.Windows.Forms.Label();
+            this.labelLetterer = new System.Windows.Forms.Label();
+            this.labelPenciller = new System.Windows.Forms.Label();
+            this.txLetterer = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.labelWriter = new System.Windows.Forms.Label();
+            this.txWriter = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.tabPlot = new System.Windows.Forms.TabPage();
+            this.tabNotes = new System.Windows.Forms.TabControl();
+            this.tabPageSummary = new System.Windows.Forms.TabPage();
+            this.txSummary = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.tabPageNotes = new System.Windows.Forms.TabPage();
+            this.txNotes = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.tabPageReview = new System.Windows.Forms.TabPage();
+            this.txReview = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.txMainCharacterOrTeam = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelMainCharacterOrTeam = new System.Windows.Forms.Label();
+            this.txScanInformation = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelScanInformation = new System.Windows.Forms.Label();
+            this.txLocations = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelLocations = new System.Windows.Forms.Label();
+            this.txTeams = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelTeams = new System.Windows.Forms.Label();
+            this.txWeblink = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelWeb = new System.Windows.Forms.Label();
+            this.txCharacters = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelCharacters = new System.Windows.Forms.Label();
+            this.tabCatalog = new System.Windows.Forms.TabPage();
+            this.labelReleasedTime = new System.Windows.Forms.Label();
+            this.dtpReleasedTime = new cYo.Common.Windows.Forms.NullableDateTimePicker();
+            this.labelOpenedTime = new System.Windows.Forms.Label();
+            this.dtpOpenedTime = new cYo.Common.Windows.Forms.NullableDateTimePicker();
+            this.labelAddedTime = new System.Windows.Forms.Label();
+            this.dtpAddedTime = new cYo.Common.Windows.Forms.NullableDateTimePicker();
+            this.txPagesAsTextSimple = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelPagesAsTextSimple = new System.Windows.Forms.Label();
+            this.txISBN = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelISBN = new System.Windows.Forms.Label();
+            this.cbBookLocation = new System.Windows.Forms.ComboBox();
+            this.labelBookLocation = new System.Windows.Forms.Label();
+            this.txCollectionStatus = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.cbBookPrice = new System.Windows.Forms.ComboBox();
+            this.labelBookPrice = new System.Windows.Forms.Label();
+            this.txBookNotes = new cYo.Common.Windows.Forms.TextBoxEx();
+            this.labelBookNotes = new System.Windows.Forms.Label();
+            this.cbBookAge = new System.Windows.Forms.ComboBox();
+            this.labelBookAge = new System.Windows.Forms.Label();
+            this.labelBookCollectionStatus = new System.Windows.Forms.Label();
+            this.cbBookCondition = new System.Windows.Forms.ComboBox();
+            this.labelBookCondition = new System.Windows.Forms.Label();
+            this.cbBookStore = new cYo.Common.Windows.Forms.ComboBoxEx();
+            this.labelBookStore = new System.Windows.Forms.Label();
+            this.cbBookOwner = new System.Windows.Forms.ComboBox();
+            this.labelBookOwner = new System.Windows.Forms.Label();
+            this.tabCustom = new System.Windows.Forms.TabPage();
+            this.customValuesData = new System.Windows.Forms.DataGridView();
+            this.CustomValueName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomValueValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPages = new System.Windows.Forms.TabPage();
+            this.btResetPages = new cYo.Common.Windows.Forms.SplitButton();
+            this.cmResetPages = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.miOrderByName = new System.Windows.Forms.ToolStripMenuItem();
+            this.miOrderByNameNumeric = new System.Windows.Forms.ToolStripMenuItem();
+            this.btPageView = new System.Windows.Forms.Button();
+            this.labelPagesInfo = new System.Windows.Forms.Label();
+            this.pagesView = new cYo.Projects.ComicRack.Viewer.Controls.PagesView();
+            this.tabColors = new System.Windows.Forms.TabPage();
+            this.panelImage = new System.Windows.Forms.Panel();
+            this.labelCurrentPage = new System.Windows.Forms.Label();
+            this.chkShowImageControls = new System.Windows.Forms.CheckBox();
+            this.btLastPage = new System.Windows.Forms.Button();
+            this.btFirstPage = new System.Windows.Forms.Button();
+            this.btNextPage = new cYo.Common.Windows.Forms.AutoRepeatButton();
+            this.btPrevPage = new cYo.Common.Windows.Forms.AutoRepeatButton();
+            this.pageViewer = new cYo.Common.Windows.Forms.BitmapViewer();
+            this.panelImageControls = new System.Windows.Forms.Panel();
+            this.labelSaturation = new System.Windows.Forms.Label();
+            this.labelContrast = new System.Windows.Forms.Label();
+            this.tbGamma = new cYo.Common.Windows.Forms.TrackBarLite();
+            this.tbSaturation = new cYo.Common.Windows.Forms.TrackBarLite();
+            this.labelGamma = new System.Windows.Forms.Label();
+            this.tbBrightness = new cYo.Common.Windows.Forms.TrackBarLite();
+            this.tbSharpening = new cYo.Common.Windows.Forms.TrackBarLite();
+            this.tbContrast = new cYo.Common.Windows.Forms.TrackBarLite();
+            this.labelSharpening = new System.Windows.Forms.Label();
+            this.labelBrightness = new System.Windows.Forms.Label();
+            this.btResetColors = new System.Windows.Forms.Button();
+            this.btPrev = new System.Windows.Forms.Button();
+            this.btNext = new System.Windows.Forms.Button();
+            this.btScript = new cYo.Common.Windows.Forms.SplitButton();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btApply = new System.Windows.Forms.Button();
+            this.tabControl.SuspendLayout();
+            this.tabSummary.SuspendLayout();
+            this.cmThumbnail.SuspendLayout();
+            this.tabDetails.SuspendLayout();
+            this.tabPlot.SuspendLayout();
+            this.tabNotes.SuspendLayout();
+            this.tabPageSummary.SuspendLayout();
+            this.tabPageNotes.SuspendLayout();
+            this.tabPageReview.SuspendLayout();
+            this.tabCatalog.SuspendLayout();
+            this.tabCustom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customValuesData)).BeginInit();
+            this.tabPages.SuspendLayout();
+            this.cmResetPages.SuspendLayout();
+            this.tabColors.SuspendLayout();
+            this.panelImage.SuspendLayout();
+            this.panelImageControls.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // btCancel
+            // 
+            this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btCancel.Location = new System.Drawing.Point(415, 483);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(80, 24);
+            this.btCancel.TabIndex = 5;
+            this.btCancel.Text = "&Cancel";
+            // 
+            // btOK
+            // 
+            this.btOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btOK.Location = new System.Drawing.Point(329, 483);
+            this.btOK.Name = "btOK";
+            this.btOK.Size = new System.Drawing.Size(80, 24);
+            this.btOK.TabIndex = 4;
+            this.btOK.Text = "&OK";
+            this.btOK.Click += new System.EventHandler(this.btOK_Click);
+            // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabSummary);
+            this.tabControl.Controls.Add(this.tabDetails);
+            this.tabControl.Controls.Add(this.tabPlot);
+            this.tabControl.Controls.Add(this.tabCatalog);
+            this.tabControl.Controls.Add(this.tabCustom);
+            this.tabControl.Controls.Add(this.tabPages);
+            this.tabControl.Controls.Add(this.tabColors);
+            this.tabControl.Location = new System.Drawing.Point(8, 9);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(574, 468);
+            this.tabControl.TabIndex = 0;
+            // 
+            // tabSummary
+            // 
+            this.tabSummary.Controls.Add(this.btThumbnail);
+            this.tabSummary.Controls.Add(this.labelCommunityRating);
+            this.tabSummary.Controls.Add(this.txCommunityRating);
+            this.tabSummary.Controls.Add(this.labelMyRating);
+            this.tabSummary.Controls.Add(this.btLinkFile);
+            this.tabSummary.Controls.Add(this.linkLabel);
+            this.tabSummary.Controls.Add(this.coverThumbnail);
+            this.tabSummary.Controls.Add(this.whereSeparator);
+            this.tabSummary.Controls.Add(this.panel1);
+            this.tabSummary.Controls.Add(this.labelWhere);
+            this.tabSummary.Controls.Add(this.labelType);
+            this.tabSummary.Controls.Add(this.txRating);
+            this.tabSummary.Controls.Add(this.labelPages);
+            this.tabSummary.Controls.Add(this.lblType);
+            this.tabSummary.Controls.Add(this.lblPath);
+            this.tabSummary.Controls.Add(this.lblPages);
+            this.tabSummary.Location = new System.Drawing.Point(4, 22);
+            this.tabSummary.Name = "tabSummary";
+            this.tabSummary.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSummary.Size = new System.Drawing.Size(566, 442);
+            this.tabSummary.TabIndex = 0;
+            this.tabSummary.Text = "Summary";
+            this.tabSummary.UseVisualStyleBackColor = true;
+            // 
+            // btThumbnail
+            // 
+            this.btThumbnail.ContextMenuStrip = this.cmThumbnail;
+            this.btThumbnail.Location = new System.Drawing.Point(372, 347);
+            this.btThumbnail.Name = "btThumbnail";
+            this.btThumbnail.Size = new System.Drawing.Size(152, 23);
+            this.btThumbnail.TabIndex = 13;
+            this.btThumbnail.Text = "Thumbnail...";
+            this.btThumbnail.UseVisualStyleBackColor = true;
+            this.btThumbnail.Visible = false;
+            this.btThumbnail.ShowContextMenu += new System.EventHandler(this.btThumbnail_ShowContextMenu);
+            this.btThumbnail.Click += new System.EventHandler(this.btThumbnail_Click);
+            // 
+            // cmThumbnail
+            // 
+            this.cmThumbnail.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miResetThumbnail,
+            this.toolStripMenuItem1});
+            this.cmThumbnail.Name = "cmKeyboardLayout";
+            this.cmThumbnail.Size = new System.Drawing.Size(103, 32);
+            // 
+            // miResetThumbnail
+            // 
+            this.miResetThumbnail.Name = "miResetThumbnail";
+            this.miResetThumbnail.Size = new System.Drawing.Size(102, 22);
+            this.miResetThumbnail.Text = "&Reset";
+            this.miResetThumbnail.Click += new System.EventHandler(this.miResetThumbnail_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(99, 6);
+            // 
+            // labelCommunityRating
+            // 
+            this.labelCommunityRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommunityRating.Location = new System.Drawing.Point(217, 313);
+            this.labelCommunityRating.Name = "labelCommunityRating";
+            this.labelCommunityRating.Size = new System.Drawing.Size(149, 20);
+            this.labelCommunityRating.TabIndex = 7;
+            this.labelCommunityRating.Text = "Community Rating:";
+            this.labelCommunityRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txCommunityRating
+            // 
+            this.txCommunityRating.DrawText = true;
+            this.txCommunityRating.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txCommunityRating.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txCommunityRating.Location = new System.Drawing.Point(372, 312);
+            this.txCommunityRating.Name = "txCommunityRating";
+            this.txCommunityRating.Rating = 3F;
+            this.txCommunityRating.RatingImage = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.StarBlue;
+            this.txCommunityRating.Size = new System.Drawing.Size(152, 21);
+            this.txCommunityRating.TabIndex = 8;
+            this.txCommunityRating.Text = "3";
+            // 
+            // labelMyRating
+            // 
+            this.labelMyRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMyRating.Location = new System.Drawing.Point(219, 285);
+            this.labelMyRating.Name = "labelMyRating";
+            this.labelMyRating.Size = new System.Drawing.Size(147, 20);
+            this.labelMyRating.TabIndex = 5;
+            this.labelMyRating.Text = "My Rating:";
+            this.labelMyRating.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btLinkFile
+            // 
+            this.btLinkFile.Location = new System.Drawing.Point(372, 373);
+            this.btLinkFile.Name = "btLinkFile";
+            this.btLinkFile.Size = new System.Drawing.Size(152, 23);
+            this.btLinkFile.TabIndex = 14;
+            this.btLinkFile.Text = "Link to File...";
+            this.btLinkFile.UseVisualStyleBackColor = true;
+            this.btLinkFile.Visible = false;
+            this.btLinkFile.Click += new System.EventHandler(this.btLinkFile_Click);
+            // 
+            // linkLabel
+            // 
+            this.linkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel.LinkColor = System.Drawing.Color.SteelBlue;
+            this.linkLabel.Location = new System.Drawing.Point(3, 416);
+            this.linkLabel.Name = "linkLabel";
+            this.linkLabel.Size = new System.Drawing.Size(560, 23);
+            this.linkLabel.TabIndex = 12;
+            this.linkLabel.TabStop = true;
+            this.linkLabel.Text = "linkLabel";
+            this.linkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabel.VisitedLinkColor = System.Drawing.Color.MediumOrchid;
+            this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
+            // 
+            // coverThumbnail
+            // 
+            this.coverThumbnail.AllowDrop = true;
+            this.coverThumbnail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coverThumbnail.Location = new System.Drawing.Point(21, 19);
+            this.coverThumbnail.Name = "coverThumbnail";
+            this.coverThumbnail.Size = new System.Drawing.Size(520, 243);
+            this.coverThumbnail.TabIndex = 0;
+            this.coverThumbnail.ThreeD = true;
+            this.coverThumbnail.Tile = true;
+            this.coverThumbnail.Click += new System.EventHandler(this.coverThumbnail_Click);
+            this.coverThumbnail.DragDrop += new System.Windows.Forms.DragEventHandler(this.coverThumbnail_DragDrop);
+            this.coverThumbnail.DragOver += new System.Windows.Forms.DragEventHandler(this.coverThumbnail_DragOver);
+            // 
+            // whereSeparator
+            // 
+            this.whereSeparator.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.whereSeparator.Location = new System.Drawing.Point(19, 360);
+            this.whereSeparator.Name = "whereSeparator";
+            this.whereSeparator.Size = new System.Drawing.Size(520, 1);
+            this.whereSeparator.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.Location = new System.Drawing.Point(23, 268);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(520, 1);
+            this.panel1.TabIndex = 0;
+            // 
+            // labelWhere
+            // 
+            this.labelWhere.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWhere.Location = new System.Drawing.Point(19, 373);
+            this.labelWhere.Name = "labelWhere";
+            this.labelWhere.Size = new System.Drawing.Size(68, 17);
+            this.labelWhere.TabIndex = 10;
+            this.labelWhere.Text = "Where:";
+            this.labelWhere.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelType
+            // 
+            this.labelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelType.Location = new System.Drawing.Point(19, 285);
+            this.labelType.Name = "labelType";
+            this.labelType.Size = new System.Drawing.Size(68, 20);
+            this.labelType.TabIndex = 1;
+            this.labelType.Text = "Type:";
+            this.labelType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txRating
+            // 
+            this.txRating.DrawText = true;
+            this.txRating.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txRating.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txRating.Location = new System.Drawing.Point(372, 285);
+            this.txRating.Name = "txRating";
+            this.txRating.Rating = 3F;
+            this.txRating.RatingImage = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.StarYellow;
+            this.txRating.Size = new System.Drawing.Size(152, 21);
+            this.txRating.TabIndex = 6;
+            this.txRating.Text = "3";
+            // 
+            // labelPages
+            // 
+            this.labelPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPages.Location = new System.Drawing.Point(21, 313);
+            this.labelPages.Name = "labelPages";
+            this.labelPages.Size = new System.Drawing.Size(66, 20);
+            this.labelPages.TabIndex = 3;
+            this.labelPages.Text = "Pages:";
+            this.labelPages.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblType
+            // 
+            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(93, 285);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(145, 20);
+            this.lblType.TabIndex = 2;
+            this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPath
+            // 
+            this.lblPath.AutoEllipsis = true;
+            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPath.Location = new System.Drawing.Point(93, 373);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(431, 35);
+            this.lblPath.TabIndex = 11;
+            this.lblPath.UseMnemonic = false;
+            // 
+            // lblPages
+            // 
+            this.lblPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPages.Location = new System.Drawing.Point(93, 313);
+            this.lblPages.Name = "lblPages";
+            this.lblPages.Size = new System.Drawing.Size(105, 20);
+            this.lblPages.TabIndex = 4;
+            this.lblPages.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tabDetails
+            // 
+            this.tabDetails.Controls.Add(this.txDay);
+            this.tabDetails.Controls.Add(this.labelDay);
+            this.tabDetails.Controls.Add(this.labelSeriesGroup);
+            this.tabDetails.Controls.Add(this.txSeriesGroup);
+            this.tabDetails.Controls.Add(this.labelStoryArc);
+            this.tabDetails.Controls.Add(this.txStoryArc);
+            this.tabDetails.Controls.Add(this.cbSeriesComplete);
+            this.tabDetails.Controls.Add(this.labelSeriesComplete);
+            this.tabDetails.Controls.Add(this.cbEnableDynamicUpdate);
+            this.tabDetails.Controls.Add(this.labelEnableDynamicUpdate);
+            this.tabDetails.Controls.Add(this.txGenre);
+            this.tabDetails.Controls.Add(this.labelTags);
+            this.tabDetails.Controls.Add(this.cbEnableProposed);
+            this.tabDetails.Controls.Add(this.txTags);
+            this.tabDetails.Controls.Add(this.labelEnableProposed);
+            this.tabDetails.Controls.Add(this.txVolume);
+            this.tabDetails.Controls.Add(this.cbAgeRating);
+            this.tabDetails.Controls.Add(this.txEditor);
+            this.tabDetails.Controls.Add(this.labelEditor);
+            this.tabDetails.Controls.Add(this.txMonth);
+            this.tabDetails.Controls.Add(this.txYear);
+            this.tabDetails.Controls.Add(this.labelAgeRating);
+            this.tabDetails.Controls.Add(this.cbFormat);
+            this.tabDetails.Controls.Add(this.txColorist);
+            this.tabDetails.Controls.Add(this.txSeries);
+            this.tabDetails.Controls.Add(this.labelFormat);
+            this.tabDetails.Controls.Add(this.labelAlternateSeries);
+            this.tabDetails.Controls.Add(this.txAlternateSeries);
+            this.tabDetails.Controls.Add(this.cbImprint);
+            this.tabDetails.Controls.Add(this.cbBlackAndWhite);
+            this.tabDetails.Controls.Add(this.labelVolume);
+            this.tabDetails.Controls.Add(this.txInker);
+            this.tabDetails.Controls.Add(this.cbManga);
+            this.tabDetails.Controls.Add(this.labelYear);
+            this.tabDetails.Controls.Add(this.labelMonth);
+            this.tabDetails.Controls.Add(this.labelBlackAndWhite);
+            this.tabDetails.Controls.Add(this.txAlternateCount);
+            this.tabDetails.Controls.Add(this.labelManga);
+            this.tabDetails.Controls.Add(this.labelSeries);
+            this.tabDetails.Controls.Add(this.labelLanguage);
+            this.tabDetails.Controls.Add(this.labelImprint);
+            this.tabDetails.Controls.Add(this.labelGenre);
+            this.tabDetails.Controls.Add(this.labelColorist);
+            this.tabDetails.Controls.Add(this.txCount);
+            this.tabDetails.Controls.Add(this.cbLanguage);
+            this.tabDetails.Controls.Add(this.cbPublisher);
+            this.tabDetails.Controls.Add(this.txPenciller);
+            this.tabDetails.Controls.Add(this.txAlternateNumber);
+            this.tabDetails.Controls.Add(this.txNumber);
+            this.tabDetails.Controls.Add(this.labelPublisher);
+            this.tabDetails.Controls.Add(this.labelCoverArtist);
+            this.tabDetails.Controls.Add(this.txCoverArtist);
+            this.tabDetails.Controls.Add(this.labelInker);
+            this.tabDetails.Controls.Add(this.labelAlternateCount);
+            this.tabDetails.Controls.Add(this.txTitle);
+            this.tabDetails.Controls.Add(this.labelCount);
+            this.tabDetails.Controls.Add(this.labelAlternateNumber);
+            this.tabDetails.Controls.Add(this.labelNumber);
+            this.tabDetails.Controls.Add(this.labelLetterer);
+            this.tabDetails.Controls.Add(this.labelPenciller);
+            this.tabDetails.Controls.Add(this.txLetterer);
+            this.tabDetails.Controls.Add(this.labelTitle);
+            this.tabDetails.Controls.Add(this.labelWriter);
+            this.tabDetails.Controls.Add(this.txWriter);
+            this.tabDetails.Location = new System.Drawing.Point(4, 22);
+            this.tabDetails.Name = "tabDetails";
+            this.tabDetails.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDetails.Size = new System.Drawing.Size(566, 442);
+            this.tabDetails.TabIndex = 1;
+            this.tabDetails.Text = "Details";
+            this.tabDetails.UseVisualStyleBackColor = true;
+            // 
+            // txDay
+            // 
+            this.txDay.Location = new System.Drawing.Point(349, 65);
+            this.txDay.MaxLength = 4;
+            this.txDay.Name = "txDay";
+            this.txDay.PromptText = "";
+            this.txDay.Size = new System.Drawing.Size(55, 20);
+            this.txDay.TabIndex = 17;
+            // 
+            // labelDay
+            // 
+            this.labelDay.AutoSize = true;
+            this.labelDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDay.Location = new System.Drawing.Point(349, 51);
+            this.labelDay.Name = "labelDay";
+            this.labelDay.Size = new System.Drawing.Size(29, 12);
+            this.labelDay.TabIndex = 16;
+            this.labelDay.Text = "Day:";
+            // 
+            // labelSeriesGroup
+            // 
+            this.labelSeriesGroup.AutoSize = true;
+            this.labelSeriesGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSeriesGroup.Location = new System.Drawing.Point(214, 129);
+            this.labelSeriesGroup.Name = "labelSeriesGroup";
+            this.labelSeriesGroup.Size = new System.Drawing.Size(74, 12);
+            this.labelSeriesGroup.TabIndex = 30;
+            this.labelSeriesGroup.Text = "Series Group:";
+            // 
+            // txSeriesGroup
+            // 
+            this.txSeriesGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txSeriesGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txSeriesGroup.Location = new System.Drawing.Point(216, 142);
+            this.txSeriesGroup.Name = "txSeriesGroup";
+            this.txSeriesGroup.PromptText = "";
+            this.txSeriesGroup.Size = new System.Drawing.Size(188, 20);
+            this.txSeriesGroup.TabIndex = 31;
+            this.txSeriesGroup.Tag = "SeriesGroup";
+            // 
+            // labelStoryArc
+            // 
+            this.labelStoryArc.AutoSize = true;
+            this.labelStoryArc.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStoryArc.Location = new System.Drawing.Point(8, 129);
+            this.labelStoryArc.Name = "labelStoryArc";
+            this.labelStoryArc.Size = new System.Drawing.Size(57, 12);
+            this.labelStoryArc.TabIndex = 28;
+            this.labelStoryArc.Text = "Story Arc:";
+            // 
+            // txStoryArc
+            // 
+            this.txStoryArc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txStoryArc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txStoryArc.Location = new System.Drawing.Point(10, 142);
+            this.txStoryArc.Name = "txStoryArc";
+            this.txStoryArc.PromptText = "";
+            this.txStoryArc.Size = new System.Drawing.Size(200, 20);
+            this.txStoryArc.TabIndex = 29;
+            this.txStoryArc.Tag = "StoryArc";
+            // 
+            // cbSeriesComplete
+            // 
+            this.cbSeriesComplete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSeriesComplete.FormattingEnabled = true;
+            this.cbSeriesComplete.Location = new System.Drawing.Point(416, 141);
+            this.cbSeriesComplete.Name = "cbSeriesComplete";
+            this.cbSeriesComplete.Size = new System.Drawing.Size(139, 21);
+            this.cbSeriesComplete.TabIndex = 33;
+            this.cbSeriesComplete.TextChanged += new System.EventHandler(this.IconTextsChanged);
+            // 
+            // labelSeriesComplete
+            // 
+            this.labelSeriesComplete.AutoSize = true;
+            this.labelSeriesComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSeriesComplete.Location = new System.Drawing.Point(414, 129);
+            this.labelSeriesComplete.Name = "labelSeriesComplete";
+            this.labelSeriesComplete.Size = new System.Drawing.Size(90, 12);
+            this.labelSeriesComplete.TabIndex = 32;
+            this.labelSeriesComplete.Text = "Series complete:";
+            // 
+            // cbEnableDynamicUpdate
+            // 
+            this.cbEnableDynamicUpdate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEnableDynamicUpdate.FormattingEnabled = true;
+            this.cbEnableDynamicUpdate.Location = new System.Drawing.Point(416, 371);
+            this.cbEnableDynamicUpdate.Name = "cbEnableDynamicUpdate";
+            this.cbEnableDynamicUpdate.Size = new System.Drawing.Size(139, 21);
+            this.cbEnableDynamicUpdate.TabIndex = 59;
+            // 
+            // labelEnableDynamicUpdate
+            // 
+            this.labelEnableDynamicUpdate.AutoSize = true;
+            this.labelEnableDynamicUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnableDynamicUpdate.Location = new System.Drawing.Point(414, 357);
+            this.labelEnableDynamicUpdate.Name = "labelEnableDynamicUpdate";
+            this.labelEnableDynamicUpdate.Size = new System.Drawing.Size(103, 12);
+            this.labelEnableDynamicUpdate.TabIndex = 58;
+            this.labelEnableDynamicUpdate.Text = "Include in Updates:";
+            // 
+            // txGenre
+            // 
+            this.txGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txGenre.Location = new System.Drawing.Point(10, 372);
+            this.txGenre.Name = "txGenre";
+            this.txGenre.Size = new System.Drawing.Size(392, 20);
+            this.txGenre.TabIndex = 57;
+            // 
+            // labelTags
+            // 
+            this.labelTags.AutoSize = true;
+            this.labelTags.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTags.Location = new System.Drawing.Point(11, 395);
+            this.labelTags.Name = "labelTags";
+            this.labelTags.Size = new System.Drawing.Size(33, 12);
+            this.labelTags.TabIndex = 60;
+            this.labelTags.Text = "Tags:";
+            // 
+            // cbEnableProposed
+            // 
+            this.cbEnableProposed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEnableProposed.FormattingEnabled = true;
+            this.cbEnableProposed.Location = new System.Drawing.Point(416, 410);
+            this.cbEnableProposed.Name = "cbEnableProposed";
+            this.cbEnableProposed.Size = new System.Drawing.Size(139, 21);
+            this.cbEnableProposed.TabIndex = 63;
+            this.cbEnableProposed.SelectedIndexChanged += new System.EventHandler(this.cbEnableShadowValues_SelectedIndexChanged);
+            // 
+            // txTags
+            // 
+            this.txTags.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txTags.Location = new System.Drawing.Point(11, 411);
+            this.txTags.Name = "txTags";
+            this.txTags.Size = new System.Drawing.Size(392, 20);
+            this.txTags.TabIndex = 61;
+            this.txTags.TextChanged += new System.EventHandler(this.IconTextsChanged);
+            // 
+            // labelEnableProposed
+            // 
+            this.labelEnableProposed.AutoSize = true;
+            this.labelEnableProposed.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEnableProposed.Location = new System.Drawing.Point(414, 395);
+            this.labelEnableProposed.Name = "labelEnableProposed";
+            this.labelEnableProposed.Size = new System.Drawing.Size(94, 12);
+            this.labelEnableProposed.TabIndex = 62;
+            this.labelEnableProposed.Text = "Proposed Values:";
+            // 
+            // txVolume
+            // 
+            this.txVolume.Location = new System.Drawing.Point(216, 28);
+            this.txVolume.Name = "txVolume";
+            this.txVolume.PromptText = "";
+            this.txVolume.Size = new System.Drawing.Size(57, 20);
+            this.txVolume.TabIndex = 3;
+            // 
+            // cbAgeRating
+            // 
+            this.cbAgeRating.FormattingEnabled = true;
+            this.cbAgeRating.Location = new System.Drawing.Point(416, 200);
+            this.cbAgeRating.Name = "cbAgeRating";
+            this.cbAgeRating.Size = new System.Drawing.Size(139, 21);
+            this.cbAgeRating.TabIndex = 39;
+            this.cbAgeRating.TextChanged += new System.EventHandler(this.IconTextsChanged);
+            // 
+            // txEditor
+            // 
+            this.txEditor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txEditor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txEditor.Location = new System.Drawing.Point(11, 315);
+            this.txEditor.Name = "txEditor";
+            this.txEditor.Size = new System.Drawing.Size(200, 20);
+            this.txEditor.TabIndex = 53;
+            this.txEditor.Tag = "Editor";
+            // 
+            // labelEditor
+            // 
+            this.labelEditor.AutoSize = true;
+            this.labelEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEditor.Location = new System.Drawing.Point(9, 300);
+            this.labelEditor.Name = "labelEditor";
+            this.labelEditor.Size = new System.Drawing.Size(39, 12);
+            this.labelEditor.TabIndex = 52;
+            this.labelEditor.Text = "Editor:";
+            // 
+            // txMonth
+            // 
+            this.txMonth.Location = new System.Drawing.Point(278, 66);
+            this.txMonth.MaxLength = 2;
+            this.txMonth.Name = "txMonth";
+            this.txMonth.PromptText = "";
+            this.txMonth.Size = new System.Drawing.Size(65, 20);
+            this.txMonth.TabIndex = 15;
+            // 
+            // txYear
+            // 
+            this.txYear.Location = new System.Drawing.Point(216, 66);
+            this.txYear.MaxLength = 4;
+            this.txYear.Name = "txYear";
+            this.txYear.PromptText = "";
+            this.txYear.Size = new System.Drawing.Size(57, 20);
+            this.txYear.TabIndex = 13;
+            this.txYear.TextChanged += new System.EventHandler(this.IconTextsChanged);
+            // 
+            // labelAgeRating
+            // 
+            this.labelAgeRating.AutoSize = true;
+            this.labelAgeRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAgeRating.Location = new System.Drawing.Point(414, 187);
+            this.labelAgeRating.Name = "labelAgeRating";
+            this.labelAgeRating.Size = new System.Drawing.Size(65, 12);
+            this.labelAgeRating.TabIndex = 38;
+            this.labelAgeRating.Text = "Age Rating:";
+            // 
+            // cbFormat
+            // 
+            this.cbFormat.FormattingEnabled = true;
+            this.cbFormat.Location = new System.Drawing.Point(416, 27);
+            this.cbFormat.Name = "cbFormat";
+            this.cbFormat.PromptText = null;
+            this.cbFormat.Size = new System.Drawing.Size(139, 21);
+            this.cbFormat.TabIndex = 9;
+            this.cbFormat.TextChanged += new System.EventHandler(this.IconTextsChanged);
+            // 
+            // txColorist
+            // 
+            this.txColorist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txColorist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txColorist.Location = new System.Drawing.Point(216, 239);
+            this.txColorist.Name = "txColorist";
+            this.txColorist.Size = new System.Drawing.Size(187, 20);
+            this.txColorist.TabIndex = 43;
+            this.txColorist.Tag = "Colorist";
+            // 
+            // txSeries
+            // 
+            this.txSeries.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txSeries.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txSeries.Location = new System.Drawing.Point(11, 28);
+            this.txSeries.Name = "txSeries";
+            this.txSeries.PromptText = "";
+            this.txSeries.Size = new System.Drawing.Size(201, 20);
+            this.txSeries.TabIndex = 1;
+            this.txSeries.Tag = "Series";
+            // 
+            // labelFormat
+            // 
+            this.labelFormat.AutoSize = true;
+            this.labelFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFormat.Location = new System.Drawing.Point(414, 13);
+            this.labelFormat.Name = "labelFormat";
+            this.labelFormat.Size = new System.Drawing.Size(45, 12);
+            this.labelFormat.TabIndex = 8;
+            this.labelFormat.Text = "Format:";
+            // 
+            // labelAlternateSeries
+            // 
+            this.labelAlternateSeries.AutoSize = true;
+            this.labelAlternateSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAlternateSeries.Location = new System.Drawing.Point(9, 89);
+            this.labelAlternateSeries.Name = "labelAlternateSeries";
+            this.labelAlternateSeries.Size = new System.Drawing.Size(177, 12);
+            this.labelAlternateSeries.TabIndex = 20;
+            this.labelAlternateSeries.Text = "Alternate Series or Storyline Title:";
+            // 
+            // txAlternateSeries
+            // 
+            this.txAlternateSeries.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txAlternateSeries.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txAlternateSeries.Location = new System.Drawing.Point(11, 104);
+            this.txAlternateSeries.Name = "txAlternateSeries";
+            this.txAlternateSeries.PromptText = "";
+            this.txAlternateSeries.Size = new System.Drawing.Size(262, 20);
+            this.txAlternateSeries.TabIndex = 21;
+            this.txAlternateSeries.Tag = "AlternateSeries";
+            // 
+            // cbImprint
+            // 
+            this.cbImprint.FormattingEnabled = true;
+            this.cbImprint.Location = new System.Drawing.Point(416, 103);
+            this.cbImprint.Name = "cbImprint";
+            this.cbImprint.Size = new System.Drawing.Size(139, 21);
+            this.cbImprint.TabIndex = 27;
+            this.cbImprint.Tag = "Imprint";
+            this.cbImprint.TextChanged += new System.EventHandler(this.IconTextsChanged);
+            // 
+            // cbBlackAndWhite
+            // 
+            this.cbBlackAndWhite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBlackAndWhite.FormattingEnabled = true;
+            this.cbBlackAndWhite.Location = new System.Drawing.Point(416, 312);
+            this.cbBlackAndWhite.Name = "cbBlackAndWhite";
+            this.cbBlackAndWhite.Size = new System.Drawing.Size(139, 21);
+            this.cbBlackAndWhite.TabIndex = 55;
+            this.cbBlackAndWhite.TextChanged += new System.EventHandler(this.IconTextsChanged);
+            // 
+            // labelVolume
+            // 
+            this.labelVolume.AutoSize = true;
+            this.labelVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVolume.Location = new System.Drawing.Point(216, 13);
+            this.labelVolume.Name = "labelVolume";
+            this.labelVolume.Size = new System.Drawing.Size(47, 12);
+            this.labelVolume.TabIndex = 2;
+            this.labelVolume.Text = "Volume:";
+            // 
+            // txInker
+            // 
+            this.txInker.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txInker.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txInker.Location = new System.Drawing.Point(10, 239);
+            this.txInker.Name = "txInker";
+            this.txInker.Size = new System.Drawing.Size(201, 20);
+            this.txInker.TabIndex = 41;
+            this.txInker.Tag = "Inker";
+            // 
+            // cbManga
+            // 
+            this.cbManga.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbManga.FormattingEnabled = true;
+            this.cbManga.Location = new System.Drawing.Point(416, 237);
+            this.cbManga.Name = "cbManga";
+            this.cbManga.Size = new System.Drawing.Size(139, 21);
+            this.cbManga.TabIndex = 45;
+            this.cbManga.TextChanged += new System.EventHandler(this.IconTextsChanged);
+            // 
+            // labelYear
+            // 
+            this.labelYear.AutoSize = true;
+            this.labelYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelYear.Location = new System.Drawing.Point(216, 52);
+            this.labelYear.Name = "labelYear";
+            this.labelYear.Size = new System.Drawing.Size(31, 12);
+            this.labelYear.TabIndex = 12;
+            this.labelYear.Text = "Year:";
+            // 
+            // labelMonth
+            // 
+            this.labelMonth.AutoSize = true;
+            this.labelMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMonth.Location = new System.Drawing.Point(276, 51);
+            this.labelMonth.Name = "labelMonth";
+            this.labelMonth.Size = new System.Drawing.Size(41, 12);
+            this.labelMonth.TabIndex = 14;
+            this.labelMonth.Text = "Month:";
+            // 
+            // labelBlackAndWhite
+            // 
+            this.labelBlackAndWhite.AutoSize = true;
+            this.labelBlackAndWhite.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBlackAndWhite.Location = new System.Drawing.Point(414, 297);
+            this.labelBlackAndWhite.Name = "labelBlackAndWhite";
+            this.labelBlackAndWhite.Size = new System.Drawing.Size(90, 12);
+            this.labelBlackAndWhite.TabIndex = 54;
+            this.labelBlackAndWhite.Text = "Black and White:";
+            // 
+            // txAlternateCount
+            // 
+            this.txAlternateCount.Location = new System.Drawing.Point(349, 104);
+            this.txAlternateCount.Name = "txAlternateCount";
+            this.txAlternateCount.PromptText = "";
+            this.txAlternateCount.Size = new System.Drawing.Size(55, 20);
+            this.txAlternateCount.TabIndex = 25;
+            // 
+            // labelManga
+            // 
+            this.labelManga.AutoSize = true;
+            this.labelManga.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelManga.Location = new System.Drawing.Point(414, 222);
+            this.labelManga.Name = "labelManga";
+            this.labelManga.Size = new System.Drawing.Size(43, 12);
+            this.labelManga.TabIndex = 44;
+            this.labelManga.Text = "Manga:";
+            // 
+            // labelSeries
+            // 
+            this.labelSeries.AutoSize = true;
+            this.labelSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSeries.Location = new System.Drawing.Point(9, 13);
+            this.labelSeries.Name = "labelSeries";
+            this.labelSeries.Size = new System.Drawing.Size(41, 12);
+            this.labelSeries.TabIndex = 0;
+            this.labelSeries.Text = "Series:";
+            // 
+            // labelLanguage
+            // 
+            this.labelLanguage.AutoSize = true;
+            this.labelLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLanguage.Location = new System.Drawing.Point(414, 261);
+            this.labelLanguage.Name = "labelLanguage";
+            this.labelLanguage.Size = new System.Drawing.Size(57, 12);
+            this.labelLanguage.TabIndex = 50;
+            this.labelLanguage.Text = "Language:";
+            // 
+            // labelImprint
+            // 
+            this.labelImprint.AutoSize = true;
+            this.labelImprint.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImprint.Location = new System.Drawing.Point(414, 88);
+            this.labelImprint.Name = "labelImprint";
+            this.labelImprint.Size = new System.Drawing.Size(45, 12);
+            this.labelImprint.TabIndex = 26;
+            this.labelImprint.Text = "Imprint:";
+            // 
+            // labelGenre
+            // 
+            this.labelGenre.AutoSize = true;
+            this.labelGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGenre.Location = new System.Drawing.Point(11, 357);
+            this.labelGenre.Name = "labelGenre";
+            this.labelGenre.Size = new System.Drawing.Size(39, 12);
+            this.labelGenre.TabIndex = 56;
+            this.labelGenre.Text = "Genre:";
+            // 
+            // labelColorist
+            // 
+            this.labelColorist.AutoSize = true;
+            this.labelColorist.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelColorist.Location = new System.Drawing.Point(214, 224);
+            this.labelColorist.Name = "labelColorist";
+            this.labelColorist.Size = new System.Drawing.Size(49, 12);
+            this.labelColorist.TabIndex = 42;
+            this.labelColorist.Text = "Colorist:";
+            // 
+            // txCount
+            // 
+            this.txCount.Location = new System.Drawing.Point(349, 28);
+            this.txCount.Name = "txCount";
+            this.txCount.PromptText = "";
+            this.txCount.Size = new System.Drawing.Size(55, 20);
+            this.txCount.TabIndex = 7;
+            // 
+            // cbLanguage
+            // 
+            this.cbLanguage.CultureTypes = System.Globalization.CultureTypes.NeutralCultures;
+            this.cbLanguage.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLanguage.FormattingEnabled = true;
+            this.cbLanguage.IntegralHeight = false;
+            this.cbLanguage.Location = new System.Drawing.Point(416, 276);
+            this.cbLanguage.Name = "cbLanguage";
+            this.cbLanguage.SelectedCulture = "";
+            this.cbLanguage.SelectedTwoLetterISOLanguage = "";
+            this.cbLanguage.Size = new System.Drawing.Size(139, 21);
+            this.cbLanguage.TabIndex = 51;
+            this.cbLanguage.TopTwoLetterISOLanguages = null;
+            // 
+            // cbPublisher
+            // 
+            this.cbPublisher.FormattingEnabled = true;
+            this.cbPublisher.Location = new System.Drawing.Point(416, 65);
+            this.cbPublisher.Name = "cbPublisher";
+            this.cbPublisher.Size = new System.Drawing.Size(139, 21);
+            this.cbPublisher.TabIndex = 19;
+            this.cbPublisher.Tag = "Publisher";
+            this.cbPublisher.TextChanged += new System.EventHandler(this.IconTextsChanged);
+            // 
+            // txPenciller
+            // 
+            this.txPenciller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txPenciller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txPenciller.Location = new System.Drawing.Point(216, 200);
+            this.txPenciller.Name = "txPenciller";
+            this.txPenciller.Size = new System.Drawing.Size(187, 20);
+            this.txPenciller.TabIndex = 37;
+            this.txPenciller.Tag = "Penciller";
+            // 
+            // txAlternateNumber
+            // 
+            this.txAlternateNumber.Location = new System.Drawing.Point(278, 104);
+            this.txAlternateNumber.Name = "txAlternateNumber";
+            this.txAlternateNumber.PromptText = "";
+            this.txAlternateNumber.Size = new System.Drawing.Size(65, 20);
+            this.txAlternateNumber.TabIndex = 23;
+            // 
+            // txNumber
+            // 
+            this.txNumber.Location = new System.Drawing.Point(278, 28);
+            this.txNumber.Name = "txNumber";
+            this.txNumber.PromptText = "";
+            this.txNumber.Size = new System.Drawing.Size(65, 20);
+            this.txNumber.TabIndex = 5;
+            // 
+            // labelPublisher
+            // 
+            this.labelPublisher.AutoSize = true;
+            this.labelPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPublisher.Location = new System.Drawing.Point(414, 51);
+            this.labelPublisher.Name = "labelPublisher";
+            this.labelPublisher.Size = new System.Drawing.Size(56, 12);
+            this.labelPublisher.TabIndex = 18;
+            this.labelPublisher.Text = "Publisher:";
+            // 
+            // labelCoverArtist
+            // 
+            this.labelCoverArtist.AutoSize = true;
+            this.labelCoverArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCoverArtist.Location = new System.Drawing.Point(214, 262);
+            this.labelCoverArtist.Name = "labelCoverArtist";
+            this.labelCoverArtist.Size = new System.Drawing.Size(72, 12);
+            this.labelCoverArtist.TabIndex = 48;
+            this.labelCoverArtist.Text = "Cover Artist:";
+            // 
+            // txCoverArtist
+            // 
+            this.txCoverArtist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txCoverArtist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txCoverArtist.Location = new System.Drawing.Point(216, 277);
+            this.txCoverArtist.Name = "txCoverArtist";
+            this.txCoverArtist.Size = new System.Drawing.Size(187, 20);
+            this.txCoverArtist.TabIndex = 49;
+            this.txCoverArtist.Tag = "CoverArtist";
+            // 
+            // labelInker
+            // 
+            this.labelInker.AutoSize = true;
+            this.labelInker.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInker.Location = new System.Drawing.Point(11, 224);
+            this.labelInker.Name = "labelInker";
+            this.labelInker.Size = new System.Drawing.Size(35, 12);
+            this.labelInker.TabIndex = 40;
+            this.labelInker.Text = "Inker:";
+            // 
+            // labelAlternateCount
+            // 
+            this.labelAlternateCount.AutoSize = true;
+            this.labelAlternateCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAlternateCount.Location = new System.Drawing.Point(347, 89);
+            this.labelAlternateCount.Name = "labelAlternateCount";
+            this.labelAlternateCount.Size = new System.Drawing.Size(19, 12);
+            this.labelAlternateCount.TabIndex = 24;
+            this.labelAlternateCount.Text = "of:";
+            // 
+            // txTitle
+            // 
+            this.txTitle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txTitle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txTitle.Location = new System.Drawing.Point(11, 66);
+            this.txTitle.Name = "txTitle";
+            this.txTitle.Size = new System.Drawing.Size(201, 20);
+            this.txTitle.TabIndex = 11;
+            this.txTitle.Tag = "Title";
+            // 
+            // labelCount
+            // 
+            this.labelCount.AutoSize = true;
+            this.labelCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCount.Location = new System.Drawing.Point(347, 13);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(19, 12);
+            this.labelCount.TabIndex = 6;
+            this.labelCount.Text = "of:";
+            // 
+            // labelAlternateNumber
+            // 
+            this.labelAlternateNumber.AutoSize = true;
+            this.labelAlternateNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAlternateNumber.Location = new System.Drawing.Point(276, 89);
+            this.labelAlternateNumber.Name = "labelAlternateNumber";
+            this.labelAlternateNumber.Size = new System.Drawing.Size(48, 12);
+            this.labelAlternateNumber.TabIndex = 22;
+            this.labelAlternateNumber.Text = "Number:";
+            // 
+            // labelNumber
+            // 
+            this.labelNumber.AutoSize = true;
+            this.labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumber.Location = new System.Drawing.Point(276, 13);
+            this.labelNumber.Name = "labelNumber";
+            this.labelNumber.Size = new System.Drawing.Size(48, 12);
+            this.labelNumber.TabIndex = 4;
+            this.labelNumber.Text = "Number:";
+            // 
+            // labelLetterer
+            // 
+            this.labelLetterer.AutoSize = true;
+            this.labelLetterer.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLetterer.Location = new System.Drawing.Point(9, 262);
+            this.labelLetterer.Name = "labelLetterer";
+            this.labelLetterer.Size = new System.Drawing.Size(49, 12);
+            this.labelLetterer.TabIndex = 46;
+            this.labelLetterer.Text = "Letterer:";
+            // 
+            // labelPenciller
+            // 
+            this.labelPenciller.AutoSize = true;
+            this.labelPenciller.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPenciller.Location = new System.Drawing.Point(214, 187);
+            this.labelPenciller.Name = "labelPenciller";
+            this.labelPenciller.Size = new System.Drawing.Size(53, 12);
+            this.labelPenciller.TabIndex = 36;
+            this.labelPenciller.Text = "Penciller:";
+            // 
+            // txLetterer
+            // 
+            this.txLetterer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txLetterer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txLetterer.Location = new System.Drawing.Point(11, 277);
+            this.txLetterer.Name = "txLetterer";
+            this.txLetterer.Size = new System.Drawing.Size(200, 20);
+            this.txLetterer.TabIndex = 47;
+            this.txLetterer.Tag = "Letterer";
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(9, 51);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(31, 12);
+            this.labelTitle.TabIndex = 10;
+            this.labelTitle.Text = "Title:";
+            // 
+            // labelWriter
+            // 
+            this.labelWriter.AutoSize = true;
+            this.labelWriter.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWriter.Location = new System.Drawing.Point(9, 187);
+            this.labelWriter.Name = "labelWriter";
+            this.labelWriter.Size = new System.Drawing.Size(40, 12);
+            this.labelWriter.TabIndex = 34;
+            this.labelWriter.Text = "Writer:";
+            // 
+            // txWriter
+            // 
+            this.txWriter.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txWriter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txWriter.Location = new System.Drawing.Point(11, 200);
+            this.txWriter.Name = "txWriter";
+            this.txWriter.Size = new System.Drawing.Size(200, 20);
+            this.txWriter.TabIndex = 35;
+            this.txWriter.Tag = "Writer";
+            // 
+            // tabPlot
+            // 
+            this.tabPlot.Controls.Add(this.tabNotes);
+            this.tabPlot.Controls.Add(this.txMainCharacterOrTeam);
+            this.tabPlot.Controls.Add(this.labelMainCharacterOrTeam);
+            this.tabPlot.Controls.Add(this.txScanInformation);
+            this.tabPlot.Controls.Add(this.labelScanInformation);
+            this.tabPlot.Controls.Add(this.txLocations);
+            this.tabPlot.Controls.Add(this.labelLocations);
+            this.tabPlot.Controls.Add(this.txTeams);
+            this.tabPlot.Controls.Add(this.labelTeams);
+            this.tabPlot.Controls.Add(this.txWeblink);
+            this.tabPlot.Controls.Add(this.labelWeb);
+            this.tabPlot.Controls.Add(this.txCharacters);
+            this.tabPlot.Controls.Add(this.labelCharacters);
+            this.tabPlot.Location = new System.Drawing.Point(4, 22);
+            this.tabPlot.Name = "tabPlot";
+            this.tabPlot.Size = new System.Drawing.Size(566, 442);
+            this.tabPlot.TabIndex = 8;
+            this.tabPlot.Text = "Plot & Notes";
+            this.tabPlot.UseVisualStyleBackColor = true;
+            // 
+            // tabNotes
+            // 
+            this.tabNotes.Controls.Add(this.tabPageSummary);
+            this.tabNotes.Controls.Add(this.tabPageNotes);
+            this.tabNotes.Controls.Add(this.tabPageReview);
+            this.tabNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
+            this.tabNotes.Location = new System.Drawing.Point(11, 15);
+            this.tabNotes.Multiline = true;
+            this.tabNotes.Name = "tabNotes";
+            this.tabNotes.SelectedIndex = 0;
+            this.tabNotes.Size = new System.Drawing.Size(539, 233);
+            this.tabNotes.TabIndex = 0;
+            // 
+            // tabPageSummary
+            // 
+            this.tabPageSummary.Controls.Add(this.txSummary);
+            this.tabPageSummary.Location = new System.Drawing.Point(4, 21);
+            this.tabPageSummary.Name = "tabPageSummary";
+            this.tabPageSummary.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSummary.Size = new System.Drawing.Size(531, 208);
+            this.tabPageSummary.TabIndex = 0;
+            this.tabPageSummary.Text = "Summary";
+            this.tabPageSummary.UseVisualStyleBackColor = true;
+            // 
+            // txSummary
+            // 
+            this.txSummary.AcceptsReturn = true;
+            this.txSummary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txSummary.FocusSelect = false;
+            this.txSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txSummary.Location = new System.Drawing.Point(3, 3);
+            this.txSummary.Multiline = true;
+            this.txSummary.Name = "txSummary";
+            this.txSummary.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txSummary.Size = new System.Drawing.Size(525, 202);
+            this.txSummary.TabIndex = 2;
+            // 
+            // tabPageNotes
+            // 
+            this.tabPageNotes.Controls.Add(this.txNotes);
+            this.tabPageNotes.Location = new System.Drawing.Point(4, 21);
+            this.tabPageNotes.Name = "tabPageNotes";
+            this.tabPageNotes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageNotes.Size = new System.Drawing.Size(531, 208);
+            this.tabPageNotes.TabIndex = 1;
+            this.tabPageNotes.Text = "Notes";
+            this.tabPageNotes.UseVisualStyleBackColor = true;
+            // 
+            // txNotes
+            // 
+            this.txNotes.AcceptsReturn = true;
+            this.txNotes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txNotes.FocusSelect = false;
+            this.txNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txNotes.Location = new System.Drawing.Point(3, 3);
+            this.txNotes.Multiline = true;
+            this.txNotes.Name = "txNotes";
+            this.txNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txNotes.Size = new System.Drawing.Size(525, 202);
+            this.txNotes.TabIndex = 10;
+            // 
+            // tabPageReview
+            // 
+            this.tabPageReview.Controls.Add(this.txReview);
+            this.tabPageReview.Location = new System.Drawing.Point(4, 21);
+            this.tabPageReview.Name = "tabPageReview";
+            this.tabPageReview.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageReview.Size = new System.Drawing.Size(531, 208);
+            this.tabPageReview.TabIndex = 2;
+            this.tabPageReview.Text = "Review";
+            this.tabPageReview.UseVisualStyleBackColor = true;
+            // 
+            // txReview
+            // 
+            this.txReview.AcceptsReturn = true;
+            this.txReview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txReview.FocusSelect = false;
+            this.txReview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txReview.Location = new System.Drawing.Point(3, 3);
+            this.txReview.Multiline = true;
+            this.txReview.Name = "txReview";
+            this.txReview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txReview.Size = new System.Drawing.Size(525, 202);
+            this.txReview.TabIndex = 10;
+            // 
+            // txMainCharacterOrTeam
+            // 
+            this.txMainCharacterOrTeam.AcceptsReturn = true;
+            this.txMainCharacterOrTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txMainCharacterOrTeam.Location = new System.Drawing.Point(286, 278);
+            this.txMainCharacterOrTeam.Name = "txMainCharacterOrTeam";
+            this.txMainCharacterOrTeam.Size = new System.Drawing.Size(264, 20);
+            this.txMainCharacterOrTeam.TabIndex = 4;
+            this.txMainCharacterOrTeam.Tag = "Teams";
+            // 
+            // labelMainCharacterOrTeam
+            // 
+            this.labelMainCharacterOrTeam.AutoSize = true;
+            this.labelMainCharacterOrTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMainCharacterOrTeam.Location = new System.Drawing.Point(284, 263);
+            this.labelMainCharacterOrTeam.Name = "labelMainCharacterOrTeam";
+            this.labelMainCharacterOrTeam.Size = new System.Drawing.Size(130, 12);
+            this.labelMainCharacterOrTeam.TabIndex = 3;
+            this.labelMainCharacterOrTeam.Text = "Main Character or Team:";
+            // 
+            // txScanInformation
+            // 
+            this.txScanInformation.AcceptsReturn = true;
+            this.txScanInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txScanInformation.Location = new System.Drawing.Point(11, 412);
+            this.txScanInformation.Name = "txScanInformation";
+            this.txScanInformation.Size = new System.Drawing.Size(260, 20);
+            this.txScanInformation.TabIndex = 10;
+            this.txScanInformation.Tag = "";
+            // 
+            // labelScanInformation
+            // 
+            this.labelScanInformation.AutoSize = true;
+            this.labelScanInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelScanInformation.Location = new System.Drawing.Point(9, 397);
+            this.labelScanInformation.Name = "labelScanInformation";
+            this.labelScanInformation.Size = new System.Drawing.Size(95, 12);
+            this.labelScanInformation.TabIndex = 9;
+            this.labelScanInformation.Text = "Scan Information:";
+            // 
+            // txLocations
+            // 
+            this.txLocations.AcceptsReturn = true;
+            this.txLocations.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txLocations.Location = new System.Drawing.Point(287, 351);
+            this.txLocations.Name = "txLocations";
+            this.txLocations.Size = new System.Drawing.Size(263, 20);
+            this.txLocations.TabIndex = 8;
+            this.txLocations.Tag = "Locations";
+            // 
+            // labelLocations
+            // 
+            this.labelLocations.AutoSize = true;
+            this.labelLocations.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLocations.Location = new System.Drawing.Point(285, 336);
+            this.labelLocations.Name = "labelLocations";
+            this.labelLocations.Size = new System.Drawing.Size(58, 12);
+            this.labelLocations.TabIndex = 7;
+            this.labelLocations.Text = "Locations:";
+            // 
+            // txTeams
+            // 
+            this.txTeams.AcceptsReturn = true;
+            this.txTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txTeams.Location = new System.Drawing.Point(286, 316);
+            this.txTeams.Name = "txTeams";
+            this.txTeams.Size = new System.Drawing.Size(264, 20);
+            this.txTeams.TabIndex = 6;
+            this.txTeams.Tag = "Teams";
+            // 
+            // labelTeams
+            // 
+            this.labelTeams.AutoSize = true;
+            this.labelTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTeams.Location = new System.Drawing.Point(284, 301);
+            this.labelTeams.Name = "labelTeams";
+            this.labelTeams.Size = new System.Drawing.Size(42, 12);
+            this.labelTeams.TabIndex = 5;
+            this.labelTeams.Text = "Teams:";
+            // 
+            // txWeblink
+            // 
+            this.txWeblink.AcceptsReturn = true;
+            this.txWeblink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txWeblink.Location = new System.Drawing.Point(287, 412);
+            this.txWeblink.Name = "txWeblink";
+            this.txWeblink.Size = new System.Drawing.Size(263, 20);
+            this.txWeblink.TabIndex = 12;
+            this.txWeblink.Tag = "";
+            // 
+            // labelWeb
+            // 
+            this.labelWeb.AutoSize = true;
+            this.labelWeb.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWeb.Location = new System.Drawing.Point(285, 397);
+            this.labelWeb.Name = "labelWeb";
+            this.labelWeb.Size = new System.Drawing.Size(31, 12);
+            this.labelWeb.TabIndex = 11;
+            this.labelWeb.Text = "Web:";
+            // 
+            // txCharacters
+            // 
+            this.txCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txCharacters.Location = new System.Drawing.Point(11, 278);
+            this.txCharacters.Multiline = true;
+            this.txCharacters.Name = "txCharacters";
+            this.txCharacters.Size = new System.Drawing.Size(260, 93);
+            this.txCharacters.TabIndex = 2;
+            this.txCharacters.Tag = "Characters";
+            this.txCharacters.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txCharacters_KeyPress);
+            // 
+            // labelCharacters
+            // 
+            this.labelCharacters.AutoSize = true;
+            this.labelCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCharacters.Location = new System.Drawing.Point(9, 263);
+            this.labelCharacters.Name = "labelCharacters";
+            this.labelCharacters.Size = new System.Drawing.Size(65, 12);
+            this.labelCharacters.TabIndex = 1;
+            this.labelCharacters.Text = "Characters:";
+            // 
+            // tabCatalog
+            // 
+            this.tabCatalog.Controls.Add(this.labelReleasedTime);
+            this.tabCatalog.Controls.Add(this.dtpReleasedTime);
+            this.tabCatalog.Controls.Add(this.labelOpenedTime);
+            this.tabCatalog.Controls.Add(this.dtpOpenedTime);
+            this.tabCatalog.Controls.Add(this.labelAddedTime);
+            this.tabCatalog.Controls.Add(this.dtpAddedTime);
+            this.tabCatalog.Controls.Add(this.txPagesAsTextSimple);
+            this.tabCatalog.Controls.Add(this.labelPagesAsTextSimple);
+            this.tabCatalog.Controls.Add(this.txISBN);
+            this.tabCatalog.Controls.Add(this.labelISBN);
+            this.tabCatalog.Controls.Add(this.cbBookLocation);
+            this.tabCatalog.Controls.Add(this.labelBookLocation);
+            this.tabCatalog.Controls.Add(this.txCollectionStatus);
+            this.tabCatalog.Controls.Add(this.cbBookPrice);
+            this.tabCatalog.Controls.Add(this.labelBookPrice);
+            this.tabCatalog.Controls.Add(this.txBookNotes);
+            this.tabCatalog.Controls.Add(this.labelBookNotes);
+            this.tabCatalog.Controls.Add(this.cbBookAge);
+            this.tabCatalog.Controls.Add(this.labelBookAge);
+            this.tabCatalog.Controls.Add(this.labelBookCollectionStatus);
+            this.tabCatalog.Controls.Add(this.cbBookCondition);
+            this.tabCatalog.Controls.Add(this.labelBookCondition);
+            this.tabCatalog.Controls.Add(this.cbBookStore);
+            this.tabCatalog.Controls.Add(this.labelBookStore);
+            this.tabCatalog.Controls.Add(this.cbBookOwner);
+            this.tabCatalog.Controls.Add(this.labelBookOwner);
+            this.tabCatalog.Location = new System.Drawing.Point(4, 22);
+            this.tabCatalog.Name = "tabCatalog";
+            this.tabCatalog.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCatalog.Size = new System.Drawing.Size(566, 442);
+            this.tabCatalog.TabIndex = 9;
+            this.tabCatalog.Text = "Catalog";
+            this.tabCatalog.UseVisualStyleBackColor = true;
+            // 
+            // labelReleasedTime
+            // 
+            this.labelReleasedTime.AutoSize = true;
+            this.labelReleasedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReleasedTime.Location = new System.Drawing.Point(314, 21);
+            this.labelReleasedTime.Name = "labelReleasedTime";
+            this.labelReleasedTime.Size = new System.Drawing.Size(56, 12);
+            this.labelReleasedTime.TabIndex = 12;
+            this.labelReleasedTime.Text = "Released:";
+            // 
+            // dtpReleasedTime
+            // 
+            this.dtpReleasedTime.CustomFormat = " ";
+            this.dtpReleasedTime.Location = new System.Drawing.Point(315, 36);
+            this.dtpReleasedTime.Name = "dtpReleasedTime";
+            this.dtpReleasedTime.Size = new System.Drawing.Size(235, 20);
+            this.dtpReleasedTime.TabIndex = 13;
+            this.dtpReleasedTime.Value = new System.DateTime(((long)(0)));
+            // 
+            // labelOpenedTime
+            // 
+            this.labelOpenedTime.AutoSize = true;
+            this.labelOpenedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOpenedTime.Location = new System.Drawing.Point(315, 98);
+            this.labelOpenedTime.Name = "labelOpenedTime";
+            this.labelOpenedTime.Size = new System.Drawing.Size(77, 12);
+            this.labelOpenedTime.TabIndex = 16;
+            this.labelOpenedTime.Text = "Opened/Read:";
+            // 
+            // dtpOpenedTime
+            // 
+            this.dtpOpenedTime.CustomFormat = " ";
+            this.dtpOpenedTime.Location = new System.Drawing.Point(316, 113);
+            this.dtpOpenedTime.Name = "dtpOpenedTime";
+            this.dtpOpenedTime.Size = new System.Drawing.Size(234, 20);
+            this.dtpOpenedTime.TabIndex = 17;
+            this.dtpOpenedTime.Value = new System.DateTime(((long)(0)));
+            // 
+            // labelAddedTime
+            // 
+            this.labelAddedTime.AutoSize = true;
+            this.labelAddedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddedTime.Location = new System.Drawing.Point(314, 58);
+            this.labelAddedTime.Name = "labelAddedTime";
+            this.labelAddedTime.Size = new System.Drawing.Size(98, 12);
+            this.labelAddedTime.TabIndex = 14;
+            this.labelAddedTime.Text = "Added/Purchased:";
+            // 
+            // dtpAddedTime
+            // 
+            this.dtpAddedTime.CustomFormat = " ";
+            this.dtpAddedTime.Location = new System.Drawing.Point(315, 73);
+            this.dtpAddedTime.Name = "dtpAddedTime";
+            this.dtpAddedTime.Size = new System.Drawing.Size(235, 20);
+            this.dtpAddedTime.TabIndex = 15;
+            this.dtpAddedTime.Value = new System.DateTime(((long)(0)));
+            // 
+            // txPagesAsTextSimple
+            // 
+            this.txPagesAsTextSimple.AcceptsReturn = true;
+            this.txPagesAsTextSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txPagesAsTextSimple.Location = new System.Drawing.Point(167, 73);
+            this.txPagesAsTextSimple.Name = "txPagesAsTextSimple";
+            this.txPagesAsTextSimple.Size = new System.Drawing.Size(126, 20);
+            this.txPagesAsTextSimple.TabIndex = 7;
+            this.txPagesAsTextSimple.Tag = "PageCountTextSimple";
+            // 
+            // labelPagesAsTextSimple
+            // 
+            this.labelPagesAsTextSimple.AutoSize = true;
+            this.labelPagesAsTextSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPagesAsTextSimple.Location = new System.Drawing.Point(165, 58);
+            this.labelPagesAsTextSimple.Name = "labelPagesAsTextSimple";
+            this.labelPagesAsTextSimple.Size = new System.Drawing.Size(40, 12);
+            this.labelPagesAsTextSimple.TabIndex = 6;
+            this.labelPagesAsTextSimple.Text = "Pages:";
+            // 
+            // txISBN
+            // 
+            this.txISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txISBN.Location = new System.Drawing.Point(11, 73);
+            this.txISBN.Name = "txISBN";
+            this.txISBN.Size = new System.Drawing.Size(150, 20);
+            this.txISBN.TabIndex = 5;
+            this.txISBN.Tag = "ISBN";
+            // 
+            // labelISBN
+            // 
+            this.labelISBN.AutoSize = true;
+            this.labelISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelISBN.Location = new System.Drawing.Point(9, 58);
+            this.labelISBN.Name = "labelISBN";
+            this.labelISBN.Size = new System.Drawing.Size(35, 12);
+            this.labelISBN.TabIndex = 4;
+            this.labelISBN.Text = "ISBN:";
+            // 
+            // cbBookLocation
+            // 
+            this.cbBookLocation.FormattingEnabled = true;
+            this.cbBookLocation.Location = new System.Drawing.Point(317, 168);
+            this.cbBookLocation.Name = "cbBookLocation";
+            this.cbBookLocation.Size = new System.Drawing.Size(233, 21);
+            this.cbBookLocation.TabIndex = 21;
+            this.cbBookLocation.Tag = "BookLocation";
+            // 
+            // labelBookLocation
+            // 
+            this.labelBookLocation.AutoSize = true;
+            this.labelBookLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookLocation.Location = new System.Drawing.Point(315, 154);
+            this.labelBookLocation.Name = "labelBookLocation";
+            this.labelBookLocation.Size = new System.Drawing.Size(80, 12);
+            this.labelBookLocation.TabIndex = 20;
+            this.labelBookLocation.Text = "Book Location:";
+            // 
+            // txCollectionStatus
+            // 
+            this.txCollectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txCollectionStatus.Location = new System.Drawing.Point(11, 210);
+            this.txCollectionStatus.Name = "txCollectionStatus";
+            this.txCollectionStatus.Size = new System.Drawing.Size(539, 20);
+            this.txCollectionStatus.TabIndex = 23;
+            this.txCollectionStatus.Tag = "CollectionStatus";
+            // 
+            // cbBookPrice
+            // 
+            this.cbBookPrice.FormattingEnabled = true;
+            this.cbBookPrice.Location = new System.Drawing.Point(167, 34);
+            this.cbBookPrice.Name = "cbBookPrice";
+            this.cbBookPrice.Size = new System.Drawing.Size(126, 21);
+            this.cbBookPrice.TabIndex = 3;
+            this.cbBookPrice.Tag = "BookPrice";
+            // 
+            // labelBookPrice
+            // 
+            this.labelBookPrice.AutoSize = true;
+            this.labelBookPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookPrice.Location = new System.Drawing.Point(165, 19);
+            this.labelBookPrice.Name = "labelBookPrice";
+            this.labelBookPrice.Size = new System.Drawing.Size(35, 12);
+            this.labelBookPrice.TabIndex = 2;
+            this.labelBookPrice.Text = "Price:";
+            // 
+            // txBookNotes
+            // 
+            this.txBookNotes.AcceptsReturn = true;
+            this.txBookNotes.FocusSelect = false;
+            this.txBookNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txBookNotes.Location = new System.Drawing.Point(11, 265);
+            this.txBookNotes.Multiline = true;
+            this.txBookNotes.Name = "txBookNotes";
+            this.txBookNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txBookNotes.Size = new System.Drawing.Size(539, 157);
+            this.txBookNotes.TabIndex = 25;
+            this.txBookNotes.Tag = "BookNotes";
+            // 
+            // labelBookNotes
+            // 
+            this.labelBookNotes.AutoSize = true;
+            this.labelBookNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookNotes.Location = new System.Drawing.Point(9, 250);
+            this.labelBookNotes.Name = "labelBookNotes";
+            this.labelBookNotes.Size = new System.Drawing.Size(120, 12);
+            this.labelBookNotes.TabIndex = 24;
+            this.labelBookNotes.Text = "Notes about this Book:";
+            // 
+            // cbBookAge
+            // 
+            this.cbBookAge.FormattingEnabled = true;
+            this.cbBookAge.Location = new System.Drawing.Point(11, 112);
+            this.cbBookAge.Name = "cbBookAge";
+            this.cbBookAge.Size = new System.Drawing.Size(150, 21);
+            this.cbBookAge.TabIndex = 9;
+            this.cbBookAge.Tag = "BookAge";
+            // 
+            // labelBookAge
+            // 
+            this.labelBookAge.AutoSize = true;
+            this.labelBookAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookAge.Location = new System.Drawing.Point(9, 97);
+            this.labelBookAge.Name = "labelBookAge";
+            this.labelBookAge.Size = new System.Drawing.Size(29, 12);
+            this.labelBookAge.TabIndex = 8;
+            this.labelBookAge.Text = "Age:";
+            // 
+            // labelBookCollectionStatus
+            // 
+            this.labelBookCollectionStatus.AutoSize = true;
+            this.labelBookCollectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookCollectionStatus.Location = new System.Drawing.Point(9, 195);
+            this.labelBookCollectionStatus.Name = "labelBookCollectionStatus";
+            this.labelBookCollectionStatus.Size = new System.Drawing.Size(96, 12);
+            this.labelBookCollectionStatus.TabIndex = 22;
+            this.labelBookCollectionStatus.Text = "Collection Status:";
+            // 
+            // cbBookCondition
+            // 
+            this.cbBookCondition.FormattingEnabled = true;
+            this.cbBookCondition.Location = new System.Drawing.Point(167, 112);
+            this.cbBookCondition.Name = "cbBookCondition";
+            this.cbBookCondition.Size = new System.Drawing.Size(126, 21);
+            this.cbBookCondition.TabIndex = 11;
+            this.cbBookCondition.Tag = "BookCondition";
+            // 
+            // labelBookCondition
+            // 
+            this.labelBookCondition.AutoSize = true;
+            this.labelBookCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookCondition.Location = new System.Drawing.Point(165, 98);
+            this.labelBookCondition.Name = "labelBookCondition";
+            this.labelBookCondition.Size = new System.Drawing.Size(57, 12);
+            this.labelBookCondition.TabIndex = 10;
+            this.labelBookCondition.Text = "Condition:";
+            // 
+            // cbBookStore
+            // 
+            this.cbBookStore.FormattingEnabled = true;
+            this.cbBookStore.Location = new System.Drawing.Point(11, 35);
+            this.cbBookStore.Name = "cbBookStore";
+            this.cbBookStore.PromptText = null;
+            this.cbBookStore.Size = new System.Drawing.Size(150, 21);
+            this.cbBookStore.TabIndex = 1;
+            this.cbBookStore.Tag = "BookStore";
+            // 
+            // labelBookStore
+            // 
+            this.labelBookStore.AutoSize = true;
+            this.labelBookStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookStore.Location = new System.Drawing.Point(11, 21);
+            this.labelBookStore.Name = "labelBookStore";
+            this.labelBookStore.Size = new System.Drawing.Size(36, 12);
+            this.labelBookStore.TabIndex = 0;
+            this.labelBookStore.Text = "Store:";
+            // 
+            // cbBookOwner
+            // 
+            this.cbBookOwner.FormattingEnabled = true;
+            this.cbBookOwner.Location = new System.Drawing.Point(11, 168);
+            this.cbBookOwner.Name = "cbBookOwner";
+            this.cbBookOwner.Size = new System.Drawing.Size(282, 21);
+            this.cbBookOwner.TabIndex = 19;
+            this.cbBookOwner.Tag = "BookOwner";
+            // 
+            // labelBookOwner
+            // 
+            this.labelBookOwner.AutoSize = true;
+            this.labelBookOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBookOwner.Location = new System.Drawing.Point(9, 154);
+            this.labelBookOwner.Name = "labelBookOwner";
+            this.labelBookOwner.Size = new System.Drawing.Size(42, 12);
+            this.labelBookOwner.TabIndex = 18;
+            this.labelBookOwner.Text = "Owner:";
+            // 
+            // tabCustom
+            // 
+            this.tabCustom.Controls.Add(this.customValuesData);
+            this.tabCustom.Location = new System.Drawing.Point(4, 22);
+            this.tabCustom.Name = "tabCustom";
+            this.tabCustom.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCustom.Size = new System.Drawing.Size(566, 442);
+            this.tabCustom.TabIndex = 10;
+            this.tabCustom.Text = "Custom";
+            this.tabCustom.UseVisualStyleBackColor = true;
+            // 
+            // customValuesData
+            // 
+            this.customValuesData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customValuesData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CustomValueName,
+            this.CustomValueValue});
+            this.customValuesData.Location = new System.Drawing.Point(11, 16);
+            this.customValuesData.Name = "customValuesData";
+            this.customValuesData.Size = new System.Drawing.Size(537, 410);
+            this.customValuesData.TabIndex = 1;
+            this.customValuesData.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.customValuesData_EditingControlShowing);
+            // 
+            // CustomValueName
+            // 
+            this.CustomValueName.HeaderText = "Name";
+            this.CustomValueName.Name = "CustomValueName";
+            this.CustomValueName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // CustomValueValue
+            // 
+            this.CustomValueValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CustomValueValue.HeaderText = "Value";
+            this.CustomValueValue.Name = "CustomValueValue";
+            // 
+            // tabPages
+            // 
+            this.tabPages.Controls.Add(this.btResetPages);
+            this.tabPages.Controls.Add(this.btPageView);
+            this.tabPages.Controls.Add(this.labelPagesInfo);
+            this.tabPages.Controls.Add(this.pagesView);
+            this.tabPages.Location = new System.Drawing.Point(4, 22);
+            this.tabPages.Name = "tabPages";
+            this.tabPages.Size = new System.Drawing.Size(566, 442);
+            this.tabPages.TabIndex = 6;
+            this.tabPages.Text = "Pages";
+            this.tabPages.UseVisualStyleBackColor = true;
+            // 
+            // btResetPages
+            // 
+            this.btResetPages.ContextMenuStrip = this.cmResetPages;
+            this.btResetPages.Location = new System.Drawing.Point(441, 407);
+            this.btResetPages.Name = "btResetPages";
+            this.btResetPages.Size = new System.Drawing.Size(111, 23);
+            this.btResetPages.TabIndex = 14;
+            this.btResetPages.Text = "Reset";
+            this.btResetPages.UseVisualStyleBackColor = true;
+            this.btResetPages.ShowContextMenu += new System.EventHandler(this.btResetPages_ShowContextMenu);
+            this.btResetPages.Click += new System.EventHandler(this.btResetPages_Click);
+            // 
+            // cmResetPages
+            // 
+            this.cmResetPages.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miOrderByName,
+            this.miOrderByNameNumeric});
+            this.cmResetPages.Name = "cmResetPages";
+            this.cmResetPages.Size = new System.Drawing.Size(211, 48);
+            this.cmResetPages.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.cmResetPages_ItemClicked);
+            // 
+            // miOrderByName
+            // 
+            this.miOrderByName.Name = "miOrderByName";
+            this.miOrderByName.Size = new System.Drawing.Size(210, 22);
+            this.miOrderByName.Text = "Order by Name";
+            // 
+            // miOrderByNameNumeric
+            // 
+            this.miOrderByNameNumeric.Name = "miOrderByNameNumeric";
+            this.miOrderByNameNumeric.Size = new System.Drawing.Size(210, 22);
+            this.miOrderByNameNumeric.Text = "Order by Name (numeric)";
+            // 
+            // btPageView
+            // 
+            this.btPageView.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SmallArrowDown;
+            this.btPageView.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btPageView.Location = new System.Drawing.Point(479, 9);
+            this.btPageView.Name = "btPageView";
+            this.btPageView.Size = new System.Drawing.Size(73, 23);
+            this.btPageView.TabIndex = 2;
+            this.btPageView.Text = "Pages";
+            this.btPageView.UseVisualStyleBackColor = true;
+            this.btPageView.Click += new System.EventHandler(this.btPageViews_Click);
+            // 
+            // labelPagesInfo
+            // 
+            this.labelPagesInfo.AutoSize = true;
+            this.labelPagesInfo.Location = new System.Drawing.Point(8, 14);
+            this.labelPagesInfo.Name = "labelPagesInfo";
+            this.labelPagesInfo.Size = new System.Drawing.Size(421, 13);
+            this.labelPagesInfo.TabIndex = 0;
+            this.labelPagesInfo.Text = "Change the page order with drag & drop or use the context menu to change page typ" +
+    "es:";
+            this.labelPagesInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelPagesInfo.UseMnemonic = false;
+            // 
+            // pagesView
+            // 
+            this.pagesView.Bookmark = null;
+            this.pagesView.CreateBackdrop = false;
+            this.pagesView.Location = new System.Drawing.Point(11, 38);
+            this.pagesView.Name = "pagesView";
+            this.pagesView.Size = new System.Drawing.Size(541, 363);
+            this.pagesView.TabIndex = 1;
+            // 
+            // tabColors
+            // 
+            this.tabColors.Controls.Add(this.panelImage);
+            this.tabColors.Controls.Add(this.panelImageControls);
+            this.tabColors.Location = new System.Drawing.Point(4, 22);
+            this.tabColors.Name = "tabColors";
+            this.tabColors.Size = new System.Drawing.Size(566, 442);
+            this.tabColors.TabIndex = 7;
+            this.tabColors.Text = "Colors";
+            this.tabColors.UseVisualStyleBackColor = true;
+            // 
+            // panelImage
+            // 
+            this.panelImage.Controls.Add(this.labelCurrentPage);
+            this.panelImage.Controls.Add(this.chkShowImageControls);
+            this.panelImage.Controls.Add(this.btLastPage);
+            this.panelImage.Controls.Add(this.btFirstPage);
+            this.panelImage.Controls.Add(this.btNextPage);
+            this.panelImage.Controls.Add(this.btPrevPage);
+            this.panelImage.Controls.Add(this.pageViewer);
+            this.panelImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelImage.Location = new System.Drawing.Point(0, 0);
+            this.panelImage.Name = "panelImage";
+            this.panelImage.Size = new System.Drawing.Size(566, 317);
+            this.panelImage.TabIndex = 12;
+            // 
+            // labelCurrentPage
+            // 
+            this.labelCurrentPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.labelCurrentPage.Location = new System.Drawing.Point(184, 291);
+            this.labelCurrentPage.Name = "labelCurrentPage";
+            this.labelCurrentPage.Size = new System.Drawing.Size(202, 21);
+            this.labelCurrentPage.TabIndex = 6;
+            this.labelCurrentPage.Text = "Page Text";
+            this.labelCurrentPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // chkShowImageControls
+            // 
+            this.chkShowImageControls.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chkShowImageControls.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chkShowImageControls.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.DoubleArrow;
+            this.chkShowImageControls.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkShowImageControls.Location = new System.Drawing.Point(416, 291);
+            this.chkShowImageControls.Name = "chkShowImageControls";
+            this.chkShowImageControls.Size = new System.Drawing.Size(140, 23);
+            this.chkShowImageControls.TabIndex = 5;
+            this.chkShowImageControls.Text = "Image Control";
+            this.chkShowImageControls.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkShowImageControls.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.chkShowImageControls.UseVisualStyleBackColor = true;
+            this.chkShowImageControls.CheckedChanged += new System.EventHandler(this.chkShowColorControls_CheckedChanged);
+            // 
+            // btLastPage
+            // 
+            this.btLastPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btLastPage.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.GoLast;
+            this.btLastPage.Location = new System.Drawing.Point(107, 290);
+            this.btLastPage.Name = "btLastPage";
+            this.btLastPage.Size = new System.Drawing.Size(32, 23);
+            this.btLastPage.TabIndex = 4;
+            this.btLastPage.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btLastPage.UseVisualStyleBackColor = true;
+            this.btLastPage.Click += new System.EventHandler(this.btLastPage_Click);
+            // 
+            // btFirstPage
+            // 
+            this.btFirstPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btFirstPage.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.GoFirst;
+            this.btFirstPage.Location = new System.Drawing.Point(11, 290);
+            this.btFirstPage.Name = "btFirstPage";
+            this.btFirstPage.Size = new System.Drawing.Size(32, 23);
+            this.btFirstPage.TabIndex = 3;
+            this.btFirstPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btFirstPage.UseVisualStyleBackColor = true;
+            this.btFirstPage.Click += new System.EventHandler(this.btFirstPage_Click);
+            // 
+            // btNextPage
+            // 
+            this.btNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btNextPage.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.GoNext;
+            this.btNextPage.Location = new System.Drawing.Point(75, 290);
+            this.btNextPage.Name = "btNextPage";
+            this.btNextPage.Size = new System.Drawing.Size(32, 23);
+            this.btNextPage.TabIndex = 2;
+            this.btNextPage.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btNextPage.UseVisualStyleBackColor = true;
+            this.btNextPage.Click += new System.EventHandler(this.btNextPage_Click);
+            // 
+            // btPrevPage
+            // 
+            this.btPrevPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btPrevPage.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.GoPrevious;
+            this.btPrevPage.Location = new System.Drawing.Point(43, 290);
+            this.btPrevPage.Name = "btPrevPage";
+            this.btPrevPage.Size = new System.Drawing.Size(32, 23);
+            this.btPrevPage.TabIndex = 1;
+            this.btPrevPage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btPrevPage.UseVisualStyleBackColor = true;
+            this.btPrevPage.Click += new System.EventHandler(this.btPrevPage_Click);
+            // 
+            // pageViewer
+            // 
+            this.pageViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pageViewer.AutoScrollMode = cYo.Common.Windows.Forms.AutoScrollMode.Pan;
+            this.pageViewer.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pageViewer.ForeColor = System.Drawing.Color.White;
+            this.pageViewer.Location = new System.Drawing.Point(11, 12);
+            this.pageViewer.Name = "pageViewer";
+            this.pageViewer.ScaleMode = cYo.Common.Drawing.ScaleMode.FitWidth;
+            this.pageViewer.Size = new System.Drawing.Size(545, 275);
+            this.pageViewer.TabIndex = 0;
+            this.pageViewer.Text = "Double Click on Color to set White Point";
+            this.pageViewer.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.pageViewer.VisibleChanged += new System.EventHandler(this.pageViewer_VisibleChanged);
+            this.pageViewer.DoubleClick += new System.EventHandler(this.pageViewer_DoubleClick);
+            // 
+            // panelImageControls
+            // 
+            this.panelImageControls.Controls.Add(this.labelSaturation);
+            this.panelImageControls.Controls.Add(this.labelContrast);
+            this.panelImageControls.Controls.Add(this.tbGamma);
+            this.panelImageControls.Controls.Add(this.tbSaturation);
+            this.panelImageControls.Controls.Add(this.labelGamma);
+            this.panelImageControls.Controls.Add(this.tbBrightness);
+            this.panelImageControls.Controls.Add(this.tbSharpening);
+            this.panelImageControls.Controls.Add(this.tbContrast);
+            this.panelImageControls.Controls.Add(this.labelSharpening);
+            this.panelImageControls.Controls.Add(this.labelBrightness);
+            this.panelImageControls.Controls.Add(this.btResetColors);
+            this.panelImageControls.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelImageControls.Location = new System.Drawing.Point(0, 317);
+            this.panelImageControls.Name = "panelImageControls";
+            this.panelImageControls.Size = new System.Drawing.Size(566, 125);
+            this.panelImageControls.TabIndex = 13;
+            this.panelImageControls.Visible = false;
+            // 
+            // labelSaturation
+            // 
+            this.labelSaturation.AutoSize = true;
+            this.labelSaturation.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaturation.Location = new System.Drawing.Point(11, 34);
+            this.labelSaturation.Name = "labelSaturation";
+            this.labelSaturation.Size = new System.Drawing.Size(57, 12);
+            this.labelSaturation.TabIndex = 1;
+            this.labelSaturation.Text = "Saturation";
+            // 
+            // labelContrast
+            // 
+            this.labelContrast.AutoSize = true;
+            this.labelContrast.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
+            this.labelContrast.Location = new System.Drawing.Point(296, 34);
+            this.labelContrast.Name = "labelContrast";
+            this.labelContrast.Size = new System.Drawing.Size(49, 12);
+            this.labelContrast.TabIndex = 5;
+            this.labelContrast.Text = "Contrast";
+            // 
+            // tbGamma
+            // 
+            this.tbGamma.Location = new System.Drawing.Point(363, 52);
+            this.tbGamma.Minimum = -100;
+            this.tbGamma.Name = "tbGamma";
+            this.tbGamma.Size = new System.Drawing.Size(192, 18);
+            this.tbGamma.TabIndex = 8;
+            this.tbGamma.ThumbSize = new System.Drawing.Size(8, 16);
+            this.tbGamma.TickFrequency = 16;
+            this.tbGamma.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
+            this.tbGamma.Scroll += new System.EventHandler(this.ColorAdjustment_Scroll);
+            this.tbGamma.ValueChanged += new System.EventHandler(this.AdjustmentSliderChanged);
+            // 
+            // tbSaturation
+            // 
+            this.tbSaturation.Location = new System.Drawing.Point(78, 28);
+            this.tbSaturation.Minimum = -100;
+            this.tbSaturation.Name = "tbSaturation";
+            this.tbSaturation.Size = new System.Drawing.Size(192, 18);
+            this.tbSaturation.TabIndex = 2;
+            this.tbSaturation.ThumbSize = new System.Drawing.Size(8, 16);
+            this.tbSaturation.TickFrequency = 16;
+            this.tbSaturation.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
+            this.tbSaturation.Scroll += new System.EventHandler(this.ColorAdjustment_Scroll);
+            this.tbSaturation.ValueChanged += new System.EventHandler(this.AdjustmentSliderChanged);
+            // 
+            // labelGamma
+            // 
+            this.labelGamma.AutoSize = true;
+            this.labelGamma.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
+            this.labelGamma.Location = new System.Drawing.Point(296, 58);
+            this.labelGamma.Name = "labelGamma";
+            this.labelGamma.Size = new System.Drawing.Size(43, 12);
+            this.labelGamma.TabIndex = 7;
+            this.labelGamma.Text = "Gamma";
+            // 
+            // tbBrightness
+            // 
+            this.tbBrightness.Location = new System.Drawing.Point(78, 52);
+            this.tbBrightness.Minimum = -100;
+            this.tbBrightness.Name = "tbBrightness";
+            this.tbBrightness.Size = new System.Drawing.Size(192, 18);
+            this.tbBrightness.TabIndex = 4;
+            this.tbBrightness.Text = "tbBrightness";
+            this.tbBrightness.ThumbSize = new System.Drawing.Size(8, 16);
+            this.tbBrightness.TickFrequency = 16;
+            this.tbBrightness.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
+            this.tbBrightness.Scroll += new System.EventHandler(this.ColorAdjustment_Scroll);
+            this.tbBrightness.ValueChanged += new System.EventHandler(this.AdjustmentSliderChanged);
+            // 
+            // tbSharpening
+            // 
+            this.tbSharpening.LargeChange = 1;
+            this.tbSharpening.Location = new System.Drawing.Point(81, 86);
+            this.tbSharpening.Maximum = 3;
+            this.tbSharpening.Name = "tbSharpening";
+            this.tbSharpening.Size = new System.Drawing.Size(189, 18);
+            this.tbSharpening.TabIndex = 10;
+            this.tbSharpening.Text = "tbSaturation";
+            this.tbSharpening.ThumbSize = new System.Drawing.Size(8, 16);
+            this.tbSharpening.TickFrequency = 1;
+            this.tbSharpening.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
+            this.tbSharpening.Scroll += new System.EventHandler(this.ColorAdjustment_Scroll);
+            // 
+            // tbContrast
+            // 
+            this.tbContrast.Location = new System.Drawing.Point(363, 28);
+            this.tbContrast.Minimum = -100;
+            this.tbContrast.Name = "tbContrast";
+            this.tbContrast.Size = new System.Drawing.Size(192, 18);
+            this.tbContrast.TabIndex = 6;
+            this.tbContrast.Text = "tbSaturation";
+            this.tbContrast.ThumbSize = new System.Drawing.Size(8, 16);
+            this.tbContrast.TickFrequency = 16;
+            this.tbContrast.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
+            this.tbContrast.Scroll += new System.EventHandler(this.ColorAdjustment_Scroll);
+            this.tbContrast.ValueChanged += new System.EventHandler(this.AdjustmentSliderChanged);
+            // 
+            // labelSharpening
+            // 
+            this.labelSharpening.AutoSize = true;
+            this.labelSharpening.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
+            this.labelSharpening.Location = new System.Drawing.Point(11, 92);
+            this.labelSharpening.Name = "labelSharpening";
+            this.labelSharpening.Size = new System.Drawing.Size(61, 12);
+            this.labelSharpening.TabIndex = 9;
+            this.labelSharpening.Text = "Sharpening";
+            // 
+            // labelBrightness
+            // 
+            this.labelBrightness.AutoSize = true;
+            this.labelBrightness.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
+            this.labelBrightness.Location = new System.Drawing.Point(11, 58);
+            this.labelBrightness.Name = "labelBrightness";
+            this.labelBrightness.Size = new System.Drawing.Size(59, 12);
+            this.labelBrightness.TabIndex = 3;
+            this.labelBrightness.Text = "Brightness";
+            // 
+            // btResetColors
+            // 
+            this.btResetColors.Location = new System.Drawing.Point(478, 86);
+            this.btResetColors.Name = "btResetColors";
+            this.btResetColors.Size = new System.Drawing.Size(77, 24);
+            this.btResetColors.TabIndex = 11;
+            this.btResetColors.Text = "Reset";
+            this.btResetColors.UseVisualStyleBackColor = true;
+            this.btResetColors.Click += new System.EventHandler(this.btReset_Click);
+            // 
+            // btPrev
+            // 
+            this.btPrev.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btPrev.Location = new System.Drawing.Point(8, 483);
+            this.btPrev.Name = "btPrev";
+            this.btPrev.Size = new System.Drawing.Size(80, 24);
+            this.btPrev.TabIndex = 1;
+            this.btPrev.Text = "&Previous";
+            this.btPrev.Click += new System.EventHandler(this.btPrev_Click);
+            // 
+            // btNext
+            // 
+            this.btNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btNext.Location = new System.Drawing.Point(92, 483);
+            this.btNext.Name = "btNext";
+            this.btNext.Size = new System.Drawing.Size(80, 24);
+            this.btNext.TabIndex = 2;
+            this.btNext.Text = "&Next";
+            this.btNext.Click += new System.EventHandler(this.btNext_Click);
+            // 
+            // btScript
+            // 
+            this.btScript.AutoEllipsis = true;
+            this.btScript.Location = new System.Drawing.Point(188, 484);
+            this.btScript.Name = "btScript";
+            this.btScript.Size = new System.Drawing.Size(135, 23);
+            this.btScript.TabIndex = 3;
+            this.btScript.Text = "Lorem Ipsum";
+            this.btScript.UseVisualStyleBackColor = true;
+            this.btScript.Visible = false;
+            // 
+            // btApply
+            // 
+            this.btApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btApply.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btApply.Location = new System.Drawing.Point(501, 483);
+            this.btApply.Name = "btApply";
+            this.btApply.Size = new System.Drawing.Size(80, 24);
+            this.btApply.TabIndex = 6;
+            this.btApply.Text = "&Apply";
+            this.btApply.Click += new System.EventHandler(this.btApply_Click);
+            // 
+            // ComicBookDialog
+            // 
+            this.AcceptButton = this.btOK;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btCancel;
+            this.ClientSize = new System.Drawing.Size(593, 517);
+            this.Controls.Add(this.btApply);
+            this.Controls.Add(this.btScript);
+            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.btNext);
+            this.Controls.Add(this.btCancel);
+            this.Controls.Add(this.btPrev);
+            this.Controls.Add(this.btOK);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ComicBookDialog";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Info";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.ComicBookDialog_DragDrop);
+            this.DragOver += new System.Windows.Forms.DragEventHandler(this.ComicBookDialog_DragOver);
+            this.tabControl.ResumeLayout(false);
+            this.tabSummary.ResumeLayout(false);
+            this.cmThumbnail.ResumeLayout(false);
+            this.tabDetails.ResumeLayout(false);
+            this.tabDetails.PerformLayout();
+            this.tabPlot.ResumeLayout(false);
+            this.tabPlot.PerformLayout();
+            this.tabNotes.ResumeLayout(false);
+            this.tabPageSummary.ResumeLayout(false);
+            this.tabPageSummary.PerformLayout();
+            this.tabPageNotes.ResumeLayout(false);
+            this.tabPageNotes.PerformLayout();
+            this.tabPageReview.ResumeLayout(false);
+            this.tabPageReview.PerformLayout();
+            this.tabCatalog.ResumeLayout(false);
+            this.tabCatalog.PerformLayout();
+            this.tabCustom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customValuesData)).EndInit();
+            this.tabPages.ResumeLayout(false);
+            this.tabPages.PerformLayout();
+            this.cmResetPages.ResumeLayout(false);
+            this.tabColors.ResumeLayout(false);
+            this.panelImage.ResumeLayout(false);
+            this.panelImageControls.ResumeLayout(false);
+            this.panelImageControls.PerformLayout();
+            this.ResumeLayout(false);
+
 		}
 
-	private IContainer components;
-
 		private TextBoxEx txVolume;
-
 		private TextBoxEx txYear;
-
 		private TextBoxEx txSeries;
-
 		private TextBoxEx txCount;
-
 		private TextBoxEx txNumber;
-
 		private Button btCancel;
-
 		private Button btOK;
-
 		private TabControl tabControl;
-
 		private TabPage tabSummary;
-
 		private Label labelWhere;
-
 		private Label labelPages;
-
 		private Label lblPath;
-
 		private Label lblPages;
-
 		private Label labelType;
-
 		private Label lblType;
-
 		private Button btPrev;
-
 		private Button btNext;
-
 		private TabPage tabDetails;
-
 		private Label labelVolume;
-
 		private Label labelYear;
-
 		private Label labelSeries;
-
 		private RatingControl txRating;
-
 		private TextBoxEx txWriter;
-
 		private TextBoxEx txColorist;
-
 		private TextBoxEx txInker;
-
 		private TextBoxEx txPenciller;
-
 		private Label labelGenre;
-
 		private Label labelColorist;
-
 		private Label labelPublisher;
-
 		private TextBoxEx txTitle;
-
 		private Label labelInker;
-
 		private Label labelCount;
-
 		private Label labelNumber;
-
 		private Label labelWriter;
-
 		private Label labelPenciller;
-
 		private Label labelTitle;
-
 		private Panel panel1;
-
 		private TextBoxEx txLetterer;
-
 		private Label labelLetterer;
-
 		private TextBoxEx txEditor;
-
 		private TextBoxEx txCoverArtist;
-
 		private Label labelEditor;
-
 		private Label labelCoverArtist;
-
 		private ComboBox cbPublisher;
-
 		private TrackBarLite tbBrightness;
-
 		private TrackBarLite tbSaturation;
-
 		private TrackBarLite tbContrast;
-
 		private Label labelSaturation;
-
 		private Label labelContrast;
-
 		private Label labelBrightness;
-
 		private ThumbnailControl coverThumbnail;
-
 		private Button btResetColors;
-
 		private TextBoxEx txAlternateSeries;
-
 		private Label labelAlternateSeries;
-
 		private TextBoxEx txAlternateCount;
-
 		private TextBoxEx txAlternateNumber;
-
 		private Label labelAlternateCount;
-
 		private Label labelAlternateNumber;
-
 		private TextBoxEx txMonth;
-
 		private Label labelMonth;
-
 		private TextBoxEx txTags;
-
 		private Label labelImprint;
-
 		private ComboBox cbImprint;
-
 		private TabPage tabPages;
-
 		private LanguageComboBox cbLanguage;
-
 		private Label labelLanguage;
-
 		private BitmapViewer pageViewer;
-
 		private TabPage tabColors;
-
 		private PagesView pagesView;
-
 		private Label labelPagesInfo;
-
 		private ComboBoxEx cbFormat;
-
 		private Label labelFormat;
-
 		private ComboBox cbBlackAndWhite;
-
 		private ComboBox cbManga;
-
-		private Label labelBlackAndWhite;
-
+		private Label labelBlackAndWhite; 
 		private Label labelManga;
-
 		private ComboBox cbEnableProposed;
-
 		private Label labelEnableProposed;
-
 		private Button btPageView;
-
 		private ComboBox cbAgeRating;
-
 		private Label labelAgeRating;
-
 		private Label labelTags;
-
 		private TabPage tabPlot;
-
 		private TextBoxEx txCharacters;
-
 		private Label labelCharacters;
-
 		private TextBoxEx txGenre;
-
 		private SplitButton btScript;
-
 		private TrackBarLite tbSharpening;
-
 		private Label labelSharpening;
-
 		private ToolTip toolTip;
-
 		private TextBoxEx txWeblink;
-
 		private Label labelWeb;
-
 		private LinkLabel linkLabel;
-
 		private ComboBox cbEnableDynamicUpdate;
-
 		private Label labelEnableDynamicUpdate;
-
 		private TextBoxEx txLocations;
-
 		private Label labelLocations;
-
 		private TextBoxEx txTeams;
-
 		private Label labelTeams;
-
 		private Button btLinkFile;
-
 		private Label labelCommunityRating;
-
 		private RatingControl txCommunityRating;
-
 		private Label labelMyRating;
-
 		private Panel whereSeparator;
-
 		private SplitButton btThumbnail;
-
 		private ContextMenuStrip cmThumbnail;
-
 		private ToolStripMenuItem miResetThumbnail;
-
 		private ToolStripSeparator toolStripMenuItem1;
-
 		private TabPage tabCatalog;
-
 		private ComboBox cbBookPrice;
-
 		private Label labelBookPrice;
-
 		private TextBoxEx txBookNotes;
-
 		private Label labelBookNotes;
-
 		private ComboBox cbBookAge;
-
 		private Label labelBookAge;
-
 		private Label labelBookCollectionStatus;
-
 		private ComboBox cbBookCondition;
-
 		private Label labelBookCondition;
-
 		private ComboBoxEx cbBookStore;
-
 		private Label labelBookStore;
-
 		private ComboBox cbBookOwner;
-
 		private Label labelBookOwner;
-
 		private TextBoxEx txCollectionStatus;
-
 		private ComboBox cbBookLocation;
-
 		private Label labelBookLocation;
-
 		private TextBoxEx txISBN;
-
 		private Label labelISBN;
-
 		private TextBoxEx txPagesAsTextSimple;
-
 		private Label labelPagesAsTextSimple;
-
 		private Label labelOpenedTime;
-
 		private NullableDateTimePicker dtpOpenedTime;
-
 		private Label labelAddedTime;
-
 		private NullableDateTimePicker dtpAddedTime;
-
 		private ComboBox cbSeriesComplete;
-
 		private Label labelSeriesComplete;
-
 		private TrackBarLite tbGamma;
-
 		private Label labelGamma;
-
 		private Panel panelImage;
-
 		private CheckBox chkShowImageControls;
-
 		private Button btLastPage;
-
 		private Button btFirstPage;
-
 		private AutoRepeatButton btNextPage;
-
 		private AutoRepeatButton btPrevPage;
-
 		private Panel panelImageControls;
-
 		private Label labelCurrentPage;
-
 		private TextBoxEx txScanInformation;
-
 		private Label labelScanInformation;
-
 		private Label labelSeriesGroup;
-
 		private TextBoxEx txSeriesGroup;
-
 		private Label labelStoryArc;
-
 		private TextBoxEx txStoryArc;
-
 		private TabControl tabNotes;
-
 		private TabPage tabPageSummary;
-
 		private TextBoxEx txSummary;
-
 		private TabPage tabPageNotes;
-
 		private TextBoxEx txNotes;
-
 		private TabPage tabPageReview;
-
 		private TextBoxEx txReview;
-
 		private TextBoxEx txMainCharacterOrTeam;
-
 		private Label labelMainCharacterOrTeam;
-
 		private SplitButton btResetPages;
-
 		private ContextMenuStrip cmResetPages;
-
 		private ToolStripMenuItem miOrderByName;
-
 		private ToolStripMenuItem miOrderByNameNumeric;
-
 		private Button btApply;
-
 		private TextBoxEx txDay;
-
 		private Label labelDay;
-
 		private Label labelReleasedTime;
-
 		private NullableDateTimePicker dtpReleasedTime;
-
 		private TabPage tabCustom;
-
 		private DataGridView customValuesData;
-
 		private DataGridViewTextBoxColumn CustomValueName;
-
 		private DataGridViewTextBoxColumn CustomValueValue;
 	}
 }

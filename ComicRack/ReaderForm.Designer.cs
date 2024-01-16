@@ -5,7 +5,12 @@ namespace cYo.Projects.ComicRack.Viewer
 {
     public partial class ReaderForm
 	{
-		protected override void Dispose(bool disposing)
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
@@ -20,17 +25,19 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private void InitializeComponent()
 		{
-			SuspendLayout();
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.ClientSize = new System.Drawing.Size(653, 621);
-			base.KeyPreview = true;
-			base.Name = "ReaderForm";
-			Text = "Reader";
-			ResumeLayout(false);
-		}
+            this.SuspendLayout();
+            // 
+            // ReaderForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(653, 621);
+            this.KeyPreview = true;
+            this.Name = "ReaderForm";
+            this.Text = "Reader";
+            this.ResumeLayout(false);
 
-		private IContainer components;
+		}
 
 	}
 }

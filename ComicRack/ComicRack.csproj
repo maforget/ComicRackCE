@@ -413,8 +413,41 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dialogs\ComicBookDialog.resx">
+      <DependentUpon>ComicBookDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ComicDataPasteDialog.resx">
+      <DependentUpon>ComicDataPasteDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ComicDisplaySettingsDialog.resx">
+      <DependentUpon>ComicDisplaySettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CrashDialog.resx">
+      <DependentUpon>CrashDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DeleteItemDialog.resx">
+      <DependentUpon>DeleteItemDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\DeviceEditControl.resx">
       <DependentUpon>DeviceEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DevicesEditDialog.resx">
+      <DependentUpon>DevicesEditDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DeviceSelectDialog.resx">
+      <DependentUpon>DeviceSelectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EditListDialog.resx">
+      <DependentUpon>EditListDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ExportComicsDialog.resx">
+      <DependentUpon>ExportComicsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ListEditorDialog.resx">
+      <DependentUpon>ListEditorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ListLayoutDialog.resx">
+      <DependentUpon>ListLayoutDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MatcherEditor.resx">
       <DependentUpon>MatcherEditor.cs</DependentUpon>
@@ -422,12 +455,66 @@
     <EmbeddedResource Include="Dialogs\MatcherGroupEditor.resx">
       <DependentUpon>MatcherGroupEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MultipleComicBooksDialog.resx">
+      <DependentUpon>MultipleComicBooksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewsDialog.resx">
+      <DependentUpon>NewsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OpenRemoteDialog.resx">
+      <DependentUpon>OpenRemoteDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PasswordDialog.resx">
+      <DependentUpon>PasswordDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PreferencesDialog.resx">
+      <DependentUpon>PreferencesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ProgressDialog.resx">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\QuickRatingDialog.resx">
+      <DependentUpon>QuickRatingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SaveWorkspaceDialog.resx">
+      <DependentUpon>SaveWorkspaceDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ServerEditControl.resx">
       <DependentUpon>ServerEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ShowErrorsDialog.resx">
+      <DependentUpon>ShowErrorsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SmartListDialog.resx">
+      <DependentUpon>SmartListDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SmartListQueryDialog.resx">
+      <DependentUpon>SmartListQueryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TasksDialog.resx">
+      <DependentUpon>TasksDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ValueEditorDialog.resx">
+      <DependentUpon>ValueEditorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ZoomDialog.resx">
+      <DependentUpon>ZoomDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReaderForm.resx">
+      <DependentUpon>ReaderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScriptOutputForm.resx">
+      <DependentUpon>ScriptOutputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ComicListFolderFilesBrowser.resx" DependentUpon="ComicListFolderFilesBrowser.cs" />
     <EmbeddedResource Include="Views\ComicListLibraryBrowser.resx" DependentUpon="ComicListLibraryBrowser.cs">
