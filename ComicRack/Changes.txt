@@ -8,7 +8,7 @@ Build 0.9.180:
 * CHANGE: Updated to .NET Framework v4.8
 * CHANGE: Updated SharpZipLib to v1.4.2
 * CHANGE: Updated SharpCompress to v0.36
-* CHANGE: Updated MySQL.Data to 6.10.9
+* CHANGE: Updated MySQL.Data to 8.2.0
 * CHANGE: Updated WindowsCodePack to V1.15
 * CHANGE: Updated forum links to the r/comicrackusers subreddit
 * CHANGE: Updated Changed wiki links to the Wayback Machine
