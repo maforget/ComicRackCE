@@ -15,7 +15,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public class MatcherGroupEditor : UserControl, IMatcherEditor
+	public partial class MatcherGroupEditor : UserControl, IMatcherEditor
 	{
 		private static TR TR = TR.Load("SmartListDialog");
 
@@ -26,44 +26,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private readonly int level;
 
 		private readonly string rulesText;
-
-		private IContainer components;
-
-		private FlowLayoutPanel matcherControls;
-
-		private ComboBox cbMatchMode;
-
-		private CheckBox chkNot;
-
-		private Label labelSubRules;
-
-		private ToolTip toolTip;
-
-		private Button btEdit;
-
-		private ContextMenuStrip cmEdit;
-
-		private ToolStripMenuItem miNewRule;
-
-		private ToolStripMenuItem miNewGroup;
-
-		private ToolStripSeparator toolStripMenuItem1;
-
-		private ToolStripMenuItem miCopy;
-
-		private ToolStripMenuItem miCut;
-
-		private ToolStripMenuItem miPaste;
-
-		private ToolStripSeparator toolStripMenuItem2;
-
-		private ToolStripMenuItem miMoveUp;
-
-		private ToolStripMenuItem miMoveDown;
-
-		private ToolStripMenuItem miDelete;
-
-		private CheckBox chkExpanded;
 
 		private int DialogEditorOffset
 		{
@@ -106,19 +68,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			LocalizeUtility.Localize(TR.Load("MatcherEditor"), cmEdit);
 			rulesText = labelSubRules.Text;
 			InitializeMatcher(comicBookMatcher);
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				currentComicBookMatcher.Matchers.Changed -= OwnMatchers_Changed;
-				if (components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
 		}
 
 		private void cmEdit_Opening(object sender, CancelEventArgs e)
@@ -322,168 +271,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		public void SetFocus()
 		{
 			Focus();
-		}
-
-		private void InitializeComponent()
-		{
-			components = new System.ComponentModel.Container();
-			matcherControls = new System.Windows.Forms.FlowLayoutPanel();
-			cbMatchMode = new System.Windows.Forms.ComboBox();
-			chkNot = new System.Windows.Forms.CheckBox();
-			labelSubRules = new System.Windows.Forms.Label();
-			toolTip = new System.Windows.Forms.ToolTip(components);
-			cmEdit = new System.Windows.Forms.ContextMenuStrip(components);
-			miNewRule = new System.Windows.Forms.ToolStripMenuItem();
-			miNewGroup = new System.Windows.Forms.ToolStripMenuItem();
-			miDelete = new System.Windows.Forms.ToolStripMenuItem();
-			toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-			miCut = new System.Windows.Forms.ToolStripMenuItem();
-			miCopy = new System.Windows.Forms.ToolStripMenuItem();
-			miPaste = new System.Windows.Forms.ToolStripMenuItem();
-			toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-			miMoveUp = new System.Windows.Forms.ToolStripMenuItem();
-			miMoveDown = new System.Windows.Forms.ToolStripMenuItem();
-			btEdit = new System.Windows.Forms.Button();
-			chkExpanded = new System.Windows.Forms.CheckBox();
-			cmEdit.SuspendLayout();
-			SuspendLayout();
-			matcherControls.AutoSize = true;
-			matcherControls.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			matcherControls.BackColor = System.Drawing.SystemColors.Control;
-			matcherControls.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-			matcherControls.Location = new System.Drawing.Point(10, 25);
-			matcherControls.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-			matcherControls.MinimumSize = new System.Drawing.Size(400, 20);
-			matcherControls.Name = "matcherControls";
-			matcherControls.Size = new System.Drawing.Size(400, 20);
-			matcherControls.TabIndex = 6;
-			cbMatchMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cbMatchMode.FormattingEnabled = true;
-			cbMatchMode.Location = new System.Drawing.Point(26, 0);
-			cbMatchMode.Name = "cbMatchMode";
-			cbMatchMode.Size = new System.Drawing.Size(137, 21);
-			cbMatchMode.TabIndex = 1;
-			cbMatchMode.SelectedIndexChanged += new System.EventHandler(cbMatchMode_SelectedIndexChanged);
-			chkNot.Appearance = System.Windows.Forms.Appearance.Button;
-			chkNot.Location = new System.Drawing.Point(0, 0);
-			chkNot.Name = "chkNot";
-			chkNot.Size = new System.Drawing.Size(21, 21);
-			chkNot.TabIndex = 0;
-			chkNot.Text = "!";
-			chkNot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			chkNot.UseVisualStyleBackColor = true;
-			chkNot.Click += new System.EventHandler(chkNot_CheckedChanged);
-			labelSubRules.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			labelSubRules.AutoEllipsis = true;
-			labelSubRules.Location = new System.Drawing.Point(169, 4);
-			labelSubRules.Name = "labelSubRules";
-			labelSubRules.Size = new System.Drawing.Size(366, 13);
-			labelSubRules.TabIndex = 2;
-			labelSubRules.Text = "of the following rules:";
-			cmEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[10]
-			{
-				miNewRule,
-				miNewGroup,
-				miDelete,
-				toolStripMenuItem1,
-				miCut,
-				miCopy,
-				miPaste,
-				toolStripMenuItem2,
-				miMoveUp,
-				miMoveDown
-			});
-			cmEdit.Name = "cmEdit";
-			cmEdit.Size = new System.Drawing.Size(181, 192);
-			cmEdit.Opening += new System.ComponentModel.CancelEventHandler(cmEdit_Opening);
-			miNewRule.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.AddTab;
-			miNewRule.Name = "miNewRule";
-			miNewRule.ShortcutKeys = System.Windows.Forms.Keys.R | System.Windows.Forms.Keys.Control;
-			miNewRule.Size = new System.Drawing.Size(180, 22);
-			miNewRule.Text = "New Rule";
-			miNewRule.Click += new System.EventHandler(miNewRule_Click);
-			miNewGroup.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.Group;
-			miNewGroup.Name = "miNewGroup";
-			miNewGroup.ShortcutKeys = System.Windows.Forms.Keys.G | System.Windows.Forms.Keys.Control;
-			miNewGroup.Size = new System.Drawing.Size(180, 22);
-			miNewGroup.Text = "New Group";
-			miNewGroup.Click += new System.EventHandler(miNewGroup_Click);
-			miDelete.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.EditDelete;
-			miDelete.Name = "miDelete";
-			miDelete.Size = new System.Drawing.Size(180, 22);
-			miDelete.Text = "Delete";
-			miDelete.Click += new System.EventHandler(miDelete_Click);
-			toolStripMenuItem1.Name = "toolStripMenuItem1";
-			toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
-			miCut.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.Cut;
-			miCut.Name = "miCut";
-			miCut.ShortcutKeys = System.Windows.Forms.Keys.X | System.Windows.Forms.Keys.Control;
-			miCut.Size = new System.Drawing.Size(180, 22);
-			miCut.Text = "Cut";
-			miCut.Click += new System.EventHandler(miCut_Click);
-			miCopy.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.EditCopy;
-			miCopy.Name = "miCopy";
-			miCopy.ShortcutKeys = System.Windows.Forms.Keys.C | System.Windows.Forms.Keys.Control;
-			miCopy.Size = new System.Drawing.Size(180, 22);
-			miCopy.Text = "Copy";
-			miCopy.Click += new System.EventHandler(miCopy_Click);
-			miPaste.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.EditPaste;
-			miPaste.Name = "miPaste";
-			miPaste.ShortcutKeys = System.Windows.Forms.Keys.P | System.Windows.Forms.Keys.Control;
-			miPaste.Size = new System.Drawing.Size(180, 22);
-			miPaste.Text = "Paste";
-			miPaste.Click += new System.EventHandler(miPaste_Click);
-			toolStripMenuItem2.Name = "toolStripMenuItem2";
-			toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
-			miMoveUp.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.GroupUp;
-			miMoveUp.Name = "miMoveUp";
-			miMoveUp.ShortcutKeys = System.Windows.Forms.Keys.U | System.Windows.Forms.Keys.Control;
-			miMoveUp.Size = new System.Drawing.Size(180, 22);
-			miMoveUp.Text = "Move Up";
-			miMoveUp.Click += new System.EventHandler(miMoveUp_Click);
-			miMoveDown.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.GroupDown;
-			miMoveDown.Name = "miMoveDown";
-			miMoveDown.ShortcutKeys = System.Windows.Forms.Keys.D | System.Windows.Forms.Keys.Control;
-			miMoveDown.Size = new System.Drawing.Size(180, 22);
-			miMoveDown.Text = "Move Down";
-			miMoveDown.Click += new System.EventHandler(miMoveDown_Click);
-			btEdit.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			btEdit.ContextMenuStrip = cmEdit;
-			btEdit.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.SmallArrowDown;
-			btEdit.Location = new System.Drawing.Point(568, 0);
-			btEdit.Name = "btEdit";
-			btEdit.Size = new System.Drawing.Size(21, 22);
-			btEdit.TabIndex = 11;
-			btEdit.UseVisualStyleBackColor = true;
-			btEdit.Click += new System.EventHandler(btEdit_Click);
-			chkExpanded.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			chkExpanded.Appearance = System.Windows.Forms.Appearance.Button;
-			chkExpanded.Checked = true;
-			chkExpanded.CheckState = System.Windows.Forms.CheckState.Checked;
-			chkExpanded.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.DoubleArrow;
-			chkExpanded.Location = new System.Drawing.Point(543, 0);
-			chkExpanded.Name = "chkExpanded";
-			chkExpanded.Size = new System.Drawing.Size(22, 22);
-			chkExpanded.TabIndex = 12;
-			chkExpanded.UseVisualStyleBackColor = true;
-			chkExpanded.CheckedChanged += new System.EventHandler(chkCollapse_CheckedChanged);
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			AutoSize = true;
-			BackColor = System.Drawing.SystemColors.Control;
-			base.Controls.Add(chkExpanded);
-			base.Controls.Add(matcherControls);
-			base.Controls.Add(labelSubRules);
-			base.Controls.Add(chkNot);
-			base.Controls.Add(cbMatchMode);
-			base.Controls.Add(btEdit);
-			base.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-			MinimumSize = new System.Drawing.Size(400, 0);
-			base.Name = "MatcherGroupEditor";
-			base.Size = new System.Drawing.Size(589, 48);
-			cmEdit.ResumeLayout(false);
-			ResumeLayout(false);
-			PerformLayout();
 		}
 	}
 }

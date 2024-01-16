@@ -160,6 +160,9 @@
     <Compile Include="Dialogs\DeviceEditControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Dialogs\DeviceEditControl.Designer.cs">
+      <DependentUpon>DeviceEditControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\DevicesEditDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,8 +204,14 @@
     <Compile Include="Dialogs\MatcherEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Dialogs\MatcherEditor.Designer.cs">
+      <DependentUpon>MatcherEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\MatcherGroupEditor.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MatcherGroupEditor.Designer.cs">
+      <DependentUpon>MatcherGroupEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\MultipleComicBooksDialog.cs">
       <SubType>Form</SubType>
@@ -254,6 +263,9 @@
     </Compile>
     <Compile Include="Dialogs\ServerEditControl.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ServerEditControl.Designer.cs">
+      <DependentUpon>ServerEditControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\ShowErrorsDialog.cs">
       <SubType>Form</SubType>
@@ -401,6 +413,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dialogs\DeviceEditControl.resx">
+      <DependentUpon>DeviceEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MatcherEditor.resx">
+      <DependentUpon>MatcherEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MatcherGroupEditor.resx">
+      <DependentUpon>MatcherGroupEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ServerEditControl.resx">
+      <DependentUpon>ServerEditControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

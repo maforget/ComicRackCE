@@ -13,7 +13,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public class MatcherEditor : UserControl, IMatcherEditor
+	public partial class MatcherEditor : UserControl, IMatcherEditor
 	{
 		private class MatcherEntry : ComboBoxSkinner.ComboBoxItem<ComicBookValueMatcher>
 		{
@@ -36,55 +36,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			new ValuePair<Color, Regex>(Color.Blue, new Regex("\\{(" + ComicBookMatcher.ComicProperties.Concat(ComicBookMatcher.SeriesStatsProperties).ToListString("|") + ")\\}", RegexOptions.Compiled))
 		};
 
-		private ComicBookValueMatcher currentComicBookMatcher;
+        private ComicBookValueMatcher currentComicBookMatcher;
+        private readonly ComicBookMatcherCollection matchers;
+        private readonly int spacing = 10;
+        private readonly int level;
 
-		private readonly ComicBookMatcherCollection matchers;
-
-		private readonly int spacing = 10;
-
-		private readonly int level;
-
-		private IContainer components;
-
-		private ComboBox cbOperator;
-
-		private Label lblDescription;
-
-		private CheckBox chkNot;
-
-		private ToolTip toolTip;
-
-		private ContextMenuStrip cmEdit;
-
-		private ToolStripMenuItem miNewRule;
-
-		private ToolStripMenuItem miNewGroup;
-
-		private ToolStripSeparator toolStripMenuItem1;
-
-		private ToolStripMenuItem miCopy;
-
-		private ToolStripMenuItem miCut;
-
-		private ToolStripMenuItem miPaste;
-
-		private ToolStripSeparator toolStripMenuItem2;
-
-		private ToolStripMenuItem miMoveUp;
-
-		private ToolStripMenuItem miMoveDown;
-
-		private Button btEdit;
-
-		private TextBox rtfMatchValue;
-
-		private TextBox rtfMatchValue2;
-
-		private ToolStripMenuItem miDelete;
-
-		private Button btMatcher;
-
-		public string Description
+        public string Description
 		{
 			get
 			{
@@ -107,15 +64,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			base.Width = width;
 			spacing = rtfMatchValue2.Left - rtfMatchValue.Right;
 			InitializeMatcher(comicBookMatcher);
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && components != null)
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
 		}
 
 		private void cmEdit_Opening(object sender, CancelEventArgs e)
@@ -374,167 +322,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			{
 				cbOperator.Focus();
 			}
-		}
-
-		private void InitializeComponent()
-		{
-			components = new System.ComponentModel.Container();
-			cbOperator = new System.Windows.Forms.ComboBox();
-			lblDescription = new System.Windows.Forms.Label();
-			chkNot = new System.Windows.Forms.CheckBox();
-			toolTip = new System.Windows.Forms.ToolTip(components);
-			cmEdit = new System.Windows.Forms.ContextMenuStrip(components);
-			miNewRule = new System.Windows.Forms.ToolStripMenuItem();
-			miNewGroup = new System.Windows.Forms.ToolStripMenuItem();
-			miDelete = new System.Windows.Forms.ToolStripMenuItem();
-			toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-			miCut = new System.Windows.Forms.ToolStripMenuItem();
-			miCopy = new System.Windows.Forms.ToolStripMenuItem();
-			miPaste = new System.Windows.Forms.ToolStripMenuItem();
-			toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-			miMoveUp = new System.Windows.Forms.ToolStripMenuItem();
-			miMoveDown = new System.Windows.Forms.ToolStripMenuItem();
-			btEdit = new System.Windows.Forms.Button();
-			rtfMatchValue = new System.Windows.Forms.TextBox();
-			rtfMatchValue2 = new System.Windows.Forms.TextBox();
-			btMatcher = new System.Windows.Forms.Button();
-			cmEdit.SuspendLayout();
-			SuspendLayout();
-			cbOperator.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cbOperator.FormattingEnabled = true;
-			cbOperator.Location = new System.Drawing.Point(169, 0);
-			cbOperator.Name = "cbOperator";
-			cbOperator.Size = new System.Drawing.Size(135, 21);
-			cbOperator.TabIndex = 2;
-			cbOperator.SelectedIndexChanged += new System.EventHandler(cbOperator_SelectedIndexChanged);
-			lblDescription.AutoSize = true;
-			lblDescription.Location = new System.Drawing.Point(448, 25);
-			lblDescription.Name = "lblDescription";
-			lblDescription.Size = new System.Drawing.Size(60, 13);
-			lblDescription.TabIndex = 7;
-			lblDescription.Text = "Description";
-			chkNot.Appearance = System.Windows.Forms.Appearance.Button;
-			chkNot.Location = new System.Drawing.Point(0, 0);
-			chkNot.Name = "chkNot";
-			chkNot.Size = new System.Drawing.Size(21, 21);
-			chkNot.TabIndex = 0;
-			chkNot.Text = "!";
-			chkNot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			chkNot.UseVisualStyleBackColor = true;
-			chkNot.CheckedChanged += new System.EventHandler(chkNot_CheckedChanged);
-			cmEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[10]
-			{
-				miNewRule,
-				miNewGroup,
-				miDelete,
-				toolStripMenuItem1,
-				miCut,
-				miCopy,
-				miPaste,
-				toolStripMenuItem2,
-				miMoveUp,
-				miMoveDown
-			});
-			cmEdit.Name = "cmEdit";
-			cmEdit.Size = new System.Drawing.Size(181, 192);
-			cmEdit.Opening += new System.ComponentModel.CancelEventHandler(cmEdit_Opening);
-			miNewRule.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.AddTab;
-			miNewRule.Name = "miNewRule";
-			miNewRule.ShortcutKeys = System.Windows.Forms.Keys.R | System.Windows.Forms.Keys.Control;
-			miNewRule.Size = new System.Drawing.Size(180, 22);
-			miNewRule.Text = "New Rule";
-			miNewRule.Click += new System.EventHandler(miNewRule_Click);
-			miNewGroup.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.Group;
-			miNewGroup.Name = "miNewGroup";
-			miNewGroup.ShortcutKeys = System.Windows.Forms.Keys.G | System.Windows.Forms.Keys.Control;
-			miNewGroup.Size = new System.Drawing.Size(180, 22);
-			miNewGroup.Text = "New Group";
-			miNewGroup.Click += new System.EventHandler(miNewGroup_Click);
-			miDelete.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.EditDelete;
-			miDelete.Name = "miDelete";
-			miDelete.Size = new System.Drawing.Size(180, 22);
-			miDelete.Text = "Delete";
-			miDelete.Click += new System.EventHandler(miDelete_Click);
-			toolStripMenuItem1.Name = "toolStripMenuItem1";
-			toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
-			miCut.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.Cut;
-			miCut.Name = "miCut";
-			miCut.ShortcutKeys = System.Windows.Forms.Keys.X | System.Windows.Forms.Keys.Control;
-			miCut.Size = new System.Drawing.Size(180, 22);
-			miCut.Text = "Cut";
-			miCut.Click += new System.EventHandler(miCut_Click);
-			miCopy.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.EditCopy;
-			miCopy.Name = "miCopy";
-			miCopy.ShortcutKeys = System.Windows.Forms.Keys.C | System.Windows.Forms.Keys.Control;
-			miCopy.Size = new System.Drawing.Size(180, 22);
-			miCopy.Text = "Copy";
-			miCopy.Click += new System.EventHandler(miCopy_Click);
-			miPaste.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.EditPaste;
-			miPaste.Name = "miPaste";
-			miPaste.ShortcutKeys = System.Windows.Forms.Keys.V | System.Windows.Forms.Keys.Control;
-			miPaste.Size = new System.Drawing.Size(180, 22);
-			miPaste.Text = "Paste";
-			miPaste.Click += new System.EventHandler(miPaste_Click);
-			toolStripMenuItem2.Name = "toolStripMenuItem2";
-			toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
-			miMoveUp.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.GroupUp;
-			miMoveUp.Name = "miMoveUp";
-			miMoveUp.ShortcutKeys = System.Windows.Forms.Keys.U | System.Windows.Forms.Keys.Control;
-			miMoveUp.Size = new System.Drawing.Size(180, 22);
-			miMoveUp.Text = "Move Up";
-			miMoveUp.Click += new System.EventHandler(miMoveUp_Click);
-			miMoveDown.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.GroupDown;
-			miMoveDown.Name = "miMoveDown";
-			miMoveDown.ShortcutKeys = System.Windows.Forms.Keys.D | System.Windows.Forms.Keys.Control;
-			miMoveDown.Size = new System.Drawing.Size(180, 22);
-			miMoveDown.Text = "Move Down";
-			miMoveDown.Click += new System.EventHandler(miMoveDown_Click);
-			btEdit.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			btEdit.ContextMenuStrip = cmEdit;
-			btEdit.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.SmallArrowDown;
-			btEdit.Location = new System.Drawing.Point(568, 0);
-			btEdit.Name = "btEdit";
-			btEdit.Size = new System.Drawing.Size(21, 21);
-			btEdit.TabIndex = 10;
-			btEdit.UseVisualStyleBackColor = true;
-			btEdit.Click += new System.EventHandler(btEdit_Click);
-			rtfMatchValue.Location = new System.Drawing.Point(310, 1);
-			rtfMatchValue.Name = "rtfMatchValue";
-			rtfMatchValue.Size = new System.Drawing.Size(135, 20);
-			rtfMatchValue.TabIndex = 11;
-			rtfMatchValue.DoubleClick += new System.EventHandler(rtfMatchValue_DoubleClick);
-			rtfMatchValue.Validated += new System.EventHandler(rtfMatchValue_Leave);
-			rtfMatchValue2.Location = new System.Drawing.Point(451, 1);
-			rtfMatchValue2.Name = "rtfMatchValue2";
-			rtfMatchValue2.Size = new System.Drawing.Size(100, 20);
-			rtfMatchValue2.TabIndex = 12;
-			rtfMatchValue2.DoubleClick += new System.EventHandler(rtfMatchValue_DoubleClick);
-			rtfMatchValue2.Validated += new System.EventHandler(rtfMatchValue2_Leave);
-			btMatcher.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.SmallArrowDown;
-			btMatcher.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			btMatcher.Location = new System.Drawing.Point(27, -1);
-			btMatcher.Name = "btMatcher";
-			btMatcher.Size = new System.Drawing.Size(136, 23);
-			btMatcher.TabIndex = 13;
-			btMatcher.Text = "Pages";
-			btMatcher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			btMatcher.UseVisualStyleBackColor = true;
-			btMatcher.Click += new System.EventHandler(btMatcher_Click);
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.Controls.Add(btMatcher);
-			base.Controls.Add(btEdit);
-			base.Controls.Add(rtfMatchValue2);
-			base.Controls.Add(rtfMatchValue);
-			base.Controls.Add(chkNot);
-			base.Controls.Add(cbOperator);
-			base.Controls.Add(lblDescription);
-			base.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-			base.Name = "MatcherEditor";
-			base.Size = new System.Drawing.Size(589, 50);
-			cmEdit.ResumeLayout(false);
-			ResumeLayout(false);
-			PerformLayout();
 		}
 	}
 }
