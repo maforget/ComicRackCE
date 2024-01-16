@@ -120,6 +120,9 @@
     <Compile Include="Controls\PagesView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\PagesView.Designer.cs">
+      <DependentUpon>PagesView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PageViewBookmarkGrouper.cs" />
     <Compile Include="Controls\PageViewItem.cs" />
     <Compile Include="Controls\PageViewItemComparer.cs" />
@@ -355,6 +358,9 @@
     <Compile Include="Views\ComicBrowserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\ComicBrowserControl.Designer.cs">
+      <DependentUpon>ComicBrowserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ComicBrowserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +373,9 @@
     <Compile Include="Views\ComicExplorerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\ComicExplorerView.Designer.cs">
+      <DependentUpon>ComicExplorerView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ComicExplorerViewSettings.cs" />
     <Compile Include="Views\ComicListBrowser.cs">
       <SubType>UserControl</SubType>
@@ -377,11 +386,20 @@
     <Compile Include="Views\ComicListFolderFilesBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\ComicListFolderFilesBrowser.Designer.cs">
+      <DependentUpon>ComicListFolderFilesBrowser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ComicListLibraryBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\ComicListLibraryBrowser.Designer.cs">
+      <DependentUpon>ComicListLibraryBrowser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ComicPagesView.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ComicPagesView.Designer.cs">
+      <DependentUpon>ComicPagesView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\DragDropContainer.cs" />
     <Compile Include="Views\FolderComicListProvider.cs" />
@@ -397,22 +415,49 @@
     <Compile Include="Views\MainView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\QuickOpenView.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\QuickOpenView.Designer.cs">
+      <DependentUpon>QuickOpenView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\RemoteConnectionView.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\RemoteConnectionView.Designer.cs">
+      <DependentUpon>RemoteConnectionView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SmallComicPreview.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SmallComicPreview.Designer.cs">
+      <DependentUpon>SmallComicPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SubView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Win7.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ComicBrowserView.Designer.cs">
+      <DependentUpon>ComicBrowserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComicListBrowser.Designer.cs">
+      <DependentUpon>ComicListBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComicListFilesBrowser.Designer.cs">
+      <DependentUpon>ComicListFilesBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubView.Designer.cs">
+      <DependentUpon>SubView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\PagesView.resx">
+      <DependentUpon>PagesView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ComicBookDialog.resx">
       <DependentUpon>ComicBookDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -516,11 +561,44 @@
     <EmbeddedResource Include="ScriptOutputForm.resx">
       <DependentUpon>ScriptOutputForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ComicBrowserForm.resx">
+      <DependentUpon>ComicBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ComicBrowserView.resx">
+      <DependentUpon>ComicBrowserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ComicExplorerView.resx">
+      <DependentUpon>ComicExplorerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ComicListBrowser.resx">
+      <DependentUpon>ComicListBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ComicListFilesBrowser.resx">
+      <DependentUpon>ComicListFilesBrowser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ComicListFolderFilesBrowser.resx" DependentUpon="ComicListFolderFilesBrowser.cs" />
     <EmbeddedResource Include="Views\ComicListLibraryBrowser.resx" DependentUpon="ComicListLibraryBrowser.cs">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ComicBrowserControl.resx" DependentUpon="ComicBrowserControl.cs" />
+    <EmbeddedResource Include="Views\ComicPagesView.resx">
+      <DependentUpon>ComicPagesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuickOpenView.resx">
+      <DependentUpon>QuickOpenView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RemoteConnectionView.resx">
+      <DependentUpon>RemoteConnectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SmallComicPreview.resx">
+      <DependentUpon>SmallComicPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubView.resx">
+      <DependentUpon>SubView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

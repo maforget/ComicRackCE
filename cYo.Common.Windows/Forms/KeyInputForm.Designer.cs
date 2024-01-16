@@ -6,7 +6,12 @@ namespace cYo.Common.Windows.Forms
 {
 	public partial class KeyInputForm
 	{
-		protected override void Dispose(bool disposing)
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
 		{
 			if (disposing && components != null)
 			{
@@ -17,21 +22,23 @@ namespace cYo.Common.Windows.Forms
 
 		private void InitializeComponent()
 		{
-			SuspendLayout();
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.ClientSize = new System.Drawing.Size(284, 56);
-			base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-			base.MaximizeBox = false;
-			base.MinimizeBox = false;
-			base.Name = "KeyInputForm";
-			base.ShowIcon = false;
-			base.ShowInTaskbar = false;
-			base.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			Text = "Press any Key";
-			ResumeLayout(false);
-		}
+            this.SuspendLayout();
+            // 
+            // KeyInputForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 56);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "KeyInputForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Press any Key";
+            this.ResumeLayout(false);
 
-		private IContainer components;
+		}
 	}
 }

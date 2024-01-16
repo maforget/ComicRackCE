@@ -13,33 +13,13 @@ using cYo.Projects.ComicRack.Engine.Controls;
 
 namespace cYo.Projects.ComicRack.Viewer.Views
 {
-	public class ComicExplorerView : SubView, ISidebar
+	public partial class ComicExplorerView : SubView, ISidebar
 	{
 		private ComicListBrowser comicListBrowser;
 
 		private ComicBook[] comicInfoBooks = new ComicBook[0];
 
 		private Size infoBrowserSize;
-
-		private IContainer components;
-
-		private ComicBrowserControl comicBrowser;
-
-		private Timer previewTimer;
-
-		private SmallComicPreview smallComicPreview;
-
-		private SizableContainer sidePanel;
-
-		private Panel treePanel;
-
-		private SizableContainer previewPane;
-
-		private SizableContainer pluginContainer;
-
-		private ComicPageContainerControl comicInfo;
-
-		private Panel pluginPlaceholder;
 
 		[Browsable(false)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -288,15 +268,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			((ISidebar)this).Preview = false;
 		}
 
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && components != null)
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
-
 		protected override void OnLoad(EventArgs e)
 		{
 			base.OnLoad(e);
@@ -396,97 +367,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			comicInfo.Controls.Add(page);
 			pluginContainer.Visible = true;
 			UpdatePreviewPadding();
-		}
-
-		private void InitializeComponent()
-		{
-			components = new System.ComponentModel.Container();
-			smallComicPreview = new cYo.Projects.ComicRack.Viewer.Views.SmallComicPreview();
-			comicBrowser = new cYo.Projects.ComicRack.Viewer.Views.ComicBrowserControl();
-			previewTimer = new System.Windows.Forms.Timer(components);
-			sidePanel = new cYo.Common.Windows.Forms.SizableContainer();
-			treePanel = new System.Windows.Forms.Panel();
-			previewPane = new cYo.Common.Windows.Forms.SizableContainer();
-			pluginContainer = new cYo.Common.Windows.Forms.SizableContainer();
-			comicInfo = new cYo.Projects.ComicRack.Engine.Controls.ComicPageContainerControl();
-			pluginPlaceholder = new System.Windows.Forms.Panel();
-			sidePanel.SuspendLayout();
-			previewPane.SuspendLayout();
-			pluginContainer.SuspendLayout();
-			SuspendLayout();
-			smallComicPreview.Caption = "";
-			smallComicPreview.CaptionMargin = new System.Windows.Forms.Padding(2);
-			smallComicPreview.Dock = System.Windows.Forms.DockStyle.Fill;
-			smallComicPreview.Location = new System.Drawing.Point(2, 8);
-			smallComicPreview.Name = "smallComicPreview";
-			smallComicPreview.Size = new System.Drawing.Size(242, 197);
-			smallComicPreview.TabIndex = 0;
-			smallComicPreview.TwoPageDisplay = false;
-			smallComicPreview.CloseClicked += new System.EventHandler(smallComicPreview_CloseClicked);
-			comicBrowser.Caption = "";
-			comicBrowser.CaptionMargin = new System.Windows.Forms.Padding(2);
-			comicBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-			comicBrowser.Location = new System.Drawing.Point(252, 0);
-			comicBrowser.Name = "comicBrowser";
-			comicBrowser.Size = new System.Drawing.Size(448, 370);
-			comicBrowser.TabIndex = 0;
-			previewTimer.Interval = 500;
-			previewTimer.Tick += new System.EventHandler(previewTimer_Tick);
-			sidePanel.AutoGripPosition = true;
-			sidePanel.Controls.Add(treePanel);
-			sidePanel.Controls.Add(previewPane);
-			sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
-			sidePanel.Grip = cYo.Common.Windows.Forms.SizableContainer.GripPosition.Right;
-			sidePanel.Location = new System.Drawing.Point(0, 0);
-			sidePanel.Name = "sidePanel";
-			sidePanel.Size = new System.Drawing.Size(252, 538);
-			sidePanel.TabIndex = 1;
-			sidePanel.ExpandedChanged += new System.EventHandler(sidePanel_ExpandedChanged);
-			treePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			treePanel.Location = new System.Drawing.Point(0, 0);
-			treePanel.Name = "treePanel";
-			treePanel.Size = new System.Drawing.Size(246, 331);
-			treePanel.TabIndex = 0;
-			previewPane.AutoGripPosition = true;
-			previewPane.BorderStyle = cYo.Common.Windows.Forms.ExtendedBorderStyle.Flat;
-			previewPane.Controls.Add(smallComicPreview);
-			previewPane.Dock = System.Windows.Forms.DockStyle.Bottom;
-			previewPane.Location = new System.Drawing.Point(0, 331);
-			previewPane.Name = "previewPane";
-			previewPane.Size = new System.Drawing.Size(246, 207);
-			previewPane.TabIndex = 1;
-			previewPane.Text = "sizableContainer1";
-			previewPane.ExpandedChanged += new System.EventHandler(sidePanel_ExpandedChanged);
-			pluginContainer.AutoGripPosition = true;
-			pluginContainer.Controls.Add(comicInfo);
-			pluginContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
-			pluginContainer.Location = new System.Drawing.Point(252, 370);
-			pluginContainer.Name = "pluginContainer";
-			pluginContainer.Size = new System.Drawing.Size(448, 162);
-			pluginContainer.TabIndex = 2;
-			pluginContainer.Visible = false;
-			pluginContainer.ExpandedChanged += new System.EventHandler(pluginContainer_ExpandedChanged);
-			comicInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-			comicInfo.Location = new System.Drawing.Point(0, 6);
-			comicInfo.Name = "comicInfo";
-			comicInfo.Size = new System.Drawing.Size(448, 156);
-			comicInfo.TabIndex = 0;
-			pluginPlaceholder.Dock = System.Windows.Forms.DockStyle.Bottom;
-			pluginPlaceholder.Location = new System.Drawing.Point(252, 532);
-			pluginPlaceholder.Name = "pluginPlaceholder";
-			pluginPlaceholder.Size = new System.Drawing.Size(448, 6);
-			pluginPlaceholder.TabIndex = 3;
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			base.Controls.Add(comicBrowser);
-			base.Controls.Add(pluginContainer);
-			base.Controls.Add(pluginPlaceholder);
-			base.Controls.Add(sidePanel);
-			base.Name = "ComicExplorerView";
-			base.Size = new System.Drawing.Size(700, 538);
-			sidePanel.ResumeLayout(false);
-			previewPane.ResumeLayout(false);
-			pluginContainer.ResumeLayout(false);
-			ResumeLayout(false);
 		}
 	}
 }

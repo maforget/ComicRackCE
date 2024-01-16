@@ -9,7 +9,12 @@ namespace cYo.Common.Windows.Forms
 {
 	public partial class SelectItemDialog
 	{
-		protected override void Dispose(bool disposing)
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
 		{
 			if (disposing && components != null)
 			{
@@ -20,90 +25,106 @@ namespace cYo.Common.Windows.Forms
 
 		private void InitializeComponent()
 		{
-			btCancel = new System.Windows.Forms.Button();
-			btOK = new System.Windows.Forms.Button();
-			lblName = new System.Windows.Forms.Label();
-			cbName = new System.Windows.Forms.ComboBox();
-			txtName = new System.Windows.Forms.TextBox();
-			chkOption = new System.Windows.Forms.CheckBox();
-			SuspendLayout();
-			btCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-			btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			btCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			btCancel.Location = new System.Drawing.Point(252, 94);
-			btCancel.Name = "btCancel";
-			btCancel.Size = new System.Drawing.Size(80, 24);
-			btCancel.TabIndex = 5;
-			btCancel.Text = "&Cancel";
-			btOK.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-			btOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-			btOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			btOK.Location = new System.Drawing.Point(166, 94);
-			btOK.Name = "btOK";
-			btOK.Size = new System.Drawing.Size(80, 24);
-			btOK.TabIndex = 4;
-			btOK.Text = "&OK";
-			lblName.AutoSize = true;
-			lblName.Location = new System.Drawing.Point(12, 24);
-			lblName.Name = "lblName";
-			lblName.Size = new System.Drawing.Size(38, 13);
-			lblName.TabIndex = 0;
-			lblName.Text = "Name:";
-			cbName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			cbName.FormattingEnabled = true;
-			cbName.Location = new System.Drawing.Point(12, 40);
-			cbName.Name = "cbName";
-			cbName.Size = new System.Drawing.Size(320, 21);
-			cbName.TabIndex = 1;
-			cbName.TextChanged += new System.EventHandler(NameTextChanged);
-			txtName.Location = new System.Drawing.Point(12, 95);
-			txtName.Name = "txtName";
-			txtName.Size = new System.Drawing.Size(100, 20);
-			txtName.TabIndex = 2;
-			txtName.TextChanged += new System.EventHandler(NameTextChanged);
-			chkOption.AutoSize = true;
-			chkOption.Location = new System.Drawing.Point(12, 67);
-			chkOption.Name = "chkOption";
-			chkOption.Size = new System.Drawing.Size(86, 17);
-			chkOption.TabIndex = 3;
-			chkOption.Text = "Lorem Ipsum";
-			chkOption.UseVisualStyleBackColor = true;
-			chkOption.Visible = false;
-			base.AcceptButton = btOK;
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.CancelButton = btCancel;
-			base.ClientSize = new System.Drawing.Size(344, 130);
-			base.Controls.Add(chkOption);
-			base.Controls.Add(txtName);
-			base.Controls.Add(cbName);
-			base.Controls.Add(lblName);
-			base.Controls.Add(btCancel);
-			base.Controls.Add(btOK);
-			base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			base.MaximizeBox = false;
-			base.MinimizeBox = false;
-			base.Name = "AddItemDialog";
-			base.ShowIcon = false;
-			base.ShowInTaskbar = false;
-			base.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			Text = "Add Item Caption";
-			ResumeLayout(false);
-			PerformLayout();
+            this.btCancel = new System.Windows.Forms.Button();
+            this.btOK = new System.Windows.Forms.Button();
+            this.lblName = new System.Windows.Forms.Label();
+            this.cbName = new System.Windows.Forms.ComboBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.chkOption = new System.Windows.Forms.CheckBox();
+            this.SuspendLayout();
+            // 
+            // btCancel
+            // 
+            this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btCancel.Location = new System.Drawing.Point(252, 94);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(80, 24);
+            this.btCancel.TabIndex = 5;
+            this.btCancel.Text = "&Cancel";
+            // 
+            // btOK
+            // 
+            this.btOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btOK.Location = new System.Drawing.Point(166, 94);
+            this.btOK.Name = "btOK";
+            this.btOK.Size = new System.Drawing.Size(80, 24);
+            this.btOK.TabIndex = 4;
+            this.btOK.Text = "&OK";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(12, 24);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(38, 13);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Name:";
+            // 
+            // cbName
+            // 
+            this.cbName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbName.FormattingEnabled = true;
+            this.cbName.Location = new System.Drawing.Point(12, 40);
+            this.cbName.Name = "cbName";
+            this.cbName.Size = new System.Drawing.Size(320, 21);
+            this.cbName.TabIndex = 1;
+            this.cbName.TextChanged += new System.EventHandler(this.NameTextChanged);
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(12, 95);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 2;
+            this.txtName.TextChanged += new System.EventHandler(this.NameTextChanged);
+            // 
+            // chkOption
+            // 
+            this.chkOption.AutoSize = true;
+            this.chkOption.Location = new System.Drawing.Point(12, 67);
+            this.chkOption.Name = "chkOption";
+            this.chkOption.Size = new System.Drawing.Size(86, 17);
+            this.chkOption.TabIndex = 3;
+            this.chkOption.Text = "Lorem Ipsum";
+            this.chkOption.UseVisualStyleBackColor = true;
+            this.chkOption.Visible = false;
+            // 
+            // SelectItemDialog
+            // 
+            this.AcceptButton = this.btOK;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btCancel;
+            this.ClientSize = new System.Drawing.Size(344, 130);
+            this.Controls.Add(this.chkOption);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.cbName);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.btCancel);
+            this.Controls.Add(this.btOK);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "SelectItemDialog";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Add Item Caption";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
 		}
 
-		private IContainer components;
-
 		private Button btCancel;
-
 		private Button btOK;
-
 		private Label lblName;
-
 		private ComboBox cbName;
-
 		private TextBox txtName;
-
 		private CheckBox chkOption;
 	}
 }

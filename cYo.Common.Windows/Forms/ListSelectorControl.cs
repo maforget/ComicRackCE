@@ -12,7 +12,7 @@ using cYo.Common.Windows.Properties;
 
 namespace cYo.Common.Windows.Forms
 {
-	public class ListSelectorControl : UserControl, Popup.INotifyClose
+	public partial class ListSelectorControl : UserControl, Popup.INotifyClose
 	{
 		private static int lastTab;
 
@@ -29,32 +29,6 @@ namespace cYo.Common.Windows.Forms
 		private bool transfered;
 
 		private static readonly Image dropDownImage = Resources.Route;
-
-		private IContainer components;
-
-		private ListBox lbOwn;
-
-		private ListBox lbPool;
-
-		private Button btAllToOwn;
-
-		private Button btSelectedToOwn;
-
-		private Button btSelectedToPool;
-
-		private Button btAllToPool;
-
-		private CheckedListBoxEx lbCheckList;
-
-		private Panel listPanel;
-
-		private Button btLists;
-
-		private Button btCheck;
-
-		private Button btText;
-
-		private TextBox text;
 
 		public HashSet<string> Pool
 		{
@@ -485,173 +459,6 @@ namespace cYo.Common.Windows.Forms
 				hashSet.AddRange(item.FromListString(','));
 			}
 			return hashSet;
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && components != null)
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
-
-		private void InitializeComponent()
-		{
-			lbOwn = new System.Windows.Forms.ListBox();
-			lbPool = new System.Windows.Forms.ListBox();
-			btAllToOwn = new System.Windows.Forms.Button();
-			btSelectedToOwn = new System.Windows.Forms.Button();
-			btSelectedToPool = new System.Windows.Forms.Button();
-			btAllToPool = new System.Windows.Forms.Button();
-			listPanel = new System.Windows.Forms.Panel();
-			btLists = new System.Windows.Forms.Button();
-			btCheck = new System.Windows.Forms.Button();
-			btText = new System.Windows.Forms.Button();
-			text = new System.Windows.Forms.TextBox();
-			lbCheckList = new cYo.Common.Windows.Forms.CheckedListBoxEx();
-			listPanel.SuspendLayout();
-			SuspendLayout();
-			lbOwn.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			lbOwn.FormattingEnabled = true;
-			lbOwn.IntegralHeight = false;
-			lbOwn.Location = new System.Drawing.Point(0, 0);
-			lbOwn.MultiColumn = true;
-			lbOwn.Name = "lbOwn";
-			lbOwn.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-			lbOwn.Size = new System.Drawing.Size(245, 95);
-			lbOwn.Sorted = true;
-			lbOwn.TabIndex = 0;
-			lbOwn.SelectedIndexChanged += new System.EventHandler(lbOwn_SelectedIndexChanged);
-			lbOwn.DoubleClick += new System.EventHandler(lbOwn_DoubleClick);
-			lbOwn.KeyDown += new System.Windows.Forms.KeyEventHandler(lbOwn_KeyDown);
-			lbPool.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			lbPool.FormattingEnabled = true;
-			lbPool.IntegralHeight = false;
-			lbPool.Location = new System.Drawing.Point(0, 101);
-			lbPool.MultiColumn = true;
-			lbPool.Name = "lbPool";
-			lbPool.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-			lbPool.Size = new System.Drawing.Size(291, 142);
-			lbPool.Sorted = true;
-			lbPool.TabIndex = 5;
-			lbPool.SelectedIndexChanged += new System.EventHandler(lbOwn_SelectedIndexChanged);
-			lbPool.DoubleClick += new System.EventHandler(lbPool_DoubleClick);
-			lbPool.KeyDown += new System.Windows.Forms.KeyEventHandler(lbPool_KeyDown);
-			btAllToOwn.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			btAllToOwn.Location = new System.Drawing.Point(251, 0);
-			btAllToOwn.Name = "btAllToOwn";
-			btAllToOwn.Size = new System.Drawing.Size(40, 23);
-			btAllToOwn.TabIndex = 1;
-			btAllToOwn.Text = "<<";
-			btAllToOwn.UseVisualStyleBackColor = true;
-			btAllToOwn.Click += new System.EventHandler(btAllToOwn_Click);
-			btSelectedToOwn.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			btSelectedToOwn.Location = new System.Drawing.Point(251, 25);
-			btSelectedToOwn.Name = "btSelectedToOwn";
-			btSelectedToOwn.Size = new System.Drawing.Size(40, 23);
-			btSelectedToOwn.TabIndex = 2;
-			btSelectedToOwn.Text = "<";
-			btSelectedToOwn.UseVisualStyleBackColor = true;
-			btSelectedToOwn.Click += new System.EventHandler(btSelectedToOwn_Click);
-			btSelectedToPool.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			btSelectedToPool.Location = new System.Drawing.Point(251, 49);
-			btSelectedToPool.Name = "btSelectedToPool";
-			btSelectedToPool.Size = new System.Drawing.Size(40, 23);
-			btSelectedToPool.TabIndex = 3;
-			btSelectedToPool.Text = ">";
-			btSelectedToPool.UseVisualStyleBackColor = true;
-			btSelectedToPool.Click += new System.EventHandler(btSelectedToPool_Click);
-			btAllToPool.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-			btAllToPool.Location = new System.Drawing.Point(251, 73);
-			btAllToPool.Name = "btAllToPool";
-			btAllToPool.Size = new System.Drawing.Size(40, 23);
-			btAllToPool.TabIndex = 4;
-			btAllToPool.Text = ">>";
-			btAllToPool.UseVisualStyleBackColor = true;
-			btAllToPool.Click += new System.EventHandler(btAllToPool_Click);
-			listPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			listPanel.Controls.Add(lbOwn);
-			listPanel.Controls.Add(btAllToPool);
-			listPanel.Controls.Add(btSelectedToOwn);
-			listPanel.Controls.Add(lbPool);
-			listPanel.Controls.Add(btAllToOwn);
-			listPanel.Controls.Add(btSelectedToPool);
-			listPanel.Location = new System.Drawing.Point(7, 7);
-			listPanel.Margin = new System.Windows.Forms.Padding(0);
-			listPanel.Name = "listPanel";
-			listPanel.Size = new System.Drawing.Size(291, 243);
-			listPanel.TabIndex = 11;
-			btLists.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-			btLists.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
-			btLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			btLists.Font = new System.Drawing.Font("Microsoft Sans Serif", 7f);
-			btLists.Location = new System.Drawing.Point(11, 245);
-			btLists.Name = "btLists";
-			btLists.Size = new System.Drawing.Size(67, 24);
-			btLists.TabIndex = 14;
-			btLists.Text = "&Lists";
-			btLists.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			btLists.UseVisualStyleBackColor = true;
-			btLists.Click += new System.EventHandler(btLists_Click);
-			btCheck.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-			btCheck.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
-			btCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			btCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 7f);
-			btCheck.Location = new System.Drawing.Point(79, 245);
-			btCheck.Name = "btCheck";
-			btCheck.Size = new System.Drawing.Size(67, 24);
-			btCheck.TabIndex = 15;
-			btCheck.Text = "&Check";
-			btCheck.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			btCheck.UseVisualStyleBackColor = true;
-			btCheck.Click += new System.EventHandler(btCheck_Click);
-			btText.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-			btText.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
-			btText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			btText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7f);
-			btText.Location = new System.Drawing.Point(147, 245);
-			btText.Name = "btText";
-			btText.Size = new System.Drawing.Size(67, 24);
-			btText.TabIndex = 16;
-			btText.Text = "&Text";
-			btText.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			btText.UseVisualStyleBackColor = true;
-			btText.Click += new System.EventHandler(btText_Click);
-			text.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			text.Location = new System.Drawing.Point(7, 7);
-			text.Multiline = true;
-			text.Name = "text";
-			text.Size = new System.Drawing.Size(291, 243);
-			text.TabIndex = 17;
-			lbCheckList.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			lbCheckList.FormattingEnabled = true;
-			lbCheckList.IntegralHeight = false;
-			lbCheckList.Location = new System.Drawing.Point(7, 7);
-			lbCheckList.MultiColumn = true;
-			lbCheckList.Name = "lbCheckList";
-			lbCheckList.Size = new System.Drawing.Size(291, 243);
-			lbCheckList.Sorted = true;
-			lbCheckList.TabIndex = 0;
-			lbCheckList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(lbCheckList_ItemCheck);
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			BackColor = System.Drawing.SystemColors.Window;
-			base.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			base.Controls.Add(text);
-			base.Controls.Add(lbCheckList);
-			base.Controls.Add(listPanel);
-			base.Controls.Add(btLists);
-			base.Controls.Add(btCheck);
-			base.Controls.Add(btText);
-			base.Margin = new System.Windows.Forms.Padding(0);
-			base.Name = "ListSelectorControl";
-			base.Padding = new System.Windows.Forms.Padding(4);
-			base.Size = new System.Drawing.Size(308, 278);
-			listPanel.ResumeLayout(false);
-			ResumeLayout(false);
-			PerformLayout();
 		}
 	}
 }

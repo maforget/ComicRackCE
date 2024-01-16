@@ -14,7 +14,7 @@ using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
-	public class SearchBrowserControl : UserControl
+	public partial class SearchBrowserControl : UserControl
 	{
 		public class SelectionEntry : IComparable<SelectionEntry>
 		{
@@ -129,27 +129,6 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 
 		private IBitmapCursor dragCursor;
 
-		private IContainer components;
-
-		private ListViewEx listView1;
-
-		private ListViewEx listView2;
-
-		private ListViewEx listView3;
-
-		private ComboBox cbType1;
-
-		private ComboBox cbType2;
-
-		private ComboBox cbType3;
-
-		private CheckBox btNot1;
-
-		private CheckBox btNot2;
-
-		private CheckBox btNot3;
-
-		private ToolTip toolTip;
 
 		public ComicBookCollection Books => books;
 
@@ -275,21 +254,6 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			chk.Tag = index;
 			cb.DisplayMember = "Caption";
 			SetSelectedIndex(cb, selected);
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				books.Clear();
-				books.Changed -= BooksChanged;
-				IdleProcess.Idle -= IdleUpdate;
-				if (components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
 		}
 
 		protected override void OnLoad(EventArgs e)
@@ -842,136 +806,6 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 				bitmap.ChangeAlpha(128);
 				return bitmap;
 			}
-		}
-
-		private void InitializeComponent()
-		{
-			components = new System.ComponentModel.Container();
-			listView2 = new cYo.Common.Windows.Forms.ListViewEx();
-			listView3 = new cYo.Common.Windows.Forms.ListViewEx();
-			listView1 = new cYo.Common.Windows.Forms.ListViewEx();
-			cbType1 = new System.Windows.Forms.ComboBox();
-			cbType2 = new System.Windows.Forms.ComboBox();
-			cbType3 = new System.Windows.Forms.ComboBox();
-			btNot1 = new System.Windows.Forms.CheckBox();
-			btNot2 = new System.Windows.Forms.CheckBox();
-			btNot3 = new System.Windows.Forms.CheckBox();
-			toolTip = new System.Windows.Forms.ToolTip(components);
-			SuspendLayout();
-			listView2.FullRowSelect = true;
-			listView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-			listView2.HideSelection = false;
-			listView2.Location = new System.Drawing.Point(191, 32);
-			listView2.Name = "listView2";
-			listView2.Size = new System.Drawing.Size(178, 162);
-			listView2.TabIndex = 3;
-			listView2.UseCompatibleStateImageBehavior = false;
-			listView2.View = System.Windows.Forms.View.Details;
-			listView2.VirtualMode = true;
-			listView2.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(listView_ItemDrag);
-			listView2.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(ListItemSelectionChanged);
-			listView2.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(ListViewRetrieveVirtualItem);
-			listView2.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(ListViewVirtualItemsSelectionRangeChanged);
-			listView3.FullRowSelect = true;
-			listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-			listView3.HideSelection = false;
-			listView3.Location = new System.Drawing.Point(375, 32);
-			listView3.Name = "listView3";
-			listView3.Size = new System.Drawing.Size(202, 162);
-			listView3.TabIndex = 5;
-			listView3.UseCompatibleStateImageBehavior = false;
-			listView3.View = System.Windows.Forms.View.Details;
-			listView3.VirtualMode = true;
-			listView3.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(listView_ItemDrag);
-			listView3.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(ListItemSelectionChanged);
-			listView3.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(ListViewRetrieveVirtualItem);
-			listView3.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(ListViewVirtualItemsSelectionRangeChanged);
-			listView1.FullRowSelect = true;
-			listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-			listView1.HideSelection = false;
-			listView1.Location = new System.Drawing.Point(16, 32);
-			listView1.Name = "listView1";
-			listView1.Size = new System.Drawing.Size(169, 162);
-			listView1.TabIndex = 1;
-			listView1.UseCompatibleStateImageBehavior = false;
-			listView1.View = System.Windows.Forms.View.Details;
-			listView1.VirtualMode = true;
-			listView1.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(listView_ItemDrag);
-			listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(ListItemSelectionChanged);
-			listView1.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(ListViewRetrieveVirtualItem);
-			listView1.VirtualItemsSelectionRangeChanged += new System.Windows.Forms.ListViewVirtualItemsSelectionRangeChangedEventHandler(ListViewVirtualItemsSelectionRangeChanged);
-			cbType1.BackColor = System.Drawing.SystemColors.Window;
-			cbType1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cbType1.FormattingEnabled = true;
-			cbType1.Location = new System.Drawing.Point(15, 7);
-			cbType1.Name = "cbType1";
-			cbType1.Size = new System.Drawing.Size(145, 21);
-			cbType1.TabIndex = 0;
-			cbType1.SelectedIndexChanged += new System.EventHandler(cbType_SelectedIndexChanged);
-			cbType2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cbType2.FormattingEnabled = true;
-			cbType2.Location = new System.Drawing.Point(190, 7);
-			cbType2.Name = "cbType2";
-			cbType2.Size = new System.Drawing.Size(157, 21);
-			cbType2.TabIndex = 2;
-			cbType2.SelectedIndexChanged += new System.EventHandler(cbType_SelectedIndexChanged);
-			cbType3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cbType3.FormattingEnabled = true;
-			cbType3.Location = new System.Drawing.Point(375, 7);
-			cbType3.Name = "cbType3";
-			cbType3.Size = new System.Drawing.Size(172, 21);
-			cbType3.TabIndex = 4;
-			cbType3.SelectedIndexChanged += new System.EventHandler(cbType_SelectedIndexChanged);
-			btNot1.Appearance = System.Windows.Forms.Appearance.Button;
-			btNot1.AutoSize = true;
-			btNot1.Location = new System.Drawing.Point(166, 7);
-			btNot1.Name = "btNot1";
-			btNot1.Size = new System.Drawing.Size(20, 23);
-			btNot1.TabIndex = 6;
-			btNot1.Tag = "0";
-			btNot1.Text = "!";
-			btNot1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			btNot1.UseVisualStyleBackColor = true;
-			btNot1.CheckedChanged += new System.EventHandler(btNot_CheckedChanged);
-			btNot2.Appearance = System.Windows.Forms.Appearance.Button;
-			btNot2.AutoSize = true;
-			btNot2.Location = new System.Drawing.Point(349, 7);
-			btNot2.Name = "btNot2";
-			btNot2.Size = new System.Drawing.Size(20, 23);
-			btNot2.TabIndex = 7;
-			btNot2.Tag = "1";
-			btNot2.Text = "!";
-			btNot2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			btNot2.UseVisualStyleBackColor = true;
-			btNot2.CheckedChanged += new System.EventHandler(btNot_CheckedChanged);
-			btNot3.Appearance = System.Windows.Forms.Appearance.Button;
-			btNot3.AutoSize = true;
-			btNot3.Location = new System.Drawing.Point(557, 7);
-			btNot3.Name = "btNot3";
-			btNot3.Size = new System.Drawing.Size(20, 23);
-			btNot3.TabIndex = 8;
-			btNot3.Tag = "2";
-			btNot3.Text = "!";
-			btNot3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			btNot3.UseVisualStyleBackColor = true;
-			btNot3.CheckedChanged += new System.EventHandler(btNot_CheckedChanged);
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.Controls.Add(btNot3);
-			base.Controls.Add(btNot2);
-			base.Controls.Add(btNot1);
-			base.Controls.Add(cbType3);
-			base.Controls.Add(cbType2);
-			base.Controls.Add(cbType1);
-			base.Controls.Add(listView2);
-			base.Controls.Add(listView3);
-			base.Controls.Add(listView1);
-			DoubleBuffered = true;
-			base.Name = "SearchBrowserControl";
-			base.Size = new System.Drawing.Size(586, 272);
-			base.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(GiveDragFeedback);
-			ResumeLayout(false);
-			PerformLayout();
 		}
 	}
 }

@@ -6,11 +6,9 @@ using cYo.Projects.ComicRack.Engine;
 
 namespace cYo.Projects.ComicRack.Viewer.Views
 {
-	public class ComicListFilesBrowser : ComicListBrowser
+	public partial class ComicListFilesBrowser : ComicListBrowser
 	{
 		private readonly FolderComicListProvider folderBooks = new FolderComicListProvider();
-
-		private IContainer components;
 
 		public bool IncludeSubFolders
 		{
@@ -29,19 +27,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			InitializeComponent();
 			folderBooks.Window = this;
 			BookList = folderBooks;
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				if (components != null)
-				{
-					components.Dispose();
-				}
-				folderBooks.Dispose();
-			}
-			base.Dispose(disposing);
 		}
 
 		protected override IComicBookListProvider GetNewBookList()
@@ -63,14 +48,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				IncludeSubFolders = !IncludeSubFolders;
 			}, AutomaticProgressDialogOptions.EnableCancel);
-		}
-
-		private void InitializeComponent()
-		{
-			SuspendLayout();
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			base.Name = "ComicListFilesBrowser";
-			ResumeLayout(false);
 		}
 	}
 }

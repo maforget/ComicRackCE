@@ -9,13 +9,11 @@ using cYo.Projects.ComicRack.Engine;
 
 namespace cYo.Projects.ComicRack.Viewer.Views
 {
-	public class ComicListBrowser : SubView, IRefreshDisplay
+	public partial class ComicListBrowser : SubView, IRefreshDisplay
 	{
 		protected readonly CursorList<IComicBookListProvider> history = new CursorList<IComicBookListProvider>();
 
 		private IComicBookListProvider bookList;
-
-		private IContainer components;
 
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public virtual IComicBookListProvider BookList
@@ -88,19 +86,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			InitializeComponent();
 		}
 
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				BookList = null;
-				if (components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
-		}
-
 		protected virtual void OnBookListChanged()
 		{
 			if (this.BookListChanged != null)
@@ -158,15 +143,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		public void RefreshDisplay()
 		{
 			OnRefreshDisplay();
-		}
-
-		private void InitializeComponent()
-		{
-			SuspendLayout();
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			base.Name = "ComicListBrowser";
-			base.Size = new System.Drawing.Size(448, 342);
-			ResumeLayout(false);
 		}
 	}
 }

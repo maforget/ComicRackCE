@@ -83,6 +83,9 @@
     <Compile Include="Forms\CaptionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\CaptionControl.Designer.cs">
+      <DependentUpon>CaptionControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CheckedListBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -104,6 +107,9 @@
     <Compile Include="Forms\ExtendedToolStripRenderer.cs" />
     <Compile Include="Forms\FastScrollControl.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FastScrollControl.Designer.cs">
+      <DependentUpon>FastScrollControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FolderTreeView.cs">
       <SubType>Component</SubType>
@@ -143,6 +149,9 @@
     <Compile Include="Forms\KeyboardShortcutEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\KeyboardShortcutEditor.Designer.cs">
+      <DependentUpon>KeyboardShortcutEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\KeyInputForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,14 +173,14 @@
     <Compile Include="Forms\LayeredForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LayeredForm.Designer.cs">
-      <DependentUpon>LayeredForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ListBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\ListSelectorControl.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ListSelectorControl.Designer.cs">
+      <DependentUpon>ListSelectorControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ListViewEx.cs">
       <SubType>Component</SubType>
@@ -286,6 +295,30 @@
     <Compile Include="ScreenExtension.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\AutomaticProgressDialog.resx">
+      <DependentUpon>AutomaticProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CaptionControl.resx">
+      <DependentUpon>CaptionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FastScrollControl.resx">
+      <DependentUpon>FastScrollControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeyboardShortcutEditor.resx">
+      <DependentUpon>KeyboardShortcutEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeyInputForm.resx">
+      <DependentUpon>KeyInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListSelectorControl.resx">
+      <DependentUpon>ListSelectorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuestionDialog.resx">
+      <DependentUpon>QuestionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectItemDialog.resx">
+      <DependentUpon>SelectItemDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

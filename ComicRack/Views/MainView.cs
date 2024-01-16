@@ -22,7 +22,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Views
 {
-	public class MainView : SubView, IDisplayWorkspace, IListDisplays
+	public partial class MainView : SubView, IDisplayWorkspace, IListDisplays
 	{
 		[Flags]
 		public enum AddRemoteLibraryOptions
@@ -74,26 +74,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private readonly HashSet<string> connectedMachines = new HashSet<string>();
 
 		private readonly VisibilityAnimator tabStripVisibility;
-
-		private IContainer components;
-
-		private TabBar tabStrip;
-
-		private ToolStrip tabToolStrip;
-
-		private ToolStripSplitButton tsbAlignment;
-
-		private ToolStripMenuItem tsbAlignBottom;
-
-		private ToolStripMenuItem tsbAlignLeft;
-
-		private ToolStripMenuItem tsbAlignRight;
-
-		private ToolStripMenuItem tsbAlignFill;
-
-		private ToolStripSeparator toolStripMenuItem1;
-
-		private ToolStripMenuItem tsbInfoPanelLeft;
 
 		public bool IsComicViewer
 		{
@@ -238,23 +218,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				InfoPanelRight = !InfoPanelRight;
 			}, true, () => InfoPanelRight, tsbInfoPanelLeft);
 			ShowView(Program.Settings.SelectedBrowser);
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				openBrowsers.ToArray().Dispose();
-				(from tsb in tabStrip.Items
-					select tsb.Tag as ComicExplorerView into c
-					where c != null && c.Tag != null && c.ComicBrowser.Library != null
-					select c.ComicBrowser.Library).Dispose();
-				if (components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
 		}
 
 		public void ShowLibrary(ComicLibrary library = null)
@@ -860,113 +823,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				ShowLibrary((bookList is IComicLibraryItem) ? (bookList as IComicLibraryItem).Library : null);
 			}
-		}
-
-		private void InitializeComponent()
-		{
-			tabStrip = new cYo.Common.Windows.Forms.TabBar();
-			tabToolStrip = new System.Windows.Forms.ToolStrip();
-			tsbAlignment = new System.Windows.Forms.ToolStripSplitButton();
-			tsbAlignBottom = new System.Windows.Forms.ToolStripMenuItem();
-			tsbAlignLeft = new System.Windows.Forms.ToolStripMenuItem();
-			tsbAlignRight = new System.Windows.Forms.ToolStripMenuItem();
-			tsbAlignFill = new System.Windows.Forms.ToolStripMenuItem();
-			toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-			tsbInfoPanelLeft = new System.Windows.Forms.ToolStripMenuItem();
-			tabStrip.SuspendLayout();
-			tabToolStrip.SuspendLayout();
-			SuspendLayout();
-			tabStrip.AllowDrop = true;
-			tabStrip.BackColor = System.Drawing.SystemColors.Control;
-			tabStrip.BottomPadding = 0;
-			tabStrip.CloseImage = cYo.Projects.ComicRack.Viewer.Properties.Resources.Close;
-			tabStrip.Controls.Add(tabToolStrip);
-			tabStrip.Dock = System.Windows.Forms.DockStyle.Top;
-			tabStrip.Location = new System.Drawing.Point(0, 0);
-			tabStrip.Name = "tabStrip";
-			tabStrip.OwnerDrawnTooltips = true;
-			tabStrip.Size = new System.Drawing.Size(895, 25);
-			tabStrip.TabIndex = 0;
-			tabStrip.Text = "tabStrip";
-			tabStrip.TopPadding = 0;
-			tabStrip.SelectedTabChanged += new System.EventHandler<cYo.Common.Windows.Forms.TabBar.SelectedTabChangedEventArgs>(tabStrip_SelectedTabChanged);
-			tabToolStrip.BackColor = System.Drawing.Color.Transparent;
-			tabToolStrip.CanOverflow = false;
-			tabToolStrip.Dock = System.Windows.Forms.DockStyle.Right;
-			tabToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-			tabToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[1]
-			{
-				tsbAlignment
-			});
-			tabToolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-			tabToolStrip.Location = new System.Drawing.Point(860, 1);
-			tabToolStrip.Name = "tabToolStrip";
-			tabToolStrip.Size = new System.Drawing.Size(35, 23);
-			tabToolStrip.TabIndex = 1;
-			tsbAlignment.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-			tsbAlignment.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			tsbAlignment.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[6]
-			{
-				tsbAlignBottom,
-				tsbAlignLeft,
-				tsbAlignRight,
-				tsbAlignFill,
-				toolStripMenuItem1,
-				tsbInfoPanelLeft
-			});
-			tsbAlignment.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.AlignBottom;
-			tsbAlignment.ImageTransparentColor = System.Drawing.Color.Magenta;
-			tsbAlignment.Name = "tsbAlignment";
-			tsbAlignment.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-			tsbAlignment.Size = new System.Drawing.Size(32, 20);
-			tsbAlignment.Text = "Docking Mode";
-			tsbAlignBottom.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-			tsbAlignBottom.Checked = true;
-			tsbAlignBottom.CheckState = System.Windows.Forms.CheckState.Checked;
-			tsbAlignBottom.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.AlignBottom;
-			tsbAlignBottom.ImageTransparentColor = System.Drawing.Color.Magenta;
-			tsbAlignBottom.Name = "tsbAlignBottom";
-			tsbAlignBottom.ShortcutKeys = System.Windows.Forms.Keys.D1 | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Control;
-			tsbAlignBottom.Size = new System.Drawing.Size(230, 22);
-			tsbAlignBottom.Text = "Dock Bottom";
-			tsbAlignLeft.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-			tsbAlignLeft.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.AlignLeft;
-			tsbAlignLeft.ImageTransparentColor = System.Drawing.Color.Magenta;
-			tsbAlignLeft.Name = "tsbAlignLeft";
-			tsbAlignLeft.ShortcutKeys = System.Windows.Forms.Keys.D2 | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Control;
-			tsbAlignLeft.Size = new System.Drawing.Size(230, 22);
-			tsbAlignLeft.Text = "Dock Left";
-			tsbAlignRight.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-			tsbAlignRight.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.AlignRight;
-			tsbAlignRight.ImageTransparentColor = System.Drawing.Color.Magenta;
-			tsbAlignRight.Name = "tsbAlignRight";
-			tsbAlignRight.ShortcutKeys = System.Windows.Forms.Keys.D3 | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Control;
-			tsbAlignRight.Size = new System.Drawing.Size(230, 22);
-			tsbAlignRight.Text = "Dock Right";
-			tsbAlignFill.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-			tsbAlignFill.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.AlignFill;
-			tsbAlignFill.ImageTransparentColor = System.Drawing.Color.Magenta;
-			tsbAlignFill.Name = "tsbAlignFill";
-			tsbAlignFill.ShortcutKeys = System.Windows.Forms.Keys.D4 | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Control;
-			tsbAlignFill.Size = new System.Drawing.Size(230, 22);
-			tsbAlignFill.Text = "Fill";
-			toolStripMenuItem1.Name = "toolStripMenuItem1";
-			toolStripMenuItem1.Size = new System.Drawing.Size(227, 6);
-			tsbInfoPanelLeft.Name = "tsbInfoPanelLeft";
-			tsbInfoPanelLeft.ShortcutKeys = System.Windows.Forms.Keys.D5 | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Control;
-			tsbInfoPanelLeft.Size = new System.Drawing.Size(230, 22);
-			tsbInfoPanelLeft.Text = "Info Panel Right";
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			BackColor = System.Drawing.SystemColors.Control;
-			base.Controls.Add(tabStrip);
-			base.Name = "MainView";
-			base.Size = new System.Drawing.Size(895, 551);
-			tabStrip.ResumeLayout(false);
-			tabStrip.PerformLayout();
-			tabToolStrip.ResumeLayout(false);
-			tabToolStrip.PerformLayout();
-			ResumeLayout(false);
-			PerformLayout();
 		}
 	}
 }

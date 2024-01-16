@@ -8,11 +8,9 @@ using cYo.Projects.ComicRack.Viewer.Controls;
 
 namespace cYo.Projects.ComicRack.Viewer.Views
 {
-	public class SubView : CaptionControl
+	public partial class SubView : CaptionControl
 	{
 		private IMain mainForm;
-
-		private IContainer components;
 
 		[Browsable(false)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -35,19 +33,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		public SubView()
 		{
 			InitializeComponent();
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				IdleProcess.Idle -= Application_Idle;
-				if (components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
 		}
 
 		private void Application_Idle(object sender, EventArgs e)
@@ -92,14 +77,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		protected static void TranslateColumns(IEnumerable<IColumn> itemViewColumnCollection)
 		{
 			ComicListField.TranslateColumns(itemViewColumnCollection);
-		}
-
-		private void InitializeComponent()
-		{
-			SuspendLayout();
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			base.Name = "SubView";
-			ResumeLayout(false);
 		}
 	}
 }

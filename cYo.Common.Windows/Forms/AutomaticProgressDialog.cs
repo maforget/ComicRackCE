@@ -24,7 +24,9 @@ namespace cYo.Common.Windows.Forms
 
 		private static readonly Dictionary<int, int> valueLookup = new Dictionary<int, int>();
 
-		public static bool ShouldAbort
+        private readonly ManualResetEvent finishEvent = new ManualResetEvent(initialState: false);
+
+        public static bool ShouldAbort
 		{
 			get
 			{

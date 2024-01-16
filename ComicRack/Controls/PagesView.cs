@@ -24,7 +24,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Controls
 {
-	public class PagesView : UserControl, IEditBookmark, IEditPage
+	public partial class PagesView : UserControl, IEditBookmark, IEditPage
 	{
 		private volatile bool listDirty;
 
@@ -43,56 +43,6 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 		private ComicPageInfo[] dragPages;
 
 		private IBitmapCursor dragCursor;
-
-		private IContainer components;
-
-		private ItemView itemView;
-
-		private ContextMenuStrip contextPages;
-
-		private ToolStripMenuItem miPageType;
-
-		private ToolStripSeparator tsPageTypeSeparator;
-
-		private ToolStripMenuItem miCopy;
-
-		private ToolStripSeparator toolStripMenuItem1;
-
-		private ToolStripMenuItem miSelectAll;
-
-		private ToolStripMenuItem miInvertSelection;
-
-		private ToolStripMenuItem miRefreshThumbnail;
-
-		private ToolStripSeparator toolStripMenuItem3;
-
-		private ToolStripMenuItem miMarkDeleted;
-
-		private ToolStripSeparator tsMovePagesSeparator;
-
-		private ToolStripMenuItem miSetBookmark;
-
-		private ToolStripMenuItem miRemoveBookmark;
-
-		private ToolStripSeparator tsBookmarkSeparator;
-
-		private ToolStripMenuItem miMoveToTop;
-
-		private ToolStripMenuItem miMoveToBottom;
-
-		private ToolStripMenuItem miResetOriginalOrder;
-
-		private ToolStripMenuItem cmPageRotate;
-
-		private ToolStripMenuItem miPagePosition;
-
-		private ToolStripMenuItem miPagePositionDefault;
-
-		private ToolStripSeparator toolStripMenuItem2;
-
-		private ToolStripMenuItem miPagePositionNear;
-
-		private ToolStripMenuItem miPagePositionFar;
 
 		public ItemView ItemView => itemView;
 
@@ -323,19 +273,6 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 			itemView.MouseWheel += ItemViewMouseWheel;
 			IdleProcess.Idle += Application_Idle;
 			KeySearch.Create(itemView);
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				IdleProcess.Idle -= Application_Idle;
-				if (components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
 		}
 
 		protected override void OnLoad(EventArgs e)
@@ -860,165 +797,6 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 				dragCursor.OverlayEffect = ((e.Effect == DragDropEffects.Copy) ? BitmapCursorOverlayEffect.Plus : BitmapCursorOverlayEffect.None);
 				Cursor.Current = dragCursor.Cursor;
 			}
-		}
-
-		private void InitializeComponent()
-		{
-			components = new System.ComponentModel.Container();
-			itemView = new cYo.Common.Windows.Forms.ItemView();
-			contextPages = new System.Windows.Forms.ContextMenuStrip(components);
-			miPageType = new System.Windows.Forms.ToolStripMenuItem();
-			cmPageRotate = new System.Windows.Forms.ToolStripMenuItem();
-			miPagePosition = new System.Windows.Forms.ToolStripMenuItem();
-			miPagePositionDefault = new System.Windows.Forms.ToolStripMenuItem();
-			toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-			miPagePositionNear = new System.Windows.Forms.ToolStripMenuItem();
-			miPagePositionFar = new System.Windows.Forms.ToolStripMenuItem();
-			tsPageTypeSeparator = new System.Windows.Forms.ToolStripSeparator();
-			miSetBookmark = new System.Windows.Forms.ToolStripMenuItem();
-			miRemoveBookmark = new System.Windows.Forms.ToolStripMenuItem();
-			tsBookmarkSeparator = new System.Windows.Forms.ToolStripSeparator();
-			miMoveToTop = new System.Windows.Forms.ToolStripMenuItem();
-			miMoveToBottom = new System.Windows.Forms.ToolStripMenuItem();
-			miResetOriginalOrder = new System.Windows.Forms.ToolStripMenuItem();
-			tsMovePagesSeparator = new System.Windows.Forms.ToolStripSeparator();
-			miCopy = new System.Windows.Forms.ToolStripMenuItem();
-			toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-			miSelectAll = new System.Windows.Forms.ToolStripMenuItem();
-			miInvertSelection = new System.Windows.Forms.ToolStripMenuItem();
-			miRefreshThumbnail = new System.Windows.Forms.ToolStripMenuItem();
-			toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-			miMarkDeleted = new System.Windows.Forms.ToolStripMenuItem();
-			contextPages.SuspendLayout();
-			SuspendLayout();
-			itemView.AllowDrop = true;
-			itemView.BackColor = System.Drawing.SystemColors.Window;
-			itemView.BackgroundImageAlignment = System.Drawing.ContentAlignment.BottomRight;
-			itemView.Dock = System.Windows.Forms.DockStyle.Fill;
-			itemView.HideSelection = false;
-			itemView.ItemContextMenuStrip = contextPages;
-			itemView.Location = new System.Drawing.Point(0, 0);
-			itemView.Name = "itemView";
-			itemView.Size = new System.Drawing.Size(413, 406);
-			itemView.SortColumn = null;
-			itemView.SortColumns = new cYo.Common.Windows.Forms.IColumn[0];
-			itemView.SortColumnsKey = "";
-			itemView.TabIndex = 1;
-			itemView.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(itemView_ItemDrag);
-			itemView.PostPaint += new System.Windows.Forms.PaintEventHandler(itemView_PostPaint);
-			itemView.DragDrop += new System.Windows.Forms.DragEventHandler(itemView_DragDrop);
-			itemView.DragEnter += new System.Windows.Forms.DragEventHandler(itemView_DragEnter);
-			itemView.DragOver += new System.Windows.Forms.DragEventHandler(itemView_DragOver);
-			itemView.DragLeave += new System.EventHandler(itemView_DragLeave);
-			itemView.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(itemView_GiveFeedback);
-			contextPages.Items.AddRange(new System.Windows.Forms.ToolStripItem[18]
-			{
-				miPageType,
-				cmPageRotate,
-				miPagePosition,
-				tsPageTypeSeparator,
-				miSetBookmark,
-				miRemoveBookmark,
-				tsBookmarkSeparator,
-				miMoveToTop,
-				miMoveToBottom,
-				miResetOriginalOrder,
-				tsMovePagesSeparator,
-				miCopy,
-				toolStripMenuItem1,
-				miSelectAll,
-				miInvertSelection,
-				miRefreshThumbnail,
-				toolStripMenuItem3,
-				miMarkDeleted
-			});
-			contextPages.Name = "cmPages";
-			contextPages.Size = new System.Drawing.Size(249, 342);
-			contextPages.Opening += new System.ComponentModel.CancelEventHandler(contextPages_Opening);
-			miPageType.Name = "miPageType";
-			miPageType.Size = new System.Drawing.Size(248, 22);
-			miPageType.Text = "Page Type";
-			cmPageRotate.Name = "cmPageRotate";
-			cmPageRotate.Size = new System.Drawing.Size(248, 22);
-			cmPageRotate.Text = "Page Rotation";
-			miPagePosition.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[4]
-			{
-				miPagePositionDefault,
-				toolStripMenuItem2,
-				miPagePositionNear,
-				miPagePositionFar
-			});
-			miPagePosition.Name = "miPagePosition";
-			miPagePosition.Size = new System.Drawing.Size(248, 22);
-			miPagePosition.Text = "Page Position";
-			miPagePositionDefault.Name = "miPagePositionDefault";
-			miPagePositionDefault.Size = new System.Drawing.Size(112, 22);
-			miPagePositionDefault.Text = "Default";
-			toolStripMenuItem2.Name = "toolStripMenuItem2";
-			toolStripMenuItem2.Size = new System.Drawing.Size(109, 6);
-			miPagePositionNear.Name = "miPagePositionNear";
-			miPagePositionNear.Size = new System.Drawing.Size(112, 22);
-			miPagePositionNear.Text = "Near";
-			miPagePositionFar.Name = "miPagePositionFar";
-			miPagePositionFar.Size = new System.Drawing.Size(112, 22);
-			miPagePositionFar.Text = "Far";
-			tsPageTypeSeparator.Name = "tsPageTypeSeparator";
-			tsPageTypeSeparator.Size = new System.Drawing.Size(245, 6);
-			miSetBookmark.Name = "miSetBookmark";
-			miSetBookmark.ShortcutKeys = System.Windows.Forms.Keys.B | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Control;
-			miSetBookmark.Size = new System.Drawing.Size(248, 22);
-			miSetBookmark.Text = "Set Bookmark...";
-			miRemoveBookmark.Name = "miRemoveBookmark";
-			miRemoveBookmark.ShortcutKeys = System.Windows.Forms.Keys.D | System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.Control;
-			miRemoveBookmark.Size = new System.Drawing.Size(248, 22);
-			miRemoveBookmark.Text = "Remove Bookmark";
-			tsBookmarkSeparator.Name = "tsBookmarkSeparator";
-			tsBookmarkSeparator.Size = new System.Drawing.Size(245, 6);
-			miMoveToTop.Name = "miMoveToTop";
-			miMoveToTop.ShortcutKeys = System.Windows.Forms.Keys.T | System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt;
-			miMoveToTop.Size = new System.Drawing.Size(248, 22);
-			miMoveToTop.Text = "&Move to Top";
-			miMoveToBottom.Name = "miMoveToBottom";
-			miMoveToBottom.ShortcutKeys = System.Windows.Forms.Keys.B | System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt;
-			miMoveToBottom.Size = new System.Drawing.Size(248, 22);
-			miMoveToBottom.Text = "Move to Bottom";
-			miResetOriginalOrder.Name = "miResetOriginalOrder";
-			miResetOriginalOrder.Size = new System.Drawing.Size(248, 22);
-			miResetOriginalOrder.Text = "Reset original Order";
-			tsMovePagesSeparator.Name = "tsMovePagesSeparator";
-			tsMovePagesSeparator.Size = new System.Drawing.Size(245, 6);
-			miCopy.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.Copy;
-			miCopy.Name = "miCopy";
-			miCopy.ShortcutKeys = System.Windows.Forms.Keys.C | System.Windows.Forms.Keys.Control;
-			miCopy.Size = new System.Drawing.Size(248, 22);
-			miCopy.Text = "&Copy Page";
-			toolStripMenuItem1.Name = "toolStripMenuItem1";
-			toolStripMenuItem1.Size = new System.Drawing.Size(245, 6);
-			miSelectAll.Name = "miSelectAll";
-			miSelectAll.ShortcutKeys = System.Windows.Forms.Keys.A | System.Windows.Forms.Keys.Control;
-			miSelectAll.Size = new System.Drawing.Size(248, 22);
-			miSelectAll.Text = "Select &All";
-			miInvertSelection.Name = "miInvertSelection";
-			miInvertSelection.Size = new System.Drawing.Size(248, 22);
-			miInvertSelection.Text = "&Invert Selection";
-			miRefreshThumbnail.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.RefreshThumbnail;
-			miRefreshThumbnail.Name = "miRefreshThumbnail";
-			miRefreshThumbnail.Size = new System.Drawing.Size(248, 22);
-			miRefreshThumbnail.Text = "&Refresh";
-			toolStripMenuItem3.Name = "toolStripMenuItem3";
-			toolStripMenuItem3.Size = new System.Drawing.Size(245, 6);
-			miMarkDeleted.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.EditDelete;
-			miMarkDeleted.Name = "miMarkDeleted";
-			miMarkDeleted.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-			miMarkDeleted.Size = new System.Drawing.Size(248, 22);
-			miMarkDeleted.Text = "Mark as &Deleted";
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.Controls.Add(itemView);
-			base.Name = "PagesView";
-			base.Size = new System.Drawing.Size(413, 406);
-			contextPages.ResumeLayout(false);
-			ResumeLayout(false);
 		}
 	}
 }

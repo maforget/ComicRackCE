@@ -7,15 +7,13 @@ using cYo.Common.Drawing;
 
 namespace cYo.Common.Windows.Forms
 {
-	public class CaptionControl : UserControl
+	public partial class CaptionControl : UserControl
 	{
 		private Padding captionMargin = new Padding(2);
 
 		private bool closeButton;
 
 		private bool selected;
-
-		private IContainer components;
 
 		[Category("Display")]
 		[DefaultValue(null)]
@@ -135,24 +133,6 @@ namespace cYo.Common.Windows.Forms
 		private void InvalidateCaption()
 		{
 			Invalidate(CaptionRectangle);
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && components != null)
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
-
-		private void InitializeComponent()
-		{
-			SuspendLayout();
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.Name = "CaptionControl";
-			ResumeLayout(false);
 		}
 	}
 }

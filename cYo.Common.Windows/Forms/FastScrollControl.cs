@@ -5,13 +5,11 @@ using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms
 {
-	public class FastScrollControl : UserControl
+	public partial class FastScrollControl : UserControl
 	{
 		private int lineHeight = 16;
 
 		private int columnWidth = 16;
-
-		private IContainer components;
 
 		[Browsable(false)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -167,21 +165,6 @@ namespace cYo.Common.Windows.Forms
 			{
 				this.MouseHWheel(this, e);
 			}
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && components != null)
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
-
-		private void InitializeComponent()
-		{
-			components = new System.ComponentModel.Container();
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 		}
 	}
 }

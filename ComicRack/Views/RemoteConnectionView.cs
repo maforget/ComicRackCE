@@ -16,7 +16,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Views
 {
-	public class RemoteConnectionView : SubView
+	public partial class RemoteConnectionView : SubView
 	{
 		private Thread thread;
 
@@ -31,20 +31,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private string textConnect = TR.Default["Connect", "Connect"];
 
 		private string textCancel = TR.Default["Cancel", "Cancel"];
-
-		private IContainer components;
-
-		private Button btConnect;
-
-		private Panel panelCenter;
-
-		private Label lblMessage;
-
-		private Label lblServerDescription;
-
-		private Label lblServerName;
-
-		private PictureBox connectionAnimation;
 
 		public MainView View
 		{
@@ -89,23 +75,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			base.AutoScrollMinSize = panelCenter.Size;
 			lblServerName.Text = client.ShareInformation.Name;
 			lblServerDescription.Text = client.ShareInformation.Comment;
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			thread?.Abort();
-			if (disposing)
-			{
-				if (oldImage != null)
-				{
-					TabImage = oldImage;
-				}
-				if (components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
 		}
 
 		private void Connect()
@@ -281,76 +250,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					thread.Join();
 				}
 			}
-		}
-
-		private void InitializeComponent()
-		{
-			btConnect = new System.Windows.Forms.Button();
-			panelCenter = new System.Windows.Forms.Panel();
-			connectionAnimation = new System.Windows.Forms.PictureBox();
-			lblMessage = new System.Windows.Forms.Label();
-			lblServerDescription = new System.Windows.Forms.Label();
-			lblServerName = new System.Windows.Forms.Label();
-			panelCenter.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)connectionAnimation).BeginInit();
-			SuspendLayout();
-			btConnect.Location = new System.Drawing.Point(80, 161);
-			btConnect.Name = "btConnect";
-			btConnect.Size = new System.Drawing.Size(163, 31);
-			btConnect.TabIndex = 0;
-			btConnect.Text = "Connect";
-			btConnect.UseVisualStyleBackColor = true;
-			btConnect.Click += new System.EventHandler(btConnect_Click);
-			panelCenter.Controls.Add(connectionAnimation);
-			panelCenter.Controls.Add(lblMessage);
-			panelCenter.Controls.Add(lblServerDescription);
-			panelCenter.Controls.Add(lblServerName);
-			panelCenter.Controls.Add(btConnect);
-			panelCenter.Location = new System.Drawing.Point(16, 3);
-			panelCenter.Name = "panelCenter";
-			panelCenter.Size = new System.Drawing.Size(323, 195);
-			panelCenter.TabIndex = 1;
-			connectionAnimation.Image = cYo.Projects.ComicRack.Viewer.Properties.Resources.BigBallAnimation;
-			connectionAnimation.Location = new System.Drawing.Point(134, 57);
-			connectionAnimation.Name = "connectionAnimation";
-			connectionAnimation.Size = new System.Drawing.Size(54, 55);
-			connectionAnimation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-			connectionAnimation.TabIndex = 4;
-			connectionAnimation.TabStop = false;
-			connectionAnimation.Visible = false;
-			lblMessage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			lblMessage.Location = new System.Drawing.Point(3, 127);
-			lblMessage.Name = "lblMessage";
-			lblMessage.Size = new System.Drawing.Size(314, 19);
-			lblMessage.TabIndex = 3;
-			lblMessage.Text = "Process Message";
-			lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			lblMessage.Visible = false;
-			lblServerDescription.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			lblServerDescription.Location = new System.Drawing.Point(3, 20);
-			lblServerDescription.Name = "lblServerDescription";
-			lblServerDescription.Size = new System.Drawing.Size(314, 19);
-			lblServerDescription.TabIndex = 2;
-			lblServerDescription.Text = "Server Description";
-			lblServerDescription.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			lblServerName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-			lblServerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-			lblServerName.Location = new System.Drawing.Point(3, 0);
-			lblServerName.Name = "lblServerName";
-			lblServerName.Size = new System.Drawing.Size(317, 20);
-			lblServerName.TabIndex = 1;
-			lblServerName.Text = "Server Name";
-			lblServerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			BackColor = System.Drawing.SystemColors.Window;
-			base.Controls.Add(panelCenter);
-			base.Name = "RemoteConnectionView";
-			base.Size = new System.Drawing.Size(356, 212);
-			panelCenter.ResumeLayout(false);
-			panelCenter.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)connectionAnimation).EndInit();
-			ResumeLayout(false);
 		}
 	}
 }

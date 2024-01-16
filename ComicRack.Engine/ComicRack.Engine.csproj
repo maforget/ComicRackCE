@@ -351,6 +351,9 @@
     <Compile Include="Controls\SearchBrowserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Controls\SearchBrowserControl.Designer.cs">
+      <DependentUpon>SearchBrowserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ThumbnailControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -604,6 +607,9 @@
     <Compile Include="SystemPaths.cs" />
     <Compile Include="ValuesStore.cs" />
     <Compile Include="YesNo.cs" />
+    <Compile Include="Controls\MagnifySetupControl.Designer.cs">
+      <DependentUpon>MagnifySetupControl.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cYo.Common.Presentation\cYo.Common.Presentation.csproj">
@@ -620,6 +626,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\MagnifySetupControl.resx">
+      <DependentUpon>MagnifySetupControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchBrowserControl.resx">
+      <DependentUpon>SearchBrowserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
