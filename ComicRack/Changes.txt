@@ -7,7 +7,7 @@ Build 0.9.180:
 * CHANGE: Removed Android Validation of apk signature (so we can use the cracked version)
 * CHANGE: Updated to .NET Framework v4.8
 * CHANGE: Updated SharpZipLib to v1.33
-* CHANGE: Updated SharpCompress to v0.30.1
+* CHANGE: Updated SharpCompress to v0.36
 * CHANGE: Updated MySQL.Data to 6.10.9
 * CHANGE: Updated WindowsCodePack to V1.15
 * CHANGE: Updated forum links to the r/comicrackusers subreddit
