@@ -866,7 +866,7 @@
       <Version>2.1.9</Version>
     </PackageReference>
     <PackageReference Include="Microsoft-WindowsAPICodePack-Shell">
-      <Version>1.1.4</Version>
+      <Version>1.1.5</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />

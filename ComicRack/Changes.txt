@@ -9,7 +9,7 @@ Build 0.9.180:
 * CHANGE: Updated SharpZipLib to v1.33
 * CHANGE: Updated SharpCompress to v0.30.1
 * CHANGE: Updated MySQL.Data to 6.10.9
-* CHANGE: Updated WindowsCodePack to V1.14
+* CHANGE: Updated WindowsCodePack to V1.15
 * CHANGE: Updated forum links to the r/comicrackusers subreddit
 * CHANGE: Updated Changed wiki links to the Wayback Machine
 * CHANGE: Updated Changed the default help system to be online manual
