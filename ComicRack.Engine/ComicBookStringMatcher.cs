@@ -70,9 +70,9 @@ namespace cYo.Projects.ComicRack.Engine
 			value = value ?? string.Empty;
 			switch (MatchOperator)
 			{
-			case 0:
+			case 0://is
 				return string.Equals(value, GetMatchValue(comicBook), sc);
-			case 1:
+			case 1://contains
 			{
 				string matchValue = GetMatchValue(comicBook);
 				if (!string.IsNullOrEmpty(matchValue))
@@ -81,20 +81,20 @@ namespace cYo.Projects.ComicRack.Engine
 				}
 				return true;
 			}
-			case 2:
-				if (parsedMatchValues.Length != 0)
+			case 2://contains any of
+                if (parsedMatchValues.Length != 0)
 				{
 					return parsedMatchValues.Any((string s) => value.IndexOf(s, sc) != -1);
 				}
 				return true;
-			case 3:
-				if (!string.IsNullOrEmpty(value))
+			case 3://contains all of
+                if (!string.IsNullOrEmpty(value))
 				{
 					return parsedMatchValues.All((string s) => value.IndexOf(s, sc) != -1);
 				}
 				return false;
-			case 4:
-			{
+			case 4://starts with
+            {
 				string matchValue2 = GetMatchValue(comicBook);
 				if (!string.IsNullOrEmpty(matchValue2))
 				{
@@ -102,8 +102,8 @@ namespace cYo.Projects.ComicRack.Engine
 				}
 				return true;
 			}
-			case 5:
-			{
+			case 5://ends with
+            {
 				string matchValue3 = GetMatchValue(comicBook);
 				if (!string.IsNullOrEmpty(matchValue3))
 				{
@@ -111,14 +111,14 @@ namespace cYo.Projects.ComicRack.Engine
 				}
 				return true;
 			}
-			case 6:
-				if (rxList != null)
+			case 6://list contains
+                if (rxList != null)
 				{
 					return rxList.Match(value).Success;
 				}
 				return false;
-			case 7:
-				if (rxMatch != null)
+			case 7://regular expression
+                if (rxMatch != null)
 				{
 					return rxMatch.Match(value).Success;
 				}
