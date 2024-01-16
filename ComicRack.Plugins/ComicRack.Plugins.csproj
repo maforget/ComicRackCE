@@ -49,8 +49,12 @@
     <Compile Include="ComicBookPluginMatcher.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CommandCollection.cs" />
-    <Compile Include="Controls\HtmlComicPageControl.cs" />
-    <Compile Include="Controls\UIComicPageControl.cs" />
+    <Compile Include="Controls\HtmlComicPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UIComicPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="IPluginConfig.cs" />
     <Compile Include="IPluginEnvironment.cs" />
     <Compile Include="PluginEngine.cs" />
