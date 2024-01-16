@@ -21,4 +21,4 @@ using System.Runtime.Versioning;
 [assembly: AssemblyInformationalVersion("0.9.180")]
 [assembly: AssemblyDelaySign(false)]
 [assembly: AssemblyKeyName("")]
-[assembly: AssemblyVersion("1.0.5915.38777")]
+[assembly: AssemblyVersion("1.0.*")]
