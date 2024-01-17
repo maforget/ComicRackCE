@@ -879,7 +879,7 @@
     <PostBuildEvent>if $(ConfigurationName) == Debug Goto :Exit
 
 del /Q *.pdb
-CD /D $(SolutionDir)
+cd ..\..\..\
 InsertIcons.bat
 
 : Exit</PostBuildEvent>
