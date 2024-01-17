@@ -93,11 +93,11 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public const string DefaultWiki = "https://web.archive.org/web/20161013095840/http://comicrack.cyolito.com:80/documentation/wiki";
 
-		public const string DefaultWebSite = "http://comicrack.cyolito.com";
+		public const string DefaultWebSite = "https://github.com/maforget/ComicRackCE";
 
 		public const string DefaultNewsFeed = "http://feeds.feedburner.com/ComicRackNews";
 
-		public const string DefaultUserForm = "https://www.reddit.com/r/comicrackusers/";
+		public const string DefaultUserForm = "https://github.com/maforget/ComicRackCE/discussions";
 
 		public const string DefaultLocalizePage = "https://web.archive.org/web/20170528182733/http://comicrack.cyolito.com/faqs/12-how-to-create-language-packs";
 

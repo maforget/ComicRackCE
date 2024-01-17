@@ -1433,11 +1433,11 @@ namespace cYo.Projects.ComicRack.Viewer
 			}, miHelpQuickIntro);
 			commands.Add(delegate
 			{
-				Program.StartDocument("http://comicrack.cyolito.com");
+				Program.StartDocument("https://github.com/maforget/ComicRackCE");
 			}, miWebHome);
 			commands.Add(delegate
 			{
-				Program.StartDocument("https://www.reddit.com/r/comicrackusers/");
+				Program.StartDocument("https://github.com/maforget/ComicRackCE/discussions");
 			}, miWebUserForum);
 			commands.Add(ShowAboutDialog, miAbout, tbAbout);
 			commands.Add(ShowNews, miNews);
