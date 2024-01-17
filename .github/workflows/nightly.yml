@@ -1,0 +1,50 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: Nightly
+
+on:
+  push:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2019
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: setup-msbuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1
+  
+    - name: Restore Packages
+      run: nuget restore ComicRack.sln
+
+    - name: Build solution
+      run: msbuild ComicRack\ComicRack.csproj -t:rebuild -property:Configuration=Release
+      
+    - name: Package Files
+      run: powershell Compress-Archive -Path 'ComicRack\bin\Release\*' -DestinationPath 'ComicRackCE_nightly.zip' -Force
+         
+    - name: Update git tag
+      run: |
+        git tag -f nightly
+        git push -f origin nightly
+    
+    - name: Update Nightly Release
+      uses: ncipollo/release-action@main
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: "ComicRackCE_nightly.zip"
+        tag: "nightly"
+        commit: ${{ github.ref_name }}
+        prerelease: true
+        allowUpdates: true
+        updateOnlyUnreleased: true
+        removeArtifacts: true

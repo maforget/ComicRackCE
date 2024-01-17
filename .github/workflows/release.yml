@@ -1,0 +1,49 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version'
+        required: true
+        type: string
+        default: 'X.Y{.Z}'
+
+jobs:
+  build:
+
+    runs-on: windows-2019
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: setup-msbuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1
+  
+    - name: Restore Packages
+      run: nuget restore ComicRack.sln
+
+    - name: Build solution
+      run: msbuild ComicRack\ComicRack.csproj -t:rebuild -property:Configuration=Release
+      
+    - name: Package Files
+      run: powershell Compress-Archive -Path 'ComicRack\bin\Release\*' -DestinationPath 'ComicRackCE_v${{ github.event.inputs.version }}.zip' -Force
+      
+    - name: Release
+      uses: ncipollo/release-action@main
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        allowUpdates: false
+        artifactErrorsFailBuild: true
+        draft: true
+        prerelease: false
+        commit: ${{ github.ref_name }}
+        tag: 'v${{ github.event.inputs.version }}'
+        artifacts: 'ComicRackCE_v${{ github.event.inputs.version }}.zip'
