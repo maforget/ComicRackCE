@@ -76,7 +76,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		}
 
 		[Browsable(false)]
-		[DefaultValue(DockStyle.Bottom)]
+		[DefaultValue(DockStyle.Fill)]
 		public DockStyle PanelDock
 		{
 			get;
@@ -386,7 +386,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			UndockedReaderState = FormWindowState.Normal;
 			FormState = FormWindowState.Normal;
 			PanelVisible = true;
-			PanelDock = DockStyle.Bottom;
+			PanelDock = DockStyle.Fill;
 			PanelSize = new Size(400, 250).ScaleDpi();
 			Type = WorkspaceType.Default;
 			PageMarginPercentWidth = 0.05f;
