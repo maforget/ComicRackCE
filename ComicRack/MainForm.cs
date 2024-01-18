@@ -133,10 +133,10 @@ namespace cYo.Projects.ComicRack.Viewer
 				if (IsValid())
 				{
 					Program.Database.Undo.SetMarker(TR.Messages["UndoRating", "Change Rating"]);
-					books.ForEach(delegate(ComicBook cb)
-					{
-						cb.Rating = rating;
-					});
+					books.ForEach((ComicBook cb) =>
+                    {
+                        cb.Rating = rating;
+                    });
 				}
 			}
 
@@ -758,16 +758,16 @@ namespace cYo.Projects.ComicRack.Viewer
 				foreach (Command sc in ScriptUtility.Scripts.GetCommands("DrawThumbnailOverlay"))
 				{
 					sc.PreCompile();
-					CoverViewItem.DrawCustomThumbnailOverlay += delegate(ComicBook comic, Graphics graphics, Rectangle bounds, int flags)
-					{
-						sc.Invoke(new object[4]
-						{
-							comic,
-							graphics,
-							bounds,
-							flags
-						}, catchErrors: true);
-					};
+					CoverViewItem.DrawCustomThumbnailOverlay += (ComicBook comic, Graphics graphics, Rectangle bounds, int flags) =>
+                    {
+                        sc.Invoke(new object[4]
+                        {
+                            comic,
+                            graphics,
+                            bounds,
+                            flags
+                        }, catchErrors: true);
+                    };
 				}
 			}
 			Program.StartupProgress(TR.Messages["InitGUI", "Initializing User Interface"], 80);
@@ -996,10 +996,10 @@ namespace cYo.Projects.ComicRack.Viewer
 			RatingControl.InsertRatingControl(contextRating2, contextRating2.Items.Count - 2, Resources.StarYellow, GetRatingEditor);
 			contextRating.Renderer = new MenuRenderer(Resources.StarYellow);
 			contextRating2.Renderer = new MenuRenderer(Resources.StarYellow);
-			IdleProcess.CancelIdle += delegate(object a, CancelEventArgs b)
-			{
-				b.Cancel = !IdleProcess.ShouldProcess(this) && !IdleProcess.ShouldProcess(readerForm);
-			};
+			IdleProcess.CancelIdle += (object a, CancelEventArgs b) =>
+            {
+                b.Cancel = !IdleProcess.ShouldProcess(this) && !IdleProcess.ShouldProcess(readerForm);
+            };
 			Program.StartupProgress(TR.Messages["LoadComic", "Opening Files"], 90);
 			Refresh();
 			foreach (string commandLineFile in Program.CommandLineFiles)
@@ -1229,14 +1229,14 @@ namespace cYo.Projects.ComicRack.Viewer
 			commands.Add(ComicDisplay.DisplayLastPageRead, () => ComicDisplay.Book != null && ComicDisplay.Book.CurrentPage != ComicDisplay.Book.Comic.LastPageRead, miLastPageRead, tbLastPageRead, cmLastPageRead);
 			commands.Add(OpenBooks.PreviousSlot, () => OpenBooks.Slots.Count > 1, miPrevTab);
 			commands.Add(OpenBooks.NextSlot, () => OpenBooks.Slots.Count > 1, miNextTab);
-			commands.AddService(this, delegate(ILibraryBrowser s)
-			{
-				s.BrowseNext();
-			}, (ILibraryBrowser s) => s.CanBrowseNext(), miNextList);
-			commands.AddService(this, delegate(ILibraryBrowser s)
-			{
-				s.BrowsePrevious();
-			}, (ILibraryBrowser s) => s.CanBrowsePrevious(), miPreviousList);
+			commands.AddService(this, (ILibraryBrowser s) =>
+            {
+                s.BrowseNext();
+            }, (ILibraryBrowser s) => s.CanBrowseNext(), miNextList);
+			commands.AddService(this, (ILibraryBrowser s) =>
+            {
+                s.BrowsePrevious();
+            }, (ILibraryBrowser s) => s.CanBrowsePrevious(), miPreviousList);
 			commands.Add(delegate
 			{
 				Program.Settings.AutoScrolling = !Program.Settings.AutoScrolling;
@@ -1388,10 +1388,10 @@ namespace cYo.Projects.ComicRack.Viewer
 			commands.Add(ToggleSmallPreview, CheckSidebarAvailable, CheckSmallPreviewEnabled, miSmallPreview);
 			commands.Add(ToggleSearchBrowser, CheckSearchAvailable, CheckSearchBrowserEnabled, miSearchBrowser);
 			commands.Add(ToggleInfoPanel, CheckInfoPanelAvailable, CheckInfoPanelEnabled, miInfoPanel);
-			commands.AddService(this, delegate(IRefreshDisplay c)
-			{
-				c.RefreshDisplay();
-			}, miViewRefresh);
+			commands.AddService(this, (IRefreshDisplay c) =>
+            {
+                c.RefreshDisplay();
+            }, miViewRefresh);
 			commands.Add(delegate
 			{
 				GetRatingEditor().SetRating(0f);
@@ -1840,18 +1840,18 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public void UpdateComics()
 		{
-			Program.Database.Books.Concat(Program.BookFactory.TemporaryBooks).ForEach(delegate(ComicBook cb)
-			{
-				Program.QueueManager.AddBookToFileUpdate(cb, alwaysWrite: true);
-			});
+			Program.Database.Books.Concat(Program.BookFactory.TemporaryBooks).ForEach((ComicBook cb) =>
+            {
+                Program.QueueManager.AddBookToFileUpdate(cb, alwaysWrite: true);
+            });
 		}
 
 		public void UpdateWebComics(bool refresh = false)
 		{
-			Program.Database.Books.Concat(Program.BookFactory.TemporaryBooks).ForEach(delegate(ComicBook cb)
-			{
-				UpdateWebComic(cb, refresh);
-			});
+			Program.Database.Books.Concat(Program.BookFactory.TemporaryBooks).ForEach((ComicBook cb) =>
+            {
+                UpdateWebComic(cb, refresh);
+            });
 		}
 
 		public void UpdateWebComics()
@@ -2426,10 +2426,10 @@ namespace cYo.Projects.ComicRack.Viewer
 		{
 			if (Program.Settings.Workspaces.Count != 0)
 			{
-				IList<DisplayWorkspace> list = ListEditorDialog.Show(Form.ActiveForm ?? this, TR.Default["Workspaces"], Program.Settings.Workspaces, CreateNewWorkspace, null, delegate(DisplayWorkspace w)
-				{
-					SetWorkspace(w, remember: true);
-				});
+				IList<DisplayWorkspace> list = ListEditorDialog.Show(Form.ActiveForm ?? this, TR.Default["Workspaces"], Program.Settings.Workspaces, CreateNewWorkspace, null, (DisplayWorkspace w) =>
+                {
+                    SetWorkspace(w, remember: true);
+                });
 				if (list != null)
 				{
 					Program.Settings.Workspaces.Clear();
@@ -2717,13 +2717,13 @@ namespace cYo.Projects.ComicRack.Viewer
 		{
 			if (Program.Settings.ListConfigurations.Count != 0)
 			{
-				IList<ListConfiguration> list = ListEditorDialog.Show(Form.ActiveForm ?? this, TR.Messages["ListLayouts", "List Layouts"], Program.Settings.ListConfigurations, CreateListLayout, null, delegate(ListConfiguration elc)
-				{
-					SetListLayout(elc.Config);
-				}, delegate(ListConfiguration elc)
-				{
-					SetListLayoutToAll(elc.Config);
-				});
+				IList<ListConfiguration> list = ListEditorDialog.Show(Form.ActiveForm ?? this, TR.Messages["ListLayouts", "List Layouts"], Program.Settings.ListConfigurations, CreateListLayout, null, (ListConfiguration elc) =>
+                {
+                    SetListLayout(elc.Config);
+                }, (ListConfiguration elc) =>
+                {
+                    SetListLayoutToAll(elc.Config);
+                });
 				if (list != null)
 				{
 					Program.Settings.ListConfigurations.Clear();
@@ -4273,13 +4273,13 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 			if (!quickUpdateRegistered)
 			{
-				Program.Database.ComicListsChanged += delegate(object s, ComicListItemChangedEventArgs e)
-				{
-					if (e.Change != ComicListItemChange.Statistic)
-					{
-						quickListDirty = true;
-					}
-				};
+				Program.Database.ComicListsChanged += (object s, ComicListItemChangedEventArgs e) =>
+                {
+                    if (e.Change != ComicListItemChange.Statistic)
+                    {
+                        quickListDirty = true;
+                    }
+                };
 				Program.Database.Books.Changed += QuickOpenBooksChanged;
 				mainView.ViewAdded += delegate
 				{

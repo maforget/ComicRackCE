@@ -270,11 +270,11 @@ namespace cYo.Projects.ComicRack.Viewer
 							}
 							installedLanguages.Add(languageInfo);
 						}
-						installedLanguages.Sort(delegate(TRInfo a, TRInfo b)
-						{
-							int num = b.CompletionPercent.CompareTo(a.CompletionPercent);
-							return (num == 0) ? string.Compare(a.CultureName, b.CultureName) : num;
-						});
+						installedLanguages.Sort((TRInfo a, TRInfo b) =>
+                        {
+                            int num = b.CompletionPercent.CompareTo(a.CompletionPercent);
+                            return (num == 0) ? string.Compare(a.CultureName, b.CultureName) : num;
+                        });
 					}
 					return installedLanguages.ToArray();
 				}
@@ -309,10 +309,10 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public static void RefreshAllWindows()
 		{
-			ForAllForms(delegate(Form f)
-			{
-				f.Refresh();
-			});
+			ForAllForms((Form f) =>
+            {
+                f.Refresh();
+            });
 		}
 
 		public static void ForAllForms(Action<Form> action)
@@ -745,21 +745,21 @@ namespace cYo.Projects.ComicRack.Viewer
 			};
 			DatabaseManager.BackgroundSaveInterval = ExtendedSettings.DatabaseBackgroundSaving;
 			WirelessSyncProvider.StartListen();
-			WirelessSyncProvider.ClientSyncRequest += delegate(object s, WirelessSyncProvider.ClientSyncRequestArgs e)
-			{
-				if (MainForm != null)
-				{
-					IPAddress address = s as IPAddress;
-					e.IsPaired = QueueManager.Devices.Any((DeviceSyncSettings d) => d.DeviceKey == e.Key);
-					if (e.IsPaired && address != null)
-					{
-						MainForm.BeginInvoke(delegate
-						{
-							QueueManager.SynchronizeDevice(e.Key, address);
-						});
-					}
-				}
-			};
+			WirelessSyncProvider.ClientSyncRequest += (object s, WirelessSyncProvider.ClientSyncRequestArgs e) =>
+            {
+                if (MainForm != null)
+                {
+                    IPAddress address = s as IPAddress;
+                    e.IsPaired = QueueManager.Devices.Any((DeviceSyncSettings d) => d.DeviceKey == e.Key);
+                    if (e.IsPaired && address != null)
+                    {
+                        MainForm.BeginInvoke(delegate
+                        {
+                            QueueManager.SynchronizeDevice(e.Key, address);
+                        });
+                    }
+                }
+            };
 			if (!ExtendedSettings.DisableAutoTuneSystem)
 			{
 				AutoTuneSystem();
@@ -890,27 +890,27 @@ namespace cYo.Projects.ComicRack.Viewer
 			NetworkManager = new NetworkManager(DatabaseManager, CacheManager, Settings, ExtendedSettings.PrivateServerPort, ExtendedSettings.InternetServerPort, ExtendedSettings.DisableBroadcast);
 			MainForm = new MainForm();
 			MainForm.FormClosed += MainFormFormClosed;
-			MainForm.FormClosing += delegate(object s, FormClosingEventArgs e)
-			{
-				bool flag2 = e.CloseReason == CloseReason.UserClosing;
-				foreach (Command command in ScriptUtility.GetCommands("Shutdown"))
-				{
-					try
-					{
-						if (!(bool)command.Invoke(new object[1]
-						{
-							flag2
-						}) && flag2)
-						{
-							e.Cancel = true;
-							return;
-						}
-					}
-					catch (Exception)
-					{
-					}
-				}
-			};
+			MainForm.FormClosing += (object s, FormClosingEventArgs e) =>
+            {
+                bool flag2 = e.CloseReason == CloseReason.UserClosing;
+                foreach (Command command in ScriptUtility.GetCommands("Shutdown"))
+                {
+                    try
+                    {
+                        if (!(bool)command.Invoke(new object[1]
+                        {
+                            flag2
+                        }) && flag2)
+                        {
+                            e.Cancel = true;
+                            return;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+            };
 			Application.AddMessageFilter(new MouseWheelDelegater());
 			MainForm.Show();
 			MainForm.Update();
@@ -962,10 +962,10 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private static bool InitializeDatabase(int startPercent, string readDbMessage)
 		{
-			return DatabaseManager.Open(Paths.DatabasePath, ExtendedSettings.DataSource, ExtendedSettings.DoNotLoadQueryCaches, string.IsNullOrEmpty(readDbMessage) ? null : ((Action<int>)delegate(int percent)
-			{
-				StartupProgress(readDbMessage, startPercent + percent / 5);
-			}));
+			return DatabaseManager.Open(Paths.DatabasePath, ExtendedSettings.DataSource, ExtendedSettings.DoNotLoadQueryCaches, string.IsNullOrEmpty(readDbMessage) ? null : ((Action<int>)((int percent) =>
+            {
+                StartupProgress(readDbMessage, startPercent + percent / 5);
+            })));
 		}
 
 		private static void MainFormFormClosed(object sender, FormClosedEventArgs e)
@@ -1011,10 +1011,10 @@ namespace cYo.Projects.ComicRack.Viewer
 					}
 					if (enumerable.Any())
 					{
-						enumerable.ForEach(delegate(string file)
-						{
-							MainForm.OpenSupportedFile(file, newSlot: true, sw.Page, fromShell: true);
-						});
+						enumerable.ForEach((string file) =>
+                        {
+                            MainForm.OpenSupportedFile(file, newSlot: true, sw.Page, fromShell: true);
+                        });
 					}
 				}
 				catch (Exception)

@@ -174,10 +174,10 @@ namespace cYo.Common.Windows.Forms
 
 			public void Clear(ItemViewStates mask)
 			{
-				GetItems().ForEach(delegate(IViewableItem vi)
-				{
-					Set(vi, mask, on: false);
-				});
+				GetItems().ForEach((IViewableItem vi) =>
+                {
+                    Set(vi, mask, on: false);
+                });
 			}
 
 			public void Focus(IViewableItem item)
@@ -2698,10 +2698,10 @@ namespace cYo.Common.Windows.Forms
 				{
 					try
 					{
-						list2.ParallelForEach(delegate(GroupHeaderInformation ghi)
-						{
-							ghi.Items.Sort(comparer);
-						});
+						list2.ParallelForEach((GroupHeaderInformation ghi) =>
+                        {
+                            ghi.Items.Sort(comparer);
+                        });
 					}
 					catch
 					{
