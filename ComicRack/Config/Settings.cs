@@ -2359,48 +2359,6 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set;
 		}
 
-		[Browsable(false)]
-		[DefaultValue(false)]
-		public bool TweetQuickReview
-		{
-			get;
-			set;
-		}
-
-		[Browsable(false)]
-		[DefaultValue(null)]
-		public string TwitterAccessToken
-		{
-			get;
-			set;
-		}
-
-		[Browsable(false)]
-		[DefaultValue(null)]
-		public string TwitterOAuthToken
-		{
-			get;
-			set;
-		}
-
-		[Browsable(false)]
-		[DefaultValue(null)]
-		public string TwitterScreenName
-		{
-			get;
-			set;
-		}
-
-		[Browsable(false)]
-		[DefaultValue(null)]
-		public string TwitterUserId
-		{
-			get;
-			set;
-		}
-
-		public bool HasTwitterAccess => !string.IsNullOrEmpty(TwitterAccessToken);
-
 		[field: NonSerialized]
 		public event EventHandler SettingsChanged;
 
@@ -2691,13 +2649,6 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		{
 			RemoteExplorerViewSettingsList.RemoveAll((RemoteExplorerViewSettings s) => s.Id == id);
 			RemoteExplorerViewSettingsList.Add(new RemoteExplorerViewSettings(id, setting));
-		}
-
-		public void ResetTwitter()
-		{
-			string text2 = (TwitterScreenName = null);
-			string text4 = (TwitterUserId = text2);
-			string text7 = (TwitterOAuthToken = (TwitterAccessToken = text4));
 		}
 
 		private void FireEvent(EventHandler eh)

@@ -129,7 +129,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			lbPaths_SelectedIndexChanged(lbPaths, EventArgs.Empty);
 			SetScanButtonText();
 			btResetMessages.Enabled = Program.Settings.HiddenMessageBoxes != HiddenMessageBoxes.None;
-			btResetTwitter.Enabled = !string.IsNullOrEmpty(Program.Settings.TwitterAccessToken);
 			FillExtensionsList();
 			chkOverwriteAssociations.Checked = Program.Settings.OverwriteAssociations;
 			if (!FileFormat.CanRegisterShell)
@@ -425,11 +424,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		{
 			Program.Settings.HiddenMessageBoxes = HiddenMessageBoxes.None;
 			btResetMessages.Enabled = false;
-		}
-
-		private void btResetTwitter_Click(object sender, EventArgs e)
-		{
-			Program.Settings.ResetTwitter();
 		}
 
 		private void ApplicationIdle(object sender, EventArgs e)

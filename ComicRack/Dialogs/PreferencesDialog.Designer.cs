@@ -87,8 +87,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.chkOverwriteAssociations = new System.Windows.Forms.CheckBox();
             this.lbFormats = new System.Windows.Forms.CheckedListBox();
             this.groupMessagesAndSocial = new cYo.Common.Windows.Forms.CollapsibleGroupBox();
-            this.btResetTwitter = new System.Windows.Forms.Button();
-            this.labelResetTwitter = new System.Windows.Forms.Label();
             this.btResetMessages = new System.Windows.Forms.Button();
             this.labelReshowHidden = new System.Windows.Forms.Label();
             this.groupMemory = new cYo.Common.Windows.Forms.CollapsibleGroupBox();
@@ -864,7 +862,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.grpWirelessSetup.Controls.Add(this.lblWifiAddresses);
             this.grpWirelessSetup.Controls.Add(this.txWifiAddresses);
             this.grpWirelessSetup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpWirelessSetup.Location = new System.Drawing.Point(0, 1437);
+            this.grpWirelessSetup.Location = new System.Drawing.Point(0, 1411);
             this.grpWirelessSetup.Name = "grpWirelessSetup";
             this.grpWirelessSetup.Size = new System.Drawing.Size(498, 136);
             this.grpWirelessSetup.TabIndex = 8;
@@ -912,7 +910,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.grpIntegration.Controls.Add(this.chkOverwriteAssociations);
             this.grpIntegration.Controls.Add(this.lbFormats);
             this.grpIntegration.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grpIntegration.Location = new System.Drawing.Point(0, 1097);
+            this.grpIntegration.Location = new System.Drawing.Point(0, 1071);
             this.grpIntegration.Name = "grpIntegration";
             this.grpIntegration.Size = new System.Drawing.Size(498, 340);
             this.grpIntegration.TabIndex = 0;
@@ -960,34 +958,14 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             // groupMessagesAndSocial
             // 
-            this.groupMessagesAndSocial.Controls.Add(this.btResetTwitter);
-            this.groupMessagesAndSocial.Controls.Add(this.labelResetTwitter);
             this.groupMessagesAndSocial.Controls.Add(this.btResetMessages);
             this.groupMessagesAndSocial.Controls.Add(this.labelReshowHidden);
             this.groupMessagesAndSocial.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupMessagesAndSocial.Location = new System.Drawing.Point(0, 996);
             this.groupMessagesAndSocial.Name = "groupMessagesAndSocial";
-            this.groupMessagesAndSocial.Size = new System.Drawing.Size(498, 101);
+            this.groupMessagesAndSocial.Size = new System.Drawing.Size(498, 75);
             this.groupMessagesAndSocial.TabIndex = 6;
             this.groupMessagesAndSocial.Text = "Messages and Social";
-            // 
-            // btResetTwitter
-            // 
-            this.btResetTwitter.Location = new System.Drawing.Point(382, 66);
-            this.btResetTwitter.Name = "btResetTwitter";
-            this.btResetTwitter.Size = new System.Drawing.Size(104, 23);
-            this.btResetTwitter.TabIndex = 3;
-            this.btResetTwitter.Text = "Reset";
-            this.btResetTwitter.UseVisualStyleBackColor = true;
-            this.btResetTwitter.Click += new System.EventHandler(this.btResetTwitter_Click);
-            // 
-            // labelResetTwitter
-            // 
-            this.labelResetTwitter.Location = new System.Drawing.Point(6, 71);
-            this.labelResetTwitter.Name = "labelResetTwitter";
-            this.labelResetTwitter.Size = new System.Drawing.Size(370, 17);
-            this.labelResetTwitter.TabIndex = 2;
-            this.labelResetTwitter.Text = "To reset the Twitter authorization, press";
             // 
             // btResetMessages
             // 
@@ -2407,8 +2385,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private Label lblWifiAddresses;
 		private TextBox txWifiAddresses;
 		private Button btTestWifi;
-		private Button btResetTwitter;
-		private Label labelResetTwitter;
 		private static int activeTab = -1;
 		private readonly List<CheckBox> tabButtons = new List<CheckBox>();
 	}

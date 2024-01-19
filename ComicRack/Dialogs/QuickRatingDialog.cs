@@ -69,7 +69,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				quickRatingDialog.Text = quickRatingDialog.Text + " - " + book.CaptionWithoutTitle;
 				quickRatingDialog.txReview.Text = book.Review;
 				quickRatingDialog.txRating.Rating = book.Rating;
-				quickRatingDialog.chkTweet.Checked = Program.Settings.TweetQuickReview;
 				quickRatingDialog.chkShow.Checked = Program.Settings.AutoShowQuickReview;
 				SetThumbnailImage(quickRatingDialog.coverThumbnail, book, book.FrontCoverPageIndex);
 				bool flag = quickRatingDialog.ShowDialog(parent) == DialogResult.OK;
@@ -78,10 +77,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 					book.Review = quickRatingDialog.txReview.Text;
 					book.Rating = quickRatingDialog.txRating.Rating;
 					Program.Settings.AutoShowQuickReview = quickRatingDialog.chkShow.Checked;
-					if (Program.Settings.TweetQuickReview = quickRatingDialog.chkTweet.Checked)
-					{
-						Twitter.Tweet(parent, book, quickRatingDialog.coverThumbnail.Bitmap);
-					}
 				}
 				return flag;
 			}

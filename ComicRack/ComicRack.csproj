@@ -75,12 +75,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\Windows\Forms\TwitterPinDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Common\Windows\Forms\TwitterPinDialog.Designer.cs">
-      <DependentUpon>TwitterPinDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="CommandHandler.cs" />
     <Compile Include="CommandMapper.cs">
       <SubType>Component</SubType>
@@ -354,7 +348,6 @@
     <Compile Include="SearchEngines.cs" />
     <Compile Include="ServiceCommandHandler.cs" />
     <Compile Include="ServiceUpdateHandler.cs" />
-    <Compile Include="Twitter.cs" />
     <Compile Include="UpdateHandler.cs" />
     <Compile Include="Views\ComicBrowserControl.cs">
       <SubType>UserControl</SubType>
@@ -866,9 +859,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="linqtotwitter">
-      <Version>2.1.9</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft-WindowsAPICodePack-Shell">
       <Version>1.1.5</Version>
     </PackageReference>

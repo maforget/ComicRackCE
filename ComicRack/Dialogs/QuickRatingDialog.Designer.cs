@@ -28,7 +28,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.txReview = new cYo.Common.Windows.Forms.TextBoxEx();
             this.btCancel = new System.Windows.Forms.Button();
             this.btOK = new System.Windows.Forms.Button();
-            this.chkTweet = new System.Windows.Forms.CheckBox();
             this.chkShow = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -96,16 +95,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.btOK.TabIndex = 5;
             this.btOK.Text = "&OK";
             // 
-            // chkTweet
-            // 
-            this.chkTweet.AutoSize = true;
-            this.chkTweet.Location = new System.Drawing.Point(188, 277);
-            this.chkTweet.Name = "chkTweet";
-            this.chkTweet.Size = new System.Drawing.Size(56, 17);
-            this.chkTweet.TabIndex = 4;
-            this.chkTweet.Text = "Tweet";
-            this.chkTweet.UseVisualStyleBackColor = true;
-            // 
             // chkShow
             // 
             this.chkShow.AutoSize = true;
@@ -124,7 +113,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.CancelButton = this.btCancel;
             this.ClientSize = new System.Drawing.Size(564, 304);
             this.Controls.Add(this.chkShow);
-            this.Controls.Add(this.chkTweet);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOK);
             this.Controls.Add(this.txReview);
@@ -152,8 +140,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private Button btOK;
 
-		private CheckBox chkTweet;
-
 		private CheckBox chkShow;
-	}
+    }
 }
