@@ -7,7 +7,6 @@ using cYo.Common.Runtime;
 using cYo.Common.Threading;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
-using cYo.Projects.ComicRack.Viewer.Remote;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
@@ -63,17 +62,11 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				if (!enableSend)
 				{
 					crashDialog.labelMessage.Visible = false;
-					crashDialog.chkSubmit.Checked = false;
-					crashDialog.chkSubmit.Enabled = enableSend;
 				}
 				DialogResult dialogResult = crashDialog.ShowDialog();
 				if (crashType == BarkType.Lock && !ThreadUtility.IsForegroundLocked)
 				{
 					return;
-				}
-				if (crashDialog.chkSubmit.Checked)
-				{
-					SubmitReport(report);
 				}
 				try
 				{
@@ -100,20 +93,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		}
 
 
-		public static void SubmitReport(string report)
-		{
-			try
-			{
-				using (new WaitCursor())
-				{
-					CrashReport crashReport = new CrashReport();
-					crashReport.SubmitReport(Application.ProductName + Application.ProductVersion.Replace(".", string.Empty), report);
-				}
-			}
-			catch
-			{
-			}
-		}
 
 		public static void OnBark(object sender, BarkEventArgs e)
 		{

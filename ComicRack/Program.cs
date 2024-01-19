@@ -40,7 +40,6 @@ using cYo.Projects.ComicRack.Plugins;
 using cYo.Projects.ComicRack.Viewer.Config;
 using cYo.Projects.ComicRack.Viewer.Dialogs;
 using cYo.Projects.ComicRack.Viewer.Properties;
-using cYo.Projects.ComicRack.Viewer.Remote;
 using Microsoft.Win32;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
 
@@ -88,8 +87,6 @@ namespace cYo.Projects.ComicRack.Viewer
 		public const int MinRowHeight = 12;
 
 		public const int MaxRowHeight = 48;
-
-		public const string DefaultCrashUrl = "http://comicrack.cyolito.com/services/CrashReport.php";
 
 		public const string DefaultWiki = "https://web.archive.org/web/20161013095840/http://comicrack.cyolito.com:80/documentation/wiki";
 

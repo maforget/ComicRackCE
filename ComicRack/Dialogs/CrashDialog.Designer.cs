@@ -26,7 +26,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.btRestart = new System.Windows.Forms.Button();
             this.btResume = new System.Windows.Forms.Button();
             this.labelMessage = new System.Windows.Forms.Label();
-            this.chkSubmit = new System.Windows.Forms.CheckBox();
             this.btDetails = new System.Windows.Forms.Button();
             this.tbLog = new System.Windows.Forms.TextBox();
             this.lockTimer = new System.Windows.Forms.Timer(this.components);
@@ -67,18 +66,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.labelMessage.TabIndex = 0;
             this.labelMessage.Text = "Please help to make ComicRack a better application by submitting the follwing rep" +
     "ort. This report does not contain any data that could identify you.";
-            // 
-            // chkSubmit
-            // 
-            this.chkSubmit.AutoSize = true;
-            this.chkSubmit.Checked = true;
-            this.chkSubmit.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSubmit.Location = new System.Drawing.Point(3, 12);
-            this.chkSubmit.Name = "chkSubmit";
-            this.chkSubmit.Size = new System.Drawing.Size(88, 17);
-            this.chkSubmit.TabIndex = 1;
-            this.chkSubmit.Text = "Submit report";
-            this.chkSubmit.UseVisualStyleBackColor = true;
             // 
             // btDetails
             // 
@@ -133,7 +120,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.chkSubmit);
             this.panel1.Controls.Add(this.btExit);
             this.panel1.Controls.Add(this.btDetails);
             this.panel1.Controls.Add(this.btResume);
@@ -165,7 +151,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,7 +159,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private Button btRestart;
 		private Button btResume;
 		private Label labelMessage;
-		private CheckBox chkSubmit;
 		private Button btDetails;
 		private TextBox tbLog;
 		private Timer lockTimer;

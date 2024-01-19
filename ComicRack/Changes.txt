@@ -6,6 +6,7 @@ Community Edition Build 0.9.180:
 * CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition. 
 * CHANGE: Removed everything to do with Validation/Donation/PayPal
 * CHANGE: Removed everything to do Twitter
+* CHANGE: Removed the Crash Report (used the cyolito.com address)
 * CHANGE: Removed Android Validation of apk signature (so we can use the cracked version)
 * CHANGE: Updated to .NET Framework v4.8
 * CHANGE: Updated SharpZipLib to v1.4.2

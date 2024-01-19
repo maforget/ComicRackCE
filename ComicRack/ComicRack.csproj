@@ -335,9 +335,6 @@
     <Compile Include="ReaderForm.Designer.cs">
       <DependentUpon>ReaderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Remote\CrashReport.cs" />
-    <Compile Include="Remote\SubmitReportCompletedEventArgs.cs" />
-    <Compile Include="Remote\SubmitReportCompletedEventHandler.cs" />
     <Compile Include="ScriptOutputForm.cs">
       <SubType>Form</SubType>
     </Compile>
