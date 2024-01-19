@@ -9,12 +9,12 @@ Community Edition Build 0.9.180:
 * CHANGE: Updated to .NET Framework v4.8
 * CHANGE: Updated SharpZipLib to v1.4.2
 * CHANGE: Updated SharpCompress to v0.36
-* CHANGE: Updated MySQL.Data to 8.2.0
+* CHANGE: Switched MySQl library to MySQLConnector for better speed & compatbility with MariaDB.
 * CHANGE: Updated WindowsCodePack to V1.15
-* CHANGE: Updated forum links to the r/comicrackusers subreddit
-* CHANGE: Updated Changed wiki links to the Wayback Machine
-* CHANGE: Updated Changed the default help system to be online manual (from Wayback Machine)
-* CHANGE: Updated Changed download manual links & fix chapter 12 links
+* CHANGE: Updated home & forum links to Github,
+* CHANGE: Updated wiki links to the Wayback Machine.
+* CHANGE: Updated the default help system to the online manual (from Wayback Machine)
+* CHANGE: Updated manual links & fix chapter 12 links
 * CHANGE: Updated Help localize ComicRack links (we still need access to the Localizer program)
 * CHANGE: Updated default sort to be natural sorting (numeric)
 * CHANGE: File Format will be the actual file format of the archive and not simply based on the extension.
