@@ -31,3 +31,5 @@ For anyone that wants to cooperate, start by opening a Issue in the tracker so w
 Also for all the ChatGPT fans out there, it can be helpful, but in small snippets of code. Don't expect it to rewrite the whole program for you. And if you want to understand what does what, then just use the debugging function of Visual Studio. Speaking of please stick to Visual Studio 2022 Community Edition. VS Code isn't at the same level (but that is your choice).
 
 We will need the Localizer tool that cYo did to help translate the program. 
+
+See the current changelog [here.](https://raw.githubusercontent.com/maforget/ComicRackCE/master/ComicRack/Changes.txt)
