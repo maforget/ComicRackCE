@@ -1,4 +1,5 @@
 using System.IO;
+using System.Text;
 using ICSharpCode.SharpZipLib.Tar;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
@@ -14,8 +15,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 
 		protected override void OnCreateFile(string target, StorageSetting setting)
 		{
-			file = File.Create(target, 131072);
-			tos = new TarOutputStream(file);
+			file = File.Create(target, BufferSize);
+            tos = new TarOutputStream(file, Encoding.UTF8);
 		}
 
 		protected override void OnCloseFile()
@@ -26,12 +27,14 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 
 		protected override void AddEntry(string name, byte[] data)
 		{
-			TarHeader tarHeader = new TarHeader();
-			tarHeader.Name = name;
-			tarHeader.UserName = "ComicRack";
-			tarHeader.UserId = 666;
-			tarHeader.Size = data.Length;
-			tos.PutNextEntry(new TarEntry(tarHeader));
+			TarHeader tarHeader = new TarHeader
+            {
+                Name = name,
+                UserName = "ComicRack",
+                UserId = 666,
+                Size = data.Length
+            };
+            tos.PutNextEntry(new TarEntry(tarHeader));
 			tos.Write(data, 0, data.Length);
 			tos.CloseEntry();
 		}
