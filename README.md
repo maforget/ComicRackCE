@@ -33,3 +33,26 @@ Also for all the ChatGPT fans out there, it can be helpful, but in small snippet
 We will need the Localizer tool that cYo did to help translate the program. 
 
 See the current changelog [here.](https://raw.githubusercontent.com/maforget/ComicRackCE/master/ComicRack/Changes.txt)
+
+## Installation
+
+ComicRack Community Edition currently does not have a standard installation package. To install, download the [nightly release](https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCE_nightly.zip "Nightly Release") and follow the instructions below:
+
+1. Extract the nightly release archive to a folder on your computer.
+2. Ensure that a previous installation of ComicRack is not currently running (check the system tray).
+3. Run ComicRack.exe in the folder you extracted to.
+4. Once ComicRack has loaded, close it again (check the system tray).
+
+## Upgrading from classic ComicRack
+
+ComicRack Community Edition uses a different data directory than classic ComicRack. In order to transfer your data over:
+
+1. Open File Explorer.
+2. Copy and paste `%appdata%\cYo\ComicRack` into the address bar and press enter. You'll see your existing ComicRack data. Consider making a backup of this directory just in case.
+3. Copy all of the contents of this directory.
+4. Navigate one directory up and open the ComicRack Community Edition directory.
+5. Paste your data into this directory and overwrite any existing files.
+6. Open ComicRack.exe from the Community Edition and all your comics should be there.
+
+Remember that changes in one, will not carry over to the other.
+
