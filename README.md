@@ -1,6 +1,9 @@
 # ComicRack Community Edition
 
 #### These are automatically build for each commit, so this nightly will always be up to date and is build directly by Github, so you know the code you downloaded is the same than from the repo.
+
+_Please keep in mind that this build isn't considered a stable build, It will change multiple times perhaps daily. There are still some bugs that might have came from the decompiling process, as such please be careful when "upgrading" to this version. There are also some reports of False Positive by Windows Defender, since this is an ever changing build, we cannot submit all version for removal._
+
 <p align="center">
     <b><u><span style='font-size:14.0pt'>👇 Download Links 👇</span></u></b>
 </p>
