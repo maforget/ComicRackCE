@@ -274,9 +274,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			LocalizeUtility.Localize(this, components);
 			quickSearch.SetCueText(tsQuickSearch.Text);
 			queryCacheTimer.Interval = (ComicLibrary.IsQueryCacheInstantUpdate ? 100 : 2500);
-		}
+            miPasteList.Click += new EventHandler((sender, e) => PasteList());
+        }
 
-		public ComicListLibraryBrowser(ComicLibrary library)
+        public ComicListLibraryBrowser(ComicLibrary library)
 			: this()
 		{
 			Library = library;
@@ -325,7 +326,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				commands.Add(CopyList, () => tvQueries.SelectedNode != null && (tvQueries.SelectedNode.Tag is ShareableComicListItem || (Program.ExtendedSettings.AllowCopyListFolders && tvQueries.SelectedNode.Tag is ComicListItemFolder)) && ComicEditMode.CanEditList(), miCopyList);
 				commands.Add(ExportList, () => tvQueries.SelectedNode != null && tvQueries.SelectedNode.Tag is ShareableComicListItem && ComicEditMode.CanEditList(), miExportReadingList);
 				commands.Add(ImportLists, () => ComicEditMode.CanEditList(), miImportReadingList);
-				commands.Add(PasteList, () => (Clipboard.ContainsData("ComicList") || Clipboard.ContainsText()) && ComicEditMode.CanEditList(), miPasteList);
+				//commands.Add(PasteList, () => (Clipboard.ContainsData("ComicList") || Clipboard.ContainsText()) && ComicEditMode.CanEditList(), miPasteList);
 				commands.Add(AddToFavorites, miAddToFavorites);
 				commands.Add(delegate
 				{
@@ -883,6 +884,16 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		private void treeContextMenu_Opening(object sender, CancelEventArgs e)
 		{
+			//Check if the clipboard contains data, if so enable the paste button.
+			try
+			{
+				miPasteList.Enabled = (Clipboard.ContainsData("ComicList") || Clipboard.ContainsText()) && ComicEditMode.CanEditList();
+			}
+			catch (Exception)
+			{
+				miPasteList.Enabled = false;
+			}
+
 			ComicListItem cli = tvQueries.SelectedNode.Tag as ComicListItem;
 			bool flag = cli != null && Program.Settings.Devices.Count > 0;
 			cmEditDevices.DropDownItems.Clear();
@@ -915,7 +926,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				};
 				cmEditDevices.DropDownItems.Add(toolStripMenuItem);
 			}
-		}
+        }
 
 		private void cmEditDevices_Click(object sender, EventArgs e)
 		{

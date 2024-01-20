@@ -798,7 +798,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			itemView.ColumnHeaderHeight = itemView.ItemRowHeight;
 			itemView.Items.Changed += ComicItemAdded;
 			itemView.MouseWheel += itemView_MouseWheel;
-			KeySearch.Create(itemView);
+            miPasteData.Click += new EventHandler((sender, e) => PasteComicData());
+            KeySearch.Create(itemView);
 		}
 
 		private void ComicItemAdded(object sender, SmartListChangedEventArgs<IViewableItem> e)
@@ -951,7 +952,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				ApplyBookOrder(GetBookList(ComicBookFilterType.Library));
 			}, () => CanReorderList(mustBeOrdered: false), miEditListApplyOrder);
-			commands.Add(PasteComicData, () => ComicEditMode.CanEditProperties() && Clipboard.ContainsData("ComicBook") && !GetBookList(ComicBookFilterType.Selected).IsEmpty(), miPasteData);
+			//commands.Add(PasteComicData, () => ComicEditMode.CanEditProperties() && Clipboard.ContainsData("ComicBook") && !GetBookList(ComicBookFilterType.Selected).IsEmpty(), miPasteData);
 			commands.Add(CopyComicData, () => itemView.SelectedCount > 0, miCopyData);
 			commands.Add(ClearComicData, () => ComicEditMode.CanEditProperties() && !GetBookList(ComicBookFilterType.Selected).IsEmpty(), miClearData);
 			commands.Add(UpdateFiles, AnySelectedLinked, miUpdateComicFiles);
@@ -2733,7 +2734,16 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			miShowOnly.Visible = miShowOnly.DropDownItems.Count != 0;
 			miUpdateComicFiles.Visible = enumerable.Any((ComicBook cb) => cb.ComicInfoIsDirty);
 			contextMenuItems.FixSeparators();
-		}
+			//Check if the clipboard contains data, if so enable the paste button.
+			try
+			{
+				miPasteData.Enabled = ComicEditMode.CanEditProperties() && Clipboard.ContainsData("ComicBook") && !GetBookList(ComicBookFilterType.Selected).IsEmpty();
+			}
+			catch (Exception)
+			{
+				miPasteData.Enabled = false;
+            }
+        }
 
 		private void LayoutMenuOpening(object sender, CancelEventArgs e)
 		{
@@ -3230,5 +3240,5 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 			return books;
 		}
-	}
+    }
 }
