@@ -1424,7 +1424,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				if (!Program.Help.Execute("HelpMain"))
 				{
-					Program.StartDocument("https://web.archive.org/web/20161013095840/http://comicrack.cyolito.com:80/documentation/wiki");
+					Program.StartDocument(Program.DefaultWiki);
 				}
 			}, miWebHelp);
 			commands.Add(delegate
@@ -1433,11 +1433,11 @@ namespace cYo.Projects.ComicRack.Viewer
 			}, miHelpQuickIntro);
 			commands.Add(delegate
 			{
-				Program.StartDocument("https://github.com/maforget/ComicRackCE");
+				Program.StartDocument(Program.DefaultWebSite);
 			}, miWebHome);
 			commands.Add(delegate
 			{
-				Program.StartDocument("https://github.com/maforget/ComicRackCE/discussions");
+				Program.StartDocument(Program.DefaultUserForm);
 			}, miWebUserForum);
 			commands.Add(ShowAboutDialog, miAbout, tbAbout);
 			commands.Add(ShowNews, miNews);

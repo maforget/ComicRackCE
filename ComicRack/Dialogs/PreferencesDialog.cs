@@ -588,7 +588,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void btTranslate_Click(object sender, EventArgs e)
 		{
-			Program.StartDocument("https://web.archive.org/web/20170528182733/http://comicrack.cyolito.com/faqs/12-how-to-create-language-packs");
+			Program.StartDocument(Program.DefaultLocalizePage);
 		}
 
 		private void memCacheUpate_Tick(object sender, EventArgs e)

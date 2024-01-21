@@ -869,7 +869,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			News = NewsStorage.Load(defaultNewsFile);
 			if (News.Subscriptions.Count == 0)
 			{
-				News.Subscriptions.Add(new NewsStorage.Subscription("http://feeds.feedburner.com/ComicRackNews", "ComicRack News"));
+				News.Subscriptions.Add(new NewsStorage.Subscription(DefaultNewsFeed, "ComicRack News"));
 			}
 			StartupProgress(TR.Messages["CreateMainWindow", "Creating Main Window"], 50);
 			if (ExtendedSettings.DisableScriptOptimization)
