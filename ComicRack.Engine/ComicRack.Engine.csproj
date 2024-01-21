@@ -639,7 +639,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MySqlConnector">
-      <Version>2.3.4</Version>
+      <Version>2.3.5</Version>
     </PackageReference>
     <PackageReference Include="SharpCompress">
       <Version>0.36.0</Version>
