@@ -55,12 +55,9 @@
     </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <Win32Resource>
-    </Win32Resource>
+    <Win32Resource>myressources.res</Win32Resource>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -732,6 +729,7 @@
     <Content Include="License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="myressources.rc" />
     <Content Include="NewsTemplate.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -870,5 +868,11 @@ cd ..\..\..\
 InsertIcons.bat
 
 : Exit</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>cd ..\..\..\
+del /Q ".\ComicRack\myressources.res"
+rc /r ".\ComicRack\myressources.rc"
+exit 0</PreBuildEvent>
   </PropertyGroup>
 </Project>
