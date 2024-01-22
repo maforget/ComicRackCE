@@ -20,4 +20,4 @@ using System.Runtime.Versioning;
 [assembly: AssemblyTrademark("ComicRack is a TM of cYo Soft")]
 [assembly: AssemblyDelaySign(false)]
 [assembly: AssemblyKeyName("")]
-[assembly: AssemblyVersion("1.0.5915.38776")]
+[assembly: AssemblyVersion("1.0.*")]

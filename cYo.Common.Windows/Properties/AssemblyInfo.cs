@@ -18,4 +18,4 @@ using System.Runtime.Versioning;
 [assembly: AssemblyProduct("")]
 [assembly: AssemblyCopyright("©2006-2015 cYo Soft")]
 [assembly: AssemblyTrademark("")]
-[assembly: AssemblyVersion("1.0.5915.38774")]
+[assembly: AssemblyVersion("1.0.*")]

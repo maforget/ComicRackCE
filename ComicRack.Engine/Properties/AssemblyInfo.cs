@@ -23,5 +23,5 @@ using System.Security.Permissions;
 [assembly: AssemblyDelaySign(false)]
 [assembly: AssemblyKeyName("")]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
-[assembly: AssemblyVersion("1.0.5915.38775")]
+[assembly: AssemblyVersion("1.0.*")]
 [module: UnverifiableCode]

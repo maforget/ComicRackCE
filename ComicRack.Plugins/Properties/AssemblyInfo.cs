@@ -18,4 +18,4 @@ using System.Runtime.Versioning;
 [assembly: ComVisible(false)]
 [assembly: CLSCompliant(true)]
 [assembly: NeutralResourcesLanguage("en")]
-[assembly: AssemblyVersion("1.0.5915.38776")]
+[assembly: AssemblyVersion("1.0.*")]
