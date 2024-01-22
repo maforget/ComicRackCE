@@ -11,9 +11,9 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public static readonly string CompanyName = AssemblyInfo.GetCompanyName(Assembly.GetEntryAssembly());
 
-		public readonly string ApplicationPath;
+		public static string ApplicationPath => Path.GetDirectoryName((Assembly.GetEntryAssembly() ?? Assembly.GetExecutingAssembly()).Location);
 
-		public readonly string ApplicationDataPath;
+        public readonly string ApplicationDataPath;
 
 		public readonly string LocalApplicationDataPath;
 
@@ -35,18 +35,10 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public SystemPaths(bool useLocal, string alternateConfig, string databasePath, string cachePath)
 		{
-			ApplicationPath = Path.GetDirectoryName((Assembly.GetEntryAssembly() ?? Assembly.GetExecutingAssembly()).Location);
-			if (useLocal)
-			{
-				ApplicationDataPath = Path.Combine(ApplicationPath, "Data");
-				LocalApplicationDataPath = Path.Combine(ApplicationPath, "Data");
-			}
-			else
-			{
-				ApplicationDataPath = MakeApplicationPath(alternateConfig, Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
-				LocalApplicationDataPath = MakeApplicationPath(alternateConfig, Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
-			}
-			DatabasePath = Path.Combine(string.IsNullOrEmpty(databasePath) ? ApplicationDataPath : databasePath, "ComicDb");
+			ApplicationDataPath = GetApplicationDataPath(useLocal, alternateConfig);
+            LocalApplicationDataPath = GetLocalApplicationDataPath(useLocal, alternateConfig);
+
+            DatabasePath = Path.Combine(string.IsNullOrEmpty(databasePath) ? ApplicationDataPath : databasePath, "ComicDb");
 			ThumbnailCachePath = Path.Combine(string.IsNullOrEmpty(cachePath) ? Path.Combine(LocalApplicationDataPath, "Cache") : cachePath, "Thumbnails");
 			ImageCachePath = Path.Combine(string.IsNullOrEmpty(cachePath) ? Path.Combine(LocalApplicationDataPath, "Cache") : cachePath, "Images");
 			FileCachePath = Path.Combine(string.IsNullOrEmpty(cachePath) ? Path.Combine(LocalApplicationDataPath, "Cache") : cachePath, "Files");
@@ -56,13 +48,14 @@ namespace cYo.Projects.ComicRack.Engine
 			PendingScriptsPath = Path.Combine(ScriptPathSecondary, ".Pending");
 		}
 
-		public static string MakeApplicationPath(string alternateConfig, string folder)
+        private static string MakeApplicationPath(string alternateConfig, string folder, bool useLocal)
 		{
-			if (!string.IsNullOrEmpty(CompanyName))
+			//When local, we don't want the Compagny & Product folder
+			if (!useLocal && !string.IsNullOrEmpty(CompanyName))
 			{
 				folder = Path.Combine(folder, CompanyName);
 			}
-			if (!string.IsNullOrEmpty(ProductName))
+			if (!useLocal && !string.IsNullOrEmpty(ProductName))
 			{
 				folder = Path.Combine(folder, ProductName);
 			}
@@ -73,5 +66,17 @@ namespace cYo.Projects.ComicRack.Engine
 			Directory.CreateDirectory(folder);
 			return folder;
 		}
-	}
+
+		public static string GetApplicationDataPath(bool useLocal, string alternateConfig)
+		{
+            string appDataFolder = useLocal ? Path.Combine(ApplicationPath, "Data") : Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            return MakeApplicationPath(alternateConfig, appDataFolder, useLocal);
+        }
+
+        public static string GetLocalApplicationDataPath(bool useLocal, string alternateConfig)
+        {
+            string localAppDataFolder = useLocal ? Path.Combine(ApplicationPath, "Data") : Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            return MakeApplicationPath(alternateConfig, localAppDataFolder, useLocal);
+        }
+    }
 }

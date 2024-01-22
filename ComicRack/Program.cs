@@ -144,9 +144,9 @@ namespace cYo.Projects.ComicRack.Viewer
 				{
 					extendedSettings = new ExtendedSettings();
 					CommandLineParser.Parse(extendedSettings, CommandLineParserOptions.None);
-					if (!string.IsNullOrEmpty(extendedSettings.AlternateConfig))
+					if (!string.IsNullOrEmpty(extendedSettings.AlternateConfig) || UseLocalSettings)
 					{
-						IniFile.AddDefaultLocation(SystemPaths.MakeApplicationPath(extendedSettings.AlternateConfig, Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)));
+						IniFile.AddDefaultLocation(SystemPaths.GetApplicationDataPath(UseLocalSettings, extendedSettings.AlternateConfig));
 					}
 					extendedSettings = new ExtendedSettings();
 					CommandLineParser.Parse(extendedSettings);
