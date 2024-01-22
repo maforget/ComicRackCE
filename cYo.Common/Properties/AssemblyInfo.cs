@@ -20,6 +20,5 @@ using System.Security.Permissions;
 [assembly: AssemblyProduct("")]
 [assembly: AssemblyCopyright("©2006-2015 cYo Soft")]
 [assembly: AssemblyTrademark("")]
-//[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
 [assembly: AssemblyVersion("1.0.*")]
 [module: UnverifiableCode]
