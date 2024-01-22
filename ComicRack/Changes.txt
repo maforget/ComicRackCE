@@ -25,6 +25,7 @@ Community Edition Build 0.9.180:
 * CHANGE: The default docking mode is now Fill, instead of Bottom.
 * CHANGE: Improved performances while handling Tar files (by Apiweb)
 * CHANGE: Removed the Crash submission dialog that used the cyolito.com website.
+* CHANGE: Alternate config (-ac) can now be used with portable mode (UseLocalSettings) (-local)
 
 * BUGFIX: Fixed smartlist "in range" for dates, the second field wasn't taken into account.
 * BUGFIX: Fixed possible crash if window size is less than 0 (Usually when using high DPI scaling).
