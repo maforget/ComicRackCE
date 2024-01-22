@@ -18,7 +18,7 @@ using System.Security.Permissions;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("cYo")]
 [assembly: AssemblyProduct("ComicRack")]
-[assembly: AssemblyCopyright("©2006-2015 cYo Soft")]
+[assembly: AssemblyCopyright("©2006-2016 cYo Soft, 2024 Community Edition")]
 [assembly: AssemblyTrademark("ComicRack is a TM of cYo Soft")]
 [assembly: AssemblyDelaySign(false)]
 [assembly: AssemblyKeyName("")]

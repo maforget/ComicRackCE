@@ -13,7 +13,7 @@ using System.Runtime.Versioning;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ComicRack")]
-[assembly: AssemblyCopyright("©2006-2015 cYo Soft")]
+[assembly: AssemblyCopyright("©2006-2016 cYo Soft, 2024 Community Edition")]
 [assembly: AssemblyTrademark("ComicRack is a TM of cYo Soft")]
 [assembly: ComVisible(false)]
 [assembly: CLSCompliant(true)]
