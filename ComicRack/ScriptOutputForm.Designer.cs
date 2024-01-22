@@ -46,6 +46,7 @@ namespace cYo.Projects.ComicRack.Viewer
             this.Name = "ScriptOutputForm";
             this.ShowIcon = false;
             this.Text = "Script Output";
+            this.Icon = Properties.Resources.ComicRackAppSmall;
             this.ResumeLayout(false);
             this.PerformLayout();
 
