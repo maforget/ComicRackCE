@@ -1,7 +1,8 @@
 Community Edition Build 0.9.180:
 
 * NEW: RAR5 Support (Default & SharpCompress)
-* NEW: Added links to The Organizer guide to the online manual help system 
+* NEW: Added links to The Organizer guide to the online manual help system
+* NEW: Added the Git version to the Splash Screen, to more easily find bug in specific releases.
 
 * CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition. 
 * CHANGE: Removed everything to do with Validation/Donation/PayPal
@@ -21,9 +22,12 @@ Community Edition Build 0.9.180:
 * CHANGE: Updated default sort to be natural sorting (numeric)
 * CHANGE: File Format will be the actual file format of the archive and not simply based on the extension.
 * CHANGE: The default docking mode is now Fill, instead of Bottom.
+* CHANGE: Improved performances while handling Tar files (by Apiweb)
+* CHANGE: Removed the Crash submission dialog that used the cyolito.com website.
 
 * BUGFIX: Fixed smartlist "in range" for dates, the second field wasn't taken into account.
 * BUGFIX: Fixed possible crash if window size is less than 0 (Usually when using high DPI scaling).
+* BUGFIX: (Maybe?) Fixed crash when the clipboard contains some objects while the program is idle. The check should now only happen on a right-click and not in the background. It should at least lessen the frequency of the crash, maybe remove it completely. 
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 

@@ -269,6 +269,7 @@
     <Compile Include="Runtime\CommandLineSwitchAttribute.cs" />
     <Compile Include="Runtime\CrashWatchDog.cs" />
     <Compile Include="Runtime\Diagnostic.cs" />
+    <Compile Include="Runtime\GitVersion.cs" />
     <Compile Include="Runtime\IniFile.cs" />
     <Compile Include="Runtime\IniFileAttribute.cs" />
     <Compile Include="Runtime\IniFileRegisterOptions.cs" />
@@ -348,6 +349,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -355,8 +357,23 @@
       <Version>1.4.2</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="CurrentCommit.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="isDirty.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tags.txt" />
+  </ItemGroup>
   <!-- <ItemGroup> -->
   <!-- <EmbeddedResource Include="Properties\Resources.resources" /> -->
   <!-- </ItemGroup> -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>cd ..\..\
+git rev-parse HEAD &gt; "CurrentCommit.txt"
+git status --porcelain &gt; "isDirty.txt"
+exit 0</PreBuildEvent>
+  </PropertyGroup>
 </Project>

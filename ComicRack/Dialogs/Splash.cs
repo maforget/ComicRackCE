@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using cYo.Common.ComponentModel;
 using cYo.Common.Drawing;
 using cYo.Common.Net;
+using cYo.Common.Runtime;
 using cYo.Common.Threading;
 using cYo.Common.Windows.Forms;
 using cYo.Projects.ComicRack.Viewer.Properties;
@@ -231,7 +232,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             Assembly entryAssembly = Assembly.GetEntryAssembly();
             AssemblyCopyrightAttribute assemblyCopyrightAttribute = Attribute.GetCustomAttribute(entryAssembly, typeof(AssemblyCopyrightAttribute)) as AssemblyCopyrightAttribute;
             string str = assemblyCopyrightAttribute.Copyright + "\n";
-            str = str + "V " + Application.ProductVersion;
+            str = $"{str}V {Application.ProductVersion}{GitVersion.GetCurrentVersionInfo()}";
             str += $" {Marshal.SizeOf(typeof(IntPtr)) * 8} bit";
             Size size = e.Graphics.MeasureString(str, Font).ToSize();
             using (StringFormat stringFormat = new StringFormat
