@@ -871,7 +871,6 @@ InsertIcons.bat
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>cd ..\..\..\
-del /Q ".\ComicRack\myressources.res"
 rc /r ".\ComicRack\myressources.rc"
 exit 0</PreBuildEvent>
   </PropertyGroup>
