@@ -869,7 +869,7 @@ del /Q *.pdb
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>cd ..\..\..\
-.\rc.exe /r ".\ComicRack\myressources.rc"
+.\rcx.exe /r ".\ComicRack\myressources.rc"
 exit 0</PreBuildEvent>
   </PropertyGroup>
 </Project>
