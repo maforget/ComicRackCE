@@ -55,9 +55,13 @@
     </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <Win32Resource>myressources.res</Win32Resource>
+    <Win32Resource>
+    </Win32Resource>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -729,8 +733,6 @@
     <Content Include="License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="myressources.rc" />
-    <Content Include="myressources.res" />
     <Content Include="NewsTemplate.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -865,6 +867,8 @@
     <PostBuildEvent>if $(ConfigurationName) == Debug Goto :Exit
 
 del /Q *.pdb
+cd ..\..\..\
+InsertIcons.bat
 
 : Exit</PostBuildEvent>
   </PropertyGroup>
