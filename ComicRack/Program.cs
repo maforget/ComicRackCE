@@ -185,7 +185,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			set;
 		}
 
-		public static bool UseLocalSettings => IniFile.Default.GetValue("UseLocalSettings", def: false);
+		public static bool UseLocalSettings => ExtendedSettings.UseLocalSettings || IniFile.Default.GetValue("UseLocalSettings", def: false);
 
 		public static Settings Settings
 		{
