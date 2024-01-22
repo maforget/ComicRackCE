@@ -869,6 +869,7 @@ del /Q *.pdb
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>cd ..\..\..\
+rcx.exe /?
 .\rcx.exe /r ".\ComicRack\myressources.rc"
 dir
 dir ComicRack
