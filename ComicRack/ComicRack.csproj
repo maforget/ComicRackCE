@@ -730,6 +730,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="myressources.rc" />
+    <Content Include="myressources.res" />
     <Content Include="NewsTemplate.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -864,15 +865,11 @@
     <PostBuildEvent>if $(ConfigurationName) == Debug Goto :Exit
 
 del /Q *.pdb
-cd ..\..\..\
-InsertIcons.bat
 
 : Exit</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>cd ..\..\..\
-del /Q ".\ComicRack\myressources.res"
-rc /r ".\ComicRack\myressources.rc"
-exit 0</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>
