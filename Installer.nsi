@@ -887,8 +887,7 @@ Section "ComicRack (Required)" ; Section_0
   File Tao.Platform.Windows.dll
   File ICSharpCode.SharpZipLib.dll
   File SharpCompress.dll
-  File MySql.Data.dll
-  File LinqToTwitter.dll
+  File MySqlConnector.dll
   File NewsTemplate.html
   File ComicRack.ini
   File ReadMe.txt
@@ -896,13 +895,13 @@ Section "ComicRack (Required)" ; Section_0
   File DefaultLists.txt
   File License.txt
   SetOutPath $INSTDIR\Help
-  File "ComicRack Introduction.djvu"
-  File "ComicRack Introduction.djvu.xml"
-  File "ComicRack Online Manual.ini"
-  File "ComicRack Wiki.ini"
-  File readme.txt
+  File "Help\ComicRack Introduction.djvu"
+  File "Help\ComicRack Introduction.djvu.xml"
+  File "Help\ComicRack Online Manual.ini"
+  File "Help\ComicRack Wiki.ini"
+  File Help\readme.txt
   SetOutPath $INSTDIR\Resources
-  File 7z.dll
+  File Resources\7z.dll
   System::Call kernel32::GetCurrentProcess()i.s
     ; Call Initialize_____Plugins
     ; SetOverwrite off
@@ -921,9 +920,9 @@ Section "ComicRack (Required)" ; Section_0
   StrCmp $_59_ 0 label_543
   SetOverwrite ifdiff
   AllowSkipFiles on
-  File 7z64.dll
+  File Resources\7z64.dll
 label_543:
-  File 7z.exe
+  File Resources\7z.exe
   System::Call kernel32::GetCurrentProcess()i.s
     ; Call Initialize_____Plugins
     ; SetOverwrite off
@@ -942,29 +941,29 @@ label_543:
   StrCmp $_59_ 0 label_558
   SetOverwrite ifdiff
   AllowSkipFiles on
-  File libwebp64.dll
+  File Resources\libwebp64.dll
   Goto label_559
 label_558:
-  File libwebp32.dll
+  File Resources\libwebp32.dll
 label_559:
-  File c44.exe
-  File ddjvu.exe
-  File djvm.exe
-  File libdjvulibre.dll
-  File libjpeg.dll
-  File libtiff.dll
-  File libz.dll
+  File Resources\c44.exe
+  File Resources\ddjvu.exe
+  File Resources\djvm.exe
+  File Resources\libdjvulibre.dll
+  File Resources\libjpeg.dll
+  File Resources\libtiff.dll
+  File Resources\libz.dll
   SetOutPath $INSTDIR\Scripts
-  File Autonumber.py
-  File CommitProposed.py
-  File NewComics.py
-  File OtherScripts.py
-  File Package.ini
-  File Renumber.png
-  File Sample.py
-  File Sample.xml
-  File SearchAndReplace.png
-  File SearchAndReplace.py
+  File Scripts\Autonumber.py
+  File Scripts\CommitProposed.py
+  File Scripts\NewComics.py
+  File Scripts\OtherScripts.py
+  File Scripts\Package.ini
+  File Scripts\Renumber.png
+  File Scripts\Sample.py
+  File Scripts\Sample.xml
+  File Scripts\SearchAndReplace.png
+  File Scripts\SearchAndReplace.py
 SectionEnd
 
 
@@ -1079,56 +1078,56 @@ Section "Language Packs" ; Section_4
   SetOutPath $INSTDIR\Languages
   SetOverwrite ifdiff
   AllowSkipFiles on
-  File cs-CZ.zip
-  File de.zip
-  File el-GR.zip
-  File es.zip
-  File fi.zip
-  File fr.zip
-  File hr.zip
-  File hu.zip
-  File it.zip
-  File ja.zip
-  File nl-BE.zip
-  File pl.zip
-  File pt-BR.zip
-  File ru.zip
-  File sk-SK.zip
-  File tr.zip
-  File zh-CN.zip
-  File zh-Hans.zip
-  File zh.zip
+  File Languages\cs-CZ.zip
+  File Languages\de.zip
+  File Languages\el-GR.zip
+  File Languages\es.zip
+  File Languages\fi.zip
+  File Languages\fr.zip
+  File Languages\hr.zip
+  File Languages\hu.zip
+  File Languages\it.zip
+  File Languages\ja.zip
+  File Languages\nl-BE.zip
+  File Languages\pl.zip
+  File Languages\pt-BR.zip
+  File Languages\ru.zip
+  File Languages\sk-SK.zip
+  File Languages\tr.zip
+  File Languages\zh-CN.zip
+  File Languages\zh-Hans.zip
+  File Languages\zh.zip
 SectionEnd
 
 
 Section "Additional images, icons and textures" ; Section_5
   ; AddSize 3282
   SetOutPath $INSTDIR\Resources\Textures\Backgrounds
-  File "Black [S].jpg"
-  File BrickWall.jpg
-  File BrushedMetal.jpg
-  File BrushedMetal2.jpg
-  File Ceramic.jpg
-  File Ceramic2.jpg
-  File ChalkBoard.jpg
-  File Circles.jpg
-  File Glass.jpg
-  File Grass.jpg
-  File LightWood.jpg
-  File OrangeMetal.jpg
-  File PlankWood.jpg
-  File Sketch.jpg
+  File "Resources\Textures\Backgrounds\Black [S].jpg"
+  File Resources\Textures\Backgrounds\BrickWall.jpg
+  File Resources\Textures\Backgrounds\BrushedMetal.jpg
+  File Resources\Textures\Backgrounds\BrushedMetal2.jpg
+  File Resources\Textures\Backgrounds\Ceramic.jpg
+  File Resources\Textures\Backgrounds\Ceramic2.jpg
+  File Resources\Textures\Backgrounds\ChalkBoard.jpg
+  File Resources\Textures\Backgrounds\Circles.jpg
+  File Resources\Textures\Backgrounds\Glass.jpg
+  File Resources\Textures\Backgrounds\Grass.jpg
+  File Resources\Textures\Backgrounds\LightWood.jpg
+  File Resources\Textures\Backgrounds\OrangeMetal.jpg
+  File Resources\Textures\Backgrounds\PlankWood.jpg
+  File Resources\Textures\Backgrounds\Sketch.jpg
   SetOutPath $INSTDIR\Resources\Textures\Papers
-  File Checkered.jpg
-  File WhitePaper.jpg
-  File WhitePaper2.jpg
-  File WhitePaper3.jpg
+  File Resources\Textures\Papers\Checkered.jpg
+  File Resources\Textures\Papers\WhitePaper.jpg
+  File Resources\Textures\Papers\WhitePaper2.jpg
+  File Resources\Textures\Papers\WhitePaper3.jpg
   SetOutPath $INSTDIR\Resources\Icons
-  File AgeRatings.zip
-  File AgeRatings_Australia.zip
-  File Formats.zip
-  File Publishers.zip
-  File Special.zip
+  File Resources\Icons\AgeRatings.zip
+  File Resources\Icons\AgeRatings_Australia.zip
+  File Resources\Icons\Formats.zip
+  File Resources\Icons\Publishers.zip
+  File Resources\Icons\Special.zip
 SectionEnd
 
 
