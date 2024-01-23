@@ -259,7 +259,7 @@ namespace cYo.Common.Threading
                 }
 
                 tw.WriteLine(new string('-', 20));
-                tw.WriteLine("{0}: {1} ({2})", t.Name, t.ThreadState, t.IsBackground ? "B" : string.Empty);
+                tw.WriteLine($"{t.Name}: {t.ThreadState} ({(t.IsBackground ? "B" : string.Empty)})");
 
                 StackTrace stackTrace;
                 if (t == Thread.CurrentThread)
