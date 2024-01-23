@@ -22,13 +22,13 @@ LicenseBkColor /windows
 ; LANG TABLES: 1
 ; LANG STRINGS: 88
 
-Name "ComicRack v0.9.178"
+Name "ComicRack Community Edition"
 BrandingText "Nullsoft Install System v2.46"
 
 ; LANG: 1033
 LangString LSTR_0 1033 "Nullsoft Install System v2.46"
-LangString LSTR_1 1033 "$(LSTR_2) Setup"
-LangString LSTR_2 1033 "ComicRack v0.9.178"
+LangString LSTR_1 1033 "$(LSTR_87) Setup"
+LangString LSTR_2 1033 "v0.9.178"
 LangString LSTR_3 1033 "Space available: "
 LangString LSTR_4 1033 "Space required: "
 LangString LSTR_5 1033 "Can't write: "
@@ -58,9 +58,9 @@ LangString LSTR_34 1033 M
 LangString LSTR_35 1033 G
 LangString LSTR_36 1033 "Error opening file for writing: $\r$\n$\r$\n$0$\r$\n$\r$\nClick Abort to stop the installation,$\r$\nRetry to try again, or$\r$\nIgnore to skip this file."
 LangString LSTR_37 1033 0
-LangString LSTR_38 1033 "Welcome to the $(LSTR_87) Setup Wizard"
+LangString LSTR_38 1033 "Welcome to the $(LSTR_88) Setup Wizard"
 LangString LSTR_39 1033 "MS Shell Dlg"
-LangString LSTR_40 1033 "This wizard will guide you through the installation of $(LSTR_87).$\r$\n$\r$\nIt is recommended that you close all other applications before starting Setup. This will make it possible to update relevant system files without having to reboot your computer.$\r$\n$\r$\n$_CLICK"
+LangString LSTR_40 1033 "This wizard will guide you through the installation of $(LSTR_88).$\r$\n$\r$\nIt is recommended that you close all other applications before starting Setup. This will make it possible to update relevant system files without having to reboot your computer.$\r$\n$\r$\n$_CLICK"
 LangString LSTR_41 1033 "If you accept the terms of the agreement, click I Agree to continue. You must accept the agreement to install $(LSTR_87)."
 LangString LSTR_42 1033 "License Agreement"
 LangString LSTR_43 1033 "Please review the license terms before installing $(LSTR_87)."
@@ -72,21 +72,21 @@ LangString LSTR_48 1033 "Position your mouse over a component to see its descrip
 LangString LSTR_49 1033 "Choose Install Location"
 LangString LSTR_50 1033 "Choose the folder in which to install $(LSTR_87)."
 LangString LSTR_51 1033 Installing
-LangString LSTR_52 1033 "Please wait while $(LSTR_87) is being installed."
+LangString LSTR_52 1033 "Please wait while $(LSTR_88) is being installed."
 LangString LSTR_53 1033 "Installation Complete"
 LangString LSTR_54 1033 "Setup was completed successfully."
 LangString LSTR_55 1033 "Installation Aborted"
 LangString LSTR_56 1033 "Setup was not completed successfully."
 LangString LSTR_57 1033 &Finish
 LangString LSTR_58 1033 "Completing the $(LSTR_87) Setup Wizard"
-LangString LSTR_59 1033 "Your computer must be restarted in order to complete the installation of $(LSTR_87). Do you want to reboot now?"
+LangString LSTR_59 1033 "Your computer must be restarted in order to complete the installation of $(LSTR_88). Do you want to reboot now?"
 LangString LSTR_60 1033 "Reboot now"
 LangString LSTR_61 1033 "I want to manually reboot later"
-LangString LSTR_62 1033 "$(LSTR_87) has been installed on your computer.$\r$\n$\r$\nClick Finish to close this wizard."
+LangString LSTR_62 1033 "$(LSTR_88) has been installed on your computer.$\r$\n$\r$\nClick Finish to close this wizard."
 LangString LSTR_63 1033 "&Run $(LSTR_87)"
 LangString LSTR_64 1033 "&Show Readme"
 LangString LSTR_65 1033 8
-LangString LSTR_66 1033 "Are you sure you want to quit $(LSTR_2) Setup?"
+LangString LSTR_66 1033 "Are you sure you want to quit $(LSTR_87) Setup?"
 LangString LSTR_67 1033 Custom
 LangString LSTR_68 1033 Cancel
 LangString LSTR_69 1033 "< &Back"
@@ -107,7 +107,8 @@ LangString LSTR_83 1033 "Show &details"
 LangString LSTR_84 1033 Completed
 LangString LSTR_85 1033 " "
 LangString LSTR_86 1033 &Close
-LangString LSTR_87 1033 "ComicRack v0.9.178"
+LangString LSTR_87 1033 "ComicRack Community Edition"
+LangString LSTR_88 1033 "$(LSTR_88)"
 
 
 ; --------------------
@@ -189,7 +190,7 @@ Page custom func_55 func_170 /ENABLECANCEL
 
 ; Page 1
 Page license func_171 func_174 func_180 /ENABLECANCEL
-  LicenseText $(LSTR_41) $(LSTR_72)    ;  "If you accept the terms of the agreement, click I Agree to continue. You must accept the agreement to install $(LSTR_87)." "I &Agree" "ComicRack v0.9.178"
+  LicenseText $(LSTR_41) $(LSTR_72)    ;  "If you accept the terms of the agreement, click I Agree to continue. You must accept the agreement to install $(LSTR_87)." "I &Agree" "ComicRack Community Edition v0.9.178"
   LicenseData [LICENSE].txt
 
 ; Page 2
@@ -198,7 +199,7 @@ Page license func_171 func_174 func_180 /ENABLECANCEL
 
 ; Page 3
 Page directory func_199 func_202 func_210 /ENABLECANCEL
-  DirText $(LSTR_77) $(LSTR_78) $(LSTR_79) $(LSTR_80)    ;  "Setup will install $(LSTR_87) in the following folder. To install in a different folder, click Browse and select another folder. $_CLICK" "Destination Folder" B&rowse... "Select the folder to install $(LSTR_87) in:" "ComicRack v0.9.178" "ComicRack v0.9.178"
+  DirText $(LSTR_77) $(LSTR_78) $(LSTR_79) $(LSTR_80)    ;  "Setup will install $(LSTR_87) in the following folder. To install in a different folder, click Browse and select another folder. $_CLICK" "Destination Folder" B&rowse... "Select the folder to install $(LSTR_87) in:" "ComicRack Community Edition v0.9.178" "ComicRack Community Edition v0.9.178"
   ; DirVar $CMDLINE
 
 ; Page 4
@@ -256,7 +257,7 @@ label_21:
   ExecWait "$\"$TEMP\dotNET45Web.exe$\" $_13_" $_14_
   Goto label_25
 label_23:
-  MessageBox MB_OK|MB_ICONEXCLAMATION "Unable to download .NET Framework.  ComicRack will be installed, but will not function without the Framework!"
+  MessageBox MB_OK|MB_ICONEXCLAMATION "Unable to download .NET Framework.  ComicRack Community Edition will be installed, but will not function without the Framework!"
   Goto label_30
 label_25:
   IntCmp $_14_ 1641 0 label_27 label_27
@@ -392,11 +393,11 @@ label_111:
     ; Exch
     ; Pop $0
   Pop $_18_
-  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 10u 195u 28u $(LSTR_38)    ;  "Welcome to the $(LSTR_87) Setup Wizard" "ComicRack v0.9.178"
+  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 10u 195u 28u $(LSTR_38)    ;  "Welcome to the $(LSTR_87) Setup Wizard" "ComicRack Community Edition v0.9.178"
     ; Call Initialize_____Plugins
     ; File $PLUGINSDIR\nsDialogs.dll
     ; SetDetailsPrint lastused
-    ; Push $(LSTR_38)    ;  "Welcome to the $(LSTR_87) Setup Wizard" "ComicRack v0.9.178"
+    ; Push $(LSTR_38)    ;  "Welcome to the $(LSTR_87) Setup Wizard" "ComicRack Community Edition v0.9.178"
     ; Push 28u
     ; Push 195u
     ; Push 10u
@@ -409,11 +410,11 @@ label_111:
   SetCtlColors $_19_ "" 0xFFFFFF
   CreateFont $_20_ $(LSTR_39) 12 700    ;  "MS Shell Dlg"
   SendMessage $_19_ ${WM_SETFONT} $_20_ 0
-  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 45u 195u 130u $(LSTR_40)    ;  "This wizard will guide you through the installation of $(LSTR_87).$\r$\n$\r$\nIt is recommended that you close all other applications before starting Setup. This will make it possible to update relevant system files without having to reboot your computer.$\r$\n$\r$\n$_CLICK" "ComicRack v0.9.178"
+  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 45u 195u 130u $(LSTR_40)    ;  "This wizard will guide you through the installation of $(LSTR_87).$\r$\n$\r$\nIt is recommended that you close all other applications before starting Setup. This will make it possible to update relevant system files without having to reboot your computer.$\r$\n$\r$\n$_CLICK" "ComicRack Community Edition v0.9.178"
     ; Call Initialize_____Plugins
     ; File $PLUGINSDIR\nsDialogs.dll
     ; SetDetailsPrint lastused
-    ; Push $(LSTR_40)    ;  "This wizard will guide you through the installation of $(LSTR_87).$\r$\n$\r$\nIt is recommended that you close all other applications before starting Setup. This will make it possible to update relevant system files without having to reboot your computer.$\r$\n$\r$\n$_CLICK" "ComicRack v0.9.178"
+    ; Push $(LSTR_40)    ;  "This wizard will guide you through the installation of $(LSTR_87).$\r$\n$\r$\nIt is recommended that you close all other applications before starting Setup. This will make it possible to update relevant system files without having to reboot your computer.$\r$\n$\r$\n$_CLICK" "ComicRack Community Edition v0.9.178"
     ; Push 130u
     ; Push 195u
     ; Push 45u
@@ -451,7 +452,7 @@ FunctionEnd
 
 Function func_171    ; Page 1, Pre
   SendMessage $_0_ ${WM_SETTEXT} 0 STR:$(LSTR_42)    ;  "License Agreement"
-  SendMessage $_2_ ${WM_SETTEXT} 0 STR:$(LSTR_43)    ;  "Please review the license terms before installing $(LSTR_87)." "ComicRack v0.9.178"
+  SendMessage $_2_ ${WM_SETTEXT} 0 STR:$(LSTR_43)    ;  "Please review the license terms before installing $(LSTR_87)." "ComicRack Community Edition v0.9.178"
 FunctionEnd
 
 
@@ -470,7 +471,7 @@ FunctionEnd
 
 Function func_181    ; Page 2, Pre
   SendMessage $_0_ ${WM_SETTEXT} 0 STR:$(LSTR_45)    ;  "Choose Components"
-  SendMessage $_2_ ${WM_SETTEXT} 0 STR:$(LSTR_46)    ;  "Choose which features of $(LSTR_87) you want to install." "ComicRack v0.9.178"
+  SendMessage $_2_ ${WM_SETTEXT} 0 STR:$(LSTR_46)    ;  "Choose which features of $(LSTR_87) you want to install." "ComicRack Community Edition v0.9.178"
 FunctionEnd
 
 
@@ -497,7 +498,7 @@ FunctionEnd
 
 Function func_199    ; Page 3, Pre
   SendMessage $_0_ ${WM_SETTEXT} 0 STR:$(LSTR_49)    ;  "Choose Install Location"
-  SendMessage $_2_ ${WM_SETTEXT} 0 STR:$(LSTR_50)    ;  "Choose the folder in which to install $(LSTR_87)." "ComicRack v0.9.178"
+  SendMessage $_2_ ${WM_SETTEXT} 0 STR:$(LSTR_50)    ;  "Choose the folder in which to install $(LSTR_87)." "ComicRack Community Edition v0.9.178"
 FunctionEnd
 
 
@@ -518,7 +519,7 @@ FunctionEnd
 
 Function func_211    ; Page 4, Pre
   SendMessage $_0_ ${WM_SETTEXT} 0 STR:$(LSTR_51)    ;  Installing
-  SendMessage $_2_ ${WM_SETTEXT} 0 STR:$(LSTR_52)    ;  "Please wait while $(LSTR_87) is being installed." "ComicRack v0.9.178"
+  SendMessage $_2_ ${WM_SETTEXT} 0 STR:$(LSTR_52)    ;  "Please wait while $(LSTR_87) is being installed." "ComicRack Community Edition v0.9.178"
 FunctionEnd
 
 
@@ -643,11 +644,11 @@ label_291:
     ; Pop $0
   Pop $_50_
   IfRebootFlag 0 label_372
-  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 10u 195u 28u $(LSTR_58)    ;  "Completing the $(LSTR_87) Setup Wizard" "ComicRack v0.9.178"
+  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 10u 195u 28u $(LSTR_58)    ;  "Completing the $(LSTR_87) Setup Wizard" "ComicRack Community Edition v0.9.178"
     ; Call Initialize_____Plugins
     ; File $PLUGINSDIR\nsDialogs.dll
     ; SetDetailsPrint lastused
-    ; Push $(LSTR_58)    ;  "Completing the $(LSTR_87) Setup Wizard" "ComicRack v0.9.178"
+    ; Push $(LSTR_58)    ;  "Completing the $(LSTR_87) Setup Wizard" "ComicRack Community Edition v0.9.178"
     ; Push 28u
     ; Push 195u
     ; Push 10u
@@ -660,11 +661,11 @@ label_291:
   SetCtlColors $_51_ "" 0xFFFFFF
   CreateFont $_52_ $(LSTR_39) 12 700    ;  "MS Shell Dlg"
   SendMessage $_51_ ${WM_SETFONT} $_52_ 0
-  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 45u 195u 40u $(LSTR_59)    ;  "Your computer must be restarted in order to complete the installation of $(LSTR_87). Do you want to reboot now?" "ComicRack v0.9.178"
+  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 45u 195u 40u $(LSTR_59)    ;  "Your computer must be restarted in order to complete the installation of $(LSTR_87). Do you want to reboot now?" "ComicRack Community Edition v0.9.178"
     ; Call Initialize_____Plugins
     ; File $PLUGINSDIR\nsDialogs.dll
     ; SetDetailsPrint lastused
-    ; Push $(LSTR_59)    ;  "Your computer must be restarted in order to complete the installation of $(LSTR_87). Do you want to reboot now?" "ComicRack v0.9.178"
+    ; Push $(LSTR_59)    ;  "Your computer must be restarted in order to complete the installation of $(LSTR_87). Do you want to reboot now?" "ComicRack Community Edition v0.9.178"
     ; Push 40u
     ; Push 195u
     ; Push 45u
@@ -714,11 +715,11 @@ label_291:
     ; CallInstDLL $PLUGINSDIR\System.dll Call
   Goto label_437
 label_372:
-  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 10u 195u 28u $(LSTR_58)    ;  "Completing the $(LSTR_87) Setup Wizard" "ComicRack v0.9.178"
+  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 10u 195u 28u $(LSTR_58)    ;  "Completing the $(LSTR_87) Setup Wizard" "ComicRack Community Edition v0.9.178"
     ; Call Initialize_____Plugins
     ; File $PLUGINSDIR\nsDialogs.dll
     ; SetDetailsPrint lastused
-    ; Push $(LSTR_58)    ;  "Completing the $(LSTR_87) Setup Wizard" "ComicRack v0.9.178"
+    ; Push $(LSTR_58)    ;  "Completing the $(LSTR_87) Setup Wizard" "ComicRack Community Edition v0.9.178"
     ; Push 28u
     ; Push 195u
     ; Push 10u
@@ -731,11 +732,11 @@ label_372:
   SetCtlColors $_51_ "" 0xFFFFFF
   CreateFont $_52_ $(LSTR_39) 12 700    ;  "MS Shell Dlg"
   SendMessage $_51_ ${WM_SETFONT} $_52_ 0
-  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 45u 195u 40u $(LSTR_62)    ;  "$(LSTR_87) has been installed on your computer.$\r$\n$\r$\nClick Finish to close this wizard." "ComicRack v0.9.178"
+  nsDialogs::CreateControl STATIC 0x40000000|0x10000000|0x04000000|0x00000100 0x00000020 120u 45u 195u 40u $(LSTR_62)    ;  "$(LSTR_87) has been installed on your computer.$\r$\n$\r$\nClick Finish to close this wizard." "ComicRack Community Edition v0.9.178"
     ; Call Initialize_____Plugins
     ; File $PLUGINSDIR\nsDialogs.dll
     ; SetDetailsPrint lastused
-    ; Push $(LSTR_62)    ;  "$(LSTR_87) has been installed on your computer.$\r$\n$\r$\nClick Finish to close this wizard." "ComicRack v0.9.178"
+    ; Push $(LSTR_62)    ;  "$(LSTR_87) has been installed on your computer.$\r$\n$\r$\nClick Finish to close this wizard." "ComicRack Community Edition v0.9.178"
     ; Push 40u
     ; Push 195u
     ; Push 45u
@@ -746,11 +747,11 @@ label_372:
     ; CallInstDLL $PLUGINSDIR\nsDialogs.dll CreateControl
   Pop $_53_
   SetCtlColors $_53_ "" 0xFFFFFF
-  nsDialogs::CreateControl BUTTON 0x40000000|0x10000000|0x04000000|0x00010000|0x00000000|0x00000C00|0x00000003|0x00002000 0 120u 90u 195u 10u $(LSTR_63)    ;  "&Run $(LSTR_87)" "ComicRack v0.9.178"
+  nsDialogs::CreateControl BUTTON 0x40000000|0x10000000|0x04000000|0x00010000|0x00000000|0x00000C00|0x00000003|0x00002000 0 120u 90u 195u 10u $(LSTR_63)    ;  "&Run $(LSTR_87)" "ComicRack Community Edition v0.9.178"
     ; Call Initialize_____Plugins
     ; File $PLUGINSDIR\nsDialogs.dll
     ; SetDetailsPrint lastused
-    ; Push $(LSTR_63)    ;  "&Run $(LSTR_87)" "ComicRack v0.9.178"
+    ; Push $(LSTR_63)    ;  "&Run $(LSTR_87)" "ComicRack Community Edition v0.9.178"
     ; Push 10u
     ; Push 195u
     ; Push 90u
@@ -852,13 +853,13 @@ FunctionEnd
 
 
 Function .onUserAbort
-  MessageBox MB_YESNO|MB_ICONEXCLAMATION $(LSTR_66) IDYES label_489    ;  "Are you sure you want to quit $(LSTR_2) Setup?" "ComicRack v0.9.178"
+  MessageBox MB_YESNO|MB_ICONEXCLAMATION $(LSTR_66) IDYES label_489    ;  "Are you sure you want to quit $(LSTR_87) Setup?" "ComicRack Community Edition v0.9.178"
   Abort
 label_489:
 FunctionEnd
 
 
-Section "ComicRack (Required)" ; Section_0
+Section "ComicRack Community Edition (Required)" ; Section_0
   ; AddSize 18107
   SectionIn 1 RO
   SetShellVarContext all
@@ -969,17 +970,17 @@ SectionEnd
 
 Section "Start Menu" ; Section_1
   CreateDirectory $SMPROGRAMS\ComicRack
-  CreateShortCut $SMPROGRAMS\ComicRack\ComicRack.lnk $INSTDIR\ComicRack.exe
+  CreateShortCut "$SMPROGRAMS\ComicRack\ComicRack Community Edition.lnk" $INSTDIR\ComicRack.exe
   CreateShortCut "$SMPROGRAMS\ComicRack\Release Notes.lnk" $INSTDIR\ReadMe.txt
   CreateShortCut "$SMPROGRAMS\ComicRack\Version History.lnk" $INSTDIR\Changes.txt
   CreateShortCut "$SMPROGRAMS\ComicRack\Quick Introduction.lnk" "$INSTDIR\Help\ComicRack Introduction.djvu"
-  WriteINIStr $INSTDIR\ComicRack.url InternetShortcut URL http://comicrack.cyolito.com/
-  CreateShortCut $SMPROGRAMS\ComicRack\Website.lnk $INSTDIR\ComicRack.url
+  WriteINIStr "$INSTDIR\ComicRack Community Edition.url" InternetShortcut URL https://github.com/maforget/ComicRackCE
+  CreateShortCut $SMPROGRAMS\ComicRack\Website.lnk "$INSTDIR\ComicRack Community Edition.url"
 SectionEnd
 
 
 Section "Desktop Shortcut" ; Section_2
-  CreateShortCut $DESKTOP\ComicRack.lnk $INSTDIR\ComicRack.exe
+  CreateShortCut "$DESKTOP\ComicRack Community Edition.lnk" $INSTDIR\ComicRack.exe
 SectionEnd
 
 
@@ -1172,7 +1173,7 @@ SectionEnd
 ; Section ; Section_7
   ; WriteUninstaller $INSTDIR\uninst.exe ;  $INSTDIR\$INSTDIR\uninst.exe
   ; WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\App Paths\ComicRack.exe" "" $INSTDIR\ComicRack.exe
-  ; WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack DisplayName $(LSTR_2)    ;  "ComicRack v0.9.178"
+  ; WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack DisplayName $(LSTR_87)    ;  "ComicRack Community Edition v0.9.178"
   ; WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack UninstallString $INSTDIR\uninst.exe
   ; WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack DisplayIcon $INSTDIR\ComicRack.exe
   ; WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack DisplayVersion v0.9.178
