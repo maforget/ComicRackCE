@@ -249,39 +249,37 @@ namespace cYo.Common.Threading
 			}
 		}
 
-		private static void DumpThread(TextWriter tw, Thread t)
-		{
-			try
-			{
-				if (!t.IsAlive)
-				{
-					return;
-				}
-				tw.WriteLine(new string('-', 20));
-				tw.WriteLine("{0}: {1} ({2})", t.Name, t.ThreadState, t.IsBackground ? "B" : string.Empty);
-				StackTrace stackTrace;
-				if (t == Thread.CurrentThread)
-				{
-					stackTrace = new StackTrace();
-				}
-				else
-				{
-					t.Suspend();
-					try
-					{
-						stackTrace = new StackTrace(t, needFileInfo: true);
-					}
-					finally
-					{
-						t.Resume();
-					}
-				}
-				tw.WriteLine(stackTrace.ToString());
-			}
-			catch
-			{
-			}
-		}
+        private static void DumpThread(TextWriter tw, Thread t)
+        {
+            try
+            {
+                if (!t.IsAlive)
+                {
+                    return;
+                }
+
+                tw.WriteLine(new string('-', 20));
+                tw.WriteLine($"{t.Name}: {t.ThreadState} ({(t.IsBackground ? "B" : string.Empty)})");
+
+                StackTrace stackTrace;
+                if (t == Thread.CurrentThread)
+                {
+                    stackTrace = new StackTrace();
+                }
+                else
+                {
+                    lock (t)
+                    {
+                        stackTrace = new StackTrace(true);
+                    }
+                }
+
+                tw.WriteLine(stackTrace.ToString());
+            }
+            catch
+            {
+            }
+        }
 
 		public static void DumpStacks(TextWriter tw)
 		{
