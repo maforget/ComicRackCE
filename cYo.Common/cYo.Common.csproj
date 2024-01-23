@@ -357,15 +357,6 @@
       <Version>1.4.2</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="CurrentCommit.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="isDirty.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Tags.txt" />
-  </ItemGroup>
   <!-- <ItemGroup> -->
   <!-- <EmbeddedResource Include="Properties\Resources.resources" /> -->
   <!-- </ItemGroup> -->
