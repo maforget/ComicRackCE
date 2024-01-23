@@ -193,13 +193,13 @@ Page license func_171 func_174 func_180 /ENABLECANCEL
   LicenseData [LICENSE].txt
 
 ; Page 2
-Page components func_181 func_184 func_198 /ENABLECANCEL
-  ComponentsText $(LSTR_73) $(LSTR_74) $(LSTR_75)    ;  "Check the components you want to install and uncheck the components you don't want to install. $_CLICK" "Select the type of install:" "Or, select the optional components you wish to install:"
+; Page components func_181 func_184 func_198 /ENABLECANCEL
+  ; ComponentsText $(LSTR_73) $(LSTR_74) $(LSTR_75)    ;  "Check the components you want to install and uncheck the components you don't want to install. $_CLICK" "Select the type of install:" "Or, select the optional components you wish to install:"
 
 ; Page 3
 Page directory func_199 func_202 func_210 /ENABLECANCEL
   DirText $(LSTR_77) $(LSTR_78) $(LSTR_79) $(LSTR_80)    ;  "Setup will install $(LSTR_87) in the following folder. To install in a different folder, click Browse and select another folder. $_CLICK" "Destination Folder" B&rowse... "Select the folder to install $(LSTR_87) in:" "ComicRack v0.9.178" "ComicRack v0.9.178"
-  DirVar $CMDLINE
+  ; DirVar $CMDLINE
 
 ; Page 4
 Page instfiles func_211 func_214 func_220
@@ -276,7 +276,7 @@ Function func_31
     ; Call Initialize_____Plugins
     ; SetDetailsPrint lastused
   SetOverwrite on
-  File $PLUGINSDIR\modern-wizard.bmp
+  ; File $PLUGINSDIR\modern-wizard.bmp
 FunctionEnd
 
 
@@ -551,7 +551,7 @@ Function func_228
     ; SetDetailsPrint lastused
   SetOverwrite on
   AllowSkipFiles on
-  File $PLUGINSDIR\modern-wizard.bmp
+  ; File $PLUGINSDIR\modern-wizard.bmp
   Call func_31
   SetAutoClose true
 FunctionEnd
@@ -1169,16 +1169,16 @@ label_737:
 SectionEnd
 
 
-Section ; Section_7
-  WriteUninstaller $INSTDIR\uninst.exe ;  $INSTDIR\$INSTDIR\uninst.exe
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\App Paths\ComicRack.exe" "" $INSTDIR\ComicRack.exe
-  WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack DisplayName $(LSTR_2)    ;  "ComicRack v0.9.178"
-  WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack UninstallString $INSTDIR\uninst.exe
-  WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack DisplayIcon $INSTDIR\ComicRack.exe
-  WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack DisplayVersion v0.9.178
-  WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack URLInfoAbout http://comicrack.cyolito.com/
-  WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack Publisher "cYo Soft"
-SectionEnd
+; Section ; Section_7
+  ; WriteUninstaller $INSTDIR\uninst.exe ;  $INSTDIR\$INSTDIR\uninst.exe
+  ; WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\App Paths\ComicRack.exe" "" $INSTDIR\ComicRack.exe
+  ; WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack DisplayName $(LSTR_2)    ;  "ComicRack v0.9.178"
+  ; WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack UninstallString $INSTDIR\uninst.exe
+  ; WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack DisplayIcon $INSTDIR\ComicRack.exe
+  ; WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack DisplayVersion v0.9.178
+  ; WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack URLInfoAbout http://comicrack.cyolito.com/
+  ; WriteRegStr HKLM Software\Microsoft\Windows\CurrentVersion\Uninstall\ComicRack Publisher "cYo Soft"
+; SectionEnd
 
 
 Function .onMouseOverSection
