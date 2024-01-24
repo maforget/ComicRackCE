@@ -108,7 +108,7 @@ LangString LSTR_84 1033 Completed
 LangString LSTR_85 1033 " "
 LangString LSTR_86 1033 &Close
 LangString LSTR_87 1033 "ComicRack Community Edition"
-LangString LSTR_88 1033 "$(LSTR_88)"
+LangString LSTR_88 1033 "$(LSTR_87) $(LSTR_2)"
 
 
 ; --------------------
