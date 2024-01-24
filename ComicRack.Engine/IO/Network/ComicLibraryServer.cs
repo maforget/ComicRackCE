@@ -83,8 +83,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 			{
 				if (certificate == null)
 				{
-					certificate = new X509Certificate2(Resources.Certificate, string.Empty);
-				}
+					certificate = new X509Certificate2(Resources.Certificate2, string.Empty);
+                }
 				return certificate;
 			}
 		}
@@ -384,9 +384,10 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 				serviceHost = new ServiceHost(this, new Uri(uriString));
 				serviceHost.Credentials.UserNameAuthentication.UserNamePasswordValidationMode = UserNamePasswordValidationMode.Custom;
 				serviceHost.Credentials.UserNameAuthentication.CustomUserNamePasswordValidator = new PasswordValidator(Config.ProtectionPassword);
-				serviceHost.Credentials.ServiceCertificate.Certificate = new X509Certificate2(Certificate);
-				serviceHost.Credentials.IssuedTokenAuthentication.KnownCertificates.Add(new X509Certificate2(Certificate));
-				serviceHost.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.None;
+				serviceHost.Credentials.ServiceCertificate.Certificate = new X509Certificate2(Certificate);// New Cert (sha256)
+                serviceHost.Credentials.IssuedTokenAuthentication.KnownCertificates.Add(new X509Certificate2(Certificate));// New Cert (sha256)
+				serviceHost.Credentials.IssuedTokenAuthentication.KnownCertificates.Add(new X509Certificate2(Resources.Certificate, string.Empty));//Old Cert (md5)
+                serviceHost.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.None;
 				ServiceEndpoint serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IRemoteServerInfo), CreateChannel(secure: false), "Info");
 				serviceEndpoint.Binding.SendTimeout = TimeSpan.FromSeconds(EngineConfiguration.Default.OperationTimeout);
 				serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IRemoteComicLibrary), CreateChannel(secure: true), "Library");

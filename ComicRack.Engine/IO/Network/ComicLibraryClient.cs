@@ -172,8 +172,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 			ChannelFactory<IRemoteComicLibrary> channelFactory = new ChannelFactory<IRemoteComicLibrary>(ComicLibraryServer.CreateChannel(secure: true), remoteAddress);
 			channelFactory.Credentials.UserName.UserName = "ComicRack";
 			channelFactory.Credentials.UserName.Password = password;
-			channelFactory.Credentials.ClientCertificate.Certificate = ComicLibraryServer.Certificate;
-			channelFactory.Credentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.None;
+			channelFactory.Credentials.ClientCertificate.Certificate = ComicLibraryServer.Certificate;// New Cert (sha256)
+            channelFactory.Credentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.None;
 			IRemoteComicLibrary remoteComicLibrary = channelFactory.CreateChannel();
 			((IContextChannel)remoteComicLibrary).OperationTimeout = TimeSpan.FromSeconds(EngineConfiguration.Default.OperationTimeout);
 			return remoteComicLibrary;
