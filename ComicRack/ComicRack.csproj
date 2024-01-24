@@ -538,6 +538,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -594,93 +595,93 @@
     </None>
     <None Include="app.config" />
     <None Include="app.manifest" />
-    <None Include="ComicRack.ini">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Help\ComicRack Introduction.djvu">
+    <Content Include="ComicRack.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Help\ComicRack Online Manual.ini">
+    </Content>
+    <Content Include="Help\ComicRack Introduction.djvu">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Help\ComicRack Wiki.ini">
+    </Content>
+    <Content Include="Help\ComicRack Online Manual.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\cs-CZ.zip">
+    </Content>
+    <Content Include="Help\ComicRack Wiki.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\de.zip">
+    </Content>
+    <Content Include="Languages\cs-CZ.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\el-GR.zip">
+    </Content>
+    <Content Include="Languages\de.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\es.zip">
+    </Content>
+    <Content Include="Languages\el-GR.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\fi.zip">
+    </Content>
+    <Content Include="Languages\es.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\fr.zip">
+    </Content>
+    <Content Include="Languages\fi.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\hr.zip">
+    </Content>
+    <Content Include="Languages\fr.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\hu.zip">
+    </Content>
+    <Content Include="Languages\hr.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\it.zip">
+    </Content>
+    <Content Include="Languages\hu.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\ja.zip">
+    </Content>
+    <Content Include="Languages\it.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\nl-BE.zip">
+    </Content>
+    <Content Include="Languages\ja.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\pl.zip">
+    </Content>
+    <Content Include="Languages\nl-BE.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\pt-BR.zip">
+    </Content>
+    <Content Include="Languages\pl.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\ru.zip">
+    </Content>
+    <Content Include="Languages\pt-BR.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\sk-SK.zip">
+    </Content>
+    <Content Include="Languages\ru.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\tr.zip">
+    </Content>
+    <Content Include="Languages\sk-SK.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\zh-CN.zip">
+    </Content>
+    <Content Include="Languages\tr.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\zh-Hans.zip">
+    </Content>
+    <Content Include="Languages\zh-CN.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Languages\zh.zip">
+    </Content>
+    <Content Include="Languages\zh-Hans.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Icons\AgeRatings.zip">
+    </Content>
+    <Content Include="Languages\zh.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Icons\AgeRatings_Australia.zip">
+    </Content>
+    <Content Include="Resources\Icons\AgeRatings.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Icons\Formats.zip">
+    </Content>
+    <Content Include="Resources\Icons\AgeRatings_Australia.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Icons\Publishers.zip">
+    </Content>
+    <Content Include="Resources\Icons\Formats.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\Icons\Special.zip">
+    </Content>
+    <Content Include="Resources\Icons\Publishers.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Package.ini">
+    </Content>
+    <Content Include="Resources\Icons\Special.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
+    <Content Include="Scripts\Package.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ComicRack.Engine.Display.Forms\ComicRack.Engine.Display.Forms.csproj">
@@ -721,16 +722,16 @@
     <Content Include="Help\readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icons\icon1.ico" />
-    <Content Include="Icons\icon2.ico" />
-    <Content Include="Icons\icon3.ico" />
-    <Content Include="Icons\icon4.ico" />
-    <Content Include="Icons\uninst_103.ico" />
+    <None Include="Icons\icon1.ico" />
+    <None Include="Icons\icon2.ico" />
+    <None Include="Icons\icon3.ico" />
+    <None Include="Icons\icon4.ico" />
+    <None Include="Icons\uninst_103.ico" />
     <Content Include="License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="myressources.rc" />
-    <Content Include="myressources.res" />
+    <None Include="myressources.rc" />
+    <None Include="myressources.res" />
     <Content Include="NewsTemplate.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -815,10 +816,18 @@
     <Content Include="Resources\Textures\Backgrounds\Sketch.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Textures\Papers\Checkered.jpg" />
-    <Content Include="Resources\Textures\Papers\WhitePaper.jpg" />
-    <Content Include="Resources\Textures\Papers\WhitePaper2.jpg" />
-    <Content Include="Resources\Textures\Papers\WhitePaper3.jpg" />
+    <Content Include="Resources\Textures\Papers\Checkered.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Papers\WhitePaper.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Papers\WhitePaper2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Papers\WhitePaper3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\Autonumber.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
