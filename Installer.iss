@@ -64,11 +64,10 @@ Name: "languages"; Description: "Language Packs";                           Type
 Name: "additional";Description: "Additional images, icons and backgrounds"; Types: full
 
 [Files]
-Source: "ComicRack\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\*.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\Changes.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\ComicRack.exe"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\ComicRack.exe.config"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\{#MyAppExeName}.config"; DestDir: "{app}"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\ComicRack.ini"; DestDir: "{app}"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\DefaultLists.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\License.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
@@ -83,12 +82,53 @@ Source: "ComicRack\bin\Release\Scripts\*"; DestDir: "{app}\Scripts"; Flags: igno
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
-; .cbr, .cbz, .crplugin
-Root: HKA; Subkey: "Software\Classes\.cbz\OpenWithProgids"; ValueType: string; ValueName: "eComic.cbz"; ValueData: ""; Flags: uninsdeletevalue
-Root: HKA; Subkey: "Software\Classes\eComic.cbz"; ValueType: string; ValueName: ""; ValueData: "Comic Book File (Zip)"; Flags: uninsdeletekey
-Root: HKA; Subkey: "Software\Classes\eComic.cbz\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#MyAppExeName},0"
-Root: HKA; Subkey: "Software\Classes\eComic.cbz\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#MyAppExeName}"" ""%1"""
-Root: HKA; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes"; ValueType: string; ValueName: ".myp"; ValueData: ""
+; Comics
+Root: HKA; Subkey: "Software\Classes\ComicRack.eComic";                       ValueType: string; ValueData: "eComic"; Flags: uninsdeletevalue
+Root: HKA; Subkey: "Software\Classes\ComicRack.eComic\DefaultIcon";           ValueType: string; ValueData: """{autopf}\{#MyAppName}\{#MyAppExeName}"",1"
+Root: HKA; Subkey: "Software\Classes\ComicRack.eComic\shell";                 ValueType: string; ValueData: "open"
+Root: HKA; Subkey: "Software\Classes\ComicRack.eComic\shell\open";            ValueType: string; ValueData: "Open eComic with ComicRack"
+Root: HKA; Subkey: "Software\Classes\ComicRack.eComic\shell\open\command";    ValueType: string; ValueData: """{autopf}\{#MyAppName}\{#MyAppExeName}""  ""%1"""
+
+; Comic Lists
+Root: HKA; Subkey: "Software\Classes\ComicRack.ComicList";                    ValueType: string; ValueData: "eComic List"
+Root: HKA; Subkey: "Software\Classes\ComicRack.ComicList\DefaultIcon";        ValueType: string; ValueData: """{autopf}\{#MyAppName}\{#MyAppExeName}"",2"
+Root: HKA; Subkey: "Software\Classes\ComicRack.ComicList\shell";              ValueType: string; ValueData: "open"
+Root: HKA; Subkey: "Software\Classes\ComicRack.ComicList\shell\open";         ValueType: string; ValueData: "Import eComic List into ComicRack CE"
+Root: HKA; Subkey: "Software\Classes\ComicRack.ComicList\shell\open\command"; ValueType: string; ValueData: """{autopf}\{#MyAppName}\{#MyAppExeName}"" -il ""%1"""
+
+; ComicRack Plugins
+Root: HKA; Subkey: "Software\Classes\ComicRack.Plugin";                       ValueType: string; ValueData: "ComicRack Plugin"
+Root: HKA; Subkey: "Software\Classes\ComicRack.Plugin\DefaultIcon";           ValueType: string; ValueData: """{autopf}\{#MyAppName}\{#MyAppExeName}"",3"
+Root: HKA; Subkey: "Software\Classes\ComicRack.Plugin\shell";                 ValueType: string; ValueData: "open"
+Root: HKA; Subkey: "Software\Classes\ComicRack.Plugin\shell\open";            ValueType: string; ValueData: "Install Plugin into ComicRack CE"
+Root: HKA; Subkey: "Software\Classes\ComicRack.Plugin\shell\open\command";    ValueType: string; ValueData: """{autopf}\{#MyAppName}\{#MyAppExeName}"" -ip ""%1"""
+
+; Extensions
+Root: HKA; Subkey: "Software\Classes\.cbz";                      ValueType: string; ValueData: "ComicRack.eComic"
+Root: HKA; Subkey: "Software\Classes\.cbz\OpenWithProgIDs";      ValueType: string; ValueName: "ComicRack.eComic"
+Root: HKA; Subkey: "Software\Classes\.cbr";                      ValueType: string; ValueData: "ComicRack.eComic"
+Root: HKA; Subkey: "Software\Classes\.cbr\OpenWithProgIDs";      ValueType: string; ValueName: "ComicRack.eComic"
+Root: HKA; Subkey: "Software\Classes\.cb7";                      ValueType: string; ValueData: "ComicRack.eComic"
+Root: HKA; Subkey: "Software\Classes\.cb7\OpenWithProgIDs";      ValueType: string; ValueName: "ComicRack.eComic"
+Root: HKA; Subkey: "Software\Classes\.cbt";                      ValueType: string; ValueData: "ComicRack.eComic"
+Root: HKA; Subkey: "Software\Classes\.cbt\OpenWithProgIDs";      ValueType: string; ValueName: "ComicRack.eComic"
+Root: HKA; Subkey: "Software\Classes\.cbw";                      ValueType: string; ValueData: "ComicRack.eComic"
+Root: HKA; Subkey: "Software\Classes\.cbw\OpenWithProgIDs";      ValueType: string; ValueName: "ComicRack.eComic"
+Root: HKA; Subkey: "Software\Classes\.cbl";                      ValueType: string; ValueData: "ComicRack.ComicList"
+Root: HKA; Subkey: "Software\Classes\.cbl\OpenWithProgIDs";      ValueType: string; ValueName: "ComicRack.ComicList"
+Root: HKA; Subkey: "Software\Classes\.crplugin";                 ValueType: string; ValueData: "ComicRack.Plugin"
+Root: HKA; Subkey: "Software\Classes\.crplugin\OpenWithProgIDs"; ValueType: string; ValueName: "ComicRack.Plugin"
+
+; Application specific
+Root: HKA; Subkey: "Software\Microsoft\Windows\CurrentVersion\App Paths\{#MyAppExeName}"; ValueType: string; ValueData: "{autopf}\{#MyAppName}\{#MyAppExeName}"
+Root: HKA; Subkey: "Software\Classes\Applications\{#MyAppExeName}\shell\open\command";    ValueType: string; ValueData: """{autopf}\{#MyAppName}\{#MyAppExeName}"" ""%1"""
+Root: HKA; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes";        ValueType: string; ValueName: ".cb7"; ValueData: ""
+Root: HKA; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes"; ValueType: string; ValueName: ".cbz"; ValueData: ""
+Root: HKA; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes"; ValueType: string; ValueName: ".cbr"; ValueData: ""
+Root: HKA; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes"; ValueType: string; ValueName: ".cbt"; ValueData: ""
+Root: HKA; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes"; ValueType: string; ValueName: ".cbw"; ValueData: ""
+Root: HKA; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes"; ValueType: string; ValueName: ".cbl"; ValueData: ""
+Root: HKA; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes"; ValueType: string; ValueName: ".crplugin"; ValueData: ""
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}";                Components: start_menu
