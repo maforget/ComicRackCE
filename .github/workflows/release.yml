@@ -39,7 +39,7 @@ jobs:
       uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
       with:
         path: Installer.iss
-        options: /DMyAppVersion=v${{ github.event.inputs.version }} /DMyAppSetupFile=ComicRackSetup_v${{ github.event.inputs.version }}
+        options: /DMyAppVersion=v${{ github.event.inputs.version }} /DMyAppSetupFile=ComicRackCESetup_v${{ github.event.inputs.version }}
 
     - name: Release
       uses: ncipollo/release-action@main
@@ -51,4 +51,4 @@ jobs:
         prerelease: false
         commit: ${{ github.ref_name }}
         tag: 'v${{ github.event.inputs.version }}'
-        artifacts: 'ComicRackCE_v${{ github.event.inputs.version }}.zip,ComicRackSetup_v${{ github.event.inputs.version }}.exe'
+        artifacts: 'ComicRackCE_v${{ github.event.inputs.version }}.zip,ComicRackCESetup_v${{ github.event.inputs.version }}.exe'
