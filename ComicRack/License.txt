@@ -1,13 +1,13 @@
-ComicRack Copyright ©2006-2016 cYo Soft
+ComicRack Community Edition Copyright ©2006-2016 cYo Soft, 2024 Community
 
-ComicRack is designed for private use and commercial use without sale ("Freeware"), if the following rules are respected:
+ComicRack Community Edition is designed for private use and commercial use without sale ("Freeware"), if the following rules are respected:
 
-cYo Soft has no responsibility if errors occures in direct or indirect relation with the software.
+cYo Soft and the Community have no responsibility if errors occur in direct or indirect relation with the software.
 
-ComicRack cannot be used in a military domain or in a similar domain (Weapon creation, armament, etc.).
+ComicRack Community Edition cannot be used in a military domain or in a similar domain (Weapon creation, armament, etc.).
 
-ComicRack can be distributed through non-commercial channels, if the delivery happens in the form of _this_ self-extracting setup-file.
+ComicRack Community Edition can be distributed through non-commercial channels, if the delivery happens in the form of _this_ self-extracting setup-file.
 
-ComicRack can be distributed through commercial channels if cYo Soft agrees this delivery and if the delivery happens in the form of _this_ self-extracting setup-file.
+ComicRack Community Edition can be distributed through commercial channels if cYo Soft agrees this delivery and if the delivery happens in the form of _this_ self-extracting setup-file.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
