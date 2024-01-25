@@ -14,7 +14,6 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-2019
 
     steps:
@@ -26,16 +25,22 @@ jobs:
 
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1
-  
+
     - name: Restore Packages
       run: nuget restore ComicRack.sln
 
     - name: Build solution
       run: msbuild ComicRack\ComicRack.csproj -t:rebuild -property:Configuration=Release
-      
+
     - name: Package Files
       run: powershell Compress-Archive -Path 'ComicRack\bin\Release\*' -DestinationPath 'ComicRackCE_v${{ github.event.inputs.version }}.zip' -Force
-      
+
+    - name: Compile installer
+      uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
+      with:
+        path: Installer.iss
+        options: /DMyAppVersion=v${{ github.event.inputs.version }} /DMyAppSetupFile=ComicRackSetup_v${{ github.event.inputs.version }}
+
     - name: Release
       uses: ncipollo/release-action@main
       with:
@@ -46,4 +51,4 @@ jobs:
         prerelease: false
         commit: ${{ github.ref_name }}
         tag: 'v${{ github.event.inputs.version }}'
-        artifacts: 'ComicRackCE_v${{ github.event.inputs.version }}.zip'
+        artifacts: 'ComicRackCE_v${{ github.event.inputs.version }}.zip,ComicRackSetup_v${{ github.event.inputs.version }}.exe'
