@@ -815,10 +815,18 @@
     <Content Include="Resources\Textures\Backgrounds\Sketch.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Textures\Papers\Checkered.jpg" />
-    <Content Include="Resources\Textures\Papers\WhitePaper.jpg" />
-    <Content Include="Resources\Textures\Papers\WhitePaper2.jpg" />
-    <Content Include="Resources\Textures\Papers\WhitePaper3.jpg" />
+    <Content Include="Resources\Textures\Papers\Checkered.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Papers\WhitePaper.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Papers\WhitePaper2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Papers\WhitePaper3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\Autonumber.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
