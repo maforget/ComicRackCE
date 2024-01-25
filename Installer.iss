@@ -34,7 +34,7 @@ SolidCompression=yes
 WizardStyle=modern
 AlwaysShowComponentsList=yes
 ArchitecturesInstallIn64BitMode=x64
-SetupIconFile=ComicRack\Icons\icon1.ico
+SetupIconFile=ComicRack\Icons\uninst_103.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
 UninstallDisplayName={#MyAppName}
 
@@ -74,10 +74,12 @@ Source: "ComicRack\bin\Release\DefaultLists.txt"; DestDir: "{app}"; Flags: ignor
 Source: "ComicRack\bin\Release\License.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\NewsTemplate.html"; DestDir: "{app}"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\ReadMe.txt"; DestDir: "{app}"; Flags: ignoreversion isreadme; Components: app
+Source: "ComicRack\bin\Release\Help\*"; DestDir: "{app}\Help"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\Languages\*"; DestDir: "{app}\Languages"; Flags: ignoreversion; Components: languages
 Source: "ComicRack\bin\Release\Resources\*"; DestDir: "{app}\Resources"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\Resources\Icons\*"; DestDir: "{app}\Resources\Icons"; Flags: ignoreversion; Components: additional
 Source: "ComicRack\bin\Release\Resources\Textures\*"; DestDir: "{app}\Resources\Textures"; Flags: ignoreversion recursesubdirs; Components: additional
+Source: "ComicRack\bin\Release\Scripts\*"; DestDir: "{app}\Scripts"; Flags: ignoreversion; Components: app
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
