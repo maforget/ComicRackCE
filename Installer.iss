@@ -64,6 +64,7 @@ Name: "languages"; Description: "Language Packs";                           Type
 Name: "additional";Description: "Additional images, icons and backgrounds"; Types: full
 
 [Files]
+; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 Source: "ComicRack\bin\Release\*.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\Changes.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Components: app
@@ -79,7 +80,6 @@ Source: "ComicRack\bin\Release\Resources\*"; DestDir: "{app}\Resources"; Flags: 
 Source: "ComicRack\bin\Release\Resources\Icons\*"; DestDir: "{app}\Resources\Icons"; Flags: ignoreversion; Components: additional
 Source: "ComicRack\bin\Release\Resources\Textures\*"; DestDir: "{app}\Resources\Textures"; Flags: ignoreversion recursesubdirs; Components: additional
 Source: "ComicRack\bin\Release\Scripts\*"; DestDir: "{app}\Scripts"; Flags: ignoreversion; Components: app
-; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
 ; Comics
@@ -139,3 +139,83 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}";          
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
+[Code]
+// Set the minimum .NET Framework version release code. 528040 = .NET Framework 4.8
+const
+  NETFrameworkLabel = '.NET Framework 4.8';
+const
+  NETFrameworkMinimum = 528040;
+const
+  NETFrameworkDownload = 'https://go.microsoft.com/fwlink/?linkid=2088631';
+const
+  NETFrameworkFilename = 'ndp48-x86-x64-allos-enu.exe';
+
+var
+  NETFrameworkVersion: Cardinal;
+var
+  DownloadPage: TDownloadWizardPage;
+var
+  ResultCode: Integer;
+
+// Log download progress to log file
+function OnDownloadProgress(const Url, FileName: String; const Progress, ProgressMax: Int64): Boolean;
+begin
+  if Progress = ProgressMax then
+    Log(Format('Successfully downloaded file to {tmp}: %s', [FileName]));
+  Result := True;
+end;
+
+// When the wizard form loads
+procedure InitializeWizard;
+begin
+  // Create the download page
+  DownloadPage := CreateDownloadPage(SetupMessage(msgWizardPreparing), SetupMessage(msgPreparingDesc), @OnDownloadProgress);
+end;
+
+// Download and run the .NET Framework setup
+function DownloadNETFramework(): Boolean;
+begin
+  DownloadPage.Clear;
+  DownloadPage.Add(NETFrameworkDownload, NETFrameworkFilename, '');
+  DownloadPage.Show;
+  try
+    try
+      DownloadPage.Download; // This downloads the file to {tmp}
+    except
+      if DownloadPage.AbortedByUser then
+        Log('Aborted by user.')
+      else
+        SuppressibleMsgBox(AddPeriod(GetExceptionMessage), mbCriticalError, MB_OK, IDOK);
+        Log(AddPeriod(GetExceptionMessage))
+      Result := False;
+    end;
+    if Exec(ExpandConstant('{tmp}\'+NETFrameworkFilename), '', '', SW_SHOW, ewWaitUntilTerminated, ResultCode) then begin
+      Result := True;
+    end
+    else begin
+      Log(Format(NETFrameworkLabel+' installation failed: [Result Code: %s] {tmp}\'+NETFrameworkFilename, [ResultCode]));
+      Result := False;
+    end;
+  finally
+    DownloadPage.Hide;
+  end;
+end;
+
+function NextButtonClick(CurPageID: Integer): Boolean;
+begin
+  if CurPageID = wpReady then begin
+    if RegQueryDWordValue(HKEY_LOCAL_MACHINE, 'Software\Microsoft\NET Framework Setup\NDP\v4\Full', 'Release', NETFrameworkVersion) then begin
+      if (NETFrameworkVersion < NETFrameworkMinimum) then begin
+        Log(Format('.NET Framework version (%s) is insufficient. Downloading '+NETFrameworkLabel+'.', [IntToStr(NETFrameworkVersion)]));
+        Result := DownloadNETFramework()
+      end else begin
+        Log(Format('.NET Framework version (%s) is sufficient.', [IntToStr(NETFrameworkVersion)]));
+        Result := True;
+      end;
+    end else begin
+      Log(Format('.NET Framework is not installed. Downloading.', [IntToStr(NETFrameworkVersion)]));
+      Result := DownloadNETFramework()
+    end;
+  end else
+    Result := True;
+end;
