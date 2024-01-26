@@ -24,26 +24,36 @@ jobs:
 
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1
-  
+
     - name: Restore Packages
       run: nuget restore ComicRack.sln
 
     - name: Build solution
       run: msbuild ComicRack\ComicRack.csproj -t:rebuild -property:Configuration=Release
-      
+
     - name: Package Files
       run: powershell Compress-Archive -Path 'ComicRack\bin\Release\*' -DestinationPath 'ComicRackCE_nightly.zip' -Force
-         
+
+    - name: Get short sha
+      id: vars
+      run: echo "sha_short=$(git rev-parse --short HEAD)" >> $env:$GITHUB_OUTPUT
+
+    - name: Compile installer
+      uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
+      with:
+        path: Installer.iss
+        options: /DMyAppVersion=nightly-${{ steps.vars.outputs.sha_short }} /DMyAppSetupFile=ComicRackCESetup_nightly
+
     - name: Update git tag
       run: |
         git tag -f nightly
         git push -f origin nightly
-    
+
     - name: Update Nightly Release
       uses: ncipollo/release-action@main
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: "ComicRackCE_nightly.zip"
+        artifacts: "ComicRackCE_nightly.zip,ComicRackCESetup_nightly.exe"
         tag: "nightly"
         commit: ${{ github.ref_name }}
         prerelease: true
