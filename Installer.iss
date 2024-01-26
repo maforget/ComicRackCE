@@ -193,7 +193,7 @@ begin
       Result := True;
     end
     else begin
-      Log(Format(NETFrameworkLabel+' installation failed: [Result Code: %s] {tmp}\'+NETFrameworkFilename, [ResultCode]));
+      Log(Format('%s installation failed: [Result Code: %s] {tmp}\%s', [NETFrameworkLabel, ResultCode, NETFrameworkFilename]));
       Result := False;
     end;
   finally
@@ -206,7 +206,7 @@ begin
   if CurPageID = wpReady then begin
     if RegQueryDWordValue(HKEY_LOCAL_MACHINE, 'Software\Microsoft\NET Framework Setup\NDP\v4\Full', 'Release', NETFrameworkVersion) then begin
       if (NETFrameworkVersion < NETFrameworkMinimum) then begin
-        Log(Format('.NET Framework version (%s) is insufficient. Downloading '+NETFrameworkLabel+'.', [IntToStr(NETFrameworkVersion)]));
+        Log(Format('.NET Framework version (%s) is insufficient. Downloading %s.', [IntToStr(NETFrameworkVersion), NETFrameworkLabel]));
         Result := DownloadNETFramework()
       end else begin
         Log(Format('.NET Framework version (%s) is sufficient.', [IntToStr(NETFrameworkVersion)]));
