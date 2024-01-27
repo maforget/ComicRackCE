@@ -12,10 +12,14 @@ _Please keep in mind that this build isn't considered a stable build, It will ch
   <a href="https://github.com/maforget/ComicRack_AmazonScrapper/releases/latest/download/AmazonScrapper.crplugin" alt="Latest Release">
       <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?label=latest%20release&logo=github" /></a>
 -->
-    <a href="https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCE_nightly.zip" alt="Nightly">
-      <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?include_prereleases&label=pre-release&logo=github" /></a>
+    <a href="https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCE_nightly.zip" alt="Nightly (ZIP)">
+      <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?include_prereleases&label=pre-release (zip)&logo=github" /></a>
+    <a href="https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe" alt="Nightly (EXE)">
+      <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?include_prereleases&label=pre-release (installer)&logo=github" /></a>
     <br>
-    <a href="https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCE_nightly.zip" alt="Nightly">
+    <a href="https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCE_nightly.zip" alt="Nightly (ZIP)">
+      <img src="https://img.shields.io/github/release-date-pre/maforget/ComicRackCE?logo=github&label=Released" /></a>   
+    <a href="https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe" alt="Nightly (EXE)">
       <img src="https://img.shields.io/github/release-date-pre/maforget/ComicRackCE?logo=github&label=Released" /></a>
 
 </p>
