@@ -1,6 +1,6 @@
 # ComicRack Community Edition
 
-#### These are automatically build for each commit, so this nightly will always be up to date and is build directly by Github, so you know the code you downloaded is the same than from the repo.
+#### These are automatically build for each commit, so this nightly will always be up to date and is build directly by Github, so you know the code you downloaded is the same than from the repo. When using the installer, I highly suggest you uninstall the original ComicRack before installing the Community Edition. It will prevent duplicates with the Open With menu.
 
 _Please keep in mind that this build isn't considered a stable build, It will change multiple times perhaps daily. There are still some bugs that might have came from the decompiling process, as such please be careful when "upgrading" to this version. There are also some reports of False Positive by Windows Defender, since this is an ever changing build, we cannot submit all version for removal._
 
@@ -44,23 +44,33 @@ See the current changelog [here.](https://raw.githubusercontent.com/maforget/Com
 
 ## Installation
 
-ComicRack Community Edition currently does not have a standard installation package. To install, download the [nightly release](https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCE_nightly.zip "Nightly Release") and follow the instructions below:
-
-1. Extract the nightly release archive to a folder on your computer.
-2. Ensure that a previous installation of ComicRack is not currently running (check the system tray).
-3. Run ComicRack.exe in the folder you extracted to.
-4. Once ComicRack has loaded, close it again (check the system tray).
+To install, download the [nightly installer](https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe "Nightly Release"), doublie-click the installer provided and follow the instructions. When using the installer, I highly suggest you uninstall the original ComicRack before installing the Community Edition. It will prevent duplicates with the Open With menu. It will still work correctly even if you have both together.
 
 ## Upgrading from classic ComicRack
 
 ComicRack Community Edition uses a different data directory than classic ComicRack. In order to transfer your data over:
 
-1. Open File Explorer.
+1. Run ComicRack Community Edition from the link on your Desktop or Start Menu.
+2. Once ComicRack has loaded, close it again (check the system tray), this is to create the required folders.
+3. Open Windows Explorer.
 2. Copy and paste `%appdata%\cYo\ComicRack` into the address bar and press enter. You'll see your existing ComicRack data. Consider making a backup of this directory just in case.
 3. Copy all of the contents of this directory.
-4. Navigate one directory up and open the ComicRack Community Edition directory.
+4. Navigate one directory up and open the `ComicRack Community Edition` directory.
 5. Paste your data into this directory and overwrite any existing files.
-6. Open ComicRack.exe from the Community Edition and all your comics should be there.
+6. Open ComicRack Community Edition and all your comics/scripts should be there.
 
 Remember that changes in one, will not carry over to the other.
 
+----
+
+#### Check my plugins for ComicRack Community Edition:
+
+- **[Android Client](https://github.com/maforget/ComicRackKeygen/tree/1.0). Includes the link to the Android Client. It still work correctly with the Community Edition & still works with the Latest Android 14 (although for 14+ you will need to install via ADB). Also includes stuff like a Keygen & a Support Pack for the Original ComicRack, but those aren't required anymore with the Community Edition anymore.**
+- **[Amazon Scrapper](https://github.com/maforget/ComicRack_AmazonScrapper). A Scrapper for Amazon books (former Comixology library).**
+- **[Data Manager](https://github.com/maforget/CRDataManager) let's you manipulate your data for ComicRack. Fix the various bugs in the latest v2 release.**
+- **[Bédéthèque Scrapper v2](https://github.com/maforget/Bedetheque-Scrapper-2) to scrap data from the French BD site Bédétheque.**
+- **[Find Image Resolution](https://github.com/maforget/ComicRack_FindImageResolution) to determine the resolution of a comic. Use it by right-clicking => Automation => Find Image Resolution (.NET). Configuration are in File => Automation => Find Image Resolution (.NET) Config.**
+- **[fullscreen.py](https://gist.githubusercontent.com/maforget/186a99205140acd3f7d3328ad1466e62/raw/8c7c0ecab28fb9a6037adbe19ff553e3597cccd6/fullscreen.py). It will automatically fullscreen the application when either opening a book or starting the application depending on which you enable). Copy the file in either `%programfiles%\ComicRack Community Edition\Scripts` or `%appdata%\cYo\ComicRack Community Edition\Scripts`.**
+- **[comicrack-copy-move-field](https://github.com/maforget/comicrack-copy-move-field). Moves or copies info from one field to another. Can either replace or append to the destination field. Small update from the original to permit dates to be copied or moved.**
+
+ ##### You should also consider installing the [ComicVine Scrapper](https://github.com/cbanack/comic-vine-scraper/releases/latest) plugin & [Library Organizer](https://github.com/Stonepaw/comicrack-library-organizer/releases/latest)
