@@ -194,7 +194,7 @@ begin
       Result := True;
     end
     else begin
-      Log(Format('%s installation failed: [Result Code: %s] {tmp}\%s', [NETFrameworkLabel, ResultCode, NETFrameworkFilename]));
+      Log(Format('%s installation failed: [Result Code: %d] {tmp}\%s', [NETFrameworkLabel, ResultCode, NETFrameworkFilename]));
       Result := False;
     end;
   finally
