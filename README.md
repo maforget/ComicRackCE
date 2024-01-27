@@ -65,7 +65,7 @@ Remember that changes in one, will not carry over to the other.
 
 #### Check my plugins for ComicRack Community Edition:
 
-- **[Android Client](https://github.com/maforget/ComicRackKeygen/tree/1.0). Includes the link to the Android Client. It still work correctly with the Community Edition & still works with the Latest Android 14 (although for 14+ you will need to install via ADB). Also includes stuff like a Keygen & a Support Pack for the Original ComicRack, but those aren't required anymore with the Community Edition anymore.**
+- **[Android Client](https://github.com/maforget/ComicRackKeygen/releases/tag/1.0). Includes the link to the Android Client. It still work correctly with the Community Edition & still works with the Latest Android 14 (although for 14+ you will need to install via ADB). Also includes stuff like a Keygen & a Support Pack for the Original ComicRack, but those aren't required anymore with the Community Edition anymore.**
 - **[Amazon Scrapper](https://github.com/maforget/ComicRack_AmazonScrapper). A Scrapper for Amazon books (former Comixology library).**
 - **[Data Manager](https://github.com/maforget/CRDataManager) let's you manipulate your data for ComicRack. Fix the various bugs in the latest v2 release.**
 - **[Bédéthèque Scrapper v2](https://github.com/maforget/Bedetheque-Scrapper-2) to scrap data from the French BD site Bédétheque.**
