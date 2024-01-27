@@ -10,7 +10,7 @@ using cYo.Projects.ComicRack.Engine.Controls;
 
 namespace cYo.Projects.ComicRack.Plugins.Controls
 {
-	public class HtmlComicPageControl : ComicPageControl
+	public partial class HtmlComicPageControl : ComicPageControl
 	{
 		[ComVisible(true)]
 		public class ScriptProvider
@@ -31,10 +31,6 @@ namespace cYo.Projects.ComicRack.Plugins.Controls
 		private string lastResult;
 
 		private string originalConfig;
-
-		private IContainer components;
-
-		private WebBrowser webBrowser;
 
 		public Func<ComicBook[], string> InfoFunction
 		{
@@ -84,22 +80,6 @@ namespace cYo.Projects.ComicRack.Plugins.Controls
 			InitializeComponent();
 		}
 
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				if (SaveConfigFunction != null && originalConfig != ScriptConfig)
-				{
-					SaveConfigFunction(ScriptConfig);
-				}
-				if (components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
-		}
-
 		protected override void OnShowInfo(IEnumerable<ComicBook> books)
 		{
 			base.OnShowInfo(books);
@@ -131,25 +111,6 @@ namespace cYo.Projects.ComicRack.Plugins.Controls
 				webBrowser.DocumentText = string.Empty;
 				lastResult = null;
 			}
-		}
-
-		private void InitializeComponent()
-		{
-			webBrowser = new System.Windows.Forms.WebBrowser();
-			SuspendLayout();
-			webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-			webBrowser.Location = new System.Drawing.Point(0, 0);
-			webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-			webBrowser.Name = "webBrowser";
-			webBrowser.Size = new System.Drawing.Size(540, 402);
-			webBrowser.TabIndex = 1;
-			webBrowser.WebBrowserShortcutsEnabled = false;
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.Controls.Add(webBrowser);
-			base.Name = "HtmlInfoControl";
-			base.Size = new System.Drawing.Size(540, 402);
-			ResumeLayout(false);
 		}
 	}
 }

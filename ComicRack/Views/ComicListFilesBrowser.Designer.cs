@@ -8,9 +8,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 	public partial class ComicListFilesBrowser : ComicListBrowser
 	{
 
-		private IContainer components;
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-		protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
@@ -25,6 +28,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             this.SuspendLayout();
             // 
             // ComicListFilesBrowser

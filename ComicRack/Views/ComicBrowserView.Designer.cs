@@ -13,6 +13,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
         private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             this.comicBrowser = new cYo.Projects.ComicRack.Viewer.Views.ComicBrowserControl();
             this.SuspendLayout();
             // 
