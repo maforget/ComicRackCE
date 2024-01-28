@@ -3,8 +3,14 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using cYo.Common.Drawing;
-using Tao.OpenGl;
-using Tao.Platform.Windows;
+using OpenTK;
+using OpenTK.Platform.Windows;
+using OpenTK.Graphics;
+using OpenTK.Graphics.OpenGL;
+using OpenTK.Platform;
+using PixelFormat = System.Drawing.Imaging.PixelFormat;
+//using Tao.OpenGl;
+//using Tao.Platform.Windows;
 
 namespace cYo.Common.Presentation.Tao
 {
@@ -27,7 +33,7 @@ namespace cYo.Common.Presentation.Tao
 					using (FastBitmapLock fastBitmapLock2 = new FastBitmapLock(bitmap2, bitmap2.Size.ToRectangle(), allowWrite: true))
 					{
 						Glu.gluScaleImage(32993, fastBitmapLock.Width, fastBitmapLock.Height, 5121, fastBitmapLock.Data, fastBitmapLock2.Width, fastBitmapLock2.Height, 5121, fastBitmapLock2.Data);
-						flag = Gl.glGetError() != 0;
+						flag = GL.GetError() != ErrorCode.NoError;
 					}
 				}
 				if (flag)

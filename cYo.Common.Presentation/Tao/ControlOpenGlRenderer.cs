@@ -9,8 +9,14 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using cYo.Common.ComponentModel;
 using cYo.Common.Drawing;
-using Tao.OpenGl;
-using Tao.Platform.Windows;
+using OpenTK;
+using OpenTK.Platform.Windows;
+using OpenTK.Graphics;
+using OpenTK.Graphics.OpenGL;
+using OpenTK.Platform;
+using PixelFormat = System.Drawing.Imaging.PixelFormat;
+//using Tao.OpenGl;
+//using Tao.Platform.Windows;
 
 namespace cYo.Common.Presentation.Tao
 {
@@ -26,7 +32,7 @@ namespace cYo.Common.Presentation.Tao
 
 		private bool isSoftwareRenderer;
 
-		private int errorCode;
+		private ErrorCode errorCode;
 
 		private int sceneCounter;
 
@@ -86,7 +92,7 @@ namespace cYo.Common.Presentation.Tao
 			set;
 		}
 
-		public int ErrorCode => errorCode;
+		public ErrorCode ErrorCode => errorCode;
 
 		public Size Size => Control.ClientRectangle.Size;
 
@@ -136,7 +142,7 @@ namespace cYo.Common.Presentation.Tao
 				array[7] = 0f;
 				array[11] = 0f;
 				array[15] = 1f;
-				Gl.glLoadMatrixf(array);
+				GL.LoadMatrix(array);
 			}
 		}
 
@@ -177,11 +183,11 @@ namespace cYo.Common.Presentation.Tao
 				clip = value;
 				if (clip.IsEmpty)
 				{
-					Gl.glDisable(3089);
+					GL.Disable(EnableCap.ScissorTest);
 					return;
 				}
 				int[] array = new int[4];
-				Gl.glEnable(3089);
+				GL.Enable(EnableCap.ScissorTest);
 				using (Matrix matrix = GetMatrix(modelView: true))
 				{
 					using (Matrix matrix2 = GetMatrix(modelView: false))
@@ -195,10 +201,10 @@ namespace cYo.Common.Presentation.Tao
 						};
 						matrix.TransformPoints(array2);
 						matrix2.TransformPoints(array2);
-						Gl.glGetIntegerv(2978, array);
+						GL.GetInteger(GetPName.Viewport, array);
 						Point point = new Point((int)((float)array[0] + (1f + array2[3].X) * (float)array[2] / 2f), (int)((float)array[1] + (1f + array2[3].Y) * (float)array[3] / 2f));
 						Point point2 = new Point((int)((float)array[0] + (1f + array2[1].X) * (float)array[2] / 2f), (int)((float)array[1] + (1f + array2[1].Y) * (float)array[3] / 2f));
-						Gl.glScissor(point.X, point.Y, point2.X - point.X, point2.Y - point.Y);
+						GL.Scissor(point.X, point.Y, point2.X - point.X, point2.Y - point.Y);
 					}
 				}
 			}
@@ -217,27 +223,27 @@ namespace cYo.Common.Presentation.Tao
 				switch (value)
 				{
 				case StencilMode.WriteOne:
-					Gl.glEnable(2960);
-					Gl.glStencilFunc(519, 1, 1);
-					Gl.glStencilOp(7681, 7681, 7681);
+					GL.Enable(EnableCap.StencilTest);
+					GL.StencilFunc(StencilFunction.Always, 1, 1);
+					GL.StencilOp(StencilOp.Replace, StencilOp.Replace, StencilOp.Replace);
 					break;
 				case StencilMode.WriteNull:
-					Gl.glEnable(2960);
-					Gl.glStencilFunc(519, 0, 0);
-					Gl.glStencilOp(7681, 7681, 7681);
-					break;
+                    GL.Enable(EnableCap.StencilTest);
+                    GL.StencilFunc(StencilFunction.Always, 0, 0);
+                    GL.StencilOp(StencilOp.Replace, StencilOp.Replace, StencilOp.Replace);
+                    break;
 				case StencilMode.TestNull:
-					Gl.glEnable(2960);
-					Gl.glStencilFunc(514, 0, 1);
-					Gl.glStencilOp(7680, 7680, 7680);
+					GL.Enable(EnableCap.StencilTest);
+                    GL.StencilFunc(StencilFunction.Equal, 0, 1);
+                    GL.StencilOp(StencilOp.Keep, StencilOp.Keep, StencilOp.Keep);
 					break;
 				case StencilMode.TestOne:
-					Gl.glEnable(2960);
-					Gl.glStencilFunc(514, 1, 1);
-					Gl.glStencilOp(7680, 7680, 7680);
-					break;
+					GL.Enable(EnableCap.StencilTest);
+                    GL.StencilFunc(StencilFunction.Equal, 1, 1);
+                    GL.StencilOp(StencilOp.Keep, StencilOp.Keep, StencilOp.Keep);
+                    break;
 				default:
-					Gl.glDisable(2960);
+					GL.Disable(EnableCap.StencilTest);
 					break;
 				}
 				stencilMode = value;
@@ -319,8 +325,8 @@ namespace cYo.Common.Presentation.Tao
 		{
 			if (!Wgl.wglMakeCurrent(deviceContext, renderingContext))
 			{
-				throw new InvalidOperationException("Can not activate the GL rendering context.");
-			}
+                throw new InvalidOperationException("Can not activate the GL rendering context.");
+            }
 		}
 
 		public void SwapBuffers()
@@ -335,12 +341,12 @@ namespace cYo.Common.Presentation.Tao
 
 		public void ReshapeFunc()
 		{
-			Gl.glViewport(0, 0, Size.Width, Size.Height);
-			Gl.glMatrixMode(5889);
-			Gl.glLoadIdentity();
-			Gl.glOrtho(0.0, Size.Width, Size.Height, 0.0, 0.0, 1.0);
-			Gl.glMatrixMode(5888);
-			Gl.glLoadIdentity();
+			GL.Viewport(0, 0, Size.Width, Size.Height);
+			GL.MatrixMode(MatrixMode.Projection);
+			GL.LoadIdentity();
+			GL.Ortho(0.0, Size.Width, Size.Height,0.0, 0.0, 1.0 );
+			GL.MatrixMode(MatrixMode.Modelview0Ext);
+			GL.LoadIdentity();
 		}
 
 		private void InitializeContexts(Control window)
@@ -455,15 +461,15 @@ namespace cYo.Common.Presentation.Tao
 		{
 			if (CompositingMode == CompositingMode.SourceOver)
 			{
-				Gl.glEnable(3042);
+				GL.Enable(EnableCap.Blend);
 				BlendingOperation blendingOperation = BlendingOperation;
 				if (blendingOperation == BlendingOperation.Blend || blendingOperation != BlendingOperation.Multiply)
 				{
-					Gl.glBlendFunc(770, 771);
+					GL.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
 				}
 				else
 				{
-					Gl.glBlendFuncSeparate(774, 0, 770, 771);
+					GL.BlendFuncSeparate(BlendingFactorSrc.DstColor, BlendingFactorDest.Zero, BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
 				}
 			}
 		}
@@ -471,7 +477,7 @@ namespace cYo.Common.Presentation.Tao
 		private static Matrix GetMatrix(bool modelView)
 		{
 			float[] array = new float[16];
-			Gl.glGetFloatv(modelView ? 2982 : 2983, array);
+			GL.GetFloat(modelView ? GetPName.ModelviewMatrix : GetPName.ProjectionMatrix, array);
 			return new Matrix(array[0], array[1], array[4], array[5], array[12], array[13]);
 		}
 
@@ -495,8 +501,8 @@ namespace cYo.Common.Presentation.Tao
 
 		protected virtual void OnInitOpenGl()
 		{
-			Gl.glDisable(2929);
-			Gl.glShadeModel(7424);
+			GL.Disable(EnableCap.DepthTest);
+			GL.ShadeModel(ShadingModel.Flat);
 		}
 
 		public bool BeginScene(Graphics gr)
@@ -531,27 +537,27 @@ namespace cYo.Common.Presentation.Tao
 			{
 				if (AutoFinish)
 				{
-					Gl.glFinish();
+					GL.Finish();
 				}
 				if (AutoSwapBuffers)
 				{
 					SwapBuffers();
 				}
-				errorCode = Gl.glGetError();
+				errorCode = GL.GetError();
 			}
 			sceneCounter--;
 		}
 
 		public void Clear(Color color)
 		{
-			Gl.glClearColor((float)(int)color.R / 255f, (float)(int)color.G / 255f, (float)(int)color.B / 255f, (float)(int)color.A / 255f);
-			Gl.glClear(16384);
+			GL.ClearColor((float)(int)color.R / 255f, (float)(int)color.G / 255f, (float)(int)color.B / 255f, (float)(int)color.A / 255f);
+			GL.Clear(ClearBufferMask.ColorBufferBit);
 		}
 
 		public void DrawImage(RendererImage image, RectangleF dest, RectangleF src, BitmapAdjustment ajustment, float opacity)
 		{
 			opacity *= Opacity;
-			Gl.glPushAttrib(24576);
+			GL.PushAttrib(AttribMask.EnableBit | AttribMask.ColorBufferBit);
 			SetDefaultBlending();
 			if (ajustment.IsEmpty)
 			{
@@ -564,7 +570,7 @@ namespace cYo.Common.Presentation.Tao
 					tm.DrawImage(image2, dest, src, opacity);
 				}
 			}
-			Gl.glPopAttrib();
+			GL.PopAttrib();
 		}
 
 		public void FillRectangle(RectangleF bounds, Color color)
@@ -572,11 +578,11 @@ namespace cYo.Common.Presentation.Tao
 			color = Color.FromArgb((int)(255f * opacity), color);
 			if (color.A >= 5)
 			{
-				Gl.glPushAttrib(24577);
+				GL.PushAttrib(AttribMask.CurrentBit | AttribMask.EnableBit | AttribMask.ColorBufferBit);
 				SetDefaultBlending();
-				Gl.glColor4ub(color.R, color.G, color.B, color.A);
-				Gl.glRectf(bounds.X, bounds.Y, bounds.Right, bounds.Bottom);
-				Gl.glPopAttrib();
+				GL.Color4(color.R, color.G, color.B, color.A);
+				GL.Rect(bounds.X, bounds.Y, bounds.Right, bounds.Bottom);
+				GL.PopAttrib();
 			}
 		}
 
@@ -587,17 +593,17 @@ namespace cYo.Common.Presentation.Tao
 			{
 				return;
 			}
-			Gl.glPushAttrib(27425);
+			GL.PushAttrib(AttribMask.CurrentBit | AttribMask.PixelModeBit | AttribMask.DepthBufferBit | AttribMask.AccumBufferBit | AttribMask.ViewportBit | AttribMask.EnableBit | AttribMask.ColorBufferBit);
 			SetDefaultBlending();
-			Gl.glLineWidth(width);
-			Gl.glColor4ub(color.R, color.G, color.B, color.A);
-			Gl.glBegin(3);
+			GL.LineWidth(width);
+			GL.Color4(color.R, color.G, color.B, color.A);
+			GL.Begin(PrimitiveType.LineStrip);
 			foreach (PointF point in points)
 			{
-				Gl.glVertex2f(point.X, point.Y);
+				GL.Vertex2(point.X, point.Y);
 			}
-			Gl.glEnd();
-			Gl.glPopAttrib();
+			GL.End();
+			GL.PopAttrib();
 		}
 
 		public bool IsVisible(RectangleF bounds)
@@ -607,23 +613,23 @@ namespace cYo.Common.Presentation.Tao
 
 		public IDisposable SaveState()
 		{
-			Gl.glPushMatrix();
-			return new Disposer(Gl.glPopMatrix);
+			GL.PushMatrix();
+			return new Disposer(GL.PopMatrix);
 		}
 
 		public void TranslateTransform(float dx, float dy)
 		{
-			Gl.glTranslatef(dx, dy, 0f);
+			GL.Translate(dx, dy, 0f);
 		}
 
 		public void ScaleTransform(float dx, float dy)
 		{
-			Gl.glScalef(dx, dy, 0f);
+			GL.Scale(dx, dy, 0f);
 		}
 
 		public void RotateTransform(float angel)
 		{
-			Gl.glRotatef(angel, 0f, 0f, 1f);
+			GL.Rotate(angel, 0f, 0f, 1f);
 		}
 
 		public void DrawBlurredImage(RendererImage image, RectangleF dest, RectangleF src, float blur)
@@ -637,7 +643,7 @@ namespace cYo.Common.Presentation.Tao
 			BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
 			try
 			{
-				Gl.glReadPixels(rc.X, rc.Y, rc.Right, rc.Bottom, 32993, 5121, bitmapData.Scan0);
+				GL.ReadPixels(rc.X, rc.Y, rc.Right, rc.Bottom, OpenTK.Graphics.OpenGL.PixelFormat.Bgra, PixelType.UnsignedByte, bitmapData.Scan0);
 				if (flip)
 				{
 					IntPtr scan = bitmapData.Scan0;
@@ -667,8 +673,8 @@ namespace cYo.Common.Presentation.Tao
 
 		public void ClearStencil()
 		{
-			Gl.glClearStencil(0);
-			Gl.glClear(1024);
+			GL.ClearStencil(0);
+			GL.Clear(ClearBufferMask.StencilBufferBit);
 		}
 
 		public static void SetProcessMemorySize(int size)

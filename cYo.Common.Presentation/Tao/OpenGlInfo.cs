@@ -1,4 +1,5 @@
-using Tao.OpenGl;
+//using Tao.OpenGl;
+using OpenTK.Graphics.OpenGL;
 
 namespace cYo.Common.Presentation.Tao
 {
@@ -20,7 +21,7 @@ namespace cYo.Common.Presentation.Tao
 			{
 				if (maxTextureSize == 0)
 				{
-					Gl.glGetIntegerv(3379, out maxTextureSize);
+                    maxTextureSize = GL.GetInteger(GetPName.MaxTextureSize);
 				}
 				return maxTextureSize;
 			}
@@ -34,7 +35,7 @@ namespace cYo.Common.Presentation.Tao
 				{
 					try
 					{
-						string text = Gl.glGetString(7938).Trim();
+						string text = GL.GetString(StringName.Version).Trim();
 						version = float.Parse(text.Substring(0, 1)) + float.Parse(text.Substring(2, 1)) / 10f;
 					}
 					catch
@@ -52,7 +53,7 @@ namespace cYo.Common.Presentation.Tao
 			{
 				if (!supportsAnisotropicFilter.HasValue)
 				{
-					supportsAnisotropicFilter = Gl.IsExtensionSupported("GL_EXT_texture_filter_anisotropic");
+                    supportsAnisotropicFilter = GL.GetString(StringName.Extensions).Contains("GL_EXT_texture_filter_anisotropic");
 				}
 				return supportsAnisotropicFilter.Value;
 			}
@@ -64,7 +65,7 @@ namespace cYo.Common.Presentation.Tao
 			{
 				if (!supportsNonPower2Textures.HasValue)
 				{
-					supportsNonPower2Textures = Gl.IsExtensionSupported("ARB_texture_non_power_of_two");
+                    supportsNonPower2Textures = GL.GetString(StringName.Extensions).Contains("ARB_texture_non_power_of_two");
 				}
 				return supportsNonPower2Textures.Value;
 			}
@@ -76,7 +77,7 @@ namespace cYo.Common.Presentation.Tao
 			{
 				if (!supportsTextureCompression.HasValue)
 				{
-					supportsTextureCompression = Gl.IsExtensionSupported("GL_ARB_texture_compression");
+                    supportsTextureCompression = GL.GetString(StringName.Extensions).Contains("GL_ARB_texture_compression");
 				}
 				return supportsTextureCompression.Value;
 			}
