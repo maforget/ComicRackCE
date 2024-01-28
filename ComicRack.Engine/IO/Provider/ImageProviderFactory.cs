@@ -31,12 +31,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			return null;
 		}
 
-        public override FileFormat GetSourceFormat(string source)
-        {
-            ImageProvider provider = CreateSourceProvider(source);
-            ProviderInfo chosenProviderInfo = GetProviderInfos().FirstOrDefault(x => x.ProviderType == provider.GetType());
-            FileFormat chosenFileFormat = chosenProviderInfo.Formats.FirstOrDefault((FileFormat ff) => ff.Supports(source));
-			return chosenFileFormat ?? provider.DefaultFileFormat;
-        }
+		public override FileFormat GetSourceFormat(string source)
+		{
+            return CreateSourceProvider(source).DefaultFileFormat;
+		}
 	}
 }
