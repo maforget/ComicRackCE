@@ -61,6 +61,10 @@ ComicRack Community Edition uses a different data directory than classic ComicRa
 
 Remember that changes in one, will not carry over to the other.
 
+---
+
+Check the [Wiki](https://github.com/maforget/ComicRackCE/wiki) for additional help & guides, such as info about using the Android Client. The wiki is open for contributor to add to.
+
 ----
 
 #### Check my plugins for ComicRack Community Edition:
