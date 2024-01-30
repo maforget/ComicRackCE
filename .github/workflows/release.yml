@@ -18,7 +18,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: setup-msbuild
       uses: microsoft/setup-msbuild@v1
@@ -36,7 +36,7 @@ jobs:
       run: powershell Compress-Archive -Path 'ComicRack\bin\Release\*' -DestinationPath 'ComicRackCE_v${{ github.event.inputs.version }}.zip' -Force
 
     - name: Compile installer
-      uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
+      uses: Minionguyjpro/Inno-Setup-Action@v1.2.3
       with:
         path: Installer.iss
         options: /DMyAppVersion=v${{ github.event.inputs.version }} /DMyAppSetupFile=ComicRackCESetup_v${{ github.event.inputs.version }}

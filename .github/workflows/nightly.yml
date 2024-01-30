@@ -17,7 +17,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: setup-msbuild
       uses: microsoft/setup-msbuild@v1
@@ -39,7 +39,7 @@ jobs:
       run: echo "sha_short=$(git rev-parse --short HEAD)" >> $env:GITHUB_OUTPUT
 
     - name: Compile installer
-      uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
+      uses: Minionguyjpro/Inno-Setup-Action@v1.2.3
       with:
         path: Installer.iss
         options: /DMyAppVersion=nightly-${{ steps.vars.outputs.sha_short }} /DMyAppSetupFile=ComicRackCESetup_nightly
