@@ -74,8 +74,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 		[DefaultValue(false)]
 		public bool IsInternet
 		{
-			get;
-			set;
+			//Always return false since Public Servers are disabled
+			get =>  false;
+			set => _ = value;
 		}
 
 		[DefaultValue(false)]
