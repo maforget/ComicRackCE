@@ -73,7 +73,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 
 		private readonly Cache<Guid, IImageProvider> providerCache = new Cache<Guid, IImageProvider>(EngineConfiguration.Default.ServerProviderCacheSize);
 
-		private static readonly ServerRegistration serverRegistration = new ServerRegistration();
+		//private static readonly ServerRegistration serverRegistration = new ServerRegistration();
 
 		private static readonly Dictionary<int, int> shareCounts = new Dictionary<int, int>();
 
@@ -316,8 +316,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 					}
 					try
 					{
-						serverRegistration.Register(uri, Config.Name, Config.Description ?? string.Empty, (int)Config.Options, Config.PrivateListPassword);
-						serverHasBeenAnnounced = true;
+						//serverRegistration.Register(uri, Config.Name, Config.Description ?? string.Empty, (int)Config.Options, Config.PrivateListPassword);
+						//serverHasBeenAnnounced = true;
 					}
 					catch (Exception)
 					{
@@ -343,7 +343,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 			string announcementUri = GetAnnouncementUri();
 			try
 			{
-				serverRegistration.Unregister(announcementUri);
+				//serverRegistration.Unregister(announcementUri);
 			}
 			catch (Exception)
 			{
@@ -509,8 +509,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 
 		public static IEnumerable<ShareInformation> GetPublicServers(ServerOptions optionsMask, string password)
 		{
-			ServerInfo[] source = HttpAccess.CallSoap(serverRegistration, (ServerRegistration s) => s.GetList((int)optionsMask, password));
-			return ((IEnumerable<ServerInfo>)source).Select((Func<ServerInfo, ShareInformation>)((ServerInfo s) => s));
+			//ServerInfo[] source = HttpAccess.CallSoap(serverRegistration, (ServerRegistration s) => s.GetList((int)optionsMask, password));
+			//return ((IEnumerable<ServerInfo>)source).Select((Func<ServerInfo, ShareInformation>)((ServerInfo s) => s));
+			return Enumerable.Empty<ShareInformation>();
 		}
 
 		public static string GetExternalServiceAddress()

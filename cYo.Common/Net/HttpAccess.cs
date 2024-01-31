@@ -121,27 +121,27 @@ namespace cYo.Common.Net
 			}
 		}
 
-		public void WrapSoap<T>(T request, Action<T> call) where T : SoapHttpClientProtocol
-		{
-			GetResponse(delegate
-			{
-				request.Proxy = WebRequest.DefaultWebProxy;
-			}, delegate(ICredentials c)
-			{
-				if (request.Proxy != null)
-				{
-					request.Proxy.Credentials = c;
-				}
-			}, delegate(ICredentials c)
-			{
-				request.Credentials = c;
-			}, () => request.Proxy.GetProxy(new Uri(request.Url)), () => new Uri(request.Url), delegate
-			{
-				request.UserAgent = UserAgent;
-				call(request);
-				return true;
-			});
-		}
+		//public void WrapSoap<T>(T request, Action<T> call) where T : SoapHttpClientProtocol
+		//{
+		//	GetResponse(delegate
+		//	{
+		//		request.Proxy = WebRequest.DefaultWebProxy;
+		//	}, delegate(ICredentials c)
+		//	{
+		//		if (request.Proxy != null)
+		//		{
+		//			request.Proxy.Credentials = c;
+		//		}
+		//	}, delegate(ICredentials c)
+		//	{
+		//		request.Credentials = c;
+		//	}, () => request.Proxy.GetProxy(new Uri(request.Url)), () => new Uri(request.Url), delegate
+		//	{
+		//		request.UserAgent = UserAgent;
+		//		call(request);
+		//		return true;
+		//	});
+		//}
 
 		public Stream GetStream(Uri uri)
 		{
@@ -252,22 +252,22 @@ namespace cYo.Common.Net
 			}
 		}
 
-		public static K CallSoap<T, K>(Func<T, K> call) where T : SoapHttpClientProtocol, new()
-		{
-			using (T soap = new T())
-			{
-				return CallSoap(soap, call);
-			}
-		}
+		//public static K CallSoap<T, K>(Func<T, K> call) where T : SoapHttpClientProtocol, new()
+		//{
+		//	using (T soap = new T())
+		//	{
+		//		return CallSoap(soap, call);
+		//	}
+		//}
 
-		public static K CallSoap<T, K>(T soap, Func<T, K> call) where T : SoapHttpClientProtocol
-		{
-			K result = default(K);
-			new HttpAccess().WrapSoap(soap, delegate(T r)
-			{
-				result = call(r);
-			});
-			return result;
-		}
+		//public static K CallSoap<T, K>(T soap, Func<T, K> call) where T : SoapHttpClientProtocol
+		//{
+		//	K result = default(K);
+		//	new HttpAccess().WrapSoap(soap, delegate(T r)
+		//	{
+		//		result = call(r);
+		//	});
+		//	return result;
+		//}
 	}
 }
