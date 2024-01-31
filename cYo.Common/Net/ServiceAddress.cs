@@ -82,18 +82,18 @@ namespace cYo.Common.Net
 			}
 			try
 			{
-				HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("http://comicrack.cyolito.com/services/ClientAddress.php");
-				httpWebRequest.Accept = "*/*";
-				using (WebResponse webResponse = httpWebRequest.GetResponse())
-				{
-					using (Stream stream = webResponse.GetResponseStream())
-					{
-						using (StreamReader streamReader = new StreamReader(stream))
-						{
-							wanIp = streamReader.ReadToEnd();
-						}
-					}
-				}
+				//HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("http://comicrack.cyolito.com/services/ClientAddress.php");
+				//httpWebRequest.Accept = "*/*";
+				//using (WebResponse webResponse = httpWebRequest.GetResponse())
+				//{
+				//	using (Stream stream = webResponse.GetResponseStream())
+				//	{
+				//		using (StreamReader streamReader = new StreamReader(stream))
+				//		{
+				//			wanIp = streamReader.ReadToEnd();
+				//		}
+				//	}
+				//}
 			}
 			catch (Exception)
 			{
