@@ -81,7 +81,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			FillListTree(tvSharedLists.Nodes, Program.Database.ComicLists);
 			IdleProcess.Idle += IdleProcess_Idle;
 			new LibraryTreeSkin().TreeView = tvSharedLists;
-		}
+            this.chkShareInternet.Enabled = false;
+        }
 
 		private void FillListTree(TreeNodeCollection tnc, IEnumerable<ComicListItem> clic)
 		{
@@ -102,7 +103,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		{
 			tvSharedLists.Enabled = cbShare.SelectedIndex == 2;
 			txPassword.Enabled = chkRequirePassword.Checked;
-			chkPrivate.Enabled = chkShareInternet.Checked;
+			chkPrivate.Enabled = chkShareInternet.Enabled && chkShareInternet.Checked;
 		}
 
 		private void txSharedName_TextChanged(object sender, EventArgs e)
