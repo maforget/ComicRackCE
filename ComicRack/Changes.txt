@@ -26,7 +26,7 @@ Community Edition Build 0.9.180:
 * CHANGE: Improved performances while handling Tar files (by Apiweb)
 * CHANGE: Removed the Crash submission dialog because it depends on the cyolito.com website
 * CHANGE: Disabled the Public server checkbox because it depends on the cyolito.com website
-* CHANGE: Made Tags be saved inside the ComicInfo.xml
+* CHANGE: Made Tags be saved inside the ComicInfo.xml (will this mess with other programs that uses the ComicInfo.xml?)
 
 * BUGFIX: (Maybe?) Fixed crash when the clipboard contains some objects while the program is idle. The check should now only happen on a right-click and not in the background. It should at least lessen the frequency of the crash, maybe remove it completely. 
 * BUGFIX: Fixed smartlist "in range" for dates, the second field wasn't taken into account.
@@ -308,7 +308,7 @@ Build 0.9.157:
 * NEW: Option to cancel wireless syncs from the device
 * NEW: New command in Comic Dialog to order pages by different criteria
 * NEW: Publisher Icons can now be extended with an applicable year range (see Publisher.zip DC Icon)
-* NEW: New setting in export to rotate double pages by 90°
+* NEW: New setting in export to rotate double pages by 90Â°
 * NEW: Setting in Advanced Preferences to limit the system memory ComicRack is using
 * NEW: Implemented a query language (like SQL) for Smartlists.
 * NEW: Added Copy/Paste support for Smartllists and the new query language
@@ -580,7 +580,7 @@ Build 0.9.141:
 * CHANGE: Names in the age rating icon sets are now added to the default Age Rating List
 * CHANGE: Extended Manga field with "Yes (Right to Left)"
 * CHANGE: Support for MangaRightToLeft icon in Special Icon set
-* CHANGE: Quick search ínput field gets bigger when focused
+* CHANGE: Quick search Ã­nput field gets bigger when focused
 
 * BUGFIX: Fixed multiple Wikipedia result entries in text context menus
 * BUGFIX: Wiki was asked for results for empty texts
