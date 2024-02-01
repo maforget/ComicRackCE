@@ -64,7 +64,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 				long totalPageMemory = 0L;
 				Exception ce = null;
 				ParallelOptions parallelOptions = new ParallelOptions();
-				parallelOptions.MaxDegreeOfParallelism = EngineConfiguration.Default.ParallelConversions.Clamp(1, 8);
+				parallelOptions.MaxDegreeOfParallelism = EngineConfiguration.Default.ParallelConversions.Clamp(1, Environment.ProcessorCount);
 				Parallel.For(0, provider.Count, parallelOptions, delegate(int n, ParallelLoopState ls)
 				{
 					try
