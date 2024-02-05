@@ -231,11 +231,13 @@
     <Compile Include="Net\IBroadcast.cs" />
     <Compile Include="Net\IPAddressExtension.cs" />
     <Compile Include="Net\IPAddressV4.cs" />
+    <Compile Include="Net\News\Atom.cs" />
     <Compile Include="Net\News\NewsChannel.cs" />
     <Compile Include="Net\News\NewsChannelCollection.cs" />
     <Compile Include="Net\News\NewsChannelItem.cs" />
     <Compile Include="Net\News\NewsChannelItemCollection.cs" />
     <Compile Include="Net\News\NewsFeed.cs" />
+    <Compile Include="Net\News\AtomNewsFeed.cs" />
     <Compile Include="Net\News\RssNewsFeed.cs" />
     <Compile Include="Net\Search\CachedSearch.cs" />
     <Compile Include="Net\Search\INetSearch.cs" />
