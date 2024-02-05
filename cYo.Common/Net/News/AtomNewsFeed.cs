@@ -22,7 +22,7 @@ namespace cYo.Common.Net.News
                 {
                     Author = item.author.name,
                     Title = item.title,
-                    Description = item.title,
+                    Description = item.content.Value,
                     Guid = item.id,
                     Link = item.link.href,
                     Published = item.updated.SafeToLocalTime(),
