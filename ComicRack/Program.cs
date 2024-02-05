@@ -94,8 +94,6 @@ namespace cYo.Projects.ComicRack.Viewer
 
         public const string DefaultNewsFeed = "https://github.com/maforget/ComicRackCE/commits.atom";
 
-		public const string OldDefaultNewsFeed = "http://feeds.feedburner.com/ComicRackNews";
-
         public const string DefaultUserForm = "https://github.com/maforget/ComicRackCE/discussions";
 
 		public const string DefaultLocalizePage = "https://web.archive.org/web/20170528182733/http://comicrack.cyolito.com/faqs/12-how-to-create-language-packs";
@@ -876,7 +874,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			else
 			{
                 //Because the default NewsFeeds.xml in the Data already as the old url inside it
-				var oldSub = News.Subscriptions.FirstOrDefault(x => x.Url == OldDefaultNewsFeed);
+				var oldSub = News.Subscriptions.FirstOrDefault(x => x.Url != DefaultNewsFeed);
                 if (oldSub != null)
 				{
 					//Since the feeds doesn't match with the default url, we remove it, and add or new one.
