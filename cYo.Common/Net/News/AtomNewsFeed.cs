@@ -25,7 +25,7 @@ namespace cYo.Common.Net.News
                     Description = item.title,
                     Guid = item.id,
                     Link = item.link.href,
-                    Published = item.updated,
+                    Published = item.updated.SafeToLocalTime(),
                     Category = "Commit"
                 };
 
