@@ -26,8 +26,10 @@ Community Edition Build 0.9.180:
 * CHANGE: Improved performances while handling Tar files (by Apiweb)
 * CHANGE: Removed the Crash submission dialog because it depends on the cyolito.com website
 * CHANGE: Disabled the Public server checkbox because it depends on the cyolito.com website
-* CHANGE: Made Tags be saved inside the ComicInfo.xml (will this mess with other programs that uses the ComicInfo.xml?)
-
+* CHANGE: Made Tags be saved inside the ComicInfo.xml. First Sync after the update will cause all the data to be updated, so a slower sync is expected. (will this mess with other programs that uses the ComicInfo.xml?)
+* CHANGE: Changed ParallelConversions from 8 to the Number of Processor. ini says it was related to the number of Processor, but I do not see any evidence for that setting. This only increases the number of pages it converts at the same time. 
+* CHANGE: Replaced the old news by the Community Edition commit history.
+ 
 * BUGFIX: (Maybe?) Fixed crash when the clipboard contains some objects while the program is idle. The check should now only happen on a right-click and not in the background. It should at least lessen the frequency of the crash, maybe remove it completely. 
 * BUGFIX: Fixed smartlist "in range" for dates, the second field wasn't taken into account.
 * BUGFIX: Fixed possible crash if window size is less than 0 (Usually when using high DPI scaling).
