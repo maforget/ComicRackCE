@@ -92,7 +92,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public const string DefaultWebSite = "https://github.com/maforget/ComicRackCE";
 
-		public const string DefaultNewsFeed = "http://feeds.feedburner.com/ComicRackNews";
+        public const string DefaultNewsFeed = "https://github.com/maforget/ComicRackCE/commits.atom";
 
 		public const string DefaultUserForm = "https://github.com/maforget/ComicRackCE/discussions";
 
