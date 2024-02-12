@@ -2652,7 +2652,20 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			});
 		}
 
-		public void PasteComicData()
+        private bool isPasteComicDataEnabled()
+        {
+            //Check if the clipboard contains data, if so enable the paste button.
+            try
+            {
+                return ComicEditMode.CanEditProperties() && Clipboard.ContainsData("ComicBook") && !GetBookList(ComicBookFilterType.Selected).IsEmpty();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public void PasteComicData()
 		{
 			try
 			{
@@ -2674,78 +2687,70 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		}
 
 		private void contextMenuItems_Opening(object sender, CancelEventArgs e)
-		{
-			IEnumerable<ComicBook> enumerable = GetBookList(ComicBookFilterType.Selected);
-			IEnumerable<ComicBook> enumerable2 = GetBookList(ComicBookFilterType.Library | ComicBookFilterType.Selected);
-			IEnumerable<ComicBook> list = GetBookList(ComicBookFilterType.NotInLibrary | ComicBookFilterType.Selected);
-			CoverViewItem coverViewItem = itemView.FocusedItem as CoverViewItem;
-			bool flag = ComicEditMode.CanEditProperties();
-			bool flag2 = ComicEditMode.CanEditList();
-			bool flag3 = !enumerable2.IsEmpty();
-			miAddLibrary.Visible = !list.IsEmpty();
-			miEdit.Visible = flag && itemView.ItemViewMode == ItemViewMode.Detail;
-			miShowWeb.Visible = coverViewItem != null && coverViewItem.Comic != null && !string.IsNullOrEmpty(coverViewItem.Comic.Web);
-			ToolStripMenuItem toolStripMenuItem = miMarkAs;
-			bool visible = (miRateMenu.Visible = flag && flag3);
-			toolStripMenuItem.Visible = visible;
-			miSetTopOfStack.Visible = openStackPanel.Visible;
-			miSetStackThumbnail.Visible = itemView.IsStack(itemView.SelectedItems.FirstOrDefault());
-			miRemoveStackThumbnail.Visible = stacksConfig != null && !string.IsNullOrEmpty(stacksConfig.GetStackCustomThumbnail(itemView.GetStackCaption(itemView.SelectedItems.FirstOrDefault())));
-			ComicLibrary comicLibrary = enumerable2.Select((ComicBook cb) => cb.Container as ComicLibrary).FirstOrDefault();
-			miAddList.Visible = comicLibrary != null && !comicLibrary.ComicLists.GetItems<ComicIdListItem>().IsEmpty() && flag3;
-			miEditList.Visible = CanReorderList(mustBeOrdered: false);
-			miExportComics.Visible = ComicEditMode.CanExport();
-			miSetListBackground.Visible = BookList is ComicListItem;
-			ToolStripMenuItem toolStripMenuItem2 = miCopyData;
-			visible = (miPasteData.Visible = ComicEditMode.CanEditProperties());
-			toolStripMenuItem2.Visible = visible;
-			FormUtility.SafeToolStripClear(miShowOnly.DropDownItems);
-			for (int j = 0; j < 3; j++)
-			{
-				SearchBrowserControl.SelectionEntry selectionColumn = bookSelectorPanel.GetSelectionColumn(j);
-				string text = null;
-				if (selectionColumn == null)
-				{
-					continue;
-				}
-				foreach (ComicBook item in enumerable)
-				{
-					string stringPropertyValue = item.GetStringPropertyValue(selectionColumn.Property);
-					if (text == null)
-					{
-						text = stringPropertyValue;
-					}
-					else if (text != stringPropertyValue)
-					{
-						text = null;
-						break;
-					}
-				}
-				if (!string.IsNullOrEmpty(text))
-				{
-					int i = j;
-					miShowOnly.DropDownItems.Add(string.Format("{0} '{1}'", selectionColumn.Caption, text.Ellipsis(60 - selectionColumn.Caption.Length, "...")), null, delegate
-					{
-						SearchBrowserVisible = true;
-						bookSelectorPanel.SelectEntry(i, text);
-					});
-				}
-			}
-			miShowOnly.Visible = miShowOnly.DropDownItems.Count != 0;
-			miUpdateComicFiles.Visible = enumerable.Any((ComicBook cb) => cb.ComicInfoIsDirty);
-			contextMenuItems.FixSeparators();
-			//Check if the clipboard contains data, if so enable the paste button.
-			try
-			{
-				miPasteData.Enabled = ComicEditMode.CanEditProperties() && Clipboard.ContainsData("ComicBook") && !GetBookList(ComicBookFilterType.Selected).IsEmpty();
-			}
-			catch (Exception)
-			{
-				miPasteData.Enabled = false;
+        {
+            IEnumerable<ComicBook> enumerable = GetBookList(ComicBookFilterType.Selected);
+            IEnumerable<ComicBook> enumerable2 = GetBookList(ComicBookFilterType.Library | ComicBookFilterType.Selected);
+            IEnumerable<ComicBook> list = GetBookList(ComicBookFilterType.NotInLibrary | ComicBookFilterType.Selected);
+            CoverViewItem coverViewItem = itemView.FocusedItem as CoverViewItem;
+            bool flag = ComicEditMode.CanEditProperties();
+            bool flag2 = ComicEditMode.CanEditList();
+            bool flag3 = !enumerable2.IsEmpty();
+            miAddLibrary.Visible = !list.IsEmpty();
+            miEdit.Visible = flag && itemView.ItemViewMode == ItemViewMode.Detail;
+            miShowWeb.Visible = coverViewItem != null && coverViewItem.Comic != null && !string.IsNullOrEmpty(coverViewItem.Comic.Web);
+            ToolStripMenuItem toolStripMenuItem = miMarkAs;
+            bool visible = (miRateMenu.Visible = flag && flag3);
+            toolStripMenuItem.Visible = visible;
+            miSetTopOfStack.Visible = openStackPanel.Visible;
+            miSetStackThumbnail.Visible = itemView.IsStack(itemView.SelectedItems.FirstOrDefault());
+            miRemoveStackThumbnail.Visible = stacksConfig != null && !string.IsNullOrEmpty(stacksConfig.GetStackCustomThumbnail(itemView.GetStackCaption(itemView.SelectedItems.FirstOrDefault())));
+            ComicLibrary comicLibrary = enumerable2.Select((ComicBook cb) => cb.Container as ComicLibrary).FirstOrDefault();
+            miAddList.Visible = comicLibrary != null && !comicLibrary.ComicLists.GetItems<ComicIdListItem>().IsEmpty() && flag3;
+            miEditList.Visible = CanReorderList(mustBeOrdered: false);
+            miExportComics.Visible = ComicEditMode.CanExport();
+            miSetListBackground.Visible = BookList is ComicListItem;
+            ToolStripMenuItem toolStripMenuItem2 = miCopyData;
+            visible = (miPasteData.Visible = ComicEditMode.CanEditProperties());
+            toolStripMenuItem2.Visible = visible;
+            FormUtility.SafeToolStripClear(miShowOnly.DropDownItems);
+            for (int j = 0; j < 3; j++)
+            {
+                SearchBrowserControl.SelectionEntry selectionColumn = bookSelectorPanel.GetSelectionColumn(j);
+                string text = null;
+                if (selectionColumn == null)
+                {
+                    continue;
+                }
+                foreach (ComicBook item in enumerable)
+                {
+                    string stringPropertyValue = item.GetStringPropertyValue(selectionColumn.Property);
+                    if (text == null)
+                    {
+                        text = stringPropertyValue;
+                    }
+                    else if (text != stringPropertyValue)
+                    {
+                        text = null;
+                        break;
+                    }
+                }
+                if (!string.IsNullOrEmpty(text))
+                {
+                    int i = j;
+                    miShowOnly.DropDownItems.Add(string.Format("{0} '{1}'", selectionColumn.Caption, text.Ellipsis(60 - selectionColumn.Caption.Length, "...")), null, delegate
+                    {
+                        SearchBrowserVisible = true;
+                        bookSelectorPanel.SelectEntry(i, text);
+                    });
+                }
             }
+            miShowOnly.Visible = miShowOnly.DropDownItems.Count != 0;
+            miUpdateComicFiles.Visible = enumerable.Any((ComicBook cb) => cb.ComicInfoIsDirty);
+            contextMenuItems.FixSeparators();
+            miPasteData.Enabled = isPasteComicDataEnabled();
         }
 
-		private void LayoutMenuOpening(object sender, CancelEventArgs e)
+        private void LayoutMenuOpening(object sender, CancelEventArgs e)
 		{
 			try
 			{
