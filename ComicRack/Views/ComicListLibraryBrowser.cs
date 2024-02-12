@@ -274,7 +274,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			LocalizeUtility.Localize(this, components);
 			quickSearch.SetCueText(tsQuickSearch.Text);
 			queryCacheTimer.Interval = (ComicLibrary.IsQueryCacheInstantUpdate ? 100 : 2500);
-            miPasteList.Click += new EventHandler((sender, e) => PasteList());
+			miPasteList.Click += new EventHandler((sender, e) => PasteList());
         }
 
         public ComicListLibraryBrowser(ComicLibrary library)
@@ -884,17 +884,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		private void treeContextMenu_Opening(object sender, CancelEventArgs e)
 		{
-			//Check if the clipboard contains data, if so enable the paste button.
-			try
-			{
-				miPasteList.Enabled = (Clipboard.ContainsData("ComicList") || Clipboard.ContainsText()) && ComicEditMode.CanEditList();
-			}
-			catch (Exception)
-			{
-				miPasteList.Enabled = false;
-			}
-
-			ComicListItem cli = tvQueries.SelectedNode.Tag as ComicListItem;
+			miPasteList.Enabled = isPasteListEnabled();
+            ComicListItem cli = tvQueries.SelectedNode.Tag as ComicListItem;
 			bool flag = cli != null && Program.Settings.Devices.Count > 0;
 			cmEditDevices.DropDownItems.Clear();
 			cmEditDevices.Visible = flag;
@@ -1400,8 +1391,24 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 		}
 
+		private bool isPasteListEnabled()
+		{
+            //Check if the clipboard contains data, if so enable the paste button.
+            try
+            {
+                return (Clipboard.ContainsData("ComicList") || Clipboard.ContainsText()) && ComicEditMode.CanEditList();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
 		private void PasteList()
 		{
+			if (!isPasteListEnabled())
+				return;
+
 			ComicListItem currentNodeComicList = GetCurrentNodeComicList();
 			ComicListItemCollection currentNodeComicListCollection = GetCurrentNodeComicListCollection();
 			if (currentNodeComicListCollection == null)
