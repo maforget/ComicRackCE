@@ -283,7 +283,7 @@ namespace cYo.Projects.ComicRack.Plugins
 			try
 			{
 				LibPath = path;
-				Log("\nInitialzing script '{0}' from '{1}'", Method, ScriptFile);
+				Log("\nInitializing script '{0}' from '{1}'", Method, ScriptFile);
 				ScriptFile = Command.GetFile(path, ScriptFile);
 				if (!File.Exists(ScriptFile))
 				{
