@@ -16,7 +16,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
 		public override IEnumerable<ProviderImageInfo> GetEntryList(string source)
 		{
-			using (FileStream fs = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, 131072))
+			using (FileStream fs = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, BufferSize))
 			{
 				using (ZipFile zf = new ZipFile(fs))
 				{
@@ -32,7 +32,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 		{
 			try
 			{
-				using (FileStream file = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, 131072))
+				using (FileStream file = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, BufferSize))
 				{
 					using (ZipFile zipFile = new ZipFile(file))
 					{
@@ -59,7 +59,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 		{
 			try
 			{
-				using (FileStream file = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, 131072))
+				using (FileStream file = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, BufferSize))
 				{
 					using (ZipFile zipFile = new ZipFile(file))
 					{

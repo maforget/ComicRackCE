@@ -63,15 +63,15 @@ namespace cYo.Common.Win32
 				stringBuilder.Append('\0');
 				UnsafeNativeMethods.SHFILEOPSTRUCT lpFileOp = default(UnsafeNativeMethods.SHFILEOPSTRUCT);
 				lpFileOp.hwnd = window?.Handle ?? IntPtr.Zero;
-				lpFileOp.wFunc = 3;
-				lpFileOp.fFlags = 1028;
+				lpFileOp.wFunc = UnsafeNativeMethods.FO_DELETE;
+				lpFileOp.fFlags = UnsafeNativeMethods.FOF_SILENT | UnsafeNativeMethods.FOF_NOERRORUI;
 				if ((options & ShellFileDeleteOptions.NoRecycleBin) == 0)
 				{
-					lpFileOp.fFlags |= 64;
+					lpFileOp.fFlags |= UnsafeNativeMethods.FOF_ALLOWUNDO;
 				}
 				if ((options & ShellFileDeleteOptions.Confirmation) == 0)
 				{
-					lpFileOp.fFlags |= 16;
+					lpFileOp.fFlags |= UnsafeNativeMethods.FOF_NOCONFIRMATION;
 				}
 				lpFileOp.pFrom = stringBuilder.ToString();
 				lpFileOp.fAnyOperationsAborted = 0;

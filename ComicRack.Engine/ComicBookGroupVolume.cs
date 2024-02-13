@@ -30,12 +30,12 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 			if (info.Index == 1002)
 			{
-				comicBookVolumeMatcher.MatchOperator = 1;
+				comicBookVolumeMatcher.MatchOperator = ComicBookNumericMatcher.Greater;
 				comicBookVolumeMatcher.MatchValue = "10000";
 			}
 			else
 			{
-				comicBookVolumeMatcher.MatchOperator = 0;
+				comicBookVolumeMatcher.MatchOperator = ComicBookNumericMatcher.Equal;
 				comicBookVolumeMatcher.MatchValue = (info.Index - 1).ToString();
 			}
 			return comicBookVolumeMatcher;

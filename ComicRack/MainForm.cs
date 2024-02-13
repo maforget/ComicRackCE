@@ -747,15 +747,15 @@ namespace cYo.Projects.ComicRack.Viewer
 			Program.StartupProgress(TR.Messages["InitScripts", "Initializing Scripts"], 70);
 			if (ScriptUtility.Initialize(this, this, this, ComicDisplay, this, OpenBooks))
 			{
-				miFileAutomation.DropDownItems.AddRange(ScriptUtility.CreateToolItems<ToolStripMenuItem>(this, "Library", () => Program.Database.Books).ToArray());
+				miFileAutomation.DropDownItems.AddRange(ScriptUtility.CreateToolItems<ToolStripMenuItem>(this, PluginEngine.ScriptTypeLibrary, () => Program.Database.Books).ToArray());
 				miFileAutomation.Visible = miFileAutomation.DropDownItems.Count != 0;
 				int num = fileMenu.DropDownItems.IndexOf(miNewComic);
-				ToolStripMenuItem[] array = ScriptUtility.CreateToolItems<ToolStripMenuItem>(this, "NewBooks", () => Program.Database.Books).ToArray();
+				ToolStripMenuItem[] array = ScriptUtility.CreateToolItems<ToolStripMenuItem>(this, PluginEngine.ScriptTypeNewBooks, () => Program.Database.Books).ToArray();
 				foreach (ToolStripMenuItem value in array)
 				{
 					fileMenu.DropDownItems.Insert(++num, value);
 				}
-				foreach (Command sc in ScriptUtility.Scripts.GetCommands("DrawThumbnailOverlay"))
+				foreach (Command sc in ScriptUtility.Scripts.GetCommands(PluginEngine.ScriptTypeDrawThumbnailOverlay))
 				{
 					sc.PreCompile();
 					CoverViewItem.DrawCustomThumbnailOverlay += (ComicBook comic, Graphics graphics, Rectangle bounds, int flags) =>
@@ -828,13 +828,13 @@ namespace cYo.Projects.ComicRack.Viewer
 				e.Book.OpenedTime = DateTime.Now;
 			}
 			e.Book.NewPages = 0;
-			recentFiles = Program.Database.GetRecentFiles(20).ToArray();
+			recentFiles = Program.Database.GetRecentFiles(Settings.RecentFileCount).ToArray();
 			if (e.Book.EditMode.IsLocalComic())
 			{
 				Win7.UpdateRecent(e.Book.FilePath);
 			}
 			UpdateBrowserVisibility();
-			ScriptUtility.Invoke("BookOpened", e.Book);
+			ScriptUtility.Invoke(PluginEngine.ScriptTypeBookOpened, e.Book);
 			string url = e.Book.FilePath;
 			Win7.AddTabbedThumbnail(this, e.Book.FilePath, delegate
 			{
@@ -937,7 +937,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			miOpenRecent.DropDownItems.Add(new ToolStripMenuItem("dummy"));
 			IdleProcess.Idle += Application_Idle;
 			Program.Settings.SettingsChanged += SettingsChanged;
-			recentFiles = Program.Database.GetRecentFiles(20).ToArray();
+			recentFiles = Program.Database.GetRecentFiles(Settings.RecentFileCount).ToArray();
 			InitializeCommands();
 			InitializeKeyboard();
 			InitializeHelp(Program.Settings.HelpSystem);
@@ -1038,7 +1038,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			IsInitialized = true;
 			this.BeginInvoke(delegate
 			{
-				ScriptUtility.Invoke("Startup");
+				ScriptUtility.Invoke(PluginEngine.ScriptTypeStartup);
 			});
 		}
 
@@ -1795,7 +1795,7 @@ namespace cYo.Projects.ComicRack.Viewer
 		{
 			using (ItemMonitor.Lock(Program.News))
 			{
-				Program.News.UpdateFeeds(60);
+				Program.News.UpdateFeeds(Program.NewsIntervalMinutes);
 			}
 		}
 
@@ -3660,9 +3660,9 @@ namespace cYo.Projects.ComicRack.Viewer
 		{
 			Program.ImagePool.Thumbs.MemoryCache.Trim();
 			Program.ImagePool.Pages.MemoryCache.Trim();
-			int val = ((Program.ExtendedSettings.LimitMemory == 0) ? 1024 : Program.ExtendedSettings.LimitMemory);
+			int val = ((Program.ExtendedSettings.LimitMemory == 0) ? Settings.UnlimitedSystemMemory : Program.ExtendedSettings.LimitMemory);
 			val = Math.Min(val, Program.Settings.MaximumMemoryMB);
-			if (val == 1024)
+			if (val == Settings.UnlimitedSystemMemory)
 			{
 				return;
 			}
@@ -3670,7 +3670,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				using (Process process = Process.GetCurrentProcess())
 				{
-					process.MaxWorkingSet = new IntPtr(val.Clamp(50, 1024) * 1024 * 1024);
+					process.MaxWorkingSet = new IntPtr(val.Clamp(50, Settings.UnlimitedSystemMemory) * 1024 * 1024);
 				}
 			}
 			catch
@@ -4211,7 +4211,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			pageDisplay.PageDisplayModeChanged += viewer_PageDisplayModeChanged;
 			pageDisplay.Resize += delegate
 			{
-				ScriptUtility.Invoke("ReaderResized", pageDisplay.Width, pageDisplay.Height);
+				ScriptUtility.Invoke(PluginEngine.ScriptTypeReaderResized, pageDisplay.Width, pageDisplay.Height);
 			};
 			pageDisplay.VisibleInfoOverlaysChanged += delegate
 			{

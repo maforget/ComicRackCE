@@ -22,7 +22,7 @@ namespace cYo.Projects.ComicRack.Engine
 		public static readonly string[] ComicProperties = ComicBook.GetProperties(onlyWritable: true).ToArray();
 
 		public static readonly string[] SeriesStatsProperties = (from name in ComicBookSeriesStatistics.GetProperties()
-			select "Stats" + name).ToArray();
+			select SeriesStatsPropertyPrefix + name).ToArray();
 
 		[NonSerialized]
 		private IComicBookStatsProvider statsProvider;
@@ -151,7 +151,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public static string ParseSeriesProperty(string prop)
 		{
-			return prop.Substring("Stats".Length);
+			return prop.Substring(SeriesStatsPropertyPrefix.Length);
 		}
 	}
 }

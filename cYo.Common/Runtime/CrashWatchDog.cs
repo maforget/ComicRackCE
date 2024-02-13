@@ -132,7 +132,7 @@ namespace cYo.Common.Runtime
 		private void LockWatcher()
 		{
 			DateTime d = DateTime.Now;
-			while (!lockWatcherHandle.WaitOne(1000, exitContext: false))
+			while (!lockWatcherHandle.WaitOne(WatcherTimeSpanMS, exitContext: false))
 			{
 				DateTime now = DateTime.Now;
 				if (inBark || !ThreadUtility.IsForegroundLocked || now - d > LockTestTime)

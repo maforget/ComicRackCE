@@ -145,67 +145,67 @@ namespace cYo.Projects.ComicRack.Plugins
 			hookTypes = new Dictionary<string, ScriptCreateHandler>
 			{
 				{
-					"Library",
+                    PluginEngine.ScriptTypeLibrary,
 					(ScriptScope s, string n) => s.GetVariable<Action<ComicBook[]>>(n)
 				},
 				{
-					"Books",
+                    PluginEngine.ScriptTypeBooks,
 					(ScriptScope s, string n) => s.GetVariable<Action<ComicBook[]>>(n)
 				},
 				{
-					"NewBooks",
+                    PluginEngine.ScriptTypeNewBooks,
 					(ScriptScope s, string n) => s.GetVariable<Action<ComicBook[]>>(n)
 				},
 				{
-					"ParseComicPath",
+                    PluginEngine.ScriptTypeParseComicPath,
 					(ScriptScope s, string n) => s.GetVariable<Action<string, ComicNameInfo>>(n)
 				},
 				{
-					"BookOpened",
+                    PluginEngine.ScriptTypeBookOpened,
 					(ScriptScope s, string n) => s.GetVariable<Action<ComicBook>>(n)
 				},
 				{
-					"CreateBookList",
+                    PluginEngine.ScriptTypeCreateBookList,
 					(ScriptScope s, string n) => s.GetVariable<Func<ComicBook[], string, string, IEnumerable<ComicBook>>>(n)
 				},
 				{
-					"ReaderResized",
+                    PluginEngine.ScriptTypeReaderResized,
 					(ScriptScope s, string n) => s.GetVariable<Action<int, int>>(n)
 				},
 				{
-					"NetSearch",
+                    PluginEngine.ScriptTypeSearch,
 					(ScriptScope s, string n) => s.GetVariable<Func<string, string, int, Dictionary<string, string>>>(n)
 				},
 				{
-					"ConfigScript",
+                    PluginEngine.ScriptTypeConfig,
 					(ScriptScope s, string n) => s.GetVariable<Action>(n)
 				},
 				{
-					"Startup",
+                    PluginEngine.ScriptTypeStartup,
 					(ScriptScope s, string n) => s.GetVariable<Action>(n)
 				},
 				{
-					"Shutdown",
+                    PluginEngine.ScriptTypeShutdown,
 					(ScriptScope s, string n) => s.GetVariable<Func<bool, bool>>(n)
 				},
 				{
-					"ComicInfoHtml",
+                    PluginEngine.ScriptTypeComicInfoHtml,
 					(ScriptScope s, string n) => s.GetVariable<Func<ComicBook[], string>>(n)
 				},
 				{
-					"ComicInfoUI",
+                    PluginEngine.ScriptTypeComicInfoUI,
 					(ScriptScope s, string n) => s.GetVariable<Func<Control>>(n)
 				},
 				{
-					"QuickOpenHtml",
+                    PluginEngine.ScriptTypeQuickOpenHtml,
 					(ScriptScope s, string n) => s.GetVariable<Func<ComicBook[], string>>(n)
 				},
 				{
-					"QuickOpenUI",
+                    PluginEngine.ScriptTypeQuickOpenUI,
 					(ScriptScope s, string n) => s.GetVariable<Func<Control>>(n)
 				},
 				{
-					"DrawThumbnailOverlay",
+                    PluginEngine.ScriptTypeDrawThumbnailOverlay,
 					(ScriptScope s, string n) => s.GetVariable<Action<ComicBook, Graphics, Rectangle, int>>(n)
 				}
 			};
@@ -377,8 +377,8 @@ namespace cYo.Projects.ComicRack.Plugins
 					ScriptSource scriptSource = scriptEngine.CreateScriptSourceFromFile(ScriptFile);
 					scriptModificationTime = File.GetLastWriteTimeUtc(ScriptFile);
 					scope = scriptEngine.CreateScope();
-					scope.SetVariable("ComicRack", base.Environment);
-					scope.SetVariable("ScriptPath", Path.GetDirectoryName(ScriptFile));
+					scope.SetVariable(HostName, base.Environment);
+					scope.SetVariable(ScriptPathName, Path.GetDirectoryName(ScriptFile));
 					scriptSource.Execute(scope);
 					script = null;
 				}

@@ -3,6 +3,7 @@ using System.ComponentModel;
 using cYo.Common.Mathematics;
 using cYo.Common.Runtime;
 using cYo.Projects.ComicRack.Engine.Database;
+using cYo.Projects.ComicRack.Engine.IO.Network;
 
 namespace cYo.Projects.ComicRack.Viewer.Config
 {
@@ -444,8 +445,8 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			AnamorphicScalingTolerance = 0.25f;
 			KeyboardZoomStepping = 0.5f;
 			DatabaseBackgroundSaving = 600;
-			InternetServerPort = 7612;
-			PrivateServerPort = 7612;
+			InternetServerPort = ComicLibraryServerConfig.DefaultPublicServicePort;
+			PrivateServerPort = ComicLibraryServerConfig.DefaultPrivateServicePort;
 			AutoHideCursorDuration = 5000;
 			HideBrowserIfShellOpen = true;
 			DragDropCursorAlpha = 0.6f;

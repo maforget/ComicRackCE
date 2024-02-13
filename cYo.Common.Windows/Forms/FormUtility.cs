@@ -90,7 +90,7 @@ namespace cYo.Common.Windows.Forms
 				else
 				{
 					IntPtr dC = GetDC(IntPtr.Zero);
-					Size size = new Size(GetDeviceCaps(dC, 88), GetDeviceCaps(dC, 90));
+					Size size = new Size(GetDeviceCaps(dC, LOGPIXELSX), GetDeviceCaps(dC, LOGPIXELSY));
 					dpiScale = new PointF((float)size.Width / 96f, (float)size.Height / 96f);
 				}
 				return dpiScale;

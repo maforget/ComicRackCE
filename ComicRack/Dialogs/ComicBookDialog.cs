@@ -1093,7 +1093,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			{
 				return;
 			}
-			foreach (Command command in scriptEngine.GetCommands("Editor"))
+			foreach (Command command in scriptEngine.GetCommands(PluginEngine.ScriptTypeEditor))
 			{
 				if (btScript.ContextMenuStrip == null)
 				{

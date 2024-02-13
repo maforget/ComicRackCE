@@ -89,7 +89,7 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				if (broadcaster == null && !DisableBroadcast)
 				{
-					broadcaster = new Broadcaster<BroadcastData>(7613);
+					broadcaster = new Broadcaster<BroadcastData>(BroadcastPort);
 				}
 				return broadcaster;
 			}

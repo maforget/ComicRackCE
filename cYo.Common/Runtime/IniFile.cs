@@ -46,7 +46,7 @@ namespace cYo.Common.Runtime
 					try
 					{
 						string file = Path.GetFileNameWithoutExtension(Assembly.GetEntryAssembly().Location) + ".ini";
-						defaultIniFile = GetDefaultLocations(file).ToListString("|");
+						defaultIniFile = GetDefaultLocations(file).ToListString(MultiInitFileSeparator);
 					}
 					catch (Exception)
 					{
@@ -443,7 +443,7 @@ namespace cYo.Common.Runtime
 
 		private static IEnumerable<string> GetFiles(string file)
 		{
-			return file.Split("|".ToCharArray());
+			return file.Split(MultiInitFileSeparator.ToCharArray());
 		}
 
 		private static bool FileExists(string file)

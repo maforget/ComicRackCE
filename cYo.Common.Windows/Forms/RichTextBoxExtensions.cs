@@ -46,9 +46,9 @@ namespace cYo.Common.Windows.Forms
 				this.rtb = rtb;
 				suspendIndex = rtb.SelectionStart;
 				suspendLength = rtb.SelectionLength;
-				SendMessage(rtb.Handle, 1245, 0, ref scrollPoint);
-				SendMessage(rtb.Handle, 11, 0, IntPtr.Zero);
-				eventMask = SendMessage(rtb.Handle, 1083, 0, IntPtr.Zero);
+				SendMessage(rtb.Handle, EM_GETSCROLLPOS, 0, ref scrollPoint);
+				SendMessage(rtb.Handle, WM_SETREDRAW, 0, IntPtr.Zero);
+				eventMask = SendMessage(rtb.Handle, EM_GETEVENTMASK, 0, IntPtr.Zero);
 			}
 
 			protected override void Dispose(bool disposing)
@@ -56,9 +56,9 @@ namespace cYo.Common.Windows.Forms
 				if (disposing)
 				{
 					rtb.Select(suspendIndex, suspendLength);
-					SendMessage(rtb.Handle, 1246, 0, ref scrollPoint);
-					SendMessage(rtb.Handle, 1093, 0, eventMask);
-					SendMessage(rtb.Handle, 11, 1, IntPtr.Zero);
+					SendMessage(rtb.Handle, EM_SETSCROLLPOS, 0, ref scrollPoint);
+					SendMessage(rtb.Handle, EM_SETEVENTMASK, 0, eventMask);
+					SendMessage(rtb.Handle, WM_SETREDRAW, 1, IntPtr.Zero);
 					rtb.Invalidate();
 				}
 				base.Dispose(disposing);

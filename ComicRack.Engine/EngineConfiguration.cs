@@ -175,14 +175,14 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
-		[DefaultValue("[{format} ][{series}][ {volume}][ #{number}][ - {title}][ ({year}[/{month}[/{day}]])]")]
+		[DefaultValue(ComicBook.DefaultCaptionFormat)]
 		public string ComicCaptionFormat
 		{
 			get;
 			set;
 		}
 
-		[DefaultValue("[{format} ][{series}][ {volume}][ #{number}][ ({year}[/{month}])]")]
+		[DefaultValue(ComicBook.DefaultComicExportFileNameFormat)]
 		public string ComicExportFileNameFormat
 		{
 			get;
@@ -590,8 +590,8 @@ namespace cYo.Projects.ComicRack.Engine
 			ExportResampling = BitmapResampling.GdiPlusHQ;
 			SyncResamping = BitmapResampling.GdiPlus;
 			SoftwareFilter = BitmapResampling.GdiPlusHQ;
-			ComicCaptionFormat = "[{format} ][{series}][ {volume}][ #{number}][ - {title}][ ({year}[/{month}[/{day}]])]";
-			ComicExportFileNameFormat = "[{format} ][{series}][ {volume}][ #{number}][ ({year}[/{month}])]";
+			ComicCaptionFormat = ComicBook.DefaultCaptionFormat;
+			ComicExportFileNameFormat = ComicBook.DefaultComicExportFileNameFormat;
 			PageBowColor = Color.Black;
 			PageBowCenter = true;
 			PageBowBorder = true;

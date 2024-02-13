@@ -43,7 +43,7 @@ namespace cYo.Projects.ComicRack.Engine
 			ResourceManager = Resources.ResourceManager;
 			DatabaseManager = databaseManager;
 			InternetCache = new FileCache(paths.FileCachePath, 100);
-			ImagePool = new ImagePool(4096, settings.MemoryThumbCacheSizeMB, settings.MemoryPageCacheCount);
+			ImagePool = new ImagePool(MemoryThumbnailCacheSize, settings.MemoryThumbCacheSizeMB, settings.MemoryPageCacheCount);
 			ImagePool.Thumbs.DiskCache = new ThumbnailDiskCache<ImageKey>(paths.ThumbnailCachePath, settings.ThumbCacheSizeMB);
 			ImagePool.Pages.DiskCache = new ImageDiskCache<ImageKey>(paths.ImageCachePath, settings.PageCacheSizeMB);
 			ImagePool.CustomThumbnailFolder = paths.CustomThumbnailPath;
@@ -63,7 +63,7 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				switch (e.Key.ResourceType)
 				{
-				case "resource":
+				case ThumbnailKey.ResourceKey:
 					if (ResourceManager != null)
 					{
 						using (Bitmap bitmap2 = ResourceManager.GetObject(e.Key.ResourceLocation) as Bitmap)
@@ -72,7 +72,7 @@ namespace cYo.Projects.ComicRack.Engine
 						}
 					}
 					break;
-				case "file":
+				case ThumbnailKey.FileKey:
 				{
 					using (Bitmap bitmap = BitmapExtensions.BitmapFromFile(e.Key.ResourceLocation))
 					{
@@ -80,7 +80,7 @@ namespace cYo.Projects.ComicRack.Engine
 					}
 					break;
 				}
-				case "custom":
+				case ThumbnailKey.CustomKey:
 					e.Image = ImagePool.GetCustomThumbnail(e.Key.ResourceLocation);
 					break;
 				default:

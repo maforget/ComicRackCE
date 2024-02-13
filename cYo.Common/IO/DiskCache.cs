@@ -131,7 +131,7 @@ namespace cYo.Common.IO
 		{
 			this.cacheFolder = cacheFolder;
 			this.cacheSizeMB = cacheSizeMB;
-			cacheIndex = Path.Combine(cacheFolder, "cache.idx");
+			cacheIndex = Path.Combine(cacheFolder, indexFile);
 			try
 			{
 				Directory.CreateDirectory(cacheFolder);

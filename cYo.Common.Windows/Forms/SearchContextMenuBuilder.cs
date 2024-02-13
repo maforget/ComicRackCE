@@ -48,7 +48,7 @@ namespace cYo.Common.Windows.Forms
 					text = (text ?? string.Empty).Trim();
 					if (!string.IsNullOrEmpty(text))
 					{
-						SearchResult[] array = search.Search(hint, text, 10).ToArray();
+						SearchResult[] array = search.Search(hint, text, Limit).ToArray();
 						if (array.Length != 0)
 						{
 							AddEntries(list, array, image);
@@ -62,7 +62,7 @@ namespace cYo.Common.Windows.Forms
 								{
 									list.Add(new ToolStripSeparator());
 								}
-								if (list.Count > 20)
+								if (list.Count > MultiLimit)
 								{
 									break;
 								}

@@ -54,7 +54,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			{
 				bounds = bounds.Pad(Level * Image.Width, 0);
 				gr.DrawImage(Image, Image.Size.Align(bounds, ContentAlignment.MiddleLeft));
-				bounds = bounds.Pad(Image.Width + 4, 0);
+				bounds = bounds.Pad(Image.Width + ImageSpacing, 0);
 				using (StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
 				{
 					LineAlignment = StringAlignment.Center
@@ -70,7 +70,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			public override Size Measure(Graphics gr, Font font)
 			{
 				Size result = gr.MeasureString(base.Item, font).ToSize();
-				result.Width += Level * Image.Width + Image.Width + 4;
+				result.Width += Level * Image.Width + Image.Width + ImageSpacing;
 				result.Height = Math.Max(result.Height, Image.Height);
 				return result;
 			}

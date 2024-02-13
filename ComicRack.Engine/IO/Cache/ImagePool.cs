@@ -105,7 +105,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 		public event EventHandler<CacheItemEventArgs<ImageKey, ThumbnailImage>> ThumbnailCached;
 
 		public ImagePool()
-			: this(20, 5242880L, 5)
+			: this(DefaultThumbCount, DefaultThumbSize, DefaultPageCount)
 		{
 		}
 
@@ -482,7 +482,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 			}
 			return thumbs.MemoryCache.LockItem(key, delegate
 			{
-				using (Bitmap image = CreateErrorThumbnail(512))
+				using (Bitmap image = CreateErrorThumbnail(ThumbnailImage.MaxHeight))
 				{
 					return ThumbnailImage.CreateFrom(image, Size.Empty);
 				}

@@ -79,7 +79,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			Scripts.CommandStates = Program.Settings.PluginsStates;
 			ComicBookDialog.ScriptEngine = Scripts;
 			ComicBookPluginMatcher.PluginEngine = Scripts;
-			foreach (Command command in Scripts.GetCommands("ParseComicPath"))
+			foreach (Command command in Scripts.GetCommands(PluginEngine.ScriptTypeParseComicPath))
 			{
 				Command c = command;
 				ComicBook.ParseFilePath += delegate(object sender, ComicBook.ParseFilePathEventArgs ea)
@@ -91,7 +91,7 @@ namespace cYo.Projects.ComicRack.Viewer
 					}, catchErrors: true);
 				};
 			}
-			foreach (Command command2 in Scripts.GetCommands("NetSearch"))
+			foreach (Command command2 in Scripts.GetCommands(PluginEngine.ScriptTypeSearch))
 			{
 				SearchEngines.Engines.Add(new ScriptSearch
 				{
@@ -275,11 +275,11 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public static IEnumerable<ComicPageControl> CreateComicInfoPages()
 		{
-			foreach (ComicPageControl item in CreatePagesHtml("ComicInfoHtml"))
+			foreach (ComicPageControl item in CreatePagesHtml(PluginEngine.ScriptTypeComicInfoHtml))
 			{
 				yield return item;
 			}
-			foreach (ComicPageControl item2 in CreatePagesHtml("ComicInfoUI"))
+			foreach (ComicPageControl item2 in CreatePagesHtml(PluginEngine.ScriptTypeComicInfoUI))
 			{
 				yield return item2;
 			}
@@ -287,11 +287,11 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public static IEnumerable<ComicPageControl> CreateQuickOpenPages()
 		{
-			foreach (ComicPageControl item in CreatePagesHtml("QuickOpenHtml"))
+			foreach (ComicPageControl item in CreatePagesHtml(PluginEngine.ScriptTypeQuickOpenHtml))
 			{
 				yield return item;
 			}
-			foreach (ComicPageControl item2 in CreatePagesHtml("QuickOpenUI"))
+			foreach (ComicPageControl item2 in CreatePagesHtml(PluginEngine.ScriptTypeQuickOpenUI))
 			{
 				yield return item2;
 			}

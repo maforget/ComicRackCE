@@ -341,7 +341,7 @@ namespace cYo.Common.Win32.PortableDevices
 
 		private string GetStringValue(PortableDeviceApi._tagpropertykey id)
 		{
-			GetValues("DEVICE").GetStringValue(ref id, out var pValue);
+			GetValues(RootNode).GetStringValue(ref id, out var pValue);
 			return pValue;
 		}
 

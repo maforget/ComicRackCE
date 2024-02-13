@@ -147,7 +147,7 @@ namespace cYo.Projects.ComicRack.Engine.Database
 		private void AddConfig(StackConfigItem sci)
 		{
 			configs.Insert(0, sci);
-			configs.Trim(1024);
+			configs.Trim(MaxConfigCount);
 		}
 	}
 }

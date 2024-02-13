@@ -104,13 +104,13 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		{
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 6);
+				SendByte(s, CommandStart);
 				SendString(s, "Start Synchronizing");
 			});
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 9);
-				SendInteger(s, 1);
+				SendByte(s, CommandInfo);
+				SendInteger(s, CurrentSyncVersion);
 				bool licensed = ReadBool(s);
 				int versionCode = ReadInteger(s);
 				string key = ReadString(s);
@@ -125,14 +125,14 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			{
 				s.Send(new byte[2]
 				{
-					8,
+                    CommandProgressUpdate,
 					(byte)percent
 				});
 			});
 			bool abort = false;
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 11);
+				SendByte(s, CommandCheckAbort);
 				abort = ReadBool(s);
 			});
 			return !abort;
@@ -142,7 +142,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		{
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 7);
+				SendByte(s, CommandCompleted);
 				SendString(s, "Synchronization completed");
 			});
 		}
@@ -152,7 +152,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			bool fileExists = false;
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 3);
+				SendByte(s, CommandFileExists);
 				SendString(s, file);
 				fileExists = ReadBool(s);
 			});
@@ -163,7 +163,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		{
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 5);
+				SendByte(s, CommandWriteFile);
 				SendString(s, file);
 				SendLong(s, data.Length);
 				byte[] array = new byte[100000];
@@ -184,7 +184,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			MemoryStream ms = null;
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 1);
+				SendByte(s, CommandReadFile);
 				SendString(s, file);
 				ms = new MemoryStream(ReadSocketData(s));
 			});
@@ -195,7 +195,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		{
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 4);
+				SendByte(s, CommandDeleteFile);
 				SendString(s, file);
 				ReadBool(s);
 			});
@@ -206,7 +206,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			long freeSpace = 0L;
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 2);
+				SendByte(s, CommandFreeSpace);
 				freeSpace = ReadLong(s);
 			});
 			return freeSpace;
@@ -217,7 +217,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			string[] fileList = null;
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 0);
+				SendByte(s, CommandListFiles);
 				fileList = ReadString(s).Split("\n", StringSplitOptions.RemoveEmptyEntries).TrimStrings().ToArray();
 			});
 			return fileList;
@@ -251,7 +251,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			Communicate(delegate(Socket socket)
 			{
 				ComicBookCollection comicBookCollection = new ComicBookCollection();
-				SendByte(socket, 10);
+				SendByte(socket, CommandReadMultiFile);
 				SendInteger(socket, files.Length);
 				for (int i = 0; i < files.Length; i++)
 				{
@@ -305,7 +305,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 						ReceiveTimeout = wifiSyncReceiveTimeout,
 						SendTimeout = wifiSyncSendTimeout
 					};
-					IAsyncResult asyncResult = socket.BeginConnect(address, 7614, null, null);
+					IAsyncResult asyncResult = socket.BeginConnect(address, DeviceClientPort, null, null);
 					asyncResult.AsyncWaitHandle.WaitOne(wifiSyncConnectionTimeout, exitContext: true);
 					if (!socket.Connected)
 					{
@@ -465,7 +465,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 				IPAddress group = IPAddress.Parse("224.34.123.90");
 				listener = new UdpClient();
 				Socket client = listener.Client;
-				listenerEP = new IPEndPoint(IPAddress.Any, 7615);
+				listenerEP = new IPEndPoint(IPAddress.Any, BroadcastListenPort);
 				client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, 1);
 				client.Bind(listenerEP);
 				client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(group, IPAddress.Any));
@@ -474,7 +474,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			catch (Exception)
 			{
 			}
-			controlPort = 7620;
+			controlPort = FirstServerControlPort;
 			controlSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			while (true)
 			{
@@ -516,7 +516,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 					}
 					Communicate(extraWifiDeviceAddress, delegate(Socket s)
 					{
-						SendByte(s, 13);
+						SendByte(s, CommandServerAvailable);
 						SendInteger(s, controlPort);
 					}, 0);
 				}
@@ -613,7 +613,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 					{
 						Communicate(address, delegate(Socket s)
 						{
-							SendByte(s, 12);
+							SendByte(s, CommandClientPong);
 						}, 0);
 					}
 				}

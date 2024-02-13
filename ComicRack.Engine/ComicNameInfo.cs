@@ -13,27 +13,27 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 			private const RegexOptions RxOptions = RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline;
 
-			private static readonly Regex rxDotReplace = new Regex("((?<!\\d)\\.|\\.(?!\\d)|_)", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+			private static readonly Regex rxDotReplace = new Regex("((?<!\\d)\\.|\\.(?!\\d)|_)", RxOptions);
 
-			private static readonly Regex rxRemove = new Regex("\\b(ctc|c2c|\\d+p|\\d{1,2}\\-\\d{1,2}|\\d{1,2}\\-(?=\\d{4}))\\b", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+			private static readonly Regex rxRemove = new Regex("\\b(ctc|c2c|\\d+p|\\d{1,2}\\-\\d{1,2}|\\d{1,2}\\-(?=\\d{4}))\\b", RxOptions);
 
-			private static readonly Regex rxBrackets = new Regex("\\(.*?\\)|\\[.*?\\]", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+			private static readonly Regex rxBrackets = new Regex("\\(.*?\\)|\\[.*?\\]", RxOptions);
 
 			private static Regex rxCount;
 
-			private static readonly Regex rxNumber = new Regex("(?<!part\\s+)(\\b|#|(c\\w*\\s*))\\d[\\d\\.]*\\b(?!\\s*(pa|cov))", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.RightToLeft);
+			private static readonly Regex rxNumber = new Regex("(?<!part\\s+)(\\b|#|(c\\w*\\s*))\\d[\\d\\.]*\\b(?!\\s*(pa|cov))", RxOptions | RegexOptions.RightToLeft);
 
-			private static readonly Regex rxVolume = new Regex("\\b(v|vol\\.?|volume)\\s*\\d+\\b", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+			private static readonly Regex rxVolume = new Regex("\\b(v|vol\\.?|volume)\\s*\\d+\\b", RxOptions);
 
-			private static readonly Regex rxYear = new Regex("\\b(?<!#)(19|2[0-3])\\d\\d\\b(?!\\spa)", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.RightToLeft);
+			private static readonly Regex rxYear = new Regex("\\b(?<!#)(19|2[0-3])\\d\\d\\b(?!\\spa)", RxOptions | RegexOptions.RightToLeft);
 
-			private static readonly Regex rxYearWithMonth = new Regex("(19|2[0-3])\\d\\d[-/\\\\\\s]\\d{1,2}\\b", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.RightToLeft);
+			private static readonly Regex rxYearWithMonth = new Regex("(19|2[0-3])\\d\\d[-/\\\\\\s]\\d{1,2}\\b", RxOptions | RegexOptions.RightToLeft);
 
-			private static readonly Regex rxFormat = new Regex("\\b(annual|director's cut|preview|b(lack)?\\s*&\\s*w(hite)?|king\\s*size|giant\\s*size)|sketch\\b", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+			private static readonly Regex rxFormat = new Regex("\\b(annual|director's cut|preview|b(lack)?\\s*&\\s*w(hite)?|king\\s*size|giant\\s*size)|sketch\\b", RxOptions);
 
-			private static readonly Regex rxCoverCount = new Regex("(?<covers>\\d+)\\s+cover", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+			private static readonly Regex rxCoverCount = new Regex("(?<covers>\\d+)\\s+cover", RxOptions);
 
-			private static readonly Regex rxnum = new Regex("\\d+\\.?\\d*", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.RightToLeft);
+			private static readonly Regex rxnum = new Regex("\\d+\\.?\\d*", RxOptions | RegexOptions.RightToLeft);
 
 			public static ComicNameInfo FromFilePath(string path)
 			{
@@ -50,7 +50,7 @@ namespace cYo.Projects.ComicRack.Engine
 					{
 						string text2 = EngineConfiguration.Default.OfValues ?? "of,von,de";
 						string arg = text2.Split(',').TrimStrings().ToListString("|");
-						rxCount = new Regex($"\\b({arg})\\s*\\d+\\b", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+						rxCount = new Regex($"\\b({arg})\\s*\\d+\\b", RxOptions);
 					}
 					Match match = rxCount.Match(text);
 					if (match.Success)
@@ -145,15 +145,15 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 			private const RegexOptions RxOptions = RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline;
 
-			private static readonly Regex rxSeries = new Regex("^(\\d+)?(([&\\w\\s'-])(?!v\\d|(?<=[ #])(\\d(?!\\d*\\s[#\\d]))+(?=(\\W|$))(?!\\))))*", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+			private static readonly Regex rxSeries = new Regex("^(\\d+)?(([&\\w\\s'-])(?!v\\d|(?<=[ #])(\\d(?!\\d*\\s[#\\d]))+(?=(\\W|$))(?!\\))))*", RxOptions);
 
-			private static readonly Regex rxVolume = new Regex("(?<=\\bv)\\d(?=\\b)", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+			private static readonly Regex rxVolume = new Regex("(?<=\\bv)\\d(?=\\b)", RxOptions);
 
-			private static readonly Regex rxNumber = new Regex("(?<=[ #]|c|ch)(\\d(?!\\d*\\s[#\\d]))+(?=(\\W|$))(?!\\))", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+			private static readonly Regex rxNumber = new Regex("(?<=[ #]|c|ch)(\\d(?!\\d*\\s[#\\d]))+(?=(\\W|$))(?!\\))", RxOptions);
 
-			private static readonly Regex rxCount = new Regex("(?<=[\\(\\[\\s]of\\s)\\d+", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+			private static readonly Regex rxCount = new Regex("(?<=[\\(\\[\\s]of\\s)\\d+", RxOptions);
 
-			private static readonly Regex rxYear = new Regex("(?<=[\\(\\[])\\d{4}\\b", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+			private static readonly Regex rxYear = new Regex("(?<=[\\(\\[])\\d{4}\\b", RxOptions);
 
 			public static ComicNameInfo FromFilePath(string path)
 			{

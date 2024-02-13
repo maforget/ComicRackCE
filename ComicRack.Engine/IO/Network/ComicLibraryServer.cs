@@ -291,7 +291,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 			{
 				return null;
 			}
-			return ServiceAddress.CompletePortAndPath(GetExternalServiceAddress(), (Config.ServicePort == 7612) ? null : Config.ServicePort.ToString(), (Config.ServiceName == "Share") ? null : Config.ServiceName);
+			return ServiceAddress.CompletePortAndPath(GetExternalServiceAddress(), (Config.ServicePort == ComicLibraryServerConfig.DefaultPublicServicePort) ? null : Config.ServicePort.ToString(), (Config.ServiceName == ComicLibraryServerConfig.DefaultServiceName) ? null : Config.ServiceName);
 		}
 
 		public void AnnounceServer()
@@ -388,9 +388,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
                 serviceHost.Credentials.IssuedTokenAuthentication.KnownCertificates.Add(new X509Certificate2(Certificate));// New Cert (sha256)
 				serviceHost.Credentials.IssuedTokenAuthentication.KnownCertificates.Add(new X509Certificate2(Resources.Certificate, string.Empty));//Old Cert (md5)
                 serviceHost.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.None;
-				ServiceEndpoint serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IRemoteServerInfo), CreateChannel(secure: false), "Info");
+				ServiceEndpoint serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IRemoteServerInfo), CreateChannel(secure: false), InfoPoint);
 				serviceEndpoint.Binding.SendTimeout = TimeSpan.FromSeconds(EngineConfiguration.Default.OperationTimeout);
-				serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IRemoteComicLibrary), CreateChannel(secure: true), "Library");
+				serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IRemoteComicLibrary), CreateChannel(secure: true), LibraryPoint);
 				serviceEndpoint.Binding.SendTimeout = TimeSpan.FromSeconds(EngineConfiguration.Default.OperationTimeout);
 				serviceHost.Open();
 				if (Config.IsInternet)

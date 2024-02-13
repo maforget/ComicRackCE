@@ -104,7 +104,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 		{
 			IInArchive a = (archive = SevenZipFactory.CreateInArchive(MapFileFormat(base.Format)));
 			InStreamWrapper archiveStream = new InStreamWrapper(File.OpenRead(source));
-			long maxCheckStartPosition = 131072L;
+			long maxCheckStartPosition = SevenZipCheckSize;
 			if (archive.Open(archiveStream, ref maxCheckStartPosition, new StubOpenCallback()) != 0)
 			{
 				archiveStream.Dispose();

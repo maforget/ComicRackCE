@@ -396,7 +396,7 @@ namespace cYo.Projects.ComicRack.Engine.Database
 				string[] files = Directory.GetFiles(customThumbnailsFolder);
 				foreach (string text in files)
 				{
-					zipFile.Add(text, Path.Combine("Thumbnails", Path.GetFileName(text)));
+					zipFile.Add(text, Path.Combine(ThumbnailsBackupFolder, Path.GetFileName(text)));
 				}
 				zipFile.CommitUpdate();
 			}
@@ -410,7 +410,7 @@ namespace cYo.Projects.ComicRack.Engine.Database
 				{
 					using (FileStream destination = File.Create(databaseFile))
 					{
-						zipFile.GetInputStream(zipFile.GetEntry("ComicDb.xml")).CopyTo(destination);
+						zipFile.GetInputStream(zipFile.GetEntry(BackupDatabaseName)).CopyTo(destination);
 					}
 				}
 				catch (Exception)
@@ -420,7 +420,7 @@ namespace cYo.Projects.ComicRack.Engine.Database
 				}
 				foreach (ZipEntry item in zipFile)
 				{
-					if (!item.Name.StartsWith("Thumbnails"))
+					if (!item.Name.StartsWith(ThumbnailsBackupFolder))
 					{
 						continue;
 					}

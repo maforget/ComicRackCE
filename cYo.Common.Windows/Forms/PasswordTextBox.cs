@@ -20,7 +20,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				if (!(value == password))
 				{
-					Text = (string.IsNullOrEmpty(value) ? string.Empty : "1234");
+					Text = (string.IsNullOrEmpty(value) ? string.Empty : dummyPassword);
 					password = value;
 				}
 			}

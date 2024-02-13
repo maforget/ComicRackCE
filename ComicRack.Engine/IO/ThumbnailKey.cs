@@ -66,7 +66,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 			if (match.Success)
 			{
 				resourceType = match.Groups["type"].Value;
-				resourceLocation = match.Groups["resource"].Value;
+				resourceLocation = match.Groups[ResourceKey].Value;
 			}
 			else
 			{

@@ -68,11 +68,11 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void cmEdit_Opening(object sender, CancelEventArgs e)
 		{
-			miNewGroup.Enabled = level <= 5;
+			miNewGroup.Enabled = level <= MaxLevel;
 			ToolStripMenuItem toolStripMenuItem = miCut;
 			bool enabled = (miDelete.Enabled = matchers.Count > 1);
 			toolStripMenuItem.Enabled = enabled;
-			miPaste.Enabled = Clipboard.ContainsData("ComicBookMatcher");
+			miPaste.Enabled = Clipboard.ContainsData(ComicBookMatcher.ClipboardFormat);
 			miMoveDown.Enabled = matchers.IndexOf(currentComicBookMatcher) < matchers.Count - 1;
 			miMoveUp.Enabled = matchers.IndexOf(currentComicBookMatcher) > 0;
 		}
@@ -262,7 +262,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		public void AddGroup()
 		{
-			if (level <= 5)
+			if (level <= MaxLevel)
 			{
 				ComicBookGroupMatcher comicBookGroupMatcher = new ComicBookGroupMatcher();
 				comicBookGroupMatcher.Matchers.Add(currentComicBookMatcher.Clone() as ComicBookMatcher);
@@ -277,12 +277,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		public void CopyClipboard()
 		{
-			Clipboard.SetData("ComicBookMatcher", currentComicBookMatcher);
+			Clipboard.SetData(ComicBookMatcher.ClipboardFormat, currentComicBookMatcher);
 		}
 
 		public void CutClipboard()
 		{
-			Clipboard.SetData("ComicBookMatcher", currentComicBookMatcher);
+			Clipboard.SetData(ComicBookMatcher.ClipboardFormat, currentComicBookMatcher);
 			matchers.Remove(currentComicBookMatcher);
 		}
 
@@ -291,12 +291,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			ComicBookMatcher comicBookMatcher = null;
 			try
 			{
-				comicBookMatcher = Clipboard.GetData("ComicBookMatcher") as ComicBookMatcher;
+				comicBookMatcher = Clipboard.GetData(ComicBookMatcher.ClipboardFormat) as ComicBookMatcher;
 			}
 			catch
 			{
 			}
-			if (comicBookMatcher != null && (!(comicBookMatcher is ComicBookGroupMatcher) || level <= 5))
+			if (comicBookMatcher != null && (!(comicBookMatcher is ComicBookGroupMatcher) || level <= MaxLevel))
 			{
 				matchers.Insert(matchers.IndexOf(currentComicBookMatcher) + 1, comicBookMatcher);
 			}

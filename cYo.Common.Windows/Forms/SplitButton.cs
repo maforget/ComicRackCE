@@ -71,9 +71,9 @@ namespace cYo.Common.Windows.Forms
 				return base.Size;
 			}
 			Size preferredSize = base.GetPreferredSize(proposedSize);
-			if (showSplit && !string.IsNullOrEmpty(Text) && TextRenderer.MeasureText(Text, Font).Width + FormUtility.ScaleDpiX(14) > preferredSize.Width)
+			if (showSplit && !string.IsNullOrEmpty(Text) && TextRenderer.MeasureText(Text, Font).Width + FormUtility.ScaleDpiX(PushButtonWidth) > preferredSize.Width)
 			{
-				return preferredSize + new Size(FormUtility.ScaleDpiX(14) + BorderSize * 2, 0);
+				return preferredSize + new Size(FormUtility.ScaleDpiX(PushButtonWidth) + BorderSize * 2, 0);
 			}
 			return preferredSize;
 		}
@@ -212,7 +212,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				ButtonRenderer.DrawButton(graphics, clientRectangle, State);
 			}
-			dropDownRectangle = new Rectangle(clientRectangle.Right - FormUtility.ScaleDpiX(14) - 1, BorderSize, FormUtility.ScaleDpiX(14), clientRectangle.Height - BorderSize * 2);
+			dropDownRectangle = new Rectangle(clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth) - 1, BorderSize, FormUtility.ScaleDpiX(PushButtonWidth), clientRectangle.Height - BorderSize * 2);
 			int borderSize = BorderSize;
 			Rectangle rectangle = new Rectangle(borderSize, borderSize, clientRectangle.Width - dropDownRectangle.Width - borderSize, clientRectangle.Height - borderSize * 2);
 			bool flag = State == PushButtonState.Hot || State == PushButtonState.Pressed || !Application.RenderWithVisualStyles;
@@ -222,14 +222,14 @@ namespace cYo.Common.Windows.Forms
 				rectangle.X = dropDownRectangle.Right;
 				if (flag)
 				{
-					graphics.DrawLine(SystemPens.ButtonShadow, clientRectangle.Left + FormUtility.ScaleDpiX(14), BorderSize, clientRectangle.Left + FormUtility.ScaleDpiX(14), clientRectangle.Bottom - BorderSize);
-					graphics.DrawLine(SystemPens.ButtonFace, clientRectangle.Left + FormUtility.ScaleDpiX(14) + 1, BorderSize, clientRectangle.Left + FormUtility.ScaleDpiX(14) + 1, clientRectangle.Bottom - BorderSize);
+					graphics.DrawLine(SystemPens.ButtonShadow, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth), BorderSize, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth), clientRectangle.Bottom - BorderSize);
+					graphics.DrawLine(SystemPens.ButtonFace, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth) + 1, BorderSize, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth) + 1, clientRectangle.Bottom - BorderSize);
 				}
 			}
 			else if (flag)
 			{
-				graphics.DrawLine(SystemPens.ButtonShadow, clientRectangle.Right - FormUtility.ScaleDpiX(14), BorderSize, clientRectangle.Right - FormUtility.ScaleDpiX(14), clientRectangle.Bottom - BorderSize);
-				graphics.DrawLine(SystemPens.ButtonFace, clientRectangle.Right - FormUtility.ScaleDpiX(14) - 1, BorderSize, clientRectangle.Right - FormUtility.ScaleDpiX(14) - 1, clientRectangle.Bottom - BorderSize);
+				graphics.DrawLine(SystemPens.ButtonShadow, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth), BorderSize, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth), clientRectangle.Bottom - BorderSize);
+				graphics.DrawLine(SystemPens.ButtonFace, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth) - 1, BorderSize, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth) - 1, clientRectangle.Bottom - BorderSize);
 			}
 			PaintArrow(graphics, dropDownRectangle);
 			if (!string.IsNullOrEmpty(Text))

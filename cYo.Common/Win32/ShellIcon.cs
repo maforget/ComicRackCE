@@ -41,10 +41,10 @@ namespace cYo.Common.Win32
 
 				public uint dwAttributes;
 
-				[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
+				[MarshalAs(UnmanagedType.ByValTStr, SizeConst = MAX_PATH)]
 				public string szDisplayName;
 
-				[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 80)]
+				[MarshalAs(UnmanagedType.ByValTStr, SizeConst = conNameSize)]
 				public string szTypeName;
 			}
 
@@ -74,7 +74,7 @@ namespace cYo.Common.Win32
 			}
 			enumFileInfoFlags = (((iconType & ShellIconType.Large) != 0) ? (enumFileInfoFlags | Unsafe.EnumFileInfoFlags.LARGEICON) : (enumFileInfoFlags | Unsafe.EnumFileInfoFlags.SMALLICON));
 			Unsafe.ShellFileInfo psfi = default(Unsafe.ShellFileInfo);
-			uint dwFileAttributes = (((iconType & ShellIconType.Directory) != 0) ? 16u : 128u);
+			uint dwFileAttributes = (((iconType & ShellIconType.Directory) != 0) ? Unsafe.FILE_ATTRIBUTE_DIRECTORY : Unsafe.FILE_ATTRIBUTE_NORMAL);
 			Unsafe.SHGetFileInfo(path, dwFileAttributes, ref psfi, (uint)Marshal.SizeOf((object)psfi), (uint)enumFileInfoFlags);
 			Icon result = Icon.FromHandle(psfi.hIcon).Clone() as Icon;
 			Unsafe.DestroyIcon(psfi.hIcon);

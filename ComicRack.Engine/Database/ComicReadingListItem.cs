@@ -85,7 +85,7 @@ namespace cYo.Projects.ComicRack.Engine.Database
 		{
 			if (!string.IsNullOrEmpty(Series))
 			{
-				return ComicBook.FormatTitle("[{format} ][{series}][ {volume}][ #{number}][ - {title}][ ({year}[/{month}[/{day}]])]", Series, null, ComicBook.FormatVolume(Volume), Number, ComicBook.FormatYear(Year), null, null, Format, FileName);
+				return ComicBook.FormatTitle(ComicBook.DefaultCaptionFormat, Series, null, ComicBook.FormatVolume(Volume), Number, ComicBook.FormatYear(Year), null, null, Format, FileName);
 			}
 			return FileName;
 		}

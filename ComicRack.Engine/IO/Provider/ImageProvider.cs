@@ -162,7 +162,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 				{
 					try
 					{
-						@lock.AcquireReaderLock(60000);
+						@lock.AcquireReaderLock(sourceLockTimeout);
 					}
 					catch (Exception)
 					{
@@ -297,13 +297,13 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			{
 				if (readOnly)
 				{
-					sourceLock.AcquireReaderLock(60000);
+					sourceLock.AcquireReaderLock(sourceLockTimeout);
 					return new Disposer(delegate
 					{
 						sourceLock.ReleaseReaderLock();
 					}, eatErrors: true);
 				}
-				sourceLock.AcquireWriterLock(60000);
+				sourceLock.AcquireWriterLock(sourceLockTimeout);
 				return new Disposer(delegate
 				{
 					sourceLock.ReleaseWriterLock();

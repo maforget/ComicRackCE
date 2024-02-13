@@ -443,14 +443,14 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public static string[] LoadDefaultBackgroundTextures()
 		{
-			return (from s in FileUtility.GetFiles(IniFile.GetDefaultLocations("Resources\\Textures\\Backgrounds"), SearchOption.AllDirectories, ".jpg", ".gif", ".png")
+			return (from s in FileUtility.GetFiles(IniFile.GetDefaultLocations(DefaultBackgroundTexturesPath), SearchOption.AllDirectories, ".jpg", ".gif", ".png")
 				orderby s
 				select s).ToArray();
 		}
 
 		public static string[] LoadDefaultPaperTextures()
 		{
-			return (from s in FileUtility.GetFiles(IniFile.GetDefaultLocations("Resources\\Textures\\Papers"), SearchOption.AllDirectories, ".jpg", ".gif", ".png")
+			return (from s in FileUtility.GetFiles(IniFile.GetDefaultLocations(DefaultPaperTexturesPath), SearchOption.AllDirectories, ".jpg", ".gif", ".png")
 				orderby s
 				select s).ToArray();
 		}
@@ -567,11 +567,11 @@ namespace cYo.Projects.ComicRack.Viewer
 					{
 						if (flag)
 						{
-							fileFormat.RegisterShell("cYo.ComicRack", "eComic", overwrite);
+							fileFormat.RegisterShell(Program.ComicRackTypeId, Program.ComicRackDocumentName, overwrite);
 						}
 						else
 						{
-							fileFormat.UnregisterShell("cYo.ComicRack");
+							fileFormat.UnregisterShell(Program.ComicRackTypeId);
 						}
 					}
 				}
@@ -819,7 +819,7 @@ namespace cYo.Projects.ComicRack.Viewer
 					InitializeDatabase(0, text2);
 				}
 				StartupProgress(TR.Messages["LoadCustomSettings", "Loading custom settings"], 20);
-				IEnumerable<string> defaultLocations = IniFile.GetDefaultLocations("Resources\\Icons");
+				IEnumerable<string> defaultLocations = IniFile.GetDefaultLocations(DefaultIconPackagesPath);
 				ComicBook.PublisherIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Publishers*.zip"), SplitIconKeysWithYear);
 				ComicBook.AgeRatingIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "AgeRatings*.zip"), SplitIconKeys);
 				ComicBook.FormatIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Formats*.zip"), SplitIconKeys);
@@ -851,7 +851,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				{
 					ImageDisplayControl.HardwareSettings.MipMapping = false;
 				}
-				Lists = new DefaultLists(() => Database.Books, IniFile.GetDefaultLocations("DefaultLists.txt"));
+				Lists = new DefaultLists(() => Database.Books, IniFile.GetDefaultLocations(DefaultListsFile));
 				StartupProgress(TR.Messages["InitCache", "Initialize Disk Caches"], 30);
 				CacheManager = new CacheManager(DatabaseManager, Paths, Settings, Resources.ResourceManager);
 				QueueManager = new QueueManager(DatabaseManager, CacheManager, Settings, Settings.Devices);
@@ -901,7 +901,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			MainForm.FormClosing += (object s, FormClosingEventArgs e) =>
             {
                 bool flag2 = e.CloseReason == CloseReason.UserClosing;
-                foreach (Command command in ScriptUtility.GetCommands("Shutdown"))
+                foreach (Command command in ScriptUtility.GetCommands(PluginEngine.ScriptTypeShutdown))
                 {
                     try
                     {

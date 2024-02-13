@@ -556,11 +556,11 @@ namespace cYo.Common.Drawing
 		private static float GetAngularCoefficient(PointF u, PointF v)
 		{
 			float angularCoefficientRads = GetAngularCoefficientRads(u, v);
-			if (angularCoefficientRads % (float)Math.PI == (float)Math.PI / 2f)
+			if (angularCoefficientRads % Pi == Pi / 2f)
 			{
 				return float.PositiveInfinity;
 			}
-			if (angularCoefficientRads % (float)Math.PI == -(float)Math.PI / 2f)
+			if (angularCoefficientRads % Pi == -Pi / 2f)
 			{
 				return float.NegativeInfinity;
 			}
@@ -575,26 +575,26 @@ namespace cYo.Common.Drawing
 				{
 					return 0f;
 				}
-				return (float)Math.PI;
+				return Pi;
 			}
 			if (to.X == from.X)
 			{
 				if (!(to.Y < from.Y))
 				{
-					return (float)Math.PI / 2f;
+					return Pi / 2f;
 				}
-				return -(float)Math.PI / 2f;
+				return -Pi / 2f;
 			}
 			float num = (float)Math.Atan((to.Y - from.Y) / (to.X - from.X));
 			if (to.X < 0f)
 			{
 				if (num > 0f)
 				{
-					num += (float)Math.PI / 2f;
+					num += Pi / 2f;
 				}
 				else if (num < 0f)
 				{
-					num -= (float)Math.PI;
+					num -= Pi;
 				}
 			}
 			return num;

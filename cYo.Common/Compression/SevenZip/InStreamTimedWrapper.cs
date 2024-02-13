@@ -62,11 +62,11 @@ namespace cYo.Common.Compression.SevenZip
 				}
 				base.BaseStream = new FileStream(baseStreamFileName, FileMode.Open, FileAccess.Read, FileShare.Read);
 				base.BaseStream.Position = baseStreamLastPosition;
-				closeTimer = new Timer(CloseStream, null, 5000, -1);
+				closeTimer = new Timer(CloseStream, null, KeepAliveInterval, -1);
 			}
 			else if (closeTimer != null)
 			{
-				closeTimer.Change(5000, -1);
+				closeTimer.Change(KeepAliveInterval, -1);
 			}
 		}
 

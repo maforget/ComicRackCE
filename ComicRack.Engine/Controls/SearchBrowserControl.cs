@@ -739,7 +739,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			else
 			{
 				comicBookContainer.Books.AddRange(comicBookMatcher.Match(books));
-				dataObject.SetData("ComicBookMatcher", comicBookMatcher);
+				dataObject.SetData(ComicBookMatcher.ClipboardFormat, comicBookMatcher);
 			}
 			dataObject.SetData(comicBookContainer);
 			dragBitmap = CreateDragCursor(si);

@@ -71,14 +71,14 @@ namespace cYo.Common.Drawing
 			graysNormalized = Normalize(grays, pixelCount);
 		}
 
-		public float GetBlackPointNormalized(float threshold = 0.005f)
+		public float GetBlackPointNormalized(float threshold = defaultThreshold)
 		{
-			return Math.Min(FindLowThreshold(graysNormalized, threshold), 0.25f);
+			return Math.Min(FindLowThreshold(graysNormalized, threshold), range);
 		}
 
-		public float GetWhitePointNormalized(float threshold = 0.005f)
+		public float GetWhitePointNormalized(float threshold = defaultThreshold)
 		{
-			return Math.Max(FindTopThreshold(graysNormalized, threshold), 0.75f);
+			return Math.Max(FindTopThreshold(graysNormalized, threshold), 3 * range);
 		}
 
 		private static float FindLowThreshold(IList<float> array, float threshold)

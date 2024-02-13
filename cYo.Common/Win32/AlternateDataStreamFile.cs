@@ -78,7 +78,7 @@ namespace cYo.Common.Win32
 
 		public static StreamWriter AppendText(string path, string stream)
 		{
-			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, 3221225472u, 1u, IntPtr.Zero, 4u, 0u, IntPtr.Zero);
+			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, NativeMethods.GENERIC_READ | NativeMethods.GENERIC_WRITE, 1u, IntPtr.Zero, NativeMethods.OPEN_ALWAYS, 0u, IntPtr.Zero);
 			NativeMethods.SetFilePointer(safeFileHandle, 0, 0, 2u);
 			if (safeFileHandle.IsInvalid)
 			{
@@ -90,19 +90,19 @@ namespace cYo.Common.Win32
 
 		public static FileStream Create(string path, string stream)
 		{
-			SafeFileHandle handle = NativeMethods.CreateFile(path + ":" + stream, 3221225472u, 0u, IntPtr.Zero, 2u, 0u, IntPtr.Zero);
+			SafeFileHandle handle = NativeMethods.CreateFile(path + ":" + stream, NativeMethods.GENERIC_READ | NativeMethods.GENERIC_WRITE, 0u, IntPtr.Zero, NativeMethods.CREATE_ALWAYS, 0u, IntPtr.Zero);
 			return new FileStream(handle, FileAccess.ReadWrite);
 		}
 
 		public static FileStream Create(string path, string stream, int bufferSize)
 		{
-			SafeFileHandle handle = NativeMethods.CreateFile(path + ":" + stream, 3221225472u, 0u, IntPtr.Zero, 2u, 0u, IntPtr.Zero);
+			SafeFileHandle handle = NativeMethods.CreateFile(path + ":" + stream, NativeMethods.GENERIC_READ | NativeMethods.GENERIC_WRITE, 0u, IntPtr.Zero, NativeMethods.CREATE_ALWAYS, 0u, IntPtr.Zero);
 			return new FileStream(handle, FileAccess.ReadWrite, bufferSize);
 		}
 
 		public static StreamWriter CreateText(string path, string stream)
 		{
-			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, 3221225472u, 1u, IntPtr.Zero, 2u, 0u, IntPtr.Zero);
+			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, NativeMethods.GENERIC_READ | NativeMethods.GENERIC_WRITE, 1u, IntPtr.Zero, NativeMethods.CREATE_ALWAYS, 0u, IntPtr.Zero);
 			if (safeFileHandle.IsInvalid)
 			{
 				throw new FileNotFoundException("Unable to open stream: " + stream + " in file: " + path + ".", path);
@@ -113,7 +113,7 @@ namespace cYo.Common.Win32
 
 		public static FileStream Open(string path, string stream)
 		{
-			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, 3221225472u, 0u, IntPtr.Zero, 3u, 0u, IntPtr.Zero);
+			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, NativeMethods.GENERIC_READ | NativeMethods.GENERIC_WRITE, 0u, IntPtr.Zero, NativeMethods.OPEN_EXISTING, 0u, IntPtr.Zero);
 			if (safeFileHandle.IsInvalid)
 			{
 				throw new FileNotFoundException("Unable to open stream: " + stream + " in file: " + path + ".", path);
@@ -123,7 +123,7 @@ namespace cYo.Common.Win32
 
 		public static FileStream OpenRead(string path, string stream)
 		{
-			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, 2147483648u, 1u, IntPtr.Zero, 3u, 0u, IntPtr.Zero);
+			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, NativeMethods.GENERIC_READ, 1u, IntPtr.Zero, NativeMethods.OPEN_EXISTING, 0u, IntPtr.Zero);
 			if (safeFileHandle.IsInvalid)
 			{
 				throw new FileNotFoundException("Unable to open stream: " + stream + " in file: " + path + ".", path);
@@ -133,7 +133,7 @@ namespace cYo.Common.Win32
 
 		public static StreamReader OpenText(string path, string stream)
 		{
-			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, 2147483648u, 1u, IntPtr.Zero, 3u, 0u, IntPtr.Zero);
+			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, NativeMethods.GENERIC_READ, 1u, IntPtr.Zero, NativeMethods.OPEN_EXISTING, 0u, IntPtr.Zero);
 			if (safeFileHandle.IsInvalid)
 			{
 				throw new FileNotFoundException("Unable to open stream: " + stream + " in file: " + path + ".", path);
@@ -144,7 +144,7 @@ namespace cYo.Common.Win32
 
 		public static FileStream OpenWrite(string path, string stream)
 		{
-			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, 3221225472u, 0u, IntPtr.Zero, 3u, 0u, IntPtr.Zero);
+			SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, NativeMethods.GENERIC_READ | NativeMethods.GENERIC_WRITE, 0u, IntPtr.Zero, NativeMethods.OPEN_EXISTING, 0u, IntPtr.Zero);
 			if (safeFileHandle.IsInvalid)
 			{
 				throw new FileNotFoundException("Unable to open stream: " + stream + " in file: " + path + ".", path);
@@ -163,7 +163,7 @@ namespace cYo.Common.Win32
 
 		public static bool Exists(string path, string stream)
 		{
-			using (SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, 2147483648u, 1u, IntPtr.Zero, 3u, 0u, IntPtr.Zero))
+			using (SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path + ":" + stream, NativeMethods.GENERIC_READ, 1u, IntPtr.Zero, NativeMethods.OPEN_EXISTING, 0u, IntPtr.Zero))
 			{
 				return !safeFileHandle.IsInvalid;
 			}
@@ -171,7 +171,7 @@ namespace cYo.Common.Win32
 
 		public static IEnumerable<string> GetStreams(string path)
 		{
-			using (SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path, 2147483648u, 1u, IntPtr.Zero, 3u, 0u, IntPtr.Zero))
+			using (SafeFileHandle safeFileHandle = NativeMethods.CreateFile(path, NativeMethods.GENERIC_READ, 1u, IntPtr.Zero, NativeMethods.OPEN_EXISTING, 0u, IntPtr.Zero))
 			{
 				if (safeFileHandle.IsInvalid)
 				{

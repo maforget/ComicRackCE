@@ -26,7 +26,7 @@ namespace cYo.Projects.ComicRack.Plugins
 			{
 				try
 				{
-					return PluginEngine.GetCommands("CreateBookList");
+					return PluginEngine.GetCommands(PluginEngine.ScriptTypeCreateBookList);
 				}
 				catch
 				{

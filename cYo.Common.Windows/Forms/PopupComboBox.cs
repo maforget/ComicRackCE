@@ -169,7 +169,7 @@ namespace cYo.Common.Windows.Forms
 		[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
 		protected override void WndProc(ref Message m)
 		{
-			if (m.Msg == 8465 && NativeMethods.HIWORD(m.WParam) == 7)
+			if (m.Msg == 8465 && NativeMethods.HIWORD(m.WParam) == NativeMethods.CBN_DROPDOWN)
 			{
 				ShowDropDown();
 			}

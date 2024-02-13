@@ -108,7 +108,7 @@ namespace cYo.Common.Presentation.Ceco
 
 			private static void SetTransform(HandleRef hdc, NativeMethods.XFORM xform)
 			{
-				NativeMethods.SetGraphicsMode(hdc, 2);
+				NativeMethods.SetGraphicsMode(hdc, NativeMethods.GM_ADVANCED);
 				NativeMethods.SetWorldTransform(hdc, xform);
 			}
 
@@ -199,7 +199,7 @@ namespace cYo.Common.Presentation.Ceco
 			}
 			if (UseTextRenderer)
 			{
-				base.Size = TextRenderer.MeasureText(gr, text, Font, new Size(maxWidth, 1000), TextFormatFlags.NoClipping | TextFormatFlags.NoPrefix | TextFormatFlags.SingleLine | TextFormatFlags.PreserveGraphicsClipping | TextFormatFlags.PreserveGraphicsTranslateTransform | TextFormatFlags.NoPadding);
+				base.Size = TextRenderer.MeasureText(gr, text, Font, new Size(maxWidth, 1000), formatFlags);
 			}
 			else
 			{
@@ -227,7 +227,7 @@ namespace cYo.Common.Presentation.Ceco
 			location2.Offset(location);
 			if (UseTextRenderer)
 			{
-				TextRenderer.DrawText(gr, text, Font, location2, ForeColor, TextFormatFlags.NoClipping | TextFormatFlags.NoPrefix | TextFormatFlags.SingleLine | TextFormatFlags.PreserveGraphicsClipping | TextFormatFlags.PreserveGraphicsTranslateTransform | TextFormatFlags.NoPadding);
+				TextRenderer.DrawText(gr, text, Font, location2, ForeColor, formatFlags);
 				return;
 			}
 			TextRenderingHint textRenderingHint = gr.TextRenderingHint;

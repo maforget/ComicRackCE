@@ -109,7 +109,7 @@ namespace cYo.Common.Windows.Forms
 			IntPtr textHandle = GetTextHandle();
 			if (textHandle != IntPtr.Zero)
 			{
-				NativeMethods.SendMessage(textHandle, 5377, IntPtr.Zero, promptText);
+				NativeMethods.SendMessage(textHandle, NativeMethods.EM_SETCUEBANNER, IntPtr.Zero, promptText);
 			}
 		}
 

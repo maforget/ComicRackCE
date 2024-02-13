@@ -20,7 +20,7 @@ namespace cYo.Common.Compression.SevenZip
 				{
 				}
 
-				[DllImport("kernel32.dll")]
+				[DllImport(Kernel32Dll)]
 				[SuppressUnmanagedCodeSecurity]
 				[return: MarshalAs(UnmanagedType.Bool)]
 				private static extern bool FreeLibrary(IntPtr hModule);
@@ -34,10 +34,10 @@ namespace cYo.Common.Compression.SevenZip
 
 			private const string Kernel32Dll = "kernel32.dll";
 
-			[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+			[DllImport(Kernel32Dll, CharSet = CharSet.Auto, SetLastError = true)]
 			public static extern SafeLibraryHandle LoadLibrary([MarshalAs(UnmanagedType.LPTStr)] string lpFileName);
 
-			[DllImport("kernel32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
+			[DllImport(Kernel32Dll, CharSet = CharSet.Ansi, SetLastError = true)]
 			public static extern IntPtr GetProcAddress(SafeLibraryHandle hModule, [MarshalAs(UnmanagedType.LPStr)] string procName);
 		}
 

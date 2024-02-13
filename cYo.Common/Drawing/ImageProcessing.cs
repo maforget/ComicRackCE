@@ -1392,7 +1392,7 @@ namespace cYo.Common.Drawing
 						reds[num3]++;
 						greens[num2]++;
 						blues[num]++;
-						int num4 = (int)((float)num3 * 0.3086f + (float)num2 * 0.6094f + (float)num * 0.082f);
+						int num4 = (int)((float)num3 * grayRed + (float)num2 * grayGreen + (float)num * grayBlue);
 						grays[num4]++;
 					}
 				});
@@ -1422,12 +1422,12 @@ namespace cYo.Common.Drawing
 		public static Matrix CreateColorSaturationMatrix(float sat)
 		{
 			Matrix matrix = new Matrix(5, 5, 1.0);
-			matrix[0, 0] = (1f - sat) * 0.3086f + sat;
-			double num3 = (matrix[0, 1] = (matrix[0, 2] = (1f - sat) * 0.3086f));
-			matrix[1, 1] = (1f - sat) * 0.6094f + sat;
-			num3 = (matrix[1, 0] = (matrix[1, 2] = (1f - sat) * 0.6094f));
-			matrix[2, 2] = (1f - sat) * 0.082f + sat;
-			num3 = (matrix[2, 0] = (matrix[2, 1] = (1f - sat) * 0.082f));
+			matrix[0, 0] = (1f - sat) * grayRed + sat;
+			double num3 = (matrix[0, 1] = (matrix[0, 2] = (1f - sat) * grayRed));
+			matrix[1, 1] = (1f - sat) * grayGreen + sat;
+			num3 = (matrix[1, 0] = (matrix[1, 2] = (1f - sat) * grayGreen));
+			matrix[2, 2] = (1f - sat) * grayBlue + sat;
+			num3 = (matrix[2, 0] = (matrix[2, 1] = (1f - sat) * grayBlue));
 			return matrix;
 		}
 
@@ -1439,7 +1439,7 @@ namespace cYo.Common.Drawing
 				byte r = whitePoint.R;
 				byte g = whitePoint.G;
 				byte b = whitePoint.B;
-				byte b2 = (byte)(0.3086f * (float)(int)r + 0.6094f * (float)(int)g + 0.082f * (float)(int)b);
+				byte b2 = (byte)(grayRed * (float)(int)r + grayGreen * (float)(int)g + grayBlue * (float)(int)b);
 				matrix[3, 0] = (float)(b2 - r) / 256f;
 				matrix[3, 1] = (float)(b2 - g) / 256f;
 				matrix[3, 2] = (float)(b2 - b) / 256f;

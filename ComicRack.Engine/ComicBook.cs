@@ -924,7 +924,7 @@ namespace cYo.Projects.ComicRack.Engine
 		public string CaptionWithoutFormat => GetFullTitle(EngineConfiguration.Default.ComicCaptionFormat, "format");
 
 		[Browsable(true)]
-		public string AlternateCaption => GetFullTitle("[{alternateseries}][ #{alternatenumber}]");
+		public string AlternateCaption => GetFullTitle(DefaultAlternateCaptionFormat);
 
 		public string TargetFilename => GetFullTitle(EngineConfiguration.Default.ComicExportFileNameFormat);
 
@@ -952,7 +952,7 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 			get
 			{
-				return ReadPercentage >= 95;
+				return ReadPercentage >= ReadPercentageAsRead;
 			}
 			set
 			{
@@ -1709,7 +1709,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public ThumbnailKey GetThumbnailKey(int page)
 		{
-			string locationKey = ((!IsLinked) ? (string.IsNullOrEmpty(CustomThumbnailKey) ? ThumbnailKey.GetResource("resource", "Unknown") : ThumbnailKey.GetResource("custom", CustomThumbnailKey)) : FileLocation);
+			string locationKey = ((!IsLinked) ? (string.IsNullOrEmpty(CustomThumbnailKey) ? ThumbnailKey.GetResource(ThumbnailKey.ResourceKey, "Unknown") : ThumbnailKey.GetResource(ThumbnailKey.CustomKey, CustomThumbnailKey)) : FileLocation);
 			return GetThumbnailKey(page, locationKey);
 		}
 
@@ -2185,7 +2185,7 @@ namespace cYo.Projects.ComicRack.Engine
 			comicBook.Id = Guid.NewGuid();
 			DataObject dataObject = new DataObject();
 			dataObject.SetData(DataFormats.UnicodeText, GetInfo().ToXml());
-			dataObject.SetData("ComicBook", comicBook);
+			dataObject.SetData(ClipboardFormat, comicBook);
 			Clipboard.SetDataObject(dataObject);
 		}
 

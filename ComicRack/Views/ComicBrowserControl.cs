@@ -952,8 +952,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				ApplyBookOrder(GetBookList(ComicBookFilterType.Library));
 			}, () => CanReorderList(mustBeOrdered: false), miEditListApplyOrder);
-			//commands.Add(PasteComicData, () => ComicEditMode.CanEditProperties() && Clipboard.ContainsData("ComicBook") && !GetBookList(ComicBookFilterType.Selected).IsEmpty(), miPasteData);
-			commands.Add(CopyComicData, () => itemView.SelectedCount > 0, miCopyData);
+            //commands.Add(PasteComicData, () => ComicEditMode.CanEditProperties() && Clipboard.ContainsData(ComicBook.ClipboardFormat) && !GetBookList(ComicBookFilterType.Selected).IsEmpty(), miPasteData);
+            commands.Add(CopyComicData, () => itemView.SelectedCount > 0, miCopyData);
 			commands.Add(ClearComicData, () => ComicEditMode.CanEditProperties() && !GetBookList(ComicBookFilterType.Selected).IsEmpty(), miClearData);
 			commands.Add(UpdateFiles, AnySelectedLinked, miUpdateComicFiles);
 			commands.Add(delegate
@@ -1403,7 +1403,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				ISetCustomThumbnail setCustomThumbnail = e.Stack.Items.FirstOrDefault() as ISetCustomThumbnail;
 				if (setCustomThumbnail != null)
 				{
-					setCustomThumbnail.CustomThumbnailKey = ThumbnailKey.GetResource("custom", stackConfigItem.ThumbnailKey);
+					setCustomThumbnail.CustomThumbnailKey = ThumbnailKey.GetResource(ThumbnailKey.CustomKey, stackConfigItem.ThumbnailKey);
 				}
 			}
 			Guid id = stackConfigItem.TopId;
@@ -2223,7 +2223,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				dataObject.SetFileDropList(stringCollection);
 				if (comicBookGroupMatcher.Matchers.Count > 0)
 				{
-					dataObject.SetData("ComicBookMatcher", (comicBookGroupMatcher.Matchers.Count == 1) ? comicBookGroupMatcher.Matchers[0] : comicBookGroupMatcher);
+					dataObject.SetData(ComicBookMatcher.ClipboardFormat, (comicBookGroupMatcher.Matchers.Count == 1) ? comicBookGroupMatcher.Matchers[0] : comicBookGroupMatcher);
 				}
 				ownDrop = false;
 				DragDropEffects dragDropEffects2 = itemView.DoDragDrop(dataObject, dragDropEffects);
@@ -2373,11 +2373,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			switch (itemView.ItemViewMode)
 			{
 			case ItemViewMode.Thumbnail:
-				return new ItemSizeInfo(FormUtility.ScaleDpiY(96), FormUtility.ScaleDpiY(512), itemView.ItemThumbSize.Height);
+				return new ItemSizeInfo(FormUtility.ScaleDpiY(Program.MinThumbHeight), FormUtility.ScaleDpiY(Program.MaxThumbHeight), itemView.ItemThumbSize.Height);
 			case ItemViewMode.Tile:
-				return new ItemSizeInfo(FormUtility.ScaleDpiY(64), FormUtility.ScaleDpiY(256), itemView.ItemTileSize.Height);
+				return new ItemSizeInfo(FormUtility.ScaleDpiY(Program.MinTileHeight), FormUtility.ScaleDpiY(Program.MaxTileHeight), itemView.ItemTileSize.Height);
 			case ItemViewMode.Detail:
-				return new ItemSizeInfo(FormUtility.ScaleDpiY(12), FormUtility.ScaleDpiY(48), itemView.ItemRowHeight);
+				return new ItemSizeInfo(FormUtility.ScaleDpiY(Program.MinRowHeight), FormUtility.ScaleDpiY(Program.MaxRowHeight), itemView.ItemRowHeight);
 			default:
 				return null;
 			}
@@ -2388,15 +2388,15 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			switch (itemView.ItemViewMode)
 			{
 			case ItemViewMode.Thumbnail:
-				height = height.Clamp(FormUtility.ScaleDpiY(96), FormUtility.ScaleDpiY(512));
+				height = height.Clamp(FormUtility.ScaleDpiY(Program.MinThumbHeight), FormUtility.ScaleDpiY(Program.MaxThumbHeight));
 				itemView.ItemThumbSize = new Size(height, height);
 				break;
 			case ItemViewMode.Tile:
-				height = height.Clamp(FormUtility.ScaleDpiY(64), FormUtility.ScaleDpiY(256));
+				height = height.Clamp(FormUtility.ScaleDpiY(Program.MinTileHeight), FormUtility.ScaleDpiY(Program.MaxTileHeight));
 				itemView.ItemTileSize = new Size(height * 2, height);
 				break;
 			case ItemViewMode.Detail:
-				height = height.Clamp(FormUtility.ScaleDpiY(12), FormUtility.ScaleDpiY(48));
+				height = height.Clamp(FormUtility.ScaleDpiY(Program.MinRowHeight), FormUtility.ScaleDpiY(Program.MaxRowHeight));
 				itemView.ItemRowHeight = height;
 				break;
 			}
@@ -2657,7 +2657,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             //Check if the clipboard contains data, if so enable the paste button.
             try
             {
-                return ComicEditMode.CanEditProperties() && Clipboard.ContainsData("ComicBook") && !GetBookList(ComicBookFilterType.Selected).IsEmpty();
+                return ComicEditMode.CanEditProperties() && Clipboard.ContainsData(ComicBook.ClipboardFormat) && !GetBookList(ComicBookFilterType.Selected).IsEmpty();
             }
             catch (Exception)
             {
@@ -2669,7 +2669,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			try
 			{
-				ComicBook comicBook = Clipboard.GetData("ComicBook") as ComicBook;
+				ComicBook comicBook = Clipboard.GetData(ComicBook.ClipboardFormat) as ComicBook;
 				IEnumerable<ComicBook> enumerable = GetBookList(ComicBookFilterType.Selected, asArray: true);
 				if (comicBook != null && !enumerable.IsEmpty())
 				{

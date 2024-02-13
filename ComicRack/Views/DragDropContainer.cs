@@ -98,7 +98,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					{
 						(ComicBookMatcher)new ComicBookSeriesMatcher
 						{
-							MatchOperator = 0,
+							MatchOperator = ComicBookStringMatcher.OperatorEquals,
 							MatchValue = t.Series
 						}
 					}
@@ -107,7 +107,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				{
 					comicBookGroupMatcher.Matchers.Add(new ComicBookVolumeMatcher
 					{
-						MatchOperator = 0,
+						MatchOperator = ComicBookNumberMatcher.Equal,
 						MatchValue = t.Volume.ToString()
 					});
 				}
@@ -147,7 +147,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			if (data.GetDataPresent(typeof(ComicBookContainer)))
 			{
-				return new DragDropContainer(data.GetData(typeof(ComicBookContainer)) as ComicBookContainer, data.GetData("ComicBookMatcher") as ComicBookMatcher);
+				return new DragDropContainer(data.GetData(typeof(ComicBookContainer)) as ComicBookContainer, data.GetData(ComicBookMatcher.ClipboardFormat) as ComicBookMatcher);
 			}
 			if (data.GetDataPresent(DataFormats.FileDrop))
 			{

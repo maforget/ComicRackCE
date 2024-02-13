@@ -24,7 +24,7 @@ namespace cYo.Common.Windows.Forms
 
 		public static void SetCueText(this TextBox tb, string text)
 		{
-			Native.SendMessage(tb.Handle, 5377, IntPtr.Zero, text);
+			Native.SendMessage(tb.Handle, Native.EM_SETCUEBANNER, IntPtr.Zero, text);
 		}
 
 		public static void EnableKeys(this TextBoxBase tb, IEnumerable<char> enabledKeys)

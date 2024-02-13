@@ -94,7 +94,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			set;
 		}
 
-		public bool CanPaste => Clipboard.ContainsData("DeviceSyncSettings");
+		public bool CanPaste => Clipboard.ContainsData(DeviceSyncSettings.ClipboardFormat);
 
 		public event EventHandler DeviceNameChanged;
 
@@ -145,14 +145,14 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		public void CopyShareSettings()
 		{
-			Clipboard.SetData("DeviceSyncSettings", Settings);
+			Clipboard.SetData(DeviceSyncSettings.ClipboardFormat, Settings);
 		}
 
 		public void PasteSharedSettings()
 		{
 			try
 			{
-				DeviceSyncSettings deviceSyncSettings = Clipboard.GetData("DeviceSyncSettings") as DeviceSyncSettings;
+				DeviceSyncSettings deviceSyncSettings = Clipboard.GetData(DeviceSyncSettings.ClipboardFormat) as DeviceSyncSettings;
 				if (deviceSyncSettings != null)
 				{
 					UpdateTree(deviceSyncSettings);

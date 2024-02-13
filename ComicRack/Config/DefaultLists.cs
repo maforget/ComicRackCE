@@ -65,16 +65,16 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		public DefaultLists(Func<IEnumerable<ComicBook>> getBooks, IEnumerable<string> initPaths)
 		{
 			this.getBooks = getBooks;
-			DefaultGenres = LoadDefaultTextList(initPaths, "Book Genres").ToArray();
-			DefaultFormats = (from s in LoadDefaultTextList(initPaths, "Book Formats").Concat(ComicBook.FormatIcons.Keys).Distinct()
+			DefaultGenres = LoadDefaultTextList(initPaths, DefaultGenresSection).ToArray();
+			DefaultFormats = (from s in LoadDefaultTextList(initPaths, DefaultFormatsSection).Concat(ComicBook.FormatIcons.Keys).Distinct()
 				orderby s
 				select s).ToArray();
-			DefaultAgeRatings = (from s in LoadDefaultTextList(initPaths, "Age Ratings").Concat(ComicBook.AgeRatingIcons.Keys)
+			DefaultAgeRatings = (from s in LoadDefaultTextList(initPaths, DefaultAgeRatingsSection).Concat(ComicBook.AgeRatingIcons.Keys)
 				orderby s
 				select s).Distinct().ToArray();
-			DefaultBookAges = LoadDefaultTextList(initPaths, "Book Ages").ToArray();
-			DefaultBookConditions = LoadDefaultTextList(initPaths, "Book Conditions").ToArray();
-			DefaultBookCollectionStatus = LoadDefaultTextList(initPaths, "Book Collection Status").ToArray();
+			DefaultBookAges = LoadDefaultTextList(initPaths, DefaultBookAgesSection).ToArray();
+			DefaultBookConditions = LoadDefaultTextList(initPaths, DefaultBookConditionsSection).ToArray();
+			DefaultBookCollectionStatus = LoadDefaultTextList(initPaths, DefaultBookCollectionStatusSection).ToArray();
 		}
 
 		public AutoCompleteStringCollection GetComicFieldList(Func<ComicBook, string> autoCompleteHandler, bool sort = false)

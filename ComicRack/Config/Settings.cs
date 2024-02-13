@@ -200,7 +200,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		private bool autoUpdateComicsFiles;
 
-		private string helpSystem = "ComicRack Online Manual";
+		private string helpSystem = DefaultHelpSystem;
 
 		private bool scripting = true;
 
@@ -316,11 +316,11 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		private bool internetCacheEnabled = true;
 
-		private int internetCacheSizeMB = 1000;
+		private int internetCacheSizeMB = DefaultInternetCacheSizeMB;
 
-		private int memoryThumbCacheSizeMB = 50;
+		private int memoryThumbCacheSizeMB = DefaultMemoryThumbnailCacheMB;
 
-		private int memoryPageCacheCount = 25;
+		private int memoryPageCacheCount = DefaultMemoryPageCacheCount;
 
 		private bool memoryThumbCacheOptimized = true;
 
@@ -999,7 +999,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			}
 		}
 
-		[DefaultValue("ComicRack Online Manual")]
+		[DefaultValue(DefaultHelpSystem)]
 		public string HelpSystem
 		{
 			get
@@ -2113,7 +2113,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		[Category("Caching")]
 		[Description("Size of the internet cache")]
-		[DefaultValue(1000)]
+		[DefaultValue(DefaultInternetCacheSizeMB)]
 		[Browsable(false)]
 		public int InternetCacheSizeMB
 		{
@@ -2133,7 +2133,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		[Category("Caching")]
 		[Description("Size of the memory thumbnail cache")]
-		[DefaultValue(50)]
+		[DefaultValue(DefaultMemoryThumbnailCacheMB)]
 		[Browsable(false)]
 		public int MemoryThumbCacheSizeMB
 		{
@@ -2143,7 +2143,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			}
 			set
 			{
-				value = value.Clamp(5, 100);
+				value = value.Clamp(MinimumMemoryThumbnailCacheMB, MaximumMemoryThumbnailCacheMB);
 				if (memoryThumbCacheSizeMB != value)
 				{
 					memoryThumbCacheSizeMB = value;
@@ -2154,7 +2154,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		[Category("Caching")]
 		[Description("Pages to cache in memory")]
-		[DefaultValue(25)]
+		[DefaultValue(DefaultMemoryPageCacheCount)]
 		[Browsable(false)]
 		public int MemoryPageCacheCount
 		{
@@ -2164,7 +2164,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			}
 			set
 			{
-				value = value.Clamp(20, 100);
+				value = value.Clamp(MinimumMemoryPageCacheCount, MaximumMemoryPageCacheCount);
 				if (memoryPageCacheCount != value)
 				{
 					memoryPageCacheCount = value;
@@ -2211,7 +2211,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			}
 		}
 
-		[DefaultValue(1024)]
+		[DefaultValue(UnlimitedSystemMemory)]
 		[Browsable(false)]
 		public int MaximumMemoryMB
 		{
@@ -2577,7 +2577,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			ExternalServerAddress = string.Empty;
 			PrivateListingPassword = string.Empty;
 			QuickOpenThumbnailSize = 128;
-			MaximumMemoryMB = 1024;
+			MaximumMemoryMB = UnlimitedSystemMemory;
 			ShowQuickManual = true;
 			ValidationDate = DateTime.MinValue;
 		}

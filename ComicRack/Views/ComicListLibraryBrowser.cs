@@ -326,8 +326,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				commands.Add(CopyList, () => tvQueries.SelectedNode != null && (tvQueries.SelectedNode.Tag is ShareableComicListItem || (Program.ExtendedSettings.AllowCopyListFolders && tvQueries.SelectedNode.Tag is ComicListItemFolder)) && ComicEditMode.CanEditList(), miCopyList);
 				commands.Add(ExportList, () => tvQueries.SelectedNode != null && tvQueries.SelectedNode.Tag is ShareableComicListItem && ComicEditMode.CanEditList(), miExportReadingList);
 				commands.Add(ImportLists, () => ComicEditMode.CanEditList(), miImportReadingList);
-				//commands.Add(PasteList, () => (Clipboard.ContainsData("ComicList") || Clipboard.ContainsText()) && ComicEditMode.CanEditList(), miPasteList);
-				commands.Add(AddToFavorites, miAddToFavorites);
+                //commands.Add(PasteList, () => (Clipboard.ContainsData(ShareableComicListItem.ClipboardFormat) || Clipboard.ContainsText()) && ComicEditMode.CanEditList(), miPasteList);
+                commands.Add(AddToFavorites, miAddToFavorites);
 				commands.Add(delegate
 				{
 					TopBrowserVisible = !TopBrowserVisible;
@@ -1348,7 +1348,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				{
 					dataObject.SetText(comicListItem.ToString());
 				}
-				dataObject.SetData("ComicList", comicListItem);
+				dataObject.SetData(ShareableComicListItem.ClipboardFormat, comicListItem);
 				Clipboard.SetDataObject(dataObject);
 			}
 			catch (Exception)
@@ -1396,7 +1396,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             //Check if the clipboard contains data, if so enable the paste button.
             try
             {
-                return (Clipboard.ContainsData("ComicList") || Clipboard.ContainsText()) && ComicEditMode.CanEditList();
+                return (Clipboard.ContainsData(ShareableComicListItem.ClipboardFormat) || Clipboard.ContainsText()) && ComicEditMode.CanEditList();
             }
             catch (Exception)
             {
@@ -1415,7 +1415,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				return;
 			}
-			ShareableComicListItem shareableComicListItem = Clipboard.GetData("ComicList") as ShareableComicListItem;
+			ShareableComicListItem shareableComicListItem = Clipboard.GetData(ShareableComicListItem.ClipboardFormat) as ShareableComicListItem;
 			if (shareableComicListItem != null)
 			{
 				shareableComicListItem = ((ICloneable)shareableComicListItem).Clone<ShareableComicListItem>();
@@ -1427,7 +1427,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 			if (Program.ExtendedSettings.AllowCopyListFolders)
 			{
-				ComicListItemFolder comicListItemFolder = Clipboard.GetData("ComicList") as ComicListItemFolder;
+				ComicListItemFolder comicListItemFolder = Clipboard.GetData(ShareableComicListItem.ClipboardFormat) as ComicListItemFolder;
 				if (comicListItemFolder != null)
 				{
 					comicListItemFolder = ((ICloneable)comicListItemFolder).Clone<ComicListItemFolder>();

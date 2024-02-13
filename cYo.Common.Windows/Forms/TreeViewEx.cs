@@ -57,9 +57,9 @@ namespace cYo.Common.Windows.Forms
 
 			public static void SetExStyles(IntPtr handle, TVS_EX exStyle)
 			{
-				TVS_EX tVS_EX = (TVS_EX)SendMessage(handle, 4397, 0, 0);
+				TVS_EX tVS_EX = (TVS_EX)SendMessage(handle, (int)LVM.TVM_GETEXTENDEDSTYLE, 0, 0);
 				tVS_EX |= exStyle;
-				SendMessage(handle, 4396, 0, (int)tVS_EX);
+				SendMessage(handle, (int)LVM.TVM_SETEXTENDEDSTYLE, 0, (int)tVS_EX);
 			}
 
 			[DllImport("user32.dll", CharSet = CharSet.Unicode)]
@@ -70,7 +70,7 @@ namespace cYo.Common.Windows.Forms
 				int num = Math.Abs(lines);
 				for (int i = 0; i < num; i++)
 				{
-					SendMessage(window.Handle, 277, (lines >= 0) ? 1 : 0, 0);
+					SendMessage(window.Handle, WM_VSCROLL, (lines >= 0) ? 1 : 0, 0);
 				}
 			}
 		}
@@ -161,7 +161,7 @@ namespace cYo.Common.Windows.Forms
 		protected override void WndProc(ref Message m)
 		{
 			base.WndProc(ref m);
-			if (m.Msg == 277)
+			if (m.Msg == Native.WM_VSCROLL)
 			{
 				ScrollEventType type = (ScrollEventType)Enum.Parse(typeof(ScrollEventType), (m.WParam.ToInt32() & 0xFFFF).ToString());
 				OnScroll(new ScrollEventArgs(type, (int)(m.WParam.ToInt64() >> 16) & 0xFF));

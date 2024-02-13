@@ -63,7 +63,7 @@ namespace cYo.Common.Net
 		{
 			AskProxyCredentials = true;
 			AskSecureCredentials = false;
-			UserAgent = "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)";
+			UserAgent = DefaultUserAgent;
 		}
 
 		public T GetResponse<T>(Action create, Action<ICredentials> setProxyCredentials, Action<ICredentials> setSecureCredentials, Func<Uri> getProxyUri, Func<Uri> getConnectionUri, Func<T> connect)

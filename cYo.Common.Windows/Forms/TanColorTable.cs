@@ -48,7 +48,7 @@ namespace cYo.Common.Windows.Forms
 						StringBuilder stringBuilder = new StringBuilder(512);
 						GetCurrentThemeName(stringBuilder, stringBuilder.Capacity, null, 0, null, 0);
 						string path = stringBuilder.ToString();
-						isLunaTheme = string.Equals("luna.msstyles", Path.GetFileName(path), StringComparison.InvariantCultureIgnoreCase);
+						isLunaTheme = string.Equals(lunaFileName, Path.GetFileName(path), StringComparison.InvariantCultureIgnoreCase);
 					}
 				}
 				else

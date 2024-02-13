@@ -202,8 +202,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void tbSystemMemory_ValueChanged(object sender, EventArgs e)
 		{
-			int num = tbMaximumMemoryUsage.Value * 32;
-			if (num == 1024)
+			int num = tbMaximumMemoryUsage.Value * MaximumMemoryStepSize;
+			if (num == Settings.UnlimitedSystemMemory)
 			{
 				lblMaximumMemoryUsageValue.Text = TR.Default["Unlimited"];
 			}
@@ -815,7 +815,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 										select f)
 			{
 				int index = lbFormats.Items.Add(item);
-				lbFormats.SetItemChecked(index, item.IsShellRegistered("cYo.ComicRack"));
+				lbFormats.SetItemChecked(index, item.IsShellRegistered(Program.ComicRackTypeId));
 			}
 		}
 
@@ -841,7 +841,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			Program.Settings.ThumbCacheSizeMB = (int)numThumbnailCacheSize.Value;
 			Program.Settings.PageCacheEnabled = chkEnablePageCache.Checked;
 			Program.Settings.PageCacheSizeMB = (int)numPageCacheSize.Value;
-			Program.Settings.MaximumMemoryMB = tbMaximumMemoryUsage.Value * 32;
+			Program.Settings.MaximumMemoryMB = tbMaximumMemoryUsage.Value * MaximumMemoryStepSize;
 			Program.Settings.MemoryPageCacheOptimized = chkMemPageOptimized.Checked;
 			Program.Settings.MemoryPageCacheCount = (int)numMemPageCount.Value;
 			Program.Settings.MemoryThumbCacheOptimized = chkMemThumbOptimized.Checked;
@@ -977,8 +977,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			numMemPageCount.Value = numMemPageCount.Clamp(Program.Settings.MemoryPageCacheCount);
 			chkMemThumbOptimized.Checked = Program.Settings.MemoryThumbCacheOptimized;
 			numMemThumbSize.Value = numMemThumbSize.Clamp(Program.Settings.MemoryThumbCacheSizeMB);
-			tbMaximumMemoryUsage.SetRange(2, 32);
-			tbMaximumMemoryUsage.Value = Program.Settings.MaximumMemoryMB / 32;
+			tbMaximumMemoryUsage.SetRange(2, MaximumMemoryStepSize);
+			tbMaximumMemoryUsage.Value = Program.Settings.MaximumMemoryMB / MaximumMemoryStepSize;
 			tbOverlayScaling.Value = Program.Settings.OverlayScaling;
 			chkOverwriteAssociations.Checked = Program.Settings.OverwriteAssociations;
 			chkUpdateComicFiles.Checked = Program.Settings.UpdateComicFiles;
@@ -1052,11 +1052,11 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				FileFormat fileFormat = (FileFormat)lbFormats.Items[i];
 				if (lbFormats.GetItemChecked(i))
 				{
-					fileFormat.RegisterShell("cYo.ComicRack", "eComic", Program.Settings.OverwriteAssociations);
+					fileFormat.RegisterShell(Program.ComicRackTypeId, Program.ComicRackDocumentName, Program.Settings.OverwriteAssociations);
 				}
 				else
 				{
-					fileFormat.UnregisterShell("cYo.ComicRack");
+					fileFormat.UnregisterShell(Program.ComicRackTypeId);
 				}
 			}
 		}
