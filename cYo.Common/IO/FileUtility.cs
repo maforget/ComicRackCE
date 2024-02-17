@@ -63,7 +63,7 @@ namespace cYo.Common.IO
 		public static IEnumerable<string> GetFiles(string path, SearchOption searchOption, Func<string, bool, FileFolderAction> validator = null, params string[] extensions)
 		{
 			FileFolderAction pathAction = SafeValidator(validator, path, isPath: true);
-			if (pathAction.HasFlag(FileFolderAction.IgnoreFolder))
+			if (pathAction.HasFlag(FileFolderAction.IgnoreFolder) || string.IsNullOrEmpty(path))
 			{
 				yield break;
 			}
