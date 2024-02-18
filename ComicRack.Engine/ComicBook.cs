@@ -124,8 +124,6 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private float rating;
 
-		private string tags = string.Empty;
-
 		private BitmapAdjustment colorAdjustment = BitmapAdjustment.Empty;
 
 		private bool enableProposed = true;
