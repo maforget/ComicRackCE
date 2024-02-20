@@ -811,7 +811,10 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public int FirstNonCoverPageIndex => FrontCoverPageIndex + 1;
+        [XmlAnyElement]
+        public System.Xml.XmlElement[] AllElements { get; set; }
+
+        public int FirstNonCoverPageIndex => FrontCoverPageIndex + 1;
 
 		[XmlArrayItem("Page")]
 		[Browsable(false)]
@@ -849,9 +852,6 @@ namespace cYo.Projects.ComicRack.Engine
 		public static string NoText => noText.Value;
 
 		public static string YesRightToLeftText => yesRightToLeftText.Value;
-
-        [XmlAnyElement]
-        public System.Xml.XmlElement[] AllElements { get; set; }
 
         [field: NonSerialized]
 		public event EventHandler<BookChangedEventArgs> BookChanged;
