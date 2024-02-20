@@ -122,7 +122,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private static readonly Regex rxSpecial = new Regex("[^a-z0-9]|\\bthe\\b|\\band\\b|", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
-		public static string CoverKeyFilter
+        public static string CoverKeyFilter
 		{
 			get
 			{
@@ -850,7 +850,10 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public static string YesRightToLeftText => yesRightToLeftText.Value;
 
-		[field: NonSerialized]
+        [XmlAnyElement]
+        public System.Xml.XmlElement[] AllElements { get; set; }
+
+        [field: NonSerialized]
 		public event EventHandler<BookChangedEventArgs> BookChanged;
 
 		public ComicInfo()
@@ -1330,7 +1333,11 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				CommunityRating = ci.CommunityRating;
 			}
-			if (!updatePages || ci.PageCount == 0)
+            if (!onlyUpdateEmpty || AllElements == null)
+            {
+                AllElements = ci.AllElements;
+            }
+            if (!updatePages || ci.PageCount == 0)
 			{
 				return;
 			}
@@ -1416,6 +1423,7 @@ namespace cYo.Projects.ComicRack.Engine
 					MainCharacterOrTeam = MainCharacterOrTeam,
 					Review = Review,
 					CommunityRating = CommunityRating,
+					AllElements = AllElements
 				};
 				Pages.ForEach(delegate(ComicPageInfo cpi)
 				{
