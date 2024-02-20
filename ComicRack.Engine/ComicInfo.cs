@@ -1413,6 +1413,9 @@ namespace cYo.Projects.ComicRack.Engine
 					Locations = Locations,
 					ScanInformation = ScanInformation,
 					Tags = Tags,
+					MainCharacterOrTeam = MainCharacterOrTeam,
+					Review = Review,
+					CommunityRating = CommunityRating,
 				};
 				Pages.ForEach(delegate(ComicPageInfo cpi)
 				{
