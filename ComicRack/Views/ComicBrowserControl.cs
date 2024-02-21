@@ -2885,34 +2885,23 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				{
 					Library.ComicListsLocked = true;
 					int count = 0;
-					ComicListItem li = default(ComicListItem);
-					string prefix = default(string);
 					foreach (ComicListItem item in from l in Library.ComicLists.GetItems<ComicListItem>()
 						where l.GetBooks().Contains(cb)
 						select l)
 					{
 						if (abortBuildMenu.WaitOne(0))
-						{
 							return;
-						}
-						int num = count + 1;
-						count = num;
-						if (num == maxLists + 1)
-						{
+
+                        if (++count == maxLists + 1)
 							break;
-						}
-						li = item;
-						int childLevel = Library.ComicLists.GetChildLevel(li);
-						prefix = new string(' ', childLevel * 4);
+
+                        ComicListItem li = item;
+                        string prefix = new string(' ', Library.ComicLists.GetChildLevel(li) * 4);
 						this.Invoke(delegate
 						{
-							ToolStripMenuItem value = ((count != maxLists) ? new ToolStripMenuItem(prefix + li.Name, GetComicListImage(li), delegate
-							{
-								ShowBookInList(li, cb);
-							}) : new ToolStripMenuItem("...")
-							{
-								Enabled = false
-							});
+                            ToolStripMenuItem value = ((count != maxLists) 
+                                ? new ToolStripMenuItem(prefix + li.Name, GetComicListImage(li), delegate{ ShowBookInList(li, cb); }) 
+                                : new ToolStripMenuItem("...") { Enabled = false });
 							menu.DropDownItems.Insert(menu.DropDownItems.Count - 1, value);
 						});
 					}
