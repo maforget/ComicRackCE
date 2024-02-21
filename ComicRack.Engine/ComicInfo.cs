@@ -812,7 +812,7 @@ namespace cYo.Projects.ComicRack.Engine
 		}
 
         [XmlAnyElement]
-        public System.Xml.XmlElement[] AllElements { get; set; }
+        public System.Xml.XmlElement[] UnparsedElements { get; set; }
 
         public int FirstNonCoverPageIndex => FrontCoverPageIndex + 1;
 
@@ -1333,9 +1333,9 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				CommunityRating = ci.CommunityRating;
 			}
-            if (!onlyUpdateEmpty || AllElements == null)
+            if (!onlyUpdateEmpty || UnparsedElements == null)
             {
-                AllElements = ci.AllElements;
+                UnparsedElements = ci.UnparsedElements;
             }
             if (!updatePages || ci.PageCount == 0)
 			{
@@ -1423,7 +1423,7 @@ namespace cYo.Projects.ComicRack.Engine
 					MainCharacterOrTeam = MainCharacterOrTeam,
 					Review = Review,
 					CommunityRating = CommunityRating,
-					AllElements = AllElements
+					UnparsedElements = UnparsedElements
 				};
 				Pages.ForEach(delegate(ComicPageInfo cpi)
 				{
