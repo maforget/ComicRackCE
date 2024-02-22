@@ -1238,7 +1238,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
             for (int id = 1; id <= 10; id++)
             {
-                VirtualTag vtag = Program.Settings.VirtualTags.ElementAtOrDefault(i);
+                VirtualTag vtag = Program.Settings.VirtualTags.FirstOrDefault(x => x.ID == id);
 
                 //If the data doesn't already exists, create a default tag for the settings
                 if (vtag is null || vtag.ID != id)
