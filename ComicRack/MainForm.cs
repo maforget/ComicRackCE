@@ -1072,7 +1072,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				e.Cancel = true;
 				return;
 			}
-			if (Program.Settings.UpdateComicFiles)
+			if (Program.Settings.UpdateComicFiles && !Program.Settings.AutoUpdateComicsFiles)
 			{
 				IEnumerable<ComicBook> dirtyTempList = Program.BookFactory.TemporaryBooks.Where((ComicBook cb) => cb.ComicInfoIsDirty);
 				int dirtyCount = dirtyTempList.Count();
