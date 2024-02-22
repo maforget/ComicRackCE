@@ -1598,12 +1598,16 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public static event EventHandler<ParseFilePathEventArgs> ParseFilePath;
 
-        private void UpdateVirtualTags()
+        private void UpdateVirtualTags(bool skip = false)
         {
+			//Skip is used to prevent a recursive loop, because updating the SetValue would call Update, which calls SetValue and so forth.
+			if (skip)
+				return;
+
 			for (int i = 1; i <= 10; i++)
 			{
 				string prop = $"VirtualTag{i:00}";
-				SetValue(prop, GetFullTitle(VirtualTagsCollection.Tags.GetValue(i)?.CaptionFormat));
+				SetValue(prop, GetFullTitle(VirtualTagsCollection.Tags.GetValue(i)?.CaptionFormat), true);
             }
         }
 
@@ -2180,11 +2184,15 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public void SetValue(string propertyName, object value)
+		public void SetValue(string propertyName, object value, bool skipUpdateTags = false)
 		{
 			try
 			{
 				GetType().GetProperty(propertyName).SetValue(this, value, null);
+
+                //Skip is used to prevent a recursive loop, because updating the SetValue would call Update, which calls SetValue and so forth.
+				if (skipUpdateTags == false)
+					UpdateVirtualTags(skipUpdateTags);
 			}
 			catch (Exception)
 			{
