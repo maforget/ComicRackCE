@@ -1509,7 +1509,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             {
                 int id = 300 + vtag.ID;
 
-                if (vtag.IsEnabled)
+                if (vtag != null && vtag.IsEnabled)
                 {
                     dictionary[id] = new ItemViewColumn(id, vtag.Name, 100,
                                             new ComicListField(vtag.PropertyName, vtag.Description),

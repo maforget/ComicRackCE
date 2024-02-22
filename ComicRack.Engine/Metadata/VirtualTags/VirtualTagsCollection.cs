@@ -52,7 +52,7 @@ namespace cYo.Projects.ComicRack.Engine
         private static IEnumerable<IVirtualTag> Init()
         {
             return Settings?.VirtualTags
-                .Where(x => x.IsEnabled && !string.IsNullOrEmpty(x.CaptionFormat) && !string.IsNullOrEmpty(x.Name))
+                .Where(x => x != null && x.IsEnabled && !string.IsNullOrEmpty(x.CaptionFormat) && !string.IsNullOrEmpty(x.Name))
                 .ToList() ?? Enumerable.Empty<IVirtualTag>();
         }
 
