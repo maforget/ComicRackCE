@@ -36,6 +36,6 @@ jobs:
       id: upload
       uses: actions/upload-artifact@v4
       with:
-        name: "ComicRackCESetup_PR.zip"
+        name: "ComicRackCESetup_PR"
         path: "ComicRack/bin/Release/*"
         if-no-files-found: error
