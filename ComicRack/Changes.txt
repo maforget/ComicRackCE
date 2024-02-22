@@ -4,6 +4,7 @@ Community Edition Build 0.9.180:
 * NEW: Added the Git version to the Splash Screen, to more easily identify bugs in specific releases.
 * NEW: Added the "-local" command line switch, to have the program load on portable mode.
 * NEW: Added links to The Organizer guide to the online manual help system
+* NEW: Added the possibility for unknown elements that may have been added my other software to the ComicInfo.xml to be kept.
 
 * CHANGE: Updated to .NET Framework v4.8
 * CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition. 
@@ -34,6 +35,7 @@ Community Edition Build 0.9.180:
 * BUGFIX: Fixed smartlist "in range" for dates, the second field wasn't taken into account.
 * BUGFIX: Fixed possible crash if window size is less than 0 (Usually when using high DPI scaling).
 * BUGFIX: Fixed a bug where clicking a folder that didn't exists anymore, would show the files from the program installation directory.
+* BUGFIX: Fixed missing entry (MainCharacterOrTeam, Review & CommunityRating) in ComicInfo.xml.
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 

@@ -201,7 +201,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private static Dictionary<string, CultureInfo> languages;
 
-		public static readonly ComicBook Default;
+        public static readonly ComicBook Default;
 
 		private static readonly Dictionary<string, string> hasAsText;
 
@@ -912,6 +912,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
+		//TODO: check to update Caption to a Virtual Tag
 		[Browsable(true)]
 		public string Caption => GetFullTitle(EngineConfiguration.Default.ComicCaptionFormat);
 
@@ -1597,7 +1598,48 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public static event EventHandler<ParseFilePathEventArgs> ParseFilePath;
 
-		static ComicBook()
+        private void UpdateVirtualTags(object sender, EventArgs e)
+        {
+			for (int i = 1; i <= 10; i++)
+			{
+				string prop = $"VirtualTag{i:00}";
+				SetValue(prop, GetFullTitle(VirtualTagsCollection.Tags.GetValue(i)?.CaptionFormat));
+            }
+        }
+
+        [Browsable(true)]
+		[DefaultValue("")]
+		public string VirtualTag01 { get; set; }
+        [Browsable(true)]
+        [DefaultValue("")]
+        public string VirtualTag02 { get; set; }
+        [Browsable(true)]
+        [DefaultValue("")]
+        public string VirtualTag03 { get; set; }
+        [Browsable(true)]
+        [DefaultValue("")]
+        public string VirtualTag04 { get; set; }
+        [Browsable(true)]
+        [DefaultValue("")]
+        public string VirtualTag05 { get; set; }
+        [Browsable(true)]
+        [DefaultValue("")]
+        public string VirtualTag06 { get; set; }
+        [Browsable(true)]
+        [DefaultValue("")]
+        public string VirtualTag07 { get; set; }
+        [Browsable(true)]
+        [DefaultValue("")]
+        public string VirtualTag08 { get; set; }
+        [Browsable(true)]
+        [DefaultValue("")]
+        public string VirtualTag09 { get; set; }
+        [Browsable(true)]
+        [DefaultValue("")]
+        public string VirtualTag10 { get; set; }
+        [DefaultValue("")]
+
+        static ComicBook()
 		{
 			GuidEquality = new Equality<ComicBook>((ComicBook a, ComicBook b) => a.Id == b.Id, (ComicBook a) => a.Id.GetHashCode());
 			EnableGroupNameCompression = false;
@@ -1637,9 +1679,10 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public ComicBook()
 		{
-		}
+            VirtualTagsCollection.TagsRefresh += UpdateVirtualTags;
+        }
 
-		public ComicBook(ComicBook cb)
+        public ComicBook(ComicBook cb)
 		{
 			CopyFrom(cb);
 			if (cb.CreateComicProvider != null)
@@ -1650,9 +1693,10 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				ComicProviderCreated += cb.ComicProviderCreated;
 			}
-		}
+            VirtualTagsCollection.TagsRefresh += UpdateVirtualTags;
+        }
 
-		public static ComicBook Create(string file, RefreshInfoOptions options)
+        public static ComicBook Create(string file, RefreshInfoOptions options)
 		{
 			ComicBook comicBook = new ComicBook
 			{
@@ -2657,7 +2701,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public static IEnumerable<string> GetProperties(bool onlyWritable, Type t = null)
 		{
-			return from pi in typeof(ComicBook).GetProperties(BindingFlags.Instance | BindingFlags.Public)
+            return from pi in typeof(ComicBook).GetProperties(BindingFlags.Instance | BindingFlags.Public)
 				where pi.CanRead && (pi.CanWrite || !onlyWritable) && (t == null || pi.PropertyType == t) && pi.Browsable(forced: true)
 				select pi.Name;
 		}
