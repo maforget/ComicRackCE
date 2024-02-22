@@ -1607,37 +1607,55 @@ namespace cYo.Projects.ComicRack.Engine
             }
         }
 
+        [XmlIgnore]
         [Browsable(true)]
 		[DefaultValue("")]
 		public string VirtualTag01 { get; set; }
+
+        [XmlIgnore]
         [Browsable(true)]
         [DefaultValue("")]
         public string VirtualTag02 { get; set; }
+
+        [XmlIgnore]
         [Browsable(true)]
         [DefaultValue("")]
         public string VirtualTag03 { get; set; }
+
+        [XmlIgnore]
         [Browsable(true)]
         [DefaultValue("")]
         public string VirtualTag04 { get; set; }
+
+        [XmlIgnore]
         [Browsable(true)]
         [DefaultValue("")]
         public string VirtualTag05 { get; set; }
+
+        [XmlIgnore]
         [Browsable(true)]
         [DefaultValue("")]
         public string VirtualTag06 { get; set; }
+
+        [XmlIgnore]
         [Browsable(true)]
         [DefaultValue("")]
         public string VirtualTag07 { get; set; }
+
+        [XmlIgnore]
         [Browsable(true)]
         [DefaultValue("")]
         public string VirtualTag08 { get; set; }
+
+        [XmlIgnore]
         [Browsable(true)]
         [DefaultValue("")]
         public string VirtualTag09 { get; set; }
+
+        [XmlIgnore]
         [Browsable(true)]
         [DefaultValue("")]
         public string VirtualTag10 { get; set; }
-        [DefaultValue("")]
 
         static ComicBook()
 		{
