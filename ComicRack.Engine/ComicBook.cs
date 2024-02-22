@@ -1598,7 +1598,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public static event EventHandler<ParseFilePathEventArgs> ParseFilePath;
 
-        private void UpdateVirtualTags(object sender, EventArgs e)
+        private void UpdateVirtualTags()
         {
 			for (int i = 1; i <= 10; i++)
 			{
@@ -1609,52 +1609,42 @@ namespace cYo.Projects.ComicRack.Engine
 
         [XmlIgnore]
         [Browsable(true)]
-		[DefaultValue("")]
-		public string VirtualTag01 { get; set; }
+        public string VirtualTag01 { get; set; }
 
         [XmlIgnore]
         [Browsable(true)]
-        [DefaultValue("")]
         public string VirtualTag02 { get; set; }
 
         [XmlIgnore]
         [Browsable(true)]
-        [DefaultValue("")]
         public string VirtualTag03 { get; set; }
 
         [XmlIgnore]
         [Browsable(true)]
-        [DefaultValue("")]
         public string VirtualTag04 { get; set; }
 
         [XmlIgnore]
         [Browsable(true)]
-        [DefaultValue("")]
         public string VirtualTag05 { get; set; }
 
         [XmlIgnore]
         [Browsable(true)]
-        [DefaultValue("")]
         public string VirtualTag06 { get; set; }
 
         [XmlIgnore]
         [Browsable(true)]
-        [DefaultValue("")]
         public string VirtualTag07 { get; set; }
 
         [XmlIgnore]
         [Browsable(true)]
-        [DefaultValue("")]
         public string VirtualTag08 { get; set; }
 
         [XmlIgnore]
         [Browsable(true)]
-        [DefaultValue("")]
         public string VirtualTag09 { get; set; }
 
         [XmlIgnore]
         [Browsable(true)]
-        [DefaultValue("")]
         public string VirtualTag10 { get; set; }
 
         static ComicBook()
@@ -1697,7 +1687,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public ComicBook()
 		{
-            VirtualTagsCollection.TagsRefresh += UpdateVirtualTags;
+			VirtualTagsCollection.TagsRefresh += (sender, e) => UpdateVirtualTags();
         }
 
         public ComicBook(ComicBook cb)
@@ -1711,7 +1701,7 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				ComicProviderCreated += cb.ComicProviderCreated;
 			}
-            VirtualTagsCollection.TagsRefresh += UpdateVirtualTags;
+            VirtualTagsCollection.TagsRefresh += (sender, e) => UpdateVirtualTags();
         }
 
         public static ComicBook Create(string file, RefreshInfoOptions options)
@@ -2036,6 +2026,7 @@ namespace cYo.Projects.ComicRack.Engine
 		public void ResetProperties(int level = 0)
 		{
 			ResetValueAttribute.ResetProperties(this, level);
+			UpdateVirtualTags();
 		}
 
 		public bool RemoveFromContainer()
