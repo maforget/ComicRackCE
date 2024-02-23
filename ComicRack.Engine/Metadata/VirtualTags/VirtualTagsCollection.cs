@@ -36,6 +36,7 @@ namespace cYo.Projects.ComicRack.Engine
             if (instance.IsValueCreated)
                 instance.Value.Refresh();
 
+            //TODO: Refresh only when settings have changed
             OnTagsRefresh();
         }
 

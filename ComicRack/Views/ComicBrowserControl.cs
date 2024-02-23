@@ -567,7 +567,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
                         SetCustomColumns();
                     };
                     SetCustomColumns();
-                    SetVirtualTagColumns();
                 }
             }
         }
@@ -783,6 +782,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             itemView.Columns.Add(new ItemViewColumn(211, "Series: Book added", 50, new ComicListField("SeriesStatLastAddedTime", "Last time a book was added to the Series", null, StringTrimming.Word, typeof(DateTime)), new CoverViewItemStatsComparer<ComicBookSeriesStatsLastAddedTimeComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupLastAddedTime>(), visible: false, StringAlignment.Far, strings));
             itemView.Columns.Add(new ItemViewColumn(212, "Series: Opened", 50, new ComicListField("SeriesStatLastOpenedTime", "Last time a book was opened from the Series", null, StringTrimming.Word, typeof(DateTime)), new CoverViewItemStatsComparer<ComicBookSeriesStatsLastOpenedTimeComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupLastOpenedTime>(), visible: false, StringAlignment.Far, strings));
             itemView.Columns.Add(new ItemViewColumn(213, "Series: Book released", 50, new ComicListField("SeriesStatLastReleasedTime", "Last time a book of this Series was released", null, StringTrimming.Word, typeof(DateTime)), new CoverViewItemStatsComparer<ComicBookSeriesStatsLastReleasedTimeComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupLastReleasedTime>(), visible: false, StringAlignment.Far, strings));
+            SetVirtualTagColumns();
             SubView.TranslateColumns(itemView.Columns);
             foreach (ItemViewColumn column in itemView.Columns)
             {
