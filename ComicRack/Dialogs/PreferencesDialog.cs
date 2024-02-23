@@ -1264,7 +1264,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         {
             components = new Container();
             ContextMenuBuilder contextMenuBuilder = new ContextMenuBuilder();
-            foreach (string item in ComicBookMatcher.ComicProperties)
+            foreach (string item in ComicBook.GetProperties(false))
             {
                 contextMenuBuilder.Add(item, topLevel: false, chk: false, SetCaptionField, item, DateTime.MinValue);
             }
