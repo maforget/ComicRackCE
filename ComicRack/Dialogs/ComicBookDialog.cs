@@ -258,19 +258,19 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                 pagesView.Book.Open(async: true, 0);
             }
             book?.Dispose();
-            bool isFilelessOrInLibrary = !comic.IsLinked || comic.IsInContainer;
-            bool shouldEnableTextbox = isFilelessOrInLibrary || Program.Settings.UpdateComicFiles;
+            bool isFilelessOrInContainer = !comic.IsLinked || comic.IsInContainer;
+            bool canEdit = isFilelessOrInContainer || Program.Settings.UpdateComicFiles;
             bool canEditProperties = comic.EditMode.CanEditProperties();
-            tabDetails.Enabled = tabPlot.Enabled = tabColors.Enabled = shouldEnableTextbox && canEditProperties;
-            tabPages.Enabled = shouldEnableTextbox && comic.EditMode.CanEditPages();
-            tabCatalog.Enabled = tabCustom.Enabled = isFilelessOrInLibrary && canEditProperties;
+            tabDetails.Enabled = tabPlot.Enabled = tabColors.Enabled = canEdit && canEditProperties;
+            tabPages.Enabled = canEdit && comic.EditMode.CanEditPages();
+            tabCatalog.Enabled = tabCustom.Enabled = isFilelessOrInContainer && canEditProperties;
             EnableTabPage(tabPages, comic.IsLinked);
             EnableTabPage(tabColors, comic.IsLinked);
-            EnableTabPage(tabCatalog, (!comic.IsLinked || !Program.Settings.CatalogOnlyForFileless) && isFilelessOrInLibrary);
-            EnableTabPage(tabCustom, Program.Settings.ShowCustomBookFields && isFilelessOrInLibrary);
+            EnableTabPage(tabCatalog, (!comic.IsLinked || !Program.Settings.CatalogOnlyForFileless) && isFilelessOrInContainer);
+            EnableTabPage(tabCustom, Program.Settings.ShowCustomBookFields && isFilelessOrInContainer);
             labelEnableProposed.Visible = cbEnableProposed.Visible = labelScanInformation.Visible = txScanInformation.Visible = comic.IsLinked;
             labelOpenedTime.Visible = dtpOpenedTime.Visible = labelPagesAsTextSimple.Visible = txPagesAsTextSimple.Visible = !comic.IsLinked;
-            txCommunityRating.Enabled = txRating.Enabled = txTags.Enabled = cbEnableProposed.Enabled = cbSeriesComplete.Enabled = isFilelessOrInLibrary;
+            txCommunityRating.Enabled = txRating.Enabled = cbEnableProposed.Enabled = cbSeriesComplete.Enabled = isFilelessOrInContainer;
             if (!canEditProperties)
             {
                 txCommunityRating.Enabled = txRating.Enabled = false;
