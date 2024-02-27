@@ -80,7 +80,9 @@ namespace cYo.Common.Text
 					if (!string.IsNullOrEmpty(text2))
 					{
 						list.Add(text2);
-						list2.Add(text2 + " ");
+
+						string articleWithSpace = text2.EndsWith("\'") ? text2 : $"{text2} ";
+                        list2.Add(articleWithSpace);
 					}
 				}
 				articles = list.ToArray();
