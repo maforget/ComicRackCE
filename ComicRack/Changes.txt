@@ -4,6 +4,9 @@ Community Edition Build 0.9.180:
 * NEW: Added the Git version to the Splash Screen, to more easily identify bugs in specific releases.
 * NEW: Added the "-local" command line switch, to have the program load on portable mode.
 * NEW: Added links to The Organizer guide to the online manual help system
+* NEW: Added the possibility for unknown elements that may have been added my other software to the ComicInfo.xml to be kept.
+* NEW: Added possibility to add articles that terminate with an apostrophe in IgnoredArticles.
+* NEW: Added French articles (Le, La, Les, L') as default in IgnoredArticles.
 
 * CHANGE: Updated to .NET Framework v4.8
 * CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition. 

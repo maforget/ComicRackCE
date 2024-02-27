@@ -120,7 +120,7 @@ namespace cYo.Common.Text
 			rxNonWordLetters = new Regex("[^\\s\\w]", RegexOptions.Compiled);
 			rxSpace = new Regex("\\s", RegexOptions.Compiled);
 			rxMultiSpace = new Regex("\\s{2,}", RegexOptions.Compiled);
-			Articles = "the, der, die, das";
+			Articles = "the, der, die, das, le, la, les, l'";
 		}
 
 		public static void ConvertIndexToLineAndColumn(string text, int index, out int line, out int column)
