@@ -937,133 +937,137 @@ namespace cYo.Common.Drawing
 				}
 				switch (method)
 				{
-				case ResizeFastInterpolation.NearestNeighbor:
-					Parallel.For(0, newHeight, delegate(int y)
-					{
-						byte* ptr = orgdst + y * dstStride;
-						int num3 = (int)((float)y * yFactor);
-						for (int i = 0; i < newWidth; i++)
+					case ResizeFastInterpolation.NearestNeighbor:
+						Parallel.For(0, newHeight, delegate(int y)
 						{
-							int num4 = (int)((float)i * xFactor);
-							byte* ptr2 = src + num3 * srcStride + num4 * srcPixelSize;
-							for (int j = 0; j < minPixelSize; j++)
+							byte* ptr = orgdst + y * dstStride;
+							int num3 = (int)((float)y * yFactor);
+							for (int i = 0; i < newWidth; i++)
 							{
-								*(ptr++) = *(ptr2++);
+								int num4 = (int)((float)i * xFactor);
+								byte* ptr2 = src + num3 * srcStride + num4 * srcPixelSize;
+								for (int j = 0; j < minPixelSize; j++)
+								{
+									*(ptr++) = *(ptr2++);
+								}
+								ptr += dstExtra;
 							}
-							ptr += dstExtra;
-						}
-					});
-					break;
-				case ResizeFastInterpolation.Bilinear:
-				{
-					int ymax = height - 1;
-					int xmax = width - 1;
-					Parallel.For(0, newHeight, delegate(int y)
-					{
-						byte* ptr3 = orgdst + y * dstStride;
-						float num5 = (float)y * yFactor;
-						int num6 = (int)num5;
-						int num7 = ((num6 == ymax) ? num6 : (num6 + 1));
-						float num8 = num5 - (float)num6;
-						float num9 = 1f - num8;
-						byte* ptr4 = src + num6 * srcStride;
-						byte* ptr5 = src + num7 * srcStride;
-						for (int k = 0; k < newWidth; k++)
+						});
+						break;
+					case ResizeFastInterpolation.Bilinear:
 						{
-							float num10 = (float)k * xFactor;
-							int num11 = (int)num10;
-							int num12 = ((num11 == xmax) ? num11 : (num11 + 1));
-							float num13 = num10 - (float)num11;
-							float num14 = 1f - num13;
-							byte* ptr6 = ptr4 + num11 * srcPixelSize;
-							byte* ptr7 = ptr4 + num12 * srcPixelSize;
-							byte* ptr8 = ptr5 + num11 * srcPixelSize;
-							byte* ptr9 = ptr5 + num12 * srcPixelSize;
-							int num15 = 0;
-							while (num15 < minPixelSize)
+							int ymax = height - 1;
+							int xmax = width - 1;
+						Parallel.For(0, newHeight, delegate(int y)
 							{
-								byte b = (byte)(num14 * (float)(int)(*ptr6) + num13 * (float)(int)(*ptr7));
-								byte b2 = (byte)(num14 * (float)(int)(*ptr8) + num13 * (float)(int)(*ptr9));
-								*ptr3 = (byte)(num9 * (float)(int)b + num8 * (float)(int)b2);
-								num15++;
-								ptr3++;
-								ptr6++;
-								ptr7++;
-								ptr8++;
-								ptr9++;
-							}
-							ptr3 += dstExtra;
+								byte* ptr3 = orgdst + y * dstStride;
+								float num5 = (float)y * yFactor;
+								int num6 = (int)num5;
+								int num7 = ((num6 == ymax) ? num6 : (num6 + 1));
+								float num8 = num5 - (float)num6;
+								float num9 = 1f - num8;
+								byte* ptr4 = src + num6 * srcStride;
+								byte* ptr5 = src + num7 * srcStride;
+								for (int k = 0; k < newWidth; k++)
+								{
+									float num10 = (float)k * xFactor;
+									int num11 = (int)num10;
+									int num12 = ((num11 == xmax) ? num11 : (num11 + 1));
+									float num13 = num10 - (float)num11;
+									float num14 = 1f - num13;
+									byte* ptr6 = ptr4 + num11 * srcPixelSize;
+									byte* ptr7 = ptr4 + num12 * srcPixelSize;
+									byte* ptr8 = ptr5 + num11 * srcPixelSize;
+									byte* ptr9 = ptr5 + num12 * srcPixelSize;
+									int num15 = 0;
+									while (num15 < minPixelSize)
+									{
+										byte b = (byte)(num14 * (float)(int)(*ptr6) + num13 * (float)(int)(*ptr7));
+										byte b2 = (byte)(num14 * (float)(int)(*ptr8) + num13 * (float)(int)(*ptr9));
+										*ptr3 = (byte)(num9 * (float)(int)b + num8 * (float)(int)b2);
+										num15++;
+										ptr3++;
+										ptr6++;
+										ptr7++;
+										ptr8++;
+										ptr9++;
+									}
+									ptr3 += dstExtra;
+								}
+							});
+							break;
 						}
-					});
-					break;
-				}
-				case ResizeFastInterpolation.Bicubic:
-				{
-					int ymax2 = height - 1;
-					int xmax2 = width - 1;
-					Parallel.For(0, newHeight, delegate(int y)
-					{
-						byte* ptr10 = orgdst + y * dstStride;
-						float num16 = (float)y * yFactor - 0.5f;
-						int num17 = (int)num16;
-						float num18 = num16 - (float)num17;
-						float[] array = new float[4];
-						int num19 = 0;
-						while (num19 < newWidth)
+					case ResizeFastInterpolation.Bicubic:
 						{
-							float num20 = (float)num19 * xFactor - 0.5f;
-							int num21 = (int)num20;
-							float num22 = num20 - (float)num21;
-							for (int l = 0; l < minPixelSize; l++)
+							int ymax2 = height - 1;
+							int xmax2 = width - 1;
+							Parallel.For(0, newHeight, delegate(int y)
 							{
-								array[l] = 0f;
-							}
-							for (int m = -1; m < 3; m++)
-							{
-								float num23 = BiCubicKernel(num18 - (float)m);
-								int num24 = num17 + m;
-								if (num24 < 0)
+								byte* ptr10 = orgdst + y * dstStride;
+								float num16 = (float)y * yFactor - 0.5f;
+								int num17 = (int)num16;
+								float num18 = num16 - (float)num17;
+								float[] array = new float[4];
+								int num19 = 0;
+								while (num19 < newWidth)
 								{
-									num24 = 0;
-								}
-								if (num24 > ymax2)
-								{
-									num24 = ymax2;
-								}
-								for (int n = -1; n < 3; n++)
-								{
-									float num25 = num23 * BiCubicKernel((float)n - num22);
-									int num26 = num21 + n;
-									if (num26 < 0)
+									float num20 = (float)num19 * xFactor - 0.5f;
+									int num21 = (int)num20;
+									float num22 = num20 - (float)num21;
+									for (int l = 0; l < minPixelSize; l++)
 									{
-										num26 = 0;
+										array[l] = 0f;
 									}
-									if (num26 > xmax2)
+									for (int m = -1; m < 3; m++)
 									{
-										num26 = xmax2;
+										float num23 = BiCubicKernel(num18 - (float)m);
+										int num24 = num17 + m;
+										if (num24 < 0)
+										{
+											num24 = 0;
+										}
+										if (num24 > ymax2)
+										{
+											num24 = ymax2;
+										}
+										for (int n = -1; n < 3; n++)
+										{
+											float num25 = num23 * BiCubicKernel((float)n - num22);
+											int num26 = num21 + n;
+											if (num26 < 0)
+											{
+												num26 = 0;
+											}
+											if (num26 > xmax2)
+											{
+												num26 = xmax2;
+											}
+											byte* ptr11 = src + num24 * srcStride + num26 * srcPixelSize;
+											for (int num27 = 0; num27 < minPixelSize; num27++)
+											{
+												array[num27] += num25 * (float)(int)ptr11[num27];
+											}
+										}
 									}
-									byte* ptr11 = src + num24 * srcStride + num26 * srcPixelSize;
-									for (int num27 = 0; num27 < minPixelSize; num27++)
+									for (int num28 = 0; num28 < minPixelSize; num28++)
 									{
-										array[num27] += num25 * (float)(int)ptr11[num27];
+										byte* intPtr = ptr10 + num28;
+										*intPtr = (byte)(*intPtr + (byte)array[num28]);
 									}
+									num19++;
+									ptr10 += dstPixelSize;
 								}
-							}
-							for (int num28 = 0; num28 < minPixelSize; num28++)
-							{
-								byte* intPtr = ptr10 + num28;
-								*intPtr = (byte)(*intPtr + (byte)array[num28]);
-							}
-							num19++;
-							ptr10 += dstPixelSize;
+							});
+							break;
 						}
-					});
-					break;
-				}
 				}
 				return bitmap2;
 			}
-			finally
+            catch
+            {
+                return null;
+            }
+            finally
 			{
 				if (bitmapData2 != null)
 				{
@@ -1237,7 +1241,11 @@ namespace cYo.Common.Drawing
 				}
 				return bitmap2;
 			}
-			finally
+            catch
+            {
+                return null;
+            }
+            finally
 			{
 				if (bitmapData != null)
 				{

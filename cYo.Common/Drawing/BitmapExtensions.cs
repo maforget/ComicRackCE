@@ -16,30 +16,37 @@ namespace cYo.Common.Drawing
 
 		public static Bitmap Resize(this Bitmap bmp, Size size, BitmapResampling resampling = BitmapResampling.BilinearHQ, PixelFormat format = PixelFormat.Format32bppArgb)
 		{
-			if (bmp == null || size.IsEmpty())
+			try
+			{
+				if (bmp == null || size.IsEmpty())
+				{
+					return null;
+				}
+				if (bmp.Size.IsEmpty())
+				{
+					return bmp;
+				}
+				switch (resampling)
+				{
+					case BitmapResampling.FastAndUgly:
+						return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.NearestNeighbor);
+					case BitmapResampling.FastBilinear:
+						return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bilinear);
+					case BitmapResampling.FastBicubic:
+						return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bicubic);
+					case BitmapResampling.BilinearHQ:
+						return ImageProcessing.ResizeBiliniearHQ(bmp, size.Width, size.Height, format);
+					case BitmapResampling.GdiPlus:
+						return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format);
+					case BitmapResampling.GdiPlusHQ:
+						return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format, highQuality: true);
+					default:
+						throw new ArgumentOutOfRangeException("resampling");
+				}
+			}
+			catch
 			{
 				return null;
-			}
-			if (bmp.Size.IsEmpty())
-			{
-				return bmp;
-			}
-			switch (resampling)
-			{
-			case BitmapResampling.FastAndUgly:
-				return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.NearestNeighbor);
-			case BitmapResampling.FastBilinear:
-				return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bilinear);
-			case BitmapResampling.FastBicubic:
-				return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bicubic);
-			case BitmapResampling.BilinearHQ:
-				return ImageProcessing.ResizeBiliniearHQ(bmp, size.Width, size.Height, format);
-			case BitmapResampling.GdiPlus:
-				return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format);
-			case BitmapResampling.GdiPlusHQ:
-				return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format, highQuality: true);
-			default:
-				throw new ArgumentOutOfRangeException("resampling");
 			}
 		}
 

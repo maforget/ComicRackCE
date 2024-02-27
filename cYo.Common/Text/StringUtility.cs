@@ -80,7 +80,9 @@ namespace cYo.Common.Text
 					if (!string.IsNullOrEmpty(text2))
 					{
 						list.Add(text2);
-						list2.Add(text2 + " ");
+
+						string articleWithSpace = text2.EndsWith("\'") ? text2 : $"{text2} ";
+                        list2.Add(articleWithSpace);
 					}
 				}
 				articles = list.ToArray();
@@ -118,7 +120,7 @@ namespace cYo.Common.Text
 			rxNonWordLetters = new Regex("[^\\s\\w]", RegexOptions.Compiled);
 			rxSpace = new Regex("\\s", RegexOptions.Compiled);
 			rxMultiSpace = new Regex("\\s{2,}", RegexOptions.Compiled);
-			Articles = "the, der, die, das";
+			Articles = "the, der, die, das, le, la, les, l'";
 		}
 
 		public static void ConvertIndexToLineAndColumn(string text, int index, out int line, out int column)
