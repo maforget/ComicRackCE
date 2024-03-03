@@ -1,39 +1,40 @@
 Community Edition Build 0.9.180:
 
 * NEW: RAR5 Support (Default & SharpCompress)
+* NEW: Added Virtual Tags. You can set any combination of field in a single one. Can be used with grouping, sorting, smart lists. Configure them in Preferences => Library => Virtual Tags. BACKUP YOUR DB, IF YOU PLAN ON GOING BACK TO AN OLDER VERSION. USING A VIRTUAL TAG IN A SMART LIST AND OPENING AN OLDER VERSION WOULD RESULT IN A DATABASE CORRUPTED MESSAGE. YOU NEED TO REMOVE ANY OF THESE LISTS BEFORE GOING BACK.
 * NEW: Added the Git version to the Splash Screen, to more easily identify bugs in specific releases.
 * NEW: Added the "-local" command line switch, to have the program load on portable mode.
 * NEW: Added links to The Organizer guide to the online manual help system
-* NEW: Added the possibility for unknown elements that may have been added my other software to the ComicInfo.xml to be kept.
+* NEW: Added the possibility for unknown elements that may have been added my other software to the ComicInfo.xml to be kept, these are also saved in the database.
 * NEW: Added possibility to add articles that terminate with an apostrophe in IgnoredArticles.
 * NEW: Added French articles (Le, La, Les, L') as default in IgnoredArticles.
 
-* CHANGE: Updated to .NET Framework v4.8
+* CHANGE: Updated to .NET Framework v4.8.
 * CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition. 
 * CHANGE: Removed Android Validation of apk signature (so we can use the cracked version). Has no incidence on whether the sync icon appears.
-* CHANGE: Updated default sort to be natural sorting (numeric)
-* CHANGE: Switched MySQl library to MySQLConnector for better speed & compatibility with MariaDB
-* CHANGE: Alternate config (-ac) can now be used with portable mode (UseLocalSettings) (-local)
-* CHANGE: Removed everything to do with Validation/Donation/PayPal
-* CHANGE: Removed everything to do with Twitter
-* CHANGE: Updated SharpZipLib to v1.4.2
-* CHANGE: Updated SharpCompress to v0.36
-* CHANGE: Updated WindowsCodePack to V1.15
-* CHANGE: Updated home & forum links to Github
-* CHANGE: Updated wiki links to the Wayback Machine
-* CHANGE: Updated the default help system to the online manual (from Wayback Machine)
-* CHANGE: Updated manual links & chapter links
-* CHANGE: Updated Help localize ComicRack links (we still need access to the Localizer program)
-* CHANGE: File Format will be the actual file format of the archive and not simply based on the extension
-* CHANGE: The default docking mode is now Fill, instead of Bottom
-* CHANGE: Improved performances while handling Tar files (by Apiweb)
-* CHANGE: Removed the Crash submission dialog because it depends on the cyolito.com website
-* CHANGE: Disabled the Public server checkbox because it depends on the cyolito.com website
+* CHANGE: Updated default sort to be natural sorting (numeric).
+* CHANGE: Switched MySQl library to MySQLConnector for better speed & compatibility with MariaDB (Yes current versions work).
+* CHANGE: Alternate config (-ac) can now be used with portable mode (UseLocalSettings) (-local).
+* CHANGE: Removed everything to do with Validation/Donation/PayPal.
+* CHANGE: Removed everything to do with Twitter.
+* CHANGE: Updated SharpZipLib to v1.4.2.
+* CHANGE: Updated SharpCompress to v0.36.
+* CHANGE: Updated WindowsCodePack to V1.15.
+* CHANGE: Updated home & forum links to Github.
+* CHANGE: Updated wiki links to the Wayback Machine.
+* CHANGE: Updated the default help system to the online manual (from Wayback Machine).
+* CHANGE: Updated manual links & chapter links.
+* CHANGE: Updated Help localize ComicRack links (we still need access to the Localizer program).
+* CHANGE: File Format will be the actual file format of the archive and not simply based on the extension.
+* CHANGE: The default docking mode is now Fill, instead of Bottom.
+* CHANGE: Improved performances while handling Tar files (by Apiweb).
+* CHANGE: Removed the Crash submission dialog because it depends on the cyolito.com website.
+* CHANGE: Disabled the Public server checkbox because it depends on the cyolito.com website.
 * CHANGE: Made Tags be saved inside the ComicInfo.xml. First Sync after the update will cause all the data to be updated, so a slower sync is expected. (will this mess with other programs that uses the ComicInfo.xml?)
 * CHANGE: Changed ParallelConversions from 8 to the Number of Processor. ini says it was related to the number of Processor, but I do not see any evidence for that setting. This only increases the number of pages it converts at the same time. 
 * CHANGE: Replaced the old news by the Community Edition commit history.
  
-* BUGFIX: (Maybe?) Fixed crash when the clipboard contains some objects while the program is idle. The check should now only happen on a right-click and not in the background. It should at least lessen the frequency of the crash, maybe remove it completely. 
+* BUGFIX: Fixed crash when the clipboard contains some objects while the program is idle. The check should now only happen on a right-click and not in the background. It should at least lessen the frequency of the crash, maybe remove it completely. 
 * BUGFIX: Fixed smartlist "in range" for dates, the second field wasn't taken into account.
 * BUGFIX: Fixed possible crash if window size is less than 0 (Usually when using high DPI scaling).
 * BUGFIX: Fixed a bug where clicking a folder that didn't exists anymore, would show the files from the program installation directory.
