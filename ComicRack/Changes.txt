@@ -37,6 +37,7 @@ Community Edition Build 0.9.180:
 * BUGFIX: Fixed smartlist "in range" for dates, the second field wasn't taken into account.
 * BUGFIX: Fixed possible crash if window size is less than 0 (Usually when using high DPI scaling).
 * BUGFIX: Fixed a bug where clicking a folder that didn't exists anymore, would show the files from the program installation directory.
+* BUGFIX: Fixed missing entry (MainCharacterOrTeam, Review & CommunityRating) in ComicInfo.xml.
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 

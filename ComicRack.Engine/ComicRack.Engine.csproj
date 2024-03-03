@@ -574,6 +574,12 @@
     <Compile Include="ISharesSettings.cs" />
     <Compile Include="ItemGroupCount.cs" />
     <Compile Include="MangaYesNo.cs" />
+    <Compile Include="Metadata\VirtualTags\ComicBookVirtualTagMatcher.cs" />
+    <Compile Include="Metadata\VirtualTags\VirtualTagsCollection.cs" />
+    <Compile Include="Metadata\VirtualTags\IVirtualTagSettings.cs" />
+    <Compile Include="Metadata\VirtualTags\IVirtualDescription.cs" />
+    <Compile Include="Metadata\VirtualTags\IVirtualTag.cs" />
+    <Compile Include="Metadata\VirtualTags\VirtualTag.cs" />
     <Compile Include="NetworkManager.cs" />
     <Compile Include="PackageManager.cs" />
     <Compile Include="PackedLocalize.cs" />
@@ -651,7 +657,6 @@
   <ItemGroup>
     <Content Include="DLL\sharpPDF.dll" />
   </ItemGroup>
-  <ItemGroup />
   <!-- <ItemGroup> -->
   <!-- <EmbeddedResource Include="Controls\ComicPageContainerControl.resources" /> -->
   <!-- <EmbeddedResource Include="Controls\MagnifySetupControl.resources" /> -->

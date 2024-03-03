@@ -42,8 +42,9 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				if (descriptionNeutral == null)
 				{
-					DescriptionAttribute descriptionAttribute = (DescriptionAttribute)Attribute.GetCustomAttribute(GetType(), typeof(DescriptionAttribute));
-					descriptionNeutral = descriptionAttribute.Description ?? string.Empty;
+                    DescriptionAttribute descriptionAttribute = (DescriptionAttribute)Attribute.GetCustomAttribute(GetType(), typeof(DescriptionAttribute));
+                    descriptionNeutral = descriptionAttribute.Description ?? string.Empty;
+                    descriptionNeutral = this is IVirtualDescription ? (this as IVirtualDescription)?.VirtualDescription : descriptionNeutral;
 				}
 				return descriptionNeutral;
 			}

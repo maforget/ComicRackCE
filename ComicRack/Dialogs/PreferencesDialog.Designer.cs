@@ -16,6 +16,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreferencesDialog));
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Installed", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("To be removed (requires restart)", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("To be installed (requires restart)", System.Windows.Forms.HorizontalAlignment.Left);
@@ -129,6 +130,26 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.labelLanguage = new System.Windows.Forms.Label();
             this.lbLanguages = new System.Windows.Forms.ListBox();
             this.pageLibrary = new System.Windows.Forms.Panel();
+            this.grpVirtualTags = new cYo.Common.Windows.Forms.CollapsibleGroupBox();
+            this.grpVtagConfig = new System.Windows.Forms.GroupBox();
+            this.lblCaptionFormat = new System.Windows.Forms.Label();
+            this.txtCaptionFormat = new System.Windows.Forms.TextBox();
+            this.btInsertValue = new System.Windows.Forms.Button();
+            this.lblVirtualTagDescription = new System.Windows.Forms.Label();
+            this.lblVirtualTagName = new System.Windows.Forms.Label();
+            this.txtVirtualTagDescription = new System.Windows.Forms.TextBox();
+            this.txtVirtualTagName = new System.Windows.Forms.TextBox();
+            this.chkVirtualTagEnable = new System.Windows.Forms.CheckBox();
+            this.lblCaptionText = new System.Windows.Forms.Label();
+            this.lblCaptionSuffix = new System.Windows.Forms.Label();
+            this.rtfVirtualTagCaption = new System.Windows.Forms.RichTextBox();
+            this.lblFieldConfig = new System.Windows.Forms.Label();
+            this.txtCaptionPrefix = new System.Windows.Forms.TextBox();
+            this.lblCaptionPrefix = new System.Windows.Forms.Label();
+            this.btnCaptionInsert = new System.Windows.Forms.Button();
+            this.txtCaptionSuffix = new System.Windows.Forms.TextBox();
+            this.lblVirtualTags = new System.Windows.Forms.Label();
+            this.cbVirtualTags = new System.Windows.Forms.ComboBox();
             this.grpServerSettings = new cYo.Common.Windows.Forms.CollapsibleGroupBox();
             this.txPrivateListingPassword = new cYo.Common.Windows.Forms.PasswordTextBox();
             this.labelPrivateListPassword = new System.Windows.Forms.Label();
@@ -209,6 +230,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.groupOtherComics.SuspendLayout();
             this.grpLanguages.SuspendLayout();
             this.pageLibrary.SuspendLayout();
+            this.grpVirtualTags.SuspendLayout();
+            this.grpVtagConfig.SuspendLayout();
             this.grpServerSettings.SuspendLayout();
             this.grpSharing.SuspendLayout();
             this.groupLibraryDisplay.SuspendLayout();
@@ -1492,6 +1515,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pageLibrary.AutoScroll = true;
             this.pageLibrary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pageLibrary.Controls.Add(this.grpVirtualTags);
             this.pageLibrary.Controls.Add(this.grpServerSettings);
             this.pageLibrary.Controls.Add(this.grpSharing);
             this.pageLibrary.Controls.Add(this.groupLibraryDisplay);
@@ -1501,6 +1525,214 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.pageLibrary.Name = "pageLibrary";
             this.pageLibrary.Size = new System.Drawing.Size(517, 408);
             this.pageLibrary.TabIndex = 10;
+            // 
+            // grpVirtualTags
+            // 
+            this.grpVirtualTags.Controls.Add(this.grpVtagConfig);
+            this.grpVirtualTags.Controls.Add(this.lblVirtualTags);
+            this.grpVirtualTags.Controls.Add(this.cbVirtualTags);
+            this.grpVirtualTags.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grpVirtualTags.Location = new System.Drawing.Point(0, 1058);
+            this.grpVirtualTags.Name = "grpVirtualTags";
+            this.grpVirtualTags.Size = new System.Drawing.Size(498, 279);
+            this.grpVirtualTags.TabIndex = 0;
+            this.grpVirtualTags.Text = "Virtual Tags";
+            // 
+            // grpVtagConfig
+            // 
+            this.grpVtagConfig.Controls.Add(this.lblCaptionFormat);
+            this.grpVtagConfig.Controls.Add(this.txtCaptionFormat);
+            this.grpVtagConfig.Controls.Add(this.btInsertValue);
+            this.grpVtagConfig.Controls.Add(this.lblVirtualTagDescription);
+            this.grpVtagConfig.Controls.Add(this.lblVirtualTagName);
+            this.grpVtagConfig.Controls.Add(this.txtVirtualTagDescription);
+            this.grpVtagConfig.Controls.Add(this.txtVirtualTagName);
+            this.grpVtagConfig.Controls.Add(this.chkVirtualTagEnable);
+            this.grpVtagConfig.Controls.Add(this.lblCaptionText);
+            this.grpVtagConfig.Controls.Add(this.lblCaptionSuffix);
+            this.grpVtagConfig.Controls.Add(this.rtfVirtualTagCaption);
+            this.grpVtagConfig.Controls.Add(this.lblFieldConfig);
+            this.grpVtagConfig.Controls.Add(this.txtCaptionPrefix);
+            this.grpVtagConfig.Controls.Add(this.lblCaptionPrefix);
+            this.grpVtagConfig.Controls.Add(this.btnCaptionInsert);
+            this.grpVtagConfig.Controls.Add(this.txtCaptionSuffix);
+            this.grpVtagConfig.Location = new System.Drawing.Point(14, 63);
+            this.grpVtagConfig.Name = "grpVtagConfig";
+            this.grpVtagConfig.Size = new System.Drawing.Size(472, 199);
+            this.grpVtagConfig.TabIndex = 5;
+            this.grpVtagConfig.TabStop = false;
+            this.grpVtagConfig.Text = "Config";
+            // 
+            // lblCaptionFormat
+            // 
+            this.lblCaptionFormat.AutoSize = true;
+            this.lblCaptionFormat.Location = new System.Drawing.Point(275, 151);
+            this.lblCaptionFormat.Name = "lblCaptionFormat";
+            this.lblCaptionFormat.Size = new System.Drawing.Size(39, 13);
+            this.lblCaptionFormat.TabIndex = 28;
+            this.lblCaptionFormat.Text = "Format";
+            this.lblCaptionFormat.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtCaptionFormat
+            // 
+            this.txtCaptionFormat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCaptionFormat.Location = new System.Drawing.Point(269, 167);
+            this.txtCaptionFormat.Name = "txtCaptionFormat";
+            this.txtCaptionFormat.Size = new System.Drawing.Size(50, 20);
+            this.txtCaptionFormat.TabIndex = 27;
+            this.toolTip.SetToolTip(this.txtCaptionFormat, resources.GetString("txtCaptionFormat.ToolTip"));
+            this.txtCaptionFormat.WordWrap = false;
+            // 
+            // btInsertValue
+            // 
+            this.btInsertValue.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SmallArrowDown;
+            this.btInsertValue.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btInsertValue.Location = new System.Drawing.Point(96, 164);
+            this.btInsertValue.Name = "btInsertValue";
+            this.btInsertValue.Size = new System.Drawing.Size(167, 23);
+            this.btInsertValue.TabIndex = 26;
+            this.btInsertValue.Text = "Choose Value";
+            this.btInsertValue.UseVisualStyleBackColor = true;
+            // 
+            // lblVirtualTagDescription
+            // 
+            this.lblVirtualTagDescription.AutoSize = true;
+            this.lblVirtualTagDescription.Location = new System.Drawing.Point(72, 49);
+            this.lblVirtualTagDescription.Name = "lblVirtualTagDescription";
+            this.lblVirtualTagDescription.Size = new System.Drawing.Size(69, 13);
+            this.lblVirtualTagDescription.TabIndex = 25;
+            this.lblVirtualTagDescription.Text = "Description : ";
+            // 
+            // lblVirtualTagName
+            // 
+            this.lblVirtualTagName.AutoSize = true;
+            this.lblVirtualTagName.Location = new System.Drawing.Point(72, 23);
+            this.lblVirtualTagName.Name = "lblVirtualTagName";
+            this.lblVirtualTagName.Size = new System.Drawing.Size(44, 13);
+            this.lblVirtualTagName.TabIndex = 24;
+            this.lblVirtualTagName.Text = "Name : ";
+            // 
+            // txtVirtualTagDescription
+            // 
+            this.txtVirtualTagDescription.Location = new System.Drawing.Point(147, 46);
+            this.txtVirtualTagDescription.Name = "txtVirtualTagDescription";
+            this.txtVirtualTagDescription.Size = new System.Drawing.Size(308, 20);
+            this.txtVirtualTagDescription.TabIndex = 2;
+            this.txtVirtualTagDescription.Validated += new System.EventHandler(this.VirtualTag_Validated);
+            // 
+            // txtVirtualTagName
+            // 
+            this.txtVirtualTagName.Location = new System.Drawing.Point(122, 20);
+            this.txtVirtualTagName.Name = "txtVirtualTagName";
+            this.txtVirtualTagName.Size = new System.Drawing.Size(333, 20);
+            this.txtVirtualTagName.TabIndex = 1;
+            this.txtVirtualTagName.Validated += new System.EventHandler(this.UpdateVirtualTagsComboBox);
+            // 
+            // chkVirtualTagEnable
+            // 
+            this.chkVirtualTagEnable.AutoSize = true;
+            this.chkVirtualTagEnable.Location = new System.Drawing.Point(10, 34);
+            this.chkVirtualTagEnable.Name = "chkVirtualTagEnable";
+            this.chkVirtualTagEnable.Size = new System.Drawing.Size(59, 17);
+            this.chkVirtualTagEnable.TabIndex = 3;
+            this.chkVirtualTagEnable.Text = "Enable";
+            this.chkVirtualTagEnable.UseVisualStyleBackColor = true;
+            this.chkVirtualTagEnable.Validated += new System.EventHandler(this.UpdateVirtualTagsComboBox);
+            // 
+            // lblCaptionText
+            // 
+            this.lblCaptionText.AutoSize = true;
+            this.lblCaptionText.Location = new System.Drawing.Point(7, 82);
+            this.lblCaptionText.Name = "lblCaptionText";
+            this.lblCaptionText.Size = new System.Drawing.Size(52, 13);
+            this.lblCaptionText.TabIndex = 3;
+            this.lblCaptionText.Text = "Caption : ";
+            // 
+            // lblCaptionSuffix
+            // 
+            this.lblCaptionSuffix.AutoSize = true;
+            this.lblCaptionSuffix.Location = new System.Drawing.Point(349, 151);
+            this.lblCaptionSuffix.Name = "lblCaptionSuffix";
+            this.lblCaptionSuffix.Size = new System.Drawing.Size(33, 13);
+            this.lblCaptionSuffix.TabIndex = 20;
+            this.lblCaptionSuffix.Text = "Suffix";
+            // 
+            // rtfVirtualTagCaption
+            // 
+            this.rtfVirtualTagCaption.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtfVirtualTagCaption.DetectUrls = false;
+            this.rtfVirtualTagCaption.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtfVirtualTagCaption.Location = new System.Drawing.Point(64, 79);
+            this.rtfVirtualTagCaption.Name = "rtfVirtualTagCaption";
+            this.rtfVirtualTagCaption.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rtfVirtualTagCaption.Size = new System.Drawing.Size(391, 62);
+            this.rtfVirtualTagCaption.TabIndex = 4;
+            this.rtfVirtualTagCaption.Text = "";
+            this.rtfVirtualTagCaption.Validated += new System.EventHandler(this.VirtualTag_Validated);
+            // 
+            // lblFieldConfig
+            // 
+            this.lblFieldConfig.AutoSize = true;
+            this.lblFieldConfig.Location = new System.Drawing.Point(165, 151);
+            this.lblFieldConfig.Name = "lblFieldConfig";
+            this.lblFieldConfig.Size = new System.Drawing.Size(29, 13);
+            this.lblFieldConfig.TabIndex = 19;
+            this.lblFieldConfig.Text = "Field";
+            this.lblFieldConfig.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtCaptionPrefix
+            // 
+            this.txtCaptionPrefix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCaptionPrefix.Location = new System.Drawing.Point(10, 167);
+            this.txtCaptionPrefix.Name = "txtCaptionPrefix";
+            this.txtCaptionPrefix.Size = new System.Drawing.Size(80, 20);
+            this.txtCaptionPrefix.TabIndex = 5;
+            // 
+            // lblCaptionPrefix
+            // 
+            this.lblCaptionPrefix.AutoSize = true;
+            this.lblCaptionPrefix.Location = new System.Drawing.Point(34, 151);
+            this.lblCaptionPrefix.Name = "lblCaptionPrefix";
+            this.lblCaptionPrefix.Size = new System.Drawing.Size(33, 13);
+            this.lblCaptionPrefix.TabIndex = 18;
+            this.lblCaptionPrefix.Text = "Prefix";
+            // 
+            // btnCaptionInsert
+            // 
+            this.btnCaptionInsert.Location = new System.Drawing.Point(410, 164);
+            this.btnCaptionInsert.Name = "btnCaptionInsert";
+            this.btnCaptionInsert.Size = new System.Drawing.Size(51, 23);
+            this.btnCaptionInsert.TabIndex = 8;
+            this.btnCaptionInsert.Text = "Insert";
+            this.btnCaptionInsert.UseVisualStyleBackColor = true;
+            this.btnCaptionInsert.Click += new System.EventHandler(this.btnCaptionInsert_Click);
+            // 
+            // txtCaptionSuffix
+            // 
+            this.txtCaptionSuffix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCaptionSuffix.Location = new System.Drawing.Point(325, 167);
+            this.txtCaptionSuffix.Name = "txtCaptionSuffix";
+            this.txtCaptionSuffix.Size = new System.Drawing.Size(80, 20);
+            this.txtCaptionSuffix.TabIndex = 7;
+            // 
+            // lblVirtualTags
+            // 
+            this.lblVirtualTags.AutoSize = true;
+            this.lblVirtualTags.Location = new System.Drawing.Point(10, 39);
+            this.lblVirtualTags.Name = "lblVirtualTags";
+            this.lblVirtualTags.Size = new System.Drawing.Size(45, 13);
+            this.lblVirtualTags.TabIndex = 1;
+            this.lblVirtualTags.Text = "Tag # : ";
+            // 
+            // cbVirtualTags
+            // 
+            this.cbVirtualTags.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVirtualTags.FormattingEnabled = true;
+            this.cbVirtualTags.Location = new System.Drawing.Point(61, 36);
+            this.cbVirtualTags.Name = "cbVirtualTags";
+            this.cbVirtualTags.Size = new System.Drawing.Size(424, 21);
+            this.cbVirtualTags.TabIndex = 0;
+            this.cbVirtualTags.SelectedIndexChanged += new System.EventHandler(this.cbVirtualTags_SelectedIndexChanged);
             // 
             // grpServerSettings
             // 
@@ -2183,6 +2415,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.groupOtherComics.PerformLayout();
             this.grpLanguages.ResumeLayout(false);
             this.pageLibrary.ResumeLayout(false);
+            this.grpVirtualTags.ResumeLayout(false);
+            this.grpVirtualTags.PerformLayout();
+            this.grpVtagConfig.ResumeLayout(false);
+            this.grpVtagConfig.PerformLayout();
             this.grpServerSettings.ResumeLayout(false);
             this.grpServerSettings.PerformLayout();
             this.grpSharing.ResumeLayout(false);
@@ -2387,5 +2623,25 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private Button btTestWifi;
 		private static int activeTab = -1;
 		private readonly List<CheckBox> tabButtons = new List<CheckBox>();
-	}
+        private CollapsibleGroupBox grpVirtualTags;
+        private Label lblVirtualTags;
+        private ComboBox cbVirtualTags;
+        private GroupBox grpVtagConfig;
+        private Label lblCaptionText;
+        private Label lblCaptionSuffix;
+        private RichTextBox rtfVirtualTagCaption;
+        private Label lblFieldConfig;
+        private TextBox txtCaptionPrefix;
+        private Label lblCaptionPrefix;
+        private Button btnCaptionInsert;
+        private TextBox txtCaptionSuffix;
+        private CheckBox chkVirtualTagEnable;
+        private Label lblVirtualTagDescription;
+        private Label lblVirtualTagName;
+        private TextBox txtVirtualTagDescription;
+        private TextBox txtVirtualTagName;
+        private Button btInsertValue;
+        private TextBox txtCaptionFormat;
+        private Label lblCaptionFormat;
+    }
 }

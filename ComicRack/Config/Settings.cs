@@ -26,8 +26,8 @@ using cYo.Projects.ComicRack.Viewer.Views;
 namespace cYo.Projects.ComicRack.Viewer.Config
 {
 	[Serializable]
-	public class Settings : ICacheSettings, IComicUpdateSettings, ISharesSettings
-	{
+	public class Settings : ICacheSettings, IComicUpdateSettings, ISharesSettings, IVirtualTagSettings
+    {
 		[Serializable]
 		public class PasswordCacheEntry
 		{
@@ -2359,7 +2359,10 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set;
 		}
 
-		[field: NonSerialized]
+		private List<VirtualTag> virtualTags = new List<VirtualTag>();
+		public List<VirtualTag> VirtualTags => virtualTags;
+
+        [field: NonSerialized]
 		public event EventHandler SettingsChanged;
 
 		[field: NonSerialized]
