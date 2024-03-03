@@ -5,6 +5,7 @@ using System.Drawing.Imaging;
 using System.Threading.Tasks;
 using cYo.Common.Collections;
 using cYo.Common.ComponentModel;
+using cYo.Common.Localize;
 using cYo.Common.Mathematics;
 
 namespace cYo.Common.Drawing
@@ -897,171 +898,205 @@ namespace cYo.Common.Drawing
 		public unsafe static Bitmap ResizeFast(Bitmap source, int newWidth, int newHeight, PixelFormat format, ResizeFastInterpolation method)
 		{
 			Bitmap bitmap = source;
+
+			//If format requested is anything other than 24 or 32 bit. Force format to be 32bit
 			if (format != PixelFormat.Format32bppArgb && format != PixelFormat.Format24bppRgb)
-			{
 				format = PixelFormat.Format32bppArgb;
-			}
-			int width = bitmap.Width;
+
+            // get source image size
+            int width = bitmap.Width;
 			int height = bitmap.Height;
+
+			//No need to resize, return a copy of the same image
 			if (newWidth == width && newHeight == height)
-			{
 				return bitmap.CreateCopy(format);
-			}
+
+			//IF source image isn't 24bit or 32bit force create a copy with color
 			if (bitmap.PixelFormat != PixelFormat.Format32bppArgb && bitmap.PixelFormat != PixelFormat.Format24bppRgb)
-			{
 				bitmap = bitmap.CreateCopy(PixelFormat.Format32bppArgb);
-			}
-			BitmapData bitmapData = null;
-			BitmapData bitmapData2 = null;
-			Bitmap bitmap2 = null;
+
+			BitmapData srcData = null;
+			BitmapData dstData = null;
+			Bitmap dstImage = null;
+
 			try
 			{
-				bitmapData = bitmap.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadOnly, bitmap.PixelFormat);
-				bitmap2 = new Bitmap(newWidth, newHeight, format);
-				bitmapData2 = bitmap2.LockBits(new Rectangle(0, 0, newWidth, newHeight), ImageLockMode.ReadWrite, bitmap2.PixelFormat);
-				int srcStride = bitmapData.Stride;
-				int srcPixelSize = bitmapData.Stride / width;
-				int num = srcStride - srcPixelSize * width;
-				int dstStride = bitmapData2.Stride;
+                // Reference: https://github.com/andrewkirillov/AForge.NET/blob/master/Sources/Imaging/Filters/Base%20classes/BaseTransformationFilter.cs#L61
+				// Also: https://github.com/andrewkirillov/AForge.NET/blob/master/Sources/Imaging/Filters/Base%20classes/BaseTransformationFilter.cs#L103
+
+                // lock source bitmap data
+                srcData = bitmap.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadOnly, bitmap.PixelFormat);
+				// create new image of required format
+				dstImage = new Bitmap(newWidth, newHeight, format);
+				// lock destination bitmap data
+				dstData = dstImage.LockBits(new Rectangle(0, 0, newWidth, newHeight), ImageLockMode.ReadWrite, dstImage.PixelFormat); 
+
+				int srcStride = srcData.Stride;
+                int srcPixelSize = srcStride / width;
+                //int srcOffset = srcStride - srcPixelSize * width;
+
+                int dstStride = dstData.Stride;
 				int dstPixelSize = dstStride / newWidth;
+				//int dstOffset = dstStride - srcPixelSize * newWidth;
+
 				int minPixelSize = Math.Min(srcPixelSize, dstPixelSize);
-				int dstExtra = dstPixelSize - minPixelSize;
-				int num2 = dstStride - dstPixelSize * newWidth;
-				float xFactor = (float)width / (float)newWidth;
+                int dstExtra = dstPixelSize - minPixelSize;
+                float xFactor = (float)width / (float)newWidth;
 				float yFactor = (float)height / (float)newHeight;
-				byte* src = (byte*)(void*)bitmapData.Scan0;
-				byte* orgdst = (byte*)(void*)bitmapData2.Scan0;
+
+                // do the job
+                byte* orgsrc = (byte*)srcData.Scan0.ToPointer();
+				byte* orgdst = (byte*)dstData.Scan0.ToPointer();
+
+				//Image has 4 bytesPerPixel (32 bit), so Add Alpha Channel
 				if (dstPixelSize == 4)
-				{
 					InitializeAlpha32(orgdst, newWidth, newHeight, dstStride);
-				}
+
 				switch (method)
 				{
-					case ResizeFastInterpolation.NearestNeighbor:
-						Parallel.For(0, newHeight, delegate(int y)
-						{
-							byte* ptr = orgdst + y * dstStride;
-							int num3 = (int)((float)y * yFactor);
-							for (int i = 0; i < newWidth; i++)
-							{
-								int num4 = (int)((float)i * xFactor);
-								byte* ptr2 = src + num3 * srcStride + num4 * srcPixelSize;
-								for (int j = 0; j < minPixelSize; j++)
-								{
-									*(ptr++) = *(ptr2++);
-								}
-								ptr += dstExtra;
-							}
-						});
+						case ResizeFastInterpolation.NearestNeighbor:
+                        // for each line
+                        for (int y = 0; y < newHeight; y++)
+                        {
+							//Ref: https://github.com/andrewkirillov/AForge.NET/blob/master/Sources/Imaging/Filters/Transform/ResizeNearestNeighbor.cs#L81
+							byte* dst = orgdst + dstStride * y;
+							byte* src = orgsrc + srcStride * ((int)(y * yFactor));
+
+							// for each pixel
+							for (int x = 0; x < newWidth; x++)
+                            {
+                                byte* p = src + srcPixelSize * ((int)(x * xFactor));
+
+                                for (int i = 0; i < minPixelSize; i++, dst++, p++)
+                                {
+                                    *dst = *p;
+                                }
+                                dst += dstExtra;
+                            }
+                        };
 						break;
-					case ResizeFastInterpolation.Bilinear:
-						{
-							int ymax = height - 1;
-							int xmax = width - 1;
-						Parallel.For(0, newHeight, delegate(int y)
-							{
-								byte* ptr3 = orgdst + y * dstStride;
-								float num5 = (float)y * yFactor;
-								int num6 = (int)num5;
-								int num7 = ((num6 == ymax) ? num6 : (num6 + 1));
-								float num8 = num5 - (float)num6;
-								float num9 = 1f - num8;
-								byte* ptr4 = src + num6 * srcStride;
-								byte* ptr5 = src + num7 * srcStride;
-								for (int k = 0; k < newWidth; k++)
-								{
-									float num10 = (float)k * xFactor;
-									int num11 = (int)num10;
-									int num12 = ((num11 == xmax) ? num11 : (num11 + 1));
-									float num13 = num10 - (float)num11;
-									float num14 = 1f - num13;
-									byte* ptr6 = ptr4 + num11 * srcPixelSize;
-									byte* ptr7 = ptr4 + num12 * srcPixelSize;
-									byte* ptr8 = ptr5 + num11 * srcPixelSize;
-									byte* ptr9 = ptr5 + num12 * srcPixelSize;
-									int num15 = 0;
-									while (num15 < minPixelSize)
-									{
-										byte b = (byte)(num14 * (float)(int)(*ptr6) + num13 * (float)(int)(*ptr7));
-										byte b2 = (byte)(num14 * (float)(int)(*ptr8) + num13 * (float)(int)(*ptr9));
-										*ptr3 = (byte)(num9 * (float)(int)b + num8 * (float)(int)b2);
-										num15++;
-										ptr3++;
-										ptr6++;
-										ptr7++;
-										ptr8++;
-										ptr9++;
-									}
-									ptr3 += dstExtra;
-								}
-							});
-							break;
-						}
-					case ResizeFastInterpolation.Bicubic:
-						{
-							int ymax2 = height - 1;
-							int xmax2 = width - 1;
-							Parallel.For(0, newHeight, delegate(int y)
-							{
-								byte* ptr10 = orgdst + y * dstStride;
-								float num16 = (float)y * yFactor - 0.5f;
-								int num17 = (int)num16;
-								float num18 = num16 - (float)num17;
-								float[] array = new float[4];
-								int num19 = 0;
-								while (num19 < newWidth)
-								{
-									float num20 = (float)num19 * xFactor - 0.5f;
-									int num21 = (int)num20;
-									float num22 = num20 - (float)num21;
-									for (int l = 0; l < minPixelSize; l++)
-									{
-										array[l] = 0f;
-									}
-									for (int m = -1; m < 3; m++)
-									{
-										float num23 = BiCubicKernel(num18 - (float)m);
-										int num24 = num17 + m;
-										if (num24 < 0)
-										{
-											num24 = 0;
-										}
-										if (num24 > ymax2)
-										{
-											num24 = ymax2;
-										}
-										for (int n = -1; n < 3; n++)
-										{
-											float num25 = num23 * BiCubicKernel((float)n - num22);
-											int num26 = num21 + n;
-											if (num26 < 0)
-											{
-												num26 = 0;
-											}
-											if (num26 > xmax2)
-											{
-												num26 = xmax2;
-											}
-											byte* ptr11 = src + num24 * srcStride + num26 * srcPixelSize;
-											for (int num27 = 0; num27 < minPixelSize; num27++)
-											{
-												array[num27] += num25 * (float)(int)ptr11[num27];
-											}
-										}
-									}
-									for (int num28 = 0; num28 < minPixelSize; num28++)
-									{
-										byte* intPtr = ptr10 + num28;
-										*intPtr = (byte)(*intPtr + (byte)array[num28]);
-									}
-									num19++;
-									ptr10 += dstPixelSize;
-								}
-							});
-							break;
-						}
-				}
-				return bitmap2;
+						case ResizeFastInterpolation.Bilinear:
+                        {
+							// Ref: https://github.com/andrewkirillov/AForge.NET/blob/master/Sources/Imaging/Filters/Transform/ResizeBilinear.cs#L78
+                            // width and height decreased by 1
+                            int ymax = height - 1;
+                            int xmax = width - 1;
+
+                            // for each line
+                            for (int y = 0; y < newHeight; y++)
+                            {
+                                byte* dst = orgdst + y * dstStride;
+
+                                // Y coordinates
+                                float oy = (float)y * yFactor;
+                                int oy1 = (int)oy;
+                                int oy2 = (oy1 == ymax) ? oy1 : (oy1 + 1);
+                                float dy1 = oy - (float)oy1;
+                                float dy2 = 1f - dy1;
+
+                                // get temp pointers
+                                byte* tp1 = orgsrc + oy1 * srcStride;
+                                byte* tp2 = orgsrc + oy2 * srcStride;
+
+                                // for each pixel
+                                for (int x = 0; x < newWidth; x++)
+                                {
+                                    // X coordinates
+                                    float ox = (float)x * xFactor;
+                                    int ox1 = (int)ox;
+                                    int ox2 = (ox1 == xmax) ? ox1 : (ox1 + 1);
+                                    float dx1 = ox - (float)ox1;
+                                    float dx2 = 1f - dx1;
+
+                                    // get four points
+                                    byte* p1 = tp1 + ox1 * srcPixelSize;
+                                    byte* p2 = tp1 + ox2 * srcPixelSize;
+                                    byte* p3 = tp2 + ox1 * srcPixelSize;
+                                    byte* p4 = tp2 + ox2 * srcPixelSize;
+
+                                    for (int i = 0; i < minPixelSize; i++, dst++, p1++, p2++, p3++, p4++)
+                                    {
+                                        *dst = (byte)(
+											dy2 * (dx2 * (*p1) + dx1 * (*p2)) +
+											dy1 * (dx2 * (*p3) + dx1 * (*p4)));
+                                    }
+                                    dst += dstExtra;
+                                }
+                            };
+                            break;
+                        }
+						case ResizeFastInterpolation.Bicubic:
+                        {
+							// Ref: https://github.com/andrewkirillov/AForge.NET/blob/master/Sources/Imaging/Filters/Transform/ResizeBicubic.cs#L79
+                            // width and height decreased by 1
+                            int ymax = height - 1;
+                            int xmax = width - 1;
+
+                            for (int y = 0; y < newHeight; y++)
+                            {
+                                byte* dst = orgdst + y * dstStride;
+
+                                // Y coordinates
+                                float oy = (float)y * yFactor - 0.5f;
+                                int oy1 = (int)oy;
+                                float dy = oy - (float)oy1;
+                                float[] array = new float[4];
+
+                                for (int x = 0; x < newWidth; x++)
+                                {
+                                    // X coordinates
+                                    float ox = (float)x * xFactor - 0.5f;
+                                    int ox1 = (int)ox;
+                                    float dx = ox - (float)ox1;
+
+                                    // initial pixel value
+                                    for (int l = 0; l < minPixelSize; l++)
+                                    {
+                                        array[l] = 0f;
+                                    }
+
+                                    for (int n = -1; n < 3; n++)
+                                    {
+                                        // get Y coefficient
+                                        float k1 = BiCubicKernel(dy - (float)n);
+
+                                        int oy2 = oy1 + n;
+                                        if (oy2 < 0)
+                                            oy2 = 0;
+                                        if (oy2 > ymax)
+                                            oy2 = ymax;
+
+                                        for (int m = -1; m < 3; m++)
+                                        {
+                                            // get X coefficient
+                                            float k2 = k1 * BiCubicKernel((float)m - dx);
+
+                                            int ox2 = ox1 + m;
+                                            if (ox2 < 0)
+                                                ox2 = 0;
+                                            if (ox2 > xmax)
+                                                ox2 = xmax;
+
+                                            // temporary pointer
+                                            byte* p = orgsrc + oy2 * srcStride + ox2 * srcPixelSize;
+                                            for (int i = 0; i < minPixelSize; i++)
+                                            {
+                                                array[i] += k2 * (float)(int)p[i];
+                                            }
+                                        }
+                                    }
+                                    for (int i = 0; i < minPixelSize; i++)
+                                    {
+                                        byte* intPtr = dst + i;
+                                        *intPtr = (byte)(*intPtr + (byte)array[i]);
+                                    }
+                                    dst += dstPixelSize;
+                                }
+                            };
+                            break;
+                        }
+                }
+				return dstImage;
 			}
             catch
             {
@@ -1069,13 +1104,15 @@ namespace cYo.Common.Drawing
             }
             finally
 			{
-				if (bitmapData2 != null)
+				if (dstData != null)
 				{
-					bitmap2.UnlockBits(bitmapData2);
+                    // unlock destination image
+                    dstImage.UnlockBits(dstData);
 				}
-				if (bitmapData != null)
+				if (srcData != null)
 				{
-					bitmap.UnlockBits(bitmapData);
+                    // unlock source image
+                    bitmap.UnlockBits(srcData);
 				}
 				if (bitmap != source)
 				{
