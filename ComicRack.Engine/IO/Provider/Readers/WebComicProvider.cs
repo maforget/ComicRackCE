@@ -13,6 +13,7 @@ using cYo.Common.Net;
 using cYo.Common.Text;
 using cYo.Common.Xml;
 using cYo.Projects.ComicRack.Engine.IO.Cache;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 {
@@ -44,6 +45,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 
 		protected override bool OnFastFormatCheck(string source)
 		{
+			if (!source.EndsWith(".cbw", StringComparison.OrdinalIgnoreCase))
+				return false;
+
 			return Load(source) != null;
 		}
 
