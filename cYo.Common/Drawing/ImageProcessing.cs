@@ -895,7 +895,8 @@ namespace cYo.Common.Drawing
 			bitmap.EdgeDetectQuick(Rectangle.Empty);
 		}
 
-		public unsafe static Bitmap ResizeFast(Bitmap source, int newWidth, int newHeight, PixelFormat format, ResizeFastInterpolation method)
+        [System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions]
+        public unsafe static Bitmap ResizeFast(Bitmap source, int newWidth, int newHeight, PixelFormat format, ResizeFastInterpolation method)
 		{
 			Bitmap bitmap = source;
 
@@ -956,7 +957,7 @@ namespace cYo.Common.Drawing
 				{
 						case ResizeFastInterpolation.NearestNeighbor:
                         // for each line
-                        for (int y = 0; y < newHeight; y++)
+                        Parallel.For(0, newHeight, (int y) =>
                         {
 							//Ref: https://github.com/andrewkirillov/AForge.NET/blob/master/Sources/Imaging/Filters/Transform/ResizeNearestNeighbor.cs#L81
 							byte* dst = orgdst + dstStride * y;
@@ -973,7 +974,7 @@ namespace cYo.Common.Drawing
                                 }
                                 dst += dstExtra;
                             }
-                        };
+                        });
 						break;
 						case ResizeFastInterpolation.Bilinear:
                         {
@@ -983,7 +984,7 @@ namespace cYo.Common.Drawing
                             int xmax = width - 1;
 
                             // for each line
-                            for (int y = 0; y < newHeight; y++)
+                            Parallel.For(0, newHeight, (int y) =>
                             {
                                 byte* dst = orgdst + y * dstStride;
 
@@ -1014,6 +1015,7 @@ namespace cYo.Common.Drawing
                                     byte* p3 = tp2 + ox1 * srcPixelSize;
                                     byte* p4 = tp2 + ox2 * srcPixelSize;
 
+                                    // interpolate using 4 points
                                     for (int i = 0; i < minPixelSize; i++, dst++, p1++, p2++, p3++, p4++)
                                     {
                                         *dst = (byte)(
@@ -1022,7 +1024,7 @@ namespace cYo.Common.Drawing
                                     }
                                     dst += dstExtra;
                                 }
-                            };
+                            });
                             break;
                         }
 						case ResizeFastInterpolation.Bicubic:
@@ -1032,7 +1034,7 @@ namespace cYo.Common.Drawing
                             int ymax = height - 1;
                             int xmax = width - 1;
 
-                            for (int y = 0; y < newHeight; y++)
+                            Parallel.For(0, newHeight, (int y) =>
                             {
                                 byte* dst = orgdst + y * dstStride;
 
@@ -1092,13 +1094,13 @@ namespace cYo.Common.Drawing
                                     }
                                     dst += dstPixelSize;
                                 }
-                            };
+                            });
                             break;
                         }
                 }
 				return dstImage;
 			}
-            catch
+            catch (AccessViolationException)
             {
                 return null;
             }
