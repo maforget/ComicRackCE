@@ -34,6 +34,10 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PDFiumSharp, Version=1.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\PDFiumSharp.dll</HintPath>
+    </Reference>
     <Reference Include="sharpPDF, Version=1.0.3755.1862, Culture=neutral, PublicKeyToken=ff55e618a43684c3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\sharpPDF.dll</HintPath>
@@ -59,6 +63,8 @@
     <Compile Include="BookPageRetrievalCompletedEventArgs.cs" />
     <Compile Include="CacheManager.cs" />
     <Compile Include="ComicBook.cs" />
+    <Compile Include="IO\Provider\Pdfium.cs" />
+    <Compile Include="IO\Provider\Readers\Pdf\PdfiumReaderEngine.cs" />
     <Compile Include="Metadata\ComicBook\Comparer\ComicBookAddedComparer.cs" />
     <Compile Include="Metadata\ComicBook\Matcher\ComicBookAddedMatcher.cs" />
     <Compile Include="Metadata\ComicBook\Comparer\ComicBookAgeRatingComparer.cs" />
@@ -655,6 +661,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DLL\PDFiumSharp.dll" />
     <Content Include="DLL\sharpPDF.dll" />
   </ItemGroup>
   <!-- <ItemGroup> -->

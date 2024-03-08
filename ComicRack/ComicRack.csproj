@@ -679,6 +679,12 @@
     <Content Include="Resources\Icons\Special.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\pdfium_x86.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\pdfium_x64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\Package.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
