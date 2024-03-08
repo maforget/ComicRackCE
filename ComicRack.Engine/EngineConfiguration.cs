@@ -19,6 +19,13 @@ namespace cYo.Projects.ComicRack.Engine
 			SharpZip
 		}
 
+		public enum PdfEngine
+		{
+			Ghostscript,
+			Pdfium,
+			Native
+		}
+
 		private string tempPath = Path.GetTempPath();
 
 		private float pageBowWidth = 0.07f;
@@ -189,21 +196,21 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
-		[DefaultValue(false)]
-		public bool DisableGhostscript
-		{
-			get;
-			set;
-		}
+        [DefaultValue(PdfEngine.Pdfium)]
+        public PdfEngine PdfEngineToUse
+        {
+            get;
+            set;
+        }
 
-		[DefaultValue(null)]
+        [DefaultValue(null)]
 		public string GhostscriptExecutable
 		{
 			get;
 			set;
 		}
 
-		[DefaultValue(null)]
+        [DefaultValue(null)]
 		public string DjVuLibreInstall
 		{
 			get;
@@ -625,6 +632,7 @@ namespace cYo.Projects.ComicRack.Engine
 			WifiSyncSendTimeout = 5000;
 			WifiSyncConnectionTimeout = 2500;
 			WifiSyncConnectionRetries = 1;
+			PdfEngineToUse = PdfEngine.Pdfium;
 		}
 
 		public string GetTempFileName()

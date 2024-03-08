@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
@@ -24,8 +25,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			}
 			else
 			{
-				pdfReader = new PdfNative();
-			}
+				if (EngineConfiguration.Default.PdfEngineToUse == EngineConfiguration.PdfEngine.Native)
+                    pdfReader = new PdfNative();
+				else
+					pdfReader = new PdfiumReaderEngine();
+            }
 		}
 
 		protected override bool OnFastFormatCheck(string source)
