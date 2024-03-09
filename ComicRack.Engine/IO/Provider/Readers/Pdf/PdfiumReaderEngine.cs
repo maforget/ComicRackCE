@@ -41,13 +41,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Pdf
                 {
                     using (PdfPage pdfPage = pdfDocument.Pages[info.Index])
                     {
-                        int dpiX = 300;
-                        int dpiY = 300;
-
-                        int pageWidth = (int)(dpiX * pdfPage.Size.Width / 72);
-                        int pageHeight = (int)(dpiY * pdfPage.Size.Height / 72);
-
-                        using (Bitmap bitmap = new Bitmap(pageWidth, pageHeight, PixelFormat.Format24bppRgb))
+                        Size size = CalculateSize(pdfPage.Width, pdfPage.Height);
+                        using (Bitmap bitmap = new Bitmap(size.Width, size.Height, PixelFormat.Format24bppRgb))
                         {
                             pdfPage.Render(bitmap);
                             return bitmap.ImageToBytes(ImageFormat.Jpeg);
@@ -59,6 +54,25 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Pdf
             {
                 return null;
             }
+        }
+
+        private Size CalculateSize(double width, double height)
+        {
+            //The width & height are returned in point (1/72 inch)
+            //but PDFs created by CR will have the wrong page size. Which would mean that opening this PDF would mean the resolution would balloon up.
+            //To prevent from the above mentioned ballooning, this will be the MAX resolution
+            int maxWidth = 1920; //8.5in at 225dpi
+            int maxHeight = 2540; //11in at 225dpi
+
+            //Calculate the width based on the max height
+            int targeWidth = (int)((width * maxHeight) / height);
+            //Calculate the height based on the max width
+            int targeHeight = (int)((height * maxWidth) / width);
+
+            //if the page is a landscape page (width > height), use the max height, if not we use the max width
+            Size outSize = width > height ? new Size(targeWidth, maxHeight) : new Size(maxWidth, targeHeight);
+
+            return outSize;
         }
 
         public ComicInfo ReadInfo(string source)
