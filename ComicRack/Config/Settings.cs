@@ -124,7 +124,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		public const int MinimumSystemMemory = 64;
 
-		public const int UnlimitedSystemMemory = 1024;
+		public const int UnlimitedSystemMemory = 4096;
 
 		private List<ListConfiguration> listConfigurations = new List<ListConfiguration>();
 

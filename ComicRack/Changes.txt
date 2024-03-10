@@ -35,6 +35,7 @@ Community Edition Build 0.9.180:
 * CHANGE: Changed ParallelConversions from 8 to the Number of Processor. ini says it was related to the number of Processor, but I do not see any evidence for that setting. This only increases the number of pages it converts at the same time. 
 * CHANGE: Replaced the old news by the Community Edition commit history.
 * CHANGE: Replaced the ComicRack.ini setting of DisableGhostscript by PdfEngineToUse, that let's you choose between Pdfium, Native & Ghostscript (if installed). Ghostscript will no longer be the default if installed, to use it you will need to set ""PdfEngineToUse = Ghostscript"".
+* CHANGE: Permit to set the maximum memory to be more than 1GB without going unlimited. The new maximum is 4064MB, more than that will be unlimited. This will not change your current settings, if you are already set to unlimited it will stay that way.
  
 * BUGFIX: Fixed crash when the clipboard contains some objects while the program is idle. The check should now only happen on a right-click and not in the background. It should at least lessen the frequency of the crash, maybe remove it completely. 
 * BUGFIX: Fixed smartlist "in range" for dates, the second field wasn't taken into account.
