@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -9,20 +10,27 @@ namespace cYo.Common.IO
 
 		public bool IsConnected(string path)
 		{
-			string text = Path.GetPathRoot(path).ToLower();
-			if (!cache.TryGetValue(text, out var value))
+			try
 			{
-				try
+				string text = Path.GetPathRoot(path).ToLower();
+				if (!cache.TryGetValue(text, out var value))
 				{
-					value = Directory.Exists(text);
+					try
+					{
+						value = Directory.Exists(text);
+					}
+					catch
+					{
+						value = false;
+					}
+					cache[text] = value;
 				}
-				catch
-				{
-					value = false;
-				}
-				cache[text] = value;
+				return value;
 			}
-			return value;
+			catch (Exception)
+			{
+				return false;
+			}
 		}
 	}
 }
