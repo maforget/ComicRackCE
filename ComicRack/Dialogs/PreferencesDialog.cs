@@ -980,7 +980,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             numMemPageCount.Value = numMemPageCount.Clamp(Program.Settings.MemoryPageCacheCount);
             chkMemThumbOptimized.Checked = Program.Settings.MemoryThumbCacheOptimized;
             numMemThumbSize.Value = numMemThumbSize.Clamp(Program.Settings.MemoryThumbCacheSizeMB);
-            tbMaximumMemoryUsage.SetRange(2, MaximumMemoryStepSize);
+            tbMaximumMemoryUsage.SetRange(Settings.MinimumSystemMemory / MaximumMemoryStepSize, Settings.UnlimitedSystemMemory / MaximumMemoryStepSize);
             tbMaximumMemoryUsage.Value = Program.Settings.MaximumMemoryMB / MaximumMemoryStepSize;
             tbOverlayScaling.Value = Program.Settings.OverlayScaling;
             chkOverwriteAssociations.Checked = Program.Settings.OverwriteAssociations;
