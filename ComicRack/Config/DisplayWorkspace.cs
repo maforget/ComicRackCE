@@ -391,7 +391,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			FileView = new ComicExplorerViewSettings();
 			DatabaseView = new ComicExplorerViewSettings();
 			UndockedReaderState = FormWindowState.Normal;
-			FormState = FormWindowState.Maximized;
+			FormState = FormWindowState.Normal;
 			PanelVisible = true;
 			PanelDock = DockStyle.Fill;
 			PanelSize = new Size(400, 250).ScaleDpi();
