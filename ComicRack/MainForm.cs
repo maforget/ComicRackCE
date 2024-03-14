@@ -329,9 +329,9 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private Rectangle undockedReaderBounds;
 
-		private FormWindowState undockedReaderState;
+        private FormWindowState undockedReaderState;
 
-		private bool shieldReaderFormClosing;
+        private bool shieldReaderFormClosing;
 
 		private Image addTabImage = Resources.AddTab;
 
@@ -559,7 +559,31 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 		}
 
-		private bool MainToolStripVisible
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public Rectangle ScriptOutputBounds
+        {
+            get
+            {
+				return ScriptConsole?.SafeBounds ?? Rectangle.Empty;
+            }
+            set
+            {
+				if (ScriptConsole != null)
+				{
+					if (value.IsEmpty)
+					{
+						ScriptConsole.StartPosition = FormStartPosition.WindowsDefaultLocation;
+					}
+					else
+					{
+						ScriptConsole.SafeBounds = value;
+					} 
+				}
+            }
+        }
+
+        private bool MainToolStripVisible
 		{
 			get
 			{
@@ -691,7 +715,12 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 		}
 
-		public IEnumerable<string> LibraryPaths => Program.Settings.ScriptingLibraries.Replace("\n", "").Replace("\r", "").Split(';', StringSplitOptions.RemoveEmptyEntries);
+        public static ScriptOutputForm ScriptConsole
+        {
+            get => Program.ScriptConsole != null ? Program.ScriptConsole : null;
+        }
+
+        public IEnumerable<string> LibraryPaths => Program.Settings.ScriptingLibraries.Replace("\n", "").Replace("\r", "").Split(';', StringSplitOptions.RemoveEmptyEntries);
 
 		public MainForm()
 		{
@@ -2515,6 +2544,7 @@ namespace cYo.Projects.ComicRack.Viewer
 					ReaderUndocked = workspace.ReaderUndocked;
 					UndockedReaderBounds = workspace.UndockedReaderBounds;
 					UndockedReaderState = workspace.UndockedReaderState;
+					ScriptOutputBounds = workspace.ScriptOutputBounds;
 				}
 				if (workspace.IsViewsSetup)
 				{
@@ -2613,6 +2643,10 @@ namespace cYo.Projects.ComicRack.Viewer
 			workspace.PageMarginPercentWidth = ComicDisplay.PageMarginPercentWidth;
 			workspace.PageTransitionEffect = ComicDisplay.PageTransitionEffect;
 			workspace.ReaderUndocked = ReaderUndocked;
+			if (ScriptConsole != null)
+			{
+				workspace.ScriptOutputBounds = ScriptOutputBounds;
+			}
 			if (workspace.ReaderUndocked)
 			{
 				workspace.UndockedReaderBounds = UndockedReaderBounds;

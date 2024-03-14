@@ -144,7 +144,14 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set;
 		}
 
-		[Browsable(false)]
+        [Browsable(false)]
+        public Rectangle ScriptOutputBounds
+        {
+            get;
+            set;
+        }
+
+        [Browsable(false)]
 		[DefaultValue(FormWindowState.Normal)]
 		public FormWindowState UndockedReaderState
 		{
