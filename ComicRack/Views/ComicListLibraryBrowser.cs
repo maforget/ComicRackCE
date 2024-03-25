@@ -335,47 +335,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				commands.Add(ToggleQuickSearch, true, () => quickSearchPanel.Visible, tsQuickSearch);
 				commands.Add(RefreshFavorites, miFavRefresh);
 				commands.Add(RemoveFavorite, miFavRemove);
-				ToolStripMenuItem toolStripMenuItem = miQueryRename;
-				ToolStripMenuItem toolStripMenuItem2 = miEditSmartList;
-				ToolStripMenuItem toolStripMenuItem3 = miNewSmartList;
-				ToolStripButton toolStripButton = tbNewSmartList;
-				ToolStripMenuItem toolStripMenuItem4 = miNewList;
-				ToolStripButton toolStripButton2 = tbNewList;
-				ToolStripMenuItem toolStripMenuItem5 = miNewFolder;
-				ToolStripButton toolStripButton3 = tbNewFolder;
-				ToolStripMenuItem toolStripMenuItem6 = miRemoveListOrFolder;
-				ToolStripMenuItem toolStripMenuItem7 = miCopyList;
-				ToolStripMenuItem toolStripMenuItem8 = miPasteList;
-				ToolStripMenuItem toolStripMenuItem9 = miExportReadingList;
-				ToolStripMenuItem toolStripMenuItem10 = miImportReadingList;
-				ToolStripSeparator toolStripSeparator = tssOpenWindow;
-				ToolStripSeparator toolStripSeparator2 = miNewSeparator;
-				ToolStripSeparator toolStripSeparator3 = miCopySeparator;
-				ToolStripSeparator toolStripSeparator4 = miRemoveSeparator;
-				bool flag2 = (miAddToFavorites.Visible = ComicEditMode.CanEditList());
-				bool flag4 = (toolStripSeparator4.Visible = flag2);
-				bool flag6 = (toolStripSeparator3.Visible = flag4);
-				bool flag8 = (toolStripSeparator2.Visible = flag6);
-				bool flag10 = (toolStripSeparator.Visible = flag8);
-				bool flag12 = (toolStripMenuItem10.Visible = flag10);
-				bool flag14 = (toolStripMenuItem9.Visible = flag12);
-				bool flag16 = (toolStripMenuItem8.Visible = flag14);
-				bool flag18 = (toolStripMenuItem7.Visible = flag16);
-				bool flag20 = (toolStripMenuItem6.Visible = flag18);
-				bool flag22 = (toolStripButton3.Visible = flag20);
-				bool flag24 = (toolStripMenuItem5.Visible = flag22);
-				bool flag26 = (toolStripButton2.Visible = flag24);
-				bool flag28 = (toolStripMenuItem4.Visible = flag26);
-				bool flag30 = (toolStripButton.Visible = flag28);
-				bool flag32 = (toolStripMenuItem3.Visible = flag30);
-				bool visible = (toolStripMenuItem2.Visible = flag32);
-				toolStripMenuItem.Visible = visible;
-				ToolStripMenuItem toolStripMenuItem11 = miRefresh;
-				ToolStripSeparator toolStripSeparator5 = tbRefreshSeparator;
-				flag32 = (tbRefresh.Visible = !ComicEditMode.IsLocalComic());
-				visible = (toolStripSeparator5.Visible = flag32);
-				toolStripMenuItem11.Visible = visible;
-			}
+                miQueryRename.Visible = miEditSmartList.Visible = miNewSmartList.Visible = tbNewSmartList.Visible = miNewList.Visible = tbNewList.Visible = 
+					miNewFolder.Visible = tbNewFolder.Visible = miRemoveListOrFolder.Visible = miCopyList.Visible = miPasteList.Visible = miExportReadingList.Visible = 
+					miImportReadingList.Visible = tssOpenWindow.Visible = miNewSeparator.Visible = miCopySeparator.Visible = miRemoveSeparator.Visible = 
+					miAddToFavorites.Visible = ComicEditMode.CanEditList();
+                miRefresh.Visible = tbRefreshSeparator.Visible = tbRefresh.Visible = !ComicEditMode.IsLocalComic();
+            }
 		}
 
 		protected override void OnListServiceRequest(IComicBookListProvider senderList, ServiceRequestEventArgs e)
