@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using cYo.Common.Collections;
 using cYo.Common.ComponentModel;
 
 namespace cYo.Projects.ComicRack.Engine
@@ -220,6 +222,11 @@ namespace cYo.Projects.ComicRack.Engine
             yield return comicBook.BookLocation;
             yield return comicBook.ISBN;
             yield return comicBook.ScanInformation;
+            foreach (var customValue in comicBook.GetCustomValues())
+            {
+                yield return customValue.Value;
+            }
+
         }
     }
 }
