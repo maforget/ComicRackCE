@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using cYo.Common.Collections;
 using cYo.Common.ComponentModel;
 
 namespace cYo.Projects.ComicRack.Engine

@@ -10,6 +10,7 @@ Community Edition Build 0.9.180:
 * NEW: Added possibility to add articles that terminate with an apostrophe in IgnoredArticles.
 * NEW: Added French articles (Le, La, Les, L') as default in IgnoredArticles.
 * NEW: Remember the Location & Size of Script Output Console by the Workspace system. Since the Workspace system is configured via the Main window, the console will load at the default location but be restored once the Main window is loaded.
+* NEW: Quick Search (using Mode All) will now search Scan Information & Custom Fields.
 
 * CHANGE: Updated to .NET Framework v4.8.
 * CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition. 
