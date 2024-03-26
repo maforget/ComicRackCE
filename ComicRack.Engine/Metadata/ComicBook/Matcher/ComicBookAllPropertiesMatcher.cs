@@ -219,6 +219,7 @@ namespace cYo.Projects.ComicRack.Engine
             yield return comicBook.BookStore;
             yield return comicBook.BookLocation;
             yield return comicBook.ISBN;
+            yield return comicBook.ScanInformation;
         }
     }
 }
