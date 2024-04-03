@@ -203,6 +203,13 @@ namespace cYo.Projects.ComicRack.Engine
             set;
         }
 
+        [DefaultValue(typeof(Size), "1920, 2540")]
+        public Size PdfiumImageSize
+        {
+            get;
+            set;
+        }
+
         [DefaultValue(null)]
 		public string GhostscriptExecutable
 		{
@@ -633,9 +640,10 @@ namespace cYo.Projects.ComicRack.Engine
 			WifiSyncConnectionTimeout = 2500;
 			WifiSyncConnectionRetries = 1;
 			PdfEngineToUse = PdfEngine.Pdfium;
-		}
+            PdfiumImageSize = new Size(1920, 2540);
+        }
 
-		public string GetTempFileName()
+        public string GetTempFileName()
 		{
 			return Path.Combine(TempPath, string.Concat(Guid.NewGuid(), ".tmp"));
 		}
