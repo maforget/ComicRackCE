@@ -310,6 +310,7 @@
     <Compile Include="Metadata\ComicBook\Matcher\ComicBookVolumeMatcher.cs" />
     <Compile Include="Metadata\ComicBook\Comparer\ComicBookWebComparer.cs" />
     <Compile Include="Metadata\ComicBook\Comparer\ComicBookWeekComparer.cs" />
+    <Compile Include="Metadata\ComicBook\Matcher\ComicBookWebMatcher.cs" />
     <Compile Include="Metadata\ComicBook\Matcher\ComicBookWeekMatcher.cs" />
     <Compile Include="Metadata\ComicBook\Comparer\ComicBookWriterComparer.cs" />
     <Compile Include="Metadata\ComicBook\Matcher\ComicBookWriterMatcher.cs" />
