@@ -16,6 +16,7 @@ using cYo.Common.Text;
 using cYo.Common.Win32;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.ColorScheme;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.Sync;
@@ -268,6 +269,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				TreeView = tvQueries
 			};
 			tvQueries.Font = SystemFonts.IconTitleFont;
+			tvQueries.SetColorScheme(Program.ExtendedSettings.UseDarkMode);
 			favContainer.Expanded = false;
 			LocalizeUtility.Localize(this, components);
 			quickSearch.SetCueText(tsQuickSearch.Text);

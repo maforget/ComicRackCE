@@ -28,6 +28,7 @@ using cYo.Common.Threading;
 using cYo.Common.Win32;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.ColorScheme;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.Display.Forms;
@@ -732,6 +733,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			Settings = Settings.Load(defaultSettingsFile);
 			Settings.RunCount++;
 			CommandLineParser.Parse(ImageDisplayControl.HardwareSettings);
+			EnableColorScheme();
 			CommandLineParser.Parse(EngineConfiguration.Default);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
@@ -840,7 +842,7 @@ namespace cYo.Projects.ComicRack.Viewer
 					};
 				}
 				ToolStripManager.Renderer = renderer;
-				if (ExtendedSettings.DisableHardware)
+                if (ExtendedSettings.DisableHardware)
 				{
 					ImageDisplayControl.HardwareAcceleration = ImageDisplayControl.HardwareAccelerationType.Disabled;
 				}
@@ -944,6 +946,21 @@ namespace cYo.Projects.ComicRack.Viewer
 			Application.Run(MainForm);
 		}
 
+        public static void EnableColorScheme()
+        {
+            if (ExtendedSettings.UseDarkMode)
+            {
+                //Disable VisualStyles so the CollapsibleGroupBox & TabBar renderer isn't marked as supported. So the Color change below will go through.
+                Application.VisualStyleState = System.Windows.Forms.VisualStyles.VisualStyleState.NonClientAreaEnabled;
+                ColorSchemeExtensions.SetDarkMode(true);
+				return;
+            }
+
+			//Not using Dark Mode so enable visual styles
+            Application.EnableVisualStyles();
+        }
+
+        private static IEnumerable<string> SplitIconKeys(string value)
 		public static Dictionary<string, ImagePackage> CreateGenericsIcons(IEnumerable<string> folders, string searchPattern, string trigger, Func<string, IEnumerable<string>> mapKeys = null)
 		{
 			Dictionary<string, ImagePackage> dictionary = new Dictionary<string, ImagePackage>();

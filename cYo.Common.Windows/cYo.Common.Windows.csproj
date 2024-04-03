@@ -47,6 +47,7 @@
     <Compile Update="Forms\CollapsibleGroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
+	  <Compile Update="Forms\ColorScheme\ColorSchemeExtensions.cs" />
     <Compile Update="Forms\ComboBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>

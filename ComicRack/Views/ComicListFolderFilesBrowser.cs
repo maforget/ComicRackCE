@@ -8,6 +8,7 @@ using cYo.Common.Collections;
 using cYo.Common.Localize;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.ColorScheme;
 using cYo.Projects.ComicRack.Viewer.Config;
 using cYo.Projects.ComicRack.Viewer.Controls;
 using cYo.Projects.ComicRack.Viewer.Properties;
@@ -100,6 +101,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			InitializeComponent();
 			tvFolders.SortNetworkFolders = Program.ExtendedSettings.SortNetworkFolders;
+			tvFolders.SetColorScheme(Program.ExtendedSettings.UseDarkMode);
 			tvFolders.Font = SystemFonts.IconTitleFont;
 			components.Add(commands);
 			LocalizeUtility.Localize(this, components);
