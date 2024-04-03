@@ -4,9 +4,9 @@ Community Edition Build 0.9.180:
 * NEW: New PDF Engine using Google's PDFium, this is now the  default. Check in the ComicRack.ini file to change the default engine or to change the rendering size. (See below for additional changes).
 * NEW: Added Virtual Tags. You can set any combination of field in a single one. Can be used with grouping, sorting, smart lists. Configure them in Preferences => Library => Virtual Tags. BACKUP YOUR DB, IF YOU PLAN ON GOING BACK TO AN OLDER VERSION. USING A VIRTUAL TAG IN A SMART LIST AND OPENING AN OLDER VERSION WOULD RESULT IN A DATABASE CORRUPTED MESSAGE. YOU NEED TO REMOVE ANY OF THESE LISTS BEFORE GOING BACK.
 * NEW: Added the Git version to the Splash Screen, to more easily identify bugs in specific releases.
-* NEW: Added the "-local" command line switch, to have the program load on portable mode.
+* NEW: Added the "-local" command line switch, to have the program load in portable mode.
 * NEW: Added links to The Organizer guide to the online manual help system
-* NEW: Unknown elements that may have been added my other software to the ComicInfo.xml will be kept, these will also be saved in the database.
+* NEW: Unknown elements that may have been added by other software to the ComicInfo.xml will be kept, these will also be saved in the database.
 * NEW: Articles in IgnoredArticles can now terminate with an apostrophe (Like L').
 * NEW: Added French articles (Le, La, Les, L') as default in IgnoredArticles.
 * NEW: Remember the Location & Size of Script Output Console by the Workspace system. Since the Workspace system is configured via the Main window, the console will load at the default location but be restored once the Main window is loaded.
