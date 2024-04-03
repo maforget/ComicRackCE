@@ -440,6 +440,14 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set; 
 		}
 
+        [DefaultValue(false)]
+        [CommandLineSwitch(ShortName = "dark")]
+        public bool UseDarkMode
+        {
+            get;
+            set;
+        }
+
         public ExtendedSettings()
 		{
 			AnamorphicScalingTolerance = 0.25f;

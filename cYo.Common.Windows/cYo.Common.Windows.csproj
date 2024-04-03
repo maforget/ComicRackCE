@@ -92,6 +92,7 @@
     <Compile Include="Forms\CollapsibleGroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\ColorScheme\ColorSchemeExtensions.cs" />
     <Compile Include="Forms\ComboBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -240,6 +241,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Forms\StyledRenderer.cs" />
+    <Compile Include="Forms\ColorScheme\ColorSchemeController.cs" />
     <Compile Include="Forms\TabBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -330,6 +332,7 @@
       <Name>cYo.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <!-- <ItemGroup> -->
   <!-- <EmbeddedResource Include="Forms\AutomaticProgressDialog.resources" /> -->
   <!-- <EmbeddedResource Include="Forms\CaptionControl.resources" /> -->
