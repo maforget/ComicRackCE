@@ -208,6 +208,7 @@
     <Compile Include="Metadata\ComicBook\Matcher\ComicBookInkerMatcher.cs" />
     <Compile Include="Metadata\ComicBook\Comparer\ComicBookISBNComparer.cs" />
     <Compile Include="Metadata\ComicBook\Matcher\ComicBookISBNMatcher.cs" />
+    <Compile Include="Metadata\ComicBook\Matcher\ComicBookIsMissingMatcher.cs" />
     <Compile Include="Metadata\ComicBook\Matcher\ComicBookIsLinkedMatcher.cs" />
     <Compile Include="Metadata\ComicBook\Comparer\ComicBookLanguageComparer.cs" />
     <Compile Include="Metadata\ComicBook\Matcher\ComicBookLanguageMatcher.cs" />
