@@ -175,6 +175,8 @@ namespace cYo.Projects.ComicRack.Engine
 
         private volatile string fileFormat;
 
+        private volatile string actualFileFormat;
+
         private volatile string fileDirectory;
 
         private static readonly Calendar weekCalendar;
@@ -544,7 +546,7 @@ namespace cYo.Projects.ComicRack.Engine
                 {
                     string text = FilePath;
                     filePath = value;
-                    fileName = (fileNameWithExtension = (fileFormat = (fileDirectory = null)));
+                    fileName = fileNameWithExtension = actualFileFormat = fileFormat = fileDirectory = null;
                     proposed = null;
                     FireBookChanged("FilePath", text, filePath);
                     if (!string.IsNullOrEmpty(text))
@@ -879,6 +881,27 @@ namespace cYo.Projects.ComicRack.Engine
         }
 
         [Browsable(true)]
+        public string ActualFileFormat
+        {
+            get
+            {
+                if (actualFileFormat != null)
+                {
+                    return actualFileFormat;
+                }
+                try
+                {
+                    actualFileFormat = Providers.Readers.GetSourceFormatName(filePath, true);
+                }
+                catch (Exception)
+                {
+                    actualFileFormat = string.Empty;
+                }
+                return actualFileFormat;
+            }
+        }
+
+        [Browsable(true)]
         public string FileDirectory
         {
             get
@@ -977,7 +1000,7 @@ namespace cYo.Projects.ComicRack.Engine
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.AppendFormat("{0}\n", FileName);
                 stringBuilder.AppendFormat("{0} ({1})\n\n", FileSizeAsText, PagesAsText);
-                stringBuilder.AppendFormat("{0}\n", FileFormat);
+                stringBuilder.AppendFormat("{0}\n", ActualFileFormat);
                 stringBuilder.AppendFormat("{0}\n\n", FileDirectory);
                 stringBuilder.Append(StringUtility.Format(lastTimeOpenedAtText.Value, OpenedTimeAsText));
                 stringBuilder.AppendLine();

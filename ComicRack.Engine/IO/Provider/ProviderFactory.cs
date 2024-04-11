@@ -10,7 +10,7 @@ using cYo.Common.Threading;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider
 {
-	public class ProviderFactory<T> where T : class
+    public class ProviderFactory<T> where T : class
 	{
 		private readonly ReaderWriterLockSlim rwLock = new ReaderWriterLockSlim();
 
@@ -107,14 +107,23 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			return GetSourceProviderInfos(source).SelectMany((ProviderInfo pi) => pi.Formats);
 		}
 
-		public virtual FileFormat GetSourceFormat(string source)
+        protected virtual FileFormat GetActualSourceFormat(string source)
+        {
+            //Just returns the source format based on the extension
+            return GetSourceFormat(source);
+        }
+
+        public FileFormat GetSourceFormat(string source, bool actualFormat = false)
 		{
+			if(actualFormat)
+				return GetActualSourceFormat(source);
+
 			return GetSourceFormats(source).FirstOrDefault((FileFormat ff) => ff.Supports(source));
 		}
 
-		public string GetSourceFormatName(string source)
+		public string GetSourceFormatName(string source, bool actualFormat = false)
 		{
-			FileFormat sourceFormat = GetSourceFormat(source);
+			FileFormat sourceFormat = GetSourceFormat(source, actualFormat);
 			if (sourceFormat != null && !string.IsNullOrEmpty(sourceFormat.Name))
 			{
 				return sourceFormat.Name;

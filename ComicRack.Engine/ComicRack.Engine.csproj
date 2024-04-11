@@ -66,6 +66,8 @@
     <Compile Include="IO\Provider\Pdfium.cs" />
     <Compile Include="IO\Provider\Readers\Pdf\PdfiumReaderEngine.cs" />
     <Compile Include="Metadata\ComicBook\Comparer\ComicBookAddedComparer.cs" />
+    <Compile Include="Metadata\ComicBook\Comparer\ComicBookActualFileFormatComparer.cs" />
+    <Compile Include="Metadata\ComicBook\Group\ComicBookGroupActualFileFormat.cs" />
     <Compile Include="Metadata\ComicBook\Matcher\ComicBookAddedMatcher.cs" />
     <Compile Include="Metadata\ComicBook\Comparer\ComicBookAgeRatingComparer.cs" />
     <Compile Include="Metadata\ComicBook\Matcher\ComicBookAgeRatingMatcher.cs" />

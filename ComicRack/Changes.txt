@@ -6,12 +6,14 @@ Community Edition Build 0.9.180:
 * NEW: Added the Git version to the Splash Screen, to more easily identify bugs in specific releases.
 * NEW: Added the "-local" command line switch, to have the program load in portable mode.
 * NEW: Added links to The Organizer guide to the online manual help system
+* NEW: Added "Actual File Format" field that will be the actual file format of the archive and not simply based on the extension.
 * NEW: Unknown elements that may have been added by other software to the ComicInfo.xml will be kept, these will also be saved in the database.
 * NEW: Articles in IgnoredArticles can now terminate with an apostrophe (Like L').
 * NEW: Added French articles (Le, La, Les, L') as default in IgnoredArticles.
 * NEW: Remember the Location & Size of Script Output Console by the Workspace system. Since the Workspace system is configured via the Main window, the console will load at the default location but be restored once the Main window is loaded.
 * NEW: Quick Search (using Mode All) will now search Scan Information & Custom Fields.
 * NEW: Added the Web field to smart list, so no more need to use expressions. (Again backup your DB, this could result in a corrupted database if going back to an older version)
+* NEW: Added an "Is Missing" smart list entry. (Again backup your DB, this could result in a corrupted database if going back to an older version)
 
 * CHANGE: Updated to .NET Framework v4.8.
 * CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition. 
@@ -29,7 +31,6 @@ Community Edition Build 0.9.180:
 * CHANGE: Updated the default help system to the online manual (from Wayback Machine).
 * CHANGE: Updated manual links & chapter links.
 * CHANGE: Updated Help localize ComicRack links (we still need access to the Localizer program).
-* CHANGE: File Format will be the actual file format of the archive and not simply based on the extension.
 * CHANGE: The default docking mode is now Fill, instead of Bottom.
 * CHANGE: Improved performances while handling Tar files (by Apiweb).
 * CHANGE: Removed the Crash submission dialog because it depended on the cyolito.com website.
