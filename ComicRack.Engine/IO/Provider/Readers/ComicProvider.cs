@@ -87,9 +87,18 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 		}
 
 		protected virtual bool IsSupportedImage(string file)
-		{
-			string fileExt = Path.GetExtension(FileUtility.MakeValidFilename(file));
-			return supportedTypes.Any((string ext) => string.Equals(fileExt, "." + ext, StringComparison.OrdinalIgnoreCase));
-		}
-	}
+        {
+            if(ShouldIgnoreFile(file)) 
+				return false;
+
+            string fileExt = Path.GetExtension(FileUtility.MakeValidFilename(file));
+            return supportedTypes.Any((string ext) => string.Equals(fileExt, "." + ext, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private static bool ShouldIgnoreFile(string file)
+        {
+            string[] ignore = { ".DS_Store\\", "__MACOSX\\" };
+            return ignore.Any(item => file.Contains(item));
+        }
+    }
 }
