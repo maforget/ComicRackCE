@@ -3478,7 +3478,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private void ViewerFullScreenChanged(object sender, EventArgs e)
 		{
-			if (Program.Settings.AutoMinimalGui && !ReaderUndocked)
+			if (Program.Settings.AutoMinimalGui)
 			{
 				MinimalGui = ComicDisplay.FullScreen;
 			}
