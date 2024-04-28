@@ -658,7 +658,7 @@
       <Version>2.3.7</Version>
     </PackageReference>
     <PackageReference Include="SharpCompress">
-      <Version>0.36.0</Version>
+      <Version>0.37.2</Version>
     </PackageReference>
     <PackageReference Include="SharpZipLib">
       <Version>1.4.2</Version>
