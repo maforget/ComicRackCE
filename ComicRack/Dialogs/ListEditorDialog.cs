@@ -89,23 +89,15 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			}
 		}
 
-		private void UpdateButtons()
-		{
-			bool flag = lvItems.SelectedItems.Count > 0;
-			Button button = btMoveTop;
-			bool enabled = (btMoveUp.Enabled = flag && lvItems.SelectedIndices[0] > 0);
-			button.Enabled = enabled;
-			Button button2 = btMoveBottom;
-			enabled = (btMoveDown.Enabled = flag && lvItems.SelectedIndices[0] < Items.Count - 1);
-			button2.Enabled = enabled;
-			Button button3 = btEdit;
-			Button button4 = btActivate;
-			bool flag5 = (btDelete.Enabled = flag);
-			enabled = (button4.Enabled = flag5);
-			button3.Enabled = enabled;
-		}
+        private void UpdateButtons()
+        {
+            bool flag = lvItems.SelectedItems.Count > 0;
+            btMoveTop.Enabled = btMoveUp.Enabled = flag && lvItems.SelectedIndices[0] > 0;
+            btMoveBottom.Enabled = btMoveDown.Enabled = flag && lvItems.SelectedIndices[0] < Items.Count - 1;
+            btEdit.Enabled = btActivate.Enabled = btDelete.Enabled = flag;
+        }
 
-		private void lvItems_MouseReorder(object sender, ListViewEx.MouseReorderEventArgs e)
+        private void lvItems_MouseReorder(object sender, ListViewEx.MouseReorderEventArgs e)
 		{
 			e.Cancel = true;
 			MoveSelected(e.ToIndex, absolute: true);
@@ -208,71 +200,56 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		public static IList<T> Show<T>(IWin32Window parent, string caption, IList<T> items, Func<T> newAction = null, Func<T, bool> editAction = null, Action<T> activateAction = null, Action<T> setAllAction = null) where T : class
 		{
-			items = items.ToList();
-			ListEditorDialog dlg = new ListEditorDialog();
-			try
-			{
-				dlg.Text = caption;
-				dlg.Items = (IList)items;
-				dlg.FillList();
-				if (newAction != null)
-				{
-					dlg.btNew.Visible = true;
-					dlg.newAction = delegate
-					{
-						T val4 = newAction();
-						if (val4 != null)
-						{
-							items.Add(val4);
-							dlg.FillList();
-						}
-					};
-				}
-				if (editAction != null)
-				{
-					dlg.btEdit.Visible = true;
-					dlg.editAction = delegate
-					{
-						T val3 = dlg.SelectedItem as T;
-						if (val3 != null && editAction(val3))
-						{
-							dlg.FillList();
-						}
-					};
-				}
-				if (activateAction != null)
-				{
-					dlg.btActivate.Visible = true;
-					dlg.activateAction = delegate
-					{
-						T val2 = dlg.SelectedItem as T;
-						if (val2 != null)
-						{
-							activateAction(val2);
-						}
-					};
-				}
-				if (setAllAction != null)
-				{
-					dlg.btSetAll.Visible = true;
-					dlg.setAllAction = delegate
-					{
-						T val = dlg.SelectedItem as T;
-						if (val != null)
-						{
-							setAllAction(val);
-						}
-					};
-				}
-				return (dlg.ShowDialog(parent) == DialogResult.Cancel) ? null : items;
-			}
-			finally
-			{
-				if (dlg != null)
-				{
-					((IDisposable)dlg).Dispose();
-				}
-			}
-		}
+            items = (IList<T>)items.ToList<T>();
+            using (ListEditorDialog dlg = new ListEditorDialog())
+            {
+                dlg.Text = caption;
+                dlg.Items = (IList)items;
+                dlg.FillList();
+                if (newAction != null)
+                {
+                    dlg.btNew.Visible = true;
+                    dlg.newAction = (Action)(() =>
+                    {
+                        T obj = newAction();
+                        if ((object)obj == null)
+                            return;
+                        ((ICollection<T>)items).Add(obj);
+                        dlg.FillList();
+                    });
+                }
+                if (editAction != null)
+                {
+                    dlg.btEdit.Visible = true;
+                    dlg.editAction = (Action)(() =>
+                    {
+                        if (!(dlg.SelectedItem is T selectedItem2) || !editAction(selectedItem2))
+                            return;
+                        dlg.FillList();
+                    });
+                }
+                if (activateAction != null)
+                {
+                    dlg.btActivate.Visible = true;
+                    dlg.activateAction = (Action)(() =>
+                    {
+                        if (!(dlg.SelectedItem is T selectedItem4))
+                            return;
+                        activateAction(selectedItem4);
+                    });
+                }
+                if (setAllAction != null)
+                {
+                    dlg.btSetAll.Visible = true;
+                    dlg.setAllAction = (Action)(() =>
+                    {
+                        if (!(dlg.SelectedItem is T selectedItem6))
+                            return;
+                        setAllAction(selectedItem6);
+                    });
+                }
+                return dlg.ShowDialog(parent) == DialogResult.Cancel ? (IList<T>)null : items;
+            }
+        }
 	}
 }
