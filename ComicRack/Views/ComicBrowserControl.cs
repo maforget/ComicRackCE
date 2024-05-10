@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -1328,7 +1330,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
                 CoverViewItem coverViewItem = focusedItem as CoverViewItem;
                 if (coverViewItem != null && coverViewItem.Comic.IsLinked)
                 {
-                    OpenComic();
+                    ExternalProgram ep = Program.Settings.ExternalPrograms.FirstOrDefault(x => x.Override);
+
+                    if (ep is null)
+                        OpenComic();
+                    else
+                        StartExternalProgram(ep, coverViewItem.Comic);
                 }
                 else
                 {
@@ -2795,6 +2802,44 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             miUpdateComicFiles.Visible = enumerable.Any((ComicBook cb) => cb.ComicInfoIsDirty);
             contextMenuItems.FixSeparators();
             miPasteData.Enabled = isPasteComicDataEnabled();
+            UpdateOpenWithMenus(enumerable);
+        }
+
+        private void UpdateOpenWithMenus(IEnumerable<ComicBook> enumerable)
+        {
+            FormUtility.SafeToolStripClear(miOpenWith.DropDownItems, 2);
+            //Populate Open With menu
+            for (int k = 0; k < Program.Settings.ExternalPrograms.Count; k++)
+            {
+                ExternalProgram ep = Program.Settings.ExternalPrograms[k];
+
+                if (string.IsNullOrEmpty(ep.Name) || string.IsNullOrEmpty(ep.Path) || !File.Exists(ep.Path))
+                    continue;
+
+                //Create menu item
+                ToolStripItem tsi = new ToolStripMenuItem(ep.Name.Ellipsis(60 - ep.Name.Length, "..."), null, delegate
+                {
+                    //For each book selected it will start a separate program
+                    foreach (ComicBook comicBook in enumerable)
+                    {
+                        StartExternalProgram(ep, comicBook);
+                    }
+                });
+                tsi.Tag = ep;
+
+                //Insert menu item
+                miOpenWith.DropDownItems.Add(tsi);
+            }
+
+            //Show the separator only if at least 1 external program was added
+            //toolStripSeparator2.Visible = miOpenWith.DropDownItems.Cast<ToolStripItem>().Where(x => x.Tag != null).Count() > 0;
+            toolStripSeparator2.Visible = miOpenWith.DropDownItems.Count > 2;
+        }
+
+        private static void StartExternalProgram(ExternalProgram ep, ComicBook comicBook)
+        {
+            string args = string.IsNullOrEmpty(ep.Arguments) ? $"\"{comicBook.FilePath}\"" : $"{ep.Arguments} \"{comicBook.FilePath}\"";
+            Program.StartProgram(ep.Path, args);
         }
 
         private void LayoutMenuOpening(object sender, CancelEventArgs e)
@@ -2946,7 +2991,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
                         string prefix = new string(' ', Library.ComicLists.GetChildLevel(li) * 4);
                         this.Invoke(delegate
                         {
-                            ToolStripMenuItem value = ((count != maxLists) 
+                            ToolStripMenuItem value = ((count != maxLists)
                                 ? new ToolStripMenuItem(prefix + li.Name, GetComicListImage(li), delegate{ ShowBookInList(li, cb); }) 
                                 : new ToolStripMenuItem("...") { Enabled = false });
                             menu.DropDownItems.Insert(menu.DropDownItems.Count - 1, value);
@@ -3281,6 +3326,66 @@ namespace cYo.Projects.ComicRack.Viewer.Views
                 books = books.Reverse();
             }
             return books;
+        }
+
+        private void miOpenWithManager_Click(object sender, EventArgs e)
+        {
+            EditOpenWithPrograms();
+        }
+
+        private void EditOpenWithPrograms()
+        {
+            IList<ExternalProgram> list = OpenWithDialog.Show(Form.ActiveForm, TR.Messages["OpenWithPrograms", "Manage Open With Programs"], Program.Settings.ExternalPrograms, 
+                newAction: NewExternalProgram,
+                editAction: ep => EditExternalProgram(ep),
+                overrideAction: ep => ep.Override = !ep.Override);
+
+            if (list != null)
+            {
+                Program.Settings.ExternalPrograms.Clear();
+                Program.Settings.ExternalPrograms.AddRange(list);
+            }
+        }
+
+        private ExternalProgram NewExternalProgram()
+        {
+            string name = "", path = "", args = "";
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Executable (*.EXE, *.BAT, *.CMD, *.PS1)|*.exe;*.bat;*.cmd;*.ps1|All files (*.*)|*.*";
+                openFileDialog.Multiselect = false;
+                openFileDialog.CheckFileExists = true;
+                if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    path = openFileDialog.FileName;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+            {
+                FileVersionInfo vi = FileVersionInfo.GetVersionInfo(path);
+                name = string.IsNullOrEmpty(vi.ProductName) 
+                    ? SelectItemDialog.GetName(this, "Set External Program", "Program") 
+                    : vi.ProductName;
+                args = SelectItemDialog.GetName(this, "Set Program Argument", string.Empty) ?? string.Empty;
+            }
+
+            if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(path))
+                return new ExternalProgram(name, path);
+
+            return null;
+        }
+
+        private bool EditExternalProgram(ExternalProgram ep)
+        {
+            string oldName = ep.Name;
+            string oldArgument = ep.Arguments;
+
+            ep.Name = SelectItemDialog.GetName(this, "Rename External Program", ep.Name) ?? ep.Name;
+            ep.Arguments = SelectItemDialog.GetName(this, "Change Program Argument", ep.Arguments) ?? string.Empty;
+
+            return oldName != ep.Name || oldArgument != ep.Arguments;
         }
     }
 }

@@ -80,6 +80,7 @@
     <Compile Include="Config\DefaultLists.cs" />
     <Compile Include="Config\DisplayWorkspace.cs" />
     <Compile Include="Config\ExtendedSettings.cs" />
+    <Compile Include="Config\ExternalProgram.cs" />
     <Compile Include="Config\HiddenMessageBoxes.cs" />
     <Compile Include="Config\LibraryGauges.cs" />
     <Compile Include="Config\ListConfiguration.cs" />
@@ -184,6 +185,12 @@
     </Compile>
     <Compile Include="Dialogs\IMatcherEditor.cs" />
     <Compile Include="Dialogs\ISmartListDialog.cs" />
+    <Compile Include="Dialogs\OpenWithDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OpenWithDialog.Designer.cs">
+      <DependentUpon>OpenWithDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\ListEditorDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -497,6 +504,9 @@
     <EmbeddedResource Include="Dialogs\OpenRemoteDialog.resx">
       <DependentUpon>OpenRemoteDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OpenWithDialog.resx">
+      <DependentUpon>OpenWithDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\PasswordDialog.resx">
       <DependentUpon>PasswordDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -569,7 +579,9 @@
     <EmbeddedResource Include="Views\ComicListLibraryBrowser.resx" DependentUpon="ComicListLibraryBrowser.cs">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ComicBrowserControl.resx" DependentUpon="ComicBrowserControl.cs" />
+    <EmbeddedResource Include="Views\ComicBrowserControl.resx" DependentUpon="ComicBrowserControl.cs">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ComicPagesView.resx">
       <DependentUpon>ComicPagesView.cs</DependentUpon>
     </EmbeddedResource>

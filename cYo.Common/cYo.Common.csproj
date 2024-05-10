@@ -89,6 +89,8 @@
     <Compile Include="ComponentModel\IItemLock.cs" />
     <Compile Include="ComponentModel\ILiteComponent.cs" />
     <Compile Include="ComponentModel\IMatcher.cs" />
+    <Compile Include="ComponentModel\IOverride.cs" />
+    <Compile Include="ComponentModel\IPath.cs" />
     <Compile Include="ComponentModel\INamed.cs" />
     <Compile Include="ComponentModel\ItemLock.cs" />
     <Compile Include="ComponentModel\IValueStore.cs" />

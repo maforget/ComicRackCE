@@ -128,7 +128,9 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		private List<ListConfiguration> listConfigurations = new List<ListConfiguration>();
 
-		private DisplayWorkspace currentWorkspace = new DisplayWorkspace();
+		private List<ExternalProgram> externalPrograms = new List<ExternalProgram>();
+
+        private DisplayWorkspace currentWorkspace = new DisplayWorkspace();
 
 		private readonly List<DisplayWorkspace> workspaces = new List<DisplayWorkspace>();
 
@@ -360,7 +362,19 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			}
 		}
 
-		public DisplayWorkspace CurrentWorkspace
+        public List<ExternalProgram> ExternalPrograms
+        {
+            get
+            {
+                return externalPrograms;
+            }
+            set
+            {
+                externalPrograms = value;
+            }
+        }
+
+        public DisplayWorkspace CurrentWorkspace
 		{
 			get
 			{
