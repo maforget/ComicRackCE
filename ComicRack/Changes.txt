@@ -16,6 +16,7 @@ Community Edition Build 0.9.180:
 * NEW: Added the Web field to smart list, so no more need to use expressions. (Again backup your DB, this could result in a corrupted database if going back to an older version)
 * NEW: Added an "Is Missing" smart list entry. (Again backup your DB, this could result in a corrupted database if going back to an older version)
 * NEW: "__MACOSX" & ".DS_Store" folders will be ignored inside archives.
+* NEW: Images smaller than 512 bytes will be ignored inside archives.
 
 * CHANGE: Updated to .NET Framework v4.8.
 * CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition. 
