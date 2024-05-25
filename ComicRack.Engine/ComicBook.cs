@@ -1121,6 +1121,8 @@ namespace cYo.Projects.ComicRack.Engine
             }
         }
 
+        public string PublishedRegional => FormatDate(Published, ComicDateFormat.Short, toLocal: false, unkownText.Value);
+
         public string PublishedAsText
         {
             get
