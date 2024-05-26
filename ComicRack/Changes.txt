@@ -56,6 +56,7 @@ Community Edition Build 0.9.180:
 * BUGFIX: Fixed missing entry (MainCharacterOrTeam, Review & CommunityRating) not being saved in ComicInfo.xml.
 * BUGFIX: Made getting a list of book from a folder a lot faster when there was incompatible files. The slowdown was related to attempting to read the files as a WebComic. Previously the program would attempt to use all it's known provider on each and every file until it found a working one, regardless of the type. Now Webcomics will NEED to be a CBW.
 * BUGFIX: Enabling fullscreen didn't minimize the gui when reader was in it's own window, with option to do it at the same time enabled.
+* BUGFIX: Fixed files not being deleted if they contained Unicode characters.
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 
