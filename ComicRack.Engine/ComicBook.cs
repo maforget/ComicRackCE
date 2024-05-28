@@ -25,6 +25,7 @@ using cYo.Common.Xml;
 using cYo.Projects.ComicRack.Engine.IO;
 using cYo.Projects.ComicRack.Engine.IO.Provider;
 using cYo.Projects.ComicRack.Engine.Sync;
+using SharpCompress.Common;
 
 namespace cYo.Projects.ComicRack.Engine
 {
@@ -1059,12 +1060,15 @@ namespace cYo.Projects.ComicRack.Engine
         {
             get
             {
-                StringBuilder stringBuilder = new StringBuilder(base.Writer);
-                AppendString(stringBuilder, "/", base.Penciller);
-                AppendString(stringBuilder, "/", base.Inker);
-                AppendString(stringBuilder, "/", base.Colorist);
-                AppendString(stringBuilder, "/", base.Letterer);
-                AppendString(stringBuilder, "/", base.CoverArtist);
+                HashSet<string> uniqueNames = new HashSet<string>();
+                StringBuilder stringBuilder = new StringBuilder();
+                AppendUniqueArtist(stringBuilder, "/", base.Writer, uniqueNames);
+                AppendUniqueArtist(stringBuilder, "/", base.Penciller, uniqueNames);
+                AppendUniqueArtist(stringBuilder, "/", base.Inker, uniqueNames);
+                AppendUniqueArtist(stringBuilder, "/", base.Colorist, uniqueNames);
+                AppendUniqueArtist(stringBuilder, "/", base.Letterer, uniqueNames);
+                AppendUniqueArtist(stringBuilder, "/", base.CoverArtist, uniqueNames);
+
                 return stringBuilder.ToString();
             }
         }
@@ -2647,9 +2651,9 @@ namespace cYo.Projects.ComicRack.Engine
             return fileName ?? string.Empty;
         }
 
-        private static void AppendString(StringBuilder s, string delimiter, string text)
+        private static void AppendUniqueArtist(StringBuilder s, string delimiter, string text, HashSet<string> uniqueNames)
         {
-            if (!string.IsNullOrEmpty(text))
+            if (!string.IsNullOrEmpty(text) && uniqueNames.Add(text))
             {
                 if (s.Length != 0)
                 {
