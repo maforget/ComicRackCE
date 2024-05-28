@@ -1062,12 +1062,12 @@ namespace cYo.Projects.ComicRack.Engine
             {
                 HashSet<string> uniqueNames = new HashSet<string>();
                 StringBuilder stringBuilder = new StringBuilder();
-                AppendUniqueArtist(stringBuilder, "/", base.Writer, uniqueNames);
-                AppendUniqueArtist(stringBuilder, "/", base.Penciller, uniqueNames);
-                AppendUniqueArtist(stringBuilder, "/", base.Inker, uniqueNames);
-                AppendUniqueArtist(stringBuilder, "/", base.Colorist, uniqueNames);
-                AppendUniqueArtist(stringBuilder, "/", base.Letterer, uniqueNames);
-                AppendUniqueArtist(stringBuilder, "/", base.CoverArtist, uniqueNames);
+                AppendUniqueName(stringBuilder, "/", base.Writer, uniqueNames);
+                AppendUniqueName(stringBuilder, "/", base.Penciller, uniqueNames);
+                AppendUniqueName(stringBuilder, "/", base.Inker, uniqueNames);
+                AppendUniqueName(stringBuilder, "/", base.Colorist, uniqueNames);
+                AppendUniqueName(stringBuilder, "/", base.Letterer, uniqueNames);
+                AppendUniqueName(stringBuilder, "/", base.CoverArtist, uniqueNames);
 
                 return stringBuilder.ToString();
             }
@@ -2651,15 +2651,23 @@ namespace cYo.Projects.ComicRack.Engine
             return fileName ?? string.Empty;
         }
 
-        private static void AppendUniqueArtist(StringBuilder s, string delimiter, string text, HashSet<string> uniqueNames)
+        private static void AppendUniqueName(StringBuilder s, string delimiter, string text, HashSet<string> uniqueNames)
         {
-            if (!string.IsNullOrEmpty(text) && uniqueNames.Add(text))
+            if (!string.IsNullOrEmpty(text))
             {
-                if (s.Length != 0)
+                var names = text.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                foreach (var name in names)
                 {
-                    s.Append(delimiter);
+                    var trimmedName = name.Trim();
+                    if (!string.IsNullOrEmpty(trimmedName) && uniqueNames.Add(trimmedName))
+                    {
+                        if (s.Length != 0)
+                        {
+                            s.Append(delimiter);
+                        }
+                        s.Append(trimmedName);
+                    }
                 }
-                s.Append(text);
             }
         }
 
