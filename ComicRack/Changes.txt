@@ -18,6 +18,7 @@ Community Edition Build 0.9.180:
 * NEW: "__MACOSX" & ".DS_Store" folders will be ignored inside archives.
 * NEW: Images smaller than 512 bytes will be ignored inside archives.
 * NEW: Added a "Published (Regional)" column that will use the OS regional setting for the Published date (like the other dates).
+* NEW: Added support for wildcard for "KeepFiles" in a script "Package.ini" (used for Data Manager multiple profiles).
 
 * CHANGE: Updated to .NET Framework v4.8.
 * CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition. 

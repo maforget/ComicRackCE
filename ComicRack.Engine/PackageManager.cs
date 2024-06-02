@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using cYo.Common.Collections;
 using cYo.Common.Drawing;
 using cYo.Common.IO;
@@ -404,17 +405,26 @@ namespace cYo.Projects.ComicRack.Engine
 				Directory.CreateDirectory(text);
 				if (!package.KeepFiles.IsEmpty())
 				{
-					string[] keep = package.KeepFiles;
-					foreach (string item in from f in Directory.GetFiles(text)
-						where !keep.Contains(Path.GetFileName(f), StringComparer.OrdinalIgnoreCase)
-						select f)
+                    string[] keep = package.KeepFiles;
+
+                    // Convert wildcard patterns to regular expressions
+                    List<Regex> keepPatterns = keep.Select(pattern =>
+                    {
+                        string regexPattern = $"^{Regex.Escape(pattern).Replace("\\*", ".*").Replace("\\?", ".")}$";
+                        return new Regex(regexPattern, RegexOptions.IgnoreCase);
+                    }).ToList();
+
+                    foreach (string item in from f in Directory.EnumerateFiles(text)
+											where !keepPatterns.Any(regex => regex.IsMatch(f))
+                                            select f)
 					{
 						FileUtility.SafeDelete(item);
 					}
-					foreach (string item2 in from f in Directory.GetDirectories(text)
-						where !keep.Contains(Path.GetFileName(f), StringComparer.OrdinalIgnoreCase)
-						select f)
-					{
+
+                    foreach (string item2 in from f in Directory.EnumerateDirectories(text)
+                                            where !keepPatterns.Any(regex => regex.IsMatch(f))
+                                            select f)
+                    {
 						FileUtility.SafeDirectoryDelete(item2);
 					}
 				}
