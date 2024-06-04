@@ -103,7 +103,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 
         private static bool IsFileTooSmall(long size)
         {
-			long minSize = 512;
+			long minSize = 256;
             return size < minSize;
         }
     }

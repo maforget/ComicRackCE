@@ -16,7 +16,7 @@ Community Edition Build 0.9.180:
 * NEW: Added the Web field to smart list, so no more need to use expressions. (Again backup your DB, this could result in a corrupted database if going back to an older version)
 * NEW: Added an "Is Missing" smart list entry. (Again backup your DB, this could result in a corrupted database if going back to an older version)
 * NEW: "__MACOSX" & ".DS_Store" folders will be ignored inside archives.
-* NEW: Images smaller than 512 bytes will be ignored inside archives.
+* NEW: Images smaller than 256 bytes will be ignored inside archives.
 * NEW: Added a "Published (Regional)" column that will use the OS regional setting for the Published date (like the other dates).
 * NEW: Added support for wildcard for "KeepFiles" in a script "Package.ini" (used for Data Manager multiple profiles).
 
