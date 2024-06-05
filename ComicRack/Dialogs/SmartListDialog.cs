@@ -459,9 +459,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private void FillBaseCombo(ComicSmartListItem scl)
 		{
             cbBaseList.Items.Clear();
-			RecursionCache.Items.Remove(EditId);
+            //RecursionCache.Items.Remove(EditId);
 
-			foreach (ComicListItem item in Library.ComicLists.GetItems<ComicListItem>())
+            foreach (ComicListItem item in Library.ComicLists.GetItems<ComicListItem>())
 			{
 				Guid guid = ((item is ComicLibraryListItem) ? Guid.Empty : item.Id);
                 if (!item.RecursionTest(EditId))

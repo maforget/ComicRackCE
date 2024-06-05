@@ -1110,7 +1110,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				}
 				ComicListItemCollection comicListItemCollection = ((dragNode.Parent == null) ? Library.ComicLists : ((ComicListItemFolder)dragNode.Parent.Tag).Items);
 				ComicListItem comicListItem = dragNode.Tag as ComicListItem;
-				if (e.Effect == DragDropEffects.Copy && comicListItem is ShareableComicListItem)
+                RecursionCache.Items.Remove(comicListItem.Id);
+                if (e.Effect == DragDropEffects.Copy && comicListItem is ShareableComicListItem)
 				{
 					comicListItem = ((ICloneable)(ShareableComicListItem)comicListItem).Clone<ShareableComicListItem>();
 				}
