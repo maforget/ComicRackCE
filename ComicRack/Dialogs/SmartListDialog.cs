@@ -458,26 +458,28 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void FillBaseCombo(ComicSmartListItem scl)
 		{
-			cbBaseList.Items.Clear();
+            cbBaseList.Items.Clear();
+			RecursionCache.Items.Remove(EditId);
+
 			foreach (ComicListItem item in Library.ComicLists.GetItems<ComicListItem>())
 			{
 				Guid guid = ((item is ComicLibraryListItem) ? Guid.Empty : item.Id);
-				if (!item.RecursionTest(EditId))
-				{
+                if (!item.RecursionTest(EditId))
+                {
 					cbBaseList.Items.Add(new ReferenceItem(item.GetLevel(), item.Name, guid, baseImages.Images[item.ImageKey]));
-					if (guid == scl.BaseListId)
-					{
+                    if (guid == scl.BaseListId)
+                    {
 						cbBaseList.SelectedIndex = cbBaseList.Items.Count - 1;
-					}
+                    }
 				}
-			}
+            }
 			if (cbBaseList.Items.Count > 0 && cbBaseList.SelectedIndex == -1)
-			{
+            {
 				cbBaseList.SelectedIndex = 0;
-			}
-		}
+            }
+        }
 
-		private void AddMatcherControl(ComicBookMatcher icbm)
+        private void AddMatcherControl(ComicBookMatcher icbm)
 		{
 			int width = cbBaseList.Right - matcherControls.Left;
 			Control control = ((icbm is ComicBookGroupMatcher) ? CreateGroupMatchPanel(icbm as ComicBookGroupMatcher, width) : CreateMatchPanel(icbm as ComicBookValueMatcher, width));

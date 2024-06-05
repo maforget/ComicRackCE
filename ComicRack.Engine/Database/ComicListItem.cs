@@ -40,7 +40,7 @@ namespace cYo.Projects.ComicRack.Engine.Database
 
 		private DisplayListConfig displayListConfig = new DisplayListConfig();
 
-		[NonSerialized]
+        [NonSerialized]
 		private ComicLibrary registeredLibrary;
 
 		[NonSerialized]
@@ -276,7 +276,7 @@ namespace cYo.Projects.ComicRack.Engine.Database
 
 		public virtual bool CustomCacheStorage => false;
 
-		[field: NonSerialized]
+        [field: NonSerialized]
 		public event ComicListChangedEventHandler Changed;
 
 		[field: NonSerialized]
@@ -759,37 +759,41 @@ namespace cYo.Projects.ComicRack.Engine.Database
 		public bool RecursionTest(Guid listId, bool ignoreSelfTest = false)
 		{
 			if (!ignoreSelfTest && base.Id == listId)
-			{
-				return true;
-			}
-			if (recurseShield.IsValueCreated && recurseShield.Value)
-			{
-				return false;
-			}
-			try
+                return true;
+
+            if (recurseShield.IsValueCreated && recurseShield.Value)
+                return false;
+
+            RecursionCacheItem cachedItem = RecursionCache.Items.GetValue(listId);
+			if (cachedItem != null && cachedItem.TryGetValue(base.Id, out bool cachedResult))
+				return cachedResult;
+
+			bool result = false;
+            try
 			{
 				recurseShield.Value = true;
 				ComicListItemFolder comicListItemFolder = this as ComicListItemFolder;
 				if (comicListItemFolder != null && comicListItemFolder.Items.Any((ComicListItem cli) => cli.RecursionTest(listId)))
-				{
-					return true;
-				}
-				ComicSmartListItem comicSmartListItem = this as ComicSmartListItem;
+                    result = true;
+
+                ComicSmartListItem comicSmartListItem = this as ComicSmartListItem;
 				if (comicSmartListItem != null)
 				{
 					ComicListItem baseList = comicSmartListItem.GetBaseList(withTest: false);
 					if (baseList != null && baseList.RecursionTest(listId))
-					{
-						return true;
-					}
-				}
+                        result = true;
+                }
 			}
 			finally
 			{
 				recurseShield.Value = false;
 			}
-			return false;
-		}
+
+			if (cachedItem != null)
+				cachedItem[base.Id] = result;
+
+			return result;
+        }
 
 		void IDeserializationCallback.OnDeserialization(object sender)
 		{
@@ -811,26 +815,42 @@ namespace cYo.Projects.ComicRack.Engine.Database
 				return seriesStats[new ComicBookSeriesStatistics.Key(book)];
 			}
 		}
-
-		//Decompile Error
-		//void IComicBookListProvider.add_NameChanged(EventHandler value)
-		//{
-		//	base.NameChanged += value;
-		//}
-
-		//void IComicBookListProvider.remove_NameChanged(EventHandler value)
-		//{
-		//	base.NameChanged -= value;
-		//}
-
-		//Guid IIdentity.get_Id()
-		//{
-		//	return base.Id;
-		//}
-
-		//string IComicBookList.get_Name()
-		//{
-		//	return base.Name;
-		//}
 	}
+
+	public class RecursionCache: Dictionary<Guid, RecursionCacheItem>
+	{
+        private static Lazy<RecursionCache> instance = new Lazy<RecursionCache>(() => new RecursionCache());
+
+        public static RecursionCache Items => instance.Value;
+
+        private RecursionCache() : base()
+        {
+
+        }
+
+		public RecursionCacheItem GetValue(Guid guid)
+		{
+			if (Items.TryGetValue(guid, out RecursionCacheItem cachedResult))
+			{
+				return cachedResult;
+			}
+
+			RecursionCacheItem item = RecursionCacheItem.Empty();
+			this[guid] = item;
+			return item;
+		}
+	}
+
+	public class RecursionCacheItem : Dictionary<Guid, bool>
+	{
+        private RecursionCacheItem() : base()
+        {
+                
+        }
+
+        public static RecursionCacheItem Empty()
+        {
+            return new RecursionCacheItem();
+        }
+    }
 }
