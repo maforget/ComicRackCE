@@ -10,6 +10,12 @@ This project aims to revive the legendary Comic Manager, ComicRack, which hasn't
 To support the community, I am releasing the decompiled version as a Community Edition. Although commercial use can't be prevented, I discourage rebranding and selling it. Don't expect major changes or rewrites; this is a work in progress, and contributions from the community are essential. As a hobbyist programmer, I recommend you implement desired features yourself.
 
 You can find the current changelog [here.](https://raw.githubusercontent.com/maforget/ComicRackCE/master/ComicRack/Changes.txt)
+## Community Collaboration
+
+To collaborate, open an Issue on the tracker and use GitHub discussions. Start with small, focused Pull Requests, avoiding large, vague commits. ChatGPT can help with small code snippets but not with complete rewrites. Use Visual Studio 2022 Community Edition for development, as it's more suitable than VS Code.
+
+We also need the Localizer tool created by cYo for translations.
+
 # Installation
 >[!important]
 >This build is unstable and may change daily. Bugs from the decompiling process may still be present, so proceed with caution when upgrading. There have been reports of false positives from Windows Defender, and we cannot submit every version for removal.
@@ -34,13 +40,3 @@ Check out my plugins for ComicRack Community Edition:
 - **[comicrack-copy-move-field](https://github.com/maforget/comicrack-copy-move-field)**: Moves or copies info from one field to another, either replacing or appending to the destination field. Updates include support for copying or moving dates.
 
 **You should also consider installing the [ComicVine Scraper](https://github.com/cbanack/comic-vine-scraper/releases/latest) plugin and the [Library Organizer](https://github.com/Stonepaw/comicrack-library-organizer/releases/latest).**
-
-## Stability Notice
-
-This build is unstable and may change daily. Bugs from the decompiling process may still be present, so proceed with caution when upgrading. There have been reports of false positives from Windows Defender, and we cannot submit every version for removal.
-
-## Community Collaboration
-
-To collaborate, open an Issue on the tracker and use GitHub discussions. Start with small, focused Pull Requests, avoiding large, vague commits. ChatGPT can help with small code snippets but not with complete rewrites. Use Visual Studio 2022 Community Edition for development, as it's more suitable than VS Code.
-
-We also need the Localizer tool created by cYo for translations.
