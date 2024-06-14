@@ -414,15 +414,15 @@ namespace cYo.Projects.ComicRack.Engine
                         return new Regex(regexPattern, RegexOptions.IgnoreCase);
                     }).ToList();
 
-                    foreach (string item in from f in Directory.EnumerateFiles(text)
+                    foreach (string item in from f in new DirectoryInfo(text).EnumerateFiles().Select(x => x.Name)
 											where !keepPatterns.Any(regex => regex.IsMatch(f))
                                             select f)
 					{
 						FileUtility.SafeDelete(item);
 					}
 
-                    foreach (string item2 in from f in Directory.EnumerateDirectories(text)
-                                            where !keepPatterns.Any(regex => regex.IsMatch(f))
+                    foreach (string item2 in from f in new DirectoryInfo(text).EnumerateDirectories().Select(x => x.Name)
+                                             where !keepPatterns.Any(regex => regex.IsMatch(f))
                                             select f)
                     {
 						FileUtility.SafeDirectoryDelete(item2);
