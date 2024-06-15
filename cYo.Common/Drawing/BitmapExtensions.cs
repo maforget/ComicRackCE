@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using cYo.Common.ComponentModel;
+using cYo.Common.Drawing3D;
 using cYo.Common.Runtime;
 using PhotoSauce.MagicScaler;
 
@@ -29,42 +30,48 @@ namespace cYo.Common.Drawing
 					return bmp;
 				}
 
-                ProcessImageSettings ps = new ProcessImageSettings() { Width = size.Width, Height = size.Height };
-                switch (resampling)
-                {
-                    case BitmapResampling.FastAndUgly:
-                        // return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.NearestNeighbor);
-                        ps.Interpolation = InterpolationSettings.NearestNeighbor;
-                        break;
-                    case BitmapResampling.FastBilinear:
+				ProcessImageSettings ps = new ProcessImageSettings() { Width = size.Width, Height = size.Height };
+				switch (resampling)
+				{
+					case BitmapResampling.FastAndUgly:
+						// return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.NearestNeighbor);
+						ps.Interpolation = InterpolationSettings.NearestNeighbor;
+						ps.HybridMode = HybridScaleMode.FavorSpeed;
+						break;
+					case BitmapResampling.FastBilinear:
                         // return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bilinear);
                         ps.Interpolation = InterpolationSettings.Linear;
+                        ps.HybridMode = HybridScaleMode.FavorSpeed;
                         break;
-                    case BitmapResampling.FastBicubic:
-                        // return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bicubic);
-                        ps.Interpolation = InterpolationSettings.Cubic;
+					case BitmapResampling.FastBicubic:
+						// return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bicubic);
+						ps.Interpolation = InterpolationSettings.CatmullRom;
+                        ps.HybridMode = HybridScaleMode.FavorSpeed;
                         break;
-                    case BitmapResampling.BilinearHQ:
+					case BitmapResampling.BilinearHQ:
 						// return ImageProcessing.ResizeBiliniearHQ(bmp, size.Width, size.Height, format);
 						ps.Interpolation = InterpolationSettings.Quadratic;
-						break;
+                        ps.HybridMode = HybridScaleMode.FavorQuality;
+                        break;
 					case BitmapResampling.GdiPlus:
-                        // return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format);
-                        ps.Interpolation = InterpolationSettings.Hermite;
+						// return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format);
+						ps.Interpolation = InterpolationSettings.Linear;
+                        ps.HybridMode = HybridScaleMode.FavorQuality;
                         break;
-                    case BitmapResampling.GdiPlusHQ:
-                        // return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format, highQuality: true);
-                        ps.Interpolation = InterpolationSettings.Lanczos;
+					case BitmapResampling.GdiPlusHQ:
+						// return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format, highQuality: true);
+						ps.Interpolation = InterpolationSettings.Cubic;
+                        ps.HybridMode = HybridScaleMode.Off;
                         break;
-                    default:
-                        throw new ArgumentOutOfRangeException("resampling");
-                }
+					default:
+						throw new ArgumentOutOfRangeException("resampling");
+				}
 
 				MemoryStream ms = new MemoryStream();
 				var resizeTask = Task.Run(() => MagicImageProcessor.ProcessImage(bmp.ImageToBytes(ImageFormat.Png), ms, ps));
 				resizeTask.Wait();
 
-                return Image.FromStream(ms) as Bitmap;
+				return Image.FromStream(ms) as Bitmap;
 			}
 			catch
 			{
@@ -401,15 +408,15 @@ namespace cYo.Common.Drawing
 			Bitmap bitmap = (Bitmap)image.Clone();
 			switch (rotation)
 			{
-			case ImageRotation.Rotate90:
-				bitmap.RotateFlip(RotateFlipType.Rotate90FlipNone);
-				break;
-			case ImageRotation.Rotate180:
-				bitmap.RotateFlip(RotateFlipType.Rotate180FlipNone);
-				break;
-			case ImageRotation.Rotate270:
-				bitmap.RotateFlip(RotateFlipType.Rotate270FlipNone);
-				break;
+				case ImageRotation.Rotate90:
+					bitmap.RotateFlip(RotateFlipType.Rotate90FlipNone);
+					break;
+				case ImageRotation.Rotate180:
+					bitmap.RotateFlip(RotateFlipType.Rotate180FlipNone);
+					break;
+				case ImageRotation.Rotate270:
+					bitmap.RotateFlip(RotateFlipType.Rotate270FlipNone);
+					break;
 			}
 			return bitmap;
 		}
@@ -630,3 +637,4 @@ namespace cYo.Common.Drawing
 		}
 	}
 }
+
