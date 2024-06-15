@@ -357,6 +357,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="PhotoSauce.MagicScaler">
+      <Version>0.14.2</Version>
+    </PackageReference>
     <PackageReference Include="SharpZipLib">
       <Version>1.4.2</Version>
     </PackageReference>

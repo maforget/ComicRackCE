@@ -5,8 +5,10 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using cYo.Common.ComponentModel;
 using cYo.Common.Runtime;
+using PhotoSauce.MagicScaler;
 
 namespace cYo.Common.Drawing
 {
@@ -26,23 +28,43 @@ namespace cYo.Common.Drawing
 				{
 					return bmp;
 				}
-				switch (resampling)
-				{
-					case BitmapResampling.FastAndUgly:
-						return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.NearestNeighbor);
-					case BitmapResampling.FastBilinear:
-						return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bilinear);
-					case BitmapResampling.FastBicubic:
-						return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bicubic);
-					case BitmapResampling.BilinearHQ:
-						return ImageProcessing.ResizeBiliniearHQ(bmp, size.Width, size.Height, format);
+
+                ProcessImageSettings ps = new ProcessImageSettings() { Width = size.Width, Height = size.Height };
+                switch (resampling)
+                {
+                    case BitmapResampling.FastAndUgly:
+                        // return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.NearestNeighbor);
+                        ps.Interpolation = InterpolationSettings.NearestNeighbor;
+                        break;
+                    case BitmapResampling.FastBilinear:
+                        // return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bilinear);
+                        ps.Interpolation = InterpolationSettings.Linear;
+                        break;
+                    case BitmapResampling.FastBicubic:
+                        // return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bicubic);
+                        ps.Interpolation = InterpolationSettings.Cubic;
+                        break;
+                    case BitmapResampling.BilinearHQ:
+						// return ImageProcessing.ResizeBiliniearHQ(bmp, size.Width, size.Height, format);
+						ps.Interpolation = InterpolationSettings.Quadratic;
+						break;
 					case BitmapResampling.GdiPlus:
-						return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format);
-					case BitmapResampling.GdiPlusHQ:
-						return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format, highQuality: true);
-					default:
-						throw new ArgumentOutOfRangeException("resampling");
-				}
+                        // return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format);
+                        ps.Interpolation = InterpolationSettings.Hermite;
+                        break;
+                    case BitmapResampling.GdiPlusHQ:
+                        // return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format, highQuality: true);
+                        ps.Interpolation = InterpolationSettings.Lanczos;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException("resampling");
+                }
+
+				MemoryStream ms = new MemoryStream();
+				var resizeTask = Task.Run(() => MagicImageProcessor.ProcessImage(bmp.ImageToBytes(ImageFormat.Png), ms, ps));
+				resizeTask.Wait();
+
+                return Image.FromStream(ms) as Bitmap;
 			}
 			catch
 			{
