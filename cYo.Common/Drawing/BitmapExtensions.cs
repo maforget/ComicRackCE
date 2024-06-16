@@ -17,69 +17,100 @@ namespace cYo.Common.Drawing
 	{
 		private const float Pi = (float)Math.PI;
 
-		public static Bitmap Resize(this Bitmap bmp, Size size, BitmapResampling resampling = BitmapResampling.BilinearHQ, PixelFormat format = PixelFormat.Format32bppArgb)
+        [System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions]
+        public static Bitmap Resize(this Bitmap bmp, Size size, BitmapResampling resampling = BitmapResampling.BilinearHQ, PixelFormat format = PixelFormat.Format32bppArgb)
 		{
 			try
-			{
-				if (bmp == null || size.IsEmpty())
-				{
-					return null;
-				}
-				if (bmp.Size.IsEmpty())
-				{
-					return bmp;
-				}
+            {
+                if (bmp == null || size.IsEmpty())
+                    return null;
 
-				ProcessImageSettings ps = new ProcessImageSettings() { Width = size.Width, Height = size.Height };
-				switch (resampling)
-				{
-					case BitmapResampling.FastAndUgly:
-						// return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.NearestNeighbor);
-						ps.Interpolation = InterpolationSettings.NearestNeighbor;
-						ps.HybridMode = HybridScaleMode.FavorSpeed;
-						break;
-					case BitmapResampling.FastBilinear:
-                        // return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bilinear);
-                        ps.Interpolation = InterpolationSettings.Linear;
-                        ps.HybridMode = HybridScaleMode.FavorSpeed;
-                        break;
-					case BitmapResampling.FastBicubic:
-						// return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bicubic);
-						ps.Interpolation = InterpolationSettings.CatmullRom;
-                        ps.HybridMode = HybridScaleMode.FavorSpeed;
-                        break;
-					case BitmapResampling.BilinearHQ:
-						// return ImageProcessing.ResizeBiliniearHQ(bmp, size.Width, size.Height, format);
-						ps.Interpolation = InterpolationSettings.Quadratic;
-                        ps.HybridMode = HybridScaleMode.FavorQuality;
-                        break;
-					case BitmapResampling.GdiPlus:
-						// return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format);
-						ps.Interpolation = InterpolationSettings.Linear;
-                        ps.HybridMode = HybridScaleMode.FavorQuality;
-                        break;
-					case BitmapResampling.GdiPlusHQ:
-						// return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format, highQuality: true);
-						ps.Interpolation = InterpolationSettings.Cubic;
-                        ps.HybridMode = HybridScaleMode.Off;
-                        break;
-					default:
-						throw new ArgumentOutOfRangeException("resampling");
-				}
+                if (bmp.Size.IsEmpty())
+                    return bmp;
 
-				MemoryStream ms = new MemoryStream();
-				var resizeTask = Task.Run(() => MagicImageProcessor.ProcessImage(bmp.ImageToBytes(ImageFormat.Png), ms, ps));
-				resizeTask.Wait();
-
-				return Image.FromStream(ms) as Bitmap;
-			}
-			catch
+				if (CommonConfiguration.Default.ImageResizing == CommonConfiguration.ResizingEngine.MagicScaler)
+					return MagicScalerResampler(bmp, size, resampling);
+				else
+                    return LegacyResampler(bmp, size, resampling, format);
+            }
+            catch (Exception e)
 			{
 				return null;
 			}
 		}
 
-		public static Bitmap Resize(this Bitmap bmp, int width, int height)
+        private static Bitmap MagicScalerResampler(Bitmap bmp, Size size, BitmapResampling resampling = BitmapResampling.BilinearHQ, PixelFormat format = PixelFormat.Format32bppArgb)
+        {
+			//No need to resize, return a copy of the same image
+			if (size.Width == bmp.Width && size.Height == bmp.Height)
+				return bmp.CreateCopy(format);
+
+			ProcessImageSettings ps = new ProcessImageSettings() { Width = size.Width, Height = size.Height};
+
+            switch (resampling)
+            {
+                case BitmapResampling.FastAndUgly:
+                    ps.Interpolation = InterpolationSettings.NearestNeighbor;
+                    ps.HybridMode = HybridScaleMode.FavorSpeed;
+                    break;
+                case BitmapResampling.FastBilinear:
+                    ps.Interpolation = InterpolationSettings.Linear;
+                    ps.HybridMode = HybridScaleMode.FavorSpeed;
+                    break;
+                case BitmapResampling.FastBicubic:
+                    ps.Interpolation = InterpolationSettings.CatmullRom;
+                    ps.HybridMode = HybridScaleMode.FavorSpeed;
+                    break;
+                case BitmapResampling.BilinearHQ:
+                    ps.Interpolation = InterpolationSettings.Quadratic;
+                    ps.HybridMode = HybridScaleMode.FavorQuality;
+                    break;
+                case BitmapResampling.GdiPlus:
+                    ps.Interpolation = InterpolationSettings.Linear;
+                    ps.HybridMode = HybridScaleMode.FavorQuality;
+                    break;
+                case BitmapResampling.GdiPlusHQ:
+                    ps.Interpolation = InterpolationSettings.Cubic;
+                    ps.HybridMode = HybridScaleMode.Off;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("resampling");
+            }
+
+            MemoryStream ms = new MemoryStream();
+
+			//var IsAlpha = ((ImageFlags)bmp.Flags & ImageFlags.HasAlpha) != 0;
+			var IsAlpha = bmp.HasTransparency();
+            byte[] imgArray = IsAlpha ? bmp.ImageToBytes(ImageFormat.Png) : bmp.ImageToJpegBytes();
+            Task.Run(() => MagicImageProcessor.ProcessImage(imgArray, ms, ps)).Wait();
+
+			bmp?.Dispose();
+            return Image.FromStream(ms) as Bitmap;
+        }
+
+        private static Bitmap LegacyResampler(Bitmap bmp, Size size, BitmapResampling resampling = BitmapResampling.BilinearHQ, PixelFormat format = PixelFormat.Format32bppArgb)
+        {
+            switch (resampling)
+            {
+                case BitmapResampling.FastAndUgly:
+                    return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.NearestNeighbor);
+                case BitmapResampling.FastBilinear:
+                    return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bilinear);
+                case BitmapResampling.FastBicubic:
+                    return ImageProcessing.ResizeFast(bmp, size.Width, size.Height, format, ResizeFastInterpolation.Bicubic);
+                case BitmapResampling.BilinearHQ:
+                    return ImageProcessing.ResizeBiliniearHQ(bmp, size.Width, size.Height, format);
+                case BitmapResampling.GdiPlus:
+                    return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format);
+                case BitmapResampling.GdiPlusHQ:
+                    return ImageProcessing.ResizeGdi(bmp, size.Width, size.Height, format, highQuality: true);
+                default:
+                    throw new ArgumentOutOfRangeException("resampling");
+            }
+        }
+
+
+        public static Bitmap Resize(this Bitmap bmp, int width, int height)
 		{
 			return bmp.Resize(new Size(width, height));
 		}
@@ -97,7 +128,7 @@ namespace cYo.Common.Drawing
 			return bmp.Resize(bmp.Size.ToRectangle(size).Size, resampling, format);
 		}
 
-		public static Bitmap Scale(this Bitmap bmp, int width, int height)
+        public static Bitmap Scale(this Bitmap bmp, int width, int height)
 		{
 			return bmp.Scale(new Size(width, height));
 		}
@@ -635,6 +666,48 @@ namespace cYo.Common.Drawing
 			}
 			return num;
 		}
-	}
+
+        public static bool HasTransparency(this Bitmap bitmap)
+        {
+			// Determine PixelSize
+			int pixelSize = bitmap.PixelFormat == PixelFormat.Format24bppRgb ? 3 : 4;
+
+            // Define the rectangle to lock
+            Rectangle rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
+
+            // Lock the bitmap's bits.
+            BitmapData bmpData = bitmap.LockBits(rect, ImageLockMode.ReadOnly, bitmap.PixelFormat);
+
+            try
+            {
+                // Get the address of the first line.
+                IntPtr ptr = bmpData.Scan0;
+
+                // Declare an array to hold the bytes of the bitmap.
+                // This code is specific to a 32bpp bitmap.
+                int bytes = Math.Abs(bmpData.Stride) * bitmap.Height;
+                byte[] rgbaValues = new byte[bytes];
+
+                // Copy the RGB values into the array.
+                System.Runtime.InteropServices.Marshal.Copy(ptr, rgbaValues, 0, bytes);
+
+                // Check for transparency
+                for (int i = pixelSize - 1; i < rgbaValues.Length; i += pixelSize)
+                {
+                    if (rgbaValues[i] < 255)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+            finally
+            {
+                // Unlock the bits.
+                bitmap.UnlockBits(bmpData);
+            }
+        }
+    }
 }
 

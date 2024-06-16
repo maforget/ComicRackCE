@@ -64,6 +64,7 @@
     <Compile Include="Collections\SmartListAction.cs" />
     <Compile Include="Collections\SmartListChangedEventArgs.cs" />
     <Compile Include="Collections\SmartListOptions.cs" />
+    <Compile Include="CommonConfiguration.cs" />
     <Compile Include="ComponentModel\ArrayConverter.cs" />
     <Compile Include="ComponentModel\ChainedComparer.cs" />
     <Compile Include="ComponentModel\ComparerExtension.cs" />
