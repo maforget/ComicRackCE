@@ -168,6 +168,7 @@
     <Compile Include="Drawing\ColorSchema.cs" />
     <Compile Include="Drawing\ColorSchemaCollection.cs" />
     <Compile Include="Drawing\ConvolutionMatrix.cs" />
+    <Compile Include="Drawing\CustomPixelSource.cs" />
     <Compile Include="Drawing\EnumExtensions.cs" />
     <Compile Include="Drawing\FastBitmap.cs" />
     <Compile Include="Drawing\FastBitmapLock.cs" />

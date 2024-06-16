@@ -81,8 +81,10 @@ namespace cYo.Common.Drawing
 
 			//var IsAlpha = ((ImageFlags)bmp.Flags & ImageFlags.HasAlpha) != 0;
 			var IsAlpha = bmp.HasTransparency();
-            byte[] imgArray = IsAlpha ? bmp.ImageToBytes(ImageFormat.Png) : bmp.ImageToJpegBytes();
-            Task.Run(() => MagicImageProcessor.ProcessImage(imgArray, ms, ps)).Wait();
+			byte[] imgArray = IsAlpha ? bmp.ImageToBytes(ImageFormat.Png) : bmp.ImageToJpegBytes();
+			//IPixelSource imgArray = new CustomPixelSource(bmp, format);
+
+			Task.Run(() => MagicImageProcessor.ProcessImage(imgArray, ms, ps)).Wait();
 
 			bmp?.Dispose();
             return Image.FromStream(ms) as Bitmap;
