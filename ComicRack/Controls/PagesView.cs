@@ -105,7 +105,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 				}
 				using (ItemMonitor.Lock(book))
 				{
-					if (book.ProviderStatus != 0)
+					if (book.ProviderStatus != Engine.IO.Provider.ImageProviderStatus.NotStarted)
 					{
 						for (int i = 0; i < book.Count; i++)
 						{
@@ -347,66 +347,51 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 
 		private void contextPages_Opening(object sender, CancelEventArgs e)
 		{
-			ToolStripMenuItem toolStripMenuItem = miPageType;
-			bool visible = (tsPageTypeSeparator.Visible = book.Comic.EditMode.CanEditPages());
-			toolStripMenuItem.Visible = visible;
-			ToolStripMenuItem toolStripMenuItem2 = miSetBookmark;
-			ToolStripMenuItem toolStripMenuItem3 = miRemoveBookmark;
-			bool flag3 = (tsBookmarkSeparator.Visible = book.Comic.EditMode.CanEditPages());
-			visible = (toolStripMenuItem3.Visible = flag3);
-			toolStripMenuItem2.Visible = visible;
-			ToolStripMenuItem toolStripMenuItem4 = miMoveToTop;
-			ToolStripMenuItem toolStripMenuItem5 = miMoveToBottom;
-			ToolStripMenuItem toolStripMenuItem6 = miResetOriginalOrder;
-			bool flag6 = (tsMovePagesSeparator.Visible = book.Comic.EditMode.CanEditPages());
-			flag3 = (toolStripMenuItem6.Visible = flag6);
-			visible = (toolStripMenuItem5.Visible = flag3);
-			toolStripMenuItem4.Visible = visible;
+            miPageType.Visible = tsPageTypeSeparator.Visible = book.Comic.EditMode.CanEditPages();
+            miSetBookmark.Visible = miRemoveBookmark.Visible = tsBookmarkSeparator.Visible = book.Comic.EditMode.CanEditPages();
+            miMoveToTop.Visible = miMoveToBottom.Visible = miResetOriginalOrder.Visible = tsMovePagesSeparator.Visible = book.Comic.EditMode.CanEditPages();
 			miCopy.Enabled = itemView.FocusedItem != null;
-			int num = -1;
+
+            ComicPageType? pageType = null;
 			foreach (ComicPageInfo selectedPage in GetSelectedPages())
 			{
-				if (num == -1)
+                if (pageType is null)
+                    pageType = selectedPage.PageType;
+                else if (pageType != selectedPage.PageType)
 				{
-					num = (int)selectedPage.PageType;
-				}
-				else if (num != (int)selectedPage.PageType)
-				{
-					num = -1;
+					pageType = null;
 					break;
 				}
 			}
-			pageMenu.Value = num;
-			int num2 = -1;
-			foreach (ComicPageInfo selectedPage2 in GetSelectedPages())
+            pageMenu.Value = pageType.HasValue ? (int)pageType.Value : -1;
+
+            ImageRotation? imageRotation = null;
+            foreach (ComicPageInfo selectedPage in GetSelectedPages())
 			{
-				if (num2 == -1)
+                if (imageRotation == null)
+                    imageRotation = selectedPage.Rotation;
+                else if (imageRotation != selectedPage.Rotation)
 				{
-					num2 = (int)selectedPage2.Rotation;
-				}
-				else if (num2 != (int)selectedPage2.Rotation)
-				{
-					num2 = -1;
+                    imageRotation = null;
 					break;
 				}
 			}
-			rotateMenu.Value = num2;
-			int num3 = -1;
-			foreach (ComicPageInfo selectedPage3 in GetSelectedPages())
+            rotateMenu.Value = imageRotation.HasValue ? (int)imageRotation.Value : -1;
+
+            ComicPagePosition? pageInfo = null;
+            foreach (ComicPageInfo selectedPage in GetSelectedPages())
 			{
-				if (num3 == -1)
+                if (pageInfo == null)
+                    pageInfo = selectedPage.PagePosition;
+                else if (pageInfo != selectedPage.PagePosition)
 				{
-					num3 = (int)selectedPage3.PagePosition;
-				}
-				else if (num3 != (int)selectedPage3.PagePosition)
-				{
-					num3 = -1;
+                    pageInfo = null;
 					break;
 				}
 			}
-			miPagePositionDefault.Checked = num3 == 0;
-			miPagePositionNear.Checked = num3 == 1;
-			miPagePositionFar.Checked = num3 == 2;
+            miPagePositionDefault.Checked = pageInfo == ComicPagePosition.Default;
+            miPagePositionNear.Checked = pageInfo == ComicPagePosition.Near;
+            miPagePositionFar.Checked = pageInfo == ComicPagePosition.Far;
 		}
 
 		private void ItemViewMouseWheel(object sender, MouseEventArgs e)
