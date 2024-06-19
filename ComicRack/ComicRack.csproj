@@ -9,6 +9,7 @@
     <RootNamespace>cYo.Projects.ComicRack.Viewer</RootNamespace>
     <AssemblyName>ComicRack</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>latest</LangVersion>
     <FileAlignment>4096</FileAlignment>
     <StartupObject>cYo.Projects.ComicRack.Viewer.Program</StartupObject>
     <PublishUrl>publish\</PublishUrl>
@@ -884,6 +885,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft-WindowsAPICodePack-Shell">
       <Version>1.1.5</Version>
+    </PackageReference>
+    <PackageReference Include="PolySharp">
+      <Version>1.14.1</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />

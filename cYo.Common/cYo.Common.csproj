@@ -9,6 +9,7 @@
     <RootNamespace>cYo.Common</RootNamespace>
     <AssemblyName>cYo.Common</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>latest</LangVersion>
     <FileAlignment>4096</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -357,6 +358,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="PolySharp">
+      <Version>1.14.1</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="SharpZipLib">
       <Version>1.4.2</Version>
     </PackageReference>
