@@ -287,7 +287,8 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 				command.Add(itemView.SelectAll, miSelectAll, toolStripMenuItem);
 				command.Add(itemView.InvertSelection, miInvertSelection);
 				command.Add(CopyPage, miCopy);
-				command.Add(RefreshDisplay, miRefreshThumbnail);
+				command.Add(MergePages, miMergePages);
+                command.Add(RefreshDisplay, miRefreshThumbnail);
 				command.Add(MarkAsDeleted, miMarkDeleted);
 				command.Add(SetBookmark, () => CanBookmark, miSetBookmark);
 				command.Add(delegate
@@ -345,56 +346,61 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 			}
 		}
 
-		private void contextPages_Opening(object sender, CancelEventArgs e)
-		{
+        private void contextPages_Opening(object sender, CancelEventArgs e)
+        {
+            miMergePages.Visible = false;
             miPageType.Visible = tsPageTypeSeparator.Visible = book.Comic.EditMode.CanEditPages();
             miSetBookmark.Visible = miRemoveBookmark.Visible = tsBookmarkSeparator.Visible = book.Comic.EditMode.CanEditPages();
             miMoveToTop.Visible = miMoveToBottom.Visible = miResetOriginalOrder.Visible = tsMovePagesSeparator.Visible = book.Comic.EditMode.CanEditPages();
-			miCopy.Enabled = itemView.FocusedItem != null;
+            miCopy.Enabled = itemView.FocusedItem != null;
 
             ComicPageType? pageType = null;
-			foreach (ComicPageInfo selectedPage in GetSelectedPages())
-			{
+            foreach (ComicPageInfo selectedPage in GetSelectedPages())
+            {
                 if (pageType is null)
                     pageType = selectedPage.PageType;
                 else if (pageType != selectedPage.PageType)
-				{
+                {
 					pageType = null;
-					break;
-				}
-			}
+                    break;
+                }
+            }
             pageMenu.Value = pageType.HasValue ? (int)pageType.Value : -1;
 
             ImageRotation? imageRotation = null;
             foreach (ComicPageInfo selectedPage in GetSelectedPages())
-			{
+            {
                 if (imageRotation == null)
                     imageRotation = selectedPage.Rotation;
                 else if (imageRotation != selectedPage.Rotation)
-				{
+                {
                     imageRotation = null;
-					break;
-				}
-			}
+                    break;
+                }
+            }
             rotateMenu.Value = imageRotation.HasValue ? (int)imageRotation.Value : -1;
 
             ComicPagePosition? pageInfo = null;
             foreach (ComicPageInfo selectedPage in GetSelectedPages())
-			{
+            {
                 if (pageInfo == null)
                     pageInfo = selectedPage.PagePosition;
                 else if (pageInfo != selectedPage.PagePosition)
-				{
+                {
                     pageInfo = null;
-					break;
-				}
-			}
+                    break;
+                }
+            }
             miPagePositionDefault.Checked = pageInfo == ComicPagePosition.Default;
             miPagePositionNear.Checked = pageInfo == ComicPagePosition.Near;
             miPagePositionFar.Checked = pageInfo == ComicPagePosition.Far;
-		}
 
-		private void ItemViewMouseWheel(object sender, MouseEventArgs e)
+            IEnumerable<ComicPageInfo> selectedPages = GetSelectedPages();
+            if (selectedPages?.Count() == 2)
+                miMergePages.Visible = true;
+        }
+
+        private void ItemViewMouseWheel(object sender, MouseEventArgs e)
 		{
 			if ((Control.ModifierKeys & Keys.Control) != 0 && itemView.ItemViewMode != ItemViewMode.Detail)
 			{
@@ -783,5 +789,45 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 				Cursor.Current = dragCursor.Cursor;
 			}
 		}
-	}
+
+        private void MergePages()
+        {
+			//If any other quantity than 2 or any of the pages are marked as Deleted, abort
+			List<PageViewItem> selectedPages = itemView.SelectedItems.Cast<PageViewItem>().ToList();
+            if (selectedPages?.Count() != 2 && selectedPages.Any((PageViewItem p) => p.PageInfo.PageType == ComicPageType.Deleted))
+				return;
+
+            //Check the reading direction to determine the first and second page.
+            bool reversed = this.Book.RightToLeftReading == YesNo.Yes || this.Book.Comic.Manga == MangaYesNo.YesAndRightToLeft;
+			//If the sort order is descending the pages will be reversed already, so no need to reverse the order
+			reversed = reversed && itemView.ItemSorter != null && itemView.ItemSortOrder == SortOrder.Descending ? false : reversed;
+            PageViewItem firstPage = (reversed ? selectedPages[^1] : selectedPages[0]);
+            PageViewItem secondPage = (reversed ? selectedPages[0] : selectedPages[^1]);
+
+			//Get the bitmaps and merge them
+			int firstImageIndex = firstPage.ImageIndex;
+			Bitmap firstImage = book.GetImage(firstImageIndex);
+			Bitmap secondImage = book.GetImage(secondPage.ImageIndex);
+            Bitmap mergedImage = BitmapExtensions.Merge(firstImage, secondImage);
+
+            //Get the PageKey (includes color ajustements) & ThumbnailKey for future reference
+            PageKey pageKey = Book.GetPageKey(firstImageIndex);
+			ThumbnailKey thumbKey = Book.GetThumbnailKey(firstImageIndex);
+
+			//Remove the original cached version 
+            Program.ImagePool.Pages.RefreshImage(pageKey);
+            Program.ImagePool.Thumbs.RefreshImage(thumbKey);
+
+            //Add pages to the ImagePool because if they aren't the Export will retrieve the original image instead
+            using IItemLock<PageImage> itemLock = Program.ImagePool.Pages.AddImage(pageKey, p => PageImage.CreateFrom(mergedImage));
+            using IItemLock<ThumbnailImage> itemLock2 = Program.ImagePool.Thumbs.AddImage(thumbKey, p => ThumbnailImage.CreateFrom(mergedImage, mergedImage.Size));
+
+			//Mark the second image as Deleted
+			secondPage.SetPageType(ComicPageType.Deleted);
+
+			//Update UI
+			UpdateList(true);//will update the pages lists so if Deleted are uncheck, they will dissapear
+			RefreshDisplay();
+		}
+    }
 }

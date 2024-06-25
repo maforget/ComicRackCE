@@ -2,8 +2,11 @@ Community Edition Build 0.9.180:
 
 * NEW: RAR5 Support (Default & SharpCompress)
 * NEW: New PDF Engine using Google's PDFium, this is now the  default. Check in the ComicRack.ini file to change the default engine or to change the rendering size. (See below for additional changes).
-* NEW: Added Virtual Tags. You can set any combination of field in a single one. Can be used with grouping, sorting, smart lists. Configure them in Preferences => Library => Virtual Tags. BACKUP YOUR DB, IF YOU PLAN ON GOING BACK TO AN OLDER VERSION. USING A VIRTUAL TAG IN A SMART LIST AND OPENING AN OLDER VERSION WOULD RESULT IN A DATABASE CORRUPTED MESSAGE. YOU NEED TO REMOVE ANY OF THESE LISTS BEFORE GOING BACK.
-* NEW: Built-in "Open With" external programs. You can also set it to override the reader and that program will replace the normal reader when double-clicking (you can still right-click open for the default viewer). There are no validation that the program will support the filetype.
+* NEW: Added Virtual Tags. You can set any combination of field in a single one. Can be used with grouping, sorting, smart lists. 
+    - Configure them in Preferences => Library => Virtual Tags. 
+    - BACKUP YOUR DB, IF YOU PLAN ON GOING BACK TO AN OLDER VERSION. USING A VIRTUAL TAG IN A SMART LIST AND OPENING AN OLDER VERSION WOULD RESULT IN A DATABASE CORRUPTED MESSAGE. YOU NEED TO REMOVE ANY OF THESE LISTS BEFORE GOING BACK.
+* NEW: Built-in "Open With" external programs. 
+    - You can also set it to override the reader and that program will replace the normal reader when double-clicking (you can still right-click open for the default viewer). There are no validation that the program will support the filetype.
 * NEW: Added the Git version to the Splash Screen, to more easily identify bugs in specific releases.
 * NEW: Added the "-local" command line switch, to have the program load in portable mode.
 * NEW: Added links to The Organizer guide to the online manual help system
@@ -19,9 +22,15 @@ Community Edition Build 0.9.180:
 * NEW: Images smaller than 256 bytes will be ignored inside archives.
 * NEW: Added a "Published (Regional)" column that will use the OS regional setting for the Published date (like the other dates).
 * NEW: Added support for wildcard for "KeepFiles" in a script "Package.ini" (used for Data Manager multiple profiles).
+* NEW: Added a Merge Pages functionality, that will merge pages together. 
+    - This is only in Cache and the book will need to be exported for the changes to be saved. 
+    - Can be easily reversed by using Refresh on a page.
+    - The sort order is important in determining the left & right images.
+    - Unless Manga is set to : Yes (Right to Left), then the sort order doesn't matter.
+    (So for Manga, either just sort by descending to see the images in the correct order, set the comic to be Right to Left or both)
 
 * CHANGE: Updated to .NET Framework v4.8.
-* CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition. 
+* CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.
 * CHANGE: Removed Android Validation of apk signature (so we can use the cracked version). Has no incidence on whether the sync icon appears.
 * CHANGE: Updated default sort to be natural sorting (numeric).
 * CHANGE: Switched MySQl library to MySQLConnector for better speed & compatibility with MariaDB (Yes current versions work).

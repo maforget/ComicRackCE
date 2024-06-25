@@ -606,5 +606,27 @@ namespace cYo.Common.Drawing
 			}
 			return num;
 		}
-	}
+
+        public static Bitmap Merge(Bitmap firstImage, Bitmap secondImage)
+        {
+			try
+			{
+				var width = firstImage.Width + secondImage.Width;
+				var height = Math.Max(firstImage.Height, secondImage.Height);
+
+				Bitmap result = new Bitmap(width, height);
+				using (Graphics g = Graphics.FromImage(result))
+				{
+					g.DrawImage(firstImage, 0, 0, firstImage.Width, firstImage.Height);
+					g.DrawImage(secondImage, firstImage.Width, 0, secondImage.Width, secondImage.Height);
+				}
+
+				return result;
+			}
+			catch
+			{
+				return null;
+			}
+        }
+    }
 }
