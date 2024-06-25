@@ -2993,7 +2993,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
                         this.Invoke(delegate
                         {
                             ToolStripMenuItem value = ((count != maxLists)
-                                ? new ToolStripMenuItem(prefix + li.Name, GetComicListImage(li), delegate{ ShowBookInList(li, cb); }) 
+                                ? new ToolStripMenuItem(prefix + li.Name.Replace("&", "&&"), GetComicListImage(li), delegate{ ShowBookInList(li, cb); }) 
                                 : new ToolStripMenuItem("...") { Enabled = false });
                             menu.DropDownItems.Insert(menu.DropDownItems.Count - 1, value);
                         });
