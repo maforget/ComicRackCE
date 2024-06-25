@@ -13,7 +13,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
     - name: Checkout
@@ -21,6 +21,8 @@ jobs:
 
     - name: setup-msbuild
       uses: microsoft/setup-msbuild@v2
+      with:
+        vs-version: '[17.3,17.4)'
 
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v2
