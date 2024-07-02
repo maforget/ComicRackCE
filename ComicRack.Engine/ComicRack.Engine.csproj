@@ -9,6 +9,7 @@
     <RootNamespace>cYo.Projects.ComicRack.Engine</RootNamespace>
     <AssemblyName>ComicRack.Engine</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>latest</LangVersion>
     <FileAlignment>4096</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -656,6 +657,11 @@
   <ItemGroup>
     <PackageReference Include="MySqlConnector">
       <Version>2.3.7</Version>
+    </PackageReference>
+    <PackageReference Include="PolySharp">
+      <Version>1.14.1</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="SharpCompress">
       <Version>0.37.2</Version>

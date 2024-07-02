@@ -9,6 +9,7 @@
     <RootNamespace>cYo.Projects.ComicRack.Engine.Display.Forms</RootNamespace>
     <AssemblyName>ComicRack.Engine.Display.Forms</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>latest</LangVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -89,6 +90,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\Windows7.Multitouch.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="PolySharp">
+      <Version>1.14.1</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   <!-- <ItemGroup> -->
   <!-- <EmbeddedResource Include="ComicDisplayControl.resources" /> -->

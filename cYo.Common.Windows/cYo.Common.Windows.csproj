@@ -9,6 +9,7 @@
     <RootNamespace>cYo.Common.Windows</RootNamespace>
     <AssemblyName>cYo.Common.Windows</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>latest</LangVersion>
     <FileAlignment>4096</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -329,6 +330,13 @@
       <Project>{198a3787-dde7-43f0-86e7-d915414f0ff4}</Project>
       <Name>cYo.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="PolySharp">
+      <Version>1.14.1</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   <!-- <ItemGroup> -->
   <!-- <EmbeddedResource Include="Forms\AutomaticProgressDialog.resources" /> -->
