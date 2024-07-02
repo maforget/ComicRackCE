@@ -883,7 +883,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>powershell -NoProfile -ExecutionPolicy Bypass -File "$(SolutionDir)\CompressIconFolders.ps1" -BaseDirectory "$(TargetDir)"
+    <PostBuildEvent>powershell -NoProfile -ExecutionPolicy Bypass -File "$(SolutionDir)CompressIconFolders.ps1" -BaseDirectory "$(TargetDir)"
 
 if $(ConfigurationName) == Debug Goto :Exit
 del /Q *.pdb
