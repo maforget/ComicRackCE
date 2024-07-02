@@ -677,21 +677,9 @@
     <Content Include="Languages\zh.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Icons\AgeRatings.zip">
+    <None Include="Resources\Icons\**\*.*">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Icons\AgeRatings_Australia.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Icons\Formats.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Icons\Publishers.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Icons\Special.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <Content Include="Resources\pdfium_x86.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -895,8 +883,9 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Debug Goto :Exit
+    <PostBuildEvent>powershell -NoProfile -ExecutionPolicy Bypass -File "$(SolutionDir)CompressIconFolders.ps1" -BaseDirectory "$(TargetDir)"
 
+if $(ConfigurationName) == Debug Goto :Exit
 del /Q *.pdb
 
 : Exit</PostBuildEvent>
