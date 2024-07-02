@@ -86,10 +86,25 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			return false;
 		}
 
-		protected virtual bool IsSupportedImage(string file)
-		{
-			string fileExt = Path.GetExtension(FileUtility.MakeValidFilename(file));
-			return supportedTypes.Any((string ext) => string.Equals(fileExt, "." + ext, StringComparison.OrdinalIgnoreCase));
-		}
-	}
+		protected virtual bool IsSupportedImage(ProviderImageInfo file)
+        {
+            if(IsImageThumbnailFolder(file.Name) || IsFileTooSmall(file.Size))
+				return false;
+
+            string fileExt = Path.GetExtension(FileUtility.MakeValidFilename(file.Name));
+            return supportedTypes.Any((string ext) => string.Equals(fileExt, "." + ext, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private static bool IsImageThumbnailFolder(string file)
+        {
+            string[] ignore = { ".DS_Store\\", "__MACOSX\\" };
+            return ignore.Any(item => file.Contains(item));
+        }
+
+        private static bool IsFileTooSmall(long size)
+        {
+			long minSize = 256;
+            return size < minSize;
+        }
+    }
 }

@@ -3478,7 +3478,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private void ViewerFullScreenChanged(object sender, EventArgs e)
 		{
-			if (Program.Settings.AutoMinimalGui && !ReaderUndocked)
+			if (Program.Settings.AutoMinimalGui)
 			{
 				MinimalGui = ComicDisplay.FullScreen;
 			}
@@ -3704,7 +3704,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				using (Process process = Process.GetCurrentProcess())
 				{
-					process.MaxWorkingSet = new IntPtr(val.Clamp(50, Settings.UnlimitedSystemMemory) * 1024 * 1024);
+                    process.MaxWorkingSet = new IntPtr(Convert.ToInt64(val.Clamp(50, Settings.UnlimitedSystemMemory)) * 1024 * 1024);
 				}
 			}
 			catch

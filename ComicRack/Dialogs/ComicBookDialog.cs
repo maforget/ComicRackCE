@@ -297,11 +297,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         {
             string text = comic.PagesAsText;
             if (comic.LastPageRead > 0)
-            {
                 text = comic.LastPageRead + 1 + "/" + text;
-            }
+
+            string fileFormat = comic.ActualFileFormat != comic.FileFormat ? $"{comic.ActualFileFormat} (Actual){Environment.NewLine}{comic.FileFormat}" : comic.FileFormat;
+
             EditControlUtility.SetLabel(lblPages, text);
-            EditControlUtility.SetLabel(lblType, $"{comic.FileFormat}/{comic.FileSizeAsText}");
+            EditControlUtility.SetLabel(lblType, $"{fileFormat}/{comic.FileSizeAsText}");
             EditControlUtility.SetLabel(lblPath, comic.FilePath);
             EditControlUtility.SetText(txRating, comic.Rating);
             EditControlUtility.SetText(txCommunityRating, comic.CommunityRating);

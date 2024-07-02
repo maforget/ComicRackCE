@@ -38,7 +38,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			base.DisableSidecar = true;
 		}
 
-		protected override bool IsSupportedImage(string file)
+		protected override bool IsSupportedImage(ProviderImageInfo file)
 		{
 			return true;
 		}

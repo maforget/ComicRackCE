@@ -147,7 +147,7 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
-		[DefaultValue(BitmapResampling.FastBilinear)]
+		[DefaultValue(BitmapResampling.FastAndUgly)]
 		public BitmapResampling ThumbnailResampling
 		{
 			get;
@@ -198,6 +198,13 @@ namespace cYo.Projects.ComicRack.Engine
 
         [DefaultValue(PdfEngine.Pdfium)]
         public PdfEngine PdfEngineToUse
+        {
+            get;
+            set;
+        }
+
+        [DefaultValue(typeof(Size), "1920, 2540")]
+        public Size PdfiumImageSize
         {
             get;
             set;
@@ -591,7 +598,7 @@ namespace cYo.Projects.ComicRack.Engine
 				Color.Red,
 				Color.Blue
 			};
-			ThumbnailResampling = BitmapResampling.FastBilinear;
+			ThumbnailResampling = BitmapResampling.FastAndUgly;
 			ThumbnailQuality = 60;
 			ThumbnailPageBow = true;
 			ExportResampling = BitmapResampling.GdiPlusHQ;
@@ -633,9 +640,10 @@ namespace cYo.Projects.ComicRack.Engine
 			WifiSyncConnectionTimeout = 2500;
 			WifiSyncConnectionRetries = 1;
 			PdfEngineToUse = PdfEngine.Pdfium;
-		}
+            PdfiumImageSize = new Size(1920, 2540);
+        }
 
-		public string GetTempFileName()
+        public string GetTempFileName()
 		{
 			return Path.Combine(TempPath, string.Concat(Guid.NewGuid(), ".tmp"));
 		}

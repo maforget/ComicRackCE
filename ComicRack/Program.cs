@@ -89,7 +89,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public const int MaxRowHeight = 48;
 
-		public const string DefaultWiki = "https://web.archive.org/web/20161013095840/http://comicrack.cyolito.com:80/documentation/wiki";
+		public const string DefaultWiki = "https://web.archive.org/web/20161013095840fw_/http://comicrack.cyolito.com:80/documentation/wiki";
 
 		public const string DefaultWebSite = "https://github.com/maforget/ComicRackCE";
 
@@ -97,7 +97,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
         public const string DefaultUserForm = "https://github.com/maforget/ComicRackCE/discussions";
 
-		public const string DefaultLocalizePage = "https://web.archive.org/web/20170528182733/http://comicrack.cyolito.com/faqs/12-how-to-create-language-packs";
+		public const string DefaultLocalizePage = "https://web.archive.org/web/20170528182733fw_/http://comicrack.cyolito.com/faqs/12-how-to-create-language-packs";
 
 		public const string ComicRackTypeId = "cYo.ComicRack";
 

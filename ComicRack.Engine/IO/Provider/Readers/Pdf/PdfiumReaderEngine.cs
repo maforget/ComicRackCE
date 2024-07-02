@@ -58,11 +58,13 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Pdf
 
         private Size CalculateSize(double width, double height)
         {
+            Size maxSize = EngineConfiguration.Default.PdfiumImageSize;
+
             //The width & height are returned in point (1/72 inch)
             //but PDFs created by CR will have the wrong page size. Which would mean that opening this PDF would mean the resolution would balloon up.
             //To prevent from the above mentioned ballooning, this will be the MAX resolution
-            int maxWidth = 1920; //8.5in at 225dpi
-            int maxHeight = 2540; //11in at 225dpi
+            int maxWidth = maxSize.Width; //1920 is 8.5in at 225dpi
+            int maxHeight = maxSize.Height; //2540 is 11in at 225dpi
 
             //Calculate the width based on the max height
             int targeWidth = (int)((width * maxHeight) / height);

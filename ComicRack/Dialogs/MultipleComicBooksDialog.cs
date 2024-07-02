@@ -90,7 +90,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.books = books.ToArray();
 			Text = StringUtility.Format(Text, books.Count());
 			labelOpenedTime.Visible = (dtpOpenedTime.Visible = (dtpOpenedTime.Enabled = (labelPagesAsTextSimple.Visible = (txPagesAsTextSimple.Visible = (txPagesAsTextSimple.Enabled = !books.Any((ComicBook cb) => cb.IsLinked))))));
-			txCommunityRating.Enabled = (txRating.Enabled = (txTags.Enabled = (cbEnableProposed.Enabled = (cbSeriesComplete.Enabled = books.All((ComicBook cb) => cb.IsInContainer)))));
+			txCommunityRating.Enabled = txRating.Enabled = cbEnableProposed.Enabled = cbSeriesComplete.Enabled = books.All((ComicBook cb) => cb.IsInContainer);
 			SpinButton.AddUpDown(txVolume);
 			SpinButton.AddUpDown(txCount, 1, 0);
 			SpinButton.AddUpDown(txNumber);

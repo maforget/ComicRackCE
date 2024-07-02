@@ -464,9 +464,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // lblType
             // 
             this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(93, 285);
+            this.lblType.Location = new System.Drawing.Point(93, 272);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(145, 20);
+            this.lblType.Size = new System.Drawing.Size(160, 41);
             this.lblType.TabIndex = 2;
             this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 

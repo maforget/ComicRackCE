@@ -19,7 +19,8 @@ namespace cYo.Common.Compression
 
 		public ZipFileFolder(string zipFile)
 		{
-			this.zipFile = new ZipFile(zipFile);
+            //437 is the default Zip char Encoding. 850 is the default western windows
+            this.zipFile = new ZipFile(zipFile, StringCodec.FromCodePage(437));
 		}
 
 		protected override void Dispose(bool disposing)

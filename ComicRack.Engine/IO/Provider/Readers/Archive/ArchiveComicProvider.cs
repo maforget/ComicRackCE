@@ -52,7 +52,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 		{
 			using (IItemLock<List<ProviderImageInfo>> itemLock = GetCachedFileList())
 			{
-				List<ProviderImageInfo> list = new List<ProviderImageInfo>(itemLock.Item.Where((ProviderImageInfo ii) => IsSupportedImage(ii.Name)));
+				List<ProviderImageInfo> list = new List<ProviderImageInfo>(itemLock.Item.Where((ProviderImageInfo ii) => IsSupportedImage(ii)));
                 list.Sort((a, b) => cYo.Common.Text.ExtendedStringComparer.Compare(a.Name, b.Name, ExtendedStringComparison.IgnoreCase));
                 foundImageList = list;
 			}

@@ -25,6 +25,7 @@ using cYo.Common.Xml;
 using cYo.Projects.ComicRack.Engine.IO;
 using cYo.Projects.ComicRack.Engine.IO.Provider;
 using cYo.Projects.ComicRack.Engine.Sync;
+using SharpCompress.Common;
 
 namespace cYo.Projects.ComicRack.Engine
 {
@@ -174,6 +175,8 @@ namespace cYo.Projects.ComicRack.Engine
         private volatile string fileNameWithExtension;
 
         private volatile string fileFormat;
+
+        private volatile string actualFileFormat;
 
         private volatile string fileDirectory;
 
@@ -544,7 +547,7 @@ namespace cYo.Projects.ComicRack.Engine
                 {
                     string text = FilePath;
                     filePath = value;
-                    fileName = (fileNameWithExtension = (fileFormat = (fileDirectory = null)));
+                    fileName = fileNameWithExtension = actualFileFormat = fileFormat = fileDirectory = null;
                     proposed = null;
                     FireBookChanged("FilePath", text, filePath);
                     if (!string.IsNullOrEmpty(text))
@@ -879,6 +882,27 @@ namespace cYo.Projects.ComicRack.Engine
         }
 
         [Browsable(true)]
+        public string ActualFileFormat
+        {
+            get
+            {
+                if (actualFileFormat != null)
+                {
+                    return actualFileFormat;
+                }
+                try
+                {
+                    actualFileFormat = Providers.Readers.GetSourceFormatName(filePath, true);
+                }
+                catch (Exception)
+                {
+                    actualFileFormat = string.Empty;
+                }
+                return actualFileFormat;
+            }
+        }
+
+        [Browsable(true)]
         public string FileDirectory
         {
             get
@@ -977,7 +1001,7 @@ namespace cYo.Projects.ComicRack.Engine
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.AppendFormat("{0}\n", FileName);
                 stringBuilder.AppendFormat("{0} ({1})\n\n", FileSizeAsText, PagesAsText);
-                stringBuilder.AppendFormat("{0}\n", FileFormat);
+                stringBuilder.AppendFormat("{0}\n", ActualFileFormat);
                 stringBuilder.AppendFormat("{0}\n\n", FileDirectory);
                 stringBuilder.Append(StringUtility.Format(lastTimeOpenedAtText.Value, OpenedTimeAsText));
                 stringBuilder.AppendLine();
@@ -1036,12 +1060,15 @@ namespace cYo.Projects.ComicRack.Engine
         {
             get
             {
-                StringBuilder stringBuilder = new StringBuilder(base.Writer);
-                AppendString(stringBuilder, "/", base.Penciller);
-                AppendString(stringBuilder, "/", base.Inker);
-                AppendString(stringBuilder, "/", base.Colorist);
-                AppendString(stringBuilder, "/", base.Letterer);
-                AppendString(stringBuilder, "/", base.CoverArtist);
+                HashSet<string> uniqueNames = new HashSet<string>();
+                StringBuilder stringBuilder = new StringBuilder();
+                AppendUniqueName(stringBuilder, "/", base.Writer, uniqueNames);
+                AppendUniqueName(stringBuilder, "/", base.Penciller, uniqueNames);
+                AppendUniqueName(stringBuilder, "/", base.Inker, uniqueNames);
+                AppendUniqueName(stringBuilder, "/", base.Colorist, uniqueNames);
+                AppendUniqueName(stringBuilder, "/", base.Letterer, uniqueNames);
+                AppendUniqueName(stringBuilder, "/", base.CoverArtist, uniqueNames);
+
                 return stringBuilder.ToString();
             }
         }
@@ -1097,6 +1124,8 @@ namespace cYo.Projects.ComicRack.Engine
                 return string.Empty;
             }
         }
+
+        public string PublishedRegional => FormatDate(Published, ComicDateFormat.Short, toLocal: false, unkownText.Value);
 
         public string PublishedAsText
         {
@@ -2622,15 +2651,23 @@ namespace cYo.Projects.ComicRack.Engine
             return fileName ?? string.Empty;
         }
 
-        private static void AppendString(StringBuilder s, string delimiter, string text)
+        private static void AppendUniqueName(StringBuilder s, string delimiter, string text, HashSet<string> uniqueNames)
         {
             if (!string.IsNullOrEmpty(text))
             {
-                if (s.Length != 0)
+                var names = text.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                foreach (var name in names)
                 {
-                    s.Append(delimiter);
+                    var trimmedName = name.Trim();
+                    if (!string.IsNullOrEmpty(trimmedName) && uniqueNames.Add(trimmedName))
+                    {
+                        if (s.Length != 0)
+                        {
+                            s.Append(delimiter);
+                        }
+                        s.Append(trimmedName);
+                    }
                 }
-                s.Append(text);
             }
         }
 

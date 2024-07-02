@@ -65,6 +65,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
             this.miMoveToBottom = new System.Windows.Forms.ToolStripMenuItem();
             this.miResetOriginalOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.tsMovePagesSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.miMergePages = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.miSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.miInvertSelection = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,6 +119,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
             this.miResetOriginalOrder,
             this.tsMovePagesSeparator,
             this.miCopy,
+            this.miMergePages,
             this.toolStripMenuItem1,
             this.miSelectAll,
             this.miInvertSelection,
@@ -125,7 +127,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
             this.toolStripMenuItem3,
             this.miMarkDeleted});
             this.contextPages.Name = "cmPages";
-            this.contextPages.Size = new System.Drawing.Size(249, 320);
+            this.contextPages.Size = new System.Drawing.Size(249, 364);
             this.contextPages.Opening += new System.ComponentModel.CancelEventHandler(this.contextPages_Opening);
             // 
             // miPageType
@@ -227,6 +229,12 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
             this.tsMovePagesSeparator.Name = "tsMovePagesSeparator";
             this.tsMovePagesSeparator.Size = new System.Drawing.Size(245, 6);
             // 
+            // miMergePages
+            // 
+            this.miMergePages.Name = "miMergePages";
+            this.miMergePages.Size = new System.Drawing.Size(248, 22);
+            this.miMergePages.Text = "Merge Pages";
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -309,5 +317,6 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem miPagePositionNear;
         private ToolStripMenuItem miPagePositionFar;
+        private ToolStripMenuItem miMergePages;
     }
 }

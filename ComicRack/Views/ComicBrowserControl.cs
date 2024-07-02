@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -768,6 +770,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             itemView.Columns.Add(new ItemViewColumn(68, "Day", 40, new ComicListField("DayAsText", "Day the Book was published", "Day"), new CoverViewItemBookComparer<ComicBookDayComparer>(), new CoverViewItemBookGrouper<ComicBookGroupDay>(), visible: false, StringAlignment.Far));
             itemView.Columns.Add(new ItemViewColumn(69, "Week", 40, new ComicListField("WeekAsText", "Week the Book was published"), new CoverViewItemBookComparer<ComicBookWeekComparer>(), new CoverViewItemBookGrouper<ComicBookGroupWeek>(), visible: false, StringAlignment.Far));
             itemView.Columns.Add(new ItemViewColumn(70, "Released", 60, new ComicListField("ReleasedTime", "Time the Book was released", null, StringTrimming.Word, typeof(DateTime), ComicBook.TR["Unknown"]), new CoverViewItemBookComparer<ComicBookReleasedComparer>(), new CoverViewItemBookGrouper<ComicBookGroupReleased>(), visible: false, StringAlignment.Far, strings));
+            itemView.Columns.Add(new ItemViewColumn(71, "Published (Regional)", 40, new ComicListField("PublishedRegional", "Publication date of the Book (regional formating)"), new CoverViewItemBookComparer<ComicBookPublishedComparer>(), new CoverViewItemBookGrouper<ComicBookGroupPublished>(), visible: false, StringAlignment.Far));
             itemView.Columns.Add(new ItemViewColumn(200, "Series: Books", 50, new ComicListField("SeriesStatCountAsText", "Books in the Series"), new CoverViewItemStatsComparer<ComicBookSeriesStatsCountComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupCount>(), visible: false, StringAlignment.Far));
             itemView.Columns.Add(new ItemViewColumn(201, "Series: Pages", 50, new ComicListField("SeriesStatPageCountAsText", "Pages in the Series"), new CoverViewItemStatsComparer<ComicBookSeriesStatsPageCountComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupPageCount>(), visible: false, StringAlignment.Far));
             itemView.Columns.Add(new ItemViewColumn(202, "Series: Pages Read", 50, new ComicListField("SeriesStatPageReadCountAsText", "Pages of the Series read"), new CoverViewItemStatsComparer<ComicBookSeriesStatsPageReadCountComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupPageReadCount>(), visible: false, StringAlignment.Far));
@@ -782,6 +785,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             itemView.Columns.Add(new ItemViewColumn(211, "Series: Book added", 50, new ComicListField("SeriesStatLastAddedTime", "Last time a book was added to the Series", null, StringTrimming.Word, typeof(DateTime)), new CoverViewItemStatsComparer<ComicBookSeriesStatsLastAddedTimeComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupLastAddedTime>(), visible: false, StringAlignment.Far, strings));
             itemView.Columns.Add(new ItemViewColumn(212, "Series: Opened", 50, new ComicListField("SeriesStatLastOpenedTime", "Last time a book was opened from the Series", null, StringTrimming.Word, typeof(DateTime)), new CoverViewItemStatsComparer<ComicBookSeriesStatsLastOpenedTimeComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupLastOpenedTime>(), visible: false, StringAlignment.Far, strings));
             itemView.Columns.Add(new ItemViewColumn(213, "Series: Book released", 50, new ComicListField("SeriesStatLastReleasedTime", "Last time a book of this Series was released", null, StringTrimming.Word, typeof(DateTime)), new CoverViewItemStatsComparer<ComicBookSeriesStatsLastReleasedTimeComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupLastReleasedTime>(), visible: false, StringAlignment.Far, strings));
+            itemView.Columns.Add(new ItemViewColumn(214, "Actual File Format (slow)", 40, new ComicListField("ActualFileFormat", "Actual File format of the Book (based on the header)"), new CoverViewItemBookComparer<ComicBookActualFileFormatComparer>(), new CoverViewItemBookGrouper<ComicBookGroupActualFileFormat>(), visible: false));
             SetVirtualTagColumns();
             SubView.TranslateColumns(itemView.Columns);
             foreach (ItemViewColumn column in itemView.Columns)
@@ -1327,7 +1331,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
                 CoverViewItem coverViewItem = focusedItem as CoverViewItem;
                 if (coverViewItem != null && coverViewItem.Comic.IsLinked)
                 {
-                    OpenComic();
+                    ExternalProgram ep = Program.Settings.ExternalPrograms.FirstOrDefault(x => x.Override);
+
+                    if (ep is null)
+                        OpenComic();
+                    else
+                        StartExternalProgram(ep, coverViewItem.Comic);
                 }
                 else
                 {
@@ -2794,6 +2803,44 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             miUpdateComicFiles.Visible = enumerable.Any((ComicBook cb) => cb.ComicInfoIsDirty);
             contextMenuItems.FixSeparators();
             miPasteData.Enabled = isPasteComicDataEnabled();
+            UpdateOpenWithMenus(enumerable);
+        }
+
+        private void UpdateOpenWithMenus(IEnumerable<ComicBook> enumerable)
+        {
+            FormUtility.SafeToolStripClear(miOpenWith.DropDownItems, 2);
+            //Populate Open With menu
+            for (int k = 0; k < Program.Settings.ExternalPrograms.Count; k++)
+            {
+                ExternalProgram ep = Program.Settings.ExternalPrograms[k];
+
+                if (string.IsNullOrEmpty(ep.Name) || string.IsNullOrEmpty(ep.Path) || !File.Exists(ep.Path))
+                    continue;
+
+                //Create menu item
+                ToolStripItem tsi = new ToolStripMenuItem(ep.Name.Ellipsis(60 - ep.Name.Length, "..."), null, delegate
+                {
+                    //For each book selected it will start a separate program
+                    foreach (ComicBook comicBook in enumerable)
+                    {
+                        StartExternalProgram(ep, comicBook);
+                    }
+                });
+                tsi.Tag = ep;
+
+                //Insert menu item
+                miOpenWith.DropDownItems.Add(tsi);
+            }
+
+            //Show the separator only if at least 1 external program was added
+            //toolStripSeparator2.Visible = miOpenWith.DropDownItems.Cast<ToolStripItem>().Where(x => x.Tag != null).Count() > 0;
+            toolStripSeparator2.Visible = miOpenWith.DropDownItems.Count > 2;
+        }
+
+        private static void StartExternalProgram(ExternalProgram ep, ComicBook comicBook)
+        {
+            string args = string.IsNullOrEmpty(ep.Arguments) ? $"\"{comicBook.FilePath}\"" : $"{ep.Arguments} \"{comicBook.FilePath}\"";
+            Program.StartProgram(ep.Path, args);
         }
 
         private void LayoutMenuOpening(object sender, CancelEventArgs e)
@@ -2945,8 +2992,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
                         string prefix = new string(' ', Library.ComicLists.GetChildLevel(li) * 4);
                         this.Invoke(delegate
                         {
-                            ToolStripMenuItem value = ((count != maxLists) 
-                                ? new ToolStripMenuItem(prefix + li.Name, GetComicListImage(li), delegate{ ShowBookInList(li, cb); }) 
+                            ToolStripMenuItem value = ((count != maxLists)
+                                ? new ToolStripMenuItem(prefix + li.Name.Replace("&", "&&"), GetComicListImage(li), delegate{ ShowBookInList(li, cb); }) 
                                 : new ToolStripMenuItem("...") { Enabled = false });
                             menu.DropDownItems.Insert(menu.DropDownItems.Count - 1, value);
                         });
@@ -3280,6 +3327,66 @@ namespace cYo.Projects.ComicRack.Viewer.Views
                 books = books.Reverse();
             }
             return books;
+        }
+
+        private void miOpenWithManager_Click(object sender, EventArgs e)
+        {
+            EditOpenWithPrograms();
+        }
+
+        private void EditOpenWithPrograms()
+        {
+            IList<ExternalProgram> list = OpenWithDialog.Show(Form.ActiveForm, TR.Messages["OpenWithPrograms", "Manage Open With Programs"], Program.Settings.ExternalPrograms, 
+                newAction: NewExternalProgram,
+                editAction: ep => EditExternalProgram(ep),
+                overrideAction: ep => ep.Override = !ep.Override);
+
+            if (list != null)
+            {
+                Program.Settings.ExternalPrograms.Clear();
+                Program.Settings.ExternalPrograms.AddRange(list);
+            }
+        }
+
+        private ExternalProgram NewExternalProgram()
+        {
+            string name = "", path = "", args = "";
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Executable (*.EXE, *.BAT, *.CMD, *.PS1)|*.exe;*.bat;*.cmd;*.ps1|All files (*.*)|*.*";
+                openFileDialog.Multiselect = false;
+                openFileDialog.CheckFileExists = true;
+                if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    path = openFileDialog.FileName;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+            {
+                FileVersionInfo vi = FileVersionInfo.GetVersionInfo(path);
+                name = string.IsNullOrEmpty(vi.ProductName) 
+                    ? SelectItemDialog.GetName(this, "Set External Program", "Program") 
+                    : vi.ProductName;
+                args = SelectItemDialog.GetName(this, "Set Program Argument", string.Empty) ?? string.Empty;
+            }
+
+            if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(path))
+                return new ExternalProgram(name, path);
+
+            return null;
+        }
+
+        private bool EditExternalProgram(ExternalProgram ep)
+        {
+            string oldName = ep.Name;
+            string oldArgument = ep.Arguments;
+
+            ep.Name = SelectItemDialog.GetName(this, "Rename External Program", ep.Name) ?? ep.Name;
+            ep.Arguments = SelectItemDialog.GetName(this, "Change Program Argument", ep.Arguments) ?? string.Empty;
+
+            return oldName != ep.Name || oldArgument != ep.Arguments;
         }
     }
 }

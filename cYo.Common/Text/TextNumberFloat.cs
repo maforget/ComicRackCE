@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace cYo.Common.Text
 {
@@ -213,5 +215,23 @@ namespace cYo.Common.Text
 			}
 			return accu;
 		}
-	}
+
+        public IEnumerable<float> GetRange()
+        {
+            Regex regex = new Regex(@"(\d+)[ -]+(\d+)", RegexOptions.IgnoreCase);
+            Match match = regex.Match(this.Text ?? string.Empty);
+
+            if (match.Success)
+            {
+                bool ba = match.Groups[1].Value.TryParse(out float a, true);
+                bool bb = match.Groups[2].Value.TryParse(out float b, true);
+
+                if ((ba && bb) && (b > a))
+                {
+					return RangeF.ToEnumerable(a, b, 1.0f);
+                }
+            }
+            return Enumerable.Empty<float>();
+        }
+    }
 }
