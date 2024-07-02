@@ -65,6 +65,7 @@
     <Compile Include="Collections\SmartListAction.cs" />
     <Compile Include="Collections\SmartListChangedEventArgs.cs" />
     <Compile Include="Collections\SmartListOptions.cs" />
+    <Compile Include="CommonConfiguration.cs" />
     <Compile Include="ComponentModel\ArrayConverter.cs" />
     <Compile Include="ComponentModel\ChainedComparer.cs" />
     <Compile Include="ComponentModel\ComparerExtension.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Drawing\ColorSchema.cs" />
     <Compile Include="Drawing\ColorSchemaCollection.cs" />
     <Compile Include="Drawing\ConvolutionMatrix.cs" />
+    <Compile Include="Drawing\CustomPixelSource.cs" />
     <Compile Include="Drawing\EnumExtensions.cs" />
     <Compile Include="Drawing\FastBitmap.cs" />
     <Compile Include="Drawing\FastBitmapLock.cs" />
@@ -358,6 +360,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="PhotoSauce.MagicScaler">
+      <Version>0.14.2</Version>
+    </PackageReference>
     <PackageReference Include="PolySharp">
       <Version>1.14.1</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
