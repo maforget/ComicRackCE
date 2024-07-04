@@ -53,7 +53,8 @@ jobs:
 
       # On an forked repo, pull_requests are empty above, making not being able to post a comment: https://github.com/orgs/community/discussions/25220#discussioncomment-7551168
       - name: Get PR ID
-        id: pr-id
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           PR_ID=$(gh pr view -R "${{ github.repository }}" "${{ github.event.workflow_run.head_repository.owner.login }}:${{ github.event.workflow_run.head_branch }}" --json "number" --jq ".number")
           echo "Pull request Number (2nd method): $PR_ID"
