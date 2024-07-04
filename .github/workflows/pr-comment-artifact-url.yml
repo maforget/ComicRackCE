@@ -51,21 +51,32 @@ jobs:
           echo "Head SHA: $HEAD_SHA"
           echo "HEAD_SHA=$HEAD_SHA" >> "$GITHUB_ENV"
 
+      # On an forked repo, pull_requests are empty above, making not being able to post a comment: https://github.com/orgs/community/discussions/25220#discussioncomment-7551168
+      - name: Get PR ID
+        id: pr-id
+        run: |
+          PR_ID=$(gh pr view -R "${{ github.repository }}" "${{ github.event.workflow_run.head_repository.owner.login }}:${{ github.event.workflow_run.head_branch }}" --json "number" --jq ".number")
+          echo "Pull request Number (2nd method): $PR_ID"
+          echo "PR_ID=$PR_ID" >> "$GITHUB_ENV"
+
       - name: Find Comment
         uses: peter-evans/find-comment@v3
         id: find-comment
         with:
-          issue-number: ${{ env.PR_NUMBER }}
+          # issue-number: ${{ env.PR_NUMBER }} # empty from a forked repo
+          issue-number: ${{ env.PR_ID }}
           comment-author: 'github-actions[bot]'
 
       - name: Update Comment
         env:
           JOB_PATH: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ env.PREVIOUS_JOB_ID }}"
           ARTIFACT_URL: "${{ github.server_url }}/${{ github.repository }}/suites/${{ env.SUITE_ID }}/artifacts/${{ env.ARTIFACT_ID }}"
-          HEAD_SHA: "${{ env.HEAD_SHA }}"
+          # HEAD_SHA: "${{ env.HEAD_SHA }}" # empty from a forked repo
+          HEAD_SHA: "${{ github.event.workflow_run.head_sha }}"
         uses: peter-evans/create-or-update-comment@v4
         with:
-          issue-number: ${{ env.PR_NUMBER }}
+          # issue-number: ${{ env.PR_NUMBER }} # empty from a forked repo
+          issue-number: ${{ env.PR_ID }}
           comment-id: ${{ steps.find-comment.outputs.comment-id }}
           edit-mode: replace
           body: |-
