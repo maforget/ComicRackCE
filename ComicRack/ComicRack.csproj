@@ -677,9 +677,6 @@
     <Content Include="Languages\zh.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\Icons\**\*.*">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <Content Include="Resources\pdfium_x86.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -883,8 +880,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>powershell -NoProfile -ExecutionPolicy Bypass -File "$(SolutionDir)CompressIconFolders.ps1" -BaseDirectory "$(TargetDir)"
-
+    <PostBuildEvent>
 if $(ConfigurationName) == Debug Goto :Exit
 del /Q *.pdb
 
@@ -894,4 +890,13 @@ del /Q *.pdb
     <PreBuildEvent>
     </PreBuildEvent>
   </PropertyGroup>
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <ResourcesIcons Include="Resources\Icons\**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ResourcesIcons)" DestinationFolder="$(TargetDir)\Resources\Icons\%(RecursiveDir)" ContinueOnError="true" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="PostBuild" AfterTargets="AfterBuild">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(SolutionDir)CompressIconFolders.ps1&quot; -BaseDirectory &quot;$(TargetDir)&quot;" />
+  </Target>
 </Project>
