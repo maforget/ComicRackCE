@@ -12,10 +12,10 @@ namespace cYo.Common.Runtime
     {
         public static string GetCurrentVersionInfo()
         {
-            var isDirty = !string.IsNullOrEmpty(Properties.Resources.isDirty.Trim());
-            var currentCommit = $"{Properties.Resources.CurrentCommit?.Substring(0, 7)}{(isDirty ? "-dirty" : "")}";
+            var isDirty = string.IsNullOrEmpty(Properties.Resources.isDirty?.Trim()) ? "" : "-dirty";
+            var currentCommit = string.IsNullOrEmpty(Properties.Resources.CurrentCommit) ? "" : $" [{Properties.Resources.CurrentCommit?[..7]}{isDirty}]";
 
-            return $" [{currentCommit}]";
+            return currentCommit;
         }
     }
 }
