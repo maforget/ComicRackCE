@@ -890,6 +890,9 @@ del /Q *.pdb
     <PreBuildEvent>
     </PreBuildEvent>
   </PropertyGroup>
+  <Target Name = "Clean">
+    <RemoveDir Directories="$(TargetDir)\Resources\Icons" />
+  </Target>
   <Target Name="AfterBuild">
     <ItemGroup>
       <ResourcesIcons Include="Resources\Icons\**\*.*" />
