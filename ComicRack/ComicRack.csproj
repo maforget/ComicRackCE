@@ -554,6 +554,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ReaderForm.resx">
       <DependentUpon>ReaderForm.cs</DependentUpon>
@@ -611,6 +612,7 @@
     <Content Include="ComicRack.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="CurrentCommit.txt" />
     <Content Include="Help\ComicRack Introduction.djvu">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -620,6 +622,7 @@
     <Content Include="Help\ComicRack Wiki.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="isDirty.txt" />
     <Content Include="Languages\cs-CZ.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -887,8 +890,10 @@ del /Q *.pdb
 : Exit</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+    <PreBuildEvent>cd ..\..\
+git rev-parse HEAD &gt; "CurrentCommit.txt"
+git status --porcelain &gt; "isDirty.txt"
+exit 0</PreBuildEvent>
   </PropertyGroup>
   <Target Name="Clean">
     <RemoveDir Directories="$(TargetDir)\Resources\Icons" />
