@@ -586,6 +586,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					sld.Apply += delegate
 					{
 						csli.SetList(sld.SmartComicList);
+
+						//Remove recursionCache if we changed the source
+						if (csli.BaseListId != oldList.BaseListId)
+							RecursionCache.Items.RemoveReference(csli.Id);
 					};
 					sld.Next += delegate
 					{
@@ -1110,7 +1114,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				}
 				ComicListItemCollection comicListItemCollection = ((dragNode.Parent == null) ? Library.ComicLists : ((ComicListItemFolder)dragNode.Parent.Tag).Items);
 				ComicListItem comicListItem = dragNode.Tag as ComicListItem;
-                RecursionCache.Items.Remove(comicListItem.Id);
+                RecursionCache.Items.RemoveReference(comicListItem.Id);
                 if (e.Effect == DragDropEffects.Copy && comicListItem is ShareableComicListItem)
 				{
 					comicListItem = ((ICloneable)(ShareableComicListItem)comicListItem).Clone<ShareableComicListItem>();
