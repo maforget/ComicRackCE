@@ -680,12 +680,6 @@
     <Content Include="Languages\zh.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\pdfium_x86.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\pdfium_x64.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Scripts\Package.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -871,6 +865,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="bblanchon.PDFium.Win32">
+      <Version>128.0.6569</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft-WindowsAPICodePack-Shell">
       <Version>1.1.5</Version>
     </PackageReference>
@@ -883,7 +880,14 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
+    <PostBuildEvent>xcopy /Y x64\pdfium.dll Resources\pdfium_x64.dll*
+xcopy /Y x86\pdfium.dll Resources\pdfium_x86.dll*
+rmdir /S /Q arm64
+rmdir /S /Q Lib
+rmdir /S /Q x64
+rmdir /S /Q x86
+del /Q PDFiumSharp.xml
+
 if $(ConfigurationName) == Debug Goto :Exit
 del /Q *.pdb
 
