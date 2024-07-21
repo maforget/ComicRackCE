@@ -35,10 +35,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PDFiumSharp, Version=1.1.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>DLL\PDFiumSharp.dll</HintPath>
-    </Reference>
     <Reference Include="sharpPDF, Version=1.0.3755.1862, Culture=neutral, PublicKeyToken=ff55e618a43684c3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLL\sharpPDF.dll</HintPath>
@@ -642,6 +638,10 @@
       <Project>{198a3787-dde7-43f0-86e7-d915414f0ff4}</Project>
       <Name>cYo.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PDFiumSharp\PDFiumSharp\PDFiumSharp.csproj">
+      <Project>{697f3551-a665-421b-8ab8-9c684cb38fe4}</Project>
+      <Name>PDFiumSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\MagnifySetupControl.resx">
@@ -672,7 +672,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DLL\PDFiumSharp.dll" />
     <Content Include="DLL\sharpPDF.dll" />
   </ItemGroup>
   <!-- <ItemGroup> -->

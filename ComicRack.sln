@@ -22,46 +22,89 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFiumSharp", "PDFiumSharp\PDFiumSharp\PDFiumSharp.csproj", "{697F3551-A665-421B-8AB8-9C684CB38FE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}.Debug|x64.Build.0 = Debug|Any CPU
 		{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}.Release|x64.ActiveCfg = Release|Any CPU
+		{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}.Release|x64.Build.0 = Release|Any CPU
 		{973066BF-3DC7-49DF-A704-951A86DBCB8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{973066BF-3DC7-49DF-A704-951A86DBCB8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973066BF-3DC7-49DF-A704-951A86DBCB8F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{973066BF-3DC7-49DF-A704-951A86DBCB8F}.Debug|x64.Build.0 = Debug|Any CPU
 		{973066BF-3DC7-49DF-A704-951A86DBCB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{973066BF-3DC7-49DF-A704-951A86DBCB8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{973066BF-3DC7-49DF-A704-951A86DBCB8F}.Release|x64.ActiveCfg = Release|Any CPU
+		{973066BF-3DC7-49DF-A704-951A86DBCB8F}.Release|x64.Build.0 = Release|Any CPU
 		{CE8F3F7B-4464-40B4-9951-020FC0913BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE8F3F7B-4464-40B4-9951-020FC0913BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE8F3F7B-4464-40B4-9951-020FC0913BFD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CE8F3F7B-4464-40B4-9951-020FC0913BFD}.Debug|x64.Build.0 = Debug|Any CPU
 		{CE8F3F7B-4464-40B4-9951-020FC0913BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE8F3F7B-4464-40B4-9951-020FC0913BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE8F3F7B-4464-40B4-9951-020FC0913BFD}.Release|x64.ActiveCfg = Release|Any CPU
+		{CE8F3F7B-4464-40B4-9951-020FC0913BFD}.Release|x64.Build.0 = Release|Any CPU
 		{27674BF8-B7E4-4DE9-9E2A-4CECA07547BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{27674BF8-B7E4-4DE9-9E2A-4CECA07547BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27674BF8-B7E4-4DE9-9E2A-4CECA07547BA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{27674BF8-B7E4-4DE9-9E2A-4CECA07547BA}.Debug|x64.Build.0 = Debug|Any CPU
 		{27674BF8-B7E4-4DE9-9E2A-4CECA07547BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27674BF8-B7E4-4DE9-9E2A-4CECA07547BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27674BF8-B7E4-4DE9-9E2A-4CECA07547BA}.Release|x64.ActiveCfg = Release|Any CPU
+		{27674BF8-B7E4-4DE9-9E2A-4CECA07547BA}.Release|x64.Build.0 = Release|Any CPU
 		{198A3787-DDE7-43F0-86E7-D915414F0FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{198A3787-DDE7-43F0-86E7-D915414F0FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198A3787-DDE7-43F0-86E7-D915414F0FF4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{198A3787-DDE7-43F0-86E7-D915414F0FF4}.Debug|x64.Build.0 = Debug|Any CPU
 		{198A3787-DDE7-43F0-86E7-D915414F0FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{198A3787-DDE7-43F0-86E7-D915414F0FF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{198A3787-DDE7-43F0-86E7-D915414F0FF4}.Release|x64.ActiveCfg = Release|Any CPU
+		{198A3787-DDE7-43F0-86E7-D915414F0FF4}.Release|x64.Build.0 = Release|Any CPU
 		{7DA0F747-D112-4793-B4C1-F2E2F2C99CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7DA0F747-D112-4793-B4C1-F2E2F2C99CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA0F747-D112-4793-B4C1-F2E2F2C99CBA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7DA0F747-D112-4793-B4C1-F2E2F2C99CBA}.Debug|x64.Build.0 = Debug|Any CPU
 		{7DA0F747-D112-4793-B4C1-F2E2F2C99CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DA0F747-D112-4793-B4C1-F2E2F2C99CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DA0F747-D112-4793-B4C1-F2E2F2C99CBA}.Release|x64.ActiveCfg = Release|Any CPU
+		{7DA0F747-D112-4793-B4C1-F2E2F2C99CBA}.Release|x64.Build.0 = Release|Any CPU
 		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}.Debug|x64.Build.0 = Debug|Any CPU
 		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}.Release|x64.ActiveCfg = Release|Any CPU
+		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}.Release|x64.Build.0 = Release|Any CPU
+		{697F3551-A665-421B-8AB8-9C684CB38FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{697F3551-A665-421B-8AB8-9C684CB38FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{697F3551-A665-421B-8AB8-9C684CB38FE4}.Debug|x64.ActiveCfg = Debug|x64
+		{697F3551-A665-421B-8AB8-9C684CB38FE4}.Debug|x64.Build.0 = Debug|x64
+		{697F3551-A665-421B-8AB8-9C684CB38FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{697F3551-A665-421B-8AB8-9C684CB38FE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{697F3551-A665-421B-8AB8-9C684CB38FE4}.Release|x64.ActiveCfg = Release|x64
+		{697F3551-A665-421B-8AB8-9C684CB38FE4}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{697F3551-A665-421B-8AB8-9C684CB38FE4} = {5040C603-CDAE-46A1-B23E-CFC29319E770}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_Rules = {"EnabledRules":["WhiteSpaceLead","WhiteSpaceTail","PunctuationLead","PunctuationTail"]}
 		SolutionGuid = {C85D577B-A999-424A-B0EC-330EC759489F}
+		RESX_Rules = {"EnabledRules":["WhiteSpaceLead","WhiteSpaceTail","PunctuationLead","PunctuationTail"]}
 	EndGlobalSection
 EndGlobal
