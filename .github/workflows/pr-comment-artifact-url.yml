@@ -76,8 +76,7 @@ jobs:
           HEAD_SHA: "${{ github.event.workflow_run.head_sha }}"
         uses: peter-evans/create-or-update-comment@v4
         with:
-          # issue-number: ${{ env.PR_NUMBER }} # empty from a forked repo
-          issue-number: ${{ env.PR_ID }}
+          issue-number: ${{ env.PR_NUMBER }}
           comment-id: ${{ steps.find-comment.outputs.comment-id }}
           edit-mode: replace
           body: |-
