@@ -816,41 +816,4 @@ namespace cYo.Projects.ComicRack.Engine.Database
 			}
 		}
 	}
-
-	public class RecursionCache: Dictionary<Guid, RecursionCacheItem>
-	{
-        private static Lazy<RecursionCache> instance = new Lazy<RecursionCache>(() => new RecursionCache());
-
-        public static RecursionCache Items => instance.Value;
-
-        private RecursionCache() : base()
-        {
-
-        }
-
-		public RecursionCacheItem GetValue(Guid guid)
-		{
-			if (Items.TryGetValue(guid, out RecursionCacheItem cachedResult))
-			{
-				return cachedResult;
-			}
-
-			RecursionCacheItem item = RecursionCacheItem.Empty();
-			this[guid] = item;
-			return item;
-		}
-	}
-
-	public class RecursionCacheItem : Dictionary<Guid, bool>
-	{
-        private RecursionCacheItem() : base()
-        {
-                
-        }
-
-        public static RecursionCacheItem Empty()
-        {
-            return new RecursionCacheItem();
-        }
-    }
 }
