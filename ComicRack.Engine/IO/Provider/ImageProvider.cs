@@ -139,7 +139,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             {
                 return new ExportImageContainer()
 				{
-					Data = RetrieveSourceByteImageKeepSource(index),
+					Data = RetrieveSourceByteImage(index, keepSourceFormat: true),
                     NeedsToConvert = false
 				};
             }
@@ -241,7 +241,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		private byte[] RetrieveSourceByteImage(int n)
+		private byte[] RetrieveSourceByteImage(int n, bool keepSourceFormat = false)
 		{
 			if (n < 0 || n >= Count)
 			{
@@ -253,8 +253,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 				try
 				{
 					array = OnRetrieveSourceByteImage(n);
-					array = DjVuImage.ConvertToJpeg(array);
-					array = WebpImage.ConvertToJpeg(array);
+					if(!keepSourceFormat)
+					{
+						array = DjVuImage.ConvertToJpeg(array);
+						array = WebpImage.ConvertToJpeg(array);
+					}
 					return array;
 				}
 				catch (Exception)
@@ -263,27 +266,6 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 				}
 			}
 		}
-
-        private byte[] RetrieveSourceByteImageKeepSource(int n)
-        {
-            if (n < 0 || n >= Count)
-            {
-                return null;
-            }
-            byte[] array = null;
-            using (LockSource(readOnly: true))
-            {
-                try
-                {
-                    array = OnRetrieveSourceByteImage(n);
-                    return array;
-                }
-                catch (Exception)
-                {
-                    return array;
-                }
-            }
-        }
 
         private ThumbnailImage RetrieveThumbnailImage(int n)
 		{
