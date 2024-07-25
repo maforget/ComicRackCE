@@ -133,11 +133,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-        public byte[] GetByteImageForExport(int index)
+        public ExportImageContainer GetByteImageForExport(int index)
         {
             using (ItemMonitor.Lock(workLock))
             {
-                return RetrieveSourceByteImageKeepSource(index);
+                return new ExportImageContainer()
+				{
+					Data = RetrieveSourceByteImageKeepSource(index),
+                    NeedsToConvert = false
+				};
             }
         }
 
@@ -440,5 +444,5 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 				}
 			}
 		}
-	}
+    }
 }

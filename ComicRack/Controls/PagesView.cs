@@ -819,7 +819,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
             Program.ImagePool.Thumbs.RefreshImage(thumbKey);
 
             //Add pages to the ImagePool because if they aren't the Export will retrieve the original image instead
-            using IItemLock<PageImage> itemLock = Program.ImagePool.Pages.AddImage(pageKey, p => PageImage.CreateFrom(mergedImage));
+            using IItemLock<PageImage> itemLock = Program.ImagePool.Pages.AddImage(pageKey, p => PageImage.CreateFromMerged(mergedImage));
             using IItemLock<ThumbnailImage> itemLock2 = Program.ImagePool.Thumbs.AddImage(thumbKey, p => ThumbnailImage.CreateFrom(mergedImage, mergedImage.Size));
 
 			//Mark the second image as Deleted

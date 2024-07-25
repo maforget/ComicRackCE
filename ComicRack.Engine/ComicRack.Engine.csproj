@@ -61,6 +61,7 @@
     <Compile Include="CacheManager.cs" />
     <Compile Include="ComicBook.cs" />
     <Compile Include="Database\RecursionCache.cs" />
+    <Compile Include="IO\Provider\ExportImageContainer.cs" />
     <Compile Include="IO\Provider\Pdfium.cs" />
     <Compile Include="IO\Provider\Readers\Pdf\PdfiumReaderEngine.cs" />
     <Compile Include="Metadata\ComicBook\Comparer\ComicBookAddedComparer.cs" />

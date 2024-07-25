@@ -1,7 +1,6 @@
 using System;
 using System.Drawing;
 using cYo.Common.ComponentModel;
-using cYo.Common.Threading;
 using cYo.Projects.ComicRack.Engine.IO.Provider;
 
 namespace cYo.Projects.ComicRack.Engine.IO
@@ -62,13 +61,13 @@ namespace cYo.Projects.ComicRack.Engine.IO
 			return provider.GetByteImage(index);
 		}
 
-        public byte[] GetByteImageForExport(int index)
-        {
-            CheckProvider();
-            return provider.GetByteImageForExport(index);
-        }
+		public ExportImageContainer GetByteImageForExport(int index)
+		{
+			CheckProvider();
+			return provider.GetByteImageForExport(index);
+		}
 
-        public ProviderImageInfo GetImageInfo(int index)
+		public ProviderImageInfo GetImageInfo(int index)
 		{
 			CheckProvider();
 			return provider.GetImageInfo(index);
