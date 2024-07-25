@@ -56,7 +56,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			public Bitmap GetImage(int index)
 			{
 				Provider provider = GetProvider(ref index);
-				if (PagePool != null && provider.ImageProvider.IsSlow)
+				if (PagePool != null)
 				{
 					using (IItemLock<PageImage> itemLock = PagePool.GetPage(new PageKey(provider.KeyProvider.GetImageKey(index)), onlyMemory: false))
 					{
