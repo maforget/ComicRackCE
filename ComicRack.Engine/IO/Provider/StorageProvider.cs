@@ -189,7 +189,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			};
 		}
 
-		public static PageResult[] GetImages(IImageProvider provider, ComicPageInfo cpi, string ext, StorageSetting setting, bool reverseSplit, bool createThumbnail)
+		public static PageResult[] GetImages(IImageProvider provider, ComicPageInfo cpi, string ext, StorageSetting setting, bool reverseSplit, bool createThumbnail, bool forExport = false)
 		{
 			byte[] array = null;
 			if (setting.RemovePages && cpi.IsTypeOf(setting.RemovePageFilter))
@@ -214,6 +214,12 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 						}
 					}
 				}
+
+				if (forExport)
+				{
+					array = provider.GetByteImageForExport(cpi.ImageIndex);
+				}
+
 				if (array != null && array.Length != 0)
 				{
 					return new PageResult[1]

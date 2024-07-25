@@ -133,7 +133,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		public ThumbnailImage GetThumbnail(int index)
+        public byte[] GetByteImageForExport(int index)
+        {
+            using (ItemMonitor.Lock(workLock))
+            {
+                return RetrieveSourceByteImageKeepSource(index);
+            }
+        }
+
+        public ThumbnailImage GetThumbnail(int index)
 		{
 			using (ItemMonitor.Lock(workLock))
 			{
@@ -252,7 +260,28 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		private ThumbnailImage RetrieveThumbnailImage(int n)
+        private byte[] RetrieveSourceByteImageKeepSource(int n)
+        {
+            if (n < 0 || n >= Count)
+            {
+                return null;
+            }
+            byte[] array = null;
+            using (LockSource(readOnly: true))
+            {
+                try
+                {
+                    array = OnRetrieveSourceByteImage(n);
+                    return array;
+                }
+                catch (Exception)
+                {
+                    return array;
+                }
+            }
+        }
+
+        private ThumbnailImage RetrieveThumbnailImage(int n)
 		{
 			if (n < 0 || n >= Count)
 			{
