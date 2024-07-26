@@ -133,7 +133,19 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		public ThumbnailImage GetThumbnail(int index)
+        public ExportImageContainer GetByteImageForExport(int index)
+        {
+            using (ItemMonitor.Lock(workLock))
+            {
+                return new ExportImageContainer()
+				{
+					Data = RetrieveSourceByteImage(index, keepSourceFormat: true),
+                    NeedsToConvert = false
+				};
+            }
+        }
+
+        public ThumbnailImage GetThumbnail(int index)
 		{
 			using (ItemMonitor.Lock(workLock))
 			{
@@ -229,7 +241,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		private byte[] RetrieveSourceByteImage(int n)
+		private byte[] RetrieveSourceByteImage(int n, bool keepSourceFormat = false)
 		{
 			if (n < 0 || n >= Count)
 			{
@@ -241,8 +253,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 				try
 				{
 					array = OnRetrieveSourceByteImage(n);
-					array = DjVuImage.ConvertToJpeg(array);
-					array = WebpImage.ConvertToJpeg(array);
+					if(!keepSourceFormat)
+					{
+						array = DjVuImage.ConvertToJpeg(array);
+						array = WebpImage.ConvertToJpeg(array);
+					}
 					return array;
 				}
 				catch (Exception)
@@ -252,7 +267,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		private ThumbnailImage RetrieveThumbnailImage(int n)
+        private ThumbnailImage RetrieveThumbnailImage(int n)
 		{
 			if (n < 0 || n >= Count)
 			{
@@ -411,5 +426,5 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 				}
 			}
 		}
-	}
+    }
 }

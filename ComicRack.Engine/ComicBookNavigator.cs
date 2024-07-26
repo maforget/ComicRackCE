@@ -663,6 +663,15 @@ namespace cYo.Projects.ComicRack.Engine
 			return provider.GetByteImage(index);
 		}
 
+		public ExportImageContainer GetByteImageForExport(int index)
+		{
+			if (provider == null)
+			{
+				return null;
+			}
+			return provider.GetByteImageForExport(index);
+		}
+
 		public ProviderImageInfo GetImageInfo(int index)
 		{
 			if (provider == null)
