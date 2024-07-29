@@ -865,9 +865,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="bblanchon.PDFium.Win32">
-      <Version>128.0.6569</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft-WindowsAPICodePack-Shell">
       <Version>1.1.5</Version>
     </PackageReference>

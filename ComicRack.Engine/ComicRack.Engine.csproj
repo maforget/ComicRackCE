@@ -639,10 +639,6 @@
       <Project>{198a3787-dde7-43f0-86e7-d915414f0ff4}</Project>
       <Name>cYo.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PDFiumSharp\PDFiumSharp\PDFiumSharp.csproj">
-      <Project>{697f3551-a665-421b-8ab8-9c684cb38fe4}</Project>
-      <Name>PDFiumSharp</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\MagnifySetupControl.resx">
@@ -657,6 +653,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="bblanchon.PDFium.Win32">
+      <Version>128.0.6611</Version>
+    </PackageReference>
     <PackageReference Include="MySqlConnector">
       <Version>2.3.7</Version>
     </PackageReference>
