@@ -35,7 +35,7 @@ jobs:
       run: msbuild ComicRack\ComicRack.csproj -t:rebuild -property:Configuration=Release
 
     - name: Package Files
-      run: powershell Compress-Archive -Path 'ComicRack\bin\Release\*' -DestinationPath 'ComicRackCE_v${{ github.event.inputs.version }}.zip' -Force
+      run: powershell Compress-Archive -Path 'ComicRack\bin\Release\net48\*' -DestinationPath 'ComicRackCE_v${{ github.event.inputs.version }}.zip' -Force
 
     - name: Compile installer
       uses: Minionguyjpro/Inno-Setup-Action@v1.2.4

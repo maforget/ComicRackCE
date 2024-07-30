@@ -39,5 +39,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: "ComicRackCESetup_PR"
-        path: "ComicRack/bin/Release/*"
+        path: "ComicRack/bin/Release/net48/*"
         if-no-files-found: error

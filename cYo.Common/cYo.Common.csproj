@@ -1,361 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{198A3787-DDE7-43F0-86E7-D915414F0FF4}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
-    <RootNamespace>cYo.Common</RootNamespace>
-    <AssemblyName>cYo.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <LangVersion>latest</LangVersion>
     <FileAlignment>4096</FileAlignment>
-    <TargetFrameworkProfile />
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Deterministic>false</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Management" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Services" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BitUtility.cs" />
-    <Compile Include="CloneUtility.cs" />
-    <Compile Include="Collections\Cache.cs" />
-    <Compile Include="Collections\CacheItemEventArgs.cs" />
-    <Compile Include="Collections\CursorList.cs" />
-    <Compile Include="Collections\Equality.cs" />
-    <Compile Include="Collections\IMoveable.cs" />
-    <Compile Include="Collections\ListExtensions.cs" />
-    <Compile Include="Collections\MruList.cs" />
-    <Compile Include="Collections\PriorityQueue.cs" />
-    <Compile Include="Collections\PriorityQueueAddMode.cs" />
-    <Compile Include="Collections\ReverseIndex.cs" />
-    <Compile Include="Collections\SimpleCache.cs" />
-    <Compile Include="Collections\SmartList.cs" />
-    <Compile Include="Collections\SmartListAction.cs" />
-    <Compile Include="Collections\SmartListChangedEventArgs.cs" />
-    <Compile Include="Collections\SmartListOptions.cs" />
-    <Compile Include="ComponentModel\ArrayConverter.cs" />
-    <Compile Include="ComponentModel\ChainedComparer.cs" />
-    <Compile Include="ComponentModel\ComparerExtension.cs" />
-    <Compile Include="ComponentModel\ComponentExtensions.cs" />
-    <Compile Include="ComponentModel\CompoundSingleGrouper.cs" />
-    <Compile Include="ComponentModel\DisposableObject.cs" />
-    <Compile Include="ComponentModel\Disposer.cs" />
-    <Compile Include="ComponentModel\DummyMatcher.cs" />
-    <Compile Include="ComponentModel\GroupContainer.cs" />
-    <Compile Include="ComponentModel\GrouperExtensions.cs" />
-    <Compile Include="ComponentModel\GroupInfo.cs" />
-    <Compile Include="ComponentModel\GroupManager.cs" />
-    <Compile Include="ComponentModel\ICompoundGroupInfo.cs" />
-    <Compile Include="ComponentModel\IDataSize.cs" />
-    <Compile Include="ComponentModel\IdComponent.cs" />
-    <Compile Include="ComponentModel\IDescription.cs" />
-    <Compile Include="ComponentModel\IExtendedDisposable.cs" />
-    <Compile Include="ComponentModel\IGroupable.cs" />
-    <Compile Include="ComponentModel\IGroupContainer.cs" />
-    <Compile Include="ComponentModel\IGrouper.cs" />
-    <Compile Include="ComponentModel\IGroupInfo.cs" />
-    <Compile Include="ComponentModel\IIdentity.cs" />
-    <Compile Include="ComponentModel\IItemLock.cs" />
-    <Compile Include="ComponentModel\ILiteComponent.cs" />
-    <Compile Include="ComponentModel\IMatcher.cs" />
-    <Compile Include="ComponentModel\IOverride.cs" />
-    <Compile Include="ComponentModel\IPath.cs" />
-    <Compile Include="ComponentModel\INamed.cs" />
-    <Compile Include="ComponentModel\ItemLock.cs" />
-    <Compile Include="ComponentModel\IValueStore.cs" />
-    <Compile Include="ComponentModel\LeanDisposer.cs" />
-    <Compile Include="ComponentModel\LiteComponent.cs" />
-    <Compile Include="ComponentModel\MatcherMode.cs" />
-    <Compile Include="ComponentModel\MatcherSet.cs" />
-    <Compile Include="ComponentModel\MatcherSetItem.cs" />
-    <Compile Include="ComponentModel\NamedIdComponent.cs" />
-    <Compile Include="ComponentModel\ReverseComparer.cs" />
-    <Compile Include="ComponentModel\ServiceRequestEventArgs.cs" />
-    <Compile Include="ComponentModel\ValueStore.cs" />
-    <Compile Include="Compression\SevenZip\ArchivePropId.cs" />
-    <Compile Include="Compression\SevenZip\AskMode.cs" />
-    <Compile Include="Compression\SevenZip\CreateObjectDelegate.cs" />
-    <Compile Include="Compression\SevenZip\ExtractToStreamCallback.cs" />
-    <Compile Include="Compression\SevenZip\FileTimeType.cs" />
-    <Compile Include="Compression\SevenZip\GetHandlerProperty2Delegate.cs" />
-    <Compile Include="Compression\SevenZip\GetHandlerPropertyDelegate.cs" />
-    <Compile Include="Compression\SevenZip\GetNumberOfFormatsDelegate.cs" />
-    <Compile Include="Compression\SevenZip\IArchiveExtractCallback.cs" />
-    <Compile Include="Compression\SevenZip\IArchiveOpenCallback.cs" />
-    <Compile Include="Compression\SevenZip\IArchiveOpenVolumeCallback.cs" />
-    <Compile Include="Compression\SevenZip\IArchiveUpdateCallback.cs" />
-    <Compile Include="Compression\SevenZip\IArchiveUpdateCallback2.cs" />
-    <Compile Include="Compression\SevenZip\ICryptoGetTextPassword.cs" />
-    <Compile Include="Compression\SevenZip\ICryptoGetTextPassword2.cs" />
-    <Compile Include="Compression\SevenZip\IInArchive.cs" />
-    <Compile Include="Compression\SevenZip\IInArchiveGetStream.cs" />
-    <Compile Include="Compression\SevenZip\IInStream.cs" />
-    <Compile Include="Compression\SevenZip\InStreamTimedWrapper.cs" />
-    <Compile Include="Compression\SevenZip\InStreamWrapper.cs" />
-    <Compile Include="Compression\SevenZip\IOutArchive.cs" />
-    <Compile Include="Compression\SevenZip\IOutStream.cs" />
-    <Compile Include="Compression\SevenZip\IOutStreamFlush.cs" />
-    <Compile Include="Compression\SevenZip\IProgress.cs" />
-    <Compile Include="Compression\SevenZip\ISequentialInStream.cs" />
-    <Compile Include="Compression\SevenZip\ISequentialOutStream.cs" />
-    <Compile Include="Compression\SevenZip\ISetProperties.cs" />
-    <Compile Include="Compression\SevenZip\IStreamGetSize.cs" />
-    <Compile Include="Compression\SevenZip\ItemPropId.cs" />
-    <Compile Include="Compression\SevenZip\KnownSevenZipFormat.cs" />
-    <Compile Include="Compression\SevenZip\OperationResult.cs" />
-    <Compile Include="Compression\SevenZip\OutStreamWrapper.cs" />
-    <Compile Include="Compression\SevenZip\PropVariant.cs" />
-    <Compile Include="Compression\SevenZip\SevenZipFactory.cs" />
-    <Compile Include="Compression\SevenZip\StreamWrapper.cs" />
-    <Compile Include="Compression\SevenZip\StubOpenCallback.cs" />
-    <Compile Include="Compression\ZipFileFolder.cs" />
-    <Compile Include="Cryptography\Password.cs" />
-    <Compile Include="DateTimeExtensions.cs" />
-    <Compile Include="Drawing3D\BitmapFrameBuffer.cs" />
-    <Compile Include="Drawing3D\ColorizeTexture.cs" />
-    <Compile Include="Drawing3D\ColorTexture.cs" />
-    <Compile Include="Drawing3D\CyoGl.cs" />
-    <Compile Include="Drawing3D\IFrameBuffer.cs" />
-    <Compile Include="Drawing3D\ITexture.cs" />
-    <Compile Include="Drawing3D\Light.cs" />
-    <Compile Include="Drawing3D\LightingResult.cs" />
-    <Compile Include="Drawing3D\LightType.cs" />
-    <Compile Include="Drawing3D\Rasterizer.cs" />
-    <Compile Include="Drawing3D\ShadingModel.cs" />
-    <Compile Include="Drawing3D\TextureExtensions.cs" />
-    <Compile Include="Drawing3D\Vertex.cs" />
-    <Compile Include="Drawing\BitmapAdjustment.cs" />
-    <Compile Include="Drawing\BitmapAdjustmentConverter.cs" />
-    <Compile Include="Drawing\BitmapAdjustmentOptions.cs" />
-    <Compile Include="Drawing\BitmapExtensions.cs" />
-    <Compile Include="Drawing\BitmapResampling.cs" />
-    <Compile Include="Drawing\BlurShadowParts.cs" />
-    <Compile Include="Drawing\BlurShadowType.cs" />
-    <Compile Include="Drawing\ColorExtensions.cs" />
-    <Compile Include="Drawing\ColorF.cs" />
-    <Compile Include="Drawing\ColorSchema.cs" />
-    <Compile Include="Drawing\ColorSchemaCollection.cs" />
-    <Compile Include="Drawing\ConvolutionMatrix.cs" />
-    <Compile Include="Drawing\EnumExtensions.cs" />
-    <Compile Include="Drawing\FastBitmap.cs" />
-    <Compile Include="Drawing\FastBitmapLock.cs" />
-    <Compile Include="Drawing\FC.cs" />
-    <Compile Include="Drawing\GraphicsExtensions.cs" />
-    <Compile Include="Drawing\Histogram.cs" />
-    <Compile Include="Drawing\IImagePackage.cs" />
-    <Compile Include="Drawing\ImageAction.cs" />
-    <Compile Include="Drawing\ImagePackage.cs" />
-    <Compile Include="Drawing\ImageProcessing.cs" />
-    <Compile Include="Drawing\ImagePropertyIDTags.cs" />
-    <Compile Include="Drawing\ImagePropertyTypes.cs" />
-    <Compile Include="Drawing\ImageRotation.cs" />
-    <Compile Include="Drawing\JpegFile.cs" />
-    <Compile Include="Drawing\MatrixUtility.cs" />
-    <Compile Include="Drawing\PathUtility.cs" />
-    <Compile Include="Drawing\PdfImages.cs" />
-    <Compile Include="Drawing\PixelOperation.cs" />
-    <Compile Include="Drawing\PointExtensions.cs" />
-    <Compile Include="Drawing\RectangleExtensions.cs" />
-    <Compile Include="Drawing\RectangleScaleMode.cs" />
-    <Compile Include="Drawing\ResizeFastInterpolation.cs" />
-    <Compile Include="Drawing\ScaleMode.cs" />
-    <Compile Include="Drawing\SimpleTextRenderer.cs" />
-    <Compile Include="Drawing\SizeExtensions.cs" />
-    <Compile Include="Drawing\TextLine.cs" />
-    <Compile Include="IO\AutoDeleteFileStream.cs" />
-    <Compile Include="IO\BinaryReaderExtension.cs" />
-    <Compile Include="IO\DiskCache.cs" />
-    <Compile Include="IO\DriveChecker.cs" />
-    <Compile Include="IO\FileKey.cs" />
-    <Compile Include="IO\FileUtility.cs" />
-    <Compile Include="IO\IDiskCache.cs" />
-    <Compile Include="IO\IVirtualFolder.cs" />
-    <Compile Include="IO\LockFile.cs" />
-    <Compile Include="IO\PartialStream.cs" />
-    <Compile Include="IO\ProgressStream.cs" />
-    <Compile Include="IO\ProgressStreamReadEventArgs.cs" />
-    <Compile Include="IO\StreamEx.cs" />
-    <Compile Include="IO\VirtualFileFolder.cs" />
-    <Compile Include="IO\XorStream.cs" />
-    <Compile Include="Localize\TR.cs" />
-    <Compile Include="Localize\TRDictionary.cs" />
-    <Compile Include="Localize\TREntry.cs" />
-    <Compile Include="Localize\TREntryList.cs" />
-    <Compile Include="Localize\TRInfo.cs" />
-    <Compile Include="Mathematics\LuDecomposition.cs" />
-    <Compile Include="Mathematics\Matrix.cs" />
-    <Compile Include="Mathematics\Matrix3.cs" />
-    <Compile Include="Mathematics\Matrix4.cs" />
-    <Compile Include="Mathematics\Numeric.cs" />
-    <Compile Include="Mathematics\QrDecomposition.cs" />
-    <Compile Include="Mathematics\Quaternion.cs" />
-    <Compile Include="Mathematics\Trigonometry.cs" />
-    <Compile Include="Mathematics\Vector2.cs" />
-    <Compile Include="Mathematics\Vector2Converter.cs" />
-    <Compile Include="Mathematics\Vector3.cs" />
-    <Compile Include="Mathematics\Vector3Converter.cs" />
-    <Compile Include="Mathematics\Vector4.cs" />
-    <Compile Include="Mathematics\Vector4Converter.cs" />
-    <Compile Include="Net\Broadcaster.cs" />
-    <Compile Include="Net\BroadcastEventArgs.cs" />
-    <Compile Include="Net\HttpAccess.cs" />
-    <Compile Include="Net\IBroadcast.cs" />
-    <Compile Include="Net\IPAddressExtension.cs" />
-    <Compile Include="Net\IPAddressV4.cs" />
-    <Compile Include="Net\News\Atom.cs" />
-    <Compile Include="Net\News\NewsChannel.cs" />
-    <Compile Include="Net\News\NewsChannelCollection.cs" />
-    <Compile Include="Net\News\NewsChannelItem.cs" />
-    <Compile Include="Net\News\NewsChannelItemCollection.cs" />
-    <Compile Include="Net\News\NewsFeed.cs" />
-    <Compile Include="Net\News\AtomNewsFeed.cs" />
-    <Compile Include="Net\News\RssNewsFeed.cs" />
-    <Compile Include="Net\Search\CachedSearch.cs" />
-    <Compile Include="Net\Search\INetSearch.cs" />
-    <Compile Include="Net\Search\SearchResult.cs" />
-    <Compile Include="Net\Search\WikiSearch.cs" />
-    <Compile Include="Net\ServiceAddress.cs" />
-    <Compile Include="Net\WebImage.cs">
+    <Compile Update="Net\WebImage.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Net\WebUtility.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="RangeF.cs" />
-    <Compile Include="Reflection\AssemblyInfo.cs" />
-    <Compile Include="Reflection\CodeDomDuckTypeGenerator.cs" />
-    <Compile Include="Reflection\DuckTyping.cs" />
-    <Compile Include="Reflection\IDuckTypeGenerator.cs" />
-    <Compile Include="Reflection\PropertyCaller.cs" />
-    <Compile Include="Reflection\ReflectionExtension.cs" />
-    <Compile Include="Reflection\ResetValueAttribute.cs" />
-    <Compile Include="Runtime\BarkEventArgs.cs" />
-    <Compile Include="Runtime\BarkEventHandler.cs" />
-    <Compile Include="Runtime\BarkType.cs" />
-    <Compile Include="Runtime\CommandLineFilesAttribute.cs" />
-    <Compile Include="Runtime\CommandLineParser.cs" />
-    <Compile Include="Runtime\CommandLineParserOptions.cs" />
-    <Compile Include="Runtime\CommandLineSwitchAttribute.cs" />
-    <Compile Include="Runtime\CrashWatchDog.cs" />
-    <Compile Include="Runtime\Diagnostic.cs" />
-    <Compile Include="Runtime\GitVersion.cs" />
-    <Compile Include="Runtime\IniFile.cs" />
-    <Compile Include="Runtime\IniFileAttribute.cs" />
-    <Compile Include="Runtime\IniFileRegisterOptions.cs" />
-    <Compile Include="Runtime\ISingleInstance.cs" />
-    <Compile Include="Runtime\Machine.cs" />
-    <Compile Include="Runtime\SingleInstance.cs" />
-    <Compile Include="Runtime\VersionNeutralBinder.cs" />
-    <Compile Include="StringPair.cs" />
-    <Compile Include="Testing\TestUtility.cs" />
-    <Compile Include="Text\ApproximateMatching.cs" />
-    <Compile Include="Text\Base32.cs" />
-    <Compile Include="Text\ExtendedStringComparer.cs" />
-    <Compile Include="Text\ExtendedStringComparison.cs" />
-    <Compile Include="Text\ExtendedStringFormater.cs" />
-    <Compile Include="Text\FileLengthFormat.cs" />
-    <Compile Include="Text\NumberedString.cs" />
-    <Compile Include="Text\ReverseTextIndex.cs" />
-    <Compile Include="Text\ReverseTextIndexMode.cs" />
-    <Compile Include="Text\StringUtility.cs" />
-    <Compile Include="Text\TextNumberFloat.cs" />
-    <Compile Include="Text\Tokenizer.cs" />
-    <Compile Include="Threading\BackgroundRunner.cs">
+    <Compile Update="Threading\BackgroundRunner.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Threading\IAsyncProcessingItem.cs" />
-    <Compile Include="Threading\IProcessingItem.cs" />
-    <Compile Include="Threading\IProgressState.cs" />
-    <Compile Include="Threading\ItemMonitor.cs" />
-    <Compile Include="Threading\ProcessingQueue.cs" />
-    <Compile Include="Threading\ProcessingQueueAddMode.cs" />
-    <Compile Include="Threading\ProcessRunner.cs" />
-    <Compile Include="Threading\ProcessRunnerOutputEventArgs.cs" />
-    <Compile Include="Threading\ProgressState.cs" />
-    <Compile Include="Threading\ReadWriteLockExtensions.cs" />
-    <Compile Include="Threading\TaskQueue.cs" />
-    <Compile Include="Threading\ThreadUtility.cs" />
-    <Compile Include="ValuePair.cs" />
-    <Compile Include="Win32\AlternateDataStreamFile.cs" />
-    <Compile Include="Win32\BitmapCursor.cs" />
-    <Compile Include="Win32\BitmapCursorOverlayEffect.cs" />
-    <Compile Include="Win32\DataObjectEx.cs" />
-    <Compile Include="Win32\ExecuteProcess.cs" />
-    <Compile Include="Win32\FileMethods.cs" />
-    <Compile Include="Win32\FileSystemEnumerable.cs" />
-    <Compile Include="Win32\FileSystemEnumeratorType.cs" />
-    <Compile Include="Win32\FontDC.cs" />
-    <Compile Include="Win32\IBitmapCursor.cs" />
-    <Compile Include="Win32\IdleProcess.cs" />
-    <Compile Include="Win32\Keyboard.cs" />
-    <Compile Include="Win32\MemoryInfo.cs" />
-    <Compile Include="Win32\PortableDevices\Device.cs" />
-    <Compile Include="Win32\PortableDevices\DeviceFactory.cs" />
-    <Compile Include="Win32\PortableDevices\DeviceFile.cs" />
-    <Compile Include="Win32\PortableDevices\DeviceFolder.cs" />
-    <Compile Include="Win32\PortableDevices\DeviceItem.cs" />
-    <Compile Include="Win32\PortableDevices\DeviceStorageFolder.cs" />
-    <Compile Include="Win32\PortableDevices\PortableDeviceApi.cs" />
-    <Compile Include="Win32\PowerRequest.cs" />
-    <Compile Include="Win32\PowerRequestType.cs" />
-    <Compile Include="Win32\ShellFile.cs" />
-    <Compile Include="Win32\ShellFileDeleteOptions.cs" />
-    <Compile Include="Win32\ShellFolder.cs" />
-    <Compile Include="Win32\ShellIcon.cs" />
-    <Compile Include="Win32\ShellIconType.cs" />
-    <Compile Include="Win32\ShellPidl.cs" />
-    <Compile Include="Win32\ShellRegister.cs" />
-    <Compile Include="Win32\TrueVisibility.cs" />
-    <Compile Include="Win32\UserCredentialsDialog.cs">
+    <Compile Update="Win32\UserCredentialsDialog.cs">
       <SubType>Dialogs</SubType>
     </Compile>
-    <Compile Include="Win32\UserCredentialsDialogFlags.cs" />
-    <Compile Include="Win32\VariableHeightTreeNode.cs" />
-    <Compile Include="Xml\IXmlDeserialized.cs" />
-    <Compile Include="Xml\XmlUtility.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="PolySharp">
@@ -366,13 +43,7 @@
     <PackageReference Include="SharpZipLib">
       <Version>1.4.2</Version>
     </PackageReference>
+    <PackageReference Include="System.Management" Version="8.0.0" />
   </ItemGroup>
-  <!-- <ItemGroup> -->
-  <!-- <EmbeddedResource Include="Properties\Resources.resources" /> -->
-  <!-- </ItemGroup> -->
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
+  <PropertyGroup />
 </Project>

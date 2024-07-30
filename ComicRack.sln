@@ -3,23 +3,44 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicRack", "ComicRack\ComicRack.csproj", "{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicRack", "ComicRack\ComicRack.csproj", "{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}"
+	ProjectSection(ProjectDependencies) = postProject
+		{198A3787-DDE7-43F0-86E7-D915414F0FF4} = {198A3787-DDE7-43F0-86E7-D915414F0FF4}
+		{27674BF8-B7E4-4DE9-9E2A-4CECA07547BA} = {27674BF8-B7E4-4DE9-9E2A-4CECA07547BA}
+		{7DA0F747-D112-4793-B4C1-F2E2F2C99CBA} = {7DA0F747-D112-4793-B4C1-F2E2F2C99CBA}
+		{973066BF-3DC7-49DF-A704-951A86DBCB8F} = {973066BF-3DC7-49DF-A704-951A86DBCB8F}
+		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2} = {A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}
+		{CE8F3F7B-4464-40B4-9951-020FC0913BFD} = {CE8F3F7B-4464-40B4-9951-020FC0913BFD}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicRack.Engine", "ComicRack.Engine\ComicRack.Engine.csproj", "{973066BF-3DC7-49DF-A704-951A86DBCB8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicRack.Engine", "ComicRack.Engine\ComicRack.Engine.csproj", "{973066BF-3DC7-49DF-A704-951A86DBCB8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicRack.Plugins", "ComicRack.Plugins\ComicRack.Plugins.csproj", "{CE8F3F7B-4464-40B4-9951-020FC0913BFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicRack.Plugins", "ComicRack.Plugins\ComicRack.Plugins.csproj", "{CE8F3F7B-4464-40B4-9951-020FC0913BFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicRack.Engine.Display.Forms", "ComicRack.Engine.Display.Forms\ComicRack.Engine.Display.Forms.csproj", "{27674BF8-B7E4-4DE9-9E2A-4CECA07547BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicRack.Engine.Display.Forms", "ComicRack.Engine.Display.Forms\ComicRack.Engine.Display.Forms.csproj", "{27674BF8-B7E4-4DE9-9E2A-4CECA07547BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cYo.Common", "cYo.Common\cYo.Common.csproj", "{198A3787-DDE7-43F0-86E7-D915414F0FF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cYo.Common", "cYo.Common\cYo.Common.csproj", "{198A3787-DDE7-43F0-86E7-D915414F0FF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cYo.Common.Presentation", "cYo.Common.Presentation\cYo.Common.Presentation.csproj", "{7DA0F747-D112-4793-B4C1-F2E2F2C99CBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cYo.Common.Presentation", "cYo.Common.Presentation\cYo.Common.Presentation.csproj", "{7DA0F747-D112-4793-B4C1-F2E2F2C99CBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cYo.Common.Windows", "cYo.Common.Windows\cYo.Common.Windows.csproj", "{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cYo.Common.Windows", "cYo.Common.Windows\cYo.Common.Windows.csproj", "{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5040C603-CDAE-46A1-B23E-CFC29319E770}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		CompressIconFolders.ps1 = CompressIconFolders.ps1
+		directory.build.props = directory.build.props
+		Installer.iss = Installer.iss
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{C335F5E2-2C66-465E-B59B-33F8E13B287E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{F21BF3C0-2205-49BC-B1DE-09BA44BE8605}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\nightly.yml = .github\workflows\nightly.yml
+		.github\workflows\pr-artifact-upload.yml = .github\workflows\pr-artifact-upload.yml
+		.github\workflows\pr-comment-artifact-url.yml = .github\workflows\pr-comment-artifact-url.yml
+		.github\workflows\release.yml = .github\workflows\release.yml
 	EndProjectSection
 EndProject
 Global
@@ -89,6 +110,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C335F5E2-2C66-465E-B59B-33F8E13B287E} = {5040C603-CDAE-46A1-B23E-CFC29319E770}
+		{F21BF3C0-2205-49BC-B1DE-09BA44BE8605} = {C335F5E2-2C66-465E-B59B-33F8E13B287E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		RESX_Rules = {"EnabledRules":["WhiteSpaceLead","WhiteSpaceTail","PunctuationLead","PunctuationTail"]}

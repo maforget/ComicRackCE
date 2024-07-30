@@ -1,7 +1,7 @@
 ; Define version and setup filename with iscc.exe /DMyAppVersion=v1.0 /DMyAppSetupFile=ComicRackSetup_v1.0 Installer.iss
 #define MyAppName "ComicRack Community Edition"
 #ifndef MyAppVersion
-#define MyAppVersion "v0.9.178"
+#define MyAppVersion "v0.9.180"
 #endif
 #ifndef MyAppSetupFile
 #define MyAppSetupFile "ComicRackSetup"
@@ -25,7 +25,7 @@ DefaultDirName={autopf}\{#MyAppName}
 ChangesAssociations=yes
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-LicenseFile=ComicRack\bin\Release\License.txt
+LicenseFile=ComicRack\bin\Release\net48\License.txt
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=.
 OutputBaseFilename={#MyAppSetupFile}
@@ -33,7 +33,7 @@ Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
 AlwaysShowComponentsList=yes
-ArchitecturesInstallIn64BitMode=x64
+ArchitecturesInstallIn64BitMode=x86compatible
 SetupIconFile=ComicRack\Icons\uninst_103.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
 UninstallDisplayName={#MyAppName}
@@ -65,21 +65,21 @@ Name: "additional";Description: "Additional images, icons and backgrounds"; Type
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: "ComicRack\bin\Release\*.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\Changes.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\{#MyAppExeName}.config"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\ComicRack.ini"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\DefaultLists.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\License.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\NewsTemplate.html"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\ReadMe.txt"; DestDir: "{app}"; Flags: ignoreversion isreadme; Components: app
-Source: "ComicRack\bin\Release\Help\*"; DestDir: "{app}\Help"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\Languages\*"; DestDir: "{app}\Languages"; Flags: ignoreversion; Components: languages
-Source: "ComicRack\bin\Release\Resources\*"; DestDir: "{app}\Resources"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\Resources\Icons\*"; DestDir: "{app}\Resources\Icons"; Flags: ignoreversion; Components: additional
-Source: "ComicRack\bin\Release\Resources\Textures\*"; DestDir: "{app}\Resources\Textures"; Flags: ignoreversion recursesubdirs; Components: additional
-Source: "ComicRack\bin\Release\Scripts\*"; DestDir: "{app}\Scripts"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\*.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\Changes.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\{#MyAppExeName}.config"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\ComicRack.ini"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\DefaultLists.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\License.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\NewsTemplate.html"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\ReadMe.txt"; DestDir: "{app}"; Flags: ignoreversion isreadme; Components: app
+Source: "ComicRack\bin\Release\net48\Help\*"; DestDir: "{app}\Help"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\Languages\*"; DestDir: "{app}\Languages"; Flags: ignoreversion; Components: languages
+Source: "ComicRack\bin\Release\net48\Resources\*"; DestDir: "{app}\Resources"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\Resources\Icons\*"; DestDir: "{app}\Resources\Icons"; Flags: ignoreversion; Components: additional
+Source: "ComicRack\bin\Release\net48\Resources\Textures\*"; DestDir: "{app}\Resources\Textures"; Flags: ignoreversion recursesubdirs; Components: additional
+Source: "ComicRack\bin\Release\net48\Scripts\*"; DestDir: "{app}\Scripts"; Flags: ignoreversion; Components: app
 
 [Registry]
 ; Comics

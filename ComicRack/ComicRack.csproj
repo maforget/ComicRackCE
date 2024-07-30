@@ -1,14 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <OutputType>WinExe</OutputType>
     <RootNamespace>cYo.Projects.ComicRack.Viewer</RootNamespace>
-    <AssemblyName>ComicRack</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <LangVersion>latest</LangVersion>
     <FileAlignment>4096</FileAlignment>
     <StartupObject>cYo.Projects.ComicRack.Viewer.Program</StartupObject>
@@ -27,688 +22,103 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Deterministic>false</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <Optimize>True</Optimize>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
   </PropertyGroup>
   <PropertyGroup>
     <Win32Resource>myressources.res</Win32Resource>
   </PropertyGroup>
-  <PropertyGroup />
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Web.Services" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandHandler.cs" />
-    <Compile Include="CommandMapper.cs">
+    <Compile Update="CommandMapper.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Config\BookPageLayout.cs" />
-    <Compile Include="Config\DefaultLists.cs" />
-    <Compile Include="Config\DisplayWorkspace.cs" />
-    <Compile Include="Config\ExtendedSettings.cs" />
-    <Compile Include="Config\ExternalProgram.cs" />
-    <Compile Include="Config\HiddenMessageBoxes.cs" />
-    <Compile Include="Config\LibraryGauges.cs" />
-    <Compile Include="Config\ListConfiguration.cs" />
-    <Compile Include="Config\RemoteShareItem.cs" />
-    <Compile Include="Config\Settings.cs" />
-    <Compile Include="Config\TabLayouts.cs" />
-    <Compile Include="Config\WorkspaceType.cs" />
-    <Compile Include="Controls\ComicListField.cs" />
-    <Compile Include="Controls\CoverThumbnailSizing.cs" />
-    <Compile Include="Controls\CoverViewItem.cs" />
-    <Compile Include="Controls\CoverViewItemBookComparer.cs" />
-    <Compile Include="Controls\CoverViewItemBookGrouper.cs" />
-    <Compile Include="Controls\CoverViewItemCommunityRatingComparer.cs" />
-    <Compile Include="Controls\CoverViewItemComparer.cs" />
-    <Compile Include="Controls\CoverViewItemPositionComparer.cs" />
-    <Compile Include="Controls\CoverViewItemRatingComparer.cs" />
-    <Compile Include="Controls\CoverViewItemReadPercentageComparer.cs" />
-    <Compile Include="Controls\CoverViewItemStatsComparer.cs" />
-    <Compile Include="Controls\CoverViewItemStatsGrouper.cs" />
-    <Compile Include="Controls\EditControlUtility.cs" />
-    <Compile Include="Controls\FavoriteViewItem.cs" />
-    <Compile Include="Controls\FolderViewItem.cs" />
-    <Compile Include="Controls\IBookGrouper.cs" />
-    <Compile Include="Controls\ISetCustomThumbnail.cs" />
-    <Compile Include="Controls\ItemSizeInfo.cs" />
-    <Compile Include="Controls\LibraryTreeSkin.cs">
+    <Compile Update="Controls\LibraryTreeSkin.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\MarkerType.cs" />
-    <Compile Include="Controls\PagesView.cs">
+    <Compile Update="Controls\PagesView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\PagesView.Designer.cs">
-      <DependentUpon>PagesView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\PageViewBookmarkGrouper.cs" />
-    <Compile Include="Controls\PageViewItem.cs" />
-    <Compile Include="Controls\PageViewItemComparer.cs" />
-    <Compile Include="Controls\PageViewItemGrouper.cs" />
-    <Compile Include="Controls\PageViewItemKeyComparer.cs" />
-    <Compile Include="Controls\PageViewItemPageComparer.cs" />
-    <Compile Include="Controls\ThumbnailViewItem.cs" />
-    <Compile Include="Dialogs\ComicBookDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\ComicBookDialog.Designer.cs">
-      <DependentUpon>ComicBookDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\ComicDataPasteDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\ComicDataPasteDialog.Designer.cs">
-      <DependentUpon>ComicDataPasteDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\ComicDisplaySettingsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\ComicDisplaySettingsDialog.Designer.cs">
-      <DependentUpon>ComicDisplaySettingsDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\CrashDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\CrashDialog.Designer.cs">
-      <DependentUpon>CrashDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\DeleteItemDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\DeleteItemDialog.Designer.cs">
-      <DependentUpon>DeleteItemDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\DeviceEditControl.cs">
+    <Compile Update="Dialogs\DeviceEditControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dialogs\DeviceEditControl.Designer.cs">
-      <DependentUpon>DeviceEditControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\DevicesEditDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\DevicesEditDialog.Designer.cs">
-      <DependentUpon>DevicesEditDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\DeviceSelectDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\DeviceSelectDialog.Designer.cs">
-      <DependentUpon>DeviceSelectDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\EditListDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\EditListDialog.Designer.cs">
-      <DependentUpon>EditListDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\ExportComicsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\ExportComicsDialog.Designer.cs">
-      <DependentUpon>ExportComicsDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\IMatcherEditor.cs" />
-    <Compile Include="Dialogs\ISmartListDialog.cs" />
-    <Compile Include="Dialogs\OpenWithDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\OpenWithDialog.Designer.cs">
-      <DependentUpon>OpenWithDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\ListEditorDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\ListEditorDialog.Designer.cs">
-      <DependentUpon>ListEditorDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\ListLayoutDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\ListLayoutDialog.Designer.cs">
-      <DependentUpon>ListLayoutDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\MatcherEditor.cs">
+    <Compile Update="Dialogs\MatcherEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dialogs\MatcherEditor.Designer.cs">
-      <DependentUpon>MatcherEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\MatcherGroupEditor.cs">
+    <Compile Update="Dialogs\MatcherGroupEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dialogs\MatcherGroupEditor.Designer.cs">
-      <DependentUpon>MatcherGroupEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\MultipleComicBooksDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\MultipleComicBooksDialog.Designer.cs">
-      <DependentUpon>MultipleComicBooksDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\NewsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\NewsDialog.Designer.cs">
-      <DependentUpon>NewsDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\OpenRemoteDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\OpenRemoteDialog.Designer.cs">
-      <DependentUpon>OpenRemoteDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\PasswordDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\PasswordDialog.Designer.cs">
-      <DependentUpon>PasswordDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\PreferencesDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\PreferencesDialog.Designer.cs">
-      <DependentUpon>PreferencesDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\ProgressDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\ProgressDialog.Designer.cs">
-      <DependentUpon>ProgressDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\QuickRatingDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\QuickRatingDialog.Designer.cs">
-      <DependentUpon>QuickRatingDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\SaveWorkspaceDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\SaveWorkspaceDialog.Designer.cs">
-      <DependentUpon>SaveWorkspaceDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\ServerEditControl.cs">
+    <Compile Update="Dialogs\ServerEditControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dialogs\ServerEditControl.Designer.cs">
-      <DependentUpon>ServerEditControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\ShowErrorsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\ShowErrorsDialog.Designer.cs">
-      <DependentUpon>ShowErrorsDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\SmartListDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\SmartListDialog.Designer.cs">
-      <DependentUpon>SmartListDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\SmartListQueryDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\SmartListQueryDialog.Designer.cs">
-      <DependentUpon>SmartListQueryDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\Splash.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\Splash.Designer.cs">
-      <DependentUpon>Splash.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\TasksDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\TasksDialog.Designer.cs">
-      <DependentUpon>TasksDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\ValueEditorDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\ValueEditorDialog.Designer.cs">
-      <DependentUpon>ValueEditorDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\ZoomDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\ZoomDialog.Designer.cs">
-      <DependentUpon>ZoomDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IDisplayWorkspace.cs" />
-    <Compile Include="IMain.cs" />
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menus\ToolStripThumbSize.cs">
+    <Compile Update="Menus\ToolStripThumbSize.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="NavigatorManager.cs" />
-    <Compile Include="NewsStorage.cs" />
-    <Compile Include="OpenComicOptions.cs" />
-    <Compile Include="OptimizedProfessionalColorTable.cs" />
-    <Compile Include="OptimizedTanColorTable.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ReaderForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReaderForm.Designer.cs">
-      <DependentUpon>ReaderForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ScriptOutputForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ScriptOutputForm.Designer.cs">
-      <DependentUpon>ScriptOutputForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ScriptUtility.cs" />
-    <Compile Include="SearchEngines.cs" />
-    <Compile Include="ServiceCommandHandler.cs" />
-    <Compile Include="ServiceUpdateHandler.cs" />
-    <Compile Include="UpdateHandler.cs" />
-    <Compile Include="Views\ComicBrowserControl.cs">
+    <Compile Update="Views\ComicBrowserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ComicBrowserControl.Designer.cs">
-      <DependentUpon>ComicBrowserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ComicBrowserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ComicBrowserForm.Designer.cs">
-      <DependentUpon>ComicBrowserForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ComicBrowserView.cs">
+    <Compile Update="Views\ComicBrowserView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ComicExplorerView.cs">
+    <Compile Update="Views\ComicExplorerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ComicExplorerView.Designer.cs">
-      <DependentUpon>ComicExplorerView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ComicExplorerViewSettings.cs" />
-    <Compile Include="Views\ComicListBrowser.cs">
+    <Compile Update="Views\ComicListBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ComicListFilesBrowser.cs">
+    <Compile Update="Views\ComicListFilesBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ComicListFolderFilesBrowser.cs">
+    <Compile Update="Views\ComicListFolderFilesBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ComicListFolderFilesBrowser.Designer.cs">
-      <DependentUpon>ComicListFolderFilesBrowser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ComicListLibraryBrowser.cs">
+    <Compile Update="Views\ComicListLibraryBrowser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ComicListLibraryBrowser.Designer.cs">
-      <DependentUpon>ComicListLibraryBrowser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ComicPagesView.cs">
+    <Compile Update="Views\ComicPagesView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ComicPagesView.Designer.cs">
-      <DependentUpon>ComicPagesView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DragDropContainer.cs" />
-    <Compile Include="Views\FolderComicListProvider.cs" />
-    <Compile Include="Views\IBrowseHistory.cs" />
-    <Compile Include="Views\IComicBrowser.cs" />
-    <Compile Include="Views\IImportComicList.cs" />
-    <Compile Include="Views\IItemSize.cs" />
-    <Compile Include="Views\ILibraryBrowser.cs" />
-    <Compile Include="Views\IListDisplays.cs" />
-    <Compile Include="Views\IRemoveBooks.cs" />
-    <Compile Include="Views\ISearchOptions.cs" />
-    <Compile Include="Views\ISidebar.cs" />
-    <Compile Include="Views\MainView.cs">
+    <Compile Update="Views\MainView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\MainView.Designer.cs">
-      <DependentUpon>MainView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\QuickOpenView.cs">
+    <Compile Update="Views\QuickOpenView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\QuickOpenView.Designer.cs">
-      <DependentUpon>QuickOpenView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RemoteConnectionView.cs">
+    <Compile Update="Views\RemoteConnectionView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\RemoteConnectionView.Designer.cs">
-      <DependentUpon>RemoteConnectionView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SmallComicPreview.cs">
+    <Compile Update="Views\SmallComicPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\SmallComicPreview.Designer.cs">
-      <DependentUpon>SmallComicPreview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SubView.cs">
+    <Compile Update="Views\SubView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Win7.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\ComicBrowserView.Designer.cs">
-      <DependentUpon>ComicBrowserView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ComicListBrowser.Designer.cs">
-      <DependentUpon>ComicListBrowser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ComicListFilesBrowser.Designer.cs">
-      <DependentUpon>ComicListFilesBrowser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SubView.Designer.cs">
-      <DependentUpon>SubView.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Controls\PagesView.resx">
-      <DependentUpon>PagesView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ComicBookDialog.resx">
-      <DependentUpon>ComicBookDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ComicDataPasteDialog.resx">
-      <DependentUpon>ComicDataPasteDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ComicDisplaySettingsDialog.resx">
-      <DependentUpon>ComicDisplaySettingsDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\CrashDialog.resx">
-      <DependentUpon>CrashDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\DeleteItemDialog.resx">
-      <DependentUpon>DeleteItemDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\DeviceEditControl.resx">
-      <DependentUpon>DeviceEditControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\DevicesEditDialog.resx">
-      <DependentUpon>DevicesEditDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\DeviceSelectDialog.resx">
-      <DependentUpon>DeviceSelectDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\EditListDialog.resx">
-      <DependentUpon>EditListDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ExportComicsDialog.resx">
-      <DependentUpon>ExportComicsDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ListEditorDialog.resx">
-      <DependentUpon>ListEditorDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ListLayoutDialog.resx">
-      <DependentUpon>ListLayoutDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\MatcherEditor.resx">
-      <DependentUpon>MatcherEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\MatcherGroupEditor.resx">
-      <DependentUpon>MatcherGroupEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\MultipleComicBooksDialog.resx">
-      <DependentUpon>MultipleComicBooksDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\NewsDialog.resx">
-      <DependentUpon>NewsDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\OpenRemoteDialog.resx">
-      <DependentUpon>OpenRemoteDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\OpenWithDialog.resx">
-      <DependentUpon>OpenWithDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\PasswordDialog.resx">
-      <DependentUpon>PasswordDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\PreferencesDialog.resx">
-      <DependentUpon>PreferencesDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ProgressDialog.resx">
-      <DependentUpon>ProgressDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\QuickRatingDialog.resx">
-      <DependentUpon>QuickRatingDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\SaveWorkspaceDialog.resx">
-      <DependentUpon>SaveWorkspaceDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ServerEditControl.resx">
-      <DependentUpon>ServerEditControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ShowErrorsDialog.resx">
-      <DependentUpon>ShowErrorsDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\SmartListDialog.resx">
-      <DependentUpon>SmartListDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\SmartListQueryDialog.resx">
-      <DependentUpon>SmartListQueryDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\Splash.resx">
-      <DependentUpon>Splash.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\TasksDialog.resx">
-      <DependentUpon>TasksDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ValueEditorDialog.resx">
-      <DependentUpon>ValueEditorDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\ZoomDialog.resx">
-      <DependentUpon>ZoomDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReaderForm.resx">
-      <DependentUpon>ReaderForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ScriptOutputForm.resx">
-      <DependentUpon>ScriptOutputForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ComicBrowserForm.resx">
-      <DependentUpon>ComicBrowserForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ComicBrowserView.resx">
-      <DependentUpon>ComicBrowserView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ComicExplorerView.resx">
-      <DependentUpon>ComicExplorerView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ComicListBrowser.resx">
-      <DependentUpon>ComicListBrowser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ComicListFilesBrowser.resx">
-      <DependentUpon>ComicListFilesBrowser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ComicListFolderFilesBrowser.resx" DependentUpon="ComicListFolderFilesBrowser.cs" />
-    <EmbeddedResource Include="Views\ComicListLibraryBrowser.resx" DependentUpon="ComicListLibraryBrowser.cs">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ComicBrowserControl.resx" DependentUpon="ComicBrowserControl.cs">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ComicPagesView.resx">
-      <DependentUpon>ComicPagesView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\MainView.resx">
-      <DependentUpon>MainView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\QuickOpenView.resx">
-      <DependentUpon>QuickOpenView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\RemoteConnectionView.resx">
-      <DependentUpon>RemoteConnectionView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SmallComicPreview.resx">
-      <DependentUpon>SmallComicPreview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SubView.resx">
-      <DependentUpon>SubView.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
-    <None Include="app.config" />
-    <None Include="app.manifest" />
     <Content Include="ComicRack.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="CurrentCommit.txt" />
-    <Content Include="Help\ComicRack Introduction.djvu">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Help\ComicRack Online Manual.ini">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Help\ComicRack Wiki.ini">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <EmbeddedResource Include="isDirty.txt" />
-    <Content Include="Languages\cs-CZ.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\de.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\el-GR.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\es.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\fi.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\fr.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\hr.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\hu.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\it.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\ja.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\nl-BE.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\pl.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\pt-BR.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\ru.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\sk-SK.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\tr.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\zh-CN.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\zh-Hans.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Languages\zh.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Package.ini">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ComicRack.Engine.Display.Forms\ComicRack.Engine.Display.Forms.csproj">
-      <Project>{27674bf8-b7e4-4de9-9e2a-4ceca07547ba}</Project>
-      <Name>ComicRack.Engine.Display.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ComicRack.Engine\ComicRack.Engine.csproj">
-      <Project>{973066bf-3dc7-49df-a704-951a86dbcb8f}</Project>
-      <Name>ComicRack.Engine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ComicRack.Plugins\ComicRack.Plugins.csproj">
-      <Project>{ce8f3f7b-4464-40b4-9951-020fc0913bfd}</Project>
-      <Name>ComicRack.Plugins</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\cYo.Common.Presentation\cYo.Common.Presentation.csproj">
-      <Project>{7da0f747-d112-4793-b4c1-f2e2f2c99cba}</Project>
-      <Name>cYo.Common.Presentation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\cYo.Common.Windows\cYo.Common.Windows.csproj">
-      <Project>{a775e7f2-2d32-4f25-bf9b-f1c9ee5f5af2}</Project>
-      <Name>cYo.Common.Windows</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\cYo.Common\cYo.Common.csproj">
-      <Project>{198a3787-dde7-43f0-86e7-d915414f0ff4}</Project>
-      <Name>cYo.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Changes.txt">
@@ -717,152 +127,15 @@
     <Content Include="DefaultLists.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Help\ComicRack Introduction.djvu.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Help\readme.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="Icons\icon1.ico" />
-    <None Include="Icons\icon2.ico" />
-    <None Include="Icons\icon3.ico" />
-    <None Include="Icons\icon4.ico" />
-    <None Include="Icons\uninst_103.ico" />
     <Content Include="License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="myressources.rc" />
-    <None Include="myressources.res" />
     <Content Include="NewsTemplate.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ReadMe.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\7z.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\7z.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\7z64.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\c44.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\ddjvu.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\djvm.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\libdjvulibre.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\libjpeg.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\libtiff.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\libwebp32.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\libwebp64.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\libz.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\Black [S].jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\BrickWall.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\BrushedMetal.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\BrushedMetal2.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\Ceramic.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\Ceramic2.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\ChalkBoard.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\Circles.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\Glass.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\Grass.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\LightWood.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\OrangeMetal.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\PlankWood.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Backgrounds\Sketch.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Papers\Checkered.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Papers\WhitePaper.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Papers\WhitePaper2.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Textures\Papers\WhitePaper3.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Autonumber.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\CommitProposed.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\NewComics.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\OtherScripts.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Renumber.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Sample.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Sample.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\SearchAndReplace.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\SearchAndReplace.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft-WindowsAPICodePack-Shell">
@@ -874,38 +147,39 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>xcopy /Y x64\pdfium.dll Resources\pdfium_x64.dll*
-xcopy /Y x86\pdfium.dll Resources\pdfium_x86.dll*
-rmdir /S /Q arm64
-rmdir /S /Q Lib
-rmdir /S /Q x64
-rmdir /S /Q x86
-del /Q PDFiumSharp.xml
-
-if $(ConfigurationName) == Debug Goto :Exit
-del /Q *.pdb
-
-: Exit</PostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PreBuildEvent>cd ..\..\
-git rev-parse HEAD &gt; "CurrentCommit.txt"
-git status --porcelain &gt; "isDirty.txt"
-exit 0</PreBuildEvent>
-  </PropertyGroup>
-  <Target Name="Clean">
-    <RemoveDir Directories="$(TargetDir)\Resources\Icons" />
+  <ItemGroup>
+    <ProjectReference Include="..\ComicRack.Engine.Display.Forms\ComicRack.Engine.Display.Forms.csproj" />
+    <ProjectReference Include="..\ComicRack.Engine\ComicRack.Engine.csproj" />
+    <ProjectReference Include="..\ComicRack.Plugins\ComicRack.Plugins.csproj" />
+    <ProjectReference Include="..\cYo.Common.Presentation\cYo.Common.Presentation.csproj" />
+    <ProjectReference Include="..\cYo.Common.Windows\cYo.Common.Windows.csproj" />
+    <ProjectReference Include="..\cYo.Common\cYo.Common.csproj" />
+  </ItemGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <Target Name="CustomClean" AfterTargets="CoreClean">
+    <RemoveDir Directories="$(OutDir)\Resources" />
+    <RemoveDir Directories="$(OutDir)\Languages" />
+    <RemoveDir Directories="$(OutDir)\Help" />
+    <RemoveDir Directories="$(OutDir)\Scripts" />
   </Target>
-  <Target Name="AfterBuild">
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <ItemGroup>
-      <ResourcesIcons Include="Resources\Icons\**\*.*" />
+        <ResourcesDirectory Include="Resources\**\*.*" />
+        <LanguagesDirectory Include="Languages\**\*.*" />
+        <HelpDirectory Include="Help\**\*.*" />
+        <ScriptsDirectory Include="Scripts\**\*.*" />
     </ItemGroup>
-    <Copy SourceFiles="@(ResourcesIcons)" DestinationFolder="$(TargetDir)\Resources\Icons\%(RecursiveDir)" ContinueOnError="true" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(ResourcesDirectory)" DestinationFolder="$(OutDir)\Resources\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(LanguagesDirectory)" DestinationFolder="$(OutDir)\Languages\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(HelpDirectory)" DestinationFolder="$(OutDir)\Help\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(ScriptsDirectory)" DestinationFolder="$(OutDir)\Scripts\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Exec Command="git rev-parse HEAD &gt; &quot;CurrentCommit.txt&quot;&#xD;&#xA;git status --porcelain &gt; &quot;isDirty.txt&quot;&#xD;&#xA;exit 0" />
   </Target>
-  <Target Name="PostBuild" AfterTargets="AfterBuild">
-    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(SolutionDir)CompressIconFolders.ps1&quot; -BaseDirectory &quot;$(TargetDir)&quot;" />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="cd $(OutDir)&#xD;&#xA;echo %25cd%25&#xD;&#xA;xcopy /Y x64\pdfium.dll Resources\pdfium_x64.dll*&#xD;&#xA;xcopy /Y x86\pdfium.dll Resources\pdfium_x86.dll*&#xD;&#xA;rmdir /S /Q arm64&#xD;&#xA;rmdir /S /Q Lib&#xD;&#xA;rmdir /S /Q x64&#xD;&#xA;rmdir /S /Q x86&#xD;&#xA;del /Q PDFiumSharp.xml&#xD;&#xA;&#xD;&#xA;if $(Configuration) == Debug Goto :Exit&#xD;&#xA;del /Q *.pdb&#xD;&#xA;&#xD;&#xA;: Exit" />
+  </Target>
+  <Target Name="CompressIconFolders" AfterTargets="PostBuild">
+      <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(SolutionDir)CompressIconFolders.ps1&quot; -BaseDirectory &quot;$(OutDir)&quot;" />
   </Target>
 </Project>

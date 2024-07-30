@@ -1,44 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
-    <RootNamespace>cYo.Common.Windows</RootNamespace>
-    <AssemblyName>cYo.Common.Windows</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <LangVersion>latest</LangVersion>
     <FileAlignment>4096</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Deterministic>false</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
     <Reference Include="Windows7.Multitouch, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d934502757229ee0, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ComicRack.Engine.Display.Forms\DLL\Windows7.Multitouch.dll</HintPath>
@@ -48,289 +23,144 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandKey.cs" />
-    <Compile Include="CommandKeyExtension.cs" />
-    <Compile Include="ContextHelp.cs" />
-    <Compile Include="ControlExtensions.cs" />
-    <Compile Include="Forms\AutoHideBounds.cs" />
-    <Compile Include="Forms\AutoHideManager.cs">
+    <Compile Update="Forms\AutoHideManager.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\AutomaticProgressDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AutomaticProgressDialog.Designer.cs">
-      <DependentUpon>AutomaticProgressDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AutomaticProgressDialogExtension.cs" />
-    <Compile Include="Forms\AutomaticProgressDialogOptions.cs" />
-    <Compile Include="Forms\AutoRepeatButton.cs">
+    <Compile Update="Forms\AutoRepeatButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\AutoScrollEventArgs.cs" />
-    <Compile Include="Forms\AutoScrollMode.cs" />
-    <Compile Include="Forms\AutoSizeComboBox.cs">
+    <Compile Update="Forms\AutoSizeComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\AutoSizeTextBox.cs">
+    <Compile Update="Forms\AutoSizeTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\BackgroundImageDisplayer.cs" />
-    <Compile Include="Forms\BaseViewItem.cs" />
-    <Compile Include="Forms\BitmapViewer.cs">
+    <Compile Update="Forms\BitmapViewer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\BorderUtility.cs" />
-    <Compile Include="Forms\CaptionControl.cs">
+    <Compile Update="Forms\CaptionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\CaptionControl.Designer.cs">
-      <DependentUpon>CaptionControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CheckedListBoxEx.cs">
+    <Compile Update="Forms\CheckedListBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\CollapsibleGroupBox.cs">
+    <Compile Update="Forms\CollapsibleGroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\ComboBoxEx.cs">
+    <Compile Update="Forms\ComboBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\ComboBoxSkinner.cs" />
-    <Compile Include="Forms\ContextMenuBuilder.cs" />
-    <Compile Include="Forms\ControlStyleColorTable.cs" />
-    <Compile Include="Forms\DrawItemViewOptions.cs" />
-    <Compile Include="Forms\DropDownHost.cs">
+    <Compile Update="Forms\DropDownHost.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\EnumMenuUtility.cs" />
-    <Compile Include="Forms\ExtendedBorderStyle.cs" />
-    <Compile Include="Forms\ExtendedToolStripRenderer.cs" />
-    <Compile Include="Forms\FastScrollControl.cs">
+    <Compile Update="Forms\FastScrollControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\FastScrollControl.Designer.cs">
-      <DependentUpon>FastScrollControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FolderTreeView.cs">
+    <Compile Update="Forms\FolderTreeView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\FormUtility.cs" />
-    <Compile Include="Forms\GroupHeaderInformation.cs" />
-    <Compile Include="Forms\HeaderAdornments.cs" />
-    <Compile Include="Forms\HeaderControl.cs">
+    <Compile Update="Forms\HeaderControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\HeaderState.cs" />
-    <Compile Include="Forms\IBaseViewItem.cs" />
-    <Compile Include="Forms\IBitmapDisplayControl.cs" />
-    <Compile Include="Forms\IColumn.cs" />
-    <Compile Include="Forms\IDelayedAutoCompleteList.cs" />
-    <Compile Include="Forms\IMouseHWheel.cs" />
-    <Compile Include="Forms\IPromptText.cs" />
-    <Compile Include="Forms\ItemDrawInformation.cs" />
-    <Compile Include="Forms\ItemSelectionDrawingStyle.cs" />
-    <Compile Include="Forms\ItemSizeInformation.cs" />
-    <Compile Include="Forms\ItemView.cs">
+    <Compile Update="Forms\ItemView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\ItemViewColumn.cs" />
-    <Compile Include="Forms\ItemViewColumnCollection.cs" />
-    <Compile Include="Forms\ItemViewColumnHeaderClickEventArgs.cs" />
-    <Compile Include="Forms\ItemViewColumnInfo.cs" />
-    <Compile Include="Forms\ItemViewConfig.cs" />
-    <Compile Include="Forms\ItemViewGroupsStatus.cs" />
-    <Compile Include="Forms\ItemViewInvalidateOptions.cs" />
-    <Compile Include="Forms\ItemViewItem.cs" />
-    <Compile Include="Forms\ItemViewLayout.cs" />
-    <Compile Include="Forms\ItemViewMode.cs" />
-    <Compile Include="Forms\ItemViewStates.cs" />
-    <Compile Include="Forms\IViewableItem.cs" />
-    <Compile Include="Forms\IViewableItemHitTest.cs" />
-    <Compile Include="Forms\KeyboardShortcutEditor.cs">
+    <Compile Update="Forms\KeyboardShortcutEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\KeyboardShortcutEditor.Designer.cs">
-      <DependentUpon>KeyboardShortcutEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\KeyInputForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\KeyInputForm.Designer.cs">
-      <DependentUpon>KeyInputForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\KeySearch.cs">
+    <Compile Update="Forms\KeySearch.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\KeySequence.cs" />
-    <Compile Include="Forms\KeySequenceCollection.cs" />
-    <Compile Include="Forms\KeySequenceEventArgs.cs" />
-    <Compile Include="Forms\KeySequenceHandler.cs">
+    <Compile Update="Forms\KeySequenceHandler.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\LanguageComboBox.cs">
+    <Compile Update="Forms\LanguageComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\LayeredForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ListBoxEx.cs">
+    <Compile Update="Forms\ListBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\ListSelectorControl.cs">
+    <Compile Update="Forms\ListSelectorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\ListSelectorControl.Designer.cs">
-      <DependentUpon>ListSelectorControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ListViewEx.cs">
+    <Compile Update="Forms\ListViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\NiceTreeSkin.cs">
+    <Compile Update="Forms\NiceTreeSkin.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\NullableDateTimePicker.cs">
+    <Compile Update="Forms\NullableDateTimePicker.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\PasswordTextBox.cs">
+    <Compile Update="Forms\PasswordTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\Popup.cs">
+    <Compile Update="Forms\Popup.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\PopupComboBox.cs">
+    <Compile Update="Forms\PopupComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\PopupComboBoxBase.cs">
+    <Compile Update="Forms\PopupComboBoxBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\QuestionDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\QuestionDialog.Designer.cs">
-      <DependentUpon>QuestionDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\QuestionResult.cs" />
-    <Compile Include="Forms\RichTextBoxExtensions.cs" />
-    <Compile Include="Forms\ScrollControl.cs">
+    <Compile Update="Forms\ScrollControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\SearchContextMenuBuilder.cs" />
-    <Compile Include="Forms\SearchTextBox.cs">
+    <Compile Update="Forms\SearchTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\SelectItemDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SelectItemDialog.Designer.cs">
-      <DependentUpon>SelectItemDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SimpleColorPicker.cs">
+    <Compile Update="Forms\SimpleColorPicker.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\SizableContainer.cs">
+    <Compile Update="Forms\SizableContainer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\SpinButton.cs">
+    <Compile Update="Forms\SpinButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\SplitButton.cs">
+    <Compile Update="Forms\SplitButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\SplitterEx.cs">
+    <Compile Update="Forms\SplitterEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\StyledRenderer.cs" />
-    <Compile Include="Forms\TabBar.cs">
+    <Compile Update="Forms\TabBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\TabControlEx.cs">
+    <Compile Update="Forms\TabControlEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\TanColorTable.cs" />
-    <Compile Include="Forms\TextBoxContextMenu.cs">
+    <Compile Update="Forms\TextBoxContextMenu.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\TextBoxEx.cs">
+    <Compile Update="Forms\TextBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\TextBoxExtensions.cs" />
-    <Compile Include="Forms\TextBoxStream.cs" />
-    <Compile Include="Forms\ThumbStickControl.cs">
+    <Compile Update="Forms\ThumbStickControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\ToolStripExtensions.cs" />
-    <Compile Include="Forms\ToolStripSearchTextBox.cs">
+    <Compile Update="Forms\ToolStripSearchTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\TrackBarLite.cs">
+    <Compile Update="Forms\TrackBarLite.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\TreeViewEx.cs">
+    <Compile Update="Forms\TreeViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\TreeViewSkinner.cs">
+    <Compile Update="Forms\TreeViewSkinner.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\TreeViewSkinnerDrawInfo.cs" />
-    <Compile Include="Forms\ViewableItemCollection.cs" />
-    <Compile Include="Forms\VisibilityAnimator.cs">
+    <Compile Update="Forms\VisibilityAnimator.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\WaitCursor.cs" />
-    <Compile Include="Forms\WrappingCheckBox.cs">
+    <Compile Update="Forms\WrappingCheckBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="KeyboardCommand.cs" />
-    <Compile Include="KeyboardShortcuts.cs" />
-    <Compile Include="ListBoxSkinner.cs">
+    <Compile Update="ListBoxSkinner.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LocalizeUtility.cs" />
-    <Compile Include="NativeLibraryHelper.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ScreenExtension.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Forms\AutomaticProgressDialog.resx">
-      <DependentUpon>AutomaticProgressDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CaptionControl.resx">
-      <DependentUpon>CaptionControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FastScrollControl.resx">
-      <DependentUpon>FastScrollControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\KeyboardShortcutEditor.resx">
-      <DependentUpon>KeyboardShortcutEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\KeyInputForm.resx">
-      <DependentUpon>KeyInputForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ListSelectorControl.resx">
-      <DependentUpon>ListSelectorControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\QuestionDialog.resx">
-      <DependentUpon>QuestionDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SelectItemDialog.resx">
-      <DependentUpon>SelectItemDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\cYo.Common\cYo.Common.csproj">
-      <Project>{198a3787-dde7-43f0-86e7-d915414f0ff4}</Project>
-      <Name>cYo.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="PolySharp">
@@ -339,18 +169,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <!-- <ItemGroup> -->
-  <!-- <EmbeddedResource Include="Forms\AutomaticProgressDialog.resources" /> -->
-  <!-- <EmbeddedResource Include="Forms\CaptionControl.resources" /> -->
-  <!-- <EmbeddedResource Include="Forms\ItemView.resources" /> -->
-  <!-- <EmbeddedResource Include="Forms\KeyboardShortcutEditor.resources" /> -->
-  <!-- <EmbeddedResource Include="Forms\KeyInputForm.resources" /> -->
-  <!-- <EmbeddedResource Include="Forms\ListSelectorControl.resources" /> -->
-  <!-- <EmbeddedResource Include="Forms\QuestionDialog.resources" /> -->
-  <!-- <EmbeddedResource Include="Forms\SelectItemDialog.resources" /> -->
-  <!-- <EmbeddedResource Include="Forms\SizableContainer.resources" /> -->
-  <!-- <EmbeddedResource Include="Forms\TextBoxContextMenu.resources" /> -->
-  <!-- <EmbeddedResource Include="Properties\Resources.resources" /> -->
-  <!-- </ItemGroup> -->
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\cYo.Common\cYo.Common.csproj" />
+  </ItemGroup>
 </Project>
