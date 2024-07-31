@@ -137,7 +137,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				chkEmbedComicInfo.Checked = value.EmbedComicInfo;
 				enumUtil.Value = (int)value.RemovePageFilter;
 				txIncludePages.Text = value.IncludePages;
-				cbPageFormat.SelectedIndex = (int)value.PageType;
+				cbPageFormat.SelectedIndex = (int)value.PageType < cbPageFormat.Items.Count ? (int)value.PageType : 0;
 				tbQuality.Value = value.PageCompression;
 				cbPageResize.SelectedIndex = (int)value.PageResize;
 				txWidth.Value = value.PageWidth;
@@ -191,7 +191,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			checkBox.Enabled = enabled;
 			txCustomStartIndex.Enabled = setting.Naming == ExportNaming.Custom;
 			txCustomName.Enabled = setting.Naming == ExportNaming.Custom || setting.Naming == ExportNaming.Caption;
-			tbQuality.Enabled = setting.PageType == StoragePageType.Jpeg || setting.PageType == StoragePageType.Webp;
+			tbQuality.Enabled = setting.PageType == StoragePageType.Jpeg || setting.PageType == StoragePageType.Webp || setting.PageType == StoragePageType.Heif || setting.PageType != StoragePageType.Avif;
 			txWidth.Enabled = setting.PageResize != StoragePageResize.Height && setting.PageResize != StoragePageResize.Original;
 			txHeight.Enabled = setting.PageResize != StoragePageResize.Width && setting.PageResize != StoragePageResize.Original;
 			chkDontEnlarge.Enabled = setting.PageResize != StoragePageResize.Original;

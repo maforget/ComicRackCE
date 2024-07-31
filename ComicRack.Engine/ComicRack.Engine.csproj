@@ -30,6 +30,34 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+      <ContentWithTargetPath Include="DLL\aom.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          <TargetPath>Resources\aom.dll</TargetPath>
+      </ContentWithTargetPath>
+      <None Include="DLL\aom.dll" />
+  </ItemGroup>
+    <ItemGroup>
+      <ContentWithTargetPath Include="DLL\libde265.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          <TargetPath>Resources\libde265.dll</TargetPath>
+      </ContentWithTargetPath>
+      <None Include="DLL\libde265.dll" />
+    </ItemGroup>
+    <ItemGroup>
+        <ContentWithTargetPath Include="DLL\libheif.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          <TargetPath>Resources\libheif.dll</TargetPath>
+      </ContentWithTargetPath>
+      <None Include="DLL\libheif.dll" />
+    </ItemGroup>
+    <ItemGroup>
+      <ContentWithTargetPath Include="DLL\libx265.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          <TargetPath>Resources\libx265.dll</TargetPath>
+      </ContentWithTargetPath>
+      <None Include="DLL\libx265.dll" />
+    </ItemGroup>
+  <ItemGroup>
     <Compile Update="Controls\ComicPageContainerControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -53,6 +81,8 @@
     <PackageReference Include="bblanchon.PDFium.Win32">
       <Version>128.0.6611</Version>
     </PackageReference>
+    <PackageReference Include="LibHeifSharp" Version="3.2.0" />
+    <PackageReference Include="Microsoft.Bcl.Numerics" Version="8.0.0" />
     <PackageReference Include="MySqlConnector">
       <Version>2.3.7</Version>
     </PackageReference>

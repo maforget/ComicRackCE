@@ -8,7 +8,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 {
 	public abstract class ComicProvider : ImageProvider, IInfoStorage
 	{
-		private static readonly string[] supportedTypes = new string[11]
+		private static readonly string[] supportedTypes = new string[]
 		{
 			"jpg",
 			"jpeg",
@@ -20,7 +20,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			"tiff",
 			"bmp",
 			"djvu",
-			"webp"
+			"webp",
+			"heic",
+			"heif",
+			"avif",
+			//"jxl"
 		};
 
 		public bool UpdateEnabled => GetType().GetAttributes<FileFormatAttribute>().FirstOrDefault((FileFormatAttribute f) => f.Format.Supports(base.Source))?.EnableUpdate ?? false;

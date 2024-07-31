@@ -257,7 +257,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 					{
 						array = DjVuImage.ConvertToJpeg(array);
 						array = WebpImage.ConvertToJpeg(array);
-					}
+						array = HeifAvifImage.ConvertToJpeg(array);
+                    }
 					return array;
 				}
 				catch (Exception)

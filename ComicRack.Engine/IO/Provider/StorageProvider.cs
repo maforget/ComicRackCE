@@ -43,7 +43,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 
             public Bitmap GetImage()
             {
-                return BitmapExtensions.BitmapFromBytes(DjVuImage.ConvertToJpeg(WebpImage.ConvertToJpeg(data)));
+                byte[] array = null;
+                array = WebpImage.ConvertToJpeg(data);
+                array = DjVuImage.ConvertToJpeg(data);
+                array = HeifAvifImage.ConvertToJpeg(data);
+                return BitmapExtensions.BitmapFromBytes(array);
             }
 
             public byte[] GetThumbnailData(StorageSetting setting)
@@ -351,25 +355,19 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             return list.ToArray();
         }
 
-        private static StoragePageType GetStoragePageTypeFromExtension(string ext)
+        private static StoragePageType GetStoragePageTypeFromExtension(string ext) => (ext ?? string.Empty).ToLower() switch
         {
-            switch ((ext ?? string.Empty).ToLower())
-            {
-                case ".bmp":
-                    return StoragePageType.Bmp;
-                case ".tif":
-                case ".tiff":
-                    return StoragePageType.Tiff;
-                case ".png":
-                    return StoragePageType.Png;
-                case ".djvu":
-                    return StoragePageType.Djvu;
-                case ".webp":
-                    return StoragePageType.Webp;
-                default:
-                    return StoragePageType.Jpeg;
-            }
-        }
+            ".bmp" => StoragePageType.Bmp,
+            ".tif" or ".tiff" => StoragePageType.Tiff,
+            ".png" => StoragePageType.Png,
+            ".gif" => StoragePageType.Gif,
+            ".djvu" => StoragePageType.Djvu,
+            ".webp" => StoragePageType.Webp,
+            ".heif" or ".heic" => StoragePageType.Heif,
+            ".avif" => StoragePageType.Avif,
+            //".jxl" => StoragePageType.JpegXL,
+            _ => StoragePageType.Jpeg,
+        };
 
         private static string GetExtensionFromStoragePageType(StoragePageType storagePageType) => storagePageType switch
         {
@@ -379,6 +377,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             StoragePageType.Gif => ".gif",
             StoragePageType.Djvu => ".djvu",
             StoragePageType.Webp => ".webp",
+            StoragePageType.Heif => ".heif",
+            StoragePageType.Avif => ".avif",
+            //StoragePageType.JpegXL => ".jxl",
             _ => ".jpg",
         };
 
@@ -390,6 +391,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             StoragePageType.Gif => bitmap.ImageToBytes(ImageFormat.Gif, 8),
             StoragePageType.Djvu => DjVuImage.ConvertToDjVu(bitmap),
             StoragePageType.Webp => WebpImage.ConvertoToWebp(bitmap, setting.PageCompression),
+            StoragePageType.Heif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, false),
+            StoragePageType.Avif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, true),
+            //StoragePageType.JpegXL => JpegXLImage.ConvertToJpegXL(bitmap),
             _ => bitmap.ImageToBytes(ImageFormat.Jpeg, 24, setting.PageCompression),
         };
     }
