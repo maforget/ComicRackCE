@@ -24,7 +24,7 @@ ComicRack has no functional limitation whatsover if no donation is made.
 * In-viewer extended info editing
 * Batch converting of eComics to all supported formats
 * Scriptable and extendable
-* Android and iPad client with syncinc capabilities
+* Android with syncinc capabilities
 * And much, much more....
 
 This is still a beta version.
@@ -36,7 +36,7 @@ Reads:
 	* cbz
 	* zip
 	* cbr
-	* rar
+	* rar (rar4 & rar5)
 	* cbt
 	* tar
 	* cb7
@@ -45,13 +45,11 @@ Reads:
 	* cbw
 	* djvu
 
-	The built in PDF reading support is very limited, but works with most eComic PDF files. 
-	If you should run into problems, please download ghostscript from
-	
-			http://comicrack.cyolito.com/faqs/comicrack-pdf
-	
-	and install it. This enables ComicRack to use Ghostscript as the render engine and makes it fully
-	PDF compliant.
+	The ComicRack Community Edition has 3 pdf engines it can use.
+	The default is now Google pdfium project that supports complex pdfs.
+	The legacy ComicRack had very limited PDF support unless you installed Ghostscript.
+	You can still use it if you want, but it won't run automatically if isntalled like legacy did.
+	To use the other engines you will need to modify the ComicRack.ini file.
 	
 Exports:
 	* cbz
@@ -67,6 +65,8 @@ Internally:
 	* PNG
 	* GIF (Static)
 	* WEBP
+	* HEIF & HEIC
+	* AVIF
 
 4) NOTABLE UNSUPPORTED ITEMS
 ============================
@@ -91,27 +91,27 @@ Now you can copy the whole install folder to an USB stick and start it from ther
 6) ANDROID VERSION
 ==================
 
-An Android version is available in the Android Market: https://market.android.com/details?id=com.cyo.comicrack.viewer.free
+The Android version isn't available in the store anymore, but can still be installed via these instructions: 
+https://github.com/maforget/ComicRackCE/wiki/Android
 
-7) IPAD VERSION
-==================
+The APK is available here: 
+https://github.com/maforget/ComicRackKeygen/releases/tag/1.0
 
-An iPad version is avaiable in the App Store: https://itunes.apple.com/us/app/comicrack/id660025721
-
-8) FAQ
+7) FAQ
 ======
 
-The FAQ is maintained at http://comicrack.cyolito.com/faqs
+The FAQ is maintained at https://github.com/maforget/ComicRackCE/wiki/Frequently-Asked-Question
+Original FAQ (via the wayback machine): https://web.archive.org/web/20171022103935fw_/https://comicrack.cyolito.com/faqs
 
-9) WIKI
+8) WIKI
 =======
 
-A Wiki is maintained and available at http://comicrack.cyolito.com/wiki
+A Wiki is maintained and available at https://github.com/maforget/ComicRackCE/wiki
 
 10) USER FORUM
 =============
 
-You can join the ComicRack user community at http://comicrack.cyolito.com/user-forum
+You can join the ComicRack user community on Reddit: https://www.reddit.com/r/comicrackusers/
 
 11) FEEDBACK
 ===========
@@ -119,4 +119,8 @@ You can join the ComicRack user community at http://comicrack.cyolito.com/user-f
 To keep up to date with new releases or tell me how much this program sucks/rules
 please visit:
 
-http://comicrack.cyolito.com
+https://github.com/maforget/ComicRackCE/discussions
+
+If you have any bugs or feature requests, please open an issue here:
+
+https://github.com/maforget/ComicRackCE/issues
