@@ -18,6 +18,7 @@ using cYo.Common.Drawing;
 using cYo.Common.IO;
 using cYo.Common.Localize;
 using cYo.Common.Mathematics;
+using cYo.Common.Net.Search;
 using cYo.Common.Reflection;
 using cYo.Common.Text;
 using cYo.Common.Threading;
@@ -1627,14 +1628,27 @@ namespace cYo.Projects.ComicRack.Engine
 
         public static event EventHandler<ParseFilePathEventArgs> ParseFilePath;
 
+        Dictionary<int, string> CachedVirtualTags = new Dictionary<int, string>();
         private string GetVirtualTagValue(int id)
         {
-            string captionFormat = VirtualTagsCollection.Tags.GetValue(id).CaptionFormat;
+            if (CachedVirtualTags.TryGetValue(id, out var value))
+                return value;
 
-            if (!string.IsNullOrEmpty(captionFormat))
-                return GetFullTitle(captionFormat);
-            else
-                return string.Empty;
+            string captionFormat = VirtualTagsCollection.Tags.GetValue(id).CaptionFormat;
+            string saved = (!string.IsNullOrEmpty(captionFormat)) ? GetFullTitle(captionFormat) : string.Empty;
+
+            CachedVirtualTags[id] = saved;
+            return saved;
+        }
+
+        private void VirtualTagsCollection_TagsRefresh(object sender, EventArgs e)
+        {
+            ClearVirtualTagsCache();
+        }
+
+        private void ClearVirtualTagsCache()
+        {
+            CachedVirtualTags.Clear();
         }
 
         [Browsable(true)]
@@ -1707,6 +1721,7 @@ namespace cYo.Projects.ComicRack.Engine
 
         public ComicBook()
         {
+            VirtualTagsCollection.TagsRefresh += VirtualTagsCollection_TagsRefresh;
         }
 
         public ComicBook(ComicBook cb)
@@ -2519,6 +2534,7 @@ namespace cYo.Projects.ComicRack.Engine
             {
                 compareAlternateNumber = null;
             }
+            ClearVirtualTagsCache();
         }
 
         public override void SetInfo(ComicInfo ci, bool onlyUpdateEmpty = true, bool updatePages = true)
