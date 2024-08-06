@@ -134,4 +134,114 @@ namespace cYo.Projects.ComicRack.Engine
             return comicBook.VirtualTag10;
         }
     }
+
+    [Serializable]
+    [Description("Virtual Tags #11")]
+    [ComicBookMatcherHint("VirtualTag11")]
+    public class ComicBookVirtualTag11Matcher : ComicBookVirtualTagMatcher
+    {
+        protected override string GetValue(ComicBook comicBook)
+        {
+            return comicBook.VirtualTag11;
+        }
+    }
+
+    [Serializable]
+    [Description("Virtual Tags #12")]
+    [ComicBookMatcherHint("VirtualTag12")]
+    public class ComicBookVirtualTag12Matcher : ComicBookVirtualTagMatcher
+    {
+        protected override string GetValue(ComicBook comicBook)
+        {
+            return comicBook.VirtualTag12;
+        }
+    }
+
+    [Serializable]
+    [Description("Virtual Tags #13")]
+    [ComicBookMatcherHint("VirtualTag13")]
+    public class ComicBookVirtualTag13Matcher : ComicBookVirtualTagMatcher
+    {
+        protected override string GetValue(ComicBook comicBook)
+        {
+            return comicBook.VirtualTag13;
+        }
+    }
+
+    [Serializable]
+    [Description("Virtual Tags #14")]
+    [ComicBookMatcherHint("VirtualTag14")]
+    public class ComicBookVirtualTag14Matcher : ComicBookVirtualTagMatcher
+    {
+        protected override string GetValue(ComicBook comicBook)
+        {
+            return comicBook.VirtualTag14;
+        }
+    }
+
+    [Serializable]
+    [Description("Virtual Tags #15")]
+    [ComicBookMatcherHint("VirtualTag15")]
+    public class ComicBookVirtualTag15Matcher : ComicBookVirtualTagMatcher
+    {
+        protected override string GetValue(ComicBook comicBook)
+        {
+            return comicBook.VirtualTag15;
+        }
+    }
+
+    [Serializable]
+    [Description("Virtual Tags #16")]
+    [ComicBookMatcherHint("VirtualTag16")]
+    public class ComicBookVirtualTag16Matcher : ComicBookVirtualTagMatcher
+    {
+        protected override string GetValue(ComicBook comicBook)
+        {
+            return comicBook.VirtualTag16;
+        }
+    }
+
+    [Serializable]
+    [Description("Virtual Tags #17")]
+    [ComicBookMatcherHint("VirtualTag17")]
+    public class ComicBookVirtualTag17Matcher : ComicBookVirtualTagMatcher
+    {
+        protected override string GetValue(ComicBook comicBook)
+        {
+            return comicBook.VirtualTag17;
+        }
+    }
+
+    [Serializable]
+    [Description("Virtual Tags #18")]
+    [ComicBookMatcherHint("VirtualTag18")]
+    public class ComicBookVirtualTag18Matcher : ComicBookVirtualTagMatcher
+    {
+        protected override string GetValue(ComicBook comicBook)
+        {
+            return comicBook.VirtualTag18;
+        }
+    }
+
+    [Serializable]
+    [Description("Virtual Tags #19")]
+    [ComicBookMatcherHint("VirtualTag19")]
+    public class ComicBookVirtualTag19Matcher : ComicBookVirtualTagMatcher
+    {
+        protected override string GetValue(ComicBook comicBook)
+        {
+            return comicBook.VirtualTag19;
+        }
+    }
+
+    [Serializable]
+    [Description("Virtual Tags #20")]
+    [ComicBookMatcherHint("VirtualTag20")]
+    public class ComicBookVirtualTag20Matcher : ComicBookVirtualTagMatcher
+    {
+        protected override string GetValue(ComicBook comicBook)
+        {
+            return comicBook.VirtualTag20;
+        }
+    }
 }

@@ -1651,35 +1651,26 @@ namespace cYo.Projects.ComicRack.Engine
             CachedVirtualTags.Clear();
         }
 
-        [Browsable(true)]
         public string VirtualTag01 => GetVirtualTagValue(1);
-
-        [Browsable(true)]
         public string VirtualTag02 => GetVirtualTagValue(2);
-
-        [Browsable(true)]
         public string VirtualTag03 => GetVirtualTagValue(3);
-
-        [Browsable(true)]
         public string VirtualTag04 => GetVirtualTagValue(4);
-
-        [Browsable(true)]
         public string VirtualTag05 => GetVirtualTagValue(5);
-
-        [Browsable(true)]
         public string VirtualTag06 => GetVirtualTagValue(6);
-
-        [Browsable(true)]
         public string VirtualTag07 => GetVirtualTagValue(7);
-
-        [Browsable(true)]
         public string VirtualTag08 => GetVirtualTagValue(8);
-
-        [Browsable(true)]
         public string VirtualTag09 => GetVirtualTagValue(9);
-
-        [Browsable(true)]
         public string VirtualTag10 => GetVirtualTagValue(10);
+        public string VirtualTag11 => GetVirtualTagValue(11);
+        public string VirtualTag12 => GetVirtualTagValue(12);
+        public string VirtualTag13 => GetVirtualTagValue(13);
+        public string VirtualTag14 => GetVirtualTagValue(14);
+        public string VirtualTag15 => GetVirtualTagValue(15);
+        public string VirtualTag16 => GetVirtualTagValue(16);
+        public string VirtualTag17 => GetVirtualTagValue(17);
+        public string VirtualTag18 => GetVirtualTagValue(18);
+        public string VirtualTag19 => GetVirtualTagValue(19);
+        public string VirtualTag20 => GetVirtualTagValue(20);
 
         static ComicBook()
         {

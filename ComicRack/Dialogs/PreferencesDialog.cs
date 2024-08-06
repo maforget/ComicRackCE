@@ -1236,7 +1236,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         {
             var VirtualTags = new List<VirtualTag>();
 
-            for (int id = 1; id <= 10; id++)
+            for (int id = 1; id <= 20; id++)
             {
                 VirtualTag vtag = Program.Settings.VirtualTags.FirstOrDefault(x => x.ID == id);
 
