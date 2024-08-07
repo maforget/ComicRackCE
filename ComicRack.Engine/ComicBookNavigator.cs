@@ -198,7 +198,9 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 			set
 			{
-				if (IsIndexRetrievalCompleted && value >= ProviderPageCount)
+                //This sets the CurrentPage to the last page if the value exceeds the total number of pages.
+                //HACK: Added a check to prevent this adjustment when the book contains only one page, ensuring it is marked as read.
+                if (IsIndexRetrievalCompleted && ProviderPageCount != 1 && value >= ProviderPageCount)
 				{
 					value = ProviderPageCount - 1;
 				}
@@ -436,7 +438,11 @@ namespace cYo.Projects.ComicRack.Engine
 			int num = SeekNewPage(offset, pageSeekOrigin, noFilter);
 			if (num == -1)
 			{
-				return false;
+                //HACK: If a book contains only one page, set the CurrentPage to 1 (Page 2), so it is marked as read
+                if (ProviderPageCount == 1)
+                    CurrentPage = 1;
+
+                return false;
 			}
 			CurrentPage = num;
 			return true;

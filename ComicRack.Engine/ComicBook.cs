@@ -2043,7 +2043,9 @@ namespace cYo.Projects.ComicRack.Engine
             OpenedTime = DateTime.Now;
             if (base.PageCount > 0)
             {
-                int num3 = (CurrentPage = (LastPageRead = base.PageCount - 1));
+                //HACK: When marking as read a book with only 1 page, set it to 1 (Page 2)
+                int currentPage = base.PageCount == 1 ? 1 : base.PageCount - 1;
+                CurrentPage = LastPageRead = currentPage;
             }
         }
 
