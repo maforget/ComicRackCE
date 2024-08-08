@@ -22,7 +22,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
         public static readonly string PackDll64 = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\7z64.dll");
 
-        private static readonly Regex rxList = new Regex("Path = (?<filename>.*)\\r\\n(.*\\r\\n)*?Size = (?<size>\\d+)", RegexOptions.Compiled);
+        private static readonly Regex rxList = new Regex("Path = (?<filename>.*)\\r\\n(Folder.*\\r\\n)*?Size = (?<size>\\d+)", RegexOptions.Compiled);
 
         private bool libraryMode;
 
