@@ -56,7 +56,7 @@ To install, download the [nightly installer](https://github.com/maforget/ComicRa
 >* Before installing the Community Edition, uninstalling the original ComicRack is suggested to avoid duplicates in the Open With menu.
 >* An updated version of the [Backup Manager](https://github.com/maforget/cr-backup-manager) is provided to help you backup your database.
 >* Use the News window within the application to stay informed about the latest builds.
->* Check the [Wiki]([ComicRackCE/wiki](https://github.com/maforget/ComicRackCE/wiki)) for additional tips and information.
+>* Check the [ComicRackCE wiki](https://github.com/maforget/ComicRackCE/wiki) for additional tips and information.
 
 ### Upgrading from classic ComicRack
 
