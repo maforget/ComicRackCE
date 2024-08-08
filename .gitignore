@@ -342,3 +342,4 @@ healthchecksdb
 */CurrentCommit.txt
 */isDirty.txt
 */Tags.txt
+/ComicRack/Properties/launchSettings.json
