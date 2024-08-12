@@ -35,6 +35,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="DeepCloner" Version="0.10.4" />
     <PackageReference Include="DynamicExpresso.Core" Version="2.16.1" />
     <PackageReference Include="PolySharp">
       <Version>1.14.1</Version>
