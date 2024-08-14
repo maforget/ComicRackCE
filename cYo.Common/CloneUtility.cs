@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using Force.DeepCloner;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace cYo.Common
 {
@@ -12,7 +12,13 @@ namespace cYo.Common
 			{
 				return null;
 			}
-			return data.DeepClone();
+			BinaryFormatter binaryFormatter = new BinaryFormatter();
+			using (MemoryStream memoryStream = new MemoryStream())
+			{
+				binaryFormatter.Serialize(memoryStream, data);
+				memoryStream.Seek(0L, SeekOrigin.Begin);
+				return (T)binaryFormatter.Deserialize(memoryStream);
+			}
 		}
 
 		public static void Swap<T>(ref T a, ref T b)
