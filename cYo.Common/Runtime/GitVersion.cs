@@ -12,20 +12,24 @@ namespace cYo.Common.Runtime
 {
     public static class GitVersion
     {
-        public static string GetCurrentVersionInfo()
+        private static string currentCommit = null;
+        private static bool? isDirty = null;
+
+        public static string CurrentCommit => currentCommit ??= GetString("CurrentCommit", Assembly.GetEntryAssembly()).Trim();
+        public static bool IsDirty => isDirty ??= !string.IsNullOrEmpty(GetString("isDirty", Assembly.GetEntryAssembly())?.Trim());
+
+		public static string GetCurrentVersionInfo()
         {
             Assembly assembly = Assembly.GetEntryAssembly();
-            var isDirty = string.IsNullOrEmpty(GetString("isDirty", assembly)?.Trim()) ? "" : "-dirty";
-            string currentCommit = GetString("CurrentCommit", assembly);
-            return string.IsNullOrEmpty(currentCommit) ? "" : $" [{currentCommit[..7]}{isDirty}]";
+            string isDirtyText = IsDirty ? "" : "-dirty";
+			return string.IsNullOrEmpty(CurrentCommit) ? "" : $" [{CurrentCommit[..7]}{isDirtyText}]";
         }
 
-        public static Stream GetStream(string resourceName, Assembly assembly)
+		public static Stream GetStream(string resourceName, Assembly assembly)
         {
             string fullResourceName = assembly.GetManifestResourceNames().FirstOrDefault(x => x.Contains(resourceName));
             return assembly.GetManifestResourceStream(fullResourceName); ;
         }
-
 
         public static string GetString(string resourceName, Assembly containingAssembly)
         {
