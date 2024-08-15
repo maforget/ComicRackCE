@@ -134,9 +134,9 @@ namespace cYo.Projects.ComicRack.Viewer
 				{
 					Program.Database.Undo.SetMarker(TR.Messages["UndoRating", "Change Rating"]);
 					books.ForEach((ComicBook cb) =>
-                    {
-                        cb.Rating = rating;
-                    });
+					{
+						cb.Rating = rating;
+					});
 				}
 			}
 
@@ -329,9 +329,9 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private Rectangle undockedReaderBounds;
 
-        private FormWindowState undockedReaderState;
+		private FormWindowState undockedReaderState;
 
-        private bool shieldReaderFormClosing;
+		private bool shieldReaderFormClosing;
 
 		private Image addTabImage = Resources.AddTab;
 
@@ -559,16 +559,16 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 		}
 
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public Rectangle ScriptOutputBounds
-        {
-            get
-            {
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public Rectangle ScriptOutputBounds
+		{
+			get
+			{
 				return ScriptConsole?.SafeBounds ?? Rectangle.Empty;
-            }
-            set
-            {
+			}
+			set
+			{
 				if (ScriptConsole != null)
 				{
 					if (value.IsEmpty)
@@ -578,12 +578,12 @@ namespace cYo.Projects.ComicRack.Viewer
 					else
 					{
 						ScriptConsole.SafeBounds = value;
-					} 
+					}
 				}
-            }
-        }
+			}
+		}
 
-        private bool MainToolStripVisible
+		private bool MainToolStripVisible
 		{
 			get
 			{
@@ -715,12 +715,12 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 		}
 
-        public static ScriptOutputForm ScriptConsole
-        {
-            get => Program.ScriptConsole != null ? Program.ScriptConsole : null;
-        }
+		public static ScriptOutputForm ScriptConsole
+		{
+			get => Program.ScriptConsole != null ? Program.ScriptConsole : null;
+		}
 
-        public IEnumerable<string> LibraryPaths => Program.Settings.ScriptingLibraries.Replace("\n", "").Replace("\r", "").Split(';', StringSplitOptions.RemoveEmptyEntries);
+		public IEnumerable<string> LibraryPaths => Program.Settings.ScriptingLibraries.Replace("\n", "").Replace("\r", "").Split(';', StringSplitOptions.RemoveEmptyEntries);
 
 		public MainForm()
 		{
@@ -788,15 +788,15 @@ namespace cYo.Projects.ComicRack.Viewer
 				{
 					sc.PreCompile();
 					CoverViewItem.DrawCustomThumbnailOverlay += (ComicBook comic, Graphics graphics, Rectangle bounds, int flags) =>
-                    {
-                        sc.Invoke(new object[4]
-                        {
-                            comic,
-                            graphics,
-                            bounds,
-                            flags
-                        }, catchErrors: true);
-                    };
+					{
+						sc.Invoke(new object[4]
+						{
+							comic,
+							graphics,
+							bounds,
+							flags
+						}, catchErrors: true);
+					};
 				}
 			}
 			Program.StartupProgress(TR.Messages["InitGUI", "Initializing User Interface"], 80);
@@ -1026,9 +1026,9 @@ namespace cYo.Projects.ComicRack.Viewer
 			contextRating.Renderer = new MenuRenderer(Resources.StarYellow);
 			contextRating2.Renderer = new MenuRenderer(Resources.StarYellow);
 			IdleProcess.CancelIdle += (object a, CancelEventArgs b) =>
-            {
-                b.Cancel = !IdleProcess.ShouldProcess(this) && !IdleProcess.ShouldProcess(readerForm);
-            };
+			{
+				b.Cancel = !IdleProcess.ShouldProcess(this) && !IdleProcess.ShouldProcess(readerForm);
+			};
 			Program.StartupProgress(TR.Messages["LoadComic", "Opening Files"], 90);
 			Refresh();
 			foreach (string commandLineFile in Program.CommandLineFiles)
@@ -1069,6 +1069,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				ScriptUtility.Invoke(PluginEngine.ScriptTypeStartup);
 			});
+			CheckForUpdate();
 		}
 
 		protected override void OnActivated(EventArgs e)
@@ -1259,13 +1260,13 @@ namespace cYo.Projects.ComicRack.Viewer
 			commands.Add(OpenBooks.PreviousSlot, () => OpenBooks.Slots.Count > 1, miPrevTab);
 			commands.Add(OpenBooks.NextSlot, () => OpenBooks.Slots.Count > 1, miNextTab);
 			commands.AddService(this, (ILibraryBrowser s) =>
-            {
-                s.BrowseNext();
-            }, (ILibraryBrowser s) => s.CanBrowseNext(), miNextList);
+			{
+				s.BrowseNext();
+			}, (ILibraryBrowser s) => s.CanBrowseNext(), miNextList);
 			commands.AddService(this, (ILibraryBrowser s) =>
-            {
-                s.BrowsePrevious();
-            }, (ILibraryBrowser s) => s.CanBrowsePrevious(), miPreviousList);
+			{
+				s.BrowsePrevious();
+			}, (ILibraryBrowser s) => s.CanBrowsePrevious(), miPreviousList);
 			commands.Add(delegate
 			{
 				Program.Settings.AutoScrolling = !Program.Settings.AutoScrolling;
@@ -1418,9 +1419,9 @@ namespace cYo.Projects.ComicRack.Viewer
 			commands.Add(ToggleSearchBrowser, CheckSearchAvailable, CheckSearchBrowserEnabled, miSearchBrowser);
 			commands.Add(ToggleInfoPanel, CheckInfoPanelAvailable, CheckInfoPanelEnabled, miInfoPanel);
 			commands.AddService(this, (IRefreshDisplay c) =>
-            {
-                c.RefreshDisplay();
-            }, miViewRefresh);
+			{
+				c.RefreshDisplay();
+			}, miViewRefresh);
 			commands.Add(delegate
 			{
 				GetRatingEditor().SetRating(0f);
@@ -1496,6 +1497,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				Program.ShowExplorer(ComicDisplay.Book.Comic.FilePath);
 			}, () => ComicDisplay.Book != null && ComicDisplay.Book.Comic.EditMode.IsLocalComic(), cmRevealInExplorer);
+			commands.Add(() => CheckForUpdate(true), miCheckUpdate);
 		}
 
 		private void InitializeKeyboard()
@@ -1870,17 +1872,17 @@ namespace cYo.Projects.ComicRack.Viewer
 		public void UpdateComics()
 		{
 			Program.Database.Books.Concat(Program.BookFactory.TemporaryBooks).ForEach((ComicBook cb) =>
-            {
-                Program.QueueManager.AddBookToFileUpdate(cb, alwaysWrite: true);
-            });
+			{
+				Program.QueueManager.AddBookToFileUpdate(cb, alwaysWrite: true);
+			});
 		}
 
 		public void UpdateWebComics(bool refresh = false)
 		{
 			Program.Database.Books.Concat(Program.BookFactory.TemporaryBooks).ForEach((ComicBook cb) =>
-            {
-                UpdateWebComic(cb, refresh);
-            });
+			{
+				UpdateWebComic(cb, refresh);
+			});
 		}
 
 		public void UpdateWebComics()
@@ -2096,21 +2098,21 @@ namespace cYo.Projects.ComicRack.Viewer
 				{
 					switch (saveFileDialog.FilterIndex)
 					{
-					case 1:
-						image.SaveImage(AddExtension(name, ".jpg"), ImageFormat.Jpeg, 24);
-						break;
-					case 2:
-						image.SaveImage(AddExtension(name, ".bmp"), ImageFormat.Bmp, 24);
-						break;
-					case 3:
-						image.SaveImage(AddExtension(name, ".png"), ImageFormat.Png, 24);
-						break;
-					case 4:
-						image.SaveImage(AddExtension(name, ".gif"), ImageFormat.Gif, 8);
-						break;
-					case 5:
-						image.SaveImage(AddExtension(name, ".tif"), ImageFormat.Tiff, 24);
-						break;
+						case 1:
+							image.SaveImage(AddExtension(name, ".jpg"), ImageFormat.Jpeg, 24);
+							break;
+						case 2:
+							image.SaveImage(AddExtension(name, ".bmp"), ImageFormat.Bmp, 24);
+							break;
+						case 3:
+							image.SaveImage(AddExtension(name, ".png"), ImageFormat.Png, 24);
+							break;
+						case 4:
+							image.SaveImage(AddExtension(name, ".gif"), ImageFormat.Gif, 8);
+							break;
+						case 5:
+							image.SaveImage(AddExtension(name, ".tif"), ImageFormat.Tiff, 24);
+							break;
 					}
 				}
 				catch (Exception ex)
@@ -2456,9 +2458,9 @@ namespace cYo.Projects.ComicRack.Viewer
 			if (Program.Settings.Workspaces.Count != 0)
 			{
 				IList<DisplayWorkspace> list = ListEditorDialog.Show(Form.ActiveForm ?? this, TR.Default["Workspaces"], Program.Settings.Workspaces, CreateNewWorkspace, null, (DisplayWorkspace w) =>
-                {
-                    SetWorkspace(w, remember: true);
-                });
+				{
+					SetWorkspace(w, remember: true);
+				});
 				if (list != null)
 				{
 					Program.Settings.Workspaces.Clear();
@@ -2752,12 +2754,12 @@ namespace cYo.Projects.ComicRack.Viewer
 			if (Program.Settings.ListConfigurations.Count != 0)
 			{
 				IList<ListConfiguration> list = ListEditorDialog.Show(Form.ActiveForm ?? this, TR.Messages["ListLayouts", "List Layouts"], Program.Settings.ListConfigurations, CreateListLayout, null, (ListConfiguration elc) =>
-                {
-                    SetListLayout(elc.Config);
-                }, (ListConfiguration elc) =>
-                {
-                    SetListLayoutToAll(elc.Config);
-                });
+				{
+					SetListLayout(elc.Config);
+				}, (ListConfiguration elc) =>
+				{
+					SetListLayoutToAll(elc.Config);
+				});
 				if (list != null)
 				{
 					Program.Settings.ListConfigurations.Clear();
@@ -3055,14 +3057,14 @@ namespace cYo.Projects.ComicRack.Viewer
 				}
 			}
 			foreach (ToolStripMenuItem item2 in from tmi in miOpenNow.DropDownItems.OfType<ToolStripMenuItem>()
-				where tmi.Tag is int
-				select tmi)
+												where tmi.Tag is int
+												select tmi)
 			{
 				item2.Checked = OpenBooks.CurrentSlot == (int)item2.Tag;
 			}
 			foreach (ToolStripMenuItem item3 in from tmi in cmComics.DropDownItems.OfType<ToolStripMenuItem>()
-				where tmi.Tag is int
-				select tmi)
+												where tmi.Tag is int
+												select tmi)
 			{
 				item3.Checked = OpenBooks.CurrentSlot == (int)item3.Tag;
 			}
@@ -3104,8 +3106,8 @@ namespace cYo.Projects.ComicRack.Viewer
 		private void InitializePluginHelp()
 		{
 			IEnumerable<PackageManager.Package> enumerable = from p in Program.ScriptPackages.GetPackages()
-				where !string.IsNullOrEmpty(p.HelpLink)
-				select p;
+															 where !string.IsNullOrEmpty(p.HelpLink)
+															 select p;
 			miHelpPlugins.Visible = enumerable.Count() > 0;
 			foreach (PackageManager.Package p2 in enumerable)
 			{
@@ -3231,24 +3233,24 @@ namespace cYo.Projects.ComicRack.Viewer
 		{
 			switch (ComicDisplay.PageLayout)
 			{
-			default:
-				if (!ComicDisplay.RightToLeftReading)
-				{
-					return miSinglePage.Image;
-				}
-				return SinglePageRtl;
-			case PageLayoutMode.Double:
-				if (!ComicDisplay.RightToLeftReading)
-				{
-					return miTwoPages.Image;
-				}
-				return TwoPagesRtl;
-			case PageLayoutMode.DoubleAdaptive:
-				if (!ComicDisplay.RightToLeftReading)
-				{
-					return miTwoPagesAdaptive.Image;
-				}
-				return TwoPagesAdaptiveRtl;
+				default:
+					if (!ComicDisplay.RightToLeftReading)
+					{
+						return miSinglePage.Image;
+					}
+					return SinglePageRtl;
+				case PageLayoutMode.Double:
+					if (!ComicDisplay.RightToLeftReading)
+					{
+						return miTwoPages.Image;
+					}
+					return TwoPagesRtl;
+				case PageLayoutMode.DoubleAdaptive:
+					if (!ComicDisplay.RightToLeftReading)
+					{
+						return miTwoPagesAdaptive.Image;
+					}
+					return TwoPagesAdaptiveRtl;
 			}
 		}
 
@@ -3635,13 +3637,13 @@ namespace cYo.Projects.ComicRack.Viewer
 			int i = 0;
 			int currentPage = books.CurrentBook.CurrentPage;
 			var enumerable = from p in books.CurrentBook.Comic.Pages
-				select new
-				{
-					Page = i++,
-					Info = p
-				} into pi
-				where pi.Info.IsBookmark
-				select pi;
+							 select new
+							 {
+								 Page = i++,
+								 Info = p
+							 } into pi
+							 where pi.Info.IsBookmark
+							 select pi;
 			if (direction < 0)
 			{
 				enumerable = enumerable.Reverse();
@@ -3704,7 +3706,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				using (Process process = Process.GetCurrentProcess())
 				{
-                    process.MaxWorkingSet = new IntPtr(Convert.ToInt64(val.Clamp(50, Settings.UnlimitedSystemMemory)) * 1024 * 1024);
+					process.MaxWorkingSet = new IntPtr(Convert.ToInt64(val.Clamp(50, Settings.UnlimitedSystemMemory)) * 1024 * 1024);
 				}
 			}
 			catch
@@ -3907,24 +3909,24 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 			switch (base.WindowState)
 			{
-			case FormWindowState.Maximized:
-				maximized = true;
-				break;
-			case FormWindowState.Minimized:
-				if (Program.Settings.MinimizeToTray)
-				{
-					MinimizeToTray();
-				}
-				else
-				{
+				case FormWindowState.Maximized:
+					maximized = true;
+					break;
+				case FormWindowState.Minimized:
+					if (Program.Settings.MinimizeToTray)
+					{
+						MinimizeToTray();
+					}
+					else
+					{
+						maximized = false;
+					}
+					Program.Collect();
+					break;
+				case FormWindowState.Normal:
+					UpdateSafeBounds();
 					maximized = false;
-				}
-				Program.Collect();
-				break;
-			case FormWindowState.Normal:
-				UpdateSafeBounds();
-				maximized = false;
-				break;
+					break;
 			}
 		}
 
@@ -4078,12 +4080,12 @@ namespace cYo.Projects.ComicRack.Viewer
 		{
 			switch (QuestionDialog.AskQuestion(this, question, buttonText, optionText))
 			{
-			default:
-				return 0;
-			case QuestionResult.Ok:
-				return 1;
-			case QuestionResult.OkWithOption:
-				return 2;
+				default:
+					return 0;
+				case QuestionResult.Ok:
+					return 1;
+				case QuestionResult.OkWithOption:
+					return 2;
 			}
 		}
 
@@ -4308,12 +4310,12 @@ namespace cYo.Projects.ComicRack.Viewer
 			if (!quickUpdateRegistered)
 			{
 				Program.Database.ComicListsChanged += (object s, ComicListItemChangedEventArgs e) =>
-                {
-                    if (e.Change != ComicListItemChange.Statistic)
-                    {
-                        quickListDirty = true;
-                    }
-                };
+				{
+					if (e.Change != ComicListItemChange.Statistic)
+					{
+						quickListDirty = true;
+					}
+				};
 				Program.Database.Books.Changed += QuickOpenBooksChanged;
 				mainView.ViewAdded += delegate
 				{
@@ -4339,8 +4341,8 @@ namespace cYo.Projects.ComicRack.Viewer
 				return;
 			}
 			List<ShareableComicListItem> list = (from cli in Program.Database.ComicLists.GetItems<ShareableComicListItem>()
-				where cli.QuickOpen
-				select cli.Clone() as ShareableComicListItem).ToList();
+												 where cli.QuickOpen
+												 select cli.Clone() as ShareableComicListItem).ToList();
 			if (list.Count == 0 || !Program.ExtendedSettings.ReplaceDefaultListsInQuickOpen)
 			{
 				defaultQuickOpenLists = defaultQuickOpenLists ?? new ShareableComicListItem[3]
@@ -4385,10 +4387,53 @@ namespace cYo.Projects.ComicRack.Viewer
 			ShowOpenDialog();
 		}
 
-		//Decompile Error
-		//string IApplication.get_ProductVersion()
-		//{
-		//	return base.ProductVersion;
-		//}
+		const string NightlyDownloadLinkEXE = @"https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe";
+		const string NightlyDownloadLinkZIP = @"https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCE_nightly.zip";
+
+		private async void CheckForUpdate(bool alwaysCheck = false)
+		{
+			bool doNotCheckForUpdate = Program.Settings.HiddenMessageBoxes.HasFlag(HiddenMessageBoxes.DoNotCheckForUpdate);
+
+			// Proceed if opened from the menu; otherwise, abort while developping or update checks are disabled.
+			if (!alwaysCheck && (GitVersion.IsDirty || doNotCheckForUpdate))
+				return;
+
+			GithubAPI gh = new GithubAPI();
+			await gh.ExecuteAsync();
+			bool isUpdateAvailable = gh.IsUpdateAvailable;
+
+			if (alwaysCheck || isUpdateAvailable)
+			{
+				string message = isUpdateAvailable ? 
+					TR.Messages["UpdateAvailable", "An update is available download it?"] : 
+					TR.Messages["UpdateNotAvailable", "There are no update available"];
+				string okButtonText = isUpdateAvailable ? TR.Default["Download", "Download"] : TR.Default["OK", "OK"];
+
+				QuestionResult qr = QuestionDialog.AskQuestion(this, message, okButtonText, (QuestionDialog qd) =>
+				{
+					qd.Option2Independent = true;
+					qd.OptionText = $"{(doNotCheckForUpdate ? "!" : "")}{TR.Messages["NeverCheckForUpdate", "&Never check for updates on startup"]}";
+					qd.Option2Text = isUpdateAvailable ? TR.Messages["ZipFileOption", "&Download zip file instead of installer"] : string.Empty;
+					qd.ShowCancel = isUpdateAvailable;
+					qd.CancelButtonText = TR.Default["No", "No"];
+				});
+
+				// The update checks option was enabled but now isn't, remove the setting. Happens only when opening from the menu.
+				if (doNotCheckForUpdate && !qr.HasFlag(QuestionResult.Option))
+					Program.Settings.HiddenMessageBoxes &= ~HiddenMessageBoxes.DoNotCheckForUpdate;
+
+				// The update checks option is enabled, update the setting
+				if (qr.HasFlag(QuestionResult.Option))
+					Program.Settings.HiddenMessageBoxes |= HiddenMessageBoxes.DoNotCheckForUpdate;
+
+				if (qr.HasFlag(QuestionResult.Cancel) || !isUpdateAvailable)
+					return;
+
+				if (qr.HasFlag(QuestionResult.Ok) && qr.HasFlag(QuestionResult.Option2))
+					Program.StartDocument(NightlyDownloadLinkZIP);
+				else if (qr.HasFlag(QuestionResult.Ok))
+					Program.StartDocument(NightlyDownloadLinkEXE);
+			}
+		}
 	}
 }
