@@ -21,7 +21,7 @@ namespace cYo.Common.Runtime
 		public static string GetCurrentVersionInfo()
         {
             Assembly assembly = Assembly.GetEntryAssembly();
-            string isDirtyText = IsDirty ? "" : "-dirty";
+            string isDirtyText = !IsDirty ? "" : "-dirty";
 			return string.IsNullOrEmpty(CurrentCommit) ? "" : $" [{CurrentCommit[..7]}{isDirtyText}]";
         }
 
