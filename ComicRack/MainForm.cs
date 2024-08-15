@@ -4406,7 +4406,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				string message = isUpdateAvailable ? 
 					TR.Messages["UpdateAvailable", "An update is available download it?"] : 
-					TR.Messages["UpdateNotAvailable", "There are no update available"];
+					TR.Messages["UpdateNotAvailable", "There are no updates available"];
 				string okButtonText = isUpdateAvailable ? TR.Default["Download", "Download"] : TR.Default["OK", "OK"];
 
 				QuestionResult qr = QuestionDialog.AskQuestion(this, message, okButtonText, (QuestionDialog qd) =>

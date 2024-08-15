@@ -3417,7 +3417,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			// 
 			this.miCheckUpdate.Name = "miCheckUpdate";
 			this.miCheckUpdate.Size = new System.Drawing.Size(256, 22);
-			this.miCheckUpdate.Text = "Check For Update";
+			this.miCheckUpdate.Text = "Check For Update...";
 			// 
 			// MainForm
 			// 
