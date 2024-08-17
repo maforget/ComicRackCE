@@ -1,179 +1,187 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>cYo.Projects.ComicRack.Viewer</RootNamespace>
-    <LangVersion>latest</LangVersion>
-    <FileAlignment>4096</FileAlignment>
-    <StartupObject>cYo.Projects.ComicRack.Viewer.Program</StartupObject>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
-    <UseWPF>true</UseWPF>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-    <Deterministic>false</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>True</Optimize>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <Optimize>False</Optimize>
-  </PropertyGroup>
-  <PropertyGroup>
-    <Win32Resource>myressources.res</Win32Resource>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System.Design" />
-    <Reference Include="System.Web.Services" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="CommandMapper.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\LibraryTreeSkin.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Controls\PagesView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Dialogs\DeviceEditControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Dialogs\MatcherEditor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Dialogs\MatcherGroupEditor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Dialogs\ServerEditControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Menus\ToolStripThumbSize.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Views\ComicBrowserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\ComicBrowserView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\ComicExplorerView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\ComicListBrowser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\ComicListFilesBrowser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\ComicListFolderFilesBrowser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\ComicListLibraryBrowser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\ComicPagesView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\MainView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\QuickOpenView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\RemoteConnectionView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\SmallComicPreview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Views\SubView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
-    </None>
-    <Content Include="ComicRack.ini">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <EmbeddedResource Include="CurrentCommit.txt" />
-    <EmbeddedResource Include="isDirty.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Changes.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DefaultLists.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="License.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NewsTemplate.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ReadMe.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft-WindowsAPICodePack-Shell">
-      <Version>1.1.5</Version>
-    </PackageReference>
-    <PackageReference Include="PolySharp">
-      <Version>1.14.1</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ComicRack.Engine.Display.Forms\ComicRack.Engine.Display.Forms.csproj" />
-    <ProjectReference Include="..\ComicRack.Engine\ComicRack.Engine.csproj" />
-    <ProjectReference Include="..\ComicRack.Plugins\ComicRack.Plugins.csproj" />
-    <ProjectReference Include="..\cYo.Common.Presentation\cYo.Common.Presentation.csproj" />
-    <ProjectReference Include="..\cYo.Common.Windows\cYo.Common.Windows.csproj" />
-    <ProjectReference Include="..\cYo.Common\cYo.Common.csproj" />
-  </ItemGroup>
-  <PropertyGroup />
-  <PropertyGroup />
-  <Target Name="CustomClean" AfterTargets="CoreClean">
-    <RemoveDir Directories="$(OutDir)\Resources" />
-    <RemoveDir Directories="$(OutDir)\Languages" />
-    <RemoveDir Directories="$(OutDir)\Help" />
-    <RemoveDir Directories="$(OutDir)\Scripts" />
-  </Target>
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <OutputType>WinExe</OutputType>
+        <RootNamespace>cYo.Projects.ComicRack.Viewer</RootNamespace>
+        <LangVersion>latest</LangVersion>
+        <FileAlignment>4096</FileAlignment>
+        <StartupObject>cYo.Projects.ComicRack.Viewer.Program</StartupObject>
+        <PublishUrl>publish\</PublishUrl>
+        <Install>true</Install>
+        <InstallFrom>Disk</InstallFrom>
+        <UpdateEnabled>false</UpdateEnabled>
+        <UpdateMode>Foreground</UpdateMode>
+        <UpdateInterval>7</UpdateInterval>
+        <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+        <UpdatePeriodically>false</UpdatePeriodically>
+        <UpdateRequired>false</UpdateRequired>
+        <MapFileExtensions>true</MapFileExtensions>
+        <ApplicationRevision>0</ApplicationRevision>
+        <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+        <IsWebBootstrapper>false</IsWebBootstrapper>
+        <UseApplicationTrust>false</UseApplicationTrust>
+        <BootstrapperEnabled>true</BootstrapperEnabled>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <UseWindowsForms>true</UseWindowsForms>
+        <UseWPF>true</UseWPF>
+        <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+        <Deterministic>false</Deterministic>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>none</DebugType>
+        <Optimize>True</Optimize>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <Optimize>False</Optimize>
+    </PropertyGroup>
+    <PropertyGroup>
+        <Win32Resource>myressources.res</Win32Resource>
+    </PropertyGroup>
     <ItemGroup>
-        <OutputDirectory Include="Output\**\*.*" />
+        <Reference Include="System.Design" />
+        <Reference Include="System.Web.Services" />
     </ItemGroup>
-    <Copy SourceFiles="@(OutputDirectory)" DestinationFolder="$(OutDir)\%(RecursiveDir)" SkipUnchangedFiles="true" />
-    <Exec Command="git rev-parse HEAD &gt; &quot;CurrentCommit.txt&quot;&#xD;&#xA;git status --porcelain &gt; &quot;isDirty.txt&quot;&#xD;&#xA;exit 0" />
-  </Target>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cd $(OutDir)&#xD;&#xA;echo %25cd%25&#xD;&#xA;xcopy /Y x64\pdfium.dll Resources\pdfium_x64.dll*&#xD;&#xA;xcopy /Y x86\pdfium.dll Resources\pdfium_x86.dll*&#xD;&#xA;rmdir /S /Q arm64&#xD;&#xA;rmdir /S /Q Lib&#xD;&#xA;rmdir /S /Q x64&#xD;&#xA;rmdir /S /Q x86&#xD;&#xA;del /Q PDFiumSharp.xml&#xD;&#xA;&#xD;&#xA;if $(Configuration) == Debug Goto :Exit&#xD;&#xA;del /Q *.pdb&#xD;&#xA;&#xD;&#xA;: Exit" />
-  </Target>
-  <Target Name="CompressIconFolders" AfterTargets="PostBuild">
-      <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(SolutionDir)CompressIconFolders.ps1&quot; -BaseDirectory &quot;$(OutDir)&quot;" />
-  </Target>
+    <ItemGroup>
+        <AppDesigner Include="Properties\" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Update="CommandMapper.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\LibraryTreeSkin.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\PagesView.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Dialogs\DeviceEditControl.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Dialogs\MatcherEditor.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Dialogs\MatcherGroupEditor.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Dialogs\ServerEditControl.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Menus\ToolStripThumbSize.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Views\ComicBrowserControl.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\ComicBrowserView.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\ComicExplorerView.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\ComicListBrowser.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\ComicListFilesBrowser.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\ComicListFolderFilesBrowser.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\ComicListLibraryBrowser.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\ComicPagesView.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\MainView.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\QuickOpenView.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\RemoteConnectionView.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\SmallComicPreview.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Views\SubView.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="..\.editorconfig">
+            <Link>.editorconfig</Link>
+        </None>
+        <EmbeddedResource Include="CurrentCommit.txt" />
+        <EmbeddedResource Include="isDirty.txt" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="Output\ComicRack.ini">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <TargetPath>ComicRack.ini</TargetPath>
+        </Content>
+        <Content Include="Output\Changes.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <TargetPath>Changes.txt</TargetPath>
+        </Content>
+        <Content Include="Output\DefaultLists.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <TargetPath>DefaultLists.txt</TargetPath>
+        </Content>
+        <Content Include="Output\License.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <TargetPath>License.txt</TargetPath>
+        </Content>
+        <Content Include="Output\NewsTemplate.html">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <TargetPath>NewsTemplate.html</TargetPath>
+        </Content>
+        <Content Include="Output\ReadMe.txt">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <TargetPath>ReadMe.txt</TargetPath>
+        </Content>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft-WindowsAPICodePack-Shell">
+            <Version>1.1.5</Version>
+        </PackageReference>
+        <PackageReference Include="PolySharp">
+            <Version>1.14.1</Version>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\ComicRack.Engine.Display.Forms\ComicRack.Engine.Display.Forms.csproj" />
+        <ProjectReference Include="..\ComicRack.Engine\ComicRack.Engine.csproj" />
+        <ProjectReference Include="..\ComicRack.Plugins\ComicRack.Plugins.csproj" />
+        <ProjectReference Include="..\cYo.Common.Presentation\cYo.Common.Presentation.csproj" />
+        <ProjectReference Include="..\cYo.Common.Windows\cYo.Common.Windows.csproj" />
+        <ProjectReference Include="..\cYo.Common\cYo.Common.csproj" />
+    </ItemGroup>
+    <PropertyGroup />
+    <PropertyGroup>
+      <PackageOutputPath>bin\$(Configuration)\</PackageOutputPath>
+    </PropertyGroup>
+    <Target Name="CustomClean" AfterTargets="CoreClean">
+        <RemoveDir Directories="$(OutDir)\Resources" />
+        <RemoveDir Directories="$(OutDir)\Languages" />
+        <RemoveDir Directories="$(OutDir)\Help" />
+        <RemoveDir Directories="$(OutDir)\Scripts" />
+    </Target>
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+        <ItemGroup>
+            <OutputDirectory Include="Output\**\*.*" />
+        </ItemGroup>
+        <Copy SourceFiles="@(OutputDirectory)" DestinationFolder="$(OutDir)\%(RecursiveDir)" SkipUnchangedFiles="true" />
+        <Exec Command="git rev-parse HEAD &gt; &quot;CurrentCommit.txt&quot;&#xD;&#xA;git status --porcelain &gt; &quot;isDirty.txt&quot;&#xD;&#xA;exit 0" />
+    </Target>
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="cd $(OutDir)&#xD;&#xA;echo %25cd%25&#xD;&#xA;xcopy /Y x64\pdfium.dll Resources\pdfium_x64.dll*&#xD;&#xA;xcopy /Y x86\pdfium.dll Resources\pdfium_x86.dll*&#xD;&#xA;rmdir /S /Q arm64&#xD;&#xA;rmdir /S /Q Lib&#xD;&#xA;rmdir /S /Q x64&#xD;&#xA;rmdir /S /Q x86&#xD;&#xA;del /Q PDFiumSharp.xml&#xD;&#xA;&#xD;&#xA;if $(Configuration) == Debug Goto :Exit&#xD;&#xA;del /Q *.pdb&#xD;&#xA;&#xD;&#xA;: Exit" />
+    </Target>
+    <Target Name="CompressIconFolders" AfterTargets="PostBuild">
+        <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(SolutionDir)CompressIconFolders.ps1&quot; -BaseDirectory &quot;$(OutDir)&quot;" />
+    </Target>
 </Project>
