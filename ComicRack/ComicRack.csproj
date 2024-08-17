@@ -162,9 +162,6 @@
         <ProjectReference Include="..\cYo.Common\cYo.Common.csproj" />
     </ItemGroup>
     <PropertyGroup />
-    <PropertyGroup>
-      <PackageOutputPath>bin\$(Configuration)\</PackageOutputPath>
-    </PropertyGroup>
     <Target Name="CustomClean" AfterTargets="CoreClean">
         <RemoveDir Directories="$(OutDir)\Resources" />
         <RemoveDir Directories="$(OutDir)\Languages" />
