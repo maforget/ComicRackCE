@@ -165,15 +165,9 @@
   </Target>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <ItemGroup>
-        <ResourcesDirectory Include="Resources\**\*.*" />
-        <LanguagesDirectory Include="Languages\**\*.*" />
-        <HelpDirectory Include="Help\**\*.*" />
-        <ScriptsDirectory Include="Scripts\**\*.*" />
+        <OutputDirectory Include="Output\**\*.*" />
     </ItemGroup>
-    <Copy SourceFiles="@(ResourcesDirectory)" DestinationFolder="$(OutDir)\Resources\%(RecursiveDir)" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(LanguagesDirectory)" DestinationFolder="$(OutDir)\Languages\%(RecursiveDir)" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(HelpDirectory)" DestinationFolder="$(OutDir)\Help\%(RecursiveDir)" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(ScriptsDirectory)" DestinationFolder="$(OutDir)\Scripts\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(OutputDirectory)" DestinationFolder="$(OutDir)\%(RecursiveDir)" SkipUnchangedFiles="true" />
     <Exec Command="git rev-parse HEAD &gt; &quot;CurrentCommit.txt&quot;&#xD;&#xA;git status --porcelain &gt; &quot;isDirty.txt&quot;&#xD;&#xA;exit 0" />
   </Target>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
