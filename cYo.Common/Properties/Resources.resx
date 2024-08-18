@@ -117,48 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Folder" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1gAADdYBkG95nAAAAAd0SU1FB9ULChI5DfndcFAAAAFaSURBVDhPvZJLSwJRGIbPj2rTplb1BySqhehk
-        k5lpRRDkpjZFVtAmL81oRcg4IlltggpKgixh5gRGKXQhaBP0I97ONw6GdtOEPng4nOE9z3lnGNbX75gL
-        TPjRiNcnW0hDLi/7aSjMOf+SQuECHlmCuGTQjn8eEuTzZ4jGIt8iBI2s2cergmKxCE3TfiWdTkPXdUti
-        H2eM3pMaSCEFHXKqJXoDiYoloAb0oFB5w2nptSkoS2dqDWiTu3zB6kGlKShrCVySs9bgTwL6IG01IMG/
-        Nwjn7qCdP9c36PTuYFcIVvbLVojW5b0ylkR4IXuLef0GoVQJ09vXCCY54kcP9Q0GZlSoJ4+Y3OSYTFZD
-        wQRHQDCucvhVE2MKh2/DxKhg/fD+Q5DJZhAWt1HIr1DQrAbjJkbiBmSxyjEDw1EDnogB5fgJjqkoepyz
-        W6zLHc6TqVW63YtX9s/czjD2DhXOZpRXW32VAAAAAElFTkSuQmCC
-</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Wikipedia" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAASFJREFUOE/N
-        0r8rxVEYx/Gji5vBrJDIqFtkMRGTCXdTEu5qkEgJpRgsMhgZ/AEGUgYZDGKQ/BOKwSpS5P0+537TLb/G
-        +6lXPefpnNP3PveEqsgkFjGPZXRhCbOYwwpGsIYF9GMGnhlD6MErPuCGWpTKaw2hEXfwQusC7tGBmAO4
-        +TiuUm5hbwvtOEGWUWymMqUX73hDqw0yDS94wD76kOUInan8yiU8sBFXITTgCfbObZTTgtNUVmYcbn5E
-        3gbZhj1/f5ZVFFNZmTo4GA9M2SDDcK0B1OACOXwb/yo338RVCIe4gj3rQbjnxzThBQ7Ud7AHh+cFDvgM
-        zfg1TtwDz2izQa5hz+n/mW74BbtxlTIBL/BF/ivryN6DqccOHHRVJYRP26lBR7HMAsoAAAAASUVORK5C
-        YII=
-</value>
+  <data name="Wikipedia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wikipedia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FolderHome" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1gAADdYBkG95nAAAAAd0SU1FB9ULChI4OcFytaQAAAFfSURBVDhPpZJNSwJRFIbvj2rTplb1BySqhehk
-        k5lYShDUplWBFLTJjzQtIkYlstoEFZQEWcLMCC1yYCqCNkE/4m3ObZya22hJBx6Gezjnue8Mw0ZGfcux
-        uShEwhGZI00Ewqxb0bCu657U6zcIyRKsS8bt8Z9FglrtCulMqiOWQGTDXv8UNBoNKIryK6VSCeVymUvs
-        dcboPSmBtJRDn7zfE8OxbYMLKAE16sY7Lu/f/gTN0o6TgA7V21esnxguEitFjtinWS4ISH4ngSigRdM0
-        OaLEEdAH8UrwfdlL4hKICbyW27QlXRPQUKcERLL6AOX6xZ2gP7yHQ0uwdtzqmIJ687tNzBZ0ZM8e3QnG
-        FvLIXzwhXtQRLzSd20QiWxqmLTZPzS9B5aCC5FEL0byGaE7DjAUfzGqYyqqQraecUTGZVhFKqcidP8OX
-        SGPIv7jDBoLJGpl6ZTC4emf/zP8pxj4Afm1oDIxW60AAAAAASUVORK5CYII=
-</value>
+  <data name="FolderHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FolderHome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlusOverlay" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        Qk3OAAAAAAAAAHYAAAAoAAAACwAAAAsAAAABAAQAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAA/wAA
-        gP8AgAD/AICA/4AAAP+AAID/gIAA/8DAwP+AgID/AAD//wD/AP8A/////wAA//8A/////wD//////wAA
-        AAAAAAAAD/////8AAAAP//D//wAAAA//8P//AAAAD//w//8AAAAPAAAADwAAAA//8P//AAAAD//w//8A
-        AAAP//D//wAAAA//////AAAAAAAAAAAAAAA=
-</value>
+  <data name="PlusOverlay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlusOverlay.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

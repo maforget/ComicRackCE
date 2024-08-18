@@ -33,7 +33,7 @@ This project aims to revive the legendary Comic Manager, ComicRack, which hasn't
 
 To support the community, I am releasing the decompiled version as a Community Edition. Although commercial use can't be prevented, I discourage rebranding and selling it. Please keep expectations realistic; major overhauls, like rewriting the entire program or UI, aren't on the horizon. As a hobbyist programmer, I can handle most code but with time. If you're eager for a new feature, I encourage you to consider implementing it yourself—it's what makes this the Community Edition.
 
-New Features are listed [here](https://github.com/maforget/ComicRackCE/wiki/New-Features). The complete changelog is [here](https://raw.githubusercontent.com/maforget/ComicRackCE/master/ComicRack/Changes.txt).
+New Features are listed [here](https://github.com/maforget/ComicRackCE/wiki/New-Features). The complete changelog is [here](https://raw.githubusercontent.com/maforget/ComicRackCE/master/ComicRack/Output/Changes.txt).
 
 ## Community Collaboration
 To collaborate, open an Issue on the tracker or use GitHub discussions. Start with small, focused Pull Requests, avoiding large, vague commits. ChatGPT can help with small code snippets but not with complete rewrites. Use Visual Studio 2022 Community Edition for development, as it's more suitable than VS Code.

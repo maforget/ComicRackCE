@@ -28,7 +28,7 @@ if (-not (Test-Path $iconDirectory)) {
 }
 
 # Use Git to check for changes in the Resources/Icons directory
-$gitChangedFiles = git status --porcelain | Select-String -Pattern "^.+/Resources/Icons/"
+$gitChangedFiles = git status --porcelain | Select-String -Pattern "^.+/Output/Resources/Icons/"
 
 $folders = Get-ChildItem -Path $iconDirectory -Directory
 
