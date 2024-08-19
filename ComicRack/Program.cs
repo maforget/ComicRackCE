@@ -365,7 +365,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 			switch (QuestionDialog.AskQuestion(parent, question, okButton, askAgainText, null, showCancel: true, cancelButton))
 			{
-			case QuestionResult.Cancel:
+			case var type when type.HasFlag(QuestionResult.Cancel):
 				return false;
 			case QuestionResult.OkWithOption:
 				Settings.HiddenMessageBoxes |= hmb;
