@@ -2104,10 +2104,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private string CleanListName(string matchValue)
         {
             //Ex: (?<=^)\s*Series\ Name\s*(?=$)
-            string output = string.Empty;
+            string output = matchValue;
 
-            // Look for the pattern and remove known regex syntax manually
-            if (matchValue.StartsWith("(?<=^)\\s*") && matchValue.EndsWith("\\s*(?=$)"))
+			// Look for the pattern and remove known regex syntax manually
+			if (matchValue.StartsWith("(?<=^)\\s*") && matchValue.EndsWith("\\s*(?=$)"))
                 output = Regex.Unescape(matchValue[9..^8]);
 
 			return output;
