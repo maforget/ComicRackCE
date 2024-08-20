@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using cYo.Common.Collections;
 using cYo.Common.ComponentModel;
@@ -665,7 +666,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 				case 1:
 					{
 						//This will match the value even if it has trailing & leading spaces. With multiple values the ListContains already does this internally.
-						string value = si.MultipleValues ? si.SelectedItems.First() : $"(?<=^)\\s*{si.SelectedItems.First()}\\s*(?=$)";
+						string value = si.MultipleValues ? si.SelectedItems.First() : $"(?<=^)\\s*{Regex.Escape(si.SelectedItems.First())}\\s*(?=$)";
 						ComicBookValueMatcher comicBookValueMatcher = ComicBookValueMatcher.Create(si.MatcherType,
 							si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : ComicBookStringMatcher.OperatorRegex,
 							value, null);
@@ -682,7 +683,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 						si.SelectedItems.ForEach(delegate (string s)
 						{
 							//This will match the value even if it has trailing & leading spaces. With multiple values the ListContains already does this internally.
-							string value = si.MultipleValues ? s : $"(?<=^)\\s*{s}\\s*(?=$)";
+							string value = si.MultipleValues ? s : $"(?<=^)\\s*{Regex.Escape(s)}\\s*(?=$)";
 							subSet.Matchers.Add(si.MatcherType,
 								si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : ComicBookStringMatcher.OperatorRegex,
 								value, null);
