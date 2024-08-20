@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
@@ -2072,8 +2073,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             }
             foreach (ComicBookValueMatcher item in comicSmartListItem.Matchers.Recurse<ComicBookValueMatcher>((object cbm) => (!(cbm is ComicBookGroupMatcher)) ? null : ((ComicBookGroupMatcher)cbm).Matchers))
             {
-                string text = item.MatchValue.Trim();
-                if (!string.IsNullOrEmpty(text))
+				string text = CleanListName(item.MatchValue.Trim());
+				if (!string.IsNullOrEmpty(text))
                 {
                     if (!string.IsNullOrEmpty(name))
                     {
@@ -2098,6 +2099,18 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             {
                 clif.Items.Add(comicSmartListItem);
             }
+        }
+
+		private string CleanListName(string matchValue)
+        {
+            //Ex: (?<=^)\s*Series\ Name\s*(?=$)
+            string output = string.Empty;
+
+            // Look for the pattern and remove known regex syntax manually
+            if (matchValue.StartsWith("(?<=^)\\s*") && matchValue.EndsWith("\\s*(?=$)"))
+                output = Regex.Unescape(matchValue[9..^8]);
+
+			return output;
         }
 
         private void SetListBackgroundImage(ComicBook cb)
