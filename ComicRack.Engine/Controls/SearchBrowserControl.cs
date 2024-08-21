@@ -665,7 +665,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			case 1:
 			{
 				ComicBookValueMatcher comicBookValueMatcher = ComicBookValueMatcher.Create(si.MatcherType, 
-					si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : ComicBookStringMatcher.OperatorEquals, 
+					si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : 0,
 					si.SelectedItems.First(), null);
 				comicBookValueMatcher.Not = si.Not;
 				return comicBookValueMatcher;
@@ -680,7 +680,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 				si.SelectedItems.ForEach(delegate(string s)
 				{
 					subSet.Matchers.Add(si.MatcherType, 
-						si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : ComicBookStringMatcher.OperatorEquals, 
+						si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : 0, 
 						s, null);
 				});
 				return subSet;
