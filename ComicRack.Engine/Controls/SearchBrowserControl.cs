@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using cYo.Common.Collections;
 using cYo.Common.ComponentModel;
@@ -308,12 +307,12 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		{
 			switch (e.Action)
 			{
-				case SmartListAction.Insert:
-					e.Item.BookChanged += BookPropertyChanged;
-					break;
-				case SmartListAction.Remove:
-					e.Item.BookChanged -= BookPropertyChanged;
-					break;
+			case SmartListAction.Insert:
+				e.Item.BookChanged += BookPropertyChanged;
+				break;
+			case SmartListAction.Remove:
+				e.Item.BookChanged -= BookPropertyChanged;
+				break;
 			}
 			listIsDirty = true;
 		}
@@ -425,14 +424,14 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		{
 			switch (column)
 			{
-				case 0:
-					return cbType1.SelectedItem as SelectionEntry;
-				case 1:
-					return cbType2.SelectedItem as SelectionEntry;
-				case 2:
-					return cbType3.SelectedItem as SelectionEntry;
-				default:
-					return null;
+			case 0:
+				return cbType1.SelectedItem as SelectionEntry;
+			case 1:
+				return cbType2.SelectedItem as SelectionEntry;
+			case 2:
+				return cbType3.SelectedItem as SelectionEntry;
+			default:
+				return null;
 			}
 		}
 
@@ -440,15 +439,15 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		{
 			switch (column)
 			{
-				case 0:
-					SelectListEntry(listView1, value);
-					break;
-				case 1:
-					SelectListEntry(listView2, value);
-					break;
-				case 2:
-					SelectListEntry(listView3, value);
-					break;
+			case 0:
+				SelectListEntry(listView1, value);
+				break;
+			case 1:
+				SelectListEntry(listView2, value);
+				break;
+			case 2:
+				SelectListEntry(listView3, value);
+				break;
 			}
 		}
 
@@ -590,7 +589,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 							continue;
 						}
 						hashSet.AddRange(from vs in stringPropertyValue.Split(listSeparators)
-										 select vs.Trim());
+							select vs.Trim());
 					}
 					List<string> list = hashSet.ToList();
 					list.Sort(new ExtendedStringComparer(ExtendedStringComparison.IgnoreArticles | ExtendedStringComparison.IgnoreCase));
@@ -661,35 +660,31 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		{
 			switch (si.SelectedItems.Count)
 			{
-				case 0:
-					return null;
-				case 1:
-					{
-						//This will match the value even if it has trailing & leading spaces. With multiple values the ListContains already does this internally.
-						string value = si.MultipleValues ? si.SelectedItems.First() : $"(?<=^)\\s*{Regex.Escape(si.SelectedItems.First())}\\s*(?=$)";
-						ComicBookValueMatcher comicBookValueMatcher = ComicBookValueMatcher.Create(si.MatcherType,
-							si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : ComicBookStringMatcher.OperatorRegex,
-							value, null);
-						comicBookValueMatcher.Not = si.Not;
-						return comicBookValueMatcher;
-					}
-				default:
-					{
-						ComicBookGroupMatcher subSet = new ComicBookGroupMatcher
-						{
-							MatcherMode = MatcherMode.Or,
-							Not = si.Not
-						};
-						si.SelectedItems.ForEach(delegate (string s)
-						{
-							//This will match the value even if it has trailing & leading spaces. With multiple values the ListContains already does this internally.
-							string value = si.MultipleValues ? s : $"(?<=^)\\s*{Regex.Escape(s)}\\s*(?=$)";
-							subSet.Matchers.Add(si.MatcherType,
-								si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : ComicBookStringMatcher.OperatorRegex,
-								value, null);
-						});
-						return subSet;
-					}
+			case 0:
+				return null;
+			case 1:
+			{
+				ComicBookValueMatcher comicBookValueMatcher = ComicBookValueMatcher.Create(si.MatcherType, 
+					si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : ComicBookStringMatcher.OperatorEquals, 
+					si.SelectedItems.First(), null);
+				comicBookValueMatcher.Not = si.Not;
+				return comicBookValueMatcher;
+			}
+			default:
+			{
+				ComicBookGroupMatcher subSet = new ComicBookGroupMatcher
+				{
+					MatcherMode = MatcherMode.Or,
+					Not = si.Not
+				};
+				si.SelectedItems.ForEach(delegate(string s)
+				{
+					subSet.Matchers.Add(si.MatcherType, 
+						si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : ComicBookStringMatcher.OperatorEquals, 
+						s, null);
+				});
+				return subSet;
+			}
 			}
 		}
 
