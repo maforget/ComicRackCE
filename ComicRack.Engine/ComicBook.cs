@@ -1015,13 +1015,15 @@ namespace cYo.Projects.ComicRack.Engine
 
         public string NumberAsText => FormatNumber(base.Number, ShadowCount);
 
+        [Browsable(true)]
         public string NumberOnly => ShadowNumber;
 
         public string AlternateNumberAsText => FormatNumber(base.AlternateNumber, base.AlternateCount);
 
         public string VolumeAsText => FormatVolume(base.Volume);
 
-        public string VolumeOnly
+		[Browsable(true)]
+		public string VolumeOnly
         {
             get
             {

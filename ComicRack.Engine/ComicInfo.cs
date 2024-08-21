@@ -570,6 +570,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
+		[Browsable(true)]
 		[DefaultValue("")]
 		[ResetValue(0)]
 		public string LanguageISO
