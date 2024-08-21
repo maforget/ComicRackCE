@@ -585,7 +585,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 						string stringPropertyValue = item.GetStringPropertyValue(selectionInfo.Property, ComicValueType.Shadow);
 						if (!selectionInfo.MultipleValues || stringPropertyValue.IndexOfAny(listSeparators) == -1)
 						{
-							hashSet.Add(stringPropertyValue.Trim());
+							hashSet.Add(stringPropertyValue);
 							continue;
 						}
 						hashSet.AddRange(from vs in stringPropertyValue.Split(listSeparators)
