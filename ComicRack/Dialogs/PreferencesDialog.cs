@@ -1384,6 +1384,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                     Program.Settings.VirtualTags.Add(item);
             }
         }
-        #endregion
-    }
+
+		private void btnVTagsHelp_Click(object sender, EventArgs e)
+		{
+            const string VTagWiki = @"https://github.com/maforget/ComicRackCE/wiki/Virtual-Tags";
+            Program.StartDocument(VTagWiki);
+		}
+		#endregion
+	}
 }

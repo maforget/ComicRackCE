@@ -585,7 +585,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 						string stringPropertyValue = item.GetStringPropertyValue(selectionInfo.Property, ComicValueType.Shadow);
 						if (!selectionInfo.MultipleValues || stringPropertyValue.IndexOfAny(listSeparators) == -1)
 						{
-							hashSet.Add(stringPropertyValue.Trim());
+							hashSet.Add(stringPropertyValue);
 							continue;
 						}
 						hashSet.AddRange(from vs in stringPropertyValue.Split(listSeparators)
@@ -664,7 +664,9 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 				return null;
 			case 1:
 			{
-				ComicBookValueMatcher comicBookValueMatcher = ComicBookValueMatcher.Create(si.MatcherType, si.MultipleValues ? 6 : 0, si.SelectedItems.First(), null);
+				ComicBookValueMatcher comicBookValueMatcher = ComicBookValueMatcher.Create(si.MatcherType, 
+					si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : ComicBookStringMatcher.OperatorEquals, 
+					si.SelectedItems.First(), null);
 				comicBookValueMatcher.Not = si.Not;
 				return comicBookValueMatcher;
 			}
@@ -677,7 +679,9 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 				};
 				si.SelectedItems.ForEach(delegate(string s)
 				{
-					subSet.Matchers.Add(si.MatcherType, si.MultipleValues ? 6 : 0, s, null);
+					subSet.Matchers.Add(si.MatcherType, 
+						si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : ComicBookStringMatcher.OperatorEquals, 
+						s, null);
 				});
 				return subSet;
 			}

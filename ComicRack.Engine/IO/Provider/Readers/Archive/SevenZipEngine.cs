@@ -239,15 +239,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             string arg;
             switch (format)
             {
-                case 2:
+                case KnownFileFormats.CBZ:
                     flag = false;
                     arg = "zip";
                     break;
-                case 6:
+                case KnownFileFormats.CB7:
                     flag = true;
                     arg = "7z";
                     break;
-                case 5:
+                case KnownFileFormats.CBT:
                     flag = false;
                     arg = "tar";
                     break;

@@ -93,10 +93,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 						if (ask)
 						{
 							QuestionResult questionResult = QuestionDialog.AskQuestion(parent, TR.Messages["AskRemoveFromLibrary", "Are you sure you want to remove these books from the library?\nAll information not stored in the files will be lost (like Open Count, Last Read etc.)!"], TR.Messages["Remove", "Remove"], moveToRecycleBin, booksImage);
-							if (questionResult == QuestionResult.Cancel)
-							{
+							if (questionResult.HasFlag(QuestionResult.Cancel))
 								return;
-							}
+
 							Program.Settings.MoveFilesToRecycleBin = questionResult.HasFlag(QuestionResult.Option);
 						}
 					}
@@ -112,10 +111,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 								qd.Image = booksImage;
 								qd.ShowCancel = true;
 							});
-							if (questionResult2 == QuestionResult.Cancel)
-							{
+							if (questionResult2.HasFlag(QuestionResult.Cancel))
 								return;
-							}
+
 							deleteFromLibrary = questionResult2.HasFlag(QuestionResult.Option);
 							if (filteredComicBookList != null)
 							{
@@ -1538,7 +1536,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 							str += "\n";
 							switch (QuestionDialog.AskQuestion(this, StringUtility.Format(format, str), TR.Default["Import", "Import"], TR.Messages["CreateMissingBooks", "Add missing Books to Library"]))
 							{
-							case QuestionResult.Cancel:
+							case var type when type.HasFlag(QuestionResult.Cancel):
 								return null;
 							case QuestionResult.OkWithOption:
 								Library.Books.AddRange(newBooks);
