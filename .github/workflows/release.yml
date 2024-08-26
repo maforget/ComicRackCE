@@ -36,6 +36,11 @@ jobs:
 
     - name: Package Files
       run: powershell Compress-Archive -Path 'ComicRack\bin\Release\net48\*' -DestinationPath 'ComicRackCE_v${{ github.event.inputs.version }}.zip' -Force
+    
+    - name: Download VC++ Redistributable (x64)
+      run: |
+        mkdir ComicRack\bin\Release\net48\_CommonRedist
+        curl -L -o ComicRack\bin\Release\net48\_CommonRedist\vc_redist.x64.exe https://aka.ms/vs/17/release/vc_redist.x64.exe
 
     - name: Compile installer
       uses: Minionguyjpro/Inno-Setup-Action@v1.2.4

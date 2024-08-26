@@ -26,7 +26,7 @@ ChangesAssociations=yes
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 LicenseFile=ComicRack\bin\Release\net48\License.txt
-PrivilegesRequiredOverridesAllowed=dialog
+PrivilegesRequired=admin
 OutputDir=.
 OutputBaseFilename={#MyAppSetupFile}
 Compression=lzma
@@ -80,6 +80,7 @@ Source: "ComicRack\bin\Release\net48\Resources\*"; DestDir: "{app}\Resources"; F
 Source: "ComicRack\bin\Release\net48\Resources\Icons\*"; DestDir: "{app}\Resources\Icons"; Flags: ignoreversion; Components: additional
 Source: "ComicRack\bin\Release\net48\Resources\Textures\*"; DestDir: "{app}\Resources\Textures"; Flags: ignoreversion recursesubdirs; Components: additional
 Source: "ComicRack\bin\Release\net48\Scripts\*"; DestDir: "{app}\Scripts"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\_CommonRedist\VC_redist.x64.exe"; DestDir: {tmp}; Flags: dontcopy
 
 [Registry]
 ; Comics
@@ -138,6 +139,10 @@ Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; 
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}";          Components: desktop
 
 [Run]
+Filename: "{tmp}\VC_redist.x64.exe"; Parameters: "/install /passive /norestart"; \
+    Check: Is64BitInstallMode and VC2022RedistNeedsInstall; \
+    Flags: waituntilterminated; \
+    StatusMsg: "Installing VC++ 2022 redistributables..."
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
 [Code]
@@ -199,6 +204,29 @@ begin
     end;
   finally
     DownloadPage.Hide;
+  end;
+end;
+
+function VC2022RedistNeedsInstall: Boolean;
+var 
+  Version: String;
+begin
+  if RegQueryStringValue(HKEY_LOCAL_MACHINE,
+       'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64', 'Version',
+       Version) then
+  begin
+    // Is the installed version at least 14.40 ? 
+    Log('VC Redist Version check : found ' + Version);
+    Result := (CompareStr(Version, 'v14.40.33810.00')<0);
+  end
+  else 
+  begin
+    // Not even an old version installed
+    Result := True;
+  end;
+  if (Result) then
+  begin
+    ExtractTemporaryFile('VC_redist.x64.exe');
   end;
 end;
 
