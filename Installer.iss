@@ -37,6 +37,7 @@ ArchitecturesInstallIn64BitMode=x86compatible
 SetupIconFile=ComicRack\Icons\uninst_103.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
 UninstallDisplayName={#MyAppName}
+RestartIfNeededByRun=false
 
 [Messages]
 // define wizard title and tray status msg
