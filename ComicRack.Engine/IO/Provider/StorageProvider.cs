@@ -204,30 +204,33 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             StoragePageType storagePageType = (setting.PageType != StoragePageType.Original) ? setting.PageType : GetStoragePageTypeFromExtension(ext);
             if (!string.IsNullOrEmpty(ext) && setting.PageResize == StoragePageResize.Original && (setting.PageType == StoragePageType.Original || setting.PageType == GetStoragePageTypeFromExtension(ext)) && cpi.Rotation == ImageRotation.None && setting.DoublePages == DoublePageHandling.Keep && setting.ImageProcessing.IsEmpty)
             {
-                array = provider.GetByteImage(cpi.ImageIndex);
-                if (setting.PageType == StoragePageType.Jpeg)
-                {
-                    using (MemoryStream s = new MemoryStream(array))
-                    {
-                        if (!JpegFile.GetImageSize(s, out var size))
-                        {
-                            array = null;
-                        }
-                        else
-                        {
-                            cpi.ImageWidth = size.Width;
-                            cpi.ImageHeight = size.Height;
-                        }
-                    }
+				if (forExport)
+				{
+					ExportImageContainer data = provider.GetByteImageForExport(cpi.ImageIndex);
+					array = (data.NeedsToConvert) ? ConvertImage(storagePageType, data.Bitmap, setting) : data.Data;
                 }
-
-                if (forExport)
+                else
                 {
-                    ExportImageContainer data = provider.GetByteImageForExport(cpi.ImageIndex);
-                    array = (data.NeedsToConvert) ? ConvertImage(storagePageType, data.Bitmap, setting) : data.Data;
-                }
+					array = provider.GetByteImage(cpi.ImageIndex);
+				}
 
-                if (array != null && array.Length != 0)
+				if (setting.PageType == StoragePageType.Jpeg)
+				{
+					using (MemoryStream s = new MemoryStream(array))
+					{
+						if (!JpegFile.GetImageSize(s, out var size))
+						{
+							array = null;
+						}
+						else
+						{
+							cpi.ImageWidth = size.Width;
+							cpi.ImageHeight = size.Height;
+						}
+					}
+				}
+
+				if (array != null && array.Length != 0)
                 {
                     return new PageResult[1]
                     {
