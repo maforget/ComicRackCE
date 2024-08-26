@@ -31,9 +31,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             public static extern heif_filetype_result heif_check_filetype(IntPtr data, int len);
         }
 
-        public static byte[] ConvertToJpeg(byte[] data)
+		public static byte[] ConvertToJpeg(byte[] data)
         {
-            if (!IsSupported(data))
+            if (!IsSupported(data) || !IsSupportedNative(data))
             {
                 return data;
             }
@@ -75,8 +75,25 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             }
         }
 
-        #region Checking file header for identification
-        private static bool IsSupported(byte[] data)
+		#region Checking file header for identification
+		private static bool IsSupported(byte[] data)
+        {
+			if (data.Length < 12 || !Environment.Is64BitProcess)
+				return false;
+
+			// Check bytes 4 to 7
+			string typeTag = Encoding.ASCII.GetString(data, 4, 4);
+			if (typeTag != "ftyp")
+				return false;
+
+			// Check bytes 8 to 11
+			string fileType = Encoding.ASCII.GetString(data, 8, 4);
+			var supportedTypes = new[] { "heic", "heix", "avif", "jpeg", "j2ki" };
+
+			return Array.Exists(supportedTypes, t => t == fileType);
+		}
+
+		private static bool IsSupportedNative(byte[] data)
         {
             if (data.Length < 12 || !Environment.Is64BitProcess)
                 return false;
