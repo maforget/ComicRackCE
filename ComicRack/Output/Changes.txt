@@ -1,79 +1,70 @@
 Community Edition Build 0.9.180:
 
 * NEW: RAR5 Support (Default & SharpCompress)
-* NEW: New PDF Engine using Google's PDFium, this is now the  default. Check in the ComicRack.ini file to change the default engine or to change the rendering size. (See below for additional changes).
-* NEW: Support for HEIF, AVIF & JpegXL image supports. This will only work in 64bit.
-* NEW: Added Virtual Tags. You can set any combination of field in a single one. Can be used with grouping, sorting, smart lists. 
-    - Configure them in Preferences => Library => Virtual Tags. 
-    - BACKUP YOUR DB, IF YOU PLAN ON GOING BACK TO AN OLDER VERSION. USING A VIRTUAL TAG IN A SMART LIST AND OPENING AN OLDER VERSION WOULD RESULT IN A DATABASE CORRUPTED MESSAGE. YOU NEED TO REMOVE ANY OF THESE LISTS BEFORE GOING BACK.
-* NEW: Built-in "Open With" external programs. 
-    - You can also set it to override the reader and that program will replace the normal reader when double-clicking (you can still right-click open for the default viewer). There are no validation that the program will support the filetype.
+* NEW: New PDF Engine using Google's PDFium is now the Default. Options to configure added to ComicRack.ini. (See Wiki)
+* NEW: Support for HEIF, AVIF image supports. Only enabled in 64bit. (Requires up to date VC++ Redistributable)
+* NEW: Added Virtual Tags. Combine multiple fields, use advanced functions. Can be used with grouping, sorting, smart lists.  (See Wiki for functions syntax)
+* NEW: Built-in "Open With" external programs. Ability to override the default viewer with your extrnal program.
 * NEW: Added the Git version to the Splash Screen, to more easily identify bugs in specific releases.
 * NEW: Added the "-local" command line switch, to have the program load in portable mode.
-* NEW: Added links to The Organizer guide to the online manual help system
+* NEW: Added links to The Organizer guide & manual in the help system.
 * NEW: Added "Actual File Format" field that will be the actual file format of the archive and not simply based on the extension.
-* NEW: Unknown elements that may have been added by other software to the ComicInfo.xml will be kept, these will also be saved in the database.
+* NEW: Unknown elements that may have been added by other softwares to the ComicInfo.xml will no longer be stripped and are also stored in the database.
 * NEW: Articles in IgnoredArticles can now terminate with an apostrophe (Like L').
 * NEW: Added French articles (Le, La, Les, L') as default in IgnoredArticles.
-* NEW: Remember the Location & Size of Script Output Console by the Workspace system. Since the Workspace system is configured via the Main window, the console will load at the default location but be restored once the Main window is loaded.
+* NEW: Remembers the Location & Size of Script Output Console by the Workspace system.
 * NEW: Quick Search (using Mode All) will now search Scan Information & Custom Fields.
-* NEW: Added the Web field to smart list, so no more need to use expressions. (Again backup your DB, this could result in a corrupted database if going back to an older version)
-* NEW: Added an "Is Missing" smart list entry. (Again backup your DB, this could result in a corrupted database if going back to an older version)
+* NEW: Added the Web field to smart lists.
+* NEW: Added an "Is Missing" smart list entry.
 * NEW: "__MACOSX" & ".DS_Store" folders will be ignored inside archives.
 * NEW: Images smaller than 256 bytes will be ignored inside archives (so that thumbnails are excluded).
-* NEW: Added a "Published (Regional)" column that will use the OS regional setting for the Published date (like the other dates).
+* NEW: Added a "Published (Regional)" column that will use the OS regional setting for the Published date.
 * NEW: Added support for wildcard for "KeepFiles" in a script "Package.ini" (used for Data Manager multiple profiles).
-* NEW: Added a Merge Pages functionality, that will merge pages together. 
-    - This is only in Cache and the book will need to be exported for the changes to be saved. 
-    - Can be easily reversed by using Refresh on a page.
-    - The sort order is important in determining the left & right images.
-    - Unless Manga is set to : Yes (Right to Left), then the sort order doesn't matter.
-    (So for Manga, either just sort by descending to see the images in the correct order, set the comic to be Right to Left or both)
+* NEW: Added a way to merge pages together. (See Wiki)
+* NEW: Added a check for update feature.
 
-* CHANGE: Updated to .NET Framework v4.8.
-* CHANGE: Updated the Splash Screen and Renamed the Program to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.
-* CHANGE: Removed Android Validation of apk signature (so we can use the cracked version). Has no incidence on whether the sync icon appears.
+
+* CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.
+* CHANGE: Removed Android Validation of APK signature to enable compatilibity with cracked version.
 * CHANGE: Updated default sort to be natural sorting (numeric).
 * CHANGE: Switched MySQl library to MySQLConnector for better speed & compatibility with MariaDB (Yes current versions work).
 * CHANGE: Alternate config (-ac) can now be used with portable mode (UseLocalSettings) (-local).
-* CHANGE: Removed everything to do with Validation/Donation/PayPal.
-* CHANGE: Removed everything to do with Twitter.
+* CHANGE: The default docking mode is now Fill, instead of Bottom.
+* CHANGE: Improved performances while handling Tar files (by Apiweb).
+* CHANGE: The field Tags is now saved inside the ComicInfo.xml.
+* CHANGE: ParallelConversions now maxes out at the number of processor (was hardcoded at 8 previously).
+* CHANGE: Made News window bigger and replaced it with commit histtory from GitHub.
+* CHANGE: Replaced the ComicRack.ini setting of "DisableGhostscript" by "PdfEngineToUse", choosing between Pdfium, Native & Ghostscript.
+* CHANGE: Values for Maximum Memory now have a bigger possible range. Unlimited is unchanged.
+* CHANGE: The magnifing glass can now be twice as big as before (512 x 512 => 1024 x 1024)
+* CHANGE: Series: Gaps will take into consideration range of numbers (Ex: 5 - 10)
+* CHANGE: Changed the default method for resizing thumbnails changed from FastBilinear (Bilinear) to FastAndUgly (Nearest Neighbor). You can revert the change in ComicRack.ini. 
+* CHANGE: Summaries will not contain the same artists multiple time anymore.
+* CHANGE: The Search Browser will no longer remove any leading/trailing spaces.
+* CHANGE: Updated Format & Publishers icons. Thanks @ ucapato & others.
+* CHANGE: Updated the Splash Screen.
+
+* CHANGE: Updated to .NET Framework v4.8.
+* CHANGE: Updated 7-Zip to to v24.07.
 * CHANGE: Updated SharpZipLib to v1.4.2.
 * CHANGE: Updated SharpCompress to v0.36.
 * CHANGE: Updated WindowsCodePack to V1.15.
-* CHANGE: Updated home & forum links to Github.
-* CHANGE: Updated wiki links to the Wayback Machine.
-* CHANGE: Updated the default help system to the online manual (from Wayback Machine).
-* CHANGE: Updated manual links & chapter links.
-* CHANGE: Updated Help localize ComicRack links (we still need access to the Localizer program).
-* CHANGE: The default docking mode is now Fill, instead of Bottom.
-* CHANGE: Improved performances while handling Tar files (by Apiweb).
-* CHANGE: Removed the Crash submission dialog because it depended on the cyolito.com website.
-* CHANGE: Disabled the Public server checkbox because it depended on the cyolito.com website.
-* CHANGE: Made Tags be saved inside the ComicInfo.xml. First Sync after the update will cause all the data to be updated, so a slower sync is expected. (will this mess with other programs that uses the ComicInfo.xml?)
-* CHANGE: Changed ParallelConversions from 8 to the Number of Processor. ini says it was related to the number of Processor, but I do not see any evidence for that setting. This only increases the number of pages it converts at the same time. 
-* CHANGE: Replaced the old news by the Community Edition commit history, a way to keep up to date with dev progress.
-* CHANGE: Replaced the ComicRack.ini setting of "DisableGhostscript" by "PdfEngineToUse", that lets you choose between Pdfium, Native & Ghostscript (if installed). Ghostscript will no longer be the default if installed, to use it you will need to set "PdfEngineToUse = Ghostscript".
-* CHANGE: A bigger maximum memory value can now be set. It used to be that anyhting above 1GB would be unlimited (the default). You can now set your maximum memory to below 4GB (instead of only 1GB before). Setting it to the maximum will still result in unlimited memory. This will not change your current settings, if you are already set to unlimited it will stay that way.
-* CHANGE: The magnifing glass can now be twice as big as before (512 x 512 => 1024 x 1024)
-* CHANGE: Updated Publishers.zip
-* CHANGE: Series: Gaps will try to determine Number range of type "# - #".
-* CHANGE: The default method for resizing thumbnails was changed from FastBilinear (Bilinear) to FastAndUgly (Nearest Neighbor). For more speed but more importantly to prevent a crash that has been happening and is hard to prevent. This should at the very least reduce the incidence of that crash happening or having bad thumnails created (with a big red X). You can change back the method manually by changing the ThumbnailResampling entry in the ComicRack.ini.
-* CHANGE: In summaries artists will not appear multiple time anymore.
-* CHANGE: Updated Format & Publishers icons. Thanks @ ucapato
+* CHANGE: Updated links & reference to the cyolito.com website.
+* CHANGE: Removed everything to do with Validation/Donation/PayPal.
+* CHANGE: Removed everything to do with Twitter.
 
  
-* BUGFIX: Fixed crash when the clipboard contains some objects while the program is idle. The check should now only happen on a right-click and not in the background. It should at least lessen the frequency of the crash, maybe remove it completely. 
-* BUGFIX: Fixed smartlist "in range" for dates, the second field wasn't taken into account.
-* BUGFIX: Fixed possible crash if window size is less than 0 (Usually when using high DPI scaling).
-* BUGFIX: Fixed a bug where clicking a folder that didn't exists anymore, would show the files from the program installation directory.
-* BUGFIX: Fixed missing entry (MainCharacterOrTeam, Review & CommunityRating) not being saved in ComicInfo.xml.
-* BUGFIX: Made getting a list of book from a folder a lot faster when there was incompatible files. The slowdown was related to attempting to read the files as a WebComic. Previously the program would attempt to use all it's known provider on each and every file until it found a working one, regardless of the type. Now Webcomics will NEED to be a CBW.
+* BUGFIX: Fixed Crash when the clipboard contained some objects while the program is idle. 
+* BUGFIX: Fixed Crash if window size is less than 0 (Usually when using high DPI scaling).
+* BUGFIX: Smartlist using "in range" for dates, wasn't taking into account the second field.
+* BUGFIX: Clicking a folder that didn't exists anymore, would show the files from the program installation directory instead.
+* BUGFIX: Entries MainCharacterOrTeam, Review & CommunityRating were not being saved in ComicInfo.xml.
+* BUGFIX: Increased performance of files loading when clicking a folder.
 * BUGFIX: Enabling fullscreen didn't minimize the gui when reader was in it's own window, with option to do it at the same time enabled.
-* BUGFIX: Fixed files not being deleted if they contained Unicode characters.
+* BUGFIX: Files were not being deleted if they contained Unicode characters.
 * BUGFIX: Increase performance (dragging, searching lists & opening edit smart lists dialog) when a lot of smart list existed.
-* BUGFIX: Fixed a bug where exporting files already in WebP or DejaVu would result in jpegs, regarless of their extensions. Thanks @ BrokenkRSA
-
+* BUGFIX: Exporting files already in WebP or DejaVu would secretly be jpegs. Thanks @ BrokenkRSA
+* BUGFIX: Wrong corner of the page was chosen when the options to zoom out on page change & true right to left reading were both enabled.
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 
