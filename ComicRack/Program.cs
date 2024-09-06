@@ -134,7 +134,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private static Splash splash;
 
-		private static readonly Regex yearRegex = new Regex("\\((?<start>\\d{4})-(?<end>\\d{4})\\)", RegexOptions.Compiled);
+		private static readonly Regex dateRangeRegex = new Regex("\\((?<start>\\d{4}_\\d{2})-(?<end>\\d{4}_\\d{2})\\)", RegexOptions.Compiled);
 
 		public static ExtendedSettings ExtendedSettings
 		{
@@ -820,7 +820,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				}
 				StartupProgress(TR.Messages["LoadCustomSettings", "Loading custom settings"], 20);
 				IEnumerable<string> defaultLocations = IniFile.GetDefaultLocations(DefaultIconPackagesPath);
-				ComicBook.PublisherIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Publishers*.zip"), SplitIconKeysWithYear);
+				ComicBook.PublisherIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Publishers*.zip"), SplitIconKeysWithYearAndMonth);
 				ComicBook.AgeRatingIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "AgeRatings*.zip"), SplitIconKeys);
 				ComicBook.FormatIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Formats*.zip"), SplitIconKeys);
 				ComicBook.SpecialIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Special*.zip"), SplitIconKeys);
@@ -948,25 +948,49 @@ namespace cYo.Projects.ComicRack.Viewer
 			return value.Split(',', '#');
 		}
 
-		private static IEnumerable<string> SplitIconKeysWithYear(string value)
-		{
-			foreach (string key in SplitIconKeys(value))
-			{
-				Match j = yearRegex.Match(key);
-				if (!j.Success)
-				{
-					yield return key;
-					continue;
-				}
-				int num = int.Parse(j.Groups["start"].Value);
-				int end = int.Parse(j.Groups["end"].Value);
-				string key2 = yearRegex.Replace(key, string.Empty);
-				for (int i = num; i <= end; i++)
-				{
-					yield return key2 + "(" + i + ")";
-				}
-			}
-		}
+        private static IEnumerable<string> SplitIconKeysWithYearAndMonth(string value)
+        {
+            foreach (string key in SplitIconKeys(value))
+            {
+                Match dateMatch = dateRangeRegex.Match(key);
+
+                if (!dateMatch.Success)
+                {
+                    yield return key;
+                    continue;
+                }
+
+                string startDate = dateMatch.Groups["start"].Value;
+                string endDate = dateMatch.Groups["end"].Value;
+                string baseKey = dateRangeRegex.Replace(key, string.Empty);
+
+                // Check if the start date contains month information
+                bool hasStartMonth = startDate.Contains("_");
+                // Check if the end date contains month information
+                bool hasEndMonth = endDate.Contains("_");
+
+                // Extract year and month parts
+                string[] startParts = startDate.Split('_');
+                string[] endParts = endDate.Split('_');
+
+                int startYear = int.Parse(startParts[0]);
+                int endYear = int.Parse(endParts[0]);
+
+                int startMonth = hasStartMonth ? int.Parse(startParts[1]) : 1;
+                int endMonth = hasEndMonth ? int.Parse(endParts[1]) : 12;
+
+                for (int year = startYear; year <= endYear; year++)
+                {
+                    int startMonthValue = (year == startYear) ? startMonth : 1;
+                    int endMonthValue = (year == endYear) ? endMonth : 12;
+
+                    for (int month = startMonthValue; month <= endMonthValue; month++)
+                    {
+                        yield return baseKey + "(" + year + (hasStartMonth ? "_" + month.ToString("00") : "") + ")";
+                    }
+                }
+            }
+        }
 
 		private static bool InitializeDatabase(int startPercent, string readDbMessage)
 		{
