@@ -152,7 +152,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                         {
                             PropVariant value = default(PropVariant);
                             archive.GetProperty(i, ItemPropId.kpidPath, ref value);
-                            if (file.Equals(value.GetObject().ToString()))
+                            if (file.Equals(value.GetObject().ToString(), StringComparison.OrdinalIgnoreCase))
                             {
                                 return GetFileData(archive, i);
                             }
