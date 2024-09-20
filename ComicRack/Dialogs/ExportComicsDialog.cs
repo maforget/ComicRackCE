@@ -160,6 +160,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		{
 			LocalizeUtility.UpdateRightToLeft(this);
 			InitializeComponent();
+			if (Environment.Is64BitProcess) this.cbPageFormat.Items.AddRange(new object[] { "HEIF", "AVIF" });
 			LocalizeUtility.Localize(this, null);
 			foreach (ComboBox control in this.GetControls<ComboBox>())
 			{

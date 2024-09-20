@@ -543,7 +543,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             "BMP",
             "DJVU",
             "WEBP"});
-            if (Environment.Is64BitProcess) this.cbPageFormat.Items.AddRange(new object[] { "HEIF", "AVIF" });
             this.cbPageFormat.Location = new System.Drawing.Point(110, 42);
             this.cbPageFormat.Name = "cbPageFormat";
             this.cbPageFormat.Size = new System.Drawing.Size(157, 21);
