@@ -22,6 +22,7 @@ Community Edition Build 0.9.180:
 * NEW: Added support for wildcard for "KeepFiles" in a script "Package.ini" (used for Data Manager multiple profiles).
 * NEW: Added a way to merge pages together. (See Wiki)
 * NEW: Added a check for update feature.
+* NEW: Added the Scan Information & Web field to the Search Browser.
 
 
 * CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.

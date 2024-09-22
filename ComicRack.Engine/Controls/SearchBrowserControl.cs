@@ -211,7 +211,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 
 		private static void FillTypeCombo(ComboBox cb, int index, ListView lv, CheckBox chk, int selected)
 		{
-			cb.Items.AddRange(new SelectionEntry[35]
+			cb.Items.AddRange(new SelectionEntry[]
 			{
 				new SelectionEntry(index, 0, "ShadowSeries", "Series", typeof(ComicBookSeriesMatcher), multiValue: false),
 				new SelectionEntry(index, 1, "ShadowTitle", "Titles", typeof(ComicBookTitleMatcher), multiValue: false),
@@ -247,7 +247,9 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 				new SelectionEntry(index, 31, "BookLocation", "Book Locations", typeof(ComicBookBookLocationMatcher), multiValue: false),
 				new SelectionEntry(index, 32, "MainCharacterOrTeam", "Main Characters/Teams", typeof(ComicBookMainCharacterOrTeamMatcher), multiValue: false),
 				new SelectionEntry(index, 33, "SeriesGroup", "Series Group", typeof(ComicBookSeriesGroupMatcher), multiValue: false),
-				new SelectionEntry(index, 34, "StoryArc", "Story Arcs", typeof(ComicBookStoryArcMatcher), multiValue: false)
+				new SelectionEntry(index, 34, "StoryArc", "Story Arcs", typeof(ComicBookStoryArcMatcher), multiValue: false),
+				new SelectionEntry(index, 35, "ScanInformation", "Scan Information", typeof(ComicBookScanInformationMatcher), multiValue: false),
+				new SelectionEntry(index, 36, "Web", "Web", typeof(ComicBookWebMatcher), multiValue: false),
 			}.Sort());
 			cb.Tag = lv;
 			lv.Tag = chk;
