@@ -66,6 +66,8 @@ Community Edition Build 0.9.180:
 * BUGFIX: Exporting files already in WebP or DejaVu would secretly be jpegs. Thanks @ BrokenkRSA
 * BUGFIX: Wrong corner of the page was chosen when the options to zoom out on page change & true right to left reading were both enabled.
 * BUGFIX: Detection of the ComicInfo.xml file is now case insensitive.
+* BUGFIX: The negation button in the Search Browser didn't work correctly under some conditions.
+
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 
