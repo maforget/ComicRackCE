@@ -76,6 +76,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - name: Get short sha
+      id: vars
+      run: echo "sha_short=$(git rev-parse --short HEAD)" >> $env:GITHUB_OUTPUT
+
     - name: Publish Winget manifest
       uses: vedantmgoyal2009/winget-releaser@v2
       with:
