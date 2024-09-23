@@ -15,6 +15,9 @@ jobs:
   build:
     runs-on: windows-2022
 
+    outputs:
+      sha_short: ${{ steps.vars.outputs.sha_short }}
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -38,7 +41,10 @@ jobs:
 
     - name: Get short sha
       id: vars
-      run: echo "sha_short=$(git rev-parse --short HEAD)" >> $env:GITHUB_OUTPUT
+      run: |
+        $sha_short = $(git rev-parse --short HEAD)
+        echo "sha_short=$sha_short" >> $env:GITHUB_OUTPUT
+        echo "Short SHA is $sha_short"
 
     - name: Download VC++ Redistributable (x64)
       run: |
@@ -76,16 +82,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Get short sha
-      id: vars
-      run: echo "sha_short=$(git rev-parse --short HEAD)" >> $env:GITHUB_OUTPUT
-
     - name: Publish Winget manifest
       uses: vedantmgoyal2009/winget-releaser@v2
       with:
         identifier: maforget.ComicRackCE.Nightly
         release-tag: nightly
-        version: nightly-${{ steps.vars.outputs.sha_short }}  # Use the short 7-digit commit SHA for the version
+        version: nightly-${{ needs.build.outputs.sha_short }}  # Use the short 7-digit commit SHA for the version
         max-versions-to-keep: 5  # keep only latest 5 versions (recommended to reduce clutter since Nightly)
         token: ${{ secrets.WINGET_TOKEN }}
 
