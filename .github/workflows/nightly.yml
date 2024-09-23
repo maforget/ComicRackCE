@@ -63,9 +63,9 @@ jobs:
         artifacts: "ComicRackCE_nightly.zip,ComicRackCESetup_nightly.exe"
         tag: "nightly"
         commit: ${{ github.ref_name }}
-        prerelease: true
+        prerelease: false
         allowUpdates: true
-        updateOnlyUnreleased: true
+        updateOnlyUnreleased: false
         removeArtifacts: true
     
   publish:
@@ -80,6 +80,7 @@ jobs:
       uses: vedantmgoyal2009/winget-releaser@v2
       with:
         identifier: maforget.ComicRackCE.Nightly
+        release-tag: nightly
         version: nightly-${{ steps.vars.outputs.sha_short }}  # Use the short 7-digit commit SHA for the version
         max-versions-to-keep: 5  # keep only latest 5 versions (recommended to reduce clutter since Nightly)
         token: ${{ secrets.WINGET_TOKEN }}
