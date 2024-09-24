@@ -88,6 +88,6 @@ jobs:
         identifier: maforget.ComicRackCE.Nightly
         release-tag: nightly
         version: nightly-${{ needs.build.outputs.sha_short }}  # Use the short 7-digit commit SHA for the version
-        max-versions-to-keep: 5  # keep only latest 5 versions (recommended to reduce clutter since Nightly)
+        max-versions-to-keep: 1
         token: ${{ secrets.WINGET_TOKEN }}
 
