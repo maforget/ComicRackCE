@@ -18,12 +18,29 @@ namespace cYo.Projects.ComicRack.Engine
         {
             get
             {
-                var matcherHintAttribute = Attribute.GetCustomAttribute(GetType(), typeof(ComicBookMatcherHintAttribute)) as ComicBookMatcherHintAttribute;
-                IVirtualTag vtag = VirtualTagsCollection.Tags.Values.FirstOrDefault(x => x.IsEnabled && x.PropertyName == matcherHintAttribute?.Properties.First());
-                return vtag?.Name ?? string.Empty;
+				var matcherHintAttribute = GetAttribute();
+				IVirtualTag vtag = VirtualTagsCollection.Tags.Values.FirstOrDefault(x => x.IsEnabled && x.PropertyName == matcherHintAttribute?.Properties.First());
+				return vtag?.Name ?? string.Empty;
             }
         }
-    }
+
+        public ComicBookMatcherHintAttribute GetAttribute()
+        {
+            return GetAttribute(GetType());
+		}
+
+		public static ComicBookMatcherHintAttribute GetAttribute(Type type)
+		{
+			return Attribute.GetCustomAttribute(type, typeof(ComicBookMatcherHintAttribute)) as ComicBookMatcherHintAttribute;
+		}
+
+		public static Type GetMatcher(IVirtualTag tag)
+		{
+            return GetAvailableMatcherTypes()
+                .FirstOrDefault(x => typeof(ComicBookVirtualTagMatcher).IsAssignableFrom(x) && GetAttribute(x).Properties.First() == tag.PropertyName);
+		}
+
+	}
 
     [Serializable]
     [Description("Virtual Tags #01")]

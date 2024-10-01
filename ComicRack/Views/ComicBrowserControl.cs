@@ -1516,10 +1516,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			Dictionary<int, ItemViewColumn> dictionary = new Dictionary<int, ItemViewColumn>();
 			foreach (var vtag in VirtualTagsCollection.Tags.Values)
 			{
-				int id = 300 + vtag.ID;
-
 				if (vtag != null && vtag.IsEnabled)
 				{
+					int id = 300 + vtag.ID;
 					dictionary[id] = new ItemViewColumn(id, vtag.Name, 100,
 											new ComicListField(vtag.PropertyName, vtag.Description),
 												new CoverViewItemPropertyComparer(vtag.PropertyName),
@@ -1534,10 +1533,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				int id = itemView.Columns[num].Id;
 				if (id >= 300 && id < 10000)
 				{
+					//Remove tag from the dict since it already exists and we won't need to add it later.
 					if (dictionary != null && dictionary.ContainsKey(id))
 						dictionary.Remove(id);
 					else
-						itemView.Columns.RemoveAt(num);
+						itemView.Columns.RemoveAt(num);//Remove tag from the UI since it isn't valid anymore
 				}
 			}
 
@@ -1550,6 +1550,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				value.TooltipText = ((ComicListField)value.Tag).Description;
 				itemView.Columns.Add(value);
 			}
+
+			//Update Search Browser
+			bookSelectorPanel.FillTypeCombos(update: true);
 		}
 
 		private bool CanReorderList(bool mustBeOrdered = true)

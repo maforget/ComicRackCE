@@ -194,9 +194,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		public SearchBrowserControl()
 		{
 			InitializeComponent();
-			FillTypeCombo(cbType1, 0, listView1, btNot1, 1);
-			FillTypeCombo(cbType2, 1, listView2, btNot2, 0);
-			FillTypeCombo(cbType3, 2, listView3, btNot3, 2);
+			FillTypeCombos();
 			ListStyles.SetOwnerDrawn(listView1);
 			ListStyles.SetOwnerDrawn(listView2);
 			ListStyles.SetOwnerDrawn(listView3);
@@ -209,10 +207,10 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			toolTip.SetToolTip(btNot3, caption);
 		}
 
-		private static void FillTypeCombo(ComboBox cb, int index, ListView lv, CheckBox chk, int selected)
+		private static void FillTypeCombo(ComboBox cb, int index, ListView lv, CheckBox chk, int selected, bool update = false)
 		{
-			cb.Items.AddRange(new SelectionEntry[]
-			{
+			List<SelectionEntry> entries =
+			[
 				new SelectionEntry(index, 0, "ShadowSeries", "Series", typeof(ComicBookSeriesMatcher), multiValue: false),
 				new SelectionEntry(index, 1, "ShadowTitle", "Titles", typeof(ComicBookTitleMatcher), multiValue: false),
 				new SelectionEntry(index, 2, "Genre", "Genres", typeof(ComicBookGenreMatcher), multiValue: true),
@@ -250,12 +248,33 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 				new SelectionEntry(index, 34, "StoryArc", "Story Arcs", typeof(ComicBookStoryArcMatcher), multiValue: false),
 				new SelectionEntry(index, 35, "ScanInformation", "Scan Information", typeof(ComicBookScanInformationMatcher), multiValue: false),
 				new SelectionEntry(index, 36, "Web", "Web", typeof(ComicBookWebMatcher), multiValue: false),
-			}.Sort());
+				.. CreateVirtualTagEntries(index),
+			];
+			int idToSelect = update && cb.SelectedItem != null ? (cb.SelectedItem as SelectionEntry)?.Id ?? selected : selected;
+			cb.Items.Clear();
+			cb.Items.AddRange(entries.ToArray().Sort());
 			cb.Tag = lv;
 			lv.Tag = chk;
 			chk.Tag = index;
 			cb.DisplayMember = "Caption";
-			SetSelectedIndex(cb, selected);
+			SetSelectedIndex(cb, idToSelect);
+		}
+
+		private static List<SelectionEntry> CreateVirtualTagEntries(int index)
+		{
+			//Create the list of columns that we want to show, based on our Virtual Tags settings
+			List<SelectionEntry> entries = new List<SelectionEntry>();
+			foreach (var vtag in VirtualTagsCollection.Tags.Values)
+			{
+				if (vtag != null && vtag.IsEnabled)
+				{
+					int id = 300 + vtag.ID;
+					Type matcher = ComicBookVirtualTagMatcher.GetMatcher(vtag);
+					entries.Add(new SelectionEntry(index, id, vtag.PropertyName, vtag.Name, matcher, multiValue: false));
+				}
+			}
+
+			return entries;
 		}
 
 		protected override void OnLoad(EventArgs e)
@@ -309,12 +328,12 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		{
 			switch (e.Action)
 			{
-			case SmartListAction.Insert:
-				e.Item.BookChanged += BookPropertyChanged;
-				break;
-			case SmartListAction.Remove:
-				e.Item.BookChanged -= BookPropertyChanged;
-				break;
+				case SmartListAction.Insert:
+					e.Item.BookChanged += BookPropertyChanged;
+					break;
+				case SmartListAction.Remove:
+					e.Item.BookChanged -= BookPropertyChanged;
+					break;
 			}
 			listIsDirty = true;
 		}
@@ -426,14 +445,14 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		{
 			switch (column)
 			{
-			case 0:
-				return cbType1.SelectedItem as SelectionEntry;
-			case 1:
-				return cbType2.SelectedItem as SelectionEntry;
-			case 2:
-				return cbType3.SelectedItem as SelectionEntry;
-			default:
-				return null;
+				case 0:
+					return cbType1.SelectedItem as SelectionEntry;
+				case 1:
+					return cbType2.SelectedItem as SelectionEntry;
+				case 2:
+					return cbType3.SelectedItem as SelectionEntry;
+				default:
+					return null;
 			}
 		}
 
@@ -441,15 +460,15 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		{
 			switch (column)
 			{
-			case 0:
-				SelectListEntry(listView1, value);
-				break;
-			case 1:
-				SelectListEntry(listView2, value);
-				break;
-			case 2:
-				SelectListEntry(listView3, value);
-				break;
+				case 0:
+					SelectListEntry(listView1, value);
+					break;
+				case 1:
+					SelectListEntry(listView2, value);
+					break;
+				case 2:
+					SelectListEntry(listView3, value);
+					break;
 			}
 		}
 
@@ -563,6 +582,15 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			return hashSet != si.SelectedItems;
 		}
 
+		public void FillTypeCombos(bool update = false)
+		{
+			this.SuspendLayout();
+			FillTypeCombo(cbType1, 0, listView1, btNot1, 1, update);
+			FillTypeCombo(cbType2, 1, listView2, btNot2, 0, update);
+			FillTypeCombo(cbType3, 2, listView3, btNot3, 2, update);
+			this.ResumeLayout(false);
+		}
+
 		private void BuildList(int start)
 		{
 			int num = -1;
@@ -591,7 +619,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 							continue;
 						}
 						hashSet.AddRange(from vs in stringPropertyValue.Split(listSeparators)
-							select vs.Trim());
+										 select vs.Trim());
 					}
 					List<string> list = hashSet.ToList();
 					list.Sort(new ExtendedStringComparer(ExtendedStringComparison.IgnoreArticles | ExtendedStringComparison.IgnoreCase));
@@ -662,31 +690,31 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		{
 			switch (si.SelectedItems.Count)
 			{
-			case 0:
-				return null;
-			case 1:
-			{
-				ComicBookValueMatcher comicBookValueMatcher = ComicBookValueMatcher.Create(si.MatcherType, 
-					si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : 0,
-					si.SelectedItems.First(), null);
-				comicBookValueMatcher.Not = si.Not;
-				return comicBookValueMatcher;
-			}
-			default:
-			{
-				ComicBookGroupMatcher subSet = new ComicBookGroupMatcher
-				{
-					MatcherMode = MatcherMode.Or,
-					Not = si.Not
-				};
+				case 0:
+					return null;
+				case 1:
+					{
+						ComicBookValueMatcher comicBookValueMatcher = ComicBookValueMatcher.Create(si.MatcherType,
+							si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : 0,
+							si.SelectedItems.First(), null);
+						comicBookValueMatcher.Not = si.Not;
+						return comicBookValueMatcher;
+					}
+				default:
+					{
+						ComicBookGroupMatcher subSet = new ComicBookGroupMatcher
+						{
+							MatcherMode = MatcherMode.Or,
+							Not = si.Not
+						};
 				si.SelectedItems.ForEach(delegate(string s)
-				{
-					subSet.Matchers.Add(si.MatcherType, 
-						si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : 0, 
-						s, null);
-				});
-				return subSet;
-			}
+						{
+							subSet.Matchers.Add(si.MatcherType,
+								si.MultipleValues ? ComicBookStringMatcher.OperatorListContains : 0,
+								s, null);
+						});
+						return subSet;
+					}
 			}
 		}
 
