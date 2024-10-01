@@ -134,7 +134,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private static Splash splash;
 
-		private static readonly Regex yearRegex = new Regex("\\((?<start>\\d{4})-(?<end>\\d{4})\\)", RegexOptions.Compiled);
+		private static readonly Regex dateRangeRegex = new Regex(@"\((?<startYear>\d{4})(?:_(?<startMonth>\d{2}))?-(?<endYear>\d{4})(?:_(?<endMonth>\d{2}))?\)", RegexOptions.Compiled);
 
 		public static ExtendedSettings ExtendedSettings
 		{
@@ -820,7 +820,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				}
 				StartupProgress(TR.Messages["LoadCustomSettings", "Loading custom settings"], 20);
 				IEnumerable<string> defaultLocations = IniFile.GetDefaultLocations(DefaultIconPackagesPath);
-				ComicBook.PublisherIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Publishers*.zip"), SplitIconKeysWithYear);
+				ComicBook.PublisherIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Publishers*.zip"), SplitIconKeysWithYearAndMonth);
 				ComicBook.AgeRatingIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "AgeRatings*.zip"), SplitIconKeys);
 				ComicBook.FormatIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Formats*.zip"), SplitIconKeys);
 				ComicBook.SpecialIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Special*.zip"), SplitIconKeys);
@@ -948,25 +948,44 @@ namespace cYo.Projects.ComicRack.Viewer
 			return value.Split(',', '#');
 		}
 
-		private static IEnumerable<string> SplitIconKeysWithYear(string value)
-		{
-			foreach (string key in SplitIconKeys(value))
-			{
-				Match j = yearRegex.Match(key);
-				if (!j.Success)
-				{
-					yield return key;
-					continue;
-				}
-				int num = int.Parse(j.Groups["start"].Value);
-				int end = int.Parse(j.Groups["end"].Value);
-				string key2 = yearRegex.Replace(key, string.Empty);
-				for (int i = num; i <= end; i++)
-				{
-					yield return key2 + "(" + i + ")";
-				}
-			}
-		}
+        private static IEnumerable<string> SplitIconKeysWithYearAndMonth(string value)
+        {
+            foreach (string key in SplitIconKeys(value))
+            {
+                Match dateMatch = dateRangeRegex.Match(key);
+
+                if (!dateMatch.Success)
+                {
+                    yield return key;
+                    continue;
+                }
+
+				Group startYearGroup = dateMatch.Groups["startYear"];
+				Group endYearGroup = dateMatch.Groups["endYear"];
+				Group startMonthGroup = dateMatch.Groups["startMonth"];
+				Group endMonthGroup = dateMatch.Groups["endMonth"];
+				string baseKey = dateRangeRegex.Replace(key, string.Empty);
+
+				int startYear = int.Parse(startYearGroup.Value);
+				int endYear = int.Parse(endYearGroup.Value);
+				int startMonth = startMonthGroup.Success ? int.Parse(startMonthGroup.Value) : 1;
+                int endMonth = endMonthGroup.Success ? int.Parse(endMonthGroup.Value) : 12;
+
+                for (int year = startYear; year <= endYear; year++)
+                {
+					// Output the Year only for the files that don't have a month
+					yield return $"{baseKey}({year})";
+
+					int startMonthValue = (year == startYear) ? startMonth : 1;
+                    int endMonthValue = (year == endYear) ? endMonth : 12;
+
+                    for (int month = startMonthValue; month <= endMonthValue; month++)
+                    {
+						yield return $"{baseKey}({year}_{month:00})";
+					}
+                }
+            }
+        }
 
 		private static bool InitializeDatabase(int startPercent, string readDbMessage)
 		{
