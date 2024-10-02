@@ -173,7 +173,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private void OnInsertQuery(object sender, EventArgs e)
 		{
 			IComicBookValueMatcher comicBookValueMatcher = ((ToolStripMenuItem)sender).Tag as IComicBookValueMatcher;
-			rtfQuery.SelectedText = "[" + comicBookValueMatcher.DescriptionNeutral + "]";
+			string description = comicBookValueMatcher is ComicBookVirtualTagMatcher virtualTagMatcher
+				? virtualTagMatcher.VirtualDescription
+				: comicBookValueMatcher.Description;
+			rtfQuery.SelectedText = "[" + description + "]";
 		}
 
 		private void OnInsertField(object sender, EventArgs e)
