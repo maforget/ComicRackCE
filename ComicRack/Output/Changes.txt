@@ -43,16 +43,18 @@ Community Edition Build 0.9.180:
 * CHANGE: Summaries will not contain the same artists multiple time anymore.
 * CHANGE: The Search Browser will no longer remove any leading/trailing spaces.
 * CHANGE: Updated Format & Publishers icons. Thanks @ ucapato & others.
+* CHANGE: Publisher icons name can now be set by year & month (ex: "DC Comics(2016_05-2024)")
 * CHANGE: Updated the Splash Screen.
-
-* CHANGE: Updated to .NET Framework v4.8.
-* CHANGE: Updated 7-Zip to to v24.07.
-* CHANGE: Updated SharpZipLib to v1.4.2.
-* CHANGE: Updated SharpCompress to v0.36.
-* CHANGE: Updated WindowsCodePack to V1.15.
 * CHANGE: Updated links & reference to the cyolito.com website.
 * CHANGE: Removed everything to do with Validation/Donation/PayPal.
 * CHANGE: Removed everything to do with Twitter.
+
+
+* UPDATE: Updated to .NET Framework v4.8.
+* UPDATE: Updated 7-Zip to to v24.07.
+* UPDATE: Updated SharpZipLib to v1.4.2.
+* UPDATE: Updated SharpCompress to v0.36.
+* UPDATE: Updated WindowsCodePack to V1.15.
 
  
 * BUGFIX: Fixed Crash when the clipboard contained some objects while the program is idle. 
