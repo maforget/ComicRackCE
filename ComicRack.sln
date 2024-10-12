@@ -117,7 +117,7 @@ Global
 		{F21BF3C0-2205-49BC-B1DE-09BA44BE8605} = {C335F5E2-2C66-465E-B59B-33F8E13B287E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C85D577B-A999-424A-B0EC-330EC759489F}
 		RESX_Rules = {"EnabledRules":["WhiteSpaceLead","WhiteSpaceTail","PunctuationLead","PunctuationTail"]}
+		SolutionGuid = {C85D577B-A999-424A-B0EC-330EC759489F}
 	EndGlobalSection
 EndGlobal
