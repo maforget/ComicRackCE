@@ -1849,11 +1849,11 @@ namespace cYo.Projects.ComicRack.Engine
 		public string GetPublisherIconKey(bool yearOnly = true)
 		{
 			string text = base.Publisher;
-			if (base.Year >= 0 && yearOnly)
-				text = $"{text}({YearAsText})";
-
 			if (base.Year >= 0 && base.Month >= 0 && !yearOnly)
-				text = $"{text}({YearAsText}_{Month:00})";
+				return $"{text}({YearAsText}_{Month:00})";
+
+			if (base.Year >= 0)
+				return $"{text}({YearAsText})";
 
 			return text;
 		}
@@ -1861,11 +1861,11 @@ namespace cYo.Projects.ComicRack.Engine
 		public string GetImprintIconKey(bool yearOnly = true)
 		{
 			string text = base.Imprint;
-			if (base.Year >= 0 && yearOnly)
-				text = $"{text}({YearAsText})";
-
 			if (base.Year >= 0 && base.Month >= 0 && !yearOnly)
-				text = $"{text}({YearAsText}_{Month:00})";
+				return $"{text}({YearAsText}_{Month:00})";
+
+			if (base.Year >= 0)
+				return $"{text}({YearAsText})";
 
 			return text;
 		}
