@@ -46,7 +46,7 @@ namespace cYo.Common.Text
             return value;
         }
 
-        private static string Format(string format, Func<string, object> getValue, out bool success)
+        private static string Format(string format, Func<string, object> getValue, out bool success, bool escapeComma = false)
         {
             StringBuilder stringBuilder = new StringBuilder();
             success = true;
@@ -58,7 +58,7 @@ namespace cYo.Common.Text
                     case '[':
                         {
                             bool success2;
-                            string value2 = Format(GetPart(format, ref i, '[', ']'), getValue, out success2);
+                            string value2 = Format(GetPart(format, ref i, '[', ']'), getValue, out success2, escapeComma);
                             if (success2)
                             {
                                 stringBuilder.Append(value2);
@@ -69,7 +69,7 @@ namespace cYo.Common.Text
                     case '$':
                         {
                             bool success3;
-                            string value3 = Format(GetPart(format, ref i, '$', '>', ['<', '>', '$']), getValue, out success3);
+                            string value3 = Format(GetPart(format, ref i, '$', '>', ['<', '>', '$']), getValue, out success3, true);
                             string result = ParseFunction(value3, out success3);
                             stringBuilder.Append(result);
                             success &= success3;
@@ -79,6 +79,9 @@ namespace cYo.Common.Text
                         {
                             string value = FormatValue(GetPart(format, ref i, '{', '}'), getValue);
                             success &= !string.IsNullOrEmpty(value);
+                            if (escapeComma && value.Contains(',')) //Escape commas when using functions, so they aren't considered parameters
+                                value = value.Replace(",", "\\,");
+
                             stringBuilder.Append(value);
                             break;
                         }
@@ -102,9 +105,15 @@ namespace cYo.Common.Text
             string result = string.Empty;
             Regex regex = new Regex(@"(?<function>[^<]+?)<(?<params>.+)$");
             name = regex.Match(value).Groups["function"].Value.ToLower();
-            param = regex.Match(value).Groups["params"].Value?.Split(',').Select(x => x.Trim()).ToArray();
+            string paramsValue = regex.Match(value).Groups["params"]?.Value;
 
-            IFunction func = FunctionFactory.Functions.CreateFunction(name);
+			param = string.IsNullOrEmpty(paramsValue)
+				? Array.Empty<string>()  // Return an empty array if null or empty
+				: Regex.Split(paramsValue, @"(?<!\\),")
+					.Select(x => x.Trim().Replace(@"\,", ",")) // Remove escaping backslash
+					.ToArray();
+
+			IFunction func = FunctionFactory.Functions.CreateFunction(name);
             func.SetParameters(param);
             result = func.ResultAsText;
             success = true;
