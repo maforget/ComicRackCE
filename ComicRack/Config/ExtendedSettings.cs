@@ -440,7 +440,15 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set; 
 		}
 
-        public ExtendedSettings()
+		[DefaultValue(false)]
+		[CommandLineSwitch(ShortName = "hidden")]
+		public bool StartHidden
+		{
+			get;
+			set;
+		}
+
+		public ExtendedSettings()
 		{
 			AnamorphicScalingTolerance = 0.25f;
 			KeyboardZoomStepping = 0.5f;
@@ -458,6 +466,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			QueryCacheMode = QueryCacheMode.InstantUpdate;
 			MacCompatibleScanning = true;
 			SortNetworkFolders = true;
+			StartHidden = false;
         }
 	}
 }

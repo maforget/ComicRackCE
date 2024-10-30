@@ -401,6 +401,8 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private bool quickListDirty;
 
+		private FormWindowState oldState;
+
 		[DefaultValue(null)]
 		public ComicDisplay ComicDisplay
 		{
@@ -2557,10 +2559,12 @@ namespace cYo.Projects.ComicRack.Viewer
 				}
 				if (workspace.IsWindowLayout)
 				{
-					base.WindowState = workspace.FormState;
+					oldState = workspace.FormState;
+					base.WindowState = Program.ExtendedSettings.StartHidden ? FormWindowState.Minimized : workspace.FormState;
 					ComicDisplay.FullScreen = workspace.FullScreen;
 					MinimalGui = workspace.MinimalGui;
 					ComicBookDialog.PagesConfig = workspace.ComicBookDialogPagesConfig;
+					Program.ExtendedSettings.StartHidden = false; //Sets it false so it respects normal setting after the first load
 				}
 				SetWorkspaceDisplayOptions(workspace);
 			}
@@ -3913,14 +3917,15 @@ namespace cYo.Projects.ComicRack.Viewer
 					maximized = true;
 					break;
 				case FormWindowState.Minimized:
-					if (Program.Settings.MinimizeToTray)
-					{
+					if (Program.ExtendedSettings.StartHidden)
+						maximized = oldState == FormWindowState.Maximized ? true : false;
+
+					if (Program.ExtendedSettings.StartHidden || Program.Settings.MinimizeToTray)
 						MinimizeToTray();
-					}
+
 					else
-					{
 						maximized = false;
-					}
+
 					Program.Collect();
 					break;
 				case FormWindowState.Normal:

@@ -788,7 +788,7 @@ namespace cYo.Projects.ComicRack.Viewer
 					InitializeDatabase(0, null);
 				});
 			}
-			if (Settings.ShowSplash)
+			if (!ExtendedSettings.StartHidden && Settings.ShowSplash)
 			{
 				ManualResetEvent mre = new ManualResetEvent(initialState: false);
 				ThreadUtility.RunInBackground("Splash Thread", delegate
