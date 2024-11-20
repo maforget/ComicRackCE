@@ -901,7 +901,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 		}
 
-		private void ToggleQuickSearch()
+		internal void ToggleQuickSearch()
 		{
 			if (!quickSearchPanel.Visible)
 			{

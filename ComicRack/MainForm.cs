@@ -1748,6 +1748,8 @@ namespace cYo.Projects.ComicRack.Viewer
 					if (this.FindActiveService<ILibraryBrowser>()?.CanBrowseNext() == true)
 						this.FindActiveService<ILibraryBrowser>()?.BrowseNext();
 				},[CommandKey.MouseButton5]));
+			mainKeys.Commands.Add(new KeyboardCommand("ToggleQuickSearch", "General", "Quick Search",
+				() => this.FindActiveService<ComicListLibraryBrowser>()?.ToggleQuickSearch(), [CommandKey.F | CommandKey.Ctrl | CommandKey.Alt]));
 		}
 
 		public bool AddRemoteLibrary(ShareInformation info, MainView.AddRemoteLibraryOptions options)
