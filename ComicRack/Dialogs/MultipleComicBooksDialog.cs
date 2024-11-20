@@ -60,10 +60,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			EditControlUtility.InitializeYesNo(cbEnableProposed);
 			EditControlUtility.InitializeYesNo(cbSeriesComplete);
 			new ComboBoxSkinner(cbImprint);
-			new ComboBoxSkinner(cbPublisher, ComicBook.PublisherIcons);
-			new ComboBoxSkinner(cbImprint, ComicBook.PublisherIcons);
-			new ComboBoxSkinner(cbAgeRating, ComicBook.AgeRatingIcons);
-			new ComboBoxSkinner(cbFormat, ComicBook.FormatIcons);
+			new ComboBoxSkinner(cbPublisher, ComicBook.PublisherIcons) { MaxHeightScale = 2 };
+			new ComboBoxSkinner(cbImprint, ComicBook.PublisherIcons) { MaxHeightScale = 2 };
+			new ComboBoxSkinner(cbAgeRating, ComicBook.AgeRatingIcons) { MaxHeightScale = 2 };
+			new ComboBoxSkinner(cbFormat, ComicBook.FormatIcons) { MaxHeightScale = 2 };
 			new ComboBoxSkinner(cbBookStore);
 			new ComboBoxSkinner(cbBookCondition);
 			new ComboBoxSkinner(cbBookLocation);

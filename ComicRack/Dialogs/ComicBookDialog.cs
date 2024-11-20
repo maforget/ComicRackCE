@@ -118,10 +118,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             {
                 pagesView.ViewConfig = PagesConfig;
             }
-            new ComboBoxSkinner(cbImprint, ComicBook.PublisherIcons);
-            new ComboBoxSkinner(cbPublisher, ComicBook.PublisherIcons);
-            new ComboBoxSkinner(cbFormat, ComicBook.FormatIcons);
-            new ComboBoxSkinner(cbAgeRating, ComicBook.AgeRatingIcons);
+            new ComboBoxSkinner(cbImprint, ComicBook.PublisherIcons) { MaxHeightScale = 2 };
+            new ComboBoxSkinner(cbPublisher, ComicBook.PublisherIcons) { MaxHeightScale = 2};
+            new ComboBoxSkinner(cbFormat, ComicBook.FormatIcons) { MaxHeightScale = 2 };
+            new ComboBoxSkinner(cbAgeRating, ComicBook.AgeRatingIcons) { MaxHeightScale = 2 };
             new ComboBoxSkinner(cbBookPrice);
             new ComboBoxSkinner(cbBookOwner);
             new ComboBoxSkinner(cbBookStore);
