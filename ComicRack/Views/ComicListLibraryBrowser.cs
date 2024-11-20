@@ -810,6 +810,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		private void tvQueries_MouseDown(object sender, MouseEventArgs e)
 		{
+			if (e.Button == MouseButtons.XButton1 || e.Button == MouseButtons.XButton2)
+			{
+				Program.MainForm.MouseDownHandler(this, e);
+				return;
+			}
 			if (e.Button == MouseButtons.Right)
 			{
 				TreeNode nodeAt = tvQueries.GetNodeAt(e.X, e.Y);

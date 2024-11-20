@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
 using cYo.Common.Collections;
@@ -4029,7 +4030,7 @@ namespace cYo.Common.Windows.Forms
 				}
 			}
 		}
-
+		
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
 			base.OnMouseDown(e);
@@ -4038,6 +4039,10 @@ namespace cYo.Common.Windows.Forms
 			IViewableItem focusedItem = FocusedItem;
 			longClickTimer.Stop();
 			longClickSubItem = -1;
+			if (e.Button == MouseButtons.XButton1 || e.Button == MouseButtons.XButton2)
+			{
+				return ;
+			}
 			if (e.Button == MouseButtons.Left)
 			{
 				int num = ColumnHeaderSeparatorHitTest(e.X, e.Y);

@@ -1038,6 +1038,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				commands.Add(Program.Database.Undo.Redo, () => Program.Database.Undo.CanRedo, tbRedo);
 			}
 			base.Controls.SetChildIndex(toolStrip, base.Controls.Count - 1);
+			ItemView.MouseDown += ItemView_MouseDown;
+		}
+
+		private void ItemView_MouseDown(object sender, MouseEventArgs e)
+		{
+			Program.MainForm.MouseDownHandler(sender, e);
 		}
 
 		protected override void OnVisibleChanged(EventArgs e)

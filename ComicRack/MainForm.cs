@@ -1198,6 +1198,14 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 		}
 
+		internal void MouseDownHandler(object sender, MouseEventArgs e)
+		{
+			if (!mainKeys.HandleKey(e.Button, false, false))
+			{
+				base.OnMouseDown(e);
+			}
+		}
+
 		private void InitializeCommands()
 		{
 			tbTools.DropDownOpening += delegate
@@ -1728,6 +1736,18 @@ namespace cYo.Projects.ComicRack.Viewer
 			Program.DefaultKeyboardMapping = ComicDisplay.KeyboardMap.GetKeyMapping().ToArray();
 			ComicDisplay.KeyboardMap.SetKeyMapping(Program.Settings.ReaderKeyboardMapping);
 			mainKeys.Commands.Add(new KeyboardCommand("FocusQuickSearch", "General", "FQS", FocusQuickSearch, CommandKey.F | CommandKey.Ctrl));
+			mainKeys.Commands.Add(new KeyboardCommand("BrowsePrevious", "General", "Previous List",
+				() =>
+				{
+					if (this.FindActiveService<ILibraryBrowser>()?.CanBrowsePrevious() == true)
+						this.FindActiveService<ILibraryBrowser>()?.BrowsePrevious();
+				},[CommandKey.MouseButton4]));
+			mainKeys.Commands.Add(new KeyboardCommand("BrowseNext", "General", "Next List",
+				() =>
+				{
+					if (this.FindActiveService<ILibraryBrowser>()?.CanBrowseNext() == true)
+						this.FindActiveService<ILibraryBrowser>()?.BrowseNext();
+				},[CommandKey.MouseButton5]));
 		}
 
 		public bool AddRemoteLibrary(ShareInformation info, MainView.AddRemoteLibraryOptions options)
@@ -4409,8 +4429,8 @@ namespace cYo.Projects.ComicRack.Viewer
 
 			if (alwaysCheck || isUpdateAvailable)
 			{
-				string message = isUpdateAvailable ? 
-					TR.Messages["UpdateAvailable", "An update is available download it?"] : 
+				string message = isUpdateAvailable ?
+					TR.Messages["UpdateAvailable", "An update is available download it?"] :
 					TR.Messages["UpdateNotAvailable", "There are no updates available"];
 				string okButtonText = isUpdateAvailable ? TR.Default["Download", "Download"] : TR.Default["OK", "OK"];
 
