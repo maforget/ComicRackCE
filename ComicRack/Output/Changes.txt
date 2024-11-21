@@ -3,7 +3,7 @@ Community Edition Build 0.9.180:
 * NEW: RAR5 Support (Default & SharpCompress)
 * NEW: New PDF Engine using Google's PDFium is now the Default. Options to configure added to ComicRack.ini. (See Wiki)
 * NEW: Support for HEIF, AVIF image supports. Only enabled in 64bit. (Requires up to date VC++ Redistributable)
-* NEW: Added Virtual Tags. Combine multiple fields, use advanced functions. Can be used with grouping, sorting, smart lists.  (See Wiki for functions syntax)
+* NEW: Added Virtual Tags. Combine multiple fields, use advanced functions. Can be used with grouping, sorting, smart lists & in search browser.  (See Wiki for functions syntax)
 * NEW: Built-in "Open With" external programs. Ability to override the default viewer with your extrnal program.
 * NEW: Added the Git version to the Splash Screen, to more easily identify bugs in specific releases.
 * NEW: Added the "-local" command line switch, to have the program load in portable mode.
@@ -23,6 +23,9 @@ Community Edition Build 0.9.180:
 * NEW: Added a way to merge pages together. (See Wiki)
 * NEW: Added a check for update feature.
 * NEW: Added the Scan Information & Web field to the Search Browser.
+* NEW: Added a "-hiddden" command line switch that disables the Splash and forces loading in the tray regardless of settings, used to have ComicRack load with windows.
+* NEW: The Back & Forward mouse buttons (Mouse 4 & 5) now call Previous & Next List.
+* NEW: Added the Ctrl+Alt+F keyboard shortcut to open Quick Search (used to search your lists).
 
 
 * CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.
@@ -48,12 +51,13 @@ Community Edition Build 0.9.180:
 * CHANGE: Updated links & reference to the cyolito.com website.
 * CHANGE: Removed everything to do with Validation/Donation/PayPal.
 * CHANGE: Removed everything to do with Twitter.
+* CHANGE: Made some combobox lists bigger. The source list in smart lists is 3x longer. Publisher, Imprint & Age Rating are 2x longer.
 
 
 * UPDATE: Updated to .NET Framework v4.8.
 * UPDATE: Updated 7-Zip to to v24.07.
 * UPDATE: Updated SharpZipLib to v1.4.2.
-* UPDATE: Updated SharpCompress to v0.36.
+* UPDATE: Updated SharpCompress to v0.38.
 * UPDATE: Updated WindowsCodePack to V1.15.
 
  
@@ -70,6 +74,7 @@ Community Edition Build 0.9.180:
 * BUGFIX: Wrong corner of the page was chosen when the options to zoom out on page change & true right to left reading were both enabled.
 * BUGFIX: Detection of the ComicInfo.xml file is now case insensitive.
 * BUGFIX: The negation button in the Search Browser didn't work correctly under some conditions.
+* BUGFIX: In the folder view, international characters are now sorted like in windows.
 
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
