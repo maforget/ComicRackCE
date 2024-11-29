@@ -343,3 +343,4 @@ healthchecksdb
 */isDirty.txt
 */Tags.txt
 /ComicRack/Properties/launchSettings.json
+/ComicRackCESetup*.exe
