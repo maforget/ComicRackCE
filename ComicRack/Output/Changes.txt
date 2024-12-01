@@ -26,6 +26,7 @@ Community Edition Build 0.9.180:
 * NEW: Added a "-hiddden" command line switch that disables the Splash and forces loading in the tray regardless of settings, used to have ComicRack load with windows.
 * NEW: The Back & Forward mouse buttons (Mouse 4 & 5) now call Previous & Next List.
 * NEW: Added the Ctrl+Alt+F keyboard shortcut to open Quick Search (used to search your lists).
+* NEW: Read support for the "MetronInfo.xml" metadata file. The "ComicInfo.xml" still has priority and only fields used in it are imported. Exporting a file will remove any "MetronInfo.xml" that existed, but the imported data is preserved in the "ComicInfo.xml" on Export.
 
 
 * CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.
@@ -52,6 +53,7 @@ Community Edition Build 0.9.180:
 * CHANGE: Removed everything to do with Validation/Donation/PayPal.
 * CHANGE: Removed everything to do with Twitter.
 * CHANGE: Made some combobox lists bigger. The source list in smart lists is 3x longer. Publisher, Imprint & Age Rating are 2x longer.
+* CHANGE: The Contains Any & Contains All smart list can now separate entries with a comma (,) or semicolon (;). Previously only spaces were used to separate entries. The separation by spaces still takes priority if there are no comma or semicolon, so existing lists should not change.
 
 
 * UPDATE: Updated to .NET Framework v4.8.
