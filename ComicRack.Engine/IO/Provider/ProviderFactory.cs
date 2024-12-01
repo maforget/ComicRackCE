@@ -10,17 +10,13 @@ using cYo.Common.Threading;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider
 {
-    public class ProviderFactory<T> where T : class
+    public class ProviderFactory<T> : ProviderFactoryBase<T> where T : class
 	{
-		private readonly ReaderWriterLockSlim rwLock = new ReaderWriterLockSlim();
-
-		private readonly List<ProviderInfo> providerDict = new List<ProviderInfo>();
-
 		public void RegisterProvider(Type pt, IEnumerable<FileFormat> formats, bool withLocking = true)
 		{
 			using (withLocking ? rwLock.UpgradeableReadLock() : null)
 			{
-				if (!providerDict.Any((ProviderInfo pi) => pi.ProviderType == pt))
+				if (!providerDict.Any((IProviderInfo pi) => pi.ProviderType == pt))
 				{
 					using (withLocking ? rwLock.WriteLock() : null)
 					{
@@ -30,7 +26,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		public void RegisterProvider(Type pt, bool withLocking = true)
+		public override void RegisterProvider(Type pt, bool withLocking = true)
 		{
 			IValidateProvider validateProvider = Activator.CreateInstance(pt) as IValidateProvider;
 			if (validateProvider == null || validateProvider.IsValid)
@@ -40,51 +36,22 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		public void RegisterProviders(Assembly assembly, Type baseType)
-		{
-			using (rwLock.WriteLock())
-			{
-				(from t in assembly.GetTypes()
-					where !t.IsAbstract && t.IsSubclassOf(baseType) && t.GetConstructor(new Type[0]) != null
-					select t).ForEach(delegate(Type t)
-				{
-					RegisterProvider(t, withLocking: false);
-				});
-			}
-		}
-
-		public void RegisterProviders(Assembly assembly)
-		{
-			RegisterProviders(assembly, typeof(T));
-		}
-
-		public void RegisterProviders()
-		{
-			RegisterProviders(Assembly.GetExecutingAssembly());
-		}
-
 		public IEnumerable<ProviderInfo> GetProviderInfos()
 		{
-			return providerDict.ReadLock(rwLock);
-		}
-
-		public IEnumerable<Type> GetProviderTypes()
-		{
-			return from pi in GetProviderInfos()
-				select pi.ProviderType;
+			return base.GetProviderInfos<ProviderInfo>();
 		}
 
 		public IEnumerable<ProviderInfo> GetSourceProviderInfos(string source)
 		{
 			return from pi in GetProviderInfos()
-				where pi.Formats.Any((FileFormat f) => f.Supports(source))
-				select pi;
+				   where pi.Formats.Any((FileFormat f) => f.Supports(source))
+				   select pi;
 		}
 
 		public IEnumerable<Type> GetSourceProviderTypes(string source)
 		{
 			return from f in GetSourceProviderInfos(source)
-				select f.ProviderType;
+				   select f.ProviderType;
 		}
 
 		public ProviderInfo GetSourceProviderInfo(string source)
@@ -107,7 +74,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			return GetSourceProviderInfos(source).SelectMany((ProviderInfo pi) => pi.Formats);
 		}
 
-        protected virtual FileFormat GetActualSourceFormat(string source)
+		protected virtual FileFormat GetActualSourceFormat(string source)
         {
             //Just returns the source format based on the extension
             return GetSourceFormat(source);
@@ -174,8 +141,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 
 		public IEnumerable<T> CreateProviders()
 		{
-			return from t in GetProviderTypes()
-				select Activator.CreateInstance(t) as T;
+			return base.CreateProviders<ProviderInfo>();
 		}
 
 		public virtual T CreateSourceProvider(string source)
