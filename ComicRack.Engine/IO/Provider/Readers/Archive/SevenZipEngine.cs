@@ -9,6 +9,7 @@ using cYo.Common.ComponentModel;
 using cYo.Common.Compression.SevenZip;
 using cYo.Common.IO;
 using cYo.Common.Win32;
+using cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 {
@@ -198,12 +199,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
         {
             try
             {
-                using (MemoryStream inStream = new MemoryStream(GetFileData(source, "ComicInfo.xml")))
-                {
-                    return ComicInfo.Deserialize(inStream);
-                }
-            }
-            catch
+				return XmlInfoProviders.Readers.DeserializeAll(s => new MemoryStream(GetFileData(source, s)));
+			}
+			catch
             {
                 return null;
             }

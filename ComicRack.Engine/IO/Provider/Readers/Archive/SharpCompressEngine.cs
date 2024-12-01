@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using cYo.Common.Xml;
+using cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo;
 using SharpCompress.Archives;
 using SharpCompress.Common;
 
@@ -80,15 +81,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
         {
             using (IArchive archive = ArchiveFactory.Open(source))
             {
-                IArchiveEntry archiveEntry = archive.Entries.FirstOrDefault((IArchiveEntry e) => Path.GetFileName(e.Key).Equals("ComicInfo.xml", StringComparison.OrdinalIgnoreCase));
-                if (archiveEntry == null)
+                return XmlInfoProviders.Readers.DeserializeAll(s =>
                 {
-                    return null;
-                }
-                using (Stream s = archiveEntry.OpenEntryStream())
-                {
-                    return XmlUtility.Load<ComicInfo>(s, compressed: false);
-                }
+                    IArchiveEntry archiveEntry = archive.Entries.FirstOrDefault((IArchiveEntry e) => Path.GetFileName(e.Key).Equals(s, StringComparison.OrdinalIgnoreCase));
+
+                    if (archiveEntry == null)
+                        return null;
+
+                    return archiveEntry.OpenEntryStream();
+                });
             }
         }
     }

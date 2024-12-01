@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo;
 using ICSharpCode.SharpZipLib.Zip;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
@@ -63,14 +64,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 				{
 					using (ZipFile zipFile = new ZipFile(file))
 					{
-						int num = zipFile.FindEntry("ComicInfo.xml", ignoreCase: true);
-						if (num != -1)
+						return XmlInfoProviders.Readers.DeserializeAll(s =>
 						{
-							using (Stream inStream = zipFile.GetInputStream(num))
+							int num = zipFile.FindEntry(s, ignoreCase: true);
+							if (num != -1)
 							{
-								return ComicInfo.Deserialize(inStream);
+								return zipFile.GetInputStream(num);
 							}
-						}
+							return null;
+						});
 					}
 				}
 			}
