@@ -71,8 +71,8 @@ namespace cYo.Common.Text
                             bool success3;
                             string value3 = Format(GetPart(format, ref i, '$', '>', ['<', '>', '$']), getValue, out success3, true);
                             string result = ParseFunction(value3, out success3);
-                            stringBuilder.Append(result);
-                            success &= success3;
+							stringBuilder.Append(result);
+                            success &= success3 && !string.IsNullOrEmpty(result);
                             break;
                         }
                      case '{':
