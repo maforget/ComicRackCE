@@ -41,7 +41,8 @@ To collaborate, open an Issue on the tracker or use GitHub discussions. Start wi
 We also need the Localizer tool created by cYo for translations.
 
 ## Installation
-To install, download the [nightly installer](https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe "Nightly Release"), double-click it, and follow the instructions. 
+To install, download the [nightly installer](https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe "Nightly Release"), double-click it, and follow the instructions. <br />
+You can also install it via winget `winget install ComicRackCE`.
 
 > [!CAUTION]
 > Because of a change with Microsoft Visual C++ Redistributable 2015-2022, if you use the HEIF/AVIF files you will need to have at a minimum version `14.40.33810.0` installed. This should be done automatically by the installer, but if you are using the ZIP file, please be advise that you will need to update it manually. More info [here](https://github.com/maforget/ComicRackCE/issues/106).
@@ -77,6 +78,9 @@ ComicRack Community Edition uses a different data directory than classic ComicRa
 6. Open ComicRack Community Edition and all your comics/scripts should be there.
 
 Remember that changes in one, will not carry over to the other.
+
+> [!NOTE]
+> You might want to update the background & paper texture settings in Book Display Settings (and in any saved Workspaces). Since the path of the textures are hardcoded they will still refer to the original ComicRack install location.
 
 ## Plugins
 
