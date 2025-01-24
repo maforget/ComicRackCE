@@ -9,15 +9,17 @@ using cYo.Common.ComponentModel;
 using cYo.Common.Runtime;
 using cYo.Common.Text;
 using cYo.Common.Threading;
+using System.Xml.Serialization;
 
 namespace cYo.Common.IO
 {
 	public abstract class DiskCache<K, T> : DisposableObject, IDiskCache<K, T>, IDisposable
 	{
 		[Serializable]
-		private class CacheItem
+		public class CacheItem
 		{
 			private long length;
+			private static Type[] extraTypes;
 
 			public string File
 			{
@@ -45,6 +47,10 @@ namespace cYo.Common.IO
 
 			public string FileName => Path.GetFileName(File);
 
+			public CacheItem()
+			{
+			}
+
 			public CacheItem(K key, string file, long length)
 			{
 				if (Path.IsPathRooted(file))
@@ -54,6 +60,25 @@ namespace cYo.Common.IO
 				Key = key;
 				File = file;
 				this.length = length;
+			}
+
+			public static Type[] GetExtraXmlSerializationTypes()
+			{
+				if (extraTypes == null)
+				{
+					List<Type> list = new List<Type>();
+					list.Add(typeof(K));
+					list.AddRange(GetDerivedTypes(typeof(K)));
+					extraTypes = list.ToArray();
+				}
+				return extraTypes;
+			}
+
+			private static IEnumerable<Type> GetDerivedTypes(Type baseType)
+			{
+				return AppDomain.CurrentDomain.GetAssemblies()
+					.SelectMany(assembly => assembly.GetTypes())
+					.Where(type => type.IsSubclassOf(baseType));
 			}
 		}
 
@@ -218,6 +243,36 @@ namespace cYo.Common.IO
 		{
 			try
 			{
+				string cacheIndexLegacy = cacheIndexFile;
+				string cacheIndexXml = $"{cacheIndexFile}.xml";
+				List<CacheItem> index = new List<CacheItem>();
+
+				try
+				{
+					if (File.Exists(cacheIndexXml))
+					{
+						index = LoadCacheIndexXml(cacheIndexXml);
+					}
+				}
+				catch (Exception)
+				{
+				}
+
+				if (index.Count > 0)
+					return index;
+
+				return LoadCacheIndexBinary(cacheIndexLegacy);
+			}
+			catch (Exception)
+			{
+				return new List<CacheItem>();
+			}
+		}
+
+		private static List<CacheItem> LoadCacheIndexBinary(string cacheIndexFile)
+		{
+			try
+			{
 				BinaryFormatter binaryFormatter = new BinaryFormatter
 				{
 					Binder = new VersionNeutralBinder()
@@ -229,11 +284,44 @@ namespace cYo.Common.IO
 			}
 			catch (Exception)
 			{
-				return new List<CacheItem>();
+				throw;
+			}
+		}
+
+		private static List<CacheItem> LoadCacheIndexXml(string cacheIndexFile)
+		{
+			try
+			{
+				using (FileStream inStream = File.OpenRead(cacheIndexFile))
+				{
+					return GetSerializer().Deserialize(inStream) as List<CacheItem>;
+				}
+			}
+			catch (Exception)
+			{
+				throw;
 			}
 		}
 
 		public void SaveCacheIndex(string cacheIndexFile)
+		{
+			string cacheIndexLegacy = cacheIndexFile;
+			string cacheIndexXml = $"{cacheIndexFile}.xml";
+
+			try
+			{
+				SaveCacheIndexXml(cacheIndexXml);
+			}
+			catch (Exception)
+			{
+			}
+			finally
+			{
+				SaveCacheIndexBinary(cacheIndexLegacy);
+			}
+		}
+
+		public void SaveCacheIndexBinary(string cacheIndexFile)
 		{
 			lock (this)
 			{
@@ -258,6 +346,36 @@ namespace cYo.Common.IO
 				{
 				}
 			}
+		}
+
+		public void SaveCacheIndexXml(string cacheIndexFile)
+		{
+			lock (this)
+			{
+				try
+				{
+					CacheIndexDirty = false;
+					XmlSerializer serializer = GetSerializer();
+					List<CacheItem> graph;
+					using (ItemMonitor.Lock(fileList))
+					{
+						graph = fileList.ToList();
+					}
+					using (Stream serializationStream = File.Create(cacheIndexFile))
+					{
+						serializer.Serialize(serializationStream, graph);
+					}
+				}
+				catch (Exception)
+				{
+					throw;
+				}
+			}
+		}
+
+		private static XmlSerializer GetSerializer()
+		{
+			return new XmlSerializer(typeof(List<CacheItem>), CacheItem.GetExtraXmlSerializationTypes());
 		}
 
 		private LinkedListNode<CacheItem> GetCacheItem(K key)

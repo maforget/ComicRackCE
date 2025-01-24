@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Xml.Serialization;
 using cYo.Common.Drawing;
 
 namespace cYo.Projects.ComicRack.Engine.IO
@@ -7,29 +8,30 @@ namespace cYo.Projects.ComicRack.Engine.IO
 	[Serializable]
 	public abstract class ImageKey
 	{
-		private readonly string location;
+		private string location;
 
 		private DateTime modified;
 
 		private long size;
 
-		private readonly int index;
+		private int index;
 
 		[NonSerialized]
 		private WeakReference source;
 
-		private readonly ImageRotation rotation;
+		private ImageRotation rotation;
 
 		private int hashCode;
 
-		public string Location => location;
+		public string Location { get => location; set => location = value; }
 
-		public DateTime Modified => modified;
+		public DateTime Modified { get => modified; set => modified = value; }
 
-		public long Size => size;
+		public long Size { get => size; set => size = value; }
 
-		public int Index => index;
+		public int Index { get => index; set => index = value; }
 
+		[XmlIgnore]
 		public object Source
 		{
 			get
@@ -46,7 +48,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 			}
 		}
 
-		public ImageRotation Rotation => rotation;
+		public ImageRotation Rotation { get => rotation; set => rotation = value; }
 
 		protected ImageKey(object source, string location, long size, DateTime modified, int index, ImageRotation rotation)
 		{
@@ -60,6 +62,10 @@ namespace cYo.Projects.ComicRack.Engine.IO
 
 		protected ImageKey(ImageKey key)
 			: this(key.Source, key.location, key.size, key.modified, key.index, key.rotation)
+		{
+		}
+
+		protected ImageKey()
 		{
 		}
 
