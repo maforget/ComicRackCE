@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Taskbar;
+using cYo.Common.Drawing;
 
 namespace cYo.Projects.ComicRack.Viewer
 {
@@ -62,7 +63,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				}
 				else
 				{
-					windowsTaskbar.SetOverlayIcon(Icon.FromHandle(bitmap.GetHicon()), text);
+					windowsTaskbar.SetOverlayIcon(bitmap.BitmapToIcon(), text);
 				}
 			}
 		}
