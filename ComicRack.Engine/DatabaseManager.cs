@@ -209,7 +209,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public void Save(string path = null)
+		public void Save(string path = null, bool withBooks = false)
 		{
 			if (database == null || InitialConnectionError)
 			{
@@ -227,7 +227,7 @@ namespace cYo.Projects.ComicRack.Engine
 				}
 				else
 				{
-					ComicDatabase.Attach(Database, withBooks: false).SaveXml(path, commitCache: false);
+					ComicDatabase.Attach(Database, withBooks: withBooks).SaveXml(path, commitCache: false);
 				}
 			}
 			catch (Exception)
@@ -239,8 +239,16 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 			if (database != null && !InitialConnectionError)
 			{
-				string text = DatabaseFile + ".xml";
-				Save(text);
+				string text = $"{DatabaseFile}.xml";
+				Save(text); // Save the database normally
+
+				// When using a SQL database, save a temp copy of the database that includes books
+				if (Database.ComicStorage != null)
+				{
+					string temp = Path.Combine(EngineConfiguration.Default.TempPath, Path.GetFileName(text));
+					Save(temp, withBooks: true); // Save the database with books to a temporary file
+					text = temp;
+				}
 				ComicDatabase.Backup(file, text, customThumbnailPath);
 			}
 		}
