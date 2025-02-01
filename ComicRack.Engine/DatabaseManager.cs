@@ -215,13 +215,12 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				return;
 			}
-			if (path == null)
+			if (path == null || !Path.GetExtension(path).Equals(".xml", StringComparison.InvariantCultureIgnoreCase))
 			{
-				path = DatabaseFile;
+				path = $"{DatabaseFile}.xml";
 			}
 			try
 			{
-				path += ".xml";
 				if (Database.ComicStorage == null)
 				{
 					Database.SaveXml(path);
