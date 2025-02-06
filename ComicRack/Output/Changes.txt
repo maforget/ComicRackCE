@@ -27,6 +27,7 @@ Community Edition Build 0.9.180:
 * NEW: The Back & Forward mouse buttons (Mouse 4 & 5) now call Previous & Next List.
 * NEW: Added the Ctrl+Alt+F keyboard shortcut to open Quick Search (used to search your lists).
 * NEW: Read support for the "MetronInfo.xml" metadata file. The "ComicInfo.xml" still has priority and only fields used in it are imported. Exporting a file will remove any "MetronInfo.xml" that existed, but the imported data is preserved in the "ComicInfo.xml" on Export.
+* NEW: Using Backup Database while using an SQL database now includes the book details. It can be used to convert to XML or to restore the SQL database.
 
 
 * CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.
@@ -78,6 +79,8 @@ Community Edition Build 0.9.180:
 * BUGFIX: The negation button in the Search Browser didn't work correctly under some conditions.
 * BUGFIX: In the folder view, international characters are now sorted like in windows.
 * BUGFIX: Fixed an error that would prevent syncing/pairing an android device.
+* BUGFIX: Fixed a rare crash that would happen when more than 10k handles were created. Usually happens when converting a lot of files.
+* BUGFIX: Fixed a problem were using Backup Database might not backup the latest changes. A ComicDb.xml.xml file was created instead but would backup the regular database (possibly outdated).
 
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
