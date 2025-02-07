@@ -2819,12 +2819,17 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			miUpdateComicFiles.Visible = enumerable.Any((ComicBook cb) => cb.ComicInfoIsDirty);
 			contextMenuItems.FixSeparators();
 			miPasteData.Enabled = isPasteComicDataEnabled();
-			UpdateOpenWithMenus(enumerable);
+		}
+
+		private void contextOpenWith_Opening(object sender, CancelEventArgs e)
+		{
+			UpdateOpenWithMenus(GetBookList(ComicBookFilterType.Selected));
 		}
 
 		private void UpdateOpenWithMenus(IEnumerable<ComicBook> enumerable)
 		{
 			FormUtility.SafeToolStripClear(miOpenWith.DropDownItems, 2);
+
 			//Populate Open With menu
 			for (int k = 0; k < Program.Settings.ExternalPrograms.Count; k++)
 			{
@@ -2843,14 +2848,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					}
 				});
 				tsi.Tag = ep;
+				tsi.Enabled = AllSelectedLinked();
 
 				//Insert menu item
-				miOpenWith.DropDownItems.Add(tsi);
+				contextOpenWith.Items.Add(tsi);
 			}
 
 			//Show the separator only if at least 1 external program was added
-			//toolStripSeparator2.Visible = miOpenWith.DropDownItems.Cast<ToolStripItem>().Where(x => x.Tag != null).Count() > 0;
-			toolStripSeparator2.Visible = miOpenWith.DropDownItems.Count > 2;
+			toolStripSeparator2.Visible = contextOpenWith.Items.Count > 2;
 		}
 
 		private static void StartExternalProgram(ExternalProgram ep, ComicBook comicBook)
