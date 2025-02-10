@@ -11,11 +11,12 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private readonly bool all = true;
 
-		public ScanItemFileOrFolder(string fileOrFolder, bool all, bool removeMissing)
+		public ScanItemFileOrFolder(string fileOrFolder, bool all, bool removeMissing, bool forceRefreshInfo = false)
 		{
 			this.fileOrFolder = fileOrFolder;
 			base.AutoRemove = removeMissing;
 			this.all = all;
+			base.ForceRefreshInfo = forceRefreshInfo;
 		}
 
 		public override IEnumerable<string> GetScanFiles()

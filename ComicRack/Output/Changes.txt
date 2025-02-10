@@ -28,6 +28,7 @@ Community Edition Build 0.9.180:
 * NEW: Added the Ctrl+Alt+F keyboard shortcut to open Quick Search (used to search your lists).
 * NEW: Read support for the "MetronInfo.xml" metadata file. The "ComicInfo.xml" still has priority and only fields used in it are imported. Exporting a file will remove any "MetronInfo.xml" that existed, but the imported data is preserved in the "ComicInfo.xml" on Export.
 * NEW: Using Backup Database while using an SQL database now includes the book details. It can be used to convert to XML or to restore the SQL database.
+* NEW: Added a feature to force refresh metadata from embedded ComicInfo.xml (or MetronInfo.xml). Open the context menu, then hold Ctrl and select Refresh. Metadata remains if no XML is embedded but may be removed if fields are empty.
 
 
 * CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.

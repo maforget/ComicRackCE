@@ -2484,9 +2484,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		public void RefreshInformation()
 		{
-			IEnumerable<CoverViewItem> enumerable = from CoverViewItem cvi in new List<IViewableItem>(itemView.SelectedItems)
-													where cvi.Comic.IsInContainer
-													select cvi;
+			IEnumerable<CoverViewItem> selectedItems = from CoverViewItem cvi in new List<IViewableItem>(itemView.SelectedItems)
+														select cvi;
+			IEnumerable<CoverViewItem> enumerable = selectedItems.Where(cvi => cvi.Comic.IsInContainer);
+
 			foreach (CoverViewItem item in enumerable)
 			{
 				if (item.Comic.IsDynamicSource)
@@ -2500,7 +2501,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 			if (ComicEditMode.CanScan())
 			{
-				Program.Scanner.ScanFilesOrFolders(enumerable.Select((CoverViewItem cvi) => cvi.Comic.FilePath), all: false, removeMissing: false);
+				bool forceRefreshInfo = Control.ModifierKeys == Keys.Control;
+
+				if (forceRefreshInfo)
+					enumerable = selectedItems;
+
+				Program.Scanner.ScanFilesOrFolders(enumerable.Select((CoverViewItem cvi) => cvi.Comic.FilePath), all: false, removeMissing: false, forceRefreshInfo: forceRefreshInfo);
 			}
 		}
 

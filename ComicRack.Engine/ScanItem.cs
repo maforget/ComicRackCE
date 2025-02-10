@@ -10,6 +10,8 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
+		public bool ForceRefreshInfo { get; set; }
+
 		public abstract IEnumerable<string> GetScanFiles();
 	}
 }
