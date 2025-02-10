@@ -29,10 +29,18 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 
 		public bool UpdateEnabled => GetType().GetAttributes<FileFormatAttribute>().FirstOrDefault((FileFormatAttribute f) => f.Format.Supports(base.Source))?.EnableUpdate ?? false;
 
+		private bool disableNtfs = false;
 		protected bool DisableNtfs
 		{
-			get;
-			set;
+			get
+			{
+				if (disableNtfs)
+					return true;
+
+				return EngineConfiguration.Default.DisableNTFS;
+			}
+
+			set => disableNtfs = value;
 		}
 
 		protected bool DisableSidecar
