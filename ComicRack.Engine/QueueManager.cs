@@ -8,6 +8,7 @@ using System.Threading;
 using cYo.Common.Collections;
 using cYo.Common.ComponentModel;
 using cYo.Common.Drawing;
+using cYo.Common.IO;
 using cYo.Common.Localize;
 using cYo.Common.Mathematics;
 using cYo.Common.Text;
@@ -438,7 +439,8 @@ namespace cYo.Projects.ComicRack.Engine
 							}
 							foreach (string item in source)
 							{
-								ShellFile.DeleteFile(item);
+								FileUtility.SafeDelete(item);
+								//ShellFile.DeleteFile(item);
 								DatabaseManager.Database.Books.Remove(item);
 							}
 						}
@@ -448,7 +450,8 @@ namespace cYo.Projects.ComicRack.Engine
 							{
 								foreach (string item2 in source)
 								{
-									ShellFile.DeleteFile(item2);
+									FileUtility.SafeDelete(item2);
+									//ShellFile.DeleteFile(item2);
 									DatabaseManager.Database.Books.Remove(item2);
 								}
 							}

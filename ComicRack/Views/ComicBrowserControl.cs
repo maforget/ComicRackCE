@@ -2484,9 +2484,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		public void RefreshInformation()
 		{
-			IEnumerable<CoverViewItem> enumerable = from CoverViewItem cvi in new List<IViewableItem>(itemView.SelectedItems)
-													where cvi.Comic.IsInContainer
-													select cvi;
+			IEnumerable<CoverViewItem> selectedItems = from CoverViewItem cvi in new List<IViewableItem>(itemView.SelectedItems)
+														select cvi;
+			IEnumerable<CoverViewItem> enumerable = selectedItems.Where(cvi => cvi.Comic.IsInContainer);
+
 			foreach (CoverViewItem item in enumerable)
 			{
 				if (item.Comic.IsDynamicSource)
@@ -2500,7 +2501,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 			if (ComicEditMode.CanScan())
 			{
-				Program.Scanner.ScanFilesOrFolders(enumerable.Select((CoverViewItem cvi) => cvi.Comic.FilePath), all: false, removeMissing: false);
+				bool forceRefreshInfo = Control.ModifierKeys == Keys.Control;
+
+				if (forceRefreshInfo)
+					enumerable = selectedItems;
+
+				Program.Scanner.ScanFilesOrFolders(enumerable.Select((CoverViewItem cvi) => cvi.Comic.FilePath), all: false, removeMissing: false, forceRefreshInfo: forceRefreshInfo);
 			}
 		}
 
@@ -2819,12 +2825,17 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			miUpdateComicFiles.Visible = enumerable.Any((ComicBook cb) => cb.ComicInfoIsDirty);
 			contextMenuItems.FixSeparators();
 			miPasteData.Enabled = isPasteComicDataEnabled();
-			UpdateOpenWithMenus(enumerable);
+		}
+
+		private void contextOpenWith_Opening(object sender, CancelEventArgs e)
+		{
+			UpdateOpenWithMenus(GetBookList(ComicBookFilterType.Selected));
 		}
 
 		private void UpdateOpenWithMenus(IEnumerable<ComicBook> enumerable)
 		{
 			FormUtility.SafeToolStripClear(miOpenWith.DropDownItems, 2);
+
 			//Populate Open With menu
 			for (int k = 0; k < Program.Settings.ExternalPrograms.Count; k++)
 			{
@@ -2843,14 +2854,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					}
 				});
 				tsi.Tag = ep;
+				tsi.Enabled = AllSelectedLinked();
 
 				//Insert menu item
-				miOpenWith.DropDownItems.Add(tsi);
+				contextOpenWith.Items.Add(tsi);
 			}
 
 			//Show the separator only if at least 1 external program was added
-			//toolStripSeparator2.Visible = miOpenWith.DropDownItems.Cast<ToolStripItem>().Where(x => x.Tag != null).Count() > 0;
-			toolStripSeparator2.Visible = miOpenWith.DropDownItems.Count > 2;
+			toolStripSeparator2.Visible = contextOpenWith.Items.Count > 2;
 		}
 
 		private static void StartExternalProgram(ExternalProgram ep, ComicBook comicBook)
