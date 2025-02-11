@@ -88,7 +88,8 @@ namespace cYo.Projects.ComicRack.Engine.IO
 								{
 									text = EngineConfiguration.Default.GetTempFileName();
 									comicInfo = storageProvider.Store(provider, comicInfo, text, setting);
-									ShellFile.DeleteFile(targetPath);
+									//ShellFile.DeleteFile(targetPath);
+									FileUtility.SafeDelete(targetPath);
 									File.Move(text, targetPath);
 								}
 								else
