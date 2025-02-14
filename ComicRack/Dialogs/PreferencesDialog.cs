@@ -145,18 +145,24 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		public static Size SafeSize { get; set; }
 
-
 		protected override void OnResizeEnd(EventArgs e)
 		{
 			base.OnResizeEnd(e);
 			UpdateSafeSize();
+            AutoSizeColumn();
 		}
 
 		private void SetSize()
 		{
 			Size = !SafeSize.IsEmpty ? SafeSize : MinimumSize;
             this.CenterToParent();
+			AutoSizeColumn();
 		}
+
+		private void AutoSizeColumn()
+		{
+            this.FindServices<ListView>().ForEach((ListView lv) => lv.AutoResizeColumn(0, 32));
+        }
 
 		private void UpdateSafeSize()
 		{
@@ -968,76 +974,76 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         private void SetSettings()
 		{
 			FormUtility.FillPanelWithOptions(pageBehavior, Program.Settings, TR.Load("Settings"));
-            chkLibraryGauges.Checked = Program.Settings.DisplayLibraryGauges;
-            chkLibraryGaugesUnread.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Unread);
-            chkLibraryGaugesNew.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.New);
-            chkLibraryGaugesTotal.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Total);
-            chkLibraryGaugesNumeric.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Numeric);
-            tbMouseWheel.Value = (int)(Program.Settings.MouseWheelSpeed * 10f);
-            chkHighQualityDisplay.Checked = Program.Settings.PageImageDisplayOptions.IsSet(ImageDisplayOptions.HighQuality);
-            chkAnamorphicScaling.Checked = Program.Settings.PageImageDisplayOptions.IsSet(ImageDisplayOptions.AnamorphicScaling);
-            chkAutoRemoveMissing.Checked = Program.Settings.RemoveMissingFilesOnFullScan;
-            chkDontAddRemovedFiles.Checked = Program.Settings.DontAddRemoveFiles;
-            tbSaturation.Value = (int)(Program.Settings.GlobalColorAdjustment.Saturation * 100f);
-            tbBrightness.Value = (int)(Program.Settings.GlobalColorAdjustment.Brightness * 100f);
-            tbContrast.Value = (int)(Program.Settings.GlobalColorAdjustment.Contrast * 100f);
-            tbGamma.Value = (int)(Program.Settings.GlobalColorAdjustment.Gamma * 100f);
-            tbSharpening.Value = Program.Settings.GlobalColorAdjustment.Sharpen;
-            chkAutoContrast.Checked = Program.Settings.GlobalColorAdjustment.Options.IsSet(BitmapAdjustmentOptions.AutoContrast);
-            chkShowCurrentPageOverlay.Checked = Program.Settings.ShowCurrentPageOverlay;
-            chkShowVisiblePartOverlay.Checked = Program.Settings.ShowVisiblePagePartOverlay;
-            chkShowStatusOverlay.Checked = Program.Settings.ShowStatusOverlay;
-            chkShowNavigationOverlay.Checked = Program.Settings.ShowNavigationOverlay;
-            cbNavigationOverlayPosition.SelectedIndex = (Program.Settings.NavigationOverlayOnTop ? 1 : 0);
-            chkShowPageNames.Checked = Program.Settings.CurrentPageShowsName;
-            chkEnableHardware.Checked = Program.Settings.HardwareAcceleration;
-            chkSmoothAutoScrolling.Checked = Program.Settings.SmoothScrolling;
-            chkEnableDisplayChangeAnimation.Checked = Program.Settings.DisplayChangeAnimation;
-            chkEnableSoftwareFiltering.Checked = Program.Settings.SoftwareFiltering;
-            chkEnableHardwareFiltering.Checked = Program.Settings.HardwareFiltering;
-            chkEnableInertialMouseScrolling.Checked = Program.Settings.FlowingMouseScrolling;
-            chkEnableInternetCache.Checked = Program.Settings.InternetCacheEnabled;
-            numInternetCacheSize.Value = numInternetCacheSize.Clamp(Program.Settings.InternetCacheSizeMB);
-            chkEnableThumbnailCache.Checked = Program.Settings.ThumbCacheEnabled;
-            numThumbnailCacheSize.Value = numThumbnailCacheSize.Clamp(Program.Settings.ThumbCacheSizeMB);
-            chkEnablePageCache.Checked = Program.Settings.PageCacheEnabled;
-            numPageCacheSize.Value = numPageCacheSize.Clamp(Program.Settings.PageCacheSizeMB);
-            chkMemPageOptimized.Checked = Program.Settings.MemoryPageCacheOptimized;
-            numMemPageCount.Value = numMemPageCount.Clamp(Program.Settings.MemoryPageCacheCount);
-            chkMemThumbOptimized.Checked = Program.Settings.MemoryThumbCacheOptimized;
-            numMemThumbSize.Value = numMemThumbSize.Clamp(Program.Settings.MemoryThumbCacheSizeMB);
-            tbMaximumMemoryUsage.SetRange(Settings.MinimumSystemMemory / MaximumMemoryStepSize, Settings.UnlimitedSystemMemory / MaximumMemoryStepSize);
-            tbMaximumMemoryUsage.Value = Program.Settings.MaximumMemoryMB / MaximumMemoryStepSize;
-            tbOverlayScaling.Value = Program.Settings.OverlayScaling;
-            chkOverwriteAssociations.Checked = Program.Settings.OverwriteAssociations;
-            chkUpdateComicFiles.Checked = Program.Settings.UpdateComicFiles;
-            chkAutoUpdateComicFiles.Checked = Program.Settings.AutoUpdateComicsFiles;
-            txCoverFilter.Text = Program.Settings.IgnoredCoverImages;
-            txLibraries.Text = Program.Settings.ScriptingLibraries;
-            chkDisableScripting.Checked = !Program.Settings.Scripting;
-            chkHideSampleScripts.Checked = Program.Settings.HideSampleScripts;
-            lbLanguages.SelectedIndex = 0;
-            foreach (TRInfo item in lbLanguages.Items)
-            {
-                if (item.CultureName == Program.Settings.CultureName)
-                {
-                    lbLanguages.SelectedItem = item;
-                    break;
-                }
-            }
-            txPublicServerAddress.Text = Program.Settings.ExternalServerAddress;
-            txPrivateListingPassword.Password = Program.Settings.PrivateListingPassword;
-            chkLookForShared.Checked = Program.Settings.LookForShared;
-            chkAutoConnectShares.Checked = Program.Settings.AutoConnectShares;
-            foreach (ComicLibraryServerConfig share in Program.Settings.Shares)
-            {
-                AddSharePage(share);
-            }
-            txWifiAddresses.Text = Program.Settings.ExtraWifiDeviceAddresses;
-            AddVirtualTags();
+			chkLibraryGauges.Checked = Program.Settings.DisplayLibraryGauges;
+			chkLibraryGaugesUnread.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Unread);
+			chkLibraryGaugesNew.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.New);
+			chkLibraryGaugesTotal.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Total);
+			chkLibraryGaugesNumeric.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Numeric);
+			tbMouseWheel.Value = (int)(Program.Settings.MouseWheelSpeed * 10f);
+			chkHighQualityDisplay.Checked = Program.Settings.PageImageDisplayOptions.IsSet(ImageDisplayOptions.HighQuality);
+			chkAnamorphicScaling.Checked = Program.Settings.PageImageDisplayOptions.IsSet(ImageDisplayOptions.AnamorphicScaling);
+			chkAutoRemoveMissing.Checked = Program.Settings.RemoveMissingFilesOnFullScan;
+			chkDontAddRemovedFiles.Checked = Program.Settings.DontAddRemoveFiles;
+			tbSaturation.Value = (int)(Program.Settings.GlobalColorAdjustment.Saturation * 100f);
+			tbBrightness.Value = (int)(Program.Settings.GlobalColorAdjustment.Brightness * 100f);
+			tbContrast.Value = (int)(Program.Settings.GlobalColorAdjustment.Contrast * 100f);
+			tbGamma.Value = (int)(Program.Settings.GlobalColorAdjustment.Gamma * 100f);
+			tbSharpening.Value = Program.Settings.GlobalColorAdjustment.Sharpen;
+			chkAutoContrast.Checked = Program.Settings.GlobalColorAdjustment.Options.IsSet(BitmapAdjustmentOptions.AutoContrast);
+			chkShowCurrentPageOverlay.Checked = Program.Settings.ShowCurrentPageOverlay;
+			chkShowVisiblePartOverlay.Checked = Program.Settings.ShowVisiblePagePartOverlay;
+			chkShowStatusOverlay.Checked = Program.Settings.ShowStatusOverlay;
+			chkShowNavigationOverlay.Checked = Program.Settings.ShowNavigationOverlay;
+			cbNavigationOverlayPosition.SelectedIndex = (Program.Settings.NavigationOverlayOnTop ? 1 : 0);
+			chkShowPageNames.Checked = Program.Settings.CurrentPageShowsName;
+			chkEnableHardware.Checked = Program.Settings.HardwareAcceleration;
+			chkSmoothAutoScrolling.Checked = Program.Settings.SmoothScrolling;
+			chkEnableDisplayChangeAnimation.Checked = Program.Settings.DisplayChangeAnimation;
+			chkEnableSoftwareFiltering.Checked = Program.Settings.SoftwareFiltering;
+			chkEnableHardwareFiltering.Checked = Program.Settings.HardwareFiltering;
+			chkEnableInertialMouseScrolling.Checked = Program.Settings.FlowingMouseScrolling;
+			chkEnableInternetCache.Checked = Program.Settings.InternetCacheEnabled;
+			numInternetCacheSize.Value = numInternetCacheSize.Clamp(Program.Settings.InternetCacheSizeMB);
+			chkEnableThumbnailCache.Checked = Program.Settings.ThumbCacheEnabled;
+			numThumbnailCacheSize.Value = numThumbnailCacheSize.Clamp(Program.Settings.ThumbCacheSizeMB);
+			chkEnablePageCache.Checked = Program.Settings.PageCacheEnabled;
+			numPageCacheSize.Value = numPageCacheSize.Clamp(Program.Settings.PageCacheSizeMB);
+			chkMemPageOptimized.Checked = Program.Settings.MemoryPageCacheOptimized;
+			numMemPageCount.Value = numMemPageCount.Clamp(Program.Settings.MemoryPageCacheCount);
+			chkMemThumbOptimized.Checked = Program.Settings.MemoryThumbCacheOptimized;
+			numMemThumbSize.Value = numMemThumbSize.Clamp(Program.Settings.MemoryThumbCacheSizeMB);
+			tbMaximumMemoryUsage.SetRange(Settings.MinimumSystemMemory / MaximumMemoryStepSize, Settings.UnlimitedSystemMemory / MaximumMemoryStepSize);
+			tbMaximumMemoryUsage.Value = Program.Settings.MaximumMemoryMB / MaximumMemoryStepSize;
+			tbOverlayScaling.Value = Program.Settings.OverlayScaling;
+			chkOverwriteAssociations.Checked = Program.Settings.OverwriteAssociations;
+			chkUpdateComicFiles.Checked = Program.Settings.UpdateComicFiles;
+			chkAutoUpdateComicFiles.Checked = Program.Settings.AutoUpdateComicsFiles;
+			txCoverFilter.Text = Program.Settings.IgnoredCoverImages;
+			txLibraries.Text = Program.Settings.ScriptingLibraries;
+			chkDisableScripting.Checked = !Program.Settings.Scripting;
+			chkHideSampleScripts.Checked = Program.Settings.HideSampleScripts;
+			lbLanguages.SelectedIndex = 0;
+			foreach (TRInfo item in lbLanguages.Items)
+			{
+				if (item.CultureName == Program.Settings.CultureName)
+				{
+					lbLanguages.SelectedItem = item;
+					break;
+				}
+			}
+			txPublicServerAddress.Text = Program.Settings.ExternalServerAddress;
+			txPrivateListingPassword.Password = Program.Settings.PrivateListingPassword;
+			chkLookForShared.Checked = Program.Settings.LookForShared;
+			chkAutoConnectShares.Checked = Program.Settings.AutoConnectShares;
+			foreach (ComicLibraryServerConfig share in Program.Settings.Shares)
+			{
+				AddSharePage(share);
+			}
+			txWifiAddresses.Text = Program.Settings.ExtraWifiDeviceAddresses;
+			AddVirtualTags();
 		}
 
-        private void AddSharePage(ComicLibraryServerConfig cfg)
+		private void AddSharePage(ComicLibraryServerConfig cfg)
         {
             TabPage tab = new TabPage(cfg.Name)
             {
