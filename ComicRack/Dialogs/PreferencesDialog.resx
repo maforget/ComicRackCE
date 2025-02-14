@@ -123,9 +123,6 @@
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>122, 17</value>
   </metadata>
-  <metadata name="cmKeyboardLayout.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>213, 17</value>
-  </metadata>
   <data name="txtCaptionFormat.ToolTip" xml:space="preserve">
     <value>Use the number formatting from the "Custom numeric format strings"
 documentation from Microsoft .NET.
@@ -138,6 +135,9 @@ Entering 000 in the Format box will give you 001, 002, etc.
 https://learn.microsoft.com/en-us/dotnet/standard/base-types
 /custom-numeric-format-strings</value>
   </data>
+  <metadata name="cmKeyboardLayout.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>213, 17</value>
+  </metadata>
   <metadata name="memCacheUpate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>370, 17</value>
   </metadata>

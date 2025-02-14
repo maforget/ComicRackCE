@@ -151,7 +151,14 @@ namespace cYo.Projects.ComicRack.Viewer.Config
             set;
         }
 
-        [Browsable(false)]
+		[Browsable(false)]
+		public Size PreferencesOutputSize
+		{
+			get;
+			set;
+		}
+
+		[Browsable(false)]
 		[DefaultValue(FormWindowState.Normal)]
 		public FormWindowState UndockedReaderState
 		{

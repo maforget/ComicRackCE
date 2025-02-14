@@ -2586,6 +2586,7 @@ namespace cYo.Projects.ComicRack.Viewer
 					ComicDisplay.FullScreen = workspace.FullScreen;
 					MinimalGui = workspace.MinimalGui;
 					ComicBookDialog.PagesConfig = workspace.ComicBookDialogPagesConfig;
+					PreferencesDialog.SafeSize = workspace.PreferencesOutputSize;
 					Program.ExtendedSettings.StartHidden = false; //Sets it false so it respects normal setting after the first load
 				}
 				SetWorkspaceDisplayOptions(workspace);
@@ -2689,6 +2690,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				workspace.ComicBookDialogPagesConfig.GroupsStatus = null;
 			}
+			workspace.PreferencesOutputSize = PreferencesDialog.SafeSize;
 		}
 
 		public void StoreWorkspace()

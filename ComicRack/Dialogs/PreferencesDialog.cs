@@ -35,7 +35,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
     {
         private const int MaximumMemoryStepSize = 32;
 
-        private static readonly string DuplicatePackageText = TR.Messages["ScriptPackageExists", "A Script Package with the same name already exists! Do you want to overwrite this Package?"];
+		private static readonly string DuplicatePackageText = TR.Messages["ScriptPackageExists", "A Script Package with the same name already exists! Do you want to overwrite this Package?"];
 
         private PluginEngine pluginEngine;
 
@@ -143,9 +143,33 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             RefreshPackageList();
         }
 
-        protected override void OnLoad(EventArgs e)
+		public static Size SafeSize { get; set; }
+
+
+		protected override void OnResizeEnd(EventArgs e)
+		{
+			base.OnResizeEnd(e);
+			UpdateSafeSize();
+		}
+
+		private void SetSize()
+		{
+			Size = !SafeSize.IsEmpty ? SafeSize : MinimumSize;
+            this.CenterToParent();
+		}
+
+		private void UpdateSafeSize()
+		{
+			if (base.IsHandleCreated && SafeSize != null)
+			{
+				SafeSize = base.Size != base.MinimumSize ? base.Size : Size.Empty;
+			}
+		}
+
+		protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+			SetSize(); //Set size here because base.OnLoad(e) sets the previous dimension overriding what we set.
             //If this is in the Init portion and it loads via settings, the form will not be drawn correctly.
 			FormUtility.RegisterPanelToTabToggle(pageReader, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.ReaderSettings));
 			FormUtility.RegisterPanelToTabToggle(pageBehavior, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.BehaviorSettings));
@@ -924,7 +948,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                 Program.Settings.PrivateListingPassword = txPrivateListingPassword.Password;
             }
             Program.Settings.ExtraWifiDeviceAddresses = txWifiAddresses.Text;
-            SaveVirtualTags();
+			Program.Settings.CurrentWorkspace.PreferencesOutputSize = SafeSize;
+			SaveVirtualTags();
             Program.RefreshAllWindows();
             Program.ForAllForms(delegate (Form f)
             {
@@ -933,7 +958,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                     s.SettingsChanged();
                 });
             });
-        }
+		}
 
         private void SetScanButtonText()
         {
@@ -941,8 +966,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         }
 
         private void SetSettings()
-        {
-            FormUtility.FillPanelWithOptions(pageBehavior, Program.Settings, TR.Load("Settings"));
+		{
+			FormUtility.FillPanelWithOptions(pageBehavior, Program.Settings, TR.Load("Settings"));
             chkLibraryGauges.Checked = Program.Settings.DisplayLibraryGauges;
             chkLibraryGaugesUnread.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Unread);
             chkLibraryGaugesNew.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.New);
@@ -1010,7 +1035,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             }
             txWifiAddresses.Text = Program.Settings.ExtraWifiDeviceAddresses;
             AddVirtualTags();
-        }
+		}
 
         private void AddSharePage(ComicLibraryServerConfig cfg)
         {
