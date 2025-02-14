@@ -392,6 +392,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblFast
 			// 
+			this.lblFast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblFast.Location = new System.Drawing.Point(426, 96);
 			this.lblFast.Name = "lblFast";
 			this.lblFast.Size = new System.Drawing.Size(56, 19);
@@ -428,6 +429,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbMouseWheel
 			// 
+			this.tbMouseWheel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbMouseWheel.Location = new System.Drawing.Point(247, 97);
 			this.tbMouseWheel.Maximum = 50;
 			this.tbMouseWheel.Minimum = 5;
@@ -459,6 +462,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// panelReaderOverlays
 			// 
+			this.panelReaderOverlays.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.panelReaderOverlays.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.panelReaderOverlays.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panelReaderOverlays.Controls.Add(this.labelVisiblePartOverlay);
@@ -530,6 +534,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbNavigationOverlayPosition
 			// 
+			this.cbNavigationOverlayPosition.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.cbNavigationOverlayPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbNavigationOverlayPosition.FormattingEnabled = true;
 			this.cbNavigationOverlayPosition.Items.AddRange(new object[] {
@@ -542,6 +547,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelNavigationOverlayPosition
 			// 
+			this.labelNavigationOverlayPosition.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.labelNavigationOverlayPosition.AutoSize = true;
 			this.labelNavigationOverlayPosition.Location = new System.Drawing.Point(18, 316);
 			this.labelNavigationOverlayPosition.Name = "labelNavigationOverlayPosition";
@@ -551,6 +557,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkShowPageNames
 			// 
+			this.chkShowPageNames.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.chkShowPageNames.AutoSize = true;
 			this.chkShowPageNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.chkShowPageNames.Location = new System.Drawing.Point(283, 193);
@@ -562,6 +569,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbOverlayScaling
 			// 
+			this.tbOverlayScaling.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.tbOverlayScaling.Location = new System.Drawing.Point(288, 316);
 			this.tbOverlayScaling.Maximum = 150;
 			this.tbOverlayScaling.Minimum = 40;
@@ -575,6 +583,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkShowCurrentPageOverlay
 			// 
+			this.chkShowCurrentPageOverlay.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.chkShowCurrentPageOverlay.AutoSize = true;
 			this.chkShowCurrentPageOverlay.Location = new System.Drawing.Point(58, 193);
 			this.chkShowCurrentPageOverlay.Name = "chkShowCurrentPageOverlay";
@@ -585,6 +594,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkShowStatusOverlay
 			// 
+			this.chkShowStatusOverlay.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.chkShowStatusOverlay.AutoSize = true;
 			this.chkShowStatusOverlay.Location = new System.Drawing.Point(58, 217);
 			this.chkShowStatusOverlay.Name = "chkShowStatusOverlay";
@@ -595,6 +605,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkShowVisiblePartOverlay
 			// 
+			this.chkShowVisiblePartOverlay.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.chkShowVisiblePartOverlay.AutoSize = true;
 			this.chkShowVisiblePartOverlay.Location = new System.Drawing.Point(58, 241);
 			this.chkShowVisiblePartOverlay.Name = "chkShowVisiblePartOverlay";
@@ -605,6 +616,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkShowNavigationOverlay
 			// 
+			this.chkShowNavigationOverlay.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.chkShowNavigationOverlay.AutoSize = true;
 			this.chkShowNavigationOverlay.Location = new System.Drawing.Point(58, 264);
 			this.chkShowNavigationOverlay.Name = "chkShowNavigationOverlay";
@@ -615,6 +627,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelOverlaySize
 			// 
+			this.labelOverlaySize.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.labelOverlaySize.AutoSize = true;
 			this.labelOverlaySize.Location = new System.Drawing.Point(244, 316);
 			this.labelOverlaySize.Name = "labelOverlaySize";
@@ -636,6 +649,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btExportKeyboard
 			// 
+			this.btExportKeyboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btExportKeyboard.Location = new System.Drawing.Point(274, 357);
 			this.btExportKeyboard.Name = "btExportKeyboard";
 			this.btExportKeyboard.Size = new System.Drawing.Size(102, 23);
@@ -646,6 +660,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btImportKeyboard
 			// 
+			this.btImportKeyboard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btImportKeyboard.ContextMenuStrip = this.cmKeyboardLayout;
 			this.btImportKeyboard.Location = new System.Drawing.Point(382, 357);
 			this.btImportKeyboard.Name = "btImportKeyboard";
@@ -679,6 +694,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// keyboardShortcutEditor
 			// 
 			this.keyboardShortcutEditor.AllowDrop = true;
+			this.keyboardShortcutEditor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.keyboardShortcutEditor.Location = new System.Drawing.Point(12, 37);
 			this.keyboardShortcutEditor.Name = "keyboardShortcutEditor";
 			this.keyboardShortcutEditor.Shortcuts = null;
@@ -712,6 +729,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbGamma
 			// 
+			this.tbGamma.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbGamma.Location = new System.Drawing.Point(150, 193);
 			this.tbGamma.Minimum = -100;
 			this.tbGamma.Name = "tbGamma";
@@ -763,6 +782,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbSharpening
 			// 
+			this.tbSharpening.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbSharpening.LargeChange = 1;
 			this.tbSharpening.Location = new System.Drawing.Point(149, 225);
 			this.tbSharpening.Maximum = 3;
@@ -777,6 +798,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btResetColor
 			// 
+			this.btResetColor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btResetColor.Location = new System.Drawing.Point(394, 265);
 			this.btResetColor.Name = "btResetColor";
 			this.btResetColor.Size = new System.Drawing.Size(91, 23);
@@ -806,6 +828,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbSaturation
 			// 
+			this.tbSaturation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbSaturation.Location = new System.Drawing.Point(148, 122);
 			this.tbSaturation.Minimum = -100;
 			this.tbSaturation.Name = "tbSaturation";
@@ -827,6 +851,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbBrightness
 			// 
+			this.tbBrightness.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbBrightness.Location = new System.Drawing.Point(148, 144);
 			this.tbBrightness.Minimum = -100;
 			this.tbBrightness.Name = "tbBrightness";
@@ -840,6 +866,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbContrast
 			// 
+			this.tbContrast.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbContrast.Location = new System.Drawing.Point(148, 168);
 			this.tbContrast.Minimum = -100;
 			this.tbContrast.Name = "tbContrast";
@@ -894,6 +922,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btTestWifi
 			// 
+			this.btTestWifi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btTestWifi.Location = new System.Drawing.Point(382, 63);
 			this.btTestWifi.Name = "btTestWifi";
 			this.btTestWifi.Size = new System.Drawing.Size(104, 23);
@@ -922,6 +951,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txWifiAddresses
 			// 
+			this.txWifiAddresses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txWifiAddresses.Location = new System.Drawing.Point(6, 65);
 			this.txWifiAddresses.Name = "txWifiAddresses";
 			this.txWifiAddresses.Size = new System.Drawing.Size(370, 20);
@@ -942,6 +973,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btAssociateExtensions
 			// 
+			this.btAssociateExtensions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btAssociateExtensions.Location = new System.Drawing.Point(382, 57);
 			this.btAssociateExtensions.Name = "btAssociateExtensions";
 			this.btAssociateExtensions.Size = new System.Drawing.Size(104, 23);
@@ -973,6 +1005,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lbFormats
 			// 
+			this.lbFormats.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lbFormats.CheckOnClick = true;
 			this.lbFormats.FormattingEnabled = true;
 			this.lbFormats.Location = new System.Drawing.Point(6, 57);
@@ -993,6 +1027,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btResetMessages
 			// 
+			this.btResetMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btResetMessages.Location = new System.Drawing.Point(382, 41);
 			this.btResetMessages.Name = "btResetMessages";
 			this.btResetMessages.Size = new System.Drawing.Size(104, 23);
@@ -1023,6 +1058,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// grpMaximumMemoryUsage
 			// 
+			this.grpMaximumMemoryUsage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.grpMaximumMemoryUsage.Controls.Add(this.lblMaximumMemoryUsageValue);
 			this.grpMaximumMemoryUsage.Controls.Add(this.tbMaximumMemoryUsage);
 			this.grpMaximumMemoryUsage.Controls.Add(this.lblMaximumMemoryUsage);
@@ -1035,6 +1072,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblMaximumMemoryUsageValue
 			// 
+			this.lblMaximumMemoryUsageValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblMaximumMemoryUsageValue.AutoSize = true;
 			this.lblMaximumMemoryUsageValue.Location = new System.Drawing.Point(397, 31);
 			this.lblMaximumMemoryUsageValue.Name = "lblMaximumMemoryUsageValue";
@@ -1044,6 +1082,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbMaximumMemoryUsage
 			// 
+			this.tbMaximumMemoryUsage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbMaximumMemoryUsage.LargeChange = 4;
 			this.tbMaximumMemoryUsage.Location = new System.Drawing.Point(7, 24);
 			this.tbMaximumMemoryUsage.Maximum = 64;
@@ -1068,6 +1108,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// grpMemoryCache
 			// 
+			this.grpMemoryCache.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.grpMemoryCache.Controls.Add(this.lblPageMemCacheUsage);
 			this.grpMemoryCache.Controls.Add(this.labelMemThumbSize);
 			this.grpMemoryCache.Controls.Add(this.lblThumbMemCacheUsage);
@@ -1085,6 +1127,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblPageMemCacheUsage
 			// 
+			this.lblPageMemCacheUsage.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblPageMemCacheUsage.AutoSize = true;
 			this.lblPageMemCacheUsage.Location = new System.Drawing.Point(299, 52);
 			this.lblPageMemCacheUsage.Name = "lblPageMemCacheUsage";
@@ -1094,6 +1137,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelMemThumbSize
 			// 
+			this.labelMemThumbSize.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.labelMemThumbSize.AutoSize = true;
 			this.labelMemThumbSize.Location = new System.Drawing.Point(19, 29);
 			this.labelMemThumbSize.Name = "labelMemThumbSize";
@@ -1103,6 +1147,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblThumbMemCacheUsage
 			// 
+			this.lblThumbMemCacheUsage.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblThumbMemCacheUsage.AutoSize = true;
 			this.lblThumbMemCacheUsage.Location = new System.Drawing.Point(299, 26);
 			this.lblThumbMemCacheUsage.Name = "lblThumbMemCacheUsage";
@@ -1112,6 +1157,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// numMemPageCount
 			// 
+			this.numMemPageCount.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.numMemPageCount.Location = new System.Drawing.Point(145, 51);
 			this.numMemPageCount.Maximum = new decimal(new int[] {
             25,
@@ -1135,6 +1181,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelMemPageCount
 			// 
+			this.labelMemPageCount.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.labelMemPageCount.AutoSize = true;
 			this.labelMemPageCount.Location = new System.Drawing.Point(19, 52);
 			this.labelMemPageCount.Name = "labelMemPageCount";
@@ -1144,6 +1191,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkMemPageOptimized
 			// 
+			this.chkMemPageOptimized.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.chkMemPageOptimized.AutoSize = true;
 			this.chkMemPageOptimized.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.chkMemPageOptimized.Location = new System.Drawing.Point(218, 51);
@@ -1155,6 +1203,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkMemThumbOptimized
 			// 
+			this.chkMemThumbOptimized.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.chkMemThumbOptimized.AutoSize = true;
 			this.chkMemThumbOptimized.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.chkMemThumbOptimized.Location = new System.Drawing.Point(218, 25);
@@ -1166,6 +1215,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// numMemThumbSize
 			// 
+			this.numMemThumbSize.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.numMemThumbSize.Increment = new decimal(new int[] {
             5,
             0,
@@ -1189,6 +1239,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// grpDiskCache
 			// 
+			this.grpDiskCache.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.grpDiskCache.Controls.Add(this.chkEnableInternetCache);
 			this.grpDiskCache.Controls.Add(this.lblInternetCacheUsage);
 			this.grpDiskCache.Controls.Add(this.btClearPageCache);
@@ -1210,6 +1262,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkEnableInternetCache
 			// 
+			this.chkEnableInternetCache.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.chkEnableInternetCache.AutoSize = true;
 			this.chkEnableInternetCache.Location = new System.Drawing.Point(22, 31);
 			this.chkEnableInternetCache.Name = "chkEnableInternetCache";
@@ -1220,6 +1273,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblInternetCacheUsage
 			// 
+			this.lblInternetCacheUsage.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblInternetCacheUsage.AutoSize = true;
 			this.lblInternetCacheUsage.Location = new System.Drawing.Point(298, 31);
 			this.lblInternetCacheUsage.Name = "lblInternetCacheUsage";
@@ -1229,6 +1283,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btClearPageCache
 			// 
+			this.btClearPageCache.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btClearPageCache.Location = new System.Drawing.Point(218, 80);
 			this.btClearPageCache.Name = "btClearPageCache";
 			this.btClearPageCache.Size = new System.Drawing.Size(74, 21);
@@ -1239,6 +1294,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// numPageCacheSize
 			// 
+			this.numPageCacheSize.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.numPageCacheSize.Increment = new decimal(new int[] {
             10,
             0,
@@ -1267,6 +1323,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// numInternetCacheSize
 			// 
+			this.numInternetCacheSize.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.numInternetCacheSize.Increment = new decimal(new int[] {
             10,
             0,
@@ -1295,6 +1352,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btClearThumbnailCache
 			// 
+			this.btClearThumbnailCache.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btClearThumbnailCache.Location = new System.Drawing.Point(218, 54);
 			this.btClearThumbnailCache.Name = "btClearThumbnailCache";
 			this.btClearThumbnailCache.Size = new System.Drawing.Size(74, 21);
@@ -1305,6 +1363,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btClearInternetCache
 			// 
+			this.btClearInternetCache.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btClearInternetCache.Location = new System.Drawing.Point(218, 27);
 			this.btClearInternetCache.Name = "btClearInternetCache";
 			this.btClearInternetCache.Size = new System.Drawing.Size(74, 21);
@@ -1315,6 +1374,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkEnablePageCache
 			// 
+			this.chkEnablePageCache.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.chkEnablePageCache.AutoSize = true;
 			this.chkEnablePageCache.Location = new System.Drawing.Point(22, 84);
 			this.chkEnablePageCache.Name = "chkEnablePageCache";
@@ -1325,6 +1385,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblPageCacheUsage
 			// 
+			this.lblPageCacheUsage.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblPageCacheUsage.AutoSize = true;
 			this.lblPageCacheUsage.Location = new System.Drawing.Point(298, 86);
 			this.lblPageCacheUsage.Name = "lblPageCacheUsage";
@@ -1334,6 +1395,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// numThumbnailCacheSize
 			// 
+			this.numThumbnailCacheSize.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.numThumbnailCacheSize.Increment = new decimal(new int[] {
             10,
             0,
@@ -1362,6 +1424,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkEnableThumbnailCache
 			// 
+			this.chkEnableThumbnailCache.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.chkEnableThumbnailCache.AutoSize = true;
 			this.chkEnableThumbnailCache.Location = new System.Drawing.Point(22, 57);
 			this.chkEnableThumbnailCache.Name = "chkEnableThumbnailCache";
@@ -1372,6 +1435,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblThumbCacheUsage
 			// 
+			this.lblThumbCacheUsage.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblThumbCacheUsage.AutoSize = true;
 			this.lblThumbCacheUsage.Location = new System.Drawing.Point(298, 58);
 			this.lblThumbCacheUsage.Name = "lblThumbCacheUsage";
@@ -1392,6 +1456,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btRestoreDatabase
 			// 
+			this.btRestoreDatabase.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btRestoreDatabase.Location = new System.Drawing.Point(259, 41);
 			this.btRestoreDatabase.Name = "btRestoreDatabase";
 			this.btRestoreDatabase.Size = new System.Drawing.Size(227, 23);
@@ -1402,6 +1467,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btBackupDatabase
 			// 
+			this.btBackupDatabase.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btBackupDatabase.Location = new System.Drawing.Point(9, 41);
 			this.btBackupDatabase.Name = "btBackupDatabase";
 			this.btBackupDatabase.Size = new System.Drawing.Size(247, 23);
@@ -1542,6 +1608,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btnVTagsHelp
 			// 
+			this.btnVTagsHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnVTagsHelp.FlatAppearance.BorderSize = 0;
 			this.btnVTagsHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnVTagsHelp.ForeColor = System.Drawing.Color.Transparent;
@@ -1555,6 +1622,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// grpVtagConfig
 			// 
+			this.grpVtagConfig.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.grpVtagConfig.Controls.Add(this.lblCaptionFormat);
 			this.grpVtagConfig.Controls.Add(this.txtCaptionFormat);
 			this.grpVtagConfig.Controls.Add(this.btInsertValue);
@@ -1580,6 +1649,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblCaptionFormat
 			// 
+			this.lblCaptionFormat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblCaptionFormat.AutoSize = true;
 			this.lblCaptionFormat.Location = new System.Drawing.Point(275, 151);
 			this.lblCaptionFormat.Name = "lblCaptionFormat";
@@ -1588,18 +1658,21 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.lblCaptionFormat.Text = "Format";
 			this.lblCaptionFormat.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
-            // txtCaptionFormat
-            // 
-            this.txtCaptionFormat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCaptionFormat.Location = new System.Drawing.Point(269, 167);
-            this.txtCaptionFormat.Name = "txtCaptionFormat";
-            this.txtCaptionFormat.Size = new System.Drawing.Size(50, 20);
-            this.txtCaptionFormat.TabIndex = 27;
-            this.toolTip.SetToolTip(this.txtCaptionFormat, resources.GetString("txtCaptionFormat.ToolTip"));
-            this.txtCaptionFormat.WordWrap = false;
-            // 
+			// txtCaptionFormat
+			// 
+			this.txtCaptionFormat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtCaptionFormat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.txtCaptionFormat.Location = new System.Drawing.Point(269, 167);
+			this.txtCaptionFormat.Name = "txtCaptionFormat";
+			this.txtCaptionFormat.Size = new System.Drawing.Size(50, 20);
+			this.txtCaptionFormat.TabIndex = 27;
+			this.toolTip.SetToolTip(this.txtCaptionFormat, resources.GetString("txtCaptionFormat.ToolTip"));
+			this.txtCaptionFormat.WordWrap = false;
+			// 
 			// btInsertValue
 			// 
+			this.btInsertValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.btInsertValue.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SmallArrowDown;
 			this.btInsertValue.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btInsertValue.Location = new System.Drawing.Point(96, 164);
@@ -1629,6 +1702,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txtVirtualTagDescription
 			// 
+			this.txtVirtualTagDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtVirtualTagDescription.Location = new System.Drawing.Point(147, 46);
 			this.txtVirtualTagDescription.Name = "txtVirtualTagDescription";
 			this.txtVirtualTagDescription.Size = new System.Drawing.Size(308, 20);
@@ -1637,6 +1712,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txtVirtualTagName
 			// 
+			this.txtVirtualTagName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtVirtualTagName.Location = new System.Drawing.Point(122, 20);
 			this.txtVirtualTagName.Name = "txtVirtualTagName";
 			this.txtVirtualTagName.Size = new System.Drawing.Size(333, 20);
@@ -1665,6 +1742,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblCaptionSuffix
 			// 
+			this.lblCaptionSuffix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblCaptionSuffix.AutoSize = true;
 			this.lblCaptionSuffix.Location = new System.Drawing.Point(349, 151);
 			this.lblCaptionSuffix.Name = "lblCaptionSuffix";
@@ -1674,6 +1752,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// rtfVirtualTagCaption
 			// 
+			this.rtfVirtualTagCaption.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.rtfVirtualTagCaption.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.rtfVirtualTagCaption.DetectUrls = false;
 			this.rtfVirtualTagCaption.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1687,6 +1767,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblFieldConfig
 			// 
+			this.lblFieldConfig.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblFieldConfig.AutoSize = true;
 			this.lblFieldConfig.Location = new System.Drawing.Point(165, 151);
 			this.lblFieldConfig.Name = "lblFieldConfig";
@@ -1714,6 +1795,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btnCaptionInsert
 			// 
+			this.btnCaptionInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCaptionInsert.Location = new System.Drawing.Point(410, 164);
 			this.btnCaptionInsert.Name = "btnCaptionInsert";
 			this.btnCaptionInsert.Size = new System.Drawing.Size(51, 23);
@@ -1724,6 +1806,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txtCaptionSuffix
 			// 
+			this.txtCaptionSuffix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtCaptionSuffix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.txtCaptionSuffix.Location = new System.Drawing.Point(325, 167);
 			this.txtCaptionSuffix.Name = "txtCaptionSuffix";
@@ -1741,6 +1824,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbVirtualTags
 			// 
+			this.cbVirtualTags.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbVirtualTags.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbVirtualTags.FormattingEnabled = true;
 			this.cbVirtualTags.Location = new System.Drawing.Point(61, 36);
@@ -1764,6 +1849,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txPrivateListingPassword
 			// 
+			this.txPrivateListingPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txPrivateListingPassword.Location = new System.Drawing.Point(12, 114);
 			this.txPrivateListingPassword.Name = "txPrivateListingPassword";
 			this.txPrivateListingPassword.Password = null;
@@ -1791,6 +1878,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txPublicServerAddress
 			// 
+			this.txPublicServerAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txPublicServerAddress.Location = new System.Drawing.Point(12, 60);
 			this.txPublicServerAddress.Name = "txPublicServerAddress";
 			this.txPublicServerAddress.Size = new System.Drawing.Size(379, 20);
@@ -1812,6 +1901,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkAutoConnectShares
 			// 
+			this.chkAutoConnectShares.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.chkAutoConnectShares.AutoSize = true;
 			this.chkAutoConnectShares.Location = new System.Drawing.Point(261, 36);
 			this.chkAutoConnectShares.Name = "chkAutoConnectShares";
@@ -1822,6 +1912,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btRemoveShare
 			// 
+			this.btRemoveShare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btRemoveShare.Location = new System.Drawing.Point(398, 89);
 			this.btRemoveShare.Name = "btRemoveShare";
 			this.btRemoveShare.Size = new System.Drawing.Size(92, 23);
@@ -1832,6 +1923,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btAddShare
 			// 
+			this.btAddShare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btAddShare.Location = new System.Drawing.Point(398, 61);
 			this.btAddShare.Name = "btAddShare";
 			this.btAddShare.Size = new System.Drawing.Size(92, 23);
@@ -1842,6 +1934,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tabShares
 			// 
+			this.tabShares.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabShares.Location = new System.Drawing.Point(12, 59);
 			this.tabShares.Name = "tabShares";
 			this.tabShares.SelectedIndex = 0;
@@ -2021,6 +2115,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// lbPaths
 			// 
 			this.lbPaths.AllowDrop = true;
+			this.lbPaths.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lbPaths.FormattingEnabled = true;
 			this.lbPaths.IntegralHeight = false;
 			this.lbPaths.Location = new System.Drawing.Point(12, 37);
@@ -2166,6 +2262,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btConfigScript
 			// 
+			this.btConfigScript.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btConfigScript.Enabled = false;
 			this.btConfigScript.Location = new System.Drawing.Point(398, 339);
 			this.btConfigScript.Name = "btConfigScript";
@@ -2177,6 +2274,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lvScripts
 			// 
+			this.lvScripts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lvScripts.CheckBoxes = true;
 			this.lvScripts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chScriptName,
@@ -2221,6 +2320,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btRemovePackage
 			// 
+			this.btRemovePackage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btRemovePackage.Location = new System.Drawing.Point(398, 344);
 			this.btRemovePackage.Name = "btRemovePackage";
 			this.btRemovePackage.Size = new System.Drawing.Size(86, 23);
@@ -2231,6 +2331,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btInstallPackage
 			// 
+			this.btInstallPackage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btInstallPackage.Location = new System.Drawing.Point(306, 344);
 			this.btInstallPackage.Name = "btInstallPackage";
 			this.btInstallPackage.Size = new System.Drawing.Size(86, 23);
@@ -2242,6 +2343,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// lvPackages
 			// 
 			this.lvPackages.AllowDrop = true;
+			this.lvPackages.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lvPackages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chPackageName,
             this.chPackageAuthor,
@@ -2374,22 +2477,22 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 			this.CancelButton = this.btCancel;
 			this.ClientSize = new System.Drawing.Size(610, 453);
-            this.Controls.Add(this.pageAdvanced);
+			this.Controls.Add(this.pageAdvanced);
 			this.Controls.Add(this.tabAdvanced);
 			this.Controls.Add(this.tabScripts);
 			this.Controls.Add(this.tabBehavior);
 			this.Controls.Add(this.tabLibraries);
 			this.Controls.Add(this.tabReader);
 			this.Controls.Add(this.pageReader);
-            this.Controls.Add(this.pageLibrary);
+			this.Controls.Add(this.pageLibrary);
 			this.Controls.Add(this.pageScripts);
 			this.Controls.Add(this.pageBehavior);
 			this.Controls.Add(this.btApply);
 			this.Controls.Add(this.btCancel);
 			this.Controls.Add(this.btOK);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(626, 492);
 			this.Name = "PreferencesDialog";
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;

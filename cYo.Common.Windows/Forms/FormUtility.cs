@@ -719,6 +719,7 @@ namespace cYo.Common.Windows.Forms
 					}
 				}
 				tabControl2.SelectedIndex = 0;
+				tabControl2.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
 			}
 			return on;
 		}
