@@ -116,7 +116,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				AddCustomFields(array);
 			}
 			TextBoxContextMenu.Register(this, TextBoxContextMenu.AddSearchLinks(SearchEngines.Engines));
-			FormUtility.RegisterPanelToTabToggle(pageData, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.Multiple));
 		}
 
 		private void AddCustomFields(string[] customValues)
@@ -254,6 +253,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 					return autoCompleteStringCollection;
 				});
 			}
+			FormUtility.RegisterPanelToTabToggle(pageData, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.Multiple));
 		}
 
 		private void Store()

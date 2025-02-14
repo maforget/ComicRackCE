@@ -103,11 +103,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             packageImageList.Images.Add(Resources.Package);
             LocalizeUtility.Localize(this, components);
             LocalizeUtility.Localize(TR.Load(base.Name), cbNavigationOverlayPosition);
-            FormUtility.RegisterPanelToTabToggle(pageReader, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.ReaderSettings));
-            FormUtility.RegisterPanelToTabToggle(pageBehavior, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.BehaviorSettings));
-            FormUtility.RegisterPanelToTabToggle(pageLibrary, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.LibrarySettings));
-            FormUtility.RegisterPanelToTabToggle(pageScripts, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.ScriptSettings));
-            FormUtility.RegisterPanelToTabToggle(pageAdvanced, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.AdvancedSettings));
             Program.Scanner.ScanNotify += DatabaseScanNotify;
             IdleProcess.Idle += ApplicationIdle;
             numMemPageCount.Minimum = 20m;
@@ -151,7 +146,13 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            SetTab((activeTab != -1) ? tabButtons[activeTab] : tabReader);
+            //If this is in the Init portion and it loads via settings, the form will not be drawn correctly.
+			FormUtility.RegisterPanelToTabToggle(pageReader, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.ReaderSettings));
+			FormUtility.RegisterPanelToTabToggle(pageBehavior, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.BehaviorSettings));
+			FormUtility.RegisterPanelToTabToggle(pageLibrary, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.LibrarySettings));
+			FormUtility.RegisterPanelToTabToggle(pageScripts, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.ScriptSettings));
+			FormUtility.RegisterPanelToTabToggle(pageAdvanced, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.AdvancedSettings));
+			SetTab((activeTab != -1) ? tabButtons[activeTab] : tabReader);
             //Fix Auto Word Selection bug
             rtfVirtualTagCaption.AutoWordSelection = false;
         }

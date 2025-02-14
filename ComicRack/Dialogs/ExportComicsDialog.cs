@@ -168,7 +168,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			}
 			this.RestorePosition();
 			this.RestorePanelStates();
-			FormUtility.RegisterPanelToTabToggle(exportSettings, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.Export));
 			foreach (FileFormat item in from f in Providers.Writers.GetSourceFormats()
 				orderby f
 				select f)
@@ -179,6 +178,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			enumUtil.ValueChanged += enumUtil_ValueChanged;
 			new NiceTreeSkin(tvPresets);
 			IdleProcess.Idle += OnIdle;
+		}
+
+		protected override void OnLoad(EventArgs e)
+		{
+			base.OnLoad(e);
+			FormUtility.RegisterPanelToTabToggle(exportSettings, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.Export));
 		}
 
 		private void OnIdle(object sender, EventArgs e)
