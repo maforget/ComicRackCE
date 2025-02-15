@@ -734,6 +734,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			Settings = Settings.Load(defaultSettingsFile);
 			Settings.RunCount++;
 			CommandLineParser.Parse(ImageDisplayControl.HardwareSettings);
+			CommandLineParser.Parse(EngineConfiguration.Default);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
 			DatabaseManager.FirstDatabaseAccess += delegate

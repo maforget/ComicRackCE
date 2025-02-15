@@ -2386,9 +2386,12 @@ namespace cYo.Projects.ComicRack.Engine
 				{
 					return;
 				}
-				if (!ComicInfoIsDirty)
+				bool forceRefreshInfo = options.HasFlag(RefreshInfoOptions.ForceRefresh);
+				if (forceRefreshInfo || !ComicInfoIsDirty)
 				{
-					SetInfo(infoStorage.LoadInfo((flag || !FileInfoRetrieved) ? InfoLoadingMethod.Complete : InfoLoadingMethod.Fast));
+					SetInfo(infoStorage.LoadInfo((flag || !FileInfoRetrieved) ? InfoLoadingMethod.Complete : InfoLoadingMethod.Fast), !forceRefreshInfo);
+					if (forceRefreshInfo)
+						ComicInfoIsDirty = false;
 				}
 				if (!imageProvider.IsSlow && (base.PageCount == 0 || num != FileSize) && (((options & RefreshInfoOptions.GetFastPageCount) != 0 && (imageProvider.Capabilities & ImageProviderCapabilities.FastPageInfo) != 0) || (options & RefreshInfoOptions.GetPageCount) != 0))
 				{
