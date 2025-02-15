@@ -439,8 +439,8 @@ namespace cYo.Projects.ComicRack.Engine
 							}
 							foreach (string item in source)
 							{
-								FileUtility.SafeDelete(item);
 								//ShellFile.DeleteFile(item);
+								Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(item, Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin );
 								DatabaseManager.Database.Books.Remove(item);
 							}
 						}
@@ -450,8 +450,8 @@ namespace cYo.Projects.ComicRack.Engine
 							{
 								foreach (string item2 in source)
 								{
-									FileUtility.SafeDelete(item2);
 									//ShellFile.DeleteFile(item2);
+									Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(item2, Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
 									DatabaseManager.Database.Books.Remove(item2);
 								}
 							}
