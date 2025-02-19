@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 [assembly: CLSCompliant(true)]
 [assembly: ComVisible(false)]
 [assembly: NeutralResourcesLanguage("en")]
-[assembly: AssemblyTitle("ComicRack")]
+[assembly: AssemblyTitle("ComicRack Community Edition")]
 [assembly: AssemblyDescription("Advanced eComic Reader and Manager")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("cYo")]
