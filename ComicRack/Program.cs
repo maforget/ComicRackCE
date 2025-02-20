@@ -736,6 +736,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			CommandLineParser.Parse(ImageDisplayControl.HardwareSettings);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
+			ShellFile.DeleteAPI = ExtendedSettings.DeleteAPI;
 			DatabaseManager.FirstDatabaseAccess += delegate
 			{
 				StartupProgress(TR.Messages["OpenDatabase", "Opening Database"], -1);
