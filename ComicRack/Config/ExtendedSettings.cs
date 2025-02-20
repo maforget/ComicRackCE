@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using cYo.Common.Mathematics;
 using cYo.Common.Runtime;
+using cYo.Common.Win32.FileOperations;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.IO.Network;
 
@@ -448,6 +449,13 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set;
 		}
 
+		[DefaultValue(FileOperationsAPI.IFileOperation)]
+		public FileOperationsAPI DeleteAPI
+		{
+			get;
+			set;
+		}
+
 		public ExtendedSettings()
 		{
 			AnamorphicScalingTolerance = 0.25f;
@@ -467,6 +475,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			MacCompatibleScanning = true;
 			SortNetworkFolders = true;
 			StartHidden = false;
-        }
+			DeleteAPI = FileOperationsAPI.IFileOperation;
+		}
 	}
 }
