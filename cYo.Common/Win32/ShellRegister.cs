@@ -129,7 +129,10 @@ namespace cYo.Common.Win32
 		{
 			if (IsFileOpenRegistered(typeId, docExtension))
 			{
-				Registry.ClassesRoot.DeleteSubKeyTree(docExtension);
+				using (RegistryKey registryKey = Registry.ClassesRoot.OpenSubKey(docExtension, true))
+				{
+					registryKey?.SetValue(null, string.Empty);
+				}
 			}
 		}
 
@@ -153,11 +156,12 @@ namespace cYo.Common.Win32
 			}
 		}
 
-		public static void RegisterFileOpenWith(string docExtension, string appPath, string friendlyName)
+		public static void RegisterFileOpenWith(string docExtension, string appPath, string friendlyName, string typeId)
 		{
 			string fileName = Path.GetFileName(appPath);
-			using (ClassesRoot.CreateSubKey(docExtension + "\\OpenWithList\\" + fileName))
+			using (RegistryKey registryKey = ClassesRoot.CreateSubKey(docExtension + "\\OpenWithProgIds"))
 			{
+				registryKey?.SetValue(typeId, string.Empty);
 			}
 			using (RegistryKey registryKey2 = ClassesRoot.CreateSubKey("Applications\\" + fileName + "\\shell\\Open"))
 			{
@@ -172,64 +176,68 @@ namespace cYo.Common.Win32
 			}
 		}
 
-		public static void RegisterFileOpenWith(string docExtension)
+		public static void RegisterFileOpenWith(string docExtension, string typeId)
 		{
 			Assembly entryAssembly = Assembly.GetEntryAssembly();
 			RegisterFileOpenWith(docExtension, entryAssembly.Location, entryAssembly.GetCustomAttributes(inherit: false).OfType<AssemblyTitleAttribute>().FirstOrDefault()
-				.Title);
-			}
+				.Title, typeId);
+		}
 
-			public static void UnregisterFileOpenWith(string docExtension, string appPath)
+		public static void UnregisterFileOpenWith(string docExtension, string appPath, string typeId)
+		{
+			string fileName = Path.GetFileName(appPath);
+			Registry.ClassesRoot.DeleteSubKeyTree(docExtension + "\\OpenWithList\\" + fileName, false); //Delete any old entries
+			using (RegistryKey registryKey = ClassesRoot.OpenSubKey(docExtension + "\\OpenWithProgIds", true))
 			{
-				string fileName = Path.GetFileName(appPath);
-				Registry.ClassesRoot.DeleteSubKeyTree(docExtension + "\\OpenWithList\\" + fileName);
-			}
-
-			public static void UnregisterFileOpenWith(string docExtension)
-			{
-				UnregisterFileOpenWith(docExtension, Assembly.GetEntryAssembly().Location);
-			}
-
-			public static bool IsFileOpenWithRegistered(string docExtension, string appPath)
-			{
-				string fileName = Path.GetFileName(appPath);
-				using (RegistryKey registryKey = ClassesRoot.OpenSubKey(docExtension + "\\OpenWithList\\" + fileName))
-				{
-					return registryKey != null;
-				}
-			}
-
-			public static bool IsFileOpenWithRegistered(string docExtension)
-			{
-				return IsFileOpenWithRegistered(docExtension, Assembly.GetEntryAssembly().Location);
-			}
-
-			public static void RegisterFileCommand(string docExtension, string verbName, string menuText, string appPath, string commandParameters)
-			{
-				verbName = verbName.Replace("&", "");
-				using (RegistryKey registryKey = ClassesRoot.CreateSubKey(docExtension + "\\Shell\\" + verbName))
-				{
-					registryKey.SetValue(string.Empty, menuText);
-					using (RegistryKey registryKey2 = registryKey.CreateSubKey("command"))
-					{
-						registryKey2.SetValue(string.Empty, "\"" + appPath + "\" " + commandParameters);
-					}
-				}
-			}
-
-			public static void RegisterFileCommand(string docExtension, string verbName, string menuText, string commandParameters)
-			{
-				RegisterFileCommand(docExtension, verbName, menuText, Assembly.GetEntryAssembly().Location, commandParameters);
-			}
-
-			public static void RegisterFileCommand(string docExtension, string menuText, string commandParameters)
-			{
-				RegisterFileCommand(docExtension, menuText, menuText, commandParameters);
-			}
-
-			public static void RegisterFileCommand(string docExtension, string menuText)
-			{
-				RegisterFileCommand(docExtension, menuText, "\"%1\"");
+				registryKey?.DeleteValue(typeId, false);
 			}
 		}
+
+		public static void UnregisterFileOpenWith(string docExtension, string typeId)
+		{
+			UnregisterFileOpenWith(docExtension, Assembly.GetEntryAssembly().Location, typeId);
+		}
+
+		public static bool IsFileOpenWithRegistered(string docExtension, string appPath, string typeId)
+		{
+			string fileName = Path.GetFileName(appPath);
+			using (RegistryKey registryKey = ClassesRoot.OpenSubKey(docExtension + "\\OpenWithProgIds"))
+			{
+				return registryKey?.GetValue(typeId) != null;
+			}
+		}
+
+		public static bool IsFileOpenWithRegistered(string docExtension, string typeId)
+		{
+			return IsFileOpenWithRegistered(docExtension, Assembly.GetEntryAssembly().Location, typeId);
+		}
+
+		public static void RegisterFileCommand(string docExtension, string verbName, string menuText, string appPath, string commandParameters)
+		{
+			verbName = verbName.Replace("&", "");
+			using (RegistryKey registryKey = ClassesRoot.CreateSubKey(docExtension + "\\Shell\\" + verbName))
+			{
+				registryKey.SetValue(string.Empty, menuText);
+				using (RegistryKey registryKey2 = registryKey.CreateSubKey("command"))
+				{
+					registryKey2.SetValue(string.Empty, "\"" + appPath + "\" " + commandParameters);
+				}
+			}
+		}
+
+		public static void RegisterFileCommand(string docExtension, string verbName, string menuText, string commandParameters)
+		{
+			RegisterFileCommand(docExtension, verbName, menuText, Assembly.GetEntryAssembly().Location, commandParameters);
+		}
+
+		public static void RegisterFileCommand(string docExtension, string menuText, string commandParameters)
+		{
+			RegisterFileCommand(docExtension, menuText, menuText, commandParameters);
+		}
+
+		public static void RegisterFileCommand(string docExtension, string menuText)
+		{
+			RegisterFileCommand(docExtension, menuText, "\"%1\"");
+		}
 	}
+}
