@@ -30,6 +30,9 @@ Community Edition Build 0.9.180:
 * NEW: Using Backup Database while using an SQL database now includes the book details. It can be used to convert to XML or to restore the SQL database.
 * NEW: Added a feature to force refresh metadata from embedded ComicInfo.xml (or MetronInfo.xml). Open the context menu, then hold Ctrl and select Refresh. Metadata remains if no XML is embedded but may be removed if fields are empty.
 * NEW: Added a DisableNTFS option in ComicRack.ini (or "-ntfs" command line switch) to disable reading/writing ComicInfo to the NTFS alternate stream, useful for NAS systems that don’t support it.
+* NEW: Added the Translator field as per the anansi-project/comicinfo.
+* NEW: The Preference dialog is now resizable and is remembered by the Workspace system.
+* NEW: Added a Delete API setting in the ComicRack.ini that let's you change which API is used to move files to the recycle bin. (See ComicRack.ini)
 
 
 * CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.
@@ -57,12 +60,14 @@ Community Edition Build 0.9.180:
 * CHANGE: Removed everything to do with Twitter.
 * CHANGE: Made some combobox lists bigger. The source list in smart lists is 3x longer. Publisher, Imprint & Age Rating are 2x longer.
 * CHANGE: The Contains Any & Contains All smart list can now separate entries with a comma (,) or semicolon (;). Previously only spaces were used to separate entries. The separation by spaces still takes priority if there are no comma or semicolon, so existing lists should not change.
+* CHANGE: Updated file assocation done by the program to use registry keys recommended by Microsoft for Windows XP+.
+* CHANGE: Replaced the API used to move files to the recycle bin to the newer Windows API. This should fix some issues with the recycle bin.
 
 
 * UPDATE: Updated to .NET Framework v4.8.
 * UPDATE: Updated 7-Zip to to v24.07.
 * UPDATE: Updated SharpZipLib to v1.4.2.
-* UPDATE: Updated SharpCompress to v0.38.
+* UPDATE: Updated SharpCompress to v0.39.
 * UPDATE: Updated WindowsCodePack to V1.15.
 
  
@@ -83,7 +88,7 @@ Community Edition Build 0.9.180:
 * BUGFIX: Fixed an error that would prevent syncing/pairing an android device.
 * BUGFIX: Fixed a rare crash that would happen when more than 10k handles were created. Usually happens when converting a lot of files.
 * BUGFIX: Fixed a problem were using Backup Database might not backup the latest changes. A ComicDb.xml.xml file was created instead but would backup the regular database (possibly outdated).
-
+* BUGFIX: Fixed tabs not rendering correctly when switching to tab view (while double-clicking).
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 
