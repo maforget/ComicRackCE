@@ -69,7 +69,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			new ComboBoxSkinner(cbBookLocation);
 			new ComboBoxSkinner(cbBookOwner);
 			new ComboBoxSkinner(cbBookPrice);
-			listFields.AddRange(new TextBoxEx[13]
+			listFields.AddRange(new TextBoxEx[14]
 			{
 				txWriter,
 				txPenciller,
@@ -77,6 +77,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				txColorist,
 				txEditor,
 				txCoverArtist,
+				txTranslator,
 				txLetterer,
 				txGenre,
 				txTags,
@@ -194,6 +195,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			SetText(txLetterer, "Letterer", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Letterer));
 			SetText(txCoverArtist, "CoverArtist", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.CoverArtist));
 			SetText(txEditor, "Editor", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Editor));
+			SetText(txTranslator, "Translator", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Translator));
 			SetText(cbPublisher, "Publisher", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Publisher, sort: true));
 			SetText(cbImprint, "Imprint", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Imprint, sort: true));
 			SetText(txGenre, "Genre", () => Program.Lists.GetGenreList(withSeparator: false));

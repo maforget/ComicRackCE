@@ -1071,6 +1071,7 @@ namespace cYo.Projects.ComicRack.Engine
 				AppendUniqueName(stringBuilder, "/", base.Colorist, uniqueNames);
 				AppendUniqueName(stringBuilder, "/", base.Letterer, uniqueNames);
 				AppendUniqueName(stringBuilder, "/", base.CoverArtist, uniqueNames);
+				AppendUniqueName(stringBuilder, "/", base.Translator, uniqueNames);
 
 				return stringBuilder.ToString();
 			}

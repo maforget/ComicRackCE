@@ -128,7 +128,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             new ComboBoxSkinner(cbBookAge);
             new ComboBoxSkinner(cbBookCondition);
             new ComboBoxSkinner(cbBookLocation);
-            ListSelectorControl.Register(SearchEngines.Engines, txWriter, txPenciller, txInker, txColorist, txEditor, txCoverArtist, txLetterer, txGenre, txTags, txCharacters, txTeams, txLocations, txCollectionStatus);
+            ListSelectorControl.Register(SearchEngines.Engines, txWriter, txPenciller, txInker, txColorist, txEditor, txTranslator, txCoverArtist, txLetterer, txGenre, txTags, txCharacters, txTeams, txLocations, txCollectionStatus);
             EditControlUtility.InitializeMangaYesNo(cbManga);
             EditControlUtility.InitializeYesNo(cbBlackAndWhite);
             EditControlUtility.InitializeYesNo(cbSeriesComplete);
@@ -163,7 +163,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             EditControlUtility.SetText(txLetterer, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Letterer));
             EditControlUtility.SetText(txCoverArtist, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.CoverArtist));
             EditControlUtility.SetText(txEditor, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Editor));
-            EditControlUtility.SetText(txCharacters, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Characters));
+            EditControlUtility.SetText(txTranslator, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Translator));
+			EditControlUtility.SetText(txCharacters, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Characters));
             EditControlUtility.SetText(txTeams, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Teams));
             EditControlUtility.SetText(txMainCharacterOrTeam, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.MainCharacterOrTeam));
             EditControlUtility.SetText(txLocations, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Locations));
@@ -337,7 +338,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             EditControlUtility.SetText(txLetterer, comic.Letterer);
             EditControlUtility.SetText(txCoverArtist, comic.CoverArtist);
             EditControlUtility.SetText(txEditor, comic.Editor);
-            EditControlUtility.SetText(cbFormat, comic.Format);
+            EditControlUtility.SetText(txTranslator, comic.Translator);
+			EditControlUtility.SetText(cbFormat, comic.Format);
             EditControlUtility.SetText(cbAgeRating, comic.AgeRating);
             EditControlUtility.SetText(cbPublisher, comic.Publisher);
             EditControlUtility.SetText(cbImprint, comic.Imprint);
@@ -444,7 +446,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             comic.Letterer = EditControlUtility.GetText(txLetterer, comic.Letterer);
             comic.CoverArtist = EditControlUtility.GetText(txCoverArtist, comic.CoverArtist);
             comic.Editor = EditControlUtility.GetText(txEditor, comic.Editor);
-            comic.Colorist = EditControlUtility.GetText(txColorist, comic.Colorist);
+            comic.Translator = EditControlUtility.GetText(txTranslator, comic.Translator);
+			comic.Colorist = EditControlUtility.GetText(txColorist, comic.Colorist);
             comic.Genre = EditControlUtility.GetText(txGenre, comic.Genre);
             comic.Characters = EditControlUtility.GetText(txCharacters, comic.Characters);
             comic.Teams = EditControlUtility.GetText(txTeams, comic.Teams);

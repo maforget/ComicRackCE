@@ -68,6 +68,8 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private string editor = string.Empty;
 
+		private string translator = string.Empty;
+
 		private string publisher = string.Empty;
 
 		private string imprint = string.Empty;
@@ -489,6 +491,22 @@ namespace cYo.Projects.ComicRack.Engine
 			set
 			{
 				SetProperty("Editor", ref editor, value);
+			}
+		}
+
+		[Browsable(true)]
+		[Searchable]
+		[DefaultValue("")]
+		[ResetValue(0)]
+		public string Translator
+		{
+			get
+			{
+				return translator;
+			}
+			set
+			{
+				SetProperty("Translator", ref translator, value);
 			}
 		}
 
@@ -1170,6 +1188,7 @@ namespace cYo.Projects.ComicRack.Engine
 			Colorist = Colorist.AppendWithSeparator(", ", ci.Colorist);
 			Letterer = Letterer.AppendWithSeparator(", ", ci.Letterer);
 			CoverArtist = CoverArtist.AppendWithSeparator(", ", ci.CoverArtist);
+			Translator = Translator.AppendWithSeparator(", ", ci.Translator);
 		}
 
 		public virtual void SetInfo(ComicInfo ci, bool onlyUpdateEmpty = true, bool updatePages = true)
@@ -1241,6 +1260,10 @@ namespace cYo.Projects.ComicRack.Engine
 			if (!onlyUpdateEmpty || string.IsNullOrEmpty(Editor))
 			{
 				Editor = ci.Editor;
+			}
+			if (!onlyUpdateEmpty || string.IsNullOrEmpty(Translator))
+			{
+				Translator = ci.Translator;
 			}
 			if (!onlyUpdateEmpty || string.IsNullOrEmpty(Letterer))
 			{
@@ -1407,6 +1430,7 @@ namespace cYo.Projects.ComicRack.Engine
 					Genre = Genre,
 					Colorist = Colorist,
 					Editor = Editor,
+					Translator = Translator,
 					Letterer = Letterer,
 					CoverArtist = CoverArtist,
 					Web = Web,
@@ -1436,7 +1460,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public bool IsSameContent(ComicInfo ci, bool withPages = true)
 		{
-			if (ci != null && ci.Writer == Writer && ci.Publisher == Publisher && ci.Imprint == Imprint && ci.Inker == Inker && ci.Penciller == Penciller && ci.Title == Title && ci.Number == Number && ci.Count == Count && ci.Summary == Summary && ci.Series == Series && ci.Volume == Volume && ci.AlternateSeries == AlternateSeries && ci.AlternateNumber == AlternateNumber && ci.AlternateCount == AlternateCount && ci.StoryArc == StoryArc && ci.SeriesGroup == SeriesGroup && ci.Year == Year && ci.Month == Month && ci.Day == Day && ci.Notes == Notes && ci.Review == Review && ci.Genre == Genre && ci.Colorist == Colorist && ci.Editor == Editor && ci.Letterer == Letterer && ci.CoverArtist == CoverArtist && ci.Web == Web && ci.LanguageISO == LanguageISO && ci.PageCount == PageCount && ci.Format == Format && ci.AgeRating == AgeRating && ci.BlackAndWhite == BlackAndWhite && ci.Manga == Manga && ci.Characters == Characters && ci.Teams == Teams && ci.MainCharacterOrTeam == MainCharacterOrTeam && ci.Locations == Locations && ci.ScanInformation == ScanInformation && ci.Tags == Tags)
+			if (ci != null && ci.Writer == Writer && ci.Publisher == Publisher && ci.Imprint == Imprint && ci.Inker == Inker && ci.Penciller == Penciller && ci.Title == Title && ci.Number == Number && ci.Count == Count && ci.Summary == Summary && ci.Series == Series && ci.Volume == Volume && ci.AlternateSeries == AlternateSeries && ci.AlternateNumber == AlternateNumber && ci.AlternateCount == AlternateCount && ci.StoryArc == StoryArc && ci.SeriesGroup == SeriesGroup && ci.Year == Year && ci.Month == Month && ci.Day == Day && ci.Notes == Notes && ci.Review == Review && ci.Genre == Genre && ci.Colorist == Colorist && ci.Editor == Editor && ci.Translator == Translator && ci.Letterer == Letterer && ci.CoverArtist == CoverArtist && ci.Web == Web && ci.LanguageISO == LanguageISO && ci.PageCount == PageCount && ci.Format == Format && ci.AgeRating == AgeRating && ci.BlackAndWhite == BlackAndWhite && ci.Manga == Manga && ci.Characters == Characters && ci.Teams == Teams && ci.MainCharacterOrTeam == MainCharacterOrTeam && ci.Locations == Locations && ci.ScanInformation == ScanInformation && ci.Tags == Tags)
 			{
 				if (withPages)
 				{

@@ -49,6 +49,10 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo
 						c.Roles.Where(r =>
 							r.Value.ToString().Contains("Editor")
 						).Select(r => c.Creator.Value))),
+					Translator = string.Join(delimiter, metronInfo.Credits.SelectMany(c =>
+						c.Roles.Where(r =>
+							r.Value.ToString().Contains("Translator")
+						).Select(r => c.Creator.Value))),
 					Letterer = string.Join(delimiter, metronInfo.Credits.SelectMany(c => 
 						c.Roles.Where(r =>
 							r.Value == RoleValues.Letterer

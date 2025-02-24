@@ -248,6 +248,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 				new SelectionEntry(index, 34, "StoryArc", "Story Arcs", typeof(ComicBookStoryArcMatcher), multiValue: false),
 				new SelectionEntry(index, 35, "ScanInformation", "Scan Information", typeof(ComicBookScanInformationMatcher), multiValue: false),
 				new SelectionEntry(index, 36, "Web", "Web", typeof(ComicBookWebMatcher), multiValue: false),
+				new SelectionEntry(index, 37, "Translator", "Translator", typeof(ComicBookTranslatorMatcher), multiValue: true),
 				.. CreateVirtualTagEntries(index),
 			];
 			int idToSelect = update && cb.SelectedItem != null ? (cb.SelectedItem as SelectionEntry)?.Id ?? selected : selected;
