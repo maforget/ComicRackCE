@@ -36,17 +36,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DynamicExpresso.Core" Version="2.16.1" />
+    <PackageReference Include="DynamicExpresso.Core" Version="2.17.2" />
     <PackageReference Include="PolySharp">
-      <Version>1.14.1</Version>
+      <Version>1.15.0</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="SharpZipLib">
       <Version>1.4.2</Version>
     </PackageReference>
-    <PackageReference Include="System.Management" Version="8.0.0" />
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="System.Management" Version="9.0.2" />
+    <PackageReference Include="System.Text.Json" Version="9.0.2" />
   </ItemGroup>
   <PropertyGroup />
 </Project>

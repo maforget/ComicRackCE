@@ -148,7 +148,7 @@
             <Version>1.1.5</Version>
         </PackageReference>
         <PackageReference Include="PolySharp">
-            <Version>1.14.1</Version>
+            <Version>1.15.0</Version>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
@@ -176,7 +176,7 @@
         <Exec Command="git rev-parse HEAD &gt; &quot;CurrentCommit.txt&quot;&#xD;&#xA;git status --porcelain &gt; &quot;isDirty.txt&quot;&#xD;&#xA;exit 0" />
     </Target>
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Exec Command="cd $(OutDir)&#xD;&#xA;echo %25cd%25&#xD;&#xA;xcopy /Y x64\pdfium.dll Resources\pdfium_x64.dll*&#xD;&#xA;xcopy /Y x86\pdfium.dll Resources\pdfium_x86.dll*&#xD;&#xA;rmdir /S /Q arm64&#xD;&#xA;rmdir /S /Q Lib&#xD;&#xA;rmdir /S /Q x64&#xD;&#xA;rmdir /S /Q x86&#xD;&#xA;del /Q PDFiumSharp.xml&#xD;&#xA;&#xD;&#xA;if $(Configuration) == Debug Goto :Exit&#xD;&#xA;del /Q *.pdb&#xD;&#xA;&#xD;&#xA;: Exit" />
+        <Exec Command="cd $(OutDir)&#xD;&#xA;echo %25cd%25&#xD;&#xA;xcopy /Y x64\pdfium.dll Resources\pdfium_x64.dll*&#xD;&#xA;xcopy /Y x86\pdfium.dll Resources\pdfium_x86.dll*&#xD;&#xA;rmdir /S /Q arm64&#xD;&#xA;rmdir /S /Q Lib&#xD;&#xA;rmdir /S /Q x64&#xD;&#xA;rmdir /S /Q x86&#xD;&#xA;rmdir /S /Q de&#xD;&#xA;&#xD;&#xA;if $(Configuration) == Debug Goto :Exit&#xD;&#xA;del /Q *.pdb&#xD;&#xA;&#xD;&#xA;: Exit" />
     </Target>
     <Target Name="CompressIconFolders" AfterTargets="PostBuild">
         <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(SolutionDir)CompressIconFolders.ps1&quot; -BaseDirectory &quot;$(OutDir)&quot;" />
