@@ -826,6 +826,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				ComicBook.AgeRatingIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "AgeRatings*.zip"), SplitIconKeys);
 				ComicBook.FormatIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Formats*.zip"), SplitIconKeys);
 				ComicBook.SpecialIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Special*.zip"), SplitIconKeys);
+				ComicBook.GenericIcons = CreateGenericsIcons(defaultLocations, "*.zip", "_", SplitIconKeys);
 				ToolStripRenderer renderer;
 				if (ExtendedSettings.SystemToolBars)
 				{
@@ -943,6 +944,18 @@ namespace cYo.Projects.ComicRack.Viewer
 				MainForm.ShowNews(always: false);
 			}
 			Application.Run(MainForm);
+		}
+
+		public static Dictionary<string, ImagePackage> CreateGenericsIcons(IEnumerable<string> folders, string searchPattern, string trigger, Func<string, IEnumerable<string>> mapKeys = null)
+		{
+			Dictionary<string, ImagePackage> dictionary = new Dictionary<string, ImagePackage>();
+			foreach (var generic in ZipFileFolder.CreateDictionaryFromFiles(folders, searchPattern, trigger))
+			{
+				var icons = new ImagePackage { EnableWidthCropping = true };
+				icons.Add(generic.Value, SplitIconKeys);
+				dictionary.Add(generic.Key, icons);
+			}
+			return dictionary;
 		}
 
 		private static IEnumerable<string> SplitIconKeys(string value)

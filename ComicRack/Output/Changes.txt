@@ -33,6 +33,7 @@ Community Edition Build 0.9.180:
 * NEW: Added the Translator field as per the anansi-project/comicinfo.
 * NEW: The Preference dialog is now resizable and is remembered by the Workspace system.
 * NEW: Added a Delete API setting in the ComicRack.ini that let's you change which API is used to move files to the recycle bin. (See ComicRack.ini)
+* NEW: Possible to add icons that apply to any writable string fields. Just give the zip the name of the field with the "_" prefix in front. (Ex: "Carl Barks.png" inside "_Writer".) 
 
 
 * CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.

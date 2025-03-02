@@ -1614,6 +1614,8 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public static ImagePackage SpecialIcons => specialIcons;
 
+		public static Dictionary<string, ImagePackage> GenericIcons { get; set; } = new Dictionary<string, ImagePackage>(StringComparer.OrdinalIgnoreCase);
+
 		public static bool NewBooksChecked
 		{
 			get;
@@ -1950,11 +1952,34 @@ namespace cYo.Projects.ComicRack.Engine
 				if (image != null)
 					yield return image;
 			}
+			foreach (var image2 in GetGenericImages())
+			{
+				if (image2 != null)
+					yield return image2;
+			}
 		}
 
 		public IEnumerable<Image> GetIcons()
 		{
 			return GetIconsInternal();
+		}
+
+		private IEnumerable<Image> GetGenericImages()
+		{
+			var properties = GetWritableStringProperties();
+			foreach (var imagePackage in GenericIcons)
+			{
+				if (properties.Contains(imagePackage.Key))
+				{
+					var propertiesValues = GetStringPropertyValue(imagePackage.Key).FromListString(',');
+					foreach (var propertiesValue in propertiesValues)
+					{
+						Image image = imagePackage.Value.GetImage(propertiesValue);
+						if (image != null)
+							yield return image;
+					}
+				}
+			}
 		}
 
 		public void CopyFrom(ComicBook cb)
