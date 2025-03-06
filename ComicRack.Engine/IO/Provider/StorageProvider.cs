@@ -47,7 +47,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                 array = WebpImage.ConvertToJpeg(data);
                 array = DjVuImage.ConvertToJpeg(data);
                 array = HeifAvifImage.ConvertToJpeg(data);
-                return BitmapExtensions.BitmapFromBytes(array);
+				array = Jpeg2000Image.ConvertToJpeg(data);
+				return BitmapExtensions.BitmapFromBytes(array);
             }
 
             public byte[] GetThumbnailData(StorageSetting setting)
@@ -368,8 +369,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             ".webp" => StoragePageType.Webp,
             ".heif" or ".heic" => StoragePageType.Heif,
             ".avif" => StoragePageType.Avif,
-            //".jxl" => StoragePageType.JpegXL,
-            _ => StoragePageType.Jpeg,
+			//".jp2" or ".j2k" => StoragePageType.Jpeg2000,
+			//".jxl" => StoragePageType.JpegXL,
+			_ => StoragePageType.Jpeg,
         };
 
         private static string GetExtensionFromStoragePageType(StoragePageType storagePageType) => storagePageType switch
@@ -382,6 +384,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             StoragePageType.Webp => ".webp",
             StoragePageType.Heif => ".heif",
             StoragePageType.Avif => ".avif",
+            //StoragePageType.Jpeg2000 => ".jp2",
             //StoragePageType.JpegXL => ".jxl",
             _ => ".jpg",
         };
@@ -396,6 +399,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             StoragePageType.Webp => WebpImage.ConvertoToWebp(bitmap, setting.PageCompression),
             StoragePageType.Heif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, false),
             StoragePageType.Avif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, true),
+            //StoragePageType.Jpeg2000 => Jpeg2000Image.ConvertToJpeg2000(bitmap, setting.PageCompression, true),
             //StoragePageType.JpegXL => JpegXLImage.ConvertToJpegXL(bitmap),
             _ => bitmap.ImageToBytes(ImageFormat.Jpeg, 24, setting.PageCompression),
         };

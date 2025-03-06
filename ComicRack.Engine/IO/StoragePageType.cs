@@ -12,6 +12,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 		Webp,
 		Heif,
 		Avif,
-		//JpegXL
+		//Jpeg2000,
+		//JpegXL,
 	}
 }

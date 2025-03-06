@@ -67,6 +67,7 @@ Internally:
 	* WEBP
 	* HEIF & HEIC
 	* AVIF
+	* Jpeg2000
 
 4) NOTABLE UNSUPPORTED ITEMS
 ============================

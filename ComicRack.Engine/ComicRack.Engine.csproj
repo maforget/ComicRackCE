@@ -82,6 +82,7 @@
     <PackageReference Include="bblanchon.PDFium.Win32">
       <Version>135.0.7033</Version>
     </PackageReference>
+    <PackageReference Include="CSJ2K" Version="3.0.0" />
     <PackageReference Include="LibHeifSharp" Version="3.2.0" />
     <PackageReference Include="Microsoft.Bcl.Numerics" Version="9.0.2" />
     <PackageReference Include="MySqlConnector">
