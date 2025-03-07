@@ -10,6 +10,7 @@ using cYo.Common.Runtime;
 using cYo.Common.Text;
 using cYo.Common.Threading;
 using System.Xml.Serialization;
+using cYo.Common.Xml;
 
 namespace cYo.Common.IO
 {
@@ -19,7 +20,6 @@ namespace cYo.Common.IO
 		public class CacheItem
 		{
 			private long length;
-			private static Type[] extraTypes;
 
 			public string File
 			{
@@ -60,25 +60,6 @@ namespace cYo.Common.IO
 				Key = key;
 				File = file;
 				this.length = length;
-			}
-
-			public static Type[] GetExtraXmlSerializationTypes()
-			{
-				if (extraTypes == null)
-				{
-					List<Type> list = new List<Type>();
-					list.Add(typeof(K));
-					list.AddRange(GetDerivedTypes(typeof(K)));
-					extraTypes = list.ToArray();
-				}
-				return extraTypes;
-			}
-
-			private static IEnumerable<Type> GetDerivedTypes(Type baseType)
-			{
-				return AppDomain.CurrentDomain.GetAssemblies()
-					.SelectMany(assembly => assembly.GetTypes())
-					.Where(type => type.IsSubclassOf(baseType));
 			}
 		}
 
@@ -292,10 +273,7 @@ namespace cYo.Common.IO
 		{
 			try
 			{
-				using (FileStream inStream = File.OpenRead(cacheIndexFile))
-				{
-					return GetSerializer().Deserialize(inStream) as List<CacheItem>;
-				}
+				return XmlUtility.Load<List<CacheItem>>(cacheIndexFile);
 			}
 			catch (Exception)
 			{
@@ -355,27 +333,18 @@ namespace cYo.Common.IO
 				try
 				{
 					CacheIndexDirty = false;
-					XmlSerializer serializer = GetSerializer();
 					List<CacheItem> graph;
 					using (ItemMonitor.Lock(fileList))
 					{
 						graph = fileList.ToList();
 					}
-					using (Stream serializationStream = File.Create(cacheIndexFile))
-					{
-						serializer.Serialize(serializationStream, graph);
-					}
+					XmlUtility.Store(cacheIndexFile, graph);
 				}
 				catch (Exception)
 				{
 					throw;
 				}
 			}
-		}
-
-		private static XmlSerializer GetSerializer()
-		{
-			return new XmlSerializer(typeof(List<CacheItem>), CacheItem.GetExtraXmlSerializationTypes());
 		}
 
 		private LinkedListNode<CacheItem> GetCacheItem(K key)

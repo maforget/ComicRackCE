@@ -6,6 +6,8 @@ using cYo.Common.Drawing;
 namespace cYo.Projects.ComicRack.Engine.IO
 {
 	[Serializable]
+	[XmlInclude(typeof(PageKey))]
+	[XmlInclude(typeof(ThumbnailKey))]
 	public abstract class ImageKey
 	{
 		private string location;
