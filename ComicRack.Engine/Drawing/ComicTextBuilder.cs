@@ -104,7 +104,7 @@ namespace cYo.Projects.ComicRack.Engine.Drawing
 			{
 				yield return new TextLine(comicBook.BookStore.AppendWithSeparator("/", comicBook.BookPriceAsText), GetNormalFont(font), foreColor, StringFormatFlags.NoWrap);
 			}
-			if (flags.HasFlag(ComicTextElements.StorageInfoformation))
+			if (flags.HasFlag(ComicTextElements.StorageInformation))
 			{
 				yield return new TextLine(comicBook.BookLocation.AppendWithSeparator("/", comicBook.BookAge, comicBook.BookCondition), GetNormalFont(font), foreColor, StringFormatFlags.NoWrap);
 			}

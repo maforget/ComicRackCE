@@ -29,7 +29,7 @@ namespace cYo.Projects.ComicRack.Engine.Drawing
 		Locations = 0x8000,
 		Notes = 0x10000,
 		PurchaseInformation = 0x20000,
-		StorageInfoformation = 0x40000,
+		StorageInformation = 0x40000,
 		CollectionStatus = 0x80000,
 		ScanInformation = 0x100000,
 		Released = 0x200000,
