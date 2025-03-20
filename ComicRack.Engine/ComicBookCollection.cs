@@ -97,6 +97,16 @@ namespace cYo.Projects.ComicRack.Engine
 			return Find((ComicBook cb) => string.Equals(cb.FileName, name, StringComparison.OrdinalIgnoreCase) && cb.FileSize == fi.Length);
 		}
 
+		public ComicBook FindItemByHash(ComicBook comicBook)
+		{
+			string hash = comicBook.Hash(asIndex: true);
+			if (!string.IsNullOrEmpty(hash))
+			{
+				return Find((ComicBook cb) => string.Equals(cb.CreatePageHash(), hash, StringComparison.OrdinalIgnoreCase));
+			}
+			return null;
+		}
+
 		private void OnBookAdded(ComicBook item)
 		{
 			using (ItemMonitor.Lock(fileDictionary))

@@ -23,6 +23,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 			return ImageProvider.CreateHashFromImageList(foundImageList);
 		}
 
+		public override string CreateHashUsingIndex()
+		{
+			return CreateHashFromImageList(foundImageList, asIndex: true);
+		}
+
 		protected IEnumerable<ProviderImageInfo> GetFileList()
 		{
 			return imageArchive.GetEntryList(base.Source);

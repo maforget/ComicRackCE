@@ -216,6 +216,10 @@ namespace cYo.Projects.ComicRack.Engine
 				{
 					comicBook2.FilePath = comicBook.FilePath;
 				}
+				else if(factory.Storage.FindItemByHash(comicBook) is ComicBook comicBook3 && comicBook3 != null && !string.IsNullOrEmpty(comicBook3.FilePath))
+				{
+					comicBook3.FilePath = comicBook.FilePath;
+				}
 				else if (factory.Storage[comicBook.FilePath] == null)
 				{
 					comicBook.AddedTime = DateTime.Now;

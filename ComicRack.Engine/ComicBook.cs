@@ -2245,12 +2245,15 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public string Hash()
+		public string Hash(bool asIndex = true)
 		{
 			try
 			{
 				if (EditMode.IsLocalComic() && !string.IsNullOrEmpty(FilePath) && File.Exists(FilePath))
 				{
+					if (asIndex)
+						return CreateFileHash(asIndex: true);
+
 					return CreateFileHash();
 				}
 			}
@@ -2442,13 +2445,35 @@ namespace cYo.Projects.ComicRack.Engine
 			RefreshInfoFromFile(RefreshInfoOptions.GetFastPageCount);
 		}
 
-		public string CreateFileHash()
+		public string CreateFileHash(bool asIndex = false)
 		{
 			using (ImageProvider imageProvider = CreateImageProvider())
 			{
+				if (imageProvider is null || imageProvider is IO.Provider.Readers.WebComicProvider)
+					return null;
+
 				imageProvider.Open(async: false);
+
+				if (asIndex)
+					return imageProvider.CreateHashUsingIndex();
+
 				return imageProvider.CreateHash();
 			}
+		}
+
+		public string CreatePageHash()
+		{
+			try
+			{
+				if (EditMode.IsLocalComic())
+				{
+					return Pages.CreatePageHash();
+				}
+			}
+			catch
+			{
+			}
+			return null;
 		}
 
 		public void RefreshFileProperties()

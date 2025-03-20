@@ -207,6 +207,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 
 		public abstract string CreateHash();
 
+		public virtual string CreateHashUsingIndex() => CreateHash();
+
 		private void Parse()
 		{
 			using (LockSource(readOnly: true))
@@ -289,7 +291,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		protected static string CreateHashFromImageList(IEnumerable<ProviderImageInfo> images)
+		protected static string CreateHashFromImageList(IEnumerable<ProviderImageInfo> images, bool asIndex = false)
 		{
 			using (MemoryStream output = new MemoryStream())
 			{
@@ -297,7 +299,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 				{
 					foreach (ProviderImageInfo image in images)
 					{
-						binaryWriter.Write(image.Name);
+						if (asIndex) binaryWriter.Write(image.Index); else binaryWriter.Write(image.Name);
 						binaryWriter.Write(image.Size);
 					}
 					binaryWriter.Flush();
