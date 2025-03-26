@@ -1008,10 +1008,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.cbLanguage.Location = new System.Drawing.Point(416, 276);
 			this.cbLanguage.Name = "cbLanguage";
 			this.cbLanguage.SelectedCulture = "";
-			this.cbLanguage.SelectedTwoLetterISOLanguage = "";
 			this.cbLanguage.Size = new System.Drawing.Size(139, 21);
 			this.cbLanguage.TabIndex = 51;
-			this.cbLanguage.TopTwoLetterISOLanguages = null;
+			this.cbLanguage.TopISOLanguages = null;
 			// 
 			// cbPublisher
 			// 

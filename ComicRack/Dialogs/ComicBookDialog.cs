@@ -356,8 +356,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             dtpAddedTime.Value = comic.AddedTime;
             dtpReleasedTime.Value = comic.ReleasedTime;
             dtpOpenedTime.Value = comic.OpenedTime;
-            cbLanguage.TopTwoLetterISOLanguages = Program.Lists.GetComicFieldList((ComicBook cb) => cb.LanguageISO).Cast<string>().Distinct();
-            cbLanguage.SelectedTwoLetterISOLanguage = comic.LanguageISO;
+            cbLanguage.TopISOLanguages = Program.Lists.GetComicFieldList((ComicBook cb) => cb.LanguageISO).Cast<string>().Distinct();
+            cbLanguage.SelectedCulture = comic.LanguageISO;
             customValuesData.Rows.Clear();
             foreach (string item in Program.Database.CustomValues.OrderBy((string s) => s))
             {
@@ -537,7 +537,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             }
             comic.AddedTime = dtpAddedTime.Value;
             comic.ReleasedTime = dtpReleasedTime.Value;
-            comic.LanguageISO = cbLanguage.SelectedTwoLetterISOLanguage;
+            comic.LanguageISO = cbLanguage.SelectedCulture;
             comic.Rating = txRating.Rating;
             comic.CommunityRating = txCommunityRating.Rating;
             comic.ColorAdjustment = pageViewer.ColorAdjustment;

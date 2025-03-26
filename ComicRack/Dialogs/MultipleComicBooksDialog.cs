@@ -87,7 +87,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				txCollectionStatus
 			});
 			ListSelectorControl.Register(SearchEngines.Engines, listFields.ToArray());
-			cbLanguage.TopTwoLetterISOLanguages = Program.Lists.GetComicFieldList((ComicBook cb) => cb.LanguageISO).Cast<string>().Distinct();
+			cbLanguage.TopISOLanguages = Program.Lists.GetComicFieldList((ComicBook cb) => cb.LanguageISO).Cast<string>().Distinct();
 			this.books = books.ToArray();
 			Text = StringUtility.Format(Text, books.Count());
 			labelOpenedTime.Visible = (dtpOpenedTime.Visible = (dtpOpenedTime.Enabled = (labelPagesAsTextSimple.Visible = (txPagesAsTextSimple.Visible = (txPagesAsTextSimple.Enabled = !books.Any((ComicBook cb) => cb.IsLinked))))));
