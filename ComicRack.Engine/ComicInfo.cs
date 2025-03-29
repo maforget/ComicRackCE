@@ -1147,13 +1147,26 @@ namespace cYo.Projects.ComicRack.Engine
 		private bool SetProperty<T>(string name, ref T property, T value)
 		{
 			if (object.Equals(property, value))
-			{
 				return false;
-			}
+
+			if (CheckMultilineEquality(property, value))
+				return false;
+
 			T val = property;
 			property = value;
 			FireBookChanged(name, val, value);
 			return true;
+		}
+
+		protected static bool CheckMultilineEquality<T>(T property, T value)
+		{
+			if (typeof(T) == typeof(string))
+			{
+				string propStr = property as string;
+				string valueStr = value as string;
+				return StringUtility.IsMultilineTextEqual(propStr, valueStr);
+			}
+			return object.Equals(property, value);
 		}
 
 		private void FireBookChanged(string name, object oldValue, object newValue)

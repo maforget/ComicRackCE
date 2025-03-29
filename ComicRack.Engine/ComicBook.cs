@@ -2487,22 +2487,22 @@ namespace cYo.Projects.ComicRack.Engine
 		private bool SetProperty<T>(string name, ref T property, T value, bool lockItem = false, bool addUndo = true)
 		{
 			if (object.Equals(property, value))
-			{
 				return false;
-			}
+
+			if (CheckMultilineEquality(property, value))
+				return false;
+
 			T val = property;
 			using (lockItem ? ItemMonitor.Lock(this) : null)
 			{
 				property = value;
 			}
+
 			if (addUndo)
-			{
 				FireBookChanged(name, val, value);
-			}
 			else
-			{
 				FireBookChanged(name);
-			}
+
 			return true;
 		}
 

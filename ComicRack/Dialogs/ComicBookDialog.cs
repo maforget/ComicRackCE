@@ -440,7 +440,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             comic.StoryArc = EditControlUtility.GetText(txStoryArc, comic.StoryArc);
             comic.SeriesGroup = EditControlUtility.GetText(txSeriesGroup, comic.SeriesGroup);
             comic.Writer = EditControlUtility.GetText(txWriter, comic.Writer);
-            comic.Summary = EditControlUtility.GetText(txSummary, comic.Summary);
+            comic.Summary = EditControlUtility.GetText(txSummary, StringUtility.MakeEditBoxMultiline(comic.Summary));
             comic.Penciller = EditControlUtility.GetText(txPenciller, comic.Penciller);
             comic.Inker = EditControlUtility.GetText(txInker, comic.Inker);
             comic.Letterer = EditControlUtility.GetText(txLetterer, comic.Letterer);
@@ -453,8 +453,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             comic.Teams = EditControlUtility.GetText(txTeams, comic.Teams);
             comic.MainCharacterOrTeam = EditControlUtility.GetText(txMainCharacterOrTeam, comic.MainCharacterOrTeam);
             comic.Locations = EditControlUtility.GetText(txLocations, comic.Locations);
-            comic.Notes = EditControlUtility.GetText(txNotes, comic.Notes);
-            comic.Review = EditControlUtility.GetText(txReview, comic.Review);
+            comic.Notes = EditControlUtility.GetText(txNotes, StringUtility.MakeEditBoxMultiline(comic.Notes));
+            comic.Review = EditControlUtility.GetText(txReview, StringUtility.MakeEditBoxMultiline(comic.Review));
             comic.ScanInformation = EditControlUtility.GetText(txScanInformation, comic.ScanInformation);
             comic.Web = EditControlUtility.GetText(txWeblink, comic.Web);
             comic.Tags = EditControlUtility.GetText(txTags, comic.Tags);

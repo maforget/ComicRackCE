@@ -503,6 +503,16 @@ namespace cYo.Common.Text
 			return text?.Replace("\r\n", "\n").Replace("\n", "\r\n");
 		}
 
+		public static string NormalizeLineEndings(string text)
+		{
+			return text?.Replace("\r\n", "\n").Replace("\r", "\n");
+		}
+
+		public static bool IsMultilineTextEqual(string property, string value)
+		{
+			return string.Equals(NormalizeLineEndings(property), NormalizeLineEndings(value));
+		}
+
 		public static IEnumerable<string> TrimStrings(this IEnumerable<string> list)
 		{
 			return list.Select((string x) => x.Trim());
