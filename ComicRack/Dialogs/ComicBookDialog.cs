@@ -350,7 +350,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             EditControlUtility.SetText(cbBookPrice, comic.BookPriceAsText);
             EditControlUtility.SetText(cbBookLocation, comic.BookLocation);
             EditControlUtility.SetText(txCollectionStatus, comic.BookCollectionStatus);
-            EditControlUtility.SetText(txBookNotes, comic.BookNotes);
+            EditControlUtility.SetText(txBookNotes, StringUtility.MakeEditBoxMultiline(comic.BookNotes));
             EditControlUtility.SetText(txISBN, comic.ISBN);
             EditControlUtility.SetText(txPagesAsTextSimple, comic.PagesAsTextSimple);
             dtpAddedTime.Value = comic.AddedTime;
