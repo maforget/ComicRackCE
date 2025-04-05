@@ -34,6 +34,7 @@ Community Edition Build 0.9.180:
 * NEW: The Preference dialog is now resizable and is remembered by the Workspace system.
 * NEW: Added a Delete API setting in the ComicRack.ini that let's you change which API is used to move files to the recycle bin. (See ComicRack.ini)
 * NEW: Possible to add icons that apply to any writable string fields. Just give the zip the name of the field with the "_" prefix in front. (Ex: "Carl Barks.png" inside "_Writer".) 
+* NEW: Added read support for Jpeg2000 images (.j2k & .jp2). It is a bit slow, so I wouldl use it to convert to another file format.
 
 
 * CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.
@@ -63,6 +64,7 @@ Community Edition Build 0.9.180:
 * CHANGE: The Contains Any & Contains All smart list can now separate entries with a comma (,) or semicolon (;). Previously only spaces were used to separate entries. The separation by spaces still takes priority if there are no comma or semicolon, so existing lists should not change.
 * CHANGE: Updated file assocation done by the program to use registry keys recommended by Microsoft for Windows XP+.
 * CHANGE: Replaced the API used to move files to the recycle bin to the newer Windows API. This should fix some issues with the recycle bin.
+* CHANGE: Language will now use the full language code instead just the 2 letter ISO code. (Ex: "en-US" instead of "en").
 
 
 * UPDATE: Updated to .NET Framework v4.8.
@@ -90,6 +92,7 @@ Community Edition Build 0.9.180:
 * BUGFIX: Fixed a rare crash that would happen when more than 10k handles were created. Usually happens when converting a lot of files.
 * BUGFIX: Fixed a problem were using Backup Database might not backup the latest changes. A ComicDb.xml.xml file was created instead but would backup the regular database (possibly outdated).
 * BUGFIX: Fixed tabs not rendering correctly when switching to tab view (while double-clicking).
+* BUGFIX: Opening the Info dialog would mark some file as requiring an update even when nothing was changed.
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 
