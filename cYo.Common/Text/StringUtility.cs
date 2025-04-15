@@ -498,6 +498,33 @@ namespace cYo.Common.Text
 			return text;
 		}
 
+		public static string AppendUniqueValueToList(this string target, string value, char delimiter = ',')
+		{
+			string returnValue = target;
+			if (!string.IsNullOrEmpty(value))
+			{
+				HashSet<string> uniqueValues = new HashSet<string>() { };
+				StringBuilder stringBuilder = new StringBuilder(returnValue); //create a new StringBuilder containing the current value
+
+				var values = value.Split(delimiter, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
+				var existing = returnValue.Split(delimiter, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
+
+				foreach (var item in values)
+				{
+					if (!string.IsNullOrEmpty(item) && !existing.Contains(item) && uniqueValues.Add(item)) //Add only unique values that don't already exist
+					{
+						if (stringBuilder.Length != 0)
+						{
+							stringBuilder.Append($"{delimiter} ");
+						}
+						stringBuilder.Append(item);
+					}
+				}
+				returnValue = stringBuilder.ToString();
+			}
+			return returnValue;
+		}
+
 		public static string MakeEditBoxMultiline(string text)
 		{
 			return text?.Replace("\r\n", "\n").Replace("\n", "\r\n");

@@ -35,6 +35,7 @@ Community Edition Build 0.9.180:
 * NEW: Added a Delete API setting in the ComicRack.ini that let's you change which API is used to move files to the recycle bin. (See ComicRack.ini)
 * NEW: Possible to add icons that apply to any writable string fields. Just give the zip the name of the field with the "_" prefix in front. (Ex: "Carl Barks.png" inside "_Writer".) 
 * NEW: Added read support for Jpeg2000 images (.j2k & .jp2). It is a bit slow, so I wouldl use it to convert to another file format.
+* NEW: Added an option to append a tag during export. It will append tags (only if they do not already exists) to the book file & to the library (only if set to replace or add to library).
 
 
 * CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.

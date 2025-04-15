@@ -14,6 +14,7 @@ using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.IO;
 using cYo.Projects.ComicRack.Engine.IO.Provider;
 using cYo.Projects.ComicRack.Viewer.Config;
+using cYo.Projects.ComicRack.Viewer.Controls;
 using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
@@ -117,7 +118,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 					IgnoreErrorPages = chkIgnoreErrorPages.Checked,
 					KeepOriginalImageNames = chkKeepOriginalNames.Checked,
 					ImageProcessingSource = (ExportImageProcessingSource)cbImageProcessingSource.SelectedIndex,
-					ImageProcessing = new BitmapAdjustment((float)tbSaturation.Value / 100f, (float)tbBrightness.Value / 100f, (float)tbContrast.Value / 100f, (float)tbGamma.Value / 100f, Color.White, chkAutoContrast.Checked ? BitmapAdjustmentOptions.AutoContrast : BitmapAdjustmentOptions.None, tbSharpening.Value)
+					ImageProcessing = new BitmapAdjustment((float)tbSaturation.Value / 100f, (float)tbBrightness.Value / 100f, (float)tbContrast.Value / 100f, (float)tbGamma.Value / 100f, Color.White, chkAutoContrast.Checked ? BitmapAdjustmentOptions.AutoContrast : BitmapAdjustmentOptions.None, tbSharpening.Value),
+					TagsToAppend = string.IsNullOrEmpty(txTagsToAppend.Text) ? null : txTagsToAppend.Text.Trim(),
 				};
 			}
 			set
@@ -153,6 +155,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				tbGamma.Value = (int)(value.ImageProcessing.Gamma * 100f);
 				tbSharpening.Value = value.ImageProcessing.Sharpen;
 				chkAutoContrast.Checked = (value.ImageProcessing.Options & BitmapAdjustmentOptions.AutoContrast) != 0;
+				txTagsToAppend.Text = value.TagsToAppend;
 			}
 		}
 
@@ -177,6 +180,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			enumUtil = new EnumMenuUtility(contextRemovePageFilter, typeof(ComicPageType), flagsMode: true, null, Keys.None);
 			enumUtil.ValueChanged += enumUtil_ValueChanged;
 			new NiceTreeSkin(tvPresets);
+			ListSelectorControl.Register(SearchEngines.Engines, txTagsToAppend);
+			EditControlUtility.SetText(txTagsToAppend, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Tags));
 			IdleProcess.Idle += OnIdle;
 		}
 

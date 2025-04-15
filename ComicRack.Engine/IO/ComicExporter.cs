@@ -43,6 +43,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 		{
 			comicBooks = books.ToList();
 			comicInfo = CombinedComics.GetComicInfo(comicBooks);
+			comicInfo.Tags = comicInfo.Tags.AppendUniqueValueToList(setting.TagsToAppend);
 			this.setting = setting;
 			this.sequence = sequence;
 		}
