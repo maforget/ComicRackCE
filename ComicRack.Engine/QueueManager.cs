@@ -494,11 +494,10 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				if (cb.ComicInfoIsDirty && Settings.UpdateComicFiles && (Settings.AutoUpdateComicsFiles || alwaysWrite))
 				{
-					cb.ComicInfoIsDirty = false;
 					WriteInfoToFileWithCacheUpdate(cb);
 				}
 			});
-		}
+			}
 
 		public void AddBookToFileUpdate(ComicBook cb)
 		{
@@ -526,6 +525,7 @@ namespace cYo.Projects.ComicRack.Engine
 						key.UpdateFileInfo();
 					});
 					cb.RefreshFileProperties();
+					cb.ComicInfoIsDirty = false;
 				}
 			}
 			catch (Exception)

@@ -1879,7 +1879,7 @@ namespace cYo.Projects.ComicRack.Engine
 			if (image != null)
 			{
 				yield return image;
-			}	
+			}
 			else if ((image = PublisherIcons.GetImage(GetPublisherIconKey(true))) != null)//Year Only
 			{
 				yield return image;
@@ -2348,6 +2348,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public bool WriteInfoToFile(bool withRefreshFileProperties = true)
 		{
+			bool success = false;
 			if (!EditMode.IsLocalComic())
 			{
 				return false;
@@ -2364,14 +2365,14 @@ namespace cYo.Projects.ComicRack.Engine
 				{
 					return false;
 				}
-				infoStorage.StoreInfo(GetInfo());
+				success = infoStorage.StoreInfo(GetInfo());
 				FileInfoRetrieved = true;
 			}
 			if (withRefreshFileProperties)
 			{
 				RefreshFileProperties();
 			}
-			return true;
+			return success;
 		}
 
 		public void ResetInfoRetrieved()
