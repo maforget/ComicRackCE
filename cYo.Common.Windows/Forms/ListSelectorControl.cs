@@ -378,6 +378,7 @@ namespace cYo.Common.Windows.Forms
 			int num = FormUtility.ScaleDpiX(16);
 			textBox.Width -= num;
 			Button bt = new Button();
+			bt.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 			textBox.Parent.Controls.Add(bt);
 			textBox.Parent.Controls.SetChildIndex(bt, 0);
 			bt.Bounds = new Rectangle(textBox.Right, textBox.Top, num, textBox.Height);
