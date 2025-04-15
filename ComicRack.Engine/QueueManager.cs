@@ -397,7 +397,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 			IProgressState ps = default(IProgressState);
 			string outPath = default(string);
-			ExportComicsQueue.AddItem(kcb, delegate(IAsyncResult ar)
+			ExportComicsQueue.AddItem(kcb, (IAsyncResult ar) =>
 			{
 				foreach (ComicBook cb in cbs)
 				{
@@ -406,26 +406,26 @@ namespace cYo.Projects.ComicRack.Engine
 				ComicExporter comicExporter = new ComicExporter(cbs, setting, sequence);
 				try
 				{
-					bool flag = kcb.EditMode.IsLocalComic();
-					bool flag2 = setting.Target == ExportTarget.ReplaceSource;
+					bool isLocal = kcb.EditMode.IsLocalComic();
+					bool replace = setting.Target == ExportTarget.ReplaceSource;
 					ps = ar as IProgressState;
 					if (ps != null)
 					{
 						ps.ProgressAvailable = true;
-						comicExporter.Progress += delegate(object s, StorageProgressEventArgs e)
+						comicExporter.Progress += (object s, StorageProgressEventArgs e) =>
 						{
 							ps.ProgressPercentage = e.PercentDone;
 							e.Cancel = ps.Abort;
 						};
 					}
 					IEnumerable<string> source = (from cb in cbs
-						where cb.EditMode.IsLocalComic()
-						select cb.FilePath).ToArray();
+												  where cb.EditMode.IsLocalComic()
+												  select cb.FilePath).ToArray();
 					outPath = comicExporter.Export(CacheManager.ImagePool);
 					if (outPath != null)
 					{
 						source = source.Where((string p) => !string.Equals(p, outPath, StringComparison.OrdinalIgnoreCase));
-						if (flag && flag2)
+						if (isLocal && replace)
 						{
 							kcb.FilePath = outPath;
 							kcb.RefreshFileProperties();
@@ -444,7 +444,7 @@ namespace cYo.Projects.ComicRack.Engine
 						}
 						else
 						{
-							if (setting.DeleteOriginal && flag)
+							if (setting.DeleteOriginal && isLocal)
 							{
 								foreach (string item2 in source)
 								{
@@ -452,7 +452,7 @@ namespace cYo.Projects.ComicRack.Engine
 									DatabaseManager.Database.Books.Remove(item2);
 								}
 							}
-							if (setting.AddToLibrary || flag2)
+							if (setting.AddToLibrary || replace)
 							{
 								DatabaseManager.BookFactory.Create(outPath, CreateBookOption.AddToStorage, RefreshInfoOptions.DontReadInformation)?.SetInfo(comicExporter.ComicInfo, onlyUpdateEmpty: false);
 							}
