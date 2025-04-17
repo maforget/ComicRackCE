@@ -17,9 +17,9 @@
 
 <p>
 <a href="https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCE_nightly.zip" alt="Nightly (ZIP)">
-  <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?include_prereleases&label=pre-release (zip)&logo=github" /></a>
+  <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?include_prereleases&logo=GitHub&label=pre-release%20(zip)" /></a>
 <a href="https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe" alt="Nightly (EXE)">
-  <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?include_prereleases&label=pre-release (installer)&logo=github" /></a>
+  <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?include_prereleases&logo=GitHub&label=pre-release%20(installer)" /></a>
 <br>
   <img src="https://img.shields.io/github/release-date-pre/maforget/ComicRackCE?logo=github&label=Released" /></a>   
 </p>
