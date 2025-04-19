@@ -41,6 +41,7 @@ using cYo.Projects.ComicRack.Viewer.Config;
 using cYo.Projects.ComicRack.Viewer.Dialogs;
 using cYo.Projects.ComicRack.Viewer.Properties;
 using Microsoft.Win32;
+using static IronPython.Modules._ast;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
 
 namespace cYo.Projects.ComicRack.Viewer
@@ -544,6 +545,11 @@ namespace cYo.Projects.ComicRack.Viewer
 				if (Directory.Exists(path))
 				{
 					Process.Start("explorer.exe", $"\"{path}\"");
+					return true;
+				}
+				if (Path.GetDirectoryName(path) is string dir && Directory.Exists(dir)) //Check parent dir instead
+				{
+					Process.Start("explorer.exe", $"\"{dir}\"");
 					return true;
 				}
 			}
