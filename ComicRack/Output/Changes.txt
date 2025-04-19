@@ -66,6 +66,7 @@ Community Edition Build 0.9.180:
 * CHANGE: Updated file assocation done by the program to use registry keys recommended by Microsoft for Windows XP+.
 * CHANGE: Replaced the API used to move files to the recycle bin to the newer Windows API. This should fix some issues with the recycle bin.
 * CHANGE: Language will now use the full language code instead just the 2 letter ISO code. (Ex: "en-US" instead of "en").
+* CHANGE: Upped the limit you can configure for thumbnails memory caching from 100MB to 500MB. Also upped the limit for number of items from 4096 to 8192 (not customizable). The memory is freed when either values is reached first.
 
 
 * UPDATE: Updated to .NET Framework v4.8.

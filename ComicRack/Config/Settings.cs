@@ -114,7 +114,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		public const int MinimumMemoryThumbnailCacheMB = 5;
 
-		public const int MaximumMemoryThumbnailCacheMB = 100;
+		public const int MaximumMemoryThumbnailCacheMB = 500;
 
 		public const int DefaultMemoryThumbnailCacheMB = 50;
 

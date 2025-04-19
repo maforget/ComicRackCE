@@ -108,7 +108,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             numMemPageCount.Minimum = 20m;
             numMemPageCount.Maximum = 100m;
             numMemThumbSize.Minimum = 5m;
-            numMemThumbSize.Maximum = 100m;
+            numMemThumbSize.Maximum = 500m;
             lbLanguages.Items.Add(new TRInfo());
             lbLanguages.Items.Add(new TRInfo("en"));
             TRInfo[] installedLanguages = Program.InstalledLanguages;
