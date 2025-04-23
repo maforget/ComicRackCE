@@ -2393,7 +2393,7 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				return;
 			}
-			bool flag = FileModifiedTime != d;
+			bool dateIsModified = FileModifiedTime != d;
 			try
 			{
 				IsDynamicSource = Providers.Readers.GetSourceProviderInfo(FilePath).Formats.All((FileFormat f) => f.Dynamic);
@@ -2402,10 +2402,18 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				IsDynamicSource = false;
 			}
-			if (!(!FileInfoRetrieved || flag) && (options & RefreshInfoOptions.ForceRefresh) == 0 && ((options & (RefreshInfoOptions.GetFastPageCount | RefreshInfoOptions.GetPageCount)) == 0 || base.PageCount != 0))
-			{
+
+			bool fileInfoIsUpToDate = FileInfoRetrieved && !dateIsModified; //file info has been retrieved and file date has not been modified
+			bool noForceRefresh = options.IsNotSet(RefreshInfoOptions.ForceRefresh); // no force refresh option is requested
+			bool pageCountAlreadyAvailable = options.IsNotSet(RefreshInfoOptions.GetFastPageCount | RefreshInfoOptions.GetPageCount) || base.PageCount != 0; // page count is already available or the options GetPageCount & GetFastPageCount are not requested
+
+			// Continue refreshing if:
+			// - File info has not been retrieved OR has been modified
+			// - OR ForceRefresh option is set
+			// - OR PageCount is 0 AND a page count option is requested
+			if (fileInfoIsUpToDate && noForceRefresh && pageCountAlreadyAvailable)
 				return;
-			}
+
 			using (ImageProvider imageProvider = CreateImageProvider())
 			{
 				IInfoStorage infoStorage = imageProvider as IInfoStorage;
@@ -2416,7 +2424,7 @@ namespace cYo.Projects.ComicRack.Engine
 				bool forceRefreshInfo = options.HasFlag(RefreshInfoOptions.ForceRefresh);
 				if (forceRefreshInfo || !ComicInfoIsDirty)
 				{
-					SetInfo(infoStorage.LoadInfo((flag || !FileInfoRetrieved) ? InfoLoadingMethod.Complete : InfoLoadingMethod.Fast), !forceRefreshInfo);
+					SetInfo(infoStorage.LoadInfo((dateIsModified || !FileInfoRetrieved) ? InfoLoadingMethod.Complete : InfoLoadingMethod.Fast), !forceRefreshInfo);
 					if (forceRefreshInfo)
 						ComicInfoIsDirty = false;
 				}
