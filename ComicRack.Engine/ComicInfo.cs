@@ -1512,10 +1512,13 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 			try
 			{
-				using (FileStream inStream = File.OpenRead(file + ".xml"))
+				string sidecar1 = $"{file}.xml";
+				string sidecar2 = Path.ChangeExtension(file, ".xml");
+				string sidecarFile = File.Exists(sidecar1) ? sidecar1 : sidecar2;
+				using (FileStream inStream = File.OpenRead(sidecarFile))
 				{
 					return Deserialize(inStream);
-				}
+				} 
 			}
 			catch (Exception)
 			{
