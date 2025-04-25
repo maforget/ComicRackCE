@@ -520,22 +520,19 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 
 		public void CacheThumbnail(ThumbnailKey key, ComicBook cb, bool noSizeLimit = false)
 		{
-			using (IItemLock<ThumbnailImage> itemLock = thumbs.GetImage(key, memoryOnly: false))
+			AddThumbToQueue(key, null, delegate
 			{
-				if (itemLock != null)
+				if (thumbs.DiskCache.IsAvailable(key))
 					return;
 
-				AddThumbToQueue(key, null, delegate
+				try
 				{
-					try
-					{
-						GetThumbnail(key, cb).SafeDispose();
-					}
-					catch
-					{
-					}
-				}, noSizeLimit);
-			}
+					GetThumbnail(key, cb).SafeDispose();
+				}
+				catch
+				{
+				}
+			}, noSizeLimit);
 		}
 
 		protected override void Dispose(bool disposing)
