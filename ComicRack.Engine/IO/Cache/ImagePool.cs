@@ -520,6 +520,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 
 		public void CacheThumbnail(ThumbnailKey key, ComicBook cb, bool noSizeLimit = false)
 		{
+			if (cb == null)
+				return;
+
 			AddThumbToQueue(key, null, delegate
 			{
 				if (thumbs.DiskCache.IsAvailable(key))

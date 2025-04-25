@@ -1906,9 +1906,6 @@ namespace cYo.Projects.ComicRack.Viewer
 		{
 			Program.Database.Books.Concat(Program.BookFactory.TemporaryBooks).ForEach((ComicBook cb) =>
 			{
-				if (cb == null)
-					return;
-
 				Program.ImagePool.CacheThumbnail(cb.GetFrontCoverThumbnailKey(), cb, noSizeLimit: true);
 			});
 		}
