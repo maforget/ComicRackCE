@@ -1909,7 +1909,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				if (cb == null)
 					return;
 
-				Program.ImagePool.CacheThumbnail(cb.GetFrontCoverThumbnailKey(), cb);
+				Program.ImagePool.CacheThumbnail(cb.GetFrontCoverThumbnailKey(), cb, noSizeLimit: true);
 			});
 		}
 
