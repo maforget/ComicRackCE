@@ -3264,7 +3264,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.tbCacheThumbnails.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.Screenshot;
 			this.tbCacheThumbnails.Name = "tbCacheThumbnails";
 			this.tbCacheThumbnails.Size = new System.Drawing.Size(268, 22);
-			this.tbCacheThumbnails.Text = "Build Thumbnails Cache";
+			this.tbCacheThumbnails.Text = "Generate Cover Thumbnails";
 			// 
 			// tsSynchronizeDevices
 			// 
