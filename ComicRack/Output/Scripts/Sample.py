@@ -154,7 +154,7 @@ def DummyHtmlInfoPanel(books):
 #@Enabled false
 #@Description A script to display the web link content
 def WebLinkInfoPanel(books):
-    for b in books:
+	for b in books:
 		if b.Web != "":
 			return "!" + b.Web
 
@@ -173,7 +173,7 @@ class UIControl(Control):
 		self.lb.Dock = DockStyle.Fill
 		self.lb.IntegralHeight = False
 		self.Controls.Add(self.lb)   
-        
+		
 	def ShowInfo(self, books):
 		print 'Calling...' + str(len(books))
 		self.lb.Items.Clear()
@@ -186,7 +186,7 @@ class UIControl(Control):
 #@Enabled false
 #@Description A simple script to show how ui info panels are done
 def DummyUIInfoPanel():
-    return UIControl()
+	return UIControl()
 
 #
 # A simple script to display the ComicRack User Forum in the quick Open
@@ -200,7 +200,14 @@ def DummyUIInfoPanel():
 #@Description A script to display the ComicRack User Forum in Quick Open
 def ComicRackUserForum(books):
 	return "!http://comicrack.cyolito.com/forum/recent"
-    
+
+#@Name [Code Sample] Dummy Book Quick Open UI
+#@Hook QuickOpenUI
+#@Enabled false
+#@Description A simple script to show how quick open ui panels are done
+def DummyUIQuickOpen():
+	return UIControl()
+
 #
 # A simple script to fade thumbnails for comics already read
 #
@@ -236,7 +243,7 @@ def FadeReadThumbnails(book, graphics, bounds, flags):
 #@Description A simple script to show how to execute a script on startup
 def ShowStartupMessage():
 	MessageBox.Show ("ComicRack started")
-    
+	
 #
 # A simple script to display a shutdown message
 #
@@ -248,4 +255,4 @@ def ShowStartupMessage():
 #@Description A simple script to show how to execute a script on shutdown. Return false to abort shutdown
 def ShowShutdownMessage(user_is_closing):
 	return MessageBox.Show ("ComicRack will shutdown! Do you want to continue?", "Shutdown Script", MessageBoxButtons.YesNo) == DialogResult.Yes
-    
+	

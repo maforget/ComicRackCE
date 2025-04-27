@@ -96,6 +96,7 @@ Community Edition Build 0.9.180:
 * BUGFIX: Fixed a problem were using Backup Database might not backup the latest changes. A ComicDb.xml.xml file was created instead but would backup the regular database (possibly outdated).
 * BUGFIX: Fixed tabs not rendering correctly when switching to tab view (while double-clicking).
 * BUGFIX: Opening the Info dialog would mark some file as requiring an update even when nothing was changed.
+* BUGFIX: Fixed scripts Hook ComicInfoUI & QuickOpenUI, not working.
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 

@@ -279,7 +279,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				yield return item;
 			}
-			foreach (ComicPageControl item2 in CreatePagesHtml(PluginEngine.ScriptTypeComicInfoUI))
+			foreach (ComicPageControl item2 in CreatePagesUI(PluginEngine.ScriptTypeComicInfoUI))
 			{
 				yield return item2;
 			}
@@ -291,7 +291,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				yield return item;
 			}
-			foreach (ComicPageControl item2 in CreatePagesHtml(PluginEngine.ScriptTypeQuickOpenUI))
+			foreach (ComicPageControl item2 in CreatePagesUI(PluginEngine.ScriptTypeQuickOpenUI))
 			{
 				yield return item2;
 			}
