@@ -7,14 +7,14 @@ using System.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-    public partial class ComicBookDialog
+	public partial class ComicBookDialog
 	{
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        protected override void Dispose(bool disposing)
+		protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
@@ -238,6 +238,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btCancel
 			// 
+			this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.btCancel.Location = new System.Drawing.Point(415, 483);
@@ -248,6 +249,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btOK
 			// 
+			this.btOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btOK.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btOK.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.btOK.Location = new System.Drawing.Point(329, 483);
@@ -259,6 +261,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tabControl
 			// 
+			this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl.Controls.Add(this.tabSummary);
 			this.tabControl.Controls.Add(this.tabDetails);
 			this.tabControl.Controls.Add(this.tabPlot);
@@ -300,6 +303,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btThumbnail
 			// 
+			this.btThumbnail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btThumbnail.ContextMenuStrip = this.cmThumbnail;
 			this.btThumbnail.Location = new System.Drawing.Point(372, 347);
 			this.btThumbnail.Name = "btThumbnail";
@@ -314,8 +318,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// cmThumbnail
 			// 
 			this.cmThumbnail.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miResetThumbnail,
-            this.toolStripMenuItem1});
+			this.miResetThumbnail,
+			this.toolStripMenuItem1});
 			this.cmThumbnail.Name = "cmKeyboardLayout";
 			this.cmThumbnail.Size = new System.Drawing.Size(103, 32);
 			// 
@@ -333,6 +337,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelCommunityRating
 			// 
+			this.labelCommunityRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelCommunityRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelCommunityRating.Location = new System.Drawing.Point(217, 313);
 			this.labelCommunityRating.Name = "labelCommunityRating";
@@ -343,6 +348,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txCommunityRating
 			// 
+			this.txCommunityRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txCommunityRating.DrawText = true;
 			this.txCommunityRating.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txCommunityRating.ForeColor = System.Drawing.SystemColors.GrayText;
@@ -356,6 +362,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelMyRating
 			// 
+			this.labelMyRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelMyRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelMyRating.Location = new System.Drawing.Point(219, 285);
 			this.labelMyRating.Name = "labelMyRating";
@@ -366,6 +373,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btLinkFile
 			// 
+			this.btLinkFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btLinkFile.Location = new System.Drawing.Point(372, 373);
 			this.btLinkFile.Name = "btLinkFile";
 			this.btLinkFile.Size = new System.Drawing.Size(152, 23);
@@ -378,7 +386,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// linkLabel
 			// 
 			this.linkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.linkLabel.LinkColor = System.Drawing.Color.SteelBlue;
 			this.linkLabel.Location = new System.Drawing.Point(3, 416);
 			this.linkLabel.Name = "linkLabel";
@@ -393,6 +401,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// coverThumbnail
 			// 
 			this.coverThumbnail.AllowDrop = true;
+			this.coverThumbnail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.coverThumbnail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.coverThumbnail.Location = new System.Drawing.Point(21, 19);
 			this.coverThumbnail.Name = "coverThumbnail";
@@ -406,6 +415,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// whereSeparator
 			// 
+			this.whereSeparator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.whereSeparator.BackColor = System.Drawing.SystemColors.ButtonShadow;
 			this.whereSeparator.Location = new System.Drawing.Point(19, 360);
 			this.whereSeparator.Name = "whereSeparator";
@@ -414,6 +424,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// panel1
 			// 
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
 			this.panel1.Location = new System.Drawing.Point(23, 268);
 			this.panel1.Name = "panel1";
@@ -422,6 +433,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelWhere
 			// 
+			this.labelWhere.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.labelWhere.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelWhere.Location = new System.Drawing.Point(19, 373);
 			this.labelWhere.Name = "labelWhere";
@@ -432,6 +444,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelType
 			// 
+			this.labelType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.labelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelType.Location = new System.Drawing.Point(19, 285);
 			this.labelType.Name = "labelType";
@@ -442,6 +455,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txRating
 			// 
+			this.txRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txRating.DrawText = true;
 			this.txRating.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txRating.ForeColor = System.Drawing.SystemColors.GrayText;
@@ -455,6 +469,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelPages
 			// 
+			this.labelPages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.labelPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelPages.Location = new System.Drawing.Point(21, 313);
 			this.labelPages.Name = "labelPages";
@@ -465,6 +480,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblType
 			// 
+			this.lblType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblType.Location = new System.Drawing.Point(93, 272);
 			this.lblType.Name = "lblType";
@@ -474,6 +490,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblPath
 			// 
+			this.lblPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.lblPath.AutoEllipsis = true;
 			this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblPath.Location = new System.Drawing.Point(93, 373);
@@ -484,6 +501,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// lblPages
 			// 
+			this.lblPages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.lblPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblPages.Location = new System.Drawing.Point(93, 313);
 			this.lblPages.Name = "lblPages";
@@ -569,6 +587,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txDay
 			// 
+			this.txDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txDay.Location = new System.Drawing.Point(349, 65);
 			this.txDay.MaxLength = 4;
 			this.txDay.Name = "txDay";
@@ -578,6 +597,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelDay
 			// 
+			this.labelDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelDay.AutoSize = true;
 			this.labelDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelDay.Location = new System.Drawing.Point(349, 51);
@@ -588,6 +608,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelSeriesGroup
 			// 
+			this.labelSeriesGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelSeriesGroup.AutoSize = true;
 			this.labelSeriesGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelSeriesGroup.Location = new System.Drawing.Point(214, 129);
@@ -598,6 +619,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txSeriesGroup
 			// 
+			this.txSeriesGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txSeriesGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txSeriesGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txSeriesGroup.Location = new System.Drawing.Point(216, 142);
@@ -609,6 +631,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelStoryArc
 			// 
+			this.labelStoryArc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelStoryArc.AutoSize = true;
 			this.labelStoryArc.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelStoryArc.Location = new System.Drawing.Point(8, 129);
@@ -619,6 +642,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txStoryArc
 			// 
+			this.txStoryArc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txStoryArc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txStoryArc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txStoryArc.Location = new System.Drawing.Point(10, 142);
@@ -630,6 +654,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbSeriesComplete
 			// 
+			this.cbSeriesComplete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbSeriesComplete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbSeriesComplete.FormattingEnabled = true;
 			this.cbSeriesComplete.Location = new System.Drawing.Point(416, 141);
@@ -640,6 +665,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelSeriesComplete
 			// 
+			this.labelSeriesComplete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelSeriesComplete.AutoSize = true;
 			this.labelSeriesComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelSeriesComplete.Location = new System.Drawing.Point(414, 129);
@@ -650,6 +676,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbEnableDynamicUpdate
 			// 
+			this.cbEnableDynamicUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbEnableDynamicUpdate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbEnableDynamicUpdate.FormattingEnabled = true;
 			this.cbEnableDynamicUpdate.Location = new System.Drawing.Point(416, 371);
@@ -659,6 +686,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelEnableDynamicUpdate
 			// 
+			this.labelEnableDynamicUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelEnableDynamicUpdate.AutoSize = true;
 			this.labelEnableDynamicUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelEnableDynamicUpdate.Location = new System.Drawing.Point(414, 357);
@@ -669,6 +697,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txGenre
 			// 
+			this.txGenre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txGenre.Location = new System.Drawing.Point(10, 372);
 			this.txGenre.Name = "txGenre";
@@ -677,6 +706,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelTags
 			// 
+			this.labelTags.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelTags.AutoSize = true;
 			this.labelTags.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelTags.Location = new System.Drawing.Point(11, 395);
@@ -687,6 +717,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbEnableProposed
 			// 
+			this.cbEnableProposed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbEnableProposed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbEnableProposed.FormattingEnabled = true;
 			this.cbEnableProposed.Location = new System.Drawing.Point(416, 410);
@@ -697,6 +728,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txTags
 			// 
+			this.txTags.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txTags.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txTags.Location = new System.Drawing.Point(11, 411);
 			this.txTags.Name = "txTags";
@@ -706,6 +738,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelEnableProposed
 			// 
+			this.labelEnableProposed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelEnableProposed.AutoSize = true;
 			this.labelEnableProposed.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelEnableProposed.Location = new System.Drawing.Point(414, 395);
@@ -716,6 +749,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txVolume
 			// 
+			this.txVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txVolume.Location = new System.Drawing.Point(216, 28);
 			this.txVolume.Name = "txVolume";
 			this.txVolume.PromptText = "";
@@ -724,6 +758,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbAgeRating
 			// 
+			this.cbAgeRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbAgeRating.FormattingEnabled = true;
 			this.cbAgeRating.Location = new System.Drawing.Point(416, 200);
 			this.cbAgeRating.Name = "cbAgeRating";
@@ -733,6 +768,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txEditor
 			// 
+			this.txEditor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txEditor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txEditor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txEditor.Location = new System.Drawing.Point(11, 315);
@@ -743,6 +779,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelEditor
 			// 
+			this.labelEditor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelEditor.AutoSize = true;
 			this.labelEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelEditor.Location = new System.Drawing.Point(9, 300);
@@ -753,6 +790,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txMonth
 			// 
+			this.txMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txMonth.Location = new System.Drawing.Point(278, 66);
 			this.txMonth.MaxLength = 2;
 			this.txMonth.Name = "txMonth";
@@ -762,6 +800,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txYear
 			// 
+			this.txYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txYear.Location = new System.Drawing.Point(216, 66);
 			this.txYear.MaxLength = 4;
 			this.txYear.Name = "txYear";
@@ -772,6 +811,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelAgeRating
 			// 
+			this.labelAgeRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelAgeRating.AutoSize = true;
 			this.labelAgeRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelAgeRating.Location = new System.Drawing.Point(414, 187);
@@ -782,6 +822,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbFormat
 			// 
+			this.cbFormat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbFormat.FormattingEnabled = true;
 			this.cbFormat.Location = new System.Drawing.Point(416, 27);
 			this.cbFormat.Name = "cbFormat";
@@ -792,6 +833,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txColorist
 			// 
+			this.txColorist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txColorist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txColorist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txColorist.Location = new System.Drawing.Point(216, 239);
@@ -802,6 +844,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txSeries
 			// 
+			this.txSeries.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txSeries.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txSeries.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txSeries.Location = new System.Drawing.Point(11, 28);
@@ -813,6 +856,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelFormat
 			// 
+			this.labelFormat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelFormat.AutoSize = true;
 			this.labelFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelFormat.Location = new System.Drawing.Point(414, 13);
@@ -823,6 +867,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelAlternateSeries
 			// 
+			this.labelAlternateSeries.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelAlternateSeries.AutoSize = true;
 			this.labelAlternateSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelAlternateSeries.Location = new System.Drawing.Point(9, 89);
@@ -833,6 +878,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txAlternateSeries
 			// 
+			this.txAlternateSeries.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txAlternateSeries.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txAlternateSeries.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txAlternateSeries.Location = new System.Drawing.Point(11, 104);
@@ -844,6 +890,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbImprint
 			// 
+			this.cbImprint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbImprint.FormattingEnabled = true;
 			this.cbImprint.Location = new System.Drawing.Point(416, 103);
 			this.cbImprint.Name = "cbImprint";
@@ -854,6 +901,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbBlackAndWhite
 			// 
+			this.cbBlackAndWhite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbBlackAndWhite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbBlackAndWhite.FormattingEnabled = true;
 			this.cbBlackAndWhite.Location = new System.Drawing.Point(416, 312);
@@ -864,6 +912,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelVolume
 			// 
+			this.labelVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelVolume.AutoSize = true;
 			this.labelVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelVolume.Location = new System.Drawing.Point(216, 13);
@@ -874,6 +923,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txInker
 			// 
+			this.txInker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txInker.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txInker.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txInker.Location = new System.Drawing.Point(10, 239);
@@ -884,6 +934,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbManga
 			// 
+			this.cbManga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbManga.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbManga.FormattingEnabled = true;
 			this.cbManga.Location = new System.Drawing.Point(416, 237);
@@ -894,6 +945,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelYear
 			// 
+			this.labelYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelYear.AutoSize = true;
 			this.labelYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelYear.Location = new System.Drawing.Point(216, 52);
@@ -904,6 +956,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelMonth
 			// 
+			this.labelMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelMonth.AutoSize = true;
 			this.labelMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelMonth.Location = new System.Drawing.Point(276, 51);
@@ -914,6 +967,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelBlackAndWhite
 			// 
+			this.labelBlackAndWhite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelBlackAndWhite.AutoSize = true;
 			this.labelBlackAndWhite.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelBlackAndWhite.Location = new System.Drawing.Point(414, 297);
@@ -924,6 +978,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txAlternateCount
 			// 
+			this.txAlternateCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txAlternateCount.Location = new System.Drawing.Point(349, 104);
 			this.txAlternateCount.Name = "txAlternateCount";
 			this.txAlternateCount.PromptText = "";
@@ -932,6 +987,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelManga
 			// 
+			this.labelManga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelManga.AutoSize = true;
 			this.labelManga.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelManga.Location = new System.Drawing.Point(414, 222);
@@ -942,6 +998,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelSeries
 			// 
+			this.labelSeries.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelSeries.AutoSize = true;
 			this.labelSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelSeries.Location = new System.Drawing.Point(9, 13);
@@ -952,6 +1009,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelLanguage
 			// 
+			this.labelLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelLanguage.AutoSize = true;
 			this.labelLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelLanguage.Location = new System.Drawing.Point(414, 261);
@@ -962,6 +1020,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelImprint
 			// 
+			this.labelImprint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelImprint.AutoSize = true;
 			this.labelImprint.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelImprint.Location = new System.Drawing.Point(414, 88);
@@ -972,6 +1031,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelGenre
 			// 
+			this.labelGenre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelGenre.AutoSize = true;
 			this.labelGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelGenre.Location = new System.Drawing.Point(11, 357);
@@ -982,6 +1042,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelColorist
 			// 
+			this.labelColorist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelColorist.AutoSize = true;
 			this.labelColorist.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelColorist.Location = new System.Drawing.Point(214, 224);
@@ -992,6 +1053,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txCount
 			// 
+			this.txCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txCount.Location = new System.Drawing.Point(349, 28);
 			this.txCount.Name = "txCount";
 			this.txCount.PromptText = "";
@@ -1000,6 +1062,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbLanguage
 			// 
+			this.cbLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbLanguage.CultureTypes = System.Globalization.CultureTypes.NeutralCultures;
 			this.cbLanguage.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
 			this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1014,6 +1077,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbPublisher
 			// 
+			this.cbPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbPublisher.FormattingEnabled = true;
 			this.cbPublisher.Location = new System.Drawing.Point(416, 65);
 			this.cbPublisher.Name = "cbPublisher";
@@ -1024,6 +1088,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txPenciller
 			// 
+			this.txPenciller.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txPenciller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txPenciller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txPenciller.Location = new System.Drawing.Point(216, 200);
@@ -1034,6 +1099,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txAlternateNumber
 			// 
+			this.txAlternateNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txAlternateNumber.Location = new System.Drawing.Point(278, 104);
 			this.txAlternateNumber.Name = "txAlternateNumber";
 			this.txAlternateNumber.PromptText = "";
@@ -1042,6 +1108,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txNumber
 			// 
+			this.txNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txNumber.Location = new System.Drawing.Point(278, 28);
 			this.txNumber.Name = "txNumber";
 			this.txNumber.PromptText = "";
@@ -1050,6 +1117,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelPublisher
 			// 
+			this.labelPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelPublisher.AutoSize = true;
 			this.labelPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelPublisher.Location = new System.Drawing.Point(414, 51);
@@ -1060,6 +1128,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelCoverArtist
 			// 
+			this.labelCoverArtist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelCoverArtist.AutoSize = true;
 			this.labelCoverArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelCoverArtist.Location = new System.Drawing.Point(214, 262);
@@ -1070,6 +1139,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txCoverArtist
 			// 
+			this.txCoverArtist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txCoverArtist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txCoverArtist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txCoverArtist.Location = new System.Drawing.Point(216, 277);
@@ -1080,6 +1150,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelInker
 			// 
+			this.labelInker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelInker.AutoSize = true;
 			this.labelInker.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelInker.Location = new System.Drawing.Point(11, 224);
@@ -1090,6 +1161,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelAlternateCount
 			// 
+			this.labelAlternateCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelAlternateCount.AutoSize = true;
 			this.labelAlternateCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelAlternateCount.Location = new System.Drawing.Point(347, 89);
@@ -1100,6 +1172,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txTitle
 			// 
+			this.txTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txTitle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txTitle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txTitle.Location = new System.Drawing.Point(11, 66);
@@ -1110,6 +1183,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelCount
 			// 
+			this.labelCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelCount.AutoSize = true;
 			this.labelCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelCount.Location = new System.Drawing.Point(347, 13);
@@ -1120,6 +1194,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelAlternateNumber
 			// 
+			this.labelAlternateNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelAlternateNumber.AutoSize = true;
 			this.labelAlternateNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelAlternateNumber.Location = new System.Drawing.Point(276, 89);
@@ -1130,6 +1205,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelNumber
 			// 
+			this.labelNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelNumber.AutoSize = true;
 			this.labelNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelNumber.Location = new System.Drawing.Point(276, 13);
@@ -1140,6 +1216,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelLetterer
 			// 
+			this.labelLetterer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelLetterer.AutoSize = true;
 			this.labelLetterer.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelLetterer.Location = new System.Drawing.Point(9, 262);
@@ -1150,6 +1227,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelPenciller
 			// 
+			this.labelPenciller.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelPenciller.AutoSize = true;
 			this.labelPenciller.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelPenciller.Location = new System.Drawing.Point(214, 187);
@@ -1160,6 +1238,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txLetterer
 			// 
+			this.txLetterer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txLetterer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txLetterer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txLetterer.Location = new System.Drawing.Point(11, 277);
@@ -1170,6 +1249,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelTitle
 			// 
+			this.labelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelTitle.AutoSize = true;
 			this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelTitle.Location = new System.Drawing.Point(9, 51);
@@ -1180,6 +1260,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelWriter
 			// 
+			this.labelWriter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelWriter.AutoSize = true;
 			this.labelWriter.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelWriter.Location = new System.Drawing.Point(9, 187);
@@ -1190,6 +1271,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txWriter
 			// 
+			this.txWriter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txWriter.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txWriter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txWriter.Location = new System.Drawing.Point(11, 200);
@@ -1222,6 +1304,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tabNotes
 			// 
+			this.tabNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabNotes.Controls.Add(this.tabPageSummary);
 			this.tabNotes.Controls.Add(this.tabPageNotes);
 			this.tabNotes.Controls.Add(this.tabPageReview);
@@ -1308,6 +1391,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// txMainCharacterOrTeam
 			// 
 			this.txMainCharacterOrTeam.AcceptsReturn = true;
+			this.txMainCharacterOrTeam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txMainCharacterOrTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txMainCharacterOrTeam.Location = new System.Drawing.Point(286, 278);
 			this.txMainCharacterOrTeam.Name = "txMainCharacterOrTeam";
@@ -1317,6 +1401,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelMainCharacterOrTeam
 			// 
+			this.labelMainCharacterOrTeam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelMainCharacterOrTeam.AutoSize = true;
 			this.labelMainCharacterOrTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelMainCharacterOrTeam.Location = new System.Drawing.Point(284, 263);
@@ -1328,6 +1413,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// txScanInformation
 			// 
 			this.txScanInformation.AcceptsReturn = true;
+			this.txScanInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txScanInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txScanInformation.Location = new System.Drawing.Point(11, 412);
 			this.txScanInformation.Name = "txScanInformation";
@@ -1337,6 +1423,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelScanInformation
 			// 
+			this.labelScanInformation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelScanInformation.AutoSize = true;
 			this.labelScanInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelScanInformation.Location = new System.Drawing.Point(9, 397);
@@ -1348,6 +1435,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// txLocations
 			// 
 			this.txLocations.AcceptsReturn = true;
+			this.txLocations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txLocations.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txLocations.Location = new System.Drawing.Point(287, 351);
 			this.txLocations.Name = "txLocations";
@@ -1357,6 +1445,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelLocations
 			// 
+			this.labelLocations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelLocations.AutoSize = true;
 			this.labelLocations.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelLocations.Location = new System.Drawing.Point(285, 336);
@@ -1368,6 +1457,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// txTeams
 			// 
 			this.txTeams.AcceptsReturn = true;
+			this.txTeams.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txTeams.Location = new System.Drawing.Point(286, 316);
 			this.txTeams.Name = "txTeams";
@@ -1377,6 +1467,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelTeams
 			// 
+			this.labelTeams.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelTeams.AutoSize = true;
 			this.labelTeams.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelTeams.Location = new System.Drawing.Point(284, 301);
@@ -1388,6 +1479,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// txWeblink
 			// 
 			this.txWeblink.AcceptsReturn = true;
+			this.txWeblink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txWeblink.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txWeblink.Location = new System.Drawing.Point(287, 412);
 			this.txWeblink.Name = "txWeblink";
@@ -1397,6 +1489,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelWeb
 			// 
+			this.labelWeb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelWeb.AutoSize = true;
 			this.labelWeb.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelWeb.Location = new System.Drawing.Point(285, 397);
@@ -1407,6 +1500,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txCharacters
 			// 
+			this.txCharacters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txCharacters.Location = new System.Drawing.Point(11, 278);
 			this.txCharacters.Multiline = true;
@@ -1418,6 +1512,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelCharacters
 			// 
+			this.labelCharacters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelCharacters.AutoSize = true;
 			this.labelCharacters.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelCharacters.Location = new System.Drawing.Point(9, 263);
@@ -1464,6 +1559,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelReleasedTime
 			// 
+			this.labelReleasedTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelReleasedTime.AutoSize = true;
 			this.labelReleasedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelReleasedTime.Location = new System.Drawing.Point(314, 21);
@@ -1474,6 +1570,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// dtpReleasedTime
 			// 
+			this.dtpReleasedTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.dtpReleasedTime.CustomFormat = " ";
 			this.dtpReleasedTime.Location = new System.Drawing.Point(315, 36);
 			this.dtpReleasedTime.Name = "dtpReleasedTime";
@@ -1483,6 +1580,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelOpenedTime
 			// 
+			this.labelOpenedTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelOpenedTime.AutoSize = true;
 			this.labelOpenedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelOpenedTime.Location = new System.Drawing.Point(315, 98);
@@ -1493,6 +1591,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// dtpOpenedTime
 			// 
+			this.dtpOpenedTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.dtpOpenedTime.CustomFormat = " ";
 			this.dtpOpenedTime.Location = new System.Drawing.Point(316, 113);
 			this.dtpOpenedTime.Name = "dtpOpenedTime";
@@ -1502,6 +1601,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelAddedTime
 			// 
+			this.labelAddedTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelAddedTime.AutoSize = true;
 			this.labelAddedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelAddedTime.Location = new System.Drawing.Point(314, 58);
@@ -1512,6 +1612,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// dtpAddedTime
 			// 
+			this.dtpAddedTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.dtpAddedTime.CustomFormat = " ";
 			this.dtpAddedTime.Location = new System.Drawing.Point(315, 73);
 			this.dtpAddedTime.Name = "dtpAddedTime";
@@ -1522,6 +1623,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// txPagesAsTextSimple
 			// 
 			this.txPagesAsTextSimple.AcceptsReturn = true;
+			this.txPagesAsTextSimple.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txPagesAsTextSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txPagesAsTextSimple.Location = new System.Drawing.Point(167, 73);
 			this.txPagesAsTextSimple.Name = "txPagesAsTextSimple";
@@ -1531,6 +1633,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelPagesAsTextSimple
 			// 
+			this.labelPagesAsTextSimple.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelPagesAsTextSimple.AutoSize = true;
 			this.labelPagesAsTextSimple.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelPagesAsTextSimple.Location = new System.Drawing.Point(165, 58);
@@ -1541,6 +1644,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txISBN
 			// 
+			this.txISBN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txISBN.Location = new System.Drawing.Point(11, 73);
 			this.txISBN.Name = "txISBN";
@@ -1550,6 +1654,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelISBN
 			// 
+			this.labelISBN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelISBN.AutoSize = true;
 			this.labelISBN.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelISBN.Location = new System.Drawing.Point(9, 58);
@@ -1560,6 +1665,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbBookLocation
 			// 
+			this.cbBookLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbBookLocation.FormattingEnabled = true;
 			this.cbBookLocation.Location = new System.Drawing.Point(317, 168);
 			this.cbBookLocation.Name = "cbBookLocation";
@@ -1569,6 +1675,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelBookLocation
 			// 
+			this.labelBookLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelBookLocation.AutoSize = true;
 			this.labelBookLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelBookLocation.Location = new System.Drawing.Point(315, 154);
@@ -1579,6 +1686,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txCollectionStatus
 			// 
+			this.txCollectionStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.txCollectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txCollectionStatus.Location = new System.Drawing.Point(11, 210);
 			this.txCollectionStatus.Name = "txCollectionStatus";
@@ -1588,6 +1696,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbBookPrice
 			// 
+			this.cbBookPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbBookPrice.FormattingEnabled = true;
 			this.cbBookPrice.Location = new System.Drawing.Point(167, 34);
 			this.cbBookPrice.Name = "cbBookPrice";
@@ -1597,6 +1706,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelBookPrice
 			// 
+			this.labelBookPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelBookPrice.AutoSize = true;
 			this.labelBookPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelBookPrice.Location = new System.Drawing.Point(165, 19);
@@ -1608,6 +1718,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// txBookNotes
 			// 
 			this.txBookNotes.AcceptsReturn = true;
+			this.txBookNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)| System.Windows.Forms.AnchorStyles.Right)));
 			this.txBookNotes.FocusSelect = false;
 			this.txBookNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.txBookNotes.Location = new System.Drawing.Point(11, 265);
@@ -1620,6 +1731,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelBookNotes
 			// 
+			this.labelBookNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelBookNotes.AutoSize = true;
 			this.labelBookNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelBookNotes.Location = new System.Drawing.Point(9, 250);
@@ -1630,6 +1742,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbBookAge
 			// 
+			this.cbBookAge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.cbBookAge.FormattingEnabled = true;
 			this.cbBookAge.Location = new System.Drawing.Point(11, 112);
 			this.cbBookAge.Name = "cbBookAge";
@@ -1639,6 +1753,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelBookAge
 			// 
+			this.labelBookAge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelBookAge.AutoSize = true;
 			this.labelBookAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelBookAge.Location = new System.Drawing.Point(9, 97);
@@ -1649,6 +1764,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelBookCollectionStatus
 			// 
+			this.labelBookCollectionStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.labelBookCollectionStatus.AutoSize = true;
 			this.labelBookCollectionStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelBookCollectionStatus.Location = new System.Drawing.Point(9, 195);
@@ -1659,6 +1776,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbBookCondition
 			// 
+			this.cbBookCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbBookCondition.FormattingEnabled = true;
 			this.cbBookCondition.Location = new System.Drawing.Point(167, 112);
 			this.cbBookCondition.Name = "cbBookCondition";
@@ -1668,6 +1786,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelBookCondition
 			// 
+			this.labelBookCondition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelBookCondition.AutoSize = true;
 			this.labelBookCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelBookCondition.Location = new System.Drawing.Point(165, 98);
@@ -1678,6 +1797,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbBookStore
 			// 
+			this.cbBookStore.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.cbBookStore.FormattingEnabled = true;
 			this.cbBookStore.Location = new System.Drawing.Point(11, 35);
 			this.cbBookStore.Name = "cbBookStore";
@@ -1688,6 +1809,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelBookStore
 			// 
+			this.labelBookStore.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelBookStore.AutoSize = true;
 			this.labelBookStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelBookStore.Location = new System.Drawing.Point(11, 21);
@@ -1698,6 +1820,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// cbBookOwner
 			// 
+			this.cbBookOwner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.cbBookOwner.FormattingEnabled = true;
 			this.cbBookOwner.Location = new System.Drawing.Point(11, 168);
 			this.cbBookOwner.Name = "cbBookOwner";
@@ -1707,6 +1830,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelBookOwner
 			// 
+			this.labelBookOwner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelBookOwner.AutoSize = true;
 			this.labelBookOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelBookOwner.Location = new System.Drawing.Point(9, 154);
@@ -1728,10 +1852,11 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// customValuesData
 			// 
+			this.customValuesData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.customValuesData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.customValuesData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CustomValueName,
-            this.CustomValueValue});
+			this.CustomValueName,
+			this.CustomValueValue});
 			this.customValuesData.Location = new System.Drawing.Point(11, 16);
 			this.customValuesData.Name = "customValuesData";
 			this.customValuesData.Size = new System.Drawing.Size(537, 410);
@@ -1765,6 +1890,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btResetPages
 			// 
+			this.btResetPages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btResetPages.ContextMenuStrip = this.cmResetPages;
 			this.btResetPages.Location = new System.Drawing.Point(441, 407);
 			this.btResetPages.Name = "btResetPages";
@@ -1778,8 +1904,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// cmResetPages
 			// 
 			this.cmResetPages.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miOrderByName,
-            this.miOrderByNameNumeric});
+			this.miOrderByName,
+			this.miOrderByNameNumeric});
 			this.cmResetPages.Name = "cmResetPages";
 			this.cmResetPages.Size = new System.Drawing.Size(211, 48);
 			this.cmResetPages.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.cmResetPages_ItemClicked);
@@ -1798,6 +1924,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btPageView
 			// 
+			this.btPageView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btPageView.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SmallArrowDown;
 			this.btPageView.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btPageView.Location = new System.Drawing.Point(479, 9);
@@ -1816,12 +1943,13 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.labelPagesInfo.Size = new System.Drawing.Size(421, 13);
 			this.labelPagesInfo.TabIndex = 0;
 			this.labelPagesInfo.Text = "Change the page order with drag & drop or use the context menu to change page typ" +
-    "es:";
+	"es:";
 			this.labelPagesInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.labelPagesInfo.UseMnemonic = false;
 			// 
 			// pagesView
 			// 
+			this.pagesView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 			this.pagesView.Bookmark = null;
 			this.pagesView.CreateBackdrop = false;
 			this.pagesView.Location = new System.Drawing.Point(11, 38);
@@ -1867,7 +1995,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkShowImageControls
 			// 
-			this.chkShowImageControls.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.chkShowImageControls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.chkShowImageControls.Appearance = System.Windows.Forms.Appearance.Button;
 			this.chkShowImageControls.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.DoubleArrow;
 			this.chkShowImageControls.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1931,9 +2059,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// pageViewer
 			// 
-			this.pageViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.pageViewer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.pageViewer.AutoScrollMode = cYo.Common.Windows.Forms.AutoScrollMode.Pan;
 			this.pageViewer.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.pageViewer.ForeColor = System.Drawing.Color.White;
@@ -1969,6 +2097,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelSaturation
 			// 
+			this.labelSaturation.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.labelSaturation.AutoSize = true;
 			this.labelSaturation.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelSaturation.Location = new System.Drawing.Point(11, 34);
@@ -1979,6 +2108,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelContrast
 			// 
+			this.labelContrast.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.labelContrast.AutoSize = true;
 			this.labelContrast.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
 			this.labelContrast.Location = new System.Drawing.Point(296, 34);
@@ -1989,6 +2119,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbGamma
 			// 
+			this.tbGamma.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.tbGamma.Location = new System.Drawing.Point(363, 52);
 			this.tbGamma.Minimum = -100;
 			this.tbGamma.Name = "tbGamma";
@@ -2002,6 +2133,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbSaturation
 			// 
+			this.tbSaturation.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.tbSaturation.Location = new System.Drawing.Point(78, 28);
 			this.tbSaturation.Minimum = -100;
 			this.tbSaturation.Name = "tbSaturation";
@@ -2015,6 +2147,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelGamma
 			// 
+			this.labelGamma.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.labelGamma.AutoSize = true;
 			this.labelGamma.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
 			this.labelGamma.Location = new System.Drawing.Point(296, 58);
@@ -2025,6 +2158,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbBrightness
 			// 
+			this.tbBrightness.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.tbBrightness.Location = new System.Drawing.Point(78, 52);
 			this.tbBrightness.Minimum = -100;
 			this.tbBrightness.Name = "tbBrightness";
@@ -2039,6 +2173,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbSharpening
 			// 
+			this.tbSharpening.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.tbSharpening.LargeChange = 1;
 			this.tbSharpening.Location = new System.Drawing.Point(81, 86);
 			this.tbSharpening.Maximum = 3;
@@ -2053,6 +2188,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// tbContrast
 			// 
+			this.tbContrast.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.tbContrast.Location = new System.Drawing.Point(363, 28);
 			this.tbContrast.Minimum = -100;
 			this.tbContrast.Name = "tbContrast";
@@ -2067,6 +2203,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelSharpening
 			// 
+			this.labelSharpening.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.labelSharpening.AutoSize = true;
 			this.labelSharpening.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
 			this.labelSharpening.Location = new System.Drawing.Point(11, 92);
@@ -2077,6 +2214,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelBrightness
 			// 
+			this.labelBrightness.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.labelBrightness.AutoSize = true;
 			this.labelBrightness.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold);
 			this.labelBrightness.Location = new System.Drawing.Point(11, 58);
@@ -2087,6 +2225,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btResetColors
 			// 
+			this.btResetColors.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btResetColors.Location = new System.Drawing.Point(478, 86);
 			this.btResetColors.Name = "btResetColors";
 			this.btResetColors.Size = new System.Drawing.Size(77, 24);
@@ -2097,6 +2236,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btPrev
 			// 
+			this.btPrev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btPrev.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.btPrev.Location = new System.Drawing.Point(8, 483);
 			this.btPrev.Name = "btPrev";
@@ -2107,6 +2247,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btNext
 			// 
+			this.btNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.btNext.Location = new System.Drawing.Point(92, 483);
 			this.btNext.Name = "btNext";
@@ -2117,6 +2258,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btScript
 			// 
+			this.btScript.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			this.btScript.AutoEllipsis = true;
 			this.btScript.Location = new System.Drawing.Point(188, 484);
 			this.btScript.Name = "btScript";
@@ -2128,7 +2270,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// btApply
 			// 
-			this.btApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btApply.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.btApply.Location = new System.Drawing.Point(501, 483);
 			this.btApply.Name = "btApply";
@@ -2139,6 +2281,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelTranslator
 			// 
+			this.labelTranslator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelTranslator.AutoSize = true;
 			this.labelTranslator.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelTranslator.Location = new System.Drawing.Point(214, 300);
@@ -2149,6 +2292,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// txTranslator
 			// 
+			this.txTranslator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txTranslator.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.txTranslator.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.txTranslator.Location = new System.Drawing.Point(216, 315);
@@ -2156,7 +2300,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.txTranslator.Size = new System.Drawing.Size(187, 20);
 			this.txTranslator.TabIndex = 65;
 			this.txTranslator.Tag = "Translator";
-			// 
+			//
 			// ComicBookDialog
 			// 
 			this.AcceptButton = this.btOK;
@@ -2171,9 +2315,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.Controls.Add(this.btCancel);
 			this.Controls.Add(this.btPrev);
 			this.Controls.Add(this.btOK);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(609, 556);
 			this.Name = "ComicBookDialog";
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
