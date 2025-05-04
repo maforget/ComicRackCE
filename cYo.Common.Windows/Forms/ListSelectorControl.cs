@@ -373,12 +373,12 @@ namespace cYo.Common.Windows.Forms
 			}
 		}
 
-		public static void Register(TextBox textBox, IEnumerable<INetSearch> search = null)
+		public static void Register(TextBox textBox, IEnumerable<INetSearch> search = null, AnchorStyles anchorStyles = AnchorStyles.Top | AnchorStyles.Right)
 		{
 			int num = FormUtility.ScaleDpiX(16);
 			textBox.Width -= num;
 			Button bt = new Button();
-			bt.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+			bt.Anchor = anchorStyles;
 			textBox.Parent.Controls.Add(bt);
 			textBox.Parent.Controls.SetChildIndex(bt, 0);
 			bt.Bounds = new Rectangle(textBox.Right, textBox.Top, num, textBox.Height);
@@ -417,6 +417,14 @@ namespace cYo.Common.Windows.Forms
 			foreach (TextBox textBox in textBoxes)
 			{
 				Register(textBox, search);
+			}
+		}
+
+		public static void Register(IEnumerable<INetSearch> search = null, AnchorStyles anchorStyles = AnchorStyles.Top | AnchorStyles.Right, params TextBox[] textBoxes)
+		{
+			foreach (TextBox textBox in textBoxes)
+			{
+				Register(textBox, search, anchorStyles: anchorStyles);
 			}
 		}
 
