@@ -68,6 +68,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.miUpdateAllComicFiles = new System.Windows.Forms.ToolStripMenuItem();
 			this.miUpdateWebComics = new System.Windows.Forms.ToolStripMenuItem();
 			this.miSynchronizeDevices = new System.Windows.Forms.ToolStripMenuItem();
+			this.miCacheThumbnails = new System.Windows.Forms.ToolStripMenuItem();
 			this.miTasks = new System.Windows.Forms.ToolStripMenuItem();
 			this.miFileAutomation = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem57 = new System.Windows.Forms.ToolStripSeparator();
@@ -380,6 +381,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.tbScan = new System.Windows.Forms.ToolStripMenuItem();
 			this.tbUpdateAllComicFiles = new System.Windows.Forms.ToolStripMenuItem();
 			this.tbUpdateWebComics = new System.Windows.Forms.ToolStripMenuItem();
+			this.tbCacheThumbnails = new System.Windows.Forms.ToolStripMenuItem();
 			this.tsSynchronizeDevices = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem48 = new System.Windows.Forms.ToolStripSeparator();
 			this.tbComicDisplaySettings = new System.Windows.Forms.ToolStripMenuItem();
@@ -452,6 +454,7 @@ namespace cYo.Projects.ComicRack.Viewer
             this.miScan,
             this.miUpdateAllComicFiles,
             this.miUpdateWebComics,
+            this.miCacheThumbnails,
             this.miSynchronizeDevices,
             this.miTasks,
             this.miFileAutomation,
@@ -555,6 +558,13 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.miSynchronizeDevices.Name = "miSynchronizeDevices";
 			this.miSynchronizeDevices.Size = new System.Drawing.Size(280, 22);
 			this.miSynchronizeDevices.Text = "Synchronize Devices";
+			// 
+			// miCacheThumbnails
+			// 
+			this.miCacheThumbnails.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.Screenshot;
+			this.miCacheThumbnails.Name = "miCacheThumbnails";
+			this.miCacheThumbnails.Size = new System.Drawing.Size(280, 22);
+			this.miCacheThumbnails.Text = "Generate Cover Thumbnails";
 			// 
 			// miTasks
 			// 
@@ -3071,6 +3081,7 @@ namespace cYo.Projects.ComicRack.Viewer
             this.tbScan,
             this.tbUpdateAllComicFiles,
             this.tbUpdateWebComics,
+            this.tbCacheThumbnails,
             this.tsSynchronizeDevices,
             this.toolStripMenuItem48,
             this.tbComicDisplaySettings,
@@ -3082,7 +3093,7 @@ namespace cYo.Projects.ComicRack.Viewer
             this.tbExit});
 			this.toolsContextMenu.Name = "toolsContextMenu";
 			this.toolsContextMenu.OwnerItem = this.tbTools;
-			this.toolsContextMenu.Size = new System.Drawing.Size(269, 414);
+			this.toolsContextMenu.Size = new System.Drawing.Size(269, 436);
 			// 
 			// tbOpenComic
 			// 
@@ -3247,6 +3258,13 @@ namespace cYo.Projects.ComicRack.Viewer
             | System.Windows.Forms.Keys.W)));
 			this.tbUpdateWebComics.Size = new System.Drawing.Size(268, 22);
 			this.tbUpdateWebComics.Text = "Update Web Comics";
+			// 
+			// tbCacheThumbnails
+			// 
+			this.tbCacheThumbnails.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.Screenshot;
+			this.tbCacheThumbnails.Name = "tbCacheThumbnails";
+			this.tbCacheThumbnails.Size = new System.Drawing.Size(268, 22);
+			this.tbCacheThumbnails.Text = "Generate Cover Thumbnails";
 			// 
 			// tsSynchronizeDevices
 			// 
@@ -3805,5 +3823,7 @@ namespace cYo.Projects.ComicRack.Viewer
 		private ToolStripSeparator toolStripSeparator6;
 		private ToolStripMenuItem cmQuickRating;
 		private ToolStripMenuItem miCheckUpdate;
+		private ToolStripMenuItem miCacheThumbnails;
+		private ToolStripMenuItem tbCacheThumbnails;
 	}
 }

@@ -1243,6 +1243,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			commands.Add(AddFolderToLibrary, miAddFolderToLibrary);
 			commands.Add(StartFullScan, miScan, tbScan);
 			commands.Add(UpdateComics, miUpdateAllComicFiles, tbUpdateAllComicFiles);
+			commands.Add(GenerateFrontCoverCache, miCacheThumbnails, tbCacheThumbnails);
 			commands.Add(MenuSynchronizeDevices, miSynchronizeDevices, tsSynchronizeDevices);
 			commands.Add(UpdateWebComics, miUpdateWebComics, tbUpdateWebComics);
 			commands.Add(delegate
@@ -1898,6 +1899,14 @@ namespace cYo.Projects.ComicRack.Viewer
 			Program.Database.Books.Concat(Program.BookFactory.TemporaryBooks).ForEach((ComicBook cb) =>
 			{
 				Program.QueueManager.AddBookToFileUpdate(cb, alwaysWrite: true);
+			});
+		}
+
+		public static void GenerateFrontCoverCache()
+		{
+			Program.Database.Books.Concat(Program.BookFactory.TemporaryBooks).ForEach((ComicBook cb) =>
+			{
+				Program.ImagePool.CacheThumbnail(cb.GetFrontCoverThumbnailKey(), cb, noSizeLimit: true);
 			});
 		}
 
