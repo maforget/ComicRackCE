@@ -98,7 +98,31 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             }
         }
 
-        private ComicBookDialog(ComicBook current, ComicBook[] allBooks)
+		public static Size SafeSize { get; set; }
+
+
+		protected override void OnResizeEnd(EventArgs e)
+		{
+			base.OnResizeEnd(e);
+			UpdateSafeSize();
+		}
+
+		private void SetSize()
+		{
+			Size = !SafeSize.IsEmpty ? SafeSize : MinimumSize;
+			this.CenterToParent();
+		}
+
+		private void UpdateSafeSize()
+		{
+			if (base.IsHandleCreated && SafeSize != null)
+			{
+				SafeSize = base.Size != base.MinimumSize ? base.Size : Size.Empty;
+			}
+		}
+
+
+		private ComicBookDialog(ComicBook current, ComicBook[] allBooks)
         {
             LocalizeUtility.UpdateRightToLeft(this);
             InitializeComponent();
@@ -216,6 +240,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             txAlternateCount.EnableOnlyNumberKeys();
             txPagesAsTextSimple.EnableOnlyNumberKeys();
             SetCurrentBook(current);
+            SetSize();
             IdleProcess.Idle += IdleProcess_Idle;
         }
 
@@ -761,7 +786,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         {
             SaveBook();
             SetCurrentBook(current);
-        }
+			Program.Settings.CurrentWorkspace.ComicBookDialogOutputSize = SafeSize;
+		}
 
         private void btPrev_Click(object sender, EventArgs e)
         {
@@ -780,7 +806,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         private void btOK_Click(object sender, EventArgs e)
         {
             SaveBook();
-        }
+			Program.Settings.CurrentWorkspace.ComicBookDialogOutputSize = SafeSize;
+		}
 
         private void ColorAdjustment_Scroll(object sender, EventArgs e)
         {
