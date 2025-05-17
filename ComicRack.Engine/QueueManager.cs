@@ -166,6 +166,8 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private static string slowThumbnailQueueMessage;
 
+		private static string slowThumbnailQueueUnlimitedMessage;
+
 		private static string getImageQueueMessage;
 
 		private static string updateDynamicQueueMessage;
@@ -597,6 +599,7 @@ namespace cYo.Projects.ComicRack.Engine
 				writeInfoQueueMessage = TR.Messages["WriteInfoQueueMessage", "Write information to Book file '{0}'"];
 				fastThumbanilQueueMessage = TR.Messages["FastThumbanilQueueMessage", "Retrieve cached thumbnail for page {0} in file '{1}'"];
 				slowThumbnailQueueMessage = TR.Messages["SlowThumbnailQueueMessage", "Create thumbnail for page {0} in file '{1}'"];
+				slowThumbnailQueueUnlimitedMessage = TR.Messages["SlowThumbnailQueueUnlimitedMessage", "Create thumbnail for cover in file '{0}'"];
 				getImageQueueMessage = TR.Messages["GetImageQueueMessage", "Get page {0} in file '{1}'"];
 				scanComicQueueMessage = TR.Messages["ScanComicQueueMessage", "Scanning '{0}'"];
 				deviceSyncQueueMessage = TR.Messages["DeviceSyncQueueMessage", "Syncing Device '{0}'"];
@@ -617,7 +620,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupLoadThumbnails, CacheManager.ImagePool.FastThumbnailQueue, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(fastThumbanilQueueMessage, ik.Item.Index + 1, Path.GetFileName(ik.Item.Location)))));
 			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupCreateThumbnails, CacheManager.ImagePool.SlowThumbnailQueue, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(slowThumbnailQueueMessage, ik.Item.Index + 1, Path.GetFileName(ik.Item.Location)))));
-			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupCreateThumbnails, CacheManager.ImagePool.SlowThumbnailQueueUnlimited, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(slowThumbnailQueueMessage, ik.Item.Index + 1, Path.GetFileName(ik.Item.Location)))));
+			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupCreateThumbnails, CacheManager.ImagePool.SlowThumbnailQueueUnlimited, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(slowThumbnailQueueUnlimitedMessage, Path.GetFileName(ik.Item.Location))), "Abort Cover Generation", CacheManager.ImagePool.SlowThumbnailQueueUnlimited.Clear));
 			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupCreatePages, CacheManager.ImagePool.SlowPageQueue, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(getImageQueueMessage, ik.Item.Index + 1, Path.GetFileName(ik.Item.Location)))));
 			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupLoadPages, CacheManager.ImagePool.FastPageQueue, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(getImageQueueMessage, ik.Item.Index + 1, Path.GetFileName(ik.Item.Location)))));
 			list.Add(new PendingTasksInfo<ComicBook>("ReadInfoAnimation", taskGroupReadInfo, ReadComicBookInfoFileQueue, (IProcessingItem<ComicBook> cb) => new TaskInfo(cb, StringUtility.Format(refreshInfoQueueMessage, cb.Item.Caption))));
