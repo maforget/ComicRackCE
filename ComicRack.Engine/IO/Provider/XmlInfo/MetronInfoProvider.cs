@@ -78,7 +78,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo
 					Notes = metronInfo.Notes ?? string.Empty,
 					Genre = string.Join(delimiter, metronInfo.Genres.Select(g => g.Value)),
 					Web = (metronInfo.UrLs.Where(u => u.Primary)?.FirstOrDefault()?.Value ?? metronInfo.UrLs.FirstOrDefault()?.Value) ?? string.Empty,
-					//PageCount = metronInfo.PageCount, //PageCount should determined by the program unless it's a fileless book, because it can create problems when set to default values
+					PageCount = metronInfo.PageCount,
 					LanguageISO = metronInfo.Series?.Lang ?? string.Empty,
 					AgeRating = metronInfo.AgeRating == AgeRatingType.Unknown ? string.Empty : LocalizeUtility.LocalizeEnum(typeof(AgeRatingType), (int)metronInfo.AgeRating),
 					Characters = string.Join(delimiter, metronInfo.Characters.Select(c => c.Value)),
