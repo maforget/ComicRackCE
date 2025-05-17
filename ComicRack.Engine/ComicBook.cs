@@ -2428,7 +2428,19 @@ namespace cYo.Projects.ComicRack.Engine
 					if (forceRefreshInfo)
 						ComicInfoIsDirty = false;
 				}
-				if (!imageProvider.IsSlow && (base.PageCount == 0 || num != FileSize) && (((options & RefreshInfoOptions.GetFastPageCount) != 0 && (imageProvider.Capabilities & ImageProviderCapabilities.FastPageInfo) != 0) || (options & RefreshInfoOptions.GetPageCount) != 0))
+
+				// Refresh page count info if:
+				// - The image provider is fast (not slow),
+				// - Either the current page count is unknown or the file size has changed,
+				// - And either:
+				//     - Fast page count is requested and supported by the image provider, or
+				//     - A full page count is explicitly requested
+				bool needsPageCountRefresh = base.PageCount == 0 || num != FileSize;
+				bool wantsFastPageCount = options.HasFlag(RefreshInfoOptions.GetFastPageCount);
+				bool canUseFastPageCount = imageProvider.Capabilities.HasFlag(ImageProviderCapabilities.FastPageInfo);
+				bool wantsFullPageCount = options.HasFlag(RefreshInfoOptions.GetPageCount);
+
+				if (!imageProvider.IsSlow && needsPageCountRefresh && ((wantsFastPageCount && canUseFastPageCount) || wantsFullPageCount))
 				{
 					try
 					{
