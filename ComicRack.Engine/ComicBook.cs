@@ -2405,7 +2405,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 			bool fileInfoIsUpToDate = FileInfoRetrieved && !dateIsModified; //file info has been retrieved and file date has not been modified
 			bool noForceRefresh = options.IsNotSet(RefreshInfoOptions.ForceRefresh); // no force refresh option is requested
-			bool pageCountAlreadyAvailable = options.IsNotSet(RefreshInfoOptions.GetFastPageCount | RefreshInfoOptions.GetPageCount) || base.PageCount != 0; // page count is already available or the options GetPageCount & GetFastPageCount are not requested
+			bool pageCountAlreadyAvailable = options.IsNotSet(RefreshInfoOptions.GetFastPageCount | RefreshInfoOptions.GetPageCount, all: false) || base.PageCount != 0; // page count is already available or the options GetPageCount & GetFastPageCount are not requested // all: false means that if either are set (any) it will return true, without it only does so when both are not set
 
 			// Continue refreshing if:
 			// - File info has not been retrieved OR has been modified
