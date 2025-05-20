@@ -378,10 +378,30 @@ namespace cYo.Common.Windows.Forms
 			int num = FormUtility.ScaleDpiX(16);
 			textBox.Width -= num;
 			Button bt = new Button();
-			bt.Anchor = anchorStyles;
-			textBox.Parent.Controls.Add(bt);
-			textBox.Parent.Controls.SetChildIndex(bt, 0);
-			bt.Bounds = new Rectangle(textBox.Right, textBox.Top, num, textBox.Height);
+			bt.Size = new Size(num, textBox.Height); // set the button size before adding to the table because the textbox would be resized otherwise
+
+			if (textBox.Parent is TableLayoutPanel tableLayoutPanel)
+			{
+				tableLayoutPanel.Controls.Remove(textBox); // remove existing textbox, because we will replace it by a panel that includes both
+				textBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right; //Set the anchor styles of the textbox relative to the panel
+				textBox.Location = new Point(0, 0); // reset the location of the textbox to (0,0) because it will be inside a panel
+				bt.Anchor = AnchorStyles.Top | AnchorStyles.Right; //Set the anchor styles of the button relative to the panel
+
+				Panel panel = new Panel(); // create a new panel to host the button and textbox
+				panel.Size = new Size(textBox.Width + num, textBox.Height); // set the panel size to match original textbox
+				panel.Dock = DockStyle.Fill; // fill the panel to the table cell
+				panel.Controls.Add(bt); // add the button to the panel
+				panel.Controls.Add(textBox); // add the textbox back inside the panel
+				tableLayoutPanel.Controls.Add(panel, tableLayoutPanel.GetColumn(textBox), tableLayoutPanel.GetRow(textBox)); // add the panel inside the table
+				panel.TabIndex = textBox.TabIndex; // set the tab index of the panel to match the textbox
+			}
+			else
+			{
+				bt.Anchor = anchorStyles;
+				textBox.Parent.Controls.Add(bt);
+				textBox.Parent.Controls.SetChildIndex(bt, 0);
+			}
+			bt.Location = new Point(textBox.Right, textBox.Top); // set the button location to the right of the textbox
 			bt.BackgroundImage = dropDownImage;
 			bt.BackgroundImageLayout = ImageLayout.Center;
 			bt.TabStop = false;
@@ -396,7 +416,7 @@ namespace cYo.Common.Windows.Forms
 			};
 			if (!textBox.Multiline)
 			{
-				textBox.KeyUp += delegate(object s2, KeyEventArgs ea2)
+				textBox.KeyUp += (object s2, KeyEventArgs ea2) =>
 				{
 					if (ea2.KeyCode == Keys.Down)
 					{
