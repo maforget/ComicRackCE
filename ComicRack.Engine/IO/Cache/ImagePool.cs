@@ -137,7 +137,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 			return true;
 		}
 
-		public void AddThumbToQueue(ThumbnailKey key, object callbackKey, AsyncCallback asyncCallback, bool noSizeLimit = false)
+		public void AddThumbToQueue(ThumbnailKey key, object callbackKey, AsyncCallback asyncCallback)
 		{
 			if (thumbs.DiskCache.IsAvailable(key))
 			{
@@ -145,7 +145,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 			}
 			else
 			{
-				(noSizeLimit ? slowThumbnailQueueUnlimited : slowThumbnailQueue).AddItem(key, callbackKey, asyncCallback);
+				slowThumbnailQueue.AddItem(key, callbackKey, asyncCallback);
 			}
 		}
 
@@ -518,12 +518,13 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 			}
 		}
 
-		public void CacheThumbnail(ThumbnailKey key, ComicBook cb, bool noSizeLimit = false)
+		public void GenerateFrontCoverThumbnail(ComicBook cb)
 		{
 			if (cb == null)
 				return;
 
-			AddThumbToQueue(key, null, delegate
+			ThumbnailKey key = cb.GetFrontCoverThumbnailKey();
+			slowThumbnailQueueUnlimited.AddItem(key, null, delegate
 			{
 				if (thumbs.DiskCache.IsAvailable(key))
 					return;
@@ -535,7 +536,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 				catch
 				{
 				}
-			}, noSizeLimit);
+			});
 		}
 
 		protected override void Dispose(bool disposing)
