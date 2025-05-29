@@ -98,6 +98,7 @@ Community Edition Build 0.9.180:
 * BUGFIX: Fixed tabs not rendering correctly when switching to tab view (while double-clicking).
 * BUGFIX: Opening the Info dialog would mark some file as requiring an update even when nothing was changed.
 * BUGFIX: Fixed scripts Hook ComicInfoUI & QuickOpenUI, not working.
+* BUGFIX: Aborting an export will now correctly stop the export process and not create partial files.
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 

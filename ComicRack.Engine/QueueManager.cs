@@ -461,6 +461,7 @@ namespace cYo.Projects.ComicRack.Engine
 						}
 					}
 				}
+				catch (OperationCanceledException) { } //Since we cancelled don't add it as an error, just ignore it.
 				catch
 				{
 					ExportErrors.Add(comicExporter);

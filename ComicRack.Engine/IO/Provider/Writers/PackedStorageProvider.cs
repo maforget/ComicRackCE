@@ -102,6 +102,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 							if (FireProgressEvent(++loopCount * 100 / provider.Count))
 							{
 								ls.Break();
+								throw new OperationCanceledException("Export operation was cancelled by the user.");
 							}
 						}
 					}
