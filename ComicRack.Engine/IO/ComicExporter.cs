@@ -73,7 +73,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 				using (IImageProvider provider = CombinedComics.OpenProvider(comicBooks, pagePool))
 				{
 					FileFormat fileFormat = setting.GetFileFormat(ComicBook);
-					string text = null;
+					string tempFile = null;
 					try
 					{
 						using (StorageProvider storageProvider = Providers.Writers.CreateFormatProvider(fileFormat.Name))
@@ -87,10 +87,10 @@ namespace cYo.Projects.ComicRack.Engine.IO
 								storageProvider.Progress += writer_Progress;
 								if (File.Exists(targetPath))
 								{
-									text = EngineConfiguration.Default.GetTempFileName();
-									comicInfo = storageProvider.Store(provider, comicInfo, text, setting);
+									tempFile = EngineConfiguration.Default.GetTempFileName();
+									comicInfo = storageProvider.Store(provider, comicInfo, tempFile, setting);
 									ShellFile.DeleteFile(targetPath);
-									File.Move(text, targetPath);
+									File.Move(tempFile, targetPath);
 								}
 								else
 								{
@@ -105,7 +105,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 					}
 					catch
 					{
-						FileUtility.SafeDelete(text ?? targetPath);
+						FileUtility.SafeDelete(tempFile ?? targetPath);
 						throw;
 					}
 				}

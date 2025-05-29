@@ -132,25 +132,26 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                 throw new InvalidDataException(TR.Messages["SourceComicNotValid", "Source Book is not valid"]);
             }
             string destFileName = target;
-            string text = null;
+            string tempFile = null;
             try
             {
                 if (string.Equals(provider.Source, target, StringComparison.OrdinalIgnoreCase))
                 {
-                    target = (text = EngineConfiguration.Default.GetTempFileName());
+                    target = (tempFile = EngineConfiguration.Default.GetTempFileName());
                 }
                 ComicInfo result = OnStore(provider, info, target, setting);
-                if (text != null)
+                if (tempFile != null)
                 {
-                    File.Copy(text, destFileName, overwrite: true);
+                    File.Copy(tempFile, destFileName, overwrite: true);
                 }
                 return result;
             }
             finally
             {
-                if (text != null)
+                //Delete temp file if it exists
+                if (tempFile != null)
                 {
-                    FileUtility.SafeDelete(text);
+                    FileUtility.SafeDelete(tempFile);
                 }
             }
         }
