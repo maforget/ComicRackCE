@@ -1528,7 +1528,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					int id = 300 + vtag.ID;
 					dictionary[id] = new ItemViewColumn(id, vtag.Name, 100,
 											new ComicListField(vtag.PropertyName, vtag.Description),
-												new CoverViewItemPropertyComparer(vtag.PropertyName),
+												new CoverViewItemVirtualTagComparer(vtag.PropertyName),
 												new CoverViewItemPropertyGrouper(vtag.PropertyName),
 												visible: false);
 				}
