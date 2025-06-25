@@ -281,6 +281,11 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 		}
 
+		private static class Native
+		{
+			public const int WM_ACTIVATEAPP = 0x001C;
+		}
+
 		private readonly CommandMapper commands = new CommandMapper();
 
 		private readonly ToolStripThumbSize thumbSize = new ToolStripThumbSize();
@@ -918,7 +923,8 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		protected override void WndProc(ref Message m)
 		{
-			if (m.Msg == 28 && m.WParam.ToInt32() == 0)
+			//Disables fullscreen mode when the application is deactivated
+			if (m.Msg == Native.WM_ACTIVATEAPP && m.WParam.ToInt32() == 0)
 			{
 				ComicDisplay.FullScreen = false;
 			}
