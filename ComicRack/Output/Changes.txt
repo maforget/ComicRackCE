@@ -99,6 +99,7 @@ Community Edition Build 0.9.180:
 * BUGFIX: Opening the Info dialog would mark some file as requiring an update even when nothing was changed.
 * BUGFIX: Fixed scripts Hook ComicInfoUI & QuickOpenUI, not working.
 * BUGFIX: Aborting an export will now correctly stop the export process and not create partial files.
+* BUGFIX: The main window state will now be correctly restored from the tray. If the program was closed from the tray, upon startup it would fail to restore the window in maximized state. Even if it was maximized before closing.
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 

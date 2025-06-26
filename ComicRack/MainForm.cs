@@ -394,8 +394,6 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private static readonly Image datasourceDisconnected = Resources.DataSourceDisconnected;
 
-		private bool maximized;
-
 		private bool shieldTray;
 
 		private bool minimalGui;
@@ -406,7 +404,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private bool quickListDirty;
 
-		private FormWindowState oldState;
+		private FormWindowState oldState = FormWindowState.Normal;
 
 		[DefaultValue(null)]
 		public ComicDisplay ComicDisplay
@@ -631,8 +629,6 @@ namespace cYo.Projects.ComicRack.Viewer
 				mainViewContainer.Dock = value;
 			}
 		}
-
-		public bool Maximized => maximized;
 
 		public Rectangle SafeBounds
 		{
@@ -2596,7 +2592,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				}
 				if (workspace.IsWindowLayout)
 				{
-					oldState = workspace.FormState;
+					oldState = Program.ExtendedSettings.StartHidden ? workspace.FormState : workspace.PreviousFormState;
 					base.WindowState = Program.ExtendedSettings.StartHidden ? FormWindowState.Minimized : workspace.FormState;
 					ComicDisplay.FullScreen = workspace.FullScreen;
 					MinimalGui = workspace.MinimalGui;
@@ -2662,6 +2658,7 @@ namespace cYo.Projects.ComicRack.Viewer
 		private void StoreWorkspace(DisplayWorkspace workspace)
 		{
 			workspace.FormState = base.WindowState;
+			workspace.PreviousFormState = oldState;
 			workspace.FormBounds = SafeBounds;
 			workspace.MinimalGui = MinimalGui;
 			workspace.PanelDock = BrowserDock;
@@ -3955,23 +3952,17 @@ namespace cYo.Projects.ComicRack.Viewer
 			switch (base.WindowState)
 			{
 				case FormWindowState.Maximized:
-					maximized = true;
+					oldState = FormWindowState.Maximized;
 					break;
 				case FormWindowState.Minimized:
-					if (Program.ExtendedSettings.StartHidden)
-						maximized = oldState == FormWindowState.Maximized ? true : false;
-
 					if (Program.ExtendedSettings.StartHidden || Program.Settings.MinimizeToTray)
 						MinimizeToTray();
-
-					else
-						maximized = false;
 
 					Program.Collect();
 					break;
 				case FormWindowState.Normal:
 					UpdateSafeBounds();
-					maximized = false;
+					oldState = FormWindowState.Normal;
 					break;
 			}
 		}
@@ -4028,7 +4019,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				}
 				base.Visible = true;
 				base.Bounds = SafeBounds;
-				base.WindowState = (Maximized ? FormWindowState.Maximized : FormWindowState.Normal);
+				base.WindowState = oldState;
 			}
 			finally
 			{

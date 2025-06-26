@@ -107,6 +107,14 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		}
 
 		[Browsable(false)]
+		[DefaultValue(FormWindowState.Normal)]
+		public FormWindowState PreviousFormState
+		{
+			get;
+			set;
+		}
+
+		[Browsable(false)]
 		[DefaultValue(false)]
 		public bool FullScreen
 		{
@@ -406,6 +414,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			DatabaseView = new ComicExplorerViewSettings();
 			UndockedReaderState = FormWindowState.Normal;
 			FormState = FormWindowState.Normal;
+			PreviousFormState = FormWindowState.Normal;
 			PanelVisible = true;
 			PanelDock = DockStyle.Fill;
 			PanelSize = new Size(400, 250).ScaleDpi();
