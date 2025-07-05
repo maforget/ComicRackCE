@@ -102,7 +102,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 
 		protected virtual bool IsSupportedImage(ProviderImageInfo file)
         {
-            if(IsImageThumbnailFolder(file.Name) || IsFileTooSmall(file.Size))
+            if(IsImageThumbnailFolder(file.Name))
 				return false;
 
             string fileExt = Path.GetExtension(FileUtility.MakeValidFilename(file.Name));

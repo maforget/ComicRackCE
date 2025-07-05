@@ -17,7 +17,6 @@ Community Edition Build 0.9.180:
 * NEW: Added the Web field to smart lists.
 * NEW: Added an "Is Missing" smart list entry.
 * NEW: "__MACOSX" & ".DS_Store" folders will be ignored inside archives.
-* NEW: Images smaller than 256 bytes will be ignored inside archives (so that thumbnails are excluded).
 * NEW: Added a "Published (Regional)" column that will use the OS regional setting for the Published date.
 * NEW: Added support for wildcard for "KeepFiles" in a script "Package.ini" (used for Data Manager multiple profiles).
 * NEW: Added a way to merge pages together. (See Wiki)
