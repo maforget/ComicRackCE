@@ -804,8 +804,31 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			itemView.ColumnHeaderHeight = itemView.ItemRowHeight;
 			itemView.Items.Changed += ComicItemAdded;
 			itemView.MouseWheel += itemView_MouseWheel;
+			itemView.StackColumnSorter = GetStackColumnSorter;
 			miPasteData.Click += new EventHandler((sender, e) => PasteComicData());
 			KeySearch.Create(itemView);
+		}
+
+		private static readonly IComparer<IViewableItem> defaultSeriesComparer = new CoverViewItemBookComparer<ComicBookSeriesComparer>();
+		/// <summary>
+		/// Callback function that will sort the items in a stack based on the stack configuration.
+		/// </summary>
+		/// <param name="stackCaption"></param>
+		/// <returns></returns>
+		private IComparer<IViewableItem> GetStackColumnSorter(string stackCaption)
+		{
+			// Determine the stack configuration depending on program settings.
+			ItemViewConfig config = stacksConfig?.GetStackViewConfig(Program.Settings.CommonListStackLayout ? BookList.Name : stackCaption);
+			IColumn colInfo = itemView.ConvertKeyToColumns(config?.SortKey)?.FirstOrDefault(); // Get the IColumn that refers to the sort key
+			IComparer<IViewableItem> stackColumnSorter = colInfo?.ColumnSorter; // Get the column sorter for the column.
+
+			SortOrder sortOrder = config?.ItemSortOrder ?? SortOrder.None; // Default to None if there is no config
+			if (sortOrder == SortOrder.Descending) 
+				stackColumnSorter = stackColumnSorter?.Reverse(); // Reverse the sorter if the sort order is Descending.
+
+			// TODO: Add config to disable (or change) this default sorters.
+			stackColumnSorter ??= defaultSeriesComparer; // Default comparer (series) if no stack configuration is found.
+			return stackColumnSorter;
 		}
 
 		private void ComicItemAdded(object sender, SmartListChangedEventArgs<IViewableItem> e)

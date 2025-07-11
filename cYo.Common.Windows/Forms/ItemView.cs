@@ -1665,6 +1665,9 @@ namespace cYo.Common.Windows.Forms
 
 		public event PaintEventHandler PostPaint;
 
+		public Func<string, IComparer<IViewableItem>> StackColumnSorter { get; set; }
+
+
 		public ItemView()
 		{
 			SelectionMode = SelectionMode.MultiSimple;
@@ -2610,15 +2613,16 @@ namespace cYo.Common.Windows.Forms
 		private Rectangle CalcItemPositions(Graphics gr, bool withSort)
 		{
 			bool areGroupsVisible = AreGroupsVisible;
-			bool flag;
+			bool isDisplayedItemsEmpty;
 			using (ItemMonitor.Lock(displayedItems))
 			{
-				flag = displayedItems == null || displayedItems.Count == 0;
+				isDisplayedItemsEmpty = displayedItems == null || displayedItems.Count == 0;
 			}
 			List<IViewableItem> viewableItems;
 			List<GroupHeaderInformation> grpHeaders;
-			if (withSort || flag)
+			if (withSort || isDisplayedItemsEmpty)
 			{
+				// Group viewable items and Create group headers and assign items to them
 				viewableItems = new List<IViewableItem>(this.items.Lock());
 				grpHeaders = new List<GroupHeaderInformation>();
 				if (areGroupsVisible)
@@ -2648,32 +2652,39 @@ namespace cYo.Common.Windows.Forms
 				{
 					grpHeaders.Add(new GroupHeaderInformation(null, new List<IViewableItem>(viewableItems)));
 				}
+
+				// Create item stacks from each group header
 				if (IsStacked)
 				{
 					Dictionary<IViewableItem, StackInfo> dictionary = new Dictionary<IViewableItem, StackInfo>();
-					foreach (GroupHeaderInformation item2 in grpHeaders)
+					foreach (GroupHeaderInformation groupHeaderInfo in grpHeaders)
 					{
-						GroupManager<IViewableItem> groupManager2 = new GroupManager<IViewableItem>(ItemStacker, item2.Items);
-						item2.Items.Clear();
-						item2.ItemCount = 0;
+						GroupManager<IViewableItem> groupManager2 = new GroupManager<IViewableItem>(ItemStacker, groupHeaderInfo.Items);
+						groupHeaderInfo.Items.Clear();
+						groupHeaderInfo.ItemCount = 0;
+						// Iterate through each stack and create the stackInfo used when referring to stacks
 						foreach (GroupContainer<IViewableItem> group in groupManager2.GetGroups())
 						{
+							// Determine which sorter is set inside that group (stack) and extend the ItemStackSorter with additional sorters.
+							var stackSorter = StackColumnSorter?.Invoke(group.Caption);
 							if (ItemStackSorter != null)
 							{
-								group.Items.Sort(ItemStackSorter);
+								// Chain the stack sorter with the default ItemStackSorter if it exists
+								var stackSortComparer = stackSorter is not null ? ItemStackSorter.Chain(stackSorter) : ItemStackSorter; // Default comparer if no specific sorter is found
+								group.Items.Sort(stackSortComparer); // Sort the items in the group using the stack sorter
 							}
 							StackInfo stackInfo = new StackInfo(group);
-							OnProcessStack(stackInfo);
-							IViewableItem key = group.Items[0];
+							OnProcessStack(stackInfo); // Settings like Top of Stack & Custom Thumbnail will be applied here
+							IViewableItem key = group.Items[0]; // Use the first item of the stack
 							dictionary[key] = stackInfo;
-							item2.Items.Add(group.Items[0]);
+							groupHeaderInfo.Items.Add(key); // Add the first item of the stack to the group header items
 							if (GroupHeaderTrueCount)
 							{
-								item2.ItemCount += group.Items.Count;
+								groupHeaderInfo.ItemCount += group.Items.Count;
 							}
 							else
 							{
-								item2.ItemCount++;
+								groupHeaderInfo.ItemCount++;
 							}
 						}
 					}
@@ -2684,11 +2695,14 @@ namespace cYo.Common.Windows.Forms
 				}
 				else
 				{
+					// Clear the stack info if not stacked
 					using (ItemMonitor.Lock(this.stackInfo))
 					{
 						this.stackInfo.Clear();
 					}
 				}
+
+				//Sort each stack (in reality first item of each stack) within each group headers
 				IComparer<IViewableItem> comparer = null;
 				using (ItemMonitor.Lock(itemSorters))
 				{
@@ -2714,6 +2728,8 @@ namespace cYo.Common.Windows.Forms
 					{
 					}
 				}
+
+				// Create the viewable items list from each group header
 				viewableItems.Clear();
 				foreach (GroupHeaderInformation item3 in grpHeaders)
 				{
