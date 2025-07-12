@@ -70,7 +70,7 @@ namespace cYo.Projects.ComicRack.Engine.Database
 		{
 		}
 
-		private const int MaxConfigCount = 1024;
+		private const int MaxConfigCount = 2048;
 
 		private readonly StackConfigItemCollection configs = new StackConfigItemCollection();
 
