@@ -103,6 +103,15 @@ namespace cYo.Projects.ComicRack.Engine.Database
 			stackConfigItem.TopId = cb.Id;
 		}
 
+		public void ResetStackTop(string stack)
+		{
+			StackConfigItem stackConfigItem = FindItem(stack);
+			if (stackConfigItem != null)
+			{
+				stackConfigItem.TopId = Guid.Empty;
+			}
+		}
+
 		public void SetStackThumbnailKey(string stack, string key)
 		{
 			StackConfigItem stackConfigItem = FindItem(stack);

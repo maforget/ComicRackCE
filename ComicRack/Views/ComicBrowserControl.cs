@@ -1027,7 +1027,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}, () => base.Main.GetRatingEditor().IsValid(), miQuickRating);
 			commands.Add(CopyListSetup, miCopyListSetup);
 			commands.Add(PasteListSetup, miPasteListSetup);
-			commands.Add(SetTopOfStack, () => itemView.SelectedCount == 1, miSetTopOfStack);
+			commands.Add(SetTopOfStack, () => itemView.SelectedCount == 1 && !HasTop(), miSetTopOfStack);
+			commands.Add(ResetTopOfStack, HasTop, miResetTopOfStack);
 			commands.Add(SetStackThumbnail, true, miSetStackThumbnail);
 			commands.Add(RemoveStackThumbnail, true, miRemoveStackThumbnail);
 			miAutomation.DropDownItems.AddRange(ScriptUtility.CreateToolItems<ToolStripMenuItem>(this, "Books", () => GetBookList(ComicBookFilterType.Selected)).ToArray());
@@ -1700,6 +1701,13 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			SetListBackgroundImage((string)null);
 		}
 
+		private bool HasTop()
+		{
+			ComicBook comicBook = GetBookList(ComicBookFilterType.Selected).FirstOrDefault();
+			IViewableItem viewableItem = itemView.SelectedItems.FirstOrDefault();
+			return viewableItem != null && itemView.IsStack(viewableItem) && (stacksConfig?.IsTop(itemView.GetStackCaption(viewableItem), comicBook) ?? false);
+		}
+
 		private void SetTopOfStack()
 		{
 			ComicBook comicBook = GetBookList(ComicBookFilterType.Selected).FirstOrDefault();
@@ -1710,6 +1718,16 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					stacksConfig = new StacksConfig();
 				}
 				stacksConfig.SetStackTop(currentStackName, comicBook);
+			}
+		}
+
+		private void ResetTopOfStack()
+		{
+			IViewableItem viewableItem = itemView.SelectedItems.FirstOrDefault();
+			if (viewableItem != null && itemView.IsStack(viewableItem))
+			{
+				stacksConfig.ResetStackTop(itemView.GetStackCaption(viewableItem));
+				FillBookList();
 			}
 		}
 
@@ -2802,7 +2820,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			ToolStripMenuItem toolStripMenuItem = miMarkAs;
 			bool visible = (miRateMenu.Visible = flag && flag3);
 			toolStripMenuItem.Visible = visible;
-			miSetTopOfStack.Visible = openStackPanel.Visible;
+			miResetTopOfStack.Visible = !(miSetTopOfStack.Visible = openStackPanel.Visible) && itemView.IsStack(itemView.SelectedItems.FirstOrDefault());
 			miSetStackThumbnail.Visible = itemView.IsStack(itemView.SelectedItems.FirstOrDefault());
 			miRemoveStackThumbnail.Visible = stacksConfig != null && !string.IsNullOrEmpty(stacksConfig.GetStackCustomThumbnail(itemView.GetStackCaption(itemView.SelectedItems.FirstOrDefault())));
 			ComicLibrary comicLibrary = enumerable2.Select((ComicBook cb) => cb.Container as ComicLibrary).FirstOrDefault();

@@ -199,6 +199,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			this.lvGroupsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.lvGroupsCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.browserContainer = new System.Windows.Forms.SplitContainer();
+			this.miResetTopOfStack = new System.Windows.Forms.ToolStripMenuItem();
 			this.contextRating.SuspendLayout();
 			this.contextMarkAs.SuspendLayout();
 			this.contextMenuItems.SuspendLayout();
@@ -402,6 +403,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             this.miInvertSelection,
             this.miRefreshInformation,
             this.sepListBackground,
+            this.miResetTopOfStack,
             this.miSetTopOfStack,
             this.miSetStackThumbnail,
             this.miRemoveStackThumbnail,
@@ -409,7 +411,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             this.toolStripRemoveSeparator,
             this.miRemove});
 			this.contextMenuItems.Name = "contextMenuFiles";
-			this.contextMenuItems.Size = new System.Drawing.Size(252, 656);
+			this.contextMenuItems.Size = new System.Drawing.Size(252, 700);
 			this.contextMenuItems.Closed += new System.Windows.Forms.ToolStripDropDownClosedEventHandler(this.contextMenuItems_Closed);
 			this.contextMenuItems.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuItems_Opening);
 			this.contextMenuItems.Opened += new System.EventHandler(this.contextMenuItems_Opened);
@@ -450,7 +452,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             this.toolStripSeparator2});
 			this.contextOpenWith.Name = "contextOpenWith";
 			this.contextOpenWith.OwnerItem = this.miOpenWith;
-			this.contextOpenWith.Size = new System.Drawing.Size(181, 54);
+			this.contextOpenWith.Size = new System.Drawing.Size(181, 32);
 			this.contextOpenWith.Opening += new System.ComponentModel.CancelEventHandler(this.contextOpenWith_Opening);
 			// 
 			// miOpenWithManager
@@ -1373,6 +1375,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			this.browserContainer.TabIndex = 2;
 			this.browserContainer.DoubleClick += new System.EventHandler(this.browserContainer_DoubleClick);
 			// 
+			// miResetTopOfStack
+			// 
+			this.miResetTopOfStack.Name = "miResetTopOfStack";
+			this.miResetTopOfStack.Size = new System.Drawing.Size(251, 22);
+			this.miResetTopOfStack.Text = "Reset Top of Stack";
+			// 
 			// ComicBrowserControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1534,5 +1542,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private ToolStripSeparator toolStripSeparator2;
 		private ToolStripMenuItem miOpenWithManager;
 		private ContextMenuStrip contextOpenWith;
+		private ToolStripMenuItem miResetTopOfStack;
 	}
 }
