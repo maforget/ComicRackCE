@@ -456,6 +456,14 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set;
 		}
 
+		[DefaultValue(false)]
+		[CommandLineSwitch(ShortName = "lss")]
+		public bool LegacyStackSorting
+		{
+			get;
+			set;
+		}
+
 		public ExtendedSettings()
 		{
 			AnamorphicScalingTolerance = 0.25f;

@@ -817,6 +817,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		/// <returns></returns>
 		private IComparer<IViewableItem> GetStackColumnSorter(string stackCaption)
 		{
+			// If legacy stack sorting is enabled, return null to use the default stack sorting.
+			if (Program.ExtendedSettings.LegacyStackSorting)
+				return null;
+
 			// Determine the stack configuration depending on program settings.
 			ItemViewConfig config = stacksConfig?.GetStackViewConfig(Program.Settings.CommonListStackLayout ? BookList.Name : stackCaption);
 			IColumn colInfo = itemView.ConvertKeyToColumns(config?.SortKey)?.FirstOrDefault(); // Get the IColumn that refers to the sort key
@@ -826,7 +830,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			if (sortOrder == SortOrder.Descending) 
 				stackColumnSorter = stackColumnSorter?.Reverse(); // Reverse the sorter if the sort order is Descending.
 
-			// TODO: Add config to disable (or change) this default sorters.
 			stackColumnSorter ??= defaultSeriesComparer; // Default comparer (series) if no stack configuration is found.
 			return stackColumnSorter;
 		}
