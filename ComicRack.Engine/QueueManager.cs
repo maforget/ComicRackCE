@@ -423,6 +423,18 @@ namespace cYo.Projects.ComicRack.Engine
 					IEnumerable<string> source = (from cb in cbs
 												  where cb.EditMode.IsLocalComic()
 												  select cb.FilePath).ToArray();
+
+
+					//Callback function to check if the file is already in the database, will be checked when calling Export
+					comicExporter.FileIsInDatabase = (string targetPath, string sourceFile) =>
+					{
+						if (string.IsNullOrEmpty(targetPath))
+							return false;
+
+						// If the target path is the same as the source file, we assume it's not a duplicate
+						return targetPath != sourceFile && DatabaseManager.Database.Books.FindItemByFile(targetPath) != null;
+					};
+
 					outPath = comicExporter.Export(CacheManager.ImagePool);
 					if (outPath != null)
 					{
