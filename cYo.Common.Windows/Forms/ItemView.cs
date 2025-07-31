@@ -2670,7 +2670,7 @@ namespace cYo.Common.Windows.Forms
 							if (ItemStackSorter != null)
 							{
 								// Chain the stack sorter with the default ItemStackSorter if it exists
-								var stackSortComparer = stackSorter is not null ? ItemStackSorter.Chain(stackSorter) : ItemStackSorter; // Default comparer if no specific sorter is found
+								var stackSortComparer = stackSorter is null ? ItemStackSorter : ItemStackSorter.Chain(stackSorter); // Default comparer if no specific sorter is found
 								group.Items.Sort(stackSortComparer); // Sort the items in the group using the stack sorter
 							}
 							StackInfo stackInfo = new StackInfo(group);
