@@ -61,9 +61,9 @@ namespace cYo.Projects.ComicRack.Engine.IO
 				{
 					throw new InvalidOperationException(StringUtility.Format(TR.Messages["OutputFileExists", "Output file '{0}' already exists!"], targetPath));
 				}
-				// Check if the file already exists in the database. Overwrite should always be false, added just in case
+				// Check if the file already exists in the database.
 				bool existsInDatabase = FileIsInDatabase?.Invoke(targetPath, ComicBook.FilePath) ?? false;
-				if (File.Exists(targetPath) && existsInDatabase && !setting.Overwrite && setting.Target == ExportTarget.ReplaceSource)
+				if (File.Exists(targetPath) && existsInDatabase && setting.Target == ExportTarget.ReplaceSource)
 				{
 					// If the file exists in the database and we are replacing the source, we throw an exception
 					throw new InvalidOperationException(StringUtility.Format(TR.Messages["AlreadyExistsInDatabase", "Resulting operation would result in a duplicate entry in the database, Output file '{0}' already exists in the library"], targetPath));
