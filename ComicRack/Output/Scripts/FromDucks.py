@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 #@Name FromDucks
 #@Hook Books
-#@Image fromducks.png
+#@Image fromducks.ico
 #@Key FromDucks
-#@Description Search on coa.inducks.org informations about the selected eComics
+#@Description Search on inducks.org informations about the selected eComics
+#
+# FromDucks 2.16 - Jul 2025
+#
+# ---> 2.16 Changelog: Fix Inducks domain name, fix log function being passed wrongly typed parameters
 #
 # FromDucks 2.15 - Jun 2022
 #
@@ -43,9 +47,7 @@
 #
 #################################################################################################################
 
-from __future__ import unicode_literals
-
-import clr, re, sys, os, urlparse
+import clr, re, sys
 
 from System.Diagnostics import Process
 from System import *
@@ -59,9 +61,8 @@ from System.Windows.Forms import *
 clr.AddReference('System.Drawing')
 from System.Drawing import Point, Size, ContentAlignment, Color, SystemColors, Icon
 from datetime import datetime
-import ssl, urllib
 settings = ""
-VERSION = "2.14"
+VERSION = "2.16"
 
 # DEBUG = False
 DEBUG = True
@@ -164,7 +165,6 @@ def FromDucks(books):
 
 		Monitor.Exit(ComicRack.MainWindow)
 
-
 def WorkerThread(books):
 
 	global aUpdate, TranslationID, f, TitleT #, progress
@@ -211,7 +211,7 @@ def WorkerThread(books):
 
 			Series,Day,Month,Year,Publisher,Pages,Language,Web,StoryFull,Characters,MainTitle = ReadInfoDucks(book)
 			#
-			if DEBUG:print chr(10) , "Scraped Info: " , Series,Day,Month,Year,Publisher,Pages,Language,Web,StoryFull,Characters,MainTitle
+			if DEBUG:print(chr(10) , "Scraped Info: " , Series,Day,Month,Year,Publisher,Pages,Language,Web,StoryFull,Characters,MainTitle)
 			#
 			# series = 0 title = 1 team = 2 tags = 3 summary = 4 notes = 5 web = 6 chars = 7 year = 8 month = 9 publisher = 10
 			# editor = 11 penciller = 12  inker = 13  writer = 14 cover = 15 colorist = 16 letterer = 17 language = 18
@@ -881,7 +881,7 @@ class BuilderForm(Form):
 		self.FormBorderStyle = FormBorderStyle.FixedDialog
 		self.Name = "FromDucks"
 		self.StartPosition = FormStartPosition.CenterParent
-		self.Text = "(c) Inducks team (web: coa.inducks.org)"
+		self.Text = "(c) Inducks team (web: inducks.org)"
 		self.MinimizeBox = False
 		self.MaximizeBox = False
 
@@ -958,7 +958,6 @@ class BuilderForm(Form):
 			"> RESET will cycle the checkbox status\n" +
 			"> REBUILD will rebuild the Series list\n(the Series list is read once and then stored);\n" +
 		    "> CANCEL will abort the script")
-
 	def ChangeStatus(self, sender, e):
 
 		if sender.Name.CompareTo(self.genre.Name) == 0:
@@ -972,8 +971,7 @@ class BuilderForm(Form):
 		global aList
 
 		Code = aList[self.list.SelectedIndex][0]
-		cWeb = "https://coa.inducks.org/publication.php?c="
-
+		cWeb = "https://inducks.org/publication.php?c="
 		DCWeb = cWeb + Code
 		if DEBUG:log_BD("Series in Web:", DCWeb)
 		Process.Start(DCWeb)
@@ -1006,13 +1004,11 @@ def ReadInfoDucks(book):
 
 	cSeries = aList[SelInd][0].strip()
 
-	# Read inducks
-	cWeb = 'https://inducks.org/issue.php?c='
-	#
-	if DEBUG:log_BD("Searching ---->" , aList[SelInd][3])
-	#
 
-	nNumIss = str(book.Number).strip().replace(" ","%20").replace("/","%2F")
+	cWeb = 'https://inducks.org/issue.php?c='
+	if DEBUG:log_BD("Searching ---->" , aList[SelInd][3])
+	
+	nNumIss = str(book.Number).strip().replace(" ","%20").replace("/","%2F")	
 	contents = ""
 	for counter in range (0,4):
 		try:
@@ -1029,7 +1025,7 @@ def ReadInfoDucks(book):
 				debuglog()
 				continue
 
-			 #if not "Issue not found" in contents:
+				#if not "Issue not found" in contents:
 			if len(contents)>4000:
 				break
 
@@ -1361,14 +1357,13 @@ def FillDat(lForce,configpath):
 	for cycle in configpath:
 
 		if "FromDucks.dat" in cycle:
-			cWeb='https://coa.inducks.org/inducks/isv/inducks_publication.isv'
+			cWeb='https://inducks.org/inducks/isv/inducks_publication.isv'
 		elif "Characters.dat" in cycle:
-			cWeb='https://coa.inducks.org/inducks/isv/inducks_charactername.isv'
+			cWeb='https://inducks.org/inducks/isv/inducks_charactername.isv'
 		elif "Languages.dat" in cycle:
-			cWeb='https://coa.inducks.org/inducks/isv/inducks_language.isv'
+			cWeb='https://inducks.org/inducks/isv/inducks_language.isv'
 
 		if lForce or not FileInfo(cycle).Exists:
-
 			try:
 				fileHandle = _read_url(cWeb)
 				if lForce:
@@ -1486,7 +1481,6 @@ def debuglog():
 	logfile = Path.Combine(__file__[:-len('FromDucks.py')] , "FromDucks_Debug_Log.txt")
 
 	if DEBUG:log_BD("Writing Log to " + logfile)
-
 	log = open(logfile, 'a')
 	try:
 		log.write (str(datetime.now().strftime("%A %d %B %Y %H:%M:%S")) + '\n')
@@ -1523,8 +1517,7 @@ def sstr(object):
 		return object
 	return str(object)
 
-def log_BD(bdstr,bdstat,lTime):
-
+def log_BD(bdstr,bdstat="",lTime=1):
 	bdlogfile = Path.Combine(__file__[:-len('FromDucks.py')] , "FromDucks_Rename_Log.txt")
 
 	bdlog = open(bdlogfile, 'a')
@@ -1534,8 +1527,7 @@ def log_BD(bdstr,bdstat,lTime):
 	else:
 		cDT= ""
 
-	bdlog.write (cDT.encode("utf-8") + bdstr.encode("utf-8") + "   " + bdstat.encode("utf-8") + "\n")
-
+	bdlog.write (str(cDT).encode("utf-8") + str(bdstr).encode("utf-8") + "   " + str(bdstat).encode("utf-8") + "\n")
 	bdlog.flush()
 	bdlog.close()
 
@@ -1586,7 +1578,6 @@ def _read_url(url):
 
 	requestUri = url
 	log_BD(requestUri, "Requesting", 1)
-
 	try:
 		Req = HttpWebRequest.Create(requestUri)
 		Req.Timeout = 60000
