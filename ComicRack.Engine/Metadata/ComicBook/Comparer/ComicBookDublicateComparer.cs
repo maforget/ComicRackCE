@@ -8,7 +8,7 @@ namespace cYo.Projects.ComicRack.Engine
 		public override int Compare(ComicBook x, ComicBook y)
 		{
 			int num = string.Compare(x.FilePath, y.FilePath, ignoreCase: true);
-			if (num != 0)
+			if (num == 0) // If Filepaths are the same, stop here, else continue comparing
 			{
 				return num;
 			}
