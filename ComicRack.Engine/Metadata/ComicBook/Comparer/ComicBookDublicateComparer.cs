@@ -7,10 +7,14 @@ namespace cYo.Projects.ComicRack.Engine
 	{
 		public override int Compare(ComicBook x, ComicBook y)
 		{
-			int num = string.Compare(x.FilePath, y.FilePath, ignoreCase: true);
-			if (num == 0) // If Filepaths are the same, stop here, else continue comparing
+			int num = 0;
+			if (x.IsLinked && y.IsLinked) // Don't compare fileless comics
 			{
-				return num;
+				num = string.Compare(x.FilePath, y.FilePath, ignoreCase: true);
+				if (num == 0) // If Filepaths are the same, stop here, else continue comparing
+				{
+					return num;
+				} 
 			}
 			num = string.Compare(GroupInfo.CompressedName(x.ShadowSeries), GroupInfo.CompressedName(y.ShadowSeries), ignoreCase: true);
 			if (num != 0)
