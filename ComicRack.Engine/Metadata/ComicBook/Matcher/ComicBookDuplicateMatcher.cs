@@ -10,7 +10,8 @@ namespace cYo.Projects.ComicRack.Engine
 	[ComicBookMatcherHint("FilePath, EnableProposed, Series, Format, Count, Number, Volume, LanguageISO, Year, Month, Day", DisableOptimizedUpdate = true)]
 	public class ComicBookDuplicateMatcher : ComicBookValueMatcher
 	{
-		private static readonly ComicBookDublicateComparer duplicateComparer = new ComicBookDublicateComparer();
+		private static readonly ComicBookDuplicateComparer.EqualityComparer duplicateComparer = new ComicBookDuplicateComparer.EqualityComparer();
+		private static readonly ComicBookDuplicateComparer.FilePathComparer filePathComparer = new ComicBookDuplicateComparer.FilePathComparer();
 
 		private static readonly string[] opListNeutral = "on|off".Split('|');
 
@@ -25,29 +26,25 @@ namespace cYo.Projects.ComicRack.Engine
 		public override IEnumerable<ComicBook> Match(IEnumerable<ComicBook> items)
 		{
 			if (MatchOperator != 0)
-			{
 				return items;
-			}
-			List<ComicBook> list = items.ToList();
-			List<ComicBook> list2 = new List<ComicBook>();
-			list.Sort(duplicateComparer);
-			ComicBook comicBook = null;
-			ComicBook comicBook2 = null;
-			foreach (ComicBook item in list)
-			{
-				if (comicBook == null || duplicateComparer.Compare(comicBook, item) != 0)
-				{
-					comicBook = (comicBook2 = item);
-					continue;
-				}
-				if (comicBook2 != null)
-				{
-					list2.Add(comicBook2);
-				}
-				comicBook2 = null;
-				list2.Add(item);
-			}
-			return list2;
+
+			// Duplicates by metadata
+			var metaGroups = items
+				.GroupBy(b => b, duplicateComparer)
+				.Where(g => g.Count() > 1)
+				.SelectMany(g => g).ToList();
+
+			// Duplicates by path
+			var pathGroups = items
+				.GroupBy(b => b, filePathComparer)
+				.Where(g => g.Count() > 1)
+				.SelectMany(g => g).ToList();
+
+			// Union to remove overlaps and duplicates
+			return metaGroups
+				.Concat(pathGroups)
+				.Distinct() // Removes books that are both metadata AND path duplicates
+				.ToList();
 		}
 	}
 }
