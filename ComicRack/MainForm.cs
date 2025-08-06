@@ -7,6 +7,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using cYo.Common;
 using cYo.Common.Collections;
@@ -1073,7 +1074,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				ScriptUtility.Invoke(PluginEngine.ScriptTypeStartup);
 			});
-			CheckForUpdate();
+			_ = Task.Run(() => CheckForUpdateAsync());
 		}
 
 		protected override void OnActivated(EventArgs e)
@@ -1510,7 +1511,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				Program.ShowExplorer(ComicDisplay.Book.Comic.FilePath);
 			}, () => ComicDisplay.Book != null && ComicDisplay.Book.Comic.EditMode.IsLocalComic(), cmRevealInExplorer);
-			commands.Add(() => CheckForUpdate(true), miCheckUpdate);
+			commands.Add(() => _ = CheckForUpdateAsync(true), miCheckUpdate);
 		}
 
 		private void InitializeKeyboard()
@@ -4427,7 +4428,7 @@ namespace cYo.Projects.ComicRack.Viewer
 		const string NightlyDownloadLinkEXE = @"https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe";
 		const string NightlyDownloadLinkZIP = @"https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCE_nightly.zip";
 
-		private async void CheckForUpdate(bool alwaysCheck = false)
+		private async Task CheckForUpdateAsync(bool alwaysCheck = false)
 		{
 			bool doNotCheckForUpdate = Program.Settings.HiddenMessageBoxes.HasFlag(HiddenMessageBoxes.DoNotCheckForUpdate);
 

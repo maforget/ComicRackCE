@@ -37,6 +37,8 @@ Community Edition Build 0.9.180:
 * NEW: Added an option to append a tag during export. It will append tags (only if they do not already exists) to the book file & to the library (only if set to replace or add to library).
 * NEW: Added feature to generate thumbnails for all covers. Under File => Generate Cover Thumbnails.
 * NEW: The Info dialog is now resizable.
+* NEW: Changed how the first item of a stack is determined to take into consideration the sorting from inside the stack. (see Wiki)
+* NEW: Added a Reset Top of Stack option in the context menu  that will reset any top of stack previsously set.
 
 
 * CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.
@@ -68,6 +70,8 @@ Community Edition Build 0.9.180:
 * CHANGE: Replaced the API used to move files to the recycle bin to the newer Windows API. This should fix some issues with the recycle bin.
 * CHANGE: Language will now use the full language code instead just the 2 letter ISO code. (Ex: "en-US" instead of "en").
 * CHANGE: Upped the limit you can configure for thumbnails memory caching from 100MB to 500MB. Also upped the limit for number of items from 4096 to 8192 (not customizable). The memory is freed when either values is reached first.
+* CHANGE: Doubled the number of items of StacksConfig from 1024 to 2048. Each list can only contain that maximum number of stacks individual configs. This affects everything from layout to grouping/sorting and Top of Stack.
+* CHANGE: Show Duplicate will now show entries that have identical file paths.
 
 
 * UPDATE: Updated to .NET Framework v4.8.
@@ -99,6 +103,9 @@ Community Edition Build 0.9.180:
 * BUGFIX: Fixed scripts Hook ComicInfoUI & QuickOpenUI, not working.
 * BUGFIX: Aborting an export will now correctly stop the export process and not create partial files.
 * BUGFIX: The main window state will now be correctly restored from the tray. If the program was closed from the tray, upon startup it would fail to restore the window in maximized state. Even if it was maximized before closing.
+* BUGFIX: Fix export upscaling double pages even when specifically told otherwise.
+* BUGFIX: Fixed an issue when exporting that would cause to have duplicate entries in the Library. An error will now be displayed and the export blocked if that happens.
+
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^
 

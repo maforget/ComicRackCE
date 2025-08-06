@@ -8,7 +8,7 @@ using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Engine.Metadata.VirtualTags
 {
-	public class ComicBookVirtualTagComparer : ComicBookSeriesComparer
+	public class ComicBookVirtualTagComparer : Comparer<ComicBook>
 	{
 		private readonly string _property;
 
@@ -19,9 +19,7 @@ namespace cYo.Projects.ComicRack.Engine.Metadata.VirtualTags
 
 		public override int Compare(ComicBook x, ComicBook y)
 		{
-			int num = ExtendedStringComparer.Compare(x.GetStringPropertyValue(_property), y.GetStringPropertyValue(_property), ExtendedStringComparison.IgnoreCase | ExtendedStringComparison.IgnoreArticles);
-
-			return num != 0 ? num : base.Compare(x, y);
+			return ExtendedStringComparer.Compare(x.GetStringPropertyValue(_property), y.GetStringPropertyValue(_property), ExtendedStringComparison.IgnoreCase | ExtendedStringComparison.IgnoreArticles);
 		}
 	}
 }

@@ -288,19 +288,22 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                     try
                     {
                         Bitmap bitmap4 = array2[i];
-                        int num = (setting.DontEnlarge ? Math.Min(bitmap4.Width, setting.PageWidth) : setting.PageWidth);
-                        int height = (setting.DontEnlarge ? Math.Min(bitmap4.Height, setting.PageHeight) : setting.PageHeight);
+                        bool isDoublePage = bitmap4.Width > bitmap4.Height;
+						int width = (setting.DontEnlarge ? Math.Min(bitmap4.Width, setting.PageWidth) : setting.PageWidth); //This is the width of a single page
+						int height = (setting.DontEnlarge ? Math.Min(bitmap4.Height, setting.PageHeight) : setting.PageHeight);
                         switch (setting.PageResize)
                         {
                             case StoragePageResize.WidthHeight:
-                                bitmap3 = bitmap4.Scale(new Size(num, height), setting.Resampling, PixelFormat.Format24bppRgb);
+                                bitmap3 = bitmap4.Scale(new Size(width, height), setting.Resampling, PixelFormat.Format24bppRgb);
                                 break;
                             case StoragePageResize.Width:
-                                if (setting.DoublePages == DoublePageHandling.AdaptWidth && bitmap4.Width > bitmap4.Height)
+                                if (setting.DoublePages == DoublePageHandling.AdaptWidth && isDoublePage)
                                 {
-                                    num *= 2;
-                                }
-                                bitmap3 = bitmap4.Scale(new Size(num, 0), setting.Resampling, PixelFormat.Format24bppRgb);
+                                    int doublePageWidth = width *= 2;
+									//Recalculate the width for a double page so it respects dont't enlarge
+									width = setting.DontEnlarge ? Math.Min(bitmap4.Width, doublePageWidth) : doublePageWidth; 
+								}
+                                bitmap3 = bitmap4.Scale(new Size(width, 0), setting.Resampling, PixelFormat.Format24bppRgb);
                                 break;
                             case StoragePageResize.Height:
                                 bitmap3 = bitmap4.Scale(new Size(0, height), setting.Resampling, PixelFormat.Format24bppRgb);
