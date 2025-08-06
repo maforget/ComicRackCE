@@ -62,7 +62,12 @@ SIZE_RENAME_LOG = 100000
 SIZE_DEBUG_LOG = 100000
 
 def FromDucks(books):
+	import clr;
+	clr.AddReference('System')
+	clr.AddReference('System.Windows.Forms')
+	clr.AddReference('System.Drawing')
 
+	from System.Windows.Forms import Form
 	class ProgressBarDialog(Form):
 		def __init__(self, nMax, cText="Scraping Files"):
 			from System.Drawing import Point, Size, Color
@@ -107,7 +112,7 @@ def FromDucks(books):
 			from System.Drawing import Point, Size, Color
 			from System.Windows.Forms import (
 				DialogResult, Button, ListBox, TextBox, Label, CheckBox, CheckState,
-				FormBorderStyle, FormStartPosition
+				FormBorderStyle, FormStartPosition, SelectionMode
 			)
 
 			global aUpdate, Translation, LStart
@@ -165,7 +170,7 @@ def FromDucks(books):
 			self.list.TabIndex = 1
 			self.list.Text = "Publications"
 			self.list.MultiColumn = False
-			self.list.SelectionMode = ListBox.SelectionMode.One
+			self.list.SelectionMode = SelectionMode.One
 			self.list.HorizontalScrollbar = True
 			self.list.DoubleClick += self.DoubleClickM
 			#self.list.Sorted = True
@@ -503,7 +508,7 @@ def FromDucks(books):
 			self.translatelist.TabIndex = 29
 			self.translatelist.Text = "Translation Language"
 			self.translatelist.MultiColumn = False
-			self.translatelist.SelectionMode = ListBox.SelectionMode.One
+			self.translatelist.SelectionMode = SelectionMode.One
 			self.translatelist.HorizontalScrollbar = True
 			self.translatelist.DoubleClick += self.DoubleClick
 			#
@@ -1022,11 +1027,6 @@ def FromDucks(books):
 		DialogResult
 	)
 
-	import clr;
-	clr.AddReference('System')
-	clr.AddReference('System.Windows.Forms')
-	clr.AddReference('System.Drawing')
-
 	global settings, aList, StartPub, SelInd, TranslationID, LStart, DEBUG, TitleT
 
 	configpath = []
@@ -1183,8 +1183,11 @@ def ReadInfoDucks(book):
 		pr = cWeb + nNum
 		web_url = pr
 		try:
-			with urllib_request.urlopen(pr) as resp:
+			resp = urllib_request.urlopen(pr)
+			try:
 				contents = resp.read().decode('utf-8')
+			finally:
+				resp.close()
 			if len(contents) > 4000:
 				break
 		except Exception:
@@ -1245,7 +1248,7 @@ def ReadInfoDucks(book):
 		if result_artists:
 			job = result_artists.group('job')
 			name = result_artists.group('artist_name')
-			artists.append(f'{job}^{name}')
+			artists.append('{}^{}'.format(job, name))
 		result_appearances = m_appearances.findall(story_html)
 		for character_code, char_name in result_appearances:
 			characters.append([character_code, char_name])
@@ -1433,4 +1436,4 @@ def test_ReadInfoDucks():
 	result = ReadInfoDucks(sample_book)
 	print('Test ReadInfoDucks result:')
 	for k, v in result.items():
-		print(f'{k}: {v}')
+		print('{}: {}'.format(k, v))
