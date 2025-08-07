@@ -752,6 +752,42 @@ def FromDucks(books):
 				self.titleT.Text = ">TiTlE<"
 				self.titleT.Tag = "T"
 				TitleT	= "T"
+
+	def SumBuild(StoryFull):
+
+		global TitleT
+
+		cNotes=""
+		cArt = ""
+		# Writing|Idea||Text|Pencils|Colours|Art|Ink|Script|Plot|Lettering
+		for story in StoryFull:
+			cArt = ""
+			for Art in range (len(story[3])):
+				Job,Auth = (story[3][Art]).split("^")
+				if Job in ("Writing", "Plot", "Script", "Text", "Idea"):
+					cArt += " W: " + Auth
+				if Job in ("Art", "Pencils"):
+					cArt += " P: " + Auth
+				if Job == "Ink":
+					cArt += " I: " + Auth
+				if Job == "Lettering":
+					cArt += " L: " + Auth
+				if Job == "Colours":
+					cArt += " C: " + Auth
+
+			if story[0] != "":
+				cNotes += TypeCol(story[0])
+			if story[1] != "":
+				cNotes += ": " + story[1].replace('+',' ')
+			if story[2] != "":
+				if TitleT == "T":
+					cNotes += " - " + story[2].title().strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")     #.decode('utf-8')
+				else:
+					cNotes += " - " + story[2].strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")     #.decode('utf-8')
+			if cArt != "":
+				cNotes += " (" + cArt.strip() + ")"
+			if cNotes != "":
+				cNotes += "\n"
 	
 	def WorkerThread(books):
 		from System.IO import FileInfo
@@ -801,7 +837,7 @@ def FromDucks(books):
 
 				nBook += 1
 
-				Series,Day,Month,Year,Publisher,Pages,Language,Web,StoryFull,Characters,MainTitle = ReadInfoDucks(book)
+				Series,Day,Month,Year,Publisher,Pages,Language,Web,StoryFull,Characters,MainTitle = ReadInfoDucks(aList[SelInd][0].strip(), book)
 				#
 				if DEBUG:print(chr(10) , "Scraped Info: " , Series,Day,Month,Year,Publisher,Pages,Language,Web,StoryFull,Characters,MainTitle)
 				#
@@ -1118,62 +1154,16 @@ def FromDucks(books):
 
 		Monitor.Exit(ComicRack.MainWindow)
 
-
-def ReadInfoDucks(book):
-
-	global aList, SelInd, TranslationID, f #, progress
-
-	cSeries = aList[SelInd][0].strip()
-
-
-	cWeb = 'https://inducks.org/issue.php?c='
-	if DEBUG:log_BD("Searching ---->" , aList[SelInd][3])
-	
-	nNumIss = str(book.Number).strip().replace(" ","%20").replace("/","%2F")	
-	contents = ""
-	for counter in range (0,4):
-		try:
-			nNum = cSeries + "+" * counter + nNumIss
-			#nNum = cSeries + "%20" + nNumIss
-
-			try:
-				pr = cWeb + nNum
-
-				#req = urllib2.Request.(pr)
-				contents = _read_url(pr.encode('utf-8'))
-
-			except:
-				debuglog()
-				continue
-
-				#if not "Issue not found" in contents:
-			if len(contents)>4000:
-				break
-
-		except IOError:
-			f.Update("Not Found: N." + str(nNum), 1)
-			f.Refresh()
-			#
-			if DEBUG:log_BD("Not Found ----> n. " , nNum.replace("+",""))
-			debuglog()
-			#
-			return -1,0,0,0,0,0,0,0,0,0,0
-def ReadInfoDucks(book):
+def ReadInfoDucks(cSeries, book):
 	"""
-	Refactored: Accepts a dict with keys 'Series', 'Number', 'LanguageISO'.
+	Refactored: Accepts a dict with keys 'Number' and 'LanguageISO'.
 	Returns a dict with fields: series, day, month, year, publisher, pages, language, web, stories, characters, main_title.
 	"""
 	import re
-	# Compatibility imports for Python 2 and 3
-	try:
-		import urllib2 as urllib_request
-	except ImportError:
-		import urllib.request as urllib_request
-
+	import sys
 	# Extract input
-	cSeries = book.get('Series', '').strip()
-	nNumIss = str(book.get('Number', '')).strip().replace(' ', '%20').replace('/', '%2F')
-	language = book.get('LanguageISO', 'en')
+	nNumIss = str(book.Number).strip().replace(' ', '%20').replace('/', '%2F')
+	language = book.LanguageISO
 	cWeb = 'https://inducks.org/issue.php?c='
 	contents = ''
 	web_url = ''
@@ -1183,17 +1173,26 @@ def ReadInfoDucks(book):
 		pr = cWeb + nNum
 		web_url = pr
 		try:
-			resp = urllib_request.urlopen(pr)
-			try:
-				contents = resp.read().decode('utf-8')
-			finally:
-				resp.close()
+			# Try IronPython .NET method first
+			if 'System' in sys.modules:
+				contents = _read_url(pr)
+			else:
+				# Fallback to CPython urllib
+				try:
+					import urllib.request as urllib_request
+				except ImportError:
+					import urllib2 as urllib_request
+				resp = urllib_request.urlopen(pr)
+				try:
+					contents = resp.read().decode('utf-8')
+				finally:
+					resp.close()
 			if len(contents) > 4000:
 				break
 		except Exception:
 			continue
 	if len(contents) < 4000:
-		return {}
+		return -1,0,0,0,0,0,0,0,0,0,0
 	# Parse fields
 	m0 = re.compile(r'Publication<.*?<a\shref="publication\.php\?c=[a-z]{2,3}[%2][^">]*?">(.*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
 	m1 = re.compile(r'Publisher.*?<a\shref="publisher.php\?c=.*?">(.*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
@@ -1268,7 +1267,6 @@ def ReadInfoDucks(book):
 		'characters': characters,
 		'main_title': main_title
 	}
-	return cNotes
 
 def ArtBuild(StoryFull):
 
@@ -1425,15 +1423,15 @@ def _read_url(url):
 	return page
 
 def test_ReadInfoDucks():
-	"""
-	Test ReadInfoDucks with a sample comic dict and print the result.
-	"""
-	sample_book = {
-		'Series': 'dk/AA',  # Example: Italian Disney series code
-		'Number': '1958-26',        # Example issue number
-		'LanguageISO': 'dk'   # Example language code
-	}
-	result = ReadInfoDucks(sample_book)
+	class Book:
+		def __init__(self, data):
+			self.__dict__.update(data)
+
+	sample_book = Book({
+		'Number': '1958-26',
+		'LanguageISO': 'dk'
+	})
+	result = ReadInfoDucks('dk/AA', sample_book)
 	print('Test ReadInfoDucks result:')
 	for k, v in result.items():
 		print('{}: {}'.format(k, v))
