@@ -47,7 +47,7 @@
 #
 #################################################################################################################
 
-import re, sys
+import re, sys, json
 
 from datetime import datetime
 settings = ""
@@ -68,34 +68,27 @@ def SumBuild(StoryFull):
 	cNotes=""
 	cArt = ""
 	# Writing|Idea||Text|Pencils|Colours|Art|Ink|Script|Plot|Lettering
-	for story in StoryFull:
+	for storycode, story in StoryFull:
 		cArt = ""
-		for Art in range (len(story[3])):
-			Job,Auth = (story[3][Art]).split("^")
-			if Job in ("Writing", "Plot", "Script", "Text", "Idea"):
-				cArt += " W: " + Auth
-			if Job in ("Art", "Pencils"):
-				cArt += " P: " + Auth
-			if Job == "Ink":
-				cArt += " I: " + Auth
-			if Job == "Lettering":
-				cArt += " L: " + Auth
-			if Job == "Colours":
-				cArt += " C: " + Auth
-
-		if story[0] != "":
-			cNotes += TypeCol(story[0])
-		if story[1] != "":
-			cNotes += ": " + story[1].replace('+',' ')
-		if story[2] != "":
-			if TitleT == "T":
-				cNotes += " - " + story[2].title().strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")     #.decode('utf-8')
+		for Art in story['jobs']:
+			cArt += " "
+			if Art['plotwritartink'] in ('p', 'w'):
+				cArt += "W: "
 			else:
-				cNotes += " - " + story[2].strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")     #.decode('utf-8')
+				cArt += Art['plotwritartink'].upper() + ": "
+			cArt += Art['personcode']
+
+		if story['storyversion']['kind'] != "":
+			cNotes += TypeCol(story['storyversion']['kind'])
+		if story['storyversion']['storycode'] != "":
+			cNotes += ": " + story['storyversion']['storycode']
+		if story['title'] != "":
+			cNotes += " - " + story['title'].strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")
 		if cArt != "":
 			cNotes += " (" + cArt.strip() + ")"
 		if cNotes != "":
 			cNotes += "\n"
+	return cNotes
 
 def FromDucks(books):
 	import clr;
@@ -1036,100 +1029,81 @@ def ReadInfoDucks(cSeries, book, Translation):
 	dTeams = ("TA", "BB", "TLP", "JW","SD", "BBB", "TTC","TMU", "Evrons", "CDR","Tempolizia", "UH", "Foul Fellows' Club", "101","S7", "QW", "SCPD", "Evil dwarfs", "DWM", "Justice Ducks")
 
 	# Extract input
-	nNumIss = str(book.Number).strip().replace(' ', '%20').replace('/', '%2F')
+	nNumIss = str(book.Number).strip()
+	cWeb = 'https://api.ducksmanager.net/comicrack/issue?publicationcode='+cSeries+'&issuenumber='+nNumIss
 	language = book.LanguageISO
-	cWeb = 'https://inducks.org/issue.php?c='
 	contents = ''
-	web_url = ''
-	# Try up to 4 times with +
-	for counter in range(4):
-		nNum = cSeries + ('+' * counter) + nNumIss
-		pr = cWeb + nNum
-		web_url = pr
-		try:
-			# Try IronPython .NET method first
-			if 'System' in sys.modules:
-				contents = _read_url(pr)
-			else:
-				# Fallback to CPython urllib
-				try:
-					import urllib.request as urllib_request
-				except ImportError:
-					import urllib2 as urllib_request
-				req = urllib_request.Request(pr)
-				resp = urllib_request.urlopen(req)
-				try:
-					contents = resp.read().decode('utf-8')
-				finally:
-					resp.close()
-			if len(contents) > 4000:
-				break
-		except Exception as e:
-			continue
-	if len(contents) < 4000:
-		raise Exception("Failed to retrieve comic information for {}".format(web_url))
+	# Try IronPython .NET method first
+	if 'System' in sys.modules:
+		contents = _read_url(cWeb)
 	else:
-		# Parse fields
-		m0 = re.compile(r'Publication<.*?<a\shref="publication\.php\?c=[a-z]{2,3}[%2][^">]*?">(.*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
-		m1 = re.compile(r'Publisher.*?<a\shref="publisher.php\?c=.*?">(.*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
-		m1a = re.compile(r'Title<\/dt>\s*?<dd>(.*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
-		m2 = re.compile(r'Date<\/dt>\s*?<dd>(.*?)>', re.IGNORECASE | re.MULTILINE | re.DOTALL)
-		m3 = re.compile(r'Pages<\/dt>\s*?<dd>(\d*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
-		result0 = m0.search(contents)
-		series = result0.group(1) if result0 else ''
-		result1 = m1.search(contents)
-		publisher = result1.group(1) if result1 else ''
-		result1a = m1a.search(contents)
-		main_title = result1a.group(1) if result1a else ''
-		result2 = m2.search(contents)
-		day = 0
-		month = 0
-		year = 0
-		if result2:
-			if '<time datetime=' in result2.group(1):
-				day = result2.group(1)[24:26]
-				month = result2.group(1)[21:23]
-				year = result2.group(1)[16:20]
-			else:
-				d1 = re.compile(r'([\D]{0,10})\s')
-				d2 = re.compile(r'([0-9]{4})')
-				resultd1 = d1.search(result2.group(1))
-				resultd2 = d2.search(result2.group(1))
-				if resultd1:
-					month = resultd1.group(1)
-				if resultd2:
-					year = resultd2.group(1)
-		result3 = m3.search(contents)
-		pages = result3.group(1) if result3 else 0
-		# Stories and characters
-		m_story = re.compile(r'<tr[^>]+?class="(?P<storykind>[^"]+?)".+?</tr>', re.S)
-		m_story_info = re.compile(r'id="[^"]">.*?<a\shref="story\.php\?c=(?P<storycode>[^"]+)">(?:<i>\((?P<title>.*?)\)</i>)?', re.S)
-		m_artists = re.compile(r'<dt>(?P<job>[^<]+).*?<a\shref="creator\.php\?c=[^"]+">(?P<artist_name>[^<]+)</a>')
-		m_appearances = re.compile(r'<a\shref="character\.php\?c=(?P<character_code>[^"]+)">(?P<character_name>[^<]+)</a>')
-		stories = []
-		characters = []
-		story_blocks = list(m_story.finditer(contents))
-		for story_html in story_blocks:
-			type_ = story_html.group('storykind')
-			story_id = ''
-			title = ''
-			artists = []
-			result_info = m_story_info.search(story_html)
-			if result_info:
-				story_id = result_info.group('storycode')
-				title = result_info.group('title')
-			result_artists = m_artists.search(story_html)
-			if result_artists:
-				job = result_artists.group('job')
-				name = result_artists.group('artist_name')
-				artists.append('{}^{}'.format(job, name))
-			result_appearances = m_appearances.findall(story_html)
-			for character_code, char_name in result_appearances:
-				characters.append([character_code, char_name])
-			stories.append({'type': type_, 'story': story_id, 'title': title, 'artists': artists})
-			if len(stories) > 50:
-				break
-			if DEBUG:print(chr(10) , "Scraped Info: " , series, day, month, year, publisher, pages, language, web_url, stories, characters, main_title)
+		# Fallback to CPython urllib
+		try:
+			import urllib.request as urllib_request
+		except ImportError:
+			import urllib2 as urllib_request
+		req = urllib_request.Request(cWeb)
+		resp = urllib_request.urlopen(req)
+		try:
+			contents = resp.read().decode('utf-8')
+		finally:
+			resp.close()
+	if len(contents) == 0:
+		f.Update("Not Found: N." + str(nNum), 1)
+		f.Refresh()
+		#
+		if DEBUG:print ("Not Found ----> n. " , nNum.replace("+",""))
+		debuglog()	
+		#
+		return -1,0,0,0,0,0,0,0,0,0,0
+	try:
+		data = json.loads(contents)
+	except:
+		print("Error parsing JSON")
+		f.Update("Error parsing JSON: N." + str(nNum), 1)
+		f.Refresh()
+		#
+		if DEBUG:print ("Error parsing JSON ----> n. " , nNum.replace("+",""))
+		debuglog()	
+		#
+		return -1,0,0,0,0,0,0,0,0,0,0
+
+	# Parse fields
+	m0 = re.compile(r'Publication<.*?<a\shref="publication\.php\?c=[a-z]{2,3}[%2][^">]*?">(.*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
+	m1 = re.compile(r'Publisher.*?<a\shref="publisher.php\?c=.*?">(.*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
+	m1a = re.compile(r'Title<\/dt>\s*?<dd>(.*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
+	m2 = re.compile(r'Date<\/dt>\s*?<dd>(.*?)>', re.IGNORECASE | re.MULTILINE | re.DOTALL)
+	m3 = re.compile(r'Pages<\/dt>\s*?<dd>(\d*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
+	result0 = m0.search(contents)
+	series = result0.group(1) if result0 else ''
+	result1 = m1.search(contents)
+	publisher = result1.group(1) if result1 else ''
+	result1a = m1a.search(contents)
+	main_title = result1a.group(1) if result1a else ''
+	result2 = m2.search(contents)
+	day = 0
+	month = 0
+	year = 0
+	if result2:
+		if '<time datetime=' in result2.group(1):
+			day = result2.group(1)[24:26]
+			month = result2.group(1)[21:23]
+			year = result2.group(1)[16:20]
+		else:
+			d1 = re.compile(r'([\D]{0,10})\s')
+			d2 = re.compile(r'([0-9]{4})')
+			resultd1 = d1.search(result2.group(1))
+			resultd2 = d2.search(result2.group(1))
+			if resultd1:
+				month = resultd1.group(1)
+			if resultd2:
+				year = resultd2.group(1)
+	result3 = m3.search(contents)
+ 
+	pages = result3.group(1) if result3 else 0
+	# Stories and characters
+	characters = []
+	entries = data['entries'].items()
 
 	if (aUpdate[0] == 1) or (aUpdate[0] == 2 and book.Series == ""):
 		try:
@@ -1139,12 +1113,9 @@ def ReadInfoDucks(cSeries, book, Translation):
 
 	if (aUpdate[1] == 1) or (aUpdate[1] == 2 and book.Title == ""):
 		if main_title == "":
-			for x in stories:
-				if TypeCol(x[0]) == "Story":
-					if TitleT == "T":
-						book.Title = x[2].title().strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")      #.decode('utf-8')
-					else:
-						book.Title = x[2].strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")      #.decode('utf-8')
+			for entrycode, entry in entries:
+				if TypeCol(entry['storyversion']['kind']) == "Story":
+					book.Title = entry['title'].strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")	  #.decode('utf-8')
 					break
 		else:
 			if TitleT == "T":
@@ -1153,15 +1124,15 @@ def ReadInfoDucks(cSeries, book, Translation):
 				book.Title = main_title.strip("(").strip(")").replace("'S","'s").replace(" The "," the ").replace("&Amp;","&")
 
 	if (aUpdate[4] == 1):
-		book.Summary = SumBuild(stories)
+		book.Summary = SumBuild(entries)
 	if (aUpdate[4] == 2):
-		book.Summary = book.Summary + chr(10) * 2 + SumBuild(story_blocks)
+		book.Summary = book.Summary + chr(10) * 2 + SumBuild(entries)
 
 	if (aUpdate[5] == 1) or (aUpdate[5] == 2 and book.Notes == ""):
 		book.Notes = "Scraped from I.N.D.U.C.K.S. " + str(datetime.now())
 
 	if (aUpdate[6] == 1) or (aUpdate[6] == 2 and book.Web == ""):
-		book.Web = web_url
+		book.Web = cWeb
 
 	if (aUpdate[7] == 1) or (aUpdate[7] == 2 and book.Characters == ""):
 		Charlist = ""
@@ -1220,7 +1191,7 @@ def ReadInfoDucks(cSeries, book, Translation):
 		except:
 			book.Publisher = publisher
 
-	Writer,Penciller,Inker,CoverArtist,Letterer,Colorist = ArtBuild(stories)
+	Writer,Penciller,Inker,CoverArtist,Letterer,Colorist = ArtBuild(entries)
 
 	if (aUpdate[12] == 1) or (aUpdate[12] == 2 and book.Penciller == ""):
 		book.Penciller = Penciller
@@ -1250,42 +1221,29 @@ def ReadInfoDucks(cSeries, book, Translation):
 			book.Genre = aUpdate[22]
 
 def ArtBuild(StoryFull):
+	plotwritartink_persons = {}
 
-	cInk =""
-	cWri = ""
-	cPen = ""
-	cLett = ""
-	cColour = ""
-	cCover = ""
+	for storycode, story in StoryFull:
+		for Art in story['jobs']:
+			plotwritartink = Art['plotwritartink']
+			personcode = Art['personcode']
+		
+			if plotwritartink not in plotwritartink_persons:
+				plotwritartink_persons[plotwritartink] = set()
+			
+			plotwritartink_persons[plotwritartink].add(personcode)
 
-	for story in StoryFull:
-		for Art in range (len(story[3])):
-			Job, Auth = (story[3][Art]).split("^")
-			if TypeCol(story[0]) == "Cover" and Auth not in cCover:
-				cCover += Auth + ", "
-			if Job in ("Writing", "Plot", "Script", "Text", "Idea") and Auth not in cWri:
-				cWri += Auth    + ", "
-			elif Job in ("Art", "Pencils") and Auth not in cPen:
-				cPen += Auth + ", "
-			elif Job == "Ink" and Auth not in cInk:
-				cInk += Auth   + ", "
-			elif Job == "Lettering" and Auth not in cLett:
-				cLett += Auth  + ", "
-			elif Job == "Colours" and Auth not in cColour:
-				cColour +=  Auth  + ", "
 
-	return cWri.strip(", "),cPen.strip(", " ),cInk.strip(", "),cCover.strip(", "),cLett.strip(", "),cColour.strip(", ")
+	return [', '.join(plotwritartink_persons.get(key, [])) for key in ['w', 'p', 'i', 'c', 'l', 'r']]
 
 def TypeCol(Type):
 
-	if Type == 'cbdced':
+	if Type == 'n':
 		cType="Story"
-	elif Type == 'ffcc33':
+	elif Type == 'c':
 		cType="Cover"
-	elif Type == 'cccc99':
+	elif Type == 'a':
 		cType="Article"
-	elif Type == 'ff99ff':
-		cType="Gag"
 	else:
 		cType="Other"
 
@@ -1474,3 +1432,6 @@ def test_ReadInfoDucks():
 	print('Test ReadInfoDucks result:')
 	for k, v in result.items():
 		print('{}: {}'.format(k, v))
+
+if __name__ == "__main__":
+	test_ReadInfoDucks()
