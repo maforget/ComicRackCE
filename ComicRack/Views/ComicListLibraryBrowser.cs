@@ -273,9 +273,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			quickSearch.SetCueText(tsQuickSearch.Text);
 			queryCacheTimer.Interval = (ComicLibrary.IsQueryCacheInstantUpdate ? 100 : 2500);
 			miPasteList.Click += new EventHandler((sender, e) => PasteList());
-        }
+		}
 
-        public ComicListLibraryBrowser(ComicLibrary library)
+		public ComicListLibraryBrowser(ComicLibrary library)
 			: this()
 		{
 			Library = library;
@@ -324,8 +324,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				commands.Add(CopyList, () => tvQueries.SelectedNode != null && (tvQueries.SelectedNode.Tag is ShareableComicListItem || (Program.ExtendedSettings.AllowCopyListFolders && tvQueries.SelectedNode.Tag is ComicListItemFolder)) && ComicEditMode.CanEditList(), miCopyList);
 				commands.Add(ExportList, () => tvQueries.SelectedNode != null && tvQueries.SelectedNode.Tag is ShareableComicListItem && ComicEditMode.CanEditList(), miExportReadingList);
 				commands.Add(ImportLists, () => ComicEditMode.CanEditList(), miImportReadingList);
-                //commands.Add(PasteList, () => (Clipboard.ContainsData(ShareableComicListItem.ClipboardFormat) || Clipboard.ContainsText()) && ComicEditMode.CanEditList(), miPasteList);
-                commands.Add(AddToFavorites, miAddToFavorites);
+				//commands.Add(PasteList, () => (Clipboard.ContainsData(ShareableComicListItem.ClipboardFormat) || Clipboard.ContainsText()) && ComicEditMode.CanEditList(), miPasteList);
+				commands.Add(AddToFavorites, miAddToFavorites);
 				commands.Add(delegate
 				{
 					TopBrowserVisible = !TopBrowserVisible;
@@ -333,12 +333,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				commands.Add(ToggleQuickSearch, true, () => quickSearchPanel.Visible, tsQuickSearch);
 				commands.Add(RefreshFavorites, miFavRefresh);
 				commands.Add(RemoveFavorite, miFavRemove);
-                miQueryRename.Visible = miEditSmartList.Visible = miNewSmartList.Visible = tbNewSmartList.Visible = miNewList.Visible = tbNewList.Visible = 
-					miNewFolder.Visible = tbNewFolder.Visible = miRemoveListOrFolder.Visible = miCopyList.Visible = miPasteList.Visible = miExportReadingList.Visible = 
-					miImportReadingList.Visible = tssOpenWindow.Visible = miNewSeparator.Visible = miCopySeparator.Visible = miRemoveSeparator.Visible = 
+				miQueryRename.Visible = miEditSmartList.Visible = miNewSmartList.Visible = tbNewSmartList.Visible = miNewList.Visible = tbNewList.Visible =
+					miNewFolder.Visible = tbNewFolder.Visible = miRemoveListOrFolder.Visible = miCopyList.Visible = miPasteList.Visible = miExportReadingList.Visible =
+					miImportReadingList.Visible = tssOpenWindow.Visible = miNewSeparator.Visible = miCopySeparator.Visible = miRemoveSeparator.Visible =
 					miAddToFavorites.Visible = ComicEditMode.CanEditList();
-                miRefresh.Visible = tbRefreshSeparator.Visible = tbRefresh.Visible = !ComicEditMode.IsLocalComic();
-            }
+				miRefresh.Visible = tbRefreshSeparator.Visible = tbRefresh.Visible = !ComicEditMode.IsLocalComic();
+			}
 		}
 
 		protected override void OnListServiceRequest(IComicBookListProvider senderList, ServiceRequestEventArgs e)
@@ -418,9 +418,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				items = items.Where((ComicListItem cli) => cli is ComicLibraryListItem || cli.Filter(filter)).ToArray();
 			}
 			ComicListItem[] list = (from tn in tnc.OfType<TreeNode>()
-				select tn.Tag as ComicListItem into cli
-				where !items.Contains(cli)
-				select cli).ToArray();
+									select tn.Tag as ComicListItem into cli
+									where !items.Contains(cli)
+									select cli).ToArray();
 			list.ForEach(delegate(ComicListItem cli)
 			{
 				RemoveNode(cli);
@@ -599,15 +599,15 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					};
 					switch (form.ShowDialog(this))
 					{
-					case DialogResult.Cancel:
-						csli.SetList(oldList);
-						return false;
-					case DialogResult.Retry:
-						comicSmartListItem = sld.SmartComicList;
-						break;
-					default:
-						comicSmartListItem = null;
-						break;
+						case DialogResult.Cancel:
+							csli.SetList(oldList);
+							return false;
+						case DialogResult.Retry:
+							comicSmartListItem = sld.SmartComicList;
+							break;
+						default:
+							comicSmartListItem = null;
+							break;
 					}
 				}
 				flag = !flag;
@@ -857,7 +857,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private void treeContextMenu_Opening(object sender, CancelEventArgs e)
 		{
 			miPasteList.Enabled = isPasteListEnabled();
-            ComicListItem cli = tvQueries.SelectedNode.Tag as ComicListItem;
+			ComicListItem cli = tvQueries.SelectedNode.Tag as ComicListItem;
 			bool flag = cli != null && Program.Settings.Devices.Count > 0;
 			cmEditDevices.DropDownItems.Clear();
 			cmEditDevices.Visible = flag;
@@ -889,7 +889,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				};
 				cmEditDevices.DropDownItems.Add(toolStripMenuItem);
 			}
-        }
+		}
 
 		private void cmEditDevices_Click(object sender, EventArgs e)
 		{
@@ -931,8 +931,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				favView.Items.Clear();
 				foreach (ComicListItem item in from cl in Library.ComicLists.GetItems<ComicListItem>()
-					where cl.Favorite
-					select cl)
+											   where cl.Favorite
+											   select cl)
 				{
 					FavoriteViewItem favoriteViewItem = FavoriteViewItem.Create(item);
 					favoriteViewItem.Tag = item.Id;
@@ -1117,8 +1117,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				}
 				ComicListItemCollection comicListItemCollection = ((dragNode.Parent == null) ? Library.ComicLists : ((ComicListItemFolder)dragNode.Parent.Tag).Items);
 				ComicListItem comicListItem = dragNode.Tag as ComicListItem;
-                RecursionCache.Items.RemoveReference(comicListItem.Id);
-                if (e.Effect == DragDropEffects.Copy && comicListItem is ShareableComicListItem)
+				RecursionCache.Items.RemoveReference(comicListItem.Id);
+				if (e.Effect == DragDropEffects.Copy && comicListItem is ShareableComicListItem)
 				{
 					comicListItem = ((ICloneable)(ShareableComicListItem)comicListItem).Clone<ShareableComicListItem>();
 				}
@@ -1332,35 +1332,82 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private void ExportList()
 		{
 			if (tvQueries.SelectedNode == null)
-			{
 				return;
-			}
+
+			base.Main.StoreWorkspace(); // We need to store the workspace because it ensures the sortKey is up to date.
 			ShareableComicListItem shareableComicListItem = tvQueries.SelectedNode.Tag as ShareableComicListItem;
 			if (shareableComicListItem == null)
-			{
 				return;
-			}
-			using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+
+			if (shareableComicListItem is ComicListItemFolder comicListItemFolder)
 			{
-				saveFileDialog.Title = miExportReadingList.Text.Replace("&", "");
-				saveFileDialog.Filter = TR.Load("FileFilter")["ReadingListSaveFilter", "ComicRack Reading List|*.cbl|ComicRack Reading List (Single Entries)|*.cbl"];
-				saveFileDialog.DefaultExt = ".cbl";
-				saveFileDialog.FileName = FileUtility.MakeValidFilename(shareableComicListItem.Name);
-				foreach (string favoritePath in Program.GetFavoritePaths())
+				// TODO: Maybe add a way to also export the folder as a single list containing all items.
+				using (FolderBrowserDialog dialog = new FolderBrowserDialog())
 				{
-					saveFileDialog.CustomPlaces.Add(favoritePath);
+					dialog.Description = miExportReadingList.Text.Replace("&", "");
+					dialog.ShowNewFolderButton = true;
+					if (dialog.ShowDialog(this) == DialogResult.OK)
+					{
+						string selectedPath = dialog.SelectedPath;
+						ExportFolderListsToFile(shareableComicListItem, true, selectedPath); // TODO: find a way to choose alwaysList
+					}
 				}
-				if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+			}
+			else
+			{
+				using (SaveFileDialog saveFileDialog = new SaveFileDialog())
 				{
-					try
+					saveFileDialog.Title = miExportReadingList.Text.Replace("&", "");
+					saveFileDialog.Filter = TR.Load("FileFilter")["ReadingListSaveFilter", "ComicRack Reading List|*.cbl|ComicRack Reading List (Single Entries)|*.cbl"];
+					saveFileDialog.DefaultExt = ".cbl";
+					saveFileDialog.FileName = FileUtility.MakeValidFilename(shareableComicListItem.Name);
+					foreach (string favoritePath in Program.GetFavoritePaths())
 					{
-						base.Main.StoreWorkspace(); // We need to store the workspace because it ensures the sortKey is up to date.
-						new ComicReadingListContainer(shareableComicListItem, Program.Settings.ExportedListsContainFilenames, saveFileDialog.FilterIndex != 1, GetCurrentListSorter).Serialize(saveFileDialog.FileName);
+						saveFileDialog.CustomPlaces.Add(favoritePath);
 					}
-					catch
+					if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
 					{
-						MessageBox.Show(StringUtility.Format(TR.Messages["ErrorWritingReadingList", "There was an error exporting the Reading List '{0}'"], Path.GetFileName(saveFileDialog.FileName)));
+						ExportListToFile(shareableComicListItem, alwaysList: saveFileDialog.FilterIndex != 1, saveFileDialog.FileName);
 					}
+
+				}
+			}
+		}
+
+		void ExportListToFile(ComicListItem cli, bool alwaysList, string fileName)
+		{
+			try
+			{
+				new ComicReadingListContainer(cli, Program.Settings.ExportedListsContainFilenames, alwaysList, GetCurrentListSorter).Serialize(fileName);
+			}
+			catch
+			{
+				MessageBox.Show(StringUtility.Format(TR.Messages["ErrorWritingReadingList", "There was an error exporting the Reading List '{0}'"], Path.GetFileName(fileName)));
+			}
+		}
+
+		void ExportFolderListsToFile(ComicListItem cli, bool alwaysList, string selectedPath)
+		{
+			// Exit if the ComicListItem is null, selectedPath is empty, or the item is not a folder.
+			if (cli == null || string.IsNullOrEmpty(selectedPath) || cli is not ComicListItemFolder comicListItemFolder)
+				return;
+
+			string basePath = selectedPath;
+			foreach (ComicListItem list in comicListItemFolder.Items) // Iterate through the items in the folder
+			{
+				if (list is ComicListItemFolder subFolder) // Item is a subfolder
+				{
+					// Create a subdirectory for the subfolder
+					string subFolderPath = Path.Combine(basePath, FileUtility.MakeValidFilename(subFolder.Name));
+					if (!string.IsNullOrEmpty(subFolderPath) && !FileUtility.SafeDirectoryExists(subFolderPath))
+						Directory.CreateDirectory(subFolderPath);
+
+					ExportFolderListsToFile(subFolder, alwaysList, subFolderPath); // Recursively export subfolders
+				}
+				else
+				{
+					string fileName = Path.Combine(basePath, FileUtility.MakeValidFilename(list.Name) + ".cbl");
+					ExportListToFile(list, alwaysList, fileName);
 				}
 			}
 		}
@@ -1379,16 +1426,16 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		private bool isPasteListEnabled()
 		{
-            //Check if the clipboard contains data, if so enable the paste button.
-            try
-            {
-                return (Clipboard.ContainsData(ShareableComicListItem.ClipboardFormat) || Clipboard.ContainsText()) && ComicEditMode.CanEditList();
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+			//Check if the clipboard contains data, if so enable the paste button.
+			try
+			{
+				return (Clipboard.ContainsData(ShareableComicListItem.ClipboardFormat) || Clipboard.ContainsText()) && ComicEditMode.CanEditList();
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
 
 		private void PasteList()
 		{
@@ -1554,14 +1601,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 							str += "\n";
 							switch (QuestionDialog.AskQuestion(this, StringUtility.Format(format, str), TR.Default["Import", "Import"], TR.Messages["CreateMissingBooks", "Add missing Books to Library"]))
 							{
-							case var type when type.HasFlag(QuestionResult.Cancel):
-								return null;
-							case QuestionResult.OkWithOption:
-								Library.Books.AddRange(newBooks);
-								break;
-							default:
-								idli.BookIds.RemoveRange(newBooks.Select((ComicBook cb) => cb.Id));
-								break;
+								case var type when type.HasFlag(QuestionResult.Cancel):
+									return null;
+								case QuestionResult.OkWithOption:
+									Library.Books.AddRange(newBooks);
+									break;
+								default:
+									idli.BookIds.RemoveRange(newBooks.Select((ComicBook cb) => cb.Id));
+									break;
 							}
 						}
 					}
