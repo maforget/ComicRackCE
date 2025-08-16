@@ -47,7 +47,7 @@
 #
 #################################################################################################################
 
-import re, sys, json
+import sys, json
 
 from datetime import datetime
 settings = ""
@@ -60,6 +60,24 @@ fileHandle = 0
 
 SIZE_RENAME_LOG = 100000
 SIZE_DEBUG_LOG = 100000
+
+
+
+def getReferenceDataFile(referenceDataName):
+	return __file__[:-len('FromDucks.py')] + referenceDataName + ".json"
+
+def FillDatNoUI(referenceDataNames):
+	global publications, characters, languages
+	for referenceDataName in referenceDataNames:
+		cWeb = "https://api.ducksmanager.net/comicrack/" + referenceDataName
+		fileName = getReferenceDataFile(referenceDataName)
+		print("Reading " + cWeb + " to " + fileName)
+		if (referenceDataName == "publications"):
+			publications = json.loads(_read_url(cWeb))
+		elif (referenceDataName == "characters"):
+			characters = json.loads(_read_url(cWeb+"?languagecode=en"))
+		elif (referenceDataName == "languages"):
+			languages = json.loads(_read_url(cWeb))
 
 def SumBuild(StoryFull):
 
@@ -628,19 +646,18 @@ def FromDucks(books):
 			# remove first element
 			#
 			nIndex = 0
-			aList.pop(0)
 
-			for x in range(len(aList)):
+			for x in range(len(publications)):
 				try:
-					self.list.Items.Add(aList[x][0] + " - " + aList[x][3].decode('utf-8'))
+					self.list.Items.Add(publications[x][0] + " - " + publications[x][3].decode('utf-8'))
 				except:
-					self.list.Items.Add(aList[x][0] + " - " + aList[x][3])
+					self.list.Items.Add(publications[x][0] + " - " + publications[x][3])
 
 				try:
-					if StartPub[0] == aList[x][3].decode('utf-8') and StartPub[1][:2] == LStart:
+					if StartPub[0] == publications[x][3].decode('utf-8') and StartPub[1][:2] == LStart:
 						nIndex = x
 				except:
-					if StartPub[0] == aList[x][3] and StartPub[1][:2] == LStart:
+					if StartPub[0] == publications[x][3] and StartPub[1][:2] == LStart:
 						nIndex = x
 
 			self.Controls.Add(self.list)
@@ -752,9 +769,9 @@ def FromDucks(books):
 
 		def DoubleClickM(self, sender, e):
 			from System.Diagnostics import Process
-			global aList
+			global publications
 
-			Code = aList[self.list.SelectedIndex][0]
+			Code = publications[self.list.SelectedIndex][0]
 			cWeb = "https://inducks.org/publication.php?c="
 			DCWeb = cWeb + Code
 			if DEBUG:log_BD("Series in Web:", DCWeb)
@@ -783,28 +800,18 @@ def FromDucks(books):
 				TitleT	= "T"
 	
 	def WorkerThread(books):
-		from System.IO import FileInfo
 		from System.Windows.Forms import (
-			MessageBox, Application
+			Application
 		)
 
 		global aUpdate, TranslationID, f, TitleT #, progress
 
 		try:
 			#  Read Language for Characternames
-			Translations = ""
 			if TranslationID == "":
 				TranslationID = 'en'
 			else:
 				TranslationID = TranslationID[:2]
-
-			#  Read Characternames
-			if FileInfo(__file__[:-len('FromDucks.py')] + 'Characters.dat').Exists:
-				fileHandle = open(__file__[:-len('FromDucks.py')] + 'Characters.dat', 'r')
-				Translations = fileHandle.readlines()
-				fileHandle.close()
-			else:
-				MessageBox.Show("Translations of characters' name not available. Please REBUILD the tables!")
 
 			#progress = Stats()
 			#progress.CenterToParent()
@@ -828,7 +835,7 @@ def FromDucks(books):
 				nBook += 1
 
 				try:
-					ReadInfoDucks(aList[SelInd][0].strip(), book, Translations)
+					ReadInfoDucks(publications[SelInd][0].strip(), book)
 				except Exception:
 					debuglog()
 				#
@@ -857,17 +864,16 @@ def FromDucks(books):
 
 		return lErrors
 
-	def FillDat(lForce,configpath):
+	def FillDat(lForce,referenceDataNames):
 		from System.IO import FileInfo
 		from System.Windows.Forms import (
 			MessageBox
 		)
+		
+		global publications, characters, languages
 
-		if not configpath:
-			configpath= []
-			configpath.append(__file__[:-len('FromDucks.py')] + "FromDucks.dat")
-			configpath.append(__file__[:-len('FromDucks.py')] + "Characters.dat")
-			configpath.append(__file__[:-len('FromDucks.py')] + "Languages.dat")
+		if not referenceDataNames:
+			referenceDataNames= ['publications', 'characters', 'languages']
 
 		if lForce:
 			fd = ProgressBarDialog(3, "Rebuilding")
@@ -878,16 +884,11 @@ def FromDucks(books):
 			fd.Update("Reading/Rebuilding [DB]", 1, "Local Database ")
 			fd.Refresh()
 
-		for cycle in configpath:
+		for referenceDataName in referenceDataNames:
+			cWeb = "https://api.ducksmanager.net/comicrack/" + referenceDataName
+			fileName = getReferenceDataFile(referenceDataName)
 
-			if "FromDucks.dat" in cycle:
-				cWeb='https://inducks.org/inducks/isv/inducks_publication.isv'
-			elif "Characters.dat" in cycle:
-				cWeb='https://inducks.org/inducks/isv/inducks_charactername.isv'
-			elif "Languages.dat" in cycle:
-				cWeb='https://inducks.org/inducks/isv/inducks_language.isv'
-
-			if lForce or not FileInfo(cycle).Exists:
+			if lForce or not FileInfo(fileName).Exists:
 				try:
 					fileHandle = _read_url(cWeb)
 					if lForce:
@@ -905,17 +906,24 @@ def FromDucks(books):
 
 				#fileHandle = open(cycle, 'w')
 
-				open(cycle, 'wb').write(fileHandle.encode("utf-8"))
+				open(fileName, 'wb').write(fileHandle.encode("utf-8"))
 
 				#for line in contents:
 				#	fileHandle.write(line)
 
 				#fileHandle.close()
 
-			elif not FileInfo(cycle).Exists:
+			elif not FileInfo(fileName).Exists:
 
-				MessageBox.Show('Cannot open ' + cycle + '\nPlease REBUILD it!')
+				MessageBox.Show('Cannot open ' + referenceDataName + '\nPlease REBUILD it!')
 				sys.exit(0)
+			
+			if (referenceDataName == "characters"):
+				characters = json.loads(_read_url(cWeb))
+			elif (referenceDataName == "languages"):
+				languages = json.loads(_read_url(cWeb+"?languagecode=en"))
+			elif (referenceDataName == "publications"):
+				publications = json.loads(_read_url(cWeb))
 
 		if lForce:
 			fd.Close()
@@ -931,9 +939,8 @@ def FromDucks(books):
 		DialogResult
 	)
 
-	global settings, aList, StartPub, SelInd, TranslationID, LStart, DEBUG, TitleT
+	global settings, publications, StartPub, SelInd, TranslationID, LStart, DEBUG, TitleT
 
-	configpath = []
 	TranslationID = ""
 	StartPub = []
 	LStart = ""
@@ -960,17 +967,18 @@ def FromDucks(books):
 		MessageBox.Show("The script cannot find the locations of the scripts. Please try restarting ComicRack.")
 		return
 
-	configpath.append(__file__[:-len('FromDucks.py')] + "FromDucks.dat")
+	referenceDataNames = ["publications"]
 
-	if not FileInfo(configpath[0]).Exists:
-		fileHandle = open(__file__[:-len('FromDucks.py')] + "FromDucks.dat", 'w')
-		fileHandle.write(" ")
+	publicationReferenceFile = getReferenceDataFile('publications')
+	if not FileInfo(publicationReferenceFile).Exists:
+		fileHandle = open(publicationReferenceFile, 'w')
+		fileHandle.write("[]")
 		fileHandle.close()
 
-	if FileInfo(configpath[0]).Length <= 1:
+	if FileInfo(publicationReferenceFile).Length <= 2:
 		FillDat(True,None)
 	else:
-		FillDat(False,configpath)
+		FillDat(False,referenceDataNames)
 
 	for book in books:
 		StartPub.append(book.Series)
@@ -981,19 +989,8 @@ def FromDucks(books):
 		StartPub.append(LStart + "/" + book.Series[:1])
 		break
 
-	fileHandle = open(configpath[0], 'r')
-	pubDB = fileHandle.readlines()
+	fileHandle = open(referenceDataNames[0], 'r')
 	fileHandle.close()
-
-	aList=list()
-
-	for x in pubDB:
-		if not x[1:] == "":
-			Data=x.split("^")
-			aList.append([Data[0],Data[1],Data[2],Data[3]])
-
-	import operator
-	aList.sort(key=operator.itemgetter(0,1))
 
 	bf = BuilderForm()
 
@@ -1022,50 +1019,35 @@ def FromDucks(books):
 
 		Monitor.Exit(ComicRack.MainWindow)
 
-def ReadInfoDucks(cSeries, book, Translation):
+def ReadInfoDucks(cSeries, book):
 	import re
 	import sys
+
+	global publications
 
 	dTeams = ("TA", "BB", "TLP", "JW","SD", "BBB", "TTC","TMU", "Evrons", "CDR","Tempolizia", "UH", "Foul Fellows' Club", "101","S7", "QW", "SCPD", "Evil dwarfs", "DWM", "Justice Ducks")
 
 	# Extract input
 	nNumIss = str(book.Number).strip()
 	cWeb = 'https://api.ducksmanager.net/comicrack/issue?publicationcode='+cSeries+'&issuenumber='+nNumIss
-	language = book.LanguageISO
-	contents = ''
-	# Try IronPython .NET method first
-	if 'System' in sys.modules:
-		contents = _read_url(cWeb)
-	else:
-		# Fallback to CPython urllib
-		try:
-			import urllib.request as urllib_request
-		except ImportError:
-			import urllib2 as urllib_request
-		req = urllib_request.Request(cWeb)
-		resp = urllib_request.urlopen(req)
-		try:
-			contents = resp.read().decode('utf-8')
-		finally:
-			resp.close()
+	contents = _read_url(cWeb)
 	if len(contents) == 0:
-		f.Update("Not Found: N." + str(nNum), 1)
+		f.Update("Not Found:" + cWeb)
 		f.Refresh()
 		#
-		if DEBUG:print ("Not Found ----> n. " , nNum.replace("+",""))
+		if DEBUG:print ("Not Found ----> " , cWeb)
 		debuglog()	
 		#
 		return -1,0,0,0,0,0,0,0,0,0,0
 	try:
 		data = json.loads(contents)
-	except:
+	except Exception:
 		print("Error parsing JSON")
-		f.Update("Error parsing JSON: N." + str(nNum), 1)
+		f.Update("Error parsing JSON: " + cWeb)
 		f.Refresh()
-		#
-		if DEBUG:print ("Error parsing JSON ----> n. " , nNum.replace("+",""))
-		debuglog()	
-		#
+		if DEBUG:
+			print("Error parsing JSON ----> ", cWeb)
+		debuglog()
 		return -1,0,0,0,0,0,0,0,0,0,0
 
 	# Parse fields
@@ -1101,8 +1083,7 @@ def ReadInfoDucks(cSeries, book, Translation):
 	result3 = m3.search(contents)
  
 	pages = result3.group(1) if result3 else 0
-	# Stories and characters
-	characters = []
+	# Stories and appearances
 	entries = data['entries'].items()
 
 	if (aUpdate[0] == 1) or (aUpdate[0] == 2 and book.Series == ""):
@@ -1137,34 +1118,28 @@ def ReadInfoDucks(cSeries, book, Translation):
 	if (aUpdate[7] == 1) or (aUpdate[7] == 2 and book.Characters == ""):
 		Charlist = ""
 		cTeams = ""
-		for x in characters:
-			Chars = ""
-			CharName = x[0].replace("+","")
-			m0 = re.compile(CharName + '\\^' + TranslationID + '\\^(.*?)\\^Y', re.IGNORECASE)
-			for Person in Translation:
-				result0 = m0.search(Person)
-				if result0:
-					try:
-						Chars = result0.group(1).decode('utf-8')
-						break
-					except:
-						pass
+		appearances = set()
+		for entry in data['entries'].values():
+			appearances.update(entry['appearances'], [])
 
-			if Chars == "":
+		characterList = set()
+		characterTeams = set()
+		for appearance in appearances:
+			character = ""
+			if appearance in characters:
 				try:
-					Chars = x[1].decode('utf-8')
+					character = characters[appearance].decode('utf-8')
 				except:
-					Chars = x[1]
+					character = characters[appearance]
 
-			if Chars not in Charlist:
-				Charlist += Chars + ", "
-				if CharName in dTeams:
-					cTeams += Chars +", "
+				characterList.add(character)
+				if character in dTeams:
+					characterTeams.add(character)
 
-		book.Characters = Charlist.strip(", ")
+		book.Characters = ", ".join(characterList)
 
-		if ((aUpdate[2] == 1) or (aUpdate[2] == 2 and book.Teams == "")) and cTeams != "":
-			book.Teams = cTeams.strip(", ")
+		if ((aUpdate[2] == 1) or (aUpdate[2] == 2 and book.Teams == "")) and characterTeams:
+			book.Teams = ", ".join(characterTeams)
 
 	if (aUpdate[8] == 1) or (aUpdate[8] == 2 and book.Year == ""):
 		if year == 0:
@@ -1211,8 +1186,9 @@ def ReadInfoDucks(cSeries, book, Translation):
 	if (aUpdate[17] == 1) or (aUpdate[17] == 2 and book.Letterer == ""):
 		book.Letterer = Letterer
 
-	if (aUpdate[18] == 1) or (aUpdate[18] == 2 and book.LanguageISO == ""):
-		book.LanguageISO = language
+	# TODO return from API
+	# if (aUpdate[18] == 1) or (aUpdate[18] == 2 and book.LanguageISO == ""):
+		# book.LanguageISO = language
 
 	if (aUpdate[19] == 1) or (aUpdate[19] == 2 and book.Genre == ""):
 		try:
@@ -1323,43 +1299,29 @@ def is_string(object):
 	return isinstance(object, str)
 
 def _read_url(url):
-	from System.Net import HttpWebRequest, DecompressionMethods
-	from System.Text import Encoding
-	from System.IO import StreamReader
-	
-	page = ''
-
-	requestUri = url
-	log_BD(requestUri, "Requesting", 1)
-	try:
-		Req = HttpWebRequest.Create(requestUri)
-		Req.Timeout = 60000
-		Req.UserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
+	if 'System' in sys.modules:
+		from System.Net import HttpWebRequest, DecompressionMethods
+		from System.Text import Encoding
+		from System.IO import StreamReader
+		Req = HttpWebRequest.Create(url)
 		Req.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip
-
-		#Req.Referer = requestUri
-		Req.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
-		Req.Headers.Add('Accept-Language','en-US,en;q=0.9,it;q=0.8,fr;q=0.7,de-DE;q=0.6,de;q=0.5')
-
-		Req.KeepAlive = True
 		webresponse = Req.GetResponse()
-		a = webresponse.Cookies
-
 		inStream = webresponse.GetResponseStream()
 		encode = Encoding.GetEncoding("utf-8")
 		ReadStream = StreamReader(inStream, encode)
-		page = ReadStream.ReadToEnd()
-
-	except:
-		debuglog()
-
-	try:
-		inStream.Close()
-		webresponse.Close()
-	except:
-		pass
-
-	return page
+		return ReadStream.ReadToEnd()
+	else:
+		# Fallback to CPython urllib
+		try:
+			import urllib.request as urllib_request
+		except ImportError:
+			import urllib2 as urllib_request
+		req = urllib_request.Request(url)
+		resp = urllib_request.urlopen(req)
+		try:
+			return resp.read().decode('utf-8')
+		finally:
+			resp.close()
 
 def test_ReadInfoDucks():
 	class Book:
@@ -1369,21 +1331,6 @@ def test_ReadInfoDucks():
 	global aUpdate
 	aUpdate = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,""]
 
-	Translation = {
-		'dk/AA': 'Danish',
-		'fr/AA': 'French',
-		'de/AA': 'German',
-		'es/AA': 'Spanish',
-		'it/AA': 'Italian',
-		'nl/AA': 'Dutch',
-		'no/AA': 'Norwegian',
-		'pl/AA': 'Polish',
-		'pt/AA': 'Portuguese',
-		'ru/AA': 'Russian',
-		'sv/AA': 'Swedish',
-		'tr/AA': 'Turkish',
-		'zh/AA': 'Chinese'
-	}
 	sample_book = Book({
 		'Series': 'dk/AA',
 		'Number': '1958-26',
@@ -1426,9 +1373,11 @@ def test_ReadInfoDucks():
 		'CommunityRating': '',
 		'ScanInformation': '',
 		'Tags': ''
-
 	})
-	ReadInfoDucks('dk/AA', sample_book, Translation)
+
+	FillDatNoUI(['publications', 'characters', 'languages'])
+
+	ReadInfoDucks('dk/AA', sample_book)
 	
 	print(sample_book.__dict__)
 
