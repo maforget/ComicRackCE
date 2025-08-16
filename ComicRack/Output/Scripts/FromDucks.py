@@ -1428,10 +1428,9 @@ def test_ReadInfoDucks():
 		'Tags': ''
 
 	})
-	result = ReadInfoDucks('dk/AA', sample_book, Translation)
-	print('Test ReadInfoDucks result:')
-	for k, v in result.items():
-		print('{}: {}'.format(k, v))
+	ReadInfoDucks('dk/AA', sample_book, Translation)
+	
+	print(sample_book.__dict__)
 
 if __name__ == "__main__":
 	test_ReadInfoDucks()
