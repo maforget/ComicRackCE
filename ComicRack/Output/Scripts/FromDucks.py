@@ -47,7 +47,8 @@
 #
 #################################################################################################################
 
-import sys, json
+import sys
+from _json_decode import JSONDecoder
 
 from datetime import datetime
 settings = ""
@@ -61,743 +62,702 @@ fileHandle = 0
 SIZE_RENAME_LOG = 100000
 SIZE_DEBUG_LOG = 100000
 
-
-
-def getReferenceDataFile(referenceDataName):
-	return __file__[:-len('FromDucks.py')] + referenceDataName + ".json"
-
-def FillDatNoUI(referenceDataNames):
-	global publications, characters, languages
-	for referenceDataName in referenceDataNames:
-		cWeb = "https://api.ducksmanager.net/comicrack/" + referenceDataName
-		fileName = getReferenceDataFile(referenceDataName)
-		print("Reading " + cWeb + " to " + fileName)
-		if (referenceDataName == "publications"):
-			publications = json.loads(_read_url(cWeb))
-		elif (referenceDataName == "characters"):
-			characters = json.loads(_read_url(cWeb+"?languagecode=en"))
-		elif (referenceDataName == "languages"):
-			languages = json.loads(_read_url(cWeb))
-
-def SumBuild(StoryFull):
-
-	global TitleT
-
-	cNotes=""
-	cArt = ""
-	# Writing|Idea||Text|Pencils|Colours|Art|Ink|Script|Plot|Lettering
-	for storycode, story in StoryFull:
-		cArt = ""
-		for Art in story['jobs']:
-			cArt += " "
-			if Art['plotwritartink'] in ('p', 'w'):
-				cArt += "W: "
-			else:
-				cArt += Art['plotwritartink'].upper() + ": "
-			cArt += Art['personcode']
-
-		if story['storyversion']['kind'] != "":
-			cNotes += TypeCol(story['storyversion']['kind'])
-		if story['storyversion']['storycode'] != "":
-			cNotes += ": " + story['storyversion']['storycode']
-		if story['title'] != "":
-			cNotes += " - " + story['title'].strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")
-		if cArt != "":
-			cNotes += " (" + cArt.strip() + ")"
-		if cNotes != "":
-			cNotes += "\n"
-	return cNotes
-
 def FromDucks(books):
-	import clr;
-	clr.AddReference('System')
-	clr.AddReference('System.Windows.Forms')
-	clr.AddReference('System.Drawing')
+	try:
+		import clr;
+		clr.AddReference('System')
+		clr.AddReference('System.Windows.Forms')
+		clr.AddReference('System.Drawing')
 
-	from System.Windows.Forms import Form
-	class ProgressBarDialog(Form):
-		def __init__(self, nMax, cText="Scraping Files"):
-			from System.Drawing import Point, Size, Color
-			from System.Windows.Forms import (
-				Label, FormStartPosition, ProgressBar
-			)
+		from System.Windows.Forms import Form
+		class ProgressBarDialog(Form):
+			def __init__(self, nMax, cText="Scraping Files"):
+				from System.Drawing import Point, Size, Color
+				from System.Windows.Forms import (
+					Label, FormStartPosition, ProgressBar
+				)
 
-			self.Text = cText #"Scraping Files"
-			self.Size = Size(350, 150)
-			self.StartPosition = FormStartPosition.CenterScreen
+				self.Text = cText #"Scraping Files"
+				self.Size = Size(350, 150)
+				self.StartPosition = FormStartPosition.CenterScreen
 
-			self.pb = ProgressBar()
-			self.traitement = Label()
+				self.pb = ProgressBar()
+				self.traitement = Label()
 
-			self.traitement.Location = Point(20, 5)
-			self.traitement.Name = "scraping"
-			self.traitement.Size = Size(300, 50)
-			self.traitement.Text = ""
+				self.traitement.Location = Point(20, 5)
+				self.traitement.Name = "scraping"
+				self.traitement.Size = Size(300, 50)
+				self.traitement.Text = ""
 
-			self.pb.Size = Size(300, 20)
-			self.pb.Location = Point(20, 50)
-			self.pb.Maximum = 100
-			self.pb.Minimum = 0
-			self.pb.Step = 100.00 / nMax
-			self.pb.Value = 0.00
-			self.pb.BackColor = Color.LightGreen
-			self.pb.Text = ""
-			self.pb.ForeColor = Color.Black
+				self.pb.Size = Size(300, 20)
+				self.pb.Location = Point(20, 50)
+				self.pb.Maximum = 100
+				self.pb.Minimum = 0
+				self.pb.Step = 100.00 / nMax
+				self.pb.Value = 0.00
+				self.pb.BackColor = Color.LightGreen
+				self.pb.Text = ""
+				self.pb.ForeColor = Color.Black
 
-			self.Controls.Add(self.pb)
-			self.Controls.Add(self.traitement)
+				self.Controls.Add(self.pb)
+				self.Controls.Add(self.traitement)
 
-		def Update(self, cText, nInc, cHead="Scraping Files "):
-			self.traitement.Text = "\n" + cText
-			if nInc > 0:
-				self.Text = cHead + self.pb.Value.ToString() + "%"
-				self.pb.Increment(self.pb.Step)
-	
-	class BuilderForm(Form):
+			def Update(self, cText, nInc, cHead="Scraping Files "):
+				self.traitement.Text = "\n" + cText
+				if nInc > 0:
+					self.Text = cHead + self.pb.Value.ToString() + "%"
+					self.pb.Increment(self.pb.Step)
+		
+		class BuilderForm(Form):
 
-		def __init__(self):
-			from System.Drawing import Point, Size, Color
-			from System.Windows.Forms import (
-				DialogResult, Button, ListBox, TextBox, Label, CheckBox, CheckState,
-				FormBorderStyle, FormStartPosition, SelectionMode
-			)
+			def __init__(self):
+				from System.Drawing import Point, Size, Color
+				from System.Windows.Forms import (
+					DialogResult, Button, ListBox, TextBox, Label, CheckBox, CheckState,
+					FormBorderStyle, FormStartPosition, SelectionMode
+				)
 
-			global aUpdate, LStart
+				global aUpdate, LStart
 
-			aUpdate = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,""]
-			# series title team Tags summary Notes Web Chars year month publisher Editor
-			# Penciller Inker Writer Cover Artist Colorist Letterer Language Genre Format Location genret
+				aUpdate = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,""]
+				# series title team Tags summary Notes Web Chars year month publisher Editor
+				# Penciller Inker Writer Cover Artist Colorist Letterer Language Genre Format Location genret
 
-			self.ok = Button()
-			self.cancel = Button()
-			self.reset = Button()
-			self.rebuild = Button()
-			self.help = Button()
+				self.ok = Button()
+				self.cancel = Button()
+				self.reset = Button()
+				self.rebuild = Button()
+				self.help = Button()
 
-			self.list = ListBox()
+				self.list = ListBox()
 
-			self.genret = TextBox()
-			self.translateinto = Label()
-			self.titleT = Label()
-			self.titleT.Tag = "L"
-
-			self.series = CheckBox()
-			self.year = CheckBox()
-			self.month = CheckBox()
-			self.title = CheckBox()
-			self.inker = CheckBox()
-			self.tags = CheckBox()
-			self.notes = CheckBox()
-			self.cover = CheckBox()
-			self.summary = CheckBox()
-			self.publisher = CheckBox()
-			self.penciller = CheckBox()
-			self.writer = CheckBox()
-			self.team = CheckBox()
-			self.web = CheckBox()
-			self.colorist = CheckBox()
-			self.language = CheckBox()
-			self.translate = Button()
-			self.translatelist = ListBox()
-			self.genre = CheckBox()
-			self.letterer = CheckBox()
-			self.location = CheckBox()
-			self.editor = CheckBox()
-			self.format = CheckBox()
-			self.age = CheckBox()
-			self.chars = CheckBox()
-			self.location = CheckBox()
-
-			#
-			# list
-			#
-			self.list.Location = Point(10, 10)
-			self.list.Name = "list"
-			self.list.Size = Size(175, 300)
-			self.list.TabIndex = 1
-			self.list.Text = "Publications"
-			self.list.MultiColumn = False
-			self.list.SelectionMode = SelectionMode.One
-			self.list.HorizontalScrollbar = True
-			self.list.DoubleClick += self.DoubleClickM
-			#self.list.Sorted = True
-			#
-			# ok
-			#
-			self.ok.DialogResult = DialogResult.OK
-			self.ok.Location = Point(405, 250)
-			self.ok.Name = "ok"
-			self.ok.Size = Size(75, 23)
-			self.ok.TabIndex = 2
-			self.ok.Text = "&Ok"
-			self.ok.UseVisualStyleBackColor = True
-			self.ok.Click += self.button_Click
-			self.ok.BackColor = Color.LightGreen
-			#
-			# cancel
-			#
-			self.cancel.DialogResult = DialogResult.Cancel
-			self.cancel.Location = Point(405, 275)
-			self.cancel.Name = "cancel"
-			self.cancel.Size = Size(75, 23)
-			self.cancel.TabIndex = 3
-			self.cancel.Text = "&Cancel"
-			self.cancel.UseVisualStyleBackColor = True
-			self.cancel.Click += self.button_Click
-			self.cancel.BackColor = Color.Red
-			#
-			# reset
-			#
-			self.reset.Location = Point(405, 10)
-			self.reset.Name = "reset"
-			self.reset.Size = Size(75, 23)
-			self.reset.TabIndex = 4
-			self.reset.Tag = "Reset the selections"
-			self.reset.Text = "&Reset"
-			self.reset.UseVisualStyleBackColor = True
-			self.reset.Click += self.button_Click
-			self.reset.BackColor = Color.LightYellow
-			#
-			# rebuild
-			#
-			self.rebuild.Location = Point(405, 40)
-			self.rebuild.Name = "rebuild"
-			self.rebuild.Size = Size(75, 23)
-			self.rebuild.TabIndex = 100
-			self.rebuild.Tag = "Rebuild the List"
-			self.rebuild.Text = "Re&build"
-			self.rebuild.UseVisualStyleBackColor = True
-			self.rebuild.Click += self.button_Click
-			self.rebuild.BackColor = Color.LightBlue
-			#
-			# Help
-			#
-			self.help.Location = Point(405, 70)
-			self.help.Name = "help"
-			self.help.Size = Size(75, 23)
-			self.help.TabIndex = 101
-			self.help.Tag = "General Help"
-			self.help.Text = "&Help"
-			self.help.UseVisualStyleBackColor = True
-			self.help.Click += self.button_Click
-			self.help.BackColor = Color.Yellow
-			#
-			# Genre Text
-			#
-			self.genret.Location = Point(375, 225)
-			self.genret.Name = "genret"
-			self.genret.Size = Size(85, 25)
-			self.genret.TabIndex = 27
-			self.genret.Text = "Disney"
-			#self.genret.TextAlign = MiddleCenter
-			#
-			# series
-			#
-			self.series.Location = Point(195, 25)
-			self.series.Name = "series"
-			self.series.Size = Size(103, 23)
-			self.series.TabIndex = 5
-			self.series.Tag = "Series"
-			self.series.Text = "Series"
-			self.series.UseVisualStyleBackColor = True
-			self.series.CheckState = CheckState.Indeterminate
-			self.series.ThreeState = True
-			#
-			# title
-			#
-			self.title.Location = Point(195, 50)
-			self.title.Name = "title"
-			self.title.Size = Size(20, 23)
-			self.title.TabIndex = 6
-			self.title.Tag = "Main Title"
-			self.title.Text = ""
-			self.title.UseVisualStyleBackColor = True
-			self.title.CheckState = CheckState.Indeterminate
-			self.title.ThreeState = True
-			#
-			# title label
-			#
-			self.titleT.Location = Point(213, 54)
-			self.titleT.Name = "titleT"
-			self.titleT.Size = Size(83, 23)
-			self.titleT.TabIndex = 300
-			self.titleT.Text = ">title<"
-			self.titleT.Click += self.ClickT
-			#
-			# team
-			#
-			self.team.Location = Point(195, 75)
-			self.team.Name = "team"
-			self.team.Size = Size(103, 23)
-			self.team.TabIndex = 7
-			self.team.Tag = "Team"
-			self.team.Text = "Team"
-			self.team.UseVisualStyleBackColor = True
-			self.team.CheckState = CheckState.Indeterminate
-			self.team.ThreeState = True
-			# Team Button
-			#self.teamlist.Location = Point(405, 75)
-			#self.teamlist.Name = "teamlist"
-			#self.teamlist.Size = Size(75, 23)
-			#self.teamlist.TabIndex = 28
-			#self.teamlist.Tag = "TeamList"
-			#self.teamlist.Text = "Team List"
-			#self.teamlist.UseVisualStyleBackColor = True
-			#self.teamlist.Click += self.button_Click
-			#
-			# Tags
-			#
-			self.tags.Location = Point(195, 100)
-			self.tags.Name = "tags"
-			self.tags.Size = Size(103, 23)
-			self.tags.TabIndex = 8
-			self.tags.Tag = "Tags"
-			self.tags.Text = "Tags"
-			self.tags.UseVisualStyleBackColor = True
-			self.tags.CheckState = CheckState.Indeterminate
-			self.tags.ThreeState = True
-			#
-			# summary
-			#
-			self.summary.Location = Point(195, 125)
-			self.summary.Name = "summary"
-			self.summary.Size = Size(103, 23)
-			self.summary.TabIndex = 9
-			self.summary.Tag = "Summary"
-			self.summary.Text = "Summary"
-			self.summary.UseVisualStyleBackColor = True
-			self.summary.CheckState = CheckState.Indeterminate
-			self.summary.ThreeState = True
-			#
-			# Notes
-			#
-			self.notes.Location = Point(195, 150)
-			self.notes.Name = "notes"
-			self.notes.Size = Size(103, 23)
-			self.notes.TabIndex = 10
-			self.notes.Tag = "Notes"
-			self.notes.Text = "Notes"
-			self.notes.UseVisualStyleBackColor = True
-			self.notes.CheckState = CheckState.Indeterminate
-			self.notes.ThreeState = True
-			#
-			# Web
-			#
-			self.web.Location = Point(195, 175)
-			self.web.Name = "web"
-			self.web.Size = Size(103, 23)
-			self.web.TabIndex = 11
-			self.web.Tag = "Web"
-			self.web.Text = "Web"
-			self.web.UseVisualStyleBackColor = True
-			self.web.CheckState = CheckState.Indeterminate
-			self.web.ThreeState = True
-			#
-			# Chars
-			#
-			self.chars.Location = Point(195, 200)
-			self.chars.Name = "chars"
-			self.chars.Size = Size(103, 23)
-			self.chars.TabIndex = 12
-			self.chars.Tag = "Characters"
-			self.chars.Text = "Characters"
-			self.chars.UseVisualStyleBackColor = True
-			self.chars.CheckState = CheckState.Indeterminate
-			self.chars.ThreeState = True
-			#
-			# year
-			#
-			self.year.Location = Point(195, 225)
-			self.year.Name = "year"
-			self.year.Size = Size(103, 23)
-			self.year.TabIndex = 13
-			self.year.Tag = "Year"
-			self.year.Text = "Year"
-			self.year.UseVisualStyleBackColor = True
-			self.year.CheckState = CheckState.Indeterminate
-			self.year.ThreeState = True
-			#
-			# month
-			#
-			self.month.Location = Point(195, 250)
-			self.month.Name = "month"
-			self.month.Size = Size(103, 23)
-			self.month.TabIndex = 14
-			self.month.Tag = "Month"
-			self.month.Text = "Month"
-			self.month.UseVisualStyleBackColor = True
-			self.month.CheckState = CheckState.Indeterminate
-			self.month.ThreeState = True
-			#
-			# publisher
-			#
-			self.publisher.Location = Point(195, 275)
-			self.publisher.Name = "publisher"
-			self.publisher.Size = Size(103, 23)
-			self.publisher.TabIndex = 15
-			self.publisher.Tag = "Publisher"
-			self.publisher.Text = "Publisher"
-			self.publisher.UseVisualStyleBackColor = True
-			self.publisher.CheckState = CheckState.Indeterminate
-			self.publisher.ThreeState = True
-			#
-			# Editor
-			#
-			self.editor.Location = Point(300, 25)
-			self.editor.Name = "editor"
-			self.editor.Size = Size(103, 23)
-			self.editor.TabIndex = 16
-			self.editor.Tag = "Editor"
-			self.editor.Text = "Editor"
-			self.editor.UseVisualStyleBackColor = True
-			self.editor.CheckState = CheckState.Indeterminate
-			self.editor.ThreeState = True
-			#
-			# Penciller
-			#
-			self.penciller.Location = Point(300, 50)
-			self.penciller.Name = "penciller"
-			self.penciller.Size = Size(103, 23)
-			self.penciller.TabIndex = 17
-			self.penciller.Tag = "Penciller"
-			self.penciller.Text = "Penciller"
-			self.penciller.UseVisualStyleBackColor = True
-			self.penciller.CheckState = CheckState.Indeterminate
-			self.penciller.ThreeState = True
-			#
-			# Inker
-			#
-			self.inker.Location = Point(300, 75)
-			self.inker.Name = "inker"
-			self.inker.Size = Size(103, 23)
-			self.inker.TabIndex = 18
-			self.inker.Tag = "Inker"
-			self.inker.Text = "Inker"
-			self.inker.UseVisualStyleBackColor = True
-			self.inker.CheckState = CheckState.Indeterminate
-			self.inker.ThreeState = True
-			#
-			# Writer
-			#
-			self.writer.Location = Point(300, 100)
-			self.writer.Name = "writer"
-			self.writer.Size = Size(103, 23)
-			self.writer.TabIndex = 19
-			self.writer.Tag = "Writer"
-			self.writer.Text = "Writer"
-			self.writer.UseVisualStyleBackColor = True
-			self.writer.CheckState = CheckState.Indeterminate
-			self.writer.ThreeState = True
-			#
-			# Cover Artist
-			#
-			self.cover.Location = Point(300, 125)
-			self.cover.Name = "cover"
-			self.cover.Size = Size(103, 23)
-			self.cover.TabIndex = 20
-			self.cover.Tag = "Cover Artist"
-			self.cover.Text = "Cover Artist"
-			self.cover.UseVisualStyleBackColor = True
-			self.cover.CheckState = CheckState.Indeterminate
-			self.cover.ThreeState = True
-			#
-			# Colorist
-			#
-			self.colorist.Location = Point(300, 150)
-			self.colorist.Name = "colorist"
-			self.colorist.Size = Size(103, 23)
-			self.colorist.TabIndex = 21
-			self.colorist.Tag = "Colorist"
-			self.colorist.Text = "Colorist"
-			self.colorist.UseVisualStyleBackColor = True
-			self.colorist.CheckState = CheckState.Indeterminate
-			self.colorist.ThreeState = True
-			#
-			# Letterer
-			#
-			self.letterer.Location = Point(300, 175)
-			self.letterer.Name = "letterer"
-			self.letterer.Size = Size(103, 23)
-			self.letterer.TabIndex = 22
-			self.letterer.Tag = "Letterer"
-			self.letterer.Text = "Letterer"
-			self.letterer.UseVisualStyleBackColor = True
-			self.letterer.CheckState = CheckState.Indeterminate
-			self.letterer.ThreeState = True
-			#
-			# Language
-			#
-			self.language.Location = Point(300, 200)
-			self.language.Name = "language"
-			self.language.Size = Size(103, 23)
-			self.language.TabIndex = 23
-			self.language.Tag = "Language"
-			self.language.Text = "Language"
-			self.language.UseVisualStyleBackColor = True
-			self.language.CheckState = CheckState.Indeterminate
-			self.language.ThreeState = True
-			#
-			# Translate Button
-			self.translate.Location = Point(405, 100)
-			self.translate.Name = "translate"
-			self.translate.Size = Size(75, 23)
-			self.translate.TabIndex = 28
-			self.translate.Tag = "Translate"
-			self.translate.Text = "Translate"
-			self.translate.UseVisualStyleBackColor = True
-			self.translate.Click += self.button_Click
-			#
-			# Translatelist
-			#
-			self.translatelist.Location = Point(405, 125)
-			self.translatelist.Name = "translatelist"
-			self.translatelist.Size = Size(75, 100)
-			self.translatelist.TabIndex = 29
-			self.translatelist.Text = "Translation Language"
-			self.translatelist.MultiColumn = False
-			self.translatelist.SelectionMode = SelectionMode.One
-			self.translatelist.HorizontalScrollbar = True
-			self.translatelist.DoubleClick += self.DoubleClick
-			#
-			# Translateinto label
-			#
-			self.translateinto.Location = Point(405, 125)
-			self.translateinto.Name = "translateinto"
-			self.translateinto.Size = Size(75, 100)
-			self.translateinto.TabIndex = 30
-			self.translateinto.Text = ""
-			#
-			# Genre
-			#
-			self.genre.Location = Point(300, 225)
-			self.genre.Name = "genre"
-			self.genre.Size = Size(103, 23)
-			self.genre.TabIndex = 24
-			self.genre.Tag = "Genre"
-			self.genre.Text = "Genre"
-			self.genre.UseVisualStyleBackColor = True
-			self.genre.CheckStateChanged += self.ChangeStatus
-			self.genre.CheckState = CheckState.Indeterminate
-			self.genre.ThreeState = True
-			#
-			# Format
-			#
-			self.format.Location = Point(300, 250)
-			self.format.Name = "format"
-			self.format.Size = Size(103, 23)
-			self.format.TabIndex = 25
-			self.format.Tag = "Format"
-			self.format.Text = "Format"
-			self.format.UseVisualStyleBackColor = True
-			self.format.CheckState = CheckState.Indeterminate
-			self.format.ThreeState = True
-			#
-			# Location
-			#
-			self.location.Location = Point(300, 275)
-			self.location.Name = "location"
-			self.location.Size = Size(103, 23)
-			self.location.TabIndex = 26
-			self.location.Tag = "Location"
-			self.location.Text = "Location"
-			self.location.UseVisualStyleBackColor = True
-			self.location.CheckState = CheckState.Indeterminate
-			self.location.ThreeState = True
-			#
-			# box W > x L V
-			self.ClientSize = Size(490, 315)
-			#
-			self.Controls.Add(self.cancel)
-			self.Controls.Add(self.ok)
-			self.Controls.Add(self.reset)
-			self.Controls.Add(self.rebuild)
-			self.Controls.Add(self.help)
-
-			self.Controls.Add(self.genret)
-
-			self.Controls.Add(self.series)
-			self.Controls.Add(self.publisher)
-			self.Controls.Add(self.title)
-			self.Controls.Add(self.titleT)
-			self.Controls.Add(self.month)
-			self.Controls.Add(self.year)
-			self.Controls.Add(self.tags)
-			self.Controls.Add(self.inker)
-			self.Controls.Add(self.writer)
-			self.Controls.Add(self.penciller)
-			self.Controls.Add(self.team)
-			self.Controls.Add(self.cover)
-			self.Controls.Add(self.summary)
-			self.Controls.Add(self.notes)
-
-			self.Controls.Add(self.web)
-			self.Controls.Add(self.colorist)
-			self.Controls.Add(self.language)
-			self.Controls.Add(self.translate)
-			self.Controls.Add(self.genre)
-			self.Controls.Add(self.letterer)
-			self.Controls.Add(self.editor)
-			self.Controls.Add(self.chars)
-			self.Controls.Add(self.format)
-			self.Controls.Add(self.location)
-
-			self.list.BeginUpdate()
-			#
-			# remove first element
-			#
-			nIndex = 0
-
-			for x in range(len(publications)):
-				try:
-					self.list.Items.Add(publications[x][0] + " - " + publications[x][3].decode('utf-8'))
-				except:
-					self.list.Items.Add(publications[x][0] + " - " + publications[x][3])
-
-				try:
-					if StartPub[0] == publications[x][3].decode('utf-8') and StartPub[1][:2] == LStart:
-						nIndex = x
-				except:
-					if StartPub[0] == publications[x][3] and StartPub[1][:2] == LStart:
-						nIndex = x
-
-			self.Controls.Add(self.list)
-
-			if nIndex > 0:
-				self.list.SelectedIndex = nIndex
-			else:
-				self.list.SelectedIndex = self.list.FindString(StartPub[1])
-
-			self.list.TopIndex = self.list.SelectedIndex
-
-			self.list.Focus()
-
-			#self.list.ScrollIntoView(1) #self.list.Items[self.list.SelectedIndex])
-
-			self.list.EndUpdate()
-
-			self.FormBorderStyle = FormBorderStyle.FixedDialog
-			self.Name = "FromDucks"
-			self.StartPosition = FormStartPosition.CenterParent
-			self.Text = "(c) Inducks team (web: inducks.org)"
-			self.MinimizeBox = False
-			self.MaximizeBox = False
-
-
-		def button_Click(self, sender, e):
-			from System.IO import FileInfo
-			from System.Windows.Forms import (
-				MessageBox, CheckState
-			)
-
-			global aUpdate, SelInd
-
-			if sender.Name.CompareTo(self.ok.Name) == 0:
-				SelInd = self.list.SelectedIndex
-				dDict = {"Checked": 1, "Unchecked": 0, "Indeterminate": 2 }
-				for x in range(self.Controls.Count):
-					if 4 < self.Controls.Item[x].TabIndex < 27:
-						aUpdate[self.Controls.Item[x].TabIndex- 5] = dDict[self.Controls.Item[x].CheckState.ToString()]
-				aUpdate[22] = self.genret.Text
-
-			elif sender.Name.CompareTo(self.reset.Name) == 0:
-				for x in range(self.Controls.Count):
-					if 4 < self.Controls.Item[x].TabIndex < 27:
-						aUpdate[self.Controls.Item[x].TabIndex-5] = aUpdate[self.Controls.Item[x].TabIndex-5] + 1
-						if aUpdate[self.Controls.Item[x].TabIndex-5] == 3:
-							aUpdate[self.Controls.Item[x].TabIndex-5] = 0
-						if self.Controls.Item[x].CheckState == CheckState.Checked:
-							self.Controls.Item[x].CheckState = CheckState.Unchecked
-						elif self.Controls.Item[x].CheckState == CheckState.Unchecked:
-							self.Controls.Item[x].CheckState = CheckState.Indeterminate
-						else:
-							self.Controls.Item[x].CheckState = CheckState.Checked
-
-				self.translateinto.Visible = False
-				self.translateinto.Text = ""
-				TranslationID = ""
-
-			elif sender.Name.CompareTo(self.rebuild.Name) == 0:
-				FillDat(True, None)
-
-			elif sender.Name.CompareTo(self.cancel.Name) == 0:
-				pass
-
-			elif sender.Name.CompareTo(self.translate.Name) == 0:
-				self.translatelist.BeginUpdate()
-				if self.translatelist.Visible == False:
-
-					self.translatelist.Visible = True
-					self.translateinto.Text = ""
-					self.translateinto.Visible = False
-
-				if FileInfo(__file__[:-len('FromDucks.py')] + 'Languages.dat').Exists:
-					fileHandle = open(__file__[:-len('FromDucks.py')] + 'Languages.dat', 'r')
-					AllLanguages = fileHandle.readlines()
-					fileHandle.close()
-					AllLanguages.pop(0)
-					for x in AllLanguages:
-						cList = x.split("^")
-						self.translatelist.Items.Add(cList[0].upper() + " - " + cList[2] )
-					self.Controls.Add(self.translatelist)
-					self.translatelist.EndUpdate()
-				else:
-					MessageBox.Show('REBUILD the local tables!')
-
-			elif sender.Name.CompareTo(self.help.Name) == 0:
-				MessageBox.Show('Help - FromDucks Script v' + VERSION + "\n---------------------\n" +
-				"Select 1 or more comics, same series;\nStart the script and define the desired behavior.\n" +
-				"Pick the correct Series name for COA, select which fields to fill:\n" +
-				"* A marked box means OVERRIDE ALWAYS *\n" +
-				"* A shaded box means OVERRIDE IF EMPTY *\n" +
-				"(only for SUMMARY, it will add to the current value)\n" +
-				"* A blank box means DO NOT OVERRIDE *\n" +
-				"On the Title label, clicking will change the way the title is written, from original to all initials capitalized\n" +
-				"Choose the genre if needed and a translation language with a double click\n"+
-				"(characters' names will be set in that language, if existing)\n" +
-				"\nDouble clicking on a series will show the COA Webpage;\n" +
-				"Click OK and wait...\n" +
-				"> RESET will cycle the checkbox status\n" +
-				"> REBUILD will rebuild the Series list\n(the Series list is read once and then stored);\n" +
-				"> CANCEL will abort the script")
-		def ChangeStatus(self, sender, e):
-
-			if sender.Name.CompareTo(self.genre.Name) == 0:
-				stDict = {"Checked": True, "Unchecked": False, "Indeterminate": True }
-				self.genret.Enabled = stDict[sender.CheckState.ToString()]
-			else:
-				pass
-
-		def DoubleClickM(self, sender, e):
-			from System.Diagnostics import Process
-			global publications
-
-			Code = publications[self.list.SelectedIndex][0]
-			cWeb = "https://inducks.org/publication.php?c="
-			DCWeb = cWeb + Code
-			if DEBUG:log_BD("Series in Web:", DCWeb)
-			Process.Start(DCWeb)
-
-		def DoubleClick(self, sender, e):
-			global TranslationID
-
-			if self.translateinto.Visible == False:
-				self.translateinto.Visible = True
-			TranslationID = self.translatelist.SelectedItem
-			self.translatelist.Visible = False
-			self.Controls.Add(self.translateinto)
-			self.translateinto.Text = self.translatelist.SelectedItem[self.translatelist.SelectedItem.find(" ")+2:].strip(" ")
-
-		def ClickT(self, sender, e):
-			global TitleT
-
-			if self.titleT.Tag == "T":
-				self.titleT.Text = ">title<"
+				self.genret = TextBox()
+				self.translateinto = Label()
+				self.titleT = Label()
 				self.titleT.Tag = "L"
-				TitleT = "L"
-			else:
-				self.titleT.Text = ">TiTlE<"
-				self.titleT.Tag = "T"
-				TitleT	= "T"
+
+				self.series = CheckBox()
+				self.year = CheckBox()
+				self.month = CheckBox()
+				self.title = CheckBox()
+				self.inker = CheckBox()
+				self.tags = CheckBox()
+				self.notes = CheckBox()
+				self.cover = CheckBox()
+				self.summary = CheckBox()
+				self.publisher = CheckBox()
+				self.penciller = CheckBox()
+				self.writer = CheckBox()
+				self.team = CheckBox()
+				self.web = CheckBox()
+				self.colorist = CheckBox()
+				self.language = CheckBox()
+				self.translate = Button()
+				self.translatelist = ListBox()
+				self.genre = CheckBox()
+				self.letterer = CheckBox()
+				self.location = CheckBox()
+				self.editor = CheckBox()
+				self.format = CheckBox()
+				self.age = CheckBox()
+				self.chars = CheckBox()
+				self.location = CheckBox()
+
+				#
+				# list
+				#
+				self.list.Location = Point(10, 10)
+				self.list.Name = "list"
+				self.list.Size = Size(175, 300)
+				self.list.TabIndex = 1
+				self.list.Text = "Publications"
+				self.list.MultiColumn = False
+				self.list.SelectionMode = SelectionMode.One
+				self.list.HorizontalScrollbar = True
+				self.list.DoubleClick += self.DoubleClickM
+				#self.list.Sorted = True
+				#
+				# ok
+				#
+				self.ok.DialogResult = DialogResult.OK
+				self.ok.Location = Point(405, 250)
+				self.ok.Name = "ok"
+				self.ok.Size = Size(75, 23)
+				self.ok.TabIndex = 2
+				self.ok.Text = "&Ok"
+				self.ok.UseVisualStyleBackColor = True
+				self.ok.Click += self.button_Click
+				self.ok.BackColor = Color.LightGreen
+				#
+				# cancel
+				#
+				self.cancel.DialogResult = DialogResult.Cancel
+				self.cancel.Location = Point(405, 275)
+				self.cancel.Name = "cancel"
+				self.cancel.Size = Size(75, 23)
+				self.cancel.TabIndex = 3
+				self.cancel.Text = "&Cancel"
+				self.cancel.UseVisualStyleBackColor = True
+				self.cancel.Click += self.button_Click
+				self.cancel.BackColor = Color.Red
+				#
+				# reset
+				#
+				self.reset.Location = Point(405, 10)
+				self.reset.Name = "reset"
+				self.reset.Size = Size(75, 23)
+				self.reset.TabIndex = 4
+				self.reset.Tag = "Reset the selections"
+				self.reset.Text = "&Reset"
+				self.reset.UseVisualStyleBackColor = True
+				self.reset.Click += self.button_Click
+				self.reset.BackColor = Color.LightYellow
+				#
+				# rebuild
+				#
+				self.rebuild.Location = Point(405, 40)
+				self.rebuild.Name = "rebuild"
+				self.rebuild.Size = Size(75, 23)
+				self.rebuild.TabIndex = 100
+				self.rebuild.Tag = "Rebuild the List"
+				self.rebuild.Text = "Re&build"
+				self.rebuild.UseVisualStyleBackColor = True
+				self.rebuild.Click += self.button_Click
+				self.rebuild.BackColor = Color.LightBlue
+				#
+				# Help
+				#
+				self.help.Location = Point(405, 70)
+				self.help.Name = "help"
+				self.help.Size = Size(75, 23)
+				self.help.TabIndex = 101
+				self.help.Tag = "General Help"
+				self.help.Text = "&Help"
+				self.help.UseVisualStyleBackColor = True
+				self.help.Click += self.button_Click
+				self.help.BackColor = Color.Yellow
+				#
+				# Genre Text
+				#
+				self.genret.Location = Point(375, 225)
+				self.genret.Name = "genret"
+				self.genret.Size = Size(85, 25)
+				self.genret.TabIndex = 27
+				self.genret.Text = "Disney"
+				#self.genret.TextAlign = MiddleCenter
+				#
+				# series
+				#
+				self.series.Location = Point(195, 25)
+				self.series.Name = "series"
+				self.series.Size = Size(103, 23)
+				self.series.TabIndex = 5
+				self.series.Tag = "Series"
+				self.series.Text = "Series"
+				self.series.UseVisualStyleBackColor = True
+				self.series.CheckState = CheckState.Indeterminate
+				self.series.ThreeState = True
+				#
+				# title
+				#
+				self.title.Location = Point(195, 50)
+				self.title.Name = "title"
+				self.title.Size = Size(20, 23)
+				self.title.TabIndex = 6
+				self.title.Tag = "Main Title"
+				self.title.Text = ""
+				self.title.UseVisualStyleBackColor = True
+				self.title.CheckState = CheckState.Indeterminate
+				self.title.ThreeState = True
+				#
+				# title label
+				#
+				self.titleT.Location = Point(213, 54)
+				self.titleT.Name = "titleT"
+				self.titleT.Size = Size(83, 23)
+				self.titleT.TabIndex = 300
+				self.titleT.Text = ">title<"
+				self.titleT.Click += self.ClickT
+				#
+				# team
+				#
+				self.team.Location = Point(195, 75)
+				self.team.Name = "team"
+				self.team.Size = Size(103, 23)
+				self.team.TabIndex = 7
+				self.team.Tag = "Team"
+				self.team.Text = "Team"
+				self.team.UseVisualStyleBackColor = True
+				self.team.CheckState = CheckState.Indeterminate
+				self.team.ThreeState = True
+				# Team Button
+				#self.teamlist.Location = Point(405, 75)
+				#self.teamlist.Name = "teamlist"
+				#self.teamlist.Size = Size(75, 23)
+				#self.teamlist.TabIndex = 28
+				#self.teamlist.Tag = "TeamList"
+				#self.teamlist.Text = "Team List"
+				#self.teamlist.UseVisualStyleBackColor = True
+				#self.teamlist.Click += self.button_Click
+				#
+				# Tags
+				#
+				self.tags.Location = Point(195, 100)
+				self.tags.Name = "tags"
+				self.tags.Size = Size(103, 23)
+				self.tags.TabIndex = 8
+				self.tags.Tag = "Tags"
+				self.tags.Text = "Tags"
+				self.tags.UseVisualStyleBackColor = True
+				self.tags.CheckState = CheckState.Indeterminate
+				self.tags.ThreeState = True
+				#
+				# summary
+				#
+				self.summary.Location = Point(195, 125)
+				self.summary.Name = "summary"
+				self.summary.Size = Size(103, 23)
+				self.summary.TabIndex = 9
+				self.summary.Tag = "Summary"
+				self.summary.Text = "Summary"
+				self.summary.UseVisualStyleBackColor = True
+				self.summary.CheckState = CheckState.Indeterminate
+				self.summary.ThreeState = True
+				#
+				# Notes
+				#
+				self.notes.Location = Point(195, 150)
+				self.notes.Name = "notes"
+				self.notes.Size = Size(103, 23)
+				self.notes.TabIndex = 10
+				self.notes.Tag = "Notes"
+				self.notes.Text = "Notes"
+				self.notes.UseVisualStyleBackColor = True
+				self.notes.CheckState = CheckState.Indeterminate
+				self.notes.ThreeState = True
+				#
+				# Web
+				#
+				self.web.Location = Point(195, 175)
+				self.web.Name = "web"
+				self.web.Size = Size(103, 23)
+				self.web.TabIndex = 11
+				self.web.Tag = "Web"
+				self.web.Text = "Web"
+				self.web.UseVisualStyleBackColor = True
+				self.web.CheckState = CheckState.Indeterminate
+				self.web.ThreeState = True
+				#
+				# Chars
+				#
+				self.chars.Location = Point(195, 200)
+				self.chars.Name = "chars"
+				self.chars.Size = Size(103, 23)
+				self.chars.TabIndex = 12
+				self.chars.Tag = "Characters"
+				self.chars.Text = "Characters"
+				self.chars.UseVisualStyleBackColor = True
+				self.chars.CheckState = CheckState.Indeterminate
+				self.chars.ThreeState = True
+				#
+				# year
+				#
+				self.year.Location = Point(195, 225)
+				self.year.Name = "year"
+				self.year.Size = Size(103, 23)
+				self.year.TabIndex = 13
+				self.year.Tag = "Year"
+				self.year.Text = "Year"
+				self.year.UseVisualStyleBackColor = True
+				self.year.CheckState = CheckState.Indeterminate
+				self.year.ThreeState = True
+				#
+				# month
+				#
+				self.month.Location = Point(195, 250)
+				self.month.Name = "month"
+				self.month.Size = Size(103, 23)
+				self.month.TabIndex = 14
+				self.month.Tag = "Month"
+				self.month.Text = "Month"
+				self.month.UseVisualStyleBackColor = True
+				self.month.CheckState = CheckState.Indeterminate
+				self.month.ThreeState = True
+				#
+				# publisher
+				#
+				self.publisher.Location = Point(195, 275)
+				self.publisher.Name = "publisher"
+				self.publisher.Size = Size(103, 23)
+				self.publisher.TabIndex = 15
+				self.publisher.Tag = "Publisher"
+				self.publisher.Text = "Publisher"
+				self.publisher.UseVisualStyleBackColor = True
+				self.publisher.CheckState = CheckState.Indeterminate
+				self.publisher.ThreeState = True
+				#
+				# Editor
+				#
+				self.editor.Location = Point(300, 25)
+				self.editor.Name = "editor"
+				self.editor.Size = Size(103, 23)
+				self.editor.TabIndex = 16
+				self.editor.Tag = "Editor"
+				self.editor.Text = "Editor"
+				self.editor.UseVisualStyleBackColor = True
+				self.editor.CheckState = CheckState.Indeterminate
+				self.editor.ThreeState = True
+				#
+				# Penciller
+				#
+				self.penciller.Location = Point(300, 50)
+				self.penciller.Name = "penciller"
+				self.penciller.Size = Size(103, 23)
+				self.penciller.TabIndex = 17
+				self.penciller.Tag = "Penciller"
+				self.penciller.Text = "Penciller"
+				self.penciller.UseVisualStyleBackColor = True
+				self.penciller.CheckState = CheckState.Indeterminate
+				self.penciller.ThreeState = True
+				#
+				# Inker
+				#
+				self.inker.Location = Point(300, 75)
+				self.inker.Name = "inker"
+				self.inker.Size = Size(103, 23)
+				self.inker.TabIndex = 18
+				self.inker.Tag = "Inker"
+				self.inker.Text = "Inker"
+				self.inker.UseVisualStyleBackColor = True
+				self.inker.CheckState = CheckState.Indeterminate
+				self.inker.ThreeState = True
+				#
+				# Writer
+				#
+				self.writer.Location = Point(300, 100)
+				self.writer.Name = "writer"
+				self.writer.Size = Size(103, 23)
+				self.writer.TabIndex = 19
+				self.writer.Tag = "Writer"
+				self.writer.Text = "Writer"
+				self.writer.UseVisualStyleBackColor = True
+				self.writer.CheckState = CheckState.Indeterminate
+				self.writer.ThreeState = True
+				#
+				# Cover Artist
+				#
+				self.cover.Location = Point(300, 125)
+				self.cover.Name = "cover"
+				self.cover.Size = Size(103, 23)
+				self.cover.TabIndex = 20
+				self.cover.Tag = "Cover Artist"
+				self.cover.Text = "Cover Artist"
+				self.cover.UseVisualStyleBackColor = True
+				self.cover.CheckState = CheckState.Indeterminate
+				self.cover.ThreeState = True
+				#
+				# Colorist
+				#
+				self.colorist.Location = Point(300, 150)
+				self.colorist.Name = "colorist"
+				self.colorist.Size = Size(103, 23)
+				self.colorist.TabIndex = 21
+				self.colorist.Tag = "Colorist"
+				self.colorist.Text = "Colorist"
+				self.colorist.UseVisualStyleBackColor = True
+				self.colorist.CheckState = CheckState.Indeterminate
+				self.colorist.ThreeState = True
+				#
+				# Letterer
+				#
+				self.letterer.Location = Point(300, 175)
+				self.letterer.Name = "letterer"
+				self.letterer.Size = Size(103, 23)
+				self.letterer.TabIndex = 22
+				self.letterer.Tag = "Letterer"
+				self.letterer.Text = "Letterer"
+				self.letterer.UseVisualStyleBackColor = True
+				self.letterer.CheckState = CheckState.Indeterminate
+				self.letterer.ThreeState = True
+				#
+				# Language
+				#
+				self.language.Location = Point(300, 200)
+				self.language.Name = "language"
+				self.language.Size = Size(103, 23)
+				self.language.TabIndex = 23
+				self.language.Tag = "Language"
+				self.language.Text = "Language"
+				self.language.UseVisualStyleBackColor = True
+				self.language.CheckState = CheckState.Indeterminate
+				self.language.ThreeState = True
+				#
+				# Translate Button
+				self.translate.Location = Point(405, 100)
+				self.translate.Name = "translate"
+				self.translate.Size = Size(75, 23)
+				self.translate.TabIndex = 28
+				self.translate.Tag = "Translate"
+				self.translate.Text = "Translate"
+				self.translate.UseVisualStyleBackColor = True
+				self.translate.Click += self.button_Click
+				#
+				# Translatelist
+				#
+				self.translatelist.Location = Point(405, 125)
+				self.translatelist.Name = "translatelist"
+				self.translatelist.Size = Size(75, 100)
+				self.translatelist.TabIndex = 29
+				self.translatelist.Text = "Translation Language"
+				self.translatelist.MultiColumn = False
+				self.translatelist.SelectionMode = SelectionMode.One
+				self.translatelist.HorizontalScrollbar = True
+				self.translatelist.DoubleClick += self.DoubleClick
+				#
+				# Translateinto label
+				#
+				self.translateinto.Location = Point(405, 125)
+				self.translateinto.Name = "translateinto"
+				self.translateinto.Size = Size(75, 100)
+				self.translateinto.TabIndex = 30
+				self.translateinto.Text = ""
+				#
+				# Genre
+				#
+				self.genre.Location = Point(300, 225)
+				self.genre.Name = "genre"
+				self.genre.Size = Size(103, 23)
+				self.genre.TabIndex = 24
+				self.genre.Tag = "Genre"
+				self.genre.Text = "Genre"
+				self.genre.UseVisualStyleBackColor = True
+				self.genre.CheckStateChanged += self.ChangeStatus
+				self.genre.CheckState = CheckState.Indeterminate
+				self.genre.ThreeState = True
+				#
+				# Format
+				#
+				self.format.Location = Point(300, 250)
+				self.format.Name = "format"
+				self.format.Size = Size(103, 23)
+				self.format.TabIndex = 25
+				self.format.Tag = "Format"
+				self.format.Text = "Format"
+				self.format.UseVisualStyleBackColor = True
+				self.format.CheckState = CheckState.Indeterminate
+				self.format.ThreeState = True
+				#
+				# Location
+				#
+				self.location.Location = Point(300, 275)
+				self.location.Name = "location"
+				self.location.Size = Size(103, 23)
+				self.location.TabIndex = 26
+				self.location.Tag = "Location"
+				self.location.Text = "Location"
+				self.location.UseVisualStyleBackColor = True
+				self.location.CheckState = CheckState.Indeterminate
+				self.location.ThreeState = True
+				#
+				# box W > x L V
+				self.ClientSize = Size(490, 315)
+				#
+				self.Controls.Add(self.cancel)
+				self.Controls.Add(self.ok)
+				self.Controls.Add(self.reset)
+				self.Controls.Add(self.rebuild)
+				self.Controls.Add(self.help)
+
+				self.Controls.Add(self.genret)
+
+				self.Controls.Add(self.series)
+				self.Controls.Add(self.publisher)
+				self.Controls.Add(self.title)
+				self.Controls.Add(self.titleT)
+				self.Controls.Add(self.month)
+				self.Controls.Add(self.year)
+				self.Controls.Add(self.tags)
+				self.Controls.Add(self.inker)
+				self.Controls.Add(self.writer)
+				self.Controls.Add(self.penciller)
+				self.Controls.Add(self.team)
+				self.Controls.Add(self.cover)
+				self.Controls.Add(self.summary)
+				self.Controls.Add(self.notes)
+
+				self.Controls.Add(self.web)
+				self.Controls.Add(self.colorist)
+				self.Controls.Add(self.language)
+				self.Controls.Add(self.translate)
+				self.Controls.Add(self.genre)
+				self.Controls.Add(self.letterer)
+				self.Controls.Add(self.editor)
+				self.Controls.Add(self.chars)
+				self.Controls.Add(self.format)
+				self.Controls.Add(self.location)
+
+				self.list.BeginUpdate()
+				#
+				# remove first element
+				#
+				nIndex = 0
+
+				for index, publicationcode in enumerate(publications.keys()):
+					publicationtitle = publications[publicationcode]
+					try:
+						self.list.Items.Add(publicationcode + " - " + publicationtitle.decode('utf-8'))
+					except:
+						self.list.Items.Add(publicationcode + " - " + publicationtitle)
+
+					try:
+						if StartPub[0] == publicationcode.decode('utf-8') and StartPub[1][:2] == LStart:
+							nIndex = index
+					except:
+						if StartPub[0] == publicationcode and StartPub[1][:2] == LStart:
+							nIndex = index
+
+				self.Controls.Add(self.list)
+
+				if nIndex > 0:
+					self.list.SelectedIndex = nIndex
+				else:
+					self.list.SelectedIndex = self.list.FindString(StartPub[1])
+
+				self.list.TopIndex = self.list.SelectedIndex
+
+				self.list.Focus()
+
+				#self.list.ScrollIntoView(1) #self.list.Items[self.list.SelectedIndex])
+
+				self.list.EndUpdate()
+
+				self.FormBorderStyle = FormBorderStyle.FixedDialog
+				self.Name = "FromDucks"
+				self.StartPosition = FormStartPosition.CenterParent
+				self.Text = "(c) Inducks team (web: inducks.org)"
+				self.MinimizeBox = False
+				self.MaximizeBox = False
+
+
+			def button_Click(self, sender, e):
+				from System.IO import FileInfo
+				from System.Windows.Forms import (
+					MessageBox, CheckState
+				)
+
+				global aUpdate, SelInd
+
+				if sender.Name.CompareTo(self.ok.Name) == 0:
+					SelInd = self.list.SelectedIndex
+					dDict = {"Checked": 1, "Unchecked": 0, "Indeterminate": 2 }
+					for x in range(self.Controls.Count):
+						if 4 < self.Controls.Item[x].TabIndex < 27:
+							aUpdate[self.Controls.Item[x].TabIndex- 5] = dDict[self.Controls.Item[x].CheckState.ToString()]
+					aUpdate[22] = self.genret.Text
+
+				elif sender.Name.CompareTo(self.reset.Name) == 0:
+					for x in range(self.Controls.Count):
+						if 4 < self.Controls.Item[x].TabIndex < 27:
+							aUpdate[self.Controls.Item[x].TabIndex-5] = aUpdate[self.Controls.Item[x].TabIndex-5] + 1
+							if aUpdate[self.Controls.Item[x].TabIndex-5] == 3:
+								aUpdate[self.Controls.Item[x].TabIndex-5] = 0
+							if self.Controls.Item[x].CheckState == CheckState.Checked:
+								self.Controls.Item[x].CheckState = CheckState.Unchecked
+							elif self.Controls.Item[x].CheckState == CheckState.Unchecked:
+								self.Controls.Item[x].CheckState = CheckState.Indeterminate
+							else:
+								self.Controls.Item[x].CheckState = CheckState.Checked
+
+					self.translateinto.Visible = False
+					self.translateinto.Text = ""
+					TranslationID = ""
+
+				elif sender.Name.CompareTo(self.rebuild.Name) == 0:
+					FillDat(True, None)
+
+				elif sender.Name.CompareTo(self.cancel.Name) == 0:
+					pass
+
+				elif sender.Name.CompareTo(self.translate.Name) == 0:
+					self.translatelist.BeginUpdate()
+					if self.translatelist.Visible == False:
+
+						self.translatelist.Visible = True
+						self.translateinto.Text = ""
+						self.translateinto.Visible = False
+
+					if FileInfo(getReferenceDataFile('languages')).Exists:
+						fileHandle = open(getReferenceDataFile('languages'), 'r')
+						AllLanguages = fileHandle.readlines()
+						fileHandle.close()
+						AllLanguages.pop(0)
+						for x in AllLanguages:
+							cList = x.split("^")
+							self.translatelist.Items.Add(cList[0].upper() + " - " + cList[2] )
+						self.Controls.Add(self.translatelist)
+						self.translatelist.EndUpdate()
+					else:
+						MessageBox.Show('REBUILD the local tables!')
+
+				elif sender.Name.CompareTo(self.help.Name) == 0:
+					MessageBox.Show('Help - FromDucks Script v' + VERSION + "\n---------------------\n" +
+					"Select 1 or more comics, same series;\nStart the script and define the desired behavior.\n" +
+					"Pick the correct Series name for COA, select which fields to fill:\n" +
+					"* A marked box means OVERRIDE ALWAYS *\n" +
+					"* A shaded box means OVERRIDE IF EMPTY *\n" +
+					"(only for SUMMARY, it will add to the current value)\n" +
+					"* A blank box means DO NOT OVERRIDE *\n" +
+					"On the Title label, clicking will change the way the title is written, from original to all initials capitalized\n" +
+					"Choose the genre if needed and a translation language with a double click\n"+
+					"(characters' names will be set in that language, if existing)\n" +
+					"\nDouble clicking on a series will show the COA Webpage;\n" +
+					"Click OK and wait...\n" +
+					"> RESET will cycle the checkbox status\n" +
+					"> REBUILD will rebuild the Series list\n(the Series list is read once and then stored);\n" +
+					"> CANCEL will abort the script")
+			def ChangeStatus(self, sender, e):
+
+				if sender.Name.CompareTo(self.genre.Name) == 0:
+					stDict = {"Checked": True, "Unchecked": False, "Indeterminate": True }
+					self.genret.Enabled = stDict[sender.CheckState.ToString()]
+				else:
+					pass
+
+			def DoubleClickM(self, sender, e):
+				from System.Diagnostics import Process
+				global publications
+
+				Code = publications[self.list.SelectedIndex][0]
+				cWeb = "https://inducks.org/publication.php?c="
+				DCWeb = cWeb + Code
+				if DEBUG:log_BD("Series in Web:", DCWeb)
+				Process.Start(DCWeb)
+
+			def DoubleClick(self, sender, e):
+				global TranslationID
+
+				if self.translateinto.Visible == False:
+					self.translateinto.Visible = True
+				TranslationID = self.translatelist.SelectedItem
+				self.translatelist.Visible = False
+				self.Controls.Add(self.translateinto)
+				self.translateinto.Text = self.translatelist.SelectedItem[self.translatelist.SelectedItem.find(" ")+2:].strip(" ")
+
+			def ClickT(self, sender, e):
+				global TitleT
+
+				if self.titleT.Tag == "T":
+					self.titleT.Text = ">title<"
+					self.titleT.Tag = "L"
+					TitleT = "L"
+				else:
+					self.titleT.Text = ">TiTlE<"
+					self.titleT.Tag = "T"
+					TitleT	= "T"
+	
+	except Exception as e:
+		debuglog()
+		raise e
 	
 	def WorkerThread(books):
 		from System.Windows.Forms import (
@@ -878,62 +838,47 @@ def FromDucks(books):
 		if lForce:
 			fd = ProgressBarDialog(3, "Rebuilding")
 			fd.Show(ComicRack.MainWindow)
-			#progressDlg = Progress()
-			#progressDlg.CenterToParent()
-			#progressDlg.Show()
 			fd.Update("Reading/Rebuilding [DB]", 1, "Local Database ")
 			fd.Refresh()
 
 		for referenceDataName in referenceDataNames:
 			cWeb = "https://api.ducksmanager.net/comicrack/" + referenceDataName
 			fileName = getReferenceDataFile(referenceDataName)
+			log_BD("Reading/Rebuilding [" + cWeb + "]", "Local Database ", 1)
+			log_BD("Storing in [" + fileName + "]", "", 1)
 
 			if lForce or not FileInfo(fileName).Exists:
 				try:
-					fileHandle = _read_url(cWeb)
+					page = _read_url(cWeb+"?languagecode=en" if referenceDataName == "characters" else cWeb)
 					if lForce:
 						fd.Update("Reading/Rebuilding [" + cWeb + "]", 1, "Local Database ")
 						fd.Refresh()
-						#progressDlg.modifyPrompt("Reading/Rebuilding [" + cWeb + "]")
-
-					#contents = fileHandle.readlines()
 
 				except IOError:
 					MessageBox.Show('Cannot open URL ' + cWeb + 'for reading')
 					sys.exit(0)
 
-				#fileHandle.close()
-
-				#fileHandle = open(cycle, 'w')
-
-				open(fileName, 'wb').write(fileHandle.encode("utf-8"))
-
-				#for line in contents:
-				#	fileHandle.write(line)
-
-				#fileHandle.close()
+				writeFile(fileName, page)
 
 			elif not FileInfo(fileName).Exists:
-
 				MessageBox.Show('Cannot open ' + referenceDataName + '\nPlease REBUILD it!')
 				sys.exit(0)
-			
-			if (referenceDataName == "characters"):
-				characters = json.loads(_read_url(cWeb))
-			elif (referenceDataName == "languages"):
-				languages = json.loads(_read_url(cWeb+"?languagecode=en"))
-			elif (referenceDataName == "publications"):
-				publications = json.loads(_read_url(cWeb))
+			else:
+				page = readFile(fileName)
 
+			if (referenceDataName == "characters"):
+				characters = JSONDecoder().decode(page)
+			elif (referenceDataName == "languages"):
+				languages = JSONDecoder().decode(page)
+			elif (referenceDataName == "publications"):
+				publications = JSONDecoder().decode(page)
 		if lForce:
-			fd.Close()
-			#progressDlg.Close()
 			MessageBox.Show('REBUILD completed!')
 
 
 	from System.Diagnostics import Process
 	from System.Threading import Monitor
-	from System.IO import Path, FileInfo, File
+	from System.IO import FileInfo, File
 	from System.Windows.Forms import (
 		MessageBox, MessageBoxButtons, MessageBoxIcon, MessageBoxDefaultButton,
 		DialogResult
@@ -947,13 +892,13 @@ def FromDucks(books):
 
 	TitleT = "L"
 
-	bdlogfile = Path.Combine(__file__[:-len('FromDucks.py')] , "FromDucks_Rename_Log.txt")
+	bdlogfile = path_combine(__file__[:-len('FromDucks.py')] , "FromDucks_Rename_Log.txt")
 	if FileInfo(bdlogfile).Exists and FileInfo(bdlogfile).Length > SIZE_RENAME_LOG:
 		Result = MessageBox.Show(ComicRack.MainWindow, "The File FromDucks_Rename_Log.txt is growing too much: do you want to clean it ?", "Rename Log File", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
 		if Result == DialogResult.Yes:
 			File.Delete(bdlogfile)
 
-	debuglogfile = Path.Combine(__file__[:-len('FromDucks.py')] , "FromDucks_Debug_Log.txt")
+	debuglogfile = path_combine(__file__[:-len('FromDucks.py')] , "FromDucks_Debug_Log.txt")
 	if FileInfo(debuglogfile).Exists and FileInfo(debuglogfile).Length > SIZE_DEBUG_LOG:
 		Result = MessageBox.Show(ComicRack.MainWindow, "The File FromDucks_Debug_Log.txt is growing too much: do you want to clean it ?", "Debug Log File", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
 		if Result == DialogResult.Yes:
@@ -971,9 +916,7 @@ def FromDucks(books):
 
 	publicationReferenceFile = getReferenceDataFile('publications')
 	if not FileInfo(publicationReferenceFile).Exists:
-		fileHandle = open(publicationReferenceFile, 'w')
-		fileHandle.write("[]")
-		fileHandle.close()
+		writeFile(publicationReferenceFile, "{}")
 
 	if FileInfo(publicationReferenceFile).Length <= 2:
 		FillDat(True,None)
@@ -989,8 +932,7 @@ def FromDucks(books):
 		StartPub.append(LStart + "/" + book.Series[:1])
 		break
 
-	fileHandle = open(referenceDataNames[0], 'r')
-	fileHandle.close()
+	# Ensure file exists, but do not read here
 
 	bf = BuilderForm()
 
@@ -1004,8 +946,8 @@ def FromDucks(books):
 				rdlg = MessageBox.Show(ComicRack.MainWindow, "Scrape Completed ! \n\nOpen Rename Log ?", "FromDucks", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
 				if rdlg == DialogResult.Yes:
 					# open rename log automatically
-					if FileInfo(Path.Combine(__file__[:-len('FromDucks.py')] , "FromDucks_Rename_Log.txt")).Exists:
-						Process.Start (Path.Combine(__file__[:-len('FromDucks.py')] , "FromDucks_Rename_Log.txt"))
+					if FileInfo(path_combine(__file__[:-len('FromDucks.py')] , "FromDucks_Rename_Log.txt")).Exists:
+						Process.Start (path_combine(__file__[:-len('FromDucks.py')] , "FromDucks_Rename_Log.txt"))
 
 			else:
 				Monitor.Enter(ComicRack.MainWindow)
@@ -1014,14 +956,137 @@ def FromDucks(books):
 				rdlg = MessageBox.Show(ComicRack.MainWindow, "Scrape ended with errors ! \n\nOpen Debug Log ?", "FromDucks", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
 				if rdlg == DialogResult.Yes:
 					# open debug log automatically
-					if FileInfo(Path.Combine(__file__[:-len('FromDucks.py')] , "FromDucks_Debug_Log.txt")).Exists:
-						Process.Start (Path.Combine(__file__[:-len('FromDucks.py')] , "FromDucks_Debug_Log.txt"))
+					if FileInfo(path_combine(__file__[:-len('FromDucks.py')] , "FromDucks_Debug_Log.txt")).Exists:
+						Process.Start (path_combine(__file__[:-len('FromDucks.py')] , "FromDucks_Debug_Log.txt"))
 
 		Monitor.Exit(ComicRack.MainWindow)
 
+def getReferenceDataFile(referenceDataName):
+	return path_combine(__file__[:-len('FromDucks.py')] , referenceDataName + ".json")
+
+def readFile(fileName):
+	try:
+		if 'System' in sys.modules:
+			from System.IO import StreamReader
+			from System.Text import Encoding
+			reader = StreamReader(fileName, Encoding.UTF8)
+			content = reader.ReadToEnd()
+			reader.Close()
+			return content
+		else:
+			try:
+				return open(fileName, 'r', encoding='utf-8').read()
+			except TypeError:
+				import codecs
+				return codecs.open(fileName, 'r', 'utf-8').read()
+	except Exception as e:
+		raise e
+
+def writeFile(fileName, content):
+	try:
+		if 'System' in sys.modules:
+			from System.IO import StreamWriter
+			from System.Text import Encoding
+			writer = StreamWriter(fileName, False, Encoding.UTF8)
+			writer.Write(content)
+			writer.Close()
+		else:
+			try:
+				open(fileName, 'w', encoding='utf-8').write(content)
+			except TypeError:
+				import codecs
+				codecs.open(fileName, 'w', 'utf-8').write(content)
+	except Exception as e:
+		raise e
+
+def sstr(object):
+	''' safely converts the given object into a string (sstr = safestr) '''
+	if object is None:
+		return '<None>'
+	if is_string(object):
+		# this is needed, because str() breaks on some strings that have unicode
+		# characters, due to a python bug.  (all strings in python are unicode.)
+		return object
+	return str(object)
+
+def is_string(object):
+	''' returns a boolean indicating whether the given object is a string '''
+	if object is None:
+		return False
+	return isinstance(object, str)
+
+def _read_url(url):
+	if 'System' in sys.modules:
+		from System.Net import HttpWebRequest, DecompressionMethods
+		from System.Text import Encoding
+		from System.IO import StreamReader
+		Req = HttpWebRequest.Create(url)
+		Req.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip
+		webresponse = Req.GetResponse()
+		inStream = webresponse.GetResponseStream()
+		encode = Encoding.GetEncoding("utf-8")
+		ReadStream = StreamReader(inStream, encode)
+		return ReadStream.ReadToEnd()
+	else:
+		# Fallback to CPython urllib
+		try:
+			import urllib.request as urllib_request
+		except ImportError:
+			import urllib2 as urllib_request
+		req = urllib_request.Request(url)
+		resp = urllib_request.urlopen(req)
+		try:
+			return resp.read().decode('utf-8')
+		finally:
+			resp.close()
+			
+def FillDatNoUI(referenceDataNames):
+	global publications, characters, languages
+	for referenceDataName in referenceDataNames:
+		cWeb = "https://api.ducksmanager.net/comicrack/" + referenceDataName
+		fileName = getReferenceDataFile(referenceDataName)
+		writeFile(fileName, _read_url(cWeb + "?languagecode=en" if referenceDataName == "characters" else cWeb))
+		page = readFile(fileName)
+
+		if (referenceDataName == "characters"):
+			characters = JSONDecoder().decode(page)
+		elif (referenceDataName == "languages"):
+			languages = JSONDecoder().decode(page)
+		elif (referenceDataName == "publications"):
+			publications = JSONDecoder().decode(page)
+
+def SumBuild(StoryFull):
+	global TitleT
+
+	cNotes=""
+	cArt = ""
+	# Writing|Idea||Text|Pencils|Colours|Art|Ink|Script|Plot|Lettering
+	for storycode, story in StoryFull:
+		cArt = ""
+		for Art in story['jobs']:
+			cArt += " "
+			if Art['plotwritartink'] in ('p', 'w'):
+				cArt += "W: "
+			else:
+				cArt += Art['plotwritartink'].upper() + ": "
+			cArt += Art['personcode']
+
+		if story['storyversion']['kind'] != "":
+			cNotes += TypeCol(story['storyversion']['kind'])
+		if story['storyversion']['storycode'] != "":
+			cNotes += ": " + story['storyversion']['storycode']
+		if story['title'] != "":
+			cNotes += " - " + story['title'].strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")
+		if cArt != "":
+			cNotes += " (" + cArt.strip() + ")"
+		if cNotes != "":
+			cNotes += "\n"
+	return cNotes
+
+
+
 def ReadInfoDucks(cSeries, book):
 	import re
-	import sys
 
 	global publications
 
@@ -1040,7 +1105,7 @@ def ReadInfoDucks(cSeries, book):
 		#
 		return -1,0,0,0,0,0,0,0,0,0,0
 	try:
-		data = json.loads(contents)
+		data = JSONDecoder().decode(contents)
 	except Exception:
 		print("Error parsing JSON")
 		f.Update("Error parsing JSON: " + cWeb)
@@ -1081,7 +1146,7 @@ def ReadInfoDucks(cSeries, book):
 			if resultd2:
 				year = resultd2.group(1)
 	result3 = m3.search(contents)
- 
+
 	pages = result3.group(1) if result3 else 0
 	# Stories and appearances
 	entries = data['entries'].items()
@@ -1233,12 +1298,26 @@ def MonthNum(month):
 	else:
 		return 0
 
+
+def log_BD(bdstr,bdstat="",lTime=1):
+	bdlogfile = path_combine(__file__[:-len('FromDucks.py')] , "FromDucks_Rename_Log.txt")
+
+	bdlog = open(bdlogfile, 'a')
+	if lTime == 1:
+		cDT = str(datetime.now().strftime("%A %d %B %Y %H:%M:%S")) + " > "
+
+	else:
+		cDT= ""
+
+	bdlog.write (cDT + str(bdstr) + "   " + str(bdstat) + "\n")
+	bdlog.flush()
+	bdlog.close()
+
 def debuglog():
-	from System.IO import Path
 	traceback = sys.exc_info()[2]
 	stackTrace = []
 
-	logfile = Path.Combine(__file__[:-len('FromDucks.py')] , "FromDucks_Debug_Log.txt")
+	logfile = path_combine(__file__[:-len('FromDucks.py')] , "FromDucks_Debug_Log.txt")
 
 	if DEBUG:log_BD("Writing Log to " + logfile)
 	log = open(logfile, 'a')
@@ -1267,61 +1346,14 @@ def debuglog():
 	log.flush()
 	log.close()
 
-def sstr(object):
-	''' safely converts the given object into a string (sstr = safestr) '''
-	if object is None:
-		return '<None>'
-	if is_string(object):
-		# this is needed, because str() breaks on some strings that have unicode
-		# characters, due to a python bug.  (all strings in python are unicode.)
-		return object
-	return str(object)
-
-def log_BD(bdstr,bdstat="",lTime=1):
-	from System.IO import Path
-	bdlogfile = Path.Combine(__file__[:-len('FromDucks.py')] , "FromDucks_Rename_Log.txt")
-
-	bdlog = open(bdlogfile, 'a')
-	if lTime == 1:
-		cDT = str(datetime.now().strftime("%A %d %B %Y %H:%M:%S")) + " > "
-
-	else:
-		cDT= ""
-
-	bdlog.write (str(cDT).encode("utf-8") + str(bdstr).encode("utf-8") + "   " + str(bdstat).encode("utf-8") + "\n")
-	bdlog.flush()
-	bdlog.close()
-
-def is_string(object):
-	''' returns a boolean indicating whether the given object is a string '''
-	if object is None:
-		return False
-	return isinstance(object, str)
-
-def _read_url(url):
-	if 'System' in sys.modules:
-		from System.Net import HttpWebRequest, DecompressionMethods
-		from System.Text import Encoding
-		from System.IO import StreamReader
-		Req = HttpWebRequest.Create(url)
-		Req.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip
-		webresponse = Req.GetResponse()
-		inStream = webresponse.GetResponseStream()
-		encode = Encoding.GetEncoding("utf-8")
-		ReadStream = StreamReader(inStream, encode)
-		return ReadStream.ReadToEnd()
-	else:
-		# Fallback to CPython urllib
-		try:
-			import urllib.request as urllib_request
-		except ImportError:
-			import urllib2 as urllib_request
-		req = urllib_request.Request(url)
-		resp = urllib_request.urlopen(req)
-		try:
-			return resp.read().decode('utf-8')
-		finally:
-			resp.close()
+def path_combine(*paths):
+	"""Cross-compatible Path.Combine for IronPython, CPython 2, and CPython 3"""
+	try:
+		from System.IO import Path
+		return Path.Combine(*paths)
+	except Exception:
+		import os
+		return os.path.join(*paths)
 
 def test_ReadInfoDucks():
 	class Book:
