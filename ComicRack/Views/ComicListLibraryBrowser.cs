@@ -1112,16 +1112,16 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			if (dragNode != null)
 			{
 				if (dragNode != e.Data.GetData(typeof(TreeNode)))
-				{
 					return;
-				}
-				ComicListItemCollection comicListItemCollection = ((dragNode.Parent == null) ? Library.ComicLists : ((ComicListItemFolder)dragNode.Parent.Tag).Items);
+
+				ComicListItemCollection comicListItemCollection = ((dragNode.Parent == null) ? Library.ComicLists : ((ComicListItemFolder)dragNode.Parent.Tag).Items); // get the source parent collection
 				ComicListItem comicListItem = dragNode.Tag as ComicListItem;
-				RecursionCache.Items.RemoveReference(comicListItem.Id);
+				RecursionCache.Items.RemoveReference(comicListItem.Id); // remove from recursion cache as we are moving it
+
+				// When copying a list and it is sharable, we clone it so that it can add a duplicate
 				if (e.Effect == DragDropEffects.Copy && comicListItem is ShareableComicListItem)
-				{
-					comicListItem = ((ICloneable)(ShareableComicListItem)comicListItem).Clone<ShareableComicListItem>();
-				}
+					comicListItem = ((ShareableComicListItem)comicListItem).Clone<ShareableComicListItem>();
+
 				if (dropNode == null)
 				{
 					comicListItemCollection.Remove(comicListItem);
@@ -1129,14 +1129,13 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				}
 				else if (separatorDropNodeStyle)
 				{
-					ComicListItemCollection comicListItemCollection2 = ((dropNode.Parent == null) ? Library.ComicLists : ((ComicListItemFolder)dropNode.Parent.Tag).Items);
-					int num = dropNode.Index;
-					int num2 = comicListItemCollection.IndexOf(comicListItem);
-					if (comicListItemCollection.Remove(comicListItem) && comicListItemCollection == comicListItemCollection2 && num2 < num)
-					{
-						num--;
-					}
-					comicListItemCollection2.Insert(num, comicListItem);
+					ComicListItemCollection comicListItemCollection2 = ((dropNode.Parent == null) ? Library.ComicLists : ((ComicListItemFolder)dropNode.Parent.Tag).Items); // get the destination parent collection
+					int dropIndex = dropNode.Index; // get the index of destination node
+					int sourceIndex = comicListItemCollection.IndexOf(comicListItem); // get the index of source node, is -1 when copying because it is a new object
+					if (comicListItemCollection.Remove(comicListItem) && comicListItemCollection == comicListItemCollection2 && sourceIndex < dropIndex)
+						dropIndex--;
+
+					comicListItemCollection2.Insert(dropIndex, comicListItem);
 				}
 				else
 				{
@@ -1144,7 +1143,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					ComicListItemCollection items = ((ComicListItemFolder)dropNode.Tag).Items;
 					items.Add(comicListItem);
 				}
-				dragNode.Tag = comicListItem;
 				OnIdle();
 				tvQueries.SelectedNode = FindItemNode(comicListItem);
 				BookList = null;
