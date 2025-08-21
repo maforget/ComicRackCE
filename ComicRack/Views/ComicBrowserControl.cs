@@ -2531,9 +2531,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			IEnumerable<CoverViewItem> selectedItems = from CoverViewItem cvi in new List<IViewableItem>(itemView.SelectedItems)
 														select cvi;
-			IEnumerable<CoverViewItem> enumerable = selectedItems.Where(cvi => cvi.Comic.IsInContainer);
 
-			foreach (CoverViewItem item in enumerable)
+			foreach (CoverViewItem item in selectedItems)
 			{
 				if (item.Comic.IsDynamicSource)
 				{
@@ -2546,12 +2545,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 			if (ComicEditMode.CanScan())
 			{
+				// If Control is pressed, force a refresh of the information, otherwise only refresh if the comic is in the library.
 				bool forceRefreshInfo = Control.ModifierKeys == Keys.Control;
+				IEnumerable<CoverViewItem> itemToRefresh = forceRefreshInfo ? selectedItems : selectedItems.Where(cvi => cvi.Comic.IsInContainer);
 
-				if (forceRefreshInfo)
-					enumerable = selectedItems;
-
-				Program.Scanner.ScanFilesOrFolders(enumerable.Select((CoverViewItem cvi) => cvi.Comic.FilePath), all: false, removeMissing: false, forceRefreshInfo: forceRefreshInfo);
+				Program.Scanner.ScanFilesOrFolders(itemToRefresh.Select((CoverViewItem cvi) => cvi.Comic.FilePath), all: false, removeMissing: false, forceRefreshInfo: forceRefreshInfo);
 			}
 		}
 
