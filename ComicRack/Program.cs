@@ -958,7 +958,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			foreach (var generic in ZipFileFolder.CreateDictionaryFromFiles(folders, searchPattern, trigger))
 			{
 				var icons = new ImagePackage { EnableWidthCropping = true };
-				icons.Add(generic.Value, SplitIconKeys);
+				icons.Add(generic.Value, mapKeys);
 				dictionary.Add(generic.Key, icons);
 			}
 			return dictionary;
