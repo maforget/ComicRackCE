@@ -67,7 +67,22 @@ namespace cYo.Projects.ComicRack.Engine
             }
             return false;
         }
-    }
+
+		public override int GetHashCode()
+		{
+			if (this is null)
+				return 0;
+
+			int hash = 17;
+			hash = hash * 23 + this.ID.GetHashCode();
+			hash = hash * 23 + this.Name?.GetHashCode() ?? 0;
+			hash = hash * 23 + this.Description?.GetHashCode() ?? 0;
+			hash = hash * 23 + this.CaptionFormat?.GetHashCode() ?? 0;
+			hash = hash * 23 + this.IsEnabled.GetHashCode();
+			hash = hash * 23 + this.IsDefault.GetHashCode();
+			return hash;
+		}
+	}
 }
 
 
