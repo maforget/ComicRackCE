@@ -1634,7 +1634,7 @@ namespace cYo.Projects.ComicRack.Engine
 		public static event EventHandler<ParseFilePathEventArgs> ParseFilePath;
 
 		Dictionary<int, string> CachedVirtualTags = new Dictionary<int, string>();
-		private string GetVirtualTagValue(int id)
+		public string GetVirtualTagValue(int id)
 		{
 			if (CachedVirtualTags.TryGetValue(id, out var value))
 				return value;
