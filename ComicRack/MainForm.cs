@@ -746,7 +746,8 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 			notifyIcon.MouseDoubleClick += NotifyIconMouseDoubleClick;
 			FormUtility.EnableRightClickSplitButtons(mainToolStrip.Items);
-			AllowDrop = true;
+			AllowDrop = !Program.Settings.DisableDragDrop;
+			Program.Settings.DisableDragDropChanged += (sender, e) => AllowDrop = !Program.Settings.DisableDragDrop;
 			base.DragDrop += BookDragDrop;
 			base.DragEnter += BookDragEnter;
 			ComicDisplay.FirstPageReached += viewer_FirstPageReached;
