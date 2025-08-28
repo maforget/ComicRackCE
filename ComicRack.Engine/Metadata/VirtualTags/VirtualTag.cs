@@ -45,8 +45,8 @@ namespace cYo.Projects.ComicRack.Engine
         [XmlIgnore]
         public string PropertyName => $"VirtualTag{ID:00}";
 
-        [XmlIgnore]
-        public string DisplayMember => $"{Name}{(IsEnabled ? " (Enabled)" : "")}";
+		[XmlIgnore]
+        public string DisplayMember => $"{ID:00}: {Name}{(IsEnabled ? " (Enabled)" : "")}";
 
         public override bool Equals(object obj)
         {
