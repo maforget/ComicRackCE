@@ -532,26 +532,18 @@ namespace cYo.Projects.ComicRack.Viewer
 		public static bool ShowExplorer(string path)
 		{
 			if (string.IsNullOrEmpty(path))
-			{
 				return false;
-			}
+
 			try
 			{
-				if (File.Exists(path))
-				{
-					Process.Start("explorer.exe", $"/n,/select,\"{path}\"");
-					return true;
-				}
-				if (Directory.Exists(path))
-				{
-					Process.Start("explorer.exe", $"\"{path}\"");
-					return true;
-				}
-				if (Path.GetDirectoryName(path) is string dir && Directory.Exists(dir)) //Check parent dir instead
-				{
-					Process.Start("explorer.exe", $"\"{dir}\"");
-					return true;
-				}
+				if (File.Exists(path)) // Open explorer and select file
+					return FileExplorer.OpenFolderAndSelect(path, Program.ExtendedSettings.OpenExplorerUsingAPI);
+
+				if (Directory.Exists(path)) // Open explorer at directory if path is a directory
+					return FileExplorer.OpenFolder(path, Program.ExtendedSettings.OpenExplorerUsingAPI);
+
+				if (Path.GetDirectoryName(path) is string dir && Directory.Exists(dir)) //Open parent dir if file does not exist
+					return FileExplorer.OpenFolder(dir, Program.ExtendedSettings.OpenExplorerUsingAPI);
 			}
 			catch (Exception)
 			{
