@@ -597,12 +597,9 @@ def FromDucks(books):
 				self.Controls.Add(self.location)
 
 				self.list.BeginUpdate()
-				#
-				# remove first element
-				#
 				nIndex = 0
 
-				for index, publicationcode in enumerate(publications.keys()):
+				for index, publicationcode in enumerate(sorted(publications.keys())):
 					publicationtitle = publications[publicationcode]
 					try:
 						self.list.Items.Add(publicationcode + " - " + publicationtitle.decode('utf-8'))
@@ -610,24 +607,19 @@ def FromDucks(books):
 						self.list.Items.Add(publicationcode + " - " + publicationtitle)
 
 					try:
-						if StartPub[0] == publicationcode.decode('utf-8') and StartPub[1][:2] == LStart:
+						if StartPub == publicationtitle.decode('utf-8'):
 							nIndex = index
 					except:
-						if StartPub[0] == publicationcode and StartPub[1][:2] == LStart:
+						if StartPub == publicationtitle:
 							nIndex = index
 
 				self.Controls.Add(self.list)
 
 				if nIndex > 0:
 					self.list.SelectedIndex = nIndex
-				else:
-					self.list.SelectedIndex = self.list.FindString(StartPub[1])
-
-				self.list.TopIndex = self.list.SelectedIndex
+					self.list.TopIndex = self.list.SelectedIndex + 10
 
 				self.list.Focus()
-
-				#self.list.ScrollIntoView(1) #self.list.Items[self.list.SelectedIndex])
 
 				self.list.EndUpdate()
 
@@ -639,16 +631,19 @@ def FromDucks(books):
 				self.MaximizeBox = False
 
 
+			def GetSelectedPublicationcodeFromList(self):
+				return self.list.Items[self.list.SelectedIndex][:self.list.Items[self.list.SelectedIndex].find(" - ")].strip()
+
 			def button_Click(self, sender, e):
 				from System.IO import FileInfo
 				from System.Windows.Forms import (
 					MessageBox, CheckState
 				)
 
-				global aUpdate, SelInd
+				global aUpdate, publicationcode
 
 				if sender.Name.CompareTo(self.ok.Name) == 0:
-					SelInd = self.list.SelectedIndex
+					publicationcode = self.GetSelectedPublicationcodeFromList()
 					dDict = {"Checked": 1, "Unchecked": 0, "Indeterminate": 2 }
 					for x in range(self.Controls.Count):
 						if 4 < self.Controls.Item[x].TabIndex < 27:
@@ -725,13 +720,10 @@ def FromDucks(books):
 
 			def DoubleClickM(self, sender, e):
 				from System.Diagnostics import Process
-				global publications
-
-				Code = publications[self.list.SelectedIndex][0]
-				cWeb = "https://inducks.org/publication.php?c="
-				DCWeb = cWeb + Code
-				if DEBUG:log_BD("Series in Web:", DCWeb)
-				Process.Start(DCWeb)
+				publicationcode = self.GetSelectedPublicationcodeFromList()
+				cWeb = "https://inducks.org/publication.php?c=" + publicationcode
+				if DEBUG:log_BD("Series in Web:", cWeb)
+				Process.Start(cWeb)
 
 			def DoubleClick(self, sender, e):
 				global TranslationID
@@ -795,7 +787,7 @@ def FromDucks(books):
 				nBook += 1
 
 				try:
-					ReadInfoDucks(publications[SelInd][0].strip(), book)
+					ReadInfoDucks(publicationcode, book)
 				except Exception:
 					debuglog()
 				#
@@ -829,11 +821,10 @@ def FromDucks(books):
 		from System.Windows.Forms import (
 			MessageBox
 		)
-		
-		global publications, characters, languages
+		global publications, characters, languages, persons
 
 		if not referenceDataNames:
-			referenceDataNames= ['publications', 'characters', 'languages']
+			referenceDataNames= ['publications', 'characters', 'languages', 'persons']
 
 		if lForce:
 			fd = ProgressBarDialog(3, "Rebuilding")
@@ -872,6 +863,8 @@ def FromDucks(books):
 				languages = JSONDecoder().decode(page)
 			elif (referenceDataName == "publications"):
 				publications = JSONDecoder().decode(page)
+			elif (referenceDataName == "persons"):
+				persons = JSONDecoder().decode(page)
 		if lForce:
 			MessageBox.Show('REBUILD completed!')
 
@@ -884,7 +877,7 @@ def FromDucks(books):
 		DialogResult
 	)
 
-	global settings, publications, StartPub, SelInd, TranslationID, LStart, DEBUG, TitleT
+	global settings, StartPub, publicationcode, TranslationID, LStart, DEBUG, TitleT
 
 	TranslationID = ""
 	StartPub = []
@@ -912,7 +905,7 @@ def FromDucks(books):
 		MessageBox.Show("The script cannot find the locations of the scripts. Please try restarting ComicRack.")
 		return
 
-	referenceDataNames = ["publications"]
+	referenceDataNames = ["publications", "characters", "languages", "persons"]
 
 	publicationReferenceFile = getReferenceDataFile('publications')
 	if not FileInfo(publicationReferenceFile).Exists:
@@ -923,14 +916,7 @@ def FromDucks(books):
 	else:
 		FillDat(False,referenceDataNames)
 
-	for book in books:
-		StartPub.append(book.Series)
-		if book.LanguageISO == "en":
-			LStart = "us"
-		else:
-			LStart = book.LanguageISO
-		StartPub.append(LStart + "/" + book.Series[:1])
-		break
+	StartPub = books[0].Series
 
 	# Ensure file exists, but do not read here
 
@@ -1041,7 +1027,7 @@ def _read_url(url):
 			resp.close()
 			
 def FillDatNoUI(referenceDataNames):
-	global publications, characters, languages
+	global publications, characters, languages, persons
 	for referenceDataName in referenceDataNames:
 		cWeb = "https://api.ducksmanager.net/comicrack/" + referenceDataName
 		fileName = getReferenceDataFile(referenceDataName)
@@ -1054,14 +1040,21 @@ def FillDatNoUI(referenceDataNames):
 			languages = JSONDecoder().decode(page)
 		elif (referenceDataName == "publications"):
 			publications = JSONDecoder().decode(page)
+		elif (referenceDataName == "persons"):
+			persons = JSONDecoder().decode(page)
+
+def cleanupTitle(title):
+	return title.strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")
 
 def SumBuild(StoryFull):
-	global TitleT
-
+	global persons
 	cNotes=""
 	cArt = ""
-	# Writing|Idea||Text|Pencils|Colours|Art|Ink|Script|Plot|Lettering
-	for storycode, story in StoryFull:
+	stories = dict(StoryFull)
+	for storycode in sorted(stories.keys()):
+		story = stories[storycode]
+		log_BD(" Story:", storycode, 2)
+		print(" Story:", storycode)
 		cArt = ""
 		for Art in story['jobs']:
 			cArt += " "
@@ -1069,14 +1062,14 @@ def SumBuild(StoryFull):
 				cArt += "W: "
 			else:
 				cArt += Art['plotwritartink'].upper() + ": "
-			cArt += Art['personcode']
+			cArt += persons[Art['personcode']]
 
 		if story['storyversion']['kind'] != "":
 			cNotes += TypeCol(story['storyversion']['kind'])
 		if story['storyversion']['storycode'] != "":
 			cNotes += ": " + story['storyversion']['storycode']
 		if story['title'] != "":
-			cNotes += " - " + story['title'].strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")
+			cNotes += " - " + cleanupTitle(story['title'])
 		if cArt != "":
 			cNotes += " (" + cArt.strip() + ")"
 		if cNotes != "":
@@ -1086,10 +1079,7 @@ def SumBuild(StoryFull):
 
 
 def ReadInfoDucks(cSeries, book):
-	import re
-
-	global publications
-
+	global characters
 	dTeams = ("TA", "BB", "TLP", "JW","SD", "BBB", "TTC","TMU", "Evrons", "CDR","Tempolizia", "UH", "Foul Fellows' Club", "101","S7", "QW", "SCPD", "Evil dwarfs", "DWM", "Justice Ducks")
 
 	# Extract input
@@ -1115,41 +1105,16 @@ def ReadInfoDucks(cSeries, book):
 		debuglog()
 		return -1,0,0,0,0,0,0,0,0,0,0
 
-	# Parse fields
-	m0 = re.compile(r'Publication<.*?<a\shref="publication\.php\?c=[a-z]{2,3}[%2][^">]*?">(.*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
-	m1 = re.compile(r'Publisher.*?<a\shref="publisher.php\?c=.*?">(.*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
-	m1a = re.compile(r'Title<\/dt>\s*?<dd>(.*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
-	m2 = re.compile(r'Date<\/dt>\s*?<dd>(.*?)>', re.IGNORECASE | re.MULTILINE | re.DOTALL)
-	m3 = re.compile(r'Pages<\/dt>\s*?<dd>(\d*?)<', re.IGNORECASE | re.MULTILINE | re.DOTALL)
-	result0 = m0.search(contents)
-	series = result0.group(1) if result0 else ''
-	result1 = m1.search(contents)
-	publisher = result1.group(1) if result1 else ''
-	result1a = m1a.search(contents)
-	main_title = result1a.group(1) if result1a else ''
-	result2 = m2.search(contents)
-	day = 0
-	month = 0
-	year = 0
-	if result2:
-		if '<time datetime=' in result2.group(1):
-			day = result2.group(1)[24:26]
-			month = result2.group(1)[21:23]
-			year = result2.group(1)[16:20]
-		else:
-			d1 = re.compile(r'([\D]{0,10})\s')
-			d2 = re.compile(r'([0-9]{4})')
-			resultd1 = d1.search(result2.group(1))
-			resultd2 = d2.search(result2.group(1))
-			if resultd1:
-				month = resultd1.group(1)
-			if resultd2:
-				year = resultd2.group(1)
-	result3 = m3.search(contents)
+	series = '' # TODO
+	publishers = data['issue']['publishers']
+	main_title = data['issue']['title']
+	release_date = data['issue']['oldestdate']
 
-	pages = result3.group(1) if result3 else 0
-	# Stories and appearances
-	entries = data['entries'].items()
+	if release_date and release_date[0].isdigit():
+		date_parts = release_date.split('-')
+		year = int(date_parts[0]) if len(date_parts) > 0 and date_parts[0].isdigit() else ''
+		month = int(date_parts[1]) if len(date_parts) > 1 and date_parts[1].isdigit() else ''
+		day = int(date_parts[2]) if len(date_parts) > 2 and date_parts[2].isdigit() else ''
 
 	if (aUpdate[0] == 1) or (aUpdate[0] == 2 and book.Series == ""):
 		try:
@@ -1157,17 +1122,18 @@ def ReadInfoDucks(cSeries, book):
 		except:
 			book.Series = series
 
+	entries = data['entries'].items()
 	if (aUpdate[1] == 1) or (aUpdate[1] == 2 and book.Title == ""):
 		if main_title == "":
 			for entrycode, entry in entries:
-				if TypeCol(entry['storyversion']['kind']) == "Story":
-					book.Title = entry['title'].strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")	  #.decode('utf-8')
+				if TypeCol(entry['storyversion']['kind']) == "Cover":
+					book.Title = cleanupTitle(entry['title'])
 					break
 		else:
 			if TitleT == "T":
-				book.Title = main_title.title().strip("(").strip(")").replace("'S","'s").replace(" The "," the ").replace("&Amp;","&")
+				book.Title = cleanupTitle(book.Title.title())
 			else:
-				book.Title = main_title.strip("(").strip(")").replace("'S","'s").replace(" The "," the ").replace("&Amp;","&")
+				book.Title = cleanupTitle(main_title)
 
 	if (aUpdate[4] == 1):
 		book.Summary = SumBuild(entries)
@@ -1201,23 +1167,23 @@ def ReadInfoDucks(cSeries, book):
 				if character in dTeams:
 					characterTeams.add(character)
 
-		book.Characters = ", ".join(characterList)
+		book.Characters = ", ".join(sorted(characterList))
 
 		if ((aUpdate[2] == 1) or (aUpdate[2] == 2 and book.Teams == "")) and characterTeams:
-			book.Teams = ", ".join(characterTeams)
+			book.Teams = ", ".join(sorted(characterTeams))
 
 	if (aUpdate[8] == 1) or (aUpdate[8] == 2 and book.Year == ""):
-		if year == 0:
+		if year == '':
 			book.Year = -1
 		else:
 			book.Year = int(year)
 
 	if (aUpdate[9] == 1) or (aUpdate[9] == 2 and book.Month == ""):
-		if month == 0:
+		if month == '':
 			book.Month = -1
 		else:
 			book.Month = int(month)
-		if day == 0:
+		if day == '':
 			book.Day = -1
 		else:
 			try:
@@ -1227,9 +1193,9 @@ def ReadInfoDucks(cSeries, book):
 
 	if (aUpdate[10] == 1) or (aUpdate[10] == 2 and book.Publisher == ""):
 		try:
-			book.Publisher = publisher.decode('utf-8')
+			book.Publisher = ','.join(publishers).decode('utf-8')
 		except:
-			book.Publisher = publisher
+			book.Publisher = ','.join(publishers)
 
 	Writer,Penciller,Inker,CoverArtist,Letterer,Colorist = ArtBuild(entries)
 
@@ -1262,9 +1228,10 @@ def ReadInfoDucks(cSeries, book):
 			book.Genre = aUpdate[22]
 
 def ArtBuild(StoryFull):
+	global persons
 	plotwritartink_persons = {}
 
-	for storycode, story in StoryFull:
+	for story in dict(StoryFull).values():
 		for Art in story['jobs']:
 			plotwritartink = Art['plotwritartink']
 			personcode = Art['personcode']
@@ -1272,10 +1239,10 @@ def ArtBuild(StoryFull):
 			if plotwritartink not in plotwritartink_persons:
 				plotwritartink_persons[plotwritartink] = set()
 			
-			plotwritartink_persons[plotwritartink].add(personcode)
+			plotwritartink_persons[plotwritartink].add(persons[personcode] if personcode in persons else personcode)
 
 
-	return [', '.join(plotwritartink_persons.get(key, [])) for key in ['w', 'p', 'i', 'c', 'l', 'r']]
+	return [', '.join(sorted(plotwritartink_persons.get(key, []))) for key in ['w', 'p', 'i', 'c', 'l', 'r']]
 
 def TypeCol(Type):
 
@@ -1399,7 +1366,7 @@ def test_ReadInfoDucks():
 		'BlackAndWhite': '',
 		'Manga': '',
 		'Characters': '',
-		'Teams': '',
+		'Teams': '', 
 		'MainCharacterOrTeam': '',
 		'Locations': '',
 		'CommunityRating': '',
@@ -1407,7 +1374,7 @@ def test_ReadInfoDucks():
 		'Tags': ''
 	})
 
-	FillDatNoUI(['publications', 'characters', 'languages'])
+	FillDatNoUI(['publications', 'characters', 'languages', 'persons'])
 
 	ReadInfoDucks('dk/AA', sample_book)
 	
