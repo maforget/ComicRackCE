@@ -1044,11 +1044,15 @@ def FillDatNoUI(referenceDataNames):
 			persons = JSONDecoder().decode(page)
 
 def cleanupTitle(title):
-	return title.strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")
+	try:
+		decoded_title = title.decode('utf-8')
+	except Exception:
+		decoded_title = title
+	return decoded_title.strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")
 
-def SumBuild(StoryFull):
+def SumBuild(StoryFull, start_marker, end_marker):
 	global persons
-	cNotes=""
+	cNotes=start_marker + "\n"
 	cArt = ""
 	stories = dict(StoryFull)
 	for storycode in sorted(stories.keys()):
@@ -1074,8 +1078,7 @@ def SumBuild(StoryFull):
 			cNotes += " (" + cArt.strip() + ")"
 		if cNotes != "":
 			cNotes += "\n"
-	return cNotes
-
+	return cNotes + end_marker
 
 
 def ReadInfoDucks(cSeries, book):
@@ -1135,13 +1138,23 @@ def ReadInfoDucks(cSeries, book):
 			else:
 				book.Title = cleanupTitle(main_title)
 
-	if (aUpdate[4] == 1):
-		book.Summary = SumBuild(entries)
-	if (aUpdate[4] == 2):
-		book.Summary = book.Summary + chr(10) * 2 + SumBuild(entries)
+	if (aUpdate[4] == 1) or (aUpdate[4] == 2):
+		start_marker = "== I.N.D.U.C.K.S. Summary =="
+		end_marker = "== End of Summary =="
+
+		start = book.Summary.find(start_marker)
+		end = book.Summary.find(end_marker, start)
+		log_BD(" Summary markers:", str(start) + " to " + str(end), 2)
+		if start != -1 and end != -1:
+			book.Summary = book.Summary[:start-2] + book.Summary[end + len(end_marker):]
+
+		inducks_summary = SumBuild(entries, start_marker, end_marker)
+		
+		book.Summary += "\n\n" + inducks_summary
+
 
 	if (aUpdate[5] == 1) or (aUpdate[5] == 2 and book.Notes == ""):
-		book.Notes = "Scraped from I.N.D.U.C.K.S. " + str(datetime.now())
+		book.Notes = "Scraped from I.N.D.U.C.K.S. via the DucksManager API on " + str(datetime.now())
 
 	if (aUpdate[6] == 1) or (aUpdate[6] == 2 and book.Web == ""):
 		book.Web = cWeb
@@ -1242,7 +1255,7 @@ def ArtBuild(StoryFull):
 			plotwritartink_persons[plotwritartink].add(persons[personcode] if personcode in persons else personcode)
 
 
-	return [', '.join(sorted(plotwritartink_persons.get(key, []))) for key in ['w', 'p', 'i', 'c', 'l', 'r']]
+	return [', '.join(sorted(plotwritartink_persons.get(key, []))) for key in ['w', 'a', 'i', 'c', 'l', 'r']]
 
 def TypeCol(Type):
 
@@ -1330,9 +1343,12 @@ def test_ReadInfoDucks():
 	global aUpdate
 	aUpdate = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,""]
 
+	global TitleT
+	TitleT = "T"
+
 	sample_book = Book({
-		'Series': 'dk/AA',
-		'Number': '1958-26',
+		'Series': 'dk/AAC',
+		'Number': '2020-31',
 		'LanguageISO': 'dk',
 		'Title': '',
 		'Count': '',
@@ -1376,8 +1392,8 @@ def test_ReadInfoDucks():
 
 	FillDatNoUI(['publications', 'characters', 'languages', 'persons'])
 
-	ReadInfoDucks('dk/AA', sample_book)
-	
+	ReadInfoDucks(sample_book.Series, sample_book)
+
 	print(sample_book.__dict__)
 
 if __name__ == "__main__":
