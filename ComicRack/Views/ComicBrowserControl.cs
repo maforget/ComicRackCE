@@ -2909,7 +2909,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		private static void StartExternalProgram(ExternalProgram ep, ComicBook comicBook)
 		{
-			string args = string.IsNullOrEmpty(ep.Arguments) ? $"\"{comicBook.FilePath}\"" : $"{ep.Arguments} \"{comicBook.FilePath}\"";
+			// Ref (long path): https://nietras.com/2025/05/26/windows-short-path-names/
+			string filePath = comicBook.FilePath.Length > 260 ? FileMethods.GetShortName(comicBook.FilePath) : comicBook.FilePath;
+			string args = string.IsNullOrEmpty(ep.Arguments) ? $"\"{filePath}\"" : $"{ep.Arguments} \"{filePath}\"";
 			Program.StartProgram(ep.Path, args);
 		}
 
