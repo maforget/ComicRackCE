@@ -10,7 +10,7 @@ namespace cYo.Common.Text.FunctionParser.Functions.Date
     public record MonthFunctionParameters(string dateInText) : FunctionParameter;
 
     [FunctionDefinition("month")]
-    public class Monthunction(string name) : FunctionBase<MonthFunctionParameters, string>(name)
+    public class MonthFunction(string name) : FunctionBase<MonthFunctionParameters, string>(name)
     {
 
         protected override Func<MonthFunctionParameters, string> Function => param =>
