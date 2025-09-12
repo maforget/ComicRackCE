@@ -293,21 +293,21 @@ namespace cYo.Common.Presentation.Tao
         private void CleanUp()
         {
             LinkedListNode<TextureElement> linkedListNode = textures.Last;
-            int num = GetTotalMemory();
-            int num2 = Settings.MaxTextureMemoryMB * 1024 * 1024;
-            int num3 = textures.Count;
+            int totalMemory = GetTotalMemory();
+            int maxTextureMemoryMB = Settings.MaxTextureMemoryMB * 1024 * 1024;
+            int texturesCount = textures.Count;
             while (linkedListNode != null)
             {
                 LinkedListNode<TextureElement> linkedListNode2 = linkedListNode;
                 TextureElement value = linkedListNode2.Value;
                 linkedListNode = linkedListNode.Previous;
-                if (value.Bitmap == null || !value.Bitmap.IsValid || num > num2 || num3 > Settings.MaxTextureCount)
+                if (value.Bitmap == null || !value.Bitmap.IsValid || totalMemory > maxTextureMemoryMB || texturesCount > Settings.MaxTextureCount)
                 {
                     int memory = value.Memory;
                     value.Dispose();
                     textures.Remove(linkedListNode2);
-                    num -= memory;
-                    num3--;
+                    totalMemory -= memory;
+                    texturesCount--;
                 }
             }
         }
