@@ -136,8 +136,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				{
 					label2 = (Label)label.Clone();
 					textBox2 = (TextBox)textBox.Clone();
-					grpCustom.Controls.Add(label2);
-					grpCustom.Controls.Add(textBox2);
+					customGroupsPanel.Controls.Add(label2);
+					customGroupsPanel.Controls.Add(textBox2);
 					label2.Visible = true;
 					label2.Top = textBox.Bottom + 8;
 					textBox2.Visible = true;
@@ -150,7 +150,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				label = label2;
 				textBox = textBox2;
 			}
-			grpCustom.Height = textBox.Bottom + 8;
+			grpCustom.Height = textBox.Bottom + 32;
 		}
 
 		protected override void OnLoad(EventArgs e)
