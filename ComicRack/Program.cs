@@ -1068,6 +1068,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			if (ExtendedSettings.IsQueryCacheModeDefault && EngineConfiguration.Default.IsEnableParallelQueriesDefault && ImageDisplayControl.HardwareSettings.IsMaxTextureMemoryMBDefault && ImageDisplayControl.HardwareSettings.IsTextureManagerOptionsDefault)
 			{
 				int processorCount = Environment.ProcessorCount;
+				// TODO: Query the video memory instead of physical memory
 				int num = (int)(MemoryInfo.InstalledPhysicalMemory / 1024 / 1024);
 				int cpuSpeedInHz = MemoryInfo.CpuSpeedInHz;
 				if (num <= 512)
@@ -1079,7 +1080,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				{
 					ExtendedSettings.OptimizedListScrolling = false;
 				}
-				ImageDisplayControl.HardwareSettings.MaxTextureMemoryMB = (num / 8).Clamp(32, 256);
+				ImageDisplayControl.HardwareSettings.MaxTextureMemoryMB = (num / 8).Clamp(32, 2048);
 				if (ImageDisplayControl.HardwareSettings.MaxTextureMemoryMB <= 64)
 				{
 					ImageDisplayControl.HardwareSettings.TextureManagerOptions |= TextureManagerOptions.BigTexturesAs16Bit;

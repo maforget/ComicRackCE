@@ -9,14 +9,14 @@ namespace cYo.Common.Presentation.Tao
 	public class TextureManagerSettings : ICloneable
 	{
 		[CommandLineSwitch(ShortName = "hwmtm")]
-		[DefaultValue(128)]
+		[DefaultValue(1024)]
 		public int MaxTextureMemoryMB
 		{
 			get;
 			set;
 		}
 
-		public bool IsMaxTextureMemoryMBDefault => MaxTextureMemoryMB == 128;
+		public bool IsMaxTextureMemoryMBDefault => MaxTextureMemoryMB == 1024;
 
 		[CommandLineSwitch(ShortName = "hwmtc")]
 		[DefaultValue(1024)]
@@ -98,7 +98,7 @@ namespace cYo.Common.Presentation.Tao
 
 		public TextureManagerSettings()
 		{
-			MaxTextureMemoryMB = 128;
+			MaxTextureMemoryMB = 1024;
 			MaxTextureCount = 1024;
 			MaxTextureTileSizeSquare = 512;
 			MaxTextureTileSizeArbitrary = 16192;
@@ -109,7 +109,7 @@ namespace cYo.Common.Presentation.Tao
 		public void Validate()
 		{
 			MaxTextureCount = MaxTextureCount.Clamp(64, 1024);
-			MaxTextureMemoryMB = MaxTextureMemoryMB.Clamp(16, 1024);
+			MaxTextureMemoryMB = MaxTextureMemoryMB.Clamp(16, 8192);
 			MaxTextureTileSizeArbitrary = MaxTextureTileSizeArbitrary.Clamp(64, OpenGlInfo.MaxTextureSize);
 			MaxTextureTileSizeSquare = MaxTextureTileSizeSquare.Clamp(64, OpenGlInfo.MaxTextureSize);
 			if (!OpenGlInfo.SupportsNonPower2Textures)
