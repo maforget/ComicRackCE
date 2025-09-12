@@ -689,10 +689,12 @@ namespace cYo.Common.Windows.Forms
 					foreach (Control control3 in array)
 					{
 						tabPage3.Controls.Remove(control3);
+						if (control3 is Panel panel)
+							panel.AutoScroll = false;
+
 						if (control2 is CollapsibleGroupBox)
-						{
 							control3.Top += ScaleDpiY((control2 as CollapsibleGroupBox).HeaderHeight);
-						}
+
 						control2.Controls.Add(control3);
 					}
 				}
@@ -733,10 +735,12 @@ namespace cYo.Common.Windows.Forms
 					foreach (Control control4 in array2)
 					{
 						item.Controls.Remove(control4);
+						if (control4 is Panel panel)
+							panel.AutoScroll = true;
+
 						if (item is CollapsibleGroupBox)
-						{
 							control4.Top -= ScaleDpiY((item as CollapsibleGroupBox).HeaderHeight);
-						}
+
 						tabPage2.Controls.Add(control4);
 					}
 				}
@@ -757,6 +761,15 @@ namespace cYo.Common.Windows.Forms
 		{
 			foreach (Control control2 in control.Controls)
 			{
+				// Set up double-click handlers on all panels and the container control itself
+				control2.Controls.OfType<Panel>().ForEach(c =>
+				{
+					c.AutoScroll = getState != null && getState(); // Set AutoScroll based on state, it should only be true when in tab mode
+					c.DoubleClick += delegate
+					{
+						TogglePanelTab(control, setState);
+					};
+				});
 				control2.DoubleClick += delegate
 				{
 					TogglePanelTab(control, setState);
