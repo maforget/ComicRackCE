@@ -183,7 +183,7 @@ namespace cYo.Common.Presentation.Panels
 			while (WaitHandle.WaitAny(waitHandles) == 0)
 			{
 				animationSignal.Reset();
-				while (!animationStopSignal.WaitOne(25))
+				while (!animationStopSignal.WaitOne(animationSlice))
 				{
 					bool stillRunning = false;
 					panels.ForEach(delegate(OverlayPanel op)

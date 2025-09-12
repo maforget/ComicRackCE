@@ -18,7 +18,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			try
 			{
 				FileInfo fileInfo = new FileInfo(file);
-				using (StreamWriter streamWriter = AlternateDataStreamFile.CreateText(file, "ComicRackInfo"))
+				using (StreamWriter streamWriter = AlternateDataStreamFile.CreateText(file, ComicBookInfoStream))
 				{
 					comicInfo.Serialize(streamWriter.BaseStream);
 					return true;
@@ -34,11 +34,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 		{
 			try
 			{
-				if (!AlternateDataStreamFile.Exists(file, "ComicRackInfo"))
+				if (!AlternateDataStreamFile.Exists(file, ComicBookInfoStream))
 				{
 					return null;
 				}
-				using (StreamReader streamReader = AlternateDataStreamFile.OpenText(file, "ComicRackInfo"))
+				using (StreamReader streamReader = AlternateDataStreamFile.OpenText(file, ComicBookInfoStream))
 				{
 					return ComicInfo.Deserialize(streamReader.BaseStream);
 				}
@@ -53,9 +53,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 		{
 			try
 			{
-				if (AlternateDataStreamFile.Exists(file, "ComicRackInfo"))
+				if (AlternateDataStreamFile.Exists(file, ComicBookInfoStream))
 				{
-					AlternateDataStreamFile.Delete(file, "ComicRackInfo");
+					AlternateDataStreamFile.Delete(file, ComicBookInfoStream);
 				}
 			}
 			catch (Exception)

@@ -92,7 +92,7 @@ namespace cYo.Common.Localize
 			foreach (string path2 in files)
 			{
 				string fileName = Path.GetFileName(path2);
-				if (!string.Equals(fileName, "LanguageInfo.xml", StringComparison.OrdinalIgnoreCase) && !ContainsKey(fileName))
+				if (!string.Equals(fileName, LanguageInfoFile, StringComparison.OrdinalIgnoreCase) && !ContainsKey(fileName))
 				{
 					File.Delete(path2);
 				}
@@ -217,7 +217,7 @@ namespace cYo.Common.Localize
 
 		public TRInfo GetLanguageInfo(CultureInfo culture)
 		{
-			string path = Path.Combine(culture.Name, "LanguageInfo.xml");
+			string path = Path.Combine(culture.Name, LanguageInfoFile);
 			TRInfo tRInfo = null;
 			try
 			{

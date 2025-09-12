@@ -74,8 +74,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 		[DefaultValue(false)]
 		public bool IsInternet
 		{
-			get;
-			set;
+			//Always return false since Public Servers are disabled
+			get =>  false;
+			set => _ = value;
 		}
 
 		[DefaultValue(false)]
@@ -102,7 +103,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 		public SmartList<Guid> SharedItems => sharedItems;
 
 		[XmlIgnore]
-		[DefaultValue(7612)]
+		[DefaultValue(ComicLibraryServerConfig.DefaultPrivateServicePort)]
 		public int ServicePort
 		{
 			get;
@@ -110,7 +111,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 		}
 
 		[XmlIgnore]
-		[DefaultValue("Share")]
+		[DefaultValue(ComicLibraryServerConfig.DefaultServiceName)]
 		public string ServiceName
 		{
 			get;
@@ -207,7 +208,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 
 		public ComicLibraryServerConfig()
 		{
-			ServicePort = 7612;
+			ServicePort = ComicLibraryServerConfig.DefaultPrivateServicePort;
 			LibraryShareMode = LibraryShareMode.All;
 			Name = string.Empty;
 			Description = string.Empty;

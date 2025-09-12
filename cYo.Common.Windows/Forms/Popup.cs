@@ -49,8 +49,8 @@ namespace cYo.Common.Windows.Forms
 				get
 				{
 					Rectangle result = ClientRectangle;
-					result.Y = result.Bottom - 6 + 1;
-					result.Height = 6;
+					result.Y = result.Bottom - GripSize + 1;
+					result.Height = GripSize;
 					return result;
 				}
 			}
@@ -60,10 +60,10 @@ namespace cYo.Common.Windows.Forms
 				get
 				{
 					Rectangle result = ClientRectangle;
-					result.Y = result.Bottom - 12 + 1;
-					result.Height = 12;
-					result.X = result.Width - 12 + 1;
-					result.Width = 12;
+					result.Y = result.Bottom - CornerGripSize + 1;
+					result.Height = CornerGripSize;
+					result.X = result.Width - CornerGripSize + 1;
+					result.Width = CornerGripSize;
 					return result;
 				}
 			}
@@ -73,7 +73,7 @@ namespace cYo.Common.Windows.Forms
 				get
 				{
 					Rectangle result = ClientRectangle;
-					result.Height = 6;
+					result.Height = GripSize;
 					return result;
 				}
 			}
@@ -83,9 +83,9 @@ namespace cYo.Common.Windows.Forms
 				get
 				{
 					Rectangle result = ClientRectangle;
-					result.Height = 12;
-					result.X = result.Width - 12 + 1;
-					result.Width = 12;
+					result.Height = CornerGripSize;
+					result.X = result.Width - CornerGripSize + 1;
+					result.Width = CornerGripSize;
 					return result;
 				}
 			}
@@ -95,7 +95,7 @@ namespace cYo.Common.Windows.Forms
 				get
 				{
 					Rectangle result = ClientRectangle;
-					result.Width = 6;
+					result.Width = GripSize;
 					return result;
 				}
 			}
@@ -105,9 +105,9 @@ namespace cYo.Common.Windows.Forms
 				get
 				{
 					Rectangle result = ClientRectangle;
-					result.Width = 12;
-					result.Y = result.Height - 12 + 1;
-					result.Height = 12;
+					result.Width = CornerGripSize;
+					result.Y = result.Height - CornerGripSize + 1;
+					result.Height = CornerGripSize;
 					return result;
 				}
 			}
@@ -117,8 +117,8 @@ namespace cYo.Common.Windows.Forms
 				get
 				{
 					Rectangle result = ClientRectangle;
-					result.X = result.Right - 6 + 1;
-					result.Width = 6;
+					result.X = result.Right - GripSize + 1;
+					result.Width = GripSize;
 					return result;
 				}
 			}
@@ -128,8 +128,8 @@ namespace cYo.Common.Windows.Forms
 				get
 				{
 					Rectangle result = ClientRectangle;
-					result.Width = 12;
-					result.Height = 12;
+					result.Width = CornerGripSize;
+					result.Height = CornerGripSize;
 					return result;
 				}
 			}
@@ -338,7 +338,7 @@ namespace cYo.Common.Windows.Forms
 			get
 			{
 				CreateParams createParams = base.CreateParams;
-				createParams.ExStyle |= 134217728;
+				createParams.ExStyle |= NativeMethods.WS_EX_NOACTIVATE;
 				return createParams;
 			}
 		}
@@ -589,7 +589,7 @@ namespace cYo.Common.Windows.Forms
 		[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
 		private bool InternalProcessResizing(ref Message m, bool contentControl)
 		{
-			if (m.Msg == 134 && m.WParam != IntPtr.Zero && childPopup != null && childPopup.Visible)
+			if (m.Msg == NativeMethods.WM_NCACTIVATE && m.WParam != IntPtr.Zero && childPopup != null && childPopup.Visible)
 			{
 				childPopup.Hide();
 			}
@@ -597,11 +597,11 @@ namespace cYo.Common.Windows.Forms
 			{
 				return false;
 			}
-			if (m.Msg == 132)
+			if (m.Msg == NativeMethods.WM_NCHITTEST)
 			{
 				return OnNcHitTest(ref m, contentControl);
 			}
-			if (m.Msg == 36)
+			if (m.Msg == NativeMethods.WM_GETMINMAXINFO)
 			{
 				return OnGetMinMaxInfo(ref m);
 			}
@@ -624,22 +624,22 @@ namespace cYo.Common.Windows.Forms
 			int y = NativeMethods.HIWORD(m.LParam);
 			Point pt = PointToClient(new Point(x, y));
 			GripBounds gripBounds = new GripBounds(contentControl ? content.ClientRectangle : base.ClientRectangle);
-			IntPtr intPtr = new IntPtr(-1);
+			IntPtr intPtr = new IntPtr(NativeMethods.HTTRANSPARENT);
 			if (resizableTop)
 			{
 				if (resizableLeft && gripBounds.TopLeft.Contains(pt))
 				{
-					m.Result = (contentControl ? intPtr : ((IntPtr)13));
+					m.Result = (contentControl ? intPtr : ((IntPtr)NativeMethods.HTTOPLEFT));
 					return true;
 				}
 				if (!resizableLeft && gripBounds.TopRight.Contains(pt))
 				{
-					m.Result = (contentControl ? intPtr : ((IntPtr)14));
+					m.Result = (contentControl ? intPtr : ((IntPtr)NativeMethods.HTTOPRIGHT));
 					return true;
 				}
 				if (gripBounds.Top.Contains(pt))
 				{
-					m.Result = (contentControl ? intPtr : ((IntPtr)12));
+					m.Result = (contentControl ? intPtr : ((IntPtr)NativeMethods.HTTOP));
 					return true;
 				}
 			}
@@ -647,28 +647,28 @@ namespace cYo.Common.Windows.Forms
 			{
 				if (resizableLeft && gripBounds.BottomLeft.Contains(pt))
 				{
-					m.Result = (contentControl ? intPtr : ((IntPtr)16));
+					m.Result = (contentControl ? intPtr : ((IntPtr)NativeMethods.HTBOTTOMLEFT));
 					return true;
 				}
 				if (!resizableLeft && gripBounds.BottomRight.Contains(pt))
 				{
-					m.Result = (contentControl ? intPtr : ((IntPtr)17));
+					m.Result = (contentControl ? intPtr : ((IntPtr)NativeMethods.HTBOTTOMRIGHT));
 					return true;
 				}
 				if (gripBounds.Bottom.Contains(pt))
 				{
-					m.Result = (contentControl ? intPtr : ((IntPtr)15));
+					m.Result = (contentControl ? intPtr : ((IntPtr)NativeMethods.HTBOTTOM));
 					return true;
 				}
 			}
 			if (resizableLeft && gripBounds.Left.Contains(pt))
 			{
-				m.Result = (contentControl ? intPtr : ((IntPtr)10));
+				m.Result = (contentControl ? intPtr : ((IntPtr)NativeMethods.HTLEFT));
 				return true;
 			}
 			if (!resizableLeft && gripBounds.Right.Contains(pt))
 			{
-				m.Result = (contentControl ? intPtr : ((IntPtr)11));
+				m.Result = (contentControl ? intPtr : ((IntPtr)NativeMethods.HTRIGHT));
 				return true;
 			}
 			return false;

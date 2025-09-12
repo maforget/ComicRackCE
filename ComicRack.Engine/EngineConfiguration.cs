@@ -19,6 +19,13 @@ namespace cYo.Projects.ComicRack.Engine
 			SharpZip
 		}
 
+		public enum PdfEngine
+		{
+			Ghostscript,
+			Pdfium,
+			Native
+		}
+
 		private string tempPath = Path.GetTempPath();
 
 		private float pageBowWidth = 0.07f;
@@ -140,7 +147,7 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
-		[DefaultValue(BitmapResampling.FastBilinear)]
+		[DefaultValue(BitmapResampling.FastAndUgly)]
 		public BitmapResampling ThumbnailResampling
 		{
 			get;
@@ -175,35 +182,42 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
-		[DefaultValue("[{format} ][{series}][ {volume}][ #{number}][ - {title}][ ({year}[/{month}[/{day}]])]")]
+		[DefaultValue(ComicBook.DefaultCaptionFormat)]
 		public string ComicCaptionFormat
 		{
 			get;
 			set;
 		}
 
-		[DefaultValue("[{format} ][{series}][ {volume}][ #{number}][ ({year}[/{month}])]")]
+		[DefaultValue(ComicBook.DefaultComicExportFileNameFormat)]
 		public string ComicExportFileNameFormat
 		{
 			get;
 			set;
 		}
 
-		[DefaultValue(false)]
-		public bool DisableGhostscript
-		{
-			get;
-			set;
-		}
+        [DefaultValue(PdfEngine.Pdfium)]
+        public PdfEngine PdfEngineToUse
+        {
+            get;
+            set;
+        }
 
-		[DefaultValue(null)]
+        [DefaultValue(typeof(Size), "1920, 2540")]
+        public Size PdfiumImageSize
+        {
+            get;
+            set;
+        }
+
+        [DefaultValue(null)]
 		public string GhostscriptExecutable
 		{
 			get;
 			set;
 		}
 
-		[DefaultValue(null)]
+        [DefaultValue(null)]
 		public string DjVuLibreInstall
 		{
 			get;
@@ -566,6 +580,14 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
+		[CommandLineSwitch(ShortName = "ntfs")]
+		[DefaultValue(false)]
+		public bool DisableNTFS
+		{
+			get;
+			set;
+		}
+
 		public static EngineConfiguration Default => defaultConfig ?? (defaultConfig = IniFile.Default.Register<EngineConfiguration>());
 
 		public EngineConfiguration()
@@ -584,14 +606,14 @@ namespace cYo.Projects.ComicRack.Engine
 				Color.Red,
 				Color.Blue
 			};
-			ThumbnailResampling = BitmapResampling.FastBilinear;
+			ThumbnailResampling = BitmapResampling.FastAndUgly;
 			ThumbnailQuality = 60;
 			ThumbnailPageBow = true;
 			ExportResampling = BitmapResampling.GdiPlusHQ;
 			SyncResamping = BitmapResampling.GdiPlus;
 			SoftwareFilter = BitmapResampling.GdiPlusHQ;
-			ComicCaptionFormat = "[{format} ][{series}][ {volume}][ #{number}][ - {title}][ ({year}[/{month}[/{day}]])]";
-			ComicExportFileNameFormat = "[{format} ][{series}][ {volume}][ #{number}][ ({year}[/{month}])]";
+			ComicCaptionFormat = ComicBook.DefaultCaptionFormat;
+			ComicExportFileNameFormat = ComicBook.DefaultComicExportFileNameFormat;
 			PageBowColor = Color.Black;
 			PageBowCenter = true;
 			PageBowBorder = true;
@@ -625,9 +647,12 @@ namespace cYo.Projects.ComicRack.Engine
 			WifiSyncSendTimeout = 5000;
 			WifiSyncConnectionTimeout = 2500;
 			WifiSyncConnectionRetries = 1;
+			PdfEngineToUse = PdfEngine.Pdfium;
+            PdfiumImageSize = new Size(1920, 2540);
+			DisableNTFS = false;
 		}
 
-		public string GetTempFileName()
+        public string GetTempFileName()
 		{
 			return Path.Combine(TempPath, string.Concat(Guid.NewGuid(), ".tmp"));
 		}

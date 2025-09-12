@@ -1641,19 +1641,14 @@ namespace cYo.Projects.ComicRack.Engine.Display
 		{
 			if (zoomInOutOnPageChange && oldZoom != 0f)
 			{
-				bool flag = e.OldPage < e.Page;
-				if (RightToLeftReading && RightToLeftReadingMode == RightToLeftReadingMode.FlipParts)
-				{
-					flag = !flag;
-				}
-				if (flag)
-				{
-					ZoomTo(new Point(-500000, -500000), oldZoom);
-				}
+				bool goingForward = e.OldPage < e.Page;
+				bool RTL = RightToLeftReading && RightToLeftReadingMode == RightToLeftReadingMode.FlipParts;
+				int corner = RTL ? -1 : 1;
+
+				if (goingForward)
+					ZoomTo(new Point(corner * -500000, -500000), oldZoom); //Next page: Arrive on Upper Left Corner, Upper Right with RTL
 				else
-				{
-					ZoomTo(new Point(500000, 500000), oldZoom);
-				}
+					ZoomTo(new Point(corner * 500000, 500000), oldZoom); //Previous Page: Arrive on Bottom Right Corner, Bottom Left with RTL
 			}
 			oldZoom = 0f;
 		}

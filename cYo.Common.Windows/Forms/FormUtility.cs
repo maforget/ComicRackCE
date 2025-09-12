@@ -90,7 +90,7 @@ namespace cYo.Common.Windows.Forms
 				else
 				{
 					IntPtr dC = GetDC(IntPtr.Zero);
-					Size size = new Size(GetDeviceCaps(dC, 88), GetDeviceCaps(dC, 90));
+					Size size = new Size(GetDeviceCaps(dC, LOGPIXELSX), GetDeviceCaps(dC, LOGPIXELSY));
 					dpiScale = new PointF((float)size.Width / 96f, (float)size.Height / 96f);
 				}
 				return dpiScale;
@@ -331,6 +331,28 @@ namespace cYo.Common.Windows.Forms
 				{
 				}
 			}
+		}
+
+		public static void AutoResizeColumn(this ListView listView, int autoSizeColumnIndex, int spaces = 0)
+		{
+			// Do some rudimentary (parameter) validation.
+			if (listView == null) throw new ArgumentNullException("listView");
+			if (listView.View != View.Details || listView.Columns.Count <= 0 || autoSizeColumnIndex < 0) return;
+			if (autoSizeColumnIndex >= listView.Columns.Count)
+				throw new IndexOutOfRangeException("Parameter autoSizeColumnIndex is outside the range of column indices in the ListView.");
+
+			// Sum up the width of all columns except the auto-resizing one.
+			int otherColumnsWidth = 0;
+			foreach (ColumnHeader header in listView.Columns)
+				if (header.Index != autoSizeColumnIndex)
+					otherColumnsWidth += header.Width;
+
+			// Calculate the (possibly) new width of the auto-resizable column.
+			int autoSizeColumnWidth = listView.ClientRectangle.Width - otherColumnsWidth - spaces;
+
+			// Finally set the new width of the auto-resizing column, if it has changed.
+			if (listView.Columns[autoSizeColumnIndex].Width != autoSizeColumnWidth)
+				listView.Columns[autoSizeColumnIndex].Width = autoSizeColumnWidth;
 		}
 
 		public static IEnumerable<ListViewItem> Enumerate(this ListView listView)
@@ -719,6 +741,7 @@ namespace cYo.Common.Windows.Forms
 					}
 				}
 				tabControl2.SelectedIndex = 0;
+				tabControl2.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
 			}
 			return on;
 		}

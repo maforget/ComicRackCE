@@ -75,7 +75,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 
 		private const string SeriesStatsPrefix = "SeriesStat";
 
-		private static readonly int SeriesStatsPrefixLength = "SeriesStat".Length;
+		private static readonly int SeriesStatsPrefixLength = SeriesStatsPrefix.Length;
 
 		private static readonly Bitmap linkArrow = Resources.SmallArrowRight.ScaleDpi();
 
@@ -1167,7 +1167,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 
 		public T GetColumnValue<T>(string displayProperty, bool proposed = false)
 		{
-			if (StatsProvider == null || !displayProperty.StartsWith("SeriesStat"))
+			if (StatsProvider == null || !displayProperty.StartsWith(SeriesStatsPrefix))
 			{
 				return Comic.GetPropertyValue<T>(displayProperty, proposed);
 			}
@@ -1352,6 +1352,10 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 				case "Editor":
 					autoSizeTextBox = new AutoSizeTextBox();
 					EditControlUtility.SetText(autoSizeTextBox, Comic.Editor, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Editor));
+					break;
+				case "Translator":
+					autoSizeTextBox = new AutoSizeTextBox();
+					EditControlUtility.SetText(autoSizeTextBox, Comic.Translator, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Translator));
 					break;
 				case "Colorist":
 					autoSizeTextBox = new AutoSizeTextBox();

@@ -1047,7 +1047,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			overlayManager.Panels.Add(magnifierOverlay);
 			visiblePartOverlay = new OverlayPanel(partInfoSize.Width, partInfoSize.Height, ContentAlignment.BottomRight, new Animator[1]
 			{
-				new FadeAnimator(100, 2000, 100)
+				new FadeAnimator(DefaultFadeTime, 2000, DefaultFadeTime)
 			})
 			{
 				Opacity = 0f,
@@ -1114,7 +1114,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 				AutoAlign = true,
 				IgnoreParentMargin = true
 			};
-			gestureOverlay.Animators.Add(new FadeAnimator(0, 500, 100));
+			gestureOverlay.Animators.Add(new FadeAnimator(0, 500, DefaultFadeTime));
 			overlayManager.Panels.Add(gestureOverlay);
 		}
 

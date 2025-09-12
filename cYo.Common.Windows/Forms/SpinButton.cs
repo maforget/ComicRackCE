@@ -316,13 +316,14 @@ namespace cYo.Common.Windows.Forms
 			}
 		}
 
-		public static void AddUpDown(TextBoxBase textBox, int start = 1, int min = int.MinValue, int max = int.MaxValue, int increment = 1, bool registerKeys = false, bool hidden = false, bool visuallyLinkToParent = false)
+		public static void AddUpDown(TextBoxBase textBox, int start = 1, int min = int.MinValue, int max = int.MaxValue, int increment = 1, bool registerKeys = false, bool hidden = false, bool visuallyLinkToParent = false, AnchorStyles anchorStyles = AnchorStyles.Top | AnchorStyles.Left)
 		{
 			SpinButton sb = new SpinButton
 			{
 				Width = FormUtility.ScaleDpiX(11),
 				Enabled = textBox.Enabled,
-				Visible = (!hidden && textBox.IsVisibleSet())
+				Visible = (!hidden && textBox.IsVisibleSet()),
+				Anchor = anchorStyles
 			};
 			Action position = delegate
 			{

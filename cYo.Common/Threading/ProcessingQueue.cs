@@ -303,8 +303,11 @@ namespace cYo.Common.Threading
 				pd.IsActive = true;
 				try
 				{
-					while (!abort)
+					while (true)
 					{
+						if (abort)
+							return;
+
 						K item = default(K);
 						QueueItem queueItem = null;
 						using (ItemMonitor.Lock(processQueue))
@@ -321,7 +324,10 @@ namespace cYo.Common.Threading
 							}
 							if (queueItem == null)
 							{
-								goto IL_00af;
+								if (stop)
+									return;
+
+								break;
 							}
 						}
 						try
@@ -342,12 +348,6 @@ namespace cYo.Common.Threading
 				finally
 				{
 					pd.IsActive = false;
-				}
-				break;
-				IL_00af:
-				if (stop)
-				{
-					break;
 				}
 			}
 		}

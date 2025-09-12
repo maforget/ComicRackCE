@@ -19,7 +19,8 @@ namespace cYo.Common.Compression
 
 		public ZipFileFolder(string zipFile)
 		{
-			this.zipFile = new ZipFile(zipFile);
+            //437 is the default Zip char Encoding. 850 is the default western windows
+            this.zipFile = new ZipFile(zipFile, StringCodec.FromCodePage(437));
 		}
 
 		protected override void Dispose(bool disposing)
@@ -85,6 +86,18 @@ namespace cYo.Common.Compression
 			return folders.SelectMany((string folder) => (from f in FileUtility.SafeGetFiles(folder, searchPattern)
 				orderby f
 				select f).Select(CreateFromFile)).ToArray();
+		}
+
+		public static Dictionary<string, ZipFileFolder> CreateDictionaryFromFiles(IEnumerable<string> folders, string searchPattern, string trigger = "")
+		{
+			return folders.SelectMany((string folder) =>
+				(from f in FileUtility.SafeGetFiles(folder, $"{trigger}{searchPattern}")
+				 orderby f
+				 select f).Select(f => new
+				 {
+					 Key = Path.GetFileNameWithoutExtension(f).Replace(trigger, string.Empty),
+					 Value = CreateFromFile(f)
+				 })).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
 		}
 	}
 }

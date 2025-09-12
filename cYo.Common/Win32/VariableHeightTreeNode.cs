@@ -58,7 +58,7 @@ namespace cYo.Common.Win32
 			tVITEMEX.item = tn.Handle;
 			tVITEMEX.iIntegral = 1;
 			TVITEMEX item = tVITEMEX;
-			SendMessage(tn.TreeView.Handle, 4414u, IntPtr.Zero, ref item);
+			SendMessage(tn.TreeView.Handle, TVM_GETITEM, IntPtr.Zero, ref item);
 			return item.iIntegral;
 		}
 
@@ -69,7 +69,7 @@ namespace cYo.Common.Win32
 			tVITEMEX.item = tn.Handle;
 			tVITEMEX.iIntegral = height;
 			TVITEMEX item = tVITEMEX;
-			SendMessage(tn.TreeView.Handle, 4415u, IntPtr.Zero, ref item);
+			SendMessage(tn.TreeView.Handle, TVM_SETITEM, IntPtr.Zero, ref item);
 		}
 	}
 }

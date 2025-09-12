@@ -90,6 +90,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			this.contextMenuItems = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.miRead = new System.Windows.Forms.ToolStripMenuItem();
 			this.miReadTab = new System.Windows.Forms.ToolStripMenuItem();
+			this.miOpenWith = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.contextOpenWith = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.miOpenWithManager = new System.Windows.Forms.ToolStripMenuItem();
 			this.miProperties = new System.Windows.Forms.ToolStripMenuItem();
 			this.miShowWeb = new System.Windows.Forms.ToolStripMenuItem();
 			this.miEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -195,9 +199,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			this.lvGroupsName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.lvGroupsCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.browserContainer = new System.Windows.Forms.SplitContainer();
+			this.miResetTopOfStack = new System.Windows.Forms.ToolStripMenuItem();
 			this.contextRating.SuspendLayout();
 			this.contextMarkAs.SuspendLayout();
 			this.contextMenuItems.SuspendLayout();
+			this.contextOpenWith.SuspendLayout();
 			this.contextExport.SuspendLayout();
 			this.contextQuickSearch.SuspendLayout();
 			this.displayOptionPanel.SuspendLayout();
@@ -213,15 +219,15 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// contextRating
 			// 
 			this.contextRating.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.miRating0,
-			this.toolStripMenuItem3,
-			this.miRating1,
-			this.miRating2,
-			this.miRating3,
-			this.miRating4,
-			this.miRating5,
-			this.toolStripSeparator1,
-			this.miQuickRating});
+            this.miRating0,
+            this.toolStripMenuItem3,
+            this.miRating1,
+            this.miRating2,
+            this.miRating3,
+            this.miRating4,
+            this.miRating5,
+            this.toolStripSeparator1,
+            this.miQuickRating});
 			this.contextRating.Name = "contextRating";
 			this.contextRating.OwnerItem = this.miRateMenu;
 			this.contextRating.Size = new System.Drawing.Size(286, 170);
@@ -230,7 +236,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miRating0.Name = "miRating0";
 			this.miRating0.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.D0)));
+            | System.Windows.Forms.Keys.D0)));
 			this.miRating0.Size = new System.Drawing.Size(285, 22);
 			this.miRating0.Tag = "0";
 			this.miRating0.Text = "None";
@@ -244,7 +250,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miRating1.Name = "miRating1";
 			this.miRating1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.D1)));
+            | System.Windows.Forms.Keys.D1)));
 			this.miRating1.Size = new System.Drawing.Size(285, 22);
 			this.miRating1.Tag = "1";
 			this.miRating1.Text = "* (1 Star)";
@@ -253,7 +259,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miRating2.Name = "miRating2";
 			this.miRating2.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.D2)));
+            | System.Windows.Forms.Keys.D2)));
 			this.miRating2.Size = new System.Drawing.Size(285, 22);
 			this.miRating2.Tag = "2";
 			this.miRating2.Text = "** (2 Stars)";
@@ -262,7 +268,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miRating3.Name = "miRating3";
 			this.miRating3.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.D3)));
+            | System.Windows.Forms.Keys.D3)));
 			this.miRating3.Size = new System.Drawing.Size(285, 22);
 			this.miRating3.Tag = "3";
 			this.miRating3.Text = "*** (3 Stars)";
@@ -271,7 +277,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miRating4.Name = "miRating4";
 			this.miRating4.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.D4)));
+            | System.Windows.Forms.Keys.D4)));
 			this.miRating4.Size = new System.Drawing.Size(285, 22);
 			this.miRating4.Tag = "4";
 			this.miRating4.Text = "**** (4 Stars)";
@@ -280,7 +286,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miRating5.Name = "miRating5";
 			this.miRating5.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.D5)));
+            | System.Windows.Forms.Keys.D5)));
 			this.miRating5.Size = new System.Drawing.Size(285, 22);
 			this.miRating5.Tag = "5";
 			this.miRating5.Text = "***** (5 Stars)";
@@ -294,7 +300,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miQuickRating.Name = "miQuickRating";
 			this.miQuickRating.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.Q)));
+            | System.Windows.Forms.Keys.Q)));
 			this.miQuickRating.Size = new System.Drawing.Size(285, 22);
 			this.miQuickRating.Text = "Quick Rating and Review...";
 			// 
@@ -308,11 +314,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// contextMarkAs
 			// 
 			this.contextMarkAs.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.miMarkUnread,
-			this.miMarkRead,
-			this.toolStripMenuItem9,
-			this.miMarkChecked,
-			this.miMarkUnchecked});
+            this.miMarkUnread,
+            this.miMarkRead,
+            this.toolStripMenuItem9,
+            this.miMarkChecked,
+            this.miMarkUnchecked});
 			this.contextMarkAs.Name = "contextMarkAs";
 			this.contextMarkAs.OwnerItem = this.miMarkAs;
 			this.contextMarkAs.Size = new System.Drawing.Size(203, 98);
@@ -321,7 +327,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miMarkUnread.Name = "miMarkUnread";
 			this.miMarkUnread.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.U)));
+            | System.Windows.Forms.Keys.U)));
 			this.miMarkUnread.Size = new System.Drawing.Size(202, 22);
 			this.miMarkUnread.Text = "&Unread";
 			// 
@@ -329,7 +335,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miMarkRead.Name = "miMarkRead";
 			this.miMarkRead.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.R)));
+            | System.Windows.Forms.Keys.R)));
 			this.miMarkRead.Size = new System.Drawing.Size(202, 22);
 			this.miMarkRead.Text = "&Read";
 			// 
@@ -342,7 +348,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miMarkChecked.Name = "miMarkChecked";
 			this.miMarkChecked.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.M)));
+            | System.Windows.Forms.Keys.M)));
 			this.miMarkChecked.Size = new System.Drawing.Size(202, 22);
 			this.miMarkChecked.Text = "Checked";
 			// 
@@ -350,7 +356,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miMarkUnchecked.Name = "miMarkUnchecked";
 			this.miMarkUnchecked.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.V)));
+            | System.Windows.Forms.Keys.V)));
 			this.miMarkUnchecked.Size = new System.Drawing.Size(202, 22);
 			this.miMarkUnchecked.Text = "Unchecked";
 			// 
@@ -369,41 +375,43 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// contextMenuItems
 			// 
 			this.contextMenuItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.miRead,
-			this.miReadTab,
-			this.miProperties,
-			this.miShowWeb,
-			this.miEdit,
-			this.toolStripMenuItem5,
-			this.miRateMenu,
-			this.miMarkAs,
-			this.miEditList,
-			this.miAddList,
-			this.tsMarkAsSeparator,
-			this.miAddLibrary,
-			this.miShowOnly,
-			this.miShowInList,
-			this.miExportComics,
-			this.miAutomation,
-			this.miUpdateComicFiles,
-			this.miRevealBrowser,
-			this.toolStripMenuItem7,
-			this.miCopyData,
-			this.miPasteData,
-			this.miClearData,
-			this.tsCopySeparator,
-			this.miSelectAll,
-			this.miInvertSelection,
-			this.miRefreshInformation,
-			this.sepListBackground,
-			this.miSetTopOfStack,
-			this.miSetStackThumbnail,
-			this.miRemoveStackThumbnail,
-			this.miSetListBackground,
-			this.toolStripRemoveSeparator,
-			this.miRemove});
+            this.miRead,
+            this.miReadTab,
+            this.miOpenWith,
+            this.miProperties,
+            this.miShowWeb,
+            this.miEdit,
+            this.toolStripMenuItem5,
+            this.miRateMenu,
+            this.miMarkAs,
+            this.miEditList,
+            this.miAddList,
+            this.tsMarkAsSeparator,
+            this.miAddLibrary,
+            this.miShowOnly,
+            this.miShowInList,
+            this.miExportComics,
+            this.miAutomation,
+            this.miUpdateComicFiles,
+            this.miRevealBrowser,
+            this.toolStripMenuItem7,
+            this.miCopyData,
+            this.miPasteData,
+            this.miClearData,
+            this.tsCopySeparator,
+            this.miSelectAll,
+            this.miInvertSelection,
+            this.miRefreshInformation,
+            this.sepListBackground,
+            this.miResetTopOfStack,
+            this.miSetTopOfStack,
+            this.miSetStackThumbnail,
+            this.miRemoveStackThumbnail,
+            this.miSetListBackground,
+            this.toolStripRemoveSeparator,
+            this.miRemove});
 			this.contextMenuItems.Name = "contextMenuFiles";
-			this.contextMenuItems.Size = new System.Drawing.Size(252, 634);
+			this.contextMenuItems.Size = new System.Drawing.Size(252, 700);
 			this.contextMenuItems.Closed += new System.Windows.Forms.ToolStripDropDownClosedEventHandler(this.contextMenuItems_Closed);
 			this.contextMenuItems.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuItems_Opening);
 			this.contextMenuItems.Opened += new System.EventHandler(this.contextMenuItems_Opened);
@@ -420,9 +428,39 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miReadTab.Name = "miReadTab";
 			this.miReadTab.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.O)));
+            | System.Windows.Forms.Keys.O)));
 			this.miReadTab.Size = new System.Drawing.Size(251, 22);
 			this.miReadTab.Text = "Open in new Tab";
+			// 
+			// miOpenWith
+			// 
+			this.miOpenWith.DropDown = this.contextOpenWith;
+			this.miOpenWith.Name = "miOpenWith";
+			this.miOpenWith.Size = new System.Drawing.Size(251, 22);
+			this.miOpenWith.Text = "Open With";
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+			this.toolStripSeparator2.Visible = false;
+			// 
+			// contextOpenWith
+			// 
+			this.contextOpenWith.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miOpenWithManager,
+            this.toolStripSeparator2});
+			this.contextOpenWith.Name = "contextOpenWith";
+			this.contextOpenWith.OwnerItem = this.miOpenWith;
+			this.contextOpenWith.Size = new System.Drawing.Size(181, 32);
+			this.contextOpenWith.Opening += new System.ComponentModel.CancelEventHandler(this.contextOpenWith_Opening);
+			// 
+			// miOpenWithManager
+			// 
+			this.miOpenWithManager.Name = "miOpenWithManager";
+			this.miOpenWithManager.Size = new System.Drawing.Size(180, 22);
+			this.miOpenWithManager.Text = "Manage Programs...";
+			this.miOpenWithManager.Click += new System.EventHandler(this.miOpenWithManager_Click);
 			// 
 			// miProperties
 			// 
@@ -455,10 +493,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// miEditList
 			// 
 			this.miEditList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.miEditListMoveToTop,
-			this.miEditListMoveToBottom,
-			this.toolStripMenuItem8,
-			this.miEditListApplyOrder});
+            this.miEditListMoveToTop,
+            this.miEditListMoveToBottom,
+            this.toolStripMenuItem8,
+            this.miEditListApplyOrder});
 			this.miEditList.Name = "miEditList";
 			this.miEditList.Size = new System.Drawing.Size(251, 22);
 			this.miEditList.Text = "Edit List";
@@ -467,7 +505,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miEditListMoveToTop.Name = "miEditListMoveToTop";
 			this.miEditListMoveToTop.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-			| System.Windows.Forms.Keys.T)));
+            | System.Windows.Forms.Keys.T)));
 			this.miEditListMoveToTop.Size = new System.Drawing.Size(225, 22);
 			this.miEditListMoveToTop.Text = "Move to Top";
 			// 
@@ -475,7 +513,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miEditListMoveToBottom.Name = "miEditListMoveToBottom";
 			this.miEditListMoveToBottom.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-			| System.Windows.Forms.Keys.B)));
+            | System.Windows.Forms.Keys.B)));
 			this.miEditListMoveToBottom.Size = new System.Drawing.Size(225, 22);
 			this.miEditListMoveToBottom.Text = "Move to Bottom";
 			// 
@@ -493,7 +531,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// miAddList
 			// 
 			this.miAddList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.dummyEntryToolStripMenuItem});
+            this.dummyEntryToolStripMenuItem});
 			this.miAddList.Name = "miAddList";
 			this.miAddList.Size = new System.Drawing.Size(251, 22);
 			this.miAddList.Text = "Add to List";
@@ -525,7 +563,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// miShowInList
 			// 
 			this.miShowInList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.dummyEntryToolStripMenuItem1});
+            this.dummyEntryToolStripMenuItem1});
 			this.miShowInList.Name = "miShowInList";
 			this.miShowInList.Size = new System.Drawing.Size(251, 22);
 			this.miShowInList.Text = "Show in List";
@@ -548,10 +586,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// contextExport
 			// 
 			this.contextExport.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.miExportComicsAs,
-			this.miExportComicsWithPrevious});
+            this.miExportComicsAs,
+            this.miExportComicsWithPrevious});
 			this.contextExport.Name = "contextExport";
-			this.contextExport.OwnerItem = this.miExportComics;
+            this.contextExport.OwnerItem = this.miExportComics;
 			this.contextExport.Size = new System.Drawing.Size(246, 48);
 			this.contextExport.Opening += new System.ComponentModel.CancelEventHandler(this.contextExport_Opening);
 			// 
@@ -560,7 +598,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			this.miExportComicsAs.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.Save;
 			this.miExportComicsAs.Name = "miExportComicsAs";
 			this.miExportComicsAs.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.E)));
+            | System.Windows.Forms.Keys.E)));
 			this.miExportComicsAs.Size = new System.Drawing.Size(245, 22);
 			this.miExportComicsAs.Text = "Export Books...";
 			// 
@@ -568,7 +606,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miExportComicsWithPrevious.Name = "miExportComicsWithPrevious";
 			this.miExportComicsWithPrevious.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-			| System.Windows.Forms.Keys.E)));
+            | System.Windows.Forms.Keys.E)));
 			this.miExportComicsWithPrevious.Size = new System.Drawing.Size(245, 22);
 			this.miExportComicsWithPrevious.Text = "Export with Previous";
 			// 
@@ -695,14 +733,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// contextQuickSearch
 			// 
 			this.contextQuickSearch.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.miSearchAll,
-			this.toolStripSeparator5,
-			this.miSearchSeries,
-			this.miSearchWriter,
-			this.miSearchArtists,
-			this.miSearchDescriptive,
-			this.miSearchCatalog,
-			this.miSearchFile});
+            this.miSearchAll,
+            this.toolStripSeparator5,
+            this.miSearchSeries,
+            this.miSearchWriter,
+            this.miSearchArtists,
+            this.miSearchDescriptive,
+            this.miSearchCatalog,
+            this.miSearchFile});
 			this.contextQuickSearch.Name = "contextQuickSearch";
 			this.contextQuickSearch.Size = new System.Drawing.Size(133, 164);
 			// 
@@ -830,7 +868,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// lblDisplayOptionText
 			// 
 			this.lblDisplayOptionText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblDisplayOptionText.Location = new System.Drawing.Point(5, 11);
 			this.lblDisplayOptionText.Name = "lblDisplayOptionText";
 			this.lblDisplayOptionText.Size = new System.Drawing.Size(598, 18);
@@ -912,7 +950,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// lblOpenStackText
 			// 
 			this.lblOpenStackText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblOpenStackText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblOpenStackText.Location = new System.Drawing.Point(119, 8);
 			this.lblOpenStackText.Name = "lblOpenStackText";
@@ -935,21 +973,21 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.tbSidebar,
-			this.btBrowsePrev,
-			this.btBrowseNext,
-			this.tbBrowseSeparator,
-			this.tbbView,
-			this.tbbGroup,
-			this.tbbStack,
-			this.tbbSort,
-			this.tsQuickSearch,
-			this.tsListLayouts,
-			this.sepDuplicateList,
-			this.tbbDuplicateList,
-			this.sepUndo,
-			this.tbUndo,
-			this.tbRedo});
+            this.tbSidebar,
+            this.btBrowsePrev,
+            this.btBrowseNext,
+            this.tbBrowseSeparator,
+            this.tbbView,
+            this.tbbGroup,
+            this.tbbStack,
+            this.tbbSort,
+            this.tsQuickSearch,
+            this.tsListLayouts,
+            this.sepDuplicateList,
+            this.tbbDuplicateList,
+            this.sepUndo,
+            this.tbUndo,
+            this.tbRedo});
 			this.toolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
 			this.toolStrip.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip.Name = "toolStrip";
@@ -993,22 +1031,22 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// tbbView
 			// 
 			this.tbbView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.miViewThumbnails,
-			this.miViewTiles,
-			this.miViewDetails,
-			this.toolStripMenuItem6,
-			this.miExpandAllGroups,
-			this.miShowGroupHeaders,
-			this.toolStripMenuItem2,
-			this.miShowOnlyAllComics,
-			this.miShowOnlyUnreadComics,
-			this.miShowOnlyReadingComics,
-			this.miShowOnlyReadComics,
-			this.toolStripMenuItem4,
-			this.miShowOnlyComics,
-			this.miShowOnlyFileless,
-			this.toolStripMenuItem1,
-			this.miShowOnlyDuplicates});
+            this.miViewThumbnails,
+            this.miViewTiles,
+            this.miViewDetails,
+            this.toolStripMenuItem6,
+            this.miExpandAllGroups,
+            this.miShowGroupHeaders,
+            this.toolStripMenuItem2,
+            this.miShowOnlyAllComics,
+            this.miShowOnlyUnreadComics,
+            this.miShowOnlyReadingComics,
+            this.miShowOnlyReadComics,
+            this.toolStripMenuItem4,
+            this.miShowOnlyComics,
+            this.miShowOnlyFileless,
+            this.toolStripMenuItem1,
+            this.miShowOnlyDuplicates});
 			this.tbbView.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.View;
 			this.tbbView.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.tbbView.Name = "tbbView";
@@ -1053,7 +1091,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.miShowGroupHeaders.Name = "miShowGroupHeaders";
 			this.miShowGroupHeaders.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-			| System.Windows.Forms.Keys.G)));
+            | System.Windows.Forms.Keys.G)));
 			this.miShowGroupHeaders.Size = new System.Drawing.Size(259, 22);
 			this.miShowGroupHeaders.Text = "Show Group Headers";
 			// 
@@ -1119,7 +1157,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// tbbGroup
 			// 
 			this.tbbGroup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.dummyToolStripMenuItem});
+            this.dummyToolStripMenuItem});
 			this.tbbGroup.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.Group;
 			this.tbbGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.tbbGroup.Name = "tbbGroup";
@@ -1138,7 +1176,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// tbbStack
 			// 
 			this.tbbStack.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.dummyToolStripMenuItem1});
+            this.dummyToolStripMenuItem1});
 			this.tbbStack.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.Stacking;
 			this.tbbStack.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.tbbStack.Name = "tbbStack";
@@ -1156,7 +1194,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// tbbSort
 			// 
 			this.tbbSort.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.dummyToolStripMenuItem2});
+            this.dummyToolStripMenuItem2});
 			this.tbbSort.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SortUp;
 			this.tbbSort.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.tbbSort.Name = "tbbSort";
@@ -1188,12 +1226,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.tsListLayouts.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.tsListLayouts.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.tsEditListLayout,
-			this.tsSaveListLayout,
-			this.miResetListBackground,
-			this.toolStripMenuItem23,
-			this.tsEditLayouts,
-			this.separatorListLayout});
+            this.tsEditListLayout,
+            this.tsSaveListLayout,
+            this.miResetListBackground,
+            this.toolStripMenuItem23,
+            this.tsEditLayouts,
+            this.separatorListLayout});
 			this.tsListLayouts.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.ListLayout;
 			this.tsListLayouts.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.tsListLayouts.Name = "tsListLayouts";
@@ -1231,7 +1269,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.tsEditLayouts.Name = "tsEditLayouts";
 			this.tsEditLayouts.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-			| System.Windows.Forms.Keys.L)));
+            | System.Windows.Forms.Keys.L)));
 			this.tsEditLayouts.Size = new System.Drawing.Size(210, 22);
 			this.tsEditLayouts.Text = "&Edit Layouts...";
 			// 
@@ -1249,7 +1287,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			this.tbbDuplicateList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.tbbDuplicateList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.dummyEntryToolStripMenuItem2});
+            this.dummyEntryToolStripMenuItem2});
 			this.tbbDuplicateList.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.AddList;
 			this.tbbDuplicateList.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.tbbDuplicateList.Name = "tbbDuplicateList";
@@ -1290,8 +1328,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// lvGroupHeaders
 			// 
 			this.lvGroupHeaders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-			this.lvGroupsName,
-			this.lvGroupsCount});
+            this.lvGroupsName,
+            this.lvGroupsCount});
 			this.lvGroupHeaders.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.lvGroupHeaders.FullRowSelect = true;
 			this.lvGroupHeaders.HideSelection = false;
@@ -1337,6 +1375,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			this.browserContainer.TabIndex = 2;
 			this.browserContainer.DoubleClick += new System.EventHandler(this.browserContainer_DoubleClick);
 			// 
+			// miResetTopOfStack
+			// 
+			this.miResetTopOfStack.Name = "miResetTopOfStack";
+			this.miResetTopOfStack.Size = new System.Drawing.Size(251, 22);
+			this.miResetTopOfStack.Text = "Reset Top of Stack";
+			// 
 			// ComicBrowserControl
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1350,6 +1394,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			this.contextRating.ResumeLayout(false);
 			this.contextMarkAs.ResumeLayout(false);
 			this.contextMenuItems.ResumeLayout(false);
+			this.contextOpenWith.ResumeLayout(false);
 			this.contextExport.ResumeLayout(false);
 			this.contextQuickSearch.ResumeLayout(false);
 			this.displayOptionPanel.ResumeLayout(false);
@@ -1493,5 +1538,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private SplitContainer browserContainer;
 		private ColumnHeader lvGroupsName;
 		private ColumnHeader lvGroupsCount;
+        private ToolStripMenuItem miOpenWith;
+		private ToolStripSeparator toolStripSeparator2;
+		private ToolStripMenuItem miOpenWithManager;
+		private ContextMenuStrip contextOpenWith;
+		private ToolStripMenuItem miResetTopOfStack;
 	}
 }

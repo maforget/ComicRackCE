@@ -13,17 +13,22 @@ on:
 
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: windows-2022
+
+    outputs:
+      sha_short: ${{ steps.vars.outputs.sha_short }}
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
 
     - name: setup-msbuild
-      uses: microsoft/setup-msbuild@v1
+      uses: microsoft/setup-msbuild@v2
 
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1
+      uses: NuGet/setup-nuget@v2
 
     - name: Restore Packages
       run: nuget restore ComicRack.sln
@@ -32,14 +37,22 @@ jobs:
       run: msbuild ComicRack\ComicRack.csproj -t:rebuild -property:Configuration=Release
 
     - name: Package Files
-      run: powershell Compress-Archive -Path 'ComicRack\bin\Release\*' -DestinationPath 'ComicRackCE_nightly.zip' -Force
+      run: powershell Compress-Archive -Path 'ComicRack\bin\Release\net48\*' -DestinationPath 'ComicRackCE_nightly.zip' -Force
 
     - name: Get short sha
       id: vars
-      run: echo "sha_short=$(git rev-parse --short HEAD)" >> $env:GITHUB_OUTPUT
+      run: |
+        $sha_short = $(git rev-parse --short HEAD)
+        echo "sha_short=$sha_short" >> $env:GITHUB_OUTPUT
+        echo "Short SHA is $sha_short"
+
+    - name: Download VC++ Redistributable (x64)
+      run: |
+        mkdir ComicRack\bin\Release\net48\_CommonRedist
+        curl -L -o ComicRack\bin\Release\net48\_CommonRedist\vc_redist.x64.exe https://aka.ms/vs/17/release/vc_redist.x64.exe
 
     - name: Compile installer
-      uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
+      uses: Minionguyjpro/Inno-Setup-Action@v1.2.4
       with:
         path: Installer.iss
         options: /DMyAppVersion=nightly-${{ steps.vars.outputs.sha_short }} /DMyAppSetupFile=ComicRackCESetup_nightly
@@ -56,7 +69,25 @@ jobs:
         artifacts: "ComicRackCE_nightly.zip,ComicRackCESetup_nightly.exe"
         tag: "nightly"
         commit: ${{ github.ref_name }}
-        prerelease: true
+        prerelease: false
         allowUpdates: true
-        updateOnlyUnreleased: true
+        updateOnlyUnreleased: false
         removeArtifacts: true
+    
+  publish:
+    runs-on: ubuntu-latest
+    needs: build  # Ensure this runs after the build job
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Publish Winget manifest
+      uses: vedantmgoyal9/winget-releaser@main
+      with:
+        identifier: maforget.ComicRackCE.Nightly
+        release-tag: nightly
+        version: nightly-${{ needs.build.outputs.sha_short }}  # Use the short 7-digit commit SHA for the version
+        max-versions-to-keep: 1
+        token: ${{ secrets.WINGET_TOKEN }}
+

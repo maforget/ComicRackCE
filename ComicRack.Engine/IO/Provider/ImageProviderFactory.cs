@@ -1,3 +1,4 @@
+using System.CodeDom;
 using System.Linq;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider
@@ -31,9 +32,10 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			return null;
 		}
 
-		public override FileFormat GetSourceFormat(string source)
-		{
+        protected override FileFormat GetActualSourceFormat(string source)
+        {
+			//returns the actual file format based on the actual providers used.
             return CreateSourceProvider(source).DefaultFileFormat;
-		}
-	}
+        }
+    }
 }

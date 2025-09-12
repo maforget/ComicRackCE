@@ -103,9 +103,9 @@ namespace cYo.Common.Drawing
 			{
 				mapKeys = (string s) => ListExtensions.AsEnumerable<string>(s);
 			}
-			if (package.FileExists("map.ini"))
+			if (package.FileExists(MapFile))
 			{
-				using (Stream stream = package.OpenRead("map.ini"))
+				using (Stream stream = package.OpenRead(MapFile))
 				{
 					using (StreamReader tr = new StreamReader(stream))
 					{

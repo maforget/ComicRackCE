@@ -25,7 +25,7 @@ namespace cYo.Projects.ComicRack.Engine.Drawing
 
 		public static Bitmap CreateDefaultBook(Bitmap cover, Bitmap coverBack, Size size, int pages, ComicBox3DOptions options = ComicBox3DOptions.Default)
 		{
-			return Create(cover, coverBack, size, (float)pages / 25f * 0.025f, 1.5f, 54f, -28f, 12f, options);
+			return Create(cover, coverBack, size, (float)pages / 25f * 0.025f, DefaultDistance, DefaultRotateX, DefaultRotateY, DefaultRotateZ, options);
 		}
 
 		public static Bitmap Create(Bitmap cover, Bitmap coverBack, Size size, float thickness, float distance, float rx, float ry, float rz, ComicBox3DOptions options = ComicBox3DOptions.Default)

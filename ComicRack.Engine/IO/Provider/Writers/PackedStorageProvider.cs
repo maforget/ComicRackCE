@@ -64,7 +64,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 				long totalPageMemory = 0L;
 				Exception ce = null;
 				ParallelOptions parallelOptions = new ParallelOptions();
-				parallelOptions.MaxDegreeOfParallelism = EngineConfiguration.Default.ParallelConversions.Clamp(1, 8);
+				parallelOptions.MaxDegreeOfParallelism = EngineConfiguration.Default.ParallelConversions.Clamp(1, Environment.ProcessorCount);
 				Parallel.For(0, provider.Count, parallelOptions, delegate(int n, ParallelLoopState ls)
 				{
 					try
@@ -75,7 +75,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 							ProviderImageInfo imageInfo = provider.GetImageInfo(page.ImageIndex);
 							string ext = ((imageInfo != null && !string.IsNullOrEmpty(imageInfo.Name)) ? Path.GetExtension(imageInfo.Name) : ".jpg");
 							int num2 = 0;
-							PageResult[] images = StorageProvider.GetImages(provider, page, ext, setting, info.Manga == MangaYesNo.YesAndRightToLeft, setting.CreateThumbnails);
+							PageResult[] images = StorageProvider.GetImages(provider, page, ext, setting, info.Manga == MangaYesNo.YesAndRightToLeft, setting.CreateThumbnails, true);
 							foreach (PageResult pageResult in images)
 							{
 								bool flag;
@@ -102,6 +102,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 							if (FireProgressEvent(++loopCount * 100 / provider.Count))
 							{
 								ls.Break();
+								throw new OperationCanceledException("Export operation was cancelled by the user.");
 							}
 						}
 					}

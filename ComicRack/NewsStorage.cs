@@ -75,7 +75,7 @@ namespace cYo.Projects.ComicRack.Viewer
 		[Serializable]
 		public class SubscriptionCollection : List<Subscription>
 		{
-		}
+        }
 
 		[Serializable]
 		public class NewsChannelItemInfo
@@ -179,7 +179,7 @@ namespace cYo.Projects.ComicRack.Viewer
 					{
 						continue;
 					}
-					RssNewsFeed rssNewsFeed = new RssNewsFeed();
+					AtomNewsFeed rssNewsFeed = new AtomNewsFeed();
 					try
 					{
 						rssNewsFeed.ReadFeed(NewsFeed.LoadFeed(subscription.Url));

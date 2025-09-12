@@ -17,7 +17,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		public PortableDeviceSyncProvider(string deviceNode, string deviceKey = null)
 		{
 			device = DeviceFactory.GetDevice(deviceNode);
-			syncFolder = device.Find(Regex.Escape("comicrack.ini"), 10).Parent;
+			syncFolder = device.Find(Regex.Escape(MarkerFile), maxFolderLevel).Parent;
 			if (syncFolder == null)
 			{
 				throw new DriveNotFoundException();

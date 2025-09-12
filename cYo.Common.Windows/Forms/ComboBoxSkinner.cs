@@ -207,6 +207,9 @@ namespace cYo.Common.Windows.Forms
 			}
 		}
 
+		[DefaultValue(1)]
+		public int MaxHeightScale { get; set; } = 1;
+
 		[DefaultValue(null)]
 		public IImagePackage IconPackage
 		{
@@ -377,7 +380,7 @@ namespace cYo.Common.Windows.Forms
 				}
 			}
 			Native.SendMessage(ComboBox.Handle, 352u, num, 0);
-			ComboBox.DropDownHeight = 150;
+			ComboBox.DropDownHeight = MaxHeightScale * 150;
 		}
 	}
 }

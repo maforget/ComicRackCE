@@ -56,7 +56,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			public Bitmap GetImage(int index)
 			{
 				Provider provider = GetProvider(ref index);
-				if (PagePool != null && provider.ImageProvider.IsSlow)
+				if (PagePool != null)
 				{
 					using (IItemLock<PageImage> itemLock = PagePool.GetPage(new PageKey(provider.KeyProvider.GetImageKey(index)), onlyMemory: false))
 					{
@@ -85,7 +85,27 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 				return provider.ImageProvider.GetByteImage(index);
 			}
 
-			protected override void Dispose(bool disposing)
+            public ExportImageContainer GetByteImageForExport(int index)
+            {
+                Provider provider = GetProvider(ref index);
+                if (PagePool != null)
+                {
+                    using (IItemLock<PageImage> itemLock = PagePool.GetPage(new PageKey(provider.KeyProvider.GetImageKey(index)), onlyMemory: false))
+                    {
+                        if (itemLock != null && itemLock.Item != null && itemLock.Item.Merged)
+                        {
+							return new ExportImageContainer()
+							{
+								Data = itemLock.Item.Data,
+								NeedsToConvert = true
+							};
+                        }
+                    }
+                }
+				return provider.ImageProvider.GetByteImageForExport(index);
+            }
+
+            protected override void Dispose(bool disposing)
 			{
 				foreach (Provider provider in providers)
 				{

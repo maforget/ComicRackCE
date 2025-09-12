@@ -232,7 +232,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				text = ((IPromptText)tb).PromptText;
 			}
-			return text.Left(128);
+			return text.Left(MaxTextLength);
 		}
 
 		protected override void Dispose(bool disposing)

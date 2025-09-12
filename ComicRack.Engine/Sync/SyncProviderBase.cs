@@ -157,13 +157,13 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			{
 			case SyncAppEdition.AndroidFree:
 				device.BookSyncLimit = 100;
-				num = 100;
+				num = MinimumAndroidFreeVersion;
 				break;
 			case SyncAppEdition.AndroidFull:
-				num = 89;
+				num = MinimumAndroidFullVersion;
 				break;
 			case SyncAppEdition.iOS:
-				num = 1;
+				num = MinimumIOsVersion;
 				break;
 			default:
 				num = int.MaxValue;
@@ -341,7 +341,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			{
 				XmlUtility.Store(memoryStream, syncInformation, compressed: false);
 				memoryStream.Position = 0L;
-				WriteFile("sync_information.xml", memoryStream);
+				WriteFile(SyncInformationFile, memoryStream);
 			}
 		}
 
@@ -355,12 +355,12 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		{
 			using (MemoryStream memoryStream = new MemoryStream())
 			{
-				using (Stream stream = ReadFile("comicrack.ini"))
+				using (Stream stream = ReadFile(MarkerFile))
 				{
 					stream.CopyTo(memoryStream);
 				}
 				memoryStream.Position = 0L;
-				WriteFile("comicrack.ini", memoryStream);
+				WriteFile(MarkerFile, memoryStream);
 			}
 			OnCompleted();
 		}
@@ -380,7 +380,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		{
 			if (!string.IsNullOrEmpty(file))
 			{
-				return string.Equals(Path.GetExtension(file), ".cbp", StringComparison.OrdinalIgnoreCase);
+				return string.Equals(Path.GetExtension(file), SyncFormatExtension, StringComparison.OrdinalIgnoreCase);
 			}
 			return false;
 		}
@@ -412,7 +412,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		{
 			try
 			{
-				using (Stream stream = ReadFile("comicrack.ini"))
+				using (Stream stream = ReadFile(MarkerFile))
 				{
 					Dictionary<string, string> values = IniFile.GetValues(new StreamReader(stream));
 					Device = new DeviceInfo(values);
@@ -432,11 +432,11 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		private string GetUniqueFileName(string baseName)
 		{
 			baseName = Path.GetFileNameWithoutExtension(baseName);
-			string text = baseName + ".cbp";
+			string text = baseName + SyncFormatExtension;
 			if (FileExists(text))
 			{
 				int num = 1;
-				while (FileExists(text = $"{baseName} ({++num})" + ".cbp"))
+				while (FileExists(text = $"{baseName} ({++num}){SyncFormatExtension}"))
 				{
 				}
 			}

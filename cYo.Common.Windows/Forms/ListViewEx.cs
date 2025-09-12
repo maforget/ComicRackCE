@@ -126,11 +126,11 @@ namespace cYo.Common.Windows.Forms
 		protected override void WndProc(ref Message m)
 		{
 			base.WndProc(ref m);
-			if (m.Msg == 276 || m.Msg == 277)
+			if (m.Msg == Native.WM_HSCROLL || m.Msg == Native.WM_VSCROLL)
 			{
 				OnScroll();
 			}
-			if (m.Msg == 15)
+			if (m.Msg == Native.WM_PAINT)
 			{
 				if (InsertLineBefore >= 0 && InsertLineBefore < base.Items.Count)
 				{
@@ -188,7 +188,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				Cursor = Cursors.Hand;
 				UpdateInsertMarkers();
-				if (InsertLineBefore == base.TopItem.Index || e.Y > base.Height - 10)
+				if (InsertLineBefore == base.TopItem.Index || e.Y > base.Height - ScrollMargin)
 				{
 					scrollTimer.Start();
 				}

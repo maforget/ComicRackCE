@@ -18,6 +18,7 @@ using cYo.Common.Drawing;
 using cYo.Common.IO;
 using cYo.Common.Localize;
 using cYo.Common.Mathematics;
+using cYo.Common.Net.Search;
 using cYo.Common.Reflection;
 using cYo.Common.Text;
 using cYo.Common.Threading;
@@ -25,6 +26,7 @@ using cYo.Common.Xml;
 using cYo.Projects.ComicRack.Engine.IO;
 using cYo.Projects.ComicRack.Engine.IO.Provider;
 using cYo.Projects.ComicRack.Engine.Sync;
+using SharpCompress.Common;
 
 namespace cYo.Projects.ComicRack.Engine
 {
@@ -124,8 +126,6 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private float rating;
 
-		private string tags = string.Empty;
-
 		private BitmapAdjustment colorAdjustment = BitmapAdjustment.Empty;
 
 		private bool enableProposed = true;
@@ -176,6 +176,8 @@ namespace cYo.Projects.ComicRack.Engine
 		private volatile string fileNameWithExtension;
 
 		private volatile string fileFormat;
+
+		private volatile string actualFileFormat;
 
 		private volatile string fileDirectory;
 
@@ -400,21 +402,6 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		[Browsable(true)]
-		[DefaultValue("")]
-		[ResetValue(0)]
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set
-			{
-				SetProperty("Tags", ref tags, value);
-			}
-		}
-
 		[DefaultValue(typeof(BitmapAdjustment), "Empty")]
 		public BitmapAdjustment ColorAdjustment
 		{
@@ -561,7 +548,7 @@ namespace cYo.Projects.ComicRack.Engine
 				{
 					string text = FilePath;
 					filePath = value;
-					fileName = (fileNameWithExtension = (fileFormat = (fileDirectory = null)));
+					fileName = fileNameWithExtension = actualFileFormat = fileFormat = fileDirectory = null;
 					proposed = null;
 					FireBookChanged("FilePath", text, filePath);
 					if (!string.IsNullOrEmpty(text))
@@ -896,6 +883,27 @@ namespace cYo.Projects.ComicRack.Engine
 		}
 
 		[Browsable(true)]
+		public string ActualFileFormat
+		{
+			get
+			{
+				if (actualFileFormat != null)
+				{
+					return actualFileFormat;
+				}
+				try
+				{
+					actualFileFormat = Providers.Readers.GetSourceFormatName(filePath, true);
+				}
+				catch (Exception)
+				{
+					actualFileFormat = string.Empty;
+				}
+				return actualFileFormat;
+			}
+		}
+
+		[Browsable(true)]
 		public string FileDirectory
 		{
 			get
@@ -929,6 +937,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
+		//TODO: check to update Caption to a Virtual Tag
 		[Browsable(true)]
 		public string Caption => GetFullTitle(EngineConfiguration.Default.ComicCaptionFormat);
 
@@ -939,7 +948,7 @@ namespace cYo.Projects.ComicRack.Engine
 		public string CaptionWithoutFormat => GetFullTitle(EngineConfiguration.Default.ComicCaptionFormat, "format");
 
 		[Browsable(true)]
-		public string AlternateCaption => GetFullTitle("[{alternateseries}][ #{alternatenumber}]");
+		public string AlternateCaption => GetFullTitle(DefaultAlternateCaptionFormat);
 
 		public string TargetFilename => GetFullTitle(EngineConfiguration.Default.ComicExportFileNameFormat);
 
@@ -967,7 +976,7 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 			get
 			{
-				return ReadPercentage >= 95;
+				return ReadPercentage >= ReadPercentageAsRead;
 			}
 			set
 			{
@@ -993,7 +1002,7 @@ namespace cYo.Projects.ComicRack.Engine
 				StringBuilder stringBuilder = new StringBuilder();
 				stringBuilder.AppendFormat("{0}\n", FileName);
 				stringBuilder.AppendFormat("{0} ({1})\n\n", FileSizeAsText, PagesAsText);
-				stringBuilder.AppendFormat("{0}\n", FileFormat);
+				stringBuilder.AppendFormat("{0}\n", ActualFileFormat);
 				stringBuilder.AppendFormat("{0}\n\n", FileDirectory);
 				stringBuilder.Append(StringUtility.Format(lastTimeOpenedAtText.Value, OpenedTimeAsText));
 				stringBuilder.AppendLine();
@@ -1006,12 +1015,14 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public string NumberAsText => FormatNumber(base.Number, ShadowCount);
 
+		[Browsable(true)]
 		public string NumberOnly => ShadowNumber;
 
 		public string AlternateNumberAsText => FormatNumber(base.AlternateNumber, base.AlternateCount);
 
 		public string VolumeAsText => FormatVolume(base.Volume);
 
+		[Browsable(true)]
 		public string VolumeOnly
 		{
 			get
@@ -1052,12 +1063,16 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 			get
 			{
-				StringBuilder stringBuilder = new StringBuilder(base.Writer);
-				AppendString(stringBuilder, "/", base.Penciller);
-				AppendString(stringBuilder, "/", base.Inker);
-				AppendString(stringBuilder, "/", base.Colorist);
-				AppendString(stringBuilder, "/", base.Letterer);
-				AppendString(stringBuilder, "/", base.CoverArtist);
+				HashSet<string> uniqueNames = new HashSet<string>();
+				StringBuilder stringBuilder = new StringBuilder();
+				AppendUniqueName(stringBuilder, "/", base.Writer, uniqueNames);
+				AppendUniqueName(stringBuilder, "/", base.Penciller, uniqueNames);
+				AppendUniqueName(stringBuilder, "/", base.Inker, uniqueNames);
+				AppendUniqueName(stringBuilder, "/", base.Colorist, uniqueNames);
+				AppendUniqueName(stringBuilder, "/", base.Letterer, uniqueNames);
+				AppendUniqueName(stringBuilder, "/", base.CoverArtist, uniqueNames);
+				AppendUniqueName(stringBuilder, "/", base.Translator, uniqueNames);
+
 				return stringBuilder.ToString();
 			}
 		}
@@ -1113,6 +1128,8 @@ namespace cYo.Projects.ComicRack.Engine
 				return string.Empty;
 			}
 		}
+
+		public string PublishedRegional => FormatDate(Published, ComicDateFormat.Short, toLocal: false, unkownText.Value);
 
 		public string PublishedAsText
 		{
@@ -1597,6 +1614,8 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public static ImagePackage SpecialIcons => specialIcons;
 
+		public static Dictionary<string, ImagePackage> GenericIcons { get; set; } = new Dictionary<string, ImagePackage>(StringComparer.OrdinalIgnoreCase);
+
 		public static bool NewBooksChecked
 		{
 			get;
@@ -1613,6 +1632,50 @@ namespace cYo.Projects.ComicRack.Engine
 		public event EventHandler<CreateComicProviderEventArgs> ComicProviderCreated;
 
 		public static event EventHandler<ParseFilePathEventArgs> ParseFilePath;
+
+		Dictionary<int, string> CachedVirtualTags = new Dictionary<int, string>();
+		public string GetVirtualTagValue(int id)
+		{
+			if (CachedVirtualTags.TryGetValue(id, out var value))
+				return value;
+
+			string captionFormat = VirtualTagsCollection.Tags.GetValue(id).CaptionFormat;
+			string saved = (!string.IsNullOrEmpty(captionFormat)) ? GetFullTitle(captionFormat) : string.Empty;
+
+			CachedVirtualTags[id] = saved;
+			return saved;
+		}
+
+		private void VirtualTagsCollection_TagsRefresh(object sender, EventArgs e)
+		{
+			ClearVirtualTagsCache();
+		}
+
+		private void ClearVirtualTagsCache()
+		{
+			CachedVirtualTags.Clear();
+		}
+
+		public string VirtualTag01 => GetVirtualTagValue(1);
+		public string VirtualTag02 => GetVirtualTagValue(2);
+		public string VirtualTag03 => GetVirtualTagValue(3);
+		public string VirtualTag04 => GetVirtualTagValue(4);
+		public string VirtualTag05 => GetVirtualTagValue(5);
+		public string VirtualTag06 => GetVirtualTagValue(6);
+		public string VirtualTag07 => GetVirtualTagValue(7);
+		public string VirtualTag08 => GetVirtualTagValue(8);
+		public string VirtualTag09 => GetVirtualTagValue(9);
+		public string VirtualTag10 => GetVirtualTagValue(10);
+		public string VirtualTag11 => GetVirtualTagValue(11);
+		public string VirtualTag12 => GetVirtualTagValue(12);
+		public string VirtualTag13 => GetVirtualTagValue(13);
+		public string VirtualTag14 => GetVirtualTagValue(14);
+		public string VirtualTag15 => GetVirtualTagValue(15);
+		public string VirtualTag16 => GetVirtualTagValue(16);
+		public string VirtualTag17 => GetVirtualTagValue(17);
+		public string VirtualTag18 => GetVirtualTagValue(18);
+		public string VirtualTag19 => GetVirtualTagValue(19);
+		public string VirtualTag20 => GetVirtualTagValue(20);
 
 		static ComicBook()
 		{
@@ -1654,6 +1717,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public ComicBook()
 		{
+			VirtualTagsCollection.TagsRefresh += VirtualTagsCollection_TagsRefresh;
 		}
 
 		public ComicBook(ComicBook cb)
@@ -1724,7 +1788,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public ThumbnailKey GetThumbnailKey(int page)
 		{
-			string locationKey = ((!IsLinked) ? (string.IsNullOrEmpty(CustomThumbnailKey) ? ThumbnailKey.GetResource("resource", "Unknown") : ThumbnailKey.GetResource("custom", CustomThumbnailKey)) : FileLocation);
+			string locationKey = ((!IsLinked) ? (string.IsNullOrEmpty(CustomThumbnailKey) ? ThumbnailKey.GetResource(ThumbnailKey.ResourceKey, "Unknown") : ThumbnailKey.GetResource(ThumbnailKey.CustomKey, CustomThumbnailKey)) : FileLocation);
 			return GetThumbnailKey(page, locationKey);
 		}
 
@@ -1770,7 +1834,7 @@ namespace cYo.Projects.ComicRack.Engine
 				if (lastPageIndexToRead != -1)
 				{
 					int imageIndex = TranslatePageToImageIndex(lastPageIndexToRead);
-					imageProvider.ImageReady += delegate(object s, ImageIndexReadyEventArgs e)
+                    imageProvider.ImageReady += delegate(object s, ImageIndexReadyEventArgs e)
 					{
 						e.Cancel = e.ImageNumber == imageIndex;
 					};
@@ -1785,113 +1849,138 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public string GetPublisherIconKey()
+		public string GetPublisherIconKey(bool yearOnly = true)
 		{
 			string text = base.Publisher;
+			if (base.Year >= 0 && base.Month >= 0 && !yearOnly)
+				return $"{text}({YearAsText}_{Month:00})";
+
 			if (base.Year >= 0)
-			{
-				text = text + "(" + YearAsText + ")";
-			}
+				return $"{text}({YearAsText})";
+
 			return text;
 		}
 
-		public string GetImprintIconKey()
+		public string GetImprintIconKey(bool yearOnly = true)
 		{
 			string text = base.Imprint;
+			if (base.Year >= 0 && base.Month >= 0 && !yearOnly)
+				return $"{text}({YearAsText}_{Month:00})";
+
 			if (base.Year >= 0)
-			{
-				text = text + "(" + YearAsText + ")";
-			}
+				return $"{text}({YearAsText})";
+
 			return text;
 		}
 
 		private IEnumerable<Image> GetIconsInternal()
 		{
-			Image img2 = PublisherIcons.GetImage(GetPublisherIconKey());
-			Image image;
-			if (img2 != null)
+			Image image = PublisherIcons.GetImage(GetPublisherIconKey(false));//Year_Month
+			if (image != null)
 			{
-				yield return img2;
+				yield return image;
+			}
+			else if ((image = PublisherIcons.GetImage(GetPublisherIconKey(true))) != null)//Year Only
+			{
+				yield return image;
 			}
 			else
 			{
-				img2 = (image = PublisherIcons.GetImage(Publisher));
+				image = PublisherIcons.GetImage(Publisher);
 				if (image != null)
-				{
-					yield return img2;
-				}
+					yield return image;
 			}
-			img2 = (image = PublisherIcons.GetImage(GetImprintIconKey()));
+
+			image = PublisherIcons.GetImage(GetImprintIconKey(false));//Year_Month
 			if (image != null)
 			{
-				yield return img2;
+				yield return image;
+			}
+			else if ((image = PublisherIcons.GetImage(GetImprintIconKey(true))) != null)//Year Only
+			{
+				yield return image;
 			}
 			else
 			{
-				img2 = (image = PublisherIcons.GetImage(Imprint));
+				image = PublisherIcons.GetImage(Imprint);
 				if (image != null)
-				{
-					yield return img2;
-				}
+					yield return image;
 			}
-			img2 = (image = AgeRatingIcons.GetImage(AgeRating));
+
+			image = AgeRatingIcons.GetImage(AgeRating);
 			if (image != null)
 			{
-				yield return img2;
+				yield return image;
 			}
-			img2 = (image = FormatIcons.GetImage(ShadowFormat));
+
+			image = FormatIcons.GetImage(ShadowFormat);
 			if (image != null)
 			{
-				yield return img2;
+				yield return image;
 			}
+
 			if (!string.IsNullOrEmpty(Tags))
 			{
 				foreach (string item in Tags.ListStringToSet(','))
 				{
-					img2 = (image = SpecialIcons.GetImage(item));
+					image = (image = SpecialIcons.GetImage(item));
 					if (image != null)
-					{
-						yield return img2;
-					}
+						yield return image;
 				}
 			}
 			if (SeriesComplete == YesNo.Yes)
 			{
-				img2 = (image = SpecialIcons.GetImage("SeriesComplete"));
+				image = SpecialIcons.GetImage("SeriesComplete");
 				if (image != null)
-				{
-					yield return img2;
-				}
+					yield return image;
 			}
 			if (BlackAndWhite == YesNo.Yes)
 			{
-				img2 = (image = SpecialIcons.GetImage("BlackAndWhite"));
+				image = SpecialIcons.GetImage("BlackAndWhite");
 				if (image != null)
-				{
-					yield return img2;
-				}
+					yield return image;
 			}
 			if (Manga == MangaYesNo.Yes)
 			{
-				img2 = (image = SpecialIcons.GetImage("Manga"));
+				image = SpecialIcons.GetImage("Manga");
 				if (image != null)
-				{
-					yield return img2;
-				}
+					yield return image;
 			}
 			if (Manga == MangaYesNo.YesAndRightToLeft)
 			{
-				img2 = (image = SpecialIcons.GetImage("MangaRightToLeft"));
+				image = SpecialIcons.GetImage("MangaRightToLeft");
 				if (image != null)
-				{
-					yield return img2;
-				}
+					yield return image;
+			}
+			foreach (var image2 in GetGenericImages())
+			{
+				if (image2 != null)
+					yield return image2;
 			}
 		}
 
 		public IEnumerable<Image> GetIcons()
 		{
 			return GetIconsInternal();
+		}
+
+		private IEnumerable<Image> GetGenericImages()
+		{
+			var properties = GetWritableStringProperties();
+			foreach (var imagePackage in GenericIcons)
+			{
+				string keyValue = properties.Contains(imagePackage.Key) ? GetStringPropertyValue(imagePackage.Key)?.Trim() : GetCustomValue(imagePackage.Key)?.Trim();
+				if (!string.IsNullOrEmpty(keyValue))
+				{
+					var propertiesValues = keyValue.FromListString(',');
+					foreach (var propertiesValue in propertiesValues)
+					{
+						Image image = imagePackage.Value.GetImage(propertiesValue);
+						if (image != null)
+							yield return image;
+					} 
+				}
+			}
 		}
 
 		public void CopyFrom(ComicBook cb)
@@ -1929,7 +2018,7 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 			try
 			{
-				return ExtendedStringFormater.Format(textFormat, delegate(string s)
+                return ExtendedStringFormater.Format(textFormat, delegate(string s)
 				{
 					try
 					{
@@ -1984,7 +2073,9 @@ namespace cYo.Projects.ComicRack.Engine
 			OpenedTime = DateTime.Now;
 			if (base.PageCount > 0)
 			{
-				int num3 = (CurrentPage = (LastPageRead = base.PageCount - 1));
+				//HACK: When marking as read a book with only 1 page, set it to 1 (Page 2)
+				int currentPage = base.PageCount == 1 ? 1 : base.PageCount - 1;
+				CurrentPage = LastPageRead = currentPage;
 			}
 		}
 
@@ -2003,7 +2094,7 @@ namespace cYo.Projects.ComicRack.Engine
 			if (searchableProperties == null)
 			{
 				searchableProperties = new HashSet<string>(from pi in GetType().GetProperties().Where(SearchableAttribute.IsSearchable)
-					select pi.Name);
+														   select pi.Name);
 			}
 			return searchableProperties.Contains(propName);
 		}
@@ -2048,7 +2139,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public string FormatString(string format)
 		{
-			return rxField.Replace(format, delegate(Match m)
+			return rxField.Replace(format, delegate (Match m)
 			{
 				try
 				{
@@ -2125,16 +2216,16 @@ namespace cYo.Projects.ComicRack.Engine
 				ComicBookNavigator comicBookNavigator = new ComicBookNavigator(this);
 				switch (base.Manga)
 				{
-				case MangaYesNo.Unknown:
-					comicBookNavigator.RightToLeftReading = YesNo.Unknown;
-					break;
-				case MangaYesNo.No:
-				case MangaYesNo.Yes:
-					comicBookNavigator.RightToLeftReading = YesNo.No;
-					break;
-				case MangaYesNo.YesAndRightToLeft:
-					comicBookNavigator.RightToLeftReading = YesNo.Yes;
-					break;
+					case MangaYesNo.Unknown:
+						comicBookNavigator.RightToLeftReading = YesNo.Unknown;
+						break;
+					case MangaYesNo.No:
+					case MangaYesNo.Yes:
+						comicBookNavigator.RightToLeftReading = YesNo.No;
+						break;
+					case MangaYesNo.YesAndRightToLeft:
+						comicBookNavigator.RightToLeftReading = YesNo.Yes;
+						break;
 				}
 				return comicBookNavigator;
 			}
@@ -2200,7 +2291,7 @@ namespace cYo.Projects.ComicRack.Engine
 			comicBook.Id = Guid.NewGuid();
 			DataObject dataObject = new DataObject();
 			dataObject.SetData(DataFormats.UnicodeText, GetInfo().ToXml());
-			dataObject.SetData("ComicBook", comicBook);
+			dataObject.SetData(ClipboardFormat, comicBook);
 			Clipboard.SetDataObject(dataObject);
 		}
 
@@ -2238,7 +2329,7 @@ namespace cYo.Projects.ComicRack.Engine
 					}
 					if (ps != null)
 					{
-						imageProvider.ImageReady += delegate(object s, ImageIndexReadyEventArgs e)
+						imageProvider.ImageReady += delegate (object s, ImageIndexReadyEventArgs e)
 						{
 							ps.ProgressAvailable = base.PageCount > 0;
 							if (ps.ProgressAvailable)
@@ -2258,6 +2349,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public bool WriteInfoToFile(bool withRefreshFileProperties = true)
 		{
+			bool success = false;
 			if (!EditMode.IsLocalComic())
 			{
 				return false;
@@ -2274,14 +2366,14 @@ namespace cYo.Projects.ComicRack.Engine
 				{
 					return false;
 				}
-				infoStorage.StoreInfo(GetInfo());
+				success = infoStorage.StoreInfo(GetInfo());
 				FileInfoRetrieved = true;
 			}
 			if (withRefreshFileProperties)
 			{
 				RefreshFileProperties();
 			}
-			return true;
+			return success;
 		}
 
 		public void ResetInfoRetrieved()
@@ -2302,7 +2394,7 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				return;
 			}
-			bool flag = FileModifiedTime != d;
+			bool dateIsModified = FileModifiedTime != d;
 			try
 			{
 				IsDynamicSource = Providers.Readers.GetSourceProviderInfo(FilePath).Formats.All((FileFormat f) => f.Dynamic);
@@ -2311,10 +2403,18 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				IsDynamicSource = false;
 			}
-			if (!(!FileInfoRetrieved || flag) && (options & RefreshInfoOptions.ForceRefresh) == 0 && ((options & (RefreshInfoOptions.GetFastPageCount | RefreshInfoOptions.GetPageCount)) == 0 || base.PageCount != 0))
-			{
+
+			bool fileInfoIsUpToDate = FileInfoRetrieved && !dateIsModified; //file info has been retrieved and file date has not been modified
+			bool noForceRefresh = options.IsNotSet(RefreshInfoOptions.ForceRefresh); // no force refresh option is requested
+			bool pageCountAlreadyAvailable = options.IsNotSet(RefreshInfoOptions.GetFastPageCount | RefreshInfoOptions.GetPageCount, all: false) || base.PageCount != 0; // page count is already available or the options GetPageCount & GetFastPageCount are not requested // all: false means that if either are set (any) it will return true, without it only does so when both are not set
+
+			// Continue refreshing if:
+			// - File info has not been retrieved OR has been modified
+			// - OR ForceRefresh option is set
+			// - OR PageCount is 0 AND a page count option is requested
+			if (fileInfoIsUpToDate && noForceRefresh && pageCountAlreadyAvailable)
 				return;
-			}
+
 			using (ImageProvider imageProvider = CreateImageProvider())
 			{
 				IInfoStorage infoStorage = imageProvider as IInfoStorage;
@@ -2322,11 +2422,26 @@ namespace cYo.Projects.ComicRack.Engine
 				{
 					return;
 				}
-				if (!ComicInfoIsDirty)
+				bool forceRefreshInfo = options.HasFlag(RefreshInfoOptions.ForceRefresh);
+				if (forceRefreshInfo || !ComicInfoIsDirty)
 				{
-					SetInfo(infoStorage.LoadInfo((flag || !FileInfoRetrieved) ? InfoLoadingMethod.Complete : InfoLoadingMethod.Fast));
+					SetInfo(infoStorage.LoadInfo((dateIsModified || !FileInfoRetrieved) ? InfoLoadingMethod.Complete : InfoLoadingMethod.Fast), !forceRefreshInfo);
+					if (forceRefreshInfo)
+						ComicInfoIsDirty = false;
 				}
-				if (!imageProvider.IsSlow && (base.PageCount == 0 || num != FileSize) && (((options & RefreshInfoOptions.GetFastPageCount) != 0 && (imageProvider.Capabilities & ImageProviderCapabilities.FastPageInfo) != 0) || (options & RefreshInfoOptions.GetPageCount) != 0))
+
+				// Refresh page count info if:
+				// - The image provider is fast (not slow),
+				// - Either the current page count is unknown or the file size has changed,
+				// - And either:
+				//     - Fast page count is requested and supported by the image provider, or
+				//     - A full page count is explicitly requested
+				bool needsPageCountRefresh = base.PageCount == 0 || num != FileSize;
+				bool wantsFastPageCount = options.HasFlag(RefreshInfoOptions.GetFastPageCount);
+				bool canUseFastPageCount = imageProvider.Capabilities.HasFlag(ImageProviderCapabilities.FastPageInfo);
+				bool wantsFullPageCount = options.HasFlag(RefreshInfoOptions.GetPageCount);
+
+				if (!imageProvider.IsSlow && needsPageCountRefresh && ((wantsFastPageCount && canUseFastPageCount) || wantsFullPageCount))
 				{
 					try
 					{
@@ -2394,22 +2509,22 @@ namespace cYo.Projects.ComicRack.Engine
 		private bool SetProperty<T>(string name, ref T property, T value, bool lockItem = false, bool addUndo = true)
 		{
 			if (object.Equals(property, value))
-			{
 				return false;
-			}
+
+			if (CheckMultilineEquality(property, value))
+				return false;
+
 			T val = property;
 			using (lockItem ? ItemMonitor.Lock(this) : null)
 			{
 				property = value;
 			}
+
 			if (addUndo)
-			{
 				FireBookChanged(name, val, value);
-			}
 			else
-			{
 				FireBookChanged(name);
-			}
+
 			return true;
 		}
 
@@ -2466,6 +2581,7 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				compareAlternateNumber = null;
 			}
+			ClearVirtualTagsCache();
 		}
 
 		public override void SetInfo(ComicInfo ci, bool onlyUpdateEmpty = true, bool updatePages = true)
@@ -2560,34 +2676,34 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				try
 				{
-					return ExtendedStringFormater.Format(textFormat, delegate(string s)
+					return ExtendedStringFormater.Format(textFormat, delegate (string s)
 					{
 						switch (s)
 						{
-						case "filename":
-							return fileName;
-						case "series":
-							return series;
-						case "title":
-							return title;
-						case "volume":
-							return volumeText;
-						case "number":
-							return numberText;
-						case "year":
-							return yearText;
-						case "month":
-							return monthText;
-						case "day":
-							return dayText;
-						case "format":
-							if (!series.Contains(format, StringComparison.OrdinalIgnoreCase))
-							{
-								return format;
-							}
-							return string.Empty;
-						default:
-							return null;
+							case "filename":
+								return fileName;
+							case "series":
+								return series;
+							case "title":
+								return title;
+							case "volume":
+								return volumeText;
+							case "number":
+								return numberText;
+							case "year":
+								return yearText;
+							case "month":
+								return monthText;
+							case "day":
+								return dayText;
+							case "format":
+								if (!series.Contains(format, StringComparison.OrdinalIgnoreCase))
+								{
+									return format;
+								}
+								return string.Empty;
+							default:
+								return null;
 						}
 					}).Trim();
 				}
@@ -2598,15 +2714,23 @@ namespace cYo.Projects.ComicRack.Engine
 			return fileName ?? string.Empty;
 		}
 
-		private static void AppendString(StringBuilder s, string delimiter, string text)
+		private static void AppendUniqueName(StringBuilder s, string delimiter, string text, HashSet<string> uniqueNames)
 		{
 			if (!string.IsNullOrEmpty(text))
 			{
-				if (s.Length != 0)
+				var names = text.Split(',', StringSplitOptions.RemoveEmptyEntries);
+				foreach (var name in names)
 				{
-					s.Append(delimiter);
+					var trimmedName = name.Trim();
+					if (!string.IsNullOrEmpty(trimmedName) && uniqueNames.Add(trimmedName))
+					{
+						if (s.Length != 0)
+						{
+							s.Append(delimiter);
+						}
+						s.Append(trimmedName);
+					}
 				}
-				s.Append(text);
 			}
 		}
 
@@ -2622,16 +2746,16 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 			switch (dateFormat)
 			{
-			default:
-				if (!date.IsDateOnly())
-				{
-					return date.ToString();
-				}
-				return date.ToShortDateString();
-			case ComicDateFormat.Short:
-				return date.ToShortDateString();
-			case ComicDateFormat.Relative:
-				return date.ToRelativeDateString(DateTime.Now);
+				default:
+					if (!date.IsDateOnly())
+					{
+						return date.ToString();
+					}
+					return date.ToShortDateString();
+				case ComicDateFormat.Short:
+					return date.ToShortDateString();
+				case ComicDateFormat.Relative:
+					return date.ToRelativeDateString(DateTime.Now);
 			}
 		}
 
@@ -2675,8 +2799,8 @@ namespace cYo.Projects.ComicRack.Engine
 		public static IEnumerable<string> GetProperties(bool onlyWritable, Type t = null)
 		{
 			return from pi in typeof(ComicBook).GetProperties(BindingFlags.Instance | BindingFlags.Public)
-				where pi.CanRead && (pi.CanWrite || !onlyWritable) && (t == null || pi.PropertyType == t) && pi.Browsable(forced: true)
-				select pi.Name;
+				   where pi.CanRead && (pi.CanWrite || !onlyWritable) && (t == null || pi.PropertyType == t) && pi.Browsable(forced: true)
+				   select pi.Name;
 		}
 
 		public static IEnumerable<string> GetWritableStringProperties()
@@ -2701,18 +2825,18 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				switch (text)
 				{
-				case "series":
-				case "title":
-				case "format":
-				case "count":
-				case "year":
-				case "number":
-				case "yearastext":
-				case "numberastext":
-				case "volumeastext":
-				case "countastext":
-					newName = ((cvt == ComicValueType.Proposed) ? "Proposed" : "Shadow") + propName;
-					return true;
+					case "series":
+					case "title":
+					case "format":
+					case "count":
+					case "year":
+					case "number":
+					case "yearastext":
+					case "numberastext":
+					case "volumeastext":
+					case "countastext":
+						newName = ((cvt == ComicValueType.Proposed) ? "Proposed" : "Shadow") + propName;
+						return true;
 				}
 			}
 			newName = propName;

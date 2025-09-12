@@ -36,14 +36,14 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public string Description => description ?? (description = ComicBookMatcher.TRMatcher[GetType().Name, DescriptionNeutral]);
 
-		public string DescriptionNeutral
+		public virtual string DescriptionNeutral
 		{
 			get
 			{
 				if (descriptionNeutral == null)
 				{
-					DescriptionAttribute descriptionAttribute = (DescriptionAttribute)Attribute.GetCustomAttribute(GetType(), typeof(DescriptionAttribute));
-					descriptionNeutral = descriptionAttribute.Description ?? string.Empty;
+                    DescriptionAttribute descriptionAttribute = (DescriptionAttribute)Attribute.GetCustomAttribute(GetType(), typeof(DescriptionAttribute));
+                    descriptionNeutral = descriptionAttribute.Description ?? string.Empty;
 				}
 				return descriptionNeutral;
 			}

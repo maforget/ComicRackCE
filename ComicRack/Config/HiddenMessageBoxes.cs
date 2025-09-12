@@ -14,6 +14,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		CloseExternalReader = 0x20,
 		ComicRackMinimized = 0x40,
 		AskDirtyItems = 0x80,
-		AskClearData = 0x100
+		AskClearData = 0x100,
+		DoNotCheckForUpdate = 0x200
 	}
 }

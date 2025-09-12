@@ -60,7 +60,7 @@ namespace cYo.Common.Windows
 					return;
 				}
 				int num = 0;
-				string[] array = value.Split("|".ToCharArray(), 4);
+				string[] array = value.Split("|".ToCharArray(), NumberOfKeys);
 				foreach (string value2 in array)
 				{
 					CommandKey commandKey = CommandKey.None;

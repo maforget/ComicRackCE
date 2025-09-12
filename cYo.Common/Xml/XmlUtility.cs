@@ -149,7 +149,7 @@ namespace cYo.Common.Xml
 
 		public static object Load(string file, Type dataType, bool compressed)
 		{
-			using (Stream s = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read, 131072))
+			using (Stream s = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read, BufferSize))
 			{
 				return Load(s, dataType, compressed);
 			}

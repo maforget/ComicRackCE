@@ -753,6 +753,11 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			Forced
 		}
 
+		private static class Native
+		{
+			public const int WM_MOUSEHWHEEL = 0x020E;
+		}
+
 		public const float MinimumZoom = 1f;
 
 		public const float MaximumZoom = 8f;
@@ -1882,7 +1887,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			{
 				location = PointToClient(Cursor.Position);
 			}
-			DoZoom(ClientToImage(location), zoom.Clamp(1f, 8f));
+			DoZoom(ClientToImage(location), zoom.Clamp(MinimumZoom, MaximumZoom));
 		}
 
 		private void ScrollToPart(ImagePartInfo ipi)
@@ -1935,7 +1940,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		private void DoZoom(Point center, float zoom)
 		{
-			if (zoom < 1f || zoom > 8f)
+			if (zoom < MinimumZoom || zoom > MaximumZoom)
 			{
 				throw new ArgumentOutOfRangeException("value", "zoom value is out of range");
 			}
@@ -2210,10 +2215,11 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			}
 		}
 
+		// Handles the mouse wheel messages, specifically for horizontal scrolling.
 		protected override void DefWndProc(ref Message m)
 		{
 			int msg = m.Msg;
-			if (msg == 526)
+			if (msg == Native.WM_MOUSEHWHEEL)
 			{
 				try
 				{
@@ -2317,7 +2323,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			}
 			if (e.Button == MouseButtons.Middle)
 			{
-				DoZoom(ClientToImage(clickPoint), (orgZoom + (float)(e.Location.Y - clickPoint.Y) / 100f).Clamp(1f, 8f));
+				DoZoom(ClientToImage(clickPoint), (orgZoom + (float)(e.Location.Y - clickPoint.Y) / 100f).Clamp(MinimumZoom, MaximumZoom));
 				MouseActionHappened = true;
 			}
 			UpdateCursorAutoHide();
@@ -2473,7 +2479,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 				zoomOffset = (float)e.ZoomFactor - 1f;
 			}
 			float value = (float)(e.ZoomFactor - (double)zoomOffset) * gestureZoomStart;
-			DoZoom(ClientToImage(GestureLocation), value.Clamp(1f, 8f));
+			DoZoom(ClientToImage(GestureLocation), value.Clamp(MinimumZoom, MaximumZoom));
 		}
 
 		private void gestureHandler_PanBegin(object sender, Windows7.Multitouch.GestureEventArgs e)

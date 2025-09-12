@@ -179,9 +179,9 @@ namespace cYo.Common.Win32
 				virtualFiles.Remove(virtualFileItem);
 			}
 			virtualFiles.Add(vfi);
-			SetData("FileGroupDescriptorW", null);
-			SetData("FileContents", null);
-			SetData("Performed DropEffect", null);
+			SetData(NativeMethods.CFSTR_FILEDESCRIPTORW, null);
+			SetData(NativeMethods.CFSTR_FILECONTENTS, null);
+			SetData(NativeMethods.CFSTR_PERFORMEDDROPEFFECT, null);
 		}
 
 		public void SetFile(string fileName, Action<Stream> handler)
@@ -198,14 +198,14 @@ namespace cYo.Common.Win32
 		{
 			switch (format)
 			{
-			case "FileGroupDescriptorW":
+			case NativeMethods.CFSTR_FILEDESCRIPTORW:
 				if (virtualFiles != null)
 				{
-					base.SetData("FileGroupDescriptorW", GetVirtualFilesDescriptor(virtualFiles));
+					base.SetData(NativeMethods.CFSTR_FILEDESCRIPTORW, GetVirtualFilesDescriptor(virtualFiles));
 				}
 				break;
-			case "FileContents":
-				base.SetData("FileContents", GetFileContents(currentVirtualFileItem));
+			case NativeMethods.CFSTR_FILECONTENTS:
+				base.SetData(NativeMethods.CFSTR_FILECONTENTS, GetFileContents(currentVirtualFileItem));
 				break;
 			}
 			return base.GetData(format, autoConvert);
@@ -216,9 +216,9 @@ namespace cYo.Common.Win32
 		{
 			if (!GetTymedUseable(formatetc.tymed))
 			{
-				Marshal.ThrowExceptionForHR(-2147221399);
+				Marshal.ThrowExceptionForHR(NativeMethods.DV_E_TYMED);
 			}
-			if (formatetc.cfFormat == (short)DataFormats.GetFormat("FileContents").Id)
+			if (formatetc.cfFormat == (short)DataFormats.GetFormat(NativeMethods.CFSTR_FILECONTENTS).Id)
 			{
 				try
 				{
@@ -233,7 +233,7 @@ namespace cYo.Common.Win32
 			if ((formatetc.tymed & TYMED.TYMED_HGLOBAL) != 0)
 			{
 				medium.tymed = TYMED.TYMED_HGLOBAL;
-				medium.unionmember = NativeMethods.GlobalAlloc(8258, 1);
+				medium.unionmember = NativeMethods.GlobalAlloc(NativeMethods.GMEM_MOVEABLE | NativeMethods.GMEM_ZEROINIT | NativeMethods.GMEM_DDESHARE, 1);
 				if (medium.unionmember == IntPtr.Zero)
 				{
 					throw new OutOfMemoryException();

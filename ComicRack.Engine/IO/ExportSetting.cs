@@ -91,6 +91,13 @@ namespace cYo.Projects.ComicRack.Engine.IO
 			set;
 		}
 
+		[DefaultValue(null)]
+		public string TagsToAppend
+		{
+			get;
+			set;
+		}
+
 		[DefaultValue(ExportImageProcessingSource.Custom)]
 		public ExportImageProcessingSource ImageProcessingSource
 		{

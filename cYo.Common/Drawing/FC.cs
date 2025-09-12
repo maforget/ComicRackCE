@@ -99,7 +99,7 @@ namespace cYo.Common.Drawing
 				value = new FontItem(font, fontKeyList.AddFirst(fontKey));
 				fontCache.Add(fontKey, value);
 			}
-			while (fontKeyList.Count > 100)
+			while (fontKeyList.Count > MaxSize)
 			{
 				FontKey value2 = fontKeyList.Last.Value;
 				fontKeyList.RemoveLast();

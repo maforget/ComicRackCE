@@ -339,6 +339,8 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /Reference
-/cYo.Common/CurrentCommit.txt
-/cYo.Common/isDirty.txt
-/cYo.Common/Tags.txt
+*/CurrentCommit.txt
+*/isDirty.txt
+*/Tags.txt
+/ComicRack/Properties/launchSettings.json
+/ComicRackCESetup*.exe

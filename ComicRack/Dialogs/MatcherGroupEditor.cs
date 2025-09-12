@@ -76,7 +76,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			ToolStripMenuItem toolStripMenuItem = miDelete;
 			bool enabled = (miCut.Enabled = matchers.Count > 1);
 			toolStripMenuItem.Enabled = enabled;
-			miPaste.Enabled = Clipboard.ContainsData("ComicBookMatcher");
+			miPaste.Enabled = Clipboard.ContainsData(ComicBookMatcher.ClipboardFormat);
 			miMoveDown.Enabled = matchers.IndexOf(currentComicBookMatcher) < matchers.Count - 1;
 			miMoveUp.Enabled = matchers.IndexOf(currentComicBookMatcher) > 0;
 		}
@@ -240,18 +240,18 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		public void CopyClipboard()
 		{
-			Clipboard.SetData("ComicBookMatcher", currentComicBookMatcher);
+			Clipboard.SetData(ComicBookMatcher.ClipboardFormat, currentComicBookMatcher);
 		}
 
 		public void CutClipboard()
 		{
-			Clipboard.SetData("ComicBookMatcher", currentComicBookMatcher);
+			Clipboard.SetData(ComicBookMatcher.ClipboardFormat, currentComicBookMatcher);
 			matchers.Remove(currentComicBookMatcher);
 		}
 
 		public void PasteClipboard()
 		{
-			ComicBookMatcher comicBookMatcher = Clipboard.GetData("ComicBookMatcher") as ComicBookMatcher;
+			ComicBookMatcher comicBookMatcher = Clipboard.GetData(ComicBookMatcher.ClipboardFormat) as ComicBookMatcher;
 			if (comicBookMatcher != null && (!(comicBookMatcher is ComicBookGroupMatcher) || level <= 5))
 			{
 				matchers.Insert(matchers.IndexOf(currentComicBookMatcher) + 1, comicBookMatcher);

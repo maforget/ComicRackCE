@@ -41,6 +41,7 @@ using cYo.Projects.ComicRack.Viewer.Config;
 using cYo.Projects.ComicRack.Viewer.Dialogs;
 using cYo.Projects.ComicRack.Viewer.Properties;
 using Microsoft.Win32;
+using static IronPython.Modules._ast;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
 
 namespace cYo.Projects.ComicRack.Viewer
@@ -88,15 +89,15 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public const int MaxRowHeight = 48;
 
-		public const string DefaultWiki = "https://web.archive.org/web/20161013095840/http://comicrack.cyolito.com:80/documentation/wiki";
+		public const string DefaultWiki = "https://web.archive.org/web/20161013095840fw_/http://comicrack.cyolito.com:80/documentation/wiki";
 
 		public const string DefaultWebSite = "https://github.com/maforget/ComicRackCE";
 
-		public const string DefaultNewsFeed = "http://feeds.feedburner.com/ComicRackNews";
+        public const string DefaultNewsFeed = "https://github.com/maforget/ComicRackCE/commits/master.atom";
 
-		public const string DefaultUserForm = "https://github.com/maforget/ComicRackCE/discussions";
+        public const string DefaultUserForm = "https://github.com/maforget/ComicRackCE/discussions";
 
-		public const string DefaultLocalizePage = "https://web.archive.org/web/20170528182733/http://comicrack.cyolito.com/faqs/12-how-to-create-language-packs";
+		public const string DefaultLocalizePage = "https://web.archive.org/web/20170528182733fw_/http://comicrack.cyolito.com/faqs/12-how-to-create-language-packs";
 
 		public const string ComicRackTypeId = "cYo.ComicRack";
 
@@ -134,7 +135,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private static Splash splash;
 
-		private static readonly Regex yearRegex = new Regex("\\((?<start>\\d{4})-(?<end>\\d{4})\\)", RegexOptions.Compiled);
+		private static readonly Regex dateRangeRegex = new Regex(@"\((?<startYear>\d{4})(?:_(?<startMonth>\d{2}))?-(?<endYear>\d{4})(?:_(?<endMonth>\d{2}))?\)", RegexOptions.Compiled);
 
 		public static ExtendedSettings ExtendedSettings
 		{
@@ -365,7 +366,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 			switch (QuestionDialog.AskQuestion(parent, question, okButton, askAgainText, null, showCancel: true, cancelButton))
 			{
-			case QuestionResult.Cancel:
+			case var type when type.HasFlag(QuestionResult.Cancel):
 				return false;
 			case QuestionResult.OkWithOption:
 				Settings.HiddenMessageBoxes |= hmb;
@@ -443,14 +444,14 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public static string[] LoadDefaultBackgroundTextures()
 		{
-			return (from s in FileUtility.GetFiles(IniFile.GetDefaultLocations("Resources\\Textures\\Backgrounds"), SearchOption.AllDirectories, ".jpg", ".gif", ".png")
+			return (from s in FileUtility.GetFiles(IniFile.GetDefaultLocations(DefaultBackgroundTexturesPath), SearchOption.AllDirectories, ".jpg", ".gif", ".png")
 				orderby s
 				select s).ToArray();
 		}
 
 		public static string[] LoadDefaultPaperTextures()
 		{
-			return (from s in FileUtility.GetFiles(IniFile.GetDefaultLocations("Resources\\Textures\\Papers"), SearchOption.AllDirectories, ".jpg", ".gif", ".png")
+			return (from s in FileUtility.GetFiles(IniFile.GetDefaultLocations(DefaultPaperTexturesPath), SearchOption.AllDirectories, ".jpg", ".gif", ".png")
 				orderby s
 				select s).ToArray();
 		}
@@ -531,21 +532,18 @@ namespace cYo.Projects.ComicRack.Viewer
 		public static bool ShowExplorer(string path)
 		{
 			if (string.IsNullOrEmpty(path))
-			{
 				return false;
-			}
+
 			try
 			{
-				if (File.Exists(path))
-				{
-					Process.Start("explorer.exe", $"/n,/select,\"{path}\"");
-					return true;
-				}
-				if (Directory.Exists(path))
-				{
-					Process.Start("explorer.exe", $"\"{path}\"");
-					return true;
-				}
+				if (File.Exists(path)) // Open explorer and select file
+					return FileExplorer.OpenFolderAndSelect(path, Program.ExtendedSettings.OpenExplorerUsingAPI);
+
+				if (Directory.Exists(path)) // Open explorer at directory if path is a directory
+					return FileExplorer.OpenFolder(path, Program.ExtendedSettings.OpenExplorerUsingAPI);
+
+				if (Path.GetDirectoryName(path) is string dir && Directory.Exists(dir)) //Open parent dir if file does not exist
+					return FileExplorer.OpenFolder(dir, Program.ExtendedSettings.OpenExplorerUsingAPI);
 			}
 			catch (Exception)
 			{
@@ -567,11 +565,11 @@ namespace cYo.Projects.ComicRack.Viewer
 					{
 						if (flag)
 						{
-							fileFormat.RegisterShell("cYo.ComicRack", "eComic", overwrite);
+							fileFormat.RegisterShell(Program.ComicRackTypeId, Program.ComicRackDocumentName, overwrite);
 						}
 						else
 						{
-							fileFormat.UnregisterShell("cYo.ComicRack");
+							fileFormat.UnregisterShell(Program.ComicRackTypeId);
 						}
 					}
 				}
@@ -734,8 +732,10 @@ namespace cYo.Projects.ComicRack.Viewer
 			Settings = Settings.Load(defaultSettingsFile);
 			Settings.RunCount++;
 			CommandLineParser.Parse(ImageDisplayControl.HardwareSettings);
+			CommandLineParser.Parse(EngineConfiguration.Default);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
+			ShellFile.DeleteAPI = ExtendedSettings.DeleteAPI;
 			DatabaseManager.FirstDatabaseAccess += delegate
 			{
 				StartupProgress(TR.Messages["OpenDatabase", "Opening Database"], -1);
@@ -788,7 +788,7 @@ namespace cYo.Projects.ComicRack.Viewer
 					InitializeDatabase(0, null);
 				});
 			}
-			if (Settings.ShowSplash)
+			if (!ExtendedSettings.StartHidden && Settings.ShowSplash)
 			{
 				ManualResetEvent mre = new ManualResetEvent(initialState: false);
 				ThreadUtility.RunInBackground("Splash Thread", delegate
@@ -819,11 +819,12 @@ namespace cYo.Projects.ComicRack.Viewer
 					InitializeDatabase(0, text2);
 				}
 				StartupProgress(TR.Messages["LoadCustomSettings", "Loading custom settings"], 20);
-				IEnumerable<string> defaultLocations = IniFile.GetDefaultLocations("Resources\\Icons");
-				ComicBook.PublisherIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Publishers*.zip"), SplitIconKeysWithYear);
+				IEnumerable<string> defaultLocations = IniFile.GetDefaultLocations(DefaultIconPackagesPath);
+				ComicBook.PublisherIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Publishers*.zip"), SplitIconKeysWithYearAndMonth);
 				ComicBook.AgeRatingIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "AgeRatings*.zip"), SplitIconKeys);
 				ComicBook.FormatIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Formats*.zip"), SplitIconKeys);
 				ComicBook.SpecialIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Special*.zip"), SplitIconKeys);
+				ComicBook.GenericIcons = CreateGenericsIcons(defaultLocations, "*.zip", "_", SplitIconKeys);
 				ToolStripRenderer renderer;
 				if (ExtendedSettings.SystemToolBars)
 				{
@@ -851,7 +852,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				{
 					ImageDisplayControl.HardwareSettings.MipMapping = false;
 				}
-				Lists = new DefaultLists(() => Database.Books, IniFile.GetDefaultLocations("DefaultLists.txt"));
+				Lists = new DefaultLists(() => Database.Books, IniFile.GetDefaultLocations(DefaultListsFile));
 				StartupProgress(TR.Messages["InitCache", "Initialize Disk Caches"], 30);
 				CacheManager = new CacheManager(DatabaseManager, Paths, Settings, Resources.ResourceManager);
 				QueueManager = new QueueManager(DatabaseManager, CacheManager, Settings, Settings.Devices);
@@ -870,6 +871,17 @@ namespace cYo.Projects.ComicRack.Viewer
 			if (News.Subscriptions.Count == 0)
 			{
 				News.Subscriptions.Add(new NewsStorage.Subscription(DefaultNewsFeed, "ComicRack News"));
+			}
+			else
+			{
+                //Because the default NewsFeeds.xml in the Data already as the old url inside it
+				var oldSub = News.Subscriptions.FirstOrDefault(x => x.Url != DefaultNewsFeed);
+                if (oldSub != null)
+				{
+					//Since the feeds doesn't match with the default url, we remove it, and add or new one.
+					News.Subscriptions.Remove(oldSub);
+                    News.Subscriptions.Add(new NewsStorage.Subscription(DefaultNewsFeed, "ComicRack News"));
+                }
 			}
 			StartupProgress(TR.Messages["CreateMainWindow", "Creating Main Window"], 50);
 			if (ExtendedSettings.DisableScriptOptimization)
@@ -890,7 +902,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			MainForm.FormClosing += (object s, FormClosingEventArgs e) =>
             {
                 bool flag2 = e.CloseReason == CloseReason.UserClosing;
-                foreach (Command command in ScriptUtility.GetCommands("Shutdown"))
+                foreach (Command command in ScriptUtility.GetCommands(PluginEngine.ScriptTypeShutdown))
                 {
                     try
                     {
@@ -932,30 +944,61 @@ namespace cYo.Projects.ComicRack.Viewer
 			Application.Run(MainForm);
 		}
 
+		public static Dictionary<string, ImagePackage> CreateGenericsIcons(IEnumerable<string> folders, string searchPattern, string trigger, Func<string, IEnumerable<string>> mapKeys = null)
+		{
+			Dictionary<string, ImagePackage> dictionary = new Dictionary<string, ImagePackage>();
+			foreach (var generic in ZipFileFolder.CreateDictionaryFromFiles(folders, searchPattern, trigger))
+			{
+				var icons = new ImagePackage { EnableWidthCropping = true };
+				icons.Add(generic.Value, mapKeys);
+				dictionary.Add(generic.Key, icons);
+			}
+			return dictionary;
+		}
+
 		private static IEnumerable<string> SplitIconKeys(string value)
 		{
 			return value.Split(',', '#');
 		}
 
-		private static IEnumerable<string> SplitIconKeysWithYear(string value)
-		{
-			foreach (string key in SplitIconKeys(value))
-			{
-				Match j = yearRegex.Match(key);
-				if (!j.Success)
-				{
-					yield return key;
-					continue;
-				}
-				int num = int.Parse(j.Groups["start"].Value);
-				int end = int.Parse(j.Groups["end"].Value);
-				string key2 = yearRegex.Replace(key, string.Empty);
-				for (int i = num; i <= end; i++)
-				{
-					yield return key2 + "(" + i + ")";
-				}
-			}
-		}
+        private static IEnumerable<string> SplitIconKeysWithYearAndMonth(string value)
+        {
+            foreach (string key in SplitIconKeys(value))
+            {
+                Match dateMatch = dateRangeRegex.Match(key);
+
+                if (!dateMatch.Success)
+                {
+                    yield return key;
+                    continue;
+                }
+
+				Group startYearGroup = dateMatch.Groups["startYear"];
+				Group endYearGroup = dateMatch.Groups["endYear"];
+				Group startMonthGroup = dateMatch.Groups["startMonth"];
+				Group endMonthGroup = dateMatch.Groups["endMonth"];
+				string baseKey = dateRangeRegex.Replace(key, string.Empty);
+
+				int startYear = int.Parse(startYearGroup.Value);
+				int endYear = int.Parse(endYearGroup.Value);
+				int startMonth = startMonthGroup.Success ? int.Parse(startMonthGroup.Value) : 1;
+                int endMonth = endMonthGroup.Success ? int.Parse(endMonthGroup.Value) : 12;
+
+                for (int year = startYear; year <= endYear; year++)
+                {
+					// Output the Year only for the files that don't have a month
+					yield return $"{baseKey}({year})";
+
+					int startMonthValue = (year == startYear) ? startMonth : 1;
+                    int endMonthValue = (year == endYear) ? endMonth : 12;
+
+                    for (int month = startMonthValue; month <= endMonthValue; month++)
+                    {
+						yield return $"{baseKey}({year}_{month:00})";
+					}
+                }
+            }
+        }
 
 		private static bool InitializeDatabase(int startPercent, string readDbMessage)
 		{
@@ -1072,7 +1115,8 @@ namespace cYo.Projects.ComicRack.Viewer
 				return 0;
 			}
 			TR.ResourceFolder = new PackedLocalize(TR.ResourceFolder);
-			Control.CheckForIllegalCrossThreadCalls = false;
+            NativeLibraryHelper.RegisterDirectory(); //Add the resources directory to the search path for natives dll's
+            Control.CheckForIllegalCrossThreadCalls = false;
 			ItemMonitor.CatchThreadInterruptException = true;
 			SingleInstance singleInstance = new SingleInstance("ComicRackSingleInstance", StartNew, StartLast);
 			singleInstance.Run(args);

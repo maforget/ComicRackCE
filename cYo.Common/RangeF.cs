@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace cYo.Common
 {
 	public struct RangeF
@@ -27,5 +29,16 @@ namespace cYo.Common
 			Start = start;
 			Length = length;
 		}
-	}
+
+        public static IEnumerable<float> ToEnumerable(float from, float to, float step = 1.0f)
+        {
+            if (step <= 0.0f) 
+				step = (step == 0.0f) ? 1.0f : -step;
+
+            if (from <= to)
+                for (float d = from; d <= to; d += step) yield return d;
+            else
+                for (float d = from; d >= to; d -= step) yield return d;
+        }
+    }
 }

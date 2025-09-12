@@ -33,6 +33,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 
 		private readonly ProcessingQueue<ImageKey> slowThumbnailQueue;
 
+		private readonly ProcessingQueue<ImageKey> slowThumbnailQueueUnlimited;
+
 		private readonly ProcessingQueue<ImageKey> slowPageQueue;
 
 		private readonly ProcessingQueue<ImageKey> fastPageQueue;
@@ -48,6 +50,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 		public ProcessingQueue<ImageKey> FastThumbnailQueue => fastThumbnailQueue;
 
 		public ProcessingQueue<ImageKey> SlowThumbnailQueue => slowThumbnailQueue;
+
+		public ProcessingQueue<ImageKey> SlowThumbnailQueueUnlimited => slowThumbnailQueueUnlimited;
 
 		public ProcessingQueue<ImageKey> SlowPageQueue => slowPageQueue;
 
@@ -69,7 +73,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 		{
 			get
 			{
-				if (!slowPageQueue.IsActive && !slowThumbnailQueue.IsActive && !fastPageQueue.IsActive)
+				if (!slowPageQueue.IsActive && !slowThumbnailQueue.IsActive && !slowThumbnailQueueUnlimited.IsActive && !fastPageQueue.IsActive)
 				{
 					return fastThumbnailQueue.IsActive;
 				}
@@ -105,7 +109,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 		public event EventHandler<CacheItemEventArgs<ImageKey, ThumbnailImage>> ThumbnailCached;
 
 		public ImagePool()
-			: this(20, 5242880L, 5)
+			: this(DefaultThumbCount, DefaultThumbSize, DefaultPageCount)
 		{
 		}
 
@@ -118,14 +122,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 			slowPageQueue = new ProcessingQueue<ImageKey>(threadCount, "Background Slow Page Queue", ThreadPriority.BelowNormal, pageCount * 2);
 			fastThumbnailQueue = new ProcessingQueue<ImageKey>("Background Fast Thumbnails Queue", ThreadPriority.Lowest, 256);
 			slowThumbnailQueue = new ProcessingQueue<ImageKey>(threadCount, "Background Slow Thumbnails Queue", ThreadPriority.Lowest, 256);
+			slowThumbnailQueueUnlimited = new ProcessingQueue<ImageKey>(threadCount, "Background Slow Thumbnails Unlimited Queue", ThreadPriority.Lowest, int.MaxValue);
 			pages.MemoryCache.ItemAdded += MemoryPageCacheItemAdded;
 			thumbs.MemoryCache.ItemAdded += MemoryThumbnailCacheItemAdded;
-			slowThumbnailQueue.DefaultProcessingQueueAddMode = (fastThumbnailQueue.DefaultProcessingQueueAddMode = (slowPageQueue.DefaultProcessingQueueAddMode = (fastPageQueue.DefaultProcessingQueueAddMode = ProcessingQueueAddMode.AddToTop)));
+			slowThumbnailQueue.DefaultProcessingQueueAddMode = slowThumbnailQueueUnlimited.DefaultProcessingQueueAddMode = (fastThumbnailQueue.DefaultProcessingQueueAddMode = (slowPageQueue.DefaultProcessingQueueAddMode = (fastPageQueue.DefaultProcessingQueueAddMode = ProcessingQueueAddMode.AddToTop)));
 		}
 
 		public bool AreImagesPending(string filePath)
 		{
-			if (!slowPageQueue.PendingItems.Any((ImageKey key) => key.Location == filePath) && !fastPageQueue.PendingItems.Any((ImageKey key) => key.Location == filePath) && !fastThumbnailQueue.PendingItems.Any((ImageKey key) => key.Location == filePath))
+			if (!slowPageQueue.PendingItems.Any((ImageKey key) => key.Location == filePath) && !fastPageQueue.PendingItems.Any((ImageKey key) => key.Location == filePath) && !fastThumbnailQueue.PendingItems.Any((ImageKey key) => key.Location == filePath) && !slowThumbnailQueueUnlimited.PendingItems.Any((ImageKey key) => key.Location == filePath))
 			{
 				return slowThumbnailQueue.PendingItems.Any((ImageKey key) => key.Location == filePath);
 			}
@@ -482,7 +487,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 			}
 			return thumbs.MemoryCache.LockItem(key, delegate
 			{
-				using (Bitmap image = CreateErrorThumbnail(512))
+				using (Bitmap image = CreateErrorThumbnail(ThumbnailImage.MaxHeight))
 				{
 					return ThumbnailImage.CreateFrom(image, Size.Empty);
 				}
@@ -513,12 +518,34 @@ namespace cYo.Projects.ComicRack.Engine.IO.Cache
 			}
 		}
 
+		public void GenerateFrontCoverThumbnail(ComicBook cb)
+		{
+			if (cb == null)
+				return;
+
+			ThumbnailKey key = cb.GetFrontCoverThumbnailKey();
+			slowThumbnailQueueUnlimited.AddItem(key, null, delegate
+			{
+				if (thumbs.DiskCache.IsAvailable(key))
+					return;
+
+				try
+				{
+					GetThumbnail(key, cb).SafeDispose();
+				}
+				catch
+				{
+				}
+			});
+		}
+
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
 				fastThumbnailQueue.Dispose();
 				slowThumbnailQueue.Dispose();
+				slowThumbnailQueueUnlimited.Dispose();
 				fastPageQueue.Dispose();
 				slowPageQueue.Dispose();
 				thumbs.Dispose();

@@ -40,14 +40,14 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             // tbWidth
             // 
             this.tbWidth.Location = new System.Drawing.Point(6, 19);
-            this.tbWidth.Maximum = 512;
+            this.tbWidth.Maximum = 1024;
             this.tbWidth.Minimum = 64;
             this.tbWidth.Name = "tbWidth";
             this.tbWidth.Size = new System.Drawing.Size(106, 17);
             this.tbWidth.TabIndex = 1;
             this.tbWidth.Text = "Width";
             this.tbWidth.ThumbSize = new System.Drawing.Size(6, 12);
-            this.tbWidth.TickFrequency = 32;
+            this.tbWidth.TickFrequency = 64;
             this.tbWidth.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
             this.tbWidth.Value = 64;
             this.tbWidth.Scroll += new System.EventHandler(this.ControlValuesChanged);
@@ -65,14 +65,14 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             // tbHeight
             // 
             this.tbHeight.Location = new System.Drawing.Point(118, 19);
-            this.tbHeight.Maximum = 512;
+            this.tbHeight.Maximum = 1024;
             this.tbHeight.Minimum = 64;
             this.tbHeight.Name = "tbHeight";
             this.tbHeight.Size = new System.Drawing.Size(106, 17);
             this.tbHeight.TabIndex = 3;
             this.tbHeight.Text = "Width";
             this.tbHeight.ThumbSize = new System.Drawing.Size(6, 12);
-            this.tbHeight.TickFrequency = 32;
+            this.tbHeight.TickFrequency = 64;
             this.tbHeight.TickStyle = System.Windows.Forms.TickStyle.BottomRight;
             this.tbHeight.Value = 64;
             this.tbHeight.Scroll += new System.EventHandler(this.ControlValuesChanged);

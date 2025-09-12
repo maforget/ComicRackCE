@@ -34,7 +34,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 		{
 			get
 			{
-				return GetThumbnail(512);
+				return GetThumbnail(MaxHeight);
 			}
 			set
 			{
@@ -149,7 +149,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 				return null;
 			}
 			ThumbnailImage thumbnailImage;
-			using (Image image2 = Scale(image, new Size(0, 512)))
+			using (Image image2 = Scale(image, new Size(0, MaxHeight)))
 			{
 				thumbnailImage = ((!supportTransparent) ? new ThumbnailImage(image2.ImageToJpegBytes(ThumbnailQuality), image2.Size, originalSize) : new ThumbnailImage(image2.ImageToBytes(ImageFormat.Png), image2.Size, originalSize));
 			}

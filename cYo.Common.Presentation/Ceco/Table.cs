@@ -132,8 +132,8 @@ namespace cYo.Common.Presentation.Ceco
 			int num4 = 0;
 			int num5 = 0;
 			int num6 = cellPadding + num2;
-			int[] array = new int[64];
-			Cell[,] array2 = new Cell[64, 64];
+			int[] array = new int[MaxTableSize];
+			Cell[,] array2 = new Cell[MaxTableSize, MaxTableSize];
 			foreach (Row inline in base.Inlines)
 			{
 				int i = 0;

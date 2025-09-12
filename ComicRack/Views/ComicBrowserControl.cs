@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -722,6 +724,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			itemView.Columns.Add(new ItemViewColumn(22, "Letterer", 80, new ComicListField("Letterer", "Letterer of the Book", "Letterer"), new CoverViewItemBookComparer<ComicBookLettererComparer>(), new CoverViewItemBookGrouper<ComicBookGroupLetterer>(), visible: false));
 			itemView.Columns.Add(new ItemViewColumn(23, "Cover Artist", 80, new ComicListField("CoverArtist", "The artist responsible for the cover", "CoverArtist"), new CoverViewItemBookComparer<ComicBookCoverArtistComparer>(), new CoverViewItemBookGrouper<ComicBookGroupCoverArtist>(), visible: false));
 			itemView.Columns.Add(new ItemViewColumn(24, "Editor", 80, new ComicListField("Editor", "Editor of the Book", "Editor"), new CoverViewItemBookComparer<ComicBookEditorComparer>(), new CoverViewItemBookGrouper<ComicBookGroupEditor>(), visible: false));
+			itemView.Columns.Add(new ItemViewColumn(72, "Translator", 80, new ComicListField("Translator", "Translator of the Book", "Translator"), new CoverViewItemBookComparer<ComicBookTranslatorComparer>(), new CoverViewItemBookGrouper<ComicBookGroupTranslator>(), visible: false));
 			itemView.Columns.Add(new ItemViewColumn(25, "File Size", 40, new ComicListField("FileSizeAsText", "Size of the Book file in bytes"), new CoverViewItemBookComparer<ComicBookSizeComparer>(), new CoverViewItemBookGrouper<ComicBookGroupSize>(), visible: false, StringAlignment.Far));
 			itemView.Columns.Add(new ItemViewColumn(26, "Alternate Series", 200, new ComicListField("AlternateSeries", "Crossover/story name", "AlternateSeries"), new CoverViewItemBookComparer<ComicBookAlternateSeriesComparer>(), new CoverViewItemBookGrouper<ComicBookGroupAlternateSeries>(), visible: false));
 			itemView.Columns.Add(new ItemViewColumn(27, "Alternate Number", 40, new ComicListField("AlternateNumberAsText", "Issue number in the crossover/story", "AlternateNumber"), new CoverViewItemBookComparer<ComicBookAlternateNumberComparer>(), new CoverViewItemBookGrouper<ComicBookGroupAlternateNumber>(), visible: false, StringAlignment.Far));
@@ -768,6 +771,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			itemView.Columns.Add(new ItemViewColumn(68, "Day", 40, new ComicListField("DayAsText", "Day the Book was published", "Day"), new CoverViewItemBookComparer<ComicBookDayComparer>(), new CoverViewItemBookGrouper<ComicBookGroupDay>(), visible: false, StringAlignment.Far));
 			itemView.Columns.Add(new ItemViewColumn(69, "Week", 40, new ComicListField("WeekAsText", "Week the Book was published"), new CoverViewItemBookComparer<ComicBookWeekComparer>(), new CoverViewItemBookGrouper<ComicBookGroupWeek>(), visible: false, StringAlignment.Far));
 			itemView.Columns.Add(new ItemViewColumn(70, "Released", 60, new ComicListField("ReleasedTime", "Time the Book was released", null, StringTrimming.Word, typeof(DateTime), ComicBook.TR["Unknown"]), new CoverViewItemBookComparer<ComicBookReleasedComparer>(), new CoverViewItemBookGrouper<ComicBookGroupReleased>(), visible: false, StringAlignment.Far, strings));
+			itemView.Columns.Add(new ItemViewColumn(71, "Published (Regional)", 40, new ComicListField("PublishedRegional", "Publication date of the Book (regional formating)"), new CoverViewItemBookComparer<ComicBookPublishedComparer>(), new CoverViewItemBookGrouper<ComicBookGroupPublished>(), visible: false, StringAlignment.Far));
 			itemView.Columns.Add(new ItemViewColumn(200, "Series: Books", 50, new ComicListField("SeriesStatCountAsText", "Books in the Series"), new CoverViewItemStatsComparer<ComicBookSeriesStatsCountComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupCount>(), visible: false, StringAlignment.Far));
 			itemView.Columns.Add(new ItemViewColumn(201, "Series: Pages", 50, new ComicListField("SeriesStatPageCountAsText", "Pages in the Series"), new CoverViewItemStatsComparer<ComicBookSeriesStatsPageCountComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupPageCount>(), visible: false, StringAlignment.Far));
 			itemView.Columns.Add(new ItemViewColumn(202, "Series: Pages Read", 50, new ComicListField("SeriesStatPageReadCountAsText", "Pages of the Series read"), new CoverViewItemStatsComparer<ComicBookSeriesStatsPageReadCountComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupPageReadCount>(), visible: false, StringAlignment.Far));
@@ -782,6 +786,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			itemView.Columns.Add(new ItemViewColumn(211, "Series: Book added", 50, new ComicListField("SeriesStatLastAddedTime", "Last time a book was added to the Series", null, StringTrimming.Word, typeof(DateTime)), new CoverViewItemStatsComparer<ComicBookSeriesStatsLastAddedTimeComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupLastAddedTime>(), visible: false, StringAlignment.Far, strings));
 			itemView.Columns.Add(new ItemViewColumn(212, "Series: Opened", 50, new ComicListField("SeriesStatLastOpenedTime", "Last time a book was opened from the Series", null, StringTrimming.Word, typeof(DateTime)), new CoverViewItemStatsComparer<ComicBookSeriesStatsLastOpenedTimeComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupLastOpenedTime>(), visible: false, StringAlignment.Far, strings));
 			itemView.Columns.Add(new ItemViewColumn(213, "Series: Book released", 50, new ComicListField("SeriesStatLastReleasedTime", "Last time a book of this Series was released", null, StringTrimming.Word, typeof(DateTime)), new CoverViewItemStatsComparer<ComicBookSeriesStatsLastReleasedTimeComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupLastReleasedTime>(), visible: false, StringAlignment.Far, strings));
+			itemView.Columns.Add(new ItemViewColumn(214, "Actual File Format (slow)", 40, new ComicListField("ActualFileFormat", "Actual File format of the Book (based on the header)"), new CoverViewItemBookComparer<ComicBookActualFileFormatComparer>(), new CoverViewItemBookGrouper<ComicBookGroupActualFileFormat>(), visible: false));
+			SetVirtualTagColumns();
 			SubView.TranslateColumns(itemView.Columns);
 			foreach (ItemViewColumn column in itemView.Columns)
 			{
@@ -798,8 +804,34 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			itemView.ColumnHeaderHeight = itemView.ItemRowHeight;
 			itemView.Items.Changed += ComicItemAdded;
 			itemView.MouseWheel += itemView_MouseWheel;
-            miPasteData.Click += new EventHandler((sender, e) => PasteComicData());
-            KeySearch.Create(itemView);
+			itemView.StackColumnSorter = GetStackColumnSorter;
+			miPasteData.Click += new EventHandler((sender, e) => PasteComicData());
+			KeySearch.Create(itemView);
+		}
+
+		private static readonly IComparer<IViewableItem> defaultSeriesComparer = new CoverViewItemBookComparer<ComicBookSeriesComparer>();
+		/// <summary>
+		/// Callback function that will sort the items in a stack based on the stack configuration.
+		/// </summary>
+		/// <param name="stackCaption"></param>
+		/// <returns></returns>
+		private IComparer<IViewableItem> GetStackColumnSorter(string stackCaption)
+		{
+			// If legacy stack sorting is enabled, return null to use the default stack sorting.
+			if (Program.ExtendedSettings.LegacyStackSorting)
+				return null;
+
+			// Determine the stack configuration depending on program settings.
+			ItemViewConfig config = stacksConfig?.GetStackViewConfig(Program.Settings.CommonListStackLayout ? BookList.Name : stackCaption);
+			IColumn colInfo = itemView.ConvertKeyToColumns(config?.SortKey)?.FirstOrDefault(); // Get the IColumn that refers to the sort key
+			IComparer<IViewableItem> stackColumnSorter = colInfo?.ColumnSorter; // Get the column sorter for the column.
+
+			SortOrder sortOrder = config?.ItemSortOrder ?? SortOrder.None; // Default to None if there is no config
+			if (sortOrder == SortOrder.Descending) 
+				stackColumnSorter = stackColumnSorter?.Reverse(); // Reverse the sorter if the sort order is Descending.
+
+			stackColumnSorter ??= defaultSeriesComparer; // Default comparer (series) if no stack configuration is found.
+			return stackColumnSorter;
 		}
 
 		private void ComicItemAdded(object sender, SmartListChangedEventArgs<IViewableItem> e)
@@ -860,14 +892,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			components.Add(commands);
 			commands.Add(delegate
 			{
-				base.Main.Control.InvokeActiveService(delegate(IBrowseHistory t)
+				base.Main.Control.InvokeActiveService(delegate (IBrowseHistory t)
 				{
 					t.BrowsePrevious();
 				});
 			}, () => base.Main.Control.InvokeActiveService((IBrowseHistory t) => t.CanBrowsePrevious(), defaultReturn: false), btBrowsePrev);
 			commands.Add(delegate
 			{
-				base.Main.Control.InvokeActiveService(delegate(IBrowseHistory t)
+				base.Main.Control.InvokeActiveService(delegate (IBrowseHistory t)
 				{
 					t.BrowseNext();
 				});
@@ -908,7 +940,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}, true, () => ShowGroupHeaders, miShowGroupHeaders);
 			commands.Add(delegate
 			{
-				base.Main.Control.InvokeActiveService(delegate(ISidebar s)
+				base.Main.Control.InvokeActiveService(delegate (ISidebar s)
 				{
 					s.Visible = !s.Visible;
 				});
@@ -952,7 +984,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				ApplyBookOrder(GetBookList(ComicBookFilterType.Library));
 			}, () => CanReorderList(mustBeOrdered: false), miEditListApplyOrder);
-			//commands.Add(PasteComicData, () => ComicEditMode.CanEditProperties() && Clipboard.ContainsData("ComicBook") && !GetBookList(ComicBookFilterType.Selected).IsEmpty(), miPasteData);
+			//commands.Add(PasteComicData, () => ComicEditMode.CanEditProperties() && Clipboard.ContainsData(ComicBook.ClipboardFormat) && !GetBookList(ComicBookFilterType.Selected).IsEmpty(), miPasteData);
 			commands.Add(CopyComicData, () => itemView.SelectedCount > 0, miCopyData);
 			commands.Add(ClearComicData, () => ComicEditMode.CanEditProperties() && !GetBookList(ComicBookFilterType.Selected).IsEmpty(), miClearData);
 			commands.Add(UpdateFiles, AnySelectedLinked, miUpdateComicFiles);
@@ -998,7 +1030,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}, () => base.Main.GetRatingEditor().IsValid(), miQuickRating);
 			commands.Add(CopyListSetup, miCopyListSetup);
 			commands.Add(PasteListSetup, miPasteListSetup);
-			commands.Add(SetTopOfStack, () => itemView.SelectedCount == 1, miSetTopOfStack);
+			commands.Add(SetTopOfStack, () => itemView.SelectedCount == 1 && !HasTop(), miSetTopOfStack);
+			commands.Add(ResetTopOfStack, HasTop, miResetTopOfStack);
 			commands.Add(SetStackThumbnail, true, miSetStackThumbnail);
 			commands.Add(RemoveStackThumbnail, true, miRemoveStackThumbnail);
 			miAutomation.DropDownItems.AddRange(ScriptUtility.CreateToolItems<ToolStripMenuItem>(this, "Books", () => GetBookList(ComicBookFilterType.Selected)).ToArray());
@@ -1008,7 +1041,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			list.AddRange(ScriptUtility.CreateToolItems<ToolStripSplitButton>(this, "Books", () => GetBookList(ComicBookFilterType.Selected), (Command c) => c.Image != null && c.Configure != null));
 			if (list.Count != 0)
 			{
-				list.ForEach(delegate(ToolStripItem bt)
+				list.ForEach(delegate (ToolStripItem bt)
 				{
 					bt.DisplayStyle = ToolStripItemDisplayStyle.Image;
 				});
@@ -1033,6 +1066,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				commands.Add(Program.Database.Undo.Redo, () => Program.Database.Undo.CanRedo, tbRedo);
 			}
 			base.Controls.SetChildIndex(toolStrip, base.Controls.Count - 1);
+			ItemView.MouseDown += ItemView_MouseDown;
+		}
+
+		private void ItemView_MouseDown(object sender, MouseEventArgs e)
+		{
+			Program.MainForm.MouseDownHandler(sender, e);
 		}
 
 		protected override void OnVisibleChanged(EventArgs e)
@@ -1106,7 +1145,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			CloseStack(withUpdate: true);
 			CoverViewItem[] array = itemView.DisplayedItems.OfType<CoverViewItem>().ToArray();
 			int num = array.FindIndex((CoverViewItem ci) => (from sci in itemView.GetStackItems(ci).OfType<CoverViewItem>()
-				select sci.Comic).Contains(oldItem.Comic)) - 1;
+															 select sci.Comic).Contains(oldItem.Comic)) - 1;
 			if (num < 0)
 			{
 				num = array.Length - 1;
@@ -1126,7 +1165,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			CloseStack(withUpdate: true);
 			CoverViewItem[] array = itemView.DisplayedItems.OfType<CoverViewItem>().ToArray();
 			int num = array.FindIndex((CoverViewItem ci) => (from sci in itemView.GetStackItems(ci).OfType<CoverViewItem>()
-				select sci.Comic).Contains(oldItem.Comic)) + 1;
+															 select sci.Comic).Contains(oldItem.Comic)) + 1;
 			if (num >= array.Length)
 			{
 				num = 0;
@@ -1194,15 +1233,15 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			ItemViewMode itemViewMode = itemView.ItemViewMode;
 			switch (itemViewMode)
 			{
-			case ItemViewMode.Thumbnail:
-				itemViewMode = ItemViewMode.Tile;
-				break;
-			case ItemViewMode.Tile:
-				itemViewMode = ItemViewMode.Detail;
-				break;
-			case ItemViewMode.Detail:
-				itemViewMode = ItemViewMode.Thumbnail;
-				break;
+				case ItemViewMode.Thumbnail:
+					itemViewMode = ItemViewMode.Tile;
+					break;
+				case ItemViewMode.Tile:
+					itemViewMode = ItemViewMode.Detail;
+					break;
+				case ItemViewMode.Detail:
+					itemViewMode = ItemViewMode.Thumbnail;
+					break;
 			}
 			itemView.ItemViewMode = itemViewMode;
 		}
@@ -1326,7 +1365,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				CoverViewItem coverViewItem = focusedItem as CoverViewItem;
 				if (coverViewItem != null && coverViewItem.Comic.IsLinked)
 				{
-					OpenComic();
+					ExternalProgram ep = Program.Settings.ExternalPrograms.FirstOrDefault(x => x.Override);
+
+					if (ep is null)
+						OpenComic();
+					else
+						StartExternalProgram(ep, coverViewItem.Comic);
 				}
 				else
 				{
@@ -1403,7 +1447,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				ISetCustomThumbnail setCustomThumbnail = e.Stack.Items.FirstOrDefault() as ISetCustomThumbnail;
 				if (setCustomThumbnail != null)
 				{
-					setCustomThumbnail.CustomThumbnailKey = ThumbnailKey.GetResource("custom", stackConfigItem.ThumbnailKey);
+					setCustomThumbnail.CustomThumbnailKey = ThumbnailKey.GetResource(ThumbnailKey.CustomKey, stackConfigItem.ThumbnailKey);
 				}
 			}
 			Guid id = stackConfigItem.TopId;
@@ -1462,14 +1506,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			if (Library != null && Program.Settings.ShowCustomBookFields)
 			{
 				dictionary = (from customKey in Library.CustomValues
-					where Program.ExtendedSettings.ShowCustomScriptValues || !customKey.Contains('.')
-					select new
-					{
-						Id = 10000 + Math.Abs(customKey.GetHashCode()),
-						Prop = "{" + customKey + "}",
-						Key = customKey
-					} into customField
-					select new ItemViewColumn(customField.Id, customField.Key, 100, new ComicListField(customField.Prop, customFieldDescription.SafeFormat(customField.Key), customField.Prop), new CoverViewItemPropertyComparer(customField.Prop), new CoverViewItemPropertyGrouper(customField.Prop), visible: false)).ToDictionary((ItemViewColumn item) => item.Id);
+							  where Program.ExtendedSettings.ShowCustomScriptValues || !customKey.Contains('.')
+							  select new
+							  {
+								  Id = 10000 + Math.Abs(customKey.GetHashCode()),
+								  Prop = "{" + customKey + "}",
+								  Key = customKey
+							  } into customField
+							  select new ItemViewColumn(customField.Id, customField.Key, 100, new ComicListField(customField.Prop, customFieldDescription.SafeFormat(customField.Key), customField.Prop), new CoverViewItemPropertyComparer(customField.Prop), new CoverViewItemPropertyGrouper(customField.Prop), visible: false)).ToDictionary((ItemViewColumn item) => item.Id);
 			}
 			for (int num = itemView.Columns.Count - 1; num >= 0; num--)
 			{
@@ -1495,6 +1539,54 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				value.TooltipText = ((ComicListField)value.Tag).Description;
 				itemView.Columns.Add(value);
 			}
+		}
+
+		private void SetVirtualTagColumns()
+		{
+			//Send the settings to the Collection.
+			VirtualTagsCollection.RegisterSettings(Program.Settings);
+
+			//Create the list of columns that we want to show, based on our Virtual Tags settings
+			Dictionary<int, ItemViewColumn> dictionary = new Dictionary<int, ItemViewColumn>();
+			foreach (var vtag in VirtualTagsCollection.Tags.Values)
+			{
+				if (vtag != null && vtag.IsEnabled)
+				{
+					int id = 300 + vtag.ID;
+					dictionary[id] = new ItemViewColumn(id, vtag.Name, 100,
+											new ComicListField(vtag.PropertyName, vtag.Description),
+												new CoverViewItemVirtualTagComparer(vtag.PropertyName),
+												new CoverViewItemVirtualTagGrouper(vtag),
+												visible: false);
+				}
+			}
+
+			//Check the existing columns and remove the ones that we don't need anymore, or the columns that already exists from our dictionary
+			for (int num = itemView.Columns.Count - 1; num >= 0; num--)
+			{
+				int id = itemView.Columns[num].Id;
+				if (id >= 300 && id < 10000)
+				{
+					//Remove tag from the dict since it already exists and we won't need to add it later.
+					if (dictionary != null && dictionary.ContainsKey(id))
+						dictionary.Remove(id);
+					else
+						itemView.Columns.RemoveAt(num);//Remove tag from the UI since it isn't valid anymore
+				}
+			}
+
+			if (dictionary is null)
+				return;
+
+			//Add the remaining columns to the interface
+			foreach (ItemViewColumn value in dictionary.Values)
+			{
+				value.TooltipText = ((ComicListField)value.Tag).Description;
+				itemView.Columns.Add(value);
+			}
+
+			//Update Search Browser
+			bookSelectorPanel.FillTypeCombos(update: true);
 		}
 
 		private bool CanReorderList(bool mustBeOrdered = true)
@@ -1612,6 +1704,13 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			SetListBackgroundImage((string)null);
 		}
 
+		private bool HasTop()
+		{
+			ComicBook comicBook = GetBookList(ComicBookFilterType.Selected).FirstOrDefault();
+			IViewableItem viewableItem = itemView.SelectedItems.FirstOrDefault();
+			return viewableItem != null && itemView.IsStack(viewableItem) && (stacksConfig?.IsTop(itemView.GetStackCaption(viewableItem), comicBook) ?? false);
+		}
+
 		private void SetTopOfStack()
 		{
 			ComicBook comicBook = GetBookList(ComicBookFilterType.Selected).FirstOrDefault();
@@ -1622,6 +1721,16 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					stacksConfig = new StacksConfig();
 				}
 				stacksConfig.SetStackTop(currentStackName, comicBook);
+			}
+		}
+
+		private void ResetTopOfStack()
+		{
+			IViewableItem viewableItem = itemView.SelectedItems.FirstOrDefault();
+			if (viewableItem != null && itemView.IsStack(viewableItem))
+			{
+				stacksConfig.ResetStackTop(itemView.GetStackCaption(viewableItem));
+				FillBookList();
 			}
 		}
 
@@ -1873,7 +1982,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					FillBookSelector(enumerable, updateNow: true);
 					if (currentMatcher2 != null)
 					{
-						enumerable = currentMatcher2.Match(enumerable);
+						// ComicBookValueMatcher's Match ignores negation, but ComicBookGroupMatcher's Match handles it. ComicBookGroupMatcher.Optimized returns only the value when a single filter is used.
+
+						IEnumerable<ComicBook> enumerableTemp = currentMatcher2.Match(enumerable);
+						if (currentMatcher2.Not)
+							enumerableTemp = enumerable.Except(enumerableTemp);
+
+						enumerable = enumerableTemp;
+
 					}
 					foreach (ComicBook item in enumerable)
 					{
@@ -1959,8 +2075,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			try
 			{
 				return from nav in base.Main.OpenBooks.Slots
-					where nav != null
-					select nav.Comic;
+					   where nav != null
+					   select nav.Comic;
 			}
 			catch (NullReferenceException)
 			{
@@ -1991,7 +2107,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private void AddFilesToLibrary()
 		{
 			Program.Scanner.ScanFilesOrFolders(from cb in GetBookList(ComicBookFilterType.NotInLibrary | ComicBookFilterType.IsNotFileless | ComicBookFilterType.Selected, asArray: true)
-				select cb.FilePath, all: false, removeMissing: false);
+											   select cb.FilePath, all: false, removeMissing: false);
 		}
 
 		private void DuplicateList(ComicListItemFolder clif = null)
@@ -2032,8 +2148,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				name = NumberedString.StripNumber(BookList.Name);
 			}
 			int number = NumberedString.MaxNumber(from cli in Library.ComicLists.GetItems<ComicListItem>()
-				where NumberedString.StripNumber(cli.Name) == name
-				select cli.Name);
+												  where NumberedString.StripNumber(cli.Name) == name
+												  select cli.Name);
 			comicSmartListItem.Name = NumberedString.Format(name, number);
 			if (clif == null)
 			{
@@ -2165,7 +2281,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				IViewableItem[] array = itemView.SelectedItems.Where((IViewableItem si) => itemView.IsStack(si)).ToArray();
 				comicBookContainer.Name = array.Select((IViewableItem si) => itemView.GetStackCaption(si)).FirstOrDefault();
 				SingleComicGrouper[] array2 = (from bg in itemView.ItemStacker.GetGroupers().OfType<IBookGrouper>()
-					select bg.BookGrouper).OfType<SingleComicGrouper>().ToArray();
+											   select bg.BookGrouper).OfType<SingleComicGrouper>().ToArray();
 				IViewableItem[] array3 = array;
 				foreach (IViewableItem item in array3)
 				{
@@ -2223,7 +2339,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				dataObject.SetFileDropList(stringCollection);
 				if (comicBookGroupMatcher.Matchers.Count > 0)
 				{
-					dataObject.SetData("ComicBookMatcher", (comicBookGroupMatcher.Matchers.Count == 1) ? comicBookGroupMatcher.Matchers[0] : comicBookGroupMatcher);
+					dataObject.SetData(ComicBookMatcher.ClipboardFormat, (comicBookGroupMatcher.Matchers.Count == 1) ? comicBookGroupMatcher.Matchers[0] : comicBookGroupMatcher);
 				}
 				ownDrop = false;
 				DragDropEffects dragDropEffects2 = itemView.DoDragDrop(dataObject, dragDropEffects);
@@ -2372,14 +2488,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			switch (itemView.ItemViewMode)
 			{
-			case ItemViewMode.Thumbnail:
-				return new ItemSizeInfo(FormUtility.ScaleDpiY(96), FormUtility.ScaleDpiY(512), itemView.ItemThumbSize.Height);
-			case ItemViewMode.Tile:
-				return new ItemSizeInfo(FormUtility.ScaleDpiY(64), FormUtility.ScaleDpiY(256), itemView.ItemTileSize.Height);
-			case ItemViewMode.Detail:
-				return new ItemSizeInfo(FormUtility.ScaleDpiY(12), FormUtility.ScaleDpiY(48), itemView.ItemRowHeight);
-			default:
-				return null;
+				case ItemViewMode.Thumbnail:
+					return new ItemSizeInfo(FormUtility.ScaleDpiY(Program.MinThumbHeight), FormUtility.ScaleDpiY(Program.MaxThumbHeight), itemView.ItemThumbSize.Height);
+				case ItemViewMode.Tile:
+					return new ItemSizeInfo(FormUtility.ScaleDpiY(Program.MinTileHeight), FormUtility.ScaleDpiY(Program.MaxTileHeight), itemView.ItemTileSize.Height);
+				case ItemViewMode.Detail:
+					return new ItemSizeInfo(FormUtility.ScaleDpiY(Program.MinRowHeight), FormUtility.ScaleDpiY(Program.MaxRowHeight), itemView.ItemRowHeight);
+				default:
+					return null;
 			}
 		}
 
@@ -2387,18 +2503,18 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			switch (itemView.ItemViewMode)
 			{
-			case ItemViewMode.Thumbnail:
-				height = height.Clamp(FormUtility.ScaleDpiY(96), FormUtility.ScaleDpiY(512));
-				itemView.ItemThumbSize = new Size(height, height);
-				break;
-			case ItemViewMode.Tile:
-				height = height.Clamp(FormUtility.ScaleDpiY(64), FormUtility.ScaleDpiY(256));
-				itemView.ItemTileSize = new Size(height * 2, height);
-				break;
-			case ItemViewMode.Detail:
-				height = height.Clamp(FormUtility.ScaleDpiY(12), FormUtility.ScaleDpiY(48));
-				itemView.ItemRowHeight = height;
-				break;
+				case ItemViewMode.Thumbnail:
+					height = height.Clamp(FormUtility.ScaleDpiY(Program.MinThumbHeight), FormUtility.ScaleDpiY(Program.MaxThumbHeight));
+					itemView.ItemThumbSize = new Size(height, height);
+					break;
+				case ItemViewMode.Tile:
+					height = height.Clamp(FormUtility.ScaleDpiY(Program.MinTileHeight), FormUtility.ScaleDpiY(Program.MaxTileHeight));
+					itemView.ItemTileSize = new Size(height * 2, height);
+					break;
+				case ItemViewMode.Detail:
+					height = height.Clamp(FormUtility.ScaleDpiY(Program.MinRowHeight), FormUtility.ScaleDpiY(Program.MaxRowHeight));
+					itemView.ItemRowHeight = height;
+					break;
 			}
 		}
 
@@ -2413,10 +2529,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		public void RefreshInformation()
 		{
-			IEnumerable<CoverViewItem> enumerable = from CoverViewItem cvi in new List<IViewableItem>(itemView.SelectedItems)
-				where cvi.Comic.IsInContainer
-				select cvi;
-			foreach (CoverViewItem item in enumerable)
+			IEnumerable<CoverViewItem> selectedItems = from CoverViewItem cvi in new List<IViewableItem>(itemView.SelectedItems)
+														select cvi;
+
+			foreach (CoverViewItem item in selectedItems)
 			{
 				if (item.Comic.IsDynamicSource)
 				{
@@ -2429,7 +2545,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 			if (ComicEditMode.CanScan())
 			{
-				Program.Scanner.ScanFilesOrFolders(enumerable.Select((CoverViewItem cvi) => cvi.Comic.FilePath), all: false, removeMissing: false);
+				// If Control is pressed, force a refresh of the information, otherwise only refresh if the comic is in the library.
+				bool forceRefreshInfo = Control.ModifierKeys == Keys.Control;
+				IEnumerable<CoverViewItem> itemToRefresh = forceRefreshInfo ? selectedItems : selectedItems.Where(cvi => cvi.Comic.IsInContainer);
+
+				Program.Scanner.ScanFilesOrFolders(itemToRefresh.Select((CoverViewItem cvi) => cvi.Comic.FilePath), all: false, removeMissing: false, forceRefreshInfo: forceRefreshInfo);
 			}
 		}
 
@@ -2637,7 +2757,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			if (Program.AskQuestion(this, TR.Messages["AskClearComicData", "Do you want to remove all entered data from the selected Books (can be reverted with Undo)?"], TR.Default["Clear"], HiddenMessageBoxes.AskClearData, null, TR.Default["No"]))
 			{
 				Program.Database.Undo.SetMarker(miClearData.Text);
-				GetBookList(ComicBookFilterType.Selected).ForEachProgress(delegate(ComicBook cb)
+				GetBookList(ComicBookFilterType.Selected).ForEachProgress(delegate (ComicBook cb)
 				{
 					cb.ResetProperties();
 				}, this, TR.Messages["ClearComicData", "Clear Books"], TR.Messages["ClearComicDataText", "Removing all entered data from the Books"]);
@@ -2646,17 +2766,30 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		public void UpdateFiles()
 		{
-			GetBookList(ComicBookFilterType.IsNotFileless | ComicBookFilterType.Selected).ForEach(delegate(ComicBook cb)
+			GetBookList(ComicBookFilterType.IsNotFileless | ComicBookFilterType.Selected).ForEach(delegate (ComicBook cb)
 			{
 				Program.QueueManager.AddBookToFileUpdate(cb, alwaysWrite: true);
 			});
+		}
+
+		private bool isPasteComicDataEnabled()
+		{
+			//Check if the clipboard contains data, if so enable the paste button.
+			try
+			{
+				return ComicEditMode.CanEditProperties() && Clipboard.ContainsData(ComicBook.ClipboardFormat) && !GetBookList(ComicBookFilterType.Selected).IsEmpty();
+			}
+			catch (Exception)
+			{
+				return false;
+			}
 		}
 
 		public void PasteComicData()
 		{
 			try
 			{
-				ComicBook comicBook = Clipboard.GetData("ComicBook") as ComicBook;
+				ComicBook comicBook = Clipboard.GetData(ComicBook.ClipboardFormat) as ComicBook;
 				IEnumerable<ComicBook> enumerable = GetBookList(ComicBookFilterType.Selected, asArray: true);
 				if (comicBook != null && !enumerable.IsEmpty())
 				{
@@ -2688,7 +2821,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			ToolStripMenuItem toolStripMenuItem = miMarkAs;
 			bool visible = (miRateMenu.Visible = flag && flag3);
 			toolStripMenuItem.Visible = visible;
-			miSetTopOfStack.Visible = openStackPanel.Visible;
+			miResetTopOfStack.Visible = !(miSetTopOfStack.Visible = openStackPanel.Visible) && itemView.IsStack(itemView.SelectedItems.FirstOrDefault());
 			miSetStackThumbnail.Visible = itemView.IsStack(itemView.SelectedItems.FirstOrDefault());
 			miRemoveStackThumbnail.Visible = stacksConfig != null && !string.IsNullOrEmpty(stacksConfig.GetStackCustomThumbnail(itemView.GetStackCaption(itemView.SelectedItems.FirstOrDefault())));
 			ComicLibrary comicLibrary = enumerable2.Select((ComicBook cb) => cb.Container as ComicLibrary).FirstOrDefault();
@@ -2734,16 +2867,51 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			miShowOnly.Visible = miShowOnly.DropDownItems.Count != 0;
 			miUpdateComicFiles.Visible = enumerable.Any((ComicBook cb) => cb.ComicInfoIsDirty);
 			contextMenuItems.FixSeparators();
-			//Check if the clipboard contains data, if so enable the paste button.
-			try
+			miPasteData.Enabled = isPasteComicDataEnabled();
+		}
+
+		private void contextOpenWith_Opening(object sender, CancelEventArgs e)
+		{
+			UpdateOpenWithMenus(GetBookList(ComicBookFilterType.Selected));
+		}
+
+		private void UpdateOpenWithMenus(IEnumerable<ComicBook> enumerable)
+		{
+			FormUtility.SafeToolStripClear(miOpenWith.DropDownItems, 2);
+
+			//Populate Open With menu
+			for (int k = 0; k < Program.Settings.ExternalPrograms.Count; k++)
 			{
-				miPasteData.Enabled = ComicEditMode.CanEditProperties() && Clipboard.ContainsData("ComicBook") && !GetBookList(ComicBookFilterType.Selected).IsEmpty();
+				ExternalProgram ep = Program.Settings.ExternalPrograms[k];
+
+				if (string.IsNullOrEmpty(ep.Name) || string.IsNullOrEmpty(ep.Path) || !File.Exists(ep.Path))
+					continue;
+
+				//Create menu item
+				ToolStripItem tsi = new ToolStripMenuItem(ep.Name.Ellipsis(60 - ep.Name.Length, "..."), null, delegate
+				{
+					//For each book selected it will start a separate program
+					foreach (ComicBook comicBook in enumerable)
+					{
+						StartExternalProgram(ep, comicBook);
+					}
+				});
+				tsi.Tag = ep;
+				tsi.Enabled = AllSelectedLinked();
+
+				//Insert menu item
+				contextOpenWith.Items.Add(tsi);
 			}
-			catch (Exception)
-			{
-				miPasteData.Enabled = false;
-            }
-        }
+
+			//Show the separator only if at least 1 external program was added
+			toolStripSeparator2.Visible = contextOpenWith.Items.Count > 2;
+		}
+
+		private static void StartExternalProgram(ExternalProgram ep, ComicBook comicBook)
+		{
+			string args = string.IsNullOrEmpty(ep.Arguments) ? $"\"{comicBook.FilePath}\"" : $"{ep.Arguments} \"{comicBook.FilePath}\"";
+			Program.StartProgram(ep.Path, args);
+		}
 
 		private void LayoutMenuOpening(object sender, CancelEventArgs e)
 		{
@@ -2801,8 +2969,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 			FormUtility.SafeToolStripClear(toolStripMenuItem.DropDownItems);
 			foreach (ComicIdListItem item in from l in comicLibrary.ComicLists.GetItems<ComicIdListItem>()
-				where l != BookList
-				select l)
+											 where l != BookList
+											 select l)
 			{
 				if (++num == listMenuSize + 1)
 				{
@@ -2880,34 +3048,23 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				{
 					Library.ComicListsLocked = true;
 					int count = 0;
-					ComicListItem li = default(ComicListItem);
-					string prefix = default(string);
 					foreach (ComicListItem item in from l in Library.ComicLists.GetItems<ComicListItem>()
-						where l.GetBooks().Contains(cb)
-						select l)
+												   where l.GetBooks().Contains(cb)
+												   select l)
 					{
 						if (abortBuildMenu.WaitOne(0))
-						{
 							return;
-						}
-						int num = count + 1;
-						count = num;
-						if (num == maxLists + 1)
-						{
+
+						if (++count == maxLists + 1)
 							break;
-						}
-						li = item;
-						int childLevel = Library.ComicLists.GetChildLevel(li);
-						prefix = new string(' ', childLevel * 4);
+
+						ComicListItem li = item;
+						string prefix = new string(' ', Library.ComicLists.GetChildLevel(li) * 4);
 						this.Invoke(delegate
 						{
-							ToolStripMenuItem value = ((count != maxLists) ? new ToolStripMenuItem(prefix + li.Name, GetComicListImage(li), delegate
-							{
-								ShowBookInList(li, cb);
-							}) : new ToolStripMenuItem("...")
-							{
-								Enabled = false
-							});
+							ToolStripMenuItem value = ((count != maxLists)
+								? new ToolStripMenuItem(prefix + li.Name.Replace("&", "&&"), GetComicListImage(li), delegate { ShowBookInList(li, cb); })
+								: new ToolStripMenuItem("...") { Enabled = false });
 							menu.DropDownItems.Insert(menu.DropDownItems.Count - 1, value);
 						});
 					}
@@ -2951,18 +3108,18 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			switch (cli.ImageKey)
 			{
-			case "Library":
-				return Resources.Library;
-			case "Folder":
-				return Resources.SearchFolder;
-			case "Search":
-				return Resources.SearchDocument;
-			case "List":
-				return Resources.List;
-			case "TempFolder":
-				return Resources.TempFolder;
-			default:
-				return null;
+				case "Library":
+					return Resources.Library;
+				case "Folder":
+					return Resources.SearchFolder;
+				case "Search":
+					return Resources.SearchDocument;
+				case "List":
+					return Resources.List;
+				case "TempFolder":
+					return Resources.TempFolder;
+				default:
+					return null;
 			}
 		}
 
@@ -3086,6 +3243,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		public void SettingsChanged()
 		{
 			SetCustomColumns();
+			SetVirtualTagColumns();
 			FillBookList();
 		}
 
@@ -3231,8 +3389,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		public IEnumerable<ComicBook> GetBookList(ComicBookFilterType cbft)
 		{
 			IEnumerable<ComicBook> books = ((!cbft.HasFlag(ComicBookFilterType.Selected)) ? (from CoverViewItem vi in itemView.DisplayedItems
-				select vi.Comic) : (from CoverViewItem vi in itemView.SelectedItems
-				select vi.Comic));
+																							 select vi.Comic) : (from CoverViewItem vi in itemView.SelectedItems
+																												 select vi.Comic));
 			books = ComicBookCollection.Filter(cbft, books);
 			if (cbft.HasFlag(ComicBookFilterType.Sorted) && itemView.ItemSortOrder == SortOrder.Descending)
 			{
@@ -3240,5 +3398,65 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 			return books;
 		}
-    }
+
+		private void miOpenWithManager_Click(object sender, EventArgs e)
+		{
+			EditOpenWithPrograms();
+		}
+
+		private void EditOpenWithPrograms()
+		{
+			IList<ExternalProgram> list = OpenWithDialog.Show(Form.ActiveForm, TR.Messages["OpenWithPrograms", "Manage Open With Programs"], Program.Settings.ExternalPrograms,
+				newAction: NewExternalProgram,
+				editAction: ep => EditExternalProgram(ep),
+				overrideAction: ep => ep.Override = !ep.Override);
+
+			if (list != null)
+			{
+				Program.Settings.ExternalPrograms.Clear();
+				Program.Settings.ExternalPrograms.AddRange(list);
+			}
+		}
+
+		private ExternalProgram NewExternalProgram()
+		{
+			string name = "", path = "", args = "";
+
+			using (OpenFileDialog openFileDialog = new OpenFileDialog())
+			{
+				openFileDialog.Filter = "Executable (*.EXE, *.BAT, *.CMD, *.PS1)|*.exe;*.bat;*.cmd;*.ps1|All files (*.*)|*.*";
+				openFileDialog.Multiselect = false;
+				openFileDialog.CheckFileExists = true;
+				if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+				{
+					path = openFileDialog.FileName;
+				}
+			}
+
+			if (!string.IsNullOrEmpty(path) && File.Exists(path))
+			{
+				FileVersionInfo vi = FileVersionInfo.GetVersionInfo(path);
+				name = string.IsNullOrEmpty(vi.ProductName)
+					? SelectItemDialog.GetName(this, "Set External Program", "Program")
+					: vi.ProductName;
+				args = SelectItemDialog.GetName(this, "Set Program Argument", string.Empty) ?? string.Empty;
+			}
+
+			if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(path))
+				return new ExternalProgram(name, path);
+
+			return null;
+		}
+
+		private bool EditExternalProgram(ExternalProgram ep)
+		{
+			string oldName = ep.Name;
+			string oldArgument = ep.Arguments;
+
+			ep.Name = SelectItemDialog.GetName(this, "Rename External Program", ep.Name) ?? ep.Name;
+			ep.Arguments = SelectItemDialog.GetName(this, "Change Program Argument", ep.Arguments) ?? string.Empty;
+
+			return oldName != ep.Name || oldArgument != ep.Arguments;
+		}
+	}
 }

@@ -80,7 +80,9 @@ namespace cYo.Common.Text
 					if (!string.IsNullOrEmpty(text2))
 					{
 						list.Add(text2);
-						list2.Add(text2 + " ");
+
+						string articleWithSpace = text2.EndsWith("\'") ? text2 : $"{text2} ";
+                        list2.Add(articleWithSpace);
 					}
 				}
 				articles = list.ToArray();
@@ -118,7 +120,7 @@ namespace cYo.Common.Text
 			rxNonWordLetters = new Regex("[^\\s\\w]", RegexOptions.Compiled);
 			rxSpace = new Regex("\\s", RegexOptions.Compiled);
 			rxMultiSpace = new Regex("\\s{2,}", RegexOptions.Compiled);
-			Articles = "the, der, die, das";
+			Articles = "the, der, die, das, le, la, les, l'";
 		}
 
 		public static void ConvertIndexToLineAndColumn(string text, int index, out int line, out int column)
@@ -496,9 +498,46 @@ namespace cYo.Common.Text
 			return text;
 		}
 
+		public static string AppendUniqueValueToList(this string target, string value, char delimiter = ',')
+		{
+			string returnValue = target;
+			if (!string.IsNullOrEmpty(value))
+			{
+				HashSet<string> uniqueValues = new HashSet<string>() { };
+				StringBuilder stringBuilder = new StringBuilder(returnValue); //create a new StringBuilder containing the current value
+
+				var values = value.Split(delimiter, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
+				var existing = returnValue.Split(delimiter, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
+
+				foreach (var item in values)
+				{
+					if (!string.IsNullOrEmpty(item) && !existing.Contains(item) && uniqueValues.Add(item)) //Add only unique values that don't already exist
+					{
+						if (stringBuilder.Length != 0)
+						{
+							stringBuilder.Append($"{delimiter} ");
+						}
+						stringBuilder.Append(item);
+					}
+				}
+				returnValue = stringBuilder.ToString();
+			}
+			return returnValue;
+		}
+
 		public static string MakeEditBoxMultiline(string text)
 		{
 			return text?.Replace("\r\n", "\n").Replace("\n", "\r\n");
+		}
+
+		public static string NormalizeLineEndings(string text)
+		{
+			return text?.Replace("\r\n", "\n").Replace("\r", "\n");
+		}
+
+		public static bool IsMultilineTextEqual(string property, string value)
+		{
+			return string.Equals(NormalizeLineEndings(property), NormalizeLineEndings(value));
 		}
 
 		public static IEnumerable<string> TrimStrings(this IEnumerable<string> list)

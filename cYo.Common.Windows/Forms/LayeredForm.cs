@@ -177,7 +177,7 @@ namespace cYo.Common.Windows.Forms
 				CreateParams createParams = base.CreateParams;
 				if (!base.DesignMode)
 				{
-					createParams.ExStyle |= 524288;
+					createParams.ExStyle |= LayeredApi.WS_EX_LAYERED;
 				}
 				return createParams;
 			}

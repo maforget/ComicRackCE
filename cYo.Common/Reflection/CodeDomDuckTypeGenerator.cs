@@ -51,7 +51,7 @@ namespace cYo.Common.Reflection
 
 		public Type[] CreateDuckTypes(Type interfaceType, Type[] duckedTypes)
 		{
-			string text = "DynamicDucks." + interfaceType.Name;
+			string text = $"{CommonNamespace}.{interfaceType.Name}";
 			CodeCompileUnit codeCompileUnit = new CodeCompileUnit();
 			CodeNamespace codeNamespace = new CodeNamespace(text);
 			codeCompileUnit.Namespaces.Add(codeNamespace);
@@ -62,7 +62,7 @@ namespace cYo.Common.Reflection
 				Type type = duckedTypes[i];
 				CodeTypeReference type2 = new CodeTypeReference(type);
 				referenceList.AddReference(type);
-				CodeTypeDeclaration codeTypeDeclaration = new CodeTypeDeclaration("Duck" + i);
+				CodeTypeDeclaration codeTypeDeclaration = new CodeTypeDeclaration(TypePrefix + i);
 				codeNamespace.Types.Add(codeTypeDeclaration);
 				codeTypeDeclaration.TypeAttributes = TypeAttributes.Public;
 				codeTypeDeclaration.BaseTypes.Add(codeTypeReference);
@@ -189,7 +189,7 @@ namespace cYo.Common.Reflection
 			Type[] array5 = new Type[duckedTypes.Length];
 			for (int num3 = 0; num3 < duckedTypes.Length; num3++)
 			{
-				array5[num3] = compiledAssembly.GetType(text + ".Duck" + num3);
+				array5[num3] = compiledAssembly.GetType($"{text}.{TypePrefix}{num3}");
 			}
 			return array5;
 		}

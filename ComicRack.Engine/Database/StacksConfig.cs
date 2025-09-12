@@ -70,7 +70,7 @@ namespace cYo.Projects.ComicRack.Engine.Database
 		{
 		}
 
-		private const int MaxConfigCount = 1024;
+		private const int MaxConfigCount = 2048;
 
 		private readonly StackConfigItemCollection configs = new StackConfigItemCollection();
 
@@ -101,6 +101,15 @@ namespace cYo.Projects.ComicRack.Engine.Database
 			}
 			stackConfigItem.ThumbnailKey = null;
 			stackConfigItem.TopId = cb.Id;
+		}
+
+		public void ResetStackTop(string stack)
+		{
+			StackConfigItem stackConfigItem = FindItem(stack);
+			if (stackConfigItem != null)
+			{
+				stackConfigItem.TopId = Guid.Empty;
+			}
 		}
 
 		public void SetStackThumbnailKey(string stack, string key)
@@ -147,7 +156,7 @@ namespace cYo.Projects.ComicRack.Engine.Database
 		private void AddConfig(StackConfigItem sci)
 		{
 			configs.Insert(0, sci);
-			configs.Trim(1024);
+			configs.Trim(MaxConfigCount);
 		}
 	}
 }

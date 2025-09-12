@@ -14,7 +14,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Pdf
 			{
 				PdfImages.GhostscriptPath = EngineConfiguration.Default.GhostscriptExecutable;
 			}
-			if (!EngineConfiguration.Default.DisableGhostscript)
+			if (EngineConfiguration.Default.PdfEngineToUse == EngineConfiguration.PdfEngine.Ghostscript)
 			{
 				return PdfImages.IsGhostscriptAvailable;
 			}

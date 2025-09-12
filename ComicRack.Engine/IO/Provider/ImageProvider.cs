@@ -133,7 +133,19 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		public ThumbnailImage GetThumbnail(int index)
+        public ExportImageContainer GetByteImageForExport(int index)
+        {
+            using (ItemMonitor.Lock(workLock))
+            {
+                return new ExportImageContainer()
+				{
+					Data = RetrieveSourceByteImage(index, keepSourceFormat: true),
+                    NeedsToConvert = false
+				};
+            }
+        }
+
+        public ThumbnailImage GetThumbnail(int index)
 		{
 			using (ItemMonitor.Lock(workLock))
 			{
@@ -162,7 +174,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 				{
 					try
 					{
-						@lock.AcquireReaderLock(60000);
+						@lock.AcquireReaderLock(sourceLockTimeout);
 					}
 					catch (Exception)
 					{
@@ -229,7 +241,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		private byte[] RetrieveSourceByteImage(int n)
+		private byte[] RetrieveSourceByteImage(int n, bool keepSourceFormat = false)
 		{
 			if (n < 0 || n >= Count)
 			{
@@ -241,8 +253,13 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 				try
 				{
 					array = OnRetrieveSourceByteImage(n);
-					array = DjVuImage.ConvertToJpeg(array);
-					array = WebpImage.ConvertToJpeg(array);
+					if(!keepSourceFormat)
+					{
+						array = DjVuImage.ConvertToJpeg(array);
+						array = WebpImage.ConvertToJpeg(array);
+						array = HeifAvifImage.ConvertToJpeg(array);
+						array = Jpeg2000Image.ConvertToJpeg(array);
+					}
 					return array;
 				}
 				catch (Exception)
@@ -252,7 +269,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			}
 		}
 
-		private ThumbnailImage RetrieveThumbnailImage(int n)
+        private ThumbnailImage RetrieveThumbnailImage(int n)
 		{
 			if (n < 0 || n >= Count)
 			{
@@ -297,13 +314,13 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 			{
 				if (readOnly)
 				{
-					sourceLock.AcquireReaderLock(60000);
+					sourceLock.AcquireReaderLock(sourceLockTimeout);
 					return new Disposer(delegate
 					{
 						sourceLock.ReleaseReaderLock();
 					}, eatErrors: true);
 				}
-				sourceLock.AcquireWriterLock(60000);
+				sourceLock.AcquireWriterLock(sourceLockTimeout);
 				return new Disposer(delegate
 				{
 					sourceLock.ReleaseWriterLock();
@@ -411,5 +428,5 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 				}
 			}
 		}
-	}
+    }
 }

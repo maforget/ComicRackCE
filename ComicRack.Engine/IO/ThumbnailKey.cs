@@ -60,13 +60,18 @@ namespace cYo.Projects.ComicRack.Engine.IO
 		{
 		}
 
+		public ThumbnailKey()
+			: base()
+		{			
+		}
+
 		private void CalcResource()
 		{
 			Match match = rxResource.Match(base.Location);
 			if (match.Success)
 			{
 				resourceType = match.Groups["type"].Value;
-				resourceLocation = match.Groups["resource"].Value;
+				resourceLocation = match.Groups[ResourceKey].Value;
 			}
 			else
 			{

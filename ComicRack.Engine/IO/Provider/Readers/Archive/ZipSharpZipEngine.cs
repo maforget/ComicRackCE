@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo;
 using ICSharpCode.SharpZipLib.Zip;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
@@ -16,7 +17,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
 		public override IEnumerable<ProviderImageInfo> GetEntryList(string source)
 		{
-			using (FileStream fs = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, 131072))
+			using (FileStream fs = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, BufferSize))
 			{
 				using (ZipFile zf = new ZipFile(fs))
 				{
@@ -32,7 +33,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 		{
 			try
 			{
-				using (FileStream file = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, 131072))
+				using (FileStream file = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, BufferSize))
 				{
 					using (ZipFile zipFile = new ZipFile(file))
 					{
@@ -59,18 +60,19 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 		{
 			try
 			{
-				using (FileStream file = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, 131072))
+				using (FileStream file = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, BufferSize))
 				{
 					using (ZipFile zipFile = new ZipFile(file))
 					{
-						int num = zipFile.FindEntry("ComicInfo.xml", ignoreCase: true);
-						if (num != -1)
+						return XmlInfoProviders.Readers.DeserializeAll(s =>
 						{
-							using (Stream inStream = zipFile.GetInputStream(num))
+							int num = zipFile.FindEntry(s, ignoreCase: true);
+							if (num != -1)
 							{
-								return ComicInfo.Deserialize(inStream);
+								return zipFile.GetInputStream(num);
 							}
-						}
+							return null;
+						});
 					}
 				}
 			}

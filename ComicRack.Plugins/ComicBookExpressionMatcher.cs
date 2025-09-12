@@ -75,12 +75,12 @@ namespace cYo.Projects.ComicRack.Plugins
 						properties.Add("EnableProposed");
 						properties.Add("FilePath");
 					}
-					return "__book." + newName;
-				}
+                    return $"{BookVariableName}.{newName}";
+                }
 				if (ComicBookMatcher.IsSeriesStatsProperty(newName))
 				{
 					usesStatistics = true;
-					return "__bookStats.GetSeriesStats(__book)." + ComicBookMatcher.ParseSeriesProperty(newName);
+					return $"{BookStatsVariableName}.GetSeriesStats({BookVariableName}).{ComicBookMatcher.ParseSeriesProperty(newName)}";
 				}
 				return string.Empty;
 			});
@@ -111,8 +111,8 @@ namespace cYo.Projects.ComicRack.Plugins
 				{
 					expression = PythonCommand.CompileExpression<Func<ComicBook, IComicBookStatsProvider, bool>>(parsedMatchValue, new string[2]
 					{
-						"__book",
-						"__bookStats"
+						BookVariableName,
+						BookStatsVariableName
 					});
 				}
 			}

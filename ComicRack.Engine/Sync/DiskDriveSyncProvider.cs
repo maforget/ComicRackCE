@@ -20,7 +20,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 				throw new ArgumentException();
 			}
 			this.rootPath = rootPath;
-			syncPath = FileUtility.GetFolders(rootPath, 3).FirstOrDefault((string fullPath) => FileUtility.SafeFileExists(Path.Combine(fullPath, "comicrack.ini")));
+			syncPath = FileUtility.GetFolders(rootPath, 3).FirstOrDefault((string fullPath) => FileUtility.SafeFileExists(Path.Combine(fullPath, MarkerFile)));
 			if (syncPath == null)
 			{
 				throw new DriveNotFoundException();

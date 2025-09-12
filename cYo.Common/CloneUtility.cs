@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace cYo.Common
 {
@@ -12,12 +12,16 @@ namespace cYo.Common
 			{
 				return null;
 			}
-			BinaryFormatter binaryFormatter = new BinaryFormatter();
+
+			DataContractSerializer serializer = new DataContractSerializer(typeof(T), new DataContractSerializerSettings()
+			{
+				PreserveObjectReferences = true,
+			});
 			using (MemoryStream memoryStream = new MemoryStream())
 			{
-				binaryFormatter.Serialize(memoryStream, data);
+				serializer.WriteObject(memoryStream, data);
 				memoryStream.Seek(0L, SeekOrigin.Begin);
-				return (T)binaryFormatter.Deserialize(memoryStream);
+				return(T)serializer.ReadObject(memoryStream);
 			}
 		}
 

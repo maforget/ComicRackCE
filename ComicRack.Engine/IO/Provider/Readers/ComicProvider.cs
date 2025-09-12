@@ -8,7 +8,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 {
 	public abstract class ComicProvider : ImageProvider, IInfoStorage
 	{
-		private static readonly string[] supportedTypes = new string[11]
+		private static readonly string[] supportedTypes = new string[]
 		{
 			"jpg",
 			"jpeg",
@@ -20,15 +20,29 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			"tiff",
 			"bmp",
 			"djvu",
-			"webp"
+			"webp",
+			"heic",
+			"heif",
+			"avif",
+			"jp2",
+			"j2k",
+			//"jxl",
 		};
 
 		public bool UpdateEnabled => GetType().GetAttributes<FileFormatAttribute>().FirstOrDefault((FileFormatAttribute f) => f.Format.Supports(base.Source))?.EnableUpdate ?? false;
 
+		private bool disableNtfs = false;
 		protected bool DisableNtfs
 		{
-			get;
-			set;
+			get
+			{
+				if (disableNtfs)
+					return true;
+
+				return EngineConfiguration.Default.DisableNTFS;
+			}
+
+			set => disableNtfs = value;
 		}
 
 		protected bool DisableSidecar
@@ -86,10 +100,25 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			return false;
 		}
 
-		protected virtual bool IsSupportedImage(string file)
-		{
-			string fileExt = Path.GetExtension(FileUtility.MakeValidFilename(file));
-			return supportedTypes.Any((string ext) => string.Equals(fileExt, "." + ext, StringComparison.OrdinalIgnoreCase));
-		}
-	}
+		protected virtual bool IsSupportedImage(ProviderImageInfo file)
+        {
+            if(IsImageThumbnailFolder(file.Name))
+				return false;
+
+            string fileExt = Path.GetExtension(FileUtility.MakeValidFilename(file.Name));
+            return supportedTypes.Any((string ext) => string.Equals(fileExt, "." + ext, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private static bool IsImageThumbnailFolder(string file)
+        {
+            string[] ignore = { ".DS_Store\\", "__MACOSX\\" };
+            return ignore.Any(item => file.Contains(item));
+        }
+
+        private static bool IsFileTooSmall(long size)
+        {
+			long minSize = 256;
+            return size < minSize;
+        }
+    }
 }

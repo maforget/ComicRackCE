@@ -9,13 +9,15 @@ using cYo.Common.ComponentModel;
 using cYo.Common.Runtime;
 using cYo.Common.Text;
 using cYo.Common.Threading;
+using System.Xml.Serialization;
+using cYo.Common.Xml;
 
 namespace cYo.Common.IO
 {
 	public abstract class DiskCache<K, T> : DisposableObject, IDiskCache<K, T>, IDisposable
 	{
 		[Serializable]
-		private class CacheItem
+		public class CacheItem
 		{
 			private long length;
 
@@ -44,6 +46,10 @@ namespace cYo.Common.IO
 			}
 
 			public string FileName => Path.GetFileName(File);
+
+			public CacheItem()
+			{
+			}
 
 			public CacheItem(K key, string file, long length)
 			{
@@ -131,7 +137,7 @@ namespace cYo.Common.IO
 		{
 			this.cacheFolder = cacheFolder;
 			this.cacheSizeMB = cacheSizeMB;
-			cacheIndex = Path.Combine(cacheFolder, "cache.idx");
+			cacheIndex = Path.Combine(cacheFolder, indexFile);
 			try
 			{
 				Directory.CreateDirectory(cacheFolder);
@@ -218,6 +224,36 @@ namespace cYo.Common.IO
 		{
 			try
 			{
+				string cacheIndexLegacy = cacheIndexFile;
+				string cacheIndexXml = $"{cacheIndexFile}.xml";
+				List<CacheItem> index = new List<CacheItem>();
+
+				try
+				{
+					if (File.Exists(cacheIndexXml))
+					{
+						index = LoadCacheIndexXml(cacheIndexXml);
+					}
+				}
+				catch (Exception)
+				{
+				}
+
+				if (index.Count > 0)
+					return index;
+
+				return LoadCacheIndexBinary(cacheIndexLegacy);
+			}
+			catch (Exception)
+			{
+				return new List<CacheItem>();
+			}
+		}
+
+		private static List<CacheItem> LoadCacheIndexBinary(string cacheIndexFile)
+		{
+			try
+			{
 				BinaryFormatter binaryFormatter = new BinaryFormatter
 				{
 					Binder = new VersionNeutralBinder()
@@ -229,11 +265,41 @@ namespace cYo.Common.IO
 			}
 			catch (Exception)
 			{
-				return new List<CacheItem>();
+				throw;
+			}
+		}
+
+		private static List<CacheItem> LoadCacheIndexXml(string cacheIndexFile)
+		{
+			try
+			{
+				return XmlUtility.Load<List<CacheItem>>(cacheIndexFile);
+			}
+			catch (Exception)
+			{
+				throw;
 			}
 		}
 
 		public void SaveCacheIndex(string cacheIndexFile)
+		{
+			string cacheIndexLegacy = cacheIndexFile;
+			string cacheIndexXml = $"{cacheIndexFile}.xml";
+
+			try
+			{
+				SaveCacheIndexXml(cacheIndexXml);
+			}
+			catch (Exception)
+			{
+			}
+			finally
+			{
+				SaveCacheIndexBinary(cacheIndexLegacy);
+			}
+		}
+
+		public void SaveCacheIndexBinary(string cacheIndexFile)
 		{
 			lock (this)
 			{
@@ -256,6 +322,27 @@ namespace cYo.Common.IO
 				}
 				catch (Exception)
 				{
+				}
+			}
+		}
+
+		public void SaveCacheIndexXml(string cacheIndexFile)
+		{
+			lock (this)
+			{
+				try
+				{
+					CacheIndexDirty = false;
+					List<CacheItem> graph;
+					using (ItemMonitor.Lock(fileList))
+					{
+						graph = fileList.ToList();
+					}
+					XmlUtility.Store(cacheIndexFile, graph);
+				}
+				catch (Exception)
+				{
+					throw;
 				}
 			}
 		}

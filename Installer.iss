@@ -1,7 +1,7 @@
 ; Define version and setup filename with iscc.exe /DMyAppVersion=v1.0 /DMyAppSetupFile=ComicRackSetup_v1.0 Installer.iss
 #define MyAppName "ComicRack Community Edition"
 #ifndef MyAppVersion
-#define MyAppVersion "v0.9.178"
+#define MyAppVersion "v0.9.180"
 #endif
 #ifndef MyAppSetupFile
 #define MyAppSetupFile "ComicRackSetup"
@@ -25,18 +25,20 @@ DefaultDirName={autopf}\{#MyAppName}
 ChangesAssociations=yes
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-LicenseFile=ComicRack\bin\Release\License.txt
-PrivilegesRequiredOverridesAllowed=dialog
+LicenseFile=ComicRack\bin\Release\net48\License.txt
+PrivilegesRequired=admin
 OutputDir=.
 OutputBaseFilename={#MyAppSetupFile}
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
 AlwaysShowComponentsList=yes
-ArchitecturesInstallIn64BitMode=x64
+ArchitecturesAllowed=x64compatible
+ArchitecturesInstallIn64BitMode=x64compatible
 SetupIconFile=ComicRack\Icons\uninst_103.ico
 UninstallDisplayIcon={app}\{#MyAppExeName}
 UninstallDisplayName={#MyAppName}
+RestartIfNeededByRun=false
 
 [Messages]
 // define wizard title and tray status msg
@@ -65,21 +67,22 @@ Name: "additional";Description: "Additional images, icons and backgrounds"; Type
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: "ComicRack\bin\Release\*.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\Changes.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\{#MyAppExeName}.config"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\ComicRack.ini"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\DefaultLists.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\License.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\NewsTemplate.html"; DestDir: "{app}"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\ReadMe.txt"; DestDir: "{app}"; Flags: ignoreversion isreadme; Components: app
-Source: "ComicRack\bin\Release\Help\*"; DestDir: "{app}\Help"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\Languages\*"; DestDir: "{app}\Languages"; Flags: ignoreversion; Components: languages
-Source: "ComicRack\bin\Release\Resources\*"; DestDir: "{app}\Resources"; Flags: ignoreversion; Components: app
-Source: "ComicRack\bin\Release\Resources\Icons\*"; DestDir: "{app}\Resources\Icons"; Flags: ignoreversion; Components: additional
-Source: "ComicRack\bin\Release\Resources\Textures\*"; DestDir: "{app}\Resources\Textures"; Flags: ignoreversion recursesubdirs; Components: additional
-Source: "ComicRack\bin\Release\Scripts\*"; DestDir: "{app}\Scripts"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\*.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\Changes.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\{#MyAppExeName}.config"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\ComicRack.ini"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\DefaultLists.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\License.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\NewsTemplate.html"; DestDir: "{app}"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\ReadMe.txt"; DestDir: "{app}"; Flags: ignoreversion isreadme; Components: app
+Source: "ComicRack\bin\Release\net48\Help\*"; DestDir: "{app}\Help"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\Languages\*"; DestDir: "{app}\Languages"; Flags: ignoreversion; Components: languages
+Source: "ComicRack\bin\Release\net48\Resources\*"; DestDir: "{app}\Resources"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\Resources\Icons\*"; DestDir: "{app}\Resources\Icons"; Flags: ignoreversion; Components: additional
+Source: "ComicRack\bin\Release\net48\Resources\Textures\*"; DestDir: "{app}\Resources\Textures"; Flags: ignoreversion recursesubdirs; Components: additional
+Source: "ComicRack\bin\Release\net48\Scripts\*"; DestDir: "{app}\Scripts"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\_CommonRedist\VC_redist.x64.exe"; DestDir: {tmp}; Flags: dontcopy
 
 [Registry]
 ; Comics
@@ -138,6 +141,10 @@ Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; 
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}";          Components: desktop
 
 [Run]
+Filename: "{tmp}\VC_redist.x64.exe"; Parameters: "/install /passive /norestart"; \
+    Check: Is64BitInstallMode and VC2022RedistNeedsInstall; \
+    Flags: waituntilterminated; \
+    StatusMsg: "Installing VC++ 2022 redistributables..."
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
 [Code]
@@ -199,6 +206,29 @@ begin
     end;
   finally
     DownloadPage.Hide;
+  end;
+end;
+
+function VC2022RedistNeedsInstall: Boolean;
+var 
+  Version: String;
+begin
+  if RegQueryStringValue(HKEY_LOCAL_MACHINE,
+       'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64', 'Version',
+       Version) then
+  begin
+    // Is the installed version at least 14.40 ? 
+    Log('VC Redist Version check : found ' + Version);
+    Result := (CompareStr(Version, 'v14.40.33810.00')<0);
+  end
+  else 
+  begin
+    // Not even an old version installed
+    Result := True;
+  end;
+  if (Result) then
+  begin
+    ExtractTemporaryFile('VC_redist.x64.exe');
   end;
 end;
 

@@ -110,42 +110,27 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Pdf
 			using (FileStream readStream = File.OpenRead(source))
 			{
 				Reader reader = new Reader(readStream);
-				int b3 = 0;
-				while (b3 != -1)
+				int b = 0;
+				while (b != -1)
 				{
-					int num;
-					do
+					while ((b = reader.ReadByte()) != -1 && !streamStartTag.IsMatch(b)) ;
+					b = reader.ReadByte();
+					while (b != -1 && (b == 10 || b == 13))
 					{
-						b3 = (num = reader.ReadByte());
+						b = reader.ReadByte();
 					}
-					while (num != -1 && !streamStartTag.IsMatch(b3));
-					b3 = reader.ReadByte();
-					while (true)
+					long offset = reader.GetPosition() - 1L;
+					if (b != byte.MaxValue || reader.ReadByte() != 216)
 					{
-						switch (b3)
-						{
-						case 10:
-						case 13:
-							goto IL_00b4;
-						}
-						break;
-						IL_00b4:
-						b3 = reader.ReadByte();
+						b = reader.ReadByte();
 					}
-					long num2 = reader.GetPosition() - 1;
-					if (b3 != 255 || reader.ReadByte() != 216)
+					else
 					{
-						b3 = reader.ReadByte();
-						continue;
+						while ((b = reader.ReadByte()) != -1 && !streamEndTag.IsMatch(b)) ;
+						yield return new ImageStreamInfo(reader.GetPosition() - offset - streamEndTag.Length - 1, offset);
 					}
-					do
-					{
-						b3 = (num = reader.ReadByte());
-					}
-					while (num != -1 && !streamEndTag.IsMatch(b3));
-					long size = reader.GetPosition() - num2 - streamEndTag.Length - 1;
-					yield return new ImageStreamInfo(size, num2);
 				}
+				reader = null;
 			}
 		}
 

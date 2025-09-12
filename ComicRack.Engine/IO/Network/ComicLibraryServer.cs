@@ -73,7 +73,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 
 		private readonly Cache<Guid, IImageProvider> providerCache = new Cache<Guid, IImageProvider>(EngineConfiguration.Default.ServerProviderCacheSize);
 
-		private static readonly ServerRegistration serverRegistration = new ServerRegistration();
+		//private static readonly ServerRegistration serverRegistration = new ServerRegistration();
 
 		private static readonly Dictionary<int, int> shareCounts = new Dictionary<int, int>();
 
@@ -291,7 +291,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 			{
 				return null;
 			}
-			return ServiceAddress.CompletePortAndPath(GetExternalServiceAddress(), (Config.ServicePort == 7612) ? null : Config.ServicePort.ToString(), (Config.ServiceName == "Share") ? null : Config.ServiceName);
+			return ServiceAddress.CompletePortAndPath(GetExternalServiceAddress(), (Config.ServicePort == ComicLibraryServerConfig.DefaultPublicServicePort) ? null : Config.ServicePort.ToString(), (Config.ServiceName == ComicLibraryServerConfig.DefaultServiceName) ? null : Config.ServiceName);
 		}
 
 		public void AnnounceServer()
@@ -316,8 +316,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 					}
 					try
 					{
-						serverRegistration.Register(uri, Config.Name, Config.Description ?? string.Empty, (int)Config.Options, Config.PrivateListPassword);
-						serverHasBeenAnnounced = true;
+						//serverRegistration.Register(uri, Config.Name, Config.Description ?? string.Empty, (int)Config.Options, Config.PrivateListPassword);
+						//serverHasBeenAnnounced = true;
 					}
 					catch (Exception)
 					{
@@ -343,7 +343,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 			string announcementUri = GetAnnouncementUri();
 			try
 			{
-				serverRegistration.Unregister(announcementUri);
+				//serverRegistration.Unregister(announcementUri);
 			}
 			catch (Exception)
 			{
@@ -388,9 +388,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
                 serviceHost.Credentials.IssuedTokenAuthentication.KnownCertificates.Add(new X509Certificate2(Certificate));// New Cert (sha256)
 				serviceHost.Credentials.IssuedTokenAuthentication.KnownCertificates.Add(new X509Certificate2(Resources.Certificate, string.Empty));//Old Cert (md5)
                 serviceHost.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.None;
-				ServiceEndpoint serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IRemoteServerInfo), CreateChannel(secure: false), "Info");
+				ServiceEndpoint serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IRemoteServerInfo), CreateChannel(secure: false), InfoPoint);
 				serviceEndpoint.Binding.SendTimeout = TimeSpan.FromSeconds(EngineConfiguration.Default.OperationTimeout);
-				serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IRemoteComicLibrary), CreateChannel(secure: true), "Library");
+				serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IRemoteComicLibrary), CreateChannel(secure: true), LibraryPoint);
 				serviceEndpoint.Binding.SendTimeout = TimeSpan.FromSeconds(EngineConfiguration.Default.OperationTimeout);
 				serviceHost.Open();
 				if (Config.IsInternet)
@@ -509,8 +509,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 
 		public static IEnumerable<ShareInformation> GetPublicServers(ServerOptions optionsMask, string password)
 		{
-			ServerInfo[] source = HttpAccess.CallSoap(serverRegistration, (ServerRegistration s) => s.GetList((int)optionsMask, password));
-			return ((IEnumerable<ServerInfo>)source).Select((Func<ServerInfo, ShareInformation>)((ServerInfo s) => s));
+			//ServerInfo[] source = HttpAccess.CallSoap(serverRegistration, (ServerRegistration s) => s.GetList((int)optionsMask, password));
+			//return ((IEnumerable<ServerInfo>)source).Select((Func<ServerInfo, ShareInformation>)((ServerInfo s) => s));
+			return Enumerable.Empty<ShareInformation>();
 		}
 
 		public static string GetExternalServiceAddress()

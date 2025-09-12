@@ -301,7 +301,7 @@ namespace cYo.Projects.ComicRack.Engine
 				Trim(currentItem);
 				if (!string.IsNullOrEmpty(pendingMarker))
 				{
-					Trim(10);
+					Trim(UndoSize);
 					undoItem.Marker = pendingMarker;
 					pendingMarker = null;
 				}

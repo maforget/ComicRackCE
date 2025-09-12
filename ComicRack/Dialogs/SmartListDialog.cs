@@ -54,7 +54,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			{
 				bounds = bounds.Pad(Level * Image.Width, 0);
 				gr.DrawImage(Image, Image.Size.Align(bounds, ContentAlignment.MiddleLeft));
-				bounds = bounds.Pad(Image.Width + 4, 0);
+				bounds = bounds.Pad(Image.Width + ImageSpacing, 0);
 				using (StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
 				{
 					LineAlignment = StringAlignment.Center
@@ -70,7 +70,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			public override Size Measure(Graphics gr, Font font)
 			{
 				Size result = gr.MeasureString(base.Item, font).ToSize();
-				result.Width += Level * Image.Width + Image.Width + 4;
+				result.Width += Level * Image.Width + Image.Width + ImageSpacing;
 				result.Height = Math.Max(result.Height, Image.Height);
 				return result;
 			}
@@ -212,7 +212,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.RestorePosition();
 			LocalizeUtility.Localize(this, null);
 			LocalizeUtility.Localize(TR.Load(base.Name), cbLimitType);
-			new ComboBoxSkinner(cbBaseList);
+			new ComboBoxSkinner(cbBaseList) { MaxHeightScale = 3 };
 			txLimit.EnableOnlyNumberKeys();
 			SpinButton.AddUpDown(txLimit, 1, 1);
 			cbMatchMode.Items.AddRange(TR.Load(base.Name).GetStrings("MatchMode", "All|Any", '|'));
@@ -458,26 +458,28 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void FillBaseCombo(ComicSmartListItem scl)
 		{
-			cbBaseList.Items.Clear();
-			foreach (ComicListItem item in Library.ComicLists.GetItems<ComicListItem>())
+            cbBaseList.Items.Clear();
+            //RecursionCache.Items.Remove(EditId);
+
+            foreach (ComicListItem item in Library.ComicLists.GetItems<ComicListItem>())
 			{
 				Guid guid = ((item is ComicLibraryListItem) ? Guid.Empty : item.Id);
-				if (!item.RecursionTest(EditId))
-				{
+                if (!item.RecursionTest(EditId))
+                {
 					cbBaseList.Items.Add(new ReferenceItem(item.GetLevel(), item.Name, guid, baseImages.Images[item.ImageKey]));
-					if (guid == scl.BaseListId)
-					{
+                    if (guid == scl.BaseListId)
+                    {
 						cbBaseList.SelectedIndex = cbBaseList.Items.Count - 1;
-					}
+                    }
 				}
-			}
+            }
 			if (cbBaseList.Items.Count > 0 && cbBaseList.SelectedIndex == -1)
-			{
+            {
 				cbBaseList.SelectedIndex = 0;
-			}
-		}
+            }
+        }
 
-		private void AddMatcherControl(ComicBookMatcher icbm)
+        private void AddMatcherControl(ComicBookMatcher icbm)
 		{
 			int width = cbBaseList.Right - matcherControls.Left;
 			Control control = ((icbm is ComicBookGroupMatcher) ? CreateGroupMatchPanel(icbm as ComicBookGroupMatcher, width) : CreateMatchPanel(icbm as ComicBookValueMatcher, width));

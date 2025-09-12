@@ -9,6 +9,10 @@ namespace cYo.Projects.ComicRack.Engine.IO
 		Tiff,
 		Bmp,
 		Djvu,
-		Webp
+		Webp,
+		Heif,
+		Avif,
+		//Jpeg2000,
+		//JpegXL,
 	}
 }

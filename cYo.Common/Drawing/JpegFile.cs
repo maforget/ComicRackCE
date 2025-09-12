@@ -50,56 +50,44 @@ namespace cYo.Common.Drawing
 		public static bool GetImageSize(Stream s, out Size size)
 		{
 			size = Size.Empty;
+			bool flag;
 			try
 			{
-				using (BinaryReader binaryReader = new BinaryReader(s))
+				using BinaryReader binaryReader = new BinaryReader(s);
+
+				// Validate JPEG SOI marker
+				if (binaryReader.ReadByte() != byte.MaxValue || binaryReader.ReadByte() != 0xD8)
 				{
-					if (binaryReader.ReadByte() != byte.MaxValue || binaryReader.ReadByte() != 216)
-					{
-						return false;
-					}
-					while (true)
-					{
-						byte b;
-						if ((b = binaryReader.ReadByte()) != byte.MaxValue)
-						{
-							continue;
-						}
-						while (true)
-						{
-							switch (b)
-							{
-							case byte.MaxValue:
-								break;
-							case 192:
-							case 193:
-							case 194:
-							case 195:
-							{
-								binaryReader.BaseStream.Seek(3L, SeekOrigin.Current);
-								int height = binaryReader.ReadUInt16BigEndian();
-								int width = binaryReader.ReadUInt16BigEndian();
-								size = new Size(width, height);
-								goto end_IL_0012;
-							}
-							default:
-								goto IL_0091;
-							}
-							b = binaryReader.ReadByte();
-							continue;
-							IL_0091:
-							binaryReader.BaseStream.Seek(binaryReader.ReadUInt16BigEndian() - 2, SeekOrigin.Current);
-							break;
-						}
-					}
-					end_IL_0012:;
+					return false;
 				}
-				return !size.IsEmpty;
+				while (true)
+				{
+					byte marker;
+					do
+					{
+						marker = binaryReader.ReadByte();
+					} while (marker == byte.MaxValue);
+
+					// Check for start of frame (SOF) markers that contain image dimensions
+					if (marker >= 0xC0 && marker <= 0xC3)
+					{
+						binaryReader.BaseStream.Seek(3, SeekOrigin.Current);
+						int height = binaryReader.ReadUInt16BigEndian();
+						int width = binaryReader.ReadUInt16BigEndian();
+						size = new Size(width, height);
+						return true;
+					}
+
+					// Skip unnecessary segments
+					int segmentLength = binaryReader.ReadUInt16BigEndian() - 2;
+					binaryReader.BaseStream.Seek(segmentLength, SeekOrigin.Current);
+				}
 			}
 			catch (Exception)
 			{
-				return false;
+				flag = false;
 			}
+			return flag;
 		}
 
 		public static bool RemoveExif(Stream inStream, Stream outStream)

@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using cYo.Common.Mathematics;
 using cYo.Common.Runtime;
+using cYo.Common.Win32.FileOperations;
 using cYo.Projects.ComicRack.Engine.Database;
+using cYo.Projects.ComicRack.Engine.IO.Network;
 
 namespace cYo.Projects.ComicRack.Viewer.Config
 {
@@ -439,13 +441,43 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set; 
 		}
 
-        public ExtendedSettings()
+		[DefaultValue(false)]
+		[CommandLineSwitch(ShortName = "hidden")]
+		public bool StartHidden
+		{
+			get;
+			set;
+		}
+
+		[DefaultValue(FileOperationsAPI.IFileOperation)]
+		public FileOperationsAPI DeleteAPI
+		{
+			get;
+			set;
+		}
+
+		[DefaultValue(false)]
+		[CommandLineSwitch(ShortName = "lss")]
+		public bool LegacyStackSorting
+		{
+			get;
+			set;
+		}
+
+		[DefaultValue(true)]
+		public bool OpenExplorerUsingAPI
+		{
+			get;
+			set;
+		}
+
+		public ExtendedSettings()
 		{
 			AnamorphicScalingTolerance = 0.25f;
 			KeyboardZoomStepping = 0.5f;
 			DatabaseBackgroundSaving = 600;
-			InternetServerPort = 7612;
-			PrivateServerPort = 7612;
+			InternetServerPort = ComicLibraryServerConfig.DefaultPublicServicePort;
+			PrivateServerPort = ComicLibraryServerConfig.DefaultPrivateServicePort;
 			AutoHideCursorDuration = 5000;
 			HideBrowserIfShellOpen = true;
 			DragDropCursorAlpha = 0.6f;
@@ -457,6 +489,9 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			QueryCacheMode = QueryCacheMode.InstantUpdate;
 			MacCompatibleScanning = true;
 			SortNetworkFolders = true;
-        }
+			StartHidden = false;
+			DeleteAPI = FileOperationsAPI.IFileOperation;
+			OpenExplorerUsingAPI = true;
+		}
 	}
 }

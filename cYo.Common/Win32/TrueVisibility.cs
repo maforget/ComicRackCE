@@ -22,7 +22,7 @@ namespace cYo.Common.Win32
 			{
 				return false;
 			}
-			return ((ulong)Native.GetWindowLong(c.Handle, -16) & 0x10000000uL) != 0;
+			return ((ulong)Native.GetWindowLong(c.Handle, Native.GWL_STYLE) & 0x10000000uL) != 0;
 		}
 	}
 }

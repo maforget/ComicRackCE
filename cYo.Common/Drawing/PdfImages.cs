@@ -184,10 +184,10 @@ namespace cYo.Common.Drawing
 						{
 							return null;
 						}
-						string text = Path.Combine(Path.GetDirectoryName(registryKey2.GetValue("GS_DLL").ToString()), "gswin32c.exe");
+						string text = Path.Combine(Path.GetDirectoryName(registryKey2.GetValue("GS_DLL").ToString()), GhostScriptWin32);
 						if (!File.Exists(text))
 						{
-							text = Path.Combine(Path.GetDirectoryName(registryKey2.GetValue("GS_DLL").ToString()), "gswin64c.exe");
+							text = Path.Combine(Path.GetDirectoryName(registryKey2.GetValue("GS_DLL").ToString()), GhostScriptWin64);
 						}
 						if (!File.Exists(text))
 						{
@@ -205,7 +205,7 @@ namespace cYo.Common.Drawing
 
 		private static string CheckPath(string path)
 		{
-			return FileUtility.GetFiles(path, SearchOption.AllDirectories).FirstOrDefault((string s) => Path.GetFileName(s).Equals("gswin32c.exe", StringComparison.OrdinalIgnoreCase)) ?? FileUtility.GetFiles(path, SearchOption.AllDirectories).FirstOrDefault((string s) => Path.GetFileName(s).Equals("gswin64c.exe", StringComparison.OrdinalIgnoreCase));
+			return FileUtility.GetFiles(path, SearchOption.AllDirectories).FirstOrDefault((string s) => Path.GetFileName(s).Equals(GhostScriptWin32, StringComparison.OrdinalIgnoreCase)) ?? FileUtility.GetFiles(path, SearchOption.AllDirectories).FirstOrDefault((string s) => Path.GetFileName(s).Equals(GhostScriptWin64, StringComparison.OrdinalIgnoreCase));
 		}
 
 		private static string CheckProgramPath(string path)

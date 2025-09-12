@@ -76,73 +76,73 @@ namespace cYo.Projects.ComicRack.Plugins
 		public static readonly Dictionary<string, string> ValidHooks = new Dictionary<string, string>
 		{
 			{
-				"CreateBookList",
-				"Edit/Update Books Commands"
+                ScriptTypeCreateBookList,
+                ScriptDescEditBooks
+            },
+			{
+                ScriptTypeParseComicPath,
+                ScriptDescParsePath
+            },
+			{
+                ScriptTypeLibrary,
+                ScriptDescEditBooks
+            },
+			{
+                ScriptTypeEditor,
+				ScriptDescEditBooks
 			},
 			{
-				"ParseComicPath",
-				"Book Path Parsers"
+                ScriptTypeBooks,
+				ScriptDescEditBooks
 			},
 			{
-				"Library",
-				"Edit/Update Books Commands"
-			},
+                ScriptTypeNewBooks,
+                ScriptDescNewBooks
+            },
 			{
-				"Editor",
-				"Edit/Update Books Commands"
-			},
+                ScriptTypeBookOpened,
+                ScriptDescBookOpened
+            },
 			{
-				"Books",
-				"Edit/Update Books Commands"
-			},
+                ScriptTypeReaderResized,
+                ScriptDescReaderResized
+            },
 			{
-				"NewBooks",
-				"Create New Books Commands"
-			},
+                ScriptTypeSearch,
+                ScriptDescSearch
+            },
 			{
-				"BookOpened",
-				"Actions when Books are opened"
-			},
-			{
-				"ReaderResized",
-				"Actions when Reader is resized"
-			},
-			{
-				"NetSearch",
-				"Additional Search Providers"
-			},
-			{
-				"ConfigScript",
+                ScriptTypeConfig,
 				string.Empty
 			},
 			{
-				"Startup",
-				"Actions when ComicRack starts"
-			},
+                ScriptTypeStartup,
+                ScriptDescStartup
+            },
 			{
-				"Shutdown",
-				"Actions when ComicRack shuts down"
-			},
+                ScriptTypeShutdown,
+                ScriptDescShutdown
+            },
 			{
-				"ComicInfoHtml",
-				"Book Information Panels"
-			},
+                ScriptTypeComicInfoHtml,
+                ScriptDescInfo
+            },
 			{
-				"ComicInfoUI",
-				"Book Information Panels"
-			},
+                ScriptTypeComicInfoUI,
+                ScriptDescInfo
+            },
 			{
-				"QuickOpenHtml",
-				"Quick Open Panels"
-			},
+                ScriptTypeQuickOpenHtml,
+                ScriptDescQuickOpen
+            },
 			{
-				"QuickOpenUI",
-				"Quick Open Panels"
-			},
+                ScriptTypeQuickOpenUI,
+                ScriptDescQuickOpen
+            },
 			{
-				"DrawThumbnailOverlay",
-				"Custom Book Thumbnail Overlays"
-			}
+                ScriptTypeDrawThumbnailOverlay,
+                ScriptDescThumbOverlay
+            }
 		};
 
 		private readonly CommandCollection commands = new CommandCollection();
@@ -188,7 +188,7 @@ namespace cYo.Projects.ComicRack.Plugins
 						{
 							continue;
 						}
-						if (cmd.Hook == "ConfigScript")
+						if (cmd.Hook == ScriptTypeConfig)
 						{
 							list.Add(cmd);
 						}

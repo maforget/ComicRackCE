@@ -60,16 +60,16 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			EditControlUtility.InitializeYesNo(cbEnableProposed);
 			EditControlUtility.InitializeYesNo(cbSeriesComplete);
 			new ComboBoxSkinner(cbImprint);
-			new ComboBoxSkinner(cbPublisher, ComicBook.PublisherIcons);
-			new ComboBoxSkinner(cbImprint, ComicBook.PublisherIcons);
-			new ComboBoxSkinner(cbAgeRating, ComicBook.AgeRatingIcons);
-			new ComboBoxSkinner(cbFormat, ComicBook.FormatIcons);
+			new ComboBoxSkinner(cbPublisher, ComicBook.PublisherIcons) { MaxHeightScale = 2 };
+			new ComboBoxSkinner(cbImprint, ComicBook.PublisherIcons) { MaxHeightScale = 2 };
+			new ComboBoxSkinner(cbAgeRating, ComicBook.AgeRatingIcons) { MaxHeightScale = 2 };
+			new ComboBoxSkinner(cbFormat, ComicBook.FormatIcons) { MaxHeightScale = 2 };
 			new ComboBoxSkinner(cbBookStore);
 			new ComboBoxSkinner(cbBookCondition);
 			new ComboBoxSkinner(cbBookLocation);
 			new ComboBoxSkinner(cbBookOwner);
 			new ComboBoxSkinner(cbBookPrice);
-			listFields.AddRange(new TextBoxEx[13]
+			listFields.AddRange(new TextBoxEx[14]
 			{
 				txWriter,
 				txPenciller,
@@ -77,6 +77,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				txColorist,
 				txEditor,
 				txCoverArtist,
+				txTranslator,
 				txLetterer,
 				txGenre,
 				txTags,
@@ -86,11 +87,11 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				txCollectionStatus
 			});
 			ListSelectorControl.Register(SearchEngines.Engines, listFields.ToArray());
-			cbLanguage.TopTwoLetterISOLanguages = Program.Lists.GetComicFieldList((ComicBook cb) => cb.LanguageISO).Cast<string>().Distinct();
+			cbLanguage.TopISOLanguages = Program.Lists.GetComicFieldList((ComicBook cb) => cb.LanguageISO).Cast<string>().Distinct();
 			this.books = books.ToArray();
 			Text = StringUtility.Format(Text, books.Count());
 			labelOpenedTime.Visible = (dtpOpenedTime.Visible = (dtpOpenedTime.Enabled = (labelPagesAsTextSimple.Visible = (txPagesAsTextSimple.Visible = (txPagesAsTextSimple.Enabled = !books.Any((ComicBook cb) => cb.IsLinked))))));
-			txCommunityRating.Enabled = (txRating.Enabled = (txTags.Enabled = (cbEnableProposed.Enabled = (cbSeriesComplete.Enabled = books.All((ComicBook cb) => cb.IsInContainer)))));
+			txCommunityRating.Enabled = txRating.Enabled = cbEnableProposed.Enabled = cbSeriesComplete.Enabled = books.All((ComicBook cb) => cb.IsInContainer);
 			SpinButton.AddUpDown(txVolume);
 			SpinButton.AddUpDown(txCount, 1, 0);
 			SpinButton.AddUpDown(txNumber);
@@ -116,7 +117,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				AddCustomFields(array);
 			}
 			TextBoxContextMenu.Register(this, TextBoxContextMenu.AddSearchLinks(SearchEngines.Engines));
-			FormUtility.RegisterPanelToTabToggle(pageData, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.Multiple));
 		}
 
 		private void AddCustomFields(string[] customValues)
@@ -195,6 +195,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			SetText(txLetterer, "Letterer", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Letterer));
 			SetText(txCoverArtist, "CoverArtist", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.CoverArtist));
 			SetText(txEditor, "Editor", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Editor));
+			SetText(txTranslator, "Translator", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Translator));
 			SetText(cbPublisher, "Publisher", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Publisher, sort: true));
 			SetText(cbImprint, "Imprint", () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Imprint, sort: true));
 			SetText(txGenre, "Genre", () => Program.Lists.GetGenreList(withSeparator: false));
@@ -254,6 +255,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 					return autoCompleteStringCollection;
 				});
 			}
+			FormUtility.RegisterPanelToTabToggle(pageData, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.Multiple));
 		}
 
 		private void Store()

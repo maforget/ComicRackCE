@@ -104,13 +104,13 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		{
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 6);
+				SendByte(s, CommandStart);
 				SendString(s, "Start Synchronizing");
 			});
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 9);
-				SendInteger(s, 1);
+				SendByte(s, CommandInfo);
+				SendInteger(s, CurrentSyncVersion);
 				bool licensed = ReadBool(s);
 				int versionCode = ReadInteger(s);
 				string key = ReadString(s);
@@ -125,14 +125,14 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			{
 				s.Send(new byte[2]
 				{
-					8,
+                    CommandProgressUpdate,
 					(byte)percent
 				});
 			});
 			bool abort = false;
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 11);
+				SendByte(s, CommandCheckAbort);
 				abort = ReadBool(s);
 			});
 			return !abort;
@@ -142,7 +142,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		{
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 7);
+				SendByte(s, CommandCompleted);
 				SendString(s, "Synchronization completed");
 			});
 		}
@@ -152,7 +152,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			bool fileExists = false;
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 3);
+				SendByte(s, CommandFileExists);
 				SendString(s, file);
 				fileExists = ReadBool(s);
 			});
@@ -163,7 +163,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		{
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 5);
+				SendByte(s, CommandWriteFile);
 				SendString(s, file);
 				SendLong(s, data.Length);
 				byte[] array = new byte[100000];
@@ -184,7 +184,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			MemoryStream ms = null;
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 1);
+				SendByte(s, CommandReadFile);
 				SendString(s, file);
 				ms = new MemoryStream(ReadSocketData(s));
 			});
@@ -195,7 +195,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		{
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 4);
+				SendByte(s, CommandDeleteFile);
 				SendString(s, file);
 				ReadBool(s);
 			});
@@ -206,7 +206,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			long freeSpace = 0L;
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 2);
+				SendByte(s, CommandFreeSpace);
 				freeSpace = ReadLong(s);
 			});
 			return freeSpace;
@@ -217,7 +217,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			string[] fileList = null;
 			Communicate(delegate(Socket s)
 			{
-				SendByte(s, 0);
+				SendByte(s, CommandListFiles);
 				fileList = ReadString(s).Split("\n", StringSplitOptions.RemoveEmptyEntries).TrimStrings().ToArray();
 			});
 			return fileList;
@@ -229,7 +229,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			switch (base.Device.Edition)
 			{
 			case SyncAppEdition.AndroidFull:
-				flag &= key == "3082030d308201f5a0030201020204494d03a7300d06092a864886f70d01010b05003037310b30090603550406130255533110300e060355040a1307416e64726f6964311630140603550403130d416e64726f6964204465627567301e170d3135303732323134353830375a170d3435303731343134353830375a3037310b30090603550406130255533110300e060355040a1307416e64726f6964311630140603550403130d416e64726f696420446562756730820122300d06092a864886f70d01010105000382010f003082010a02820101009ebd1f327aa7fd9d5c556df9e09ce4d7f091b04ffe649bf0c286fcd7d2efb24c485f02b4518d08227285d1758f0e6ba44ec3d2dd16a53d34f790452c2b25166db2488ac8de275cbe575325a4f19a476e23cd0831e7b05bb728525500e516bb24b20444ce79ec5625cf5963e4b792f8c5017fc36b880b8b78750bdcace2d4e25aee155aab3a4bb1c1c9a539a73edfc1057d77080e85c9506b033ffc72efe2c418f91171b78899be0d9fb04e5befd57cae955d7a81aff4573362d74571bd84d8ca5502cf99ad3124a6dfe45428b38c50300af28c13006803feadfc3aed84027b5fc4d0350ff41612652368f49b49c0461ff845b9c1e1bea440df4f65805f582b150203010001a321301f301d0603551d0e0416041490edd92d5d54c07225eb32807acdd2bd57a169a4300d06092a864886f70d01010b050003820101000932afee5e88d0b1252c84d1d9b8533c5d57fbd0e4766c53ce0f6565e04fe06c4c23687e109d9e23569736f3ee2105c57630b3b66229d25d910293c3d615e81290e932ecf321cc59a2dbecb4acf89a811cd63f10611b01d546f2aea1a23f259bb7f4e833117396e2e62c28a331d5d9a3fb625e199438635dd65e2da46fd4687aea161e9a490a597e264573be8821e2f3e7826df68dfee333301d968d154636497e76851f838df16d9d428b390b5b19f7b6ddbdbb1e19395f349f169764f38c114a91eaa831195a8e2c6217d1ac385ca4f6301f385fe44bdb82bbf6cd64033cd54e334500cec523e6d5abcc3f6bed5538ad7830ec45a897b1752f3695063e4853" || key == "3082019d30820106a00302010202044e7b1922300d06092a864886f70d010105050030133111300f060355040a130863596f20536f6674301e170d3131303932323131313635305a170d3336303931353131313635305a30133111300f060355040a130863596f20536f667430819f300d06092a864886f70d010101050003818d00308189028181008d81ffb74008a048c517275a464db26461df06a3c85675b6ffa8bea15ec9288eec1ef1bf7616d09b7265bf1c5666473342c2a96ca385769592d73a21595335e5173c69ae5bb7aebd29387e9635ce30bdf11afff71145570b6577799ecac6100bcf0b2c4df6fe34fb8a418b5511c6a56c97b15c544269e91478ee24633ef063090203010001300d06092a864886f70d010105050003818100802cf8770c7af0744f9680b54da88b56eb1d6a48e8d446ce746817fe959991dc1f882323c6015edd4d48f28cfe3a94e30b75c92855b01a8c48354aae8e13a0b949390133c07b09419ac73d0b0b3dc13b2838fe9eae4b171c8022cb47ead602771560277cde7ad61e1a9ce5dee880d0226ed8cc71f36fb376d271a3cb61f1128b";
+				flag &= key == AndroidDebugKey || key == AndroidKey;
 					flag = true;
 				break;
 			default:
@@ -251,7 +251,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			Communicate(delegate(Socket socket)
 			{
 				ComicBookCollection comicBookCollection = new ComicBookCollection();
-				SendByte(socket, 10);
+				SendByte(socket, CommandReadMultiFile);
 				SendInteger(socket, files.Length);
 				for (int i = 0; i < files.Length; i++)
 				{
@@ -305,7 +305,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 						ReceiveTimeout = wifiSyncReceiveTimeout,
 						SendTimeout = wifiSyncSendTimeout
 					};
-					IAsyncResult asyncResult = socket.BeginConnect(address, 7614, null, null);
+					IAsyncResult asyncResult = socket.BeginConnect(address, DeviceClientPort, null, null);
 					asyncResult.AsyncWaitHandle.WaitOne(wifiSyncConnectionTimeout, exitContext: true);
 					if (!socket.Connected)
 					{
@@ -465,7 +465,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 				IPAddress group = IPAddress.Parse("224.34.123.90");
 				listener = new UdpClient();
 				Socket client = listener.Client;
-				listenerEP = new IPEndPoint(IPAddress.Any, 7615);
+				listenerEP = new IPEndPoint(IPAddress.Any, BroadcastListenPort);
 				client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, 1);
 				client.Bind(listenerEP);
 				client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(group, IPAddress.Any));
@@ -474,7 +474,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			catch (Exception)
 			{
 			}
-			controlPort = 7620;
+			controlPort = FirstServerControlPort;
 			controlSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			while (true)
 			{
@@ -516,7 +516,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 					}
 					Communicate(extraWifiDeviceAddress, delegate(Socket s)
 					{
-						SendByte(s, 13);
+						SendByte(s, CommandServerAvailable);
 						SendInteger(s, controlPort);
 					}, 0);
 				}
@@ -613,7 +613,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 					{
 						Communicate(address, delegate(Socket s)
 						{
-							SendByte(s, 12);
+							SendByte(s, CommandClientPong);
 						}, 0);
 					}
 				}

@@ -25,7 +25,7 @@ namespace cYo.Common.Presentation.Ceco
 
 		private static readonly float[] sizeFactors = new float[7]
 		{
-			7f / 12f,
+			7f / normSize,
 			19f / 24f,
 			1f,
 			1.16666663f,

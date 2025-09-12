@@ -36,10 +36,10 @@ namespace cYo.Common.Win32
 
 				public int dwReserved1;
 
-				[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
+				[MarshalAs(UnmanagedType.ByValTStr, SizeConst = MAX_PATH)]
 				public string cFileName;
 
-				[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 14)]
+				[MarshalAs(UnmanagedType.ByValTStr, SizeConst = MAX_ALTERNATE)]
 				public string cAlternate;
 			}
 

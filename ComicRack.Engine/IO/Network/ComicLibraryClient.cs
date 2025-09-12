@@ -48,7 +48,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 
 		private ComicLibraryClient(string serviceAddress, ShareInformation information)
 		{
-			serviceAddress = ServiceAddress.CompletePortAndPath(serviceAddress, 7612.ToString(), "Share");
+			serviceAddress = ServiceAddress.CompletePortAndPath(serviceAddress, ComicLibraryServerConfig.DefaultPrivateServicePort.ToString(), ComicLibraryServerConfig.DefaultServiceName);
 			if (information == null)
 			{
 				IRemoteServerInfo serverInfoService = GetServerInfoService(serviceAddress);
@@ -167,7 +167,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 
 		private static IRemoteComicLibrary GetComicLibraryService(string address, string password)
 		{
-			string uriString = string.Format("net.tcp://{0}/{1}", address, "Library");
+			string uriString = string.Format("net.tcp://{0}/{1}", address, ComicLibraryServer.LibraryPoint);
 			EndpointAddress remoteAddress = new EndpointAddress(new Uri(uriString), EndpointIdentity.CreateDnsIdentity("ComicRack"), (AddressHeaderCollection)null);
 			ChannelFactory<IRemoteComicLibrary> channelFactory = new ChannelFactory<IRemoteComicLibrary>(ComicLibraryServer.CreateChannel(secure: true), remoteAddress);
 			channelFactory.Credentials.UserName.UserName = "ComicRack";
@@ -181,7 +181,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 
 		private static IRemoteServerInfo GetServerInfoService(string serviceAddress)
 		{
-			string remoteAddress = string.Format("net.tcp://{0}/{1}", serviceAddress, "Info");
+			string remoteAddress = string.Format("net.tcp://{0}/{1}", serviceAddress, ComicLibraryServer.InfoPoint);
 			ChannelFactory<IRemoteServerInfo> channelFactory = new ChannelFactory<IRemoteServerInfo>(ComicLibraryServer.CreateChannel(secure: false), remoteAddress);
 			IRemoteServerInfo remoteServerInfo = channelFactory.CreateChannel();
 			((IContextChannel)remoteServerInfo).OperationTimeout = TimeSpan.FromSeconds(EngineConfiguration.Default.OperationTimeout);

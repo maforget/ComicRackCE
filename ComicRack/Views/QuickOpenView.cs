@@ -76,7 +76,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 			set
 			{
-				value = value.Clamp(96, 512);
+				value = value.Clamp(Program.MinThumbHeight, Program.MaxThumbHeight);
 				itemView.ItemThumbSize = new Size(value, value);
 			}
 		}

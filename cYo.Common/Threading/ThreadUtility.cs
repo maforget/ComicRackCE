@@ -191,7 +191,7 @@ namespace cYo.Common.Threading
 				};
 				using (ItemMonitor.Lock(threadQueue))
 				{
-					if (threadQueue.Count < 64)
+					if (threadQueue.Count < MaxThreadQueueSize)
 					{
 						thread = new Thread((ThreadStart)delegate
 						{
