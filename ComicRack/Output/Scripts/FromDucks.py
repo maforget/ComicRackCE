@@ -179,7 +179,6 @@ def FromDucks(books):
 				#
 				# ok
 				#
-				self.ok.DialogResult = DialogResult.OK
 				self.ok.Location = Point(405, 250)
 				self.ok.Name = "ok"
 				self.ok.Size = Size(75, 23)
@@ -632,7 +631,7 @@ def FromDucks(books):
 
 
 			def GetSelectedPublicationcodeFromList(self):
-				return self.list.Items[self.list.SelectedIndex][:self.list.Items[self.list.SelectedIndex].find(" - ")].strip()
+				return "" if self.list.SelectedIndex == -1 else self.list.Items[self.list.SelectedIndex][:self.list.Items[self.list.SelectedIndex].find(" - ")].strip()
 
 			def button_Click(self, sender, e):
 				from System.IO import FileInfo
@@ -644,12 +643,15 @@ def FromDucks(books):
 
 				if sender.Name.CompareTo(self.ok.Name) == 0:
 					publicationcode = self.GetSelectedPublicationcodeFromList()
+					if publicationcode == "":
+						MessageBox.Show('Please select a publication first!')
+						return
 					dDict = {"Checked": 1, "Unchecked": 0, "Indeterminate": 2 }
 					for x in range(self.Controls.Count):
 						if 4 < self.Controls.Item[x].TabIndex < 27:
 							aUpdate[self.Controls.Item[x].TabIndex- 5] = dDict[self.Controls.Item[x].CheckState.ToString()]
 					aUpdate[22] = self.genret.Text
-
+					self.DialogResult = DialogResult.OK
 				elif sender.Name.CompareTo(self.reset.Name) == 0:
 					for x in range(self.Controls.Count):
 						if 4 < self.Controls.Item[x].TabIndex < 27:
@@ -676,23 +678,15 @@ def FromDucks(books):
 				elif sender.Name.CompareTo(self.translate.Name) == 0:
 					self.translatelist.BeginUpdate()
 					if self.translatelist.Visible == False:
-
 						self.translatelist.Visible = True
 						self.translateinto.Text = ""
 						self.translateinto.Visible = False
 
-					if FileInfo(getReferenceDataFile('languages')).Exists:
-						fileHandle = open(getReferenceDataFile('languages'), 'r')
-						AllLanguages = fileHandle.readlines()
-						fileHandle.close()
-						AllLanguages.pop(0)
-						for x in AllLanguages:
-							cList = x.split("^")
-							self.translatelist.Items.Add(cList[0].upper() + " - " + cList[2] )
-						self.Controls.Add(self.translatelist)
-						self.translatelist.EndUpdate()
-					else:
-						MessageBox.Show('REBUILD the local tables!')
+					for languagecode, languagename in enumerate(sorted(languages.keys())):
+						self.translatelist.Items.Add(languagecode.upper() + " - " + languagename )
+					self.Controls.Add(self.translatelist)
+					
+					self.translatelist.EndUpdate()
 
 				elif sender.Name.CompareTo(self.help.Name) == 0:
 					MessageBox.Show('Help - FromDucks Script v' + VERSION + "\n---------------------\n" +
@@ -833,14 +827,14 @@ def FromDucks(books):
 			fd.Refresh()
 
 		for referenceDataName in referenceDataNames:
-			cWeb = "https://api.ducksmanager.net/comicrack/" + referenceDataName
+			cWeb = "https://api-comicrack.ducksmanager.net/comicrack/" + ("?languagecode=en" if referenceDataName == "characters" else "")
 			fileName = getReferenceDataFile(referenceDataName)
 			log_BD("Reading/Rebuilding [" + cWeb + "]", "Local Database ", 1)
 			log_BD("Storing in [" + fileName + "]", "", 1)
 
 			if lForce or not FileInfo(fileName).Exists:
 				try:
-					page = _read_url(cWeb+"?languagecode=en" if referenceDataName == "characters" else cWeb)
+					page = _read_url(cWeb)
 					if lForce:
 						fd.Update("Reading/Rebuilding [" + cWeb + "]", 1, "Local Database ")
 						fd.Refresh()
@@ -1002,34 +996,81 @@ def is_string(object):
 	return isinstance(object, str)
 
 def _read_url(url):
+
 	if 'System' in sys.modules:
-		from System.Net import HttpWebRequest, DecompressionMethods
+		from System.Net import HttpWebRequest, DecompressionMethods, WebException, HttpStatusCode
 		from System.Text import Encoding
 		from System.IO import StreamReader
-		Req = HttpWebRequest.Create(url)
-		Req.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip
-		webresponse = Req.GetResponse()
-		inStream = webresponse.GetResponseStream()
-		encode = Encoding.GetEncoding("utf-8")
-		ReadStream = StreamReader(inStream, encode)
-		return ReadStream.ReadToEnd()
+		try:
+			Req = HttpWebRequest.Create(url)
+			Req.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip
+			Req.Timeout = 5000  # milliseconds
+			try:
+				webresponse = Req.GetResponse()
+			except WebException as ex:
+				# Check for HTTP 404
+				if hasattr(ex, 'Response') and ex.Response is not None:
+					if hasattr(ex.Response, 'StatusCode') and ex.Response.StatusCode == HttpStatusCode.NotFound:
+						return ""
+				# Timeout or other network error
+				if hasattr(ex, 'Status') and str(ex.Status) == 'Timeout':
+					return ""
+				return ""
+			inStream = webresponse.GetResponseStream()
+			encode = Encoding.GetEncoding("utf-8")
+			ReadStream = StreamReader(inStream, encode)
+			return ReadStream.ReadToEnd()
+		except Exception:
+			return ""
 	else:
 		# Fallback to CPython urllib
 		try:
 			import urllib.request as urllib_request
+			from urllib.error import HTTPError
 		except ImportError:
 			import urllib2 as urllib_request
-		req = urllib_request.Request(url)
-		resp = urllib_request.urlopen(req)
+			HTTPError = urllib_request.HTTPError
+		# First, check for 404 with a HEAD request to avoid waiting for timeout
+		head_req = urllib_request.Request(url, method='HEAD') if hasattr(urllib_request.Request, 'method') else None
 		try:
+			if head_req:
+				try:
+					urllib_request.urlopen(head_req, timeout=2)
+				except HTTPError as e:
+					if hasattr(e, 'code') and e.code == 404:
+						return ""
+			else:
+				# Python <3.3 fallback: try GET, catch 404 before reading
+				try:
+					resp = urllib_request.urlopen(url, timeout=2)
+				except HTTPError as e:
+					if hasattr(e, 'code') and e.code == 404:
+						return ""
+					raise
+		except Exception:
+			return ""
+		# If not 404, do the actual GET
+		req = urllib_request.Request(url)
+		try:
+			resp = urllib_request.urlopen(req, timeout=5)
 			return resp.read().decode('utf-8')
+		except HTTPError as e:
+			if hasattr(e, 'code') and e.code == 404:
+				return ""
+			return ""
+		except Exception as e:
+			# Timeout or other network error
+			return ""
 		finally:
-			resp.close()
+			try:
+				resp.close()
+			except Exception:
+				pass
 			
 def FillDatNoUI(referenceDataNames):
 	global publications, characters, languages, persons
 	for referenceDataName in referenceDataNames:
-		cWeb = "https://api.ducksmanager.net/comicrack/" + referenceDataName
+		cWeb = "https://api-comicrack.ducksmanager.net/comicrack/" + referenceDataName
 		fileName = getReferenceDataFile(referenceDataName)
 		writeFile(fileName, _read_url(cWeb + "?languagecode=en" if referenceDataName == "characters" else cWeb))
 		page = readFile(fileName)
@@ -1082,16 +1123,17 @@ def SumBuild(StoryFull, start_marker, end_marker):
 
 
 def ReadInfoDucks(cSeries, book):
-	global characters
+	global characters, f
 	dTeams = ("TA", "BB", "TLP", "JW","SD", "BBB", "TTC","TMU", "Evrons", "CDR","Tempolizia", "UH", "Foul Fellows' Club", "101","S7", "QW", "SCPD", "Evil dwarfs", "DWM", "Justice Ducks")
 
 	# Extract input
 	nNumIss = str(book.Number).strip()
-	cWeb = 'https://api.ducksmanager.net/comicrack/issue?publicationcode='+cSeries+'&issuenumber='+nNumIss
+	cWeb = 'https://api-comicrack.ducksmanager.net/comicrack/issue?publicationcode='+cSeries+'&issuenumber='+nNumIss
 	contents = _read_url(cWeb)
 	if len(contents) == 0:
-		f.Update("Not Found:" + cWeb)
-		f.Refresh()
+		if (f):
+			f.Update("Timeout/Network Error:" + cWeb)
+			f.Refresh()
 		#
 		if DEBUG:print ("Not Found ----> " , cWeb)
 		debuglog()	
@@ -1101,8 +1143,9 @@ def ReadInfoDucks(cSeries, book):
 		data = JSONDecoder().decode(contents)
 	except Exception:
 		print("Error parsing JSON")
-		f.Update("Error parsing JSON: " + cWeb)
-		f.Refresh()
+		if (f):
+			f.Update("Error parsing JSON: " + cWeb)
+			f.Refresh()
 		if DEBUG:
 			print("Error parsing JSON ----> ", cWeb)
 		debuglog()
@@ -1146,7 +1189,7 @@ def ReadInfoDucks(cSeries, book):
 		end = book.Summary.find(end_marker, start)
 		log_BD(" Summary markers:", str(start) + " to " + str(end), 2)
 		if start != -1 and end != -1:
-			book.Summary = book.Summary[:start-2] + book.Summary[end + len(end_marker):]
+			book.Summary = book.Summary[:start] + book.Summary[end + len(end_marker):]
 
 		inducks_summary = SumBuild(entries, start_marker, end_marker)
 		
@@ -1345,10 +1388,13 @@ def test_ReadInfoDucks():
 
 	global TitleT
 	TitleT = "T"
+ 
+	global f
+	f = None
 
 	sample_book = Book({
 		'Series': 'dk/AAC',
-		'Number': '2020-31',
+		'Number': '31',
 		'LanguageISO': 'dk',
 		'Title': '',
 		'Count': '',
