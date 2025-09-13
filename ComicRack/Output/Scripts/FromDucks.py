@@ -775,7 +775,7 @@ def FromDucks(books):
 					# return
 
 
-				log_BD("[" + book.Series +"] #" + book.Number + " - " + book.Title," ** Scraped **\n", 1 )
+				log_BD("[" + book.Series +"] #" + book.Number," ** Scraped **\n", 1 )
 				Application.DoEvents()
 
 		except:
@@ -790,58 +790,39 @@ def FromDucks(books):
 
 		return lErrors
 
-	def FillDat(lForce,referenceDataNames):
-		from System.IO import FileInfo
+	def FillDat():
 		from System.Windows.Forms import (
 			MessageBox
 		)
-		global publications, characters, languages, persons
+  
+		fd = None
 
-		if not referenceDataNames:
-			referenceDataNames= ['publications', 'characters', 'languages', 'persons']
+		for referenceDataName in ['publications', 'characters', 'languages', 'persons']:
+			cWeb = "https://api-comicrack.ducksmanager.net/comicrack/" + referenceDataName + ("?languagecode=en" if referenceDataName == "characters" else "")
+			fileName = getReferenceDataFileName(referenceDataName)
 
-		if lForce:
-			fd = ProgressBarDialog(3, "Rebuilding")
-			fd.Show(ComicRack.MainWindow)
-			fd.Update("Reading/Rebuilding [DB]", 1, "Local Database ")
-			fd.Refresh()
-
-		for referenceDataName in referenceDataNames:
-			cWeb = "https://api-comicrack.ducksmanager.net/comicrack/" + ("?languagecode=en" if referenceDataName == "characters" else "")
-			fileName = getReferenceDataFile(referenceDataName)
-			log_BD("Reading/Rebuilding [" + cWeb + "]", "Local Database ", 1)
-			log_BD("Storing in [" + fileName + "]", "", 1)
-
-			if lForce or not FileInfo(fileName).Exists:
+			if fileExistsAndCreatedToday(fileName):
+				page = readFile(fileName)
+			else:
 				try:
 					page = _read_url(cWeb)
-					if lForce:
-						fd.Update("Reading/Rebuilding [" + cWeb + "]", 1, "Local Database ")
-						fd.Refresh()
+					if (fd is None):
+						fd = ProgressBarDialog(1, "Reading/Rebuilding Local Database")
+						log_BD("Reading/Rebuilding [" + cWeb + "]", "Local Database ", 1)
+						log_BD("Storing in [" + fileName + "]", "", 1)
+					fd.Show(ComicRack.MainWindow)
+					fd.Update("Reading/Rebuilding [" + cWeb + "]", 1, "Local Database ")
+					fd.Refresh()
 
 				except IOError:
 					MessageBox.Show('Cannot open URL ' + cWeb + 'for reading')
 					sys.exit(0)
 
 				writeFile(fileName, page)
-
-			elif not FileInfo(fileName).Exists:
-				MessageBox.Show('Cannot open ' + referenceDataName + '\nPlease REBUILD it!')
-				sys.exit(0)
-			else:
-				page = readFile(fileName)
-
-			if (referenceDataName == "characters"):
-				characters = JSONDecoder().decode(page)
-			elif (referenceDataName == "languages"):
-				languages = JSONDecoder().decode(page)
-			elif (referenceDataName == "publications"):
-				publications = JSONDecoder().decode(page)
-			elif (referenceDataName == "persons"):
-				persons = JSONDecoder().decode(page)
-		if lForce:
-			MessageBox.Show('REBUILD completed!')
-
+    
+			fillReferenceData(referenceDataName, page)
+		if (not fd is None):
+			fd.Close()
 
 	from System.Diagnostics import Process
 	from System.Threading import Monitor
@@ -879,16 +860,11 @@ def FromDucks(books):
 		MessageBox.Show("The script cannot find the locations of the scripts. Please try restarting ComicRack.")
 		return
 
-	referenceDataNames = ["publications", "characters", "languages", "persons"]
-
-	publicationReferenceFile = getReferenceDataFile('publications')
+	publicationReferenceFile = getReferenceDataFileName('publications')
 	if not FileInfo(publicationReferenceFile).Exists:
 		writeFile(publicationReferenceFile, "{}")
 
-	if FileInfo(publicationReferenceFile).Length <= 2:
-		FillDat(True,None)
-	else:
-		FillDat(False,referenceDataNames)
+	FillDat()
 
 	StartPub = books[0].Series
 
@@ -921,7 +897,7 @@ def FromDucks(books):
 
 		Monitor.Exit(ComicRack.MainWindow)
 
-def getReferenceDataFile(referenceDataName):
+def getReferenceDataFileName(referenceDataName):
 	return path_combine(__file__[:-len('FromDucks.py')] , referenceDataName + ".json")
 
 def readFile(fileName):
@@ -956,6 +932,37 @@ def writeFile(fileName, content):
 			except TypeError:
 				import codecs
 				codecs.open(fileName, 'w', 'utf-8').write(content)
+	except Exception as e:
+		raise e
+
+def fileExistsAndCreatedToday(fileName):
+	try:
+		if 'System' in sys.modules:
+			from System.IO import FileInfo
+			from System import DateTime
+			fi = FileInfo(fileName)
+			if fi.Exists:
+				if fi.CreationTime.Date == DateTime.Now.Date:
+					return True
+				else:
+					return False
+			else:
+				return False
+		else:
+			import os
+			import time
+			if os.path.exists(fileName):
+				creation_time = os.path.getmtime(fileName)
+				creation_date = time.localtime(creation_time)
+				current_date = time.localtime()
+				if (creation_date.tm_year == current_date.tm_year and
+					creation_date.tm_mon == current_date.tm_mon and
+					creation_date.tm_mday == current_date.tm_mday):
+					return True
+				else:
+					return False
+			else:
+				return False
 	except Exception as e:
 		raise e
 
@@ -1046,23 +1053,27 @@ def _read_url(url):
 				resp.close()
 			except Exception:
 				pass
+
+def fillReferenceData(referenceDataName, page):
+	global publications, characters, languages, persons
+	if referenceDataName == "characters":
+		characters = JSONDecoder().decode(page)
+	elif referenceDataName == "languages":
+		languages = JSONDecoder().decode(page)
+	elif referenceDataName == "publications":
+		publications = JSONDecoder().decode(page)
+	elif referenceDataName == "persons":
+		persons = JSONDecoder().decode(page)
 			
 def FillDatNoUI(referenceDataNames):
 	global publications, characters, languages, persons
 	for referenceDataName in referenceDataNames:
 		cWeb = "https://api-comicrack.ducksmanager.net/comicrack/" + referenceDataName
-		fileName = getReferenceDataFile(referenceDataName)
-		writeFile(fileName, _read_url(cWeb + "?languagecode=en" if referenceDataName == "characters" else cWeb))
-		page = readFile(fileName)
-
-		if (referenceDataName == "characters"):
-			characters = JSONDecoder().decode(page)
-		elif (referenceDataName == "languages"):
-			languages = JSONDecoder().decode(page)
-		elif (referenceDataName == "publications"):
-			publications = JSONDecoder().decode(page)
-		elif (referenceDataName == "persons"):
-			persons = JSONDecoder().decode(page)
+		fileName = getReferenceDataFileName(referenceDataName)
+		if (not fileExistsAndCreatedToday(fileName)):
+			print("Reading/Rebuilding [" + cWeb + "]", "Local Database ")
+			writeFile(fileName, _read_url(cWeb + "?languagecode=en" if referenceDataName == "characters" else cWeb))
+		fillReferenceData(referenceDataName, readFile(fileName))
 
 def cleanupTitle(title):
 	try:
@@ -1374,7 +1385,7 @@ def test_ReadInfoDucks():
 
 	sample_book = Book({
 		'Series': 'dk/AAC',
-		'Number': '31',
+		'Number': '2020-35',
 		'LanguageISO': 'dk',
 		'Title': '',
 		'Count': '',
