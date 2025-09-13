@@ -40,7 +40,6 @@
 # Choose the genre if wanted, pick a translation language with a double click (characters' names will be set in that language, if existing)
 # Click OK and wait...
 # RESET will cycle the checkbox status
-# REBUILD will rebuild/download the tables (tables are read once and then stored)
 # CANCEL will abort the script
 #
 # Bugs, suggestions or comments in the Comicrack Forum !
@@ -126,7 +125,6 @@ def FromDucks(books):
 				self.ok = Button()
 				self.cancel = Button()
 				self.reset = Button()
-				self.rebuild = Button()
 				self.help = Button()
 
 				self.list = ListBox()
@@ -212,21 +210,9 @@ def FromDucks(books):
 				self.reset.Click += self.button_Click
 				self.reset.BackColor = Color.LightYellow
 				#
-				# rebuild
-				#
-				self.rebuild.Location = Point(405, 40)
-				self.rebuild.Name = "rebuild"
-				self.rebuild.Size = Size(75, 23)
-				self.rebuild.TabIndex = 100
-				self.rebuild.Tag = "Rebuild the List"
-				self.rebuild.Text = "Re&build"
-				self.rebuild.UseVisualStyleBackColor = True
-				self.rebuild.Click += self.button_Click
-				self.rebuild.BackColor = Color.LightBlue
-				#
 				# Help
 				#
-				self.help.Location = Point(405, 70)
+				self.help.Location = Point(405, 40)
 				self.help.Name = "help"
 				self.help.Size = Size(75, 23)
 				self.help.TabIndex = 101
@@ -492,7 +478,7 @@ def FromDucks(books):
 				self.language.ThreeState = True
 				#
 				# Translate Button
-				self.translate.Location = Point(405, 100)
+				self.translate.Location = Point(405, 70)
 				self.translate.Name = "translate"
 				self.translate.Size = Size(75, 23)
 				self.translate.TabIndex = 28
@@ -564,7 +550,6 @@ def FromDucks(books):
 				self.Controls.Add(self.cancel)
 				self.Controls.Add(self.ok)
 				self.Controls.Add(self.reset)
-				self.Controls.Add(self.rebuild)
 				self.Controls.Add(self.help)
 
 				self.Controls.Add(self.genret)
@@ -634,7 +619,6 @@ def FromDucks(books):
 				return "" if self.list.SelectedIndex == -1 else self.list.Items[self.list.SelectedIndex][:self.list.Items[self.list.SelectedIndex].find(" - ")].strip()
 
 			def button_Click(self, sender, e):
-				from System.IO import FileInfo
 				from System.Windows.Forms import (
 					MessageBox, CheckState
 				)
@@ -669,9 +653,6 @@ def FromDucks(books):
 					self.translateinto.Text = ""
 					TranslationID = ""
 
-				elif sender.Name.CompareTo(self.rebuild.Name) == 0:
-					FillDat(True, None)
-
 				elif sender.Name.CompareTo(self.cancel.Name) == 0:
 					pass
 
@@ -702,7 +683,6 @@ def FromDucks(books):
 					"\nDouble clicking on a series will show the COA Webpage;\n" +
 					"Click OK and wait...\n" +
 					"> RESET will cycle the checkbox status\n" +
-					"> REBUILD will rebuild the Series list\n(the Series list is read once and then stored);\n" +
 					"> CANCEL will abort the script")
 			def ChangeStatus(self, sender, e):
 
