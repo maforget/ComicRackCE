@@ -1123,10 +1123,11 @@ def ReadInfoDucks(cSeries, book):
 	contents = _read_url(cWeb)
 	if len(contents) == 0:
 		if (f):
-			f.Update("Timeout/Network Error:" + cWeb)
+			f.Update("Timeout/Network Error:" + cWeb, 1)
 			f.Refresh()
 		#
 		if DEBUG:print ("Not Found ----> " , cWeb)
+		log_BD("Not Found ----> ", cWeb, 1)
 		debuglog()	
 		#
 		return -1,0,0,0,0,0,0,0,0,0,0
@@ -1135,7 +1136,7 @@ def ReadInfoDucks(cSeries, book):
 	except Exception:
 		print("Error parsing JSON")
 		if (f):
-			f.Update("Error parsing JSON: " + cWeb)
+			f.Update("Error parsing JSON: " + cWeb, 1)
 			f.Refresh()
 		if DEBUG:
 			print("Error parsing JSON ----> ", cWeb)
@@ -1382,56 +1383,62 @@ def test_ReadInfoDucks():
  
 	global f
 	f = None
-
-	sample_book = Book({
-		'Series': 'dk/AAC',
-		'Number': '2020-35',
-		'LanguageISO': 'dk',
-		'Title': '',
-		'Count': '',
-		'Volume': '',
-		'AlternateSeries': '',
-		'AlternateNumber': '',
-		'StoryArc': '',
-		'SeriesGroup': '',
-		'AlternateCount': '',
-		'Summary': '',
-		'Notes': '',
-		'Review': '',
-		'Year': '',
-		'Month': '',
-		'Day': '',
-		'Writer': '',
-		'Penciller': '',
-		'Inker': '',
-		'Colorist': '',
-		'Letterer': '',
-		'CoverArtist': '',
-		'Editor': '',
-		'Translator': '',
-		'Publisher': '',
-		'Imprint': '',
-		'Genre': '',
-		'Web': '',
-		'PageCount': '',
-		'Format': '',
-		'AgeRating': '',
-		'BlackAndWhite': '',
-		'Manga': '',
-		'Characters': '',
-		'Teams': '', 
-		'MainCharacterOrTeam': '',
-		'Locations': '',
-		'CommunityRating': '',
-		'ScanInformation': '',
-		'Tags': ''
-	})
-
+ 
 	FillDatNoUI(['publications', 'characters', 'languages', 'persons'])
+ 
+	for book in [
+     	#{'Series': 'dk/AAC','Number': '2020-35'},
+      	#{'Series': 'dk/JB', 'Number': '1'}
+      	{'Series': 'dk/MH', 'Number': '1967-01'}
+       ]:
+		sample_book = Book({
+			'Series': book['Series'],
+			'Number': book['Number'],
+			'LanguageISO': 'dk',
+			'Title': '',
+			'Count': '',
+			'Volume': '',
+			'AlternateSeries': '',
+			'AlternateNumber': '',
+			'StoryArc': '',
+			'SeriesGroup': '',
+			'AlternateCount': '',
+			'Summary': '',
+			'Notes': '',
+			'Review': '',
+			'Year': '',
+			'Month': '',
+			'Day': '',
+			'Writer': '',
+			'Penciller': '',
+			'Inker': '',
+			'Colorist': '',
+			'Letterer': '',
+			'CoverArtist': '',
+			'Editor': '',
+			'Translator': '',
+			'Publisher': '',
+			'Imprint': '',
+			'Genre': '',
+			'Web': '',
+			'PageCount': '',
+			'Format': '',
+			'AgeRating': '',
+			'BlackAndWhite': '',
+			'Manga': '',
+			'Characters': '',
+			'Teams': '', 
+			'MainCharacterOrTeam': '',
+			'Locations': '',
+			'CommunityRating': '',
+			'ScanInformation': '',
+			'Tags': ''
+		})
 
-	ReadInfoDucks(sample_book.Series, sample_book)
 
-	print(sample_book.__dict__)
+		ReadInfoDucks(sample_book.Series, sample_book)
+
+		print(sample_book.__dict__)
 
 if __name__ == "__main__":
 	test_ReadInfoDucks()
