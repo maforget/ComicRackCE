@@ -733,9 +733,8 @@ namespace cYo.Projects.ComicRack.Viewer
 			Settings = Settings.Load(defaultSettingsFile);
 			Settings.RunCount++;
 			CommandLineParser.Parse(ImageDisplayControl.HardwareSettings);
-			EnableColorScheme();
-			CommandLineParser.Parse(EngineConfiguration.Default);
-			Application.EnableVisualStyles();
+            CommandLineParser.Parse(EngineConfiguration.Default);
+            EnableColorScheme();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
 			ShellFile.DeleteAPI = ExtendedSettings.DeleteAPI;
 			DatabaseManager.FirstDatabaseAccess += delegate
@@ -960,7 +959,6 @@ namespace cYo.Projects.ComicRack.Viewer
             Application.EnableVisualStyles();
         }
 
-        private static IEnumerable<string> SplitIconKeys(string value)
 		public static Dictionary<string, ImagePackage> CreateGenericsIcons(IEnumerable<string> folders, string searchPattern, string trigger, Func<string, IEnumerable<string>> mapKeys = null)
 		{
 			Dictionary<string, ImagePackage> dictionary = new Dictionary<string, ImagePackage>();

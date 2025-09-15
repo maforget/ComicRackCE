@@ -126,6 +126,7 @@
     <Compile Update="Forms\SplitterEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Forms\ColorScheme\ColorSchemeController.cs" />
     <Compile Update="Forms\TabBar.cs">
       <SubType>Component</SubType>
     </Compile>
