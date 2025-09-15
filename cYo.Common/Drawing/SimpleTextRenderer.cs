@@ -37,15 +37,14 @@ namespace cYo.Common.Drawing
 		private static Rectangle WorkText(Graphics gr, IEnumerable<TextLine> textLines, Rectangle bounds, bool onlyMeassure, int scrollOffset)
 		{
 			if (gr == null || textLines == null)
-			{
 				throw new ArgumentNullException();
-			}
+
 			Rectangle rect = bounds;
 			using (gr.SaveState())
 			{
-				Rectangle rectangle = Rectangle.Empty;
-				int num = 0;
-				float num2 = MeasureFirstTab(gr, textLines) + 8f;
+				Rectangle a = Rectangle.Empty;
+				int dy = 0;
+				float num = MeasureFirstTab(gr, textLines) + 8f;
 				gr.PageUnit = GraphicsUnit.Pixel;
 				foreach (TextLine textLine in textLines)
 				{
@@ -56,44 +55,42 @@ namespace cYo.Common.Drawing
 					}
 					if (textLine.Separator)
 					{
-						num = textLine.BeforeSpacing;
-						continue;
+						dy = textLine.BeforeSpacing;
 					}
-					if (num != 0)
+					else
 					{
-						Space(ref rect, num);
-						num = 0;
-					}
-					if (!string.IsNullOrEmpty(textLine.Text))
-					{
-						Space(ref rect, textLine.BeforeSpacing);
-					}
-					using (Brush br = new SolidBrush(textLine.ForeColor))
-					{
-						StringFormat format = textLine.Format;
-						if (format.Alignment != StringAlignment.Far)
+						if (dy != 0)
 						{
-							format.SetTabStops(0f, new float[1]
+							Space(ref rect, dy);
+							dy = 0;
+						}
+						if (!string.IsNullOrEmpty(textLine.Text))
+							Space(ref rect, textLine.BeforeSpacing);
+
+						using (Brush br = new SolidBrush(textLine.ForeColor))
+						{
+							StringFormat format = textLine.Format;
+							if (format.Alignment != StringAlignment.Far)
 							{
-								num2
-							});
+								format.SetTabStops(0f, new float[1]
+								{
+									num
+								});
+							}
+							Rectangle b = DrawString(gr, textLine.Text, textLine.Font, br, ref rect, format, onlyMeassure);
+							if (rect.Height != 0)
+								a = (a.IsEmpty ? b : Rectangle.Union(a, b));
+							else
+								break;
 						}
-						Rectangle rectangle2 = DrawString(gr, textLine.Text, textLine.Font, br, ref rect, format, onlyMeassure);
-						if (rect.Height == 0)
+						if (!string.IsNullOrEmpty(textLine.Text))
 						{
-							break;
+							Space(ref rect, textLine.AfterSpacing);
+							a.Height += textLine.AfterSpacing;
 						}
-						rectangle = (rectangle.IsEmpty ? rectangle2 : Rectangle.Union(rectangle, rectangle2));
-						goto IL_0130;
-					}
-					IL_0130:
-					if (!string.IsNullOrEmpty(textLine.Text))
-					{
-						Space(ref rect, textLine.AfterSpacing);
-						rectangle.Height += textLine.AfterSpacing;
 					}
 				}
-				return rectangle;
+				return a;
 			}
 		}
 

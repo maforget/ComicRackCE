@@ -169,7 +169,9 @@ namespace cYo.Common.Windows.Forms
 		[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
 		protected override void WndProc(ref Message m)
 		{
-			if (m.Msg == 8465 && NativeMethods.HIWORD(m.WParam) == NativeMethods.CBN_DROPDOWN)
+			// 0x2111 = WM_REFLECT + WM_COMMAND
+			// This is a reflected control notification sent to the control itself
+			if (m.Msg == NativeMethods.WM_REFLECT + NativeMethods.WM_COMMAND && NativeMethods.HIWORD(m.WParam) == NativeMethods.CBN_DROPDOWN)
 			{
 				ShowDropDown();
 			}

@@ -753,6 +753,11 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			Forced
 		}
 
+		private static class Native
+		{
+			public const int WM_MOUSEHWHEEL = 0x020E;
+		}
+
 		public const float MinimumZoom = 1f;
 
 		public const float MaximumZoom = 8f;
@@ -2210,10 +2215,11 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			}
 		}
 
+		// Handles the mouse wheel messages, specifically for horizontal scrolling.
 		protected override void DefWndProc(ref Message m)
 		{
 			int msg = m.Msg;
-			if (msg == 526)
+			if (msg == Native.WM_MOUSEHWHEEL)
 			{
 				try
 				{

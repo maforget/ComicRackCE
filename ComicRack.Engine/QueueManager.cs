@@ -166,6 +166,8 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private static string slowThumbnailQueueMessage;
 
+		private static string slowThumbnailQueueUnlimitedMessage;
+
 		private static string getImageQueueMessage;
 
 		private static string updateDynamicQueueMessage;
@@ -397,7 +399,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 			IProgressState ps = default(IProgressState);
 			string outPath = default(string);
-			ExportComicsQueue.AddItem(kcb, delegate(IAsyncResult ar)
+			ExportComicsQueue.AddItem(kcb, (IAsyncResult ar) =>
 			{
 				foreach (ComicBook cb in cbs)
 				{
@@ -406,26 +408,38 @@ namespace cYo.Projects.ComicRack.Engine
 				ComicExporter comicExporter = new ComicExporter(cbs, setting, sequence);
 				try
 				{
-					bool flag = kcb.EditMode.IsLocalComic();
-					bool flag2 = setting.Target == ExportTarget.ReplaceSource;
+					bool isLocal = kcb.EditMode.IsLocalComic();
+					bool replace = setting.Target == ExportTarget.ReplaceSource;
 					ps = ar as IProgressState;
 					if (ps != null)
 					{
 						ps.ProgressAvailable = true;
-						comicExporter.Progress += delegate(object s, StorageProgressEventArgs e)
+						comicExporter.Progress += (object s, StorageProgressEventArgs e) =>
 						{
 							ps.ProgressPercentage = e.PercentDone;
 							e.Cancel = ps.Abort;
 						};
 					}
 					IEnumerable<string> source = (from cb in cbs
-						where cb.EditMode.IsLocalComic()
-						select cb.FilePath).ToArray();
+												  where cb.EditMode.IsLocalComic()
+												  select cb.FilePath).ToArray();
+
+
+					//Callback function to check if the file is already in the database, will be checked when calling Export
+					comicExporter.FileIsInDatabase = (string targetPath, string sourceFile) =>
+					{
+						if (string.IsNullOrEmpty(targetPath))
+							return false;
+
+						// If the target path is the same as the source file, we assume it's not a duplicate
+						return targetPath != sourceFile && DatabaseManager.Database.Books.FindItemByFile(targetPath) != null;
+					};
+
 					outPath = comicExporter.Export(CacheManager.ImagePool);
 					if (outPath != null)
 					{
 						source = source.Where((string p) => !string.Equals(p, outPath, StringComparison.OrdinalIgnoreCase));
-						if (flag && flag2)
+						if (isLocal && replace)
 						{
 							kcb.FilePath = outPath;
 							kcb.RefreshFileProperties();
@@ -444,7 +458,7 @@ namespace cYo.Projects.ComicRack.Engine
 						}
 						else
 						{
-							if (setting.DeleteOriginal && flag)
+							if (setting.DeleteOriginal && isLocal)
 							{
 								foreach (string item2 in source)
 								{
@@ -452,13 +466,14 @@ namespace cYo.Projects.ComicRack.Engine
 									DatabaseManager.Database.Books.Remove(item2);
 								}
 							}
-							if (setting.AddToLibrary || flag2)
+							if (setting.AddToLibrary || replace)
 							{
 								DatabaseManager.BookFactory.Create(outPath, CreateBookOption.AddToStorage, RefreshInfoOptions.DontReadInformation)?.SetInfo(comicExporter.ComicInfo, onlyUpdateEmpty: false);
 							}
 						}
 					}
 				}
+				catch (OperationCanceledException) { } //Since we cancelled don't add it as an error, just ignore it.
 				catch
 				{
 					ExportErrors.Add(comicExporter);
@@ -494,11 +509,10 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				if (cb.ComicInfoIsDirty && Settings.UpdateComicFiles && (Settings.AutoUpdateComicsFiles || alwaysWrite))
 				{
-					cb.ComicInfoIsDirty = false;
 					WriteInfoToFileWithCacheUpdate(cb);
 				}
 			});
-		}
+			}
 
 		public void AddBookToFileUpdate(ComicBook cb)
 		{
@@ -526,6 +540,7 @@ namespace cYo.Projects.ComicRack.Engine
 						key.UpdateFileInfo();
 					});
 					cb.RefreshFileProperties();
+					cb.ComicInfoIsDirty = false;
 				}
 			}
 			catch (Exception)
@@ -597,6 +612,7 @@ namespace cYo.Projects.ComicRack.Engine
 				writeInfoQueueMessage = TR.Messages["WriteInfoQueueMessage", "Write information to Book file '{0}'"];
 				fastThumbanilQueueMessage = TR.Messages["FastThumbanilQueueMessage", "Retrieve cached thumbnail for page {0} in file '{1}'"];
 				slowThumbnailQueueMessage = TR.Messages["SlowThumbnailQueueMessage", "Create thumbnail for page {0} in file '{1}'"];
+				slowThumbnailQueueUnlimitedMessage = TR.Messages["SlowThumbnailQueueUnlimitedMessage", "Create thumbnail for cover in file '{0}'"];
 				getImageQueueMessage = TR.Messages["GetImageQueueMessage", "Get page {0} in file '{1}'"];
 				scanComicQueueMessage = TR.Messages["ScanComicQueueMessage", "Scanning '{0}'"];
 				deviceSyncQueueMessage = TR.Messages["DeviceSyncQueueMessage", "Syncing Device '{0}'"];
@@ -617,6 +633,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupLoadThumbnails, CacheManager.ImagePool.FastThumbnailQueue, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(fastThumbanilQueueMessage, ik.Item.Index + 1, Path.GetFileName(ik.Item.Location)))));
 			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupCreateThumbnails, CacheManager.ImagePool.SlowThumbnailQueue, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(slowThumbnailQueueMessage, ik.Item.Index + 1, Path.GetFileName(ik.Item.Location)))));
+			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupCreateThumbnails, CacheManager.ImagePool.SlowThumbnailQueueUnlimited, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(slowThumbnailQueueUnlimitedMessage, Path.GetFileName(ik.Item.Location))), "Abort Cover Generation", CacheManager.ImagePool.SlowThumbnailQueueUnlimited.Clear));
 			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupCreatePages, CacheManager.ImagePool.SlowPageQueue, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(getImageQueueMessage, ik.Item.Index + 1, Path.GetFileName(ik.Item.Location)))));
 			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupLoadPages, CacheManager.ImagePool.FastPageQueue, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(getImageQueueMessage, ik.Item.Index + 1, Path.GetFileName(ik.Item.Location)))));
 			list.Add(new PendingTasksInfo<ComicBook>("ReadInfoAnimation", taskGroupReadInfo, ReadComicBookInfoFileQueue, (IProcessingItem<ComicBook> cb) => new TaskInfo(cb, StringUtility.Format(refreshInfoQueueMessage, cb.Item.Caption))));

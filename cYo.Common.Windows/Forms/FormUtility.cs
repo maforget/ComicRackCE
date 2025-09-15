@@ -333,6 +333,28 @@ namespace cYo.Common.Windows.Forms
 			}
 		}
 
+		public static void AutoResizeColumn(this ListView listView, int autoSizeColumnIndex, int spaces = 0)
+		{
+			// Do some rudimentary (parameter) validation.
+			if (listView == null) throw new ArgumentNullException("listView");
+			if (listView.View != View.Details || listView.Columns.Count <= 0 || autoSizeColumnIndex < 0) return;
+			if (autoSizeColumnIndex >= listView.Columns.Count)
+				throw new IndexOutOfRangeException("Parameter autoSizeColumnIndex is outside the range of column indices in the ListView.");
+
+			// Sum up the width of all columns except the auto-resizing one.
+			int otherColumnsWidth = 0;
+			foreach (ColumnHeader header in listView.Columns)
+				if (header.Index != autoSizeColumnIndex)
+					otherColumnsWidth += header.Width;
+
+			// Calculate the (possibly) new width of the auto-resizable column.
+			int autoSizeColumnWidth = listView.ClientRectangle.Width - otherColumnsWidth - spaces;
+
+			// Finally set the new width of the auto-resizing column, if it has changed.
+			if (listView.Columns[autoSizeColumnIndex].Width != autoSizeColumnWidth)
+				listView.Columns[autoSizeColumnIndex].Width = autoSizeColumnWidth;
+		}
+
 		public static IEnumerable<ListViewItem> Enumerate(this ListView listView)
 		{
 			for (int i = 0; i < listView.Items.Count; i++)
@@ -667,10 +689,12 @@ namespace cYo.Common.Windows.Forms
 					foreach (Control control3 in array)
 					{
 						tabPage3.Controls.Remove(control3);
+						if (control3 is Panel panel)
+							panel.AutoScroll = false;
+
 						if (control2 is CollapsibleGroupBox)
-						{
 							control3.Top += ScaleDpiY((control2 as CollapsibleGroupBox).HeaderHeight);
-						}
+
 						control2.Controls.Add(control3);
 					}
 				}
@@ -711,14 +735,17 @@ namespace cYo.Common.Windows.Forms
 					foreach (Control control4 in array2)
 					{
 						item.Controls.Remove(control4);
+						if (control4 is Panel panel)
+							panel.AutoScroll = true;
+
 						if (item is CollapsibleGroupBox)
-						{
 							control4.Top -= ScaleDpiY((item as CollapsibleGroupBox).HeaderHeight);
-						}
+
 						tabPage2.Controls.Add(control4);
 					}
 				}
 				tabControl2.SelectedIndex = 0;
+				tabControl2.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
 			}
 			return on;
 		}
@@ -734,6 +761,15 @@ namespace cYo.Common.Windows.Forms
 		{
 			foreach (Control control2 in control.Controls)
 			{
+				// Set up double-click handlers on all panels and the container control itself
+				control2.Controls.OfType<Panel>().ForEach(c =>
+				{
+					c.AutoScroll = getState != null && getState(); // Set AutoScroll based on state, it should only be true when in tab mode
+					c.DoubleClick += delegate
+					{
+						TogglePanelTab(control, setState);
+					};
+				});
 				control2.DoubleClick += delegate
 				{
 					TogglePanelTab(control, setState);

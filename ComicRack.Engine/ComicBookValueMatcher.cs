@@ -36,7 +36,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public string Description => description ?? (description = ComicBookMatcher.TRMatcher[GetType().Name, DescriptionNeutral]);
 
-		public string DescriptionNeutral
+		public virtual string DescriptionNeutral
 		{
 			get
 			{
@@ -44,7 +44,6 @@ namespace cYo.Projects.ComicRack.Engine
 				{
                     DescriptionAttribute descriptionAttribute = (DescriptionAttribute)Attribute.GetCustomAttribute(GetType(), typeof(DescriptionAttribute));
                     descriptionNeutral = descriptionAttribute.Description ?? string.Empty;
-                    descriptionNeutral = this is IVirtualDescription ? (this as IVirtualDescription)?.VirtualDescription : descriptionNeutral;
 				}
 				return descriptionNeutral;
 			}

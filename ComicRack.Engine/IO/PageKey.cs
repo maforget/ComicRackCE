@@ -8,7 +8,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 	{
 		private BitmapAdjustment adjustment = BitmapAdjustment.Empty;
 
-		public BitmapAdjustment Adjustment => adjustment;
+		public BitmapAdjustment Adjustment { get => adjustment; set => adjustment = value; }
 
 		public PageKey(object source, string location, long size, DateTime modified, int index, ImageRotation rotation, BitmapAdjustment adjustment)
 			: base(source, location, size, modified, index, rotation)
@@ -19,6 +19,11 @@ namespace cYo.Projects.ComicRack.Engine.IO
 		public PageKey(ImageKey key)
 			: base(key)
 		{
+		}
+
+		public PageKey()
+			: base()
+		{		
 		}
 
 		protected override int CreateHashCode()

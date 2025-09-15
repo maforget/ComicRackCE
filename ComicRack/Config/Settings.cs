@@ -114,7 +114,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		public const int MinimumMemoryThumbnailCacheMB = 5;
 
-		public const int MaximumMemoryThumbnailCacheMB = 100;
+		public const int MaximumMemoryThumbnailCacheMB = 500;
 
 		public const int DefaultMemoryThumbnailCacheMB = 50;
 
@@ -297,6 +297,8 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		private volatile bool alwaysDisplayBrowserDockingGrip;
 
 		private bool autoHideMainMenu = true;
+
+		private bool disableDragDrop = false;
 
 		private bool showMainMenuNoComicOpen = true;
 
@@ -1908,6 +1910,25 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			}
 		}
 
+		[Category("Browser")]
+		[Description("Disable opening files via drag-and-drop")]
+		[DefaultValue(false)]
+		public bool DisableDragDrop
+		{
+			get
+			{
+				return disableDragDrop;
+			}
+			set
+			{
+				if (disableDragDrop != value)
+				{
+					disableDragDrop = value;
+					FireEvent(this.DisableDragDropChanged);
+				}
+			}
+		}
+
 		[DefaultValue(true)]
 		[Browsable(false)]
 		public bool AutoHideMainMenu
@@ -2572,6 +2593,9 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		public event EventHandler AutoHideMainMenuChanged;
 
 		[field: NonSerialized]
+		public event EventHandler DisableDragDropChanged;
+
+		[field: NonSerialized]
 		public event EventHandler ShowMainMenuNoComicOpenChanged;
 
 		[field: NonSerialized]
@@ -2685,24 +2709,24 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			});
 		}
 
-		public static Settings LoadBinary(string file)
-		{
-			try
-			{
-				BinaryFormatter binaryFormatter = new BinaryFormatter
-				{
-					AssemblyFormat = FormatterAssemblyStyle.Simple
-				};
-				using (Stream serializationStream = File.OpenRead(file))
-				{
-					return (Settings)binaryFormatter.Deserialize(serializationStream);
-				}
-			}
-			catch (Exception)
-			{
-				return new Settings();
-			}
-		}
+		//public static Settings LoadBinary(string file)
+		//{
+		//	try
+		//	{
+		//		BinaryFormatter binaryFormatter = new BinaryFormatter
+		//		{
+		//			AssemblyFormat = FormatterAssemblyStyle.Simple
+		//		};
+		//		using (Stream serializationStream = File.OpenRead(file))
+		//		{
+		//			return (Settings)binaryFormatter.Deserialize(serializationStream);
+		//		}
+		//	}
+		//	catch (Exception)
+		//	{
+		//		return new Settings();
+		//	}
+		//}
 
 		public static Settings Load(string file)
 		{
@@ -2718,18 +2742,18 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			}
 		}
 
-		public void SaveBinary(string file)
-		{
-			BinaryFormatter binaryFormatter = new BinaryFormatter
-			{
-				TypeFormat = FormatterTypeStyle.TypesWhenNeeded,
-				AssemblyFormat = FormatterAssemblyStyle.Simple
-			};
-			using (Stream serializationStream = File.Create(file))
-			{
-				binaryFormatter.Serialize(serializationStream, this);
-			}
-		}
+		//public void SaveBinary(string file)
+		//{
+		//	BinaryFormatter binaryFormatter = new BinaryFormatter
+		//	{
+		//		TypeFormat = FormatterTypeStyle.TypesWhenNeeded,
+		//		AssemblyFormat = FormatterAssemblyStyle.Simple
+		//	};
+		//	using (Stream serializationStream = File.Create(file))
+		//	{
+		//		binaryFormatter.Serialize(serializationStream, this);
+		//	}
+		//}
 
 		public void Save(string file)
 		{

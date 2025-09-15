@@ -12,7 +12,9 @@ namespace cYo.Projects.ComicRack.Engine.IO
 
 		public static bool MemoryOptimized = true;
 
-		public Color BackgrounColor
+		public bool Merged { get; set; } = false;
+
+        public Color BackgrounColor
 		{
 			get;
 			set;
@@ -73,5 +75,12 @@ namespace cYo.Projects.ComicRack.Engine.IO
 		{
 			return new PageImage(bmp.ImageToJpegBytes());
 		}
-	}
+
+        public static PageImage CreateFromMerged(Bitmap bmp)
+        {
+            PageImage newPageImage = CreateFrom(bmp);
+			newPageImage.Merged = true;
+			return newPageImage;
+        }
+    }
 }

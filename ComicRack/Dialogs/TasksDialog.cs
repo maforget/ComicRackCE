@@ -108,24 +108,24 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			{
 				return;
 			}
-			int num = 0;
-			int num2 = 0;
-			int num3 = ((lvTasks.TopItem != null) ? lvTasks.TopItem.Index : 0);
+			int totalPendingItems = 0;
+			int totalAbortableItems = 0;
+			int previousTopItemIndex = ((lvTasks.TopItem != null) ? lvTasks.TopItem.Index : 0);
 			lvTasks.BeginUpdate();
 			try
 			{
 				lvTasks.Items.Clear();
 				foreach (QueueManager.IPendingTasks process in processes)
 				{
-					IEnumerable<object> source = process.GetPendingItems().OfType<object>();
-					int num4 = source.Count();
-					num += num4;
+					IEnumerable<object> pendingItems = process.GetPendingItems().OfType<object>();
+					int pendingItemCount = pendingItems.Count();
+					totalPendingItems += pendingItemCount;
 					if (process.Abort != null)
 					{
-						num2 += num4;
+						totalAbortableItems += pendingItemCount;
 					}
 					ListViewGroup group = lvTasks.Groups[process.Group] ?? lvTasks.Groups.Add(process.Group, process.Group);
-					foreach (object item in source.Take(10))
+					foreach (object item in pendingItems.Take(10))
 					{
 						ListViewItem listViewItem = lvTasks.Items.Add(item.ToString());
 						listViewItem.ImageKey = process.Group;
@@ -139,35 +139,35 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 						listViewItem.Tag = progressState;
 						switch (progressState.State)
 						{
-						case ProgressState.Waiting:
-							listViewItem.SubItems.Add(waitingText);
-							break;
-						case ProgressState.Running:
-							listViewItem.SubItems.Add(progressState.ProgressAvailable ? $"{progressState.ProgressPercentage}%" : runningText);
-							break;
-						case ProgressState.Completed:
-							listViewItem.SubItems.Add(completedText);
-							break;
+							case ProgressState.Waiting:
+								listViewItem.SubItems.Add(waitingText);
+								break;
+							case ProgressState.Running:
+								listViewItem.SubItems.Add(progressState.ProgressAvailable ? $"{progressState.ProgressPercentage}%" : runningText);
+								break;
+							case ProgressState.Completed:
+								listViewItem.SubItems.Add(completedText);
+								break;
 						}
 					}
-					if (num4 > 10)
+					if (pendingItemCount > 10)
 					{
-						ListViewItem listViewItem2 = lvTasks.Items.Add(string.Format(TR.Messages["ListMore", "{0} more..."], num4 - 10));
+						ListViewItem listViewItem2 = lvTasks.Items.Add(string.Format(TR.Messages["ListMore", "{0} more..."], pendingItemCount - 10));
 						listViewItem2.ForeColor = SystemColors.ControlLight;
 						listViewItem2.Group = group;
 					}
 				}
-				if (num3 < lvTasks.Items.Count)
+				if (previousTopItemIndex < lvTasks.Items.Count)
 				{
-					lvTasks.TopItem = lvTasks.Items[num3];
+					lvTasks.TopItem = lvTasks.Items[previousTopItemIndex];
 				}
 			}
 			finally
 			{
 				lvTasks.EndUpdate();
 			}
-			lblItemCount.Text = StringUtility.Format(counterFormat, num);
-			btAbort.Enabled = num2 > 0;
+			lblItemCount.Text = StringUtility.Format(counterFormat, totalPendingItems);
+			btAbort.Enabled = totalAbortableItems > 0;
 		}
 
 		private static void AddNodeEntry(TreeNode tn, string text, params object[] p)

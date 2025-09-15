@@ -10,7 +10,7 @@ using cYo.Common.Collections;
 namespace cYo.Projects.ComicRack.Engine.Database
 {
 	[Serializable]
-	public class ComicListItemFolder : ComicListItem, IDeserializationCallback, ICloneable
+	public class ComicListItemFolder : ShareableComicListItem, IDeserializationCallback, ICloneable
 	{
 		private readonly ComicListItemCollection items = new ComicListItemCollection();
 
@@ -187,7 +187,7 @@ namespace cYo.Projects.ComicRack.Engine.Database
 			items.Changed += items_Changed;
 		}
 
-		public object Clone()
+		public override object Clone()
 		{
 			return new ComicListItemFolder(this);
 		}

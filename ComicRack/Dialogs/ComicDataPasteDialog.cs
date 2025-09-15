@@ -24,6 +24,11 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.RestorePosition();
 			this.RestorePanelStates();
 			LocalizeUtility.Localize(this, null);
+		}
+
+		protected override void OnLoad(EventArgs e)
+		{
+			base.OnLoad(e);
 			FormUtility.RegisterPanelToTabToggle(pageData, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.Paste));
 		}
 

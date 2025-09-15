@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -23,7 +24,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 				}
 				if (FireProgressEvent(i * 100 / provider.Count))
 				{
-					break;
+					throw new OperationCanceledException("Export operation was cancelled by the user.");
 				}
 				PageResult[] images = StorageProvider.GetImages(provider, page, null, setting, info.Manga == MangaYesNo.YesAndRightToLeft, createThumbnail: false);
 				foreach (PageResult pageResult in images)

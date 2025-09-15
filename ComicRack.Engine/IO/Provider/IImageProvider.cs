@@ -24,8 +24,10 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 
 		byte[] GetByteImage(int index);
 
-		ProviderImageInfo GetImageInfo(int index);
+        ExportImageContainer GetByteImageForExport(int index);
+
+        ProviderImageInfo GetImageInfo(int index);
 
 		ThumbnailImage GetThumbnail(int index);
-	}
+    }
 }

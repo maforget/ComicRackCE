@@ -39,10 +39,15 @@ namespace cYo.Projects.ComicRack.Engine.IO
 
 		public event EventHandler<StorageProgressEventArgs> Progress;
 
+		public FileIsInDatabaseChecker FileIsInDatabase { get; set; }
+		public delegate bool FileIsInDatabaseChecker(string targetPath, string sourcePath);
+
+
 		public ComicExporter(IEnumerable<ComicBook> books, ExportSetting setting, int sequence)
 		{
 			comicBooks = books.ToList();
 			comicInfo = CombinedComics.GetComicInfo(comicBooks);
+			comicInfo.Tags = comicInfo.Tags.AppendUniqueValueToList(setting.TagsToAppend);
 			this.setting = setting;
 			this.sequence = sequence;
 		}
@@ -55,6 +60,13 @@ namespace cYo.Projects.ComicRack.Engine.IO
 				if (File.Exists(targetPath) && !setting.Overwrite && setting.Target != ExportTarget.ReplaceSource)
 				{
 					throw new InvalidOperationException(StringUtility.Format(TR.Messages["OutputFileExists", "Output file '{0}' already exists!"], targetPath));
+				}
+				// Check if the file already exists in the database.
+				bool existsInDatabase = FileIsInDatabase?.Invoke(targetPath, ComicBook.FilePath) ?? false;
+				if (File.Exists(targetPath) && existsInDatabase && setting.Target == ExportTarget.ReplaceSource)
+				{
+					// If the file exists in the database and we are replacing the source, we throw an exception
+					throw new InvalidOperationException(StringUtility.Format(TR.Messages["AlreadyExistsInDatabase", "Resulting operation would result in a duplicate entry in the database, Output file '{0}' already exists in the library"], targetPath));
 				}
 				if ((setting.AddToLibrary || setting.Target == ExportTarget.ReplaceSource) && Providers.Readers.GetFormatProviderType(setting.FormatId) == null)
 				{
@@ -72,7 +84,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 				using (IImageProvider provider = CombinedComics.OpenProvider(comicBooks, pagePool))
 				{
 					FileFormat fileFormat = setting.GetFileFormat(ComicBook);
-					string text = null;
+					string tempFile = null;
 					try
 					{
 						using (StorageProvider storageProvider = Providers.Writers.CreateFormatProvider(fileFormat.Name))
@@ -86,10 +98,10 @@ namespace cYo.Projects.ComicRack.Engine.IO
 								storageProvider.Progress += writer_Progress;
 								if (File.Exists(targetPath))
 								{
-									text = EngineConfiguration.Default.GetTempFileName();
-									comicInfo = storageProvider.Store(provider, comicInfo, text, setting);
+									tempFile = EngineConfiguration.Default.GetTempFileName();
+									comicInfo = storageProvider.Store(provider, comicInfo, tempFile, setting);
 									ShellFile.DeleteFile(targetPath);
-									File.Move(text, targetPath);
+									File.Move(tempFile, targetPath);
 								}
 								else
 								{
@@ -104,7 +116,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 					}
 					catch
 					{
-						FileUtility.SafeDelete(text ?? targetPath);
+						FileUtility.SafeDelete(tempFile ?? targetPath);
 						throw;
 					}
 				}

@@ -60,6 +60,11 @@ namespace cYo.Projects.ComicRack.Engine.IO
 		{
 		}
 
+		public ThumbnailKey()
+			: base()
+		{			
+		}
+
 		private void CalcResource()
 		{
 			Match match = rxResource.Match(base.Location);

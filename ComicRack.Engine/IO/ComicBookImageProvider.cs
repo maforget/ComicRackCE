@@ -61,6 +61,12 @@ namespace cYo.Projects.ComicRack.Engine.IO
 			return provider.GetByteImage(index);
 		}
 
+		public ExportImageContainer GetByteImageForExport(int index)
+		{
+			CheckProvider();
+			return provider.GetByteImageForExport(index);
+		}
+
 		public ProviderImageInfo GetImageInfo(int index)
 		{
 			CheckProvider();

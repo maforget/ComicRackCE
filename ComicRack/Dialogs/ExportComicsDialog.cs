@@ -14,6 +14,7 @@ using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.IO;
 using cYo.Projects.ComicRack.Engine.IO.Provider;
 using cYo.Projects.ComicRack.Viewer.Config;
+using cYo.Projects.ComicRack.Viewer.Controls;
 using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
@@ -117,7 +118,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 					IgnoreErrorPages = chkIgnoreErrorPages.Checked,
 					KeepOriginalImageNames = chkKeepOriginalNames.Checked,
 					ImageProcessingSource = (ExportImageProcessingSource)cbImageProcessingSource.SelectedIndex,
-					ImageProcessing = new BitmapAdjustment((float)tbSaturation.Value / 100f, (float)tbBrightness.Value / 100f, (float)tbContrast.Value / 100f, (float)tbGamma.Value / 100f, Color.White, chkAutoContrast.Checked ? BitmapAdjustmentOptions.AutoContrast : BitmapAdjustmentOptions.None, tbSharpening.Value)
+					ImageProcessing = new BitmapAdjustment((float)tbSaturation.Value / 100f, (float)tbBrightness.Value / 100f, (float)tbContrast.Value / 100f, (float)tbGamma.Value / 100f, Color.White, chkAutoContrast.Checked ? BitmapAdjustmentOptions.AutoContrast : BitmapAdjustmentOptions.None, tbSharpening.Value),
+					TagsToAppend = string.IsNullOrEmpty(txTagsToAppend.Text) ? null : txTagsToAppend.Text.Trim(),
 				};
 			}
 			set
@@ -137,7 +139,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				chkEmbedComicInfo.Checked = value.EmbedComicInfo;
 				enumUtil.Value = (int)value.RemovePageFilter;
 				txIncludePages.Text = value.IncludePages;
-				cbPageFormat.SelectedIndex = (int)value.PageType;
+				cbPageFormat.SelectedIndex = (int)value.PageType < cbPageFormat.Items.Count ? (int)value.PageType : 0;
 				tbQuality.Value = value.PageCompression;
 				cbPageResize.SelectedIndex = (int)value.PageResize;
 				txWidth.Value = value.PageWidth;
@@ -153,6 +155,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				tbGamma.Value = (int)(value.ImageProcessing.Gamma * 100f);
 				tbSharpening.Value = value.ImageProcessing.Sharpen;
 				chkAutoContrast.Checked = (value.ImageProcessing.Options & BitmapAdjustmentOptions.AutoContrast) != 0;
+				txTagsToAppend.Text = value.TagsToAppend;
 			}
 		}
 
@@ -160,6 +163,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		{
 			LocalizeUtility.UpdateRightToLeft(this);
 			InitializeComponent();
+			if (Environment.Is64BitProcess) this.cbPageFormat.Items.AddRange(new object[] { "HEIF", "AVIF" });
 			LocalizeUtility.Localize(this, null);
 			foreach (ComboBox control in this.GetControls<ComboBox>())
 			{
@@ -167,7 +171,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			}
 			this.RestorePosition();
 			this.RestorePanelStates();
-			FormUtility.RegisterPanelToTabToggle(exportSettings, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.Export));
 			foreach (FileFormat item in from f in Providers.Writers.GetSourceFormats()
 				orderby f
 				select f)
@@ -177,7 +180,15 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			enumUtil = new EnumMenuUtility(contextRemovePageFilter, typeof(ComicPageType), flagsMode: true, null, Keys.None);
 			enumUtil.ValueChanged += enumUtil_ValueChanged;
 			new NiceTreeSkin(tvPresets);
+			ListSelectorControl.Register(SearchEngines.Engines, txTagsToAppend);
+			EditControlUtility.SetText(txTagsToAppend, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Tags));
 			IdleProcess.Idle += OnIdle;
+		}
+
+		protected override void OnLoad(EventArgs e)
+		{
+			base.OnLoad(e);
+			FormUtility.RegisterPanelToTabToggle(exportSettings, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.Export));
 		}
 
 		private void OnIdle(object sender, EventArgs e)
@@ -191,7 +202,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			checkBox.Enabled = enabled;
 			txCustomStartIndex.Enabled = setting.Naming == ExportNaming.Custom;
 			txCustomName.Enabled = setting.Naming == ExportNaming.Custom || setting.Naming == ExportNaming.Caption;
-			tbQuality.Enabled = setting.PageType == StoragePageType.Jpeg || setting.PageType == StoragePageType.Webp;
+			tbQuality.Enabled = setting.PageType == StoragePageType.Jpeg || setting.PageType == StoragePageType.Webp || setting.PageType == StoragePageType.Heif || setting.PageType == StoragePageType.Avif;
 			txWidth.Enabled = setting.PageResize != StoragePageResize.Height && setting.PageResize != StoragePageResize.Original;
 			txHeight.Enabled = setting.PageResize != StoragePageResize.Width && setting.PageResize != StoragePageResize.Original;
 			chkDontEnlarge.Enabled = setting.PageResize != StoragePageResize.Original;

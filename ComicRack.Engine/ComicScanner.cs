@@ -70,20 +70,20 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public void ScanFileOrFolder(string fileOrFolder, bool all, bool removeMissing)
+		public void ScanFileOrFolder(string fileOrFolder, bool all, bool removeMissing, bool forceRefreshInfo = false)
 		{
 			if (!string.IsNullOrEmpty(fileOrFolder))
 			{
-				scanQueue.Add(new ScanItemFileOrFolder(fileOrFolder, all, removeMissing));
+				scanQueue.Add(new ScanItemFileOrFolder(fileOrFolder, all, removeMissing, forceRefreshInfo));
 				Scan();
 			}
 		}
 
-		public void ScanFilesOrFolders(IEnumerable<string> filesOrFolders, bool all, bool removeMissing)
+		public void ScanFilesOrFolders(IEnumerable<string> filesOrFolders, bool all, bool removeMissing, bool forceRefreshInfo = false)
 		{
 			filesOrFolders.ForEach(delegate(string folder)
 			{
-				ScanFileOrFolder(folder, all, removeMissing);
+				ScanFileOrFolder(folder, all, removeMissing, forceRefreshInfo);
 			});
 		}
 
@@ -134,7 +134,7 @@ namespace cYo.Projects.ComicRack.Engine
 									}
 									if (!comicScanNotifyEventArgs.IgnoreFile)
 									{
-										OnProcessScannedFile(scanFile, scanOptions);
+										OnProcessScannedFile(scanFile, scanOptions, scanItem.ForceRefreshInfo);
 									}
 								}
 							}
@@ -205,10 +205,11 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		protected virtual void OnProcessScannedFile(string file, ComicScanOptions scanOptions)
+		protected virtual void OnProcessScannedFile(string file, ComicScanOptions scanOptions, bool forceRefreshInfo = false)
 		{
-			ComicBook comicBook = factory.Create(file, CreateBookOption.DoNotAdd, RefreshInfoOptions.DontReadInformation);
-			if (comicBook != null && !comicBook.IsInContainer)
+			RefreshInfoOptions refreshInfoOptions = forceRefreshInfo ? RefreshInfoOptions.ForceRefresh : RefreshInfoOptions.DontReadInformation;
+			ComicBook comicBook = factory.Create(file, CreateBookOption.DoNotAdd, refreshInfoOptions);
+			if (comicBook != null && !comicBook.IsInContainer && !forceRefreshInfo)
 			{
 				ComicBook comicBook2 = factory.Storage.FindItemByFileNameSize(comicBook.FilePath);
 				if (comicBook2 != null && !File.Exists(comicBook2.FilePath))

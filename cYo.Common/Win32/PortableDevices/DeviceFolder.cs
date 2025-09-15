@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -8,7 +9,8 @@ namespace cYo.Common.Win32.PortableDevices
 {
 	public class DeviceFolder : DeviceItem
 	{
-		public IEnumerable<DeviceItem> Items => base.Device.EnumerateItems(this);
+		public IEnumerable<DeviceItem> Items => base.Device.EnumerateItems(this).CatchExceptions(ex => 
+			Debug.WriteLine($"Error enumerating ItemPath: {this.ItemPath} - {ex.Message}"));
 
 		public bool IsRoot
 		{

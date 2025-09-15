@@ -146,8 +146,8 @@ namespace cYo.Projects.ComicRack.Engine
         protected override void OnMatchValueChanged()
         {
             base.OnMatchValueChanged();
-            parsedMatchValues = ((MatchColumn == 0) ? MatchValue : MatchValue2).Split(' ', StringSplitOptions.RemoveEmptyEntries);
-            try
+            parsedMatchValues = Regex.Split((MatchColumn == 0) ? MatchValue : MatchValue2, @"[,;]|(?<![,;].*)\s+(?!.*[,;])").Where(x=> !string.IsNullOrEmpty(x.Trim())).Select(x => x.Trim()).ToArray();
+			try
             {
                 rxList = new Regex($"(?<=^|[,;])\\s*{Regex.Escape(MatchValue.Trim())}\\s*(?=$|[,;])", RegexOptions.IgnoreCase | RegexOptions.Singleline);
             }

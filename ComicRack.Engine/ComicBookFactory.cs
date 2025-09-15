@@ -67,40 +67,51 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 			if (comicBook != null)
 			{
-				return comicBook;
+				return RefreshComicBookInfo(options, comicBook);
 			}
 			if (!File.Exists(file) || Providers.Readers.GetSourceProviderType(file) == null)
 			{
 				TemporaryBooks.Remove(file);
 				return null;
 			}
-			comicBook = TemporaryBooks[file];
+			comicBook = RefreshComicBookInfo(options, TemporaryBooks[file]);
 			bool flag = comicBook != null;
 			comicBook = comicBook ?? ComicBook.Create(file, options);
 			switch (addOptions)
 			{
-			case CreateBookOption.AddToStorage:
-				comicBook.AddedTime = DateTime.Now;
-				if ((options & RefreshInfoOptions.GetFastPageCount) != 0)
-				{
-					comicBook.RefreshInfoFromFile(RefreshInfoOptions.GetFastPageCount);
-				}
-				TemporaryBooks.Remove(comicBook);
-				Storage.Add(comicBook);
-				break;
-			case CreateBookOption.AddToTemporary:
-				if (!flag)
-				{
-					TemporaryBooks.Add(comicBook);
-					comicBook.RefreshInfoFromFile(options);
-					comicBook.BookChanged += OnTemporaryBookChanged;
-				}
-				break;
-			default:
-				throw new ArgumentOutOfRangeException("addOptions");
-			case CreateBookOption.DoNotAdd:
-				break;
+				case CreateBookOption.AddToStorage:
+					comicBook.AddedTime = DateTime.Now;
+					if ((options & RefreshInfoOptions.GetFastPageCount) != 0)
+					{
+						comicBook.RefreshInfoFromFile(RefreshInfoOptions.GetFastPageCount);
+					}
+					TemporaryBooks.Remove(comicBook);
+					Storage.Add(comicBook);
+					break;
+				case CreateBookOption.AddToTemporary:
+					if (!flag)
+					{
+						TemporaryBooks.Add(comicBook);
+						comicBook.RefreshInfoFromFile(options);
+						comicBook.BookChanged += OnTemporaryBookChanged;
+					}
+					break;
+				default:
+					throw new ArgumentOutOfRangeException("addOptions");
+				case CreateBookOption.DoNotAdd:
+					break;
 			}
+			return comicBook;
+		}
+
+		private static ComicBook RefreshComicBookInfo(RefreshInfoOptions options, ComicBook comicBook)
+		{
+			if (comicBook is null)
+				return null;
+
+			if (options.HasFlag(RefreshInfoOptions.ForceRefresh))
+				comicBook.RefreshInfoFromFile(options);
+
 			return comicBook;
 		}
 

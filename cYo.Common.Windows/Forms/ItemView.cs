@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
 using cYo.Common.Collections;
@@ -19,6 +20,7 @@ namespace cYo.Common.Windows.Forms
 {
 	public class ItemView : ScrollControl
 	{
+		#region Classes
 		private class DisplayItem
 		{
 			private Rectangle bounds;
@@ -175,9 +177,9 @@ namespace cYo.Common.Windows.Forms
 			public void Clear(ItemViewStates mask)
 			{
 				GetItems().ForEach((IViewableItem vi) =>
-                {
-                    Set(vi, mask, on: false);
-                });
+				{
+					Set(vi, mask, on: false);
+				});
 			}
 
 			public void Focus(IViewableItem item)
@@ -288,8 +290,10 @@ namespace cYo.Common.Windows.Forms
 					return groupDict[group.Key];
 				}
 			}
-		}
+		} 
+		#endregion
 
+		#region Fields
 		private const int maxPopupSize = 20;
 
 		private const int longClickDelta = 2;
@@ -460,8 +464,10 @@ namespace cYo.Common.Windows.Forms
 
 		private ToolStripMenuItem miStack;
 
-		private ToolTip toolTip;
+		private ToolTip toolTip; 
+		#endregion
 
+		#region Properties
 		[Category("Behavior")]
 		[DefaultValue(true)]
 		public bool LabelEdit
@@ -1379,7 +1385,7 @@ namespace cYo.Common.Windows.Forms
 			get
 			{
 				return (from comp in itemSorters.Lock()
-					select Columns.FindBySorter(comp)).TakeWhile((IColumn ic) => ic != null).ToArray();
+						select Columns.FindBySorter(comp)).TakeWhile((IColumn ic) => ic != null).ToArray();
 			}
 			set
 			{
@@ -1411,7 +1417,7 @@ namespace cYo.Common.Windows.Forms
 			get
 			{
 				return (from comp in ItemGrouper.GetGroupers()
-					select Columns.FindByGrouper(comp)).TakeWhile((IColumn ic) => ic != null).ToArray();
+						select Columns.FindByGrouper(comp)).TakeWhile((IColumn ic) => ic != null).ToArray();
 			}
 			set
 			{
@@ -1472,7 +1478,7 @@ namespace cYo.Common.Windows.Forms
 			get
 			{
 				return (from comp in ItemStacker.GetGroupers()
-					select Columns.FindByGrouper(comp)).TakeWhile((IColumn ic) => ic != null).ToArray();
+						select Columns.FindByGrouper(comp)).TakeWhile((IColumn ic) => ic != null).ToArray();
 			}
 			set
 			{
@@ -1640,7 +1646,8 @@ namespace cYo.Common.Windows.Forms
 
 		public IViewableItem InplaceEditItem => currentInplaceEditItem;
 
-		public int InplaceEditSubItem => currentInplaceEditSubItem;
+		public int InplaceEditSubItem => currentInplaceEditSubItem; 
+		#endregion
 
 		public event EventHandler<StackEventArgs> ProcessStack;
 
@@ -1657,6 +1664,9 @@ namespace cYo.Common.Windows.Forms
 		public event ItemDragEventHandler ItemDrag;
 
 		public event PaintEventHandler PostPaint;
+
+		public Func<string, IComparer<IViewableItem>> StackColumnSorter { get; set; }
+
 
 		public ItemView()
 		{
@@ -2603,17 +2613,18 @@ namespace cYo.Common.Windows.Forms
 		private Rectangle CalcItemPositions(Graphics gr, bool withSort)
 		{
 			bool areGroupsVisible = AreGroupsVisible;
-			bool flag;
+			bool isDisplayedItemsEmpty;
 			using (ItemMonitor.Lock(displayedItems))
 			{
-				flag = displayedItems == null || displayedItems.Count == 0;
+				isDisplayedItemsEmpty = displayedItems == null || displayedItems.Count == 0;
 			}
-			List<IViewableItem> list;
-			List<GroupHeaderInformation> list2;
-			if (withSort || flag)
+			List<IViewableItem> viewableItems;
+			List<GroupHeaderInformation> grpHeaders;
+			if (withSort || isDisplayedItemsEmpty)
 			{
-				list = new List<IViewableItem>(items.Lock());
-				list2 = new List<GroupHeaderInformation>();
+				// Group viewable items and Create group headers and assign items to them
+				viewableItems = new List<IViewableItem>(this.items.Lock());
+				grpHeaders = new List<GroupHeaderInformation>();
 				if (areGroupsVisible)
 				{
 					IGrouper<IViewableItem> grouper = ItemGrouper;
@@ -2621,7 +2632,7 @@ namespace cYo.Common.Windows.Forms
 					{
 						grouper = new AlphabetGrouper(grouper);
 					}
-					GroupManager<IViewableItem> groupManager = new GroupManager<IViewableItem>(grouper, list);
+					GroupManager<IViewableItem> groupManager = new GroupManager<IViewableItem>(grouper, viewableItems);
 					IEnumerable<GroupContainer<IViewableItem>> enumerable = groupManager.GetGroups();
 					if (GroupSortingOrder != 0)
 					{
@@ -2633,40 +2644,47 @@ namespace cYo.Common.Windows.Forms
 					}
 					foreach (GroupContainer<IViewableItem> item in enumerable)
 					{
-						list2.Add(new GroupHeaderInformation(item.Caption, item.Items, GroupsStatus.IsCollapsed(item.Caption)));
-						list.AddRange(item.Items);
+						grpHeaders.Add(new GroupHeaderInformation(item.Caption, item.Items, GroupsStatus.IsCollapsed(item.Caption)));
+						viewableItems.AddRange(item.Items);
 					}
 				}
 				else
 				{
-					list2.Add(new GroupHeaderInformation(null, new List<IViewableItem>(list)));
+					grpHeaders.Add(new GroupHeaderInformation(null, new List<IViewableItem>(viewableItems)));
 				}
+
+				// Create item stacks from each group header
 				if (IsStacked)
 				{
 					Dictionary<IViewableItem, StackInfo> dictionary = new Dictionary<IViewableItem, StackInfo>();
-					foreach (GroupHeaderInformation item2 in list2)
+					foreach (GroupHeaderInformation groupHeaderInfo in grpHeaders)
 					{
-						GroupManager<IViewableItem> groupManager2 = new GroupManager<IViewableItem>(ItemStacker, item2.Items);
-						item2.Items.Clear();
-						item2.ItemCount = 0;
+						GroupManager<IViewableItem> groupManager2 = new GroupManager<IViewableItem>(ItemStacker, groupHeaderInfo.Items);
+						groupHeaderInfo.Items.Clear();
+						groupHeaderInfo.ItemCount = 0;
+						// Iterate through each stack and create the stackInfo used when referring to stacks
 						foreach (GroupContainer<IViewableItem> group in groupManager2.GetGroups())
 						{
+							// Determine which sorter is set inside that group (stack) and extend the ItemStackSorter with additional sorters.
+							var stackSorter = StackColumnSorter?.Invoke(group.Caption);
 							if (ItemStackSorter != null)
 							{
-								group.Items.Sort(ItemStackSorter);
+								// Chain the stack sorter with the default ItemStackSorter if it exists
+								var stackSortComparer = stackSorter is null ? ItemStackSorter : ItemStackSorter.Chain(stackSorter); // Default comparer if no specific sorter is found
+								group.Items.Sort(stackSortComparer); // Sort the items in the group using the stack sorter
 							}
 							StackInfo stackInfo = new StackInfo(group);
-							OnProcessStack(stackInfo);
-							IViewableItem key = group.Items[0];
+							OnProcessStack(stackInfo); // Settings like Top of Stack & Custom Thumbnail will be applied here
+							IViewableItem key = group.Items[0]; // Use the first item of the stack
 							dictionary[key] = stackInfo;
-							item2.Items.Add(group.Items[0]);
+							groupHeaderInfo.Items.Add(key); // Add the first item of the stack to the group header items
 							if (GroupHeaderTrueCount)
 							{
-								item2.ItemCount += group.Items.Count;
+								groupHeaderInfo.ItemCount += group.Items.Count;
 							}
 							else
 							{
-								item2.ItemCount++;
+								groupHeaderInfo.ItemCount++;
 							}
 						}
 					}
@@ -2677,11 +2695,14 @@ namespace cYo.Common.Windows.Forms
 				}
 				else
 				{
+					// Clear the stack info if not stacked
 					using (ItemMonitor.Lock(this.stackInfo))
 					{
 						this.stackInfo.Clear();
 					}
 				}
+
+				//Sort each stack (in reality first item of each stack) within each group headers
 				IComparer<IViewableItem> comparer = null;
 				using (ItemMonitor.Lock(itemSorters))
 				{
@@ -2698,7 +2719,7 @@ namespace cYo.Common.Windows.Forms
 				{
 					try
 					{
-						list2.ParallelForEach((GroupHeaderInformation ghi) =>
+						grpHeaders.ParallelForEach((GroupHeaderInformation ghi) =>
                         {
                             ghi.Items.Sort(comparer);
                         });
@@ -2707,33 +2728,35 @@ namespace cYo.Common.Windows.Forms
 					{
 					}
 				}
-				list.Clear();
-				foreach (GroupHeaderInformation item3 in list2)
+
+				// Create the viewable items list from each group header
+				viewableItems.Clear();
+				foreach (GroupHeaderInformation item3 in grpHeaders)
 				{
-					list.AddRange(item3.Items);
+					viewableItems.AddRange(item3.Items);
 				}
 			}
 			else
 			{
 				using (ItemMonitor.Lock(displayedItems))
 				{
-					list = displayedItems;
+					viewableItems = displayedItems;
 				}
 				using (ItemMonitor.Lock(displayedGroups))
 				{
-					list2 = displayedGroups;
+					grpHeaders = displayedGroups;
 				}
 			}
-			if (list2.Count > 0)
+			if (grpHeaders.Count > 0)
 			{
-				groupsStatus = new ItemViewGroupsStatus(list2);
+				groupsStatus = new ItemViewGroupsStatus(grpHeaders);
 			}
 			Dictionary<IViewableItem, ItemInformation> dictionary2 = new Dictionary<IViewableItem, ItemInformation>();
-			int num = 0;
-			int num2 = 0;
-			int num3 = 0;
-			int num4 = 0;
-			int num5 = 0;
+			int width = 0;
+			int height = 0;
+			int col = 0;
+			int row = 0;
+			int itemIndex = 0;
 			IColumn expandedColumn = GetExpandedColumn();
 			IColumn column = columns.FirstOrDefault((IColumn c) => c.Visible);
 			Rectangle rectangle = ((expandedColumn != null) ? GetColumnHeaderRectangle(expandedColumn) : Rectangle.Empty);
@@ -2746,17 +2769,17 @@ namespace cYo.Common.Windows.Forms
 			}
 			Point empty = Point.Empty;
 			Rectangle rectangle2 = new Rectangle(empty, Size.Empty);
-			for (int i = 0; i < list2.Count; i++)
+			for (int i = 0; i < grpHeaders.Count; i++)
 			{
-				GroupHeaderInformation groupHeaderInformation = list2[i];
+				GroupHeaderInformation groupHeaderInformation = grpHeaders[i];
 				if (areGroupsVisible && !string.IsNullOrEmpty(groupHeaderInformation.Caption))
 				{
 					if (empty.X != 0)
 					{
-						empty.Y += itemBorderSize.Height * 2 + num2;
+						empty.Y += itemBorderSize.Height * 2 + height;
 						empty.X = 0;
-						num4++;
-						num3 = 0;
+						row++;
+						col = 0;
 					}
 					groupHeaderInformation.Bounds = new Rectangle(empty.X, empty.Y, viewRectangle.Width, GroupHeaderHeight);
 					groupHeaderInformation.ExpandedColumnBounds = Rectangle.Empty;
@@ -2768,7 +2791,7 @@ namespace cYo.Common.Windows.Forms
 					continue;
 				}
 				int startIndex = 0;
-				int num6 = 0;
+				int grpIndex = 0;
 				foreach (IViewableItem item4 in groupHeaderInformation.Items)
 				{
 					if (item4.View == null)
@@ -2776,11 +2799,11 @@ namespace cYo.Common.Windows.Forms
 						continue;
 					}
 					Size size = GetDefaultItemSize(viewRectangle.Width);
-					int num7 = 0;
+					int offset = 0;
 					switch (ItemViewMode)
 					{
 					case ItemViewMode.Detail:
-						num7 = 8;
+						offset = 8;
 						break;
 					case ItemViewMode.Thumbnail:
 					case ItemViewMode.Tile:
@@ -2790,8 +2813,8 @@ namespace cYo.Common.Windows.Forms
 							Graphics = gr,
 							Size = size,
 							DisplayType = ItemViewMode,
-							Item = num5,
-							GroupItem = num6,
+							Item = itemIndex,
+							GroupItem = grpIndex,
 							SubItem = -1,
 							Header = null
 						};
@@ -2800,36 +2823,36 @@ namespace cYo.Common.Windows.Forms
 						break;
 					}
 					}
-					if (size.Width > num)
+					if (size.Width > width)
 					{
-						num = size.Width;
+						width = size.Width;
 					}
-					if (size.Height > num2)
+					if (size.Height > height)
 					{
-						num2 = size.Height;
+						height = size.Height;
 					}
 					if (IsTopLayout)
 					{
-						if (empty.X + 2 * itemBorderSize.Width + size.Width >= viewRectangle.Width && num3 > 0)
+						if (empty.X + 2 * itemBorderSize.Width + size.Width >= viewRectangle.Width && col > 0)
 						{
-							RealignItems(groupHeaderInformation.Items, dictionary2, startIndex, num3, viewRectangle.Left, viewRectangle.Right, HorizontalItemAlignment);
-							num4++;
-							startIndex = num6;
-							num3 = 0;
+							RealignItems(groupHeaderInformation.Items, dictionary2, startIndex, col, viewRectangle.Left, viewRectangle.Right, HorizontalItemAlignment);
+							row++;
+							startIndex = grpIndex;
+							col = 0;
 							empty.X = 0;
-							empty.Y += itemBorderSize.Height * 2 + num2;
-							num2 = size.Height;
+							empty.Y += itemBorderSize.Height * 2 + height;
+							height = size.Height;
 						}
 					}
-					else if (empty.Y + 2 * itemBorderSize.Height + size.Height >= viewRectangle.Height && num4 > 0)
+					else if (empty.Y + 2 * itemBorderSize.Height + size.Height >= viewRectangle.Height && row > 0)
 					{
-						num3++;
-						num4 = 0;
+						col++;
+						row = 0;
 						empty.Y = 0;
-						empty.X += itemBorderSize.Width * 2 + num;
-						num = size.Width;
+						empty.X += itemBorderSize.Width * 2 + width;
+						width = size.Width;
 					}
-					Rectangle rectangle3 = new Rectangle(empty.X + itemBorderSize.Width + num7, empty.Y + itemBorderSize.Height, size.Width, size.Height);
+					Rectangle rectangle3 = new Rectangle(empty.X + itemBorderSize.Width + offset, empty.Y + itemBorderSize.Height, size.Width, size.Height);
 					rectangle3.Offset(viewRectangle.Location);
 					if (expandedColumn != null)
 					{
@@ -2840,24 +2863,24 @@ namespace cYo.Common.Windows.Forms
 							rectangle3.X += rectangle.Width;
 						}
 					}
-					dictionary2[item4] = new ItemInformation(item4, rectangle3, num3, num4, groupHeaderInformation);
+					dictionary2[item4] = new ItemInformation(item4, rectangle3, col, row, groupHeaderInformation);
 					rectangle2 = Rectangle.Union(rectangle2, rectangle3);
 					if (IsTopLayout)
 					{
 						empty.X += itemBorderSize.Width * 2 + size.Width;
-						num3++;
+						col++;
 					}
 					else
 					{
 						empty.Y += itemBorderSize.Height * 2 + size.Height;
-						num4++;
+						row++;
 					}
-					num6++;
-					num5++;
+					grpIndex++;
+					itemIndex++;
 				}
 				if (IsTopLayout)
 				{
-					RealignItems(groupHeaderInformation.Items, dictionary2, startIndex, num3, viewRectangle.Left, viewRectangle.Right, HorizontalItemAlignment);
+					RealignItems(groupHeaderInformation.Items, dictionary2, startIndex, col, viewRectangle.Left, viewRectangle.Right, HorizontalItemAlignment);
 				}
 				if (expandedColumn != null)
 				{
@@ -2878,11 +2901,11 @@ namespace cYo.Common.Windows.Forms
 			}
 			using (ItemMonitor.Lock(displayedItems))
 			{
-				displayedItems = list;
+				displayedItems = viewableItems;
 			}
 			using (ItemMonitor.Lock(displayedGroups))
 			{
-				displayedGroups = list2;
+				displayedGroups = grpHeaders;
 				return rectangle2;
 			}
 		}
@@ -4029,7 +4052,7 @@ namespace cYo.Common.Windows.Forms
 				}
 			}
 		}
-
+		
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
 			base.OnMouseDown(e);
@@ -4038,6 +4061,10 @@ namespace cYo.Common.Windows.Forms
 			IViewableItem focusedItem = FocusedItem;
 			longClickTimer.Stop();
 			longClickSubItem = -1;
+			if (e.Button == MouseButtons.XButton1 || e.Button == MouseButtons.XButton2)
+			{
+				return ;
+			}
 			if (e.Button == MouseButtons.Left)
 			{
 				int num = ColumnHeaderSeparatorHitTest(e.X, e.Y);

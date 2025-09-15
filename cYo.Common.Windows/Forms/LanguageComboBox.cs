@@ -33,17 +33,17 @@ namespace cYo.Common.Windows.Forms
 
 		private CultureTypes cultureTypes = CultureTypes.NeutralCultures;
 
-		private IEnumerable<string> topTwoLetterISOLanguages;
+		private IEnumerable<string> topISOLanguages;
 
 		public override string Text
 		{
 			get
 			{
-				return SelectedTwoLetterISOLanguage;
+				return SelectedCulture;
 			}
 			set
 			{
-				SelectedTwoLetterISOLanguage = value;
+				SelectedCulture = value;
 			}
 		}
 
@@ -63,18 +63,18 @@ namespace cYo.Common.Windows.Forms
 			}
 		}
 
-		public IEnumerable<string> TopTwoLetterISOLanguages
+		public IEnumerable<string> TopISOLanguages
 		{
 			get
 			{
-				return topTwoLetterISOLanguages;
+				return topISOLanguages;
 			}
 			set
 			{
-				topTwoLetterISOLanguages = value;
-				string selectedTwoLetterISOLanguage = SelectedTwoLetterISOLanguage;
+				topISOLanguages = value;
+				string selectedCulture = SelectedCulture;
 				FillList();
-				SelectedTwoLetterISOLanguage = selectedTwoLetterISOLanguage;
+				SelectedCulture = selectedCulture;
 			}
 		}
 
@@ -133,7 +133,7 @@ namespace cYo.Common.Windows.Forms
 		public LanguageComboBox()
 		{
 			base.DropDownStyle = ComboBoxStyle.DropDownList;
-			SelectedTwoLetterISOLanguage = string.Empty;
+			SelectedCulture = string.Empty;
 			new ComboBoxSkinner(this);
 			FillList();
 		}
@@ -168,7 +168,7 @@ namespace cYo.Common.Windows.Forms
 			base.Items.Clear();
 			base.Items.Add(new LanguageItem(new CultureInfo(string.Empty)));
 			base.Sorted = false;
-			LanguageItem[] array = ((topTwoLetterISOLanguages == null) ? null : (from iso in topTwoLetterISOLanguages.Where(IsValidCulture)
+			LanguageItem[] array = ((topISOLanguages == null) ? null : (from iso in topISOLanguages.Where(IsValidCulture)
 				select new LanguageItem(new CultureInfo(iso))).ToArray().Sort());
 			bool hasTop = array != null && array.Length != 0;
 			if (hasTop)

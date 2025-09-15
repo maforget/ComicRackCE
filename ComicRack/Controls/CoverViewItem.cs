@@ -1353,6 +1353,10 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 					autoSizeTextBox = new AutoSizeTextBox();
 					EditControlUtility.SetText(autoSizeTextBox, Comic.Editor, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Editor));
 					break;
+				case "Translator":
+					autoSizeTextBox = new AutoSizeTextBox();
+					EditControlUtility.SetText(autoSizeTextBox, Comic.Translator, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Translator));
+					break;
 				case "Colorist":
 					autoSizeTextBox = new AutoSizeTextBox();
 					EditControlUtility.SetText(autoSizeTextBox, Comic.Colorist, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Colorist));

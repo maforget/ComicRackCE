@@ -96,7 +96,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 		{
 			try
 			{
-				return extensionArray.All((string ext) => ShellRegister.IsFileOpenRegistered(typeId, ext) || ShellRegister.IsFileOpenWithRegistered(ext));
+				return extensionArray.All((string ext) => ShellRegister.IsFileOpenRegistered(typeId, ext) || ShellRegister.IsFileOpenWithRegistered(ext, typeId));
 			}
 			catch
 			{
@@ -118,7 +118,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 					}
 					else
 					{
-						ShellRegister.RegisterFileOpenWith(docExtension);
+						ShellRegister.RegisterFileOpenWith(docExtension, typeId);
 					}
 				}
 			}
@@ -135,7 +135,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 				foreach (string docExtension in array)
 				{
 					ShellRegister.UnregisterFileOpen(typeId, docExtension);
-					ShellRegister.UnregisterFileOpenWith(docExtension);
+					ShellRegister.UnregisterFileOpenWith(docExtension, typeId);
 				}
 			}
 			catch

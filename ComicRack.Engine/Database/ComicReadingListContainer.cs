@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 using cYo.Common.Collections;
 using cYo.Common.ComponentModel;
@@ -43,25 +44,22 @@ namespace cYo.Projects.ComicRack.Engine.Database
 			MatcherMode = MatcherMode.And;
 		}
 
-		public ComicReadingListContainer(ComicListItem list, bool withFilenames, bool alwaysList = false)
-			: this()
+		public ComicReadingListContainer(ComicListItem list, bool withFilenames, bool alwaysList = false, Func<string, IComparer<ComicBook>> sortHandler = null) : this()
 		{
-			ComicReadingListContainer comicReadingListContainer = this;
 			Name = list.Name;
-			ComicSmartListItem comicSmartListItem = list as ComicSmartListItem;
+			ComicSmartListItem comicSmartListItem = list as ComicSmartListItem; // Check if it's a smart list
 			if (alwaysList || comicSmartListItem == null)
 			{
-				list.GetBooks().ForEach(delegate(ComicBook b)
-				{
-					comicReadingListContainer.items.Add(new ComicReadingListItem(b, withFilenames));
-				});
+				List<ComicBook> bookList = list.GetBooks().ToList();// Get the list of books
+				string sortKey = comicSmartListItem?.Display.View.SortKey;
+				if (comicSmartListItem != null && sortHandler != null && !string.IsNullOrEmpty(sortKey) && (sortHandler(sortKey) is IComparer<ComicBook> comparer) && comparer != null)
+					bookList.Sort(comparer);  // sort the book list using the sort key;
+
+				bookList.ForEach((ComicBook b) => this.items.Add(new ComicReadingListItem(b, withFilenames))); // add the individual list of books
 				return;
 			}
 			MatcherMode = comicSmartListItem.MatcherMode;
-			comicSmartListItem.Matchers.ForEach(delegate(ComicBookMatcher m)
-			{
-				Matchers.Add(m.Clone() as ComicBookMatcher);
-			});
+			comicSmartListItem.Matchers.ForEach((ComicBookMatcher m) => Matchers.Add(m.Clone() as ComicBookMatcher));
 		}
 
 		public void Serialize(Stream outStream)

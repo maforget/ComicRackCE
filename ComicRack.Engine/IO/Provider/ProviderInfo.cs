@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider
 {
-	public class ProviderInfo
+	public class ProviderInfo : IProviderInfo
 	{
 		public Type ProviderType
 		{

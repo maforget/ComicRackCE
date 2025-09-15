@@ -580,6 +580,14 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
+		[CommandLineSwitch(ShortName = "ntfs")]
+		[DefaultValue(false)]
+		public bool DisableNTFS
+		{
+			get;
+			set;
+		}
+
 		public static EngineConfiguration Default => defaultConfig ?? (defaultConfig = IniFile.Default.Register<EngineConfiguration>());
 
 		public EngineConfiguration()
@@ -641,7 +649,8 @@ namespace cYo.Projects.ComicRack.Engine
 			WifiSyncConnectionRetries = 1;
 			PdfEngineToUse = PdfEngine.Pdfium;
             PdfiumImageSize = new Size(1920, 2540);
-        }
+			DisableNTFS = false;
+		}
 
         public string GetTempFileName()
 		{

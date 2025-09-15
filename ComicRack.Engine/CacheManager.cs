@@ -11,7 +11,7 @@ namespace cYo.Projects.ComicRack.Engine
 {
 	public class CacheManager
 	{
-		public const int MemoryThumbnailCacheSize = 4096;
+		public const int MemoryThumbnailCacheSize = 8192;
 
 		public DatabaseManager DatabaseManager
 		{

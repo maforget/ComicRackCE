@@ -75,7 +75,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 							ProviderImageInfo imageInfo = provider.GetImageInfo(page.ImageIndex);
 							string ext = ((imageInfo != null && !string.IsNullOrEmpty(imageInfo.Name)) ? Path.GetExtension(imageInfo.Name) : ".jpg");
 							int num2 = 0;
-							PageResult[] images = StorageProvider.GetImages(provider, page, ext, setting, info.Manga == MangaYesNo.YesAndRightToLeft, setting.CreateThumbnails);
+							PageResult[] images = StorageProvider.GetImages(provider, page, ext, setting, info.Manga == MangaYesNo.YesAndRightToLeft, setting.CreateThumbnails, true);
 							foreach (PageResult pageResult in images)
 							{
 								bool flag;
@@ -102,6 +102,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 							if (FireProgressEvent(++loopCount * 100 / provider.Count))
 							{
 								ls.Break();
+								throw new OperationCanceledException("Export operation was cancelled by the user.");
 							}
 						}
 					}

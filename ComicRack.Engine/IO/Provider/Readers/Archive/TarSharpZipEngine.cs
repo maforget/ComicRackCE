@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo;
 using ICSharpCode.SharpZipLib.Tar;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
@@ -91,19 +92,18 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             {
                 byte[] buffer = new byte[BufferSize];
 
-                using (FileStream inputStream =
-                       new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, BufferSize))
+                using (FileStream inputStream = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, BufferSize))
                 using (TarInputStream tarInputStream = new TarInputStream(inputStream, Encoding.UTF8))
                 {
-                    TarEntry nextEntry;
-                    do
+                    return XmlInfoProviders.Readers.DeserializeAll(s =>
                     {
-                        nextEntry = tarInputStream.GetNextEntry();
-                    } while (String.Compare(Path.GetFileName(nextEntry.Name), "ComicInfo.xml",
-                                 StringComparison.OrdinalIgnoreCase) != 0);
+                        TarEntry nextEntry;
+                        do
+                        {
+                            nextEntry = tarInputStream.GetNextEntry();
+                        } while (String.Compare(Path.GetFileName(nextEntry.Name), s, StringComparison.OrdinalIgnoreCase) != 0);
 
-                    using (MemoryStream inStream = new MemoryStream())
-                    {
+						MemoryStream inStream = new MemoryStream();
                         int bytesRead;
                         while ((bytesRead = tarInputStream.Read(buffer, 0, buffer.Length)) > 0)
                         {
@@ -112,8 +112,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
                         inStream.Position = 0;
 
-                        return ComicInfo.Deserialize(inStream);
-                    }
+                        return inStream;
+                    });
                 }
             }
             catch

@@ -26,3 +26,15 @@ If applicable, add screenshots to help explain your problem.
 
 **Additional context**
 Add any other context about the problem here.
+
+**If you have a crash dump paste it between ```**
+<details>
+  <summary>Crash dump</summary>
+
+```
+
+# If you have a crash dump paste it here
+
+```
+
+</details>

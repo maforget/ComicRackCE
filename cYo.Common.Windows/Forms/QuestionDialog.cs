@@ -113,11 +113,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				base.StartPosition = FormStartPosition.CenterScreen;
 			}
-			if (ShowDialog(owner) != DialogResult.OK)
-			{
-				return QuestionResult.Cancel;
-			}
-			QuestionResult questionResult = QuestionResult.Ok;
+			QuestionResult questionResult = ShowDialog(owner) != DialogResult.OK ? QuestionResult.Cancel : QuestionResult.Ok;
 			if (chkOption.Checked)
 			{
 				questionResult |= QuestionResult.Option;

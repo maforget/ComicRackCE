@@ -87,5 +87,17 @@ namespace cYo.Common.Compression
 				orderby f
 				select f).Select(CreateFromFile)).ToArray();
 		}
+
+		public static Dictionary<string, ZipFileFolder> CreateDictionaryFromFiles(IEnumerable<string> folders, string searchPattern, string trigger = "")
+		{
+			return folders.SelectMany((string folder) =>
+				(from f in FileUtility.SafeGetFiles(folder, $"{trigger}{searchPattern}")
+				 orderby f
+				 select f).Select(f => new
+				 {
+					 Key = Path.GetFileNameWithoutExtension(f).Replace(trigger, string.Empty),
+					 Value = CreateFromFile(f)
+				 })).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+		}
 	}
 }

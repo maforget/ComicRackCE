@@ -35,7 +35,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
     {
         private const int MaximumMemoryStepSize = 32;
 
-        private static readonly string DuplicatePackageText = TR.Messages["ScriptPackageExists", "A Script Package with the same name already exists! Do you want to overwrite this Package?"];
+		private static readonly string DuplicatePackageText = TR.Messages["ScriptPackageExists", "A Script Package with the same name already exists! Do you want to overwrite this Package?"];
 
         private PluginEngine pluginEngine;
 
@@ -103,17 +103,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             packageImageList.Images.Add(Resources.Package);
             LocalizeUtility.Localize(this, components);
             LocalizeUtility.Localize(TR.Load(base.Name), cbNavigationOverlayPosition);
-            FormUtility.RegisterPanelToTabToggle(pageReader, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.ReaderSettings));
-            FormUtility.RegisterPanelToTabToggle(pageBehavior, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.BehaviorSettings));
-            FormUtility.RegisterPanelToTabToggle(pageLibrary, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.LibrarySettings));
-            FormUtility.RegisterPanelToTabToggle(pageScripts, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.ScriptSettings));
-            FormUtility.RegisterPanelToTabToggle(pageAdvanced, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.AdvancedSettings));
             Program.Scanner.ScanNotify += DatabaseScanNotify;
             IdleProcess.Idle += ApplicationIdle;
             numMemPageCount.Minimum = 20m;
             numMemPageCount.Maximum = 100m;
             numMemThumbSize.Minimum = 5m;
-            numMemThumbSize.Maximum = 100m;
+            numMemThumbSize.Maximum = 500m;
             lbLanguages.Items.Add(new TRInfo());
             lbLanguages.Items.Add(new TRInfo("en"));
             TRInfo[] installedLanguages = Program.InstalledLanguages;
@@ -148,10 +143,46 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             RefreshPackageList();
         }
 
-        protected override void OnLoad(EventArgs e)
+		public static Size SafeSize { get; set; }
+
+		protected override void OnResizeEnd(EventArgs e)
+		{
+			base.OnResizeEnd(e);
+			UpdateSafeSize();
+            AutoSizeColumn();
+		}
+
+		private void SetSize()
+		{
+			Size = !SafeSize.IsEmpty ? SafeSize : MinimumSize;
+            this.CenterToParent();
+			AutoSizeColumn();
+		}
+
+		private void AutoSizeColumn()
+		{
+            this.FindServices<ListView>().ForEach((ListView lv) => lv.AutoResizeColumn(0, 32));
+        }
+
+		private void UpdateSafeSize()
+		{
+			if (base.IsHandleCreated && SafeSize != null)
+			{
+				SafeSize = base.Size != base.MinimumSize ? base.Size : Size.Empty;
+			}
+		}
+
+		protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            SetTab((activeTab != -1) ? tabButtons[activeTab] : tabReader);
+			SetSize(); //Set size here because base.OnLoad(e) sets the previous dimension overriding what we set.
+            //If this is in the Init portion and it loads via settings, the form will not be drawn correctly.
+			FormUtility.RegisterPanelToTabToggle(pageReader, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.ReaderSettings));
+			FormUtility.RegisterPanelToTabToggle(pageBehavior, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.BehaviorSettings));
+			FormUtility.RegisterPanelToTabToggle(pageLibrary, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.LibrarySettings));
+			FormUtility.RegisterPanelToTabToggle(pageScripts, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.ScriptSettings));
+			FormUtility.RegisterPanelToTabToggle(pageAdvanced, PropertyCaller.CreateFlagsValueStore(Program.Settings, "TabLayouts", TabLayouts.AdvancedSettings));
+			SetTab((activeTab != -1) ? tabButtons[activeTab] : tabReader);
             //Fix Auto Word Selection bug
             rtfVirtualTagCaption.AutoWordSelection = false;
         }
@@ -923,7 +954,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                 Program.Settings.PrivateListingPassword = txPrivateListingPassword.Password;
             }
             Program.Settings.ExtraWifiDeviceAddresses = txWifiAddresses.Text;
-            SaveVirtualTags();
+			Program.Settings.CurrentWorkspace.PreferencesOutputSize = SafeSize;
+			SaveVirtualTags();
             Program.RefreshAllWindows();
             Program.ForAllForms(delegate (Form f)
             {
@@ -932,7 +964,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                     s.SettingsChanged();
                 });
             });
-        }
+		}
 
         private void SetScanButtonText()
         {
@@ -940,78 +972,78 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         }
 
         private void SetSettings()
-        {
-            FormUtility.FillPanelWithOptions(pageBehavior, Program.Settings, TR.Load("Settings"));
-            chkLibraryGauges.Checked = Program.Settings.DisplayLibraryGauges;
-            chkLibraryGaugesUnread.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Unread);
-            chkLibraryGaugesNew.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.New);
-            chkLibraryGaugesTotal.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Total);
-            chkLibraryGaugesNumeric.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Numeric);
-            tbMouseWheel.Value = (int)(Program.Settings.MouseWheelSpeed * 10f);
-            chkHighQualityDisplay.Checked = Program.Settings.PageImageDisplayOptions.IsSet(ImageDisplayOptions.HighQuality);
-            chkAnamorphicScaling.Checked = Program.Settings.PageImageDisplayOptions.IsSet(ImageDisplayOptions.AnamorphicScaling);
-            chkAutoRemoveMissing.Checked = Program.Settings.RemoveMissingFilesOnFullScan;
-            chkDontAddRemovedFiles.Checked = Program.Settings.DontAddRemoveFiles;
-            tbSaturation.Value = (int)(Program.Settings.GlobalColorAdjustment.Saturation * 100f);
-            tbBrightness.Value = (int)(Program.Settings.GlobalColorAdjustment.Brightness * 100f);
-            tbContrast.Value = (int)(Program.Settings.GlobalColorAdjustment.Contrast * 100f);
-            tbGamma.Value = (int)(Program.Settings.GlobalColorAdjustment.Gamma * 100f);
-            tbSharpening.Value = Program.Settings.GlobalColorAdjustment.Sharpen;
-            chkAutoContrast.Checked = Program.Settings.GlobalColorAdjustment.Options.IsSet(BitmapAdjustmentOptions.AutoContrast);
-            chkShowCurrentPageOverlay.Checked = Program.Settings.ShowCurrentPageOverlay;
-            chkShowVisiblePartOverlay.Checked = Program.Settings.ShowVisiblePagePartOverlay;
-            chkShowStatusOverlay.Checked = Program.Settings.ShowStatusOverlay;
-            chkShowNavigationOverlay.Checked = Program.Settings.ShowNavigationOverlay;
-            cbNavigationOverlayPosition.SelectedIndex = (Program.Settings.NavigationOverlayOnTop ? 1 : 0);
-            chkShowPageNames.Checked = Program.Settings.CurrentPageShowsName;
-            chkEnableHardware.Checked = Program.Settings.HardwareAcceleration;
-            chkSmoothAutoScrolling.Checked = Program.Settings.SmoothScrolling;
-            chkEnableDisplayChangeAnimation.Checked = Program.Settings.DisplayChangeAnimation;
-            chkEnableSoftwareFiltering.Checked = Program.Settings.SoftwareFiltering;
-            chkEnableHardwareFiltering.Checked = Program.Settings.HardwareFiltering;
-            chkEnableInertialMouseScrolling.Checked = Program.Settings.FlowingMouseScrolling;
-            chkEnableInternetCache.Checked = Program.Settings.InternetCacheEnabled;
-            numInternetCacheSize.Value = numInternetCacheSize.Clamp(Program.Settings.InternetCacheSizeMB);
-            chkEnableThumbnailCache.Checked = Program.Settings.ThumbCacheEnabled;
-            numThumbnailCacheSize.Value = numThumbnailCacheSize.Clamp(Program.Settings.ThumbCacheSizeMB);
-            chkEnablePageCache.Checked = Program.Settings.PageCacheEnabled;
-            numPageCacheSize.Value = numPageCacheSize.Clamp(Program.Settings.PageCacheSizeMB);
-            chkMemPageOptimized.Checked = Program.Settings.MemoryPageCacheOptimized;
-            numMemPageCount.Value = numMemPageCount.Clamp(Program.Settings.MemoryPageCacheCount);
-            chkMemThumbOptimized.Checked = Program.Settings.MemoryThumbCacheOptimized;
-            numMemThumbSize.Value = numMemThumbSize.Clamp(Program.Settings.MemoryThumbCacheSizeMB);
-            tbMaximumMemoryUsage.SetRange(Settings.MinimumSystemMemory / MaximumMemoryStepSize, Settings.UnlimitedSystemMemory / MaximumMemoryStepSize);
-            tbMaximumMemoryUsage.Value = Program.Settings.MaximumMemoryMB / MaximumMemoryStepSize;
-            tbOverlayScaling.Value = Program.Settings.OverlayScaling;
-            chkOverwriteAssociations.Checked = Program.Settings.OverwriteAssociations;
-            chkUpdateComicFiles.Checked = Program.Settings.UpdateComicFiles;
-            chkAutoUpdateComicFiles.Checked = Program.Settings.AutoUpdateComicsFiles;
-            txCoverFilter.Text = Program.Settings.IgnoredCoverImages;
-            txLibraries.Text = Program.Settings.ScriptingLibraries;
-            chkDisableScripting.Checked = !Program.Settings.Scripting;
-            chkHideSampleScripts.Checked = Program.Settings.HideSampleScripts;
-            lbLanguages.SelectedIndex = 0;
-            foreach (TRInfo item in lbLanguages.Items)
-            {
-                if (item.CultureName == Program.Settings.CultureName)
-                {
-                    lbLanguages.SelectedItem = item;
-                    break;
-                }
-            }
-            txPublicServerAddress.Text = Program.Settings.ExternalServerAddress;
-            txPrivateListingPassword.Password = Program.Settings.PrivateListingPassword;
-            chkLookForShared.Checked = Program.Settings.LookForShared;
-            chkAutoConnectShares.Checked = Program.Settings.AutoConnectShares;
-            foreach (ComicLibraryServerConfig share in Program.Settings.Shares)
-            {
-                AddSharePage(share);
-            }
-            txWifiAddresses.Text = Program.Settings.ExtraWifiDeviceAddresses;
-            AddVirtualTags();
-        }
+		{
+			FormUtility.FillPanelWithOptions(pageBehavior, Program.Settings, TR.Load("Settings"));
+			chkLibraryGauges.Checked = Program.Settings.DisplayLibraryGauges;
+			chkLibraryGaugesUnread.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Unread);
+			chkLibraryGaugesNew.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.New);
+			chkLibraryGaugesTotal.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Total);
+			chkLibraryGaugesNumeric.Checked = Program.Settings.LibraryGaugesFormat.IsSet(LibraryGauges.Numeric);
+			tbMouseWheel.Value = (int)(Program.Settings.MouseWheelSpeed * 10f);
+			chkHighQualityDisplay.Checked = Program.Settings.PageImageDisplayOptions.IsSet(ImageDisplayOptions.HighQuality);
+			chkAnamorphicScaling.Checked = Program.Settings.PageImageDisplayOptions.IsSet(ImageDisplayOptions.AnamorphicScaling);
+			chkAutoRemoveMissing.Checked = Program.Settings.RemoveMissingFilesOnFullScan;
+			chkDontAddRemovedFiles.Checked = Program.Settings.DontAddRemoveFiles;
+			tbSaturation.Value = (int)(Program.Settings.GlobalColorAdjustment.Saturation * 100f);
+			tbBrightness.Value = (int)(Program.Settings.GlobalColorAdjustment.Brightness * 100f);
+			tbContrast.Value = (int)(Program.Settings.GlobalColorAdjustment.Contrast * 100f);
+			tbGamma.Value = (int)(Program.Settings.GlobalColorAdjustment.Gamma * 100f);
+			tbSharpening.Value = Program.Settings.GlobalColorAdjustment.Sharpen;
+			chkAutoContrast.Checked = Program.Settings.GlobalColorAdjustment.Options.IsSet(BitmapAdjustmentOptions.AutoContrast);
+			chkShowCurrentPageOverlay.Checked = Program.Settings.ShowCurrentPageOverlay;
+			chkShowVisiblePartOverlay.Checked = Program.Settings.ShowVisiblePagePartOverlay;
+			chkShowStatusOverlay.Checked = Program.Settings.ShowStatusOverlay;
+			chkShowNavigationOverlay.Checked = Program.Settings.ShowNavigationOverlay;
+			cbNavigationOverlayPosition.SelectedIndex = (Program.Settings.NavigationOverlayOnTop ? 1 : 0);
+			chkShowPageNames.Checked = Program.Settings.CurrentPageShowsName;
+			chkEnableHardware.Checked = Program.Settings.HardwareAcceleration;
+			chkSmoothAutoScrolling.Checked = Program.Settings.SmoothScrolling;
+			chkEnableDisplayChangeAnimation.Checked = Program.Settings.DisplayChangeAnimation;
+			chkEnableSoftwareFiltering.Checked = Program.Settings.SoftwareFiltering;
+			chkEnableHardwareFiltering.Checked = Program.Settings.HardwareFiltering;
+			chkEnableInertialMouseScrolling.Checked = Program.Settings.FlowingMouseScrolling;
+			chkEnableInternetCache.Checked = Program.Settings.InternetCacheEnabled;
+			numInternetCacheSize.Value = numInternetCacheSize.Clamp(Program.Settings.InternetCacheSizeMB);
+			chkEnableThumbnailCache.Checked = Program.Settings.ThumbCacheEnabled;
+			numThumbnailCacheSize.Value = numThumbnailCacheSize.Clamp(Program.Settings.ThumbCacheSizeMB);
+			chkEnablePageCache.Checked = Program.Settings.PageCacheEnabled;
+			numPageCacheSize.Value = numPageCacheSize.Clamp(Program.Settings.PageCacheSizeMB);
+			chkMemPageOptimized.Checked = Program.Settings.MemoryPageCacheOptimized;
+			numMemPageCount.Value = numMemPageCount.Clamp(Program.Settings.MemoryPageCacheCount);
+			chkMemThumbOptimized.Checked = Program.Settings.MemoryThumbCacheOptimized;
+			numMemThumbSize.Value = numMemThumbSize.Clamp(Program.Settings.MemoryThumbCacheSizeMB);
+			tbMaximumMemoryUsage.SetRange(Settings.MinimumSystemMemory / MaximumMemoryStepSize, Settings.UnlimitedSystemMemory / MaximumMemoryStepSize);
+			tbMaximumMemoryUsage.Value = Program.Settings.MaximumMemoryMB / MaximumMemoryStepSize;
+			tbOverlayScaling.Value = Program.Settings.OverlayScaling;
+			chkOverwriteAssociations.Checked = Program.Settings.OverwriteAssociations;
+			chkUpdateComicFiles.Checked = Program.Settings.UpdateComicFiles;
+			chkAutoUpdateComicFiles.Checked = Program.Settings.AutoUpdateComicsFiles;
+			txCoverFilter.Text = Program.Settings.IgnoredCoverImages;
+			txLibraries.Text = Program.Settings.ScriptingLibraries;
+			chkDisableScripting.Checked = !Program.Settings.Scripting;
+			chkHideSampleScripts.Checked = Program.Settings.HideSampleScripts;
+			lbLanguages.SelectedIndex = 0;
+			foreach (TRInfo item in lbLanguages.Items)
+			{
+				if (item.CultureName == Program.Settings.CultureName)
+				{
+					lbLanguages.SelectedItem = item;
+					break;
+				}
+			}
+			txPublicServerAddress.Text = Program.Settings.ExternalServerAddress;
+			txPrivateListingPassword.Password = Program.Settings.PrivateListingPassword;
+			chkLookForShared.Checked = Program.Settings.LookForShared;
+			chkAutoConnectShares.Checked = Program.Settings.AutoConnectShares;
+			foreach (ComicLibraryServerConfig share in Program.Settings.Shares)
+			{
+				AddSharePage(share);
+			}
+			txWifiAddresses.Text = Program.Settings.ExtraWifiDeviceAddresses;
+			AddVirtualTags();
+		}
 
-        private void AddSharePage(ComicLibraryServerConfig cfg)
+		private void AddSharePage(ComicLibraryServerConfig cfg)
         {
             TabPage tab = new TabPage(cfg.Name)
             {
@@ -1235,19 +1267,16 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         private void AddVirtualTags()
         {
             var VirtualTags = new List<VirtualTag>();
-
-            for (int id = 1; id <= 10; id++)
+            
+            for (int id = 1; id <= 20; id++)
             {
                 VirtualTag vtag = Program.Settings.VirtualTags.FirstOrDefault(x => x.ID == id);
+				string name = $"Virtual Tag #{id:00}";
+                vtag = vtag is null 
+					? new VirtualTag(id, name, name, string.Empty, isDefault: true) //If the data doesn't already exists, create an empty tag.
+					: new VirtualTag(vtag.ID, vtag.Name, vtag.Description, vtag.CaptionFormat, vtag.IsEnabled, vtag.IsDefault); // Otherwise create a new instance so that it doesn't edit the original until we save.
 
-                //If the data doesn't already exists, create a default tag for the settings
-                if (vtag is null || vtag.ID != id)
-                {
-                    string name = $"Virtual Tag #{id:00}";
-                    vtag = new VirtualTag(id, name, name, string.Empty, isDefault: true);
-                }
-
-                VirtualTags.Add(vtag);
+				VirtualTags.Add(vtag);
             }
 
             SetVirtualTagsComboBoxDataSource(VirtualTags);
@@ -1342,7 +1371,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             VirtualTagUpdate();
         }
 
-        private void VirtualTagUpdate()
+		private void VirtualTagUpdate()
         {
             if (cbVirtualTags.SelectedIndex == -1)
                 return;
@@ -1384,6 +1413,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                     Program.Settings.VirtualTags.Add(item);
             }
         }
-        #endregion
-    }
+
+		private void btnVTagsHelp_Click(object sender, EventArgs e)
+		{
+            const string VTagWiki = @"https://github.com/maforget/ComicRackCE/wiki/Virtual-Tags";
+            Program.StartDocument(VTagWiki);
+		}
+		#endregion
+	}
 }

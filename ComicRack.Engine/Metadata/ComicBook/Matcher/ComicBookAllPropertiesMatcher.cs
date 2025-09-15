@@ -155,7 +155,8 @@ namespace cYo.Projects.ComicRack.Engine
                     yield return comicBook.Inker;
                     yield return comicBook.Colorist;
                     yield return comicBook.Editor;
-                    yield return comicBook.Letterer;
+                    yield return comicBook.Translator;
+					yield return comicBook.Letterer;
                     yield return comicBook.CoverArtist;
                     yield break;
                 case MatcherOption.File:
@@ -193,7 +194,8 @@ namespace cYo.Projects.ComicRack.Engine
             yield return comicBook.Colorist;
             yield return comicBook.Letterer;
             yield return comicBook.Editor;
-            yield return comicBook.CoverArtist;
+            yield return comicBook.Translator;
+			yield return comicBook.CoverArtist;
             yield return comicBook.Summary;
             yield return comicBook.FilePath;
             yield return comicBook.Genre;

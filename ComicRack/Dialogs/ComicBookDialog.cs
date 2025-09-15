@@ -98,7 +98,31 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             }
         }
 
-        private ComicBookDialog(ComicBook current, ComicBook[] allBooks)
+		public static Size SafeSize { get; set; }
+
+
+		protected override void OnResizeEnd(EventArgs e)
+		{
+			base.OnResizeEnd(e);
+			UpdateSafeSize();
+		}
+
+		private void SetSize()
+		{
+			Size = !SafeSize.IsEmpty ? SafeSize : MinimumSize;
+			this.CenterToParent();
+		}
+
+		private void UpdateSafeSize()
+		{
+			if (base.IsHandleCreated && SafeSize != null)
+			{
+				SafeSize = base.Size != base.MinimumSize ? base.Size : Size.Empty;
+			}
+		}
+
+
+		private ComicBookDialog(ComicBook current, ComicBook[] allBooks)
         {
             LocalizeUtility.UpdateRightToLeft(this);
             InitializeComponent();
@@ -118,17 +142,18 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             {
                 pagesView.ViewConfig = PagesConfig;
             }
-            new ComboBoxSkinner(cbImprint, ComicBook.PublisherIcons);
-            new ComboBoxSkinner(cbPublisher, ComicBook.PublisherIcons);
-            new ComboBoxSkinner(cbFormat, ComicBook.FormatIcons);
-            new ComboBoxSkinner(cbAgeRating, ComicBook.AgeRatingIcons);
+            new ComboBoxSkinner(cbImprint, ComicBook.PublisherIcons) { MaxHeightScale = 2 };
+            new ComboBoxSkinner(cbPublisher, ComicBook.PublisherIcons) { MaxHeightScale = 2};
+            new ComboBoxSkinner(cbFormat, ComicBook.FormatIcons) { MaxHeightScale = 2 };
+            new ComboBoxSkinner(cbAgeRating, ComicBook.AgeRatingIcons) { MaxHeightScale = 2 };
             new ComboBoxSkinner(cbBookPrice);
             new ComboBoxSkinner(cbBookOwner);
             new ComboBoxSkinner(cbBookStore);
             new ComboBoxSkinner(cbBookAge);
             new ComboBoxSkinner(cbBookCondition);
             new ComboBoxSkinner(cbBookLocation);
-            ListSelectorControl.Register(SearchEngines.Engines, txWriter, txPenciller, txInker, txColorist, txEditor, txCoverArtist, txLetterer, txGenre, txTags, txCharacters, txTeams, txLocations, txCollectionStatus);
+            ListSelectorControl.Register(SearchEngines.Engines, txWriter, txPenciller, txInker, txColorist, txEditor, txTranslator, txCoverArtist, txLetterer, txGenre, txTags, txCollectionStatus);
+            ListSelectorControl.Register(SearchEngines.Engines, anchorStyles: AnchorStyles.Bottom | AnchorStyles.Right, txCharacters, txTeams, txLocations);
             EditControlUtility.InitializeMangaYesNo(cbManga);
             EditControlUtility.InitializeYesNo(cbBlackAndWhite);
             EditControlUtility.InitializeYesNo(cbSeriesComplete);
@@ -163,7 +188,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             EditControlUtility.SetText(txLetterer, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Letterer));
             EditControlUtility.SetText(txCoverArtist, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.CoverArtist));
             EditControlUtility.SetText(txEditor, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Editor));
-            EditControlUtility.SetText(txCharacters, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Characters));
+            EditControlUtility.SetText(txTranslator, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Translator));
+			EditControlUtility.SetText(txCharacters, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Characters));
             EditControlUtility.SetText(txTeams, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Teams));
             EditControlUtility.SetText(txMainCharacterOrTeam, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.MainCharacterOrTeam));
             EditControlUtility.SetText(txLocations, null, () => Program.Lists.GetComicFieldList((ComicBook cb) => cb.Locations));
@@ -195,15 +221,16 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                     currentTextBox = tb;
                 };
             });
-            SpinButton.AddUpDown(txVolume);
-            SpinButton.AddUpDown(txCount, 1, 0);
-            SpinButton.AddUpDown(txNumber);
-            SpinButton.AddUpDown(txYear, DateTime.Now.Year);
-            SpinButton.AddUpDown(txMonth, DateTime.Now.Month, 1, 12);
-            SpinButton.AddUpDown(txDay, DateTime.Now.Month, 1, 31);
-            SpinButton.AddUpDown(txAlternateCount, 1, 0);
-            SpinButton.AddUpDown(txAlternateNumber);
-            SpinButton.AddUpDown(txPagesAsTextSimple, 1, 1, int.MaxValue, 1, registerKeys: false, hidden: true);
+			AnchorStyles anchorStyles = AnchorStyles.Top | AnchorStyles.Right;
+			SpinButton.AddUpDown(txVolume, anchorStyles: anchorStyles);
+            SpinButton.AddUpDown(txCount, 1, 0, anchorStyles: anchorStyles);
+            SpinButton.AddUpDown(txNumber, anchorStyles: anchorStyles);
+            SpinButton.AddUpDown(txYear, DateTime.Now.Year, anchorStyles: anchorStyles);
+            SpinButton.AddUpDown(txMonth, DateTime.Now.Month, 1, 12, anchorStyles: anchorStyles);
+            SpinButton.AddUpDown(txDay, DateTime.Now.Month, 1, 31, anchorStyles: anchorStyles);
+            SpinButton.AddUpDown(txAlternateCount, 1, 0, anchorStyles: anchorStyles);
+            SpinButton.AddUpDown(txAlternateNumber, anchorStyles: anchorStyles);
+            SpinButton.AddUpDown(txPagesAsTextSimple, 1, 1, int.MaxValue, 1, registerKeys: false, hidden: true, anchorStyles: anchorStyles);
             txVolume.EnableOnlyNumberKeys();
             txCount.EnableOnlyNumberKeys();
             txYear.EnableOnlyNumberKeys();
@@ -212,6 +239,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             txAlternateCount.EnableOnlyNumberKeys();
             txPagesAsTextSimple.EnableOnlyNumberKeys();
             SetCurrentBook(current);
+            SetSize();
             IdleProcess.Idle += IdleProcess_Idle;
         }
 
@@ -297,7 +325,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         {
             string text = comic.PagesAsText;
             if (comic.LastPageRead > 0)
-                text = comic.LastPageRead + 1 + "/" + text;
+                //HACK: When a book contains only one page, display "1/1 Page(s)." Otherwise, it will incorrectly display "Page 2/1 Page(s)."
+                text = $"{comic.LastPageRead + (comic.PageCount == 1 ? 0 : 1)}/{text}";
 
             string fileFormat = comic.ActualFileFormat != comic.FileFormat ? $"{comic.ActualFileFormat} (Actual){Environment.NewLine}{comic.FileFormat}" : comic.FileFormat;
 
@@ -336,7 +365,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             EditControlUtility.SetText(txLetterer, comic.Letterer);
             EditControlUtility.SetText(txCoverArtist, comic.CoverArtist);
             EditControlUtility.SetText(txEditor, comic.Editor);
-            EditControlUtility.SetText(cbFormat, comic.Format);
+            EditControlUtility.SetText(txTranslator, comic.Translator);
+			EditControlUtility.SetText(cbFormat, comic.Format);
             EditControlUtility.SetText(cbAgeRating, comic.AgeRating);
             EditControlUtility.SetText(cbPublisher, comic.Publisher);
             EditControlUtility.SetText(cbImprint, comic.Imprint);
@@ -347,14 +377,14 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             EditControlUtility.SetText(cbBookPrice, comic.BookPriceAsText);
             EditControlUtility.SetText(cbBookLocation, comic.BookLocation);
             EditControlUtility.SetText(txCollectionStatus, comic.BookCollectionStatus);
-            EditControlUtility.SetText(txBookNotes, comic.BookNotes);
+            EditControlUtility.SetText(txBookNotes, StringUtility.MakeEditBoxMultiline(comic.BookNotes));
             EditControlUtility.SetText(txISBN, comic.ISBN);
             EditControlUtility.SetText(txPagesAsTextSimple, comic.PagesAsTextSimple);
             dtpAddedTime.Value = comic.AddedTime;
             dtpReleasedTime.Value = comic.ReleasedTime;
             dtpOpenedTime.Value = comic.OpenedTime;
-            cbLanguage.TopTwoLetterISOLanguages = Program.Lists.GetComicFieldList((ComicBook cb) => cb.LanguageISO).Cast<string>().Distinct();
-            cbLanguage.SelectedTwoLetterISOLanguage = comic.LanguageISO;
+            cbLanguage.TopISOLanguages = Program.Lists.GetComicFieldList((ComicBook cb) => cb.LanguageISO).Cast<string>().Distinct();
+            cbLanguage.SelectedCulture = comic.LanguageISO;
             customValuesData.Rows.Clear();
             foreach (string item in Program.Database.CustomValues.OrderBy((string s) => s))
             {
@@ -437,20 +467,21 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             comic.StoryArc = EditControlUtility.GetText(txStoryArc, comic.StoryArc);
             comic.SeriesGroup = EditControlUtility.GetText(txSeriesGroup, comic.SeriesGroup);
             comic.Writer = EditControlUtility.GetText(txWriter, comic.Writer);
-            comic.Summary = EditControlUtility.GetText(txSummary, comic.Summary);
+            comic.Summary = EditControlUtility.GetText(txSummary, StringUtility.MakeEditBoxMultiline(comic.Summary));
             comic.Penciller = EditControlUtility.GetText(txPenciller, comic.Penciller);
             comic.Inker = EditControlUtility.GetText(txInker, comic.Inker);
             comic.Letterer = EditControlUtility.GetText(txLetterer, comic.Letterer);
             comic.CoverArtist = EditControlUtility.GetText(txCoverArtist, comic.CoverArtist);
             comic.Editor = EditControlUtility.GetText(txEditor, comic.Editor);
-            comic.Colorist = EditControlUtility.GetText(txColorist, comic.Colorist);
+            comic.Translator = EditControlUtility.GetText(txTranslator, comic.Translator);
+			comic.Colorist = EditControlUtility.GetText(txColorist, comic.Colorist);
             comic.Genre = EditControlUtility.GetText(txGenre, comic.Genre);
             comic.Characters = EditControlUtility.GetText(txCharacters, comic.Characters);
             comic.Teams = EditControlUtility.GetText(txTeams, comic.Teams);
             comic.MainCharacterOrTeam = EditControlUtility.GetText(txMainCharacterOrTeam, comic.MainCharacterOrTeam);
             comic.Locations = EditControlUtility.GetText(txLocations, comic.Locations);
-            comic.Notes = EditControlUtility.GetText(txNotes, comic.Notes);
-            comic.Review = EditControlUtility.GetText(txReview, comic.Review);
+            comic.Notes = EditControlUtility.GetText(txNotes, StringUtility.MakeEditBoxMultiline(comic.Notes));
+            comic.Review = EditControlUtility.GetText(txReview, StringUtility.MakeEditBoxMultiline(comic.Review));
             comic.ScanInformation = EditControlUtility.GetText(txScanInformation, comic.ScanInformation);
             comic.Web = EditControlUtility.GetText(txWeblink, comic.Web);
             comic.Tags = EditControlUtility.GetText(txTags, comic.Tags);
@@ -533,7 +564,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             }
             comic.AddedTime = dtpAddedTime.Value;
             comic.ReleasedTime = dtpReleasedTime.Value;
-            comic.LanguageISO = cbLanguage.SelectedTwoLetterISOLanguage;
+            comic.LanguageISO = cbLanguage.SelectedCulture;
             comic.Rating = txRating.Rating;
             comic.CommunityRating = txCommunityRating.Rating;
             comic.ColorAdjustment = pageViewer.ColorAdjustment;
@@ -754,7 +785,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         {
             SaveBook();
             SetCurrentBook(current);
-        }
+			Program.Settings.CurrentWorkspace.ComicBookDialogOutputSize = SafeSize;
+		}
 
         private void btPrev_Click(object sender, EventArgs e)
         {
@@ -773,7 +805,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         private void btOK_Click(object sender, EventArgs e)
         {
             SaveBook();
-        }
+			Program.Settings.CurrentWorkspace.ComicBookDialogOutputSize = SafeSize;
+		}
 
         private void ColorAdjustment_Scroll(object sender, EventArgs e)
         {

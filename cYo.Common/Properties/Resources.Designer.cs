@@ -61,16 +61,6 @@ namespace cYo.Common.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fe5c09bd6e678cb9244b1fd13b8d968617983308
-        ///.
-        /// </summary>
-        internal static string CurrentCommit {
-            get {
-                return ResourceManager.GetString("CurrentCommit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Folder {
@@ -87,24 +77,6 @@ namespace cYo.Common.Properties {
             get {
                 object obj = ResourceManager.GetObject("FolderHome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to  M ComicRack/Dialogs/Splash.cs
-        /// M cYo.Common.Presentation/Tao/TextureManagerSettings.cs
-        /// M cYo.Common/Properties/Resources.Designer.cs
-        /// M cYo.Common/Properties/Resources.resx
-        /// M cYo.Common/cYo.Common.csproj
-        ///?? cYo.Common/CurrentCommit.txt
-        ///?? cYo.Common/Runtime/GitVersion.cs
-        ///?? cYo.Common/Tags.txt
-        ///?? cYo.Common/isDirty.txt
-        ///.
-        /// </summary>
-        internal static string isDirty {
-            get {
-                return ResourceManager.GetString("isDirty", resourceCulture);
             }
         }
         

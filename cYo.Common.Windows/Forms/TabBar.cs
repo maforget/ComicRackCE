@@ -1363,18 +1363,15 @@ namespace cYo.Common.Windows.Forms
 		{
 			using (ItemMonitor.Lock(animatedImages))
 			{
-				if (!animatedImages.TryGetValue(tbi, out var value))
+				if (animatedImages.TryGetValue(tbi, out var value))
 				{
-					goto IL_0049;
+					if (enable && tbi.Image == value)
+					{
+						return;
+					}
+					ImageAnimator.StopAnimate(value, AnimationHandler);
+					animatedImages.Remove(tbi);
 				}
-				if (enable && tbi.Image == value)
-				{
-					return;
-				}
-				ImageAnimator.StopAnimate(value, AnimationHandler);
-				animatedImages.Remove(tbi);
-				goto IL_0049;
-				IL_0049:
 				if (enable && tbi.Image != null && ImageAnimator.CanAnimate(tbi.Image))
 				{
 					ImageAnimator.Animate(tbi.Image, AnimationHandler);

@@ -17,9 +17,9 @@
 
 <p>
 <a href="https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCE_nightly.zip" alt="Nightly (ZIP)">
-  <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?include_prereleases&label=pre-release (zip)&logo=github" /></a>
+  <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?include_prereleases&logo=GitHub&label=pre-release%20(zip)" /></a>
 <a href="https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe" alt="Nightly (EXE)">
-  <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?include_prereleases&label=pre-release (installer)&logo=github" /></a>
+  <img src="https://img.shields.io/github/v/release/maforget/ComicRackCE?include_prereleases&logo=GitHub&label=pre-release%20(installer)" /></a>
 <br>
   <img src="https://img.shields.io/github/release-date-pre/maforget/ComicRackCE?logo=github&label=Released" /></a>   
 </p>
@@ -33,7 +33,7 @@ This project aims to revive the legendary Comic Manager, ComicRack, which hasn't
 
 To support the community, I am releasing the decompiled version as a Community Edition. Although commercial use can't be prevented, I discourage rebranding and selling it. Please keep expectations realistic; major overhauls, like rewriting the entire program or UI, aren't on the horizon. As a hobbyist programmer, I can handle most code but with time. If you're eager for a new feature, I encourage you to consider implementing it yourself—it's what makes this the Community Edition.
 
-New Features are listed [here](https://github.com/maforget/ComicRackCE/wiki/New-Features). The complete changelog is [here](https://raw.githubusercontent.com/maforget/ComicRackCE/master/ComicRack/Changes.txt).
+New Features are listed [here](https://github.com/maforget/ComicRackCE/wiki/New-Features). The complete changelog is [here](https://raw.githubusercontent.com/maforget/ComicRackCE/master/ComicRack/Output/Changes.txt).
 
 ## Community Collaboration
 To collaborate, open an Issue on the tracker or use GitHub discussions. Start with small, focused Pull Requests, avoiding large, vague commits. ChatGPT can help with small code snippets but not with complete rewrites. Use Visual Studio 2022 Community Edition for development, as it's more suitable than VS Code.
@@ -41,7 +41,13 @@ To collaborate, open an Issue on the tracker or use GitHub discussions. Start wi
 We also need the Localizer tool created by cYo for translations.
 
 ## Installation
-To install, download the [nightly installer](https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe "Nightly Release"), double-click it, and follow the instructions. 
+To install, download the [nightly installer](https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe "Nightly Release"), double-click it, and follow the instructions. <br />
+You can also install it via winget `winget install ComicRackCE`.
+
+> [!CAUTION]
+> Because of a change with Microsoft Visual C++ Redistributable 2015-2022, if you use the HEIF/AVIF files you will need to have at a minimum version `14.40.33810.0` installed. This should be done automatically by the installer, but if you are using the ZIP file, please be advise that you will need to update it manually. More info [here](https://github.com/maforget/ComicRackCE/issues/106).
+>
+> Link to lastest Visual C++ Redistributable 2015-2022: https://aka.ms/vs/17/release/vc_redist.x64.exe
 
 >[!IMPORTANT]
 >* This build is currently under development and may undergo daily changes. Bugs resulting from the decompiling process may still exist, so exercise caution when upgrading.
@@ -56,7 +62,7 @@ To install, download the [nightly installer](https://github.com/maforget/ComicRa
 >* Before installing the Community Edition, uninstalling the original ComicRack is suggested to avoid duplicates in the Open With menu.
 >* An updated version of the [Backup Manager](https://github.com/maforget/cr-backup-manager) is provided to help you backup your database.
 >* Use the News window within the application to stay informed about the latest builds.
->* Check the [Wiki]([ComicRackCE/wiki](https://github.com/maforget/ComicRackCE/wiki)) for additional tips and information.
+>* Check the [ComicRackCE wiki](https://github.com/maforget/ComicRackCE/wiki) for additional tips and information.
 
 ### Upgrading from classic ComicRack
 
@@ -72,6 +78,9 @@ ComicRack Community Edition uses a different data directory than classic ComicRa
 6. Open ComicRack Community Edition and all your comics/scripts should be there.
 
 Remember that changes in one, will not carry over to the other.
+
+> [!NOTE]
+> You might want to update the background & paper texture settings in Book Display Settings (and in any saved Workspaces). Since the path of the textures are hardcoded they will still refer to the original ComicRack install location.
 
 ## Plugins
 

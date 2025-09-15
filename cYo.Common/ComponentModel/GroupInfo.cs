@@ -59,99 +59,78 @@ namespace cYo.Common.ComponentModel
 			try
 			{
 				DateTime now = DateTime.Now;
-				int num = now.Year * 12 + now.Month;
-				int num2 = now.Year * 366 + now.DayOfYear;
-				int num3 = date.Year * 12 + date.Month;
-				int num4 = date.Year * 366 + date.DayOfYear;
-				if (date.CompareTo(DateTime.MinValue, ignoreTime: true) == 0)
-				{
+				int nowMonth = now.Year * 12 + now.Month;
+				int nowDayOfYear = now.Year * 366 + now.DayOfYear;
+				int dateMonth = date.Year * 12 + date.Month;
+				int dateDayOfYear = date.Year * 366 + date.DayOfYear;
+
+				if (date.CompareTo(DateTime.MinValue, ignoreTime: true) == 0) // Never
 					return new GroupInfo(unknown ?? DateGroups[0], 1000);
-				}
-				if (num2 == num4)
-				{
+
+				if (nowDayOfYear == dateDayOfYear) //Today
 					return new GroupInfo(DateGroups[1], 0);
-				}
-				if (num2 - 1 == num4)
-				{
+
+				if (nowDayOfYear - 1 == dateDayOfYear) // Yesterday
 					return new GroupInfo(DateGroups[2], 1);
-				}
-				if (num2 - 2 == num4)
-				{
-					return new GroupInfo(DateGroups[3], 2);
-				}
-				if (num2 - 3 == num4)
-				{
+
+				if (nowDayOfYear - 2 == dateDayOfYear) // Two Days Ago
+					return new GroupInfo(DateGroups[3], 2); 
+
+				if (nowDayOfYear - 3 == dateDayOfYear) // Three Days Ago
 					return new GroupInfo(DateGroups[4], 3);
-				}
-				if (num2 / 7 == num4 / 7)
-				{
+
+				if (nowDayOfYear / 7 == dateDayOfYear / 7) // This Week
 					return new GroupInfo(DateGroups[5], 10);
-				}
-				if (num2 / 7 - 1 == num4 / 7)
-				{
+
+				if (nowDayOfYear / 7 - 1 == dateDayOfYear / 7) // Last Week
 					return new GroupInfo(DateGroups[6], 11);
-				}
-				if (num2 / 7 - 2 == num4 / 7)
-				{
+
+				if (nowDayOfYear / 7 - 2 == dateDayOfYear / 7) // Two Weeks Ago
 					return new GroupInfo(DateGroups[7], 12);
-				}
-				if (num2 / 7 - 3 == num4 / 7)
-				{
+
+				if (nowDayOfYear / 7 - 3 == dateDayOfYear / 7) // Three Weeks Ago
 					return new GroupInfo(DateGroups[8], 13);
-				}
-				if (num == num3)
-				{
+
+				if (nowMonth == dateMonth) // This Month
 					return new GroupInfo(DateGroups[9], 20);
-				}
-				if (num - 1 == num3)
-				{
+
+				if (nowMonth - 1 == dateMonth) // Last Month
 					return new GroupInfo(DateGroups[10], 21);
-				}
-				if (num - 2 == num3)
-				{
+
+				if (nowMonth - 2 == dateMonth) // Two Months Ago
 					return new GroupInfo(DateGroups[11], 22);
-				}
-				if (num - 3 == num3)
-				{
+
+				if (nowMonth - 3 == dateMonth) // Three Months Ago
 					return new GroupInfo(DateGroups[12], 23);
-				}
-				if (num - 4 == num3)
-				{
+
+				if (nowMonth - 4 == dateMonth) // Four Months Ago
 					return new GroupInfo(DateGroups[13], 24);
-				}
-				if (num - 5 == num3)
-				{
+
+				if (nowMonth - 5 == dateMonth) // Five Months Ago
 					return new GroupInfo(DateGroups[14], 25);
-				}
-				if (num - 6 == num3)
-				{
+
+				if (nowMonth - 6 == dateMonth) // Six Months Ago
 					return new GroupInfo(DateGroups[15], 26);
-				}
-				if (now.Year == date.Year)
-				{
+
+				if (now.Year == date.Year) // This Year
 					return new GroupInfo(DateGroups[16], 30);
-				}
-				if (now.Year - 1 == date.Year)
-				{
+
+				if (now.Year - 1 == date.Year) // Last Year
 					return new GroupInfo(DateGroups[17], 31);
-				}
-				if (now.Year - 2 == date.Year)
-				{
+
+				if (now.Year - 2 == date.Year) // Two Years Ago
 					return new GroupInfo(DateGroups[18], 32);
-				}
-				if (now.Year - 3 == date.Year)
-				{
+
+				if (now.Year - 3 == date.Year) // Three Years Ago
 					return new GroupInfo(DateGroups[19], 33);
-				}
-				if (now.Year + 1 == date.Year)
-				{
+
+				if (now.Year + 1 == date.Year) // Next Year
 					return new GroupInfo(DateGroups[21], 34);
-				}
-				if (now.Year < date.Year)
-				{
+
+				if (now.Year < date.Year) // In the Future
 					return new GroupInfo(DateGroups[22], 35);
-				}
-				return new GroupInfo(DateGroups[20], 34);
+
+				return new GroupInfo(DateGroups[20], 34); // Older than Three Years
 			}
 			catch
 			{

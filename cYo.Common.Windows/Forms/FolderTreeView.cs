@@ -104,9 +104,10 @@ namespace cYo.Common.Windows.Forms
 								list.Add(item2);
 							}
 						}
-						if (sortNetworkFolders && PathIsNetworkPath(shellFolder.Pidl.PhysicalPath))
+						if (sortNetworkFolders && PathIsNetworkPath(shellFolder.Pidl.PhysicalPath) 
+							|| shellFolder.Pidl.IsFileSystem && !shellFolder.Pidl.IsDesktop && !PathIsNetworkPath(shellFolder.Pidl.PhysicalPath))
 						{
-							list.Sort((TreeNode a, TreeNode b) => string.Compare(a.Text, b.Text, StringComparison.OrdinalIgnoreCase));
+							list.Sort((TreeNode a, TreeNode b) => string.Compare(a.Text, b.Text, StringComparison.InvariantCultureIgnoreCase));
 						}
 						foreach (TreeNode item4 in list)
 						{

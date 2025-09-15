@@ -9,6 +9,7 @@ using cYo.Common.ComponentModel;
 using cYo.Common.Compression.SevenZip;
 using cYo.Common.IO;
 using cYo.Common.Win32;
+using cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 {
@@ -22,7 +23,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
         public static readonly string PackDll64 = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\7z64.dll");
 
-        private static readonly Regex rxList = new Regex("Path = (?<filename>.*)\\r\\n(.*\\r\\n)*?Size = (?<size>\\d+)", RegexOptions.Compiled);
+        private static readonly Regex rxList = new Regex("Path = (?<filename>.*)\\r\\n(Folder.*\\r\\n)*?Size = (?<size>\\d+)", RegexOptions.Compiled);
 
         private bool libraryMode;
 
@@ -152,7 +153,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                         {
                             PropVariant value = default(PropVariant);
                             archive.GetProperty(i, ItemPropId.kpidPath, ref value);
-                            if (file.Equals(value.GetObject().ToString()))
+                            if (file.Equals(value.GetObject().ToString(), StringComparison.OrdinalIgnoreCase))
                             {
                                 return GetFileData(archive, i);
                             }
@@ -198,12 +199,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
         {
             try
             {
-                using (MemoryStream inStream = new MemoryStream(GetFileData(source, "ComicInfo.xml")))
-                {
-                    return ComicInfo.Deserialize(inStream);
-                }
-            }
-            catch
+				return XmlInfoProviders.Readers.DeserializeAll(s => new MemoryStream(GetFileData(source, s)));
+			}
+			catch
             {
                 return null;
             }
@@ -239,15 +237,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             string arg;
             switch (format)
             {
-                case 2:
+                case KnownFileFormats.CBZ:
                     flag = false;
                     arg = "zip";
                     break;
-                case 6:
+                case KnownFileFormats.CB7:
                     flag = true;
                     arg = "7z";
                     break;
-                case 5:
+                case KnownFileFormats.CBT:
                     flag = false;
                     arg = "tar";
                     break;

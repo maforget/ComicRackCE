@@ -71,9 +71,9 @@ namespace cYo.Common
 			return (num & num2) != 0;
 		}
 
-		public static bool IsNotSet<T>(this Enum n, T mask)
+		public static bool IsNotSet<T>(this Enum n, T mask, bool all = true)
 		{
-			return !n.IsSet(mask);
+			return !n.IsSet(mask, all);
 		}
 
 		public static int GetBitCount(int n)

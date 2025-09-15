@@ -212,7 +212,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.RestorePosition();
 			LocalizeUtility.Localize(this, null);
 			LocalizeUtility.Localize(TR.Load(base.Name), cbLimitType);
-			new ComboBoxSkinner(cbBaseList);
+			new ComboBoxSkinner(cbBaseList) { MaxHeightScale = 3 };
 			txLimit.EnableOnlyNumberKeys();
 			SpinButton.AddUpDown(txLimit, 1, 1);
 			cbMatchMode.Items.AddRange(TR.Load(base.Name).GetStrings("MatchMode", "All|Any", '|'));
