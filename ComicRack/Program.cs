@@ -1073,14 +1073,12 @@ namespace cYo.Projects.ComicRack.Viewer
 				int num = (int)(MemoryInfo.InstalledPhysicalMemory / 1024 / 1024);
 				int cpuSpeedInHz = MemoryInfo.CpuSpeedInHz;
 				if (num <= 512)
-				{
 					ExtendedSettings.QueryCacheMode = QueryCacheMode.Disabled;
-				}
+
 				EngineConfiguration.Default.EnableParallelQueries = processorCount > 1;
-				if (cpuSpeedInHz > 2000)
-				{
-					ExtendedSettings.OptimizedListScrolling = false;
-				}
+				if (cpuSpeedInHz < 2000)
+					ExtendedSettings.OptimizedListScrolling = true;
+
 				ImageDisplayControl.HardwareSettings.MaxTextureMemoryMB = (num / 8).Clamp(32, 2048);
 				if (ImageDisplayControl.HardwareSettings.MaxTextureMemoryMB <= 64)
 				{

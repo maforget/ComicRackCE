@@ -397,7 +397,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set;
 		}
 
-		[DefaultValue(true)]
+		[DefaultValue(false)]
 		public bool OptimizedListScrolling
 		{
 			get;
@@ -482,7 +482,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			HideBrowserIfShellOpen = true;
 			DragDropCursorAlpha = 0.6f;
 			ListMenuSize = 25;
-			OptimizedListScrolling = true;
+			OptimizedListScrolling = false;
 			QuickOpenListSize = 10;
 			RemoteLibrariesInQuickOpen = true;
 			OnlyLocalRemoteLibrariesInQuickOpen = true;
