@@ -3,7 +3,11 @@
 #@Hook Books
 #@Image fromducks.ico
 #@Key FromDucks
-#@Description Search on inducks.org informations about the selected eComics
+#@Description Search for Inducks informations about the selected eComics
+#
+# FromDucks 3.0 - Sep 2025
+#
+# ---> 3.0 Changelog: Use the DucksManager API to get the Inducks data in a structured way, allow to test most of the script logic using pure Python
 #
 # FromDucks 2.16 - Jul 2025
 #
@@ -51,7 +55,7 @@ from _json_decode import JSONDecoder
 
 from datetime import datetime
 settings = ""
-VERSION = "2.16"
+VERSION = "3.0"
 
 # DEBUG = False
 DEBUG = True
@@ -1068,9 +1072,9 @@ def fillReferenceData(referenceDataName, page):
 	elif referenceDataName == "persons":
 		persons = JSONDecoder().decode(page)
 			
-def FillDatNoUI(referenceDataNames):
+def FillDatNoUI():
 	global publications, characters, languages, persons
-	for referenceDataName in referenceDataNames:
+	for referenceDataName in ['publications', 'characters', 'languages', 'persons']:
 		cWeb = "https://api-comicrack.ducksmanager.net/comicrack/" + referenceDataName
 		fileName = getReferenceDataFileName(referenceDataName)
 		if (not fileExistsAndCreatedToday(fileName)):
@@ -1391,7 +1395,7 @@ def test_ReadInfoDucks():
 	global f
 	f = None
  
-	FillDatNoUI(['publications', 'characters', 'languages', 'persons'])
+	FillDatNoUI()
  
 	for book in [
      	#{'Series': 'dk/AAC','Number': '2020-35'},
