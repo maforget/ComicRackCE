@@ -584,18 +584,20 @@ def FromDucks(books):
 				nIndex = 0
 
 				for index, publicationcode in enumerate(sorted(publications.keys())):
+					publicationCountrycode = publicationcode[:publicationcode.find("/")]
 					publicationtitle = publications[publicationcode]
 					try:
 						self.list.Items.Add(publicationcode + " - " + publicationtitle.decode('utf-8'))
 					except:
 						self.list.Items.Add(publicationcode + " - " + publicationtitle)
 
-					try:
-						if StartPub == publicationtitle.decode('utf-8'):
-							nIndex = index
-					except:
-						if StartPub == publicationtitle:
-							nIndex = index
+					if publicationCountrycode == bookLanguagecode:
+						try:
+							if bookPublicationname == publicationtitle.decode('utf-8'):
+								nIndex = index
+						except:
+							if bookPublicationname == publicationtitle:
+								nIndex = index
 
 				self.Controls.Add(self.list)
 
@@ -775,7 +777,6 @@ def FromDucks(books):
 					# return
 
 
-				log_BD("[" + book.Series +"] #" + book.Number," ** Scraped **\n", 1 )
 				Application.DoEvents()
 
 		except:
@@ -802,15 +803,18 @@ def FromDucks(books):
 			fileName = getReferenceDataFileName(referenceDataName)
 
 			if fileExistsAndCreatedToday(fileName):
+				log_BD("Reference file " + referenceDataName + " is up to date, reading local copy", "", 1)
 				page = readFile(fileName)
 			else:
 				try:
+					log_BD("Retrieving reference file " + referenceDataName, "", 1)
 					page = _read_url(cWeb)
+					log_BD("Retrieved reference file " + referenceDataName, "", 1)
 					if (fd is None):
 						fd = ProgressBarDialog(1, "Reading/Rebuilding Local Database")
 						log_BD("Reading/Rebuilding [" + cWeb + "]", "Local Database ", 1)
 						log_BD("Storing in [" + fileName + "]", "", 1)
-					fd.Show(ComicRack.MainWindow)
+						fd.Show(ComicRack.MainWindow)
 					fd.Update("Reading/Rebuilding [" + cWeb + "]", 1, "Local Database ")
 					fd.Refresh()
 
@@ -820,7 +824,9 @@ def FromDucks(books):
 
 				writeFile(fileName, page)
     
+			log_BD("Filling " + referenceDataName + " data", "", 1)
 			fillReferenceData(referenceDataName, page)
+			log_BD("Filled " + referenceDataName + " data", "", 1)
 		if (not fd is None):
 			fd.Close()
 
@@ -832,10 +838,9 @@ def FromDucks(books):
 		DialogResult
 	)
 
-	global settings, StartPub, publicationcode, TranslationID, LStart, DEBUG, TitleT
+	global settings, bookPublicationname, bookLanguagecode, publicationcode, TranslationID, LStart, DEBUG, TitleT
 
 	TranslationID = ""
-	StartPub = []
 	LStart = ""
 
 	TitleT = "L"
@@ -860,13 +865,10 @@ def FromDucks(books):
 		MessageBox.Show("The script cannot find the locations of the scripts. Please try restarting ComicRack.")
 		return
 
-	publicationReferenceFile = getReferenceDataFileName('publications')
-	if not FileInfo(publicationReferenceFile).Exists:
-		writeFile(publicationReferenceFile, "{}")
-
 	FillDat()
 
-	StartPub = books[0].Series
+	bookPublicationname = books[0].Series
+	bookLanguagecode = books[0].LanguageISO
 
 	# Ensure file exists, but do not read here
 
@@ -920,6 +922,7 @@ def readFile(fileName):
 
 def writeFile(fileName, content):
 	try:
+		log_BD("Writing file:", fileName, 1)
 		if 'System' in sys.modules:
 			from System.IO import StreamWriter
 			from System.Text import Encoding
@@ -1071,7 +1074,7 @@ def FillDatNoUI(referenceDataNames):
 		cWeb = "https://api-comicrack.ducksmanager.net/comicrack/" + referenceDataName
 		fileName = getReferenceDataFileName(referenceDataName)
 		if (not fileExistsAndCreatedToday(fileName)):
-			print("Reading/Rebuilding [" + cWeb + "]", "Local Database ")
+			print("Reading/Rebuilding [" + cWeb + "]")
 			writeFile(fileName, _read_url(cWeb + "?languagecode=en" if referenceDataName == "characters" else cWeb))
 		fillReferenceData(referenceDataName, readFile(fileName))
 
@@ -1080,7 +1083,7 @@ def cleanupTitle(title):
 		decoded_title = title.decode('utf-8')
 	except Exception:
 		decoded_title = title
-	return decoded_title.strip("(").strip(")").replace("'S","'s").replace(" The"," the").replace("&Amp;","&")
+	return decoded_title.replace("'S","'s").replace(" The"," the").replace("&Amp;","&")
 
 def SumBuild(StoryFull, start_marker, end_marker):
 	global persons
@@ -1143,7 +1146,7 @@ def ReadInfoDucks(cSeries, book):
 		debuglog()
 		return -1,0,0,0,0,0,0,0,0,0,0
 
-	series = '' # TODO
+	series = publications[cSeries] if cSeries in publications else cSeries
 	publishers = data['issue']['publishers']
 	main_title = data['issue']['title']
 	release_date = data['issue']['oldestdate']
@@ -1274,6 +1277,10 @@ def ReadInfoDucks(cSeries, book):
 			book.Genre = aUpdate[22].decode('utf-8')
 		except:
 			book.Genre = aUpdate[22]
+	try:
+		log_BD("[" + book.Series.decode('utf-8') +"] #" + book.Number," ** Scraped **\n", 1, True )
+	except:	
+		log_BD("[" + book.Series +"] #" + book.Number," ** Scraped **\n", 1, True )
 
 def ArtBuild(StoryFull):
 	global persons
@@ -1314,10 +1321,10 @@ def MonthNum(month):
 		return 0
 
 
-def log_BD(bdstr,bdstat="",lTime=1):
+def log_BD(bdstr,bdstat="",lTime=1, utf8Encode=False):
 	bdlogfile = path_combine(__file__[:-len('FromDucks.py')] , "FromDucks_Rename_Log.txt")
 
-	bdlog = open(bdlogfile, 'a')
+	bdlog = open(bdlogfile, 'a', encoding='utf-8') if utf8Encode else open(bdlogfile, 'a')
 	if lTime == 1:
 		cDT = str(datetime.now().strftime("%A %d %B %Y %H:%M:%S")) + " > "
 
@@ -1376,10 +1383,10 @@ def test_ReadInfoDucks():
 			self.__dict__.update(data)
 
 	global aUpdate
-	aUpdate = [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,""]
+	aUpdate = [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,""]
 
 	global TitleT
-	TitleT = "T"
+	TitleT = "L"
  
 	global f
 	f = None
@@ -1389,7 +1396,7 @@ def test_ReadInfoDucks():
 	for book in [
      	#{'Series': 'dk/AAC','Number': '2020-35'},
       	#{'Series': 'dk/JB', 'Number': '1'}
-      	{'Series': 'dk/MH', 'Number': '1967-01'}
+      	{'Series': 'dk/MH', 'Number': '1967-06'}
        ]:
 		sample_book = Book({
 			'Series': book['Series'],
