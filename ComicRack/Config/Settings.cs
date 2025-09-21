@@ -298,6 +298,8 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		private bool autoHideMainMenu = true;
 
+		private bool disableDragDrop = false;
+
 		private bool showMainMenuNoComicOpen = true;
 
 		private bool informationCover3D = true;
@@ -1908,6 +1910,25 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			}
 		}
 
+		[Category("Browser")]
+		[Description("Disable opening files via drag-and-drop")]
+		[DefaultValue(false)]
+		public bool DisableDragDrop
+		{
+			get
+			{
+				return disableDragDrop;
+			}
+			set
+			{
+				if (disableDragDrop != value)
+				{
+					disableDragDrop = value;
+					FireEvent(this.DisableDragDropChanged);
+				}
+			}
+		}
+
 		[DefaultValue(true)]
 		[Browsable(false)]
 		public bool AutoHideMainMenu
@@ -2570,6 +2591,9 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		[field: NonSerialized]
 		public event EventHandler AutoHideMainMenuChanged;
+
+		[field: NonSerialized]
+		public event EventHandler DisableDragDropChanged;
 
 		[field: NonSerialized]
 		public event EventHandler ShowMainMenuNoComicOpenChanged;

@@ -1634,7 +1634,7 @@ namespace cYo.Projects.ComicRack.Engine
 		public static event EventHandler<ParseFilePathEventArgs> ParseFilePath;
 
 		Dictionary<int, string> CachedVirtualTags = new Dictionary<int, string>();
-		private string GetVirtualTagValue(int id)
+		public string GetVirtualTagValue(int id)
 		{
 			if (CachedVirtualTags.TryGetValue(id, out var value))
 				return value;
@@ -1969,15 +1969,16 @@ namespace cYo.Projects.ComicRack.Engine
 			var properties = GetWritableStringProperties();
 			foreach (var imagePackage in GenericIcons)
 			{
-				if (properties.Contains(imagePackage.Key))
+				string keyValue = properties.Contains(imagePackage.Key) ? GetStringPropertyValue(imagePackage.Key)?.Trim() : GetCustomValue(imagePackage.Key)?.Trim();
+				if (!string.IsNullOrEmpty(keyValue))
 				{
-					var propertiesValues = GetStringPropertyValue(imagePackage.Key).FromListString(',');
+					var propertiesValues = keyValue.FromListString(',');
 					foreach (var propertiesValue in propertiesValues)
 					{
 						Image image = imagePackage.Value.GetImage(propertiesValue);
 						if (image != null)
 							yield return image;
-					}
+					} 
 				}
 			}
 		}

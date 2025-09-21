@@ -464,6 +464,13 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set;
 		}
 
+		[DefaultValue(true)]
+		public bool OpenExplorerUsingAPI
+		{
+			get;
+			set;
+		}
+
 		public ExtendedSettings()
 		{
 			AnamorphicScalingTolerance = 0.25f;
@@ -484,6 +491,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			SortNetworkFolders = true;
 			StartHidden = false;
 			DeleteAPI = FileOperationsAPI.IFileOperation;
+			OpenExplorerUsingAPI = true;
 		}
 	}
 }

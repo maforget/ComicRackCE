@@ -532,26 +532,18 @@ namespace cYo.Projects.ComicRack.Viewer
 		public static bool ShowExplorer(string path)
 		{
 			if (string.IsNullOrEmpty(path))
-			{
 				return false;
-			}
+
 			try
 			{
-				if (File.Exists(path))
-				{
-					Process.Start("explorer.exe", $"/n,/select,\"{path}\"");
-					return true;
-				}
-				if (Directory.Exists(path))
-				{
-					Process.Start("explorer.exe", $"\"{path}\"");
-					return true;
-				}
-				if (Path.GetDirectoryName(path) is string dir && Directory.Exists(dir)) //Check parent dir instead
-				{
-					Process.Start("explorer.exe", $"\"{dir}\"");
-					return true;
-				}
+				if (File.Exists(path)) // Open explorer and select file
+					return FileExplorer.OpenFolderAndSelect(path, Program.ExtendedSettings.OpenExplorerUsingAPI);
+
+				if (Directory.Exists(path)) // Open explorer at directory if path is a directory
+					return FileExplorer.OpenFolder(path, Program.ExtendedSettings.OpenExplorerUsingAPI);
+
+				if (Path.GetDirectoryName(path) is string dir && Directory.Exists(dir)) //Open parent dir if file does not exist
+					return FileExplorer.OpenFolder(dir, Program.ExtendedSettings.OpenExplorerUsingAPI);
 			}
 			catch (Exception)
 			{
@@ -958,7 +950,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			foreach (var generic in ZipFileFolder.CreateDictionaryFromFiles(folders, searchPattern, trigger))
 			{
 				var icons = new ImagePackage { EnableWidthCropping = true };
-				icons.Add(generic.Value, SplitIconKeys);
+				icons.Add(generic.Value, mapKeys);
 				dictionary.Add(generic.Key, icons);
 			}
 			return dictionary;
@@ -1076,6 +1068,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			if (ExtendedSettings.IsQueryCacheModeDefault && EngineConfiguration.Default.IsEnableParallelQueriesDefault && ImageDisplayControl.HardwareSettings.IsMaxTextureMemoryMBDefault && ImageDisplayControl.HardwareSettings.IsTextureManagerOptionsDefault)
 			{
 				int processorCount = Environment.ProcessorCount;
+				// TODO: Query the video memory instead of physical memory
 				int num = (int)(MemoryInfo.InstalledPhysicalMemory / 1024 / 1024);
 				int cpuSpeedInHz = MemoryInfo.CpuSpeedInHz;
 				if (num <= 512)
@@ -1087,7 +1080,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				{
 					ExtendedSettings.OptimizedListScrolling = false;
 				}
-				ImageDisplayControl.HardwareSettings.MaxTextureMemoryMB = (num / 8).Clamp(32, 256);
+				ImageDisplayControl.HardwareSettings.MaxTextureMemoryMB = (num / 8).Clamp(32, 2048);
 				if (ImageDisplayControl.HardwareSettings.MaxTextureMemoryMB <= 64)
 				{
 					ImageDisplayControl.HardwareSettings.TextureManagerOptions |= TextureManagerOptions.BigTexturesAs16Bit;

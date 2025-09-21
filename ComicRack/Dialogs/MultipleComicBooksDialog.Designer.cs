@@ -97,6 +97,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.labelCommunityRating = new System.Windows.Forms.Label();
 			this.pageData = new System.Windows.Forms.Panel();
 			this.grpCustom = new cYo.Common.Windows.Forms.CollapsibleGroupBox();
+			this.customGroupsPanel = new System.Windows.Forms.Panel();
 			this.textCustomField = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.labelCustomField = new System.Windows.Forms.Label();
 			this.grpCatalog = new cYo.Common.Windows.Forms.CollapsibleGroupBox();
@@ -147,6 +148,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.labelSeriesComplete = new System.Windows.Forms.Label();
 			this.pageData.SuspendLayout();
 			this.grpCustom.SuspendLayout();
+			this.customGroupsPanel.SuspendLayout();
 			this.grpCatalog.SuspendLayout();
 			this.grpPlotNotes.SuspendLayout();
 			this.grpArtists.SuspendLayout();
@@ -595,6 +597,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.cbLanguage.Location = new System.Drawing.Point(10, 285);
 			this.cbLanguage.Name = "cbLanguage";
 			this.cbLanguage.SelectedCulture = "";
+			this.cbLanguage.SelectedTwoLetterISOLanguage = "";
 			this.cbLanguage.Size = new System.Drawing.Size(143, 21);
 			this.cbLanguage.TabIndex = 41;
 			this.cbLanguage.TopISOLanguages = null;
@@ -847,8 +850,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// grpCustom
 			// 
-			this.grpCustom.Controls.Add(this.textCustomField);
-			this.grpCustom.Controls.Add(this.labelCustomField);
+			this.grpCustom.Controls.Add(this.customGroupsPanel);
 			this.grpCustom.Dock = System.Windows.Forms.DockStyle.Top;
 			this.grpCustom.Location = new System.Drawing.Point(0, 1261);
 			this.grpCustom.Name = "grpCustom";
@@ -856,10 +858,22 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.grpCustom.TabIndex = 4;
 			this.grpCustom.Text = "Custom Fields";
 			// 
+			// customGroupsPanel
+			// 
+			this.customGroupsPanel.AutoScrollMargin = new System.Drawing.Size(0, 16);
+			this.customGroupsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.customGroupsPanel.Controls.Add(this.textCustomField);
+			this.customGroupsPanel.Controls.Add(this.labelCustomField);
+			this.customGroupsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.customGroupsPanel.Location = new System.Drawing.Point(0, 24);
+			this.customGroupsPanel.Name = "customGroupsPanel";
+			this.customGroupsPanel.Size = new System.Drawing.Size(478, 67);
+			this.customGroupsPanel.TabIndex = 72;
+			// 
 			// textCustomField
 			// 
 			this.textCustomField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-			this.textCustomField.Location = new System.Drawing.Point(11, 53);
+			this.textCustomField.Location = new System.Drawing.Point(11, 23);
 			this.textCustomField.Name = "textCustomField";
 			this.textCustomField.Size = new System.Drawing.Size(451, 20);
 			this.textCustomField.TabIndex = 25;
@@ -869,7 +883,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.labelCustomField.AutoSize = true;
 			this.labelCustomField.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelCustomField.Location = new System.Drawing.Point(10, 38);
+			this.labelCustomField.Location = new System.Drawing.Point(10, 8);
 			this.labelCustomField.Name = "labelCustomField";
 			this.labelCustomField.Size = new System.Drawing.Size(76, 12);
 			this.labelCustomField.TabIndex = 24;
@@ -1452,7 +1466,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.Text = "Multiple Book Information ({0})";
 			this.pageData.ResumeLayout(false);
 			this.grpCustom.ResumeLayout(false);
-			this.grpCustom.PerformLayout();
+			this.customGroupsPanel.ResumeLayout(false);
+			this.customGroupsPanel.PerformLayout();
 			this.grpCatalog.ResumeLayout(false);
 			this.grpCatalog.PerformLayout();
 			this.grpPlotNotes.ResumeLayout(false);
@@ -1538,6 +1553,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private RatingControl txCommunityRating;
 		private Label labelCommunityRating;
 		private Panel pageData;
+		private Panel customGroupsPanel;
 		private CollapsibleGroupBox grpCatalog;
 		private CollapsibleGroupBox grpArtists;
 		private CollapsibleGroupBox grpPlotNotes;

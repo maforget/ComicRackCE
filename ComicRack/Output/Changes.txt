@@ -32,13 +32,15 @@ Community Edition Build 0.9.180:
 * NEW: Added the Translator field as per the anansi-project/comicinfo.
 * NEW: The Preference dialog is now resizable and is remembered by the Workspace system.
 * NEW: Added a Delete API setting in the ComicRack.ini that let's you change which API is used to move files to the recycle bin. (See ComicRack.ini)
-* NEW: Possible to add icons that apply to any writable string fields. Just give the zip the name of the field with the "_" prefix in front. (Ex: "Carl Barks.png" inside "_Writer".) 
+* NEW: Possible to add icons that apply to any writable string fields or custom fields. Just give the zip the name of the field with the "_" prefix in front. (Ex: "Carl Barks.png" inside "_Writer".) 
 * NEW: Added read support for Jpeg2000 images (.j2k & .jp2). It is a bit slow, so I wouldl use it to convert to another file format.
 * NEW: Added an option to append a tag during export. It will append tags (only if they do not already exists) to the book file & to the library (only if set to replace or add to library).
 * NEW: Added feature to generate thumbnails for all covers. Under File => Generate Cover Thumbnails.
 * NEW: The Info dialog is now resizable.
 * NEW: Changed how the first item of a stack is determined to take into consideration the sorting from inside the stack. (see Wiki)
 * NEW: Added a Reset Top of Stack option in the context menu  that will reset any top of stack previsously set.
+* NEW: You can now export a folder and it will export all the lists inside it as regular reading lists.
+* NEW: Added an option in Preferences to disable opening files via drag-and-drop.
 
 
 * CHANGE: Program renamed to Community Edition, this means that a new config folder will be used %appdata%\cYo\ComicRack Community Edition.
@@ -72,10 +74,18 @@ Community Edition Build 0.9.180:
 * CHANGE: Upped the limit you can configure for thumbnails memory caching from 100MB to 500MB. Also upped the limit for number of items from 4096 to 8192 (not customizable). The memory is freed when either values is reached first.
 * CHANGE: Doubled the number of items of StacksConfig from 1024 to 2048. Each list can only contain that maximum number of stacks individual configs. This affects everything from layout to grouping/sorting and Top of Stack.
 * CHANGE: Show Duplicate will now show entries that have identical file paths.
+* CHANGE: Exporting a smart list as a reading list (single entries) will now keep the sort order of the smart list.
+* CHANGE: Folder are now a ShareableComicListItem, this has multiple implications such as:
+    - Exporting Folders as CBL (only single entries for now)
+    - Copy / Pasting Folders and Ctrl dragging them will now copy the folder and all it's children lists in 1 shot.
+    - You can now select folders to be shared using the server.
+    - Folders can now be added to the Quick Open.
+* CHANGE: Refreshing a book in the Folder tab will now refresh the cover. It previsouly only worked in the Library tab.
+* CHANGE: Reveal in Explorer now uses the Windows API to open the folder and select the file. It should work better with long paths & prevents the spamming of explorer windows if the same folder is opened multiple times.
 
 
 * UPDATE: Updated to .NET Framework v4.8.
-* UPDATE: Updated 7-Zip to to v24.07.
+* UPDATE: Updated 7-Zip to to v25.01.
 * UPDATE: Updated SharpZipLib to v1.4.2.
 * UPDATE: Updated SharpCompress to v0.39.
 * UPDATE: Updated WindowsCodePack to V1.15.
@@ -105,6 +115,7 @@ Community Edition Build 0.9.180:
 * BUGFIX: The main window state will now be correctly restored from the tray. If the program was closed from the tray, upon startup it would fail to restore the window in maximized state. Even if it was maximized before closing.
 * BUGFIX: Fix export upscaling double pages even when specifically told otherwise.
 * BUGFIX: Fixed an issue when exporting that would cause to have duplicate entries in the Library. An error will now be displayed and the export blocked if that happens.
+* BUGFIX: Fixed an issue where copying a list while pressing CTRL while dragging would link both lists until a restart.
 
 
 ^^^^^^^^^^ Community Edition ^^^^^^^^^^

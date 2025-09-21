@@ -1267,19 +1267,16 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         private void AddVirtualTags()
         {
             var VirtualTags = new List<VirtualTag>();
-
+            
             for (int id = 1; id <= 20; id++)
             {
                 VirtualTag vtag = Program.Settings.VirtualTags.FirstOrDefault(x => x.ID == id);
+				string name = $"Virtual Tag #{id:00}";
+                vtag = vtag is null 
+					? new VirtualTag(id, name, name, string.Empty, isDefault: true) //If the data doesn't already exists, create an empty tag.
+					: new VirtualTag(vtag.ID, vtag.Name, vtag.Description, vtag.CaptionFormat, vtag.IsEnabled, vtag.IsDefault); // Otherwise create a new instance so that it doesn't edit the original until we save.
 
-                //If the data doesn't already exists, create a default tag for the settings
-                if (vtag is null || vtag.ID != id)
-                {
-                    string name = $"Virtual Tag #{id:00}";
-                    vtag = new VirtualTag(id, name, name, string.Empty, isDefault: true);
-                }
-
-                VirtualTags.Add(vtag);
+				VirtualTags.Add(vtag);
             }
 
             SetVirtualTagsComboBoxDataSource(VirtualTags);
@@ -1374,7 +1371,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             VirtualTagUpdate();
         }
 
-        private void VirtualTagUpdate()
+		private void VirtualTagUpdate()
         {
             if (cbVirtualTags.SelectedIndex == -1)
                 return;
