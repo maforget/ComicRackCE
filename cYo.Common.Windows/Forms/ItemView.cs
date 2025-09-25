@@ -2671,17 +2671,8 @@ namespace cYo.Common.Windows.Forms
 							{
 								// Chain the stack sorter with the default ItemStackSorter if it exists
 								var stackSortComparer = stackSorter is null ? ItemStackSorter : ItemStackSorter.Chain(stackSorter); // Default comparer if no specific sorter is found
-                                // Deterministically select the issue that represents the stack
-                                group.Items.Sort(System.Collections.Generic.Comparer<IViewableItem>.Create((book1, book2) =>
-                                {
-                                    int sortResult = stackSortComparer.Compare(book1, book2);
-                                    if (sortResult != 0) return sortResult;
-									// Else tie-breaker based on Comic GUID
-                                    var guid1 = ((dynamic)book1).Comic.Id;
-                                    var guid2 = ((dynamic)book2).Comic.Id;
-                                    return guid1.CompareTo(guid2);
-                                }));
-                            }
+								group.Items.Sort(stackSortComparer); // Sort the items in the group using the stack sorter
+							}
 							StackInfo stackInfo = new StackInfo(group);
 							OnProcessStack(stackInfo); // Settings like Top of Stack & Custom Thumbnail will be applied here
 							IViewableItem key = group.Items[0]; // Use the first item of the stack
