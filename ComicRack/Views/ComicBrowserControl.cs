@@ -810,6 +810,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		}
 
 		private static readonly IComparer<IViewableItem> defaultSeriesComparer = new CoverViewItemBookComparer<ComicBookSeriesComparer>();
+		private static readonly IComparer<IViewableItem> IdComparer = new CoverViewItemBookComparer<ComicBookIdComparer>();
 		/// <summary>
 		/// Callback function that will sort the items in a stack based on the stack configuration.
 		/// </summary>
@@ -831,6 +832,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				stackColumnSorter = stackColumnSorter?.Reverse(); // Reverse the sorter if the sort order is Descending.
 
 			stackColumnSorter ??= defaultSeriesComparer; // Default comparer (series) if no stack configuration is found.
+			stackColumnSorter = stackColumnSorter.Chain(IdComparer); // Always chain the tie breaker comparer to ensure a stable sort.
 			return stackColumnSorter;
 		}
 
