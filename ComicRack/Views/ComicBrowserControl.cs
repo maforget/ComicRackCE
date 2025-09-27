@@ -864,8 +864,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 			// Determine the stack configuration depending on program settings.
 			ItemViewConfig config = stacksConfig?.GetStackViewConfig(Program.Settings.CommonListStackLayout ? BookList.Name : stackCaption);
-			IColumn colInfo = itemView.ConvertKeyToColumns(config?.SortKey)?.FirstOrDefault(); // Get the IColumn that refers to the sort key
-			IComparer<IViewableItem> stackColumnSorter = colInfo?.ColumnSorter; // Get the column sorter for the column.
+			var stackColumnSorter = ComicBookMetadataManager.GetIViewableItemComparers(config?.SortKey); // Get the IComparer for the sort key
 
 			SortOrder sortOrder = config?.ItemSortOrder ?? SortOrder.None; // Default to None if there is no config
 			if (sortOrder == SortOrder.Descending)
