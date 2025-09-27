@@ -567,9 +567,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					library.CustomValuesChanged += delegate
 					{
 						SetCustomColumns();
+						ComicBookMetadataManager.Create(itemView.Columns);
 					};
 					SetCustomColumns();
 					SetVirtualTagColumns();
+					ComicBookMetadataManager.Create(itemView.Columns);
 				}
 			}
 		}
@@ -828,7 +830,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			IComparer<IViewableItem> stackColumnSorter = colInfo?.ColumnSorter; // Get the column sorter for the column.
 
 			SortOrder sortOrder = config?.ItemSortOrder ?? SortOrder.None; // Default to None if there is no config
-			if (sortOrder == SortOrder.Descending) 
+			if (sortOrder == SortOrder.Descending)
 				stackColumnSorter = stackColumnSorter?.Reverse(); // Reverse the sorter if the sort order is Descending.
 
 			stackColumnSorter ??= defaultSeriesComparer; // Default comparer (series) if no stack configuration is found.
@@ -2532,7 +2534,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		public void RefreshInformation()
 		{
 			IEnumerable<CoverViewItem> selectedItems = from CoverViewItem cvi in new List<IViewableItem>(itemView.SelectedItems)
-														select cvi;
+													   select cvi;
 
 			foreach (CoverViewItem item in selectedItems)
 			{
@@ -3248,6 +3250,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			SetCustomColumns();
 			SetVirtualTagColumns();
+			ComicBookMetadataManager.Create(itemView.Columns);
 			FillBookList();
 		}
 
