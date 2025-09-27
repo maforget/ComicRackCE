@@ -856,7 +856,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		/// </summary>
 		/// <param name="stackCaption"></param>
 		/// <returns></returns>
-		private IComparer<IViewableItem> GetStackColumnSorter(string stackCaption)
+		private IComparer<IViewableItem>[] GetStackColumnSorter(string stackCaption)
 		{
 			// If legacy stack sorting is enabled, return null to use the default stack sorting.
 			if (Program.ExtendedSettings.LegacyStackSorting)
@@ -864,15 +864,18 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 			// Determine the stack configuration depending on program settings.
 			ItemViewConfig config = stacksConfig?.GetStackViewConfig(Program.Settings.CommonListStackLayout ? BookList.Name : stackCaption);
-			var stackColumnSorter = ComicBookMetadataManager.GetIViewableItemComparers(config?.SortKey); // Get the IComparer for the sort key
+			var columnsSorters = ComicBookMetadataManager.GetIViewableItemComparers(config?.SortKey); // Get the IComparers for the sort key
+			var firstComparer = columnsSorters?.FirstOrDefault(); // Get the first comparer to reverse the sort order
 
 			SortOrder sortOrder = config?.ItemSortOrder ?? SortOrder.None; // Default to None if there is no config
-			if (sortOrder == SortOrder.Descending)
-				stackColumnSorter = stackColumnSorter?.Reverse(); // Reverse the sorter if the sort order is Descending.
+			if (sortOrder == SortOrder.Descending && firstComparer != null)
+				firstComparer = firstComparer.Reverse(); // Reverse the sorter if the sort order is Descending.
 
-			stackColumnSorter ??= defaultSeriesComparer; // Default comparer (series) if no stack configuration is found.
-			stackColumnSorter = stackColumnSorter.Chain(IdComparer); // Always chain the tie breaker comparer to ensure a stable sort.
-			return stackColumnSorter;
+			firstComparer ??= defaultSeriesComparer; // Default comparer (series) if no stack configuration is found.
+			if (columnsSorters?.Length > 0 && firstComparer != null)
+				columnsSorters[0] = firstComparer; // Replace the first comparer with the reversed one.
+
+			return columnsSorters?.AddLast(IdComparer)?.ToArray() ?? [firstComparer]; // Add the tie breaker comparer to ensure a stable sort
 		}
 
 		private void ComicItemAdded(object sender, SmartListChangedEventArgs<IViewableItem> e)

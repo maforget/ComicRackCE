@@ -295,7 +295,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 						comparer = new ComicBookAddedComparer();
 						break;
 					case DeviceSyncSettings.ListSort.ListOrder:
-						comparer = ComicBookMetadataManager.GetComparers(list.Display.View.SortKey);
+						comparer = ComicBookMetadataManager.GetComparers(list.Display.View.SortKey)?.Chain();
 						grouper = ComicBookMetadataManager.GetGroupers(list.Display.View.GrouperId);
 						break;
 					case DeviceSyncSettings.ListSort.StoryArc:

@@ -60,11 +60,11 @@ namespace cYo.Projects.ComicRack.Engine
 		// Gets the first generic comparer for the given comma separated sort key
 		private static IComparer<T> GetGenericFirstComparer<T>(string sortKey) => GetGenericComparers<T>(sortKey)?.FirstOrDefault();
 
-		// Gets a chained generic comparer for the given comma separated sort key
-		private static IComparer<T> GetGenericChainedComparer<T>(string sortKey)
+		// Gets an array of comparers for the given comma separated sort key
+		private static IComparer<T>[] GetGenericChainedComparer<T>(string sortKey)
 		{
 			var comparer = GetGenericComparers<T>(sortKey);
-			return comparer is null ? null : new ChainedComparer<T>(comparer);
+			return comparer is null ? null : comparer.TakeWhile(x => x != null).ToArray();
 		}
 		#endregion
 
@@ -73,14 +73,14 @@ namespace cYo.Projects.ComicRack.Engine
 		// Gets the first comparer for the given comma separated sort key
 		public static IComparer<ComicBook> GetComparer(string sortKey) => GetGenericFirstComparer<ComicBook>(sortKey);
 
-		// Gets a chained comparer for the given comma separated sort key
-		public static IComparer<ComicBook> GetComparers(string sortKey) => GetGenericChainedComparer<ComicBook>(sortKey);
+		// Gets an array of comparers for the given comma separated sort key
+		public static IComparer<ComicBook>[] GetComparers(string sortKey) => GetGenericChainedComparer<ComicBook>(sortKey);
 
 		// Gets the first comparer for the given comma separated sort key
 		public static IComparer<IViewableItem> GetIViewableItemComparer(string sortKey) => GetGenericFirstComparer<IViewableItem>(sortKey);
 
-		// Gets a chained comparer for the given comma separated sort key
-		public static IComparer<IViewableItem> GetIViewableItemComparers(string sortKey) => GetGenericChainedComparer<IViewableItem>(sortKey);
+		// Gets an array of comparers for the given comma separated sort key
+		public static IComparer<IViewableItem>[] GetIViewableItemComparers(string sortKey) => GetGenericChainedComparer<IViewableItem>(sortKey);
 		#endregion
 
 
@@ -103,7 +103,7 @@ namespace cYo.Projects.ComicRack.Engine
 		private static IGrouper<T> GetGenericCompoundGroupers<T>(string sortKey)
 		{
 			var groupers = GetGenericGrouper<T>(sortKey);
-			return groupers is null ? null : new CompoundSingleGrouper<T>(GetGenericGrouper<T>(sortKey).ToArray());
+			return groupers is null ? null : new CompoundSingleGrouper<T>(GetGenericGrouper<T>(sortKey).TakeWhile(x => x != null).ToArray());
 		}
 		#endregion
 
