@@ -1413,7 +1413,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private IComparer<ComicBook> GetCurrentListSorter(string sortKey)
 		{
 			var comicBrowser = Program.MainForm.FindActiveService<IComicBrowser>() as ComicBrowserControl;
-			var comparer = (comicBrowser?.ItemView.ConvertKeyToColumns(sortKey).FirstOrDefault()?.ColumnSorter as IComicBookComparer)?.Comparer;
+			var comparer = ComicBookMetadataManager.GetComparers(sortKey);
+
+			if (comparer is null)
+				return null;
 
 			var sortOrder = comicBrowser?.ItemView.ItemSortOrder ?? SortOrder.None;
 			if (sortOrder == SortOrder.Descending && comparer != null)
