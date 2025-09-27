@@ -76,28 +76,67 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 		}
 
-		private class CoverViewItemPropertyComparer : CoverViewItemComparer
+		private class CoverViewItemPropertyComparer : CoverViewItemComparer, IComicBookComparer
 		{
-			private readonly string property;
+			private readonly IComparer<ComicBook> comparer;
+			public IComparer<ComicBook> Comparer => comparer;
 
 			public CoverViewItemPropertyComparer(string property)
 			{
-				this.property = property;
+				comparer = new ComicBookPropertyComparer(property);
 			}
 
 			protected override int OnCompare(CoverViewItem x, CoverViewItem y)
 			{
-				return ExtendedStringComparer.Compare(x.Comic.GetStringPropertyValue(property), y.Comic.GetStringPropertyValue(property));
+				return comparer.Compare(x.Comic, y.Comic);
 			}
 		}
 
-		private class CoverViewItemPropertyGrouper : IGrouper<IViewableItem>
+		public class ComicBookPropertyComparer : Comparer<ComicBook>
 		{
 			private readonly string property;
 
+			public ComicBookPropertyComparer(string property)
+			{
+				this.property = property;
+			}
+
+			public override int Compare(ComicBook x, ComicBook y)
+			{
+				return ExtendedStringComparer.Compare(x.GetStringPropertyValue(property), y.GetStringPropertyValue(property), ExtendedStringComparison.IgnoreCase | ExtendedStringComparison.IgnoreArticles);
+			}
+		}
+
+		private class CoverViewItemPropertyGrouper : IGrouper<IViewableItem>, IBookGrouper
+		{
 			public bool IsMultiGroup => false;
 
+			private readonly IGrouper<ComicBook> bookGrouper;
+			public IGrouper<ComicBook> BookGrouper => bookGrouper;
+
 			public CoverViewItemPropertyGrouper(string property)
+			{
+				bookGrouper = new ComicBookPropertyGrouper(property);
+			}
+
+			public IEnumerable<IGroupInfo> GetGroups(IViewableItem item)
+			{
+				CoverViewItem coverViewItem = (CoverViewItem)item;
+				return bookGrouper.GetGroups(coverViewItem.Comic);
+			}
+
+			public IGroupInfo GetGroup(IViewableItem item)
+			{
+				CoverViewItem coverViewItem = (CoverViewItem)item;
+				return bookGrouper.GetGroup(coverViewItem.Comic);
+			}
+		}
+
+		private class ComicBookPropertyGrouper : SingleComicGrouper
+		{
+			private readonly string property;
+
+			public ComicBookPropertyGrouper(string property)
 			{
 				this.property = property;
 			}
@@ -107,10 +146,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				throw new NotImplementedException();
 			}
 
-			public IGroupInfo GetGroup(IViewableItem item)
+			public override IGroupInfo GetGroup(ComicBook item)
 			{
-				CoverViewItem coverViewItem = (CoverViewItem)item;
-				return SingleComicGrouper.GetNameGroup(coverViewItem.Comic.GetStringPropertyValue(property));
+				return GetNameGroup(item.GetStringPropertyValue(property));
 			}
 		}
 
