@@ -116,7 +116,7 @@ namespace cYo.Common.Windows.Forms
         // ComicBrowser/Pages Views > Details 
         public static void Draw(Graphics graphics, Rectangle bounds, Font font, string text, Color textColor, StringFormat format, HeaderState state, HeaderAdornments adornments)
         {
-            Color controlDark = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.Header.Seperator : SystemColors.ControlDark;
+            Color controlDark = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.Header.Separator : SystemColors.ControlDark;
 
             if (ThemeExtensions.IsDarkModeEnabled)
             {

@@ -41,6 +41,7 @@ namespace cYo.Common.Windows.Forms
             { typeof(ListBox), c => ThemeListBox((ListBox)c) },
             { typeof(ListView), c => ThemeListView((ListView)c) },
             { typeof(Panel), c => ThemePanel((Panel)c) },
+            { typeof(RichTextBox), c => ThemeRichTextBox((RichTextBox)c) },
             { typeof(StatusStrip), c => ThemeStatusStrip((StatusStrip)c) },
             { typeof(TextBox), c => ThemeTextBox((TextBox)c) },
         };
@@ -84,10 +85,10 @@ namespace cYo.Common.Windows.Forms
             public static class Header
             {
                 public static readonly Color Back = Color.FromArgb(32, 32, 32);
-                public static readonly Color Seperator = Color.FromArgb(99, 99, 99);
+                public static readonly Color Separator = Color.FromArgb(99, 99, 99);
                 public static readonly Color Text = SystemColors.WindowText;
                 public static readonly Color GroupText = Color.Orange;
-                public static readonly Color GroupSeperator = Color.White;
+                public static readonly Color GroupSeparator = Color.White;
             }
 
             public static class Button
@@ -205,7 +206,7 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemePanel(Panel panel)
         {
-            //panel.BackColor = SystemColors.Control;
+            panel.BackColor = SystemColors.Control;
         }
         private static void ThemeGroupBox(GroupBox groupBox)
         {
@@ -259,7 +260,7 @@ namespace cYo.Common.Windows.Forms
             // results in DropDown instead of DropDownList theme formatting (highlighted text when not dropped down)
             // we can get (mostly) work around it by not drawing the background in ComboBox_DrawItem but 2 issues:
             // - we lose visual feedback that this is the the selected box (could draw out focus rectangle)
-            // - dropdown button still has editable theming (seperator line)
+            // - dropdown button still has editable theming (separator line)
             if (comboBox.DrawMode == DrawMode.Normal)
             {
                 // OwnerDrawFixed is an unverified assumption (OwnerDrawVariable might be required in some cases)
@@ -272,6 +273,11 @@ namespace cYo.Common.Windows.Forms
         {
             listBox.BackColor = Colors.TextBox.Back;
             listBox.ForeColor = SystemColors.WindowText;
+            listBox.BorderStyle = BorderStyle.FixedSingle;
+        }
+        private static void ThemeRichTextBox(RichTextBox richTextBox)
+        {
+            richTextBox.BorderStyle = BorderStyle.None;
         }
 
         private static void ThemeListView(ListView listView)
@@ -434,9 +440,9 @@ namespace cYo.Common.Windows.Forms
                 e.Graphics.FillRectangle(bgBrush, e.Bounds);
             }
 
-            using (Pen sepPen = new Pen(Colors.Header.Seperator))
+            using (Pen sepPen = new Pen(Colors.Header.Separator))
             {
-                int x = e.Bounds.Right - 1;
+                int x = e.Bounds.Right - 2;
                 int y1 = e.Bounds.Top;
                 int y2 = e.Bounds.Bottom;
                 e.Graphics.DrawLine(sepPen, x, y1, x, y2);
