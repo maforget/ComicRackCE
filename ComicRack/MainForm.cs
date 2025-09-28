@@ -47,7 +47,7 @@ using SaveFileDialog = System.Windows.Forms.SaveFileDialog;
 namespace cYo.Projects.ComicRack.Viewer
 {
 	[ComVisible(true)]
-	public partial class MainForm : Form, IMain, IContainerControl, IPluginConfig, IApplication, IBrowser
+	public partial class MainForm : FormEx, IMain, IContainerControl, IPluginConfig, IApplication, IBrowser
 	{
 		public partial class ComicReaderTab : TabBar.TabBarItem
 		{

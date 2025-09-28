@@ -15,7 +15,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class ServerEditControl : UserControl
+	public partial class ServerEditControl : UserControlEx
 	{
 		public ComicLibraryServerConfig Config
 		{

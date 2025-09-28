@@ -1,12 +1,13 @@
+using cYo.Common.Drawing;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using cYo.Common.Drawing;
 
 namespace cYo.Common.Windows.Forms
 {
-	public class TabControlEx : TabControl
-	{
+	public class TabControlEx : TabControl, ITheme
+    {
 		private Point downPoint;
 
 		[DefaultValue(false)]
@@ -16,7 +17,20 @@ namespace cYo.Common.Windows.Forms
 			set;
 		}
 
-		protected override void OnDragOver(DragEventArgs e)
+        public void ApplyTheme(Control? control = null)
+        {
+            if (!ThemeExtensions.IsDarkModeEnabled) return;
+            if (control == null)
+            {
+                ThemeExtensions.Theme(this);
+            }
+            else
+            {
+                ThemeExtensions.Theme(control);
+            }
+        }
+
+        protected override void OnDragOver(DragEventArgs e)
 		{
 			base.OnDragOver(e);
 			DragTab(e, ReorderTabsWhileDragging);
@@ -78,7 +92,13 @@ namespace cYo.Common.Windows.Forms
 			downPoint = Point.Empty;
 		}
 
-		private TabPage GetTabPageByTab(Point pt)
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            ApplyTheme();
+        }
+
+        private TabPage GetTabPageByTab(Point pt)
 		{
 			for (int i = 0; i < base.TabPages.Count; i++)
 			{

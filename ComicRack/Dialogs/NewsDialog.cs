@@ -12,7 +12,7 @@ using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class NewsDialog : Form
+	public partial class NewsDialog : FormEx
 	{
 		private NewsStorage news;
 

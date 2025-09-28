@@ -14,7 +14,7 @@ using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
-	public partial class SearchBrowserControl : UserControl
+	public partial class SearchBrowserControl : UserControlEx
 	{
 		public class SelectionEntry : IComparable<SelectionEntry>
 		{

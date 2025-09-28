@@ -14,7 +14,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class SmartListQueryDialog : Form, ISmartListDialog
+	public partial class SmartListQueryDialog : FormEx, ISmartListDialog
 	{
 		private class UndoItem
 		{

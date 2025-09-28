@@ -31,7 +31,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-    public partial class PreferencesDialog : Form
+    public partial class PreferencesDialog : FormEx
     {
         private const int MaximumMemoryStepSize = 32;
 

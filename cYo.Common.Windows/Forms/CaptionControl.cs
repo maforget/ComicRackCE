@@ -7,7 +7,7 @@ using cYo.Common.Drawing;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class CaptionControl : UserControl
+	public partial class CaptionControl : UserControlEx
 	{
 		private Padding captionMargin = new Padding(2);
 

@@ -14,7 +14,7 @@ using cYo.Projects.ComicRack.Viewer.Controls;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class ListLayoutDialog : Form
+	public partial class ListLayoutDialog : FormEx
 	{
 		public class TileTextItem
 		{

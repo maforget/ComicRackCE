@@ -13,7 +13,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class MatcherEditor : UserControl, IMatcherEditor
+	public partial class MatcherEditor : UserControlEx, IMatcherEditor
 	{
 		private class MatcherEntry : ComboBoxSkinner.ComboBoxItem<ComicBookValueMatcher>
 		{

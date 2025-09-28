@@ -15,7 +15,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class OpenRemoteDialog : Form
+	public partial class OpenRemoteDialog : FormEx
 	{
 		private bool showPublic;
 

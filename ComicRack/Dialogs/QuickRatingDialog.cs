@@ -13,7 +13,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class QuickRatingDialog : Form
+	public partial class QuickRatingDialog : FormEx
 	{
 		public QuickRatingDialog()
 		{

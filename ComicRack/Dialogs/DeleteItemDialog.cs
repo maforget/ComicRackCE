@@ -8,7 +8,7 @@ using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class DeleteItemDialog : Form
+	public partial class DeleteItemDialog : FormEx
 	{
 		public DeleteItemDialog()
 		{

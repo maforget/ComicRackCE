@@ -16,7 +16,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class TasksDialog : Form
+	public partial class TasksDialog : FormEx
 	{
 		private readonly string counterFormat;
 

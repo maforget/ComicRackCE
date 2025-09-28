@@ -1,7 +1,9 @@
 using System.Windows.Forms;
+using cYo.Common.Windows.Forms;
+
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
-    public partial class MagnifySetupControl : UserControl
+    public partial class MagnifySetupControl : UserControlEx
 	{
         /// <summary>
         /// Required designer variable.
