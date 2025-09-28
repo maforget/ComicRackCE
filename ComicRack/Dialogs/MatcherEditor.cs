@@ -64,7 +64,16 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			base.Width = width;
 			spacing = rtfMatchValue2.Left - rtfMatchValue.Right;
 			InitializeMatcher(comicBookMatcher);
-		}
+            if (ThemeExtensions.IsDarkModeEnabled)
+            {
+                // a button pretending to be a dropdown box. lovely.
+                // let's dress it up as one. Except for dropdown arrow to carot - that's asking too much
+                // we also have to make it a bit smaller as otherwise borders are out of bounds
+                this.btMatcher.Location = new System.Drawing.Point(27, 0);
+                this.btMatcher.Size = new System.Drawing.Size(136, 21);
+                ThemeExtensions.Theme(btMatcher);
+            }
+        }
 
 		private void cmEdit_Opening(object sender, CancelEventArgs e)
 		{
