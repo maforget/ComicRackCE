@@ -441,7 +441,15 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set; 
 		}
 
-		[DefaultValue(false)]
+        [DefaultValue(false)]
+        [CommandLineSwitch(ShortName = "dark")]
+        public bool UseDarkMode
+        {
+            get;
+            set;
+        }
+
+        [DefaultValue(false)]
 		[CommandLineSwitch(ShortName = "hidden")]
 		public bool StartHidden
 		{
