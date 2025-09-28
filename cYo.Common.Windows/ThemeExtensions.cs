@@ -426,6 +426,8 @@ namespace cYo.Common.Windows.Forms
             }
         }
 
+        // this is duplicated in TasksDialog.lvTasks_DrawColumnHeader
+        // TODO: de-duplicate
         private static void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
             if ((sender as ListView).View != View.Details)

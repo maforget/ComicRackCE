@@ -328,7 +328,42 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void lvTasks_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
 		{
-			e.DrawDefault = true;
+			if (ThemeExtensions.IsDarkModeEnabled)
+			{
+                e.DrawDefault = false;
+                using (Brush bgBrush = new SolidBrush(ThemeExtensions.Colors.Header.Back))
+                {
+                    e.Graphics.FillRectangle(bgBrush, e.Bounds);
+                }
+
+                using (Pen sepPen = new Pen(ThemeExtensions.Colors.Header.Separator))
+                {
+                    int x = e.Bounds.Right - 2;
+                    int y1 = e.Bounds.Top;
+                    int y2 = e.Bounds.Bottom;
+                    e.Graphics.DrawLine(sepPen, x, y1, x, y2);
+                }
+
+                using (Brush textBrush = new SolidBrush(ThemeExtensions.Colors.Header.Text))
+                {
+                    // Draw the header text with custom color and font
+                    e.Graphics.DrawString(
+                        e.Header.Text,
+                        e.Font,
+                        textBrush,
+                        e.Bounds,
+                        new StringFormat
+                        {
+                            Alignment = StringAlignment.Near, // left align text
+                            LineAlignment = StringAlignment.Center, // vertically center text
+                            Trimming = StringTrimming.EllipsisCharacter
+                        });
+                }
+            }
+			else
+			{
+                e.DrawDefault = true;
+            }	
 		}
 
 		public static TasksDialog Show(IWin32Window parent, IEnumerable<QueueManager.IPendingTasks> processes, int tab = 0)
