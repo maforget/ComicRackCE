@@ -19,8 +19,10 @@ namespace cYo.Common.Windows.Forms
 			{
 				TVM_FIRST = 4352,
 				TVM_SETEXTENDEDSTYLE = 4396,
-				TVM_GETEXTENDEDSTYLE = 4397
-			}
+				TVM_GETEXTENDEDSTYLE = 4397,
+                TVM_SETBKCOLOR = 4381,
+                TVM_SETTEXTCOLOR = 4382
+            }
 
 			public const int WM_SCROLL = 276;
 
@@ -62,7 +64,17 @@ namespace cYo.Common.Windows.Forms
 				SendMessage(handle, (int)LVM.TVM_SETEXTENDEDSTYLE, 0, (int)tVS_EX);
 			}
 
-			[DllImport("user32.dll", CharSet = CharSet.Unicode)]
+            public static void SetBackColor(IntPtr handle, Color color)
+            {
+                SendMessage(handle, (int)LVM.TVM_SETBKCOLOR, 0, ToWin32(color));
+            }
+
+            public static void SetForeColor(IntPtr handle, Color color)
+            {
+                SendMessage(handle, (int)LVM.TVM_SETTEXTCOLOR, 0, ToWin32(color));
+            }
+
+            [DllImport("user32.dll", CharSet = CharSet.Unicode)]
 			private static extern int SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
 
 			public static void ScrollLines(IWin32Window window, int lines)
@@ -73,7 +85,12 @@ namespace cYo.Common.Windows.Forms
 					SendMessage(window.Handle, WM_VSCROLL, (lines >= 0) ? 1 : 0, 0);
 				}
 			}
-		}
+
+            public static int ToWin32(Color c)
+            {
+                return unchecked(c.R << 0 | c.G << 8 | c.B << 16);
+            }
+        }
 
 		private Timer scrollTimer;
 
@@ -158,7 +175,18 @@ namespace cYo.Common.Windows.Forms
 			}
 		}
 
-		protected override void WndProc(ref Message m)
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            if (ThemeExtensions.IsDarkModeEnabled)
+            {
+                // set BackColor & ForeColor
+                Native.SetBackColor(Handle, SystemColors.Window);
+                Native.SetForeColor(Handle, SystemColors.ControlText);
+            }
+        }
+
+        protected override void WndProc(ref Message m)
 		{
 			base.WndProc(ref m);
 			if (m.Msg == Native.WM_VSCROLL)

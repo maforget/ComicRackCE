@@ -7,7 +7,12 @@ namespace cYo.Common.Windows.Forms
 	{
 		public static void DrawBorder(Graphics g, Rectangle bounds, ExtendedBorderStyle style)
 		{
-			Border3DStyle style2;
+            if (ThemeExtensions.IsDarkModeEnabled)
+            {
+                DrawDarkBorder(g, bounds);
+                return;
+            }
+            Border3DStyle style2;
 			switch (style)
 			{
 			default:
@@ -25,7 +30,12 @@ namespace cYo.Common.Windows.Forms
 			ControlPaint.DrawBorder3D(g, bounds, style2);
 		}
 
-		public static Rectangle AdjustBorder(Rectangle bounds, ExtendedBorderStyle style, bool inwards)
+        public static void DrawDarkBorder(Graphics g, Rectangle bounds)
+        {
+            ControlPaint.DrawBorder(g, bounds, ThemeExtensions.Colors.DefaultBorder, ButtonBorderStyle.Solid);
+        }
+
+        public static Rectangle AdjustBorder(Rectangle bounds, ExtendedBorderStyle style, bool inwards)
 		{
 			int num = ((!inwards) ? 1 : (-1));
 			switch (style)

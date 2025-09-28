@@ -1264,9 +1264,40 @@ namespace cYo.Common.Windows.Forms
 			gr.DrawImage(image, rect);
 		}
 
-		private void DrawTabItem(Graphics gr, Rectangle rc, TabItemState tabItemState, bool buttonMode)
+        private void DrawDarkBorder(Graphics gr, Rectangle rect, TabItemState tabItemState)
+        {
+            if (tabItemState == TabItemState.Selected)
+            {
+                using (Pen activePen = new Pen(ThemeExtensions.Colors.DefaultBorder))
+                {
+                    gr.DrawLine(activePen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
+                    gr.DrawLine(activePen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top
+                    gr.DrawLine(activePen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1); // Right
+                }
+                using (Pen disabledPen = new Pen(ThemeExtensions.Colors.ToolStrip.BorderColor))
+                {
+                    gr.DrawLine(disabledPen, rect.Right - 1, rect.Top - 1, rect.Right - 1, rect.Bottom - 1);
+                }
+				return;
+            }
+            using (Pen disabledPen = new Pen(ThemeExtensions.Colors.ToolStrip.BorderColor))
+            {
+                gr.DrawLine(disabledPen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
+                gr.DrawLine(disabledPen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top
+                gr.DrawLine(disabledPen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1); // Right
+            }
+        }
+
+        private void DrawTabItem(Graphics gr, Rectangle rc, TabItemState tabItemState, bool buttonMode)
 		{
-			if (TabRenderer.IsSupported)
+            if (ThemeExtensions.IsDarkModeEnabled)
+            {
+                // tab label background
+                gr.FillRectangle((tabItemState == TabItemState.Selected) ? SystemBrushes.ControlLightLight : SystemBrushes.ControlDark, rc);
+                DrawDarkBorder(gr, rc, tabItemState);
+                return;
+            }
+            if (TabRenderer.IsSupported)
 			{
 				TabRenderer.DrawTabItem(gr, rc, tabItemState);
 				if (buttonMode)
@@ -1835,7 +1866,7 @@ namespace cYo.Common.Windows.Forms
 			Rectangle bounds = item.Bounds;
 			DrawTabItem(gr, bounds, item.State, buttonMode: false);
 			bounds = bounds.Pad(2, 2, 2);
-			if (Focused && item.State == TabItemState.Selected)
+			if (Focused && item.State == TabItemState.Selected && !ThemeExtensions.IsDarkModeEnabled)
 			{
 				ControlPaint.DrawFocusRectangle(gr, bounds);
 			}

@@ -285,9 +285,24 @@ namespace cYo.Common.Windows.Forms
 			IComboBoxItem comboBoxItem = obj as IComboBoxItem;
 			bool flag = (e.State & DrawItemState.ComboBoxEdit) != 0;
 			bool flag2 = comboBoxItem != null && comboBoxItem.IsSeparator && !flag && e.Index > 0;
-			e.DrawBackground();
-			e.DrawFocusRectangle();
-			using (Brush brush = new SolidBrush(e.ForeColor))
+            Pen separatorPen = ThemeExtensions.IsDarkModeEnabled ? SystemPens.ControlText : SystemPens.ControlLight;
+
+            e.DrawBackground();
+            // override SelectedText highlighting
+            if (ThemeExtensions.IsDarkModeEnabled && e.State.HasFlag(DrawItemState.Selected))
+            {
+                using (Brush highlightBrush = new SolidBrush(ThemeExtensions.Colors.SelectedText.HighLight))
+                {
+                    e.Graphics.FillRectangle(highlightBrush, e.Bounds);
+                }
+                ControlPaint.DrawBorder(e.Graphics, e.Bounds, ThemeExtensions.Colors.SelectedText.Focus, ButtonBorderStyle.Solid);
+            }
+            else
+            {
+                e.DrawFocusRectangle();
+            }
+
+            using (Brush brush = new SolidBrush(e.ForeColor))
 			{
 				Rectangle rectangle = e.Bounds;
 				if (flag2)
@@ -328,7 +343,7 @@ namespace cYo.Common.Windows.Forms
 					{
 						e.Graphics.FillRectangle(brush2, rect);
 					}
-					e.Graphics.DrawLine(SystemPens.ControlLight, rect.Left + 2, rect.Top + 1, rect.Right - 2, rect.Top + 1);
+					e.Graphics.DrawLine(separatorPen, rect.Left + 2, rect.Top + 1, rect.Right - 2, rect.Top + 1);
 				}
 			}
 		}
