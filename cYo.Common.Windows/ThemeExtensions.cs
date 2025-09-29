@@ -1,11 +1,11 @@
-﻿using System;
+﻿using cYo.Common.Drawing;
+using cYo.Common.Win32;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-using cYo.Common.Drawing;
-using cYo.Common.Win32;
 using static cYo.Common.Windows.Forms.ComboBoxSkinner;
 
 namespace cYo.Common.Windows.Forms
@@ -37,6 +37,7 @@ namespace cYo.Common.Windows.Forms
             { typeof(Button), c => ThemeButton((Button)c) },
             { typeof(CheckBox), c => ThemeCheckBox((CheckBox)c) },
             { typeof(ComboBox), c => ThemeComboBox((ComboBox)c) },
+            { typeof(DataGridView), c => ThemeDataGridView((DataGridView)c) },
             { typeof(GroupBox), c => ThemeGroupBox((GroupBox)c) },
             { typeof(ListBox), c => ThemeListBox((ListBox)c) },
             { typeof(ListView), c => ThemeListView((ListView)c) },
@@ -54,6 +55,7 @@ namespace cYo.Common.Windows.Forms
         {
             { typeof(ComboBox), c => SetComboBoxUXTheme((ComboBox)c) },
             { typeof(ListView), c => SetListViewUXTheme((ListView)c) },
+            { typeof(ProgressBar), c => SetProgressBarUXTheme((ProgressBar)c) },
             { typeof(TabControl), c => SetTabControlUXTheme((TabControl)c) }
         };
 
@@ -69,17 +71,13 @@ namespace cYo.Common.Windows.Forms
 
             public static readonly Color GroupHeader = Color.FromArgb(155, 155, 155);
 
-            public static class TextBox
+            public static class Button
             {
-                public static readonly Color Back = Color.FromArgb(56, 56, 56);
-                public static readonly Color MouseOverBack = Color.FromArgb(86, 86, 86);
-                public static readonly Color EnterBack = Color.FromArgb(71, 71, 71);
-            }
-
-            public static class SelectedText
-            {
-                public static readonly Color HighLight = Color.FromArgb(52, 67, 86);
-                public static readonly Color Focus = Color.FromArgb(40, 100, 180);
+                public static readonly Color Back = Color.FromArgb(51, 51, 51);
+                public static readonly Color CheckedBack = Color.FromArgb(102, 102, 102);
+                public static readonly Color Fore = Color.White;
+                public static readonly Color Border = DefaultBorder;
+                public static readonly Color MouseOverBack = Color.FromArgb(71, 71, 71);
             }
 
             public static class Header
@@ -91,14 +89,31 @@ namespace cYo.Common.Windows.Forms
                 public static readonly Color GroupSeparator = Color.White;
             }
 
-            public static class Button
+            public static class SelectedText
             {
-                public static readonly Color Back = Color.FromArgb(51, 51, 51);
-                public static readonly Color CheckedBack = Color.FromArgb(102, 102, 102);
-                public static readonly Color Fore = Color.White;
-                public static readonly Color Border = DefaultBorder;
-                public static readonly Color MouseOverBack = Color.FromArgb(71, 71, 71);
+                public static readonly Color HighLight = Color.FromArgb(52, 67, 86);
+                public static readonly Color Focus = Color.FromArgb(40, 100, 180);
             }
+
+            public static class SmartQuery
+            {
+                public static readonly Color Back = TextBox.Back;
+                public static readonly Color Exception = Color.FromArgb(125, 31, 31);
+                public static readonly Color Fore = SystemColors.ControlText;
+                public static readonly Color Keyword = Color.FromArgb(250, 198, 0);
+                public static readonly Color Qualifier = Color.FromArgb(76, 163, 255);
+                public static readonly Color Negation = Color.Red;
+                public static readonly Color String = Color.FromArgb(255, 125, 125);
+                
+            }
+
+            public static class TextBox
+            {
+                public static readonly Color Back = Color.FromArgb(56, 56, 56);
+                public static readonly Color MouseOverBack = Color.FromArgb(86, 86, 86);
+                public static readonly Color EnterBack = Color.FromArgb(71, 71, 71);
+            }
+
             public static class ToolStrip
             {
                 // currently this is purely for statusstrip border.
@@ -247,8 +262,9 @@ namespace cYo.Common.Windows.Forms
             }
             else
             {
-                checkBox.Paint -= CheckBox_Paint;
-                checkBox.Paint += CheckBox_Paint;
+                // disabling for now to see how this is handled by uxtheme in different Windows builds
+                //checkBox.Paint -= CheckBox_Paint;
+                //checkBox.Paint += CheckBox_Paint;
             }
         }
         private static void ThemeComboBox(ComboBox comboBox)
@@ -269,14 +285,25 @@ namespace cYo.Common.Windows.Forms
                 comboBox.DrawItem += ComboBox_DrawItem;
             }
         }
+
+        private static void ThemeDataGridView(DataGridView gridView)
+        {
+            gridView.EnableHeadersVisualStyles = false;
+            gridView.DefaultCellStyle.SelectionBackColor = Colors.SelectedText.HighLight;
+            gridView.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
+            gridView.BorderStyle = BorderStyle.FixedSingle;
+        }
+
         private static void ThemeListBox(ListBox listBox)
         {
             listBox.BackColor = Colors.TextBox.Back;
             listBox.ForeColor = SystemColors.WindowText;
             listBox.BorderStyle = BorderStyle.FixedSingle;
         }
+
         private static void ThemeRichTextBox(RichTextBox richTextBox)
         {
+            richTextBox.BackColor = Colors.TextBox.Back;
             richTextBox.BorderStyle = BorderStyle.None;
         }
 
@@ -285,7 +312,8 @@ namespace cYo.Common.Windows.Forms
             listView.BackColor = Colors.TextBox.Back;
             listView.ForeColor = SystemColors.WindowText;
 
-            if (!(listView is ListViewEx) && listView.View == View.Details && listView.HeaderStyle != ColumnHeaderStyle.None)
+            //if (!(listView is ListViewEx) && listView.View == View.Details && listView.HeaderStyle != ColumnHeaderStyle.None)
+            if (!listView.OwnerDraw && listView.View == View.Details && listView.HeaderStyle != ColumnHeaderStyle.None)
             {
                 listView.OwnerDraw = true;
                 listView.DrawItem -= ListView_DrawItem;
@@ -338,9 +366,18 @@ namespace cYo.Common.Windows.Forms
             UXTheme.SetComboBoxTheme(comboBox.Handle);
         }
 
+        /// <summary>
+        /// Custom <see cref="ListView"/> <see cref="UXTheme"/> handling as theme class depends on <c>ListView</c> settings.
+        /// </summary>
+        /// <param name="listView"><see cref="ListView"/> to be themed.</param>
+        /// <remarks>
+        /// <see cref="ListView.Groups"/> dark headers bug tracked in <a href="https://github.com/dotnet/winforms/issues/3320">ListView Group Header Color #3320</a>
+        /// </remarks>
         private static void SetListViewUXTheme(ListView listView)
         {
-            if (listView.ShowGroups && listView.HeaderStyle != ColumnHeaderStyle.None)
+            // ShowGroups defaults to true, so let's check the count before giving up on scrollbars
+            //if (listView.ShowGroups && listView.HeaderStyle != ColumnHeaderStyle.None) // why do we care about ColumnHeaderStyle when this affects Group headers?
+            if (listView.ShowGroups && listView.Groups.Count > 1)
             {
                 // sacrifice dark scrollbars to show readable group headers
                 UXTheme.SetControlTheme(listView.Handle, "DarkMode_ItemsView");
@@ -354,6 +391,14 @@ namespace cYo.Common.Windows.Forms
 
             // header has to be themed separately
             UXTheme.SetListViewHeaderTheme(listView.Handle);
+        }
+
+        private static void SetProgressBarUXTheme(ProgressBar progressBar)
+        {
+            // explicitly disable UX theming, like the pros
+            // https://github.com/dotnet/winforms/blob/be8f5b01a967606a1e6cf57af373ef7785aa1fe0/src/System.Windows.Forms/System/Windows/Forms/Controls/ProgressBar/ProgressBar.cs#L82
+            //  (might also need to actually do some manually theming, like the pros a few lines before they disable UX theming)
+            UXTheme.SetControlTheme(progressBar.Handle, " ", "");
         }
 
         private static void SetTabControlUXTheme(TabControl tabControl)
@@ -426,11 +471,16 @@ namespace cYo.Common.Windows.Forms
             }
         }
 
-        // this is duplicated in TasksDialog.lvTasks_DrawColumnHeader
-        // TODO: de-duplicate
-        private static void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+
+        /// <summary>
+        /// <para><see cref="ListView.OnDrawColumnHeader(DrawListViewColumnHeaderEventArgs)"/> method to handle dark <see cref="ColumnHeader"/> text on dark background.</para>
+        /// <para><c>DrawDefault</c> is executed unless <see cref="IsDarkModeEnabled"/> is <paramref name="true"/> and <see cref="ListView.View"/> is set to <see cref="View.Details"/></para>
+        /// </summary>
+        /// <param name="form"><see cref="Form"/> to be (window) themed.</param>
+        public static void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
-            if ((sender as ListView).View != View.Details)
+            // explicit IsDarkModeEnabled check as public (referenced in TaskDialog and ListStyles)
+            if (!IsDarkModeEnabled || (sender as ListView).View != View.Details)
             {
                 e.DrawDefault = true;
                 return;
