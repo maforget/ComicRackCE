@@ -2192,6 +2192,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public void MenuSynchronizeDevices()
 		{
+			StoreWorkspace(); // save workspace before sync, so sorted lists key are up to date
 			if (!Program.QueueManager.SynchronizeDevices())
 			{
 				ShowPortableDevices();
@@ -4107,6 +4108,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		void IApplication.SynchronizeDevices()
 		{
+			StoreWorkspace(); // save workspace before sync, so sorted lists key are up to date
 			Program.QueueManager.SynchronizeDevices();
 		}
 

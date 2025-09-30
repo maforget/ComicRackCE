@@ -157,7 +157,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             "Alternate Series",
             "Published",
             "Added",
-            "Story Arc"});
+            "Story Arc",
+            "List Order"});
             this.cbLimitSort.Location = new System.Drawing.Point(126, 18);
             this.cbLimitSort.Name = "cbLimitSort";
             this.cbLimitSort.Size = new System.Drawing.Size(144, 21);

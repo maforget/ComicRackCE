@@ -4,9 +4,10 @@ using cYo.Projects.ComicRack.Engine.Metadata.VirtualTags;
 
 namespace cYo.Projects.ComicRack.Viewer.Controls
 {
-	public class CoverViewItemVirtualTagComparer : CoverViewItemComparer
+	public class CoverViewItemVirtualTagComparer : CoverViewItemComparer, IComicBookComparer
 	{
 		private readonly IComparer<ComicBook> _comparer;
+		public IComparer<ComicBook> Comparer => _comparer;
 
 		public CoverViewItemVirtualTagComparer(string property)
 		{

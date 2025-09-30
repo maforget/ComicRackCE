@@ -277,27 +277,31 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			{
 				switch (setting.ListSortType)
 				{
-				default:
-					comparer = new ChainedComparer<ComicBook>(new ComicBookSeriesComparer(), new ComicBookPublishedComparer());
-					grouper = new ComicBookGroupSeries();
-					break;
-				case DeviceSyncSettings.ListSort.Random:
-					list2.Randomize();
-					break;
-				case DeviceSyncSettings.ListSort.AlternateSeries:
-					comparer = new ChainedComparer<ComicBook>(new ComicBookAlternateSeriesComparer(), new ComicBookSeriesComparer(), new ComicBookPublishedComparer());
-					grouper = new ComicBookGroupAlternateSeries();
-					break;
-				case DeviceSyncSettings.ListSort.Published:
-					comparer = new ChainedComparer<ComicBook>(new ComicBookPublishedComparer(), new ComicBookSeriesComparer());
-					break;
-				case DeviceSyncSettings.ListSort.Added:
-					comparer = new ComicBookAddedComparer();
-					break;
-				case DeviceSyncSettings.ListSort.StoryArc:
-					comparer = new ChainedComparer<ComicBook>(new ComicBookStoryArcComparer(), new ComicBookAlternateNumberComparer(), new ComicBookSeriesComparer(), new ComicBookPublishedComparer());
-					grouper = new ComicBookGroupStoryArc();
-					break;
+					default:
+						comparer = new ChainedComparer<ComicBook>(new ComicBookSeriesComparer(), new ComicBookPublishedComparer());
+						grouper = new ComicBookGroupSeries();
+						break;
+					case DeviceSyncSettings.ListSort.Random:
+						list2.Randomize();
+						break;
+					case DeviceSyncSettings.ListSort.AlternateSeries:
+						comparer = new ChainedComparer<ComicBook>(new ComicBookAlternateSeriesComparer(), new ComicBookSeriesComparer(), new ComicBookPublishedComparer());
+						grouper = new ComicBookGroupAlternateSeries();
+						break;
+					case DeviceSyncSettings.ListSort.Published:
+						comparer = new ChainedComparer<ComicBook>(new ComicBookPublishedComparer(), new ComicBookSeriesComparer());
+						break;
+					case DeviceSyncSettings.ListSort.Added:
+						comparer = new ComicBookAddedComparer();
+						break;
+					case DeviceSyncSettings.ListSort.ListOrder:
+						comparer = ComicBookMetadataManager.GetComparers(list.Display.View.SortKey)?.Chain();
+						grouper = ComicBookMetadataManager.GetGroupers(list.Display.View.GrouperId);
+						break;
+					case DeviceSyncSettings.ListSort.StoryArc:
+						comparer = new ChainedComparer<ComicBook>(new ComicBookStoryArcComparer(), new ComicBookAlternateNumberComparer(), new ComicBookSeriesComparer(), new ComicBookPublishedComparer());
+						grouper = new ComicBookGroupStoryArc();
+						break;
 				}
 			}
 			List<ComicBook>[] array = ((grouper != null) ? (from gc in new GroupManager<ComicBook>(grouper, list2).GetGroups()

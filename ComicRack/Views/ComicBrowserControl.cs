@@ -76,28 +76,67 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 		}
 
-		private class CoverViewItemPropertyComparer : CoverViewItemComparer
+		private class CoverViewItemPropertyComparer : CoverViewItemComparer, IComicBookComparer
 		{
-			private readonly string property;
+			private readonly IComparer<ComicBook> comparer;
+			public IComparer<ComicBook> Comparer => comparer;
 
 			public CoverViewItemPropertyComparer(string property)
 			{
-				this.property = property;
+				comparer = new ComicBookPropertyComparer(property);
 			}
 
 			protected override int OnCompare(CoverViewItem x, CoverViewItem y)
 			{
-				return ExtendedStringComparer.Compare(x.Comic.GetStringPropertyValue(property), y.Comic.GetStringPropertyValue(property));
+				return comparer.Compare(x.Comic, y.Comic);
 			}
 		}
 
-		private class CoverViewItemPropertyGrouper : IGrouper<IViewableItem>
+		public class ComicBookPropertyComparer : Comparer<ComicBook>
 		{
 			private readonly string property;
 
+			public ComicBookPropertyComparer(string property)
+			{
+				this.property = property;
+			}
+
+			public override int Compare(ComicBook x, ComicBook y)
+			{
+				return ExtendedStringComparer.Compare(x.GetStringPropertyValue(property), y.GetStringPropertyValue(property), ExtendedStringComparison.IgnoreCase | ExtendedStringComparison.IgnoreArticles);
+			}
+		}
+
+		private class CoverViewItemPropertyGrouper : IGrouper<IViewableItem>, IBookGrouper
+		{
 			public bool IsMultiGroup => false;
 
+			private readonly IGrouper<ComicBook> bookGrouper;
+			public IGrouper<ComicBook> BookGrouper => bookGrouper;
+
 			public CoverViewItemPropertyGrouper(string property)
+			{
+				bookGrouper = new ComicBookPropertyGrouper(property);
+			}
+
+			public IEnumerable<IGroupInfo> GetGroups(IViewableItem item)
+			{
+				CoverViewItem coverViewItem = (CoverViewItem)item;
+				return bookGrouper.GetGroups(coverViewItem.Comic);
+			}
+
+			public IGroupInfo GetGroup(IViewableItem item)
+			{
+				CoverViewItem coverViewItem = (CoverViewItem)item;
+				return bookGrouper.GetGroup(coverViewItem.Comic);
+			}
+		}
+
+		private class ComicBookPropertyGrouper : SingleComicGrouper
+		{
+			private readonly string property;
+
+			public ComicBookPropertyGrouper(string property)
 			{
 				this.property = property;
 			}
@@ -107,10 +146,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				throw new NotImplementedException();
 			}
 
-			public IGroupInfo GetGroup(IViewableItem item)
+			public override IGroupInfo GetGroup(ComicBook item)
 			{
-				CoverViewItem coverViewItem = (CoverViewItem)item;
-				return SingleComicGrouper.GetNameGroup(coverViewItem.Comic.GetStringPropertyValue(property));
+				return GetNameGroup(item.GetStringPropertyValue(property));
 			}
 		}
 
@@ -567,8 +605,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					library.CustomValuesChanged += delegate
 					{
 						SetCustomColumns();
+						ComicBookMetadataManager.Create(itemView.Columns);
 					};
 					SetCustomColumns();
+					SetVirtualTagColumns();
+					ComicBookMetadataManager.Create(itemView.Columns);
 				}
 			}
 		}
@@ -787,7 +828,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			itemView.Columns.Add(new ItemViewColumn(212, "Series: Opened", 50, new ComicListField("SeriesStatLastOpenedTime", "Last time a book was opened from the Series", null, StringTrimming.Word, typeof(DateTime)), new CoverViewItemStatsComparer<ComicBookSeriesStatsLastOpenedTimeComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupLastOpenedTime>(), visible: false, StringAlignment.Far, strings));
 			itemView.Columns.Add(new ItemViewColumn(213, "Series: Book released", 50, new ComicListField("SeriesStatLastReleasedTime", "Last time a book of this Series was released", null, StringTrimming.Word, typeof(DateTime)), new CoverViewItemStatsComparer<ComicBookSeriesStatsLastReleasedTimeComparer>(), new CoverViewItemStatsGrouper<ComicBookStatsGroupLastReleasedTime>(), visible: false, StringAlignment.Far, strings));
 			itemView.Columns.Add(new ItemViewColumn(214, "Actual File Format (slow)", 40, new ComicListField("ActualFileFormat", "Actual File format of the Book (based on the header)"), new CoverViewItemBookComparer<ComicBookActualFileFormatComparer>(), new CoverViewItemBookGrouper<ComicBookGroupActualFileFormat>(), visible: false));
-			SetVirtualTagColumns();
 			SubView.TranslateColumns(itemView.Columns);
 			foreach (ItemViewColumn column in itemView.Columns)
 			{
@@ -816,7 +856,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		/// </summary>
 		/// <param name="stackCaption"></param>
 		/// <returns></returns>
-		private IComparer<IViewableItem> GetStackColumnSorter(string stackCaption)
+		private IComparer<IViewableItem>[] GetStackColumnSorter(string stackCaption)
 		{
 			// If legacy stack sorting is enabled, return null to use the default stack sorting.
 			if (Program.ExtendedSettings.LegacyStackSorting)
@@ -824,16 +864,18 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 			// Determine the stack configuration depending on program settings.
 			ItemViewConfig config = stacksConfig?.GetStackViewConfig(Program.Settings.CommonListStackLayout ? BookList.Name : stackCaption);
-			IColumn colInfo = itemView.ConvertKeyToColumns(config?.SortKey)?.FirstOrDefault(); // Get the IColumn that refers to the sort key
-			IComparer<IViewableItem> stackColumnSorter = colInfo?.ColumnSorter; // Get the column sorter for the column.
+			var columnsSorters = ComicBookMetadataManager.GetIViewableItemComparers(config?.SortKey); // Get the IComparers for the sort key
+			var firstComparer = columnsSorters?.FirstOrDefault(); // Get the first comparer to reverse the sort order
 
 			SortOrder sortOrder = config?.ItemSortOrder ?? SortOrder.None; // Default to None if there is no config
-			if (sortOrder == SortOrder.Descending) 
-				stackColumnSorter = stackColumnSorter?.Reverse(); // Reverse the sorter if the sort order is Descending.
+			if (sortOrder == SortOrder.Descending && firstComparer != null)
+				firstComparer = firstComparer.Reverse(); // Reverse the sorter if the sort order is Descending.
 
-			stackColumnSorter ??= defaultSeriesComparer; // Default comparer (series) if no stack configuration is found.
-			stackColumnSorter = stackColumnSorter.Chain(IdComparer); // Always chain the tie breaker comparer to ensure a stable sort.
-			return stackColumnSorter;
+			firstComparer ??= defaultSeriesComparer; // Default comparer (series) if no stack configuration is found.
+			if (columnsSorters?.Length > 0 && firstComparer != null)
+				columnsSorters[0] = firstComparer; // Replace the first comparer with the reversed one.
+
+			return columnsSorters?.AddLast(IdComparer)?.ToArray() ?? [firstComparer]; // Add the tie breaker comparer to ensure a stable sort
 		}
 
 		private void ComicItemAdded(object sender, SmartListChangedEventArgs<IViewableItem> e)
@@ -2532,7 +2574,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		public void RefreshInformation()
 		{
 			IEnumerable<CoverViewItem> selectedItems = from CoverViewItem cvi in new List<IViewableItem>(itemView.SelectedItems)
-														select cvi;
+													   select cvi;
 
 			foreach (CoverViewItem item in selectedItems)
 			{
@@ -3248,6 +3290,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			SetCustomColumns();
 			SetVirtualTagColumns();
+			ComicBookMetadataManager.Create(itemView.Columns);
 			FillBookList();
 		}
 

@@ -1413,13 +1413,17 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private IComparer<ComicBook> GetCurrentListSorter(string sortKey)
 		{
 			var comicBrowser = Program.MainForm.FindActiveService<IComicBrowser>() as ComicBrowserControl;
-			var comparer = (comicBrowser?.ItemView.ConvertKeyToColumns(sortKey).FirstOrDefault()?.ColumnSorter as IComicBookComparer)?.Comparer;
+			var comparers = ComicBookMetadataManager.GetComparers(sortKey);
+			var firstComparer = comparers?.FirstOrDefault(); // Get the first comparer to reverse the sort order
 
 			var sortOrder = comicBrowser?.ItemView.ItemSortOrder ?? SortOrder.None;
-			if (sortOrder == SortOrder.Descending && comparer != null)
-				comparer = comparer.Reverse();
+			if (sortOrder == SortOrder.Descending && firstComparer != null)
+				firstComparer = firstComparer.Reverse();
 
-			return comparer;
+			if (comparers?.Length > 0 && firstComparer != null)
+				comparers[0] = firstComparer; // Replace the first comparer with the reversed one.
+
+			return comparers?.Chain();
 		}
 
 		private bool isPasteListEnabled()

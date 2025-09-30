@@ -752,7 +752,8 @@ namespace cYo.Projects.ComicRack.Viewer
                     {
                         MainForm.BeginInvoke(delegate
                         {
-                            QueueManager.SynchronizeDevice(e.Key, address);
+							MainForm.StoreWorkspace(); // save workspace before sync, so sorted lists key are up to date
+							QueueManager.SynchronizeDevice(e.Key, address);
                         });
                     }
                 }
