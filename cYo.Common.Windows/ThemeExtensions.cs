@@ -42,6 +42,7 @@ namespace cYo.Common.Windows.Forms
             { typeof(ListBox), c => ThemeListBox((ListBox)c) },
             { typeof(ListView), c => ThemeListView((ListView)c) },
             { typeof(Panel), c => ThemePanel((Panel)c) },
+            { typeof(ProgressBar), c => ThemeProgressBar((ProgressBar)c) },
             { typeof(RichTextBox), c => ThemeRichTextBox((RichTextBox)c) },
             { typeof(StatusStrip), c => ThemeStatusStrip((StatusStrip)c) },
             { typeof(TextBox), c => ThemeTextBox((TextBox)c) },
@@ -55,7 +56,6 @@ namespace cYo.Common.Windows.Forms
         {
             { typeof(ComboBox), c => SetComboBoxUXTheme((ComboBox)c) },
             { typeof(ListView), c => SetListViewUXTheme((ListView)c) },
-            { typeof(ProgressBar), c => SetProgressBarUXTheme((ProgressBar)c) },
             { typeof(TabControl), c => SetTabControlUXTheme((TabControl)c) }
         };
 
@@ -248,11 +248,12 @@ namespace cYo.Common.Windows.Forms
         private static void ThemeCheckBox(CheckBox checkBox)
         {
 
-            checkBox.FlatStyle = FlatStyle.Flat;
+            checkBox.FlatStyle = OsVersionEx.IsWindows11_OrGreater() ? FlatStyle.System : FlatStyle.Flat;
             if (checkBox.Appearance == Appearance.Button)
             {
                 // although it has the appearance of a button, the theme engine doesn't style it as such, so we have to do it manually
                 // this might be handled correctly in Win11 builds
+                checkBox.FlatStyle = FlatStyle.Flat;
                 checkBox.BackColor = Colors.Button.Back;
                 checkBox.ForeColor = Colors.Button.Fore;
                 checkBox.FlatAppearance.BorderSize = 1;
@@ -299,6 +300,21 @@ namespace cYo.Common.Windows.Forms
             listBox.BackColor = Colors.TextBox.Back;
             listBox.ForeColor = SystemColors.WindowText;
             listBox.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        /// <summary>
+        /// Manually set <see cref="ProgressBar"/> background due to bug in Dark Mode.
+        /// </summary>
+        /// <param name="progressBar"><see cref="ProgressBar"/> to be themed.</param>
+        /// <remarks>
+        /// Disabling Visual Styles does not seem to be required despite base .NET 4.8 <see cref="ProgressBar"/> not disabling it. 
+        /// <a href="https://github.com/dotnet/winforms/blob/be8f5b01a967606a1e6cf57af373ef7785aa1fe0/src/System.Windows.Forms/System/Windows/Forms/Controls/ProgressBar/ProgressBar.cs#L82">(.NET 10)</a><br/>
+        /// Invisible background/border bug is tracked in <a href="https://github.com/dotnet/winforms/issues/11914">[Dark Mode] Improve visual contrast of the ProgressBar control in dark mode. #11914</a><br/>
+        /// Related issue to watch: <a href="https://github.com/dotnet/winforms/issues/11938">[Dark Mode] The BackColor of the ProgressBar control should not be changed #11938</a>
+        /// </remarks>
+        private static void ThemeProgressBar(ProgressBar progressBar)
+        {
+            progressBar.BackColor = Colors.TextBox.Back;
         }
 
         private static void ThemeRichTextBox(RichTextBox richTextBox)
@@ -393,13 +409,6 @@ namespace cYo.Common.Windows.Forms
             UXTheme.SetListViewHeaderTheme(listView.Handle);
         }
 
-        private static void SetProgressBarUXTheme(ProgressBar progressBar)
-        {
-            // explicitly disable UX theming, like the pros
-            // https://github.com/dotnet/winforms/blob/be8f5b01a967606a1e6cf57af373ef7785aa1fe0/src/System.Windows.Forms/System/Windows/Forms/Controls/ProgressBar/ProgressBar.cs#L82
-            //  (might also need to actually do some manually theming, like the pros a few lines before they disable UX theming)
-            UXTheme.SetControlTheme(progressBar.Handle, " ", "");
-        }
 
         private static void SetTabControlUXTheme(TabControl tabControl)
         {
