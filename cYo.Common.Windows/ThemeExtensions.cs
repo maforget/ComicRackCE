@@ -247,8 +247,6 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemeCheckBox(CheckBox checkBox)
         {
-
-            checkBox.FlatStyle = OsVersionEx.IsWindows11_OrGreater() ? FlatStyle.System : FlatStyle.Flat;
             if (checkBox.Appearance == Appearance.Button)
             {
                 // although it has the appearance of a button, the theme engine doesn't style it as such, so we have to do it manually
@@ -261,11 +259,13 @@ namespace cYo.Common.Windows.Forms
                 checkBox.FlatAppearance.CheckedBackColor = Colors.Button.CheckedBack;
                 checkBox.FlatAppearance.MouseOverBackColor = Colors.Button.MouseOverBack;
             }
+            else if (OsVersionEx.IsWindows11_OrGreater() && checkBox.FlatStyle == FlatStyle.System)
+            {
+                checkBox.FlatStyle = FlatStyle.Standard; // Win11 can theme Flat/Standard, so only change if System
+            }
             else
             {
-                // disabling for now to see how this is handled by uxtheme in different Windows builds
-                //checkBox.Paint -= CheckBox_Paint;
-                //checkBox.Paint += CheckBox_Paint;
+                checkBox.FlatStyle = FlatStyle.Flat; // Win10 19044 draws standard checkboxes w/ white background, so force flat
             }
         }
         private static void ThemeComboBox(ComboBox comboBox)
@@ -409,7 +409,6 @@ namespace cYo.Common.Windows.Forms
             UXTheme.SetListViewHeaderTheme(listView.Handle);
         }
 
-
         private static void SetTabControlUXTheme(TabControl tabControl)
         {
             UXTheme.SetControlTheme(tabControl.Handle, null, "DarkMode::FileExplorerBannerContainer");
@@ -545,76 +544,6 @@ namespace cYo.Common.Windows.Forms
             using (var pen = new Pen(Colors.ToolStrip.BorderColor, 1))
             {
                 e.Graphics.DrawRectangle(pen, 0, 0, e.ClipRectangle.Width - 1, e.ClipRectangle.Height - 1);
-            }
-        }
-
-        private static void CheckBox_Paint(object sender, PaintEventArgs e)
-        {
-            // based on CheckedListEx.OnDrawItem()
-            // this is not a great solution and is currently not Dpi aware.
-            var checkBox = sender as CheckBox;
-            CheckState itemCheckState = checkBox.CheckState;
-            CheckBoxState state;
-            Size size;
-            Brush backGroundBrush = new SolidBrush(checkBox.Parent.BackColor);
-
-            if (!checkBox.Enabled)
-            {
-                e.Graphics.Clear(checkBox.Parent.BackColor);
-            }
-            if (Application.RenderWithVisualStyles)
-            {
-                if (checkBox.Enabled)
-                {
-                    state = itemCheckState == CheckState.Unchecked ? CheckBoxState.UncheckedNormal : itemCheckState == CheckState.Checked ? CheckBoxState.CheckedNormal : CheckBoxState.MixedNormal;
-                }
-                else
-                {
-                    state = itemCheckState == CheckState.Unchecked ? CheckBoxState.UncheckedDisabled : itemCheckState == CheckState.Checked ? CheckBoxState.CheckedDisabled : CheckBoxState.MixedDisabled;
-                }
-                size = CheckBoxRenderer.GetGlyphSize(e.Graphics, state);
-
-                var x = 0;
-                var y = 0;
-                if (checkBox.CheckAlign == System.Drawing.ContentAlignment.MiddleRight)
-                {
-                    x = checkBox.Width - size.Width;
-                    y = (checkBox.Height / 2) - (size.Height / 2);
-                }
-                // this causes checkboxes to be drawn in the wrong place.
-                // could be due to logic bug, or needing to doublebuffer or some other image processing/oprimisation
-                //if (checkBox.CheckAlign == System.Drawing.ContentAlignment.TopLeft)
-                //{
-                //    // default, expected, here so we can color unhandled cases in red
-                //}
-                //else if (checkBox.CheckAlign == System.Drawing.ContentAlignment.MiddleLeft)
-                //{
-                //    y = (e.ClipRectangle.Height / 2) - (size.Height / 2);
-                //}
-                //else if (checkBox.CheckAlign == System.Drawing.ContentAlignment.MiddleRight)
-                //{
-                //    x = e.ClipRectangle.Width - size.Width;
-                //    y = (e.ClipRectangle.Height / 2) - (size.Height / 2);
-                //}
-                //else
-                //{
-                //    e.Graphics.Clear(Color.Red);
-                //}
-
-                using (backGroundBrush)
-                {
-                    e.Graphics.FillRectangle(backGroundBrush, x, y, size.Width, size.Height + 1);
-                }
-                e.Graphics.DrawImage(RenderDarkCheckbox(state, size), x, y);
-            }
-            else
-            {
-                size = new Size(14, 14);
-            }
-            if (!checkBox.Enabled)
-            {
-                // may need to check TextAlign similar to CheckAlign above
-                TextRenderer.DrawText(e.Graphics, checkBox.Text, checkBox.Font, new Point(size.Width + 1, 2), SystemColors.GrayText);
             }
         }
 
