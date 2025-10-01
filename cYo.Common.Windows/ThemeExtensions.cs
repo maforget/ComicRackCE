@@ -263,7 +263,7 @@ namespace cYo.Common.Windows.Forms
             {
                 checkBox.FlatStyle = FlatStyle.Standard; // Win11 can theme Flat/Standard, so only change if System
             }
-            else
+            else if (!OsVersionEx.IsWindows11_OrGreater())
             {
                 checkBox.FlatStyle = FlatStyle.Flat; // Win10 19044 draws standard checkboxes w/ white background, so force flat
             }
