@@ -1,3 +1,4 @@
+using cYo.Common.Win32;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -127,11 +128,33 @@ namespace cYo.Common.Windows.Forms
 			Native.SetExStyles(tv.Handle, Native.TVS_EX.TVS_EX_DOUBLEBUFFER);
 		}
 
-		protected override void OnCreateControl()
+        /// <summary>
+        /// Sets <see cref="TreeView"/> <typeparamref name="ForeColor"/> and <typeparamref name="BackColor"/> using P/invoke.
+        /// </summary>
+		/// <param name="treeView"><see cref="TreeView"/> control to set the colors of.</param>
+		/// <param name="backColor"><typeparamref name="BackColor"/>  to set. If none is provided and Dark Mode is enabled, defaults to <see cref="ThemeExtensions.Colors.TreeView.Back"/> </param>
+		/// <param name="foreColor"><typeparamref name="ForeColor"/> to set. If none is provided and Dark Mode is enabled, defaults to <see cref="ThemeExtensions.Colors.TreeView.Fore"/> </param>
+        /// <remarks>
+        /// If <see cref="ThemeExtensions.IsDarkModeEnabled"/> is <paramref name="true"/> and no <see cref="Color"/> values are passed, will apply default <see cref="ThemeExtensions.Colors.TreeView"/> colors.
+        /// </remarks>
+        public static void SetColor(TreeView treeView, Color? backColor = null, Color? foreColor = null)
+        {
+			if (backColor == null && ThemeExtensions.IsDarkModeEnabled)
+				backColor = ThemeExtensions.Colors.TreeView.Back;
+            if (backColor != null)
+                Native.SetBackColor(treeView.Handle, (Color)backColor);
+
+            if (foreColor == null && ThemeExtensions.IsDarkModeEnabled)
+                foreColor = ThemeExtensions.Colors.TreeView.Fore;
+            if (backColor != null)
+                Native.SetForeColor(treeView.Handle, (Color)foreColor);
+        }
+
+        protected override void OnCreateControl()
 		{
 			base.OnCreateControl();
 			EnableDoubleBuffer(this);
-		}
+        }
 
 		private void scrollTimer_Tick(object sender, EventArgs e)
 		{
@@ -179,11 +202,7 @@ namespace cYo.Common.Windows.Forms
         {
             base.OnHandleCreated(e);
             if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                // set BackColor & ForeColor
-                Native.SetBackColor(Handle, SystemColors.Window);
-                Native.SetForeColor(Handle, SystemColors.ControlText);
-            }
+                SetColor(this);
         }
 
         protected override void WndProc(ref Message m)
@@ -194,7 +213,7 @@ namespace cYo.Common.Windows.Forms
 				ScrollEventType type = (ScrollEventType)Enum.Parse(typeof(ScrollEventType), (m.WParam.ToInt32() & 0xFFFF).ToString());
 				OnScroll(new ScrollEventArgs(type, (int)(m.WParam.ToInt64() >> 16) & 0xFF));
 			}
-		}
+        }
 
 		protected virtual void OnScroll(ScrollEventArgs sea)
 		{

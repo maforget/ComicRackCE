@@ -568,11 +568,11 @@ namespace cYo.Common.Windows.Forms
 
 		public static bool StyleEnabled = true;
 
-		private static Bitmap arrowLeft = Resources.SimpleArrowLeft;
+		private static Bitmap arrowLeft = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowLeft : Resources.SimpleArrowLeft;
 
-		private static Bitmap arrowRight = Resources.SimpleArrowRight;
+		private static Bitmap arrowRight = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowRight : Resources.SimpleArrowRight;
 
-		private static Bitmap arrowDown = Resources.SimpleArrowDown;
+		private static Bitmap arrowDown = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowDown : Resources.SimpleArrowDown;
 
 		private static Bitmap insertArrow = Resources.InsertArrow;
 

@@ -27,14 +27,9 @@ namespace cYo.Common.Windows.Forms
 
         private Bitmap expandedImage;
 
-        private static readonly Image arrowDown = Resources.SimpleArrowDown.ScaleDpi();
+        private static readonly Image arrowDown = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowDown.ScaleDpi() : Resources.SimpleArrowDown.ScaleDpi();
 
-        private static readonly Image arrowRight = Resources.SimpleArrowRight.ScaleDpi();
-
-        private static readonly Image darkArrowDown = Resources.DarkSimpleArrowDown.ScaleDpi();
-
-        private static readonly Image darkArrowRight = Resources.DarkSimpleArrowRight.ScaleDpi();
-
+        private static readonly Image arrowRight = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowRight.ScaleDpi() : Resources.SimpleArrowRight.ScaleDpi();
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -319,12 +314,12 @@ namespace cYo.Common.Windows.Forms
                 obj = expandedImage;
                 if (obj == null)
                 {
-                    return ThemeExtensions.IsDarkModeEnabled ? darkArrowDown : arrowDown;
+                    return arrowDown;
                 }
             }
             else
             {
-                obj = collapsedImage ?? (ThemeExtensions.IsDarkModeEnabled ? darkArrowRight : arrowRight);
+                obj = collapsedImage ?? arrowRight;
             }
             return (Image)obj;
         }

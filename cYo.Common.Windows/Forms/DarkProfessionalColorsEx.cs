@@ -19,9 +19,8 @@ namespace cYo.Common.Windows.Forms
         public override Color MenuItemPressedGradientEnd
             => Color.FromArgb(0xFF, 0x60, 0x60, 0x60);
 
-        public override Color MenuItemSelected
-            //=> SystemColors.ControlText; // this means white highlight
-            => Color.FromArgb(52, 67, 86);
+        public override Color MenuItemSelected => ThemeExtensions.Colors.SelectedText.HighLight;
+        //=> SystemColors.ControlText; // this means white highlight
 
         public override Color MenuItemSelectedGradientBegin
             => Color.FromArgb(0xFF, 0x40, 0x40, 0x40);
@@ -44,13 +43,13 @@ namespace cYo.Common.Windows.Forms
         public override Color ToolStripDropDownBackground
             => SystemColors.Control;
 
-        public override Color ImageMarginGradientBegin
-            => SystemColors.Control;
+        public override Color ImageMarginGradientBegin => Color.Black;
+        //=> SystemColors.Control;
 
-        public override Color ImageMarginGradientMiddle
-            => SystemColors.Control;
+        public override Color ImageMarginGradientMiddle => SystemColors.ControlLightLight;
+        //=> SystemColors.Control;
 
-        public override Color ImageMarginGradientEnd
-            => SystemColors.Control;
+        public override Color ImageMarginGradientEnd => SystemColors.ControlLight;
+        //=> SystemColors.Control;
     }
 }

@@ -46,6 +46,7 @@ namespace cYo.Common.Windows.Forms
             { typeof(RichTextBox), c => ThemeRichTextBox((RichTextBox)c) },
             { typeof(StatusStrip), c => ThemeStatusStrip((StatusStrip)c) },
             { typeof(TextBox), c => ThemeTextBox((TextBox)c) },
+            { typeof(TreeView), c => ThemeTreeView((TreeView)c) }
         };
 
         /// <summary>
@@ -104,7 +105,7 @@ namespace cYo.Common.Windows.Forms
                 public static readonly Color Qualifier = Color.FromArgb(76, 163, 255);
                 public static readonly Color Negation = Color.Red;
                 public static readonly Color String = Color.FromArgb(255, 125, 125);
-                
+
             }
 
             public static class TextBox
@@ -119,6 +120,12 @@ namespace cYo.Common.Windows.Forms
                 // currently this is purely for statusstrip border.
                 // TODO: move to renderer (will need to account for which borders need to be drawn)
                 public static readonly Color BorderColor = Color.FromArgb(100, 100, 100);
+            }
+
+            public static class TreeView
+            {
+                public static readonly Color Back = SystemColors.Window;
+                public static readonly Color Fore = SystemColors.ControlText;
             }
         }
 
@@ -373,6 +380,18 @@ namespace cYo.Common.Windows.Forms
             textBox.Leave -= TextBox_Leave;
             textBox.Leave += TextBox_Leave;
         }
+
+        private static void ThemeTreeView(TreeView treeView)
+        {
+            if (!treeView.IsHandleCreated)
+            {
+                treeView.HandleCreated += (s, e) => ThemeTreeView((s as TreeView));
+                return;
+            }
+            // use the TreeViewEx.SetColor method to avoid having to DllImport & declare native constants
+            TreeViewEx.SetColor(treeView);
+        }
+
         #endregion
 
 
