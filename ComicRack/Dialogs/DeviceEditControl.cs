@@ -17,7 +17,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class DeviceEditControl : UserControl
+	public partial class DeviceEditControl : UserControlEx
 	{
 		private class TagElement
 		{
@@ -102,6 +102,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		{
 			SetStyle(ControlStyles.SupportsTransparentBackColor, value: true);
 			InitializeComponent();
+			if (ThemeExtensions.IsDarkModeEnabled)
+				BackColor = SystemColors.Control;
 			TR tr = TR.Load("DevicesEditDialog");
 			LocalizeUtility.Localize(tr, this);
 			LocalizeUtility.Localize(tr, cbLimitType);

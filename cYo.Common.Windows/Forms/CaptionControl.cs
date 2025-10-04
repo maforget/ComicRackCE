@@ -7,7 +7,7 @@ using cYo.Common.Drawing;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class CaptionControl : UserControl
+	public partial class CaptionControl : UserControlEx
 	{
 		private Padding captionMargin = new Padding(2);
 
@@ -124,7 +124,7 @@ namespace cYo.Common.Windows.Forms
 			Rectangle captionRectangle = CaptionRectangle;
 			if (captionRectangle.Height != 0)
 			{
-				gr.FillRectangle(Brushes.White, captionRectangle);
+				gr.FillRectangle((ThemeExtensions.IsDarkModeEnabled ? Brushes.Black : Brushes.White), captionRectangle);
 				gr.DrawStyledRectangle(captionRectangle, selected ? 255 : 128, StyledRenderer.VistaColor, StyledRenderer.Default.Frame(0, 1));
 				TextRenderer.DrawText(gr, Caption, SystemFonts.SmallCaptionFont, captionRectangle.Pad(captionMargin), SystemColors.ActiveCaptionText);
 			}

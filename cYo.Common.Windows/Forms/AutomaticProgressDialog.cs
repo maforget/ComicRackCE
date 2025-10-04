@@ -10,7 +10,7 @@ using cYo.Common.Threading;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class AutomaticProgressDialog : Form
+	public partial class AutomaticProgressDialog : FormEx
 	{
 		private Thread thread;
 

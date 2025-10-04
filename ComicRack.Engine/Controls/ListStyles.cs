@@ -14,7 +14,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		{
 			lv.OwnerDraw = true;
 			lv.DrawItem += DrawItem;
-			lv.DrawColumnHeader += DrawColumnHeader;
+			lv.DrawColumnHeader += ThemeExtensions.ListView_DrawColumnHeader;
 			lv.DrawSubItem += DrawSubItem;
 			lv.MouseMove += MouseMove;
 		}
@@ -50,12 +50,13 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			}
 		}
 
-		private static void DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
-		{
-			e.DrawDefault = true;
-		}
+        // replaced with theme-aware version (ThemeExtensions.ListView_DrawColumnHeader)
+        //private static void DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        //{
+        //	e.DrawDefault = true;
+        //}
 
-		private static void DrawItem(object sender, DrawListViewItemEventArgs e)
+        private static void DrawItem(object sender, DrawListViewItemEventArgs e)
 		{
 			e.DrawDefault = false;
 			e.DrawBackground();

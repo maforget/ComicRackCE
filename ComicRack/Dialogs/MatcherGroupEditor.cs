@@ -15,7 +15,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class MatcherGroupEditor : UserControl, IMatcherEditor
+	public partial class MatcherGroupEditor : UserControlEx, IMatcherEditor
 	{
 		private static TR TR = TR.Load("SmartListDialog");
 

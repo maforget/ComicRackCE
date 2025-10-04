@@ -11,7 +11,7 @@ using cYo.Projects.ComicRack.Engine.Sync;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class DeviceSelectDialog : Form
+	public partial class DeviceSelectDialog : FormEx
 	{
 
 		public DeviceSelectDialog()

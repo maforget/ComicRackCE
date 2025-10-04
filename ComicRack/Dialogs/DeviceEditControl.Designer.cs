@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-    public partial class DeviceEditControl : UserControl
+    public partial class DeviceEditControl : UserControlEx
 	{
         /// <summary>
         /// Required designer variable.

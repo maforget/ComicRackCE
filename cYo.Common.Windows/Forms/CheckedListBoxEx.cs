@@ -30,7 +30,16 @@ namespace cYo.Common.Windows.Forms
 
 		public event DrawItemEventHandler DrawItemText;
 
-		protected override void OnDrawItem(DrawItemEventArgs e)
+        public CheckedListBoxEx()
+        {
+            if (ThemeExtensions.IsDarkModeEnabled)
+            {
+                BorderStyle = BorderStyle.FixedSingle;
+                BackColor = ThemeExtensions.Colors.TextBox.Back;
+            }
+        }
+
+        protected override void OnDrawItem(DrawItemEventArgs e)
 		{
 			if (e.Index >= base.Items.Count || e.Index < 0)
 			{

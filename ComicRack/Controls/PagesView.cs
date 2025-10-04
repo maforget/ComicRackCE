@@ -24,7 +24,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Controls
 {
-	public partial class PagesView : UserControl, IEditBookmark, IEditPage
+	public partial class PagesView : UserControlEx, IEditBookmark, IEditPage
 	{
 		private volatile bool listDirty;
 

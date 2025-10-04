@@ -14,7 +14,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class DevicesEditDialog : Form
+	public partial class DevicesEditDialog : FormEx
 	{
 		private static int selectedTab;
 

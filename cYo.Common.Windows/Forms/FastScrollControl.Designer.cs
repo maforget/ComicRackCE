@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class FastScrollControl : UserControl
+	public partial class FastScrollControl : UserControlEx
 	{
         /// <summary>
         /// Required designer variable.

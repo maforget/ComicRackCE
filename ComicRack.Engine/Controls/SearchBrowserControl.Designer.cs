@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
-    public partial class SearchBrowserControl : UserControl
+    public partial class SearchBrowserControl : UserControlEx
     {
         /// <summary>
         /// Required designer variable.

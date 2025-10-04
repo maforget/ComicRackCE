@@ -53,7 +53,9 @@ namespace cYo.Common.Windows.Forms
 		public TextBoxEx()
 		{
 			FocusSelect = true;
-		}
+            if (ThemeExtensions.IsDarkModeEnabled)
+                BorderStyle = BorderStyle.FixedSingle;
+        }
 
 		protected override bool IsInputKey(Keys keyData)
 		{
@@ -68,7 +70,9 @@ namespace cYo.Common.Windows.Forms
 		{
 			base.OnHandleCreated(e);
 			SetPromptText();
-		}
+            //if (ThemeExtensions.IsDarkModeEnabled)
+                ThemeExtensions.Theme(this);
+        }
 
 		protected override void OnEnter(EventArgs e)
 		{

@@ -1,8 +1,3 @@
-using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
 using cYo.Common.Collections;
 using cYo.Common.Localize;
 using cYo.Common.Text;
@@ -11,10 +6,16 @@ using cYo.Common.Windows.Forms;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Viewer.Properties;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+using static IronPython.Modules._ast;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class SmartListQueryDialog : Form, ISmartListDialog
+	public partial class SmartListQueryDialog : FormEx, ISmartListDialog
 	{
 		private class UndoItem
 		{
@@ -143,10 +144,53 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		public event EventHandler Previous;
 
-		public SmartListQueryDialog()
+		public static class queryFont
+		{
+            public static readonly Font Default = new("Courier New", 10.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            public static readonly Font Language = new("Courier New", 10.25F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            public static readonly Font Exception = new("Courier New", 10.25F, FontStyle.Underline, GraphicsUnit.Point, ((byte)(0)));
+        }
+
+        public static class tokenColors
+        {
+            public static Color Back { get; private set; }
+            public static Color Fore { get; private set; }
+            public static Color Exception { get; private set; }
+            public static Color Keyword { get; private set; }
+            public static Color Qualifier { get; private set; }
+            public static Color Negation { get; private set; }
+            public static Color String { get; private set; }
+
+            public static void UseDefault()
+            {
+                Back = SystemColors.Window;
+                Exception = Color.LightGray;
+                Fore = SystemColors.WindowText;
+                Keyword = Color.Green;
+                Qualifier = Color.Blue;
+                Negation = Color.DarkRed;
+                String = Color.Red;
+            }
+
+            public static void UseTheme()
+            {
+                Back = ThemeExtensions.Colors.SmartQuery.Back;
+                Exception = ThemeExtensions.Colors.SmartQuery.Exception;
+                Fore = ThemeExtensions.Colors.SmartQuery.Fore;
+                Keyword = ThemeExtensions.Colors.SmartQuery.Keyword;
+                Qualifier = ThemeExtensions.Colors.SmartQuery.Qualifier;
+                Negation = ThemeExtensions.Colors.SmartQuery.Negation;
+                String = ThemeExtensions.Colors.SmartQuery.String;
+            }
+        }
+
+        public SmartListQueryDialog()
 		{
 			InitializeComponent();
-			LocalizeUtility.UpdateRightToLeft(this);
+			tokenColors.UseDefault();
+            if (ThemeExtensions.IsDarkModeEnabled)
+				tokenColors.UseTheme();
+            LocalizeUtility.UpdateRightToLeft(this);
 			this.RestorePosition();
 			LocalizeUtility.Localize(this, typeof(SmartListDialog).Name, components);
 			LocalizeUtility.Localize(TR.Load("TextBoxContextMenu"), cmEdit);
@@ -532,50 +576,53 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				if (all)
 				{
 					rtfQuery.SelectAll();
-					rtfQuery.SelectionBackColor = SystemColors.Window;
-					rtfQuery.SelectionColor = SystemColors.WindowText;
+					rtfQuery.SelectionBackColor = tokenColors.Back;
+					rtfQuery.SelectionColor = tokenColors.Fore;
 				}
 				Tokenizer tokenizer = ComicSmartListItem.TokenizeQuery(rtfQuery.Text);
 				int selectionStart = rtfQuery.SelectionStart;
 				foreach (Tokenizer.Token item in tokenizer.GetAll())
 				{
-					Color selectionColor = SystemColors.WindowText;
-					string text = item.Text.ToLower();
+					Color selectionColor = tokenColors.Fore;
+                    string text = item.Text.ToLower();
 					if (text.StartsWith("\""))
 					{
-						selectionColor = Color.Red;
-					}
+						selectionColor = tokenColors.String;
+                    }
 					else if (text.StartsWith("["))
 					{
-						selectionColor = Color.Green;
-					}
+						selectionColor = tokenColors.Keyword;
+                    }
 					else
 					{
-						switch (text)
-						{
-						case "match":
-						case "in":
-						case "all":
-						case "any":
-						case "name":
-							selectionColor = Color.Blue;
-							break;
-						case "not":
-							selectionColor = Color.DarkRed;
-							break;
-						}
+                        switch (text)
+                        {
+                            case "match":
+                            case "in":
+                            case "all":
+                            case "any":
+                            case "name":
+                                selectionColor = tokenColors.Qualifier;
+                                break;
+                            case "not":
+                                selectionColor = tokenColors.Negation;
+                                break;
+                        }
 					}
 					if (all || (selectionStart > item.Index - 5 && selectionStart < item.Index + item.Length + 5))
 					{
 						rtfQuery.Select(item.Index, item.Length);
 						rtfQuery.SelectionColor = selectionColor;
-					}
+						if (!text.StartsWith("\""))
+							rtfQuery.SelectionFont = queryFont.Language;
+                    }
 				}
 				if (ex != null && ex.Token != null)
 				{
 					rtfQuery.Select(ex.Token.Index, ex.Token.Length);
-					rtfQuery.SelectionBackColor = Color.LightGray;
-				}
+					rtfQuery.SelectionBackColor = tokenColors.Exception;
+					rtfQuery.SelectionFont = queryFont.Exception;
+                }
 			}
 			rtfQuery.ClearUndo();
 		}

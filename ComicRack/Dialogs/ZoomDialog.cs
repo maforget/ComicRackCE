@@ -3,10 +3,11 @@ using System.Drawing;
 using System.Windows.Forms;
 using cYo.Common.Mathematics;
 using cYo.Common.Windows;
+using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class ZoomDialog : Form
+	public partial class ZoomDialog : FormEx
 	{
 		public float Zoom
 		{

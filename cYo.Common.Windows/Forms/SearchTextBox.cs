@@ -49,8 +49,11 @@ namespace cYo.Common.Windows.Forms
 			protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
 			{
 				base.OnRenderToolStripBorder(e);
-				ControlPaint.DrawBorder3D(e.Graphics, e.AffectedBounds, Border3DStyle.Flat);
-			}
+                // themed textbox doesn't fit in toolstrip height, so no border
+                //ControlPaint.DrawBorder(e.Graphics, e.AffectedBounds, Color.Red, ButtonBorderStyle.Solid);
+                if (!ThemeExtensions.IsDarkModeEnabled)
+                    ControlPaint.DrawBorder3D(e.Graphics, e.AffectedBounds, Border3DStyle.Flat);
+            }
 
 			protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
 			{

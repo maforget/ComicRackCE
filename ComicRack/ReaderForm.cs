@@ -4,13 +4,14 @@ using System.Drawing;
 using System.Windows.Forms;
 using cYo.Common.Localize;
 using cYo.Common.Windows;
+using cYo.Common.Windows.Forms;
 using cYo.Projects.ComicRack.Engine.Display;
 using cYo.Projects.ComicRack.Viewer.Config;
 using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer
 {
-	public partial class ReaderForm : Form
+	public partial class ReaderForm : FormEx
 	{
 		private Rectangle safeBounds;
 

@@ -735,7 +735,8 @@ namespace cYo.Projects.ComicRack.Viewer
 			CommandLineParser.Parse(EngineConfiguration.Default);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
-			ShellFile.DeleteAPI = ExtendedSettings.DeleteAPI;
+            ThemeExtensions.Initialize(ExtendedSettings.UseDarkMode); // if using dark mode, replace SystemColors and initialize native Windows theming
+            ShellFile.DeleteAPI = ExtendedSettings.DeleteAPI;
 			DatabaseManager.FirstDatabaseAccess += delegate
 			{
 				StartupProgress(TR.Messages["OpenDatabase", "Opening Database"], -1);
@@ -826,21 +827,28 @@ namespace cYo.Projects.ComicRack.Viewer
 				ComicBook.FormatIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Formats*.zip"), SplitIconKeys);
 				ComicBook.SpecialIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Special*.zip"), SplitIconKeys);
 				ComicBook.GenericIcons = CreateGenericsIcons(defaultLocations, "*.zip", "_", SplitIconKeys);
-				ToolStripRenderer renderer;
-				if (ExtendedSettings.SystemToolBars)
-				{
-					renderer = new ToolStripSystemRenderer();
-				}
+                if (ExtendedSettings.UseDarkMode)
+                {
+                    ToolStripManager.Renderer = ThemeExtensions.Renderer();
+                }
 				else
 				{
-					bool flag = Environment.OSVersion.Platform == PlatformID.Win32NT && Environment.OSVersion.Version.Major == 5;
-					ProfessionalColorTable professionalColorTable = ((!(ExtendedSettings.ForceTanColorSchema || flag)) ? ((ProfessionalColorTable)new OptimizedProfessionalColorTable()) : ((ProfessionalColorTable)new OptimizedTanColorTable()));
-					renderer = new ToolStripProfessionalRenderer(professionalColorTable)
-					{
-						RoundedEdges = false
-					};
-				}
-				ToolStripManager.Renderer = renderer;
+                    ToolStripRenderer renderer;
+                    if (ExtendedSettings.SystemToolBars)
+                    {
+                        renderer = new ToolStripSystemRenderer();
+                    }
+                    else
+                    {
+                        bool flag = Environment.OSVersion.Platform == PlatformID.Win32NT && Environment.OSVersion.Version.Major == 5;
+                        ProfessionalColorTable professionalColorTable = ((!(ExtendedSettings.ForceTanColorSchema || flag)) ? ((ProfessionalColorTable)new OptimizedProfessionalColorTable()) : ((ProfessionalColorTable)new OptimizedTanColorTable()));
+                        renderer = new ToolStripProfessionalRenderer(professionalColorTable)
+                        {
+                            RoundedEdges = false
+                        };
+                    }
+                    ToolStripManager.Renderer = renderer;
+                }
 				if (ExtendedSettings.DisableHardware)
 				{
 					ImageDisplayControl.HardwareAcceleration = ImageDisplayControl.HardwareAccelerationType.Disabled;

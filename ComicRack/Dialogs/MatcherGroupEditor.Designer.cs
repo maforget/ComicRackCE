@@ -1,8 +1,9 @@
 using System.Windows.Forms;
+using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-    public partial class MatcherGroupEditor : UserControl, IMatcherEditor
+    public partial class MatcherGroupEditor : UserControlEx, IMatcherEditor
 	{
         /// <summary>
         /// Required designer variable.

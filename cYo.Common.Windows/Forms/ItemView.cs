@@ -3177,9 +3177,9 @@ namespace cYo.Common.Windows.Forms
 			Rectangle bounds = groupHeaderInformation.Bounds;
 			string text = (ShowGroupCount ? $"{groupHeaderInformation.Caption} ({groupHeaderInformation.ItemCount})" : groupHeaderInformation.Caption);
 			Font font = FC.Get(Font, Font.Size * 1.15f);
-			Color darkBlue = Color.DarkBlue;
-			Color controlDark = SystemColors.ControlDark;
-			Size size = graphics.MeasureString(text, font).ToSize();
+            Color headerTextColor = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.Header.GroupText : Color.DarkBlue;
+            Color dividerLineColor = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.Header.GroupSeparator : SystemColors.ControlDark;
+            Size size = graphics.MeasureString(text, font).ToSize();
 			Bitmap bitmap = (groupHeaderInformation.Collapsed ? groupCollapsedImage : groupExpandedImage);
 			int num = size.Width;
 			int height = size.Height;
@@ -3208,7 +3208,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				groupHeaderInformation.ArrowBounds = Rectangle.Empty;
 			}
-			using (Brush brush = new SolidBrush(darkBlue))
+			using (Brush brush = new SolidBrush(headerTextColor))
 			{
 				graphics.DrawString(text, font, brush, num3, num2);
 				groupHeaderInformation.TextBounds = new Rectangle(bounds.X + num3, bounds.Y + num2, size.Width, size.Height);
@@ -3217,7 +3217,7 @@ namespace cYo.Common.Windows.Forms
 			Rectangle rect = new Rectangle(num5, y, bounds.Width - num5 - 5, 1);
 			if (rect.Width > 5)
 			{
-				using (Brush brush2 = new SolidBrush(controlDark))
+				using (Brush brush2 = new SolidBrush(dividerLineColor))
 				{
 					graphics.FillRectangle(brush2, rect);
 				}
@@ -3225,7 +3225,7 @@ namespace cYo.Common.Windows.Forms
 			rect = new Rectangle(5, y, num4 - 10, 1);
 			if (rect.Width > 5)
 			{
-				using (Brush brush3 = new SolidBrush(controlDark))
+				using (Brush brush3 = new SolidBrush(dividerLineColor))
 				{
 					graphics.FillRectangle(brush3, rect);
 				}

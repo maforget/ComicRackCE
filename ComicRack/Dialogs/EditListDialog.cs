@@ -11,7 +11,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class EditListDialog : Form
+	public partial class EditListDialog : FormEx
 	{
 		public EditListDialog()
 		{

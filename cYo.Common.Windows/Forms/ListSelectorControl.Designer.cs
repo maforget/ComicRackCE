@@ -12,7 +12,7 @@ using cYo.Common.Windows.Properties;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class ListSelectorControl : UserControl, Popup.INotifyClose
+	public partial class ListSelectorControl : UserControlEx, Popup.INotifyClose
 	{
         /// <summary>
         /// Required designer variable.
