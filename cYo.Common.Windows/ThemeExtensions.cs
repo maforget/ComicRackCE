@@ -68,7 +68,14 @@ namespace cYo.Common.Windows.Forms
             // WhiteSmoke is (245,245,245), but (10,10,10) would be too dark
             public static readonly Color BlackSmoke = Color.FromArgb(48, 48, 48);
 
-            public static readonly Color DefaultBorder = Color.FromArgb(155, 155, 155);
+            public static class Border
+            {
+                public static readonly Color Darkest = Color.FromArgb(16, 16, 16);
+                public static readonly Color Dark = Color.FromArgb(51, 51, 51);
+                public static readonly Color Default = Color.FromArgb(93, 93, 93);
+                public static readonly Color Light = Color.FromArgb(155, 155, 155);
+                //public static readonly Color Dark = Color.FromArgb(155, 155, 155);
+            }
 
             public static readonly Color GroupHeader = Color.FromArgb(155, 155, 155);
 
@@ -77,8 +84,13 @@ namespace cYo.Common.Windows.Forms
                 public static readonly Color Back = Color.FromArgb(51, 51, 51);
                 public static readonly Color CheckedBack = Color.FromArgb(102, 102, 102);
                 public static readonly Color Fore = Color.White;
-                public static readonly Color Border = DefaultBorder;
+                public static readonly Color Border = Color.FromArgb(155, 155, 155);
                 public static readonly Color MouseOverBack = Color.FromArgb(71, 71, 71);
+            }
+
+            public static class List
+            {
+                public static readonly Color Back = Color.FromArgb(56, 56, 56); // to match ComboBox button
             }
 
             public static class Header
@@ -86,8 +98,16 @@ namespace cYo.Common.Windows.Forms
                 public static readonly Color Back = Color.FromArgb(32, 32, 32);
                 public static readonly Color Separator = Color.FromArgb(99, 99, 99);
                 public static readonly Color Text = SystemColors.WindowText;
-                public static readonly Color GroupText = Color.Orange;
-                public static readonly Color GroupSeparator = Color.White;
+                public static readonly Color GroupText = Color.LightSkyBlue;
+                public static readonly Color GroupSeparator = Color.FromArgb(190, 190, 190);
+            }
+
+            public static class Material
+            {
+                public static readonly Color Window = SystemColors.ControlLightLight;
+                public static readonly Color SidePanel = SystemColors.ControlLightLight;
+                public static readonly Color Content = SystemColors.ControlLight;
+                //public static readonly Color Dark = Color.FromArgb(155, 155, 155);
             }
 
             public static class SelectedText
@@ -110,9 +130,9 @@ namespace cYo.Common.Windows.Forms
 
             public static class TextBox
             {
-                public static readonly Color Back = Color.FromArgb(56, 56, 56);
-                public static readonly Color MouseOverBack = Color.FromArgb(86, 86, 86);
-                public static readonly Color EnterBack = Color.FromArgb(71, 71, 71);
+                public static readonly Color Back = Color.FromArgb(46, 46, 46); //Color.FromArgb(56, 56, 56);
+                public static readonly Color MouseOverBack = SystemColorsEx.ControlLight; //Color.FromArgb(86, 86, 86);
+                public static readonly Color EnterBack = SystemColorsEx.ControlLightLight; //Color.FromArgb(71, 71, 71);
             }
 
             public static class ToolStrip
@@ -124,7 +144,7 @@ namespace cYo.Common.Windows.Forms
 
             public static class TreeView
             {
-                public static readonly Color Back = SystemColors.Window;
+                public static readonly Color Back = Material.SidePanel; //SystemColors.Window;
                 public static readonly Color Fore = SystemColors.ControlText;
             }
         }
@@ -167,7 +187,11 @@ namespace cYo.Common.Windows.Forms
             if (!IsDarkModeEnabled) return;
 
             if (control is Form form)
+            {
+                form.BackColor = Colors.Material.Window;
                 SetWindowUXTheme(form);
+            }
+                
 
             if (themeHandlers.TryGetValue(control.GetType(), out var theme))
             {
@@ -228,7 +252,7 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemePanel(Panel panel)
         {
-            panel.BackColor = SystemColors.Control;
+            panel.BackColor = SystemColors.Control; // changing this breaks checkboxes
         }
         private static void ThemeGroupBox(GroupBox groupBox)
         {
@@ -277,7 +301,7 @@ namespace cYo.Common.Windows.Forms
         }
         private static void ThemeComboBox(ComboBox comboBox)
         {
-            comboBox.BackColor = Colors.TextBox.Back;
+            comboBox.BackColor = Colors.List.Back;
             comboBox.ForeColor = SystemColors.WindowText;
 
             // Blue -> Gray highlight
@@ -561,19 +585,19 @@ namespace cYo.Common.Windows.Forms
         {
             TextBox textBox = sender as TextBox;
             textBox.BackColor = Colors.TextBox.EnterBack;
-            if (!textBox.Multiline)
-            {
-                textBox.BorderStyle = BorderStyle.Fixed3D;
-            }
+            //if (!textBox.Multiline)
+            //{
+            //    textBox.BorderStyle = BorderStyle.Fixed3D;
+            //}
         }
         private static void TextBox_Leave(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
             textBox.BackColor = Colors.TextBox.Back;
-            if (!textBox.Multiline)
-            {
-                textBox.BorderStyle = BorderStyle.FixedSingle;
-            }
+            //if (!textBox.Multiline)
+            //{
+            //    textBox.BorderStyle = BorderStyle.FixedSingle;
+            //}
         }
         #endregion
 

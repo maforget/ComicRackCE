@@ -154,6 +154,13 @@ namespace cYo.Common.Windows.Forms
 		{
 			base.OnCreateControl();
 			EnableDoubleBuffer(this);
+            if (ThemeExtensions.IsDarkModeEnabled)
+            {
+                BorderStyle = BorderStyle.None;
+                this.BackColor = ThemeExtensions.Colors.TreeView.Back;
+                this.ForeColor = ThemeExtensions.Colors.TreeView.Fore;
+                SetColor(this);
+            }
         }
 
 		private void scrollTimer_Tick(object sender, EventArgs e)

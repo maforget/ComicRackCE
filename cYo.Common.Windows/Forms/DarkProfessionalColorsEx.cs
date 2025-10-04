@@ -28,28 +28,36 @@ namespace cYo.Common.Windows.Forms
         public override Color MenuItemSelectedGradientEnd
             => Color.FromArgb(0xFF, 0x40, 0x40, 0x40);
 
-        public override Color MenuStripGradientBegin
-            => SystemColors.Control;
+        public override Color MenuStripGradientBegin => SystemColors.ControlLightLight;
+        //=> SystemColorsEx.Control;
 
-        public override Color MenuStripGradientEnd
-            => SystemColors.Control;
+        public override Color MenuStripGradientEnd => SystemColors.ControlLightLight;
+        //=> SystemColorsEx.Control;
 
-        public override Color StatusStripGradientBegin
-            => SystemColors.Control;
+        public override Color StatusStripGradientBegin => Color.FromArgb(51, 51, 51);
+        //=> SystemColorsEx.Control;
 
-        public override Color StatusStripGradientEnd
-            => SystemColors.Control;
+        public override Color StatusStripGradientEnd => Color.FromArgb(51, 51, 51);
+        //=> SystemColorsEx.Control;
 
-        public override Color ToolStripDropDownBackground
-            => SystemColors.Control;
+        public override Color ToolStripDropDownBackground => Color.FromArgb(43, 43, 43);
+        //=> SystemColorsEx.Control;
 
-        public override Color ImageMarginGradientBegin //=> SystemColors.ControlDark;
-        => SystemColors.Control;
+        public override Color ImageMarginGradientBegin => Color.FromArgb(51, 51, 51);
+        //=> SystemColorsEx.Control;
 
-        public override Color ImageMarginGradientMiddle //=> SystemColors.ControlDark;
-        => SystemColors.Control;
+        public override Color ImageMarginGradientMiddle => Color.FromArgb(51, 51, 51);
+        //=> SystemColorsEx.Control;
 
-        public override Color ImageMarginGradientEnd //=> SystemColors.ControlDark;
-        => SystemColors.Control;
+        public override Color ImageMarginGradientEnd => Color.FromArgb(51, 51, 51);
+        //=> SystemColorsEx.Control;
+
+        public override Color ToolStripBorder => ThemeExtensions.Colors.Border.Dark;
+
+        public override Color ToolStripGradientBegin => SystemColors.ControlLight;
+
+        public override Color ToolStripGradientMiddle => SystemColors.ControlLight;
+
+        public override Color ToolStripGradientEnd => SystemColors.ControlLight;
     }
 }

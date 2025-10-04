@@ -1268,7 +1268,7 @@ namespace cYo.Common.Windows.Forms
         {
             if (tabItemState == TabItemState.Selected)
             {
-                using (Pen activePen = new Pen(ThemeExtensions.Colors.DefaultBorder))
+                using (Pen activePen = new Pen(ThemeExtensions.Colors.Border.Dark))
                 {
                     gr.DrawLine(activePen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
                     gr.DrawLine(activePen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top

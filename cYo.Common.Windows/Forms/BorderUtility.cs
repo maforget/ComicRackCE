@@ -30,9 +30,11 @@ namespace cYo.Common.Windows.Forms
 			ControlPaint.DrawBorder3D(g, bounds, style2);
 		}
 
-        public static void DrawDarkBorder(Graphics g, Rectangle bounds)
+        public static void DrawDarkBorder(Graphics g, Rectangle bounds, Color? color = null)
         {
-            ControlPaint.DrawBorder(g, bounds, ThemeExtensions.Colors.DefaultBorder, ButtonBorderStyle.Solid);
+            if (color == null)
+                color = ThemeExtensions.Colors.Border.Default;
+            ControlPaint.DrawBorder(g, bounds, (Color)color, ButtonBorderStyle.Solid);
         }
 
         public static Rectangle AdjustBorder(Rectangle bounds, ExtendedBorderStyle style, bool inwards)
