@@ -43,13 +43,13 @@ namespace cYo.Common.Windows.Forms
         public override Color ToolStripDropDownBackground
             => SystemColors.Control;
 
-        public override Color ImageMarginGradientBegin => Color.Black;
-        //=> SystemColors.Control;
+        public override Color ImageMarginGradientBegin //=> SystemColors.ControlDark;
+        => SystemColors.Control;
 
-        public override Color ImageMarginGradientMiddle => SystemColors.ControlLightLight;
-        //=> SystemColors.Control;
+        public override Color ImageMarginGradientMiddle //=> SystemColors.ControlDark;
+        => SystemColors.Control;
 
-        public override Color ImageMarginGradientEnd => SystemColors.ControlLight;
-        //=> SystemColors.Control;
+        public override Color ImageMarginGradientEnd //=> SystemColors.ControlDark;
+        => SystemColors.Control;
     }
 }

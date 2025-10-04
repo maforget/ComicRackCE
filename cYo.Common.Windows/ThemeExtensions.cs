@@ -237,7 +237,7 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemeButton(Button button)
         {
-            if (button.Image == null && button.BackgroundImage == null)
+            if (button.Image == null && button.BackgroundImage == null && button.GetType() != typeof(SplitButton))
             {
                 button.FlatStyle = FlatStyle.System;
             }
@@ -289,8 +289,8 @@ namespace cYo.Common.Windows.Forms
             {
                 // OwnerDrawFixed is an unverified assumption (OwnerDrawVariable might be required in some cases)
                 comboBox.DrawMode = DrawMode.OwnerDrawFixed;
-                comboBox.DrawItem -= ComboBox_DrawItem;
-                comboBox.DrawItem += ComboBox_DrawItem;
+                comboBox.DrawItem -= ComboBox_DrawItemHighlight;
+                comboBox.DrawItem += ComboBox_DrawItemHighlight;
             }
         }
 
@@ -350,7 +350,7 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemeStatusStrip(StatusStrip statusStrip)
         {
-            statusStrip.Renderer = Renderer();
+            statusStrip.Renderer = new DarkToolStripRenderer();
             foreach (ToolStripStatusLabel tsLabel in statusStrip.Items.OfType<ToolStripStatusLabel>())
             {
                 if (tsLabel.BorderStyle.Equals(Border3DStyle.SunkenOuter))
@@ -438,29 +438,20 @@ namespace cYo.Common.Windows.Forms
 
         #region Custom Draw Event Handlers
 
-        // trimmed version of cYo.Common.Windows.Forms.ComboBoxSkinner.comboBox_DrawItem
-        // TODO: de-duplicate
-        private static void ComboBox_DrawItem(object sender, DrawItemEventArgs e)
+        // Use custom SelectedText HighLight color.
+        // related: cYo.Common.Windows.Forms.ComboBoxSkinner.comboBox_DrawItem (private, requires instantiation, comes with ComboBoxSkinner baggage)
+        private static void ComboBox_DrawItemHighlight(object sender, DrawItemEventArgs e)
         {
             if (e.Index < 0)
-            {
                 return;
-            }
+
             ComboBox comboBox = (ComboBox)sender;
-            var obj = comboBox.Items[e.Index];
-            IComboBoxItem comboBoxItem = obj as IComboBoxItem;
-            bool flag = (e.State & DrawItemState.ComboBoxEdit) != 0;
-            bool flag2 = comboBoxItem != null && comboBoxItem.IsSeparator && !flag && e.Index > 0;
-            Pen separatorPen = ThemeExtensions.IsDarkModeEnabled ? SystemPens.ControlText : SystemPens.ControlLight;
+            var item = comboBox.Items[e.Index];
 
-
-            Color foreColor = SystemColors.ControlText;
-
-            // only draw background and use actual ForeColor when DroppedDown
+            // override SelectedText highlighting
             if (comboBox.DroppedDown)
             {
                 e.DrawBackground();
-                // override SelectedText highlighting
                 if (e.State.HasFlag(DrawItemState.Selected))
                 {
                     using (Brush highlightBrush = new SolidBrush(Colors.SelectedText.HighLight))
@@ -470,30 +461,16 @@ namespace cYo.Common.Windows.Forms
                     ControlPaint.DrawBorder(e.Graphics, e.Bounds, Colors.SelectedText.Focus, ButtonBorderStyle.Solid);
                 }
             }
-            // focus rectangle doesn't match theme (it's dotted black/grey instead of solid blue)
-            //e.DrawFocusRectangle();
-            // this doesn't look great as it's an inner border and omits the button
-            // not sure how to draw out of combobox items bounds
-            // ControlPaint.DrawBorder(e.Graphics, e.Bounds, Color.Red, ButtonBorderStyle.Solid);
 
-            // e.ForeColor -> SystemColors.ControlText override. so we get white instead of black text
-            using (Brush brush = new SolidBrush(SystemColors.ControlText))
+            using (Brush brush = new SolidBrush(e.ForeColor))
             {
-                Rectangle rectangle = e.Bounds;
-                if (comboBoxItem != null && comboBoxItem.IsOwnerDrawn)
+                using (StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
                 {
-                    comboBoxItem.Draw(e.Graphics, rectangle, e.ForeColor, comboBox.Font);
-                }
-                else
+                    LineAlignment = StringAlignment.Center,
+                    Alignment = StringAlignment.Near
+                })
                 {
-                    using (StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
-                    {
-                        LineAlignment = StringAlignment.Center,
-                        Alignment = StringAlignment.Near
-                    })
-                    {
-                        e.Graphics.DrawString(comboBox.GetItemText(obj), comboBox.Font, brush, rectangle, format);
-                    }
+                    e.Graphics.DrawString(comboBox.GetItemText(item), comboBox.Font, brush, e.Bounds, format);
                 }
             }
         }
@@ -612,9 +589,24 @@ namespace cYo.Common.Windows.Forms
             return bmp;
         }
 
-        public static ToolStripProfessionalRenderer Renderer()
+        public class DarkToolStripRenderer : ToolStripProfessionalRenderer
         {
-            return (new ToolStripProfessionalRenderer(new DarkProfessionalColorsEx()));
+            public DarkToolStripRenderer()
+                : base(new DarkProfessionalColorsEx())
+            {
+            }
+
+            protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
+            {
+                e.TextColor = Color.White;
+                base.OnRenderItemText(e);
+            }
+
+            protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
+            {
+                e.ArrowColor = Color.White;
+                base.OnRenderArrow(e);
+            }
         }
     }
 }

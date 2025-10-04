@@ -828,7 +828,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				ComicBook.GenericIcons = CreateGenericsIcons(defaultLocations, "*.zip", "_", SplitIconKeys);
                 if (ExtendedSettings.UseDarkMode)
                 {
-                    ToolStripManager.Renderer = ThemeExtensions.Renderer();
+                    ToolStripManager.Renderer = new ThemeExtensions.DarkToolStripRenderer();
                 }
 				else
 				{
