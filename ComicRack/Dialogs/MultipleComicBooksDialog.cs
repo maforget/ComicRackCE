@@ -69,7 +69,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			new ComboBoxSkinner(cbBookLocation);
 			new ComboBoxSkinner(cbBookOwner);
 			new ComboBoxSkinner(cbBookPrice);
-			listFields.AddRange(new TextBoxEx[14]
+			listFields.AddRange(new TextBoxEx[]
 			{
 				txWriter,
 				txPenciller,
@@ -84,7 +84,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				txCharacters,
 				txTeams,
 				txLocations,
-				txCollectionStatus
+				txCollectionStatus,
+				txMainCharacterOrTeam
 			});
 			ListSelectorControl.Register(SearchEngines.Engines, listFields.ToArray());
 			cbLanguage.TopISOLanguages = Program.Lists.GetComicFieldList((ComicBook cb) => cb.LanguageISO).Cast<string>().Distinct();

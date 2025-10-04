@@ -153,7 +153,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             new ComboBoxSkinner(cbBookCondition);
             new ComboBoxSkinner(cbBookLocation);
             ListSelectorControl.Register(SearchEngines.Engines, txWriter, txPenciller, txInker, txColorist, txEditor, txTranslator, txCoverArtist, txLetterer, txGenre, txTags, txCollectionStatus);
-            ListSelectorControl.Register(SearchEngines.Engines, anchorStyles: AnchorStyles.Bottom | AnchorStyles.Right, txCharacters, txTeams, txLocations);
+            ListSelectorControl.Register(SearchEngines.Engines, anchorStyles: AnchorStyles.Bottom | AnchorStyles.Right, txCharacters, txTeams, txLocations, txMainCharacterOrTeam);
             EditControlUtility.InitializeMangaYesNo(cbManga);
             EditControlUtility.InitializeYesNo(cbBlackAndWhite);
             EditControlUtility.InitializeYesNo(cbSeriesComplete);
