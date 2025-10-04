@@ -245,7 +245,19 @@ namespace cYo.Common.Drawing
         }.Select(_ => _.ToKnownColor())
     );
 
+        public static uint GetSystemColorArgb(KnownColor color)
+        {
+            //Debug.Assert(Color.IsKnownColorSystem(color));
+            return (!SystemColorsEx.s_useAlternativeColorSet)
+                ? (uint)Color.FromKnownColor(color).ToArgb() //ColorValueTable[(int)color]
+                : GetAlternateSystemColorArgb(color);
+        }
         #endregion
+
+        public static Color GetSystemColor(KnownColor color)
+        {
+            return Color.FromArgb(unchecked((int)GetSystemColorArgb(color)));
+        }
 
 
         #region private
