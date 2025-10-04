@@ -3240,7 +3240,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				ComicBook comic = toolTipItem.Comic;
 				VisualStyleElement normal = VisualStyleElement.ToolTip.Standard.Normal;
-				if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
+				if (ThemeExtensions.IsDarkModeEnabled)
+				{
+					e.Graphics.FillRectangle(new SolidBrush(ThemeExtensions.Colors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size));
+				}
+				else if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
 				{
 					VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(normal);
 					visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);
@@ -3252,7 +3256,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				}
 				Rectangle bounds = e.Bounds;
 				bounds.Inflate(-10, -10);
-				ThumbTileRenderer.DrawTile(e.Graphics, bounds, itemLock.Item.GetThumbnail(bounds.Height), comic, FC.GetRelative(Font, 1.2f), SystemColors.InfoText, Color.Transparent, ThumbnailDrawingOptions.DefaultWithoutBackground, ComicTextElements.DefaultComic, threeD: false);
+				Color textColor = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.ToolTip.InfoText : SystemColors.InfoText;
+				ThumbTileRenderer.DrawTile(e.Graphics, bounds, itemLock.Item.GetThumbnail(bounds.Height), comic, FC.GetRelative(Font, 1.2f), textColor, Color.Transparent, ThumbnailDrawingOptions.DefaultWithoutBackground, ComicTextElements.DefaultComic, threeD: false);
 			}
 		}
 

@@ -99,7 +99,8 @@ namespace cYo.Projects.ComicRack.Viewer
 							}
 							rc.Height -= 10;
 						}
-						ThumbTileRenderer.DrawTile(gr, rc, itemLock.Item.GetThumbnail(rc.Height), comic, font, SystemColors.InfoText, Color.Transparent, ThumbnailDrawingOptions.DefaultWithoutBackground, ComicTextElements.DefaultComic, threeD: false, comic.GetIcons());
+						Color textColor = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.ToolTip.InfoText : SystemColors.InfoText;
+						ThumbTileRenderer.DrawTile(gr, rc, itemLock.Item.GetThumbnail(rc.Height), comic, font, textColor, Color.Transparent, ThumbnailDrawingOptions.DefaultWithoutBackground, ComicTextElements.DefaultComic, threeD: false, comic.GetIcons());
 					}
 				}
 				catch
