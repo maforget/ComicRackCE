@@ -70,6 +70,11 @@
         <Compile Update="Menus\ToolStripThumbSize.cs">
             <SubType>Component</SubType>
         </Compile>
+        <Compile Update="Properties\Resources.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
         <Compile Update="Views\ComicBrowserControl.cs">
             <SubType>UserControl</SubType>
         </Compile>
@@ -160,6 +165,12 @@
         <ProjectReference Include="..\cYo.Common.Presentation\cYo.Common.Presentation.csproj" />
         <ProjectReference Include="..\cYo.Common.Windows\cYo.Common.Windows.csproj" />
         <ProjectReference Include="..\cYo.Common\cYo.Common.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Update="Properties\Resources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
     <PropertyGroup />
     <Target Name="CustomClean" AfterTargets="CoreClean">

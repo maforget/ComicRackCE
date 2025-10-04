@@ -175,7 +175,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap ArrowDown {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkArrowDown", resourceCulture) : ResourceManager.GetObject("ArrowDown", resourceCulture);
+                object obj = ResourceManager.GetObject("ArrowDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -185,7 +185,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap ArrowRight {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkArrowRight", resourceCulture) : ResourceManager.GetObject("ArrowRight", resourceCulture);
+                object obj = ResourceManager.GetObject("ArrowRight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,6 +353,266 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DarkArrowDown {
+            get {
+                object obj = ResourceManager.GetObject("DarkArrowDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkArrowRight {
+            get {
+                object obj = ResourceManager.GetObject("DarkArrowRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkDetailView {
+            get {
+                object obj = ResourceManager.GetObject("DarkDetailView", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkDoubleArrow {
+            get {
+                object obj = ResourceManager.GetObject("DarkDoubleArrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkGapDown {
+            get {
+                object obj = ResourceManager.GetObject("DarkGapDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkGapUp {
+            get {
+                object obj = ResourceManager.GetObject("DarkGapUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkGapUpDown {
+            get {
+                object obj = ResourceManager.GetObject("DarkGapUpDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkGoFirst {
+            get {
+                object obj = ResourceManager.GetObject("DarkGoFirst", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkGoLast {
+            get {
+                object obj = ResourceManager.GetObject("DarkGoLast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkGoNext {
+            get {
+                object obj = ResourceManager.GetObject("DarkGoNext", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkGoPrevious {
+            get {
+                object obj = ResourceManager.GetObject("DarkGoPrevious", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkGroup {
+            get {
+                object obj = ResourceManager.GetObject("DarkGroup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkGroupDown {
+            get {
+                object obj = ResourceManager.GetObject("DarkGroupDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkGroupUp {
+            get {
+                object obj = ResourceManager.GetObject("DarkGroupUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkLocked {
+            get {
+                object obj = ResourceManager.GetObject("DarkLocked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkRenumber {
+            get {
+                object obj = ResourceManager.GetObject("DarkRenumber", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkSmallArrowDown {
+            get {
+                object obj = ResourceManager.GetObject("DarkSmallArrowDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkSmallArrowRight {
+            get {
+                object obj = ResourceManager.GetObject("DarkSmallArrowRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkSmallCloseGray {
+            get {
+                object obj = ResourceManager.GetObject("DarkSmallCloseGray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkSort {
+            get {
+                object obj = ResourceManager.GetObject("DarkSort", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkSortDown {
+            get {
+                object obj = ResourceManager.GetObject("DarkSortDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkSortUp {
+            get {
+                object obj = ResourceManager.GetObject("DarkSortUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkStarWhite {
+            get {
+                object obj = ResourceManager.GetObject("DarkStarWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkStarWhiteHollow {
+            get {
+                object obj = ResourceManager.GetObject("DarkStarWhiteHollow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkThumbView {
+            get {
+                object obj = ResourceManager.GetObject("DarkThumbView", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkTileView {
+            get {
+                object obj = ResourceManager.GetObject("DarkTileView", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Database {
             get {
                 object obj = ResourceManager.GetObject("Database", resourceCulture);
@@ -395,7 +655,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap DetailView {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkDetailView", resourceCulture) : ResourceManager.GetObject("DetailView", resourceCulture);
+                object obj = ResourceManager.GetObject("DetailView", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -455,7 +715,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap DoubleArrow {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkDoubleArrow", resourceCulture) : ResourceManager.GetObject("DoubleArrow", resourceCulture);
+                object obj = ResourceManager.GetObject("DoubleArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -675,7 +935,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap GapDown {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkGapDown", resourceCulture) : ResourceManager.GetObject("GapDown", resourceCulture);
+                object obj = ResourceManager.GetObject("GapDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -685,7 +945,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap GapUp {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkGapUp", resourceCulture) : ResourceManager.GetObject("GapUp", resourceCulture);
+                object obj = ResourceManager.GetObject("GapUp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -695,7 +955,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap GapUpDown {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkGapUpDown", resourceCulture) : ResourceManager.GetObject("GapUpDown", resourceCulture);
+                object obj = ResourceManager.GetObject("GapUpDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -755,17 +1015,17 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap GoFirst {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkGoFirst", resourceCulture) : ResourceManager.GetObject("GoFirst", resourceCulture);
+                object obj = ResourceManager.GetObject("GoFirst", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap GoLast {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkGoLast", resourceCulture) : ResourceManager.GetObject("GoLast", resourceCulture);
+                object obj = ResourceManager.GetObject("GoLast", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -775,7 +1035,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap GoNext {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkGoNext", resourceCulture) : ResourceManager.GetObject("GoNext", resourceCulture);
+                object obj = ResourceManager.GetObject("GoNext", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -785,7 +1045,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap GoPrevious {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkGoPrevious", resourceCulture) : ResourceManager.GetObject("GoPrevious", resourceCulture);
+                object obj = ResourceManager.GetObject("GoPrevious", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -815,7 +1075,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Group {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkGroup", resourceCulture) : ResourceManager.GetObject("Group", resourceCulture);
+                object obj = ResourceManager.GetObject("Group", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -825,7 +1085,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap GroupDown {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkGroupDown", resourceCulture) : ResourceManager.GetObject("GroupDown", resourceCulture);
+                object obj = ResourceManager.GetObject("GroupDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -835,7 +1095,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap GroupUp {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkGroupUp", resourceCulture) : ResourceManager.GetObject("GroupUp", resourceCulture);
+                object obj = ResourceManager.GetObject("GroupUp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -945,7 +1205,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Locked {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkLocked", resourceCulture) : ResourceManager.GetObject("Locked", resourceCulture);
+                object obj = ResourceManager.GetObject("Locked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1625,7 +1885,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap SmallArrowDown {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkSmallArrowDown", resourceCulture) : ResourceManager.GetObject("SmallArrowDown", resourceCulture);
+                object obj = ResourceManager.GetObject("SmallArrowDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1635,7 +1895,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap SmallArrowRight {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkSmallArrowRight", resourceCulture) : ResourceManager.GetObject("SmallArrowRight", resourceCulture);
+                object obj = ResourceManager.GetObject("SmallArrowRight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1665,7 +1925,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap SmallCloseGray {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkSmallCloseGray", resourceCulture) : ResourceManager.GetObject("SmallCloseGray", resourceCulture);
+                object obj = ResourceManager.GetObject("SmallCloseGray", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1685,7 +1945,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Sort {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkSort", resourceCulture) : ResourceManager.GetObject("Sort", resourceCulture);
+                object obj = ResourceManager.GetObject("Sort", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1695,7 +1955,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap SortDown {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkSortDown", resourceCulture) : ResourceManager.GetObject("SortDown", resourceCulture);
+                object obj = ResourceManager.GetObject("SortDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1705,7 +1965,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap SortUp {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkSortUp", resourceCulture) : ResourceManager.GetObject("SortUp", resourceCulture);
+                object obj = ResourceManager.GetObject("SortUp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1745,7 +2005,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap StarBlack {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkStarWhite", resourceCulture) : ResourceManager.GetObject("StarBlack", resourceCulture);
+                object obj = ResourceManager.GetObject("StarBlack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1755,7 +2015,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap StarBlackHollow {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkStarWhiteHollow", resourceCulture) : ResourceManager.GetObject("StarBlackHollow", resourceCulture);
+                object obj = ResourceManager.GetObject("StarBlackHollow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1815,7 +2075,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap ThumbView {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkThumbView", resourceCulture) : ResourceManager.GetObject("ThumbView", resourceCulture);
+                object obj = ResourceManager.GetObject("ThumbView", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1825,7 +2085,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap TileView {
             get {
-                object obj = Program.ExtendedSettings.UseDarkMode ? ResourceManager.GetObject("DarkTileView", resourceCulture) : ResourceManager.GetObject("TileView", resourceCulture);
+                object obj = ResourceManager.GetObject("TileView", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

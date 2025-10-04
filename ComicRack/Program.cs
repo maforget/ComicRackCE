@@ -736,6 +736,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
             ThemeExtensions.Initialize(ExtendedSettings.UseDarkMode); // if using dark mode, replace SystemColors and initialize native Windows theming
+			ResourceManagerEx.InitResourceManager(ExtendedSettings.UseDarkMode);
             ShellFile.DeleteAPI = ExtendedSettings.DeleteAPI;
 			DatabaseManager.FirstDatabaseAccess += delegate
 			{
