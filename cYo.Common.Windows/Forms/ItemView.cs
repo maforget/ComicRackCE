@@ -1665,7 +1665,7 @@ namespace cYo.Common.Windows.Forms
 
 		public event PaintEventHandler PostPaint;
 
-		public Func<string, IComparer<IViewableItem>> StackColumnSorter { get; set; }
+		public Func<string, IComparer<IViewableItem>[]> StackColumnSorter { get; set; }
 
 
 		public ItemView()

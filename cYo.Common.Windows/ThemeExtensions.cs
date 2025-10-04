@@ -147,6 +147,12 @@ namespace cYo.Common.Windows.Forms
                 public static readonly Color Back = Material.SidePanel; //SystemColors.Window;
                 public static readonly Color Fore = SystemColors.ControlText;
             }
+
+            public static class ToolTip
+            {
+                public static readonly Color InfoText = SystemColors.ControlText;
+                public static readonly Color Back = SystemColors.Window;  //BlackSmoke;
+            }
         }
 
         /// <summary>

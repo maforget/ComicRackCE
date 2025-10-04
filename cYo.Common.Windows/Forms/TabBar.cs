@@ -1156,7 +1156,11 @@ namespace cYo.Common.Windows.Forms
 		{
 			VisualStyleRenderer visualStyleRenderer = null;
 			VisualStyleElement normal = VisualStyleElement.ToolTip.Standard.Normal;
-			if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
+			if (ThemeExtensions.IsDarkModeEnabled)
+			{
+				e.Graphics.FillRectangle(new SolidBrush(ThemeExtensions.Colors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size));
+			}
+			else if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
 			{
 				visualStyleRenderer = new VisualStyleRenderer(normal);
 				visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);

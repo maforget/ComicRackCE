@@ -99,7 +99,8 @@ namespace cYo.Projects.ComicRack.Viewer
 							}
 							rc.Height -= 10;
 						}
-						ThumbTileRenderer.DrawTile(gr, rc, itemLock.Item.GetThumbnail(rc.Height), comic, font, SystemColors.InfoText, Color.Transparent, ThumbnailDrawingOptions.DefaultWithoutBackground, ComicTextElements.DefaultComic, threeD: false, comic.GetIcons());
+						Color textColor = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.ToolTip.InfoText : SystemColors.InfoText;
+						ThumbTileRenderer.DrawTile(gr, rc, itemLock.Item.GetThumbnail(rc.Height), comic, font, textColor, Color.Transparent, ThumbnailDrawingOptions.DefaultWithoutBackground, ComicTextElements.DefaultComic, threeD: false, comic.GetIcons());
 					}
 				}
 				catch
@@ -2192,6 +2193,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public void MenuSynchronizeDevices()
 		{
+			StoreWorkspace(); // save workspace before sync, so sorted lists key are up to date
 			if (!Program.QueueManager.SynchronizeDevices())
 			{
 				ShowPortableDevices();
@@ -2565,23 +2567,13 @@ namespace cYo.Projects.ComicRack.Viewer
 				if (workspace.IsWindowLayout)
 				{
 					if (!workspace.FormBounds.IsEmpty)
-					{
-						Rectangle b = workspace.FormBounds;
-						Screen screen = Screen.AllScreens.Where((Screen scr) => scr.Bounds.IntersectsWith(b)).FirstOrDefault();
-						if (screen == null)
-						{
-							Rectangle bounds = Screen.PrimaryScreen.Bounds;
-							b.Width = Math.Min(b.Width, bounds.Width);
-							b.Height = Math.Min(b.Height, bounds.Height);
-							b = b.Center(bounds);
-						}
-						base.Bounds = b;
-					}
+						base.Bounds = GetOnScreenBounds(workspace.FormBounds);
+
 					BrowserVisible = workspace.PanelVisible || (!ComicDisplay.IsValid && Program.Settings.ShowQuickOpen);
 					mainViewContainer.DockSize = workspace.PanelSize;
 					BrowserDock = workspace.PanelDock;
 					ReaderUndocked = workspace.ReaderUndocked;
-					UndockedReaderBounds = workspace.UndockedReaderBounds;
+					UndockedReaderBounds = GetOnScreenBounds(workspace.UndockedReaderBounds);
 					UndockedReaderState = workspace.UndockedReaderState;
 					ScriptOutputBounds = workspace.ScriptOutputBounds;
 				}
@@ -2610,6 +2602,23 @@ namespace cYo.Projects.ComicRack.Viewer
 				ResumeLayout();
 				VisibilityAnimator.EnableAnimation = (SizableContainer.EnableAnimation = enableAnimation);
 			}
+		}
+
+		private Rectangle GetOnScreenBounds(Rectangle formBounds)
+		{
+			if (formBounds.IsEmpty)
+				return Rectangle.Empty;
+
+			Rectangle b = formBounds;
+			Screen screen = Screen.AllScreens.Where((Screen scr) => scr.Bounds.IntersectsWith(b)).FirstOrDefault();
+			if (screen == null)
+			{
+				Rectangle bounds = Screen.PrimaryScreen.Bounds;
+				b.Width = Math.Min(b.Width, bounds.Width);
+				b.Height = Math.Min(b.Height, bounds.Height);
+				b = b.Center(bounds);
+			}
+			return b;
 		}
 
 		private void SetWorkspaceDisplayOptions(DisplayWorkspace workspace)
@@ -4107,6 +4116,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		void IApplication.SynchronizeDevices()
 		{
+			StoreWorkspace(); // save workspace before sync, so sorted lists key are up to date
 			Program.QueueManager.SynchronizeDevices();
 		}
 

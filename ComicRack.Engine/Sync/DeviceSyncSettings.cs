@@ -25,7 +25,8 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			AlternateSeries,
 			Published,
 			Added,
-			StoryArc
+			StoryArc,
+			ListOrder
 		}
 
 		[Serializable]

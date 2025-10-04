@@ -1,7 +1,6 @@
 using cYo.Common.ComponentModel;
-using cYo.Projects.ComicRack.Engine;
 
-namespace cYo.Projects.ComicRack.Viewer.Controls
+namespace cYo.Projects.ComicRack.Engine
 {
 	public interface IBookGrouper
 	{

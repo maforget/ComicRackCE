@@ -15,6 +15,8 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private static Dictionary<string, TabbedThumbnail> thumbnails = new Dictionary<string, TabbedThumbnail>(StringComparer.OrdinalIgnoreCase);
 
+		private const uint BCM_SETSHIELD = 0x160Cu;
+
 		public static bool TabbedThumbnailsEnabled => false;
 
 		public static bool Initialize()
@@ -125,9 +127,8 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				return false;
 			}
-			uint msg = 5644u;
 			button.FlatStyle = FlatStyle.System;
-			return SendMessage(new HandleRef(button, button.Handle), msg, new IntPtr(0), new IntPtr(1)) == 0;
+			return SendMessage(new HandleRef(button, button.Handle), BCM_SETSHIELD, new IntPtr(0), new IntPtr(1)) == 0;
 		}
 	}
 }
