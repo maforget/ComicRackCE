@@ -35,7 +35,7 @@ namespace cYo.Common.Windows.Forms
             if (ThemeExtensions.IsDarkModeEnabled)
             {
                 BorderStyle = BorderStyle.FixedSingle;
-                BackColor = ThemeExtensions.Colors.TextBox.Back;
+                BackColor = ThemeExtensions.Colors.List.Back;
             }
         }
 

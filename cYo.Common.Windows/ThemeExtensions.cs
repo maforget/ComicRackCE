@@ -64,56 +64,27 @@ namespace cYo.Common.Windows.Forms
         /// </summary>
         public static class Colors
         {
-            // WhiteSmoke is (245,245,245), but (10,10,10) would be too dark
+
+            /// <summary>
+            /// Colors used for specific components with the app. i.e. hardcoded.
+            /// </summary>
+            /// <remarks>
+            /// KnownColor replacement is temporary. We should replace them where they are used in code, ideally by defining a Default color scheme.</remarks>
+            #region App Colors
+
+            // WhiteSmoke is RGB 245 but RGB 10 would be too dark
+            // WhiteSmoke - RGB 245 - DisplayWorkspace Background and PreferencesDialog 
             public static readonly Color BlackSmoke = Color.FromArgb(48, 48, 48);
 
-            public static class Border
-            {
-                public static readonly Color Darkest = Color.FromArgb(16, 16, 16);
-                public static readonly Color Dark = Color.FromArgb(51, 51, 51);
-                public static readonly Color Default = Color.FromArgb(93, 93, 93);
-                public static readonly Color Light = Color.FromArgb(155, 155, 155);
-                //public static readonly Color Dark = Color.FromArgb(155, 155, 155);
-            }
+            // Gainsboro  - RGB 220 - PreferencesDialog label(Navigation|Status|Page|VisiblePart)Overlay
+            public static readonly Color Lossboro = SystemColors.ControlDarkDark;
 
-            public static readonly Color GroupHeader = Color.FromArgb(155, 155, 155);
+            // specific parts
 
-            public static class Button
+            public static class ItemView
             {
-                public static readonly Color Back = Color.FromArgb(51, 51, 51);
-                public static readonly Color CheckedBack = Color.FromArgb(102, 102, 102);
-                public static readonly Color Fore = Color.White;
-                public static readonly Color Border = Color.FromArgb(155, 155, 155);
-                public static readonly Color MouseOverBack = Color.FromArgb(71, 71, 71);
-            }
-
-            public static class List
-            {
-                public static readonly Color Back = Color.FromArgb(56, 56, 56); // to match ComboBox button
-                public static readonly Color Disabled = Color.FromArgb(64, 64, 64); // from .net combobox source
-            }
-
-            public static class Header
-            {
-                public static readonly Color Back = Color.FromArgb(32, 32, 32);
-                public static readonly Color Separator = Color.FromArgb(99, 99, 99);
-                public static readonly Color Text = SystemColors.WindowText;
                 public static readonly Color GroupText = Color.LightSkyBlue;
                 public static readonly Color GroupSeparator = Color.FromArgb(190, 190, 190);
-            }
-
-            public static class Material
-            {
-                public static readonly Color Window = SystemColors.ControlLightLight;
-                public static readonly Color SidePanel = SystemColors.ControlLightLight;
-                public static readonly Color Content = SystemColors.ControlLight;
-                //public static readonly Color Dark = Color.FromArgb(155, 155, 155);
-            }
-
-            public static class SelectedText
-            {
-                public static readonly Color HighLight = Color.FromArgb(52, 67, 86);
-                public static readonly Color Focus = Color.FromArgb(40, 100, 180);
             }
 
             public static class SmartQuery
@@ -126,6 +97,32 @@ namespace cYo.Common.Windows.Forms
                 public static readonly Color Negation = Color.Red;
                 public static readonly Color String = Color.FromArgb(255, 125, 125);
 
+            }
+
+            public static class ToolTip
+            {
+                public static readonly Color InfoText = SystemColors.Info;
+                public static readonly Color Back = SystemColors.InfoText;  //BlackSmoke;
+            }
+            #endregion
+
+            /// <summary>
+            /// Colors used for all Controls of a type.
+            /// </summary>
+            #region Control Type Colors
+            public static class Button
+            {
+                public static readonly Color Back = SystemColors.Window; // RGB 50 HEX 32
+                public static readonly Color CheckedBack = Color.FromArgb(102, 102, 102);
+                public static readonly Color Fore = Color.White;
+                public static readonly Color Border = Color.FromArgb(155, 155, 155);
+                public static readonly Color MouseOverBack = SystemColors.ButtonShadow; // RGB 70 HEX 46
+            }
+
+            public static class List
+            {
+                public static readonly Color Back = Color.FromArgb(56, 56, 56); // to match ComboBox button
+                public static readonly Color Disabled = Color.FromArgb(64, 64, 64); // from .net combobox source
             }
 
             public static class TextBox
@@ -147,17 +144,56 @@ namespace cYo.Common.Windows.Forms
                 public static readonly Color Back = Material.SidePanel; //SystemColors.Window;
                 public static readonly Color Fore = SystemColors.ControlText;
             }
+            #endregion
 
-            public static class ToolTip
+            /// <summary>
+            /// Colors used in multiple control types for a specific part
+            /// </summary>
+            #region Part Colors
+            public static class Border
             {
-                public static readonly Color InfoText = SystemColors.Info;
-                public static readonly Color Back = SystemColors.InfoText;  //BlackSmoke;
+                public static readonly Color Darkest = Color.FromArgb(16, 16, 16);
+                public static readonly Color Dark = Color.FromArgb(51, 51, 51);
+                public static readonly Color Default = Color.FromArgb(93, 93, 93);
+                public static readonly Color Light = Color.FromArgb(155, 155, 155);
+                //public static readonly Color Dark = Color.FromArgb(155, 155, 155);
+            }
+
+            public static class Header
+            {
+                public static readonly Color Back = Color.FromArgb(32, 32, 32);
+                public static readonly Color Separator = Color.FromArgb(99, 99, 99);
+                public static readonly Color Text = SystemColors.WindowText;
+            }
+
+            public static class SelectedText
+            {
+                public static readonly Color HighLight = Color.FromArgb(52, 67, 86);
+                public static readonly Color Focus = Color.FromArgb(40, 100, 180);
+            }
+            #endregion
+
+            public static class Material
+            {
+                public static readonly Color Window = SystemColors.ControlLightLight;
+                public static readonly Color SidePanel = SystemColors.ControlLightLight;
+                public static readonly Color Content = SystemColors.ControlLight;
+                //public static readonly Color Dark = Color.FromArgb(155, 155, 155);
             }
         }
 
         /* ComboBox SystemColors.ControlDarkDark https://github.com/dotnet/winforms/blob/652464e290a4f2849a9045f7232057f3d6d5b89b/src/System.Windows.Forms/System/Windows/Forms/Controls/ComboBox/ComboBox.cs#L268
+         * TabPage base.backColor https://github.com/dotnet/winforms/blob/7be5881eb66abe9f65700ef241ba399df21c4d33/src/System.Windows.Forms/System/Windows/Forms/Controls/TabControl/TabPage.cs#L105
+         * TreeView ShouldSerializeBackColor() ? base.BackColor : SystemColors.Window https://github.com/dotnet/winforms/blob/7be5881eb66abe9f65700ef241ba399df21c4d33/src/System.Windows.Forms/System/Windows/Forms/Controls/TreeView/TreeView.cs#L195
+         * DateTimePicker base.ForeColor https://github.com/dotnet/winforms/blob/7be5881eb66abe9f65700ef241ba399df21c4d33/src/System.Windows.Forms/System/Windows/Forms/Controls/DateTimePicker/DateTimePicker.cs#L492
          * 
+         * Foreground color for Highlighted (selected) text
+         * SelectedItemWithFocusForeColor
+         * Application.IsDarkModeEnabled ? SystemColors.ControlText : SystemColors.HighlightText;
+         * https://github.com/dotnet/winforms/blob/7be5881eb66abe9f65700ef241ba399df21c4d33/src/System.Windows.Forms/System/Windows/Forms/Controls/PropertyGrid/PropertyGrid.cs#L78
          * 
+         * Draw UpDownButtons
+         * https://github.com/dotnet/winforms/blob/7be5881eb66abe9f65700ef241ba399df21c4d33/src/System.Windows.Forms/System/Windows/Forms/Controls/UpDown/UpDownBase.UpDownButtons.cs#L273
          */
 
         /// <summary>
@@ -177,6 +213,7 @@ namespace cYo.Common.Windows.Forms
             darkColorTable.Initialize(useDarkMode);
 
             darkColorTable.SetColor(KnownColor.WhiteSmoke, Colors.BlackSmoke.ToArgb()); // make default background darker
+            darkColorTable.SetColor(KnownColor.Gainsboro, Colors.Lossboro.ToArgb());    // PreferencesDialog overlays
             darkColorTable.SetColor(KnownColor.HighlightText, Color.White.ToArgb());    // HighlightText should be white
 
             UXTheme.Initialize();

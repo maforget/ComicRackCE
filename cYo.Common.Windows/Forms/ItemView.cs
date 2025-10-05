@@ -3177,8 +3177,8 @@ namespace cYo.Common.Windows.Forms
 			Rectangle bounds = groupHeaderInformation.Bounds;
 			string text = (ShowGroupCount ? $"{groupHeaderInformation.Caption} ({groupHeaderInformation.ItemCount})" : groupHeaderInformation.Caption);
 			Font font = FC.Get(Font, Font.Size * 1.15f);
-            Color headerTextColor = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.Header.GroupText : Color.DarkBlue;
-            Color dividerLineColor = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.Header.GroupSeparator : SystemColors.ControlDark;
+            Color headerTextColor = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.ItemView.GroupText : Color.DarkBlue;
+            Color dividerLineColor = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.ItemView.GroupSeparator : SystemColors.ControlDark;
             Size size = graphics.MeasureString(text, font).ToSize();
 			Bitmap bitmap = (groupHeaderInformation.Collapsed ? groupCollapsedImage : groupExpandedImage);
 			int num = size.Width;

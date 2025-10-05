@@ -10,6 +10,10 @@ namespace cYo.Common.Windows.Forms
     /// <c>src/System.Windows.Forms/System/Windows/Forms/Controls/ToolStrips/ProfessionalColorTable.KnownColors.cs</c><br/>
     /// <c>src/System.Windows.Forms/System/Windows/Forms/Controls/ToolStrips/ProfessionalColorTable.cs</c><br/>
     /// </summary>
+    /// <remarks>
+    /// <para>Uses <see cref="SystemColorsEx"/> as a base so that derived colors respect <see cref="ThemeExtensions.IsDarkModeEnabled"/>.</para>
+    /// <para>Heavily trimmed./</para>
+    /// </remarks>
     internal class ProfessionalColorTableEx : ProfessionalColorTable
     {
         #region KnownColors
@@ -411,7 +415,7 @@ namespace cYo.Common.Windows.Forms
         public override Color SeparatorLight => FromKnownColor(KnownColors.msocbvcrCBSplitterLineLight);
 
         // Note: the color is retained for backwards compatibility
-        //public override Color StatusStripBorder => SystemColorsEx.ButtonHighlight;
+        public virtual Color StatusStripBorder => SystemColorsEx.ButtonHighlight;
 
         public override Color StatusStripGradientBegin => FromKnownColor(KnownColors.msocbvcrCBGradMainMenuHorzBegin);
 

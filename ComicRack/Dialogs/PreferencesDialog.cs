@@ -76,13 +76,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         {
             LocalizeUtility.UpdateRightToLeft(this);
             InitializeComponent();
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                labelVisiblePartOverlay.BackColor = SystemColors.ControlDarkDark;
-                labelNavigationOverlay.BackColor = SystemColors.ControlDarkDark;
-                labelStatusOverlay.BackColor = SystemColors.ControlDarkDark;
-                labelPageOverlay.BackColor = SystemColors.ControlDarkDark;
-            }
             lvPackages.Columns.ScaleDpi();
             lvScripts.Columns.ScaleDpi();
             this.RestorePosition();
