@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-using static cYo.Common.Windows.Forms.ComboBoxSkinner;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -91,6 +90,7 @@ namespace cYo.Common.Windows.Forms
             public static class List
             {
                 public static readonly Color Back = Color.FromArgb(56, 56, 56); // to match ComboBox button
+                public static readonly Color Disabled = Color.FromArgb(64, 64, 64); // from .net combobox source
             }
 
             public static class Header
@@ -150,10 +150,15 @@ namespace cYo.Common.Windows.Forms
 
             public static class ToolTip
             {
-                public static readonly Color InfoText = SystemColors.ControlText;
-                public static readonly Color Back = SystemColors.Window;  //BlackSmoke;
+                public static readonly Color InfoText = SystemColors.Info;
+                public static readonly Color Back = SystemColors.InfoText;  //BlackSmoke;
             }
         }
+
+        /* ComboBox SystemColors.ControlDarkDark https://github.com/dotnet/winforms/blob/652464e290a4f2849a9045f7232057f3d6d5b89b/src/System.Windows.Forms/System/Windows/Forms/Controls/ComboBox/ComboBox.cs#L268
+         * 
+         * 
+         */
 
         /// <summary>
 		/// Sets <see cref="IsDarkModeEnabled"/>. If <paramref name="useDarkMode"/> is <c>true</c>, initializes <see cref="KnownColorTableEx"/> which replaces built-in <see cref="SystemColors"/> with Dark Mode colors.
@@ -171,7 +176,8 @@ namespace cYo.Common.Windows.Forms
             KnownColorTableEx darkColorTable = new KnownColorTableEx();
             darkColorTable.Initialize(useDarkMode);
 
-            darkColorTable.SetColor(KnownColor.WhiteSmoke, Colors.BlackSmoke.ToArgb());
+            darkColorTable.SetColor(KnownColor.WhiteSmoke, Colors.BlackSmoke.ToArgb()); // make default background darker
+            darkColorTable.SetColor(KnownColor.HighlightText, Color.White.ToArgb());    // HighlightText should be white
 
             UXTheme.Initialize();
         }
@@ -315,13 +321,13 @@ namespace cYo.Common.Windows.Forms
             // we can get (mostly) work around it by not drawing the background in ComboBox_DrawItem but 2 issues:
             // - we lose visual feedback that this is the the selected box (could draw out focus rectangle)
             // - dropdown button still has editable theming (separator line)
-            if (comboBox.DrawMode == DrawMode.Normal)
-            {
-                // OwnerDrawFixed is an unverified assumption (OwnerDrawVariable might be required in some cases)
-                comboBox.DrawMode = DrawMode.OwnerDrawFixed;
-                comboBox.DrawItem -= ComboBox_DrawItemHighlight;
-                comboBox.DrawItem += ComboBox_DrawItemHighlight;
-            }
+            //if (comboBox.DrawMode == DrawMode.Normal)
+            //{
+            //    // OwnerDrawFixed is an unverified assumption (OwnerDrawVariable might be required in some cases)
+            //    comboBox.DrawMode = DrawMode.OwnerDrawFixed;
+            //    comboBox.DrawItem -= ComboBox_DrawItemHighlight;
+            //    comboBox.DrawItem += ComboBox_DrawItemHighlight;
+            //}
         }
 
         private static void ThemeDataGridView(DataGridView gridView)
@@ -483,11 +489,11 @@ namespace cYo.Common.Windows.Forms
             {
                 e.DrawBackground();
                 if (e.State.HasFlag(DrawItemState.Selected))
-                {
+            {
                     using (Brush highlightBrush = new SolidBrush(Colors.SelectedText.HighLight))
                     {
                         e.Graphics.FillRectangle(highlightBrush, e.Bounds);
-                    }
+            }
                     ControlPaint.DrawBorder(e.Graphics, e.Bounds, Colors.SelectedText.Focus, ButtonBorderStyle.Solid);
                 }
             }
@@ -584,8 +590,9 @@ namespace cYo.Common.Windows.Forms
         }
         private static void TextBox_MouseHover(object sender, EventArgs e)
         {
-            if ((sender as TextBox).Enabled)
-                (sender as TextBox).BackColor = Colors.TextBox.MouseOverBack;
+            TextBox textBox = sender as TextBox;
+            if (textBox.Enabled && !textBox.Focused)
+                textBox.BackColor = Colors.TextBox.MouseOverBack;
         }
         private static void TextBox_Enter(object sender, EventArgs e)
         {

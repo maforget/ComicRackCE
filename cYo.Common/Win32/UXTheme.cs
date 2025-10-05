@@ -97,6 +97,9 @@ namespace cYo.Common.Win32
             [DllImport("uxtheme.dll", EntryPoint = "#135", SetLastError = true)]
             internal static extern PreferredAppMode SetPreferredAppMode(PreferredAppMode mode);
 
+            [DllImport("uxtheme.dll", EntryPoint = "#136", ExactSpelling = true)]
+            internal static extern void FlushMenuThemes();
+
             /// <summary>Causes a window to use a different set of visual style information than its class normally uses. (<a href="https://source.dot.net/#System.Windows.Forms.Primitives/Windows.Win32.PInvoke.UXTHEME.dll.g.cs,1258">documentation source</a>)</summary>
             /// <param name="hwnd">
             /// <para>Type: <b><a href="https://docs.microsoft.com/windows/desktop/WinProg/windows-data-types">HWND</a></b> Handle to the window whose visual style information is to be changed.</para>
@@ -156,6 +159,8 @@ namespace cYo.Common.Win32
             Native.AllowDarkModeForApp(true);
             //Native.AllowDarkModeForWindow(hUxTheme, true); // we don't have a window handle yet
             Native.SetPreferredAppMode(Native.PreferredAppMode.ForceDark);
+
+            Native.FlushMenuThemes();
         }
 
         /// <summary>Sets Dark Mode for App Window. (Effectively <c><see cref="System.Windows.Forms.Form"/></c>)</summary>
@@ -169,6 +174,8 @@ namespace cYo.Common.Win32
             Native.SetWindowTheme(hwnd, "DarkMode_Explorer", null);
 
             Native.DwmSetWindowAttribute(hwnd, Native.DWMWA_USE_IMMERSIVE_DARK_MODE, ref Native.YES, sizeof(int));
+
+            Native.FlushMenuThemes();
         }
 
         /// <summary>
@@ -203,17 +210,33 @@ namespace cYo.Common.Win32
         {
             if (!IsDarkModeSupported || hwnd == null || hwnd == IntPtr.Zero) return;
 
-            Native.SetWindowTheme(hwnd, "DarkMode_CFD", null);
+            Native.SetWindowTheme(hwnd, null, "DarkMode_CFD::Combobox");
             Native.COMBOBOXINFO pcbi = default(Native.COMBOBOXINFO);
             pcbi.cbSize = Marshal.SizeOf((object)pcbi);
             Native.GetComboBoxInfo(hwnd, ref pcbi);
+
+            //IntPtr comboHandle = pcbi.hwndCombo;
+            //if (comboHandle != IntPtr.Zero)
+            //{
+                //Native.SetWindowTheme(comboHandle, "DarkMode_CFD", null);
+                //Native.SetWindowTheme(comboHandle, null, "DarkMode_CFD::Combobox");
+                //Native.DwmSetWindowAttribute(comboHandle, Native.DWMWA_USE_IMMERSIVE_DARK_MODE, ref Native.YES, sizeof(int));
+            //}
 
             IntPtr listHandle = pcbi.hwndList;
             if (listHandle != IntPtr.Zero)
             {
                 Native.SetWindowTheme(listHandle, "DarkMode_Explorer", null);
-                Native.DwmSetWindowAttribute(listHandle, Native.DWMWA_USE_IMMERSIVE_DARK_MODE, ref Native.YES, sizeof(int));
+                //Native.DwmSetWindowAttribute(listHandle, Native.DWMWA_USE_IMMERSIVE_DARK_MODE, ref Native.YES, sizeof(int));
             }
+
+            //IntPtr textHandle = pcbi.hwndEdit;
+            //if (textHandle != IntPtr.Zero)
+            //{
+                //Native.SetWindowTheme(textHandle, "DarkMode_CEdit", null);
+                //Native.SetWindowTheme(textHandle, null, "DarkMode_CFD::Edit");
+                //Native.DwmSetWindowAttribute(textHandle, Native.DWMWA_USE_IMMERSIVE_DARK_MODE, ref Native.YES, sizeof(int));
+            //}
         }
 
         /// <summary>
