@@ -99,10 +99,20 @@ namespace cYo.Common.Windows.Forms
 
             }
 
+            public static class TabBar
+            {
+                public static readonly Color SelectedBack = SystemColors.Window; // RGB 50 HEX 32
+                public static readonly Color SelectedBorder = Color.Black;
+                //public static readonly Color SelectedFore = SystemColors.InfoText; // currently using ForeColor
+                public static readonly Color Back = SystemColors.Window; // RGB 50 HEX 32
+                public static readonly Color Border = Color.Black;
+                //public static readonly Color Fore = SystemColors.InfoText;  // currently using ForeColor
+            }
+
             public static class ToolTip
             {
-                public static readonly Color InfoText = SystemColors.Info;
-                public static readonly Color Back = SystemColors.InfoText;  //BlackSmoke;
+                public static readonly Color InfoText = SystemColors.ControlText; // should be SystemColors.InfoText; needs alpha-aware tweaks
+                public static readonly Color Back = SystemColors.Window; // should be SystemColors.Info; needs alpha-aware tweaks
             }
             #endregion
 
@@ -141,7 +151,7 @@ namespace cYo.Common.Windows.Forms
 
             public static class TreeView
             {
-                public static readonly Color Back = Material.SidePanel; //SystemColors.Window;
+                public static readonly Color Back = Material.SidePanel; // was SystemColors.Window;
                 public static readonly Color Fore = SystemColors.ControlText;
             }
             #endregion
@@ -161,7 +171,7 @@ namespace cYo.Common.Windows.Forms
 
             public static class Header
             {
-                public static readonly Color Back = Color.FromArgb(32, 32, 32);
+                public static readonly Color Back = SystemColors.Control; // RGB 32 HEX 20
                 public static readonly Color Separator = Color.FromArgb(99, 99, 99);
                 public static readonly Color Text = SystemColors.WindowText;
             }
@@ -175,9 +185,9 @@ namespace cYo.Common.Windows.Forms
 
             public static class Material
             {
-                public static readonly Color Window = SystemColors.ControlLightLight;
-                public static readonly Color SidePanel = SystemColors.ControlLightLight;
-                public static readonly Color Content = SystemColors.ControlLight;
+                public static readonly Color Window = SystemColors.Control; // RGB 32 HEX 20
+                public static readonly Color SidePanel = SystemColors.Control; // RGB 32 HEX 20
+                //public static readonly Color Content = SystemColors.ControlLight; // RGB 46 HEX 2E
                 //public static readonly Color Dark = Color.FromArgb(155, 155, 155);
             }
         }
@@ -377,7 +387,7 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemeListBox(ListBox listBox)
         {
-            listBox.BackColor = Colors.TextBox.Back;
+            listBox.BackColor = Colors.List.Back;
             listBox.ForeColor = SystemColors.WindowText;
             listBox.BorderStyle = BorderStyle.FixedSingle;
         }

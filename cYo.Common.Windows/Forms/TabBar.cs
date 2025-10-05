@@ -1272,19 +1272,19 @@ namespace cYo.Common.Windows.Forms
         {
             if (tabItemState == TabItemState.Selected)
             {
-                using (Pen activePen = new Pen(ThemeExtensions.Colors.Border.Dark))
+                using (Pen activePen = new Pen(ThemeExtensions.Colors.TabBar.SelectedBack))
                 {
                     gr.DrawLine(activePen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
                     gr.DrawLine(activePen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top
                     gr.DrawLine(activePen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1); // Right
                 }
-                using (Pen disabledPen = new Pen(ThemeExtensions.Colors.ToolStrip.BorderColor))
+                using (Pen disabledPen = new Pen(ThemeExtensions.Colors.TabBar.Back))
                 {
                     gr.DrawLine(disabledPen, rect.Right - 1, rect.Top - 1, rect.Right - 1, rect.Bottom - 1);
                 }
 				return;
             }
-            using (Pen disabledPen = new Pen(ThemeExtensions.Colors.ToolStrip.BorderColor))
+            using (Pen disabledPen = new Pen(ThemeExtensions.Colors.TabBar.Back))
             {
                 gr.DrawLine(disabledPen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
                 gr.DrawLine(disabledPen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top
@@ -1296,8 +1296,11 @@ namespace cYo.Common.Windows.Forms
 		{
             if (ThemeExtensions.IsDarkModeEnabled)
             {
-                // tab label background
-                gr.FillRectangle((tabItemState == TabItemState.Selected) ? SystemBrushes.ControlLightLight : SystemBrushes.ControlDark, rc);
+				// tab label background
+				using (Brush backgroundBrush = new SolidBrush((tabItemState == TabItemState.Selected) ? ThemeExtensions.Colors.TabBar.SelectedBack : ThemeExtensions.Colors.TabBar.Back))
+				{
+					gr.FillRectangle(backgroundBrush, rc);
+				}
                 DrawDarkBorder(gr, rc, tabItemState);
                 return;
             }

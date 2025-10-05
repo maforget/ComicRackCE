@@ -49,7 +49,6 @@ namespace cYo.Common.Drawing
             0xFFBEBEBE, // FF000000 - FFBEBEBE: InactiveCaptionText - Middle Dark Panel
             0xFF50503C, // FFFFFFE1 - FF50503C: Info - Link Label
             0xFFBEBEBE, // FF000000 - FFBEBEBE: InfoText - Prompt Text Color
-            //0xFF2E2E2E,
             0xFF373737, // FFF0F0F0 - FF373737: Menu - Normal Menu Background
             0xFFF0F0F0, // FF000000 - FFF0F0F0: MenuText - White
             0xFF505050, // FFC8C8C8 - FF505050: ScrollBar - Scrollbars and Scrollbar Arrows
