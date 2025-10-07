@@ -393,6 +393,16 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DarkEditDelete {
+            get {
+                object obj = ResourceManager.GetObject("DarkEditDelete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DarkGapDown {
             get {
                 object obj = ResourceManager.GetObject("DarkGapDown", resourceCulture);
@@ -496,6 +506,16 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         internal static System.Drawing.Bitmap DarkLocked {
             get {
                 object obj = ResourceManager.GetObject("DarkLocked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DarkRename {
+            get {
+                object obj = ResourceManager.GetObject("DarkRename", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
