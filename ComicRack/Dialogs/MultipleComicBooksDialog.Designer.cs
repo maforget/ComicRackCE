@@ -57,8 +57,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.labelEditor = new System.Windows.Forms.Label();
 			this.labelCoverArtist = new System.Windows.Forms.Label();
 			this.labelLetterer = new System.Windows.Forms.Label();
-			this.cbPublisher = new System.Windows.Forms.ComboBox();
-			this.labelAlternateSeries = new System.Windows.Forms.Label();
+			this.cbPublisher = new cYo.Common.Windows.Forms.ComboBoxEx();
+            this.labelAlternateSeries = new System.Windows.Forms.Label();
 			this.labelAlternateNumber = new System.Windows.Forms.Label();
 			this.labelAlternateCount = new System.Windows.Forms.Label();
 			this.txAlternateSeries = new cYo.Common.Windows.Forms.TextBoxEx();
@@ -68,8 +68,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.txMonth = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.labelTags = new System.Windows.Forms.Label();
 			this.txTags = new cYo.Common.Windows.Forms.TextBoxEx();
-			this.cbImprint = new System.Windows.Forms.ComboBox();
-			this.labelImprint = new System.Windows.Forms.Label();
+			this.cbImprint = new cYo.Common.Windows.Forms.ComboBoxEx();
+            this.labelImprint = new System.Windows.Forms.Label();
 			this.cbLanguage = new cYo.Common.Windows.Forms.LanguageComboBox();
 			this.labelLanguage = new System.Windows.Forms.Label();
 			this.cbManga = new System.Windows.Forms.ComboBox();
@@ -1514,7 +1514,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private Label labelEditor;
 		private Label labelCoverArtist;
 		private Label labelLetterer;
-		private ComboBox cbPublisher;
+		private ComboBoxEx cbPublisher;
 		private Label labelAlternateSeries;
 		private Label labelAlternateNumber;
 		private Label labelAlternateCount;
@@ -1525,7 +1525,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private TextBoxEx txMonth;
 		private Label labelTags;
 		private TextBoxEx txTags;
-		private ComboBox cbImprint;
+		private ComboBoxEx cbImprint;
 		private Label labelImprint;
 		private LanguageComboBox cbLanguage;
 		private Label labelLanguage;

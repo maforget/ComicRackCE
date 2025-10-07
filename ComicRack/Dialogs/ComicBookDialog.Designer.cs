@@ -78,7 +78,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.txSeriesGroup = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.txStoryArc = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.txTranslator = new cYo.Common.Windows.Forms.TextBoxEx();
-			this.cbAgeRating = new System.Windows.Forms.ComboBox();
+			this.cbAgeRating = new cYo.Common.Windows.Forms.ComboBoxEx();
 			this.txInker = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.txLetterer = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.txEditor = new cYo.Common.Windows.Forms.TextBoxEx();
@@ -114,8 +114,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.labelFormat = new System.Windows.Forms.Label();
 			this.labelAlternateSeries = new System.Windows.Forms.Label();
 			this.txAlternateSeries = new cYo.Common.Windows.Forms.TextBoxEx();
-			this.cbImprint = new System.Windows.Forms.ComboBox();
-			this.labelVolume = new System.Windows.Forms.Label();
+			this.cbImprint = new cYo.Common.Windows.Forms.ComboBoxEx();
+            this.labelVolume = new System.Windows.Forms.Label();
 			this.labelYear = new System.Windows.Forms.Label();
 			this.labelMonth = new System.Windows.Forms.Label();
 			this.txAlternateCount = new cYo.Common.Windows.Forms.TextBoxEx();
@@ -123,8 +123,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.labelImprint = new System.Windows.Forms.Label();
 			this.labelGenre = new System.Windows.Forms.Label();
 			this.txCount = new cYo.Common.Windows.Forms.TextBoxEx();
-			this.cbPublisher = new System.Windows.Forms.ComboBox();
-			this.txAlternateNumber = new cYo.Common.Windows.Forms.TextBoxEx();
+			this.cbPublisher = new cYo.Common.Windows.Forms.ComboBoxEx();
+            this.txAlternateNumber = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.txNumber = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.labelPublisher = new System.Windows.Forms.Label();
 			this.labelAlternateCount = new System.Windows.Forms.Label();
@@ -2491,7 +2491,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private TextBoxEx txCoverArtist;
 		private Label labelEditor;
 		private Label labelCoverArtist;
-		private ComboBox cbPublisher;
+		private ComboBoxEx cbPublisher;
 		private TrackBarLite tbBrightness;
 		private TrackBarLite tbSaturation;
 		private TrackBarLite tbContrast;
@@ -2510,7 +2510,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private Label labelMonth;
 		private TextBoxEx txTags;
 		private Label labelImprint;
-		private ComboBox cbImprint;
+		private ComboBoxEx cbImprint;
 		private TabPage tabPages;
 		private LanguageComboBox cbLanguage;
 		private Label labelLanguage;
@@ -2527,7 +2527,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private ComboBox cbEnableProposed;
 		private Label labelEnableProposed;
 		private Button btPageView;
-		private ComboBox cbAgeRating;
+		private ComboBoxEx cbAgeRating;
 		private Label labelAgeRating;
 		private Label labelTags;
 		private TabPage tabPlot;
