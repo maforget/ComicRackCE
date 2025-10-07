@@ -18,7 +18,7 @@ namespace cYo.Common.Win32
         /// <summary>
 		/// Win32 API native things
 		/// </summary>
-        internal static class Native
+        private static class Native
         {
 
             public static readonly int DWMWA_USE_IMMERSIVE_DARK_MODE = GetDwmDarkModeAttribute();
@@ -54,6 +54,17 @@ namespace cYo.Common.Win32
                 public int right;
 
                 public int bottom;
+
+                // Add if required. Disabled due to not currently used + System.Drawing dependency.
+                //public RECT(Rectangle r)
+                //{
+                //    left = r.Left; top = r.Top; right = r.Right; bottom = r.Bottom;
+                //}
+
+                public RECT(int l, int t, int r_, int b)
+                {
+                    left = l; top = t; right = r_; bottom = b;
+                }
             }
 
             public enum ComboBoxButtonState

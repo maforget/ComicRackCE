@@ -116,11 +116,11 @@ namespace cYo.Common.Windows.Forms
         // ComicBrowser/Pages Views > Details 
         public static void Draw(Graphics graphics, Rectangle bounds, Font font, string text, Color textColor, StringFormat format, HeaderState state, HeaderAdornments adornments)
         {
-            Color controlDark = ThemeExtensions.IsDarkModeEnabled ? ThemeExtensions.Colors.Header.Separator : SystemColors.ControlDark;
+            Color controlDark = ThemeExtensions.IsDarkModeEnabled ? ThemeColors.Header.Separator : SystemColors.ControlDark;
 
             if (ThemeExtensions.IsDarkModeEnabled)
             {
-                using (Brush brush = new SolidBrush(ThemeExtensions.Colors.Header.Back))
+                using (Brush brush = new SolidBrush(ThemeColors.Header.Back))
                 {
                     graphics.FillRectangle(brush, bounds);
                 }

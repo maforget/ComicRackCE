@@ -167,7 +167,7 @@ namespace cYo.Common.Windows.Forms
                 NativeMethods.COMBOBOXINFO pcbi = GetChildHandle();
                 if (pcbi.hwndEdit != IntPtr.Zero && hwndChild == pcbi.hwndEdit )
                 {
-                    NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeExtensions.Colors.List.Disabled));
+                    NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeColors.ComboBox.Disabled));
                     NativeMethods.SetTextColor(hdc, ColorTranslator.ToWin32(SystemColors.GrayText));
 
                     m.Result = NativeMethods.darkEditBrush;

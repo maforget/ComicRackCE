@@ -33,7 +33,7 @@ namespace cYo.Common.Windows.Forms
         public static void DrawDarkBorder(Graphics g, Rectangle bounds, Color? color = null)
         {
             if (color == null)
-                color = ThemeExtensions.Colors.Border.Default;
+                color = ThemeColors.Border.Default;
             ControlPaint.DrawBorder(g, bounds, (Color)color, ButtonBorderStyle.Solid);
         }
 

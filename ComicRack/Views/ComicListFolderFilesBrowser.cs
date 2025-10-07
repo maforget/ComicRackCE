@@ -104,7 +104,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			components.Add(commands);
 			LocalizeUtility.Localize(this, components);
             if (ThemeExtensions.IsDarkModeEnabled)
-                favView.BackColor = ThemeExtensions.Colors.Material.SidePanel;
+                favView.BackColor = ThemeColors.Material.SidePanel;
         }
 
 		public ComicListFolderFilesBrowser(SmartList<string> paths)

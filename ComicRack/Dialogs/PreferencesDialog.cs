@@ -1059,9 +1059,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             {
                 tab.Text = sc.ShareName;
             };
-            // don't think this is required
-            //if (ThemeExtensions.IsDarkModeEnabled)
-            //    ThemeExtensions.Theme(tab);
+            // this IS required
+            if (ThemeExtensions.IsDarkModeEnabled)
+                ThemeExtensions.Theme(tab);
             tab.Controls.Add(sc);
             tabShares.TabPages.Add(tab);
         }

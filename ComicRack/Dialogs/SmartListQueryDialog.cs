@@ -151,45 +151,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             public static readonly Font Exception = new("Courier New", 10.25F, FontStyle.Underline, GraphicsUnit.Point, ((byte)(0)));
         }
 
-        public static class tokenColors
-        {
-            public static Color Back { get; private set; }
-            public static Color Fore { get; private set; }
-            public static Color Exception { get; private set; }
-            public static Color Keyword { get; private set; }
-            public static Color Qualifier { get; private set; }
-            public static Color Negation { get; private set; }
-            public static Color String { get; private set; }
-
-            public static void UseDefault()
-            {
-                Back = SystemColors.Window;
-                Exception = Color.LightGray;
-                Fore = SystemColors.WindowText;
-                Keyword = Color.Green;
-                Qualifier = Color.Blue;
-                Negation = Color.DarkRed;
-                String = Color.Red;
-            }
-
-            public static void UseTheme()
-            {
-                Back = ThemeExtensions.Colors.SmartQuery.Back;
-                Exception = ThemeExtensions.Colors.SmartQuery.Exception;
-                Fore = ThemeExtensions.Colors.SmartQuery.Fore;
-                Keyword = ThemeExtensions.Colors.SmartQuery.Keyword;
-                Qualifier = ThemeExtensions.Colors.SmartQuery.Qualifier;
-                Negation = ThemeExtensions.Colors.SmartQuery.Negation;
-                String = ThemeExtensions.Colors.SmartQuery.String;
-            }
-        }
-
         public SmartListQueryDialog()
 		{
 			InitializeComponent();
-			tokenColors.UseDefault();
-            if (ThemeExtensions.IsDarkModeEnabled)
-				tokenColors.UseTheme();
             LocalizeUtility.UpdateRightToLeft(this);
 			this.RestorePosition();
 			LocalizeUtility.Localize(this, typeof(SmartListDialog).Name, components);
@@ -576,22 +540,22 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				if (all)
 				{
 					rtfQuery.SelectAll();
-					rtfQuery.SelectionBackColor = tokenColors.Back;
-					rtfQuery.SelectionColor = tokenColors.Fore;
+					rtfQuery.SelectionBackColor = ThemeColors.SmartQuery.Back;
+					rtfQuery.SelectionColor = ThemeColors.SmartQuery.Fore;
 				}
 				Tokenizer tokenizer = ComicSmartListItem.TokenizeQuery(rtfQuery.Text);
 				int selectionStart = rtfQuery.SelectionStart;
 				foreach (Tokenizer.Token item in tokenizer.GetAll())
 				{
-					Color selectionColor = tokenColors.Fore;
+					Color selectionColor = ThemeColors.SmartQuery.Fore;
                     string text = item.Text.ToLower();
 					if (text.StartsWith("\""))
 					{
-						selectionColor = tokenColors.String;
+						selectionColor = ThemeColors.SmartQuery.String;
                     }
 					else if (text.StartsWith("["))
 					{
-						selectionColor = tokenColors.Keyword;
+						selectionColor = ThemeColors.SmartQuery.Keyword;
                     }
 					else
 					{
@@ -602,10 +566,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                             case "all":
                             case "any":
                             case "name":
-                                selectionColor = tokenColors.Qualifier;
+                                selectionColor = ThemeColors.SmartQuery.Qualifier;
                                 break;
                             case "not":
-                                selectionColor = tokenColors.Negation;
+                                selectionColor = ThemeColors.SmartQuery.Negation;
                                 break;
                         }
 					}
@@ -620,7 +584,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				if (ex != null && ex.Token != null)
 				{
 					rtfQuery.Select(ex.Token.Index, ex.Token.Length);
-					rtfQuery.SelectionBackColor = tokenColors.Exception;
+					rtfQuery.SelectionBackColor = ThemeColors.SmartQuery.Exception;
 					rtfQuery.SelectionFont = queryFont.Exception;
                 }
 			}

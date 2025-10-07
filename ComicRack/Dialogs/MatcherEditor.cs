@@ -71,8 +71,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                 // we also have to make it a bit smaller as otherwise borders are out of bounds
                 this.btMatcher.Location = new Point(27, 0);
                 this.btMatcher.Size = new Size(136, 21);
-                this.btMatcher.BackColor = ThemeExtensions.Colors.Button.Back;
-                this.btMatcher.ForeColor = ThemeExtensions.Colors.Button.Fore;
+                this.btMatcher.BackColor = ThemeColors.Button.Back;
+                this.btMatcher.ForeColor = ThemeColors.Button.Fore;
             }
         }
 

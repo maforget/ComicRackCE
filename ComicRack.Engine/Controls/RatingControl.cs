@@ -183,7 +183,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             SetStyle(ControlStyles.Selectable, value: true);
             SetStyle(ControlStyles.SupportsTransparentBackColor, value: true);
             if (ThemeExtensions.IsDarkModeEnabled)
-                BackColor = ThemeExtensions.Colors.List.Back;
+                BackColor = ThemeColors.List.Back;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -210,7 +210,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             {
                 if (ThemeExtensions.IsDarkModeEnabled)
                 {
-                    ControlPaint.DrawBorder(graphics, base.ClientRectangle, ThemeExtensions.Colors.Border.Light, ButtonBorderStyle.Inset);
+                    ControlPaint.DrawBorder(graphics, base.ClientRectangle, ThemeColors.Border.Light, ButtonBorderStyle.Inset);
                 }
                 else
                 {

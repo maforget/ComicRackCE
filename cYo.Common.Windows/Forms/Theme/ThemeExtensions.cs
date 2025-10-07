@@ -60,153 +60,6 @@ namespace cYo.Common.Windows.Forms
         };
 
         /// <summary>
-        /// Theme <see cref="Color"/> definitions. For when <see cref="SystemColors"/>, <see cref="KnownColor"/> and <see cref="ProfessionalColors"/> simply isn't enough (or <b>consistent</b> enough)
-        /// </summary>
-        public static class Colors
-        {
-
-            /// <summary>
-            /// Colors used for specific components with the app. i.e. hardcoded.
-            /// </summary>
-            /// <remarks>
-            /// KnownColor replacement is temporary. We should replace them where they are used in code, ideally by defining a Default color scheme.</remarks>
-            #region App Colors
-
-            // WhiteSmoke is RGB 245 but RGB 10 would be too dark
-            // WhiteSmoke - RGB 245 - DisplayWorkspace Background and PreferencesDialog 
-            public static readonly Color BlackSmoke = Color.FromArgb(48, 48, 48);
-
-            // Gainsboro  - RGB 220 - PreferencesDialog label(Navigation|Status|Page|VisiblePart)Overlay
-            public static readonly Color Lossboro = SystemColors.ControlDarkDark;
-
-            // specific parts
-
-            public static class ItemView
-            {
-                public static readonly Color GroupText = Color.LightSkyBlue;
-                public static readonly Color GroupSeparator = Color.FromArgb(190, 190, 190);
-            }
-
-            public static class SmartQuery
-            {
-                public static readonly Color Back = TextBox.Back;
-                public static readonly Color Exception = Color.FromArgb(125, 31, 31);
-                public static readonly Color Fore = SystemColors.ControlText;
-                public static readonly Color Keyword = Color.FromArgb(250, 198, 0);
-                public static readonly Color Qualifier = Color.FromArgb(76, 163, 255);
-                public static readonly Color Negation = Color.Red;
-                public static readonly Color String = Color.FromArgb(255, 125, 125);
-
-            }
-
-            public static class TabBar
-            {
-                public static readonly Color SelectedBack = SystemColors.Window; // RGB 50 HEX 32
-                public static readonly Color SelectedBorder = Color.Black;
-                //public static readonly Color SelectedFore = SystemColors.InfoText; // currently using ForeColor
-                public static readonly Color Back = SystemColors.Window; // RGB 50 HEX 32
-                public static readonly Color Border = Color.Black;
-                //public static readonly Color Fore = SystemColors.InfoText;  // currently using ForeColor
-            }
-
-            public static class ToolTip
-            {
-                public static readonly Color InfoText = SystemColors.ControlText; // should be SystemColors.InfoText; needs alpha-aware tweaks
-                public static readonly Color Back = SystemColors.Window; // should be SystemColors.Info; needs alpha-aware tweaks
-            }
-            #endregion
-
-            /// <summary>
-            /// Colors used for all Controls of a type.
-            /// </summary>
-            #region Control Type Colors
-            public static class Button
-            {
-                public static readonly Color Back = SystemColors.Window; // RGB 50 HEX 32
-                public static readonly Color CheckedBack = Color.FromArgb(102, 102, 102);
-                public static readonly Color Fore = Color.White;
-                public static readonly Color Border = Color.FromArgb(155, 155, 155);
-                public static readonly Color MouseOverBack = SystemColors.ButtonShadow; // RGB 70 HEX 46
-            }
-
-            public static class List
-            {
-                public static readonly Color Back = Color.FromArgb(56, 56, 56); // to match ComboBox button
-                public static readonly Color Disabled = Color.FromArgb(64, 64, 64); // from .net combobox source
-            }
-
-            public static class TextBox
-            {
-                public static readonly Color Back = Color.FromArgb(46, 46, 46); //Color.FromArgb(56, 56, 56);
-                public static readonly Color MouseOverBack = SystemColorsEx.ControlLight; //Color.FromArgb(86, 86, 86);
-                public static readonly Color EnterBack = SystemColorsEx.ControlLightLight; //Color.FromArgb(71, 71, 71);
-            }
-
-            public static class ToolStrip
-            {
-                // currently this is purely for statusstrip border.
-                // TODO: move to renderer (will need to account for which borders need to be drawn)
-                public static readonly Color BorderColor = Color.FromArgb(100, 100, 100);
-            }
-
-            public static class TreeView
-            {
-                public static readonly Color Back = Material.SidePanel; // was SystemColors.Window;
-                public static readonly Color Fore = SystemColors.ControlText;
-            }
-            #endregion
-
-            /// <summary>
-            /// Colors used in multiple control types for a specific part
-            /// </summary>
-            #region Part Colors
-            public static class Border
-            {
-                public static readonly Color Darkest = Color.FromArgb(16, 16, 16);
-                public static readonly Color Dark = Color.FromArgb(51, 51, 51);
-                public static readonly Color Default = Color.FromArgb(93, 93, 93);
-                public static readonly Color Light = Color.FromArgb(155, 155, 155);
-                //public static readonly Color Dark = Color.FromArgb(155, 155, 155);
-            }
-
-            public static class Header
-            {
-                public static readonly Color Back = SystemColors.Control; // RGB 32 HEX 20
-                public static readonly Color Separator = Color.FromArgb(99, 99, 99);
-                public static readonly Color Text = SystemColors.WindowText;
-            }
-
-            public static class SelectedText
-            {
-                public static readonly Color HighLight = Color.FromArgb(52, 67, 86);
-                public static readonly Color Focus = Color.FromArgb(40, 100, 180);
-            }
-            #endregion
-
-            public static class Material
-            {
-                public static readonly Color Window = SystemColors.Control; // RGB 32 HEX 20
-                public static readonly Color SidePanel = SystemColors.Control; // RGB 32 HEX 20
-                //public static readonly Color Content = SystemColors.ControlLight; // RGB 46 HEX 2E
-                //public static readonly Color Dark = Color.FromArgb(155, 155, 155);
-            }
-        }
-
-        /* ComboBox SystemColors.ControlDarkDark https://github.com/dotnet/winforms/blob/652464e290a4f2849a9045f7232057f3d6d5b89b/src/System.Windows.Forms/System/Windows/Forms/Controls/ComboBox/ComboBox.cs#L268
-         * TabPage base.backColor https://github.com/dotnet/winforms/blob/7be5881eb66abe9f65700ef241ba399df21c4d33/src/System.Windows.Forms/System/Windows/Forms/Controls/TabControl/TabPage.cs#L105
-         * TreeView ShouldSerializeBackColor() ? base.BackColor : SystemColors.Window https://github.com/dotnet/winforms/blob/7be5881eb66abe9f65700ef241ba399df21c4d33/src/System.Windows.Forms/System/Windows/Forms/Controls/TreeView/TreeView.cs#L195
-         * DateTimePicker base.ForeColor https://github.com/dotnet/winforms/blob/7be5881eb66abe9f65700ef241ba399df21c4d33/src/System.Windows.Forms/System/Windows/Forms/Controls/DateTimePicker/DateTimePicker.cs#L492
-         * 
-         * Foreground color for Highlighted (selected) text
-         * SelectedItemWithFocusForeColor
-         * Application.IsDarkModeEnabled ? SystemColors.ControlText : SystemColors.HighlightText;
-         * https://github.com/dotnet/winforms/blob/7be5881eb66abe9f65700ef241ba399df21c4d33/src/System.Windows.Forms/System/Windows/Forms/Controls/PropertyGrid/PropertyGrid.cs#L78
-         * 
-         * Draw UpDownButtons
-         * https://github.com/dotnet/winforms/blob/7be5881eb66abe9f65700ef241ba399df21c4d33/src/System.Windows.Forms/System/Windows/Forms/Controls/UpDown/UpDownBase.UpDownButtons.cs#L273
-         */
-
-        /// <summary>
 		/// Sets <see cref="IsDarkModeEnabled"/>. If <paramref name="useDarkMode"/> is <c>true</c>, initializes <see cref="KnownColorTableEx"/> which replaces built-in <see cref="SystemColors"/> with Dark Mode colors.
         /// </summary>
         /// <param name="useDarkMode">Determines if the Dark Mode theme should be used (and <see cref="SystemColors"/> replaced).</param>
@@ -218,12 +71,14 @@ namespace cYo.Common.Windows.Forms
             IsDarkModeEnabled = useDarkMode;
 
             if (!useDarkMode) return;
+            
+            ThemeColors.Dark(); // Initialize Dark color palette.
 
             KnownColorTableEx darkColorTable = new KnownColorTableEx();
             darkColorTable.Initialize(useDarkMode);
 
-            darkColorTable.SetColor(KnownColor.WhiteSmoke, Colors.BlackSmoke.ToArgb()); // make default background darker
-            darkColorTable.SetColor(KnownColor.Gainsboro, Colors.Lossboro.ToArgb());    // PreferencesDialog overlays
+            darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb()); // make default background darker
+            darkColorTable.SetColor(KnownColor.Gainsboro, ThemeColors.Lossboro.ToArgb());    // PreferencesDialog overlays
             darkColorTable.SetColor(KnownColor.HighlightText, Color.White.ToArgb());    // HighlightText should be white
 
             UXTheme.Initialize();
@@ -247,10 +102,10 @@ namespace cYo.Common.Windows.Forms
 
             if (control is Form form)
             {
-                form.BackColor = Colors.Material.Window;
+                form.BackColor = ThemeColors.Material.Window;
                 SetWindowUXTheme(form);
             }
-                
+
 
             if (themeHandlers.TryGetValue(control.GetType(), out var theme))
             {
@@ -330,7 +185,7 @@ namespace cYo.Common.Windows.Forms
                 if (button.FlatAppearance.BorderSize != 0)
                 {
                     button.FlatAppearance.BorderSize = 1;
-                    button.FlatAppearance.BorderColor = Colors.Button.Border;
+                    button.FlatAppearance.BorderColor = ThemeColors.Button.Border;
                 }
             }
         }
@@ -342,12 +197,12 @@ namespace cYo.Common.Windows.Forms
                 // although it has the appearance of a button, the theme engine doesn't style it as such, so we have to do it manually
                 // this might be handled correctly in Win11 builds
                 checkBox.FlatStyle = FlatStyle.Flat;
-                checkBox.BackColor = Colors.Button.Back;
-                checkBox.ForeColor = Colors.Button.Fore;
+                checkBox.BackColor = ThemeColors.Button.Back;
+                checkBox.ForeColor = ThemeColors.Button.Fore;
                 checkBox.FlatAppearance.BorderSize = 1;
-                checkBox.FlatAppearance.BorderColor = Colors.Button.Border;
-                checkBox.FlatAppearance.CheckedBackColor = Colors.Button.CheckedBack;
-                checkBox.FlatAppearance.MouseOverBackColor = Colors.Button.MouseOverBack;
+                checkBox.FlatAppearance.BorderColor = ThemeColors.Button.Border;
+                checkBox.FlatAppearance.CheckedBackColor = ThemeColors.Button.CheckedBack;
+                checkBox.FlatAppearance.MouseOverBackColor = ThemeColors.Button.MouseOverBack;
             }
             else if (OsVersionEx.IsWindows11_OrGreater() && checkBox.FlatStyle == FlatStyle.System)
             {
@@ -360,7 +215,7 @@ namespace cYo.Common.Windows.Forms
         }
         private static void ThemeComboBox(ComboBox comboBox)
         {
-            comboBox.BackColor = Colors.List.Back;
+            comboBox.BackColor = ThemeColors.List.Back;
             comboBox.ForeColor = SystemColors.WindowText;
 
             // Blue -> Gray highlight
@@ -380,14 +235,14 @@ namespace cYo.Common.Windows.Forms
         private static void ThemeDataGridView(DataGridView gridView)
         {
             gridView.EnableHeadersVisualStyles = false;
-            gridView.DefaultCellStyle.SelectionBackColor = Colors.SelectedText.HighLight;
+            gridView.DefaultCellStyle.SelectionBackColor = ThemeColors.SelectedText.HighLight;
             gridView.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
             gridView.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private static void ThemeListBox(ListBox listBox)
         {
-            listBox.BackColor = Colors.List.Back;
+            listBox.BackColor = ThemeColors.List.Back;
             listBox.ForeColor = SystemColors.WindowText;
             listBox.BorderStyle = BorderStyle.FixedSingle;
         }
@@ -404,18 +259,18 @@ namespace cYo.Common.Windows.Forms
         /// </remarks>
         private static void ThemeProgressBar(ProgressBar progressBar)
         {
-            progressBar.BackColor = Colors.TextBox.Back;
+            progressBar.BackColor = ThemeColors.TextBox.Back;
         }
 
         private static void ThemeRichTextBox(RichTextBox richTextBox)
         {
-            richTextBox.BackColor = Colors.TextBox.Back;
+            richTextBox.BackColor = ThemeColors.TextBox.Back;
             richTextBox.BorderStyle = BorderStyle.None;
         }
 
         private static void ThemeListView(ListView listView)
         {
-            listView.BackColor = Colors.TextBox.Back;
+            listView.BackColor = ThemeColors.TextBox.Back;
             listView.ForeColor = SystemColors.WindowText;
 
             //if (!(listView is ListViewEx) && listView.View == View.Details && listView.HeaderStyle != ColumnHeaderStyle.None)
@@ -452,7 +307,7 @@ namespace cYo.Common.Windows.Forms
             if (!(textBox is TextBoxEx))
                 textBox.BorderStyle = BorderStyle.FixedSingle;
 
-            textBox.BackColor = Colors.TextBox.Back;
+            textBox.BackColor = ThemeColors.TextBox.Back;
             textBox.ForeColor = SystemColors.ControlText;
             textBox.MouseLeave -= TextBox_MouseLeave;
             textBox.MouseLeave += TextBox_MouseLeave;
@@ -536,12 +391,12 @@ namespace cYo.Common.Windows.Forms
             {
                 e.DrawBackground();
                 if (e.State.HasFlag(DrawItemState.Selected))
-            {
-                    using (Brush highlightBrush = new SolidBrush(Colors.SelectedText.HighLight))
+                {
+                    using (Brush highlightBrush = new SolidBrush(ThemeColors.SelectedText.HighLight))
                     {
                         e.Graphics.FillRectangle(highlightBrush, e.Bounds);
-            }
-                    ControlPaint.DrawBorder(e.Graphics, e.Bounds, Colors.SelectedText.Focus, ButtonBorderStyle.Solid);
+                    }
+                    ControlPaint.DrawBorder(e.Graphics, e.Bounds, ThemeColors.SelectedText.Focus, ButtonBorderStyle.Solid);
                 }
             }
 
@@ -574,12 +429,12 @@ namespace cYo.Common.Windows.Forms
             }
 
             e.DrawDefault = false;
-            using (Brush bgBrush = new SolidBrush(Colors.Header.Back))
+            using (Brush bgBrush = new SolidBrush(ThemeColors.Header.Back))
             {
                 e.Graphics.FillRectangle(bgBrush, e.Bounds);
             }
 
-            using (Pen sepPen = new Pen(Colors.Header.Separator))
+            using (Pen sepPen = new Pen(ThemeColors.Header.Separator))
             {
                 int x = e.Bounds.Right - 2;
                 int y1 = e.Bounds.Top;
@@ -587,7 +442,7 @@ namespace cYo.Common.Windows.Forms
                 e.Graphics.DrawLine(sepPen, x, y1, x, y2);
             }
 
-            using (Brush textBrush = new SolidBrush(Colors.Header.Text))
+            using (Brush textBrush = new SolidBrush(ThemeColors.Header.Text))
             {
                 // Draw the header text with custom color and font
                 e.Graphics.DrawString(
@@ -620,7 +475,7 @@ namespace cYo.Common.Windows.Forms
         #region Custom Paint Event Handlers
         private static void ToolStripStatusLabel_Paint(object sender, PaintEventArgs e)
         {
-            using (var pen = new Pen(Colors.ToolStrip.BorderColor, 1))
+            using (var pen = new Pen(ThemeColors.ToolStrip.BorderColor, 1))
             {
                 e.Graphics.DrawRectangle(pen, 0, 0, e.ClipRectangle.Width - 1, e.ClipRectangle.Height - 1);
             }
@@ -633,18 +488,18 @@ namespace cYo.Common.Windows.Forms
         private static void TextBox_MouseLeave(object sender, EventArgs e)
         {
             if (!(sender as TextBox).Focused)
-                (sender as TextBox).BackColor = Colors.TextBox.Back;
+                (sender as TextBox).BackColor = ThemeColors.TextBox.Back;
         }
         private static void TextBox_MouseHover(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
             if (textBox.Enabled && !textBox.Focused)
-                textBox.BackColor = Colors.TextBox.MouseOverBack;
+                textBox.BackColor = ThemeColors.TextBox.MouseOverBack;
         }
         private static void TextBox_Enter(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            textBox.BackColor = Colors.TextBox.EnterBack;
+            textBox.BackColor = ThemeColors.TextBox.EnterBack;
             //if (!textBox.Multiline)
             //{
             //    textBox.BorderStyle = BorderStyle.Fixed3D;
@@ -653,7 +508,7 @@ namespace cYo.Common.Windows.Forms
         private static void TextBox_Leave(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            textBox.BackColor = Colors.TextBox.Back;
+            textBox.BackColor = ThemeColors.TextBox.Back;
             //if (!textBox.Multiline)
             //{
             //    textBox.BorderStyle = BorderStyle.FixedSingle;

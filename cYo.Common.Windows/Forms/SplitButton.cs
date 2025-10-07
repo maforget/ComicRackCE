@@ -60,12 +60,12 @@ namespace cYo.Common.Windows.Forms
             //if (ThemeExtensions.IsDarkModeEnabled)
             //{
             //	FlatStyle = FlatStyle.Flat;
-            //             BackColor = ThemeExtensions.Colors.Button.Back;
-            //             ForeColor = ThemeExtensions.Colors.Button.Fore;
-            //             FlatAppearance.CheckedBackColor = ThemeExtensions.Colors.Button.CheckedBack;
-            //             FlatAppearance.MouseOverBackColor = ThemeExtensions.Colors.Button.MouseOverBack;
+            //             BackColor = ThemeColors.Button.Back;
+            //             ForeColor = ThemeColors.Button.Fore;
+            //             FlatAppearance.CheckedBackColor = ThemeColors.Button.CheckedBack;
+            //             FlatAppearance.MouseOverBackColor = ThemeColors.Button.MouseOverBack;
             //	FlatAppearance.BorderSize = 1;
-            //             FlatAppearance.BorderColor = ThemeExtensions.Colors.Button.Border;
+            //             FlatAppearance.BorderColor = ThemeColors.Button.Border;
             //         }
         }
 
@@ -212,20 +212,20 @@ namespace cYo.Common.Windows.Forms
             {
                 if (State == PushButtonState.Hot)
                 {
-                    using (Brush b = new SolidBrush(ThemeExtensions.Colors.Button.MouseOverBack))
+                    using (Brush b = new SolidBrush(ThemeColors.Button.MouseOverBack))
                         graphics.FillRectangle(b, clientRectangle);
                 }
                 else if (State == PushButtonState.Pressed)
                 {
-                    using (Brush b = new SolidBrush(ThemeExtensions.Colors.Button.CheckedBack))
+                    using (Brush b = new SolidBrush(ThemeColors.Button.CheckedBack))
                         graphics.FillRectangle(b, clientRectangle);
                 }
                 else
                 {
-                    using (Brush b = new SolidBrush(ThemeExtensions.Colors.Button.Back))
+                    using (Brush b = new SolidBrush(ThemeColors.Button.Back))
                         graphics.FillRectangle(b, clientRectangle);
                 }
-                ControlPaint.DrawBorder(graphics, clientRectangle, ThemeExtensions.Colors.Button.Border, ButtonBorderStyle.Solid);
+                ControlPaint.DrawBorder(graphics, clientRectangle, ThemeColors.Button.Border, ButtonBorderStyle.Solid);
                 return;
             }
             if (State != PushButtonState.Pressed && base.IsDefault && !Application.RenderWithVisualStyles)

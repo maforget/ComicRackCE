@@ -274,7 +274,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			queryCacheTimer.Interval = (ComicLibrary.IsQueryCacheInstantUpdate ? 100 : 2500);
 			miPasteList.Click += new EventHandler((sender, e) => PasteList());
             if (ThemeExtensions.IsDarkModeEnabled)
-                favView.BackColor = ThemeExtensions.Colors.Material.SidePanel;
+                favView.BackColor = ThemeColors.Material.SidePanel;
         }
 
 		public ComicListLibraryBrowser(ComicLibrary library)

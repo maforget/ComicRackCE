@@ -132,20 +132,20 @@ namespace cYo.Common.Windows.Forms
         /// Sets <see cref="TreeView"/> <typeparamref name="ForeColor"/> and <typeparamref name="BackColor"/> using P/invoke.
         /// </summary>
 		/// <param name="treeView"><see cref="TreeView"/> control to set the colors of.</param>
-		/// <param name="backColor"><typeparamref name="BackColor"/>  to set. If none is provided and Dark Mode is enabled, defaults to <see cref="ThemeExtensions.Colors.TreeView.Back"/> </param>
-		/// <param name="foreColor"><typeparamref name="ForeColor"/> to set. If none is provided and Dark Mode is enabled, defaults to <see cref="ThemeExtensions.Colors.TreeView.Fore"/> </param>
+		/// <param name="backColor"><typeparamref name="BackColor"/>  to set. If none is provided and Dark Mode is enabled, defaults to <see cref="ThemeColors.TreeView.Back"/> </param>
+		/// <param name="foreColor"><typeparamref name="ForeColor"/> to set. If none is provided and Dark Mode is enabled, defaults to <see cref="ThemeColors.TreeView.Fore"/> </param>
         /// <remarks>
-        /// If <see cref="ThemeExtensions.IsDarkModeEnabled"/> is <paramref name="true"/> and no <see cref="Color"/> values are passed, will apply default <see cref="ThemeExtensions.Colors.TreeView"/> colors.
+        /// If <see cref="ThemeExtensions.IsDarkModeEnabled"/> is <paramref name="true"/> and no <see cref="Color"/> values are passed, will apply default <see cref="ThemeColors.TreeView"/> colors.
         /// </remarks>
         public static void SetColor(TreeView treeView, Color? backColor = null, Color? foreColor = null)
         {
 			if (backColor == null && ThemeExtensions.IsDarkModeEnabled)
-				backColor = ThemeExtensions.Colors.TreeView.Back;
+				backColor = ThemeColors.TreeView.Back;
             if (backColor != null)
                 Native.SetBackColor(treeView.Handle, (Color)backColor);
 
             if (foreColor == null && ThemeExtensions.IsDarkModeEnabled)
-                foreColor = ThemeExtensions.Colors.TreeView.Fore;
+                foreColor = ThemeColors.TreeView.Fore;
             if (backColor != null)
                 Native.SetForeColor(treeView.Handle, (Color)foreColor);
         }
@@ -157,8 +157,8 @@ namespace cYo.Common.Windows.Forms
             if (ThemeExtensions.IsDarkModeEnabled)
             {
                 BorderStyle = BorderStyle.None;
-                this.BackColor = ThemeExtensions.Colors.TreeView.Back;
-                this.ForeColor = ThemeExtensions.Colors.TreeView.Fore;
+                this.BackColor = ThemeColors.TreeView.Back;
+                this.ForeColor = ThemeColors.TreeView.Fore;
                 SetColor(this);
             }
         }

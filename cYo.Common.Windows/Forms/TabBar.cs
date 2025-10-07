@@ -1158,7 +1158,7 @@ namespace cYo.Common.Windows.Forms
 			VisualStyleElement normal = VisualStyleElement.ToolTip.Standard.Normal;
 			if (ThemeExtensions.IsDarkModeEnabled)
 			{
-				e.Graphics.FillRectangle(new SolidBrush(ThemeExtensions.Colors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size));
+				e.Graphics.FillRectangle(new SolidBrush(ThemeColors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size));
 			}
 			else if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
 			{
@@ -1272,23 +1272,23 @@ namespace cYo.Common.Windows.Forms
         {
             if (tabItemState == TabItemState.Selected)
             {
-                using (Pen activePen = new Pen(ThemeExtensions.Colors.TabBar.SelectedBack))
+                using (Pen selectedBorderPen = new Pen(ThemeColors.TabBar.SelectedBorder))
                 {
-                    gr.DrawLine(activePen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
-                    gr.DrawLine(activePen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top
-                    gr.DrawLine(activePen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1); // Right
+                    gr.DrawLine(selectedBorderPen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
+                    gr.DrawLine(selectedBorderPen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top
+                    gr.DrawLine(selectedBorderPen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1); // Right
                 }
-                using (Pen disabledPen = new Pen(ThemeExtensions.Colors.TabBar.Back))
+                using (Pen borderPen = new Pen(ThemeColors.TabBar.Border))
                 {
-                    gr.DrawLine(disabledPen, rect.Right - 1, rect.Top - 1, rect.Right - 1, rect.Bottom - 1);
+                    gr.DrawLine(borderPen, rect.Right - 1, rect.Top - 1, rect.Right - 1, rect.Bottom - 1);
                 }
 				return;
             }
-            using (Pen disabledPen = new Pen(ThemeExtensions.Colors.TabBar.Back))
+            using (Pen borderPen = new Pen(ThemeColors.TabBar.Border))
             {
-                gr.DrawLine(disabledPen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
-                gr.DrawLine(disabledPen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top
-                gr.DrawLine(disabledPen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1); // Right
+                gr.DrawLine(borderPen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
+                gr.DrawLine(borderPen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top
+                gr.DrawLine(borderPen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1); // Right
             }
         }
 
@@ -1297,7 +1297,7 @@ namespace cYo.Common.Windows.Forms
             if (ThemeExtensions.IsDarkModeEnabled)
             {
 				// tab label background
-				using (Brush backgroundBrush = new SolidBrush((tabItemState == TabItemState.Selected) ? ThemeExtensions.Colors.TabBar.SelectedBack : ThemeExtensions.Colors.TabBar.Back))
+				using (Brush backgroundBrush = new SolidBrush((tabItemState == TabItemState.Selected) ? ThemeColors.TabBar.SelectedBack : ThemeColors.TabBar.Back))
 				{
 					gr.FillRectangle(backgroundBrush, rc);
 				}
@@ -1326,7 +1326,7 @@ namespace cYo.Common.Windows.Forms
 				}
 				border3DSide |= Border3DSide.Bottom;
 			}
-			using (Brush brush = new SolidBrush((tabItemState == TabItemState.Selected) ? SystemColors.ControlLightLight : BackColor))
+			using (Brush brush = new SolidBrush((tabItemState == TabItemState.Selected) ? ThemeColors.TabBar.SelectedBack : BackColor))
 			{
 				gr.FillRectangle(brush, rc);
 			}

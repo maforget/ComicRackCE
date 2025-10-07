@@ -291,11 +291,11 @@ namespace cYo.Common.Windows.Forms
             // override SelectedText highlighting
             if (ThemeExtensions.IsDarkModeEnabled && e.State.HasFlag(DrawItemState.Selected))
             {
-                using (Brush highlightBrush = new SolidBrush(ThemeExtensions.Colors.SelectedText.HighLight))
+                using (Brush highlightBrush = new SolidBrush(ThemeColors.SelectedText.HighLight))
                 {
                     e.Graphics.FillRectangle(highlightBrush, e.Bounds);
                 }
-                ControlPaint.DrawBorder(e.Graphics, e.Bounds, ThemeExtensions.Colors.SelectedText.Focus, ButtonBorderStyle.Solid);
+                ControlPaint.DrawBorder(e.Graphics, e.Bounds, ThemeColors.SelectedText.Focus, ButtonBorderStyle.Solid);
             }
             else
             {
