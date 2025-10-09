@@ -189,9 +189,9 @@ namespace cYo.Common.Windows.Forms
 		{
 			if (!focused)
 			{
-				return Color.Gray;
+				return ThemeColors.StyledRenderer.Selection;
 			}
-			return SystemColors.Highlight;
+			return ThemeColors.StyledRenderer.SelectionFocused;
 		}
 
 		public static void DrawStyledRectangle(this Graphics gr, Rectangle rc, int baseAlpha, Color baseColor, StyleDefinition style = null)

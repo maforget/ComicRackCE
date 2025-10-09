@@ -275,7 +275,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 			Rectangle bounds = drawInfo.Bounds;
 			if (drawInfo.DrawBorder)
 			{
-				using (Pen pen = new Pen(Color.FromArgb(48, SystemColors.ControlDark), 1f))
+				using (Pen pen = new Pen(ThemeColors.ThumbnailViewItem.Border, 1f))
 				{
 					drawInfo.Graphics.DrawLine(pen, bounds.Location, new Point(bounds.Left, bounds.Bottom));
 				}

@@ -44,6 +44,7 @@ namespace cYo.Common.Windows.Forms
             { typeof(ProgressBar), c => ThemeProgressBar((ProgressBar)c) },
             { typeof(RichTextBox), c => ThemeRichTextBox((RichTextBox)c) },
             { typeof(StatusStrip), c => ThemeStatusStrip((StatusStrip)c) },
+            { typeof(TabPage), c => ThemeTabPage((TabPage)c) },
             { typeof(TextBox), c => ThemeTextBox((TextBox)c) },
             { typeof(TreeView), c => ThemeTreeView((TreeView)c) }
         };
@@ -72,14 +73,14 @@ namespace cYo.Common.Windows.Forms
 
             if (!useDarkMode) return;
             
-            ThemeColors.Dark(); // Initialize Dark color palette.
-
             KnownColorTableEx darkColorTable = new KnownColorTableEx();
             darkColorTable.Initialize(useDarkMode);
 
-            darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb()); // make default background darker
-            darkColorTable.SetColor(KnownColor.Gainsboro, ThemeColors.Lossboro.ToArgb());    // PreferencesDialog overlays
+            // make default background darker. alternative would be to use another KnownColor, but there are a total of 1 potential dark KnownColors (Black)
+            darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb()); 
             darkColorTable.SetColor(KnownColor.HighlightText, Color.White.ToArgb());    // HighlightText should be white
+
+            ThemeColors.Dark(); // Initialize Dark color palette.
 
             UXTheme.Initialize();
         }
@@ -105,7 +106,6 @@ namespace cYo.Common.Windows.Forms
                 form.BackColor = ThemeColors.Material.Window;
                 SetWindowUXTheme(form);
             }
-
 
             if (themeHandlers.TryGetValue(control.GetType(), out var theme))
             {
@@ -166,8 +166,9 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemePanel(Panel panel)
         {
-            panel.BackColor = SystemColors.Control; // changing this breaks checkboxes
+            //panel.BackColor = SystemColors.Control; // changing this breaks checkboxes
         }
+
         private static void ThemeGroupBox(GroupBox groupBox)
         {
             groupBox.ForeColor = SystemColors.WindowText;
@@ -198,7 +199,7 @@ namespace cYo.Common.Windows.Forms
                 // this might be handled correctly in Win11 builds
                 checkBox.FlatStyle = FlatStyle.Flat;
                 checkBox.BackColor = ThemeColors.Button.Back;
-                checkBox.ForeColor = ThemeColors.Button.Fore;
+                checkBox.ForeColor = ThemeColors.Button.Text;
                 checkBox.FlatAppearance.BorderSize = 1;
                 checkBox.FlatAppearance.BorderColor = ThemeColors.Button.Border;
                 checkBox.FlatAppearance.CheckedBackColor = ThemeColors.Button.CheckedBack;
@@ -237,7 +238,7 @@ namespace cYo.Common.Windows.Forms
             gridView.EnableHeadersVisualStyles = false;
             gridView.DefaultCellStyle.SelectionBackColor = ThemeColors.SelectedText.HighLight;
             gridView.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
-            gridView.BorderStyle = BorderStyle.FixedSingle;
+            gridView.BorderStyle = BorderStyle.None;
         }
 
         private static void ThemeListBox(ListBox listBox)
@@ -301,6 +302,12 @@ namespace cYo.Common.Windows.Forms
             }
         }
 
+        private static void ThemeTabPage(TabPage tabPage)
+        {
+            if (tabPage.BackColor == Color.Transparent && tabPage.Parent is TabControl)
+                tabPage.BackColor = ThemeColors.Material.Content; // this is tabPage.Parent.BackColor, which is System.Control
+        }
+
         private static void ThemeTextBox(TextBox textBox)
         {
             // TextBoxEx did not like BorderStyle being set 
@@ -321,15 +328,18 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemeTreeView(TreeView treeView)
         {
-            if (!treeView.IsHandleCreated)
+            if (treeView.GetType() == typeof(TreeView))
             {
-                treeView.HandleCreated += (s, e) => ThemeTreeView((s as TreeView));
-                return;
+                if (!treeView.IsHandleCreated)
+                {
+                    treeView.HandleCreated += (s, e) => ThemeTreeView((s as TreeView));
+                    return;
+                }
+                // use the TreeViewEx.SetColor method to avoid having to DllImport & declare native constants
+                TreeViewEx.SetColor(treeView);
             }
-            // use the TreeViewEx.SetColor method to avoid having to DllImport & declare native constants
-            TreeViewEx.SetColor(treeView);
-        }
 
+        }
         #endregion
 
 
@@ -368,7 +378,7 @@ namespace cYo.Common.Windows.Forms
 
         private static void SetTabControlUXTheme(TabControl tabControl)
         {
-            UXTheme.SetControlTheme(tabControl.Handle, null, "DarkMode::FileExplorerBannerContainer");
+            UXTheme.SetTabControlTheme(tabControl.Handle);
         }
 
         #endregion
@@ -527,8 +537,8 @@ namespace cYo.Common.Windows.Forms
             ImageProcessing.Invert(bmp);
             return bmp;
         }
-
-        public class DarkToolStripRenderer : ToolStripProfessionalRenderer
+        
+    public class DarkToolStripRenderer : ToolStripProfessionalRenderer
         {
             public DarkToolStripRenderer()
                 : base(new DarkProfessionalColorsEx())
@@ -545,6 +555,25 @@ namespace cYo.Common.Windows.Forms
             {
                 e.ArrowColor = Color.White;
                 base.OnRenderArrow(e);
+            }
+
+            protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
+            {
+                base.OnRenderItemCheck(e);
+                var g = e.Graphics;
+                var rect = e.ImageRectangle;
+                g.FillRectangle(new SolidBrush(ColorTable.CheckPressedBackground), rect);
+
+                using (var pen = new Pen(Color.White, 2))
+                {
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    g.DrawLines(pen, new[]
+                    {
+                        new Point(rect.Left + 4, rect.Top + rect.Height/2 - 1),
+                        new Point(rect.Left + rect.Width/3 + rect.Width/6, rect.Bottom - 5),
+                        new Point(rect.Right - 4, rect.Top + 3)
+                    });
+                }
             }
         }
     }

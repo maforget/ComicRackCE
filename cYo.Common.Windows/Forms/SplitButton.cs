@@ -61,7 +61,7 @@ namespace cYo.Common.Windows.Forms
             //{
             //	FlatStyle = FlatStyle.Flat;
             //             BackColor = ThemeColors.Button.Back;
-            //             ForeColor = ThemeColors.Button.Fore;
+            //             ForeColor = ThemeColors.Button.Text;
             //             FlatAppearance.CheckedBackColor = ThemeColors.Button.CheckedBack;
             //             FlatAppearance.MouseOverBackColor = ThemeColors.Button.MouseOverBack;
             //	FlatAppearance.BorderSize = 1;

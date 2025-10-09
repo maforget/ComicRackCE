@@ -201,7 +201,9 @@ namespace cYo.Common.Windows.Forms
         {
             get
             {
-                if (!UsesTheme || TransparentTouch || ThemeExtensions.IsDarkModeEnabled)
+                if (ThemeExtensions.IsDarkModeEnabled)
+                    return ThemeColors.Material.Content;
+                if (!UsesTheme || TransparentTouch)
                 {
                     return base.BackColor;
                 }
@@ -273,17 +275,10 @@ namespace cYo.Common.Windows.Forms
         {
             Rectangle headerRectangle = HeaderRectangle;
             // MultipleComicBooksDialog/Preferences
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                using (LinearGradientBrush brush = new LinearGradientBrush(headerRectangle, SystemColors.ControlDarkDark, SystemColors.ControlLightLight, 0f))
-                {
-                    gr.FillRectangle(brush, headerRectangle);
-                }
-            }
-            else if (UsesTheme)
+            if (UsesTheme)
             {
 
-                using (LinearGradientBrush brush = new LinearGradientBrush(headerRectangle, SystemColors.Control, SystemColors.ControlLight, 0f))
+                using (LinearGradientBrush brush = new LinearGradientBrush(headerRectangle, ThemeColors.CollapsibleGroupBox.HeaderGradientStart, ThemeColors.CollapsibleGroupBox.HeaderGradientEnd, 0f))
                 {
                     gr.FillRectangle(brush, headerRectangle);
                 }
@@ -299,7 +294,7 @@ namespace cYo.Common.Windows.Forms
                 LineAlignment = StringAlignment.Center
             })
             {
-                using (Brush brush2 = new SolidBrush(ForeColor))
+                using (Brush brush2 = new SolidBrush(ThemeExtensions.IsDarkModeEnabled ? ThemeColors.CollapsibleGroupBox.HeaderText : ForeColor))
                 {
                     gr.DrawString(Text, FC.Get(Font, HeaderFontStyle), brush2, headerRectangle.Pad(ToggleRectange.Width, 0), format);
                 }

@@ -623,7 +623,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 							thumbTileRenderer.Font = font;
 							thumbTileRenderer.Border = base.Border;
 							thumbTileRenderer.ForeColor = textColor;
-							thumbTileRenderer.BackColor = Color.LightGray;
+							thumbTileRenderer.BackColor = ThemeColors.ThumbnailViewItem.Back;
 							thumbTileRenderer.SelectionBackColor = StyledRenderer.GetSelectionColor(drawInfo.ControlFocused);
 							thumbTileRenderer.PageCount = Comic.PageCount;
 							thumbTileRenderer.RatingMode = ratingMode;

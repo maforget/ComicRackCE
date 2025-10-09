@@ -47,8 +47,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             LocalizeUtility.Localize(this, components);
             noneSelectedText = TR.Load(base.Name)[pageViewer.Name, pageViewer.Text];
             previewOnlyForComics = TR.Load(base.Name)["PreviewOnlyForComics", "Preview is only available for Books"];
-            if (ThemeExtensions.IsDarkModeEnabled)
-                pageViewer.BackColor = ThemeColors.Material.SidePanel;
         }
 
         protected override void OnLoad(EventArgs e)

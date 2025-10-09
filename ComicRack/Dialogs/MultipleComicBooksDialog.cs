@@ -157,7 +157,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		protected override void OnLoad(EventArgs e)
 		{
 			base.OnLoad(e);
-			Init();
+			Init();			
 		}
 
 		private void RefreshBooksInfoFromFiles()
@@ -401,7 +401,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			{
 				label.Left = c.Left;
 			}
-			return checkBox;
+            if (ThemeExtensions.IsDarkModeEnabled)
+                ThemeExtensions.Theme(checkBox);
+            return checkBox;
 		}
 
 		private void SetGrayText(IPromptText tx, string property)

@@ -228,6 +228,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				base.Nodes[0].Expand();
 			}
+			SetColor(this, ThemeColors.Material.SidePanel);
 		}
 
 		private static void ClearTree(TreeView tree)

@@ -541,13 +541,13 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				{
 					rtfQuery.SelectAll();
 					rtfQuery.SelectionBackColor = ThemeColors.SmartQuery.Back;
-					rtfQuery.SelectionColor = ThemeColors.SmartQuery.Fore;
+					rtfQuery.SelectionColor = ThemeColors.SmartQuery.Text;
 				}
 				Tokenizer tokenizer = ComicSmartListItem.TokenizeQuery(rtfQuery.Text);
 				int selectionStart = rtfQuery.SelectionStart;
 				foreach (Tokenizer.Token item in tokenizer.GetAll())
 				{
-					Color selectionColor = ThemeColors.SmartQuery.Fore;
+					Color selectionColor = ThemeColors.SmartQuery.Text;
                     string text = item.Text.ToLower();
 					if (text.StartsWith("\""))
 					{

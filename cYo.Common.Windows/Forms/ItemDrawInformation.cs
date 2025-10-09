@@ -36,7 +36,7 @@ namespace cYo.Common.Windows.Forms
 
 		public ItemDrawInformation()
 		{
-			TextColor = Color.Black;
+			TextColor = ThemeColors.ItemDrawInfoText;
 			DrawBorder = true;
 		}
 	}

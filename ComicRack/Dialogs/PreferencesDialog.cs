@@ -1053,15 +1053,15 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             {
                 Dock = DockStyle.Fill,
                 Config = cfg,
-                BackColor = Color.Transparent
+                BackColor = ThemeColors.Preferences.ServerEditControl
             };
             sc.ShareNameChanged += delegate
             {
                 tab.Text = sc.ShareName;
             };
             // this IS required
-            if (ThemeExtensions.IsDarkModeEnabled)
-                ThemeExtensions.Theme(tab);
+            //if (ThemeExtensions.IsDarkModeEnabled)
+                //ThemeExtensions.Theme(tab);
             tab.Controls.Add(sc);
             tabShares.TabPages.Add(tab);
         }

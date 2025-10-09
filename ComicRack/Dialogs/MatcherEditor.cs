@@ -72,7 +72,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                 this.btMatcher.Location = new Point(27, 0);
                 this.btMatcher.Size = new Size(136, 21);
                 this.btMatcher.BackColor = ThemeColors.Button.Back;
-                this.btMatcher.ForeColor = ThemeColors.Button.Fore;
+                this.btMatcher.ForeColor = ThemeColors.Button.Text;
             }
         }
 

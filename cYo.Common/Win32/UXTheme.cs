@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace cYo.Common.Win32
@@ -110,6 +111,22 @@ namespace cYo.Common.Win32
 
             [DllImport("uxtheme.dll", EntryPoint = "#136", ExactSpelling = true)]
             internal static extern void FlushMenuThemes();
+
+            [DllImport("user32.dll")]
+            static extern IntPtr GetWindow(IntPtr hWnd, uint uCmd);
+
+            private const uint GW_CHILD = 5;
+            private const uint GW_HWNDNEXT = 2;
+
+            internal static IEnumerable<IntPtr> EnumChildWindows(IntPtr parent)
+            {
+                IntPtr child = GetWindow(parent, GW_CHILD);
+                while (child != IntPtr.Zero)
+                {
+                    yield return child;
+                    child = GetWindow(child, GW_HWNDNEXT);
+                }
+            }
 
             /// <summary>Causes a window to use a different set of visual style information than its class normally uses. (<a href="https://source.dot.net/#System.Windows.Forms.Primitives/Windows.Win32.PInvoke.UXTHEME.dll.g.cs,1258">documentation source</a>)</summary>
             /// <param name="hwnd">
@@ -268,6 +285,17 @@ namespace cYo.Common.Win32
                 Native.SetWindowTheme(columnHeaderHandle, "DarkMode_ItemsView", null); //working but dark header text
                 //NativeMethods.SetWindowTheme(columnHeaderHandle, null, "DarkMode_ItemsView::Header");
             }
+        }
+
+        public static void SetTabControlTheme(IntPtr hwnd)
+        {
+            if (!IsDarkModeSupported || hwnd == null || hwnd == IntPtr.Zero) return;
+
+            Native.SetWindowTheme(hwnd, null, "DarkMode::FileExplorerBannerContainer");
+            //foreach (var childHandle in Native.EnumChildWindows(hwnd))
+            //{
+            //    Native.SetWindowTheme(childHandle, null, "DarkMode::FileExplorerBannerContainer");
+            //}
         }
 
         /// <summary>

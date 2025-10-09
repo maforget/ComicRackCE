@@ -4763,7 +4763,7 @@ namespace cYo.Common.Windows.Forms
 			miStack.Text = "Stack by";
 			longClickTimer.Interval = 1000;
 			longClickTimer.Tick += new System.EventHandler(longClickTimer_Tick);
-			BackColor = System.Drawing.SystemColors.Window;
+			BackColor = cYo.Common.Windows.Forms.ThemeColors.ItemView.DefaultBack;
 			base.Size = new System.Drawing.Size(624, 600);
 			autoHeaderContextMenuStrip.ResumeLayout(false);
 			autoViewContextMenuStrip.ResumeLayout(false);

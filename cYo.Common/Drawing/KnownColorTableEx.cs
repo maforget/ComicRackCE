@@ -192,57 +192,57 @@ namespace cYo.Common.Drawing
         public void ResetAll() => Load(KnownOriginalColors);
 
         public readonly HashSet<KnownColor> KnownColors = new(
-        new[]
-        {
-                    SystemColors.Window,             // most backgrounds and gradient start (Toolstrip, menu)
-                    SystemColors.WindowText,         // most text boxes - list, combo etc
-                    SystemColors.GrayText,           // disabled menu text (expect should be other controls too)
-                    SystemColors.Highlight,          // all the highlights (except combobox): toolstrip, selected item, active menu item
+            new[]
+            {
+                SystemColors.Window,             // most backgrounds and gradient start (Toolstrip, menu)
+                SystemColors.WindowText,         // most text boxes - list, combo etc
+                SystemColors.GrayText,           // disabled menu text (expect should be other controls too)
+                SystemColors.Highlight,          // all the highlights (except combobox): toolstrip, selected item, active menu item
 
-                    SystemColors.ButtonFace,         // main menu bar, toolstrip gradient
-                    SystemColors.ButtonShadow,       // menu border. Lines - menu dividers, toolstrip dividers
-                    SystemColors.ButtonHighlight,    // MainForm bottom line, toolstrip dividers, Re-size grip (bottom right)
+                SystemColors.ButtonFace,         // main menu bar, toolstrip gradient
+                SystemColors.ButtonShadow,       // menu border. Lines - menu dividers, toolstrip dividers
+                SystemColors.ButtonHighlight,    // MainForm bottom line, toolstrip dividers, Re-size grip (bottom right)
 
-                    SystemColors.ControlLightLight,  // active tab label background ... but also button highlight
-                    SystemColors.ControlLight,       // grip highlight, remaining tasks text
-                    SystemColors.Control,            // Form background (not tabs or menu). gradient end. inactive tab label
-                    SystemColors.ControlText,        // most read-only text. active menu item. menu arrows
-                    SystemColors.ControlDark,        // inner active button shadow. selected pref menu buttom (checkbox?) outline
-                    SystemColors.ControlDarkDark,    // Outer button shadow
+                SystemColors.ControlLightLight,  // active tab label background ... but also button highlight
+                SystemColors.ControlLight,       // grip highlight, remaining tasks text
+                SystemColors.Control,            // Form background (not tabs or menu). gradient end. inactive tab label
+                SystemColors.ControlText,        // most read-only text. active menu item. menu arrows
+                SystemColors.ControlDark,        // inner active button shadow. selected pref menu buttom (checkbox?) outline
+                SystemColors.ControlDarkDark,    // Outer button shadow
 
-                    SystemColors.MenuText,           // inactive (not-selected) menu text
+                SystemColors.MenuText,           // inactive (not-selected) menu text
 
-                    SystemColors.Info,               // hover-over tooltip background
-                    SystemColors.InfoText,           // hover-over tooltip text
+                SystemColors.Info,               // hover-over tooltip background
+                SystemColors.InfoText,           // hover-over tooltip text
 
-                    SystemColors.WindowFrame,        // hover-over tooltip border (probably others but not observed)
+                SystemColors.WindowFrame,        // hover-over tooltip border (probably others but not observed)
 
-                    SystemColors.AppWorkspace,       // 1px border around tab|panel|whatever-the-element-is. doubled for open comic as it's a seperate element.
+                SystemColors.AppWorkspace,       // 1px border around tab|panel|whatever-the-element-is. doubled for open comic as it's a seperate element.
 
-                    SystemColors.HighlightText,     // selected ComboBox text color in some cases (probably related to DropDownList etc setting)
+                SystemColors.HighlightText,     // selected ComboBox text color in some cases (probably related to DropDownList etc setting)
 
-                    // these colors were not observed
-                    // might be due to OS settings, not interacting with a UI element that uses them, or they are genuinely not used
-                    SystemColors.Desktop,
-                    SystemColors.ScrollBar,         // I think this is intended as a joke
+                // these colors were not observed
+                // might be due to OS settings, not interacting with a UI element that uses them, or they are genuinely not used
+                SystemColors.Desktop,
+                SystemColors.ScrollBar,         // I think this is intended as a joke
 
-                    SystemColors.HotTrack,
+                SystemColors.HotTrack,
 
-                    SystemColors.ActiveBorder,
-                    SystemColors.ActiveCaption,
-                    SystemColors.ActiveCaptionText,
-                    SystemColors.GradientActiveCaption,
+                SystemColors.ActiveBorder,
+                SystemColors.ActiveCaption,
+                SystemColors.ActiveCaptionText,
+                SystemColors.GradientActiveCaption,
 
-                    SystemColors.InactiveBorder,
-                    SystemColors.InactiveCaption,
-                    SystemColors.InactiveCaptionText,
-                    SystemColors.GradientInactiveCaption,
+                SystemColors.InactiveBorder,
+                SystemColors.InactiveCaption,
+                SystemColors.InactiveCaptionText,
+                SystemColors.GradientInactiveCaption,
 
-                    SystemColors.Menu,
-                    SystemColors.MenuBar,
-                    SystemColors.MenuHighlight
-        }.Select(_ => _.ToKnownColor())
-    );
+                SystemColors.Menu,
+                SystemColors.MenuBar,
+                SystemColors.MenuHighlight
+            }.Select(_ => _.ToKnownColor())
+        );
 
         public static uint GetSystemColorArgb(KnownColor color)
         {

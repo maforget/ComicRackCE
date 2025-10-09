@@ -3,6 +3,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 using cYo.Common.Drawing;
+using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
@@ -39,7 +40,14 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			return (ToolStripManager.Renderer as ToolStripProfessionalRenderer)?.ColorTable;
 		}
 
-		protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
+        protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
+        {
+            if (ThemeExtensions.IsDarkModeEnabled)
+                e.ArrowColor = Color.White;
+            base.OnRenderArrow(e);
+        }
+
+        protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
 		{
 			if (starImage == null)
 			{
@@ -49,6 +57,8 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			Graphics graphics = e.Graphics;
 			if (!text.StartsWith("*"))
 			{
+				if (ThemeExtensions.IsDarkModeEnabled)
+					e.TextColor = Color.White;
 				base.OnRenderItemText(e);
 				return;
 			}
@@ -68,5 +78,27 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 				}
 			}
 		}
-	}
+
+        protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
+        {
+            base.OnRenderItemCheck(e);
+			if (ThemeExtensions.IsDarkModeEnabled)
+			{
+                var g = e.Graphics;
+                var rect = e.ImageRectangle;
+                g.FillRectangle(new SolidBrush(ColorTable.CheckPressedBackground), rect);
+
+                using (var pen = new Pen(Color.White, 2))
+                {
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    g.DrawLines(pen, new[]
+                    {
+                        new Point(rect.Left + 4, rect.Top + rect.Height/2 - 1),
+                        new Point(rect.Left + rect.Width/3 + rect.Width/6, rect.Bottom - 5),
+                        new Point(rect.Right - 4, rect.Top + 3)
+                    });
+                }
+            }
+        }
+    }
 }

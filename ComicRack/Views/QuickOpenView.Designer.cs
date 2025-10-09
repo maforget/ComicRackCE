@@ -112,7 +112,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             // 
             this.itemView.AutomaticHeaderMenu = false;
             this.itemView.AutomaticViewMenu = false;
-            this.itemView.BackColor = System.Drawing.SystemColors.Window;
+            this.itemView.BackColor = cYo.Common.Windows.Forms.ThemeColors.ItemView.MainBack;
             this.itemView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemView.EnableStick = false;
             this.itemView.GroupCollapsedImage = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.ArrowRight;

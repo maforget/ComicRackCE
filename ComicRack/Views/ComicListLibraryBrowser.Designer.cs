@@ -450,7 +450,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// 
 			// favView
 			// 
-			this.favView.BackColor = System.Drawing.SystemColors.Window;
+			this.favView.BackColor = cYo.Common.Windows.Forms.ThemeColors.ComicListLibraryBrowser.FavViewBack;
 			this.favView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.favView.GroupColumns = new cYo.Common.Windows.Forms.IColumn[0];
 			this.favView.GroupColumnsKey = null;

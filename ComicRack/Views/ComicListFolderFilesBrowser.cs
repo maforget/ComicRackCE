@@ -103,8 +103,6 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			tvFolders.Font = SystemFonts.IconTitleFont;
 			components.Add(commands);
 			LocalizeUtility.Localize(this, components);
-            if (ThemeExtensions.IsDarkModeEnabled)
-                favView.BackColor = ThemeColors.Material.SidePanel;
         }
 
 		public ComicListFolderFilesBrowser(SmartList<string> paths)

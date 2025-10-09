@@ -487,7 +487,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				base.AutoSize = true;
 				base.Overflow = ToolStripItemOverflow.Never;
-				tabBar.BackColor = Color.Transparent;
+				tabBar.BackColor = ThemeColors.TabBar.Back;
 				tabBar.TabHeight = 24;
 				tabBar.DrawBaseLine = false;
 			}
@@ -810,8 +810,8 @@ namespace cYo.Common.Windows.Forms
 		{
 			get
 			{
-				Color result = SystemColors.AppWorkspace;
-				if (Application.RenderWithVisualStyles)
+				Color result = ThemeColors.TabBar.DefaultBorder;
+				if (Application.RenderWithVisualStyles && !ThemeExtensions.IsDarkModeEnabled)
 				{
 					VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(VisualStyleElement.Tab.Pane.Normal);
 					result = visualStyleRenderer.GetColor(ColorProperty.BorderColorHint);
@@ -1272,19 +1272,19 @@ namespace cYo.Common.Windows.Forms
         {
             if (tabItemState == TabItemState.Selected)
             {
-                using (Pen selectedBorderPen = new Pen(ThemeColors.TabBar.SelectedBorder))
+                using (Pen selectedBorderPen = new Pen(ThemeColors.TabBar.DefaultBorder))
                 {
                     gr.DrawLine(selectedBorderPen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
                     gr.DrawLine(selectedBorderPen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top
                     gr.DrawLine(selectedBorderPen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1); // Right
                 }
-                using (Pen borderPen = new Pen(ThemeColors.TabBar.Border))
+                using (Pen borderPen = new Pen(ThemeColors.TabBar.DefaultBorder))
                 {
                     gr.DrawLine(borderPen, rect.Right - 1, rect.Top - 1, rect.Right - 1, rect.Bottom - 1);
                 }
 				return;
             }
-            using (Pen borderPen = new Pen(ThemeColors.TabBar.Border))
+            using (Pen borderPen = new Pen(ThemeColors.TabBar.DefaultBorder))
             {
                 gr.DrawLine(borderPen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
                 gr.DrawLine(borderPen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top

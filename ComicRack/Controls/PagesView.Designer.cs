@@ -79,7 +79,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
             // itemView
             // 
             this.itemView.AllowDrop = true;
-            this.itemView.BackColor = System.Drawing.SystemColors.Window;
+            this.itemView.BackColor = cYo.Common.Windows.Forms.ThemeColors.ItemView.MainBack;
             this.itemView.BackgroundImageAlignment = System.Drawing.ContentAlignment.BottomRight;
             this.itemView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemView.GroupColumns = new cYo.Common.Windows.Forms.IColumn[0];

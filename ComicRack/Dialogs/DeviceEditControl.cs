@@ -102,8 +102,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		{
 			SetStyle(ControlStyles.SupportsTransparentBackColor, value: true);
 			InitializeComponent();
-			if (ThemeExtensions.IsDarkModeEnabled)
-				BackColor = SystemColors.Control;
 			TR tr = TR.Load("DevicesEditDialog");
 			LocalizeUtility.Localize(tr, this);
 			LocalizeUtility.Localize(tr, cbLimitType);

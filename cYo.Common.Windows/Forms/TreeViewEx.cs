@@ -29,7 +29,7 @@ namespace cYo.Common.Windows.Forms
 
 			public const int WM_VSCROLL = 277;
 
-			private const int SB_LINEUP = 0;
+            private const int SB_LINEUP = 0;
 
 			private const int SB_LINELEFT = 0;
 
@@ -133,7 +133,7 @@ namespace cYo.Common.Windows.Forms
         /// </summary>
 		/// <param name="treeView"><see cref="TreeView"/> control to set the colors of.</param>
 		/// <param name="backColor"><typeparamref name="BackColor"/>  to set. If none is provided and Dark Mode is enabled, defaults to <see cref="ThemeColors.TreeView.Back"/> </param>
-		/// <param name="foreColor"><typeparamref name="ForeColor"/> to set. If none is provided and Dark Mode is enabled, defaults to <see cref="ThemeColors.TreeView.Fore"/> </param>
+		/// <param name="foreColor"><typeparamref name="ForeColor"/> to set. If none is provided and Dark Mode is enabled, defaults to <see cref="ThemeColors.TreeView.Text"/> </param>
         /// <remarks>
         /// If <see cref="ThemeExtensions.IsDarkModeEnabled"/> is <paramref name="true"/> and no <see cref="Color"/> values are passed, will apply default <see cref="ThemeColors.TreeView"/> colors.
         /// </remarks>
@@ -145,7 +145,7 @@ namespace cYo.Common.Windows.Forms
                 Native.SetBackColor(treeView.Handle, (Color)backColor);
 
             if (foreColor == null && ThemeExtensions.IsDarkModeEnabled)
-                foreColor = ThemeColors.TreeView.Fore;
+                foreColor = ThemeColors.TreeView.Text;
             if (backColor != null)
                 Native.SetForeColor(treeView.Handle, (Color)foreColor);
         }
@@ -157,8 +157,8 @@ namespace cYo.Common.Windows.Forms
             if (ThemeExtensions.IsDarkModeEnabled)
             {
                 BorderStyle = BorderStyle.None;
-                this.BackColor = ThemeColors.TreeView.Back;
-                this.ForeColor = ThemeColors.TreeView.Fore;
+				this.BackColor = ThemeColors.TreeView.Back;
+                this.ForeColor = ThemeColors.TreeView.Text;
                 SetColor(this);
             }
         }
@@ -222,7 +222,7 @@ namespace cYo.Common.Windows.Forms
 			}
         }
 
-		protected virtual void OnScroll(ScrollEventArgs sea)
+        protected virtual void OnScroll(ScrollEventArgs sea)
 		{
 			if (this.Scroll != null)
 			{

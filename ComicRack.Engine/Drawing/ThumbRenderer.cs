@@ -48,7 +48,7 @@ namespace cYo.Projects.ComicRack.Engine.Drawing
 			Resources.NewPages5Plus.ToOptimized()
 		};
 
-		private Color selectionBackColor = SystemColors.Highlight;
+		private Color selectionBackColor = ThemeColors.ThumbRenderer.SelectionBack;
 
 		private List<Image> stateImages;
 

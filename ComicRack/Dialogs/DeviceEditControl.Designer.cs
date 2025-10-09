@@ -289,7 +289,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = cYo.Common.Windows.Forms.ThemeColors.DeviceEditControl.Back;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grpListOptions);
             this.Controls.Add(this.tvSharedLists);

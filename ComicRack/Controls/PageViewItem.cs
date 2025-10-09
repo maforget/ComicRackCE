@@ -223,7 +223,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 							Font = font,
 							Border = base.Border,
 							ForeColor = textColor,
-							BackColor = Color.LightGray,
+							BackColor = ThemeColors.ThumbnailViewItem.Back,
 							SelectionBackColor = StyledRenderer.GetSelectionColor(drawInfo.ControlFocused),
 							ImageOpacity = base.Opacity,
 							Bookmarked = PageInfo.IsBookmark

@@ -815,8 +815,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// itemView
 			// 
 			this.itemView.AllowDrop = true;
-			this.itemView.BackColor = System.Drawing.SystemColors.Window;
-			this.itemView.ColumnHeaderHeight = 19;
+			this.itemView.BackColor = cYo.Common.Windows.Forms.ThemeColors.ItemView.MainBack;
+            this.itemView.ColumnHeaderHeight = 19;
 			this.itemView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.itemView.ExpandedDetailColumnName = "Cover";
 			this.itemView.GroupCollapsedImage = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.ArrowRight;
