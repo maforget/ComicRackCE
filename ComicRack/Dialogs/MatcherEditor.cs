@@ -64,16 +64,16 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			base.Width = width;
 			spacing = rtfMatchValue2.Left - rtfMatchValue.Right;
 			InitializeMatcher(comicBookMatcher);
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                // a button pretending to be a dropdown combobox. lovely.
-                // let's dress it up as one. Except for dropdown arrow to carot - that's asking too much
-                // we also have to make it a bit smaller as otherwise borders are out of bounds
-                this.btMatcher.Location = new Point(27, 0);
-                this.btMatcher.Size = new Size(136, 21);
-                this.btMatcher.BackColor = ThemeColors.Button.Back;
-                this.btMatcher.ForeColor = ThemeColors.Button.Text;
-            }
+			ThemeExtensions.TryDrawTheme(() =>
+			{
+				// a button pretending to be a dropdown combobox. lovely.
+				// let's dress it up as one. Except for dropdown arrow to carot - that's asking too much
+				// we also have to make it a bit smaller as otherwise borders are out of bounds
+				this.btMatcher.Location = new Point(27, 0);
+				this.btMatcher.Size = new Size(136, 21);
+				this.btMatcher.BackColor = ThemeColors.Button.Back;
+				this.btMatcher.ForeColor = ThemeColors.Button.Text;
+			}, onlyDrawIfDefault: false);
         }
 
 		private void cmEdit_Opening(object sender, CancelEventArgs e)

@@ -160,19 +160,24 @@ namespace cYo.Common.Windows.Forms
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
-            if (ThemeExtensions.IsDarkModeEnabled && !Enabled && m.Msg == NativeMethods.WM_CTLCOLORSTATIC)
-            {
-                IntPtr hdc = m.WParam;   // handle to device context (DC)
-                IntPtr hwndChild = m.LParam;  // handle to the static control
-                NativeMethods.COMBOBOXINFO pcbi = GetChildHandle();
-                if (pcbi.hwndEdit != IntPtr.Zero && hwndChild == pcbi.hwndEdit )
-                {
-                    NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeColors.ComboBox.Disabled));
-                    NativeMethods.SetTextColor(hdc, ColorTranslator.ToWin32(SystemColors.GrayText));
+			Message message = m;
+			ThemeExtensions.TryDrawTheme(() =>
+			{
+				if (!Enabled && message.Msg == NativeMethods.WM_CTLCOLORSTATIC)
+				{
+					IntPtr hdc = message.WParam;   // handle to device context (DC)
+					IntPtr hwndChild = message.LParam;  // handle to the static control
+					NativeMethods.COMBOBOXINFO pcbi = GetChildHandle();
+					if (pcbi.hwndEdit != IntPtr.Zero && hwndChild == pcbi.hwndEdit)
+					{
+						NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeColors.ComboBox.Disabled));
+						NativeMethods.SetTextColor(hdc, ColorTranslator.ToWin32(SystemColors.GrayText));
 
-                    m.Result = NativeMethods.darkEditBrush;
-                }
-            }
+						message.Result = NativeMethods.darkEditBrush;
+					}
+				}
+			}, onlyDrawIfDefault: false);
+			m = message;
         }
 
         protected override void OnEnter(EventArgs e)

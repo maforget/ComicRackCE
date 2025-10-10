@@ -32,11 +32,11 @@ namespace cYo.Common.Windows.Forms
 
         public CheckedListBoxEx()
         {
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                BorderStyle = BorderStyle.FixedSingle;
-                BackColor = ThemeColors.List.Back;
-            }
+			ThemeExtensions.TryDrawTheme(() =>
+			{
+				BorderStyle = BorderStyle.FixedSingle;
+				BackColor = ThemeColors.List.Back;
+			}, onlyDrawIfDefault: false);
         }
 
         protected override void OnDrawItem(DrawItemEventArgs e)

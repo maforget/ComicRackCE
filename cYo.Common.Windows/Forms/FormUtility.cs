@@ -698,8 +698,7 @@ namespace cYo.Common.Windows.Forms
 						control2.Controls.Add(control3);
 					}
 				}
-				if (ThemeExtensions.IsDarkModeEnabled)
-                    ThemeExtensions.Theme(control);
+                ThemeExtensions.Theme(control);
                 control.Visible = visible;
 				control.Tag = null;
 				tabControl.Dispose();
@@ -748,8 +747,7 @@ namespace cYo.Common.Windows.Forms
 				}
 				tabControl2.SelectedIndex = 0;
 				tabControl2.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
-                if (ThemeExtensions.IsDarkModeEnabled)
-                    ThemeExtensions.Theme(tabControl2);
+                ThemeExtensions.Theme(tabControl2);
                 tabControl2.Visible = visible2;
             }
 			return on;

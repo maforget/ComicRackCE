@@ -53,8 +53,10 @@ namespace cYo.Common.Windows.Forms
 		public TextBoxEx()
 		{
 			FocusSelect = true;
-            if (ThemeExtensions.IsDarkModeEnabled)
-                BorderStyle = BorderStyle.FixedSingle;
+			ThemeExtensions.TryDrawTheme(() =>
+			{
+				BorderStyle = BorderStyle.FixedSingle;
+			}, onlyDrawIfDefault: false);
         }
 
 		protected override bool IsInputKey(Keys keyData)
@@ -70,8 +72,7 @@ namespace cYo.Common.Windows.Forms
 		{
 			base.OnHandleCreated(e);
 			SetPromptText();
-            //if (ThemeExtensions.IsDarkModeEnabled)
-                ThemeExtensions.Theme(this);
+            ThemeExtensions.Theme(this);
         }
 
 		protected override void OnEnter(EventArgs e)

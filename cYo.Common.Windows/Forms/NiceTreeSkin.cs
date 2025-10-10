@@ -8,9 +8,9 @@ namespace cYo.Common.Windows.Forms
 {
 	public class NiceTreeSkin : TreeViewSkinner
 	{
-		private readonly Bitmap down = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowDown : Resources.SimpleArrowDown;
+		private readonly Bitmap down = Resources.SimpleArrowDown;
 
-		private readonly Bitmap right = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowRight : Resources.SimpleArrowRight;
+		private readonly Bitmap right = Resources.SimpleArrowRight;
 
 		public NiceTreeSkin()
 		{

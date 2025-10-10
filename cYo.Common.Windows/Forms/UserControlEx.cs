@@ -7,7 +7,6 @@ namespace cYo.Common.Windows.Forms
     {
         public void ApplyTheme(Control? control = null)
         {
-            if (!ThemeExtensions.IsDarkModeEnabled) return;
             if (control == null)
             {
                 ThemeExtensions.Theme(this);

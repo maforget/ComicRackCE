@@ -285,22 +285,23 @@ namespace cYo.Common.Windows.Forms
 			IComboBoxItem comboBoxItem = obj as IComboBoxItem;
 			bool flag = (e.State & DrawItemState.ComboBoxEdit) != 0;
 			bool flag2 = comboBoxItem != null && comboBoxItem.IsSeparator && !flag && e.Index > 0;
-            Pen separatorPen = ThemeExtensions.IsDarkModeEnabled ? SystemPens.ControlText : SystemPens.ControlLight;
+            Pen separatorPen = ThemeColors.ComboBox.SeparatorPen;
 
             e.DrawBackground();
-            // override SelectedText highlighting
-            if (ThemeExtensions.IsDarkModeEnabled && e.State.HasFlag(DrawItemState.Selected))
-            {
-                using (Brush highlightBrush = new SolidBrush(ThemeColors.SelectedText.HighLight))
-                {
-                    e.Graphics.FillRectangle(highlightBrush, e.Bounds);
-                }
-                ControlPaint.DrawBorder(e.Graphics, e.Bounds, ThemeColors.SelectedText.Focus, ButtonBorderStyle.Solid);
-            }
-            else
-            {
+			// override SelectedText highlighting
+			bool wasDrawn = ThemeExtensions.TryDrawTheme(() =>
+			{
+				if (e.State.HasFlag(DrawItemState.Selected))
+				{
+					using (Brush highlightBrush = new SolidBrush(ThemeColors.SelectedText.HighLight))
+					{
+						e.Graphics.FillRectangle(highlightBrush, e.Bounds);
+					}
+					ControlPaint.DrawBorder(e.Graphics, e.Bounds, ThemeColors.SelectedText.Focus, ButtonBorderStyle.Solid);
+				}
+			}, onlyDrawIfDefault: false);
+            if (!wasDrawn)
                 e.DrawFocusRectangle();
-            }
 
             using (Brush brush = new SolidBrush(e.ForeColor))
 			{

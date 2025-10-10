@@ -568,11 +568,11 @@ namespace cYo.Common.Windows.Forms
 
 		public static bool StyleEnabled = true;
 
-		private static Bitmap arrowLeft = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowLeft : Resources.SimpleArrowLeft;
+		private static Bitmap arrowLeft = Resources.SimpleArrowLeft;
 
-		private static Bitmap arrowRight = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowRight : Resources.SimpleArrowRight;
+		private static Bitmap arrowRight = Resources.SimpleArrowRight;
 
-		private static Bitmap arrowDown = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowDown : Resources.SimpleArrowDown;
+		private static Bitmap arrowDown = Resources.SimpleArrowDown;
 
 		private static Bitmap insertArrow = Resources.InsertArrow;
 
@@ -811,11 +811,14 @@ namespace cYo.Common.Windows.Forms
 			get
 			{
 				Color result = ThemeColors.TabBar.DefaultBorder;
-				if (Application.RenderWithVisualStyles && !ThemeExtensions.IsDarkModeEnabled)
+				ThemeExtensions.TryDrawTheme(() =>
 				{
-					VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(VisualStyleElement.Tab.Pane.Normal);
-					result = visualStyleRenderer.GetColor(ColorProperty.BorderColorHint);
-				}
+					if (Application.RenderWithVisualStyles)
+					{
+						VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(VisualStyleElement.Tab.Pane.Normal);
+						result = visualStyleRenderer.GetColor(ColorProperty.BorderColorHint);
+					}
+				}, onlyDrawIfDefault: true);
 				return result;
 			}
 		}
@@ -1156,19 +1159,19 @@ namespace cYo.Common.Windows.Forms
 		{
 			VisualStyleRenderer visualStyleRenderer = null;
 			VisualStyleElement normal = VisualStyleElement.ToolTip.Standard.Normal;
-			if (ThemeExtensions.IsDarkModeEnabled)
+			bool wasDrawn = ThemeExtensions.TryDrawTheme(() => e.Graphics.FillRectangle(new SolidBrush(ThemeColors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size)), onlyDrawIfDefault: false);
+			if (!wasDrawn)
 			{
-				e.Graphics.FillRectangle(new SolidBrush(ThemeColors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size));
-			}
-			else if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
-			{
-				visualStyleRenderer = new VisualStyleRenderer(normal);
-				visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);
-			}
-			else
-			{
-				e.DrawBackground();
-				e.DrawBorder();
+				if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
+				{
+					visualStyleRenderer = new VisualStyleRenderer(normal);
+					visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);
+				}
+				else
+				{
+					e.DrawBackground();
+					e.DrawBorder();
+				}
 			}
 			if (OwnerDrawnTooltips && toolTipItem != null && !toolTipItem.ToolTipSize.IsEmpty)
 			{
@@ -1294,16 +1297,18 @@ namespace cYo.Common.Windows.Forms
 
         private void DrawTabItem(Graphics gr, Rectangle rc, TabItemState tabItemState, bool buttonMode)
 		{
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
+			bool wasDrawn = ThemeExtensions.TryDrawTheme(() =>
+			{
 				// tab label background
 				using (Brush backgroundBrush = new SolidBrush((tabItemState == TabItemState.Selected) ? ThemeColors.TabBar.SelectedBack : ThemeColors.TabBar.Back))
 				{
 					gr.FillRectangle(backgroundBrush, rc);
 				}
-                DrawDarkBorder(gr, rc, tabItemState);
-                return;
-            }
+				DrawDarkBorder(gr, rc, tabItemState);
+			}, onlyDrawIfDefault: false);
+			if (wasDrawn)
+				return;
+
             if (TabRenderer.IsSupported)
 			{
 				TabRenderer.DrawTabItem(gr, rc, tabItemState);
@@ -1873,10 +1878,14 @@ namespace cYo.Common.Windows.Forms
 			Rectangle bounds = item.Bounds;
 			DrawTabItem(gr, bounds, item.State, buttonMode: false);
 			bounds = bounds.Pad(2, 2, 2);
-			if (Focused && item.State == TabItemState.Selected && !ThemeExtensions.IsDarkModeEnabled)
+			ThemeExtensions.TryDrawTheme(() =>
 			{
-				ControlPaint.DrawFocusRectangle(gr, bounds);
-			}
+				if (Focused && item.State == TabItemState.Selected)
+				{
+					ControlPaint.DrawFocusRectangle(gr, bounds);
+				}
+			}, onlyDrawIfDefault: true);
+
 			bounds = bounds.Pad(1);
 			if (item.Image != null)
 			{

@@ -139,28 +139,30 @@ namespace cYo.Common.Windows.Forms
         /// </remarks>
         public static void SetColor(TreeView treeView, Color? backColor = null, Color? foreColor = null)
         {
-			if (backColor == null && ThemeExtensions.IsDarkModeEnabled)
+			bool wasDrawn = ThemeExtensions.TryDrawTheme(() =>
+			{
 				backColor = ThemeColors.TreeView.Back;
-            if (backColor != null)
-                Native.SetBackColor(treeView.Handle, (Color)backColor);
+				foreColor = ThemeColors.TreeView.Text;
+			}, onlyDrawIfDefault: false);
 
-            if (foreColor == null && ThemeExtensions.IsDarkModeEnabled)
-                foreColor = ThemeColors.TreeView.Text;
-            if (backColor != null)
-                Native.SetForeColor(treeView.Handle, (Color)foreColor);
+			if (!wasDrawn)
+			{
+				Native.SetBackColor(treeView.Handle, (Color)backColor);
+				Native.SetForeColor(treeView.Handle, (Color)foreColor);
+			}
         }
 
         protected override void OnCreateControl()
 		{
 			base.OnCreateControl();
 			EnableDoubleBuffer(this);
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                BorderStyle = BorderStyle.None;
+			ThemeExtensions.TryDrawTheme(() =>
+			{
+				BorderStyle = BorderStyle.None;
 				this.BackColor = ThemeColors.TreeView.Back;
-                this.ForeColor = ThemeColors.TreeView.Text;
-                SetColor(this);
-            }
+				this.ForeColor = ThemeColors.TreeView.Text;
+				SetColor(this);
+			}, onlyDrawIfDefault: false);
         }
 
 		private void scrollTimer_Tick(object sender, EventArgs e)
@@ -208,8 +210,7 @@ namespace cYo.Common.Windows.Forms
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            if (ThemeExtensions.IsDarkModeEnabled)
-                SetColor(this);
+			ThemeExtensions.TryDrawTheme(() => SetColor(this), onlyDrawIfDefault: false);
         }
 
         protected override void WndProc(ref Message m)

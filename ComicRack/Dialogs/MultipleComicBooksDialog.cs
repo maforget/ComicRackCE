@@ -401,8 +401,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			{
 				label.Left = c.Left;
 			}
-            if (ThemeExtensions.IsDarkModeEnabled)
-                ThemeExtensions.Theme(checkBox);
+            ThemeExtensions.Theme(checkBox);
             return checkBox;
 		}
 

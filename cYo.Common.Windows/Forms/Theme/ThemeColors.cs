@@ -6,12 +6,16 @@ namespace cYo.Common.Windows.Forms
 {
     public static class ThemeColors
     {
-        internal static ThemeColorTable ColorTable => colorTable;
+		internal static ThemeColorTable ColorTable => colorTable ??= new ThemeColorTable();
 
-        private static ThemeColorTable colorTable = new ThemeColorTable();
-        public static void Default() => colorTable = new ThemeColorTable();
-        public static void Dark() => colorTable = new DarkThemeColorTable();
+		private static ThemeColorTable colorTable;
 
+        public static bool IsDefault => ColorTable?.GetType() == typeof(ThemeColorTable);
+
+		internal static void Register<T>() where T : ThemeColorTable, new()
+		{
+			colorTable = new T();
+		}
 
         // WhiteSmoke is RGB 245 but RGB 10 would be too dark
         // WhiteSmoke - RGB 245 - DisplayWorkspace Background and PreferencesDialog 
@@ -29,7 +33,7 @@ namespace cYo.Common.Windows.Forms
         #region App Colors
 
         #region Singles
-        public static Color ItemDrawInfoText => colorTable.ItemDrawInfoText;
+        public static Color ItemDrawInfoText => ColorTable.ItemDrawInfoText;
         //public static Color ControlStyleColorTableBorder => colorTable.ControlStyleColorTableBorder;
         #endregion
 
@@ -41,34 +45,34 @@ namespace cYo.Common.Windows.Forms
 
         public static class CollapsibleGroupBox
         {
-            public static Color HeaderGradientStart => colorTable.CollapsibleGroupBoxHeaderBackGradientStart;
-            public static Color HeaderGradientEnd => colorTable.CollapsibleGroupBoxHeaderBackGradientEnd;
-            public static Color HeaderText => colorTable.CollapsibleGroupBoxHeaderText;
+            public static Color HeaderGradientStart => ColorTable.CollapsibleGroupBoxHeaderBackGradientStart;
+            public static Color HeaderGradientEnd => ColorTable.CollapsibleGroupBoxHeaderBackGradientEnd;
+            public static Color HeaderText => ColorTable.CollapsibleGroupBoxHeaderText;
         }
 
         public static class StyledRenderer
         {
-            public static Color Selection => colorTable.StyledSelectionBack;
-            public static Color SelectionFocused => colorTable.StyledSelectionFocusedBack;
+            public static Color Selection => ColorTable.StyledSelectionBack;
+            public static Color SelectionFocused => ColorTable.StyledSelectionFocusedBack;
         }
 
         public static class ThumbRenderer
         {
-            public static Color SelectionBack => colorTable.ThumbRendererSelectionBack;
+            public static Color SelectionBack => ColorTable.ThumbRendererSelectionBack;
         }
 
         public static class ThumbTileRenderer
         {
-            public static Color Emboss => colorTable.ThumbTileRendererEmboss;
-            public static Color TitleText => colorTable.ThumbTileRendererTitleText;
-            public static Color BodyText => colorTable.ThumbTileRendererBodyText;
+            public static Color Emboss => ColorTable.ThumbTileRendererEmboss;
+            public static Color TitleText => ColorTable.ThumbTileRendererTitleText;
+            public static Color BodyText => ColorTable.ThumbTileRendererBodyText;
         }
 
         public static class ThumbnailViewItem
         {
-            public static Color Back => colorTable.ThumbnailViewItemBack;
-            public static Color HighlightText => colorTable.ThumbnailViewItemHighlightText;
-            public static Color Border => colorTable.ThumbnailViewItemBorder;
+            public static Color Back => ColorTable.ThumbnailViewItemBack;
+            public static Color HighlightText => ColorTable.ThumbnailViewItemHighlightText;
+            public static Color Border => ColorTable.ThumbnailViewItemBorder;
         }
 
         #endregion
@@ -88,83 +92,83 @@ namespace cYo.Common.Windows.Forms
 
         public static class ComicListFolderFilesBrowser
         {
-            public static Color FavViewBack => colorTable.ComicListFolderFilesBrowserFavViewBack;
+            public static Color FavViewBack => ColorTable.ComicListFolderFilesBrowserFavViewBack;
         }
 
         public static class ComicListLibraryBrowser
         {
-            public static Color FavViewBack => colorTable.ComicListLibraryBrowserFavViewBack;
+            public static Color FavViewBack => ColorTable.ComicListLibraryBrowserFavViewBack;
         }
 
         public static class ItemView
         {
-            public static Color DefaultBack => colorTable.ItemViewDefaultBack;
-            public static Color MainBack => colorTable.ItemViewMainBack;
-            public static Color GroupText => colorTable.ItemViewGroupText;
-            public static Color GroupSeparator => colorTable.ItemViewGroupSeparator;
+            public static Color DefaultBack => ColorTable.ItemViewDefaultBack;
+            public static Color MainBack => ColorTable.ItemViewMainBack;
+            public static Color GroupText => ColorTable.ItemViewGroupText;
+            public static Color GroupSeparator => ColorTable.ItemViewGroupSeparator;
         }
 
         public static class LibraryTree
         {
-            public static Color TotalBack => colorTable.LibraryTreeTotalBookCountBack;
-            public static Color TotalText => colorTable.LibraryTreeTotalBookCountText;
-            public static Color UnreadBack => colorTable.LibraryTreeUnreadBookCountBack;
-            public static Color UnreadText => colorTable.LibraryTreeUnreadBookCountText;
-            public static Color NewBack => colorTable.LibraryTreeNewBookCountBack;
-            public static Color NewText => colorTable.LibraryTreeNewBookCountText;
+            public static Color TotalBack => ColorTable.LibraryTreeTotalBookCountBack;
+            public static Color TotalText => ColorTable.LibraryTreeTotalBookCountText;
+            public static Color UnreadBack => ColorTable.LibraryTreeUnreadBookCountBack;
+            public static Color UnreadText => ColorTable.LibraryTreeUnreadBookCountText;
+            public static Color NewBack => ColorTable.LibraryTreeNewBookCountBack;
+            public static Color NewText => ColorTable.LibraryTreeNewBookCountText;
         }
 
         public static class SmallComicPreview
         {
-            public static Color PageViewerBack => colorTable.SmallComicPreviewPageViewerBack;
-            public static Color PageViewerText => colorTable.SmallComicPreviewPageViewerText;
+            public static Color PageViewerBack => ColorTable.SmallComicPreviewPageViewerBack;
+            public static Color PageViewerText => ColorTable.SmallComicPreviewPageViewerText;
         }
 
         public static class TabBar
         {
-            public static readonly Color Back = colorTable.TabBarBack;
-            public static readonly Color DefaultBorder = colorTable.TabBarDefaultBorder;
-            public static readonly Color SelectedBack = colorTable.TabBarSelectedBack;
+            public static readonly Color Back = ColorTable.TabBarBack;
+            public static readonly Color DefaultBorder = ColorTable.TabBarDefaultBorder;
+            public static readonly Color SelectedBack = ColorTable.TabBarSelectedBack;
         }
 
         public static class ToolTip
-        {
-            public static readonly Color InfoText = colorTable.ToolTipText;
-            public static readonly Color Back = colorTable.ToolTipBack;
+		{
+            public static readonly Color InfoText = ColorTable.ToolTipText;
+            public static readonly Color Back = ColorTable.ToolTipBack;
         }
         #endregion
 
         #region Dialogs
         public static class ComicBook
         {
-            public static Color Link => colorTable.ComicBookLink;
-            public static Color VisitedLink => colorTable.ComicBookVisitedLink;
-            public static Color PageViewer => colorTable.ComicBookPageViewerText;
-            public static Color PanelBack => colorTable.ComicBookPanelBack;
-            public static Color Separator => colorTable.ComicBookWhereSeparator;
+            public static Color Link => ColorTable.ComicBookLink;
+            public static Color VisitedLink => ColorTable.ComicBookVisitedLink;
+            public static Color PageViewer => ColorTable.ComicBookPageViewerText;
+            public static Color PanelBack => ColorTable.ComicBookPanelBack;
+            public static Color Separator => ColorTable.ComicBookWhereSeparator;
         }
 
         public static class DeviceEditControl
         {
-            public static Color Back => colorTable.DeviceEditControlBack;
+            public static Color Back => ColorTable.DeviceEditControlBack;
         }
 
         public static class Preferences
         {
-            public static Color PanelReader => colorTable.PreferencesPanelReaderOverlay;
-            public static Color LabelOverlays => colorTable.PreferencesLabelOverlays;
-            public static Color ServerEditControl => colorTable.PreferencesServerEditControl;
+            public static Color PanelReader => ColorTable.PreferencesPanelReaderOverlay;
+            public static Color LabelOverlays => ColorTable.PreferencesLabelOverlays;
+            public static Color ServerEditControl => ColorTable.PreferencesServerEditControl;
         }
 
         public static class SmartQuery
         {
-            public static readonly Color Back = colorTable.SmartQueryBack;
-            public static readonly Color Exception = colorTable.SmartQueryException;
-            public static readonly Color Text = colorTable.SmartQueryText;
-            public static readonly Color Keyword = colorTable.SmartQueryKeyword;
-            public static readonly Color Qualifier = colorTable.SmartQueryQualifier;
-            public static readonly Color Negation = colorTable.SmartQueryNegation;
-            public static readonly Color String = colorTable.SmartQueryString;
+            public static readonly Color Back = ColorTable.SmartQueryBack;
+            public static readonly Color Exception = ColorTable.SmartQueryException;
+            public static readonly Color Text = ColorTable.SmartQueryText;
+            public static readonly Color Keyword = ColorTable.SmartQueryKeyword;
+            public static readonly Color Qualifier = ColorTable.SmartQueryQualifier;
+            public static readonly Color Negation = ColorTable.SmartQueryNegation;
+            public static readonly Color String = ColorTable.SmartQueryString;
         }
         #endregion
 
@@ -189,6 +193,7 @@ namespace cYo.Common.Windows.Forms
         {
             public static readonly Color Back = Color.FromArgb(56, 56, 56); // to match ComboBox button
             public static readonly Color Disabled = Color.FromArgb(64, 64, 64); // from .net combobox source
+            public static Pen SeparatorPen => ColorTable.ComboBoxSeparatorPen;
         }
 
         public static class List
@@ -234,7 +239,7 @@ namespace cYo.Common.Windows.Forms
         public static class Header
         {
             public static readonly Color Back = SystemColors.Control; // RGB 32 HEX 20
-            public static readonly Color Separator = Color.FromArgb(99, 99, 99);
+            public static Color Separator => ColorTable.HeaderSeparator;
             public static readonly Color Text = SystemColors.WindowText;
         }
 
@@ -242,6 +247,11 @@ namespace cYo.Common.Windows.Forms
         {
             public static readonly Color HighLight = Color.FromArgb(52, 67, 86);
             public static readonly Color Focus = Color.FromArgb(40, 100, 180);
+        }
+
+        public static class Caption
+        {
+            public static Brush Brush => ColorTable.CaptionBrush;
         }
         #endregion
 
@@ -264,8 +274,8 @@ namespace cYo.Common.Windows.Forms
     /// </remarks>
     internal class ThemeColorTable
     {
-        // ComicBookDialog
-        public virtual Color ComicBookLink => Color.SteelBlue;
+		// ComicBookDialog
+		public virtual Color ComicBookLink => Color.SteelBlue;
         public virtual Color ComicBookVisitedLink => Color.MediumOrchid;
         public virtual Color ComicBookPageViewerText => Color.White;
         public virtual Color ComicBookPanelBack => SystemColors.ButtonShadow;
@@ -358,7 +368,16 @@ namespace cYo.Common.Windows.Forms
         // ToolTip
         public virtual Color ToolTipBack => Color.Empty;
         public virtual Color ToolTipText => SystemColors.InfoText;
-    }
+
+        // ComboBox
+        public virtual Pen ComboBoxSeparatorPen => SystemPens.ControlLight;
+
+        // Caption
+        public virtual Brush CaptionBrush => Brushes.White;
+
+        // Header
+        public virtual Color HeaderSeparator => SystemColors.ControlDark;
+	}
 
     /// <summary>
     /// Dark Mode aplication <see cref="Color"/> values.<br/>
@@ -459,6 +478,15 @@ namespace cYo.Common.Windows.Forms
         // ToolTip
         public override Color ToolTipBack => SystemColors.Window; // should be SystemColors.Info; needs alpha-aware tweaks
         public override Color ToolTipText => SystemColors.ControlText; // should be SystemColors.InfoText; needs alpha-aware tweaks
-    }
+
+		// ComboBox
+		public override Pen ComboBoxSeparatorPen => SystemPens.ControlText;
+
+		// Caption
+		public override Brush CaptionBrush => Brushes.Black;
+
+		// Header
+		public override Color HeaderSeparator => Color.FromArgb(99, 99, 99);
+	}
 
 }

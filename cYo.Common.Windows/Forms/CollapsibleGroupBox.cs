@@ -27,9 +27,9 @@ namespace cYo.Common.Windows.Forms
 
         private Bitmap expandedImage;
 
-        private static readonly Image arrowDown = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowDown.ScaleDpi() : Resources.SimpleArrowDown.ScaleDpi();
+        private static readonly Image arrowDown = Resources.SimpleArrowDown.ScaleDpi();
 
-        private static readonly Image arrowRight = ThemeExtensions.IsDarkModeEnabled ? Resources.DarkSimpleArrowRight.ScaleDpi() : Resources.SimpleArrowRight.ScaleDpi();
+        private static readonly Image arrowRight = Resources.SimpleArrowRight.ScaleDpi();
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -201,13 +201,13 @@ namespace cYo.Common.Windows.Forms
         {
             get
             {
-                if (ThemeExtensions.IsDarkModeEnabled)
-                    return ThemeColors.Material.Content;
-                if (!UsesTheme || TransparentTouch)
-                {
-                    return base.BackColor;
-                }
-                return Color.Transparent;
+                Color temp = Color.Transparent;
+
+                bool wasDrawn = ThemeExtensions.TryDrawTheme(() => temp = ThemeColors.Material.Content, onlyDrawIfDefault: false);
+                if (!wasDrawn && (!UsesTheme || TransparentTouch))
+                    temp = base.BackColor;
+
+                return temp;
             }
             set
             {
@@ -252,11 +252,14 @@ namespace cYo.Common.Windows.Forms
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             base.OnPaintBackground(e);
-            if (UsesTheme && !TransparentTouch && !ThemeExtensions.IsDarkModeEnabled)
+            ThemeExtensions.TryDrawTheme(() =>
             {
-                VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(VisualStyleElement.Tab.Body.Normal);
-                visualStyleRenderer.DrawBackground(e.Graphics, base.ClientRectangle);
-            }
+                if (UsesTheme && !TransparentTouch)
+                {
+                    VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(VisualStyleElement.Tab.Body.Normal);
+                    visualStyleRenderer.DrawBackground(e.Graphics, base.ClientRectangle);
+                }
+            }, onlyDrawIfDefault: true);
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -294,7 +297,7 @@ namespace cYo.Common.Windows.Forms
                 LineAlignment = StringAlignment.Center
             })
             {
-                using (Brush brush2 = new SolidBrush(ThemeExtensions.IsDarkModeEnabled ? ThemeColors.CollapsibleGroupBox.HeaderText : ForeColor))
+                using (Brush brush2 = new SolidBrush(ThemeColors.CollapsibleGroupBox.HeaderText))
                 {
                     gr.DrawString(Text, FC.Get(Font, HeaderFontStyle), brush2, headerRectangle.Pad(ToggleRectange.Width, 0), format);
                 }

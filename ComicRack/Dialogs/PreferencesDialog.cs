@@ -1060,8 +1060,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                 tab.Text = sc.ShareName;
             };
             // this IS required
-            //if (ThemeExtensions.IsDarkModeEnabled)
-                //ThemeExtensions.Theme(tab);
+            //ThemeExtensions.Theme(tab);
             tab.Controls.Add(sc);
             tabShares.TabPages.Add(tab);
         }

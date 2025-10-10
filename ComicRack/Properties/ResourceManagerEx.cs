@@ -6,26 +6,28 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using cYo.Common.Localize;
+using cYo.Common.Windows.Forms.Theme;
 
 namespace cYo.Projects.ComicRack.Viewer.Properties
 {
 	internal class ResourceManagerEx : System.Resources.ResourceManager
 	{
-		private readonly bool useDarkMode;
+		private readonly bool isThemed;
 		private readonly Dictionary<string, string> darkResources = new Dictionary<string, string>();
-		const string triggerWord = "Dark";
+		private readonly string triggerWord = string.Empty;
 
-		public ResourceManagerEx(bool useDarkMode)
-			: base("cYo.Projects.ComicRack.Viewer.Properties.Resources", typeof(Resources).Assembly)
+		public ResourceManagerEx(Type resourceType, Themes theme = Themes.Default )
+			: base(resourceType.FullName, resourceType.Assembly)
 		{
-			this.useDarkMode = useDarkMode;
-			DiscoverDarkResources();
+			isThemed = theme != Themes.Default ? true : false;
+			triggerWord = isThemed ? theme.ToString() : string.Empty;
+			DiscoverResources();
 		}
 
-		private void DiscoverDarkResources()
+		private void DiscoverResources()
 		{
 			//Get all resources
-			var resourceSet = Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+			var resourceSet = this.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
 			var imagesKeys = resourceSet.OfType<DictionaryEntry>() // all images keys
 				.Where(i => i.Value is Bitmap)
 				.Select(i => i.Key.ToString())
@@ -49,7 +51,7 @@ namespace cYo.Projects.ComicRack.Viewer.Properties
 
 		public override object GetObject(string name, CultureInfo culture)
 		{
-			if (!useDarkMode)
+			if (!isThemed)
 				return base.GetObject(name, culture);
 
 			return GetDarkObject(name, culture);
@@ -64,17 +66,26 @@ namespace cYo.Projects.ComicRack.Viewer.Properties
 			//return base.GetObject($"{triggerWord}{name}", culture) ?? base.GetObject(name, culture); // If the Dark variant doesn't exist return the regular version
 		}
 
-		internal static void InitResourceManager(bool useDarkMode = false)
+		internal static void InitResourceManager(Themes theme)
 		{
-			var innerField = typeof(Resources).GetField("resourceMan",
+			Type[] types = 
+				[
+					typeof(cYo.Projects.ComicRack.Viewer.Properties.Resources), 
+					typeof(cYo.Common.Windows.Properties.Resources)
+				];
+
+			foreach (Type type in types)
+			{
+				var innerField = type.GetField("resourceMan",
+							BindingFlags.NonPublic | BindingFlags.Static);
+
+				innerField?.SetValue(null, new ResourceManagerEx(type, theme));
+
+				innerField = type.GetField("resourceCulture",
 					BindingFlags.NonPublic | BindingFlags.Static);
 
-			innerField?.SetValue(null, new ResourceManagerEx(useDarkMode));
-
-			innerField = typeof(Resources).GetField("resourceCulture",
-				BindingFlags.NonPublic | BindingFlags.Static);
-
-			innerField.SetValue(null, CultureInfo.CurrentUICulture);
+				innerField.SetValue(null, CultureInfo.CurrentUICulture); 
+			}
 		}
 	}
 }

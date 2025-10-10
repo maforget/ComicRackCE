@@ -15,14 +15,7 @@ namespace cYo.Common.Windows.Forms
     /// </summary>
     public static class ThemeExtensions
     {
-        /// <summary>
-        /// <para>Indicates whether Dark Mode has been <b>enabled</b>. Set on initialization and referenced in all public non-initialization <see cref="ThemeExtensions"/> calls.</para>
-        /// <para>Also serves as a <b>global reference</b> for other classes.</para>
-        /// </summary>
-        /// <remarks>
-        /// This is intended to mirror the <c>Application.IsDarkModeEnabled</c> which is available . .NET 9+.
-        /// </remarks>
-        public static bool IsDarkModeEnabled = false;
+        private static bool IsThemed { get; set; } = false;
 
         /// <summary>
         /// <see cref="Control"/> to Theme Handler method mappings. For controls which don't respond to <see cref="SystemColors"/> change, or
@@ -67,39 +60,68 @@ namespace cYo.Common.Windows.Forms
         /// <remarks>
         /// If <see cref="IsDarkModeEnabled"/> is set to false, all calls to other <see cref="ThemeExtensions"/> functions will immediately return.
         /// </remarks>
-        public static void Initialize(bool useDarkMode = false)
+        public static void Initialize(Theme.Themes theme)
         {
-            IsDarkModeEnabled = useDarkMode;
+            IsThemed = ThemeFactory(theme);
+			if (IsThemed)
+            {
+                KnownColorTableEx darkColorTable = new KnownColorTableEx();
+                darkColorTable.Initialize(true);
 
-            if (!useDarkMode) return;
-            
-            KnownColorTableEx darkColorTable = new KnownColorTableEx();
-            darkColorTable.Initialize(useDarkMode);
+                // make default background darker. alternative would be to use another KnownColor, but there are a total of 1 potential dark KnownColors (Black)
+                darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb());
+                darkColorTable.SetColor(KnownColor.HighlightText, Color.White.ToArgb());    // HighlightText should be white
 
-            // make default background darker. alternative would be to use another KnownColor, but there are a total of 1 potential dark KnownColors (Black)
-            darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb()); 
-            darkColorTable.SetColor(KnownColor.HighlightText, Color.White.ToArgb());    // HighlightText should be white
-
-            ThemeColors.Dark(); // Initialize Dark color palette.
-
-            UXTheme.Initialize();
+                UXTheme.Initialize(); 
+            }
         }
 
-        /// <summary>
-		/// Themes a <see cref="Control"/>, recursively. The specifics are determined by the control <see cref="Type"/> mapping in <see cref="themeHandlers"/> and <see cref="complexUXThemeHandlers"/>.<br/>
-        /// Also sets the window theme for a <see cref="Form"/>.
-        /// </summary>
-        /// <param name="control"><see cref="Control"/> to be themed.</param>
-        /// <remarks>
-        /// Theming can essentially be broken down into these (optional) parts:<br/>
-        /// - <see cref="themeHandlers"/> - Set <typeparamref name="ForeColor"/> and <typeparamref name="BackColor"/><br/>
-        /// - <see cref="themeHandlers"/> - Attach custom <see cref="EventHandler"/> (<c>Draw</c>, <c>Paint</c>, <c>Mouse</c>)<br/>
-        /// - <see cref="themeHandlers"/> - Set <see cref="BorderStyle"/> and <see cref="FlatStyle"/> (either for looks, or because it's required for <see cref="UXTheme.SetControlTheme(IntPtr, string, string)"/> to identify a part)<br/>
-        /// - <see cref="complexUXThemeHandlers"/> - Apply native Windows OS theming via <see cref="UXTheme.SetControlTheme(IntPtr, string, string)"/><br/>
-        /// </remarks>
-        public static void Theme(this Control control)
+        // Returns if a theme other than default is being applied
+        private static bool ThemeFactory(Theme.Themes theme)
         {
-            if (!IsDarkModeEnabled) return;
+            switch (theme)
+            {
+                case Forms.Theme.Themes.Dark:
+                    ThemeColors.Register<DarkThemeColorTable>();
+                    return true;
+                case Forms.Theme.Themes.Default:
+                default:
+                    ThemeColors.Register<ThemeColorTable>();
+                    return false;
+            };
+        }
+
+		/// <summary>
+		/// Runs the provided <see cref="Action"/> only if the Theme isn't <see cref="Theme.Themes.Default"/> or if <paramref name="onlyDrawIfDefault"/> is false and we are in the <see cref="Theme.Themes.Default"/> Theme, then it will always draw.
+		/// </summary>
+		/// <param name="action">The <see cref="Action"/> to run</param>
+		/// <param name="onlyDrawIfDefault"></param>
+		/// <returns>a <see cref="Boolean"/> if it was successful in drawing</returns>
+		public static bool TryDrawTheme(Action action, bool onlyDrawIfDefault = false)
+		{
+            if ((!ThemeColors.IsDefault && !onlyDrawIfDefault) || (ThemeColors.IsDefault && onlyDrawIfDefault)) // We are themed or we have requested to only draw when in the default 
+			{
+				action();
+                return true;
+			}
+            return false;
+		}
+
+		/// <summary>
+		/// Themes a <see cref="Control"/>, recursively. The specifics are determined by the control <see cref="Type"/> mapping in <see cref="themeHandlers"/> and <see cref="complexUXThemeHandlers"/>.<br/>
+		/// Also sets the window theme for a <see cref="Form"/>.
+		/// </summary>
+		/// <param name="control"><see cref="Control"/> to be themed.</param>
+		/// <remarks>
+		/// Theming can essentially be broken down into these (optional) parts:<br/>
+		/// - <see cref="themeHandlers"/> - Set <typeparamref name="ForeColor"/> and <typeparamref name="BackColor"/><br/>
+		/// - <see cref="themeHandlers"/> - Attach custom <see cref="EventHandler"/> (<c>Draw</c>, <c>Paint</c>, <c>Mouse</c>)<br/>
+		/// - <see cref="themeHandlers"/> - Set <see cref="BorderStyle"/> and <see cref="FlatStyle"/> (either for looks, or because it's required for <see cref="UXTheme.SetControlTheme(IntPtr, string, string)"/> to identify a part)<br/>
+		/// - <see cref="complexUXThemeHandlers"/> - Apply native Windows OS theming via <see cref="UXTheme.SetControlTheme(IntPtr, string, string)"/><br/>
+		/// </remarks>
+		public static void Theme(this Control control)
+        {
+            if (!IsThemed) return;
 
             if (control is Form form)
             {
@@ -432,7 +454,7 @@ namespace cYo.Common.Windows.Forms
         public static void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
             // explicit IsDarkModeEnabled check as public (referenced in TaskDialog and ListStyles)
-            if (!IsDarkModeEnabled || (sender as ListView).View != View.Details)
+            if (!IsThemed || (sender as ListView).View != View.Details)
             {
                 e.DrawDefault = true;
                 return;

@@ -735,8 +735,8 @@ namespace cYo.Projects.ComicRack.Viewer
 			CommandLineParser.Parse(EngineConfiguration.Default);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
-            ThemeExtensions.Initialize(ExtendedSettings.UseDarkMode); // if using dark mode, replace SystemColors and initialize native Windows theming
-			ResourceManagerEx.InitResourceManager(ExtendedSettings.UseDarkMode);
+            ThemeExtensions.Initialize(ExtendedSettings.Theme); // if using dark mode, replace SystemColors and initialize native Windows theming
+			ResourceManagerEx.InitResourceManager(ExtendedSettings.Theme);
             ShellFile.DeleteAPI = ExtendedSettings.DeleteAPI;
 			DatabaseManager.FirstDatabaseAccess += delegate
 			{
@@ -828,11 +828,8 @@ namespace cYo.Projects.ComicRack.Viewer
 				ComicBook.FormatIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Formats*.zip"), SplitIconKeys);
 				ComicBook.SpecialIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Special*.zip"), SplitIconKeys);
 				ComicBook.GenericIcons = CreateGenericsIcons(defaultLocations, "*.zip", "_", SplitIconKeys);
-                if (ExtendedSettings.UseDarkMode)
-                {
-                    ToolStripManager.Renderer = new ThemeExtensions.DarkToolStripRenderer();
-                }
-				else
+				bool wasDrawn = ThemeExtensions.TryDrawTheme(() => ToolStripManager.Renderer = new ThemeExtensions.DarkToolStripRenderer(), onlyDrawIfDefault: false);
+				if (!wasDrawn)
 				{
                     ToolStripRenderer renderer;
                     if (ExtendedSettings.SystemToolBars)

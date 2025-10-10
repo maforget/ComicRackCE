@@ -116,19 +116,17 @@ namespace cYo.Common.Windows.Forms
         // ComicBrowser/Pages Views > Details 
         public static void Draw(Graphics graphics, Rectangle bounds, Font font, string text, Color textColor, StringFormat format, HeaderState state, HeaderAdornments adornments)
         {
-            Color controlDark = ThemeExtensions.IsDarkModeEnabled ? ThemeColors.Header.Separator : SystemColors.ControlDark;
-
-            if (ThemeExtensions.IsDarkModeEnabled)
+            Color controlDark = ThemeColors.Header.Separator;
+            bool wasDrawn = ThemeExtensions.TryDrawTheme(() =>
             {
                 using (Brush brush = new SolidBrush(ThemeColors.Header.Back))
                 {
                     graphics.FillRectangle(brush, bounds);
                 }
-            }
-            else
-            {
+            }, onlyDrawIfDefault: false);
+
+			if(!wasDrawn)
                 graphics.FillRectangle(Brushes.White, bounds);
-            }
 
             StyledRenderer.AlphaStyle state2;
             switch (state)
@@ -151,9 +149,9 @@ namespace cYo.Common.Windows.Forms
             graphics.DrawStyledRectangle(bounds, state2, controlDark, StyledRenderer.Default.Frame(0, 1));
             bounds.Inflate(-2, 0);
 
-            Image themedArrowDown = ThemeExtensions.IsDarkModeEnabled ? darkSortDownImage : sortDownImage;
-            Image themedSortUpImage = ThemeExtensions.IsDarkModeEnabled ? darkSortUpImage : sortUpImage;
-            Image themedDropDownImage = ThemeExtensions.IsDarkModeEnabled ? darkDropDownImage : dropDownImage;
+            Image themedArrowDown = sortDownImage;
+            Image themedSortUpImage = sortUpImage;
+            Image themedDropDownImage = dropDownImage;
             using (graphics.SaveState())
             {
                 if (adornments.IsSet(HeaderAdornments.DropDown))
