@@ -7,14 +7,7 @@ namespace cYo.Common.Windows.Forms
     {
         public void ApplyTheme(Control? control = null)
         {
-            if (control == null)
-            {
-                ThemeExtensions.Theme(this);
-            }
-            else
-            {
-                ThemeExtensions.Theme(control);
-            }
+            ThemeExtensions.Theme(control ?? this);
         }
 
         protected override void OnHandleCreated(EventArgs e)

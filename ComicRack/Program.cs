@@ -828,9 +828,12 @@ namespace cYo.Projects.ComicRack.Viewer
 				ComicBook.FormatIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Formats*.zip"), SplitIconKeys);
 				ComicBook.SpecialIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Special*.zip"), SplitIconKeys);
 				ComicBook.GenericIcons = CreateGenericsIcons(defaultLocations, "*.zip", "_", SplitIconKeys);
-				bool wasDrawn = ThemeExtensions.TryDrawTheme(() => ToolStripManager.Renderer = new ThemeExtensions.DarkToolStripRenderer(), onlyDrawIfDefault: false);
-				if (!wasDrawn)
-				{
+                if (ExtendedSettings.UseDarkMode)
+                {
+                    ToolStripManager.Renderer = new ThemeExtensions.DarkToolStripRenderer();
+                }
+                else
+                {
                     ToolStripRenderer renderer;
                     if (ExtendedSettings.SystemToolBars)
                     {

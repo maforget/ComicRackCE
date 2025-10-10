@@ -32,16 +32,20 @@ namespace cYo.Projects.ComicRack.Viewer.Properties
 				.Where(i => i.Value is Bitmap)
 				.Select(i => i.Key.ToString())
 				.ToHashSet();
-			var darkImagesKeys = imagesKeys.Where(i => i.StartsWith(triggerWord)).ToHashSet(); // all images keys that start with the trigger word
 
-			foreach (string key in darkImagesKeys)
+			if (isThemed)
 			{
-				string lightKey = key.Replace(triggerWord, "");
+                var darkImagesKeys = imagesKeys.Where(i => i.StartsWith(triggerWord)).ToHashSet(); // all images keys that start with the trigger word
 
-				// Only add if the light version exists
-				if (imagesKeys.TryGetValue(lightKey, out var _))
-					darkResources[lightKey] = key;
-			}
+                foreach (string key in darkImagesKeys)
+                {
+                    string lightKey = key.Replace(triggerWord, "");
+
+                    // Only add if the light version exists
+                    if (imagesKeys.TryGetValue(lightKey, out var _))
+                        darkResources[lightKey] = key;
+                }
+            }
 		}
 
 		public override object GetObject(string name)

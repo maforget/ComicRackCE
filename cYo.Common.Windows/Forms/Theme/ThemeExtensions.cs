@@ -15,6 +15,15 @@ namespace cYo.Common.Windows.Forms
     /// </summary>
     public static class ThemeExtensions
     {
+        /// <summary>
+        /// <para>Indicates whether Dark Mode has been <b>enabled</b>. Set on initialization and referenced in all public non-initialization <see cref="ThemeExtensions"/> calls.</para>
+        /// <para>Also serves as a <b>global reference</b> for other classes.</para>
+        /// </summary>
+        /// <remarks>
+        /// This is intended to mirror the <c>Application.IsDarkModeEnabled</c> which is available . .NET 9+.
+        /// </remarks>
+        public static bool IsDarkModeEnabled = false;
+
         private static bool IsThemed { get; set; } = false;
 
         /// <summary>
@@ -62,6 +71,8 @@ namespace cYo.Common.Windows.Forms
         /// </remarks>
         public static void Initialize(Theme.Themes theme)
         {
+            IsDarkModeEnabled = theme == Forms.Theme.Themes.Dark;
+
             IsThemed = ThemeFactory(theme);
 			if (IsThemed)
             {
