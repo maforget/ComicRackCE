@@ -19,7 +19,7 @@ namespace cYo.Common.Windows.Forms
         public override Color MenuItemPressedGradientEnd
             => Color.FromArgb(0xFF, 0x60, 0x60, 0x60);
 
-        public override Color MenuItemSelected => ThemeColors.SelectedText.HighLight;
+        public override Color MenuItemSelected => ThemeColors.SelectedText.Highlight;
         //=> SystemColors.ControlText; // this means white highlight
 
         public override Color MenuItemSelectedGradientBegin

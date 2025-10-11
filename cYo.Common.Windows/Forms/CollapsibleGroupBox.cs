@@ -201,13 +201,11 @@ namespace cYo.Common.Windows.Forms
         {
             get
             {
-                Color temp = Color.Transparent;
-
-                bool wasDrawn = ThemeExtensions.TryDrawTheme(() => temp = ThemeColors.Material.Content, onlyDrawIfDefault: false);
-                if (!wasDrawn && (!UsesTheme || TransparentTouch))
-                    temp = base.BackColor;
-
-                return temp;
+                if (!UsesTheme || TransparentTouch)
+                {
+                    return base.BackColor;
+                }
+                return ThemeColors.CollapsibleGroupBox.Back;
             }
             set
             {
@@ -252,14 +250,11 @@ namespace cYo.Common.Windows.Forms
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             base.OnPaintBackground(e);
-            ThemeExtensions.TryDrawTheme(() =>
+            if (UsesTheme && !TransparentTouch && !ThemeExtensions.IsDarkModeEnabled)
             {
-                if (UsesTheme && !TransparentTouch)
-                {
-                    VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(VisualStyleElement.Tab.Body.Normal);
-                    visualStyleRenderer.DrawBackground(e.Graphics, base.ClientRectangle);
-                }
-            }, onlyDrawIfDefault: true);
+                VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(VisualStyleElement.Tab.Body.Normal);
+                visualStyleRenderer.DrawBackground(e.Graphics, base.ClientRectangle);
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -297,10 +292,7 @@ namespace cYo.Common.Windows.Forms
                 LineAlignment = StringAlignment.Center
             })
             {
-                using (Brush brush2 = new SolidBrush(ThemeColors.CollapsibleGroupBox.HeaderText))
-                {
-                    gr.DrawString(Text, FC.Get(Font, HeaderFontStyle), brush2, headerRectangle.Pad(ToggleRectange.Width, 0), format);
-                }
+                gr.DrawString(Text, FC.Get(Font, HeaderFontStyle), ThemeBrushes.CollapsibleGroupBox.HeaderText, headerRectangle.Pad(ToggleRectange.Width, 0), format);
             }
         }
 

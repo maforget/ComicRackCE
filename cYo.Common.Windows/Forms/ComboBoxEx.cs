@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using static cYo.Common.Win32.ExecuteProcess;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -160,24 +161,68 @@ namespace cYo.Common.Windows.Forms
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
-			Message message = m;
-			ThemeExtensions.TryDrawTheme(() =>
+
+            IntPtr hdc = m.WParam;   // handle to device context (DC)
+            IntPtr hwndChild = m.LParam;  // handle to the static control
+            NativeMethods.COMBOBOXINFO pcbi = GetChildHandle();
+
+
+			if (!ThemeExtensions.IsDarkModeEnabled || pcbi.hwndEdit == IntPtr.Zero)
+				return;
+
+			switch (m.Msg)
 			{
-				if (!Enabled && message.Msg == NativeMethods.WM_CTLCOLORSTATIC)
-				{
-					IntPtr hdc = message.WParam;   // handle to device context (DC)
-					IntPtr hwndChild = message.LParam;  // handle to the static control
-					NativeMethods.COMBOBOXINFO pcbi = GetChildHandle();
-					if (pcbi.hwndEdit != IntPtr.Zero && hwndChild == pcbi.hwndEdit)
+				case NativeMethods.WM_CTLCOLORSTATIC:
+					if (hwndChild == pcbi.hwndEdit)
 					{
 						NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeColors.ComboBox.Disabled));
 						NativeMethods.SetTextColor(hdc, ColorTranslator.ToWin32(SystemColors.GrayText));
 
-						message.Result = NativeMethods.darkEditBrush;
+						m.Result = NativeMethods.darkEditBrush;
+						return;
 					}
-				}
-			}, onlyDrawIfDefault: false);
-			m = message;
+
+					// Additional handling for Simple style listbox when disabled
+					if (DropDownStyle == ComboBoxStyle.Simple && !Enabled && hwndChild == pcbi.hwndList)
+					{
+						NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeColors.ComboBox.Disabled));
+						NativeMethods.SetTextColor(hdc, ColorTranslator.ToWin32(SystemColors.GrayText));
+						m.Result = NativeMethods.darkEditBrush;
+						return;
+					}
+
+					break;
+				case NativeMethods.WM_PAINT:
+					if (!GetStyle(ControlStyles.UserPaint) && (FlatStyle == FlatStyle.Flat || FlatStyle == FlatStyle.Popup) && !(SystemInformation.HighContrast && BackColor == SystemColors.Window))
+					{
+                        using Graphics g = Graphics.FromHdc(hdc);
+
+                        // Special handling for disabled DropDownList in dark mode
+                        if (!Enabled && DropDownStyle == ComboBoxStyle.DropDownList)
+						{
+							// The text area for DropDownList (excluding the dropdown button)
+							Rectangle textBounds = ClientRectangle;
+							textBounds.Width -= SystemInformation.VerticalScrollBarWidth;
+
+							// Fill the background
+							using var bgBrush = new SolidBrush(ThemeColors.ComboBox.Disabled);
+							g.FillRectangle(bgBrush, textBounds);
+
+							// Draw the text
+							TextRenderer.DrawText(
+								g,
+								Text,
+								Font,
+								textBounds,
+                                SystemColors.GrayText,
+								TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
+						}
+
+						return;
+					}
+					break;
+			}
+
         }
 
         protected override void OnEnter(EventArgs e)

@@ -42,7 +42,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 
         protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
         {
-			ThemeExtensions.TryDrawTheme(() => e.ArrowColor = Color.White, onlyDrawIfDefault: false);
+			ThemeExtensions.SetToolStripItemColor(e);
             base.OnRenderArrow(e);
         }
 
@@ -56,8 +56,8 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			Graphics graphics = e.Graphics;
 			if (!text.StartsWith("*"))
 			{
-				ThemeExtensions.TryDrawTheme(() => e.TextColor = Color.White, onlyDrawIfDefault: false);
-				base.OnRenderItemText(e);
+                ThemeExtensions.SetToolStripItemColor(e);
+                base.OnRenderItemText(e);
 				return;
 			}
 			float num = text.Count((char c) => c == '*');
@@ -80,23 +80,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
         protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
         {
             base.OnRenderItemCheck(e);
-			ThemeExtensions.TryDrawTheme(() =>
-			{
-				var g = e.Graphics;
-				var rect = e.ImageRectangle;
-				g.FillRectangle(new SolidBrush(ColorTable.CheckPressedBackground), rect);
-
-				using (var pen = new Pen(Color.White, 2))
-				{
-					g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-					g.DrawLines(pen, new[]
-					{
-						new Point(rect.Left + 4, rect.Top + rect.Height/2 - 1),
-						new Point(rect.Left + rect.Width/3 + rect.Width/6, rect.Bottom - 5),
-						new Point(rect.Right - 4, rect.Top + 3)
-					});
-				}
-			}, onlyDrawIfDefault: false);
+            ThemeExtensions.RenderItemCheck(e.Graphics, e.ImageRectangle, ColorTable.CheckPressedBackground);
         }
     }
 }

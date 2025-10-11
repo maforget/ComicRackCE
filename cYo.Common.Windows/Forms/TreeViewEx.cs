@@ -150,13 +150,10 @@ namespace cYo.Common.Windows.Forms
         {
             base.OnCreateControl();
             EnableDoubleBuffer(this);
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                BorderStyle = BorderStyle.None;
-                this.BackColor = ThemeColors.TreeView.Back;
-                this.ForeColor = ThemeColors.TreeView.Text;
-                SetColor(this);
-            }
+            ThemeExtensions.SetBorderStyle(this);
+            this.BackColor = ThemeColors.TreeView.Back == Color.Empty ? this.BackColor : ThemeColors.TreeView.Back;
+            this.ForeColor = ThemeColors.TreeView.Text == Color.Empty ? this.ForeColor : ThemeColors.TreeView.Text;
+            SetColor(this);
         }
 
         private void scrollTimer_Tick(object sender, EventArgs e)
@@ -204,8 +201,7 @@ namespace cYo.Common.Windows.Forms
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            if (ThemeExtensions.IsDarkModeEnabled)
-                SetColor(this);
+            SetColor(this);
         }
 
         protected override void WndProc(ref Message m)

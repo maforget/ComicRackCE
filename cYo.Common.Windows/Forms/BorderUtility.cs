@@ -7,33 +7,32 @@ namespace cYo.Common.Windows.Forms
 	{
 		public static void DrawBorder(Graphics g, Rectangle bounds, ExtendedBorderStyle style)
 		{
-			bool wasDrawn = ThemeExtensions.TryDrawTheme(() => DrawDarkBorder(g, bounds), onlyDrawIfDefault: false);
-			if (wasDrawn)
-				return;
-
+            if (ThemeExtensions.IsDarkModeEnabled)
+            {
+                DrawDarkBorder(g, bounds);
+                return;
+            }
             Border3DStyle style2;
 			switch (style)
 			{
-				default:
-					return;
-				case ExtendedBorderStyle.Flat:
-					style2 = Border3DStyle.Flat;
-					break;
-				case ExtendedBorderStyle.Sunken:
-					style2 = Border3DStyle.Sunken;
-					break;
-				case ExtendedBorderStyle.Raised:
-					style2 = Border3DStyle.Raised;
-					break;
+			default:
+				return;
+			case ExtendedBorderStyle.Flat:
+				style2 = Border3DStyle.Flat;
+				break;
+			case ExtendedBorderStyle.Sunken:
+				style2 = Border3DStyle.Sunken;
+				break;
+			case ExtendedBorderStyle.Raised:
+				style2 = Border3DStyle.Raised;
+				break;
 			}
 			ControlPaint.DrawBorder3D(g, bounds, style2);
 		}
 
         public static void DrawDarkBorder(Graphics g, Rectangle bounds, Color? color = null)
         {
-            if (color == null)
-                color = ThemeColors.Border.Default;
-            ControlPaint.DrawBorder(g, bounds, (Color)color, ButtonBorderStyle.Solid);
+            ControlPaint.DrawBorder(g, bounds, (color ?? ThemeColors.Border.Default), ButtonBorderStyle.Solid);
         }
 
         public static Rectangle AdjustBorder(Rectangle bounds, ExtendedBorderStyle style, bool inwards)

@@ -74,16 +74,18 @@ namespace cYo.Common.Windows.Forms
             IsDarkModeEnabled = theme == Forms.Theme.Themes.Dark;
 
             IsThemed = ThemeFactory(theme);
-			if (IsThemed)
+			if (IsDarkModeEnabled)
             {
                 KnownColorTableEx darkColorTable = new KnownColorTableEx();
-                darkColorTable.Initialize(true);
+                darkColorTable.Initialize(IsDarkModeEnabled);
 
                 // make default background darker. alternative would be to use another KnownColor, but there are a total of 1 potential dark KnownColors (Black)
-                darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb());
+                darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb()); 
                 darkColorTable.SetColor(KnownColor.HighlightText, Color.White.ToArgb());    // HighlightText should be white
 
-                UXTheme.Initialize(); 
+                //ThemeColors.Dark(); // Initialize Dark color palette.
+
+                UXTheme.Initialize();
             }
         }
 
@@ -102,7 +104,7 @@ namespace cYo.Common.Windows.Forms
             };
         }
 
-		/// <summary>
+        /// <summary>
 		/// Runs the provided <see cref="Action"/> only if the Theme isn't <see cref="Theme.Themes.Default"/> or if <paramref name="onlyDrawIfDefault"/> is false and we are in the <see cref="Theme.Themes.Default"/> Theme, then it will always draw.
 		/// </summary>
 		/// <param name="action">The <see cref="Action"/> to run</param>
@@ -120,19 +122,19 @@ namespace cYo.Common.Windows.Forms
 
 		/// <summary>
 		/// Themes a <see cref="Control"/>, recursively. The specifics are determined by the control <see cref="Type"/> mapping in <see cref="themeHandlers"/> and <see cref="complexUXThemeHandlers"/>.<br/>
-		/// Also sets the window theme for a <see cref="Form"/>.
-		/// </summary>
-		/// <param name="control"><see cref="Control"/> to be themed.</param>
-		/// <remarks>
-		/// Theming can essentially be broken down into these (optional) parts:<br/>
-		/// - <see cref="themeHandlers"/> - Set <typeparamref name="ForeColor"/> and <typeparamref name="BackColor"/><br/>
-		/// - <see cref="themeHandlers"/> - Attach custom <see cref="EventHandler"/> (<c>Draw</c>, <c>Paint</c>, <c>Mouse</c>)<br/>
-		/// - <see cref="themeHandlers"/> - Set <see cref="BorderStyle"/> and <see cref="FlatStyle"/> (either for looks, or because it's required for <see cref="UXTheme.SetControlTheme(IntPtr, string, string)"/> to identify a part)<br/>
-		/// - <see cref="complexUXThemeHandlers"/> - Apply native Windows OS theming via <see cref="UXTheme.SetControlTheme(IntPtr, string, string)"/><br/>
-		/// </remarks>
-		public static void Theme(this Control control)
+        /// Also sets the window theme for a <see cref="Form"/>.
+        /// </summary>
+        /// <param name="control"><see cref="Control"/> to be themed.</param>
+        /// <remarks>
+        /// Theming can essentially be broken down into these (optional) parts:<br/>
+        /// - <see cref="themeHandlers"/> - Set <typeparamref name="ForeColor"/> and <typeparamref name="BackColor"/><br/>
+        /// - <see cref="themeHandlers"/> - Attach custom <see cref="EventHandler"/> (<c>Draw</c>, <c>Paint</c>, <c>Mouse</c>)<br/>
+        /// - <see cref="themeHandlers"/> - Set <see cref="BorderStyle"/> and <see cref="FlatStyle"/> (either for looks, or because it's required for <see cref="UXTheme.SetControlTheme(IntPtr, string, string)"/> to identify a part)<br/>
+        /// - <see cref="complexUXThemeHandlers"/> - Apply native Windows OS theming via <see cref="UXTheme.SetControlTheme(IntPtr, string, string)"/><br/>
+        /// </remarks>
+        public static void Theme(this Control control)
         {
-            if (!IsThemed) return;
+            if (!IsDarkModeEnabled) return;
 
             if (control is Form form)
             {
@@ -269,7 +271,7 @@ namespace cYo.Common.Windows.Forms
         private static void ThemeDataGridView(DataGridView gridView)
         {
             gridView.EnableHeadersVisualStyles = false;
-            gridView.DefaultCellStyle.SelectionBackColor = ThemeColors.SelectedText.HighLight;
+            gridView.DefaultCellStyle.SelectionBackColor = ThemeColors.SelectedText.Highlight;
             gridView.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
             gridView.BorderStyle = BorderStyle.None;
         }
@@ -435,7 +437,7 @@ namespace cYo.Common.Windows.Forms
                 e.DrawBackground();
                 if (e.State.HasFlag(DrawItemState.Selected))
                 {
-                    using (Brush highlightBrush = new SolidBrush(ThemeColors.SelectedText.HighLight))
+                    using (Brush highlightBrush = new SolidBrush(ThemeColors.SelectedText.Highlight))
                     {
                         e.Graphics.FillRectangle(highlightBrush, e.Bounds);
                     }
@@ -465,7 +467,7 @@ namespace cYo.Common.Windows.Forms
         public static void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
             // explicit IsDarkModeEnabled check as public (referenced in TaskDialog and ListStyles)
-            if (!IsThemed || (sender as ListView).View != View.Details)
+            if (!IsDarkModeEnabled || (sender as ListView).View != View.Details)
             {
                 e.DrawDefault = true;
                 return;
@@ -570,8 +572,56 @@ namespace cYo.Common.Windows.Forms
             ImageProcessing.Invert(bmp);
             return bmp;
         }
-        
-    public class DarkToolStripRenderer : ToolStripProfessionalRenderer
+
+        public static void SetToolStripItemColor (ToolStripArrowRenderEventArgs e)
+        {
+            if (!IsDarkModeEnabled) return;
+            e.ArrowColor = Color.White;
+        }
+
+        public static void SetToolStripItemColor(ToolStripItemTextRenderEventArgs e)
+        {
+            if (!IsDarkModeEnabled) return;
+            e.TextColor = Color.White;
+        }
+
+        public static void SetSidePanelColor(Control control)
+        {
+            if (!IsDarkModeEnabled) return;
+            control.BackColor = ThemeColors.Material.SidePanel;
+            if (control.GetType() == typeof(TreeView) || control.GetType() == typeof(TreeViewEx))
+            {
+                TreeViewEx.SetColor((TreeView)control, ThemeColors.Material.SidePanel);
+            }
+        }
+
+        public static void SetBorderStyle(Control control, BorderStyle? borderStyle = null)
+        {
+            if (!IsDarkModeEnabled) return;
+            control.GetType().GetProperty("BorderStyle")?.SetValue(control, borderStyle ?? BorderStyle.None);
+        }
+
+        public static void RenderItemCheck(Graphics graphics, Rectangle rect, Color background, Color? checkColor = null)
+        {
+            if (!IsDarkModeEnabled) return;
+
+            using (Brush brush = new SolidBrush(background))
+            {
+                graphics.FillRectangle(brush, rect);
+            }
+            using (var pen = new Pen(checkColor ?? Color.White, 2))
+            {
+                graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                graphics.DrawLines(pen, new[]
+                {
+                    new Point(rect.Left + 4, rect.Top + rect.Height/2 - 1),
+                    new Point(rect.Left + rect.Width/3 + rect.Width/6, rect.Bottom - 5),
+                    new Point(rect.Right - 4, rect.Top + 3)
+                });
+            }
+        }
+
+        public class DarkToolStripRenderer : ToolStripProfessionalRenderer
         {
             public DarkToolStripRenderer()
                 : base(new DarkProfessionalColorsEx())
@@ -593,20 +643,7 @@ namespace cYo.Common.Windows.Forms
             protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e)
             {
                 base.OnRenderItemCheck(e);
-                var g = e.Graphics;
-                var rect = e.ImageRectangle;
-                g.FillRectangle(new SolidBrush(ColorTable.CheckPressedBackground), rect);
-
-                using (var pen = new Pen(Color.White, 2))
-                {
-                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                    g.DrawLines(pen, new[]
-                    {
-                        new Point(rect.Left + 4, rect.Top + rect.Height/2 - 1),
-                        new Point(rect.Left + rect.Width/3 + rect.Width/6, rect.Bottom - 5),
-                        new Point(rect.Right - 4, rect.Top + 3)
-                    });
-                }
+                ThemeExtensions.RenderItemCheck(e.Graphics, e.ImageRectangle, ColorTable.CheckPressedBackground);
             }
         }
     }

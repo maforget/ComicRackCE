@@ -262,23 +262,15 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		public ComicListLibraryBrowser()
 		{
 			InitializeComponent();
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                tvQueries.BackColor = ThemeColors.Material.SidePanel;
-				TreeViewEx.SetColor(tvQueries, ThemeColors.Material.SidePanel);
-			}
-			treeImages.ImageSize = treeImages.ImageSize.ScaleDpi();
+            ThemeExtensions.SetSidePanelColor(tvQueries);
+            treeImages.ImageSize = treeImages.ImageSize.ScaleDpi();
 			treeSkin = new LibraryTreeSkin
 			{
 				TreeView = tvQueries
 			};
 			tvQueries.Font = SystemFonts.IconTitleFont;
             // we have to slam down the settings again
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                treeSkin.TreeView.BackColor = ThemeColors.Material.SidePanel;
-				TreeViewEx.SetColor(treeSkin.TreeView, ThemeColors.Material.SidePanel);
-            }
+            ThemeExtensions.SetSidePanelColor(treeSkin.TreeView);
             favContainer.Expanded = false;
 			LocalizeUtility.Localize(this, components);
 			quickSearch.SetCueText(tsQuickSearch.Text);

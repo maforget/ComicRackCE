@@ -1,5 +1,8 @@
-﻿using cYo.Common.Drawing;
+﻿using cYo.Common.Collections;
+using cYo.Common.Drawing;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
 namespace cYo.Common.Windows.Forms
@@ -45,6 +48,7 @@ namespace cYo.Common.Windows.Forms
 
         public static class CollapsibleGroupBox
         {
+            public static Color Back => ColorTable.CollapsibleGroupBoxBack;
             public static Color HeaderGradientStart => ColorTable.CollapsibleGroupBoxHeaderBackGradientStart;
             public static Color HeaderGradientEnd => ColorTable.CollapsibleGroupBoxHeaderBackGradientEnd;
             public static Color HeaderText => ColorTable.CollapsibleGroupBoxHeaderText;
@@ -73,6 +77,24 @@ namespace cYo.Common.Windows.Forms
             public static Color Back => ColorTable.ThumbnailViewItemBack;
             public static Color HighlightText => ColorTable.ThumbnailViewItemHighlightText;
             public static Color Border => ColorTable.ThumbnailViewItemBorder;
+        }
+
+        public static class Caption
+        {
+            public static Color Back => ColorTable.CaptionBack;
+            public static Color Text => ColorTable.CaptionText;
+        }
+
+        public static class CheckedListBox
+        {
+            public static Color Back = ColorTable.CheckedListBoxBack;
+        }
+
+        public static class RatingControl
+        {
+            public static Color Back = ColorTable.RatingControlBack;
+            public static Color Rated = ColorTable.RatingControlRated;
+            public static Color Unrated = ColorTable.RatingControlUnrated;
         }
 
         #endregion
@@ -193,7 +215,7 @@ namespace cYo.Common.Windows.Forms
         {
             public static readonly Color Back = Color.FromArgb(56, 56, 56); // to match ComboBox button
             public static readonly Color Disabled = Color.FromArgb(64, 64, 64); // from .net combobox source
-            public static Pen SeparatorPen => ColorTable.ComboBoxSeparatorPen;
+            public static Color Separator => ColorTable.ComboBoxSeparator;
         }
 
         public static class List
@@ -218,8 +240,8 @@ namespace cYo.Common.Windows.Forms
 
         public static class TreeView
         {
-            public static readonly Color Back = ThemeColors.TextBox.Back;
-            public static readonly Color Text = SystemColors.ControlText;
+            public static Color Back => ColorTable.TreeViewBack;
+            public static Color Text => ColorTable.TreeViewText;
         }
         #endregion
 
@@ -238,20 +260,15 @@ namespace cYo.Common.Windows.Forms
 
         public static class Header
         {
-            public static readonly Color Back = SystemColors.Control; // RGB 32 HEX 20
+            public static Color Back => ColorTable.HeaderBack; // SystemColors.Control; // RGB 32 HEX 20
             public static Color Separator => ColorTable.HeaderSeparator;
             public static readonly Color Text = SystemColors.WindowText;
         }
 
         public static class SelectedText
         {
-            public static readonly Color HighLight = Color.FromArgb(52, 67, 86);
+            public static readonly Color Highlight = Color.FromArgb(52, 67, 86);
             public static readonly Color Focus = Color.FromArgb(40, 100, 180);
-        }
-
-        public static class Caption
-        {
-            public static Brush Brush => ColorTable.CaptionBrush;
         }
         #endregion
 
@@ -260,6 +277,75 @@ namespace cYo.Common.Windows.Forms
             public static readonly Color Window = Color.FromArgb(unchecked((int)0xFF333333));    // Form Background. SystemColors.Control; // RGB 32 HEX 20
             public static readonly Color SidePanel = Color.FromArgb(unchecked((int)0xFF191919)); // RGB 25 HEX 19
             public static readonly Color Content = SystemColors.Control;                         // MainViewItemView + CollapsibleGroupBox + background
+        }
+    }
+
+    public static class ThemePens
+    {
+        private static readonly Dictionary<Color, Pen> cache = new();
+
+        public static class ComboBox
+        {
+            public static Pen Separator => FromThemeColor(ThemeColors.ComboBox.Separator);
+        }
+
+        public static Pen FromThemeColor(Color color)
+        {
+            if (!cache.TryGetValue(color, out var pen))
+            {
+                pen = new Pen(color);
+                cache[color] = pen;
+            }
+            return pen;
+        }
+
+        public static void Reset()
+        {
+            foreach (var pen in cache.Values)
+                pen.Dispose();
+            cache.Clear();
+        }
+    }
+
+    public static class ThemeBrushes
+    {
+        private static readonly Dictionary<Color, SolidBrush> cache = new();
+
+        public static class Caption
+        {
+            public static Brush Back => FromThemeColor(ThemeColors.Caption.Back);
+        }
+
+        public static class CollapsibleGroupBox
+        {
+            public static Brush HeaderText => FromThemeColor(ThemeColors.CollapsibleGroupBox.HeaderText);
+        }
+
+        public static class Header
+        {
+            public static Brush Back => FromThemeColor(ThemeColors.Header.Back);
+        }
+
+        public static class SelectedText
+        {
+            public static Brush Highlight => FromThemeColor(ThemeColors.SelectedText.Highlight);
+        }
+
+        public static Brush FromThemeColor(Color color)
+        {
+            if (!cache.TryGetValue(color, out var brush))
+            {
+                brush = new SolidBrush(color);
+                cache[color] = brush;
+            }
+            return brush;
+        }
+
+        public static void Reset()
+        {
+            foreach (var brush in cache.Values)
+                brush.Dispose();
+            cache.Clear();
         }
     }
 
@@ -288,9 +374,10 @@ namespace cYo.Common.Windows.Forms
         public virtual Color ComicListLibraryBrowserFavViewBack => SystemColors.Window;
 
         // CollapsibleGroupBox
+        public virtual Color CollapsibleGroupBoxBack => Color.Transparent;
         public virtual Color CollapsibleGroupBoxHeaderBackGradientStart => SystemColors.Control;
         public virtual Color CollapsibleGroupBoxHeaderBackGradientEnd => SystemColors.ControlLight;
-        public virtual Color CollapsibleGroupBoxHeaderText => Color.Empty; //ForeColor
+        public virtual Color CollapsibleGroupBoxHeaderText => Control.DefaultForeColor;
 
         // DeviceEditControl
         public virtual Color DeviceEditControlBack => Color.Transparent;
@@ -369,15 +456,28 @@ namespace cYo.Common.Windows.Forms
         public virtual Color ToolTipBack => Color.Empty;
         public virtual Color ToolTipText => SystemColors.InfoText;
 
+        // TreeView
+        public virtual Color TreeViewBack => Color.Empty;
+        public virtual Color TreeViewText => Color.Empty;
+
         // ComboBox
-        public virtual Pen ComboBoxSeparatorPen => SystemPens.ControlLight;
+        public virtual Color ComboBoxSeparator => SystemColors.ControlLight;
 
         // Caption
-        public virtual Brush CaptionBrush => Brushes.White;
+        public virtual Color CaptionBack => Color.White;
+        public virtual Color CaptionText => SystemColors.ActiveCaptionText;
 
         // Header
+        public virtual Color HeaderBack => Color.White;
         public virtual Color HeaderSeparator => SystemColors.ControlDark;
-	}
+
+        // Control defaults
+        public virtual Color CheckedListBoxBack => SystemColors.Window;
+
+        public virtual Color RatingControlBack => Color.Empty; // BackColor - Control.DefaultBackColor - SystemColors.Control
+        public virtual Color RatingControlRated => Color.Empty; // ForeColor - Control.DefaultForeColor - SystemColors.ControlText
+        public virtual Color RatingControlUnrated => Color.LightGray;
+    }
 
     /// <summary>
     /// Dark Mode aplication <see cref="Color"/> values.<br/>
@@ -395,6 +495,7 @@ namespace cYo.Common.Windows.Forms
         //public override Color ComicBookWhereSeparator => Color.Cyan;
 
         // CollapsibleGroupBox
+        public override Color CollapsibleGroupBoxBack => ThemeColors.Material.Content;
         public override Color CollapsibleGroupBoxHeaderBackGradientStart => SystemColors.Control;
         public override Color CollapsibleGroupBoxHeaderBackGradientEnd => SystemColors.ControlDark;
         public override Color CollapsibleGroupBoxHeaderText => SystemColors.ControlText;
@@ -479,14 +580,28 @@ namespace cYo.Common.Windows.Forms
         public override Color ToolTipBack => SystemColors.Window; // should be SystemColors.Info; needs alpha-aware tweaks
         public override Color ToolTipText => SystemColors.ControlText; // should be SystemColors.InfoText; needs alpha-aware tweaks
 
-		// ComboBox
-		public override Pen ComboBoxSeparatorPen => SystemPens.ControlText;
+        // TreeView
+        public override Color TreeViewBack => ThemeColors.TextBox.Back;
+        public override Color TreeViewText => SystemColors.ControlText;
+
+        // ComboBox
+        public override Color ComboBoxSeparator => SystemColors.ControlText;
 
 		// Caption
-		public override Brush CaptionBrush => Brushes.Black;
+		public override Color CaptionBack => Color.Black;
+        //public override Color CaptionText => SystemColors.ActiveCaptionText;
 
-		// Header
-		public override Color HeaderSeparator => Color.FromArgb(99, 99, 99);
-	}
+        // Header
+        public override Color HeaderBack => SystemColors.Control;
+        public override Color HeaderSeparator => Color.FromArgb(99, 99, 99);
+
+        // Control defaults
+        public override Color CheckedListBoxBack => ThemeColors.List.Back;
+
+        public override Color RatingControlBack => ThemeColors.List.Back;
+
+        public override Color RatingControlRated => SystemColors.ControlText;
+        public override Color RatingControlUnrated => SystemColors.GrayText;
+    }
 
 }

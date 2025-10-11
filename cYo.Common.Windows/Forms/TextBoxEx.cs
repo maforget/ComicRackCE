@@ -53,10 +53,7 @@ namespace cYo.Common.Windows.Forms
 		public TextBoxEx()
 		{
 			FocusSelect = true;
-			ThemeExtensions.TryDrawTheme(() =>
-			{
-				BorderStyle = BorderStyle.FixedSingle;
-			}, onlyDrawIfDefault: false);
+			ThemeExtensions.SetBorderStyle(this, BorderStyle.FixedSingle);
         }
 
 		protected override bool IsInputKey(Keys keyData)

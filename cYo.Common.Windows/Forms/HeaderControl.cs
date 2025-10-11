@@ -22,12 +22,6 @@ namespace cYo.Common.Windows.Forms
 
         private static readonly Image dropDownImage = Resources.SmallArrowDown;
 
-        private static readonly Image darkSortUpImage = Resources.DarkSortUp;
-
-        private static readonly Image darkSortDownImage = Resources.DarkSortDown;
-
-        private static readonly Image darkDropDownImage = Resources.DarkSmallArrowDown;
-
         [DefaultValue(false)]
         public bool Pressed
         {
@@ -116,18 +110,7 @@ namespace cYo.Common.Windows.Forms
         // ComicBrowser/Pages Views > Details 
         public static void Draw(Graphics graphics, Rectangle bounds, Font font, string text, Color textColor, StringFormat format, HeaderState state, HeaderAdornments adornments)
         {
-            Color controlDark = ThemeColors.Header.Separator;
-            bool wasDrawn = ThemeExtensions.TryDrawTheme(() =>
-            {
-                using (Brush brush = new SolidBrush(ThemeColors.Header.Back))
-                {
-                    graphics.FillRectangle(brush, bounds);
-                }
-            }, onlyDrawIfDefault: false);
-
-			if(!wasDrawn)
-                graphics.FillRectangle(Brushes.White, bounds);
-
+            graphics.FillRectangle(ThemeBrushes.Header.Back, bounds);
             StyledRenderer.AlphaStyle state2;
             switch (state)
             {
@@ -146,12 +129,9 @@ namespace cYo.Common.Windows.Forms
             }
             bounds.Width--;
             bounds.Height--;
-            graphics.DrawStyledRectangle(bounds, state2, controlDark, StyledRenderer.Default.Frame(0, 1));
+            graphics.DrawStyledRectangle(bounds, state2, ThemeColors.Header.Separator, StyledRenderer.Default.Frame(0, 1));
             bounds.Inflate(-2, 0);
 
-            Image themedArrowDown = sortDownImage;
-            Image themedSortUpImage = sortUpImage;
-            Image themedDropDownImage = dropDownImage;
             using (graphics.SaveState())
             {
                 if (adornments.IsSet(HeaderAdornments.DropDown))
@@ -159,17 +139,17 @@ namespace cYo.Common.Windows.Forms
                     Rectangle dropDownBounds = GetDropDownBounds(bounds);
                     graphics.DrawLine(SystemPens.ControlDark, dropDownBounds.TopLeft().Add(0, 4), dropDownBounds.BottomLeft().Add(0, -4));
                     graphics.DrawLine(SystemPens.ControlLight, dropDownBounds.TopLeft().Add(1, 4), dropDownBounds.BottomLeft().Add(1, -4));
-                    graphics.DrawImage(themedDropDownImage, themedDropDownImage.Size.Align(dropDownBounds, ContentAlignment.MiddleCenter));
+                    graphics.DrawImage(dropDownImage, dropDownImage.Size.Align(dropDownBounds, ContentAlignment.MiddleCenter));
                     dropDownBounds.Inflate(4, 4);
                     graphics.SetClip(dropDownBounds, CombineMode.Exclude);
                 }
                 if (adornments.IsSet(HeaderAdornments.SortDown))
                 {
-                    graphics.DrawImage(themedArrowDown, sortDownImage.Size.Align(bounds.Pad(0, 1), ContentAlignment.TopCenter), 0.7f);
+                    graphics.DrawImage(sortDownImage, sortDownImage.Size.Align(bounds.Pad(0, 1), ContentAlignment.TopCenter), 0.7f);
                 }
                 else if (adornments.IsSet(HeaderAdornments.SortUp))
                 {
-                    graphics.DrawImage(themedSortUpImage, sortDownImage.Size.Align(bounds.Pad(0, 1), ContentAlignment.TopCenter), 0.7f);
+                    graphics.DrawImage(sortUpImage, sortDownImage.Size.Align(bounds.Pad(0, 1), ContentAlignment.TopCenter), 0.7f);
                 }
                 using (Brush brush = new SolidBrush(textColor))
                 {

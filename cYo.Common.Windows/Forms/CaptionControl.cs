@@ -124,9 +124,9 @@ namespace cYo.Common.Windows.Forms
 			Rectangle captionRectangle = CaptionRectangle;
 			if (captionRectangle.Height != 0)
 			{
-				gr.FillRectangle((ThemeColors.Caption.Brush), captionRectangle);
+				gr.FillRectangle(ThemeBrushes.Caption.Back, captionRectangle);
 				gr.DrawStyledRectangle(captionRectangle, selected ? 255 : 128, StyledRenderer.VistaColor, StyledRenderer.Default.Frame(0, 1));
-				TextRenderer.DrawText(gr, Caption, SystemFonts.SmallCaptionFont, captionRectangle.Pad(captionMargin), SystemColors.ActiveCaptionText);
+				TextRenderer.DrawText(gr, Caption, SystemFonts.SmallCaptionFont, captionRectangle.Pad(captionMargin), ThemeColors.Caption.Text);
 			}
 		}
 

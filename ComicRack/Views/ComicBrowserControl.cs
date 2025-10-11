@@ -3240,19 +3240,19 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				ComicBook comic = toolTipItem.Comic;
 				VisualStyleElement normal = VisualStyleElement.ToolTip.Standard.Normal;
-				bool drawn = ThemeExtensions.TryDrawTheme(() => e.Graphics.FillRectangle(new SolidBrush(ThemeColors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size)), onlyDrawIfDefault: false);
-				if (!drawn)
+				if (ThemeExtensions.IsDarkModeEnabled)
 				{
-					if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
-					{
-						VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(normal);
-						visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);
-					}
-					else
-					{
-						e.DrawBackground();
-						e.DrawBorder();
-					}
+					e.Graphics.FillRectangle(new SolidBrush(ThemeColors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size));
+				}
+				else if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
+				{
+					VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(normal);
+					visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);
+				}
+				else
+				{
+					e.DrawBackground();
+					e.DrawBorder();
 				}
 				Rectangle bounds = e.Bounds;
 				bounds.Inflate(-10, -10);

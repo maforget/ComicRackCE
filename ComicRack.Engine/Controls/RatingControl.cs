@@ -182,30 +182,24 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             SetStyle(ControlStyles.ResizeRedraw, value: true);
             SetStyle(ControlStyles.Selectable, value: true);
             SetStyle(ControlStyles.SupportsTransparentBackColor, value: true);
-            ThemeExtensions.TryDrawTheme(() => BackColor = ThemeColors.List.Back, onlyDrawIfDefault: false);
-               
+            BackColor = ThemeColors.RatingControl.Back == Color.Empty ? BackColor : ThemeColors.RatingControl.Back;
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             Graphics graphics = e.Graphics;
-            bool wasDrawn = ThemeExtensions.TryDrawTheme(() =>
+            if (Application.RenderWithVisualStyles && !ThemeExtensions.IsDarkModeEnabled)
             {
-                if (Application.RenderWithVisualStyles)
+                if (drawBorder)
                 {
-                    if (drawBorder)
-                    {
-                        VisualStyleElement element = (Focused ? VisualStyleElement.TextBox.TextEdit.Focused : VisualStyleElement.TextBox.TextEdit.Normal);
-                        VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(element);
-                        visualStyleRenderer.DrawBackground(graphics, base.ClientRectangle);
-                    }
-                    DrawContent(graphics);
+                    VisualStyleElement element = (Focused ? VisualStyleElement.TextBox.TextEdit.Focused : VisualStyleElement.TextBox.TextEdit.Normal);
+                    VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(element);
+                    visualStyleRenderer.DrawBackground(graphics, base.ClientRectangle);
                 }
-            }, onlyDrawIfDefault: true);
-            if (wasDrawn)
+                DrawContent(graphics);
                 return;
-
+            }
             if (drawBorder)
             {
                 graphics.Clear(SystemColors.Window);
@@ -213,8 +207,11 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             DrawContent(graphics);
             if (drawBorder)
             {
-                wasDrawn = ThemeExtensions.TryDrawTheme(() => ControlPaint.DrawBorder(graphics, base.ClientRectangle, ThemeColors.Border.Light, ButtonBorderStyle.Inset), onlyDrawIfDefault: false);
-                if (!wasDrawn)
+                if (ThemeExtensions.IsDarkModeEnabled)
+                {
+                    ControlPaint.DrawBorder(graphics, base.ClientRectangle, ThemeColors.Border.Light, ButtonBorderStyle.Inset);
+                }
+                else
                 {
                     if (Focused)
                     {
@@ -319,8 +316,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             rectangle.Inflate(-2, -2);
             if (drawText)
             {
-                Color color = ((Rating == 0f) ? Color.LightGray : ForeColor);
-                ThemeExtensions.TryDrawTheme(() => color = ((Rating == 0f) ? SystemColors.GrayText : SystemColors.ControlText));
+                Color color = ((Rating == 0f) ? ThemeColors.RatingControl.Unrated : ThemeColors.RatingControl.Rated == Color.Empty ? ForeColor : ThemeColors.RatingControl.Rated);
                 string ratingText = GetRatingText(Rating);
                 Size size = gr.MeasureString(ratingText, Font).ToSize();
                 size.Width += 4;
