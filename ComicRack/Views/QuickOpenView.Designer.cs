@@ -144,7 +144,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = cYo.Common.Drawing.SystemColorsEx.Window;
             this.Caption = "Quick Open";
             this.Controls.Add(this.comicPageContainer);
             this.Controls.Add(this.panelStatus);

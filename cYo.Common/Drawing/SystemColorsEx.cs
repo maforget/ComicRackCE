@@ -1,13 +1,14 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
 
 namespace cYo.Common.Drawing
 {
     /// <summary>
     /// source: <a href="https://github.com/dotnet/runtime">dotnet/runtime</a>. (.NET Foundation, MIT license)<br/>
-    /// <c>src/libraries/System.Drawing.Primitives/src/System/Drawing/SystemColors.cs</c><br/>
+    /// <c>src/libraries/System.Drawing.Primitives/src/System/Drawing/SystemColorsEx.cs</c><br/>
     /// source refers to Dark Theme colors as <c>AlternateSystemColors<c>; this has been kept the same.
     /// </summary>
-    /// <remarks>Adds AlternateSystemColors (Dark Mode) support to SystemColors.</remarks>
+    /// <remarks>Adds AlternateSystemColors (Dark Mode) support to SystemColorsEx.</remarks>
     public static class SystemColorsEx
     {
         internal static bool s_useAlternativeColorSet = false;
@@ -82,11 +83,13 @@ namespace cYo.Common.Drawing
 
     /// <summary>
     /// source: <a href="https://github.com/dotnet/winforms">dotnet/winforms</a>. (.NET Foundation, MIT license)<br/>
-    /// <c>src/System/Drawing/SystemBrushes.cs</c><br/>
+    /// <c>src/System/Drawing/SystemBrushesEx.cs</c><br/>
     /// </summary>
     public static class SystemBrushesEx
     {
         private static readonly object s_systemBrushesKey = new();
+
+        private static readonly Dictionary<Color, Brush> cache = new();
 
         public static Brush ActiveBorder => FromSystemColor(SystemColorsEx.ActiveBorder);
         public static Brush ActiveCaption => FromSystemColor(SystemColorsEx.ActiveCaption);
@@ -133,7 +136,13 @@ namespace cYo.Common.Drawing
 
         public static Brush FromSystemColor(Color c)
         {
-            return new SolidBrush(c);
+            if (!cache.TryGetValue(c, out var brush))
+            {
+                brush = new SolidBrush(c);
+                cache[c] = brush;
+            }
+            return brush;
+            //return new SolidBrush(c);
             //if (!c.IsSystemColor)
             //{
             //    throw new ArgumentException(SR.Format(SR.ColorNotSystemColor, c.ToString()));
@@ -157,15 +166,24 @@ namespace cYo.Common.Drawing
 
             //return systemBrushes[idx] ??= new SolidBrush(c, true);
         }
+
+        public static void Reset()
+        {
+            foreach (var brush in cache.Values)
+                brush.Dispose();
+            cache.Clear();
+        }
     }
 
     /// <summary>
     /// source: <a href="https://github.com/dotnet/winforms">dotnet/winforms</a>. (.NET Foundation, MIT license)<br/>
-    /// <c>src/System/Drawing/SystemPens.cs</c><br/>
+    /// <c>src/System/Drawing/SystemPensEx.cs</c><br/>
     /// </summary>
     public static class SystemPensEx
     {
         private static readonly object s_systemPensKey = new();
+
+        private static readonly Dictionary<Color, Pen> cache = new();
 
         public static Pen ActiveBorder => FromSystemColor(SystemColorsEx.ActiveBorder);
         public static Pen ActiveCaption => FromSystemColor(SystemColorsEx.ActiveCaption);
@@ -213,7 +231,13 @@ namespace cYo.Common.Drawing
 
         public static Pen FromSystemColor(Color c)
         {
-            return new Pen(c);
+            if (!cache.TryGetValue(c, out var pen))
+            {
+                pen = new Pen(c);
+                cache[c] = pen;
+            }
+            return pen;
+            //return new Pen(c);
             //if (!c.IsSystemColor)
             //{
             //    throw new ArgumentException(SR.Format(SR.ColorNotSystemColor, c.ToString()));
@@ -235,6 +259,13 @@ namespace cYo.Common.Drawing
             //Debug.Assert(idx >= 0 && idx < SystemPensEx.Length, "System colors have been added but our system color array has not been expanded.");
 
             //return systemPens[idx] ??= new Pen(c, true);
+        }
+
+        public static void Reset()
+        {
+            foreach (var pen in cache.Values)
+                pen.Dispose();
+            cache.Clear();
         }
     }
 }

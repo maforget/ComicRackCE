@@ -295,7 +295,7 @@ namespace cYo.Common.Windows.Forms
         /// <summary>
         ///  When this is specified, professional colors picks from SystemColors
         ///  rather than colors that match the current theme. If theming is not
-        ///  turned on, we'll fall back to SystemColors.
+        ///  turned on, we'll fall back to SystemColorsEx.
         /// </summary>
         public bool UseSystemColors
         {

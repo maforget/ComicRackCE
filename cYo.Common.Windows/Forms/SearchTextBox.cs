@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Windows.Forms.Layout;
+using cYo.Common.Drawing;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -58,7 +59,7 @@ namespace cYo.Common.Windows.Forms
 			protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
 			{
 				base.OnRenderToolStripBackground(e);
-				e.Graphics.Clear(SystemColors.Window);
+				e.Graphics.Clear(SystemColorsEx.Window);
 			}
 		}
 

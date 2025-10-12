@@ -397,7 +397,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.txRating.DrawText = true;
 			this.txRating.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txRating.ForeColor = System.Drawing.SystemColors.GrayText;
+			this.txRating.ForeColor = cYo.Common.Drawing.SystemColorsEx.GrayText;
 			this.txRating.Location = new System.Drawing.Point(13, 363);
 			this.txRating.Name = "txRating";
 			this.txRating.Rating = 3F;
@@ -812,7 +812,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.txCommunityRating.DrawText = true;
 			this.txCommunityRating.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txCommunityRating.ForeColor = System.Drawing.SystemColors.GrayText;
+			this.txCommunityRating.ForeColor = cYo.Common.Drawing.SystemColorsEx.GrayText;
 			this.txCommunityRating.Location = new System.Drawing.Point(248, 364);
 			this.txCommunityRating.Name = "txCommunityRating";
 			this.txCommunityRating.Rating = 3F;

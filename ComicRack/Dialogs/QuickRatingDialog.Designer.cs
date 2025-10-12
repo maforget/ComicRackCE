@@ -36,7 +36,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.txRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txRating.DrawText = true;
             this.txRating.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txRating.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txRating.ForeColor = cYo.Common.Drawing.SystemColorsEx.GrayText;
             this.txRating.Location = new System.Drawing.Point(12, 245);
             this.txRating.Name = "txRating";
             this.txRating.Rating = 3F;

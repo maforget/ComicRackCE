@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using cYo.Common.Drawing;
 using cYo.Common.Win32;
 
 namespace cYo.Common.Windows.Forms
@@ -233,7 +234,7 @@ namespace cYo.Common.Windows.Forms
                 Rectangle bounds = clientRectangle;
                 bounds.Inflate(-1, -1);
                 ButtonRenderer.DrawButton(graphics, bounds, State);
-                graphics.DrawRectangle(SystemPens.WindowFrame, 0, 0, clientRectangle.Width - 1, clientRectangle.Height - 1);
+                graphics.DrawRectangle(SystemPensEx.WindowFrame, 0, 0, clientRectangle.Width - 1, clientRectangle.Height - 1);
             }
             else
             {
@@ -274,7 +275,7 @@ namespace cYo.Common.Windows.Forms
             }
             else if (ThemeExtensions.IsDarkModeEnabled)
             {
-                TextRenderer.DrawText(graphics, Text, Font, rectangle, SystemColors.GrayText, textFormatFlags);
+                TextRenderer.DrawText(graphics, Text, Font, rectangle, SystemColorsEx.GrayText, textFormatFlags);
             }
             else
             {
@@ -368,7 +369,7 @@ namespace cYo.Common.Windows.Forms
                 new Point(point.X + num2, point.Y - num3),
                 new Point(point.X, point.Y + num4)
             };
-            g.FillPolygon(SystemBrushes.ControlText, points);
+            g.FillPolygon(SystemBrushesEx.ControlText, points);
         }
 
         private void ShowContextMenuStrip()

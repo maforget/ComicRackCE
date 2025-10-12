@@ -103,7 +103,7 @@ namespace cYo.Common.Windows.Forms
                 Trimming = StringTrimming.EllipsisCharacter
             })
             {
-                Draw(graphics, bounds, font, text, SystemColors.ControlText, format, state, adornments);
+                Draw(graphics, bounds, font, text, SystemColorsEx.ControlText, format, state, adornments);
             }
         }
 
@@ -137,8 +137,8 @@ namespace cYo.Common.Windows.Forms
                 if (adornments.IsSet(HeaderAdornments.DropDown))
                 {
                     Rectangle dropDownBounds = GetDropDownBounds(bounds);
-                    graphics.DrawLine(SystemPens.ControlDark, dropDownBounds.TopLeft().Add(0, 4), dropDownBounds.BottomLeft().Add(0, -4));
-                    graphics.DrawLine(SystemPens.ControlLight, dropDownBounds.TopLeft().Add(1, 4), dropDownBounds.BottomLeft().Add(1, -4));
+                    graphics.DrawLine(SystemPensEx.ControlDark, dropDownBounds.TopLeft().Add(0, 4), dropDownBounds.BottomLeft().Add(0, -4));
+                    graphics.DrawLine(SystemPensEx.ControlLight, dropDownBounds.TopLeft().Add(1, 4), dropDownBounds.BottomLeft().Add(1, -4));
                     graphics.DrawImage(dropDownImage, dropDownImage.Size.Align(dropDownBounds, ContentAlignment.MiddleCenter));
                     dropDownBounds.Inflate(4, 4);
                     graphics.SetClip(dropDownBounds, CombineMode.Exclude);

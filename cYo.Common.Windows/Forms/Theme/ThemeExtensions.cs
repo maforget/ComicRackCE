@@ -57,6 +57,7 @@ namespace cYo.Common.Windows.Forms
         /// </summary>
         private static readonly Dictionary<Type, Action<Control>> complexUXThemeHandlers = new()
         {
+            { typeof(CheckBox), c => SetCheckBoxUXTheme((CheckBox)c) },
             { typeof(ComboBox), c => SetComboBoxUXTheme((ComboBox)c) },
             { typeof(ListView), c => SetListViewUXTheme((ListView)c) },
             { typeof(TabControl), c => SetTabControlUXTheme((TabControl)c) }
@@ -79,9 +80,72 @@ namespace cYo.Common.Windows.Forms
                 KnownColorTableEx darkColorTable = new KnownColorTableEx();
                 darkColorTable.Initialize(IsDarkModeEnabled);
 
-                // make default background darker. alternative would be to use another KnownColor, but there are a total of 1 potential dark KnownColors (Black)
-                darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb()); 
-                darkColorTable.SetColor(KnownColor.HighlightText, Color.White.ToArgb());    // HighlightText should be white
+                //darkColorTable.SetColor(KnownColor.Window, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Window)));             // most backgrounds and gradient start (Toolstrip, menu)
+                //darkColorTable.SetColor(KnownColor.WindowText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.WindowText)));         // most text boxes - list, combo etc
+                //darkColorTable.SetColor(KnownColor.GrayText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.GrayText)));           // disabled menu text (expect should be other controls too)
+                //darkColorTable.SetColor(KnownColor.Highlight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Highlight)));          // all the highlights (except combobox): toolstrip, selected item, active menu item
+
+                //darkColorTable.SetColor(KnownColor.ButtonFace, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonFace)));         // main menu bar, toolstrip gradient
+                //darkColorTable.SetColor(KnownColor.ButtonShadow, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonShadow)));       // menu border. Lines - menu dividers, toolstrip dividers
+                //darkColorTable.SetColor(KnownColor.ButtonHighlight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonHighlight)));    // MainForm bottom line, toolstrip dividers, Re-size grip (bottom right)
+
+                //darkColorTable.SetColor(KnownColor.ControlLightLight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlLightLight)));  // active tab label background ... but also button highlight
+                //darkColorTable.SetColor(KnownColor.ControlLight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlLight)));       // grip highlight, remaining tasks text
+                //darkColorTable.SetColor(KnownColor.Control, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Control)));            // Form background (not tabs or menu). gradient end. inactive tab label
+                //darkColorTable.SetColor(KnownColor.ControlText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlText)));        // most read-only text. active menu item. menu arrows
+                //darkColorTable.SetColor(KnownColor.ControlDark, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlDark)));        // inner active button shadow. selected pref menu buttom (checkbox?) outline
+                //darkColorTable.SetColor(KnownColor.ControlDarkDark, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlDarkDark)));    // Outer button shadow
+
+                //darkColorTable.SetColor(KnownColor.MenuText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.MenuText)));           // inactive (not-selected) menu text
+
+                //darkColorTable.SetColor(KnownColor.Info, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Info)));               // hover-over tooltip background
+                //darkColorTable.SetColor(KnownColor.InfoText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.InfoText)));           // hover-over tooltip text
+
+                //darkColorTable.SetColor(KnownColor.WindowFrame, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.WindowFrame)));        // hover-over tooltip border (probably others but not observed)
+
+                //darkColorTable.SetColor(KnownColor.AppWorkspace, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.AppWorkspace)));       // 1px border around tab|panel|whatever-the-element-is. doubled for open comic as it's a seperate element.
+
+                //darkColorTable.SetColor(KnownColor.HighlightText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.HighlightText)));     // selected ComboBox text color in some cases (probably related to DropDownList etc setting)
+
+                //darkColorTable.SetColor(KnownColor.Desktop, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Desktop)));
+                //darkColorTable.SetColor(KnownColor.ScrollBar, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ScrollBar)));         // I think this is intended as a joke
+
+                //darkColorTable.SetColor(KnownColor.HotTrack, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.HotTrack)));
+
+                //darkColorTable.SetColor(KnownColor.ActiveBorder, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ActiveBorder)));
+                //darkColorTable.SetColor(KnownColor.ActiveCaption, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ActiveCaption)));
+                //darkColorTable.SetColor(KnownColor.ActiveCaptionText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ActiveCaptionText)));
+                //darkColorTable.SetColor(KnownColor.GradientActiveCaption, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.GradientActiveCaption)));
+
+                //darkColorTable.SetColor(KnownColor.InactiveBorder, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.InactiveBorder)));
+                //darkColorTable.SetColor(KnownColor.InactiveCaption, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.InactiveCaption)));
+                //darkColorTable.SetColor(KnownColor.InactiveCaptionText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.InactiveCaptionText)));
+                //darkColorTable.SetColor(KnownColor.GradientInactiveCaption, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.GradientInactiveCaption)));
+
+                //darkColorTable.SetColor(KnownColor.Menu, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Menu)));
+                //darkColorTable.SetColor(KnownColor.MenuBar, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.MenuBar)));
+                //darkColorTable.SetColor(KnownColor.MenuHighlight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.MenuHighlight)));
+
+                // 
+                //
+
+                //darkColorTable.SetColor(KnownColor.ButtonFace, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonFace)));
+
+                //darkColorTable.SetColor(KnownColor.GrayText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.GrayText)));
+
+                // used in ListBox CheckBox drawing
+                darkColorTable.SetColor(KnownColor.Window, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Window)));
+                //darkColorTable.SetColor(KnownColor.WindowText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.WindowText)));
+
+                // Used in ListBox CheckBox drawing + Searchbox renderer (#todo)
+                darkColorTable.SetColor(KnownColor.ControlText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlText)));
+
+                // used in Disabled Text drawing
+                darkColorTable.SetColor(KnownColor.Control, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Control)));
+                
+                // used in ComboBox + ListView highlighting
+                //darkColorTable.SetColor(KnownColor.Highlight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Highlight)));
+                darkColorTable.SetColor(KnownColor.HighlightText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.HighlightText)));
 
                 //ThemeColors.Dark(); // Initialize Dark color palette.
 
@@ -139,7 +203,33 @@ namespace cYo.Common.Windows.Forms
             if (control is Form form)
             {
                 form.BackColor = ThemeColors.Material.Window;
+                //form.ForeColor = SystemColorsEx.ControlText;
                 SetWindowUXTheme(form);
+            }
+
+            if (control.BackColor.IsSystemColor)
+            {
+                try
+                {
+                    control.BackColor = KnownColorTableEx.GetSystemColor(control.BackColor.ToKnownColor());
+                }
+                catch
+                {
+                    //control.BackColor = Color.Cyan;
+                }
+            }
+
+
+            if (control.ForeColor.IsSystemColor)
+            {
+                try
+                {
+                    control.ForeColor = KnownColorTableEx.GetSystemColor(control.ForeColor.ToKnownColor());
+                }
+                catch
+                {
+                    //control.ForeColor = Color.Cyan;
+                }
             }
 
             if (themeHandlers.TryGetValue(control.GetType(), out var theme))
@@ -202,12 +292,12 @@ namespace cYo.Common.Windows.Forms
         private static void ThemePanel(Panel panel)
         {
             //if (panel.BackColor == Color.Transparent && panel.Parent.BackColor != Color.Transparent)
-                //panel.BackColor = panel.Parent.BackColor; // SystemColors.Control; // changing this breaks checkboxes
+                //panel.BackColor = panel.Parent.BackColor; // SystemColorsEx.Control; // changing this breaks checkboxes
         }
 
         private static void ThemeGroupBox(GroupBox groupBox)
         {
-            groupBox.ForeColor = SystemColors.WindowText;
+            groupBox.ForeColor = SystemColorsEx.WindowText;
         }
 
         private static void ThemeButton(Button button)
@@ -248,14 +338,18 @@ namespace cYo.Common.Windows.Forms
             }
             else if (!OsVersionEx.IsWindows11_OrGreater())
             {
-                checkBox.FlatStyle = FlatStyle.Flat; // Win10 19044 draws standard checkboxes w/ white background, so force flat
+                checkBox.Paint += CheckBox_DrawDisabled;
+                //checkBox.UseVisualStyleBackColor = false;
+                //checkBox.BackColor = SystemColorsEx.Window;  //ThemeColors.Material.Window;
+                //checkBox.ForeColor = SystemColorsEx.ControlText;
+                //checkBox.FlatStyle = FlatStyle.Flat; // Win10 19044 draws standard checkboxes w/ white background, so force flat
             }
         }
 
         private static void ThemeComboBox(ComboBox comboBox)
         {
             comboBox.BackColor = ThemeColors.ComboBox.Back;
-            comboBox.ForeColor = SystemColors.WindowText;
+            comboBox.ForeColor = SystemColorsEx.WindowText;
 
             // Blue -> Gray highlight
             // results in DropDown instead of DropDownList theme formatting (highlighted text when not dropped down)
@@ -275,14 +369,14 @@ namespace cYo.Common.Windows.Forms
         {
             gridView.EnableHeadersVisualStyles = false;
             gridView.DefaultCellStyle.SelectionBackColor = ThemeColors.SelectedText.Highlight;
-            gridView.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
+            gridView.DefaultCellStyle.SelectionForeColor = SystemColorsEx.ControlText;
             gridView.BorderStyle = BorderStyle.None;
         }
 
         private static void ThemeListBox(ListBox listBox)
         {
             listBox.BackColor = ThemeColors.ListBox.Back;
-            listBox.ForeColor = SystemColors.WindowText;
+            listBox.ForeColor = SystemColorsEx.WindowText;
             listBox.BorderStyle = BorderStyle.FixedSingle;
         }
 
@@ -310,7 +404,7 @@ namespace cYo.Common.Windows.Forms
         private static void ThemeListView(ListView listView)
         {
             listView.BackColor = ThemeColors.TextBox.Back;
-            listView.ForeColor = SystemColors.WindowText;
+            listView.ForeColor = SystemColorsEx.WindowText;
 
             //if (!(listView is ListViewEx) && listView.View == View.Details && listView.HeaderStyle != ColumnHeaderStyle.None)
             if (!listView.OwnerDraw && listView.View == View.Details && listView.HeaderStyle != ColumnHeaderStyle.None)
@@ -353,7 +447,7 @@ namespace cYo.Common.Windows.Forms
                 textBox.BorderStyle = BorderStyle.FixedSingle;
 
             textBox.BackColor = ThemeColors.TextBox.Back;
-            textBox.ForeColor = SystemColors.ControlText;
+            textBox.ForeColor = SystemColorsEx.ControlText;
             textBox.MouseLeave -= TextBox_MouseLeave;
             textBox.MouseLeave += TextBox_MouseLeave;
             textBox.MouseHover -= TextBox_MouseHover;
@@ -380,6 +474,18 @@ namespace cYo.Common.Windows.Forms
         }
         #endregion
 
+
+        private static void SetCheckBoxUXTheme(CheckBox checkBox)
+        {
+            if (checkBox.Appearance == Appearance.Button)
+            {
+                UXTheme.SetControlTheme(checkBox.Handle);
+            }
+            else
+            {
+                UXTheme.SetControlTheme(checkBox.Handle, "DarkMode_Explorer", "Button");
+            }
+        }
 
         #region Complex UX Theming
         private static void SetComboBoxUXTheme(ComboBox comboBox)
@@ -430,13 +536,21 @@ namespace cYo.Common.Windows.Forms
 
             if (!checkBox.Enabled)
             {
-                TextRenderer.DrawText(
-                e.Graphics,
-                checkBox.Text,
-                checkBox.Font,
-                e.ClipRectangle,
-                SystemColors.GrayText,
-                TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter); // TextFormatFlags is an assumption
+                if (checkBox.Appearance == Appearance.Button)
+                {
+                    TextRenderer.DrawText(
+                    e.Graphics,
+                    checkBox.Text,
+                    checkBox.Font,
+                    e.ClipRectangle,
+                    SystemColorsEx.GrayText,
+                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter); // TextFormatFlags is an assumption
+                }
+                else
+                {
+                    e.Graphics.DrawString(checkBox.Text, checkBox.Font, SystemBrushesEx.GrayText, new PointF(16, 0));
+                }
+                    
             }
         }
 

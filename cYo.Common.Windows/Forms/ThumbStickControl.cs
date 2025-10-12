@@ -268,7 +268,7 @@ namespace cYo.Common.Windows.Forms
 				{
 					if (stickImagePressed == null)
 					{
-						g.FillEllipse(SystemBrushes.ControlDarkDark, rect);
+						g.FillEllipse(SystemBrushesEx.ControlDarkDark, rect);
 					}
 					else
 					{
@@ -277,7 +277,7 @@ namespace cYo.Common.Windows.Forms
 				}
 				else if (stickImage == null)
 				{
-					g.FillEllipse(SystemBrushes.ControlDark, rect);
+					g.FillEllipse(SystemBrushesEx.ControlDark, rect);
 				}
 				else
 				{

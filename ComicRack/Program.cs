@@ -502,7 +502,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				}
 				if (num2 != num)
 				{
-					Color color = Color.FromArgb(192, SystemColors.Highlight);
+					Color color = Color.FromArgb(192, SystemColorsEx.Highlight);
 					Font iconTitleFont = SystemFonts.IconTitleFont;
 					string text = StringUtility.Format("{0} {1}", num, TR.Default["Books", "books"]);
 					Rectangle rectangle = new Rectangle(Point.Empty, graphics.MeasureString(text, iconTitleFont).ToSize());
@@ -521,7 +521,7 @@ namespace cYo.Projects.ComicRack.Viewer
 						Alignment = StringAlignment.Center
 					})
 					{
-						graphics.DrawString(text, iconTitleFont, SystemBrushes.HighlightText, rectangle, format);
+						graphics.DrawString(text, iconTitleFont, SystemBrushesEx.HighlightText, rectangle, format);
 						return bitmap;
 					}
 				}

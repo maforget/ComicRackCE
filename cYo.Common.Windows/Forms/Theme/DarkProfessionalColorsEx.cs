@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using cYo.Common.Drawing;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -8,7 +9,7 @@ namespace cYo.Common.Windows.Forms
     /// <c>src/System.Windows.Forms/System/Windows/Forms/DarkProfessionalColors.cs</c>
     /// </summary>
     /// <remarks>These are defaults and could do with checking/tweaking.</remarks>
-    internal sealed class DarkProfessionalColorsEx : ProfessionalColorTable
+    internal sealed class DarkProfessionalColorsEx : ProfessionalColorTableEx
     {
         public override Color MenuItemPressedGradientBegin
             => Color.FromArgb(0xFF, 0x60, 0x60, 0x60);
@@ -20,7 +21,7 @@ namespace cYo.Common.Windows.Forms
             => Color.FromArgb(0xFF, 0x60, 0x60, 0x60);
 
         public override Color MenuItemSelected => ThemeColors.SelectedText.Highlight;
-        //=> SystemColors.ControlText; // this means white highlight
+        //=> SystemColorsEx.ControlText; // this means white highlight
 
         public override Color MenuItemSelectedGradientBegin
             => Color.FromArgb(0xFF, 0x40, 0x40, 0x40);
@@ -28,10 +29,10 @@ namespace cYo.Common.Windows.Forms
         public override Color MenuItemSelectedGradientEnd
             => Color.FromArgb(0xFF, 0x40, 0x40, 0x40);
 
-        public override Color MenuStripGradientBegin => SystemColors.ControlLightLight;
+        public override Color MenuStripGradientBegin => SystemColorsEx.ControlLightLight;
         //=> SystemColorsEx.Control;
 
-        public override Color MenuStripGradientEnd => SystemColors.ControlLightLight;
+        public override Color MenuStripGradientEnd => SystemColorsEx.ControlLightLight;
         //=> SystemColorsEx.Control;
 
         public override Color StatusStripGradientBegin => Color.FromArgb(51, 51, 51);
@@ -54,10 +55,10 @@ namespace cYo.Common.Windows.Forms
 
         public override Color ToolStripBorder => ThemeColors.Border.Dark;
 
-        public override Color ToolStripGradientBegin => SystemColors.ControlLight;
+        public override Color ToolStripGradientBegin => SystemColorsEx.ControlLight;
 
-        public override Color ToolStripGradientMiddle => SystemColors.ControlLight;
+        public override Color ToolStripGradientMiddle => SystemColorsEx.ControlLight;
 
-        public override Color ToolStripGradientEnd => SystemColors.ControlLight;
+        public override Color ToolStripGradientEnd => SystemColorsEx.ControlLight;
     }
 }

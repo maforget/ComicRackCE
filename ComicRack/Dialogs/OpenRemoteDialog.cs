@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using cYo.Common.Drawing;
 using cYo.Common.Localize;
 using cYo.Common.Text;
 using cYo.Common.Threading;
@@ -175,7 +176,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				listViewItem.Tag = item;
 				if (Program.NetworkManager.IsOwnServer(item.Uri))
 				{
-					listViewItem.ForeColor = SystemColors.GrayText;
+					listViewItem.ForeColor = SystemColorsEx.GrayText;
 					listViewItem.Tag = null;
 				}
 			}

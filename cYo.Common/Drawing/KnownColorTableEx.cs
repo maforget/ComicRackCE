@@ -42,7 +42,8 @@ namespace cYo.Common.Drawing
             0xFF101010, // FF000000 - FF101010: Desktop - Black
             0xFF969696, // FF6D6D6D - FF969696: GrayText - Prompt Text Focused TextBox
             0xFF2864B4, // FF0078D7 - FF2864B4: Highlight - Highlighted Panel in DarkMode
-            0xFF000000, // FFFFFFFF - FF000000: HighlightText - White
+            //0xFF000000, // FFFFFFFF - FF000000: HighlightText - White
+            0xFFFFFFFF,
             0xFF2D5FAF, // FF0066CC - FF2D5FAF: HotTrack - Background of the ToggleSwitch
             0xFF3C3F41, // FFF4F7FC - FF3C3F41: InactiveBorder - Dark gray
             0xFF374B5A, // FFBFCBDD - FF374B5A: InactiveCaption - Highlighted Panel in DarkMode
@@ -110,7 +111,7 @@ namespace cYo.Common.Drawing
         public KnownColorTableEx()
         {
             // force init color table
-            byte unused = SystemColors.Window.R;
+            byte unused = SystemColorsEx.Window.R;
 
             var systemDrawingAssembly = typeof(Color).Assembly;
 
@@ -142,14 +143,15 @@ namespace cYo.Common.Drawing
                 ?.GetValue(null);
         }
 
-        public void Initialize(bool useAlternateColors)
+        public void Initialize(bool useAlternateColors = false)
         {
-            if (!useAlternateColors) return;
+            SystemColorsEx.UseAlternativeColorSet = useAlternateColors;
+            //if (!useAlternateColors) return;
 
-            KnownColors.ForEach(color =>
-            {
-                setColor(color, GetAlternateSystemColorArgb(color));
-            });
+            //KnownColors.ForEach(color =>
+            //{
+            //    setColor(color, Color.Red.ToArgb());
+            //});
 
             //foreach (KnownColor color in Enum.GetValues(typeof(KnownColor)))
             //{

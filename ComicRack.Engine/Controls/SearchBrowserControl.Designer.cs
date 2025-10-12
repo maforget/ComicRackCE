@@ -94,7 +94,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             // 
             // cbType1
             // 
-            this.cbType1.BackColor = System.Drawing.SystemColors.Window;
+            this.cbType1.BackColor = cYo.Common.Drawing.SystemColorsEx.Window;
             this.cbType1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbType1.FormattingEnabled = true;
             this.cbType1.Location = new System.Drawing.Point(15, 7);

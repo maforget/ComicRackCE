@@ -202,7 +202,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             }
             if (drawBorder)
             {
-                graphics.Clear(SystemColors.Window);
+                graphics.Clear(SystemColorsEx.Window);
             }
             DrawContent(graphics);
             if (drawBorder)
