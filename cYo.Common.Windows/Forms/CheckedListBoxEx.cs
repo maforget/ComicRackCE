@@ -33,7 +33,7 @@ namespace cYo.Common.Windows.Forms
         public CheckedListBoxEx()
         {
 			ThemeExtensions.SetBorderStyle(this, BorderStyle.FixedSingle);
-            BackColor = ThemeColors.CheckedListBox.Back == Color.Empty ? BackColor : ThemeColors.CheckedListBox.Back;
+            BackColor = ThemeColors.ListBox.Back == Color.Empty ? BackColor : ThemeColors.ListBox.Back;
         }
 
         protected override void OnDrawItem(DrawItemEventArgs e)

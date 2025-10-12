@@ -284,40 +284,15 @@ namespace cYo.Common.Windows.Forms
 
         private void DrawSplitLine(Graphics graphics, Rectangle clientRectangle)
         {
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                Rectangle bounds = clientRectangle;
-                Rectangle buttonRect;
-                Rectangle splitRect;
-                if (RightToLeft == RightToLeft.Yes)
-                {
-                    buttonRect = new Rectangle(bounds.X + FormUtility.ScaleDpiX(PushButtonWidth) + 1, bounds.Y, bounds.Width, bounds.Height);
-                    splitRect = new Rectangle(bounds.X, bounds.Y, FormUtility.ScaleDpiX(PushButtonWidth) - 1, bounds.Height);
-                    using (Pen p = new Pen(SystemColors.WindowText))
-                    {
-                        graphics.DrawLine(p, splitRect.Right, splitRect.Top + 4, splitRect.Right, splitRect.Bottom - 4);
-                    }
-                }
-                else
-                {
-                    buttonRect = new Rectangle(bounds.X, bounds.Y, bounds.Width - FormUtility.ScaleDpiX(PushButtonWidth) - 1, bounds.Height);
-                    splitRect = new Rectangle(bounds.Right - FormUtility.ScaleDpiX(PushButtonWidth) - 1, bounds.Y, FormUtility.ScaleDpiX(PushButtonWidth) - 1, bounds.Height);
-                    using (Pen p = new Pen(SystemColors.WindowText))
-                    {
-                        graphics.DrawLine(p, splitRect.Left, splitRect.Top + 4, splitRect.Left, splitRect.Bottom - 4);
-                    }
-                }
-                return;
-            }
             if (RightToLeft == RightToLeft.Yes)
             {
-                graphics.DrawLine(SystemPens.ButtonShadow, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth), BorderSize, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth), clientRectangle.Bottom - BorderSize);
-                graphics.DrawLine(SystemPens.ButtonFace, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth) + 1, BorderSize, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth) + 1, clientRectangle.Bottom - BorderSize);
+                graphics.DrawLine(ThemePens.SplitButton.SeparatorRight, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth), BorderSize, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth), clientRectangle.Bottom - BorderSize);
+                graphics.DrawLine(ThemePens.SplitButton.SeparatorLeft, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth) + 1, BorderSize, clientRectangle.Left + FormUtility.ScaleDpiX(PushButtonWidth) + 1, clientRectangle.Bottom - BorderSize);
             }
             else
             {
-                graphics.DrawLine(SystemPens.ButtonShadow, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth), BorderSize, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth), clientRectangle.Bottom - BorderSize);
-                graphics.DrawLine(SystemPens.ButtonFace, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth) - 1, BorderSize, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth) - 1, clientRectangle.Bottom - BorderSize);
+                graphics.DrawLine(ThemePens.SplitButton.SeparatorRight, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth), BorderSize, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth), clientRectangle.Bottom - BorderSize);
+                graphics.DrawLine(ThemePens.SplitButton.SeparatorLeft, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth) - 1, BorderSize, clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth) - 1, clientRectangle.Bottom - BorderSize);
             }
         }
 

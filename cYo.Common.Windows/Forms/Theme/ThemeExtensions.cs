@@ -20,7 +20,7 @@ namespace cYo.Common.Windows.Forms
         /// <para>Also serves as a <b>global reference</b> for other classes.</para>
         /// </summary>
         /// <remarks>
-        /// This is intended to mirror the <c>Application.IsDarkModeEnabled</c> which is available . .NET 9+.
+        /// This is intended to mirror the <c>Application.IsDarkModeEnabled</c> which is available in .NET 9+.
         /// </remarks>
         public static bool IsDarkModeEnabled = false;
 
@@ -201,7 +201,8 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemePanel(Panel panel)
         {
-            //panel.BackColor = SystemColors.Control; // changing this breaks checkboxes
+            //if (panel.BackColor == Color.Transparent && panel.Parent.BackColor != Color.Transparent)
+                //panel.BackColor = panel.Parent.BackColor; // SystemColors.Control; // changing this breaks checkboxes
         }
 
         private static void ThemeGroupBox(GroupBox groupBox)
@@ -239,6 +240,7 @@ namespace cYo.Common.Windows.Forms
                 checkBox.FlatAppearance.BorderColor = ThemeColors.Button.Border;
                 checkBox.FlatAppearance.CheckedBackColor = ThemeColors.Button.CheckedBack;
                 checkBox.FlatAppearance.MouseOverBackColor = ThemeColors.Button.MouseOverBack;
+                checkBox.Paint += CheckBox_DrawDisabled;
             }
             else if (OsVersionEx.IsWindows11_OrGreater() && checkBox.FlatStyle == FlatStyle.System)
             {
@@ -249,9 +251,10 @@ namespace cYo.Common.Windows.Forms
                 checkBox.FlatStyle = FlatStyle.Flat; // Win10 19044 draws standard checkboxes w/ white background, so force flat
             }
         }
+
         private static void ThemeComboBox(ComboBox comboBox)
         {
-            comboBox.BackColor = ThemeColors.List.Back;
+            comboBox.BackColor = ThemeColors.ComboBox.Back;
             comboBox.ForeColor = SystemColors.WindowText;
 
             // Blue -> Gray highlight
@@ -278,7 +281,7 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemeListBox(ListBox listBox)
         {
-            listBox.BackColor = ThemeColors.List.Back;
+            listBox.BackColor = ThemeColors.ListBox.Back;
             listBox.ForeColor = SystemColors.WindowText;
             listBox.BorderStyle = BorderStyle.FixedSingle;
         }
@@ -421,6 +424,22 @@ namespace cYo.Common.Windows.Forms
 
         #region Custom Draw Event Handlers
 
+        private static void CheckBox_DrawDisabled(object sender, PaintEventArgs e)
+        {
+            CheckBox checkBox = sender as CheckBox;
+
+            if (!checkBox.Enabled)
+            {
+                TextRenderer.DrawText(
+                e.Graphics,
+                checkBox.Text,
+                checkBox.Font,
+                e.ClipRectangle,
+                SystemColors.GrayText,
+                TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter); // TextFormatFlags is an assumption
+            }
+        }
+
         // Use custom SelectedText HighLight color.
         // related: cYo.Common.Windows.Forms.ComboBoxSkinner.comboBox_DrawItem (private, requires instantiation, comes with ComboBoxSkinner baggage)
         private static void ComboBox_DrawItemHighlight(object sender, DrawItemEventArgs e)
@@ -561,6 +580,7 @@ namespace cYo.Common.Windows.Forms
         }
         #endregion
 
+        #region External Helper Functions
         public static Bitmap RenderDarkCheckbox(CheckBoxState state, Size size)
         {
             Bitmap bmp = new Bitmap(size.Width, size.Height);
@@ -620,6 +640,7 @@ namespace cYo.Common.Windows.Forms
                 });
             }
         }
+        #endregion
 
         public class DarkToolStripRenderer : ToolStripProfessionalRenderer
         {

@@ -139,11 +139,8 @@ namespace cYo.Common.Windows.Forms
         /// </remarks>
         public static void SetColor(TreeView treeView, Color? backColor = null, Color? foreColor = null)
         {
-			if (backColor != null || ThemeExtensions.IsDarkModeEnabled)
-				Native.SetBackColor(treeView.Handle, (backColor ?? ThemeColors.TreeView.Back));
-
-            if (foreColor != null || ThemeExtensions.IsDarkModeEnabled)
-                Native.SetForeColor(treeView.Handle, (foreColor ?? ThemeColors.TreeView.Text));
+           Native.SetBackColor(treeView.Handle, backColor ?? treeView.BackColor);
+           Native.SetForeColor(treeView.Handle, foreColor ?? treeView.ForeColor);
         }
 
         protected override void OnCreateControl()
@@ -153,7 +150,6 @@ namespace cYo.Common.Windows.Forms
             ThemeExtensions.SetBorderStyle(this);
             this.BackColor = ThemeColors.TreeView.Back == Color.Empty ? this.BackColor : ThemeColors.TreeView.Back;
             this.ForeColor = ThemeColors.TreeView.Text == Color.Empty ? this.ForeColor : ThemeColors.TreeView.Text;
-            SetColor(this);
         }
 
         private void scrollTimer_Tick(object sender, EventArgs e)
@@ -196,12 +192,6 @@ namespace cYo.Common.Windows.Forms
             {
                 scrollTimer.Enabled = false;
             }
-        }
-
-        protected override void OnHandleCreated(EventArgs e)
-        {
-            base.OnHandleCreated(e);
-            SetColor(this);
         }
 
         protected override void WndProc(ref Message m)

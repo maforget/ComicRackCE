@@ -37,7 +37,9 @@ namespace cYo.Common.Windows.Forms
 
         #region Singles
         public static Color ItemDrawInfoText => ColorTable.ItemDrawInfoText;
-        //public static Color ControlStyleColorTableBorder => colorTable.ControlStyleColorTableBorder;
+        //public static Color ControlStyleColorTableBorder => ColorTable.ControlStyleColorTableBorder;
+
+        public static Color MatcherGroupEditor => ColorTable.MatcherGroupEditor; // double reference - should add MatcherGroupEditorControlBack
         #endregion
 
         #region General
@@ -85,16 +87,17 @@ namespace cYo.Common.Windows.Forms
             public static Color Text => ColorTable.CaptionText;
         }
 
-        public static class CheckedListBox
-        {
-            public static Color Back = ColorTable.CheckedListBoxBack;
-        }
-
         public static class RatingControl
         {
-            public static Color Back = ColorTable.RatingControlBack;
-            public static Color Rated = ColorTable.RatingControlRated;
-            public static Color Unrated = ColorTable.RatingControlUnrated;
+            public static Color Back => ColorTable.RatingControlBack;
+            public static Color Rated => ColorTable.RatingControlRated;
+            public static Color Unrated => ColorTable.RatingControlUnrated;
+        }
+
+        public static class SplitButton
+        {
+            public static Color SeparatorLeft => ColorTable.SplitButtonSeparatorLeft;
+            public static Color SeparatorRight => ColorTable.SplitButtonSeparatorRight;
         }
 
         #endregion
@@ -194,6 +197,18 @@ namespace cYo.Common.Windows.Forms
         }
         #endregion
 
+        #region Color.Empty
+        public static class ListBox
+        {
+            public static Color Back => ColorTable.ListBoxBack;
+        }
+
+        public static class TreeView
+        {
+            public static Color Back => ColorTable.TreeViewBack;
+            public static Color Text => ColorTable.TreeViewText;
+        }
+        #endregion
 
         #endregion
 
@@ -218,12 +233,6 @@ namespace cYo.Common.Windows.Forms
             public static Color Separator => ColorTable.ComboBoxSeparator;
         }
 
-        public static class List
-        {
-            public static readonly Color Back = Color.FromArgb(56, 56, 56); // to match ComboBox button
-            public static readonly Color Disabled = Color.FromArgb(64, 64, 64); // from .net combobox source
-        }
-
         public static class TextBox
         {
             public static readonly Color Back = Color.FromArgb(unchecked((int)0xFF2E2E2E)); //Color.FromArgb(56, 56, 56);
@@ -236,12 +245,6 @@ namespace cYo.Common.Windows.Forms
             // currently this is purely for statusstrip border.
             // TODO: move to renderer (will need to account for which borders need to be drawn)
             public static readonly Color BorderColor = Color.FromArgb(100, 100, 100);
-        }
-
-        public static class TreeView
-        {
-            public static Color Back => ColorTable.TreeViewBack;
-            public static Color Text => ColorTable.TreeViewText;
         }
         #endregion
 
@@ -260,9 +263,9 @@ namespace cYo.Common.Windows.Forms
 
         public static class Header
         {
-            public static Color Back => ColorTable.HeaderBack; // SystemColors.Control; // RGB 32 HEX 20
+            public static Color Back => ColorTable.HeaderBack;
             public static Color Separator => ColorTable.HeaderSeparator;
-            public static readonly Color Text = SystemColors.WindowText;
+            public static Color Text => ColorTable.HeaderText;
         }
 
         public static class SelectedText
@@ -270,6 +273,7 @@ namespace cYo.Common.Windows.Forms
             public static readonly Color Highlight = Color.FromArgb(52, 67, 86);
             public static readonly Color Focus = Color.FromArgb(40, 100, 180);
         }
+
         #endregion
 
         public static class Material
@@ -287,6 +291,12 @@ namespace cYo.Common.Windows.Forms
         public static class ComboBox
         {
             public static Pen Separator => FromThemeColor(ThemeColors.ComboBox.Separator);
+        }
+
+        public static class SplitButton
+        {
+            public static Pen SeparatorLeft => FromThemeColor(ThemeColors.SplitButton.SeparatorLeft);
+            public static Pen SeparatorRight => FromThemeColor(ThemeColors.SplitButton.SeparatorRight);
         }
 
         public static Pen FromThemeColor(Color color)
@@ -392,6 +402,8 @@ namespace cYo.Common.Windows.Forms
         public virtual Color MainViewBack => Color.Transparent;
         public virtual Color MainViewToolStripBack => Color.Transparent;
 
+        public virtual Color MatcherGroupEditor => SystemColors.Control;
+
         // SimpleScrollbarPanel
         public virtual Color ScrollbarPanelBorder => Color.LightGray;
 
@@ -470,13 +482,19 @@ namespace cYo.Common.Windows.Forms
         // Header
         public virtual Color HeaderBack => Color.White;
         public virtual Color HeaderSeparator => SystemColors.ControlDark;
+        public virtual Color HeaderText => Color.Empty; // only used in ThemeExtension.ListView_DrawColumnHeader, which is only used in dark mode
 
         // Control defaults
-        public virtual Color CheckedListBoxBack => SystemColors.Window;
+        public virtual Color ListBoxBack => Color.Empty; // BackColor - ListBox.BackColor - SystemColors.Window
 
+        // RatingControl
         public virtual Color RatingControlBack => Color.Empty; // BackColor - Control.DefaultBackColor - SystemColors.Control
         public virtual Color RatingControlRated => Color.Empty; // ForeColor - Control.DefaultForeColor - SystemColors.ControlText
         public virtual Color RatingControlUnrated => Color.LightGray;
+
+        // SplitButton
+        public virtual Color SplitButtonSeparatorLeft => SystemColors.ButtonShadow;
+        public virtual Color SplitButtonSeparatorRight => SystemColors.ButtonFace;
     }
 
     /// <summary>
@@ -518,6 +536,8 @@ namespace cYo.Common.Windows.Forms
         //MainView
         //public override Color MainViewBack => Color.Transparent;
         //public override Color MainViewToolStripBack => Color.Transparent;
+
+        public override Color MatcherGroupEditor => ThemeColors.Material.Window;
 
         // SimpleScrollbarPanel
         //public override Color ScrollbarPanelBorder => ThemeColors.BlackSmoke;
@@ -594,14 +614,18 @@ namespace cYo.Common.Windows.Forms
         // Header
         public override Color HeaderBack => SystemColors.Control;
         public override Color HeaderSeparator => Color.FromArgb(99, 99, 99);
+        public override Color HeaderText => SystemColors.WindowText;
 
         // Control defaults
-        public override Color CheckedListBoxBack => ThemeColors.List.Back;
+        public override Color ListBoxBack => Color.FromArgb(46, 46, 46); // to match ListView BackColor
 
-        public override Color RatingControlBack => ThemeColors.List.Back;
-
+        // RatingControl
+        public override Color RatingControlBack => ListBoxBack;
         public override Color RatingControlRated => SystemColors.ControlText;
         public override Color RatingControlUnrated => SystemColors.GrayText;
+
+        public override Color SplitButtonSeparatorLeft => SystemColors.WindowText;
+        public override Color SplitButtonSeparatorRight => SystemColors.ButtonFace;
     }
 
 }
