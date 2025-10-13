@@ -42,6 +42,7 @@ namespace cYo.Common.Windows.Forms
             { typeof(ComboBox), c => ThemeComboBox((ComboBox)c) },
             { typeof(DataGridView), c => ThemeDataGridView((DataGridView)c) },
             { typeof(GroupBox), c => ThemeGroupBox((GroupBox)c) },
+            { typeof(Label), c => ThemeLabel((Label)c) },
             { typeof(ListBox), c => ThemeListBox((ListBox)c) },
             { typeof(ListView), c => ThemeListView((ListView)c) },
             { typeof(Panel), c => ThemePanel((Panel)c) },
@@ -81,79 +82,7 @@ namespace cYo.Common.Windows.Forms
             {
                 KnownColorTableEx darkColorTable = new KnownColorTableEx();
                 darkColorTable.Initialize(IsDarkModeEnabled);
-
-                //darkColorTable.SetColor(KnownColor.Window, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Window)));             // most backgrounds and gradient start (Toolstrip, menu)
-                //darkColorTable.SetColor(KnownColor.WindowText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.WindowText)));         // most text boxes - list, combo etc
-                //darkColorTable.SetColor(KnownColor.GrayText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.GrayText)));           // disabled menu text (expect should be other controls too)
-                //darkColorTable.SetColor(KnownColor.Highlight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Highlight)));          // all the highlights (except combobox): toolstrip, selected item, active menu item
-
-                //darkColorTable.SetColor(KnownColor.ButtonFace, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonFace)));         // main menu bar, toolstrip gradient
-                //darkColorTable.SetColor(KnownColor.ButtonShadow, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonShadow)));       // menu border. Lines - menu dividers, toolstrip dividers
-                
-                //darkColorTable.SetColor(KnownColor.ControlLightLight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlLightLight)));  // active tab label background ... but also button highlight
-                //darkColorTable.SetColor(KnownColor.ControlLight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlLight)));       // grip highlight, remaining tasks text
-                //darkColorTable.SetColor(KnownColor.Control, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Control)));            // Form background (not tabs or menu). gradient end. inactive tab label
-                //darkColorTable.SetColor(KnownColor.ControlText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlText)));        // most read-only text. active menu item. menu arrows
-                //darkColorTable.SetColor(KnownColor.ControlDark, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlDark)));        // inner active button shadow. selected pref menu buttom (checkbox?) outline
-                //darkColorTable.SetColor(KnownColor.ControlDarkDark, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlDarkDark)));    // Outer button shadow
-
-                //darkColorTable.SetColor(KnownColor.MenuText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.MenuText)));           // inactive (not-selected) menu text
-
-                //darkColorTable.SetColor(KnownColor.Info, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Info)));               // hover-over tooltip background
-                //darkColorTable.SetColor(KnownColor.InfoText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.InfoText)));           // hover-over tooltip text
-
-                //darkColorTable.SetColor(KnownColor.WindowFrame, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.WindowFrame)));        // hover-over tooltip border (probably others but not observed)
-
-                //darkColorTable.SetColor(KnownColor.AppWorkspace, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.AppWorkspace)));       // 1px border around tab|panel|whatever-the-element-is. doubled for open comic as it's a seperate element.
-
-                //darkColorTable.SetColor(KnownColor.HighlightText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.HighlightText)));     // selected ComboBox text color in some cases (probably related to DropDownList etc setting)
-
-                //darkColorTable.SetColor(KnownColor.Desktop, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Desktop)));
-                //darkColorTable.SetColor(KnownColor.ScrollBar, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ScrollBar)));         // I think this is intended as a joke
-
-                //darkColorTable.SetColor(KnownColor.HotTrack, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.HotTrack)));
-
-                //darkColorTable.SetColor(KnownColor.ActiveBorder, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ActiveBorder)));
-                //darkColorTable.SetColor(KnownColor.ActiveCaption, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ActiveCaption)));
-                //darkColorTable.SetColor(KnownColor.ActiveCaptionText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ActiveCaptionText)));
-                //darkColorTable.SetColor(KnownColor.GradientActiveCaption, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.GradientActiveCaption)));
-
-                //darkColorTable.SetColor(KnownColor.InactiveBorder, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.InactiveBorder)));
-                //darkColorTable.SetColor(KnownColor.InactiveCaption, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.InactiveCaption)));
-                //darkColorTable.SetColor(KnownColor.InactiveCaptionText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.InactiveCaptionText)));
-                //darkColorTable.SetColor(KnownColor.GradientInactiveCaption, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.GradientInactiveCaption)));
-
-                //darkColorTable.SetColor(KnownColor.Menu, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Menu)));
-                //darkColorTable.SetColor(KnownColor.MenuBar, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.MenuBar)));
-                //darkColorTable.SetColor(KnownColor.MenuHighlight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.MenuHighlight)));
-
-                // 
-                //
-
-                //darkColorTable.SetColor(KnownColor.ButtonFace, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonFace)));
-
-                //darkColorTable.SetColor(KnownColor.GrayText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.GrayText)));
-
-                // used in ListBox CheckBox drawing
-                darkColorTable.SetColor(KnownColor.Window, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Window)));
-
-                // Used in ListBox CheckBox drawing + Searchbox renderer (#todo)
-                darkColorTable.SetColor(KnownColor.ControlText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlText)));
-
-                // used in Disabled Text drawing
-                darkColorTable.SetColor(KnownColor.Control, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Control)));
-
-                // used in ComboBox + ListView highlighted text
-                //darkColorTable.SetColor(KnownColor.WindowText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.WindowText)));
-                
-                //darkColorTable.SetColor(KnownColor.Highlight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Highlight)));
-                //darkColorTable.SetColor(KnownColor.HighlightText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.HighlightText)));
-
-                // StatuStrip border
-                darkColorTable.SetColor(KnownColor.ButtonHighlight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonHighlight)));    // MainForm bottom line, toolstrip dividers, Re-size grip (bottom right)
-
-                //ThemeColors.Dark(); // Initialize Dark color palette.
-
+                darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb());
                 UXTheme.Initialize();
             }
         }
@@ -219,11 +148,8 @@ namespace cYo.Common.Windows.Forms
                     control.BackColor = KnownColorTableEx.GetSystemColor(control.BackColor.ToKnownColor());
                 }
                 catch
-                {
-                    //control.BackColor = Color.Cyan;
-                }
+                {}
             }
-
 
             if (control.ForeColor.IsSystemColor)
             {
@@ -232,9 +158,7 @@ namespace cYo.Common.Windows.Forms
                     control.ForeColor = KnownColorTableEx.GetSystemColor(control.ForeColor.ToKnownColor());
                 }
                 catch
-                {
-                    //control.ForeColor = Color.Cyan;
-                }
+                {}
             }
 
             if (themeHandlers.TryGetValue(control.GetType(), out var theme))
@@ -253,7 +177,7 @@ namespace cYo.Common.Windows.Forms
         }
 
         /// <summary>
-		/// Sets <see cref="Form"/> window <see cref="UXTheme"/>. A handle is required: if not yet created, subscribes to <see cref="Form.OnHandleCreated(EventArgs)"/>.
+        /// Sets <see cref="Form"/> window <see cref="UXTheme"/>. A handle is required: if not yet created, subscribes to <see cref="Form.OnHandleCreated(EventArgs)"/>.
         /// </summary>
         /// <param name="form"><see cref="Form"/> to be (window) themed.</param>
         private static void SetWindowUXTheme(Form form)
@@ -296,6 +220,7 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemePanel(Panel panel)
         {
+            //panel.BackColor = Color.Red;
             //if (panel.BackColor == Color.Transparent && panel.Parent.BackColor != Color.Transparent)
                 //panel.BackColor = panel.Parent.BackColor; // SystemColorsEx.Control; // changing this breaks checkboxes
         }
@@ -388,6 +313,11 @@ namespace cYo.Common.Windows.Forms
             gridView.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
             gridView.RowHeadersDefaultCellStyle.BackColor = ThemeColors.Header.Back;
             gridView.RowHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
+        }
+
+        private static void ThemeLabel(Label label)
+        {
+            label.Paint += Label_Paint;
         }
 
         private static void ThemeListBox(ListBox listBox)
@@ -588,6 +518,17 @@ namespace cYo.Common.Windows.Forms
             );
         }
 
+        private static void Label_Paint(object sender, PaintEventArgs e)
+        {
+            Label label = sender as Label;
+
+            if (!label.Enabled)
+            {
+                TextFormatFlags textFormatFlags = GetTextFormatFlags(label);
+                TextRenderer.DrawText(e.Graphics, label.Text, label.Font, label.ClientRectangle, SystemColorsEx.GrayText, label.BackColor, textFormatFlags);
+            }
+        }
+
         // this is to handle MultipleComicBooksDialog checkboxes having less room than others for some reason (even though they all have a height of 17px)
         // this might be a wider issue related to DPI handling. 
         #region TEMP
@@ -703,6 +644,63 @@ namespace cYo.Common.Windows.Forms
 
             // Ellipsis
             if (button.AutoEllipsis)
+                flags |= TextFormatFlags.EndEllipsis;
+
+            return flags;
+        }
+
+        private static TextFormatFlags GetTextFormatFlags(Label label)
+        {
+            TextFormatFlags flags =
+                TextFormatFlags.WordBreak |
+                TextFormatFlags.TextBoxControl |
+                TextFormatFlags.PreserveGraphicsTranslateTransform |
+                TextFormatFlags.PreserveGraphicsClipping;
+
+            // Alignment
+            switch (label.TextAlign)
+            {
+                case System.Drawing.ContentAlignment.TopLeft:
+                    flags |= TextFormatFlags.Top | TextFormatFlags.Left;
+                    break;
+                case System.Drawing.ContentAlignment.TopCenter:
+                    flags |= TextFormatFlags.Top | TextFormatFlags.HorizontalCenter;
+                    break;
+                case System.Drawing.ContentAlignment.TopRight:
+                    flags |= TextFormatFlags.Top | TextFormatFlags.Right;
+                    break;
+                case System.Drawing.ContentAlignment.MiddleLeft:
+                    flags |= TextFormatFlags.VerticalCenter | TextFormatFlags.Left;
+                    break;
+                case System.Drawing.ContentAlignment.MiddleCenter:
+                    flags |= TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter;
+                    break;
+                case System.Drawing.ContentAlignment.MiddleRight:
+                    flags |= TextFormatFlags.VerticalCenter | TextFormatFlags.Right;
+                    break;
+                case System.Drawing.ContentAlignment.BottomLeft:
+                    flags |= TextFormatFlags.Bottom | TextFormatFlags.Left;
+                    break;
+                case System.Drawing.ContentAlignment.BottomCenter:
+                    flags |= TextFormatFlags.Bottom | TextFormatFlags.HorizontalCenter;
+                    break;
+                case System.Drawing.ContentAlignment.BottomRight:
+                    flags |= TextFormatFlags.Bottom | TextFormatFlags.Right;
+                    break;
+            }
+
+            // Mnemonics
+            if (!label.UseMnemonic)
+                flags |= TextFormatFlags.NoPrefix;
+            //else if (!label.ShowKeyboardCues)
+            //    flags |= TextFormatFlags.HidePrefix;
+
+            // Right-to-left layout
+            if (label.RightToLeft == RightToLeft.Yes)
+                flags |= TextFormatFlags.RightToLeft | TextFormatFlags.Right;
+
+            // AutoEllipsis (only when not multiline)
+            if (!label.AutoSize && label.AutoEllipsis)
                 flags |= TextFormatFlags.EndEllipsis;
 
             return flags;
@@ -1004,6 +1002,27 @@ namespace cYo.Common.Windows.Forms
                 });
             }
         }
+
+        public static void RenderOverflowButton(ToolStripItemRenderEventArgs e)
+        {
+            if (!IsDarkModeEnabled) return;
+
+            var g = e.Graphics;
+            var item = e.Item as ToolStripOverflowButton;
+
+            const int overflowButtonWidth = 12;
+            Rectangle overflowArrowRect = new Rectangle(item.Width - overflowButtonWidth + 1, item.Height - 8, 9, 5);
+
+            Point middle = new Point(overflowArrowRect.Left + overflowArrowRect.Width / 2, overflowArrowRect.Top + overflowArrowRect.Height / 2);
+            Point[] arrow = new Point[] {
+                    new Point(middle.X - 2, middle.Y - 1),
+                    new Point(middle.X + 3, middle.Y - 1),
+                    new Point(middle.X,     middle.Y + 2)
+                };
+
+            g.FillPolygon(SystemBrushesEx.ControlText, arrow);
+            g.DrawLine(SystemPensEx.ControlText, overflowArrowRect.Right - 7, overflowArrowRect.Y - 2, overflowArrowRect.Right - 3, overflowArrowRect.Y - 2);
+        }
         #endregion
 
         public class DarkToolStripRenderer : ToolStripProfessionalRenderer
@@ -1029,6 +1048,17 @@ namespace cYo.Common.Windows.Forms
             {
                 base.OnRenderItemCheck(e);
                 ThemeExtensions.RenderItemCheck(e.Graphics, e.ImageRectangle, ColorTable.CheckPressedBackground);
+            }
+
+            protected override void OnRenderOverflowButtonBackground(ToolStripItemRenderEventArgs e)
+            {
+                base.OnRenderOverflowButtonBackground(e);
+                RenderOverflowButton(e);
+            }
+
+            protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
+            {
+                //base.OnRenderToolStripBorder(e);
             }
         }
     }

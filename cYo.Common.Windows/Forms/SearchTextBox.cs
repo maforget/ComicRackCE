@@ -61,7 +61,14 @@ namespace cYo.Common.Windows.Forms
 				base.OnRenderToolStripBackground(e);
 				e.Graphics.Clear(SystemColorsEx.Window);
 			}
-		}
+
+            protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
+            {
+                ThemeExtensions.SetToolStripItemColor(e);
+                base.OnRenderArrow(e);
+            }
+
+        }
 
 		private readonly ToolStripDropDownButton searchButton = new ToolStripDropDownButton();
 
