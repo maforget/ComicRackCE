@@ -893,21 +893,23 @@ namespace cYo.Common.Windows.Forms
 
         private static void ListView_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
-            ListView listView = sender as ListView;
-            if (listView.Items.Count > 0 && listView.Items[e.ItemIndex] != null)
-                listView.Items[e.ItemIndex].UseItemStyleForSubItems = false;
-            e.DrawText();
-            e.DrawBackground();
+            //ListView listView = sender as ListView;
+            //if (listView.Items.Count > 0 && listView.Items[e.ItemIndex] != null)
+            //    listView.Items[e.ItemIndex].UseItemStyleForSubItems = false;
+            //e.DrawText();
+            //e.DrawBackground();
             // in theory this should be fine; in practice it can lead to dark HighlighText
             // (or something else causes dark HighlighText)
-            //e.DrawDefault = true; 
+            e.DrawDefault = true;
 
         }
 
         private static void ListView_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
         {
-            ListViewItem item = sender as ListViewItem;
-            item.ForeColor = Color.Red; // testing to see if we ever actually see Red Text.
+            //ListView listView = sender as ListView;
+            //item.ForeColor = Color.Red; // testing to see if we ever actually see Red Text.
+            //e.Item.ForeColor = Color.Purple;
+            //e.SubItem.ForeColor = Color.Red;
             e.DrawDefault = true;
         }
 
