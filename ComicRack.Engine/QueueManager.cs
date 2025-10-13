@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -235,7 +236,7 @@ namespace cYo.Projects.ComicRack.Engine
 				if (scanner == null)
 				{
 					scanner = new ComicScanner(DatabaseManager.BookFactory);
-					scanner.ScanNotify += delegate(object s, ComicScanNotifyEventArgs e)
+					scanner.ScanNotify += delegate (object s, ComicScanNotifyEventArgs e)
 					{
 						if (this.ComicScanned != null)
 						{
@@ -368,7 +369,7 @@ namespace cYo.Projects.ComicRack.Engine
 			{
 				return;
 			}
-			UpdateComicBookDynamicQueue.AddItem(cb, delegate(IAsyncResult ar)
+			UpdateComicBookDynamicQueue.AddItem(cb, delegate (IAsyncResult ar)
 			{
 				if (refresh)
 				{
@@ -499,20 +500,30 @@ namespace cYo.Projects.ComicRack.Engine
 			});
 		}
 
+		//Used to track Timers used by AddBookToFileUpdate. Makes it so it only updates in batches. Otherwise when AutoUpdateComicsFiles is true it updates as soon as a property is updated changing ComicInfoIsDirty to false and making it so that each following property will not update and the resulting file is incomplete.
+		private readonly ConcurrentDictionary<ComicBook, Timer> debounceTimers = new();
 		public void AddBookToFileUpdate(ComicBook cb, bool alwaysWrite)
 		{
 			if (cb == null || !cb.IsLinked || !cb.ComicInfoIsDirty || !cb.FileInfoRetrieved || !Settings.UpdateComicFiles || !(Settings.AutoUpdateComicsFiles || alwaysWrite))
-			{
 				return;
-			}
-			WriteComicBookInfoFileQueue.AddItem(cb, delegate
+
+			// Cancel existing timer if one is running
+			if (debounceTimers.TryRemove(cb, out var t))
+				t?.Dispose();
+
+			debounceTimers[cb] = new Timer(_ =>
 			{
-				if (cb.ComicInfoIsDirty && Settings.UpdateComicFiles && (Settings.AutoUpdateComicsFiles || alwaysWrite))
+				// Removes timer since it just executed
+				if (debounceTimers.TryRemove(cb, out var t))
+					t?.Dispose();
+
+				WriteComicBookInfoFileQueue.AddItem(cb, delegate
 				{
-					WriteInfoToFileWithCacheUpdate(cb);
-				}
-			});
-			}
+					if (cb.ComicInfoIsDirty && Settings.UpdateComicFiles && (Settings.AutoUpdateComicsFiles || alwaysWrite))
+						WriteInfoToFileWithCacheUpdate(cb);
+				});
+			}, null, 100, Timeout.Infinite);
+		}
 
 		public void AddBookToFileUpdate(ComicBook cb)
 		{
@@ -531,11 +542,11 @@ namespace cYo.Projects.ComicRack.Engine
 				DateTime oldWrite = cb.FileModifiedTime;
 				if (cb.WriteInfoToFile(withRefreshFileProperties: false))
 				{
-					CacheManager.ImagePool.Pages.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), delegate(ImageKey key)
+					CacheManager.ImagePool.Pages.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), delegate (ImageKey key)
 					{
 						key.UpdateFileInfo();
 					});
-					CacheManager.ImagePool.Thumbs.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), delegate(ImageKey key)
+					CacheManager.ImagePool.Thumbs.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), delegate (ImageKey key)
 					{
 						key.UpdateFileInfo();
 					});
@@ -571,7 +582,7 @@ namespace cYo.Projects.ComicRack.Engine
 			DeviceSyncSettings ssc = new DeviceSyncSettings(dss);
 			ComicBookContainer library = new ComicBookContainer();
 			library.Books.AddRange(DatabaseManager.Database.Books);
-			DeviceSyncQueue.AddItem(ssc, delegate(IAsyncResult ar)
+			DeviceSyncQueue.AddItem(ssc, delegate (IAsyncResult ar)
 			{
 				try
 				{
@@ -589,7 +600,7 @@ namespace cYo.Projects.ComicRack.Engine
 					if (syncProvider3 != null)
 					{
 						StorageSync storageSync = new StorageSync(syncProvider3);
-						storageSync.Error = (EventHandler<StorageSync.SyncErrorEventArgs>)Delegate.Combine(storageSync.Error, (EventHandler<StorageSync.SyncErrorEventArgs>)delegate(object s, StorageSync.SyncErrorEventArgs e)
+						storageSync.Error = (EventHandler<StorageSync.SyncErrorEventArgs>)Delegate.Combine(storageSync.Error, (EventHandler<StorageSync.SyncErrorEventArgs>)delegate (object s, StorageSync.SyncErrorEventArgs e)
 						{
 							DeviceSyncErrors.Add(new DeviceSyncError(ssc.DeviceName, e.Message));
 						});
