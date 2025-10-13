@@ -302,17 +302,20 @@ namespace cYo.Common.Windows.Forms
         private static void ThemeDataGridView(DataGridView gridView)
         {
             gridView.EnableHeadersVisualStyles = false;
+            gridView.BorderStyle = BorderStyle.None;
+            gridView.BackgroundColor = ThemeColors.ListBox.Back;
+
+            gridView.DefaultCellStyle.BackColor = ThemeColors.TextBox.Back;
             gridView.DefaultCellStyle.SelectionBackColor = ThemeColors.SelectedText.Highlight;
             gridView.DefaultCellStyle.SelectionForeColor = SystemColorsEx.ControlText;
-            gridView.BorderStyle = BorderStyle.None;
-            // addition adjustments when not overwriting SystemColors
-            gridView.BackgroundColor = ThemeColors.ListBox.Back;
-            gridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            
             gridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             gridView.ColumnHeadersDefaultCellStyle.BackColor = ThemeColors.Header.Back;
-            gridView.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
+            gridView.ColumnHeadersDefaultCellStyle.ForeColor = SystemColorsEx.ControlText;
+
+            gridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             gridView.RowHeadersDefaultCellStyle.BackColor = ThemeColors.Header.Back;
-            gridView.RowHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
+            gridView.RowHeadersDefaultCellStyle.ForeColor = SystemColorsEx.ControlText;
         }
 
         private static void ThemeLabel(Label label)
