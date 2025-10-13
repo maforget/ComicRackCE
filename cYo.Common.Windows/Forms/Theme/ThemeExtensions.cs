@@ -3,7 +3,9 @@ using cYo.Common.Win32;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -87,8 +89,7 @@ namespace cYo.Common.Windows.Forms
 
                 //darkColorTable.SetColor(KnownColor.ButtonFace, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonFace)));         // main menu bar, toolstrip gradient
                 //darkColorTable.SetColor(KnownColor.ButtonShadow, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonShadow)));       // menu border. Lines - menu dividers, toolstrip dividers
-                //darkColorTable.SetColor(KnownColor.ButtonHighlight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonHighlight)));    // MainForm bottom line, toolstrip dividers, Re-size grip (bottom right)
-
+                
                 //darkColorTable.SetColor(KnownColor.ControlLightLight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlLightLight)));  // active tab label background ... but also button highlight
                 //darkColorTable.SetColor(KnownColor.ControlLight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlLight)));       // grip highlight, remaining tasks text
                 //darkColorTable.SetColor(KnownColor.Control, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Control)));            // Form background (not tabs or menu). gradient end. inactive tab label
@@ -135,17 +136,21 @@ namespace cYo.Common.Windows.Forms
 
                 // used in ListBox CheckBox drawing
                 darkColorTable.SetColor(KnownColor.Window, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Window)));
-                //darkColorTable.SetColor(KnownColor.WindowText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.WindowText)));
 
                 // Used in ListBox CheckBox drawing + Searchbox renderer (#todo)
                 darkColorTable.SetColor(KnownColor.ControlText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ControlText)));
 
                 // used in Disabled Text drawing
                 darkColorTable.SetColor(KnownColor.Control, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Control)));
+
+                // used in ComboBox + ListView highlighted text
+                //darkColorTable.SetColor(KnownColor.WindowText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.WindowText)));
                 
-                // used in ComboBox + ListView highlighting
                 //darkColorTable.SetColor(KnownColor.Highlight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.Highlight)));
-                darkColorTable.SetColor(KnownColor.HighlightText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.HighlightText)));
+                //darkColorTable.SetColor(KnownColor.HighlightText, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.HighlightText)));
+
+                // StatuStrip border
+                darkColorTable.SetColor(KnownColor.ButtonHighlight, unchecked((int)KnownColorTableEx.GetSystemColorArgb(KnownColor.ButtonHighlight)));    // MainForm bottom line, toolstrip dividers, Re-size grip (bottom right)
 
                 //ThemeColors.Dark(); // Initialize Dark color palette.
 
@@ -330,7 +335,7 @@ namespace cYo.Common.Windows.Forms
                 checkBox.FlatAppearance.BorderColor = ThemeColors.Button.Border;
                 checkBox.FlatAppearance.CheckedBackColor = ThemeColors.Button.CheckedBack;
                 checkBox.FlatAppearance.MouseOverBackColor = ThemeColors.Button.MouseOverBack;
-                checkBox.Paint += CheckBox_DrawDisabled;
+                checkBox.Paint += CheckBox_Paint;
             }
             else if (OsVersionEx.IsWindows11_OrGreater() && checkBox.FlatStyle == FlatStyle.System)
             {
@@ -338,11 +343,15 @@ namespace cYo.Common.Windows.Forms
             }
             else if (!OsVersionEx.IsWindows11_OrGreater())
             {
-                checkBox.Paint += CheckBox_DrawDisabled;
+                checkBox.FlatStyle = FlatStyle.Flat; // Win10 19044 draws standard checkboxes w/ white background, so force flat
+                checkBox.Paint += CheckBox_Paint;
                 //checkBox.UseVisualStyleBackColor = false;
                 //checkBox.BackColor = SystemColorsEx.Window;  //ThemeColors.Material.Window;
                 //checkBox.ForeColor = SystemColorsEx.ControlText;
-                //checkBox.FlatStyle = FlatStyle.Flat; // Win10 19044 draws standard checkboxes w/ white background, so force flat
+
+                //checkBox.UseVisualStyleBackColor = false;
+                //checkBox.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
+                //checkBox.DoubleBuffered = true;
             }
         }
 
@@ -371,6 +380,14 @@ namespace cYo.Common.Windows.Forms
             gridView.DefaultCellStyle.SelectionBackColor = ThemeColors.SelectedText.Highlight;
             gridView.DefaultCellStyle.SelectionForeColor = SystemColorsEx.ControlText;
             gridView.BorderStyle = BorderStyle.None;
+            // addition adjustments when not overwriting SystemColors
+            gridView.BackgroundColor = ThemeColors.ListBox.Back;
+            gridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            gridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            gridView.ColumnHeadersDefaultCellStyle.BackColor = ThemeColors.Header.Back;
+            gridView.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
+            gridView.RowHeadersDefaultCellStyle.BackColor = ThemeColors.Header.Back;
+            gridView.RowHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
         }
 
         private static void ThemeListBox(ListBox listBox)
@@ -530,31 +547,268 @@ namespace cYo.Common.Windows.Forms
 
         #region Custom Draw Event Handlers
 
-        private static void CheckBox_DrawDisabled(object sender, PaintEventArgs e)
+        public static void CheckBox_Paint(object sender, PaintEventArgs e)
         {
             CheckBox checkBox = sender as CheckBox;
-
-            if (!checkBox.Enabled)
+            TextFormatFlags textFormatFlags = GetTextFormatFlags(checkBox);
+            if (checkBox.Appearance == Appearance.Button)
             {
-                if (checkBox.Appearance == Appearance.Button)
+                // TODO: handle disabled checboxes with images/icons (currently they're wiped)
+                if (!checkBox.Enabled)
                 {
+                    e.Graphics.Clear(checkBox.BackColor);
                     TextRenderer.DrawText(
                     e.Graphics,
                     checkBox.Text,
                     checkBox.Font,
                     e.ClipRectangle,
                     SystemColorsEx.GrayText,
-                    TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter); // TextFormatFlags is an assumption
-                }
-                else
-                {
-                    e.Graphics.DrawString(checkBox.Text, checkBox.Font, SystemBrushesEx.GrayText, new PointF(16, 0));
-                }
-                    
+                    textFormatFlags); // TextFormatFlags is an assumption
+                }  
+                return;
+            }
+
+            e.Graphics.Clear(checkBox.BackColor);
+            //e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+            Rectangle boxRect;
+            Rectangle textRect;
+            CalculateLayout(checkBox, e.Graphics, out boxRect, out textRect);
+            DrawDarkCheckBox(checkBox, e.Graphics, boxRect);
+
+            // Draw text
+            TextRenderer.DrawText(
+                e.Graphics,
+                checkBox.Text,
+                checkBox.Font,
+                textRect,
+                checkBox.Enabled ? checkBox.ForeColor : SystemColorsEx.GrayText,
+                textFormatFlags
+            );
+        }
+
+        // this is to handle MultipleComicBooksDialog checkboxes having less room than others for some reason (even though they all have a height of 17px)
+        // this might be a wider issue related to DPI handling. 
+        #region TEMP
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetAncestor(IntPtr hwnd, uint gaFlags);
+        private const uint GA_ROOT = 2;
+        private const uint GA_ROOTOWNER = 3;
+
+        public static Form GetRealWindow(Control c)
+        {
+            IntPtr hwndRoot = GetAncestor(c.Handle, GA_ROOT);
+            return Control.FromHandle(hwndRoot) as Form;
+        }
+        #endregion
+
+        private static void CalculateLayout(CheckBox checkBox, Graphics g, out Rectangle boxRect, out Rectangle textRect)
+        {
+            //bool win11 = true;
+            // draw smaller checkboxes for MultipleComicBooksDialog
+            // string is because cYo.Projects.ComicRack.Viewer.Dialogs couldn't be referenced, should find a better solution
+            bool win11Size = GetRealWindow(checkBox).Name != "MultipleComicBooksDialog";
+            Size glyphSize = CheckBoxRenderer.GetGlyphSize(g, CheckBoxState.UncheckedNormal);
+            int boxSize = checkBox.Font.Height; // scale with DPI/font
+            //boxRect = new Rectangle(checkBox.Padding.Left, (checkBox.Height - glyphSize.Height) / 2, glyphSize.Width, glyphSize.Height);
+            if (win11Size)
+            {
+                boxRect = new Rectangle(checkBox.Padding.Left, checkBox.Padding.Top + (checkBox.Height - boxSize) / 2, boxSize - FormUtility.ScaleDpiX(1), boxSize - FormUtility.ScaleDpiX(1));
+            }
+            else
+            {
+                boxRect = new Rectangle(checkBox.Padding.Left, checkBox.Padding.Top + (checkBox.Height - boxSize) / 2 + FormUtility.ScaleDpiY(1), boxSize - FormUtility.ScaleDpiX(3), boxSize - FormUtility.ScaleDpiY(3));
+            }
+
+            textRect = checkBox.ClientRectangle;
+            if (win11Size)
+            {
+                textRect.X = boxRect.Right + FormUtility.ScaleDpiX(2); // spacing
+                textRect.Width -= (boxRect.Width + FormUtility.ScaleDpiX(2));
+            }
+            else
+            {
+                textRect.X = boxRect.Right + FormUtility.ScaleDpiX(4); // spacing
+                textRect.Width -= (boxRect.Width + FormUtility.ScaleDpiX(4));
+            }
+
+        }
+
+        private static void SetUncheckedBrushes(CheckBox checkBox, out Pen borderPen, out Brush borderEdgeBrush, out Brush backCornerBrush, out Brush backVertexBrush)
+        {
+            borderPen = ThemePens.CheckBox.UncheckedBorder;
+
+            borderEdgeBrush = ThemeBrushes.CheckBox.UncheckedBorderEdge;
+            backCornerBrush = ThemeBrushes.CheckBox.UncheckedBackCorner;
+            backVertexBrush = ThemeBrushes.CheckBox.UncheckedBackVertex;
+
+            if (!checkBox.Enabled)
+            {
+                borderPen = ThemePens.CheckBox.UncheckedDisabledBorder;
+
+                borderEdgeBrush = ThemeBrushes.CheckBox.UncheckedDisabledBorderEdge;
+                backCornerBrush = ThemeBrushes.CheckBox.UncheckedDisabledBackCorner;
+                backVertexBrush = ThemeBrushes.CheckBox.UncheckedDisabledBackVertex;
             }
         }
 
-        // Use custom SelectedText HighLight color.
+        private static TextFormatFlags GetTextFormatFlags(ButtonBase button)
+        {
+            TextFormatFlags flags = TextFormatFlags.SingleLine | TextFormatFlags.NoPrefix;
+
+            // Handle TextAlign
+            System.Drawing.ContentAlignment align = button.TextAlign;
+
+            switch (align)
+            {
+                case System.Drawing.ContentAlignment.TopLeft:
+                    flags |= TextFormatFlags.Top | TextFormatFlags.Left;
+                    break;
+                case System.Drawing.ContentAlignment.TopCenter:
+                    flags |= TextFormatFlags.Top | TextFormatFlags.HorizontalCenter;
+                    break;
+                case System.Drawing.ContentAlignment.TopRight:
+                    flags |= TextFormatFlags.Top | TextFormatFlags.Right;
+                    break;
+                case System.Drawing.ContentAlignment.MiddleLeft:
+                    flags |= TextFormatFlags.VerticalCenter | TextFormatFlags.Left;
+                    break;
+                case System.Drawing.ContentAlignment.MiddleCenter:
+                    flags |= TextFormatFlags.VerticalCenter | TextFormatFlags.HorizontalCenter;
+                    break;
+                case System.Drawing.ContentAlignment.MiddleRight:
+                    flags |= TextFormatFlags.VerticalCenter | TextFormatFlags.Right;
+                    break;
+                case System.Drawing.ContentAlignment.BottomLeft:
+                    flags |= TextFormatFlags.Bottom | TextFormatFlags.Left;
+                    break;
+                case System.Drawing.ContentAlignment.BottomCenter:
+                    flags |= TextFormatFlags.Bottom | TextFormatFlags.HorizontalCenter;
+                    break;
+                case System.Drawing.ContentAlignment.BottomRight:
+                    flags |= TextFormatFlags.Bottom | TextFormatFlags.Right;
+                    break;
+            }
+
+            // Right-to-left text handling
+            if (button.RightToLeft == RightToLeft.Yes)
+                flags |= TextFormatFlags.RightToLeft | TextFormatFlags.Right;
+
+            // Mnemonics (Alt+char underlines)
+            if (button.UseMnemonic)
+                flags &= ~TextFormatFlags.NoPrefix;
+            else
+                flags |= TextFormatFlags.NoPrefix;
+
+            // Ellipsis
+            if (button.AutoEllipsis)
+                flags |= TextFormatFlags.EndEllipsis;
+
+            return flags;
+        }
+
+
+        private static void DrawDarkCheckMark(CheckBox checkBox, Graphics g, Rectangle boxRect)
+        {
+            Point[] checkMark = new Point[6]
+                {
+                    new Point(boxRect.Left + 2, boxRect.Top + (boxRect.Height/2)+2),
+                    new Point(boxRect.Left + boxRect.Width / 2 -1, boxRect.Bottom - 1),
+                    new Point(boxRect.Right - 2, boxRect.Top + 5),
+                    new Point(boxRect.Right - 2, boxRect.Top + 3),
+                    new Point(boxRect.Left + boxRect.Width / 2 - 1, boxRect.Bottom - 3),
+                    new Point(boxRect.Left + 2, boxRect.Top + (boxRect.Height / 2)),
+                 };
+
+            g.DrawPolygon(checkBox.Enabled ? SystemPensEx.ControlText : SystemPensEx.GrayText, checkMark);
+            g.FillPolygon(checkBox.Enabled ? SystemBrushesEx.ControlText : SystemBrushesEx.GrayText, checkMark);
+        }
+
+        private static void DrawDarkCheckBox(CheckBox checkBox, Graphics g, Rectangle boxRect)
+        {
+            Brush backBrush = checkBox.Checked ? ThemeBrushes.CheckBox.Back : ThemeBrushes.CheckBox.UncheckedBack;
+            g.FillRectangle(backBrush, new Rectangle(boxRect.X + 2, boxRect.Y, boxRect.Width - 3, boxRect.Height));
+            g.FillRectangle(backBrush, new Rectangle(boxRect.X, boxRect.Y + 2, boxRect.Width, boxRect.Height - 3));
+
+            //boxRect.Inflate(-2, -3);
+            // Fill background
+            // Checkmark if checked
+            if (checkBox.Checked)
+                DrawDarkCheckMark(checkBox, g, boxRect);
+
+            int left = boxRect.X;
+            int right = boxRect.X + boxRect.Width;
+            int top = boxRect.Y;
+            int bottom = boxRect.Y + boxRect.Height;
+
+            Pen borderPen = ThemePens.CheckBox.Border;
+            
+            Brush borderEdgeBrush = ThemeBrushes.CheckBox.BorderEdge;
+            Brush backCornerBrush = ThemeBrushes.CheckBox.BackCorner;
+            Brush backVertexBrush = ThemeBrushes.CheckBox.BackVertex;
+
+            if (!checkBox.Checked)
+                SetUncheckedBrushes(checkBox, out borderPen, out borderEdgeBrush, out backCornerBrush, out backVertexBrush);
+
+            // Main Border
+            g.DrawLine(borderPen, new Point(left + 3, top), new Point(right - 3, top));
+            g.DrawLine(borderPen, new Point(left + 3, bottom), new Point(right - 3, bottom));
+            g.DrawLine(borderPen, new Point(left, top + 3), new Point(left, bottom - 3));
+            g.DrawLine(borderPen, new Point(right, top + 3), new Point(right, bottom - 3));
+
+            // Border Edges
+            // Top - Left + Right
+            g.FillRectangle(borderEdgeBrush, left + 2, top, 1, 1);
+            g.FillRectangle(borderEdgeBrush, right - 2, top, 1, 1);
+            // Bottom - Left + Right
+            g.FillRectangle(borderEdgeBrush, left + 2, bottom, 1, 1);
+            g.FillRectangle(borderEdgeBrush, right - 2, bottom, 1, 1);
+            // Left - Top + Bottom
+            g.FillRectangle(borderEdgeBrush, left, top + 2, 1, 1);
+            g.FillRectangle(borderEdgeBrush, left, bottom - 2, 1, 1);
+            // Right - Top + Bottom
+            g.FillRectangle(borderEdgeBrush, right, top + 2, 1, 1);
+            g.FillRectangle(borderEdgeBrush, right, bottom - 2, 1, 1);
+
+            // Inner Corners
+            g.FillRectangle(backCornerBrush, left + 1, top + 1, 1, 1);
+            g.FillRectangle(backCornerBrush, right - 1, top + 1, 1, 1);
+            g.FillRectangle(backCornerBrush, right - 1, bottom - 1, 1, 1);
+            g.FillRectangle(backCornerBrush, left + 1, bottom - 1, 1, 1);
+
+            // Inner Vertices
+            // Top - Left + Right
+            g.FillRectangle(backVertexBrush, left + 2, top + 1, 1, 1);
+            g.FillRectangle(backVertexBrush, right - 2, top + 1, 1, 1);
+            // Bottom - Left + Right
+            g.FillRectangle(backVertexBrush, left + 2, bottom - 1, 1, 1);
+            g.FillRectangle(backVertexBrush, right - 2, bottom - 1, 1, 1);
+            // Left - Top + Bottom
+            g.FillRectangle(backVertexBrush, left + 1, top + 2, 1, 1);
+            g.FillRectangle(backVertexBrush, left + 1, bottom - 2, 1, 1);
+            // Right - Top + Bottom
+            g.FillRectangle(backVertexBrush, right - 1, top + 2, 1, 1);
+            g.FillRectangle(backVertexBrush, right - 1, bottom - 2, 1, 1);
+
+            if (checkBox.Checked)
+            {
+                Brush cornerBrush = ThemeBrushes.CheckBox.BorderCorner;
+                g.FillRectangle(cornerBrush, left + 1, top, 1, 1);
+                g.FillRectangle(cornerBrush, left + 1, bottom, 1, 1);
+                g.FillRectangle(cornerBrush, left, top + 1, 1, 1);
+                g.FillRectangle(cornerBrush, left, bottom - 1, 1, 1);
+                g.FillRectangle(cornerBrush, right - 1, top, 1, 1);
+                g.FillRectangle(cornerBrush, right - 1, bottom, 1, 1);
+                g.FillRectangle(cornerBrush, right, top + 1, 1, 1);
+                g.FillRectangle(cornerBrush, right, bottom - 1, 1, 1);
+            }
+            // ... and that's how you draw a ✓. simples, right?
+            // ... and that's how you draw a ✓. simples, right?
+
+        }
+
+        // Use custom SelectedText Highlight color.
         // related: cYo.Common.Windows.Forms.ComboBoxSkinner.comboBox_DrawItem (private, requires instantiation, comes with ComboBoxSkinner baggage)
         private static void ComboBox_DrawItemHighlight(object sender, DrawItemEventArgs e)
         {
@@ -577,7 +831,6 @@ namespace cYo.Common.Windows.Forms
                     ControlPaint.DrawBorder(e.Graphics, e.Bounds, ThemeColors.SelectedText.Focus, ButtonBorderStyle.Solid);
                 }
             }
-
             using (Brush brush = new SolidBrush(e.ForeColor))
             {
                 using (StringFormat format = new StringFormat(StringFormatFlags.NoWrap)
@@ -596,7 +849,6 @@ namespace cYo.Common.Windows.Forms
         /// <para><see cref="ListView.OnDrawColumnHeader(DrawListViewColumnHeaderEventArgs)"/> method to handle dark <see cref="ColumnHeader"/> text on dark background.</para>
         /// <para><c>DrawDefault</c> is executed unless <see cref="IsDarkModeEnabled"/> is <paramref name="true"/> and <see cref="ListView.View"/> is set to <see cref="View.Details"/></para>
         /// </summary>
-        /// <param name="form"><see cref="Form"/> to be (window) themed.</param>
         public static void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
             // explicit IsDarkModeEnabled check as public (referenced in TaskDialog and ListStyles)
@@ -639,11 +891,17 @@ namespace cYo.Common.Windows.Forms
 
         private static void ListView_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
+            ListViewItem item = sender as ListViewItem;
+            if (item.Selected)
+                item.ForeColor = SystemColorsEx.HighlightText;
             e.DrawDefault = true;
         }
 
         private static void ListView_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
         {
+            ListViewItem item = sender as ListViewItem;
+            if (item.Selected)
+                item.ForeColor = SystemColorsEx.HighlightText;
             e.DrawDefault = true;
         }
 
@@ -678,19 +936,11 @@ namespace cYo.Common.Windows.Forms
         {
             TextBox textBox = sender as TextBox;
             textBox.BackColor = ThemeColors.TextBox.EnterBack;
-            //if (!textBox.Multiline)
-            //{
-            //    textBox.BorderStyle = BorderStyle.Fixed3D;
-            //}
         }
         private static void TextBox_Leave(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
             textBox.BackColor = ThemeColors.TextBox.Back;
-            //if (!textBox.Multiline)
-            //{
-            //    textBox.BorderStyle = BorderStyle.FixedSingle;
-            //}
         }
         #endregion
 

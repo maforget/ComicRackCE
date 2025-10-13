@@ -1,9 +1,7 @@
-﻿using cYo.Common.Collections;
-using cYo.Common.Drawing;
+﻿using cYo.Common.Drawing;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -98,6 +96,25 @@ namespace cYo.Common.Windows.Forms
         {
             public static Color SeparatorLeft => ColorTable.SplitButtonSeparatorLeft;
             public static Color SeparatorRight => ColorTable.SplitButtonSeparatorRight;
+        }
+
+        public static class CheckBox
+        {
+            public static Color Back => ColorTable.CheckBoxBack;
+            public static Color BackCorner => ColorTable.CheckBoxBackCorner;
+            public static Color BackVertex => ColorTable.CheckBoxBackVertex;
+            public static Color Border => ColorTable.CheckBoxBorder;
+            public static Color BorderEdge => ColorTable.CheckBoxBorderEdge;
+            public static Color BorderCorner => ColorTable.CheckBoxBorderCorner;
+            public static Color UncheckedBorder => ColorTable.CheckBoxUncheckedBorder;
+            public static Color UncheckedBorderEdge => ColorTable.CheckBoxUncheckedBorderEdge;
+            public static Color UncheckedBack => ColorTable.CheckBoxUncheckedBack;
+            public static Color UncheckedBackCorner => ColorTable.CheckBoxUncheckedBackCorner;
+            public static Color UncheckedBackVertex => ColorTable.CheckBoxUncheckedBackVertex;
+            public static Color UncheckedDisabledBorder => ColorTable.CheckBoxUncheckedDisabledBorder;
+            public static Color UncheckedDisabledBorderEdge => ColorTable.CheckBoxUncheckedDisabledBorderEdge;
+            public static Color UncheckedDisabledBackCorner => ColorTable.CheckBoxUncheckedDisabledBackCorner;
+            public static Color UncheckedDisabledBackVertex => ColorTable.CheckBoxUncheckedDisabledBackVertex;
         }
 
         #endregion
@@ -288,6 +305,13 @@ namespace cYo.Common.Windows.Forms
     {
         private static readonly Dictionary<Color, Pen> cache = new();
 
+        public static class CheckBox
+        {
+            public static Pen Border => FromThemeColor(ThemeColors.CheckBox.Border);
+            public static Pen UncheckedBorder => FromThemeColor(ThemeColors.CheckBox.UncheckedBorder);
+            public static Pen UncheckedDisabledBorder => FromThemeColor(ThemeColors.CheckBox.UncheckedDisabledBorder);
+        }
+
         public static class ComboBox
         {
             public static Pen Separator => FromThemeColor(ThemeColors.ComboBox.Separator);
@@ -324,6 +348,25 @@ namespace cYo.Common.Windows.Forms
         public static class Caption
         {
             public static Brush Back => FromThemeColor(ThemeColors.Caption.Back);
+        }
+
+        public static class CheckBox
+        {
+            public static Brush Back => FromThemeColor(ThemeColors.CheckBox.Back);
+            public static Brush BackCorner => FromThemeColor(ThemeColors.CheckBox.BackCorner);
+            public static Brush BackVertex => FromThemeColor(ThemeColors.CheckBox.BackVertex);
+            //public static Brush Border => FromThemeColor(ThemeColors.CheckBox.Border);
+            public static Brush BorderEdge => FromThemeColor(ThemeColors.CheckBox.BorderEdge);
+            public static Brush BorderCorner => FromThemeColor(ThemeColors.CheckBox.BorderCorner);
+            //public static Brush UncheckedBorder => FromThemeColor(ThemeColors.CheckBox.UncheckedBorder);
+            public static Brush UncheckedBorderEdge => FromThemeColor(ThemeColors.CheckBox.UncheckedBorderEdge);
+            public static Brush UncheckedBack => FromThemeColor(ThemeColors.CheckBox.UncheckedBack);
+            public static Brush UncheckedBackCorner => FromThemeColor(ThemeColors.CheckBox.UncheckedBackCorner);
+            public static Brush UncheckedBackVertex => FromThemeColor(ThemeColors.CheckBox.UncheckedBackVertex);
+            //public static Brush UncheckedDisabledBorder => FromThemeColor(ThemeColors.CheckBox.UncheckedDisabledBorder);
+            public static Brush UncheckedDisabledBorderEdge => FromThemeColor(ThemeColors.CheckBox.UncheckedDisabledBorderEdge);
+            public static Brush UncheckedDisabledBackCorner => FromThemeColor(ThemeColors.CheckBox.UncheckedDisabledBackCorner);
+            public static Brush UncheckedDisabledBackVertex => FromThemeColor(ThemeColors.CheckBox.UncheckedDisabledBackVertex);
         }
 
         public static class CollapsibleGroupBox
@@ -495,6 +538,24 @@ namespace cYo.Common.Windows.Forms
         // SplitButton
         public virtual Color SplitButtonSeparatorLeft => SystemColorsEx.ButtonShadow;
         public virtual Color SplitButtonSeparatorRight => SystemColorsEx.ButtonFace;
+
+        // CheckBox
+        public virtual Color CheckBoxBack => Color.Empty;
+        public virtual Color CheckBoxBackCorner => Color.Empty;
+        public virtual Color CheckBoxBackVertex => Color.Empty;
+        public virtual Color CheckBoxBorder => Color.Empty;
+        public virtual Color CheckBoxBorderEdge => Color.Empty;
+        public virtual Color CheckBoxBorderCorner => Color.Empty;
+        public virtual Color CheckBoxUncheckedBorder => Color.Empty;
+        public virtual Color CheckBoxUncheckedBorderEdge => Color.Empty;
+        public virtual Color CheckBoxUncheckedBack => Color.Empty;
+        public virtual Color CheckBoxUncheckedBackCorner => Color.Empty;
+        public virtual Color CheckBoxUncheckedBackVertex => Color.Empty;
+        public virtual Color CheckBoxUncheckedDisabledBorder => Color.Empty;
+        public virtual Color CheckBoxUncheckedDisabledBorderEdge => Color.Empty;
+        public virtual Color CheckBoxUncheckedDisabledBack => Color.Empty;
+        public virtual Color CheckBoxUncheckedDisabledBackCorner => Color.Empty;
+        public virtual Color CheckBoxUncheckedDisabledBackVertex => Color.Empty;
     }
 
     /// <summary>
@@ -626,6 +687,23 @@ namespace cYo.Common.Windows.Forms
 
         public override Color SplitButtonSeparatorLeft => SystemColorsEx.WindowText;
         public override Color SplitButtonSeparatorRight => SystemColorsEx.ButtonFace;
+
+        // CheckBox
+        public override Color CheckBoxBack => Color.FromArgb(0, 95, 184);
+        public override Color CheckBoxBackCorner => Color.FromArgb(0, 95, 184);
+        public override Color CheckBoxBackVertex => Color.FromArgb(0, 95, 184);
+        public override Color CheckBoxBorder => Color.FromArgb(0, 95, 184);
+        public override Color CheckBoxBorderEdge => Color.FromArgb(4, 87, 166);
+        public override Color CheckBoxBorderCorner => Color.FromArgb(28, 54, 74);
+        public override Color CheckBoxUncheckedBorder => Color.FromArgb(98, 98, 98);
+        public override Color CheckBoxUncheckedBorderEdge => Color.FromArgb(90, 90, 90);
+        public override Color CheckBoxUncheckedBack => SystemColorsEx.ControlLight;
+        public override Color CheckBoxUncheckedBackCorner => Color.FromArgb(48, 48, 48);
+        public override Color CheckBoxUncheckedBackVertex => SystemColorsEx.ControlDark;
+        public override Color CheckBoxUncheckedDisabledBorder => SystemColorsEx.ControlDark;
+        public override Color CheckBoxUncheckedDisabledBorderEdge => Color.FromArgb(60, 60, 60);
+        public override Color CheckBoxUncheckedDisabledBackCorner => Color.FromArgb(100, 100, 100);
+        public override Color CheckBoxUncheckedDisabledBackVertex => SystemColorsEx.ControlDarkDark;
     }
 
 }

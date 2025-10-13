@@ -12,18 +12,27 @@ namespace cYo.Common.Drawing
     public class KnownColorTableEx
     {
 
-        /// <summary>
-        /// source: <a href="https://github.com/dotnet/runtime">dotnet/runtime</a>. (.NET Foundation, MIT license)<br/>
-        /// <c>src/libraries/System.Drawing.Primitives/src/System/Drawing/KnownColorTable.cs</c><br/>
-        /// source refers to Dark Theme colors as <c>AlternateSystemColors<c>; this has been kept the same.
-        /// </summary>
-        /// <remarks>These are defaults and could do with checking/tweaking.</remarks>
+
         #region NET_10 KnownColorTable
         // These values were based on manual investigation of dark mode themes in the
         // Win32 Common Controls and WinUI. There aren't direct mappings published by
         // Windows, these may change slightly when this feature is finalized to make
         // sure we have the best experience in hybrid dark mode scenarios (mixing
         // WPF, WinForms, and WinUI).
+
+        /// <summary>
+        /// source: <a href="https://github.com/dotnet/runtime">dotnet/runtime</a>. (.NET Foundation, MIT license)<br/>
+        /// <c>src/libraries/System.Drawing.Primitives/src/System/Drawing/KnownColorTable.cs</c><br/>
+        /// source refers to Dark Theme colors as <c>AlternateSystemColors</c>; this has been kept the same.
+        /// </summary>
+        /// <remarks>
+        /// <para>These are defaults and could do with checking/tweaking.</para>
+        /// <para>
+        /// <see cref="SystemColors.HighlightText"/> is set to <see cref="SystemColors.ControlText"/> elsewhere:<br/>
+        /// <a href="https://github.com/dotnet/winforms/blob/0a52f06318e5176b427ae353a416e19635531fc6/src/System.Windows.Forms/System/Windows/Forms/Controls/PropertyGrid/PropertyGrid.cs#L78">Application.IsDarkModeEnabled ? SystemColors.ControlText : SystemColors.HighlightText;</a>.<br/>
+        /// Setting here until we have a reason not to, instead of creating a <c>PropertyGrid</c> class and having to re-write <see cref="System.Windows.Forms.Control"/>.
+        /// </para>
+        /// </remarks>
         private static ReadOnlySpan<uint> AlternateSystemColors =>
         [
             0,          // To align with KnownColor.ActiveBorder = 1
@@ -43,7 +52,7 @@ namespace cYo.Common.Drawing
             0xFF969696, // FF6D6D6D - FF969696: GrayText - Prompt Text Focused TextBox
             0xFF2864B4, // FF0078D7 - FF2864B4: Highlight - Highlighted Panel in DarkMode
             //0xFF000000, // FFFFFFFF - FF000000: HighlightText - White
-            0xFFFFFFFF,
+            0xFFFFFFFF, // see remarks above.
             0xFF2D5FAF, // FF0066CC - FF2D5FAF: HotTrack - Background of the ToggleSwitch
             0xFF3C3F41, // FFF4F7FC - FF3C3F41: InactiveBorder - Dark gray
             0xFF374B5A, // FFBFCBDD - FF374B5A: InactiveCaption - Highlighted Panel in DarkMode
@@ -111,7 +120,7 @@ namespace cYo.Common.Drawing
         public KnownColorTableEx()
         {
             // force init color table
-            byte unused = SystemColorsEx.Window.R;
+            byte unused = SystemColors.Window.R;
 
             var systemDrawingAssembly = typeof(Color).Assembly;
 
