@@ -150,6 +150,11 @@ namespace cYo.Common.Windows.Forms
             public static Color GroupSeparator => ColorTable.ItemViewGroupSeparator;
         }
 
+        public static class NiceTreeSkin
+        {
+            public static Color Separator => ColorTable.NiceTreeSkinDragSeparator;
+        }
+
         public static class LibraryTree
         {
             public static Color TotalBack => ColorTable.LibraryTreeTotalBookCountBack;
@@ -317,6 +322,11 @@ namespace cYo.Common.Windows.Forms
             public static Pen Separator => FromThemeColor(ThemeColors.ComboBox.Separator);
         }
 
+        public static class NiceTreeSkin
+        {
+            public static Pen Separator => FromThemeColor(ThemeColors.NiceTreeSkin.Separator);
+        }
+
         public static class SplitButton
         {
             public static Pen SeparatorLeft => FromThemeColor(ThemeColors.SplitButton.SeparatorLeft);
@@ -377,6 +387,11 @@ namespace cYo.Common.Windows.Forms
         public static class Header
         {
             public static Brush Back => FromThemeColor(ThemeColors.Header.Back);
+        }
+
+        public static class NiceTreeSkin
+        {
+            public static Brush Separator => FromThemeColor(ThemeColors.NiceTreeSkin.Separator);
         }
 
         public static class SelectedText
@@ -484,6 +499,9 @@ namespace cYo.Common.Windows.Forms
 
         // ItemDrawInformation
         public virtual Color ItemDrawInfoText => Color.Black;
+
+        // NiceTreeSkin
+        public virtual Color NiceTreeSkinDragSeparator => Color.Black;
 
         // LibraryTreeSkin
         public virtual Color LibraryTreeTotalBookCountBack => Color.Green;
@@ -634,6 +652,9 @@ namespace cYo.Common.Windows.Forms
         public override Color ItemViewDefaultBack => SystemColors.Window;
         public override Color ItemViewGroupText => Color.LightSkyBlue;
         public override Color ItemViewGroupSeparator => Color.FromArgb(190, 190, 190);
+
+        // NiceTreeSkin
+        public override Color NiceTreeSkinDragSeparator => Color.FromArgb(190, 190, 190);
 
         // LibraryTreeSkin
         public override Color LibraryTreeTotalBookCountBack => Color.FromArgb(unchecked((int)0xFF00C000));

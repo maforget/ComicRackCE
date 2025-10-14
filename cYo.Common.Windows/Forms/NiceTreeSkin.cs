@@ -37,7 +37,7 @@ namespace cYo.Common.Windows.Forms
 				}
 				Rectangle itemBounds = di.ItemBounds;
 				itemBounds.Height = 2;
-				di.Graphics.FillRectangle(Brushes.Black, itemBounds);
+				di.Graphics.FillRectangle(ThemeBrushes.NiceTreeSkin.Separator, itemBounds);
 			}
 		}
 
