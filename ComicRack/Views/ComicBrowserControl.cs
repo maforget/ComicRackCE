@@ -3256,7 +3256,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				}
 				Rectangle bounds = e.Bounds;
 				bounds.Inflate(-10, -10);
-				ThumbTileRenderer.DrawTile(e.Graphics, bounds, itemLock.Item.GetThumbnail(bounds.Height), comic, FC.GetRelative(Font, 1.2f), ThemeColors.ToolTip.InfoText, Color.Transparent, ThumbnailDrawingOptions.DefaultWithoutBackground, ComicTextElements.DefaultComic, threeD: false);
+				ThumbTileRenderer.DrawTile(e.Graphics, bounds, itemLock?.Item.GetThumbnail(bounds.Height), comic, FC.GetRelative(Font, 1.2f), ThemeColors.ToolTip.InfoText, Color.Transparent, ThumbnailDrawingOptions.DefaultWithoutBackground, ComicTextElements.DefaultComic, threeD: false);
 			}
 		}
 
