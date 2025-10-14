@@ -249,6 +249,7 @@ namespace cYo.Common.Windows.Forms
 
         private static void ThemeCheckBox(CheckBox checkBox)
         {
+            checkBox.Paint += CheckBox_Paint;
             if (checkBox.Appearance == Appearance.Button)
             {
                 // although it has the appearance of a button, the theme engine doesn't style it as such, so we have to do it manually
@@ -260,23 +261,10 @@ namespace cYo.Common.Windows.Forms
                 checkBox.FlatAppearance.BorderColor = ThemeColors.Button.Border;
                 checkBox.FlatAppearance.CheckedBackColor = ThemeColors.Button.CheckedBack;
                 checkBox.FlatAppearance.MouseOverBackColor = ThemeColors.Button.MouseOverBack;
-                checkBox.Paint += CheckBox_Paint;
             }
-            else if (OsVersionEx.IsWindows11_OrGreater() && checkBox.FlatStyle == FlatStyle.System)
+            else if (checkBox.FlatStyle == FlatStyle.System)
             {
-                checkBox.FlatStyle = FlatStyle.Standard; // Win11 can theme Flat/Standard, so only change if System
-            }
-            else if (!OsVersionEx.IsWindows11_OrGreater())
-            {
-                checkBox.FlatStyle = FlatStyle.Flat; // Win10 19044 draws standard checkboxes w/ white background, so force flat
-                checkBox.Paint += CheckBox_Paint;
-                //checkBox.UseVisualStyleBackColor = false;
-                //checkBox.BackColor = SystemColors.Window;  //ThemeColors.Material.Window;
-                //checkBox.ForeColor = SystemColors.ControlText;
-
-                //checkBox.UseVisualStyleBackColor = false;
-                //checkBox.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
-                //checkBox.DoubleBuffered = true;
+                checkBox.FlatStyle = FlatStyle.Standard;
             }
         }
 
@@ -481,35 +469,29 @@ namespace cYo.Common.Windows.Forms
 
         #region Custom Draw Event Handlers
 
+        // TODO: handle disabled checkboxes with images/icons (currently they're wiped)
         public static void CheckBox_Paint(object sender, PaintEventArgs e)
         {
             CheckBox checkBox = sender as CheckBox;
+            bool onlyDrawDisabledText = OsVersionEx.IsWindows11_OrGreater() || checkBox.Appearance == Appearance.Button;
             TextFormatFlags textFormatFlags = GetTextFormatFlags(checkBox);
-            if (checkBox.Appearance == Appearance.Button)
-            {
-                // TODO: handle disabled checboxes with images/icons (currently they're wiped)
-                if (!checkBox.Enabled)
-                {
-                    e.Graphics.Clear(checkBox.BackColor);
-                    TextRenderer.DrawText(
-                    e.Graphics,
-                    checkBox.Text,
-                    checkBox.Font,
-                    e.ClipRectangle,
-                    SystemColors.GrayText,
-                    textFormatFlags); // TextFormatFlags is an assumption
-                }  
-                return;
-            }
 
-            e.Graphics.Clear(checkBox.BackColor);
+            // default OS drawing for enabled Win11 CheckBox or Appearance.Button
+            if (onlyDrawDisabledText && checkBox.Enabled) return;
+
+            Rectangle boxRect = GetCheckRectangle(checkBox, e.Graphics);
+            Rectangle textRect = checkBox.Appearance == Appearance.Button ? e.ClipRectangle : GetTextRectangle(checkBox, e.Graphics, boxRect);
+
             //e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
 
-            Rectangle boxRect;
-            Rectangle textRect;
-            CalculateLayout(checkBox, e.Graphics, out boxRect, out textRect);
-            DrawDarkCheckBox(checkBox, e.Graphics, boxRect);
+            // Draw actual Check (Box + Mark)
+            if (!onlyDrawDisabledText)
+                DrawDarkCheckBox(checkBox, e.Graphics, boxRect);
+
+            // Clear text area
+            using (var backBrush = new SolidBrush(checkBox.BackColor))
+                e.Graphics.FillRectangle(backBrush, textRect);
 
             // Draw text
             TextRenderer.DrawText(
@@ -533,51 +515,85 @@ namespace cYo.Common.Windows.Forms
             }
         }
 
-        // this is to handle MultipleComicBooksDialog checkboxes having less room than others for some reason (even though they all have a height of 17px)
-        // this might be a wider issue related to DPI handling. 
-        #region TEMP
-        [DllImport("user32.dll")]
-        private static extern IntPtr GetAncestor(IntPtr hwnd, uint gaFlags);
-        private const uint GA_ROOT = 2;
-        private const uint GA_ROOTOWNER = 3;
-
-        public static Form GetRealWindow(Control c)
+        private static Rectangle GetCheckRectangle(CheckBox checkBox, Graphics g)
         {
-            IntPtr hwndRoot = GetAncestor(c.Handle, GA_ROOT);
-            return Control.FromHandle(hwndRoot) as Form;
-        }
-        #endregion
-
-        private static void CalculateLayout(CheckBox checkBox, Graphics g, out Rectangle boxRect, out Rectangle textRect)
-        {
-            //bool win11 = true;
-            // draw smaller checkboxes for MultipleComicBooksDialog
-            // string is because cYo.Projects.ComicRack.Viewer.Dialogs couldn't be referenced, should find a better solution
-            bool win11Size = GetRealWindow(checkBox).Name != "MultipleComicBooksDialog";
             Size glyphSize = CheckBoxRenderer.GetGlyphSize(g, CheckBoxState.UncheckedNormal);
-            int boxSize = checkBox.Font.Height; // scale with DPI/font
-            //boxRect = new Rectangle(checkBox.Padding.Left, (checkBox.Height - glyphSize.Height) / 2, glyphSize.Width, glyphSize.Height);
-            if (win11Size)
+            Point checkPosition = GetImageAlignmentPoint(checkBox.ClientRectangle, glyphSize, checkBox.CheckAlign);
+
+            Rectangle boxRect = new Rectangle(checkPosition, glyphSize);
+
+            if (checkBox.CheckAlign == System.Drawing.ContentAlignment.MiddleRight)
+                boxRect.X -= 1;
+            return boxRect;
+        }
+
+        private static Rectangle GetTextRectangle(CheckBox checkBox, Graphics g, Rectangle boxRect)
+        {
+            // this is the kind of thing Microsoft love to change between OS versions
+            int padTextY = 1, padBoxRtl = 2, padBoxLtr = 3;
+
+            Rectangle textRect = checkBox.ClientRectangle;
+            textRect.Y -= FormUtility.ScaleDpiX(padTextY);
+
+            if (checkBox.CheckAlign == System.Drawing.ContentAlignment.MiddleRight)
             {
-                boxRect = new Rectangle(checkBox.Padding.Left, checkBox.Padding.Top + (checkBox.Height - boxSize) / 2, boxSize - FormUtility.ScaleDpiX(1), boxSize - FormUtility.ScaleDpiX(1));
+                textRect.X += 1;
+                textRect.Width = checkBox.Bounds.Width - FormUtility.ScaleDpiX(boxRect.Width) - FormUtility.ScaleDpiX(padBoxRtl);
             }
             else
             {
-                boxRect = new Rectangle(checkBox.Padding.Left, checkBox.Padding.Top + (checkBox.Height - boxSize) / 2 + FormUtility.ScaleDpiY(1), boxSize - FormUtility.ScaleDpiX(3), boxSize - FormUtility.ScaleDpiY(3));
+                textRect.X = boxRect.Right + FormUtility.ScaleDpiX(padBoxLtr);
+                textRect.Width = checkBox.Bounds.Right - FormUtility.ScaleDpiX(textRect.X);
+            }
+            return textRect;
+        }
+
+        internal static Point GetImageAlignmentPoint(Rectangle bounds, Size imageSize, System.Drawing.ContentAlignment alignment)
+        {
+            int x = 0;
+            int y = 0;
+
+            switch (alignment)
+            {
+                case System.Drawing.ContentAlignment.TopLeft:
+                    x = bounds.Left;
+                    y = bounds.Top;
+                    break;
+                case System.Drawing.ContentAlignment.TopCenter:
+                    x = bounds.Left + (bounds.Width - imageSize.Width) / 2;
+                    y = bounds.Top;
+                    break;
+                case System.Drawing.ContentAlignment.TopRight:
+                    x = bounds.Right - imageSize.Width;
+                    y = bounds.Top;
+                    break;
+                case System.Drawing.ContentAlignment.MiddleLeft:
+                    x = bounds.Left;
+                    y = bounds.Top + (bounds.Height - imageSize.Height) / 2;
+                    break;
+                case System.Drawing.ContentAlignment.MiddleCenter:
+                    x = bounds.Left + (bounds.Width - imageSize.Width) / 2;
+                    y = bounds.Top + (bounds.Height - imageSize.Height) / 2;
+                    break;
+                case System.Drawing.ContentAlignment.MiddleRight:
+                    x = bounds.Right - imageSize.Width;
+                    y = bounds.Top + (bounds.Height - imageSize.Height) / 2;
+                    break;
+                case System.Drawing.ContentAlignment.BottomLeft:
+                    x = bounds.Left;
+                    y = bounds.Bottom - imageSize.Height;
+                    break;
+                case System.Drawing.ContentAlignment.BottomCenter:
+                    x = bounds.Left + (bounds.Width - imageSize.Width) / 2;
+                    y = bounds.Bottom - imageSize.Height;
+                    break;
+                case System.Drawing.ContentAlignment.BottomRight:
+                    x = bounds.Right - imageSize.Width;
+                    y = bounds.Bottom - imageSize.Height;
+                    break;
             }
 
-            textRect = checkBox.ClientRectangle;
-            if (win11Size)
-            {
-                textRect.X = boxRect.Right + FormUtility.ScaleDpiX(2); // spacing
-                textRect.Width -= (boxRect.Width + FormUtility.ScaleDpiX(2));
-            }
-            else
-            {
-                textRect.X = boxRect.Right + FormUtility.ScaleDpiX(4); // spacing
-                textRect.Width -= (boxRect.Width + FormUtility.ScaleDpiX(4));
-            }
-
+            return new Point(x, y);
         }
 
         private static void SetUncheckedBrushes(CheckBox checkBox, out Pen borderPen, out Brush borderEdgeBrush, out Brush backCornerBrush, out Brush backVertexBrush)
@@ -602,10 +618,7 @@ namespace cYo.Common.Windows.Forms
         {
             TextFormatFlags flags = TextFormatFlags.SingleLine | TextFormatFlags.NoPrefix;
 
-            // Handle TextAlign
-            System.Drawing.ContentAlignment align = button.TextAlign;
-
-            switch (align)
+            switch (button.TextAlign)
             {
                 case System.Drawing.ContentAlignment.TopLeft:
                     flags |= TextFormatFlags.Top | TextFormatFlags.Left;
@@ -729,6 +742,8 @@ namespace cYo.Common.Windows.Forms
 
         private static void DrawDarkCheckBox(CheckBox checkBox, Graphics g, Rectangle boxRect)
         {
+            g.Clear(checkBox.BackColor);
+
             Brush backBrush = checkBox.Checked ? ThemeBrushes.CheckBox.Back : ThemeBrushes.CheckBox.UncheckedBack;
             g.FillRectangle(backBrush, new Rectangle(boxRect.X + 2, boxRect.Y, boxRect.Width - 3, boxRect.Height));
             g.FillRectangle(backBrush, new Rectangle(boxRect.X, boxRect.Y + 2, boxRect.Width, boxRect.Height - 3));
