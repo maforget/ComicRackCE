@@ -443,20 +443,29 @@ namespace cYo.Common.Windows.Forms
         {
             // ShowGroups defaults to true, so let's check the count before giving up on scrollbars
             //if (listView.ShowGroups && listView.HeaderStyle != ColumnHeaderStyle.None) // why do we care about ColumnHeaderStyle when this affects Group headers?
-            if (listView.ShowGroups && listView.Groups.Count > 1)
-            {
-                // sacrifice dark scrollbars to show readable group headers
-                UXTheme.SetControlTheme(listView.Handle, "DarkMode_ItemsView");
-                //Native.SetWindowTheme(hwnd,null, "DarkMode_ItemsView::ListView"); //messed up scrollbar
-            }
-            else
-            {
-                // we don't have groups - let's get dark scrollbars
-                UXTheme.SetControlTheme(listView.Handle);
-            }
+            //if (listView.ShowGroups && listView.Groups.Count > 1)
+            //{
+            //    // sacrifice dark scrollbars to show readable group headers
+            //    UXTheme.SetControlTheme(listView.Handle, "DarkMode_ItemsView");
+            //    //Native.SetWindowTheme(hwnd,null, "DarkMode_ItemsView::ListView"); //messed up scrollbar
+            //}
+            //else
+            //{
+            //    // we don't have groups - let's get dark scrollbars
+            //    UXTheme.SetControlTheme(listView.Handle);
+            //}
+
+            
+            UXTheme.SetControlTheme(listView.Handle);
 
             // header has to be themed separately
             UXTheme.SetListViewHeaderTheme(listView.Handle);
+            if (listView.ShowGroups && listView.Groups.Count > 1)
+            {
+                // Color GroupHeaders
+                var colorizer = new Theme.ListViewTextColorizer(listView, ThemeColors.ItemView.GroupText, listView.BackColor, disableTheming: false);
+                UXTheme.SetWindowTheme(colorizer.Handle);
+            }
         }
 
         private static void SetTabControlUXTheme(TabControl tabControl)
