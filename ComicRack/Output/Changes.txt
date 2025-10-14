@@ -1,3 +1,28 @@
+Community Edition Build 0.9.182:
+
+* NEW: Dark Mode !!! Enable via "UseDarkMode" setting in ComicRack.ini (or "-dark"). (Huge thanks to @gman-comicdb for doing the very hard work)
+* NEW: Added an "escape" Virtual Tag function.
+* NEW: Added a new List Order sorting option for Devices, this will use the list current Sort order.
+
+
+* CHANGE: Open With will automatically use the 8.3 file name for long path.
+* CHANGE: Custom values in the multiple books dialog will now scroll if there are too many.
+* CHANGE: Upped texture memory by eightfold.
+    - Default value changed from 128MB to 1024MB
+    - Max value changed from 1024MB to 8192MB
+    - Auto tune max value changed from 256MB to 2048MB
+* CHANGE: Renamed SoftwareResampling to SoftwareFilter in ComicRack.ini.
+* CHANGE: Inverted default value for OptimizedListScrolling so that it is always disabled, unless the computer is too slow (< 2000MHZ).
+* CHANGE: Ensure that the reader window can't be open off-screen.
+* CHANGE: Main Character/Team is now uses a ListSelector. Now functions like other multi-value fields.
+* CHANGE: Fixed ComicInfo.xml not always fully updating when set to auto update.
+* CHANGE: Smart list based upon a Virtual Tag will not be cached anymore. The list could be outaded when changing value that the virtual tag depended on.
+
+
+* BUGFIX: Fixed an incorrect "operation would result in a duplicate entry in the database" error. File path comparaison didn't ignore case.
+* BUGFIX: The program could sometimes become hung and the processor usage would be max will starting up, requiring to force close it. 
+
+
 Community Edition Build 0.9.180:
 
 * NEW: RAR5 Support (Default & SharpCompress)
