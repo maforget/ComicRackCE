@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using static cYo.Common.Win32.ExecuteProcess;
-using cYo.Common.Drawing;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -177,7 +176,7 @@ namespace cYo.Common.Windows.Forms
 					if (hwndChild == pcbi.hwndEdit)
 					{
 						NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeColors.ComboBox.Disabled));
-						NativeMethods.SetTextColor(hdc, ColorTranslator.ToWin32(SystemColorsEx.GrayText));
+						NativeMethods.SetTextColor(hdc, ColorTranslator.ToWin32(SystemColors.GrayText));
 
 						m.Result = NativeMethods.darkEditBrush;
 						return;
@@ -187,14 +186,14 @@ namespace cYo.Common.Windows.Forms
 					if (DropDownStyle == ComboBoxStyle.Simple && !Enabled && hwndChild == pcbi.hwndList)
 					{
 						NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeColors.ComboBox.Disabled));
-						NativeMethods.SetTextColor(hdc, ColorTranslator.ToWin32(SystemColorsEx.GrayText));
+						NativeMethods.SetTextColor(hdc, ColorTranslator.ToWin32(SystemColors.GrayText));
 						m.Result = NativeMethods.darkEditBrush;
 						return;
 					}
 
 					break;
 				case NativeMethods.WM_PAINT:
-					if (!GetStyle(ControlStyles.UserPaint) && (FlatStyle == FlatStyle.Flat || FlatStyle == FlatStyle.Popup) && !(SystemInformation.HighContrast && BackColor == SystemColorsEx.Window))
+					if (!GetStyle(ControlStyles.UserPaint) && (FlatStyle == FlatStyle.Flat || FlatStyle == FlatStyle.Popup) && !(SystemInformation.HighContrast && BackColor == SystemColors.Window))
 					{
                         using Graphics g = Graphics.FromHdc(hdc);
 
@@ -215,7 +214,7 @@ namespace cYo.Common.Windows.Forms
 								Text,
 								Font,
 								textBounds,
-                                SystemColorsEx.GrayText,
+                                SystemColors.GrayText,
 								TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
 						}
 

@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using cYo.Common.Collections;
-using cYo.Common.Drawing;
 using cYo.Common.Net.Search;
 using cYo.Common.Text;
 using cYo.Common.Windows.Properties;
@@ -57,25 +56,25 @@ namespace cYo.Common.Windows.Forms
 				switch (tab)
 				{
 				default:
-					btLists.BackColor = SystemColorsEx.Control;
-					btCheck.BackColor = SystemColorsEx.Window;
-					btText.BackColor = SystemColorsEx.Window;
+					btLists.BackColor = SystemColors.Control;
+					btCheck.BackColor = SystemColors.Window;
+					btText.BackColor = SystemColors.Window;
 					listPanel.Visible = true;
 					lbCheckList.Visible = false;
 					text.Visible = false;
 					break;
 				case 1:
-					btLists.BackColor = SystemColorsEx.Window;
-					btCheck.BackColor = SystemColorsEx.Control;
-					btText.BackColor = SystemColorsEx.Window;
+					btLists.BackColor = SystemColors.Window;
+					btCheck.BackColor = SystemColors.Control;
+					btText.BackColor = SystemColors.Window;
 					listPanel.Visible = false;
 					lbCheckList.Visible = true;
 					text.Visible = false;
 					break;
 				case 2:
-					btLists.BackColor = SystemColorsEx.Window;
-					btCheck.BackColor = SystemColorsEx.Window;
-					btText.BackColor = SystemColorsEx.Control;
+					btLists.BackColor = SystemColors.Window;
+					btCheck.BackColor = SystemColors.Window;
+					btText.BackColor = SystemColors.Control;
 					listPanel.Visible = false;
 					lbCheckList.Visible = false;
 					text.Visible = true;

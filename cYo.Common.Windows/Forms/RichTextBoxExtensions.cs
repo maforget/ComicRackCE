@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using cYo.Common.ComponentModel;
-using cYo.Common.Drawing;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -73,7 +72,7 @@ namespace cYo.Common.Windows.Forms
 				using (rtb.SuspendPainting())
 				{
 					rtb.SelectAll();
-					rtb.SelectionColor = SystemColorsEx.WindowText;
+					rtb.SelectionColor = SystemColors.WindowText;
 					foreach (ValuePair<Color, Regex> color in colors)
 					{
 						foreach (Match item in color.Value.Matches(rtb.Text))

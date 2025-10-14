@@ -176,7 +176,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				listViewItem.Tag = item;
 				if (Program.NetworkManager.IsOwnServer(item.Uri))
 				{
-					listViewItem.ForeColor = SystemColorsEx.GrayText;
+					listViewItem.ForeColor = SystemColors.GrayText;
 					listViewItem.Tag = null;
 				}
 			}

@@ -532,7 +532,7 @@ namespace cYo.Projects.ComicRack.Engine.Drawing
 				{
 					DrawShadow(graphics, thumbnailBounds, shadowSize);
 				}
-				graphics.FillRectangle(SystemBrushesEx.Control, thumbnailBounds);
+				graphics.FillRectangle(SystemBrushes.Control, thumbnailBounds);
 				graphics.DrawRectangle(Pens.Black, thumbnailBounds);
 			}
 		}

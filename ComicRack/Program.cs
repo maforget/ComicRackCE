@@ -1,3 +1,6 @@
+global using SystemColors = cYo.Common.Drawing.SystemColorsEx;
+global using SystemBrushes = cYo.Common.Drawing.SystemBrushesEx;
+global using SystemPens = cYo.Common.Drawing.SystemPensEx;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -41,7 +44,6 @@ using cYo.Projects.ComicRack.Viewer.Config;
 using cYo.Projects.ComicRack.Viewer.Dialogs;
 using cYo.Projects.ComicRack.Viewer.Properties;
 using Microsoft.Win32;
-using static IronPython.Modules._ast;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
 
 namespace cYo.Projects.ComicRack.Viewer
@@ -502,7 +504,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				}
 				if (num2 != num)
 				{
-					Color color = Color.FromArgb(192, SystemColorsEx.Highlight);
+					Color color = Color.FromArgb(192, SystemColors.Highlight);
 					Font iconTitleFont = SystemFonts.IconTitleFont;
 					string text = StringUtility.Format("{0} {1}", num, TR.Default["Books", "books"]);
 					Rectangle rectangle = new Rectangle(Point.Empty, graphics.MeasureString(text, iconTitleFont).ToSize());
@@ -521,7 +523,7 @@ namespace cYo.Projects.ComicRack.Viewer
 						Alignment = StringAlignment.Center
 					})
 					{
-						graphics.DrawString(text, iconTitleFont, SystemBrushesEx.HighlightText, rectangle, format);
+						graphics.DrawString(text, iconTitleFont, SystemBrushes.HighlightText, rectangle, format);
 						return bitmap;
 					}
 				}

@@ -155,12 +155,10 @@ namespace cYo.Common.Drawing
         public void Initialize(bool useAlternateColors = false)
         {
             SystemColorsEx.UseAlternativeColorSet = useAlternateColors;
-            //if (!useAlternateColors) return;
+            if (!useAlternateColors) return;
 
-            //KnownColors.ForEach(color =>
-            //{
-            //    setColor(color, Color.Red.ToArgb());
-            //});
+            //KnownColors.ForEach(color => setColor(color, Color.Red.ToArgb())); // For testing
+            //KnownColors.ForEach(color => setColor(color, GetAlternateSystemColorArgb(color))); // Old behavior of replacing SystemColors (disable global using and enable this to revert)
 
             //foreach (KnownColor color in Enum.GetValues(typeof(KnownColor)))
             //{

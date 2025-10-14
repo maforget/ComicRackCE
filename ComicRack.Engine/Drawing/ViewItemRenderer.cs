@@ -8,7 +8,7 @@ namespace cYo.Projects.ComicRack.Engine.Drawing
 	{
 		private Color backColor = Color.Transparent;
 
-		private Color foreColor = SystemColorsEx.WindowText;
+		private Color foreColor = SystemColors.WindowText;
 
 		private readonly List<TextLine> textLines = new List<TextLine>();
 

@@ -53,9 +53,9 @@ namespace cYo.Common.Windows.Forms
 
 		private bool keepHandleVisible = true;
 
-		private readonly Color hotColor = SystemColorsEx.ControlLight;
+		private readonly Color hotColor = SystemColors.ControlLight;
 
-		private Color pressedColor = SystemColorsEx.Highlight;
+		private Color pressedColor = SystemColors.Highlight;
 
 		private ExtendedBorderStyle borderStyle;
 

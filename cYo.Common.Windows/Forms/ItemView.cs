@@ -3234,7 +3234,7 @@ namespace cYo.Common.Windows.Forms
 		{
 			Rectangle rc2 = rc;
 			rc2.Inflate(-1, -1);
-			gr.DrawStyledRectangle(rc2, StyledRenderer.GetAlphaStyle(drawState.HasFlag(ItemViewStates.Selected), drawState.HasFlag(ItemViewStates.Hot), drawState.HasFlag(ItemViewStates.Focused)), Focused ? SystemColorsEx.Highlight : Color.Gray);
+			gr.DrawStyledRectangle(rc2, StyledRenderer.GetAlphaStyle(drawState.HasFlag(ItemViewStates.Selected), drawState.HasFlag(ItemViewStates.Hot), drawState.HasFlag(ItemViewStates.Focused)), Focused ? SystemColors.Highlight : Color.Gray);
 		}
 
 		protected virtual void OnDrawItemStates(Graphics gr, IViewableItem item, Rectangle rc, ItemViewStates drawState)
@@ -3257,7 +3257,7 @@ namespace cYo.Common.Windows.Forms
 
 		protected virtual void DrawMarker(Graphics gr, Rectangle bounds)
 		{
-			Color color = Color.FromArgb(128, SystemColorsEx.ControlDarkDark);
+			Color color = Color.FromArgb(128, SystemColors.ControlDarkDark);
 			using (Brush brush = new SolidBrush(color))
 			{
 				gr.FillRectangle(brush, bounds);
@@ -3474,11 +3474,11 @@ namespace cYo.Common.Windows.Forms
 					{
 						Rectangle rect = Translate(selectionRect, fromClient: false);
 						rect.Inflate(-2, -2);
-						using (Brush brush = new SolidBrush(Color.FromArgb(128, SystemColorsEx.Highlight)))
+						using (Brush brush = new SolidBrush(Color.FromArgb(128, SystemColors.Highlight)))
 						{
 							graphics.FillRectangle(brush, rect);
 						}
-						graphics.DrawRectangle(SystemPensEx.Highlight, rect);
+						graphics.DrawRectangle(SystemPens.Highlight, rect);
 					}
 					if (resizeColumn != null)
 					{
@@ -3496,7 +3496,7 @@ namespace cYo.Common.Windows.Forms
 						Rectangle columnHeaderRectangle = GetColumnHeaderRectangle(dragHeader);
 						viewRectangle2.X = columnHeaderRectangle.X - base.ScrollPositionX;
 						viewRectangle2.Width = columnHeaderRectangle.Width;
-						using (Brush brush2 = new SolidBrush(Color.FromArgb(128, SystemColorsEx.ControlDark)))
+						using (Brush brush2 = new SolidBrush(Color.FromArgb(128, SystemColors.ControlDark)))
 						{
 							graphics.FillRectangle(brush2, viewRectangle2);
 						}

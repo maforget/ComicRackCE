@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using cYo.Common;
 using cYo.Common.Collections;
 using cYo.Common.ComponentModel;
-using cYo.Common.Drawing;
+
 using cYo.Common.IO;
 using cYo.Common.Localize;
 using cYo.Common.Text;
@@ -467,7 +467,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					_ = item is ComicLibraryListItem;
 				}
 				num++;
-				treeNode.ForeColor = (item.RecursionTest() ? Color.Red : SystemColorsEx.WindowText);
+				treeNode.ForeColor = (item.RecursionTest() ? Color.Red : SystemColors.WindowText);
 				if (comicListItemFolder != null)
 				{
 					FillListTree(treeNode.Nodes, comicListItemFolder.Items, filter);

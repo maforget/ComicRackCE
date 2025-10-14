@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using cYo.Common.Collections;
-using cYo.Common.Drawing;
 using cYo.Common.Localize;
 using cYo.Common.Text;
 using cYo.Common.Threading;
@@ -154,7 +153,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 					if (pendingItemCount > 10)
 					{
 						ListViewItem listViewItem2 = lvTasks.Items.Add(string.Format(TR.Messages["ListMore", "{0} more..."], pendingItemCount - 10));
-						listViewItem2.ForeColor = SystemColorsEx.ControlLight;
+						listViewItem2.ForeColor = SystemColors.ControlLight;
 						listViewItem2.Group = group;
 					}
 				}

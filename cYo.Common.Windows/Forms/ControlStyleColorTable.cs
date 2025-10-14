@@ -1,16 +1,15 @@
 using System.Drawing;
 using System.Windows.Forms;
-using cYo.Common.Drawing;
 
 namespace cYo.Common.Windows.Forms
 {
 	public class ControlStyleColorTable : ProfessionalColorTable
 	{
-		private readonly Color backgroundColor = SystemColorsEx.Control;
+		private readonly Color backgroundColor = SystemColors.Control;
 
-		private readonly Color lightColor = SystemColorsEx.ControlLight;
+		private readonly Color lightColor = SystemColors.ControlLight;
 
-		private readonly Color darkColor = SystemColorsEx.ControlDark;
+		private readonly Color darkColor = SystemColors.ControlDark;
 
 		private readonly Color borderColor = Color.Black;
 

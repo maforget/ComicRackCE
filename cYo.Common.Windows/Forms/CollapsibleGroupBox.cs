@@ -283,7 +283,7 @@ namespace cYo.Common.Windows.Forms
             }
             else
             {
-                gr.FillRectangle(SystemBrushesEx.ControlDark, headerRectangle);
+                gr.FillRectangle(SystemBrushes.ControlDark, headerRectangle);
             }
             Image toggleImage = GetToggleImage();
             gr.DrawImage(toggleImage, toggleImage.Size.Align(ToggleRectange, System.Drawing.ContentAlignment.MiddleCenter));

@@ -11,11 +11,11 @@ using System.Windows.Forms.VisualStyles;
 
 namespace cYo.Common.Windows.Forms
 {
-    /// <summary>
-    /// Class to centralisation application Theming. When theming is enabled, calls <see cref="KnownColorTableEx"/> on initialization to override built-in <see cref="SystemColors"/> with theme-defined colors.<br/>
-    /// Exposes <see cref="Theme(Control)"/> for recursive <see cref="Control"/> theming by setting class fields and leveraging <see cref="UXTheme"/> for native Windows OS theming.
-    /// </summary>
-    public static class ThemeExtensions
+	/// <summary>
+	/// Class to centralisation application Theming. When theming is enabled, calls <see cref="KnownColorTableEx"/> on initialization to override built-in <see cref="System.Drawing.SystemColors"/> with theme-defined colors.<br/>
+	/// Exposes <see cref="Theme(Control)"/> for recursive <see cref="Control"/> theming by setting class fields and leveraging <see cref="UXTheme"/> for native Windows OS theming.
+	/// </summary>
+	public static class ThemeExtensions
     {
         /// <summary>
         /// <para>Indicates whether Dark Mode has been <b>enabled</b>. Set on initialization and referenced in all public non-initialization <see cref="ThemeExtensions"/> calls.</para>
@@ -28,14 +28,14 @@ namespace cYo.Common.Windows.Forms
 
         private static bool IsThemed { get; set; } = false;
 
-        /// <summary>
-        /// <see cref="Control"/> to Theme Handler method mappings. For controls which don't respond to <see cref="SystemColors"/> change, or
-        /// require additional tweaking such as setting <see cref="BorderStyle"/> or <see cref="FlatStyle"/>.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="BorderStyle"/> or <see cref="FlatStyle"/> can affect whether <see cref="UXTheme.SetControlTheme(IntPtr, string, string)"/> is able to theme a <see cref="Control"/> or not.<br/>
-        /// </remarks>
-        private static readonly Dictionary<Type, Action<Control>> themeHandlers = new()
+		/// <summary>
+		/// <see cref="Control"/> to Theme Handler method mappings. For controls which don't respond to <see cref="System.Drawing.SystemColors"/> change, or
+		/// require additional tweaking such as setting <see cref="BorderStyle"/> or <see cref="FlatStyle"/>.
+		/// </summary>
+		/// <remarks>
+		/// <see cref="BorderStyle"/> or <see cref="FlatStyle"/> can affect whether <see cref="UXTheme.SetControlTheme(IntPtr, string, string)"/> is able to theme a <see cref="Control"/> or not.<br/>
+		/// </remarks>
+		private static readonly Dictionary<Type, Action<Control>> themeHandlers = new()
         {
             { typeof(Button), c => ThemeButton((Button)c) },
             { typeof(CheckBox), c => ThemeCheckBox((CheckBox)c) },
@@ -66,18 +66,18 @@ namespace cYo.Common.Windows.Forms
             { typeof(TabControl), c => SetTabControlUXTheme((TabControl)c) }
         };
 
-        /// <summary>
-		/// Sets <see cref="IsDarkModeEnabled"/>. If <paramref name="useDarkMode"/> is <c>true</c>, initializes <see cref="KnownColorTableEx"/> which replaces built-in <see cref="SystemColors"/> with Dark Mode colors.
-        /// </summary>
-        /// <param name="useDarkMode">Determines if the Dark Mode theme should be used (and <see cref="SystemColors"/> replaced).</param>
-        /// <remarks>
-        /// If <see cref="IsDarkModeEnabled"/> is set to false, all calls to other <see cref="ThemeExtensions"/> functions will immediately return.
-        /// </remarks>
-        public static void Initialize(Theme.Themes theme)
+		/// <summary>
+		/// Sets <see cref="IsDarkModeEnabled"/>. If <paramref name="useDarkMode"/> is <c>true</c>, initializes <see cref="KnownColorTableEx"/> which replaces built-in <see cref="System.Drawing.SystemColors"/> with Dark Mode colors.
+		/// </summary>
+		/// <param name="useDarkMode">Determines if the Dark Mode theme should be used (and <see cref="System.Drawing.SystemColors"/> replaced).</param>
+		/// <remarks>
+		/// If <see cref="IsDarkModeEnabled"/> is set to false, all calls to other <see cref="ThemeExtensions"/> functions will immediately return.
+		/// </remarks>
+		public static void Initialize(Theme.Themes theme)
         {
             IsDarkModeEnabled = theme == Forms.Theme.Themes.Dark;
-
             IsThemed = ThemeFactory(theme);
+
 			if (IsDarkModeEnabled)
             {
                 KnownColorTableEx darkColorTable = new KnownColorTableEx();
@@ -137,7 +137,7 @@ namespace cYo.Common.Windows.Forms
             if (control is Form form)
             {
                 form.BackColor = ThemeColors.Material.Window;
-                //form.ForeColor = SystemColorsEx.ControlText;
+                //form.ForeColor = SystemColors.ControlText;
                 SetWindowUXTheme(form);
             }
 
@@ -222,12 +222,12 @@ namespace cYo.Common.Windows.Forms
         {
             //panel.BackColor = Color.Red;
             //if (panel.BackColor == Color.Transparent && panel.Parent.BackColor != Color.Transparent)
-                //panel.BackColor = panel.Parent.BackColor; // SystemColorsEx.Control; // changing this breaks checkboxes
+                //panel.BackColor = panel.Parent.BackColor; // SystemColors.Control; // changing this breaks checkboxes
         }
 
         private static void ThemeGroupBox(GroupBox groupBox)
         {
-            groupBox.ForeColor = SystemColorsEx.WindowText;
+            groupBox.ForeColor = SystemColors.WindowText;
         }
 
         private static void ThemeButton(Button button)
@@ -271,8 +271,8 @@ namespace cYo.Common.Windows.Forms
                 checkBox.FlatStyle = FlatStyle.Flat; // Win10 19044 draws standard checkboxes w/ white background, so force flat
                 checkBox.Paint += CheckBox_Paint;
                 //checkBox.UseVisualStyleBackColor = false;
-                //checkBox.BackColor = SystemColorsEx.Window;  //ThemeColors.Material.Window;
-                //checkBox.ForeColor = SystemColorsEx.ControlText;
+                //checkBox.BackColor = SystemColors.Window;  //ThemeColors.Material.Window;
+                //checkBox.ForeColor = SystemColors.ControlText;
 
                 //checkBox.UseVisualStyleBackColor = false;
                 //checkBox.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
@@ -283,7 +283,7 @@ namespace cYo.Common.Windows.Forms
         private static void ThemeComboBox(ComboBox comboBox)
         {
             comboBox.BackColor = ThemeColors.ComboBox.Back;
-            comboBox.ForeColor = SystemColorsEx.WindowText;
+            comboBox.ForeColor = SystemColors.WindowText;
 
             // Blue -> Gray highlight
             // results in DropDown instead of DropDownList theme formatting (highlighted text when not dropped down)
@@ -307,15 +307,15 @@ namespace cYo.Common.Windows.Forms
 
             gridView.DefaultCellStyle.BackColor = ThemeColors.TextBox.Back;
             gridView.DefaultCellStyle.SelectionBackColor = ThemeColors.SelectedText.Highlight;
-            gridView.DefaultCellStyle.SelectionForeColor = SystemColorsEx.ControlText;
+            gridView.DefaultCellStyle.SelectionForeColor = SystemColors.ControlText;
             
             gridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             gridView.ColumnHeadersDefaultCellStyle.BackColor = ThemeColors.Header.Back;
-            gridView.ColumnHeadersDefaultCellStyle.ForeColor = SystemColorsEx.ControlText;
+            gridView.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
 
             gridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             gridView.RowHeadersDefaultCellStyle.BackColor = ThemeColors.Header.Back;
-            gridView.RowHeadersDefaultCellStyle.ForeColor = SystemColorsEx.ControlText;
+            gridView.RowHeadersDefaultCellStyle.ForeColor = SystemColors.ControlText;
         }
 
         private static void ThemeLabel(Label label)
@@ -326,7 +326,7 @@ namespace cYo.Common.Windows.Forms
         private static void ThemeListBox(ListBox listBox)
         {
             listBox.BackColor = ThemeColors.ListBox.Back;
-            listBox.ForeColor = SystemColorsEx.WindowText;
+            listBox.ForeColor = SystemColors.WindowText;
             listBox.BorderStyle = BorderStyle.FixedSingle;
         }
 
@@ -354,7 +354,7 @@ namespace cYo.Common.Windows.Forms
         private static void ThemeListView(ListView listView)
         {
             listView.BackColor = ThemeColors.TextBox.Back;
-            listView.ForeColor = SystemColorsEx.WindowText;
+            listView.ForeColor = SystemColors.WindowText;
 
             //if (!(listView is ListViewEx) && listView.View == View.Details && listView.HeaderStyle != ColumnHeaderStyle.None)
             if (!listView.OwnerDraw && listView.View == View.Details && listView.HeaderStyle != ColumnHeaderStyle.None)
@@ -398,7 +398,7 @@ namespace cYo.Common.Windows.Forms
                 textBox.BorderStyle = BorderStyle.FixedSingle;
 
             textBox.BackColor = ThemeColors.TextBox.Back;
-            textBox.ForeColor = SystemColorsEx.ControlText;
+            textBox.ForeColor = SystemColors.ControlText;
             textBox.MouseLeave -= TextBox_MouseLeave;
             textBox.MouseLeave += TextBox_MouseLeave;
             textBox.MouseHover -= TextBox_MouseHover;
@@ -496,7 +496,7 @@ namespace cYo.Common.Windows.Forms
                     checkBox.Text,
                     checkBox.Font,
                     e.ClipRectangle,
-                    SystemColorsEx.GrayText,
+                    SystemColors.GrayText,
                     textFormatFlags); // TextFormatFlags is an assumption
                 }  
                 return;
@@ -517,7 +517,7 @@ namespace cYo.Common.Windows.Forms
                 checkBox.Text,
                 checkBox.Font,
                 textRect,
-                checkBox.Enabled ? checkBox.ForeColor : SystemColorsEx.GrayText,
+                checkBox.Enabled ? checkBox.ForeColor : SystemColors.GrayText,
                 textFormatFlags
             );
         }
@@ -529,7 +529,7 @@ namespace cYo.Common.Windows.Forms
             if (!label.Enabled)
             {
                 TextFormatFlags textFormatFlags = GetTextFormatFlags(label);
-                TextRenderer.DrawText(e.Graphics, label.Text, label.Font, label.ClientRectangle, SystemColorsEx.GrayText, label.BackColor, textFormatFlags);
+                TextRenderer.DrawText(e.Graphics, label.Text, label.Font, label.ClientRectangle, SystemColors.GrayText, label.BackColor, textFormatFlags);
             }
         }
 
@@ -723,8 +723,8 @@ namespace cYo.Common.Windows.Forms
                     new Point(boxRect.Left + 2, boxRect.Top + (boxRect.Height / 2)),
                  };
 
-            g.DrawPolygon(checkBox.Enabled ? SystemPensEx.ControlText : SystemPensEx.GrayText, checkMark);
-            g.FillPolygon(checkBox.Enabled ? SystemBrushesEx.ControlText : SystemBrushesEx.GrayText, checkMark);
+            g.DrawPolygon(checkBox.Enabled ? SystemPens.ControlText : SystemPens.GrayText, checkMark);
+            g.FillPolygon(checkBox.Enabled ? SystemBrushes.ControlText : SystemBrushes.GrayText, checkMark);
         }
 
         private static void DrawDarkCheckBox(CheckBox checkBox, Graphics g, Rectangle boxRect)
@@ -1030,8 +1030,8 @@ namespace cYo.Common.Windows.Forms
                     new Point(middle.X,     middle.Y + 2)
                 };
 
-            g.FillPolygon(SystemBrushesEx.ControlText, arrow);
-            g.DrawLine(SystemPensEx.ControlText, overflowArrowRect.Right - 7, overflowArrowRect.Y - 2, overflowArrowRect.Right - 3, overflowArrowRect.Y - 2);
+            g.FillPolygon(SystemBrushes.ControlText, arrow);
+            g.DrawLine(SystemPens.ControlText, overflowArrowRect.Right - 7, overflowArrowRect.Y - 2, overflowArrowRect.Right - 3, overflowArrowRect.Y - 2);
         }
         #endregion
 

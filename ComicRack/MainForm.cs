@@ -86,7 +86,7 @@ namespace cYo.Projects.ComicRack.Viewer
 						rc.Inflate(-10, -5);
 						if (!string.IsNullOrEmpty(shortcut))
 						{
-							using (Brush brush = new SolidBrush(Color.FromArgb(128, SystemColorsEx.InfoText)))
+							using (Brush brush = new SolidBrush(Color.FromArgb(128, SystemColors.InfoText)))
 							{
 								using (StringFormat format = new StringFormat
 								{

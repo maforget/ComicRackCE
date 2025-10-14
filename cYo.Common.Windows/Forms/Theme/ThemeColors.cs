@@ -23,7 +23,7 @@ namespace cYo.Common.Windows.Forms
         public static readonly Color BlackSmoke = Color.FromArgb(48, 48, 48);
 
         // Gainsboro  - RGB 220 - PreferencesDialog label(Navigation|Status|Page|VisiblePart)Overlay
-        public static readonly Color Lossboro = SystemColorsEx.ControlDarkDark;
+        public static readonly Color Lossboro = SystemColors.ControlDarkDark;
 
         /// <summary>
         /// Colors used for specific components with the app. i.e. hardcoded.
@@ -236,11 +236,11 @@ namespace cYo.Common.Windows.Forms
 
         public static class Button
         {
-            public static readonly Color Back = SystemColorsEx.Window; // RGB 50 HEX 32
+            public static readonly Color Back = SystemColors.Window; // RGB 50 HEX 32
             public static readonly Color CheckedBack = Color.FromArgb(102, 102, 102);
             public static readonly Color Text = Color.White;
             public static readonly Color Border = Color.FromArgb(155, 155, 155);
-            public static readonly Color MouseOverBack = SystemColorsEx.ButtonShadow; // RGB 70 HEX 46
+            public static readonly Color MouseOverBack = SystemColors.ButtonShadow; // RGB 70 HEX 46
         }
 
         public static class ComboBox
@@ -295,9 +295,9 @@ namespace cYo.Common.Windows.Forms
 
         public static class Material
         {
-            public static readonly Color Window = Color.FromArgb(unchecked((int)0xFF333333));    // Form Background. SystemColorsEx.Control; // RGB 32 HEX 20
+            public static readonly Color Window = Color.FromArgb(unchecked((int)0xFF333333));    // Form Background. SystemColors.Control; // RGB 32 HEX 20
             public static readonly Color SidePanel = Color.FromArgb(unchecked((int)0xFF191919)); // RGB 25 HEX 19
-            public static readonly Color Content = SystemColorsEx.Control;                         // MainViewItemView + CollapsibleGroupBox + background
+            public static readonly Color Content = SystemColors.Control;                         // MainViewItemView + CollapsibleGroupBox + background
         }
     }
 
@@ -417,19 +417,19 @@ namespace cYo.Common.Windows.Forms
 		public virtual Color ComicBookLink => Color.SteelBlue;
         public virtual Color ComicBookVisitedLink => Color.MediumOrchid;
         public virtual Color ComicBookPageViewerText => Color.White;
-        public virtual Color ComicBookPanelBack => SystemColorsEx.ButtonShadow;
-        public virtual Color ComicBookWhereSeparator => SystemColorsEx.ButtonShadow;
+        public virtual Color ComicBookPanelBack => SystemColors.ButtonShadow;
+        public virtual Color ComicBookWhereSeparator => SystemColors.ButtonShadow;
 
         // ComicListFolderFilesBrowser
-        public virtual Color ComicListFolderFilesBrowserFavViewBack => SystemColorsEx.Window;
+        public virtual Color ComicListFolderFilesBrowserFavViewBack => SystemColors.Window;
 
         // ComicListLibraryBrowserF
-        public virtual Color ComicListLibraryBrowserFavViewBack => SystemColorsEx.Window;
+        public virtual Color ComicListLibraryBrowserFavViewBack => SystemColors.Window;
 
         // CollapsibleGroupBox
         public virtual Color CollapsibleGroupBoxBack => Color.Transparent;
-        public virtual Color CollapsibleGroupBoxHeaderBackGradientStart => SystemColorsEx.Control;
-        public virtual Color CollapsibleGroupBoxHeaderBackGradientEnd => SystemColorsEx.ControlLight;
+        public virtual Color CollapsibleGroupBoxHeaderBackGradientStart => SystemColors.Control;
+        public virtual Color CollapsibleGroupBoxHeaderBackGradientEnd => SystemColors.ControlLight;
         public virtual Color CollapsibleGroupBoxHeaderText => Control.DefaultForeColor;
 
         // DeviceEditControl
@@ -445,13 +445,13 @@ namespace cYo.Common.Windows.Forms
         public virtual Color MainViewBack => Color.Transparent;
         public virtual Color MainViewToolStripBack => Color.Transparent;
 
-        public virtual Color MatcherGroupEditor => SystemColorsEx.Control;
+        public virtual Color MatcherGroupEditor => SystemColors.Control;
 
         // SimpleScrollbarPanel
         public virtual Color ScrollbarPanelBorder => Color.LightGray;
 
         // SmallComicPreview
-        public virtual Color SmallComicPreviewPageViewerBack => SystemColorsEx.Window;
+        public virtual Color SmallComicPreviewPageViewerBack => SystemColors.Window;
         public virtual Color SmallComicPreviewPageViewerText => Color.LightGray;
 
         // ThumbTileRenderer
@@ -460,12 +460,12 @@ namespace cYo.Common.Windows.Forms
         public virtual Color ThumbTileRendererBodyText => Color.Gray;
 
         // ThumbRenderer
-        public virtual Color ThumbRendererSelectionBack => SystemColorsEx.Highlight;
+        public virtual Color ThumbRendererSelectionBack => SystemColors.Highlight;
 
         // ThumbnailViewItem
         public virtual Color ThumbnailViewItemBack => Color.LightGray; // CoverViewItem, FavoriteViewitem, FolderViewItem
-        public virtual Color ThumbnailViewItemHighlightText => SystemColorsEx.HighlightText; // FavoriteViewitem, FolderViewItem
-        public virtual Color ThumbnailViewItemBorder => Color.FromArgb(48, SystemColorsEx.ControlDark);
+        public virtual Color ThumbnailViewItemHighlightText => SystemColors.HighlightText; // FavoriteViewitem, FolderViewItem
+        public virtual Color ThumbnailViewItemBorder => Color.FromArgb(48, SystemColors.ControlDark);
 
         // PreferencesDialog
         public virtual Color PreferencesPanelReaderOverlay => Color.WhiteSmoke;
@@ -474,13 +474,13 @@ namespace cYo.Common.Windows.Forms
 
         // StyledRenderer
         public virtual Color StyledSelectionBack => Color.Gray;
-        public virtual Color StyledSelectionFocusedBack => SystemColorsEx.Highlight;
+        public virtual Color StyledSelectionFocusedBack => SystemColors.Highlight;
 
         // ItemView
-        public virtual Color ItemViewMainBack => SystemColorsEx.Window;
-        public virtual Color ItemViewDefaultBack => SystemColorsEx.Window;
+        public virtual Color ItemViewMainBack => SystemColors.Window;
+        public virtual Color ItemViewDefaultBack => SystemColors.Window;
         public virtual Color ItemViewGroupText => Color.DarkBlue;
-        public virtual Color ItemViewGroupSeparator => SystemColorsEx.ControlDark;
+        public virtual Color ItemViewGroupSeparator => SystemColors.ControlDark;
 
         // ItemDrawInformation
         public virtual Color ItemDrawInfoText => Color.Black;
@@ -494,9 +494,9 @@ namespace cYo.Common.Windows.Forms
         public virtual Color LibraryTreeNewBookCountText => Color.White;
 
         // SmartQuery
-        public virtual Color SmartQueryBack => SystemColorsEx.Window;
+        public virtual Color SmartQueryBack => SystemColors.Window;
         public virtual Color SmartQueryException => Color.LightGray;
-        public virtual Color SmartQueryText => SystemColorsEx.WindowText;
+        public virtual Color SmartQueryText => SystemColors.WindowText;
         public virtual Color SmartQueryKeyword => Color.Green;
         public virtual Color SmartQueryQualifier => Color.Blue;
         public virtual Color SmartQueryNegation => Color.DarkRed;
@@ -504,40 +504,40 @@ namespace cYo.Common.Windows.Forms
 
         // TabBar
         public virtual Color TabBarBack => Color.Transparent; // TabBar.BackColor
-        public virtual Color TabBarDefaultBorder => SystemColorsEx.AppWorkspace; // replaced when RenderWithVisualStyles enabled 
-        public virtual Color TabBarSelectedBack => SystemColorsEx.ControlLightLight;
+        public virtual Color TabBarDefaultBorder => SystemColors.AppWorkspace; // replaced when RenderWithVisualStyles enabled 
+        public virtual Color TabBarSelectedBack => SystemColors.ControlLightLight;
 
         // ToolTip
         public virtual Color ToolTipBack => Color.Empty;
-        public virtual Color ToolTipText => SystemColorsEx.InfoText;
+        public virtual Color ToolTipText => SystemColors.InfoText;
 
         // TreeView
         public virtual Color TreeViewBack => Color.Empty;
         public virtual Color TreeViewText => Color.Empty;
 
         // ComboBox
-        public virtual Color ComboBoxSeparator => SystemColorsEx.ControlLight;
+        public virtual Color ComboBoxSeparator => SystemColors.ControlLight;
 
         // Caption
         public virtual Color CaptionBack => Color.White;
-        public virtual Color CaptionText => SystemColorsEx.ActiveCaptionText;
+        public virtual Color CaptionText => SystemColors.ActiveCaptionText;
 
         // Header
         public virtual Color HeaderBack => Color.White;
-        public virtual Color HeaderSeparator => SystemColorsEx.ControlDark;
+        public virtual Color HeaderSeparator => SystemColors.ControlDark;
         public virtual Color HeaderText => Color.Empty; // only used in ThemeExtension.ListView_DrawColumnHeader, which is only used in dark mode
 
         // Control defaults
-        public virtual Color ListBoxBack => Color.Empty; // BackColor - ListBox.BackColor - SystemColorsEx.Window
+        public virtual Color ListBoxBack => Color.Empty; // BackColor - ListBox.BackColor - SystemColors.Window
 
         // RatingControl
-        public virtual Color RatingControlBack => Color.Empty; // BackColor - Control.DefaultBackColor - SystemColorsEx.Control
-        public virtual Color RatingControlRated => Color.Empty; // ForeColor - Control.DefaultForeColor - SystemColorsEx.ControlText
+        public virtual Color RatingControlBack => Color.Empty; // BackColor - Control.DefaultBackColor - SystemColors.Control
+        public virtual Color RatingControlRated => Color.Empty; // ForeColor - Control.DefaultForeColor - SystemColors.ControlText
         public virtual Color RatingControlUnrated => Color.LightGray;
 
         // SplitButton
-        public virtual Color SplitButtonSeparatorLeft => SystemColorsEx.ButtonShadow;
-        public virtual Color SplitButtonSeparatorRight => SystemColorsEx.ButtonFace;
+        public virtual Color SplitButtonSeparatorLeft => SystemColors.ButtonShadow;
+        public virtual Color SplitButtonSeparatorRight => SystemColors.ButtonFace;
 
         // CheckBox
         public virtual Color CheckBoxBack => Color.Empty;
@@ -562,22 +562,22 @@ namespace cYo.Common.Windows.Forms
     /// Dark Mode aplication <see cref="Color"/> values.<br/>
     /// </summary>
     /// <remarks>
-    /// Does not include <see cref="SystemColors"/> or <see cref="System.Windows.Forms.Control"/> colors.
+    /// Does not include <see cref="System.Drawing.SystemColors"/> or <see cref="System.Windows.Forms.Control"/> colors.
     /// </remarks>
     internal class DarkThemeColorTable : ThemeColorTable
     {
         // ComicBookDialog
         public override Color ComicBookLink => Color.LightBlue;
         //public override Color ComicBookVisitedLink => Color.MediumOrchid;
-        //public override Color ComicBookPageViewerText => SystemColorsEx.Control;
+        //public override Color ComicBookPageViewerText => SystemColors.Control;
         //public override Color ComicBookPanelBack => Color.Red;
         //public override Color ComicBookWhereSeparator => Color.Cyan;
 
         // CollapsibleGroupBox
         public override Color CollapsibleGroupBoxBack => ThemeColors.Material.Content;
-        public override Color CollapsibleGroupBoxHeaderBackGradientStart => SystemColorsEx.Control;
-        public override Color CollapsibleGroupBoxHeaderBackGradientEnd => SystemColorsEx.ControlDark;
-        public override Color CollapsibleGroupBoxHeaderText => SystemColorsEx.ControlText;
+        public override Color CollapsibleGroupBoxHeaderBackGradientStart => SystemColors.Control;
+        public override Color CollapsibleGroupBoxHeaderBackGradientEnd => SystemColors.ControlDark;
+        public override Color CollapsibleGroupBoxHeaderText => SystemColors.ControlText;
 
         // ComicListFolderFilesBrowser
         public override Color ComicListFolderFilesBrowserFavViewBack => ThemeColors.Material.SidePanel;
@@ -589,7 +589,7 @@ namespace cYo.Common.Windows.Forms
         //public override Color ControlStyleColorTableBorder => Color.Black;
 
         // DeviceEditControl
-        public override Color DeviceEditControlBack => SystemColorsEx.Control;
+        public override Color DeviceEditControlBack => SystemColors.Control;
 
         // MainForm
         //public override Color MainFormToolStripBack => Color.Transparent;
@@ -609,7 +609,7 @@ namespace cYo.Common.Windows.Forms
 
         // StyledRenderer
         public override Color StyledSelectionBack => Color.Gray;
-        public override Color StyledSelectionFocusedBack => SystemColorsEx.Highlight;
+        public override Color StyledSelectionFocusedBack => SystemColors.Highlight;
 
         // ThumbTileRenderer
         public override Color ThumbTileRendererEmboss => ThemeColors.BlackSmoke; // Color.FromArgb(unchecked((int)0xFF303030));
@@ -617,21 +617,21 @@ namespace cYo.Common.Windows.Forms
         public override Color ThumbTileRendererBodyText => Color.LightGray;
 
         // ThumbRenderer
-        public override Color ThumbRendererSelectionBack => SystemColorsEx.Highlight;
+        public override Color ThumbRendererSelectionBack => SystemColors.Highlight;
 
         // ThumbnailViewItem
         public override Color ThumbnailViewItemBack => Color.FromArgb(72,72,72); // CoverViewItem, FavoriteViewitem, FolderViewItem
-        //public override Color ThumbnailViewItemHighlightText => SystemColorsEx.HighlightText; // FavoriteViewitem, FolderViewItem
+        //public override Color ThumbnailViewItemHighlightText => SystemColors.HighlightText; // FavoriteViewitem, FolderViewItem
         public override Color ThumbnailViewItemBorder => Color.FromArgb(64, 190,190,190);
 
         // PreferencesDialog
         public override Color PreferencesPanelReaderOverlay => ThemeColors.BlackSmoke;
         public override Color PreferencesLabelOverlays => ThemeColors.Lossboro;
-        public override Color PreferencesServerEditControl => SystemColorsEx.Control;
+        public override Color PreferencesServerEditControl => SystemColors.Control;
 
         // ItemView
         public override Color ItemViewMainBack => ThemeColors.Material.Content;
-        public override Color ItemViewDefaultBack => SystemColorsEx.Window;
+        public override Color ItemViewDefaultBack => SystemColors.Window;
         public override Color ItemViewGroupText => Color.LightSkyBlue;
         public override Color ItemViewGroupSeparator => Color.FromArgb(190, 190, 190);
 
@@ -646,47 +646,47 @@ namespace cYo.Common.Windows.Forms
         // SmartQuery
         public override Color SmartQueryBack => ThemeColors.TextBox.Back;
         public override Color SmartQueryException => Color.FromArgb(125, 31, 31);
-        public override Color SmartQueryText => SystemColorsEx.ControlText;
+        public override Color SmartQueryText => SystemColors.ControlText;
         public override Color SmartQueryKeyword => Color.FromArgb(250, 198, 0);
         public override Color SmartQueryQualifier => Color.FromArgb(76, 163, 255);
         public override Color SmartQueryNegation => Color.Red;
         public override Color SmartQueryString => Color.FromArgb(255, 125, 125);
 
         // TabBar
-        public override Color TabBarBack => SystemColorsEx.Window; // RGB 50 HEX 32
+        public override Color TabBarBack => SystemColors.Window; // RGB 50 HEX 32
         public override Color TabBarDefaultBorder => Color.Black;
-        public override Color TabBarSelectedBack => SystemColorsEx.Window; // RGB 50 HEX 32
+        public override Color TabBarSelectedBack => SystemColors.Window; // RGB 50 HEX 32
 
         // ToolTip
-        public override Color ToolTipBack => SystemColorsEx.Window; // should be SystemColorsEx.Info; needs alpha-aware tweaks
-        public override Color ToolTipText => SystemColorsEx.ControlText; // should be SystemColorsEx.InfoText; needs alpha-aware tweaks
+        public override Color ToolTipBack => SystemColors.Window; // should be SystemColors.Info; needs alpha-aware tweaks
+        public override Color ToolTipText => SystemColors.ControlText; // should be SystemColors.InfoText; needs alpha-aware tweaks
 
         // TreeView
         public override Color TreeViewBack => ThemeColors.TextBox.Back;
-        public override Color TreeViewText => SystemColorsEx.ControlText;
+        public override Color TreeViewText => SystemColors.ControlText;
 
         // ComboBox
-        public override Color ComboBoxSeparator => SystemColorsEx.ControlText;
+        public override Color ComboBoxSeparator => SystemColors.ControlText;
 
 		// Caption
 		public override Color CaptionBack => Color.Black;
-        //public override Color CaptionText => SystemColorsEx.ActiveCaptionText;
+        //public override Color CaptionText => SystemColors.ActiveCaptionText;
 
         // Header
-        public override Color HeaderBack => SystemColorsEx.Control;
+        public override Color HeaderBack => SystemColors.Control;
         public override Color HeaderSeparator => Color.FromArgb(99, 99, 99);
-        public override Color HeaderText => SystemColorsEx.WindowText;
+        public override Color HeaderText => SystemColors.WindowText;
 
         // Control defaults
         public override Color ListBoxBack => Color.FromArgb(46, 46, 46); // to match ListView BackColor
 
         // RatingControl
         public override Color RatingControlBack => ListBoxBack;
-        public override Color RatingControlRated => SystemColorsEx.ControlText;
-        public override Color RatingControlUnrated => SystemColorsEx.GrayText;
+        public override Color RatingControlRated => SystemColors.ControlText;
+        public override Color RatingControlUnrated => SystemColors.GrayText;
 
-        public override Color SplitButtonSeparatorLeft => SystemColorsEx.WindowText;
-        public override Color SplitButtonSeparatorRight => SystemColorsEx.ButtonFace;
+        public override Color SplitButtonSeparatorLeft => SystemColors.WindowText;
+        public override Color SplitButtonSeparatorRight => SystemColors.ButtonFace;
 
         // CheckBox
         public override Color CheckBoxBack => Color.FromArgb(0, 95, 184);
@@ -697,13 +697,13 @@ namespace cYo.Common.Windows.Forms
         public override Color CheckBoxBorderCorner => Color.FromArgb(28, 54, 74);
         public override Color CheckBoxUncheckedBorder => Color.FromArgb(98, 98, 98);
         public override Color CheckBoxUncheckedBorderEdge => Color.FromArgb(90, 90, 90);
-        public override Color CheckBoxUncheckedBack => SystemColorsEx.ControlLight;
+        public override Color CheckBoxUncheckedBack => SystemColors.ControlLight;
         public override Color CheckBoxUncheckedBackCorner => Color.FromArgb(48, 48, 48);
-        public override Color CheckBoxUncheckedBackVertex => SystemColorsEx.ControlDark;
-        public override Color CheckBoxUncheckedDisabledBorder => SystemColorsEx.ControlDark;
+        public override Color CheckBoxUncheckedBackVertex => SystemColors.ControlDark;
+        public override Color CheckBoxUncheckedDisabledBorder => SystemColors.ControlDark;
         public override Color CheckBoxUncheckedDisabledBorderEdge => Color.FromArgb(60, 60, 60);
         public override Color CheckBoxUncheckedDisabledBackCorner => Color.FromArgb(100, 100, 100);
-        public override Color CheckBoxUncheckedDisabledBackVertex => SystemColorsEx.ControlDarkDark;
+        public override Color CheckBoxUncheckedDisabledBackVertex => SystemColors.ControlDarkDark;
     }
 
 }
