@@ -64,8 +64,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			base.Width = width;
 			spacing = rtfMatchValue2.Left - rtfMatchValue.Right;
 			InitializeMatcher(comicBookMatcher);
-            this.btMatcher.BackColor = ThemeColors.Button.Back == Color.Empty ? this.btMatcher.BackColor : ThemeColors.Button.Back;
-			this.btMatcher.ForeColor = ThemeColors.Button.Text == Color.Empty ? this.btMatcher.ForeColor : ThemeColors.Button.Text;
             if (ThemeExtensions.IsDarkModeEnabled)
             {
                 // a button pretending to be a dropdown combobox. lovely.
@@ -73,6 +71,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                 // we also have to make it a bit smaller as otherwise borders are out of bounds
                 this.btMatcher.Location = new Point(btMatcher.Location.X, btMatcher.Location.Y + 1);
                 this.btMatcher.Size = new Size(btMatcher.Size.Width, btMatcher.Size.Height - 2);
+                this.btMatcher.BackColor = ThemeColors.Button.Back;
+                this.btMatcher.ForeColor = ThemeColors.Button.Text;
             }
         }
 
