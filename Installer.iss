@@ -1,7 +1,7 @@
 ; Define version and setup filename with iscc.exe /DMyAppVersion=v1.0 /DMyAppSetupFile=ComicRackSetup_v1.0 Installer.iss
 #define MyAppName "ComicRack Community Edition"
 #ifndef MyAppVersion
-#define MyAppVersion "v0.9.180"
+#define MyAppVersion "v0.9.182"
 #endif
 #ifndef MyAppSetupFile
 #define MyAppSetupFile "ComicRackSetup"
