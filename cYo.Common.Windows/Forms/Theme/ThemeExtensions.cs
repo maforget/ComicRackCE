@@ -893,24 +893,73 @@ namespace cYo.Common.Windows.Forms
 
         private static void ListView_DrawItem(object sender, DrawListViewItemEventArgs e)
         {
-            //ListView listView = sender as ListView;
-            //if (listView.Items.Count > 0 && listView.Items[e.ItemIndex] != null)
-            //    listView.Items[e.ItemIndex].UseItemStyleForSubItems = false;
-            //e.DrawText();
-            //e.DrawBackground();
-            // in theory this should be fine; in practice it can lead to dark HighlighText
-            // (or something else causes dark HighlighText)
-            e.DrawDefault = true;
+            if (e.Item.ListView.View != View.Details)
+                e.DrawDefault = true;
 
         }
 
         private static void ListView_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
         {
-            //ListView listView = sender as ListView;
-            //item.ForeColor = Color.Red; // testing to see if we ever actually see Red Text.
-            //e.Item.ForeColor = Color.Purple;
-            //e.SubItem.ForeColor = Color.Red;
-            e.DrawDefault = true;
+            if (e.Item.ListView.View != View.Details || e.Item == null)
+            {
+                e.DrawDefault = true;
+                return;
+            }
+            ListView listView = (ListView)sender;
+            Rectangle bounds = e.Bounds;
+            Rectangle textRect = bounds; // Updated based on whether we have images
+            ImageList imageList = listView.SmallImageList;
+
+            Color backColor = e.Item.BackColor;
+            Color textColor = e.Item.ForeColor;
+
+            if (e.Item.Selected)
+            {
+                backColor = ThemeColors.SelectedText.Highlight;
+                textColor = SystemColors.HighlightText; // currently same as ForeColor
+            }
+
+            // Fill background
+            using (var backBrush = new SolidBrush(backColor))
+                e.Graphics.FillRectangle(backBrush, bounds);
+            if (e.Item.Selected)
+                ControlPaint.DrawBorder(e.Graphics, e.Bounds, ThemeColors.SelectedText.Focus, ButtonBorderStyle.Solid);
+
+            // Handle first column having images
+            if (e.ColumnIndex == 0 && imageList != null)
+            {
+                int imageWidth = imageList.ImageSize.Width;
+                int imageHeight = imageList.ImageSize.Height;
+                int imageY = bounds.Top + (bounds.Height - imageHeight) / 2;
+                int imageX = bounds.Left + 4; // small padding from left
+
+                // Shift text based on imageList != null, whether this item has an image or not
+                textRect.X += imageX + imageWidth;
+
+                // Draw the image if there is one to draw
+                if (e.Item.ImageIndex >= 0 && e.Item.ImageIndex < imageList.Images.Count)
+                    imageList.Draw(e.Graphics, imageX, imageY, imageWidth, imageHeight, e.Item.ImageIndex);
+            }
+
+            textRect.X += 2;
+            textRect.Width = bounds.Right - textRect.X;
+
+            // Draw text
+            TextRenderer.DrawText(
+                e.Graphics,
+                e.SubItem.Text,
+                e.SubItem.Font,
+                textRect,
+                textColor,
+                backColor,
+                TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
+
+            // Draw column divider
+            if (e.ColumnIndex < listView.Columns.Count)
+            {
+                using (var pen = new Pen(Color.FromArgb(77, 77, 77)))
+                    e.Graphics.DrawLine(pen, bounds.Right - 2, bounds.Top, bounds.Right - 2, bounds.Bottom);
+            }
         }
 
         #endregion
