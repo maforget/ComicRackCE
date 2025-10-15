@@ -121,6 +121,7 @@ def RenumberBooks(books):
 	f.AutoScaleMode = AutoScaleMode.Font
 	f.AutoSize = True
 
+	ThemeMe(f)
 	f.ResumeLayout(False)
 	f.PerformLayout()
 
@@ -147,3 +148,7 @@ def RenumberBooks(books):
 				n = n + 1
 	finally:	
 		f.Dispose()
+
+def ThemeMe(control):
+    if ComicRack.App.ProductVersion >= '0.9.182':
+            ComicRack.Theme.ApplyTheme(control)

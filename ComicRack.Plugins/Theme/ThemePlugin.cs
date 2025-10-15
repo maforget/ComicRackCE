@@ -30,7 +30,7 @@ namespace cYo.Projects.ComicRack.Plugins.Theme
 
 		public void ApplyTheme(Control control = null)
 		{
-			control.Theme();
+			control?.Theme();
 		}
 	}
 }
