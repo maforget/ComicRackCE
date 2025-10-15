@@ -1,9 +1,8 @@
 ﻿using System.Windows.Forms;
 
-namespace cYo.Common.Windows.Forms
+namespace cYo.Common.Windows.Forms;
+
+public interface ITheme
 {
-    public interface ITheme
-    {
-        void ApplyTheme(Control control);
-    }
+    void ApplyTheme(Control control);
 }
