@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 
-namespace cYo.Common.Drawing;
+namespace cYo.Common.Drawing.Extensions;
 
 /// <summary>
 /// source: <a href="https://github.com/dotnet/runtime">dotnet/runtime</a>. (.NET Foundation, MIT license)<br/>
