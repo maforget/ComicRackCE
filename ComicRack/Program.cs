@@ -45,6 +45,7 @@ using cYo.Projects.ComicRack.Viewer.Dialogs;
 using cYo.Projects.ComicRack.Viewer.Properties;
 using Microsoft.Win32;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
+using cYo.Projects.ComicRack.Plugins.Theme;
 
 namespace cYo.Projects.ComicRack.Viewer
 {
@@ -739,6 +740,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
             ThemeExtensions.Initialize(ExtendedSettings.Theme); // if using dark mode, replace SystemColors and initialize native Windows theming
 			ResourceManagerEx.InitResourceManager(ExtendedSettings.Theme);
+			ThemePlugin.Register(ExtendedSettings.Theme); // Register the current theme for the IThemePlugin interface for plugins
             ShellFile.DeleteAPI = ExtendedSettings.DeleteAPI;
 			DatabaseManager.FirstDatabaseAccess += delegate
 			{

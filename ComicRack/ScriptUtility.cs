@@ -13,6 +13,7 @@ using cYo.Projects.ComicRack.Engine.Display;
 using cYo.Projects.ComicRack.Plugins;
 using cYo.Projects.ComicRack.Plugins.Automation;
 using cYo.Projects.ComicRack.Plugins.Controls;
+using cYo.Projects.ComicRack.Plugins.Theme;
 using cYo.Projects.ComicRack.Viewer.Dialogs;
 
 namespace cYo.Projects.ComicRack.Viewer
@@ -70,10 +71,9 @@ namespace cYo.Projects.ComicRack.Viewer
 		{
 			Scripts = new PluginEngine();
 			if (!Enabled)
-			{
 				return false;
-			}
-			PluginEnvironment env = new PluginEnvironment(mainWindow, app, browser, comicDisplay, config, openBooks);
+
+			PluginEnvironment env = new PluginEnvironment(mainWindow, app, browser, comicDisplay, config, openBooks, ThemePlugin.Default);
 			Scripts.Initialize(env, Program.Paths.ScriptPath);
 			Scripts.Initialize(env, Program.Paths.ScriptPathSecondary);
 			Scripts.CommandStates = Program.Settings.PluginsStates;
@@ -82,21 +82,11 @@ namespace cYo.Projects.ComicRack.Viewer
 			foreach (Command command in Scripts.GetCommands(PluginEngine.ScriptTypeParseComicPath))
 			{
 				Command c = command;
-				ComicBook.ParseFilePath += delegate(object sender, ComicBook.ParseFilePathEventArgs ea)
-				{
-					c.Invoke(new object[2]
-					{
-						ea.Path,
-						ea.NameInfo
-					}, catchErrors: true);
-				};
+				ComicBook.ParseFilePath += (sender, e) => c.Invoke([e.Path, e.NameInfo], catchErrors: true);
 			}
 			foreach (Command command2 in Scripts.GetCommands(PluginEngine.ScriptTypeSearch))
 			{
-				SearchEngines.Engines.Add(new ScriptSearch
-				{
-					Command = command2
-				});
+				SearchEngines.Engines.Add(new ScriptSearch { Command = command2 });
 			}
 			return true;
 		}
