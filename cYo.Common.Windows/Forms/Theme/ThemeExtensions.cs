@@ -94,7 +94,7 @@ public static partial class ThemeExtensions
     /// </remarks>
     public static void Theme(this Control control)
     {
-        if (!IsDarkModeEnabled) return;
+        if (!IsDarkModeEnabled || control is null) return;
 
         if (control is Form form)
         {
