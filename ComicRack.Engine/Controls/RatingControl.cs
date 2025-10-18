@@ -7,6 +7,8 @@ using System.Windows.Forms.VisualStyles;
 using cYo.Common.Drawing;
 using cYo.Common.Mathematics;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine.Drawing;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
@@ -189,13 +191,14 @@ namespace cYo.Projects.ComicRack.Engine.Controls
         {
             base.OnPaint(e);
             Graphics graphics = e.Graphics;
-            if (Application.RenderWithVisualStyles && !ThemeExtensions.IsDarkModeEnabled)
+            if (Application.RenderWithVisualStyles)
             {
                 if (drawBorder)
                 {
                     VisualStyleElement element = (Focused ? VisualStyleElement.TextBox.TextEdit.Focused : VisualStyleElement.TextBox.TextEdit.Normal);
                     VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(element);
-                    visualStyleRenderer.DrawBackground(graphics, base.ClientRectangle);
+                    //visualStyleRenderer.DrawBackground(graphics, base.ClientRectangle);
+                    visualStyleRenderer.DrawThemeBackground(e, base.ClientRectangle, BackColor);
                 }
                 DrawContent(graphics);
                 return;
@@ -207,20 +210,15 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             DrawContent(graphics);
             if (drawBorder)
             {
-                if (ThemeExtensions.IsDarkModeEnabled)
+                if (Focused)
                 {
-                    ControlPaint.DrawBorder(graphics, base.ClientRectangle, ThemeColors.Border.Light, ButtonBorderStyle.Inset);
+                    Rectangle clientRectangle = base.ClientRectangle;
+                    clientRectangle.Inflate(-2, -2);
+                    //ControlPaint.DrawFocusRectangle(graphics, clientRectangle);
+                    ControlPaintEx.DrawFocusRectangle(graphics, clientRectangle);
                 }
-                else
-                {
-                    if (Focused)
-                    {
-                        Rectangle clientRectangle = base.ClientRectangle;
-                        clientRectangle.Inflate(-2, -2);
-                        ControlPaint.DrawFocusRectangle(graphics, clientRectangle);
-                    }
-                    ControlPaint.DrawBorder3D(graphics, base.ClientRectangle, Border3DStyle.Sunken);
-                }
+                //ControlPaint.DrawBorder3D(graphics, base.ClientRectangle, Border3DStyle.Sunken);
+                ControlPaintEx.DrawBorder3D(graphics, base.ClientRectangle, Border3DStyle.Sunken);
             }
         }
 

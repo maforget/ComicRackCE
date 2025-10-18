@@ -22,6 +22,8 @@ using cYo.Common.Threading;
 using cYo.Common.Win32;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Controls;
 using cYo.Projects.ComicRack.Engine.Database;
@@ -3240,21 +3242,24 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				ComicBook comic = toolTipItem.Comic;
 				VisualStyleElement normal = VisualStyleElement.ToolTip.Standard.Normal;
-				if (ThemeExtensions.IsDarkModeEnabled)
-				{
-					e.Graphics.FillRectangle(new SolidBrush(ThemeColors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size));
-				}
-				else if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
+				//if (ThemeExtensions.IsDarkModeEnabled)
+				//{
+				//	e.Graphics.FillRectangle(new SolidBrush(ThemeColors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size));
+				//}
+				if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
 				{
 					VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(normal);
-					visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);
-				}
+                    //visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);
+                    visualStyleRenderer.DrawThemeBackground(e);
+                }
 				else
 				{
-					e.DrawBackground();
-					e.DrawBorder();
+                    e.DrawBackground();
+					//e.DrawBorder();
+					//e.DrawThemeBackground();
+					e.DrawThemeBorder();
 				}
-				Rectangle bounds = e.Bounds;
+                Rectangle bounds = e.Bounds;
 				bounds.Inflate(-10, -10);
 				ThumbTileRenderer.DrawTile(e.Graphics, bounds, itemLock?.Item.GetThumbnail(bounds.Height), comic, FC.GetRelative(Font, 1.2f), ThemeColors.ToolTip.InfoText, Color.Transparent, ThumbnailDrawingOptions.DefaultWithoutBackground, ComicTextElements.DefaultComic, threeD: false);
 			}

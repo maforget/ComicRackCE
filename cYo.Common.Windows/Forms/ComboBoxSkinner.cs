@@ -5,6 +5,8 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using cYo.Common.Drawing;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -286,18 +288,10 @@ namespace cYo.Common.Windows.Forms
 			bool flag = (e.State & DrawItemState.ComboBoxEdit) != 0;
 			bool flag2 = comboBoxItem != null && comboBoxItem.IsSeparator && !flag && e.Index > 0;
 
-
             e.DrawBackground();
-            // override SelectedText highlighting
-            if (ThemeExtensions.IsDarkModeEnabled && e.State.HasFlag(DrawItemState.Selected))
-            {
-                e.Graphics.FillRectangle(ThemeBrushes.SelectedText.Highlight, e.Bounds);
-                ControlPaint.DrawBorder(e.Graphics, e.Bounds, ThemeColors.SelectedText.Focus, ButtonBorderStyle.Solid);
-            }
-            else
-            {
-                e.DrawFocusRectangle();
-            }
+			//e.DrawFocusRectangle();
+			//e.DrawThemeBackground();
+            e.DrawThemeFocusRectangle(); // override SelectedText highlighting
 
             using (Brush brush = new SolidBrush(e.ForeColor))
 			{
