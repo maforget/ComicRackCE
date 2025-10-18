@@ -1,9 +1,11 @@
+using cYo.Common.Win32;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-using cYo.Common.Win32;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -54,20 +56,6 @@ namespace cYo.Common.Windows.Forms
         }
 
         public event EventHandler ShowContextMenu;
-
-        public SplitButton()
-        {
-            //if (ThemeExtensions.IsDarkModeEnabled)
-            //{
-            //	FlatStyle = FlatStyle.Flat;
-            //             BackColor = ThemeColors.Button.Back;
-            //             ForeColor = ThemeColors.Button.Text;
-            //             FlatAppearance.CheckedBackColor = ThemeColors.Button.CheckedBack;
-            //             FlatAppearance.MouseOverBackColor = ThemeColors.Button.MouseOverBack;
-            //	FlatAppearance.BorderSize = 1;
-            //             FlatAppearance.BorderColor = ThemeColors.Button.Border;
-            //         }
-        }
 
         protected override void Dispose(bool disposing)
         {
@@ -208,26 +196,6 @@ namespace cYo.Common.Windows.Forms
 
         private void DrawButtonBase(Graphics graphics, Rectangle clientRectangle)
         {
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                if (State == PushButtonState.Hot)
-                {
-                    using (Brush b = new SolidBrush(ThemeColors.Button.MouseOverBack))
-                        graphics.FillRectangle(b, clientRectangle);
-                }
-                else if (State == PushButtonState.Pressed)
-                {
-                    using (Brush b = new SolidBrush(ThemeColors.Button.CheckedBack))
-                        graphics.FillRectangle(b, clientRectangle);
-                }
-                else
-                {
-                    using (Brush b = new SolidBrush(ThemeColors.Button.Back))
-                        graphics.FillRectangle(b, clientRectangle);
-                }
-                ControlPaint.DrawBorder(graphics, clientRectangle, ThemeColors.Button.Border, ButtonBorderStyle.Solid);
-                return;
-            }
             if (State != PushButtonState.Pressed && base.IsDefault && !Application.RenderWithVisualStyles)
             {
                 Rectangle bounds = clientRectangle;
@@ -260,25 +228,23 @@ namespace cYo.Common.Windows.Forms
                 textFormatFlags |= TextFormatFlags.EndEllipsis;
             }
 
-            if (Application.RenderWithVisualStyles && !ThemeExtensions.IsDarkModeEnabled)
+            if (Application.RenderWithVisualStyles)
             {
                 VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(base.Enabled ? VisualStyleElement.Button.PushButton.Default : VisualStyleElement.Button.PushButton.Disabled);
-                using (FontDC dc = new FontDC(graphics, Font))
-                {
-                    visualStyleRenderer.DrawText(dc, rectangle, Text, drawDisabled: true, textFormatFlags);
-                }
+                //using (FontDC dc = new FontDC(graphics, Font))
+                //{
+                    //visualStyleRenderer.DrawText(dc, rectangle, Text, drawDisabled: true, textFormatFlags);
+                //}
+                visualStyleRenderer.DrawThemeText(graphics, ForeColor, Font, rectangle, Text, drawDisabled: true, textFormatFlags);
             }
             else if (base.Enabled)
             {
                 TextRenderer.DrawText(graphics, Text, Font, rectangle, ForeColor, textFormatFlags);
             }
-            else if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                TextRenderer.DrawText(graphics, Text, Font, rectangle, SystemColors.GrayText, textFormatFlags);
-            }
             else
             {
-                ControlPaint.DrawStringDisabled(graphics, Text, Font, ForeColor, rectangle, textFormatFlags);
+                //ControlPaint.DrawStringDisabled(graphics, Text, Font, ForeColor, rectangle, textFormatFlags);
+                ControlPaintEx.DrawStringDisabled(graphics, Text, Font, ForeColor, rectangle, textFormatFlags);
             }
         }
 
@@ -304,7 +270,7 @@ namespace cYo.Common.Windows.Forms
 
             Graphics graphics = pevent.Graphics;
             Rectangle clientRectangle = base.ClientRectangle;
-            DrawButtonBase(graphics, clientRectangle);
+            ThemeExtensions.InvokeAction(() => DrawButtonBase(graphics, clientRectangle), () => ThemeExtensions.DrawSplitButtonBase(graphics, clientRectangle, State)); ;
             dropDownRectangle = new Rectangle(clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth) - 1, BorderSize, FormUtility.ScaleDpiX(PushButtonWidth), clientRectangle.Height - BorderSize * 2);
             int borderSize = BorderSize;
             Rectangle rectangle = new Rectangle(borderSize, borderSize, clientRectangle.Width - dropDownRectangle.Width - borderSize, clientRectangle.Height - borderSize * 2);
@@ -319,9 +285,9 @@ namespace cYo.Common.Windows.Forms
 
             PaintArrow(graphics, dropDownRectangle);
             DrawButtonText(graphics, rectangle);
-            if (State != PushButtonState.Pressed && Focused && !ThemeExtensions.IsDarkModeEnabled)
+            if (State != PushButtonState.Pressed && Focused)
             {
-                ControlPaint.DrawFocusRectangle(graphics, rectangle);
+                ControlPaintEx.DrawFocusRectangle(graphics, rectangle);
             }
         }
 
