@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace cYo.Common.Windows.Forms;
+namespace cYo.Common.Windows.Forms.Theme.ExtendedColors;
 
 /// <summary>
 /// source: <a href="https://github.com/dotnet/winforms">dotnet/winforms</a>. (.NET Foundation, MIT license)<br/>
@@ -12,7 +12,7 @@ namespace cYo.Common.Windows.Forms;
 /// </summary>
 /// <remarks>
 /// <para>Uses <see cref="SystemColorsEx"/> as a base so that derived colors respect <see cref="ThemeExtensions.IsDarkModeEnabled"/>.</para>
-/// <para>Heavily trimmed./</para>
+/// <para>Heavily trimmed.</para>
 /// </remarks>
 internal partial class ProfessionalColorTableEx : ProfessionalColorTable
 {
