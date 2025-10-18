@@ -17,7 +17,6 @@ using cYo.Common.Text;
 using cYo.Common.Win32;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
-using cYo.Common.Windows.Forms.Theme;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.Sync;
@@ -264,7 +263,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		public ComicListLibraryBrowser()
 		{
 			InitializeComponent();
-			tvQueries.SetSidePanelColor();
+            ThemeExtensions.SetSidePanelColor(tvQueries);
             treeImages.ImageSize = treeImages.ImageSize.ScaleDpi();
 			treeSkin = new LibraryTreeSkin
 			{
@@ -272,7 +271,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			};
 			tvQueries.Font = SystemFonts.IconTitleFont;
             // we have to slam down the settings again
-            treeSkin.TreeView.SetSidePanelColor();
+            ThemeExtensions.SetSidePanelColor(treeSkin.TreeView);
             favContainer.Expanded = false;
 			LocalizeUtility.Localize(this, components);
 			quickSearch.SetCueText(tsQuickSearch.Text);
