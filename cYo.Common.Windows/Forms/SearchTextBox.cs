@@ -1,3 +1,5 @@
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -39,8 +41,8 @@ namespace cYo.Common.Windows.Forms
 			}
 		}
 
-		public class MyRenderer : ToolStripProfessionalRenderer
-		{
+		public class MyRenderer : ThemeToolStripProRenderer
+        {
 			public MyRenderer()
 				: base((ToolStripManager.Renderer is ToolStripProfessionalRenderer) ? ((ToolStripProfessionalRenderer)ToolStripManager.Renderer).ColorTable : null)
 			{
@@ -49,10 +51,9 @@ namespace cYo.Common.Windows.Forms
 			protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
 			{
 				base.OnRenderToolStripBorder(e);
-                // themed textbox doesn't fit in toolstrip height, so no border
-                //ControlPaint.DrawBorder(e.Graphics, e.AffectedBounds, Color.Red, ButtonBorderStyle.Solid);
-                if (!ThemeExtensions.IsDarkModeEnabled)
-                    ControlPaint.DrawBorder3D(e.Graphics, e.AffectedBounds, Border3DStyle.Flat);
+				// themed textbox doesn't fit in toolstrip height, so no border
+				//ControlPaint.DrawBorder(e.Graphics, e.AffectedBounds, Color.Red, ButtonBorderStyle.Solid);
+				ThemeExtensions.InvokeAction(() => ControlPaint.DrawBorder3D(e.Graphics, e.AffectedBounds, Border3DStyle.Flat), isDefaultAction: true);
             }
 
 			protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
@@ -60,13 +61,6 @@ namespace cYo.Common.Windows.Forms
 				base.OnRenderToolStripBackground(e);
 				e.Graphics.Clear(SystemColors.Window);
 			}
-
-            protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
-            {
-                ThemeExtensions.SetToolStripItemColor(e);
-                base.OnRenderArrow(e);
-            }
-
         }
 
 		private readonly ToolStripDropDownButton searchButton = new ToolStripDropDownButton();
