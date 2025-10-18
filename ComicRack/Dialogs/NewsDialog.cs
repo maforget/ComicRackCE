@@ -9,7 +9,6 @@ using cYo.Common.Localize;
 using cYo.Common.Net.News;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
-using cYo.Common.Windows.Forms.Theme;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
@@ -104,12 +103,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				try
 				{
 					webBrowser.DocumentText = text.Replace("#TITLE#", newsChannelItem.Title).Replace("#TEXT#", newsChannelItem.Description).Replace("#LINK#", newsChannelItem.Link)
-						.Replace("#DATE#", newsChannelItem.Published.ToString()).ReplaceWebColors();
+						.Replace("#DATE#", newsChannelItem.Published.ToString());
 				}
 				catch
 				{
 				}
-                news.NewsChannelItemInfos[newsChannelItem].IsRead = true;
+				news.NewsChannelItemInfos[newsChannelItem].IsRead = true;
 				lvi.Font = FC.Get(lvi.Font, FontStyle.Regular);
 			}
 		}
