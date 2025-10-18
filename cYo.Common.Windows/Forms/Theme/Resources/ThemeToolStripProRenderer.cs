@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
-using cYo.Common.Windows.Forms.Theme.ExtendedColors;
+using cYo.Common.Drawing.ExtendedColors;
 
 namespace cYo.Common.Windows.Forms.Theme.Resources;
 

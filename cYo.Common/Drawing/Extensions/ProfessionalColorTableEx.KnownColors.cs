@@ -1,7 +1,7 @@
 ﻿
-namespace cYo.Common.Windows.Forms.Theme.ExtendedColors;
+namespace cYo.Common.Drawing.ExtendedColors;
 
-internal partial class ProfessionalColorTableEx
+public partial class ProfessionalColorTableEx
 {
     #region KnownColors
     private enum KnownColors
