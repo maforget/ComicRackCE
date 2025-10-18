@@ -5,8 +5,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Resources;
+using cYo.Common.Windows.Forms.Theme.Resources;
 
-namespace cYo.Common.Windows.Forms.Theme;
+namespace cYo.Common.Windows.Forms.Theme.DarkMode.Rendering;
 
 public class ListViewTextColorizer : NativeWindow, IDisposable
 {
@@ -85,7 +86,7 @@ public class ListViewTextColorizer : NativeWindow, IDisposable
     private void DrawGroupHeaderOverlays()
     {
         if (!_lv.IsHandleCreated) return;
-        if (_lv.Groups == null || _lv.Groups.Count == 0) return;
+        if (_lv.Groups == null || _lv.Groups.Count == 0) return; // may also need to return if _lv.ShowGroups is false
 
         using (Graphics g = Graphics.FromHwnd(_lv.Handle))
         {
@@ -95,7 +96,7 @@ public class ListViewTextColorizer : NativeWindow, IDisposable
             foreach (ListViewGroup group in _lv.Groups)
             {
                 int nativeGroupId = GetNativeGroupId(group);
-                if (nativeGroupId < 0)
+                if (nativeGroupId < 0 || group.Items.Count == 0)
                     continue;
 
                 // Get rectangle for the group header (LVGGR_HEADER = 1)
