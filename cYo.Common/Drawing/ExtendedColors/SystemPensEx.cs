@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cYo.Common.Drawing.Extensions;
+namespace cYo.Common.Drawing.ExtendedColors;
 
 /// <summary>
 /// source: <a href="https://github.com/dotnet/winforms">dotnet/winforms</a>. (.NET Foundation, MIT license)<br/>

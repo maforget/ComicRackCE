@@ -1,4 +1,4 @@
-﻿using cYo.Common.Drawing.Extensions;
+﻿using cYo.Common.Drawing.ExtendedColors;
 using cYo.Common.Win32;
 using cYo.Common.Windows.Forms.Theme.Internal;
 using cYo.Common.Windows.Forms.Theme.Resources;
