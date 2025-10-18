@@ -275,10 +275,13 @@ public static class UXTheme
     /// The <c><see cref="System.Windows.Forms.ListView"/></c><br/> itself is themed separately depending on its configuration. <br/>
     /// This is only way to get a dark empty-column header, but column header text is also set to dark and must be handled manually.
     /// </remarks>
-    public static void SetListViewHeaderTheme(IntPtr hwnd)
+    public static void SetListViewTheme(IntPtr hwnd)
     {
         if (!IsDarkModeSupported || hwnd == null || hwnd == IntPtr.Zero) return;
 
+        SetControlTheme((hwnd));
+
+        // header has to be themed separately
         IntPtr columnHeaderHandle = Native.SendMessage(hwnd, Native.LVM_GETHEADER, IntPtr.Zero, IntPtr.Zero);
         if (columnHeaderHandle != IntPtr.Zero)
         {
