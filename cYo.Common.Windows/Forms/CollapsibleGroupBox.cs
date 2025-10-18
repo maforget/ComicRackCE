@@ -5,6 +5,8 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using cYo.Common.Drawing;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Common.Windows.Properties;
 
 namespace cYo.Common.Windows.Forms
@@ -250,10 +252,11 @@ namespace cYo.Common.Windows.Forms
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             base.OnPaintBackground(e);
-            if (UsesTheme && !TransparentTouch && !ThemeExtensions.IsDarkModeEnabled)
+            if (UsesTheme && !TransparentTouch)
             {
                 VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(VisualStyleElement.Tab.Body.Normal);
-                visualStyleRenderer.DrawBackground(e.Graphics, base.ClientRectangle);
+                //visualStyleRenderer.DrawBackground(e.Graphics, base.ClientRectangle);
+                visualStyleRenderer.DrawThemeBackground(e, base.ClientRectangle,BackColor);
             }
         }
 
