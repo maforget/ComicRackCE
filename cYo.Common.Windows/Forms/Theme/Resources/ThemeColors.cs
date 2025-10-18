@@ -1,22 +1,24 @@
-﻿using cYo.Common.Drawing;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Drawing;
+using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
+using cYo.Common.Windows.Forms.Theme.Internal;
 
-namespace cYo.Common.Windows.Forms;
+namespace cYo.Common.Windows.Forms.Theme.Resources;
 
+/// <summary>
+/// TODO : ADD SUMMARY
+/// </summary>
 public static class ThemeColors
 {
-		internal static ThemeColorTable ColorTable => colorTable ??= new ThemeColorTable();
+	internal static ThemeColorTable ColorTable => colorTable ??= new ThemeColorTable();
 
-		private static ThemeColorTable colorTable;
+	private static ThemeColorTable colorTable;
 
     public static bool IsDefault => ColorTable?.GetType() == typeof(ThemeColorTable);
 
-		internal static void Register<T>() where T : ThemeColorTable, new()
-		{
-			colorTable = new T();
-		}
+	internal static void Register<T>() where T : ThemeColorTable, new()
+	{
+		colorTable = new T();
+	}
 
     // WhiteSmoke is RGB 245 but RGB 10 would be too dark
     // WhiteSmoke - RGB 245 - DisplayWorkspace Background and PreferencesDialog 
@@ -100,21 +102,21 @@ public static class ThemeColors
 
     public static class CheckBox
     {
-        public static Color Back => ColorTable.CheckBoxBack;
-        public static Color BackCorner => ColorTable.CheckBoxBackCorner;
-        public static Color BackVertex => ColorTable.CheckBoxBackVertex;
-        public static Color Border => ColorTable.CheckBoxBorder;
-        public static Color BorderEdge => ColorTable.CheckBoxBorderEdge;
-        public static Color BorderCorner => ColorTable.CheckBoxBorderCorner;
-        public static Color UncheckedBorder => ColorTable.CheckBoxUncheckedBorder;
-        public static Color UncheckedBorderEdge => ColorTable.CheckBoxUncheckedBorderEdge;
-        public static Color UncheckedBack => ColorTable.CheckBoxUncheckedBack;
-        public static Color UncheckedBackCorner => ColorTable.CheckBoxUncheckedBackCorner;
-        public static Color UncheckedBackVertex => ColorTable.CheckBoxUncheckedBackVertex;
-        public static Color UncheckedDisabledBorder => ColorTable.CheckBoxUncheckedDisabledBorder;
-        public static Color UncheckedDisabledBorderEdge => ColorTable.CheckBoxUncheckedDisabledBorderEdge;
-        public static Color UncheckedDisabledBackCorner => ColorTable.CheckBoxUncheckedDisabledBackCorner;
-        public static Color UncheckedDisabledBackVertex => ColorTable.CheckBoxUncheckedDisabledBackVertex;
+        //public static Color Back => ColorTable.CheckBoxBack;
+        //public static Color BackCorner => ColorTable.CheckBoxBackCorner;
+        //public static Color BackVertex => ColorTable.CheckBoxBackVertex;
+        //public static Color Border => ColorTable.CheckBoxBorder;
+        //public static Color BorderEdge => ColorTable.CheckBoxBorderEdge;
+        //public static Color BorderCorner => ColorTable.CheckBoxBorderCorner;
+        //public static Color UncheckedBorder => ColorTable.CheckBoxUncheckedBorder;
+        //public static Color UncheckedBorderEdge => ColorTable.CheckBoxUncheckedBorderEdge;
+        //public static Color UncheckedBack => ColorTable.CheckBoxUncheckedBack;
+        //public static Color UncheckedBackCorner => ColorTable.CheckBoxUncheckedBackCorner;
+        //public static Color UncheckedBackVertex => ColorTable.CheckBoxUncheckedBackVertex;
+        //public static Color UncheckedDisabledBorder => ColorTable.CheckBoxUncheckedDisabledBorder;
+        //public static Color UncheckedDisabledBorderEdge => ColorTable.CheckBoxUncheckedDisabledBorderEdge;
+        //public static Color UncheckedDisabledBackCorner => ColorTable.CheckBoxUncheckedDisabledBackCorner;
+        //public static Color UncheckedDisabledBackVertex => ColorTable.CheckBoxUncheckedDisabledBackVertex;
     }
 
     #endregion
@@ -219,89 +221,54 @@ public static class ThemeColors
     }
     #endregion
 
-    #region Color.Empty
-    public static class ListBox
-    {
-        public static Color Back => ColorTable.ListBoxBack;
-    }
-
-    public static class TreeView
-    {
-        public static Color Back => ColorTable.TreeViewBack;
-        public static Color Text => ColorTable.TreeViewText;
-    }
-    #endregion
-
-    #endregion
-
-    /// <summary>
-    /// Colors used for all Controls of a type.
-    /// </summary>
-    #region Control Type Colors
-
-    public static class Button
-    {
-        public static readonly Color Back = SystemColors.Window; // RGB 50 HEX 32
-        public static readonly Color CheckedBack = Color.FromArgb(102, 102, 102);
-        public static readonly Color Text = Color.White;
-        public static readonly Color Border = Color.FromArgb(155, 155, 155);
-        public static readonly Color MouseOverBack = SystemColors.ButtonShadow; // RGB 70 HEX 46
-    }
-
     public static class ComboBox
     {
-        public static readonly Color Back = Color.FromArgb(56, 56, 56); // to match ComboBox button
-        public static readonly Color Disabled = Color.FromArgb(64, 64, 64); // from .net combobox source
         public static Color Separator => ColorTable.ComboBoxSeparator;
-    }
-
-    public static class TextBox
-    {
-        public static readonly Color Back = Color.FromArgb(unchecked((int)0xFF2E2E2E)); //Color.FromArgb(56, 56, 56);
-        public static readonly Color MouseOverBack = Color.FromArgb(unchecked((int)0xFF222222)); //Color.FromArgb(86, 86, 86);
-        public static readonly Color EnterBack = Color.FromArgb(unchecked((int)0xFF1A1A1A)); //Color.FromArgb(71, 71, 71);
-    }
-
-    public static class ToolStrip
-    {
-        // currently this is purely for statusstrip border.
-        // TODO: move to renderer (will need to account for which borders need to be drawn)
-        public static readonly Color BorderColor = Color.FromArgb(100, 100, 100);
-    }
-    #endregion
-
-    /// <summary>
-    /// Colors used in multiple control types for a specific part
-    /// </summary>
-    #region Part Colors
-    public static class Border
-    {
-        public static readonly Color Darkest = Color.FromArgb(16, 16, 16);
-        public static readonly Color Dark = Color.FromArgb(51, 51, 51);
-        public static readonly Color Default = Color.FromArgb(93, 93, 93);
-        public static readonly Color Light = Color.FromArgb(155, 155, 155);
-        //public static readonly Color Dark = Color.FromArgb(155, 155, 155);
     }
 
     public static class Header
     {
         public static Color Back => ColorTable.HeaderBack;
         public static Color Separator => ColorTable.HeaderSeparator;
-        public static Color Text => ColorTable.HeaderText;
-    }
-
-    public static class SelectedText
-    {
-        public static readonly Color Highlight = Color.FromArgb(52, 67, 86);
-        public static readonly Color Focus = Color.FromArgb(40, 100, 180);
+        //public static Color Text => ColorTable.HeaderText;
     }
 
     #endregion
 
-    public static class Material
+
+    // These are colors only used in Dark Mode. They should not be directly part of ThemeColors
+    #region Dark Mode Colors
+
+    public static class DarkMode
     {
-        public static readonly Color Window = Color.FromArgb(unchecked((int)0xFF333333));    // Form Background. SystemColors.Control; // RGB 32 HEX 20
-        public static readonly Color SidePanel = Color.FromArgb(unchecked((int)0xFF191919)); // RGB 25 HEX 19
-        public static readonly Color Content = SystemColors.Control;                         // MainViewItemView + CollapsibleGroupBox + background
+        public static class Button
+        {
+            public static readonly Color Back = DarkColors.Button.Back; // RGB 50 HEX 32
+            public static readonly Color Text = DarkColors.Button.Text;
+        }
+
+        public static class ComboBox
+        {
+            public static readonly Color Disabled = DarkColors.ComboBox.Disabled;
+        }
+
+        public static class SelectedText
+        {
+            public static readonly Color Focus = DarkColors.SelectedText.Focus;
+            public static readonly Color Highlight = DarkColors.SelectedText.Highlight;
+        }
+
+        public static class TreeView
+        {
+            public static readonly Color Back = DarkColors.TreeView.Back;
+            public static readonly Color Text = DarkColors.TreeView.Text;
+        }
+
+        public static class UIComponent
+        {
+            public static readonly Color SidePanel = DarkColors.UIComponent.SidePanel;
+        }
     }
+
+    #endregion
 }
