@@ -1,3 +1,4 @@
+using cYo.Common.Windows.Forms.Theme.Resources;
 using System.Drawing;
 
 namespace cYo.Common.Windows.Forms

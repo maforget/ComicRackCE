@@ -15,6 +15,7 @@ using cYo.Common.Localize;
 using cYo.Common.Mathematics;
 using cYo.Common.Threading;
 using cYo.Common.Win32;
+using cYo.Common.Windows.Forms.Theme.Resources;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -4763,7 +4764,7 @@ namespace cYo.Common.Windows.Forms
 			miStack.Text = "Stack by";
 			longClickTimer.Interval = 1000;
 			longClickTimer.Tick += new System.EventHandler(longClickTimer_Tick);
-			BackColor = cYo.Common.Windows.Forms.ThemeColors.ItemView.DefaultBack;
+			BackColor = ThemeColors.ItemView.DefaultBack;
 			base.Size = new System.Drawing.Size(624, 600);
 			autoHeaderContextMenuStrip.ResumeLayout(false);
 			autoViewContextMenuStrip.ResumeLayout(false);

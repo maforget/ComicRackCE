@@ -1,5 +1,6 @@
 using System.Windows.Forms;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
@@ -51,7 +52,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             this.matcherControls.AutoSize = true;
             this.matcherControls.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.matcherControls.BackColor = cYo.Common.Windows.Forms.ThemeColors.MatcherGroupEditor;
+            this.matcherControls.BackColor = ThemeColors.MatcherGroupEditor;
             this.matcherControls.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.matcherControls.Location = new System.Drawing.Point(10, 25);
             this.matcherControls.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
@@ -222,7 +223,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = cYo.Common.Windows.Forms.ThemeColors.MatcherGroupEditor;
+            this.BackColor = ThemeColors.MatcherGroupEditor;
             this.Controls.Add(this.chkExpanded);
             this.Controls.Add(this.matcherControls);
             this.Controls.Add(this.labelSubRules);
