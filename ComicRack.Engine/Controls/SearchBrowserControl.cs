@@ -11,6 +11,7 @@ using cYo.Common.Localize;
 using cYo.Common.Text;
 using cYo.Common.Win32;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
@@ -309,18 +310,16 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			SafeSetBounds(cbType1, listView1.Left, 0, listView1.Width - 1 - width2, cbType1.Height);
 			SafeSetBounds(cbType2, listView2.Left, 0, listView2.Width - 1 - width2, cbType2.Height);
 			SafeSetBounds(cbType3, listView3.Left, 0, listView3.Width - 1 - width2, cbType3.Height);
-			if (ThemeExtensions.IsDarkModeEnabled)
+			int yOffset = -1;
+			int heightOffset = 0;
+			ThemeExtensions.InvokeAction(() =>
 			{
-                SafeSetBounds(btNot1, cbType1.Right + 1, 0, width2, cbType1.Height - 2);
-                SafeSetBounds(btNot2, cbType2.Right + 1, 0, width2, cbType2.Height - 2);
-                SafeSetBounds(btNot3, cbType3.Right + 1, 0, width2, cbType3.Height - 2);
-            }
-			else
-			{
-                SafeSetBounds(btNot1, cbType1.Right + 1, -1, width2, cbType1.Height);
-                SafeSetBounds(btNot2, cbType2.Right + 1, -1, width2, cbType2.Height);
-                SafeSetBounds(btNot3, cbType3.Right + 1, -1, width2, cbType3.Height);
-            }
+				yOffset = 0;
+				heightOffset = -2;
+			});
+            SafeSetBounds(btNot1, cbType1.Right + 1, yOffset, width2, cbType1.Height + heightOffset);
+            SafeSetBounds(btNot2, cbType2.Right + 1, yOffset, width2, cbType2.Height + heightOffset);
+            SafeSetBounds(btNot3, cbType3.Right + 1, yOffset, width2, cbType3.Height + heightOffset);
 				
 			base.OnLayout(levent);
 		}
