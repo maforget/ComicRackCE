@@ -34,6 +34,7 @@ public partial class ProfessionalColorTableEx : ProfessionalColorTable
 
     public ProfessionalColorTableEx()
     {
+        base.UseSystemColors = true;
     }
 
     private Dictionary<KnownColors, Color> ColorTable
