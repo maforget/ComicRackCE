@@ -15,6 +15,7 @@ using cYo.Projects.ComicRack.Plugins.Automation;
 using cYo.Projects.ComicRack.Plugins.Controls;
 using cYo.Projects.ComicRack.Plugins.Theme;
 using cYo.Projects.ComicRack.Viewer.Dialogs;
+using cYo.Common.Windows.Forms.Theme;
 
 namespace cYo.Projects.ComicRack.Viewer
 {
@@ -211,24 +212,18 @@ namespace cYo.Projects.ComicRack.Viewer
 					Icon = command.CommandImage,
 					ScriptEngine = command.Environment,
 					ScriptConfig = command.LoadConfig(),
-					InfoFunction = delegate(ComicBook[] b)
+					InfoFunction = (ComicBook[] b) =>
 					{
 						try
 						{
-							return command.Invoke(new object[1]
-							{
-								b
-							}) as string;
+							return (command.Invoke([b]) as string)?.ReplaceWebColors();
 						}
 						catch (Exception ex)
 						{
 							return ex.ToString();
 						}
 					},
-					SaveConfigFunction = delegate(string cfg)
-					{
-						command.SaveConfig(cfg);
-					}
+					SaveConfigFunction = cfg => command.SaveConfig(cfg)
 				};
 			}
 		}
