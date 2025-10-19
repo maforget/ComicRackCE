@@ -1,5 +1,6 @@
 ﻿using cYo.Common.Win32;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -463,7 +464,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// panelReaderOverlays
 			// 
 			this.panelReaderOverlays.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.panelReaderOverlays.BackColor = cYo.Common.Windows.Forms.ThemeColors.Preferences.PanelReader;
+			this.panelReaderOverlays.BackColor = ThemeColors.Preferences.PanelReader;
 			this.panelReaderOverlays.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panelReaderOverlays.Controls.Add(this.labelVisiblePartOverlay);
 			this.panelReaderOverlays.Controls.Add(this.labelNavigationOverlay);
@@ -477,7 +478,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// labelVisiblePartOverlay
 			// 
 			this.labelVisiblePartOverlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.labelVisiblePartOverlay.BackColor = cYo.Common.Windows.Forms.ThemeColors.Preferences.LabelOverlays;
+			this.labelVisiblePartOverlay.BackColor = ThemeColors.Preferences.LabelOverlays;
             this.labelVisiblePartOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.labelVisiblePartOverlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.labelVisiblePartOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -492,7 +493,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// labelNavigationOverlay
 			// 
 			this.labelNavigationOverlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.labelNavigationOverlay.BackColor = cYo.Common.Windows.Forms.ThemeColors.Preferences.LabelOverlays;
+			this.labelNavigationOverlay.BackColor = ThemeColors.Preferences.LabelOverlays;
             this.labelNavigationOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.labelNavigationOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelNavigationOverlay.Location = new System.Drawing.Point(55, 100);
@@ -505,7 +506,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// labelStatusOverlay
 			// 
-			this.labelStatusOverlay.BackColor = cYo.Common.Windows.Forms.ThemeColors.Preferences.LabelOverlays;
+			this.labelStatusOverlay.BackColor = ThemeColors.Preferences.LabelOverlays;
             this.labelStatusOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.labelStatusOverlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.labelStatusOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -520,7 +521,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// labelPageOverlay
 			// 
 			this.labelPageOverlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.labelPageOverlay.BackColor = cYo.Common.Windows.Forms.ThemeColors.Preferences.LabelOverlays;
+			this.labelPageOverlay.BackColor = ThemeColors.Preferences.LabelOverlays;
             this.labelPageOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.labelPageOverlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.labelPageOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -5,6 +5,7 @@ using System.Linq;
 using cYo.Common.Collections;
 using cYo.Common.Drawing;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 
 namespace cYo.Projects.ComicRack.Engine.Drawing
 {

@@ -11,6 +11,7 @@ using cYo.Common.Localize;
 using cYo.Common.Mathematics;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Controls;
 using cYo.Projects.ComicRack.Engine.Database;
@@ -112,7 +113,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             // 
             this.itemView.AutomaticHeaderMenu = false;
             this.itemView.AutomaticViewMenu = false;
-            this.itemView.BackColor = cYo.Common.Windows.Forms.ThemeColors.ItemView.MainBack;
+            this.itemView.BackColor = ThemeColors.ItemView.MainBack;
             this.itemView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemView.EnableStick = false;
             this.itemView.GroupCollapsedImage = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.ArrowRight;

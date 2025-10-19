@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using cYo.Common.Drawing;
 using cYo.Common.Mathematics;
+using cYo.Common.Windows.Forms.Theme.Resources;
 
 namespace cYo.Common.Windows.Forms
 {

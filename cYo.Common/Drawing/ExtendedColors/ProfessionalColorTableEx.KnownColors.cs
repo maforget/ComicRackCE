@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+namespace cYo.Common.Drawing.ExtendedColors;
 
-namespace cYo.Common.Windows.Forms;
-
-internal partial class ProfessionalColorTableEx
+public partial class ProfessionalColorTableEx
 {
     #region KnownColors
     private enum KnownColors

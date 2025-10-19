@@ -1,23 +1,12 @@
-﻿using cYo.Common.Drawing;
-using cYo.Common.Win32;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Runtime.InteropServices;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace cYo.Common.Windows.Forms;
+namespace cYo.Common.Windows.Forms.Theme.DarkMode.Rendering;
 
-/// <summary>
-/// Class to centralisation application Theming. When theming is enabled, calls <see cref="KnownColorTableEx"/> on initialization to override built-in <see cref="System.Drawing.SystemColors"/> with theme-defined colors.<br/>
-/// Exposes <see cref="Theme(Control)"/> for recursive <see cref="Control"/> theming by setting class fields and leveraging <see cref="UXTheme"/> for native Windows OS theming.
-/// </summary>
-public static partial class ThemeExtensions
+internal static class Helpers
 {
-    private static Rectangle GetCheckRectangle(CheckBox checkBox, Graphics g)
+    internal static Rectangle GetCheckRectangle(CheckBox checkBox, Graphics g)
     {
         Size glyphSize = CheckBoxRenderer.GetGlyphSize(g, CheckBoxState.UncheckedNormal);
         Point checkPosition = GetImageAlignmentPoint(checkBox.ClientRectangle, glyphSize, checkBox.CheckAlign);
@@ -29,7 +18,7 @@ public static partial class ThemeExtensions
         return boxRect;
     }
 
-    private static Rectangle GetTextRectangle(CheckBox checkBox, Graphics g, Rectangle boxRect)
+    internal static Rectangle GetTextRectangle(CheckBox checkBox, Graphics g, Rectangle boxRect)
     {
         // this is the kind of thing Microsoft love to change between OS versions
         int padTextY = 1, padBoxRtl = 2, padBoxLtr = 3;
@@ -98,7 +87,7 @@ public static partial class ThemeExtensions
         return new Point(x, y);
     }
 
-    private static TextFormatFlags GetTextFormatFlags(ButtonBase button)
+    internal static TextFormatFlags GetTextFormatFlags(ButtonBase button)
     {
         TextFormatFlags flags = TextFormatFlags.SingleLine | TextFormatFlags.NoPrefix;
 
@@ -150,7 +139,7 @@ public static partial class ThemeExtensions
         return flags;
     }
 
-    private static TextFormatFlags GetTextFormatFlags(Label label)
+    internal static TextFormatFlags GetTextFormatFlags(Label label)
     {
         TextFormatFlags flags =
             TextFormatFlags.WordBreak |
@@ -200,7 +189,7 @@ public static partial class ThemeExtensions
         if (label.RightToLeft == RightToLeft.Yes)
             flags |= TextFormatFlags.RightToLeft | TextFormatFlags.Right;
 
-        // AutoEllipsis (only when not multiline)
+        // AutoEllipsis (only when not multi-line)
         if (!label.AutoSize && label.AutoEllipsis)
             flags |= TextFormatFlags.EndEllipsis;
 

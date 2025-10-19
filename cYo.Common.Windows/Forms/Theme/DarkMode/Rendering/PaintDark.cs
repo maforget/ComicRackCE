@@ -1,24 +1,15 @@
-﻿using cYo.Common.Drawing;
-using cYo.Common.Win32;
-using System;
-using System.Collections.Generic;
+﻿using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
+using static cYo.Common.Windows.Forms.Theme.DarkMode.Rendering.Helpers;
 
-namespace cYo.Common.Windows.Forms;
+namespace cYo.Common.Windows.Forms.Theme.DarkMode.Rendering;
 
-/// <summary>
-/// Class to centralisation application Theming. When theming is enabled, calls <see cref="KnownColorTableEx"/> on initialization to override built-in <see cref="System.Drawing.SystemColors"/> with theme-defined colors.<br/>
-/// Exposes <see cref="Theme(Control)"/> for recursive <see cref="Control"/> theming by setting class fields and leveraging <see cref="UXTheme"/> for native Windows OS theming.
-/// </summary>
-public static partial class ThemeExtensions
+internal static class PaintDark
 {
-    // TODO: handle disabled checkboxes with images/icons (currently they're wiped)
-    public static void CheckBox_Paint(object sender, PaintEventArgs e)
+    // TODO: handle disabled CheckBoxes with images/icons (currently they're wiped)
+    public static void CheckBox(object sender, PaintEventArgs e)
     {
         CheckBox checkBox = sender as CheckBox;
         bool onlyDrawDisabledText = OsVersionEx.IsWindows11_OrGreater() || checkBox.Appearance == Appearance.Button;
@@ -35,7 +26,7 @@ public static partial class ThemeExtensions
 
         // Draw actual Check (Box + Mark)
         if (!onlyDrawDisabledText)
-            DrawDarkCheckBox(checkBox, e.Graphics, boxRect);
+            DrawDark.CheckBox(checkBox, e.Graphics, boxRect);
 
         // Clear text area
         using (var backBrush = new SolidBrush(checkBox.BackColor))
@@ -52,7 +43,7 @@ public static partial class ThemeExtensions
         );
     }
 
-    private static void Label_Paint(object sender, PaintEventArgs e)
+    internal static void Label(object sender, PaintEventArgs e)
     {
         Label label = sender as Label;
 
@@ -63,14 +54,12 @@ public static partial class ThemeExtensions
         }
     }
 
-    #region Custom Paint Event Handlers
-    private static void ToolStripStatusLabel_Paint(object sender, PaintEventArgs e)
+    internal static void ToolStripStatusLabel(object sender, PaintEventArgs e)
     {
-        using (var pen = new Pen(ThemeColors.ToolStrip.BorderColor, 1))
+        using (var pen = new Pen(DarkColors.ToolStrip.BorderColor, 1))
         {
             e.Graphics.DrawRectangle(pen, 0, 0, e.ClipRectangle.Width - 1, e.ClipRectangle.Height - 1);
         }
     }
 
-    #endregion
 }

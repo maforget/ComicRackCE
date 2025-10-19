@@ -3,6 +3,7 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using cYo.Common.Drawing;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {

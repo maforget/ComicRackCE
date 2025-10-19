@@ -1,3 +1,5 @@
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -167,7 +169,7 @@ namespace cYo.Common.Windows.Forms
             NativeMethods.COMBOBOXINFO pcbi = GetChildHandle();
 
 
-			if (!ThemeExtensions.IsDarkModeEnabled || pcbi.hwndEdit == IntPtr.Zero)
+			if (!ThemeManager.IsDarkModeEnabled || pcbi.hwndEdit == IntPtr.Zero)
 				return;
 
 			switch (m.Msg)
@@ -175,7 +177,7 @@ namespace cYo.Common.Windows.Forms
 				case NativeMethods.WM_CTLCOLORSTATIC:
 					if (hwndChild == pcbi.hwndEdit)
 					{
-						NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeColors.ComboBox.Disabled));
+						NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeColors.DarkMode.ComboBox.Disabled));
 						NativeMethods.SetTextColor(hdc, ColorTranslator.ToWin32(SystemColors.GrayText));
 
 						m.Result = NativeMethods.darkEditBrush;
@@ -185,7 +187,7 @@ namespace cYo.Common.Windows.Forms
 					// Additional handling for Simple style listbox when disabled
 					if (DropDownStyle == ComboBoxStyle.Simple && !Enabled && hwndChild == pcbi.hwndList)
 					{
-						NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeColors.ComboBox.Disabled));
+						NativeMethods.SetBkColor(hdc, ColorTranslator.ToWin32(ThemeColors.DarkMode.ComboBox.Disabled));
 						NativeMethods.SetTextColor(hdc, ColorTranslator.ToWin32(SystemColors.GrayText));
 						m.Result = NativeMethods.darkEditBrush;
 						return;
@@ -205,7 +207,7 @@ namespace cYo.Common.Windows.Forms
 							textBounds.Width -= SystemInformation.VerticalScrollBarWidth;
 
 							// Fill the background
-							using var bgBrush = new SolidBrush(ThemeColors.ComboBox.Disabled);
+							using var bgBrush = new SolidBrush(ThemeColors.DarkMode.ComboBox.Disabled);
 							g.FillRectangle(bgBrush, textBounds);
 
 							// Draw the text

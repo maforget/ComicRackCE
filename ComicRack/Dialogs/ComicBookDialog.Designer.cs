@@ -1,5 +1,6 @@
 ﻿using cYo.Common.Win32;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine.Controls;
 using cYo.Projects.ComicRack.Viewer.Controls;
 using System.ComponentModel;
@@ -392,7 +393,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.linkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.linkLabel.LinkColor = cYo.Common.Windows.Forms.ThemeColors.ComicBook.Link;
+			this.linkLabel.LinkColor = ThemeColors.ComicBook.Link;
 			this.linkLabel.Location = new System.Drawing.Point(3, 416);
 			this.linkLabel.Name = "linkLabel";
 			this.linkLabel.Size = new System.Drawing.Size(560, 23);
@@ -400,7 +401,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.linkLabel.TabStop = true;
 			this.linkLabel.Text = "linkLabel";
 			this.linkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.linkLabel.VisitedLinkColor = cYo.Common.Windows.Forms.ThemeColors.ComicBook.VisitedLink;
+			this.linkLabel.VisitedLinkColor = ThemeColors.ComicBook.VisitedLink;
             this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
 			// 
 			// coverThumbnail
@@ -424,7 +425,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.whereSeparator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.whereSeparator.BackColor = cYo.Common.Windows.Forms.ThemeColors.ComicBook.Separator;
+			this.whereSeparator.BackColor = ThemeColors.ComicBook.Separator;
             this.whereSeparator.Location = new System.Drawing.Point(19, 360);
 			this.whereSeparator.Name = "whereSeparator";
 			this.whereSeparator.Size = new System.Drawing.Size(520, 1);
@@ -434,7 +435,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel1.BackColor = cYo.Common.Windows.Forms.ThemeColors.ComicBook.PanelBack;
+			this.panel1.BackColor = ThemeColors.ComicBook.PanelBack;
 			this.panel1.Location = new System.Drawing.Point(23, 268);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(520, 1);
@@ -2167,7 +2168,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.pageViewer.AutoScrollMode = cYo.Common.Windows.Forms.AutoScrollMode.Pan;
 			this.pageViewer.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.pageViewer.ForeColor = cYo.Common.Windows.Forms.ThemeColors.ComicBook.PageViewer;
+			this.pageViewer.ForeColor = ThemeColors.ComicBook.PageViewer;
 			this.pageViewer.Location = new System.Drawing.Point(11, 12);
 			this.pageViewer.Name = "pageViewer";
 			this.pageViewer.ScaleMode = cYo.Common.Drawing.ScaleMode.FitWidth;

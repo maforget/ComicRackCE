@@ -1,5 +1,6 @@
 using cYo.Common.ComponentModel;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using System.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
@@ -289,7 +290,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = cYo.Common.Windows.Forms.ThemeColors.DeviceEditControl.Back;
+            this.BackColor = ThemeColors.DeviceEditControl.Back;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grpListOptions);
             this.Controls.Add(this.tvSharedLists);

@@ -10,6 +10,7 @@ using cYo.Common.Mathematics;
 using cYo.Common.Runtime;
 using cYo.Common.Threading;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine.Drawing;
 using cYo.Projects.ComicRack.Engine.IO;
 using cYo.Projects.ComicRack.Viewer.Properties;

@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Collections;
 using cYo.Common.Collections;
 
-namespace cYo.Common.Drawing.Extensions;
+namespace cYo.Common.Drawing.ExtendedColors;
 
 public class KnownColorTableEx
 {

@@ -1,4 +1,5 @@
-using cYo.Common.Win32;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -147,9 +148,7 @@ namespace cYo.Common.Windows.Forms
         {
             base.OnCreateControl();
             EnableDoubleBuffer(this);
-            ThemeExtensions.SetBorderStyle(this);
-            this.BackColor = ThemeColors.TreeView.Back == Color.Empty ? this.BackColor : ThemeColors.TreeView.Back;
-            this.ForeColor = ThemeColors.TreeView.Text == Color.Empty ? this.ForeColor : ThemeColors.TreeView.Text;
+            this.SetTreeViewColor();;
         }
 
         private void scrollTimer_Tick(object sender, EventArgs e)

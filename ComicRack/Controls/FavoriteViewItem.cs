@@ -6,6 +6,7 @@ using cYo.Common.Collections;
 using cYo.Common.ComponentModel;
 using cYo.Common.Drawing;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.Drawing;

@@ -1,14 +1,15 @@
 ﻿using System.Drawing;
-using System.Windows.Forms;
+using cYo.Common.Drawing.ExtendedColors;
 
-namespace cYo.Common.Windows.Forms;
+namespace cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 
 /// <summary>
-/// source: <a href="https://github.com/dotnet/winforms">dotnet/winforms</a>. (.NET Foundation, MIT license)<br/>
-/// <c>src/System.Windows.Forms/System/Windows/Forms/DarkProfessionalColors.cs</c>
+/// Default Dark Mode <see cref="ProfessionalColorTableEx"/>.
 /// </summary>
-/// <remarks>These are defaults and could do with checking/tweaking.</remarks>
-internal sealed class DarkProfessionalColorsEx : ProfessionalColorTableEx
+/// <remarks>
+/// Based on <a href="https://github.com/dotnet/winforms">dotnet/winforms</a>. <c>src/System/Windows/Forms/DarkProfessionalColors.cs</c> (.NET Foundation, MIT license)<br/>
+/// </remarks>
+internal sealed class DarkProfessionalColors : ProfessionalColorTableEx
 {
     public override Color MenuItemPressedGradientBegin
         => Color.FromArgb(0xFF, 0x60, 0x60, 0x60);
@@ -19,7 +20,7 @@ internal sealed class DarkProfessionalColorsEx : ProfessionalColorTableEx
     public override Color MenuItemPressedGradientEnd
         => Color.FromArgb(0xFF, 0x60, 0x60, 0x60);
 
-    public override Color MenuItemSelected => ThemeColors.SelectedText.Highlight;
+    public override Color MenuItemSelected => DarkColors.SelectedText.Highlight;
     //=> SystemColors.ControlText; // this means white highlight
 
     public override Color MenuItemSelectedGradientBegin
@@ -52,7 +53,7 @@ internal sealed class DarkProfessionalColorsEx : ProfessionalColorTableEx
     public override Color ImageMarginGradientEnd => Color.FromArgb(51, 51, 51);
     //=> SystemColors.Control;
 
-    public override Color ToolStripBorder => ThemeColors.Border.Dark;
+    public override Color ToolStripBorder => DarkColors.Border.Dark;
 
     public override Color ToolStripGradientBegin => SystemColors.ControlLight;
 

@@ -8,6 +8,7 @@ using cYo.Common;
 using cYo.Common.Localize;
 using cYo.Common.Text;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Viewer.Properties;
 
@@ -64,16 +65,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			base.Width = width;
 			spacing = rtfMatchValue2.Left - rtfMatchValue.Right;
 			InitializeMatcher(comicBookMatcher);
-            if (ThemeExtensions.IsDarkModeEnabled)
-            {
-                // a button pretending to be a dropdown combobox. lovely.
-                // let's dress it up as one. Except for dropdown arrow to carot - that's asking too much
-                // we also have to make it a bit smaller as otherwise borders are out of bounds
-                this.btMatcher.Location = new Point(btMatcher.Location.X, btMatcher.Location.Y + 1);
-                this.btMatcher.Size = new Size(btMatcher.Size.Width, btMatcher.Size.Height - 2);
-                this.btMatcher.BackColor = ThemeColors.Button.Back;
-                this.btMatcher.ForeColor = ThemeColors.Button.Text;
-            }
+            // a button pretending to be a dropdown combobox. lovely.
+            // let's dress it up as one. Except for dropdown arrow to carot - that's asking too much
+            // we also have to make it a bit smaller as otherwise borders are out of bounds
+            this.btMatcher.SetComboBoxButton();
         }
 
 		private void cmEdit_Opening(object sender, CancelEventArgs e)

@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace cYo.Common.Windows.Forms;
+namespace cYo.Common.Windows.Forms.Theme.Resources;
 
+/// <summary>
+/// TODO : ADD SUMMARY
+/// </summary>
 public static class ThemePens
 {
     private static readonly Dictionary<Color, Pen> cache = new();
 
-    public static class CheckBox
-    {
-        public static Pen Border => FromThemeColor(ThemeColors.CheckBox.Border);
-        public static Pen UncheckedBorder => FromThemeColor(ThemeColors.CheckBox.UncheckedBorder);
-        public static Pen UncheckedDisabledBorder => FromThemeColor(ThemeColors.CheckBox.UncheckedDisabledBorder);
-    }
+    //public static class CheckBox
+    //{
+    //    public static Pen Border => FromThemeColor(ThemeColors.CheckBox.Border);
+    //    public static Pen UncheckedBorder => FromThemeColor(ThemeColors.CheckBox.UncheckedBorder);
+    //    public static Pen UncheckedDisabledBorder => FromThemeColor(ThemeColors.CheckBox.UncheckedDisabledBorder);
+    //}
 
     public static class ComboBox
     {
