@@ -1,9 +1,10 @@
-﻿using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
+﻿using cYo.Common.Win32;
 using cYo.Common.Windows.Forms.Theme.DarkMode.Rendering;
 using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 using cYo.Common.Windows.Forms.Theme.Resources;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms.Theme.DarkMode.Handlers;
 
@@ -64,6 +65,13 @@ internal partial class DarkControl
             listView.DrawSubItem += DrawDarkListView.SubItem;
             if (listView.Items.Count > 0) listView.Items[0].UseItemStyleForSubItems = false;
         }
+    }
+
+    private static void DarkUXListView(ListView listView)
+    {
+        UXTheme.SetListViewTheme(listView.Handle);
+        if (listView.ShowGroups && listView.Groups.Count > 1)
+            listView.ThemeGroupHeader();
     }
 
     private static void DarkStatusStrip(StatusStrip statusStrip)

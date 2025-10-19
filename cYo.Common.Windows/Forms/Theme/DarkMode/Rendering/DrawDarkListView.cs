@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms.Theme.DarkMode.Rendering;
 
-internal static class DrawDarkListView
+internal static partial class DrawDarkListView
 {
     /// <summary>
     /// <para><see cref="ListView.OnDrawColumnHeader(DrawListViewColumnHeaderEventArgs)"/> method to handle dark <see cref="ColumnHeader"/> text on dark background.</para>
@@ -42,14 +42,14 @@ internal static class DrawDarkListView
 
     internal static void Item(object sender, DrawListViewItemEventArgs e)
     {
-        if (e.Item.ListView.View != View.Details)
+        if (e.Item.ListView.View != View.Details || e.Item.ListView.CheckBoxes)
             e.DrawDefault = true;
 
     }
 
     internal static void SubItem(object sender, DrawListViewSubItemEventArgs e)
     {
-        if (e.Item.ListView.View != View.Details || e.Item == null)
+        if (e.Item.ListView.View != View.Details || e.Item == null || e.Item.ListView.CheckBoxes)
         {
             e.DrawDefault = true;
             return;

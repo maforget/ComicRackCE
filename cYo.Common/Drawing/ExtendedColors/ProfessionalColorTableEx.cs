@@ -18,7 +18,7 @@ public partial class ProfessionalColorTableEx : ProfessionalColorTable
 
     private Dictionary<KnownColors, Color>? _professionalRGB;
     private bool _usingSystemColors;
-    private bool _useSystemColors;
+    //private bool _useSystemColors;
     private string? _lastKnownColorScheme = string.Empty;
 
     private const string OliveColorScheme = "HomeStead";
@@ -77,20 +77,20 @@ public partial class ProfessionalColorTableEx : ProfessionalColorTable
     ///  rather than colors that match the current theme. If theming is not
     ///  turned on, we'll fall back to SystemColorsEx.
     /// </summary>
-    public bool UseSystemColors
-    {
-        get => _useSystemColors;
-        set
-        {
-            if (_useSystemColors == value)
-            {
-                return;
-            }
+    //public bool UseSystemColors
+    //{
+    //    get => _useSystemColors;
+    //    set
+    //    {
+    //        if (_useSystemColors == value)
+    //        {
+    //            return;
+    //        }
 
-            _useSystemColors = value;
-            ResetRGBTable();
-        }
-    }
+    //        _useSystemColors = value;
+    //        ResetRGBTable();
+    //    }
+    //}
 
     private Color FromKnownColor(KnownColors color)
     {

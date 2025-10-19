@@ -68,18 +68,7 @@ internal partial class DarkControl
             ForeColor = SystemColors.WindowText,
             BackColor = DarkColors.TextBox.Back,
             Theme = c => DarkListView((ListView)c),
-            UXTheme = c => {
-                ListView lv = (ListView)c;
-                UXTheme.SetListViewTheme(lv.Handle);
-                if (lv.ShowGroups && lv.Groups.Count > 1)
-                {
-                    var colorizer = new Rendering.ListViewTextColorizer(
-                        lv,
-                        Theme.Resources.ThemeColors.ItemView.GroupText,
-                        lv.BackColor,
-                        disableTheming: false);
-                }
-            }//SetListViewUXTheme((ListView)c)
+            UXTheme = c => DarkUXListView((ListView)c) //SetListViewUXTheme((ListView)c)
         },
 
         [typeof(RichTextBox)] = new DarkControlDefinition
