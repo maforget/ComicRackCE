@@ -69,7 +69,9 @@ namespace cYo.Projects.ComicRack.Engine.Database
 
 			public IEnumerable<ComicListItem> Match(string property)
 			{
-				return reversePropertyIndex.Match(property).Concat(reversePropertyIndex.Match("*"));
+				return reversePropertyIndex.Match(property)
+					.Concat(reversePropertyIndex.Match("*"))
+					.Concat(reversePropertyIndex.Where(x => x.StartsWith("VirtualTag")));
 			}
 
 			public IEnumerable<ComicListItem> Match(Guid id)

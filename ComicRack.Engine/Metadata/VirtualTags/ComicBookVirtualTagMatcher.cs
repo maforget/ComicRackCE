@@ -60,7 +60,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 	[Serializable]
     [Description("Virtual Tags #01")]
-    [ComicBookMatcherHint("VirtualTag01")]
+    [ComicBookMatcherHint("VirtualTag01", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag1Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -71,7 +71,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #02")]
-    [ComicBookMatcherHint("VirtualTag02")]
+    [ComicBookMatcherHint("VirtualTag02", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag2Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -82,7 +82,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #03")]
-    [ComicBookMatcherHint("VirtualTag03")]
+    [ComicBookMatcherHint("VirtualTag03", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag3Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -93,7 +93,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #04")]
-    [ComicBookMatcherHint("VirtualTag04")]
+    [ComicBookMatcherHint("VirtualTag04", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag4Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -104,7 +104,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #05")]
-    [ComicBookMatcherHint("VirtualTag05")]
+    [ComicBookMatcherHint("VirtualTag05", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag5Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -115,7 +115,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #06")]
-    [ComicBookMatcherHint("VirtualTag06")]
+    [ComicBookMatcherHint("VirtualTag06", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag6Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -126,7 +126,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #07")]
-    [ComicBookMatcherHint("VirtualTag07")]
+    [ComicBookMatcherHint("VirtualTag07", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag7Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -137,7 +137,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #08")]
-    [ComicBookMatcherHint("VirtualTag08")]
+    [ComicBookMatcherHint("VirtualTag08", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag8Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -148,7 +148,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #09")]
-    [ComicBookMatcherHint("VirtualTag09")]
+    [ComicBookMatcherHint("VirtualTag09", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag9Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -159,7 +159,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #10")]
-    [ComicBookMatcherHint("VirtualTag10")]
+    [ComicBookMatcherHint("VirtualTag10", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag10Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -170,7 +170,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #11")]
-    [ComicBookMatcherHint("VirtualTag11")]
+    [ComicBookMatcherHint("VirtualTag11", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag11Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -181,7 +181,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #12")]
-    [ComicBookMatcherHint("VirtualTag12")]
+    [ComicBookMatcherHint("VirtualTag12", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag12Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -192,7 +192,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #13")]
-    [ComicBookMatcherHint("VirtualTag13")]
+    [ComicBookMatcherHint("VirtualTag13", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag13Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -203,7 +203,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #14")]
-    [ComicBookMatcherHint("VirtualTag14")]
+    [ComicBookMatcherHint("VirtualTag14", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag14Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -214,7 +214,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #15")]
-    [ComicBookMatcherHint("VirtualTag15")]
+    [ComicBookMatcherHint("VirtualTag15", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag15Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -225,7 +225,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #16")]
-    [ComicBookMatcherHint("VirtualTag16")]
+    [ComicBookMatcherHint("VirtualTag16", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag16Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -236,7 +236,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #17")]
-    [ComicBookMatcherHint("VirtualTag17")]
+    [ComicBookMatcherHint("VirtualTag17", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag17Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -247,7 +247,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #18")]
-    [ComicBookMatcherHint("VirtualTag18")]
+    [ComicBookMatcherHint("VirtualTag18", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag18Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -258,7 +258,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #19")]
-    [ComicBookMatcherHint("VirtualTag19")]
+    [ComicBookMatcherHint("VirtualTag19", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag19Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)
@@ -269,7 +269,7 @@ namespace cYo.Projects.ComicRack.Engine
 
     [Serializable]
     [Description("Virtual Tags #20")]
-    [ComicBookMatcherHint("VirtualTag20")]
+    [ComicBookMatcherHint("VirtualTag20", DisableOptimizedUpdate = true)]
     public class ComicBookVirtualTag20Matcher : ComicBookVirtualTagMatcher
     {
         protected override string GetValue(ComicBook comicBook)

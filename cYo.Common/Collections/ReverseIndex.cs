@@ -95,5 +95,13 @@ namespace cYo.Common.Collections
 				return index.TryGetValue(key, out value) ? value.ToArray() : new T[0];
 			}
 		}
+
+		public IEnumerable<T> Where(Func<K, bool> predicate)
+		{
+			using (ItemMonitor.Lock(index))
+			{
+				return index.Where((x) => predicate(x.Key)) is var value && value.Any() ? value.SelectMany(x => x.Value) : new T[0];
+			}
+		}
 	}
 }
