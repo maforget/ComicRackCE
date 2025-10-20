@@ -39,7 +39,7 @@ internal partial class DarkControl
             Theme = c => DarkDataGridView((DataGridView)c)
         },
 
-        [typeof(Form)] = new DarkControlDefinition
+        [typeof(FormEx)] = new DarkControlDefinition
         {
             ForeColor = SystemColors.WindowText,
             BackColor = DarkColors.UIComponent.Window,
