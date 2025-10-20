@@ -109,6 +109,11 @@ internal partial class DarkControl
             BorderStyle = BorderStyle.None,
             Theme = c => DarkTreeView((TreeView)c)
         },
+
+        [typeof(ProgressBar)] = new DarkControlDefinition
+        {
+			BackColor = DarkColors.TextBox.Back,
+		},
     };
 }
 
