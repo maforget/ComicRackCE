@@ -5,6 +5,7 @@ using cYo.Common.Windows.Forms.Theme.Internal;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms.Theme.DarkMode;
@@ -24,11 +25,9 @@ internal class DarkThemeHandler : IThemeHandler
     /// </summary>
     private static bool TryGetDarkControlDefinition(Type controlType, out DarkControlDefinition controlDefinition)
     {
-        if (DarkControlTable.TryGetValue(controlType, out controlDefinition))
-            return true;
-        else
-            return DarkControlTable.TryGetValue(controlType.BaseType, out controlDefinition);
-    }
+		controlDefinition = DarkControlTable.FirstOrDefault(x => x.Key.IsAssignableFrom(controlType)).Value;
+        return controlDefinition != null;
+	}
 
     /// <summary>
     /// Handles applying Dark Mode as detailed in <see cref="DarkControlDefinition"/>.
