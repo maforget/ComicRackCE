@@ -22,14 +22,13 @@ internal partial class DarkControl
 
         [typeof(CheckedListBox)] = new DarkControlDefinition
         {
-            ForeColor = SystemColors.WindowText,
             BackColor = DarkColors.ListBox.Back,
             BorderStyle = BorderStyle.FixedSingle
+            //Theme = c => DarkCheckedListBox((CheckedListBox)c) // TODO: Dark Mode CheckBoxes
         },
 
         [typeof(ComboBox)] = new DarkControlDefinition
         {
-            ForeColor = SystemColors.WindowText,
             BackColor = DarkColors.ComboBox.Back,
             UXTheme = c => UXTheme.SetComboBoxTheme(c.Handle) //SetComboBoxUXTheme((ComboBox)c)
         },
@@ -41,14 +40,13 @@ internal partial class DarkControl
 
         [typeof(FormEx)] = new DarkControlDefinition
         {
-            ForeColor = SystemColors.WindowText,
             BackColor = DarkColors.UIComponent.Window,
             UXTheme = c => UXTheme.SetWindowTheme(c.Handle) //SetWindowUXTheme((Form)c)
         },
 
         [typeof(GroupBox)] = new DarkControlDefinition
         {
-            ForeColor = SystemColors.WindowText
+            ForeColor = SystemColors.ControlText
         },
 
         [typeof(Label)] = new DarkControlDefinition
@@ -58,14 +56,12 @@ internal partial class DarkControl
 
         [typeof(ListBox)] = new DarkControlDefinition
         {
-            ForeColor = SystemColors.WindowText,
             BackColor = DarkColors.ListBox.Back,
             BorderStyle = BorderStyle.FixedSingle
         },
 
         [typeof(ListView)] = new DarkControlDefinition
         {
-            ForeColor = SystemColors.WindowText,
             BackColor = DarkColors.TextBox.Back,
             Theme = c => DarkListView((ListView)c),
             UXTheme = c => DarkUXListView((ListView)c) //SetListViewUXTheme((ListView)c)
@@ -73,7 +69,6 @@ internal partial class DarkControl
 
         [typeof(RichTextBox)] = new DarkControlDefinition
         {
-            ForeColor = SystemColors.ControlText,
             BackColor = DarkColors.TextBox.Back,
             BorderStyle = BorderStyle.None,
             //Theme = c => DarkTextBoxBase((TextBoxBase)c) // Need to account for BackColor change in SmartQuery before adding this
@@ -96,7 +91,6 @@ internal partial class DarkControl
 
         [typeof(TextBox)] = new DarkControlDefinition
         {
-            ForeColor = SystemColors.ControlText,
             BackColor = DarkColors.TextBox.Back,
             BorderStyle = BorderStyle.FixedSingle,
             Theme = c => DarkTextBoxBase((TextBox)c)
