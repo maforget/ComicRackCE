@@ -5,9 +5,10 @@ using cYo.Common.Windows.Forms.Theme.Internal;
 using cYo.Common.Windows.Forms.Theme.Resources;
 using System;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace cYo.Common.Windows.Forms.Theme;
 
@@ -144,9 +145,9 @@ public static class ThemeExtensions
 	{
 		//TODO: Add a way to disable the repalce if the plugin supports theme and doesn't need you to replace the colors
 		Regex rxWebBody = new Regex(@"<body(?=[^>]*)([^>]*?)\bstyle=""([^""]*)""([^>]*)>|<body([^>]*)>", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-		string rxWebBodyReplace = "<body$1 style=\"$2background-color:#383838;color:#eeeeee;\"$3>";
+        string rxWebBodyReplace = "<body$1 style=\"$2background-color:#383838;color:#eeeeee;scrollbar-face-color:#4d4d4d;scrollbar-track-color:#171717;scrollbar-shadow-color:#171717;scrollbar-arrow-color:#676767;\"$3>";
 
-		if (ThemeManager.IsDarkModeEnabled)
+        if (ThemeManager.IsDarkModeEnabled)
 			return rxWebBody.Replace(webPage, rxWebBodyReplace);
 		else
 			return webPage;
