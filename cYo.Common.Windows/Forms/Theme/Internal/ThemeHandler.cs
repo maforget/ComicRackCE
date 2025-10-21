@@ -14,7 +14,7 @@ public static class ThemeHandler
         Handler = new T();
     }
 
-    public static void SetTheme(Control control) => SetTheme(control, false);
+    public static void SetTheme(this Control control) => SetTheme(control, false);
 
     /// <summary>
     /// Applies the registered theme handler to the specified control.
@@ -26,7 +26,7 @@ public static class ThemeHandler
 
         if (Handler != null && recursive)
             foreach (Control childControl in control.Controls)
-                childControl.Theme();
+                childControl.SetTheme(true);
     }
 }
 

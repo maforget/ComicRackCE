@@ -113,9 +113,9 @@ internal class DarkColors
 
     public static class UIComponent
     {
-        public static readonly Color Window = Color.FromArgb(unchecked((int)0xFF333333));    // Form Background. SystemColors.Control; // RGB 32 HEX 20
-        public static readonly Color SidePanel = Color.FromArgb(unchecked((int)0xFF191919)); // RGB 25 HEX 19
-        public static readonly Color Content = SystemColors.Control;                         // MainViewItemView + CollapsibleGroupBox + background
+        public static readonly Color Window = Color.FromArgb(unchecked((int)0xFF333333));    // RGB 51 HEX 33 : Form Background 
+        public static readonly Color SidePanel = Color.FromArgb(unchecked((int)0xFF191919)); // RGB 25 HEX 19 : ComicExplorerView.SidePanel [favView(ItemView) + ComicListBrowser + SmallComicPreview] 
+        public static readonly Color Content = SystemColors.Control;                         // RGB 32 HEX 20 : MainViewItemView + CollapsibleGroupBox + background  
     }
 
     //// ComicBookDialog
