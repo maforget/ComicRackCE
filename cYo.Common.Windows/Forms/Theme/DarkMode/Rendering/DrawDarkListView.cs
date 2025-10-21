@@ -44,12 +44,11 @@ internal static partial class DrawDarkListView
     {
         if (e.Item.ListView.View != View.Details || e.Item.ListView.CheckBoxes)
             e.DrawDefault = true;
-
     }
 
     internal static void SubItem(object sender, DrawListViewSubItemEventArgs e)
     {
-        if (e.Item.ListView.View != View.Details || e.Item == null || e.Item.ListView.CheckBoxes)
+        if (e.Item.ListView.View != View.Details || e.Item == null)
         {
             e.DrawDefault = true;
             return;
@@ -58,6 +57,7 @@ internal static partial class DrawDarkListView
         Rectangle bounds = e.Bounds;
         Rectangle textRect = bounds; // Updated based on whether we have images
         ImageList imageList = listView.SmallImageList;
+        ImageList checkImageList = listView.StateImageList;
 
         Color backColor = e.Item.BackColor;
         Color textColor = e.Item.ForeColor;
@@ -74,22 +74,32 @@ internal static partial class DrawDarkListView
         if (e.Item.Selected)
             ControlPaint.DrawBorder(e.Graphics, e.Bounds, DarkColors.SelectedText.Focus, ButtonBorderStyle.Solid);
 
-        // Handle first column having images
-        if (e.ColumnIndex == 0 && imageList != null)
+        // Handle first column having images and/or checkBoxes
+        if (e.ColumnIndex == 0)
         {
-            int imageWidth = imageList.ImageSize.Width;
-            int imageHeight = imageList.ImageSize.Height;
-            int imageY = bounds.Top + (bounds.Height - imageHeight) / 2;
-            int imageX = bounds.Left + 4; // small padding from left
+            int leftPad = 4;
+            if (listView.CheckBoxes)
+            {
+                int checkBoxWidth = checkImageList.ImageSize.Width;
+                leftPad += checkBoxWidth;
+                textRect.X += leftPad;
+            }
+            if (imageList != null)
+            {
+                int imageWidth = imageList.ImageSize.Width;
+                int imageHeight = imageList.ImageSize.Height;
+                int imageY = bounds.Top + (bounds.Height - imageHeight) / 2;
+                int imageX = bounds.Left + leftPad; // small padding from left
 
-            // Shift text based on imageList != null, whether this item has an image or not
-            textRect.X += imageX + imageWidth;
+                // Shift text based on imageList != null, whether this item has an image or not
+                textRect.X += imageX + imageWidth;
 
-            // Draw the image if there is one to draw
-            if (e.Item.ImageIndex >= 0 && e.Item.ImageIndex < imageList.Images.Count)
-                imageList.Draw(e.Graphics, imageX, imageY, imageWidth, imageHeight, e.Item.ImageIndex);
+                // Draw the image if there is one to draw
+                if (e.Item.ImageIndex >= 0 && e.Item.ImageIndex < imageList.Images.Count)
+                    imageList.Draw(e.Graphics, imageX, imageY, imageWidth, imageHeight, e.Item.ImageIndex);
+            }
         }
-
+        
         textRect.X += 2;
         textRect.Width = bounds.Right - textRect.X;
 
