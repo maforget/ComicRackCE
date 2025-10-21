@@ -42,7 +42,7 @@ internal class DarkControlDefinition
         SetColor(control);
     }
 
-    private void SetColor(Control control)
+    public void SetColor(Control control)
     {
         Color systemForeColor;
         Color systemBackColor;

@@ -3,6 +3,7 @@ using cYo.Common.Localize;
 using cYo.Common.Text;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
 using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Database;
@@ -177,7 +178,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		{
 			base.OnLoad(e);
 			rtfQuery.AutoWordSelection = false;
-		}
+			ThemeExtensions.InvokeAction(() => Colorize(all: true, forced: true));
+        }
 
 		private void OnInsertQuery(object sender, EventArgs e)
 		{

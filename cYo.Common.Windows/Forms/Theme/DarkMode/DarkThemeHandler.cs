@@ -27,7 +27,11 @@ internal class DarkThemeHandler : IThemeHandler
     {
 		controlDefinition = DarkControlTable.FirstOrDefault(x => x.Key.IsAssignableFrom(controlType)).Value;
         return controlDefinition != null;
-	}
+        //if (DarkControlTable.TryGetValue(controlType, out controlDefinition))
+        //    return true;
+        //else
+        //    return DarkControlTable.TryGetValue(controlType.BaseType, out controlDefinition);
+    }
 
     /// <summary>
     /// Handles applying Dark Mode as detailed in <see cref="DarkControlDefinition"/>.
@@ -37,6 +41,8 @@ internal class DarkThemeHandler : IThemeHandler
         // Get a custom DarkControlDefinition if one exists; fallback to default DarkControlDefinition if it doesn't
         if (!TryGetDarkControlDefinition(control.GetType(), out var darkControlDefinition))
             darkControlDefinition = new DarkControlDefinition(control);
+
+        darkControlDefinition.SetColor(control);
 
         SetDarkMode(control, darkControlDefinition);
 
