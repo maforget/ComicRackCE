@@ -2268,7 +2268,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					itemView.BackgroundImage = null;
 					backgroundImage.Dispose();
 				}
-				if (image != null && itemView.BackColor.GetBrightness() >= 0.95f)
+				if (image != null) // && itemView.BackColor.GetBrightness() >= 0.95f
 				{
 					itemView.BackgroundImage = image;
 					itemView.BackgroundImageAlignment = System.Drawing.ContentAlignment.BottomRight;
