@@ -33,6 +33,11 @@ public static class ThemePens
         public static Pen SeparatorRight => FromThemeColor(ThemeColors.SplitButton.SeparatorRight);
     }
 
+    public static class Stack
+    {
+        public static Pen Border => FromThemeColor(ThemeColors.Stack.Border);
+    }
+
     public static Pen FromThemeColor(Color color)
     {
         if (!cache.TryGetValue(color, out var pen))

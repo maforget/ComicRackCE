@@ -533,8 +533,8 @@ namespace cYo.Projects.ComicRack.Engine.Drawing
 				{
 					DrawShadow(graphics, thumbnailBounds, shadowSize);
 				}
-				graphics.FillRectangle(System.Drawing.SystemBrushes.Control, thumbnailBounds); // This should always be white, since it's supossed to be paper
-				graphics.DrawRectangle(Pens.Black, thumbnailBounds);
+				graphics.FillRectangle(ThemeBrushes.Stack.Fill, thumbnailBounds);
+				graphics.DrawRectangle(ThemePens.Stack.Border, thumbnailBounds);
 			}
 		}
 

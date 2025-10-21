@@ -30,6 +30,11 @@ public static class ThemeBrushes
         public static Brush Separator => FromThemeColor(ThemeColors.NiceTreeSkin.Separator);
     }
 
+    public static class Stack
+    {
+        public static Brush Fill => FromThemeColor(ThemeColors.Stack.Fill);
+    }
+
 
     public static class DarkMode
     {

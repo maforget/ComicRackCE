@@ -140,4 +140,8 @@ internal class DarkThemeColorTable : ThemeColorTable
     // SplitButton
     public override Color SplitButtonSeparatorLeft => SystemColors.WindowText;
     public override Color SplitButtonSeparatorRight => SystemColors.ButtonFace;
+
+    // Stacks
+    public override Color StackFill => Color.LightGray;
+	public override Color StackBorder => Color.Black;
 }

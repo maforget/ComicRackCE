@@ -181,9 +181,15 @@ public static class ThemeColors
     }
 
     public static class ToolTip
-		{
+	{
         public static readonly Color InfoText = ColorTable.ToolTipText;
         public static readonly Color Back = ColorTable.ToolTipBack;
+    }
+
+    public static class Stack
+    {
+        public static readonly Color Fill = ColorTable.StackFill;
+        public static readonly Color Border = ColorTable.StackBorder;
     }
     #endregion
 

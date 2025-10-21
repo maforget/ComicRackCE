@@ -147,6 +147,10 @@ internal class ThemeColorTable
     public virtual Color SplitButtonSeparatorLeft => SystemColors.ButtonShadow;
     public virtual Color SplitButtonSeparatorRight => SystemColors.ButtonFace;
 
+    // Stacks
+    public virtual Color StackFill => SystemColors.Control;
+    public virtual Color StackBorder => Color.Black;
+
     // CheckBox
     //public virtual Color CheckBoxBack => Color.Empty;
     //public virtual Color CheckBoxBackCorner => Color.Empty;
