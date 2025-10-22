@@ -1643,7 +1643,7 @@ namespace cYo.Projects.ComicRack.Engine
 			string saved = (!string.IsNullOrEmpty(captionFormat)) ? GetFullTitle(captionFormat) : string.Empty;
 
 			CachedVirtualTags[id] = saved;
-			return saved;
+			return saved; 
 		}
 
 		private void VirtualTagsCollection_TagsRefresh(object sender, EventArgs e)
@@ -2845,18 +2845,21 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public static bool MapPropertyNameToAsText(string propName, out string newName)
 		{
-			if (hasAsText.TryGetValue(propName, out newName))
+			using (ItemMonitor.Lock(hasAsText))
 			{
-				return true;
+				if (hasAsText.TryGetValue(propName, out newName))
+				{
+					return true;
+				}
+				string text = propName + "AsText";
+				if (typeof(ComicBook).GetProperty(text, BindingFlags.IgnoreCase | BindingFlags.Instance | BindingFlags.Public) != null)
+				{
+					propName = text;
+				}
+				hasAsText[propName] = propName;
+				newName = propName;
+				return true; 
 			}
-			string text = propName + "AsText";
-			if (typeof(ComicBook).GetProperty(text, BindingFlags.IgnoreCase | BindingFlags.Instance | BindingFlags.Public) != null)
-			{
-				propName = text;
-			}
-			hasAsText[propName] = propName;
-			newName = propName;
-			return true;
 		}
 
 		public static bool IsDefaultPropertyValue(object value)
