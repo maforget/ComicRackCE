@@ -43,6 +43,9 @@ internal static class PaintDark
         );
     }
 
+    /// <summary>
+    /// Paint disabled Label text.
+    /// </summary>
     internal static void Label(object sender, PaintEventArgs e)
     {
         Label label = sender as Label;
@@ -54,6 +57,10 @@ internal static class PaintDark
         }
     }
 
+    // SOON : Use ControlPaintEx
+    /// <summary>
+    /// Paint ToolStripStatusLabel border
+    /// </summary>
     internal static void ToolStripStatusLabel(object sender, PaintEventArgs e)
     {
         using (var pen = new Pen(DarkColors.ToolStrip.BorderColor, 1))

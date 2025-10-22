@@ -96,10 +96,9 @@ internal partial class DarkControl
             Theme = c => DarkTextBoxBase((TextBox)c)
         },
 
+        // DeviceEditControl TreeView
         [typeof(TreeView)] = new DarkControlDefinition
         {
-            //ForeColor = DarkColors.TreeView.Text,
-            //BackColor = DarkColors.TreeView.Back,
             BorderStyle = BorderStyle.None,
             Theme = c => DarkTreeView((TreeView)c)
         },

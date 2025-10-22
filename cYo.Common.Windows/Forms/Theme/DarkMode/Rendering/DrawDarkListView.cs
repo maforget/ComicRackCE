@@ -7,9 +7,11 @@ namespace cYo.Common.Windows.Forms.Theme.DarkMode.Rendering;
 internal static partial class DrawDarkListView
 {
     /// <summary>
-    /// <para><see cref="ListView.OnDrawColumnHeader(DrawListViewColumnHeaderEventArgs)"/> method to handle dark <see cref="ColumnHeader"/> text on dark background.</para>
-    /// <para><c>DrawDefault</c> is executed unless <see cref="IsDarkModeEnabled"/> is <paramref name="true"/> and <see cref="ListView.View"/> is set to <see cref="View.Details"/></para>
+    /// Custom <see cref="DrawListViewColumnHeaderEventHandler"/>. Draws light <see cref="System.Windows.Forms.ColumnHeader"/> text on dark background.
     /// </summary>
+    /// <remarks>
+    /// <c>DrawDefault</c> is executed unless <see cref="ListView.View"/> is set to <see cref="View.Details"/>
+    /// </remarks>
     internal static void ColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
     {
         if ((sender as ListView)?.View != View.Details)

@@ -98,14 +98,10 @@ internal partial class DarkControl
 
     private static void DarkTextBoxBase(TextBoxBase textBox)
     {
-        // TextBoxEx did not like BorderStyle being set 
-        // RichTextBox FixedSingle = FixedTripleExtraChunkyDeluxeEdition
-        //if (!(textBox is TextBoxEx) && !(textBox is RichTextBox))
-            //textBox.BorderStyle = BorderStyle.FixedSingle;
-
         DarkEventHandlers.TextBox_Mouse(textBox);
     }
 
+    // HACK : TreeView backColor is set in about 5 different places
     private static void DarkTreeView(TreeView treeView)
     {
         // DeviceEditControl TreeView
