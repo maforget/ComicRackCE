@@ -433,7 +433,7 @@ namespace cYo.Projects.ComicRack.Engine
 							return false;
 
 						// If the target path is the same as the source file, we assume it's not a duplicate
-						return targetPath != sourceFile && DatabaseManager.Database.Books.FindItemByFile(targetPath) != null;
+						return !targetPath.Equals(sourceFile, StringComparison.OrdinalIgnoreCase) && DatabaseManager.Database.Books.FindItemByFile(targetPath) != null;
 					};
 
 					outPath = comicExporter.Export(CacheManager.ImagePool);
