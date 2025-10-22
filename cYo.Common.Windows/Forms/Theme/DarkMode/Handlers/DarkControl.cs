@@ -20,6 +20,7 @@ internal partial class DarkControl
 
     private static void DarkCheckBox(CheckBox checkBox)
     {
+        checkBox.Paint -= PaintDark.CheckBox;
         checkBox.Paint += PaintDark.CheckBox;
         if (checkBox.Appearance == Appearance.Button)
             DarkButtonBase(checkBox);
@@ -48,6 +49,7 @@ internal partial class DarkControl
 
     private static void DarkLabel(Label label)
     {
+        label.Paint -= PaintDark.Label;
         label.Paint += PaintDark.Label;
     }
 
