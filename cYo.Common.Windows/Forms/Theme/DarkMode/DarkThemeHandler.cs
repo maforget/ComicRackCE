@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms.Theme.DarkMode;
 
+/// <summary>
+/// Handles applying Dark Mode theming to <see cref="Control"/>.
+/// </summary>
 internal class DarkThemeHandler : IThemeHandler
 {
     /// <summary>
     /// Contains custom steps required to apply Dark Mode for a given <see cref="Control"/> <see cref="Type"/>, where required.
     /// </summary>
-    /// <remarks>
-    /// Default Dark Mode is applied to Control Types when are not listed here. 
-    /// </remarks>
     private static Dictionary<Type, DarkControlDefinition> DarkControlTable => DarkControl.DefinitionTable;
 
     /// <summary>
@@ -63,7 +63,8 @@ internal class DarkThemeHandler : IThemeHandler
 		control.WhenHandleCreated(dark.UXTheme);
 	}
 
-	private void TrySetValue<T>(T? value, Action<T> action) where T : struct
+    #region Helpers
+    private void TrySetValue<T>(T? value, Action<T> action) where T : struct
 	{
 		if (value is null)
 			return;
@@ -81,16 +82,5 @@ internal class DarkThemeHandler : IThemeHandler
 
 	private static void SafeSet(Action action) { try { action(); } catch { } }
     private static void SafeSet(Action action, bool shouldSet) { if (shouldSet) { try { action(); } catch { } } }
-
-    #region unused
-
-    //private static Color GetSystemColor(Color color)
-    //        => KnownColorTableEx.GetSystemColor(color.ToKnownColor());
-
-    //internal static void TryReplaceBackColor(Control control, Color backColor)
-    //    => SafeSet(() => control.BackColor = backColor, true);
-
-    //internal static void TryReplaceForeColor(Control control, Color foreColor)
-    //    => SafeSet(() => control.ForeColor = foreColor);
     #endregion
 }

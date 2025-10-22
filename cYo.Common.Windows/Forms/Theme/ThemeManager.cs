@@ -9,8 +9,8 @@ namespace cYo.Common.Windows.Forms.Theme;
 public class ThemeManager
 {
     /// <summary>
-    /// <para>Indicates whether Dark Mode has been <b>enabled</b>. Set on initialization and referenced in all public non-initialization <see cref="ThemeExtensions"/> calls.</para>
-    /// <para>Also serves as a <b>global reference</b> for other classes.</para>
+    /// Indicates whether Dark Mode has been enabled based on the current <see cref="Themes"/>.<br/>
+    /// This is used to indicate to Plugins
     /// </summary>
     /// <remarks>
     /// This is intended to mirror the <c>Application.IsDarkModeEnabled</c> which is available in .NET 9+.
@@ -20,28 +20,22 @@ public class ThemeManager
     private static bool IsThemed { get; set; } = false;
 
     /// <summary>
-    /// Sets <see cref="IsDarkModeEnabled"/>. If <paramref name="useDarkMode"/> is <c>true</c>, initializes <see cref="KnownColorTableEx"/> which replaces built-in <see cref="System.Drawing.SystemColors"/> with Dark Mode colors.
+    /// Initializes the required <see cref="Theme"/> components and sets <see cref="IsDarkModeEnabled"/> and <see cref="IsThemed"/>
+    /// based on the <paramref name="theme"/>.<br/>
     /// </summary>
-    /// <param name="useDarkMode">Determines if the Dark Mode theme should be used (and <see cref="System.Drawing.SystemColors"/> replaced).</param>
-    /// <remarks>
-    /// If <see cref="IsDarkModeEnabled"/> is set to false, all calls to other <see cref="ThemeExtensions"/> functions will immediately return.
-    /// </remarks>
+    /// <param name="theme">Current theme.</param>
     public static void Initialize(Themes theme)
     {
         // TODO: add a way for a theme to indicate whether it is a Light or Dark Color Mode theme
-        IsDarkModeEnabled = theme == Themes.Dark;
+        IsDarkModeEnabled = InitializeDarkMode(theme);
         IsThemed = ThemeFactory(theme);
-
-        if (IsDarkModeEnabled)
-        {
-            ThemeHandler.Register<DarkMode.DarkThemeHandler>();
-            KnownColorTableEx darkColorTable = new KnownColorTableEx();
-            darkColorTable.Initialize(IsDarkModeEnabled);
-            darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb());
-            UXTheme.Initialize();
-        }
     }
 
+    /// <summary>
+    /// Calls <see cref="ThemeColors.Register"/> to register <see cref="ThemeColorTable"/> based on the value of <paramref name="theme"/>.
+    /// </summary>
+    /// <param name="theme">Current theme.</param>
+    /// <returns><paramref name="true"/> if <paramref name="theme"/> is not <see cref="Themes.Default"/></returns>
     // Returns if a theme other than default is being applied
     private static bool ThemeFactory(Themes theme)
     {
@@ -55,5 +49,41 @@ public class ThemeManager
                 ThemeColors.Register<ThemeColorTable>();
                 return false;
         };
+    }
+
+    /// <summary>
+    /// Initializes Dark Mode if <paramref name="theme"/> is a Dark Mode theme.
+    /// </summary>
+    /// <remarks>
+    /// <b>Dark Mode Initialization</b>
+    /// <list type="bullet">
+    ///     <item>
+    ///         <term><see cref="ThemeHandler.Register"/></term>
+    ///         <description>Register Dark Mode Theme Handler that will handle <see cref="System.Windows.Forms.Control"/> theming.</description>
+    ///     </item>
+    ///     <item>
+    ///         <term><see cref="KnownColorTableEx.Initialize"/></term>
+    ///         <description>Replaces <see cref="System.Drawing.SystemColors"/> with <see cref="SystemColorsEx"/></description>
+    ///     </item>
+    ///     <item>
+    ///         <term><see cref="UXTheme.Initialize"/></term>
+    ///         <description>Determines if the host Windows OS Theme Engine supports Dark Mode and sets related attributes.</description>
+    ///     </item>
+    /// </list>
+    /// </remarks>
+    /// <param name="theme">Current theme.</param>
+    /// <returns><paramref name="true"/> if <paramref name="theme"/> is a Dark Mode theme.</returns>
+    private static bool InitializeDarkMode(Themes theme)
+    {
+        if (theme == Themes.Dark)
+        {
+            ThemeHandler.Register<DarkMode.DarkThemeHandler>();
+            KnownColorTableEx darkColorTable = new KnownColorTableEx();
+            darkColorTable.Initialize(true);
+            darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb());
+            UXTheme.Initialize();
+            return true;
+        }
+        return false;
     }
 }
