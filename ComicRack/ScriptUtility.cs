@@ -216,6 +216,7 @@ namespace cYo.Projects.ComicRack.Viewer
 					{
 						try
 						{
+							//TODO: Add a way to disable ReplaceWebColors if the plugin supports theme and doesn't need you to replace the colors
 							return (command.Invoke([b]) as string)?.ReplaceWebColors();
 						}
 						catch (Exception ex)
