@@ -2847,15 +2847,13 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 			using (ItemMonitor.Lock(hasAsText))
 			{
-				if (hasAsText.TryGetValue(propName, out newName))
-				{
-					return true;
-				}
 				string text = propName + "AsText";
+				if (hasAsText.TryGetValue(text, out newName) || hasAsText.TryGetValue(propName, out newName))
+					return true;
+
 				if (typeof(ComicBook).GetProperty(text, BindingFlags.IgnoreCase | BindingFlags.Instance | BindingFlags.Public) != null)
-				{
 					propName = text;
-				}
+
 				hasAsText[propName] = propName;
 				newName = propName;
 				return true; 
