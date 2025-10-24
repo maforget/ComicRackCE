@@ -4,7 +4,6 @@ using cYo.Common.Windows.Forms.Theme.Internal;
 using cYo.Common.Windows.Forms.Theme.Resources;
 using System;
 using System.Drawing;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -52,6 +51,19 @@ public static class ThemeExtensions
 			darkModeAction();
 		else
 			defaultAction();
+	}
+
+	/// <summary>
+	/// Runs one of two provided <see cref="Func{TResult}"/> depending on whether <see cref="ThemeManager.IsDarkModeEnabled"/> is <paramref name="true"/> or <paramref name="false"/>.
+	/// </summary>
+	/// <param name="defaultFunc"><see cref="Func{TResult}"/> to run when <see cref="ThemeManager.IsDarkModeEnabled"/> is <paramref name="false"/></param>
+	/// <param name="darkModeFunc"><see cref="Func{TResult}"/> to run when <see cref="ThemeManager.IsDarkModeEnabled"/> is <paramref name="true"/> </param>
+	public static TResult InvokeFunc<TResult>(Func<TResult> defaultFunc, Func<TResult> darkModeFunc)
+	{
+		if (ThemeManager.IsDarkModeEnabled)
+			return darkModeFunc();
+		else
+			return defaultFunc();
 	}
 
     /// <summary>
@@ -174,29 +186,21 @@ public static class ThemeExtensions
 
 	public static void DrawTabItem(Graphics g, Rectangle rect, TabItemState tabItemState, bool buttonMode)
 		=> InvokeAction(() => DarkThemeExtensions.DrawTabItem(g, rect, tabItemState, buttonMode));
-    #endregion
+	#endregion
 
-    // REVIEW: could these be wrapped in a Func<T,TResult> delegate, similar to InvokeAction?
-    // This would allow us to move the implementation to DarkMode.DarkThemeExtensions, where it should be.
-    #region Other Extensions
-    public static string ReplaceWebColors(this string webPage)
-	{
-		Regex rxWebBody = new Regex(@"<body(?=[^>]*)([^>]*?)\bstyle=""([^""]*)""([^>]*)>|<body([^>]*)>", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        string rxWebBodyReplace = "<body$1 style=\"$2background-color:#383838;color:#eeeeee;scrollbar-face-color:#4d4d4d;scrollbar-track-color:#171717;scrollbar-shadow-color:#171717;scrollbar-arrow-color:#676767;\"$3>";
-
-        if (ThemeManager.IsDarkModeEnabled)
-			return rxWebBody.Replace(webPage, rxWebBodyReplace);
-		else
-			return webPage;
-	}
+	// Replace ReplaceWebColors & GetTabBarBorderColor
+	#region Other Extensions
+	public static string ReplaceWebColors(this string webPage) 
+		=> InvokeFunc(
+			() => webPage,
+			() => DarkThemeExtensions.ReplaceWebColors(webPage)
+	);
 
 	public static Color GetTabBarBorderColor(this VisualStyleRenderer visualStyleRenderer, ColorProperty colorProperty)
-	{
-		if (ThemeManager.IsDarkModeEnabled)
-			return ThemeColors.TabBar.DefaultBorder;
-		else
-			return visualStyleRenderer.GetColor(colorProperty);
-	}
+		=> InvokeFunc(
+			() => visualStyleRenderer.GetColor(colorProperty),
+			() => ThemeColors.TabBar.DefaultBorder
+	);
 	#endregion
 }
 

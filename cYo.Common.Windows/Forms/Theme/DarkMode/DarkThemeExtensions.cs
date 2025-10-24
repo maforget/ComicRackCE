@@ -1,6 +1,7 @@
 ﻿using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 using cYo.Common.Windows.Forms.Theme.DarkMode.Rendering;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -82,5 +83,16 @@ internal static class DarkThemeExtensions
         internal static void DrawFocusRectangle(DrawItemEventArgs e) => DarkControlPaint.DrawFocusRectangle(e);
         internal static void DrawFocusRectangle(Graphics g, Rectangle rect) => DarkControlPaint.DrawFocusRectangle(g, rect);
     }
-    #endregion
+	#endregion
+
+	#region Other
+    // Modifies an HTML page to add a style attribute to the body that will replace colors for a dark mode
+	internal static string ReplaceWebColors(this string webPage)
+	{
+		Regex rxWebBody = new Regex(@"<body(?=[^>]*)([^>]*?)\bstyle=""([^""]*)""([^>]*)>|<body([^>]*)>", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+		string rxWebBodyReplace = "<body$1 style=\"$2background-color:#383838;color:#eeeeee;scrollbar-face-color:#4d4d4d;scrollbar-track-color:#171717;scrollbar-shadow-color:#171717;scrollbar-arrow-color:#676767;\"$3>";
+
+		return rxWebBody.Replace(webPage, rxWebBodyReplace);
+	}
+	#endregion
 }
