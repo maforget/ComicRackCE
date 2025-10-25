@@ -69,7 +69,7 @@ internal class DarkControlDefinition
 		TrySetValue(BackColor, c => control.BackColor = c);
 
 		// Invoke custom Theme handler method if required. This is often due to branching property-value logic, or custom Draw/Paint EventHandlers
-		Theme?.Invoke(control);
+		SafeInvokeTheme(control);
 
 		// Apply UXTheme
 		control.WhenHandleCreated(UXTheme);
@@ -102,6 +102,16 @@ internal class DarkControlDefinition
 
 		SafeSet(() => action(value));
 	}
+
+    private void SafeInvokeTheme(Control control)
+    {
+        if (Theme is null) return;
+
+		if (control?.InvokeRequired == true)
+            control?.Invoke(Theme);
+        else
+			Theme(control);
+    }
 
 	private static void SafeSet(Action action) { try { action(); } catch { } }
 	private static void SafeSet(Action action, bool shouldSet) { if (shouldSet) { try { action(); } catch { } } }
