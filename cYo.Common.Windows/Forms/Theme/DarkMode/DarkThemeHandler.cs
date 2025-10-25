@@ -42,45 +42,6 @@ internal class DarkThemeHandler : IThemeHandler
         if (!TryGetDarkControlDefinition(control.GetType(), out var darkControlDefinition))
             darkControlDefinition = new DarkControlDefinition(control);
 
-        darkControlDefinition.SetColor(control);
-
-        SetDarkMode(control, darkControlDefinition);
-
-        //darkControl.Apply(control);
-        //control.WhenHandleCreated(darkControl.UXTheme); // would be nice if this could live in DarkControlDefinition.Apply
+		darkControlDefinition.Apply(control);
     }
-
-	private void SetDarkMode(Control control, DarkControlDefinition dark)
-	{
-		TrySetValue(dark.BorderStyle, b => control.GetType().GetProperty("BorderStyle")?.SetValue(control, b));
-		TrySetValue(dark.ForeColor, c => control.ForeColor = c);
-		TrySetValue(dark.BackColor, c => control.BackColor = c);
-
-		// Invoke custom Theme handler method if required. This is often due to branching property-value logic, or custom Draw/Paint EventHandlers
-		dark.Theme?.Invoke(control);
-
-		// Apply UXTheme
-		control.WhenHandleCreated(dark.UXTheme);
-	}
-
-    #region Helpers
-    private void TrySetValue<T>(T? value, Action<T> action) where T : struct
-	{
-		if (value is null)
-			return;
-
-		SafeSet(() => action(value.Value));
-	}
-
-	private void TrySetValue<T>(T value, Action<T> action) where T : class
-	{
-		if (value is null)
-			return;
-
-		SafeSet(() => action(value));
-	}
-
-	private static void SafeSet(Action action) { try { action(); } catch { } }
-    private static void SafeSet(Action action, bool shouldSet) { if (shouldSet) { try { action(); } catch { } } }
-    #endregion
 }
