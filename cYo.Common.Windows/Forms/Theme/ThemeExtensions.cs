@@ -72,10 +72,13 @@ public static class ThemeExtensions
     /// </summary>
     internal static void WhenHandleCreated(this Control control, Action<Control> handleCreatedAction)
 	{
+		if (handleCreatedAction is null) 
+			return;
+
 		if (control.IsHandleCreated)
 		{
             handleCreatedAction(control);
-			return; // REVIEW : should we be subscribing anyway instead of returning, in case handle is re-created?
+			return; // REVIEW : should we be subscribing anyway instead of returning, in case handle is re-created? I don't think it is required?
 		}
 
 		EventHandler handler = null!;
@@ -85,7 +88,7 @@ public static class ThemeExtensions
             handleCreatedAction(s as Control);
 		};
 		control.HandleCreated += handler;
-		// REVIEW : do we need to do anything on HandleDestroyed?
+		// REVIEW : do we need to do anything on HandleDestroyed? I don't believe so, unless we remove the top return, then we should use SafeSubscribe instead to handle cleanup
 	}
 
 	// Generally, Dark Mode instance theming
