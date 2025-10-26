@@ -118,6 +118,21 @@ internal class DarkColors
         public static readonly Color Content = SystemColors.Control;                         // RGB 32 HEX 20 : MainViewItemView + CollapsibleGroupBox + background  
     }
 
+    public static Color GetUIComponentColor(Theme.UIComponent component)
+    {
+        switch (component)
+        {
+            case Theme.UIComponent.SidePanel:
+                return UIComponent.SidePanel;
+            case Theme.UIComponent.Content:
+                return UIComponent.Content;
+            case Theme.UIComponent.Window:
+                return UIComponent.Window;
+            default:
+                return Color.Empty; // Theme.UIComponent.None or null, if that's a possibility
+        }
+    }
+
     //// ComicBookDialog
     //public Color ComicBookLink => Color.LightBlue;
     ////public Color ComicBookVisitedLink => Color.MediumOrchid;

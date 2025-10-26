@@ -4,7 +4,6 @@ using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 using cYo.Common.Windows.Forms.Theme.Internal;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -25,12 +24,27 @@ internal class DarkThemeHandler : IThemeHandler
     /// </summary>
     private static bool TryGetDarkControlDefinition(Type controlType, out DarkControlDefinition controlDefinition)
     {
-		controlDefinition = DarkControlTable.FirstOrDefault(x => x.Key.IsAssignableFrom(controlType)).Value;
+        if (DarkControlTable.TryGetValue(controlType, out controlDefinition))
+            return true;
+        else
+            controlDefinition = DarkControlTable.FirstOrDefault(definition => controlType.IsSubclassOf(definition.Key)).Value;
         return controlDefinition != null;
-        //if (DarkControlTable.TryGetValue(controlType, out controlDefinition))
-        //    return true;
-        //else
-        //    return DarkControlTable.TryGetValue(controlType.BaseType, out controlDefinition);
+    }
+
+    private static bool TryGetDarkCustomControlDefinition(Control control, out DarkControlDefinition customDefinition)
+    {
+        if (typeof(IThemeCustom).IsAssignableFrom(control.GetType()))
+        {
+            IThemeCustom customControl = (IThemeCustom)control;
+            if (customControl.ControlDefinition != null || customControl.UIComponent != UIComponent.None)
+            {
+                customDefinition = new DarkControlDefinition(customControl.ControlDefinition, customControl.UIComponent);
+                return true;
+            }
+        }
+
+        customDefinition = null;
+        return false;
     }
 
     /// <summary>
@@ -38,19 +52,25 @@ internal class DarkThemeHandler : IThemeHandler
     /// </summary>
     public void Handle(Control control)
     {
-        // Get a custom DarkControlDefinition if one exists; fallback to default DarkControlDefinition if it doesn't
-        if (!TryGetDarkControlDefinition(control.GetType(), out var darkControlDefinition))
-            darkControlDefinition = new DarkControlDefinition(control);
+        // Get a custom ThemeDefinition if one exists. 
+        if (TryGetDarkCustomControlDefinition(control, out var darkControlDefinition)) 
+            ; // do nothing
+        // Get a Dark Mode DarkControlDefinition if one exists. 
+        else if (TryGetDarkControlDefinition(control.GetType(), out darkControlDefinition)) 
+            darkControlDefinition.SetColor(control);
+        // Fall back to default DarkControlDefinition
+        else
+            darkControlDefinition = new DarkControlDefinition(control); 
 
-        darkControlDefinition.SetColor(control);
-
-        SetDarkMode(control, darkControlDefinition);
-
-        //darkControl.Apply(control);
-        //control.WhenHandleCreated(darkControl.UXTheme); // would be nice if this could live in DarkControlDefinition.Apply
+        SetDarkMode(control, darkControlDefinition!);
     }
 
-	private void SetDarkMode(Control control, DarkControlDefinition dark)
+    /// <summary>
+    /// Set Dark Mode for a <see cref="Control"/> by applying <see cref="DarkControlDefinition"/>.
+    /// </summary>
+    /// <param name="control">Control to set Dark Mode for</param>
+    /// <param name="dark">Definition of how to set Dark Mode for <paramref name="control"/></param>
+    private void SetDarkMode(Control control, DarkControlDefinition dark)
 	{
 		TrySetValue(dark.BorderStyle, b => control.GetType().GetProperty("BorderStyle")?.SetValue(control, b));
 		TrySetValue(dark.ForeColor, c => control.ForeColor = c);
@@ -65,22 +85,12 @@ internal class DarkThemeHandler : IThemeHandler
 
     #region Helpers
     private void TrySetValue<T>(T? value, Action<T> action) where T : struct
-	{
-		if (value is null)
-			return;
-
-		SafeSet(() => action(value.Value));
-	}
+        => SafeSet(() => action(value.Value), value is not null);
 
 	private void TrySetValue<T>(T value, Action<T> action) where T : class
-	{
-		if (value is null)
-			return;
+        => SafeSet(() => action(value), value is not null);
 
-		SafeSet(() => action(value));
-	}
-
-	private static void SafeSet(Action action) { try { action(); } catch { } }
+    private static void SafeSet(Action action) { try { action(); } catch { } }
     private static void SafeSet(Action action, bool shouldSet) { if (shouldSet) { try { action(); } catch { } } }
     #endregion
 }

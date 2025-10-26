@@ -2,6 +2,7 @@
 using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms.Theme.DarkMode.Handlers;
@@ -67,6 +68,12 @@ internal partial class DarkControl
             UXTheme = c => DarkUXListView((ListView)c) //SetListViewUXTheme((ListView)c)
         },
 
+        // RatingControl lives in ComicRack.Engine which is inaccessible
+        //[typeof(RatingControl)] = new DarkControlDefinition
+        //{
+        //    BackColor = DarkColors.RatingControl.Back
+        //},
+
         [typeof(RichTextBox)] = new DarkControlDefinition
         {
             BackColor = DarkColors.TextBox.Back,
@@ -105,8 +112,8 @@ internal partial class DarkControl
 
         [typeof(ProgressBar)] = new DarkControlDefinition
         {
-			BackColor = DarkColors.TextBox.Back,
-		},
+            BackColor = DarkColors.TextBox.Back,
+        },
     };
 }
 
