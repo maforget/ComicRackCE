@@ -88,7 +88,7 @@ internal static partial class DrawDarkListView
 
 				Size glyphSize = CheckBoxRenderer.GetGlyphSize(e.Graphics, state); // Should be DPI-aware
 				Size checkSize = checkImageList is not null ? checkImageList.ImageSize : glyphSize;
-				int checkY = bounds.Top + (bounds.Height - glyphSize.Height) / 2;
+				int checkY = bounds.Top + (bounds.Height - checkSize.Height) / 2;
 				int checkX = bounds.Left + leftPad;
 				leftPad = checkX + checkSize.Width + 4; // padding space for checkbox, don't move textRect.X because leftPad takes care of it on it's own
 
