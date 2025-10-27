@@ -4,7 +4,6 @@ using cYo.Common.Windows.Forms.Theme.Internal;
 using cYo.Common.Windows.Forms.Theme.Resources;
 using System;
 using System.Drawing;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -60,9 +59,22 @@ public static class ThemeExtensions
 			defaultAction();
 	}
 
+	/// <summary>
+	/// Runs one of two provided <see cref="Func{TResult}"/> depending on whether <see cref="ThemeManager.IsDarkModeEnabled"/> is <paramref name="true"/> or <paramref name="false"/>.
+	/// </summary>
+	/// <param name="defaultFunc"><see cref="Func{TResult}"/> to run when <see cref="ThemeManager.IsDarkModeEnabled"/> is <paramref name="false"/></param>
+	/// <param name="darkModeFunc"><see cref="Func{TResult}"/> to run when <see cref="ThemeManager.IsDarkModeEnabled"/> is <paramref name="true"/> </param>
+	public static TResult InvokeFunc<TResult>(Func<TResult> defaultFunc, Func<TResult> darkModeFunc)
+	{
+		if (ThemeManager.IsDarkModeEnabled)
+			return darkModeFunc();
+		else
+			return defaultFunc();
+	}
+
     /// <summary>
-    /// Invokes <see cref="Action{Control}"/> if <see cref="Control.IsHandleCreated"/>, and subscribes to
-    /// <see cref="Control.OnHandleCreated(EventArgs)"/> otherwise.
+	/// Invokes <see cref="Action{Control}"/> if <see cref="Control.IsHandleCreated"/>, and subscribes to
+	/// <see cref="Control.OnHandleCreated(EventArgs)"/> otherwise.
     /// </summary>
     internal static void WhenHandleCreated(this Control control, Action<Control> handleCreatedAction)
 	{
@@ -72,7 +84,7 @@ public static class ThemeExtensions
 		if (control.IsHandleCreated)
 		{
             handleCreatedAction(control);
-			return; // REVIEW : should we be subscribing anyway instead of returning, in case handle is re-created?
+			return;
 		}
 
 		EventHandler handler = null!;
@@ -82,7 +94,6 @@ public static class ThemeExtensions
             handleCreatedAction(s as Control);
 		};
 		control.HandleCreated += handler;
-		// REVIEW : do we need to do anything on HandleDestroyed?
 	}
 
     // Generally, Dark Mode instance theming
@@ -93,8 +104,6 @@ public static class ThemeExtensions
     /// <remarks>
     /// This cannot be applied on the <see cref="System.Type"/> as it only applies to specific instances.
     /// </remarks>
-    // REVIEW : should these be kept as dedicated functions or the underlying SetUIComponentColor exposed?
-    // REVIEW : this should probably be generic Theme functionality, not Dark Mode specific
     public static void SetSidePanelColor(this Control control)
 		=> InvokeAction(() => DarkThemeExtensions.SetUIComponentColor(control, UIComponent.SidePanel));
 
@@ -197,31 +206,22 @@ public static class ThemeExtensions
 
 	public static void DrawTabItem(Graphics g, Rectangle rect, TabItemState tabItemState, bool buttonMode)
 		=> InvokeAction(() => DarkThemeExtensions.DrawTabItem(g, rect, tabItemState, buttonMode));
-    #endregion
+	#endregion
 
-    // REVIEW: could these be wrapped in a Func<T,TResult> delegate, similar to InvokeAction?
-    // This would allow us to move the implementation to DarkMode.DarkThemeExtensions, where it should be.
-    #region Other Extensions
-    public static string ReplaceWebColors(this string webPage)
-	{
-        //TODO: Add a way to disable the replace if the plugin supports theme and doesn't need you to replace the colors
-		Regex rxWebBody = new Regex(@"<body(?=[^>]*)([^>]*?)\bstyle=""([^""]*)""([^>]*)>|<body([^>]*)>", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        string rxWebBodyReplace = "<body$1 style=\"$2background-color:#383838;color:#eeeeee;scrollbar-face-color:#4d4d4d;scrollbar-track-color:#171717;scrollbar-shadow-color:#171717;scrollbar-arrow-color:#676767;\"$3>";
-
-        if (ThemeManager.IsDarkModeEnabled)
-			return rxWebBody.Replace(webPage, rxWebBodyReplace);
-		else
-			return webPage;
-    }
+	// Replace ReplaceWebColors & GetTabBarBorderColor
+	#region Other Extensions
+	public static string ReplaceWebColors(this string webPage) 
+		=> InvokeFunc(
+			() => webPage,
+			() => DarkThemeExtensions.ReplaceWebColors(webPage)
+	);
 
 	public static Color GetTabBarBorderColor(this VisualStyleRenderer visualStyleRenderer, ColorProperty colorProperty)
-    {
-		if (ThemeManager.IsDarkModeEnabled)
-			return ThemeColors.TabBar.DefaultBorder;
-		else
-			return visualStyleRenderer.GetColor(colorProperty);
-    }
-    #endregion
+		=> InvokeFunc(
+			() => visualStyleRenderer.GetColor(colorProperty),
+			() => ThemeColors.TabBar.DefaultBorder
+	);
+	#endregion
 }
 
 /// <summary>

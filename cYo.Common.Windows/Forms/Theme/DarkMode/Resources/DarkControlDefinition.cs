@@ -54,7 +54,6 @@ internal class DarkControlDefinition : ThemeControlDefinition
     public DarkControlDefinition(Control control)
     {
         SetColor(control);
-        // REVIEW : should a default BorderStyle be checked/set? 
     }
 
     public void SetColor(Control control)

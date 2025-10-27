@@ -52,17 +52,18 @@ internal class DarkThemeHandler : IThemeHandler
     /// </summary>
     public void Handle(Control control)
     {
-        // Get a custom ThemeDefinition if one exists. 
-        if (TryGetDarkCustomControlDefinition(control, out var darkControlDefinition)) 
-            ; // do nothing
-        // Get a Dark Mode DarkControlDefinition if one exists. 
-        else if (TryGetDarkControlDefinition(control.GetType(), out darkControlDefinition)) 
-            darkControlDefinition.SetColor(control);
-        // Fall back to default DarkControlDefinition
-        else
-            darkControlDefinition = new DarkControlDefinition(control); 
+		// Get a custom ThemeDefinition if one exists. 
+		if (!TryGetDarkCustomControlDefinition(control, out var darkControlDefinition))
+		{
+		    // Get a Dark Mode DarkControlDefinition if one exists. 
+			if (TryGetDarkControlDefinition(control.GetType(), out darkControlDefinition))
+				darkControlDefinition.SetColor(control);
+			// Fall back to default DarkControlDefinition
+			else
+				darkControlDefinition = new DarkControlDefinition(control);
+		}
 
-        SetDarkMode(control, darkControlDefinition!);
+		SetDarkMode(control, darkControlDefinition!);
     }
 
     /// <summary>

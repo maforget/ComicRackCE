@@ -291,9 +291,9 @@ namespace cYo.Common.Windows.Forms
             e.DrawThemeBackground();
 			//e.DrawFocusRectangle();
 			//e.DrawThemeBackground();
-            e.DrawThemeFocusRectangle(); // override SelectedText highlighting
+			e.DrawThemeFocusRectangle(); // override SelectedText highlighting
 
-            using (Brush brush = new SolidBrush(e.ForeColor))
+			using (Brush brush = new SolidBrush(e.ForeColor))
 			{
 				Rectangle rectangle = e.Bounds;
 				if (flag2)

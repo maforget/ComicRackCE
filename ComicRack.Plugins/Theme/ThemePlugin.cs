@@ -9,7 +9,7 @@ using cYo.Common.Windows.Forms.Theme;
 
 namespace cYo.Projects.ComicRack.Plugins.Theme
 {
-	public class ThemePlugin : IThemePlugin, ITheme
+	public class ThemePlugin : IThemePlugin
 	{
 		private static ThemePlugin instance;
 		public static ThemePlugin Default => instance ??= new ThemePlugin();
