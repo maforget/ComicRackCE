@@ -80,7 +80,7 @@ internal class DarkColors
 
     internal static class RatingControl
     {
-        public static readonly Color Back = DarkColors.ListBox.Back;
+        public static readonly Color Back = Common.ListBack;
         public static readonly Color Rated = SystemColors.ControlText;
         public static readonly Color Unrated = SystemColors.GrayText;
     }
