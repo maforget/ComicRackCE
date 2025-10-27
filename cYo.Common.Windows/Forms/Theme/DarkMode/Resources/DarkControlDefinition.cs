@@ -1,4 +1,4 @@
-﻿using cYo.Common.Drawing.ExtendedColors;
+﻿using cYo.Common.Windows.Forms.Theme.Resources;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -8,25 +8,40 @@ namespace cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 /// <summary>
 /// Used to define what is required to turn a <see cref="Control"/> into a Dark Mode Control.
 /// </summary>
-internal class DarkControlDefinition
+internal class DarkControlDefinition : ThemeControlDefinition
 {
-    public Color? ForeColor { get; set; }
-    public Color? BackColor { get; set; }
-    public BorderStyle? BorderStyle { get; set; }
-    public Action<Control> Theme { get; set; }
-    public Action<Control> UXTheme { get; set; } = control => Win32.UXTheme.SetControlTheme(control.Handle); //Handlers.SetControlUXTheme(control);
+    // TODO : add at least Paint EventHandler methods
+    public Action<Control> UXTheme { get; set; } = control => Win32.UXTheme.SetControlTheme(control.Handle);
 
+    /// <summary>
+    /// Empty constructor for use in <see cref="Handlers.DarkControl.DefinitionTable"/>.
+    /// </summary>
     public DarkControlDefinition()
     {
     }
 
-    public DarkControlDefinition(DarkControlDefinition darkControlDefinition)
+    public DarkControlDefinition(DarkControlDefinition definition)
     {
-        ForeColor = darkControlDefinition.ForeColor;
-        BackColor = darkControlDefinition.BackColor;
-        BorderStyle = darkControlDefinition.BorderStyle;
-        Theme = darkControlDefinition.Theme;
-        UXTheme = darkControlDefinition.UXTheme;
+        ForeColor = definition.ForeColor;
+        BackColor = definition.BackColor;
+        BorderStyle = definition.BorderStyle;
+        Theme = definition.Theme;
+        UXTheme = definition.UXTheme;
+    }
+
+    public DarkControlDefinition(ThemeControlDefinition definition)
+        : this(definition, UIComponent.None)
+    {
+    }
+
+    public DarkControlDefinition(ThemeControlDefinition definition, UIComponent component)
+        : base(definition)
+    {
+        if (!definition.AllowUXTheme)
+            UXTheme = null;
+
+        if (component != UIComponent.None)
+            BackColor = DarkColors.GetUIComponentColor(component);
     }
 
     /// <summary>
@@ -38,8 +53,8 @@ internal class DarkControlDefinition
     /// </remarks>
     public DarkControlDefinition(Control control)
     {
-        //if (TryGetDarkControlDefinition(control.GetType(), out var darkControl))
         SetColor(control);
+        // REVIEW : should a default BorderStyle be checked/set? 
     }
 
     public void SetColor(Control control)
@@ -53,67 +68,4 @@ internal class DarkControlDefinition
         if (!BackColor.HasValue && TryGetSystemColor(control.BackColor, out systemBackColor))
             BackColor = systemBackColor;
     }
-
-    /// <summary>
-    /// Apply the current <see cref="DarkControlDefinition"/> to <paramref name="control"/>
-    /// </summary>
-    /// <param name="control">Control to apply Dark Mode to.</param>
-    public void Apply(Control control)
-    {
-        // Set the Dark variant of SystemColors based on the Control existing Color. Only applies if the Definition doesn't providde a BackColor or ForeColor
-		SetColor(control);
-
-		// Set BorderStyle, ForeColor, BackColor
-		TrySetValue(BorderStyle, b => control.GetType().GetProperty("BorderStyle")?.SetValue(control, b));
-		TrySetValue(ForeColor, c => control.ForeColor = c);
-		TrySetValue(BackColor, c => control.BackColor = c);
-
-		// Invoke custom Theme handler method if required. This is often due to branching property-value logic, or custom Draw/Paint EventHandlers
-		SafeInvokeTheme(control);
-
-		// Apply UXTheme
-		control.WhenHandleCreated(UXTheme);
-	}
-
-    #region Helpers
-    private static bool TryGetSystemColor(Color color, out Color systemColor)
-    {
-        if (color.IsSystemColor)
-        {
-            systemColor = KnownColorTableEx.GetSystemColor(color.ToKnownColor());
-            return true;
-        }
-        systemColor = Color.Empty;
-        return false;
-    }
-
-	private static void TrySetValue<T>(T? value, Action<T> action) where T : struct
-	{
-		if (value is null)
-			return;
-
-		SafeSet(() => action(value.Value));
-	}
-
-	private static void TrySetValue<T>(T value, Action<T> action) where T : class
-	{
-		if (value is null)
-			return;
-
-		SafeSet(() => action(value));
-	}
-
-    private void SafeInvokeTheme(Control control)
-    {
-        if (Theme is null) return;
-
-		if (control?.InvokeRequired == true)
-            control?.Invoke(Theme);
-        else
-			Theme(control);
-    }
-
-	private static void SafeSet(Action action) { try { action(); } catch { } }
-	private static void SafeSet(Action action, bool shouldSet) { if (shouldSet) { try { action(); } catch { } } }
-	#endregion
 }

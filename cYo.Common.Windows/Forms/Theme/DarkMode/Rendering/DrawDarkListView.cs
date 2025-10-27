@@ -82,7 +82,8 @@ internal static partial class DrawDarkListView
             int leftPad = 4;
             if (listView.CheckBoxes)
             {
-                int checkBoxWidth = checkImageList.ImageSize.Width;
+                // TODO : verify 14 is the correct checkbox size (at a glance looks to be)
+                int checkBoxWidth = checkImageList is null ? FormUtility.ScaleDpiX(14) : checkImageList.ImageSize.Width;
                 leftPad += checkBoxWidth;
                 textRect.X += leftPad;
             }

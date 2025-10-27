@@ -1,5 +1,5 @@
-﻿using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
-using cYo.Common.Windows.Forms.Theme.DarkMode.Rendering;
+﻿using cYo.Common.Windows.Forms.Theme.DarkMode.Rendering;
+using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -14,21 +14,22 @@ namespace cYo.Common.Windows.Forms.Theme.DarkMode;
 /// Provides extended Dark Mode-related functionality for use outside of the <see cref="Theme.DarkMode"/> namespace.
 /// </summary>
 /// <remarks>
-/// Methods generally extend <see cref="Control"/> or forward delegates to <see cref="DrawDark"/>/<see cref="DarkControlPaint"/>
+/// Methods generally extend <see cref="Control"/> or forward delegates to <see cref="DrawDark"/>/<see cref="GraphicsExtensions"/>
 /// </remarks>
 internal static class DarkThemeExtensions
 {
     #region Control Extensions
-    // Provide a way to color controls based on their UI "role" as oppose to their Type. Currently only provides SidePanel method as that's what is needed.
-    // TODO: Expand so that other UIComponent colors are available for Plugins
-    #region Set UIComponent Color
-    internal static void SetSidePanelColor(this Control control)
+    // Provide a way to color controls based on their UI "role" as oppose to their Type
+    internal static void SetUIComponentColor(this Control control, UIComponent component)
     {
-        control.BackColor = DarkColors.UIComponent.SidePanel;
-        if (control.GetType() == typeof(TreeView) || control.GetType() == typeof(TreeViewEx))
-            TreeViewEx.SetColor((TreeView)control, DarkColors.UIComponent.SidePanel);
+        Color backColor = DarkColors.GetUIComponentColor(component);
+        if (backColor != Color.Empty)
+        {
+            control.BackColor = backColor;
+            if (control.GetType().IsSubclassOf(typeof(TreeView)))
+                TreeViewEx.SetColor((TreeView)control, backColor);
+        }
     }
-    #endregion
 
     /// <summary>
 	/// Sets <see cref="TreeView.ForeColor"/> and <see cref="TreeView.BackColor"/>.
@@ -37,6 +38,7 @@ internal static class DarkThemeExtensions
     /// This is not done purely via <see cref="Theme.Resources.ThemeColors"/> as additional Win32 method call is required.<br/>
     /// <see cref="DarkControlDefinition"/> is based on <see cref="System.Type"/> and is not suitable for instance-specific settings.
     /// </remarks>
+    // REVIEW : Review why this is required when TreeView base calls SetColor() equivalent
     internal static void SetTreeViewColor(this TreeView treeView)
     {
         treeView.BackColor = DarkColors.TreeView.Back;

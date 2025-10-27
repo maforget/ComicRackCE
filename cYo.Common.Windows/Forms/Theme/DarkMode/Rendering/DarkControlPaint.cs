@@ -22,8 +22,11 @@ internal static class DarkControlPaint
     {
         if ((e.State & DrawItemState.Focus) == DrawItemState.Focus && (e.State & DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect)
         {
+            Rectangle bounds = e.Bounds;
+            bounds.Width--;
+            bounds.Height--;
             //ControlPaint.DrawFocusRectangle(e.Graphics, e.Bounds, e.ForeColor, e.BackColor);
-            ControlPaint.DrawFocusRectangle(e.Graphics, e.Bounds, Color.Red, Color.Cyan);
+            e.Graphics.DrawRectangle(DarkPens.SelectedText.Focus, bounds);
         }
     }
 
@@ -57,8 +60,9 @@ internal static class DarkControlPaint
         //e.Graphics.Clear(backColor); // emulating non-VisualStyleRenderer path for now
         //e.DrawThemeBackground();
         e.DrawBackground();
-        //if (e.State.HasFlag(DrawItemState.Selected)) 
-        //    e.DrawThemeFocusRectangle();
+
+        if (e.State.HasFlag(DrawItemState.Selected) || e.State.HasFlag(DrawItemState.HotLight) || e.State.HasFlag(DrawItemState.Focus))
+            e.Graphics.FillRectangle(DarkBrushes.SelectedText.Highlight, e.Bounds);
     }
 
     internal static void DrawBackground(DrawToolTipEventArgs e)

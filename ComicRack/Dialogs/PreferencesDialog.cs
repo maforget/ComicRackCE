@@ -432,7 +432,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
         private void lbPaths_DrawItem(object sender, DrawItemEventArgs e)
         {
-            e.DrawBackground();
+            e.DrawThemeBackground();
             string s = lbPaths.Items[e.Index] as string;
             using (StringFormat format = new StringFormat
             {

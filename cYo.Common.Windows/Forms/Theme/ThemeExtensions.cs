@@ -21,8 +21,14 @@ public static class ThemeExtensions
 	/// <summary>
 	/// Themes a <see cref="Control"/>, recursively. The specifics are determined by the current <see cref="ThemeHandler"/>.
 	/// </summary>
-	/// <param name="control"><see cref="Control"/> to be themed.</param>
+	/// <param name="control"><see cref="Control"/> to be themed. Child controls will be themed.</param>
 	public static void Theme(this Control control) => ThemeHandler.SetTheme(control, recursive: true);
+
+    /// <summary>
+    /// Themes a <see cref="Control"/>. The specifics are determined by the current <see cref="ThemeHandler"/>.
+    /// </summary>
+    /// <param name="control"><see cref="Control"/> to be themed. Child controls will not be themed.</param>
+    public static void ThemeControl(this Control control) => ThemeHandler.SetTheme(control, recursive: false);
 
     /// <summary>
     /// Runs the provided <see cref="Action"/> only if the Theme isn't <see cref="Themes.Default"/> or if <paramref name="isDefaultAction"/> is false and we are in the <see cref="Themes.Default"/> Theme, then it will always draw.
@@ -72,7 +78,7 @@ public static class ThemeExtensions
     /// </summary>
     internal static void WhenHandleCreated(this Control control, Action<Control> handleCreatedAction)
 	{
-		if (handleCreatedAction is null) 
+		if (handleCreatedAction == null)
 			return;
 
 		if (control.IsHandleCreated)
@@ -91,16 +97,30 @@ public static class ThemeExtensions
 		// REVIEW : do we need to do anything on HandleDestroyed? I don't believe so, unless we remove the top return, then we should use SafeSubscribe instead to handle cleanup
 	}
 
-	// Generally, Dark Mode instance theming
-	#region Control Extensions
-	/// <summary>
-	/// Apply <see cref="ThemeColors.DarkMode.UIComponent.SidePanel"/> <typeparamref name="BackColor"/> to a <see cref="Control"/>.
-	/// </summary>
-	/// <remarks>
-	/// This cannot be applied on the <see cref="System.Type"/> as it only applies to specific instances.
-	/// </remarks>
-	public static void SetSidePanelColor(this Control control)
-		=> InvokeAction(() => DarkThemeExtensions.SetSidePanelColor(control));
+    // Generally, Dark Mode instance theming
+    #region Control Extensions
+    /// <summary>
+    /// Apply <see cref="UIComponent.SidePanel"/> <typeparamref name="BackColor"/> to a <see cref="Control"/>.
+    /// </summary>
+    /// <remarks>
+    /// This cannot be applied on the <see cref="System.Type"/> as it only applies to specific instances.
+    /// </remarks>
+    // REVIEW : should these be kept as dedicated functions or the underlying SetUIComponentColor exposed?
+    // REVIEW : this should probably be generic Theme functionality, not Dark Mode specific
+    public static void SetSidePanelColor(this Control control)
+		=> InvokeAction(() => DarkThemeExtensions.SetUIComponentColor(control, UIComponent.SidePanel));
+
+    /// <summary>
+    /// Apply <see cref="UIComponent.Content"/> <typeparamref name="BackColor"/> to a <see cref="Control"/>.
+    /// </summary>
+    public static void SetContentColor(this Control control)
+        => InvokeAction(() => DarkThemeExtensions.SetUIComponentColor(control, UIComponent.Content));
+
+    /// <summary>
+    /// Apply <see cref="UIComponent.Window"/> <typeparamref name="BackColor"/> to a <see cref="Control"/>.
+    /// </summary>
+    public static void SetWindowColor(this Control control)
+        => InvokeAction(() => DarkThemeExtensions.SetUIComponentColor(control, UIComponent.Window));
 
     /// <summary>
     /// Resizes <see cref="Button"/> pretending to be a <see cref="ComboBox"/> control.
@@ -114,10 +134,10 @@ public static class ThemeExtensions
 	/// </summary>
     public static void SetTreeViewColor(this TreeView treeView)
 		=> InvokeAction(() => DarkThemeExtensions.SetTreeViewColor(treeView));
-	#endregion
+    #endregion
 
-	// Generally, either draw default or draw Dark Mode version
-	#region Drawing Extensions
+    // Generally, either draw default or draw Dark Mode version
+    #region Drawing Extensions
 	public static void DrawThemeFocusRectangle(this DrawItemEventArgs e)
 		=> InvokeAction(
 			() => e.DrawFocusRectangle(),
@@ -137,20 +157,20 @@ public static class ThemeExtensions
     /// </list>
     /// </summary>
     public static void ListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
-		=> InvokeAction(
-			() => e.DrawDefault = true,
-			() => DarkThemeExtensions.ListView_DrawColumnHeader(sender, e)
-		);
+        => InvokeAction(
+            () => e.DrawDefault = true,
+            () => DarkThemeExtensions.ListView_DrawColumnHeader(sender, e)
+        );
 
 	public static void DrawThemeBackground(this VisualStyleRenderer vsr, PaintEventArgs e, Rectangle rect, Color backColor)
-		=> InvokeAction(
+        => InvokeAction(
 			() => vsr.DrawBackground(e.Graphics, rect),
 			() => DarkThemeExtensions.ControlPaint.DrawBackground(e, backColor)
 		);
 
-	public static void DrawThemeBackground(this VisualStyleRenderer vsr, DrawToolTipEventArgs e)
-		=> InvokeAction(
-			() => vsr.DrawBackground(e.Graphics, e.Bounds),
+    public static void DrawThemeBackground(this VisualStyleRenderer vsr, DrawToolTipEventArgs e)
+        => InvokeAction(
+            () => vsr.DrawBackground(e.Graphics, e.Bounds),
 			() => DarkThemeExtensions.ControlPaint.DrawBackground(e)
 		);
 
@@ -166,20 +186,20 @@ public static class ThemeExtensions
 			() => TextRenderer.DrawText(e.Graphics, e.ToolTipText, e.Font, rect, ThemeColors.ToolTip.InfoText)
 		);
 
-	//public static void DrawThemeBackground(this DrawToolTipEventArgs e) => InvokeAction(
-	//    () => e.DrawBackground(),
-	//    () => DarkThemeExtensions.ControlPaint.DrawBackground(e)
-	//);
+    //public static void DrawThemeBackground(this DrawToolTipEventArgs e) => InvokeAction(
+    //    () => e.DrawBackground(),
+    //    () => DarkThemeExtensions.ControlPaint.DrawBackground(e)
+    //);
 
-	public static void DrawThemeBackground(this DrawItemEventArgs e)
-		=> InvokeAction(
-			() => e.DrawBackground(),
+    public static void DrawThemeBackground(this DrawItemEventArgs e)
+        => InvokeAction(
+            () => e.DrawBackground(),
 			() => DarkThemeExtensions.ControlPaint.DrawBackground(e)
 		);
 
-	public static void DrawThemeBorder(this DrawToolTipEventArgs e)
-		=> InvokeAction(
-			() => e.DrawBorder(),
+    public static void DrawThemeBorder(this DrawToolTipEventArgs e)
+        => InvokeAction(
+            () => e.DrawBorder(),
 			() => DarkThemeExtensions.ControlPaint.DrawBorder(e)
 		);
 
