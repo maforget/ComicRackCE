@@ -84,7 +84,7 @@ public static class ThemeExtensions
 		if (control.IsHandleCreated)
 		{
             handleCreatedAction(control);
-			return; // REVIEW : should we be subscribing anyway instead of returning, in case handle is re-created? I don't think it is required?
+			return;
 		}
 
 		EventHandler handler = null!;
@@ -94,7 +94,6 @@ public static class ThemeExtensions
             handleCreatedAction(s as Control);
 		};
 		control.HandleCreated += handler;
-		// REVIEW : do we need to do anything on HandleDestroyed? I don't believe so, unless we remove the top return, then we should use SafeSubscribe instead to handle cleanup
 	}
 
     // Generally, Dark Mode instance theming
@@ -105,8 +104,6 @@ public static class ThemeExtensions
     /// <remarks>
     /// This cannot be applied on the <see cref="System.Type"/> as it only applies to specific instances.
     /// </remarks>
-    // REVIEW : should these be kept as dedicated functions or the underlying SetUIComponentColor exposed?
-    // REVIEW : this should probably be generic Theme functionality, not Dark Mode specific
     public static void SetSidePanelColor(this Control control)
 		=> InvokeAction(() => DarkThemeExtensions.SetUIComponentColor(control, UIComponent.SidePanel));
 

@@ -25,7 +25,7 @@ public class ThemeControlDefinition
         ForeColor = definition.ForeColor;
         BackColor = definition.BackColor;
         BorderStyle = definition.BorderStyle;
-        Theme = definition.Theme; // REVIEW : will this throw if definition.Theme is null?
+        Theme = definition.Theme;
     }
 
     #region Helpers
