@@ -15,7 +15,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		{
 			lv.OwnerDraw = true;
 			lv.DrawItem += DrawItem;
-			lv.DrawColumnHeader += ThemeExtensions.ListView_DrawColumnHeader;
+			lv.DrawColumnHeader += DrawColumnHeader;
 			lv.DrawSubItem += DrawSubItem;
 			lv.MouseMove += MouseMove;
 		}
@@ -51,11 +51,8 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			}
 		}
 
-        // replaced with theme-aware version (ThemeExtensions.ListView_DrawColumnHeader)
-        //private static void DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
-        //{
-        //	e.DrawDefault = true;
-        //}
+		private static void DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+			=> ThemeExtensions.ListView_DrawColumnHeader(sender, e); // handles dark text on dark background in Dark Mode
 
         private static void DrawItem(object sender, DrawListViewItemEventArgs e)
 		{

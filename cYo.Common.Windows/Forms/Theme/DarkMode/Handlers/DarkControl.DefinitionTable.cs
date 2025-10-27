@@ -63,7 +63,7 @@ internal partial class DarkControl
 
         [typeof(ListView)] = new DarkControlDefinition
         {
-            BackColor = DarkColors.TextBox.Back,
+            BackColor = DarkColors.ListBox.Back,
             Theme = c => DarkListView((ListView)c),
             UXTheme = c => DarkUXListView((ListView)c) //SetListViewUXTheme((ListView)c)
         },

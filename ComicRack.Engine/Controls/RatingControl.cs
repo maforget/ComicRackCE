@@ -184,7 +184,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             SetStyle(ControlStyles.ResizeRedraw, value: true);
             SetStyle(ControlStyles.Selectable, value: true);
             SetStyle(ControlStyles.SupportsTransparentBackColor, value: true);
-            BackColor = ThemeColors.RatingControl.Back == Color.Empty ? BackColor : ThemeColors.RatingControl.Back;
+            ThemeExtensions.InvokeAction(() => BackColor = ThemeColors.DarkMode.RatingControl.Back);
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -314,7 +314,12 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             rectangle.Inflate(-2, -2);
             if (drawText)
             {
-                Color color = ((Rating == 0f) ? ThemeColors.RatingControl.Unrated : ThemeColors.RatingControl.Rated == Color.Empty ? ForeColor : ThemeColors.RatingControl.Rated);
+                Color color = ThemeColors.RatingControl.Unrated;
+                if (Rating != 0f)
+                    ThemeExtensions.InvokeAction(
+                        () => color = ForeColor,
+                        () => color = ThemeColors.DarkMode.RatingControl.Rated
+                    );
                 string ratingText = GetRatingText(Rating);
                 Size size = gr.MeasureString(ratingText, Font).ToSize();
                 size.Width += 4;

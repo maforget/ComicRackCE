@@ -67,7 +67,7 @@ internal static class DarkControlPaint
 
     internal static void DrawBackground(DrawToolTipEventArgs e)
     {
-        e.Graphics.FillRectangle(new SolidBrush(ThemeColors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size));
+        e.Graphics.FillRectangle(DarkBrushes.ToolTip.Back, new Rectangle(Point.Empty, e.Bounds.Size));
     }
 
     internal static void DrawBorder(DrawToolTipEventArgs e)

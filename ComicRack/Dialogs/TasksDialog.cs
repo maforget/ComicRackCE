@@ -10,6 +10,7 @@ using cYo.Common.Text;
 using cYo.Common.Threading;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.IO.Network;
 using cYo.Projects.ComicRack.Viewer.Properties;
@@ -325,11 +326,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			}
 		}
 
-        // replaced with theme-aware version (ThemeExtensions.ListView_DrawColumnHeader)
-        //private void lvTasks_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
-        //{
-        //	e.DrawDefault = true;
-        //}
+		private void lvTasks_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+			=> ThemeExtensions.ListView_DrawColumnHeader(sender, e);
+
 
         public static TasksDialog Show(IWin32Window parent, IEnumerable<QueueManager.IPendingTasks> processes, int tab = 0)
 		{

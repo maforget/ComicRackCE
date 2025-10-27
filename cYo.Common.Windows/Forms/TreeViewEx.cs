@@ -138,6 +138,7 @@ namespace cYo.Common.Windows.Forms
         /// <remarks>
         /// If <see cref="ThemeExtensions.IsDarkModeEnabled"/> is <paramref name="true"/> and no <see cref="Color"/> values are passed, will apply default <see cref="ThemeColors.TreeView"/> colors.
         /// </remarks>
+        // REVIEW : Why is this required? TreeView base class ForeColor/BackColor is calling the native method anyway. Might be related to before/after handle creation
         public static void SetColor(TreeView treeView, Color? backColor = null, Color? foreColor = null)
         {
            Native.SetBackColor(treeView.Handle, backColor ?? treeView.BackColor);

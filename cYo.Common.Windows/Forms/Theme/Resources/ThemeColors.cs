@@ -20,10 +20,6 @@ public static class ThemeColors
 		colorTable = new T();
 	}
 
-    // WhiteSmoke is RGB 245 but RGB 10 would be too dark
-    // WhiteSmoke - RGB 245 - DisplayWorkspace Background and PreferencesDialog 
-    public static readonly Color BlackSmoke = Color.FromArgb(48, 48, 48);
-
     // Gainsboro  - RGB 220 - PreferencesDialog label(Navigation|Status|Page|VisiblePart)Overlay
     public static readonly Color Lossboro = SystemColors.ControlDarkDark;
 
@@ -89,8 +85,8 @@ public static class ThemeColors
 
     public static class RatingControl
     {
-        public static Color Back => ColorTable.RatingControlBack;
-        public static Color Rated => ColorTable.RatingControlRated;
+        //public static Color Back => ColorTable.RatingControlBack;
+        //public static Color Rated => ColorTable.RatingControlRated;
         public static Color Unrated => ColorTable.RatingControlUnrated;
     }
 
@@ -182,8 +178,8 @@ public static class ThemeColors
 
     public static class ToolTip
 	{
+        //public static readonly Color Back = ColorTable.ToolTipBack;
         public static readonly Color InfoText = ColorTable.ToolTipText;
-        public static readonly Color Back = ColorTable.ToolTipBack;
     }
 
     public static class Stack
@@ -247,33 +243,40 @@ public static class ThemeColors
 
     public static class DarkMode
     {
-        public static class Button
-        {
-            public static readonly Color Back = DarkColors.Button.Back; // RGB 50 HEX 32
-            public static readonly Color Text = DarkColors.Button.Text;
-        }
+        public static readonly Color BlackSmoke = DarkColors.BlackSmoke;
+        //public static class Button
+        //{
+        //    public static readonly Color Back = DarkColors.Button.Back; // RGB 50 HEX 32
+        //    public static readonly Color Text = DarkColors.Button.Text;
+        //}
 
         public static class ComboBox
         {
             public static readonly Color Disabled = DarkColors.ComboBox.Disabled;
         }
 
-        public static class SelectedText
+        public static class RatingControl
         {
-            public static readonly Color Focus = DarkColors.SelectedText.Focus;
-            public static readonly Color Highlight = DarkColors.SelectedText.Highlight;
+            public static readonly Color Back = DarkColors.RatingControl.Back;
+            public static readonly Color Rated = DarkColors.RatingControl.Rated;
         }
 
-        public static class TreeView
-        {
-            public static readonly Color Back = DarkColors.TreeView.Back;
-            public static readonly Color Text = DarkColors.TreeView.Text;
-        }
+        //public static class SelectedText
+        //{
+        //    public static readonly Color Focus = DarkColors.SelectedText.Focus;
+        //    public static readonly Color Highlight = DarkColors.SelectedText.Highlight;
+        //}
 
-        public static class UIComponent
-        {
-            public static readonly Color SidePanel = DarkColors.UIComponent.SidePanel;
-        }
+        //public static class TreeView
+        //{
+        //    public static readonly Color Back = DarkColors.TreeView.Back;
+        //    public static readonly Color Text = DarkColors.TreeView.Text;
+        //}
+
+        //public static class UIComponent
+        //{
+        //    public static readonly Color SidePanel = DarkColors.UIComponent.SidePanel;
+        //}
     }
 
     #endregion

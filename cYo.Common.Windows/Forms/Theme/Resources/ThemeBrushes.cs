@@ -36,13 +36,13 @@ public static class ThemeBrushes
     }
 
 
-    public static class DarkMode
-    {
-        public static class SelectedText
-        {
-            public static Brush Highlight => FromThemeColor(ThemeColors.DarkMode.SelectedText.Highlight);
-        }
-    }
+    //public static class DarkMode
+    //{
+    //    public static class SelectedText
+    //    {
+    //        public static Brush Highlight => FromThemeColor(ThemeColors.DarkMode.SelectedText.Highlight);
+    //    }
+    //}
 
     public static Brush FromThemeColor(Color color)
     {

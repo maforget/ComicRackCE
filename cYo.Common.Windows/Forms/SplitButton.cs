@@ -270,7 +270,10 @@ namespace cYo.Common.Windows.Forms
 
             Graphics graphics = pevent.Graphics;
             Rectangle clientRectangle = base.ClientRectangle;
-            ThemeExtensions.InvokeAction(() => DrawButtonBase(graphics, clientRectangle), () => ThemeExtensions.DrawSplitButtonBase(graphics, clientRectangle, State)); ;
+            ThemeExtensions.InvokeAction(
+                () => DrawButtonBase(graphics, clientRectangle),
+                () => ThemeExtensions.DrawSplitButtonBase(graphics, clientRectangle, State)
+            );
             dropDownRectangle = new Rectangle(clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth) - 1, BorderSize, FormUtility.ScaleDpiX(PushButtonWidth), clientRectangle.Height - BorderSize * 2);
             int borderSize = BorderSize;
             Rectangle rectangle = new Rectangle(borderSize, borderSize, clientRectangle.Width - dropDownRectangle.Width - borderSize, clientRectangle.Height - borderSize * 2);

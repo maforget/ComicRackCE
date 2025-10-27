@@ -116,12 +116,12 @@ internal class ThemeColorTable
     public virtual Color TabBarSelectedBack => SystemColors.ControlLightLight;
 
     // ToolTip
-    public virtual Color ToolTipBack => Color.Empty;
+    //public virtual Color ToolTipBack => Color.Empty;
     public virtual Color ToolTipText => SystemColors.InfoText;
 
     // TreeView
-    public virtual Color TreeViewBack => Color.Empty;
-    public virtual Color TreeViewText => Color.Empty;
+    //public virtual Color TreeViewBack => Color.Empty;
+    //public virtual Color TreeViewText => Color.Empty;
 
     // ComboBox
     public virtual Color ComboBoxSeparator => SystemColors.ControlLight;
@@ -139,8 +139,8 @@ internal class ThemeColorTable
     //public virtual Color ListBoxBack => Color.Empty; // BackColor - ListBox.BackColor - SystemColors.Window
 
     // RatingControl
-    public virtual Color RatingControlBack => Color.Empty; // BackColor - Control.DefaultBackColor - SystemColors.Control
-    public virtual Color RatingControlRated => Color.Empty; // ForeColor - Control.DefaultForeColor - SystemColors.ControlText
+    //public virtual Color RatingControlBack => Color.Empty; // BackColor - Control.DefaultBackColor - SystemColors.Control
+    //public virtual Color RatingControlRated => Color.Empty; // ForeColor - Control.DefaultForeColor - SystemColors.ControlText
     public virtual Color RatingControlUnrated => Color.LightGray;
 
     // SplitButton
@@ -150,22 +150,4 @@ internal class ThemeColorTable
     // Stacks
     public virtual Color StackFill => SystemColors.Control;
     public virtual Color StackBorder => Color.Black;
-
-    // CheckBox
-    //public virtual Color CheckBoxBack => Color.Empty;
-    //public virtual Color CheckBoxBackCorner => Color.Empty;
-    //public virtual Color CheckBoxBackVertex => Color.Empty;
-    //public virtual Color CheckBoxBorder => Color.Empty;
-    //public virtual Color CheckBoxBorderEdge => Color.Empty;
-    //public virtual Color CheckBoxBorderCorner => Color.Empty;
-    //public virtual Color CheckBoxUncheckedBorder => Color.Empty;
-    //public virtual Color CheckBoxUncheckedBorderEdge => Color.Empty;
-    //public virtual Color CheckBoxUncheckedBack => Color.Empty;
-    //public virtual Color CheckBoxUncheckedBackCorner => Color.Empty;
-    //public virtual Color CheckBoxUncheckedBackVertex => Color.Empty;
-    //public virtual Color CheckBoxUncheckedDisabledBorder => Color.Empty;
-    //public virtual Color CheckBoxUncheckedDisabledBorderEdge => Color.Empty;
-    //public virtual Color CheckBoxUncheckedDisabledBack => Color.Empty;
-    //public virtual Color CheckBoxUncheckedDisabledBackCorner => Color.Empty;
-    //public virtual Color CheckBoxUncheckedDisabledBackVertex => Color.Empty;
 }

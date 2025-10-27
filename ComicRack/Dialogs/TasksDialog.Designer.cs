@@ -71,7 +71,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.lvTasks.TabIndex = 0;
             this.lvTasks.UseCompatibleStateImageBehavior = false;
             this.lvTasks.View = System.Windows.Forms.View.Details;
-            this.lvTasks.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(ThemeExtensions.ListView_DrawColumnHeader);
+            this.lvTasks.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.lvTasks_DrawColumnHeader);
             this.lvTasks.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.lvTasks_DrawSubItem);
             // 
             // colTask

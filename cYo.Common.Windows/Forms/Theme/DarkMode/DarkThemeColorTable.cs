@@ -54,14 +54,14 @@ internal class DarkThemeColorTable : ThemeColorTable
 
     // SmallComicPreview
     public override Color SmallComicPreviewPageViewerBack => DarkColors.UIComponent.SidePanel;
-    public override Color SmallComicPreviewPageViewerText => ThemeColors.BlackSmoke;
+    public override Color SmallComicPreviewPageViewerText => DarkColors.BlackSmoke;
 
     // StyledRenderer
     public override Color StyledSelectionBack => Color.Gray;
     public override Color StyledSelectionFocusedBack => SystemColors.Highlight;
 
     // ThumbTileRenderer
-    public override Color ThumbTileRendererEmboss => ThemeColors.BlackSmoke; // Color.FromArgb(unchecked((int)0xFF303030));
+    public override Color ThumbTileRendererEmboss => DarkColors.BlackSmoke; // Color.FromArgb(unchecked((int)0xFF303030));
     public override Color ThumbTileRendererTitleText => Color.White; // Color.FromArgb(unchecked((int)0xFFD0D0D0));
     public override Color ThumbTileRendererBodyText => Color.LightGray;
 
@@ -74,7 +74,7 @@ internal class DarkThemeColorTable : ThemeColorTable
     public override Color ThumbnailViewItemBorder => Color.FromArgb(64, SystemColors.InactiveCaptionText);
 
     // PreferencesDialog
-    public override Color PreferencesPanelReaderOverlay => ThemeColors.BlackSmoke;
+    public override Color PreferencesPanelReaderOverlay => DarkColors.BlackSmoke;
     public override Color PreferencesLabelOverlays => ThemeColors.Lossboro;
     public override Color PreferencesServerEditControl => SystemColors.Control;
 
@@ -110,12 +110,12 @@ internal class DarkThemeColorTable : ThemeColorTable
     public override Color TabBarSelectedBack => SystemColors.Window; // RGB 50 HEX 32
 
     // ToolTip
-    public override Color ToolTipBack => SystemColors.Window; // should be SystemColors.Info; needs alpha-aware tweaks
+    //public override Color ToolTipBack => SystemColors.Window; // should be SystemColors.Info; needs alpha-aware tweaks
     public override Color ToolTipText => SystemColors.ControlText; // should be SystemColors.InfoText; needs alpha-aware tweaks
 
     // TreeView
-    public override Color TreeViewBack => DarkColors.TreeView.Back;
-    public override Color TreeViewText => DarkColors.TreeView.Text;
+    //public override Color TreeViewBack => DarkColors.TreeView.Back;
+    //public override Color TreeViewText => DarkColors.TreeView.Text;
 
     // ComboBox
     public override Color ComboBoxSeparator => SystemColors.ControlText;
@@ -133,8 +133,8 @@ internal class DarkThemeColorTable : ThemeColorTable
     //public override Color ListBoxBack => Color.FromArgb(46, 46, 46); // to match ListView BackColor
 
     // RatingControl
-    public override Color RatingControlBack => DarkColors.ListBox.Back;
-    public override Color RatingControlRated => SystemColors.ControlText;
+    //public override Color RatingControlBack => DarkColors.ListBox.Back;
+    //public override Color RatingControlRated => SystemColors.ControlText;
     public override Color RatingControlUnrated => SystemColors.GrayText;
 
     // SplitButton

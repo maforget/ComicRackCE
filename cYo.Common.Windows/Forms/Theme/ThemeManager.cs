@@ -80,7 +80,7 @@ public class ThemeManager
             ThemeHandler.Register<DarkMode.DarkThemeHandler>();
             KnownColorTableEx darkColorTable = new KnownColorTableEx();
             darkColorTable.Initialize(true);
-            darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.BlackSmoke.ToArgb());
+            darkColorTable.SetColor(KnownColor.WhiteSmoke, ThemeColors.DarkMode.BlackSmoke.ToArgb());
             UXTheme.Initialize();
             return true;
         }
