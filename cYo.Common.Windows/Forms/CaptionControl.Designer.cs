@@ -7,7 +7,7 @@ using cYo.Common.Drawing;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class CaptionControl : UserControl
+	public partial class CaptionControl : UserControlEx
 	{
         /// <summary>
         /// Required designer variable.

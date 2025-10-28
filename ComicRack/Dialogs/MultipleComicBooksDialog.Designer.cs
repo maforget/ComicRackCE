@@ -1,6 +1,7 @@
 ﻿using cYo.Common.Windows.Forms;
 using cYo.Projects.ComicRack.Engine.Controls;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
@@ -57,8 +58,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.labelEditor = new System.Windows.Forms.Label();
 			this.labelCoverArtist = new System.Windows.Forms.Label();
 			this.labelLetterer = new System.Windows.Forms.Label();
-			this.cbPublisher = new System.Windows.Forms.ComboBox();
-			this.labelAlternateSeries = new System.Windows.Forms.Label();
+			this.cbPublisher = new cYo.Common.Windows.Forms.ComboBoxEx();
+            this.labelAlternateSeries = new System.Windows.Forms.Label();
 			this.labelAlternateNumber = new System.Windows.Forms.Label();
 			this.labelAlternateCount = new System.Windows.Forms.Label();
 			this.txAlternateSeries = new cYo.Common.Windows.Forms.TextBoxEx();
@@ -68,8 +69,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.txMonth = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.labelTags = new System.Windows.Forms.Label();
 			this.txTags = new cYo.Common.Windows.Forms.TextBoxEx();
-			this.cbImprint = new System.Windows.Forms.ComboBox();
-			this.labelImprint = new System.Windows.Forms.Label();
+			this.cbImprint = new cYo.Common.Windows.Forms.ComboBoxEx();
+            this.labelImprint = new System.Windows.Forms.Label();
 			this.cbLanguage = new cYo.Common.Windows.Forms.LanguageComboBox();
 			this.labelLanguage = new System.Windows.Forms.Label();
 			this.cbManga = new System.Windows.Forms.ComboBox();
@@ -397,7 +398,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.txRating.DrawText = true;
 			this.txRating.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txRating.ForeColor = System.Drawing.SystemColors.GrayText;
+			this.txRating.ForeColor = SystemColors.GrayText;
 			this.txRating.Location = new System.Drawing.Point(13, 363);
 			this.txRating.Name = "txRating";
 			this.txRating.Rating = 3F;
@@ -812,7 +813,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.txCommunityRating.DrawText = true;
 			this.txCommunityRating.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txCommunityRating.ForeColor = System.Drawing.SystemColors.GrayText;
+			this.txCommunityRating.ForeColor = SystemColors.GrayText;
 			this.txCommunityRating.Location = new System.Drawing.Point(248, 364);
 			this.txCommunityRating.Name = "txCommunityRating";
 			this.txCommunityRating.Rating = 3F;
@@ -1514,7 +1515,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private Label labelEditor;
 		private Label labelCoverArtist;
 		private Label labelLetterer;
-		private ComboBox cbPublisher;
+		private ComboBoxEx cbPublisher;
 		private Label labelAlternateSeries;
 		private Label labelAlternateNumber;
 		private Label labelAlternateCount;
@@ -1525,7 +1526,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private TextBoxEx txMonth;
 		private Label labelTags;
 		private TextBoxEx txTags;
-		private ComboBox cbImprint;
+		private ComboBoxEx cbImprint;
 		private Label labelImprint;
 		private LanguageComboBox cbLanguage;
 		private Label labelLanguage;

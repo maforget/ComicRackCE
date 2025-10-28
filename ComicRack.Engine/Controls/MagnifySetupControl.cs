@@ -8,7 +8,7 @@ using cYo.Projects.ComicRack.Engine.Display;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
-	public partial class MagnifySetupControl : UserControl
+	public partial class MagnifySetupControl : UserControlEx
 	{
 		private TrackBarLite tbWidth;
 		private TrackBarLite tbHeight;

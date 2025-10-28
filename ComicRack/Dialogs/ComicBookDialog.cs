@@ -27,7 +27,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-    public partial class ComicBookDialog : Form
+    public partial class ComicBookDialog : FormEx
     {
         private static int lastActivePage = -1;
 

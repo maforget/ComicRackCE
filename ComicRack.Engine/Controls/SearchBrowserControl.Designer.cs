@@ -1,10 +1,11 @@
 using cYo.Common.Win32;
 using cYo.Common.Windows.Forms;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
-    public partial class SearchBrowserControl : UserControl
+    public partial class SearchBrowserControl : UserControlEx
     {
         /// <summary>
         /// Required designer variable.
@@ -94,7 +95,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             // 
             // cbType1
             // 
-            this.cbType1.BackColor = System.Drawing.SystemColors.Window;
+            this.cbType1.BackColor = SystemColors.Window;
             this.cbType1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbType1.FormattingEnabled = true;
             this.cbType1.Location = new System.Drawing.Point(15, 7);

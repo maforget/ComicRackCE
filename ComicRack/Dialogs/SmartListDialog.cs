@@ -17,7 +17,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class SmartListDialog : Form, ISmartListDialog
+	public partial class SmartListDialog : FormEx, ISmartListDialog
 	{
 		private class ReferenceItem : ComboBoxSkinner.ComboBoxItem<string>
 		{

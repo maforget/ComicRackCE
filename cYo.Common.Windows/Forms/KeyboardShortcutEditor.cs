@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class KeyboardShortcutEditor : UserControl
+	public partial class KeyboardShortcutEditor : UserControlEx
 	{
 		private class KeyItem
 		{

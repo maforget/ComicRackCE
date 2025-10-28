@@ -1,20 +1,23 @@
-using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
 using cYo.Common.Collections;
 using cYo.Common.Localize;
 using cYo.Common.Text;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Viewer.Properties;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+using static IronPython.Modules._ast;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class SmartListQueryDialog : Form, ISmartListDialog
+	public partial class SmartListQueryDialog : FormEx, ISmartListDialog
 	{
 		private class UndoItem
 		{
@@ -143,10 +146,17 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		public event EventHandler Previous;
 
-		public SmartListQueryDialog()
+		public static class queryFont
+		{
+            public static readonly Font Default = new("Courier New", 10.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            public static readonly Font Language = new("Courier New", 10.25F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            public static readonly Font Exception = new("Courier New", 10.25F, FontStyle.Underline, GraphicsUnit.Point, ((byte)(0)));
+        }
+
+        public SmartListQueryDialog()
 		{
 			InitializeComponent();
-			LocalizeUtility.UpdateRightToLeft(this);
+            LocalizeUtility.UpdateRightToLeft(this);
 			this.RestorePosition();
 			LocalizeUtility.Localize(this, typeof(SmartListDialog).Name, components);
 			LocalizeUtility.Localize(TR.Load("TextBoxContextMenu"), cmEdit);
@@ -168,7 +178,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		{
 			base.OnLoad(e);
 			rtfQuery.AutoWordSelection = false;
-		}
+			ThemeExtensions.InvokeAction(() => Colorize(all: true, forced: true));
+        }
 
 		private void OnInsertQuery(object sender, EventArgs e)
 		{
@@ -532,50 +543,53 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				if (all)
 				{
 					rtfQuery.SelectAll();
-					rtfQuery.SelectionBackColor = SystemColors.Window;
-					rtfQuery.SelectionColor = SystemColors.WindowText;
+					rtfQuery.SelectionBackColor = ThemeColors.SmartQuery.Back;
+					rtfQuery.SelectionColor = ThemeColors.SmartQuery.Text;
 				}
 				Tokenizer tokenizer = ComicSmartListItem.TokenizeQuery(rtfQuery.Text);
 				int selectionStart = rtfQuery.SelectionStart;
 				foreach (Tokenizer.Token item in tokenizer.GetAll())
 				{
-					Color selectionColor = SystemColors.WindowText;
-					string text = item.Text.ToLower();
+					Color selectionColor = ThemeColors.SmartQuery.Text;
+                    string text = item.Text.ToLower();
 					if (text.StartsWith("\""))
 					{
-						selectionColor = Color.Red;
-					}
+						selectionColor = ThemeColors.SmartQuery.String;
+                    }
 					else if (text.StartsWith("["))
 					{
-						selectionColor = Color.Green;
-					}
+						selectionColor = ThemeColors.SmartQuery.Keyword;
+                    }
 					else
 					{
-						switch (text)
-						{
-						case "match":
-						case "in":
-						case "all":
-						case "any":
-						case "name":
-							selectionColor = Color.Blue;
-							break;
-						case "not":
-							selectionColor = Color.DarkRed;
-							break;
-						}
+                        switch (text)
+                        {
+                            case "match":
+                            case "in":
+                            case "all":
+                            case "any":
+                            case "name":
+                                selectionColor = ThemeColors.SmartQuery.Qualifier;
+                                break;
+                            case "not":
+                                selectionColor = ThemeColors.SmartQuery.Negation;
+                                break;
+                        }
 					}
 					if (all || (selectionStart > item.Index - 5 && selectionStart < item.Index + item.Length + 5))
 					{
 						rtfQuery.Select(item.Index, item.Length);
 						rtfQuery.SelectionColor = selectionColor;
-					}
+						if (!text.StartsWith("\""))
+							rtfQuery.SelectionFont = queryFont.Language;
+                    }
 				}
 				if (ex != null && ex.Token != null)
 				{
 					rtfQuery.Select(ex.Token.Index, ex.Token.Length);
-					rtfQuery.SelectionBackColor = Color.LightGray;
-				}
+					rtfQuery.SelectionBackColor = ThemeColors.SmartQuery.Exception;
+					rtfQuery.SelectionFont = queryFont.Exception;
+                }
 			}
 			rtfQuery.ClearUndo();
 		}

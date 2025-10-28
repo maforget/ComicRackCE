@@ -17,7 +17,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class DeviceEditControl : UserControl
+	public partial class DeviceEditControl : UserControlEx
 	{
 		private class TagElement
 		{

@@ -3,10 +3,11 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using cYo.Common.Windows;
+using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class ProgressDialog : Form
+	public partial class ProgressDialog : FormEx
 	{
 		private bool cancel;
 

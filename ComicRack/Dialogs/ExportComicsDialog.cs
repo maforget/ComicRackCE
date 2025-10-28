@@ -19,7 +19,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class ExportComicsDialog : Form
+	public partial class ExportComicsDialog : FormEx
 	{
 		private readonly EnumMenuUtility enumUtil;
 

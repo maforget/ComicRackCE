@@ -12,7 +12,7 @@ using cYo.Common.Windows.Properties;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class ListSelectorControl : UserControl, Popup.INotifyClose
+	public partial class ListSelectorControl : UserControlEx, Popup.INotifyClose
 	{
         /// <summary>
         /// Required designer variable.
@@ -144,7 +144,7 @@ namespace cYo.Common.Windows.Forms
             // btLists
             // 
             this.btLists.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btLists.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
+            this.btLists.FlatAppearance.CheckedBackColor = SystemColors.ControlLight;
             this.btLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLists.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.btLists.Location = new System.Drawing.Point(11, 245);
@@ -159,7 +159,7 @@ namespace cYo.Common.Windows.Forms
             // btCheck
             // 
             this.btCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btCheck.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
+            this.btCheck.FlatAppearance.CheckedBackColor = SystemColors.ControlLight;
             this.btCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.btCheck.Location = new System.Drawing.Point(79, 245);
@@ -174,7 +174,7 @@ namespace cYo.Common.Windows.Forms
             // btText
             // 
             this.btText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btText.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ControlLight;
+            this.btText.FlatAppearance.CheckedBackColor = SystemColors.ControlLight;
             this.btText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.btText.Location = new System.Drawing.Point(147, 245);
@@ -217,7 +217,7 @@ namespace cYo.Common.Windows.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = SystemColors.Window;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.text);
             this.Controls.Add(this.lbCheckList);

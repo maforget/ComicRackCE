@@ -8,6 +8,7 @@ using cYo.Common.Collections;
 using cYo.Common.Localize;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Viewer.Config;
 using cYo.Projects.ComicRack.Viewer.Controls;
 using cYo.Projects.ComicRack.Viewer.Properties;
@@ -227,7 +228,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             // 
             // favView
             // 
-            this.favView.BackColor = System.Drawing.SystemColors.Window;
+            this.favView.BackColor = ThemeColors.ComicListFolderFilesBrowser.FavViewBack;
             this.favView.ContextMenuStrip = this.contextMenuFavorites;
             this.favView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.favView.GroupColumns = new cYo.Common.Windows.Forms.IColumn[0];

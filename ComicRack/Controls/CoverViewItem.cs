@@ -14,6 +14,7 @@ using cYo.Common.Mathematics;
 using cYo.Common.Reflection;
 using cYo.Common.Text;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.Drawing;
@@ -623,7 +624,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 							thumbTileRenderer.Font = font;
 							thumbTileRenderer.Border = base.Border;
 							thumbTileRenderer.ForeColor = textColor;
-							thumbTileRenderer.BackColor = Color.LightGray;
+							thumbTileRenderer.BackColor = ThemeColors.ThumbnailViewItem.Back;
 							thumbTileRenderer.SelectionBackColor = StyledRenderer.GetSelectionColor(drawInfo.ControlFocused);
 							thumbTileRenderer.PageCount = Comic.PageCount;
 							thumbTileRenderer.RatingMode = ratingMode;

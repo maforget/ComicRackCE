@@ -22,7 +22,7 @@ namespace cYo.Common.Windows.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace cYo.Common.Windows.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("cYo.Common.Windows.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace cYo.Common.Windows.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,67 @@ namespace cYo.Common.Windows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap InsertArrow {
+        public static System.Drawing.Bitmap DarkSimpleArrowDown {
+            get {
+                object obj = ResourceManager.GetObject("DarkSimpleArrowDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap DarkSimpleArrowLeft {
+            get {
+                object obj = ResourceManager.GetObject("DarkSimpleArrowLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap DarkSimpleArrowRight {
+            get {
+                object obj = ResourceManager.GetObject("DarkSimpleArrowRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap DarkSmallArrowDown {
+            get {
+                object obj = ResourceManager.GetObject("DarkSmallArrowDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap DarkSortDown {
+            get {
+                object obj = ResourceManager.GetObject("DarkSortDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap DarkSortUp {
+            get {
+                object obj = ResourceManager.GetObject("DarkSortUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap InsertArrow {
             get {
                 object obj = ResourceManager.GetObject("InsertArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +133,7 @@ namespace cYo.Common.Windows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MozillaGrip {
+        public static System.Drawing.Bitmap MozillaGrip {
             get {
                 object obj = ResourceManager.GetObject("MozillaGrip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +143,7 @@ namespace cYo.Common.Windows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Route {
+        public static System.Drawing.Bitmap Route {
             get {
                 object obj = ResourceManager.GetObject("Route", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +153,7 @@ namespace cYo.Common.Windows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SimpleArrowDown {
+        public static System.Drawing.Bitmap SimpleArrowDown {
             get {
                 object obj = ResourceManager.GetObject("SimpleArrowDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +163,7 @@ namespace cYo.Common.Windows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SimpleArrowLeft {
+        public static System.Drawing.Bitmap SimpleArrowLeft {
             get {
                 object obj = ResourceManager.GetObject("SimpleArrowLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +173,7 @@ namespace cYo.Common.Windows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SimpleArrowRight {
+        public static System.Drawing.Bitmap SimpleArrowRight {
             get {
                 object obj = ResourceManager.GetObject("SimpleArrowRight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +183,7 @@ namespace cYo.Common.Windows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SmallArrowDown {
+        public static System.Drawing.Bitmap SmallArrowDown {
             get {
                 object obj = ResourceManager.GetObject("SmallArrowDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +193,7 @@ namespace cYo.Common.Windows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SortDown {
+        public static System.Drawing.Bitmap SortDown {
             get {
                 object obj = ResourceManager.GetObject("SortDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +203,7 @@ namespace cYo.Common.Windows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SortUp {
+        public static System.Drawing.Bitmap SortUp {
             get {
                 object obj = ResourceManager.GetObject("SortUp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

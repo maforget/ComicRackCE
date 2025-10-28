@@ -1,13 +1,14 @@
+using cYo.Common.Drawing;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
-using cYo.Common.Drawing;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
-	public class MenuRenderer : ToolStripProfessionalRenderer
-	{
+	public class MenuRenderer : ThemeToolStripProRenderer
+    {
 		private Image starImage;
 
 		public Image StarImage
@@ -39,7 +40,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			return (ToolStripManager.Renderer as ToolStripProfessionalRenderer)?.ColorTable;
 		}
 
-		protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
+        protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
 		{
 			if (starImage == null)
 			{
@@ -49,7 +50,8 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			Graphics graphics = e.Graphics;
 			if (!text.StartsWith("*"))
 			{
-				base.OnRenderItemText(e);
+                SetToolStripItemThemeColor(e);
+                base.OnRenderItemText(e);
 				return;
 			}
 			float num = text.Count((char c) => c == '*');
@@ -68,5 +70,5 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 				}
 			}
 		}
-	}
+    }
 }

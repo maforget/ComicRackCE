@@ -1,10 +1,11 @@
 using cYo.Common.ComponentModel;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using System.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-    public partial class DeviceEditControl : UserControl
+    public partial class DeviceEditControl : UserControlEx
 	{
         /// <summary>
         /// Required designer variable.
@@ -289,7 +290,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = ThemeColors.DeviceEditControl.Back;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grpListOptions);
             this.Controls.Add(this.tvSharedLists);

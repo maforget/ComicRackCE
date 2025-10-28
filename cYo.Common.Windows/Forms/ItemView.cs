@@ -15,6 +15,7 @@ using cYo.Common.Localize;
 using cYo.Common.Mathematics;
 using cYo.Common.Threading;
 using cYo.Common.Win32;
+using cYo.Common.Windows.Forms.Theme.Resources;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -3177,9 +3178,7 @@ namespace cYo.Common.Windows.Forms
 			Rectangle bounds = groupHeaderInformation.Bounds;
 			string text = (ShowGroupCount ? $"{groupHeaderInformation.Caption} ({groupHeaderInformation.ItemCount})" : groupHeaderInformation.Caption);
 			Font font = FC.Get(Font, Font.Size * 1.15f);
-			Color darkBlue = Color.DarkBlue;
-			Color controlDark = SystemColors.ControlDark;
-			Size size = graphics.MeasureString(text, font).ToSize();
+            Size size = graphics.MeasureString(text, font).ToSize();
 			Bitmap bitmap = (groupHeaderInformation.Collapsed ? groupCollapsedImage : groupExpandedImage);
 			int num = size.Width;
 			int height = size.Height;
@@ -3208,7 +3207,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				groupHeaderInformation.ArrowBounds = Rectangle.Empty;
 			}
-			using (Brush brush = new SolidBrush(darkBlue))
+			using (Brush brush = new SolidBrush(ThemeColors.ItemView.GroupText))
 			{
 				graphics.DrawString(text, font, brush, num3, num2);
 				groupHeaderInformation.TextBounds = new Rectangle(bounds.X + num3, bounds.Y + num2, size.Width, size.Height);
@@ -3217,7 +3216,7 @@ namespace cYo.Common.Windows.Forms
 			Rectangle rect = new Rectangle(num5, y, bounds.Width - num5 - 5, 1);
 			if (rect.Width > 5)
 			{
-				using (Brush brush2 = new SolidBrush(controlDark))
+				using (Brush brush2 = new SolidBrush(ThemeColors.ItemView.GroupSeparator))
 				{
 					graphics.FillRectangle(brush2, rect);
 				}
@@ -3225,7 +3224,7 @@ namespace cYo.Common.Windows.Forms
 			rect = new Rectangle(5, y, num4 - 10, 1);
 			if (rect.Width > 5)
 			{
-				using (Brush brush3 = new SolidBrush(controlDark))
+				using (Brush brush3 = new SolidBrush(ThemeColors.ItemView.GroupSeparator))
 				{
 					graphics.FillRectangle(brush3, rect);
 				}
@@ -4765,7 +4764,7 @@ namespace cYo.Common.Windows.Forms
 			miStack.Text = "Stack by";
 			longClickTimer.Interval = 1000;
 			longClickTimer.Tick += new System.EventHandler(longClickTimer_Tick);
-			BackColor = System.Drawing.SystemColors.Window;
+			BackColor = ThemeColors.ItemView.DefaultBack;
 			base.Size = new System.Drawing.Size(624, 600);
 			autoHeaderContextMenuStrip.ResumeLayout(false);
 			autoViewContextMenuStrip.ResumeLayout(false);

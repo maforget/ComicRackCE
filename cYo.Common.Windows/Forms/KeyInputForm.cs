@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class KeyInputForm : Form
+	public partial class KeyInputForm : FormEx
 	{
 		private string description;
 

@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using cYo.Common.Drawing;
 using cYo.Common.Mathematics;
+using cYo.Common.Windows.Forms.Theme.Resources;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -189,9 +190,9 @@ namespace cYo.Common.Windows.Forms
 		{
 			if (!focused)
 			{
-				return Color.Gray;
+				return ThemeColors.StyledRenderer.Selection;
 			}
-			return SystemColors.Highlight;
+			return ThemeColors.StyledRenderer.SelectionFocused;
 		}
 
 		public static void DrawStyledRectangle(this Graphics gr, Rectangle rc, int baseAlpha, Color baseColor, StyleDefinition style = null)

@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using cYo.Common;
 using cYo.Common.Collections;
 using cYo.Common.ComponentModel;
+
 using cYo.Common.IO;
 using cYo.Common.Localize;
 using cYo.Common.Text;
 using cYo.Common.Win32;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.Sync;
@@ -262,18 +264,21 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		public ComicListLibraryBrowser()
 		{
 			InitializeComponent();
-			treeImages.ImageSize = treeImages.ImageSize.ScaleDpi();
+			tvQueries.SetSidePanelColor();
+            treeImages.ImageSize = treeImages.ImageSize.ScaleDpi();
 			treeSkin = new LibraryTreeSkin
 			{
 				TreeView = tvQueries
 			};
 			tvQueries.Font = SystemFonts.IconTitleFont;
-			favContainer.Expanded = false;
+            // we have to slam down the settings again
+            treeSkin.TreeView.SetSidePanelColor();
+            favContainer.Expanded = false;
 			LocalizeUtility.Localize(this, components);
 			quickSearch.SetCueText(tsQuickSearch.Text);
 			queryCacheTimer.Interval = (ComicLibrary.IsQueryCacheInstantUpdate ? 100 : 2500);
 			miPasteList.Click += new EventHandler((sender, e) => PasteList());
-		}
+        }
 
 		public ComicListLibraryBrowser(ComicLibrary library)
 			: this()

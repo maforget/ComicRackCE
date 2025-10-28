@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using cYo.Common.Localize;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Display;
 using cYo.Projects.ComicRack.Engine.Display.Forms;
@@ -59,11 +60,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             // 
             // pageViewer
             // 
-            this.pageViewer.BackColor = System.Drawing.SystemColors.Window;
+            this.pageViewer.BackColor = ThemeColors.SmallComicPreview.PageViewerBack;
             this.pageViewer.DisableHardwareAcceleration = true;
             this.pageViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pageViewer.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pageViewer.ForeColor = System.Drawing.Color.LightGray;
+            this.pageViewer.ForeColor = ThemeColors.SmallComicPreview.PageViewerText;
             this.pageViewer.HardwareFiltering = false;
             this.pageViewer.Location = new System.Drawing.Point(0, 25);
             this.pageViewer.MagnifierSize = new System.Drawing.Size(400, 300);

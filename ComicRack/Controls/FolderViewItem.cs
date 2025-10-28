@@ -8,6 +8,7 @@ using cYo.Common.ComponentModel;
 using cYo.Common.Drawing;
 using cYo.Common.IO;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Drawing;
 using cYo.Projects.ComicRack.Engine.IO;
@@ -37,7 +38,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 			Font font = base.View.Font;
 			Color foreColor = base.View.ForeColor;
 			ThumbnailDrawingOptions thumbnailDrawingOptions = ThumbnailDrawingOptions.EnableShadow | ThumbnailDrawingOptions.EnableBorder | ThumbnailDrawingOptions.EnableRating | ThumbnailDrawingOptions.EnableVerticalBookmarks | ThumbnailDrawingOptions.EnableBackground | ThumbnailDrawingOptions.EnableStates | ThumbnailDrawingOptions.EnableBowShadow;
-			Color foreColor2 = (((drawInfo.State & ItemViewStates.Selected) != 0) ? SystemColors.HighlightText : base.View.ForeColor);
+			Color foreColor2 = (((drawInfo.State & ItemViewStates.Selected) != 0) ? ThemeColors.ThumbnailViewItem.HighlightText : base.View.ForeColor);
 			if (base.Selected)
 			{
 				thumbnailDrawingOptions |= ThumbnailDrawingOptions.Selected;
@@ -61,8 +62,8 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 					thumbTileRenderer.Font = font;
 					thumbTileRenderer.Border = new Size(2, 2);
 					thumbTileRenderer.ForeColor = foreColor;
-					thumbTileRenderer.BackColor = Color.LightGray;
-					thumbTileRenderer.SelectionBackColor = StyledRenderer.GetSelectionColor(drawInfo.ControlFocused);
+					thumbTileRenderer.BackColor = ThemeColors.ThumbnailViewItem.Back;
+                    thumbTileRenderer.SelectionBackColor = StyledRenderer.GetSelectionColor(drawInfo.ControlFocused);
 					thumbTileRenderer.TextLines.Add(new TextLine(FileUtility.GetSafeFileName(Text), FC.GetRelative(font, 1.2f, FontStyle.Bold), foreColor2, (StringFormatFlags)0, StringAlignment.Near, 0, 2));
 					thumbTileRenderer.TextLines.Add(new TextLine(Text, FC.GetRelative(font, 0.8f), foreColor2, format, 0, 5));
 					thumbTileRenderer.DrawTile(drawInfo.Graphics, bounds);

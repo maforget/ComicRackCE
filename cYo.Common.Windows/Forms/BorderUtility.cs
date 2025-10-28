@@ -1,3 +1,4 @@
+using cYo.Common.Windows.Forms.Theme;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,7 +8,7 @@ namespace cYo.Common.Windows.Forms
 	{
 		public static void DrawBorder(Graphics g, Rectangle bounds, ExtendedBorderStyle style)
 		{
-			Border3DStyle style2;
+            Border3DStyle style2;
 			switch (style)
 			{
 			default:
@@ -22,10 +23,11 @@ namespace cYo.Common.Windows.Forms
 				style2 = Border3DStyle.Raised;
 				break;
 			}
-			ControlPaint.DrawBorder3D(g, bounds, style2);
+            //ControlPaint.DrawBorder3D(g, bounds, style2);
+            ControlPaintEx.DrawBorder3D(g, bounds, style2);
 		}
 
-		public static Rectangle AdjustBorder(Rectangle bounds, ExtendedBorderStyle style, bool inwards)
+        public static Rectangle AdjustBorder(Rectangle bounds, ExtendedBorderStyle style, bool inwards)
 		{
 			int num = ((!inwards) ? 1 : (-1));
 			switch (style)

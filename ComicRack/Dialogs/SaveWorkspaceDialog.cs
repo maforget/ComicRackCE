@@ -8,7 +8,7 @@ using cYo.Projects.ComicRack.Viewer.Config;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class SaveWorkspaceDialog : Form
+	public partial class SaveWorkspaceDialog : FormEx
 	{
 		public SaveWorkspaceDialog()
 		{

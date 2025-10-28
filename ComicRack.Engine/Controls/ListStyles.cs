@@ -3,6 +3,7 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using cYo.Common.Drawing;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
@@ -51,11 +52,9 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 		}
 
 		private static void DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
-		{
-			e.DrawDefault = true;
-		}
+			=> ThemeExtensions.ListView_DrawColumnHeader(sender, e); // handles dark text on dark background in Dark Mode
 
-		private static void DrawItem(object sender, DrawListViewItemEventArgs e)
+        private static void DrawItem(object sender, DrawListViewItemEventArgs e)
 		{
 			e.DrawDefault = false;
 			e.DrawBackground();

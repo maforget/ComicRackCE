@@ -13,7 +13,7 @@ using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-    public partial class OpenWithDialog : Form
+    public partial class OpenWithDialog : FormEx
     {
         private Action newAction;
         private Action editAction;

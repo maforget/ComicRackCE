@@ -8,6 +8,7 @@ using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.Display;
 using cYo.Projects.ComicRack.Plugins.Automation;
+using cYo.Projects.ComicRack.Plugins.Theme;
 
 namespace cYo.Projects.ComicRack.Plugins
 {
@@ -54,15 +55,22 @@ namespace cYo.Projects.ComicRack.Plugins
 			set;
 		}
 
+		public IThemePlugin Theme
+		{
+			get;
+			set;
+		}
+
 		public IEnumerable<string> LibraryPaths => config.LibraryPaths;
 
-		public PluginEnvironment(IWin32Window mainWindow, IApplication app, IBrowser browser, IComicDisplay comicDisplay, IPluginConfig config, IOpenBooksManager openBooksManager)
+		public PluginEnvironment(IWin32Window mainWindow, IApplication app, IBrowser browser, IComicDisplay comicDisplay, IPluginConfig config, IOpenBooksManager openBooksManager, IThemePlugin themePlugin = default)
 		{
 			App = app;
 			Browser = browser;
 			ComicDisplay = comicDisplay;
 			MainWindow = mainWindow;
 			OpenBooks = openBooksManager;
+			Theme = themePlugin;
 			this.config = config;
 		}
 
@@ -98,7 +106,7 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		public object Clone()
 		{
-			return new PluginEnvironment(MainWindow, App, Browser, ComicDisplay, config, OpenBooks);
+			return new PluginEnvironment(MainWindow, App, Browser, ComicDisplay, config, OpenBooks, Theme);
 		}
 	}
 }
