@@ -12,5 +12,6 @@ namespace cYo.Projects.ComicRack.Plugins.Theme
 	{
 		Themes CurrentTheme { get; }
 		bool IsDarkModeEnabled { get; }
+		ToolStripRenderer ToolStripRenderer { get; }
 	}
 }
