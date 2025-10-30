@@ -98,14 +98,18 @@ internal partial class DarkControl
     // HACK : TreeView backColor is set in about 5 different places
     private static void DarkTreeView(TreeView treeView)
     {
-        // DeviceEditControl TreeView
-        if (treeView.GetType() == typeof(TreeView))
+        // Only change if default BackColor
+        if (treeView.BackColor == SystemColors.Window)
         {
-            treeView.BackColor = DarkColors.TreeView.Back;
-            treeView.ForeColor = DarkColors.TreeView.Text;
-            treeView.WhenHandleCreated(treeView => TreeViewEx.SetColor((TreeView)treeView));
+            // TreeViewEx.OnCreateControl sets BackColor to DarkColors.TreeView.Back, so TreeViewEx should never have default BackColor
+            // But it does for RemoteConnectionView (may be due to TreeView -> TreeViewEx somewhere)
+            if (treeView.GetType() == typeof(TreeViewEx))
+                treeView.BackColor = DarkColors.UIComponent.SidePanel; // RemoteConnectionView - ComicListLibraryBrowser.tvQueries
+            else
+                treeView.BackColor = DarkColors.TreeView.Back; // DeviceEditControl
         }
-
+        treeView.ForeColor = DarkColors.TreeView.Text;
+        treeView.WhenHandleCreated(treeView => TreeViewEx.SetColor((TreeView)treeView));
     }
 
     #region Helpers
