@@ -122,7 +122,7 @@ internal class DarkThemeColorTable : ThemeColorTable
 
     // Caption
     public override Color CaptionBack => Color.Black;
-    //public override Color CaptionText => SystemColors.ActiveCaptionText;
+    public override Color CaptionText => SystemColors.ActiveCaptionText;
 
     // Header
     public override Color HeaderBack => DarkColors.Header.Back;
