@@ -15,7 +15,7 @@ using cYo.Projects.ComicRack.Viewer.Config;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class ComicDataPasteDialog : Form
+	public partial class ComicDataPasteDialog : FormEx
 	{
 		public ComicDataPasteDialog()
 		{

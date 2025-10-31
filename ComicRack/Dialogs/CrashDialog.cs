@@ -10,7 +10,7 @@ using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class CrashDialog : Form
+	public partial class CrashDialog : FormEx
 	{
 		private BarkType crashType = BarkType.ThreadException;
 

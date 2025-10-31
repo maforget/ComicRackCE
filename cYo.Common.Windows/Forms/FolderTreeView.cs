@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using cYo.Common.Collections;
 using cYo.Common.Win32;
+using cYo.Common.Windows.Forms.Theme;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -228,6 +229,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				base.Nodes[0].Expand();
 			}
+			this.SetSidePanelColor();
 		}
 
 		private static void ClearTree(TreeView tree)

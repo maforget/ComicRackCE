@@ -10,7 +10,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Views
 {
-	public partial class ComicBrowserForm : Form
+	public partial class ComicBrowserForm : FormEx
 	{
 		[Browsable(false)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]

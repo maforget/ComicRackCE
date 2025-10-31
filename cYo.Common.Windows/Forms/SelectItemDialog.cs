@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class SelectItemDialog : Form
+	public partial class SelectItemDialog : FormEx
 	{
 		private string itemCaption;
 

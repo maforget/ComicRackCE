@@ -5,6 +5,8 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using cYo.Common.Drawing;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -285,8 +287,12 @@ namespace cYo.Common.Windows.Forms
 			IComboBoxItem comboBoxItem = obj as IComboBoxItem;
 			bool flag = (e.State & DrawItemState.ComboBoxEdit) != 0;
 			bool flag2 = comboBoxItem != null && comboBoxItem.IsSeparator && !flag && e.Index > 0;
-			e.DrawBackground();
-			e.DrawFocusRectangle();
+
+            e.DrawThemeBackground();
+			//e.DrawFocusRectangle();
+			//e.DrawThemeBackground();
+			e.DrawThemeFocusRectangle(); // override SelectedText highlighting
+
 			using (Brush brush = new SolidBrush(e.ForeColor))
 			{
 				Rectangle rectangle = e.Bounds;
@@ -328,7 +334,7 @@ namespace cYo.Common.Windows.Forms
 					{
 						e.Graphics.FillRectangle(brush2, rect);
 					}
-					e.Graphics.DrawLine(SystemPens.ControlLight, rect.Left + 2, rect.Top + 1, rect.Right - 2, rect.Top + 1);
+					e.Graphics.DrawLine(ThemePens.ComboBox.Separator, rect.Left + 2, rect.Top + 1, rect.Right - 2, rect.Top + 1);
 				}
 			}
 		}

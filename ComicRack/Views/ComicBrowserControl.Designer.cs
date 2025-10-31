@@ -20,6 +20,7 @@ using cYo.Common.Threading;
 using cYo.Common.Win32;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Controls;
 using cYo.Projects.ComicRack.Engine.Database;
@@ -815,8 +816,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			// itemView
 			// 
 			this.itemView.AllowDrop = true;
-			this.itemView.BackColor = System.Drawing.SystemColors.Window;
-			this.itemView.ColumnHeaderHeight = 19;
+			this.itemView.BackColor = ThemeColors.ItemView.MainBack;
+            this.itemView.ColumnHeaderHeight = 19;
 			this.itemView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.itemView.ExpandedDetailColumnName = "Cover";
 			this.itemView.GroupCollapsedImage = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.ArrowRight;

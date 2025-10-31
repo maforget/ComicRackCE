@@ -718,4 +718,91 @@
   <data name="ThumbView" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ThumbView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DarkDetailView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\DetailView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkGoFirst" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\GoFirst.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+	<data name="DarkGoLast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\Dark\GoLast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	<data name="DarkGoPrevious" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\Dark\GoPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+	<data name="DarkGoNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\Dark\GoNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
+  <data name="DarkGroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\Group.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkRenumber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\Renumber.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkStarWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\StarWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkStarWhiteHollow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\StarWhiteHollow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkSmallCloseGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\SmallCloseGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkGroupUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\GroupUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkArrowDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\ArrowDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkArrowRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\ArrowRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkSmallArrowDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\SmallArrowDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkSmallArrowRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\SmallArrowRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkGapDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\GapDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkGapUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\GapUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkGapUpDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\GapUpDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkLocked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\Locked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkSortDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\SortDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkGroupDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\GroupDown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkSortUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\SortUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkSort" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\Sort.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkTileView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\TileView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkDetailView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\DetailView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkThumbView" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\ThumbView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkDoubleArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\DoubleArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkEditDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\EditDelete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkRename" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\Rename.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

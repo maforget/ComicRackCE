@@ -17,7 +17,7 @@ using cYo.Projects.ComicRack.Viewer.Config;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class ComicDisplaySettingsDialog : Form
+	public partial class ComicDisplaySettingsDialog : FormEx
 	{
 		private class TextureFileItem : ComboBoxSkinner.ComboBoxItem<string>
 		{

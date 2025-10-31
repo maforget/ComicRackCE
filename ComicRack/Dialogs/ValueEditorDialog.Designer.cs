@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
@@ -45,7 +46,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.BackColor = SystemColors.Window;
             this.panel1.Controls.Add(this.rtfMatchValue);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);

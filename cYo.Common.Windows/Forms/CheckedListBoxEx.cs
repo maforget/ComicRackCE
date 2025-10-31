@@ -1,3 +1,4 @@
+using cYo.Common.Windows.Forms.Theme;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -30,7 +31,7 @@ namespace cYo.Common.Windows.Forms
 
 		public event DrawItemEventHandler DrawItemText;
 
-		protected override void OnDrawItem(DrawItemEventArgs e)
+        protected override void OnDrawItem(DrawItemEventArgs e)
 		{
 			if (e.Index >= base.Items.Count || e.Index < 0)
 			{
@@ -69,7 +70,7 @@ namespace cYo.Common.Windows.Forms
 			OnDrawItemText(new DrawItemEventArgs(e.Graphics, e.Font, rectangle2, e.Index, e.State, e.ForeColor, e.BackColor));
 			if ((e.State & DrawItemState.Focus) != 0 && (e.State & DrawItemState.NoFocusRect) == 0)
 			{
-				ControlPaint.DrawFocusRectangle(e.Graphics, rectangle2);
+				ControlPaintEx.DrawFocusRectangle(e.Graphics, rectangle2);
 			}
 		}
 

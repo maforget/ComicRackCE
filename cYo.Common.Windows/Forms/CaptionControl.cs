@@ -4,10 +4,11 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using cYo.Common.Drawing;
+using cYo.Common.Windows.Forms.Theme.Resources;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class CaptionControl : UserControl
+	public partial class CaptionControl : UserControlEx
 	{
 		private Padding captionMargin = new Padding(2);
 
@@ -124,9 +125,9 @@ namespace cYo.Common.Windows.Forms
 			Rectangle captionRectangle = CaptionRectangle;
 			if (captionRectangle.Height != 0)
 			{
-				gr.FillRectangle(Brushes.White, captionRectangle);
+				gr.FillRectangle(ThemeBrushes.Caption.Back, captionRectangle);
 				gr.DrawStyledRectangle(captionRectangle, selected ? 255 : 128, StyledRenderer.VistaColor, StyledRenderer.Default.Frame(0, 1));
-				TextRenderer.DrawText(gr, Caption, SystemFonts.SmallCaptionFont, captionRectangle.Pad(captionMargin), SystemColors.ActiveCaptionText);
+				TextRenderer.DrawText(gr, Caption, SystemFonts.SmallCaptionFont, captionRectangle.Pad(captionMargin), ThemeColors.Caption.Text);
 			}
 		}
 

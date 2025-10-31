@@ -10,7 +10,7 @@ using cYo.Projects.ComicRack.Engine.Sync;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class ShowErrorsDialog : Form
+	public partial class ShowErrorsDialog : FormEx
 	{
 		public class ErrorItem
 		{

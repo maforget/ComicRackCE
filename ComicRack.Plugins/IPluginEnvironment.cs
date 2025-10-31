@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using cYo.Projects.ComicRack.Engine.Display;
 using cYo.Projects.ComicRack.Plugins.Automation;
+using cYo.Projects.ComicRack.Plugins.Theme;
 
 namespace cYo.Projects.ComicRack.Plugins
 {
@@ -37,6 +38,8 @@ namespace cYo.Projects.ComicRack.Plugins
 			get;
 			set;
 		}
+
+		IThemePlugin Theme { get; set; }
 
 		string Localize(string resourceKey, string elementKey, string text);
 	}

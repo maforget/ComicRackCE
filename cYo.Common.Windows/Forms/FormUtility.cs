@@ -15,6 +15,7 @@ using cYo.Common.Mathematics;
 using cYo.Common.Reflection;
 using cYo.Common.Text;
 using cYo.Common.Win32;
+using cYo.Common.Windows.Forms.Theme;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -698,7 +699,8 @@ namespace cYo.Common.Windows.Forms
 						control2.Controls.Add(control3);
 					}
 				}
-				control.Visible = visible;
+                ThemeExtensions.Theme(control);
+                control.Visible = visible;
 				control.Tag = null;
 				tabControl.Dispose();
 				parent.Controls.Remove(tabControl);
@@ -715,8 +717,8 @@ namespace cYo.Common.Windows.Forms
 				control.Tag = tabControl2;
 				parent.Controls.Add(tabControl2);
 				tabControl2.Bounds = control.Bounds;
-				tabControl2.Visible = visible2;
-				foreach (Control item in control.Controls.OfType<Control>().Reverse())
+                //tabControl2.Visible = visible2; //why visible before ready? moved to end
+                foreach (Control item in control.Controls.OfType<Control>().Reverse())
 				{
 					if (!item.IsVisibleSet())
 					{
@@ -746,7 +748,9 @@ namespace cYo.Common.Windows.Forms
 				}
 				tabControl2.SelectedIndex = 0;
 				tabControl2.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
-			}
+                ThemeExtensions.Theme(tabControl2);
+                tabControl2.Visible = visible2;
+            }
 			return on;
 		}
 

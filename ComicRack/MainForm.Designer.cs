@@ -5,6 +5,7 @@ using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Display;
 using cYo.Projects.ComicRack.Viewer.Views;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer
@@ -2519,7 +2520,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.quickOpenView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.quickOpenView.BackColor = System.Drawing.SystemColors.Window;
+			this.quickOpenView.BackColor = SystemColors.Window;
 			this.quickOpenView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.quickOpenView.Caption = "Quick Open";
 			this.quickOpenView.CaptionMargin = new System.Windows.Forms.Padding(2);
@@ -3400,7 +3401,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			// mainViewContainer
 			// 
 			this.mainViewContainer.AutoGripPosition = true;
-			this.mainViewContainer.BackColor = System.Drawing.SystemColors.Control;
+			this.mainViewContainer.BackColor = SystemColors.Control;
 			this.mainViewContainer.Controls.Add(this.mainView);
 			this.mainViewContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.mainViewContainer.Location = new System.Drawing.Point(0, 388);

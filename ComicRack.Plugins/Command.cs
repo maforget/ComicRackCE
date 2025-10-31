@@ -6,6 +6,8 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using cYo.Common.Drawing;
+using cYo.Common.IO;
+using cYo.Common.Windows.Forms.Theme;
 
 namespace cYo.Projects.ComicRack.Plugins
 {
@@ -55,9 +57,10 @@ namespace cYo.Projects.ComicRack.Plugins
 		[DefaultValue(null)]
 		public string Image
 		{
-			get;
-			set;
+			get => GetThemedImage();
+			set => image = value;
 		}
+		private string image = null;
 
 		[XmlIgnore]
 		public Image CommandImage
@@ -205,13 +208,27 @@ namespace cYo.Projects.ComicRack.Plugins
 			{
 				if (!string.IsNullOrEmpty(Image))
 				{
-					CommandImage = System.Drawing.Image.FromFile(GetFile(path, Image)).CreateCopy(alwaysTrueCopy: true);
+					CommandImage = System.Drawing.Image.FromFile(GetFile(path, Image)).CreateCopy(alwaysTrueCopy: true); // Since we change Image it should load the correct themed image instead. 
 				}
 			}
 			catch
 			{
 				CommandImage = null;
 			}
+		}
+
+		private string GetThemedImage()
+		{
+			if (Environment?.Theme.CurrentTheme != Themes.Default)
+			{
+				string themeName = Environment.Theme.CurrentTheme.ToString();
+				string themedImage = !string.IsNullOrEmpty(image) ? $"{themeName}{image}" : null; // Find the name of the themed image
+
+				if (!string.IsNullOrEmpty(themedImage) && FileUtility.SafeFileExists(GetFile(Environment.CommandPath, themedImage)))
+					return themedImage; // Return themed image name if it exists
+			}
+
+			return image; // Otherwise return regular image
 		}
 
 		protected virtual void MakeDefaults()

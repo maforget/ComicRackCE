@@ -17,6 +17,7 @@ using cYo.Common.Threading;
 using cYo.Common.Win32;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Drawing;
 using cYo.Projects.ComicRack.Engine.IO;
@@ -24,7 +25,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Controls
 {
-	public partial class PagesView : UserControl, IEditBookmark, IEditPage
+	public partial class PagesView : UserControlEx, IEditBookmark, IEditPage
 	{
         /// <summary>
         /// Required designer variable.
@@ -79,7 +80,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
             // itemView
             // 
             this.itemView.AllowDrop = true;
-            this.itemView.BackColor = System.Drawing.SystemColors.Window;
+            this.itemView.BackColor = ThemeColors.ItemView.MainBack;
             this.itemView.BackgroundImageAlignment = System.Drawing.ContentAlignment.BottomRight;
             this.itemView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemView.GroupColumns = new cYo.Common.Windows.Forms.IColumn[0];

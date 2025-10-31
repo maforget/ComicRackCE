@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms
 {
-	public partial class QuestionDialog : Form
+	public partial class QuestionDialog : FormEx
 	{
 		public string Question
 		{

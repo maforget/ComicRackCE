@@ -1,8 +1,10 @@
 ﻿using cYo.Common.Win32;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine.Controls;
 using cYo.Projects.ComicRack.Viewer.Controls;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
@@ -78,7 +80,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.txSeriesGroup = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.txStoryArc = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.txTranslator = new cYo.Common.Windows.Forms.TextBoxEx();
-			this.cbAgeRating = new System.Windows.Forms.ComboBox();
+			this.cbAgeRating = new cYo.Common.Windows.Forms.ComboBoxEx();
 			this.txInker = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.txLetterer = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.txEditor = new cYo.Common.Windows.Forms.TextBoxEx();
@@ -114,8 +116,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.labelFormat = new System.Windows.Forms.Label();
 			this.labelAlternateSeries = new System.Windows.Forms.Label();
 			this.txAlternateSeries = new cYo.Common.Windows.Forms.TextBoxEx();
-			this.cbImprint = new System.Windows.Forms.ComboBox();
-			this.labelVolume = new System.Windows.Forms.Label();
+			this.cbImprint = new cYo.Common.Windows.Forms.ComboBoxEx();
+            this.labelVolume = new System.Windows.Forms.Label();
 			this.labelYear = new System.Windows.Forms.Label();
 			this.labelMonth = new System.Windows.Forms.Label();
 			this.txAlternateCount = new cYo.Common.Windows.Forms.TextBoxEx();
@@ -123,8 +125,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.labelImprint = new System.Windows.Forms.Label();
 			this.labelGenre = new System.Windows.Forms.Label();
 			this.txCount = new cYo.Common.Windows.Forms.TextBoxEx();
-			this.cbPublisher = new System.Windows.Forms.ComboBox();
-			this.txAlternateNumber = new cYo.Common.Windows.Forms.TextBoxEx();
+			this.cbPublisher = new cYo.Common.Windows.Forms.ComboBoxEx();
+            this.txAlternateNumber = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.txNumber = new cYo.Common.Windows.Forms.TextBoxEx();
 			this.labelPublisher = new System.Windows.Forms.Label();
 			this.labelAlternateCount = new System.Windows.Forms.Label();
@@ -355,7 +357,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.txCommunityRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txCommunityRating.DrawText = true;
 			this.txCommunityRating.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txCommunityRating.ForeColor = System.Drawing.SystemColors.GrayText;
+			this.txCommunityRating.ForeColor = SystemColors.GrayText;
 			this.txCommunityRating.Location = new System.Drawing.Point(372, 312);
 			this.txCommunityRating.Name = "txCommunityRating";
 			this.txCommunityRating.Rating = 3F;
@@ -391,7 +393,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.linkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.linkLabel.LinkColor = System.Drawing.Color.SteelBlue;
+			this.linkLabel.LinkColor = ThemeColors.ComicBook.Link;
 			this.linkLabel.Location = new System.Drawing.Point(3, 416);
 			this.linkLabel.Name = "linkLabel";
 			this.linkLabel.Size = new System.Drawing.Size(560, 23);
@@ -399,8 +401,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.linkLabel.TabStop = true;
 			this.linkLabel.Text = "linkLabel";
 			this.linkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.linkLabel.VisitedLinkColor = System.Drawing.Color.MediumOrchid;
-			this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
+			this.linkLabel.VisitedLinkColor = ThemeColors.ComicBook.VisitedLink;
+            this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
 			// 
 			// coverThumbnail
 			// 
@@ -423,8 +425,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.whereSeparator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.whereSeparator.BackColor = System.Drawing.SystemColors.ButtonShadow;
-			this.whereSeparator.Location = new System.Drawing.Point(19, 360);
+			this.whereSeparator.BackColor = ThemeColors.ComicBook.Separator;
+            this.whereSeparator.Location = new System.Drawing.Point(19, 360);
 			this.whereSeparator.Name = "whereSeparator";
 			this.whereSeparator.Size = new System.Drawing.Size(520, 1);
 			this.whereSeparator.TabIndex = 9;
@@ -433,7 +435,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+			this.panel1.BackColor = ThemeColors.ComicBook.PanelBack;
 			this.panel1.Location = new System.Drawing.Point(23, 268);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(520, 1);
@@ -466,7 +468,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.txRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.txRating.DrawText = true;
 			this.txRating.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txRating.ForeColor = System.Drawing.SystemColors.GrayText;
+			this.txRating.ForeColor = SystemColors.GrayText;
 			this.txRating.Location = new System.Drawing.Point(372, 285);
 			this.txRating.Name = "txRating";
 			this.txRating.Rating = 3F;
@@ -2166,7 +2168,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.pageViewer.AutoScrollMode = cYo.Common.Windows.Forms.AutoScrollMode.Pan;
 			this.pageViewer.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.pageViewer.ForeColor = System.Drawing.Color.White;
+			this.pageViewer.ForeColor = ThemeColors.ComicBook.PageViewer;
 			this.pageViewer.Location = new System.Drawing.Point(11, 12);
 			this.pageViewer.Name = "pageViewer";
 			this.pageViewer.ScaleMode = cYo.Common.Drawing.ScaleMode.FitWidth;
@@ -2491,7 +2493,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private TextBoxEx txCoverArtist;
 		private Label labelEditor;
 		private Label labelCoverArtist;
-		private ComboBox cbPublisher;
+		private ComboBoxEx cbPublisher;
 		private TrackBarLite tbBrightness;
 		private TrackBarLite tbSaturation;
 		private TrackBarLite tbContrast;
@@ -2510,7 +2512,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private Label labelMonth;
 		private TextBoxEx txTags;
 		private Label labelImprint;
-		private ComboBox cbImprint;
+		private ComboBoxEx cbImprint;
 		private TabPage tabPages;
 		private LanguageComboBox cbLanguage;
 		private Label labelLanguage;
@@ -2527,7 +2529,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private ComboBox cbEnableProposed;
 		private Label labelEnableProposed;
 		private Button btPageView;
-		private ComboBox cbAgeRating;
+		private ComboBoxEx cbAgeRating;
 		private Label labelAgeRating;
 		private Label labelTags;
 		private TabPage tabPlot;

@@ -3,6 +3,7 @@ using System.ComponentModel;
 using cYo.Common.Mathematics;
 using cYo.Common.Runtime;
 using cYo.Common.Win32.FileOperations;
+using cYo.Common.Windows.Forms.Theme;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.IO.Network;
 
@@ -442,6 +443,29 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		}
 
 		[DefaultValue(false)]
+		[CommandLineSwitch(ShortName = "dark")]
+		public bool UseDarkMode
+		{
+			get;
+			set;
+		}
+
+		private Themes theme = Themes.Default;
+		[DefaultValue(Themes.Default)]
+		[CommandLineSwitch(ShortName = "theme")]
+		public Themes Theme
+		{
+			get
+			{
+				if (UseDarkMode)
+					return Themes.Dark;
+
+				return theme;
+			}
+			set => theme = value;
+		}
+
+        [DefaultValue(false)]
 		[CommandLineSwitch(ShortName = "hidden")]
 		public bool StartHidden
 		{
@@ -492,6 +516,7 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			StartHidden = false;
 			DeleteAPI = FileOperationsAPI.IFileOperation;
 			OpenExplorerUsingAPI = true;
+			Theme = Themes.Default;
 		}
 	}
 }

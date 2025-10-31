@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using cYo.Common.Collections;
 using cYo.Common.Drawing;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.Sync;
 using cYo.Projects.ComicRack.Viewer.Config;
@@ -71,7 +72,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 			bool flag3 = Program.Settings.LibraryGaugesFormat.HasFlag(LibraryGauges.New) && cli.NewBookCount != 0;
 			if (flag)
 			{
-				int num2 = DrawNumberMarker(gr, cli.BookCount, Color.Green, Color.White, font, rc, !(flag2 && flag3), roundRight: true, onlyMeasure, totalSize);
+				int num2 = DrawNumberMarker(gr, cli.BookCount, ThemeColors.LibraryTree.TotalBack, ThemeColors.LibraryTree.TotalText, font, rc, !(flag2 && flag3), roundRight: true, onlyMeasure, totalSize);
 				rc.Width -= num2;
 				num += num2;
 			}
@@ -82,13 +83,13 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 				{
 					num3 += cli.NewBookCount;
 				}
-				int num4 = DrawNumberMarker(gr, num3, Color.Orange, Color.White, font, rc, !flag3, !flag, onlyMeasure, totalSize);
+				int num4 = DrawNumberMarker(gr, num3, ThemeColors.LibraryTree.UnreadBack, ThemeColors.LibraryTree.UnreadText, font, rc, !flag3, !flag, onlyMeasure, totalSize);
 				rc.Width -= num4;
 				num += num4;
 			}
 			if (flag3)
 			{
-				int num5 = DrawNumberMarker(gr, cli.NewBookCount, Color.Red, Color.White, font, rc, roundLeft: true, !(flag2 && flag), onlyMeasure, totalSize);
+				int num5 = DrawNumberMarker(gr, cli.NewBookCount, ThemeColors.LibraryTree.NewBack, ThemeColors.LibraryTree.NewText, font, rc, roundLeft: true, !(flag2 && flag), onlyMeasure, totalSize);
 				num += num5;
 			}
 			return num;

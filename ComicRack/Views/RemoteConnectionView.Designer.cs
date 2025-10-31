@@ -124,7 +124,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = SystemColors.Window;
             this.Controls.Add(this.panelCenter);
             this.Name = "RemoteConnectionView";
             this.Size = new System.Drawing.Size(356, 212);

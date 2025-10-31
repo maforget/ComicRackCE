@@ -19,6 +19,7 @@ from System.Windows.Forms import *
 class NewComicsForm(Form):
 	def __init__(self):
 		self.InitializeComponent()
+		ThemeMe(self)
 	
 	def InitializeComponent(self):
 		self._labelSeries = System.Windows.Forms.Label()
@@ -205,3 +206,7 @@ def NewComicBooks(books):
     
 	finally:	
 		f.Dispose()
+
+def ThemeMe(control):
+    if ComicRack.App.ProductVersion >= '0.9.182':
+            ComicRack.Theme.ApplyTheme(control)

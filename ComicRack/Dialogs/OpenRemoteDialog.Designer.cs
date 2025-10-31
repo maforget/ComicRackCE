@@ -1,5 +1,6 @@
 ﻿using cYo.Common.Windows.Forms;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
@@ -177,8 +178,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.labelFailedServerList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelFailedServerList.BackColor = System.Drawing.SystemColors.Window;
-            this.labelFailedServerList.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.labelFailedServerList.BackColor = SystemColors.Window;
+            this.labelFailedServerList.ForeColor = SystemColors.GrayText;
             this.labelFailedServerList.Location = new System.Drawing.Point(184, 96);
             this.labelFailedServerList.Name = "labelFailedServerList";
             this.labelFailedServerList.Size = new System.Drawing.Size(186, 68);

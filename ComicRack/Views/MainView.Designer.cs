@@ -65,7 +65,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             // tabStrip
             // 
             this.tabStrip.AllowDrop = true;
-            this.tabStrip.BackColor = System.Drawing.SystemColors.Control;
+            this.tabStrip.BackColor = SystemColors.Control;
             this.tabStrip.BottomPadding = 0;
             this.tabStrip.CloseImage = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.Close;
             this.tabStrip.Controls.Add(this.tabToolStrip);
@@ -173,7 +173,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
             // MainView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = SystemColors.Control;
             this.Controls.Add(this.tabStrip);
             this.Name = "MainView";
             this.Size = new System.Drawing.Size(895, 551);

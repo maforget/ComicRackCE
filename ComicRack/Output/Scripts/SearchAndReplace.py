@@ -116,6 +116,8 @@ def SearchAndReplace (books):
 	cbFields.SelectedIndex = lastSelection
 	txtReplace.Text = lastReplaceText
 	txtSearch.Text = lastSearchText
+	ThemeMe(f)
+
 
 	#Show Window
 	try:
@@ -135,3 +137,7 @@ def SearchAndReplace (books):
 		lastSearchText = txtSearch.Text
 	finally:
 		f.Dispose()
+
+def ThemeMe(control):
+    if ComicRack.App.ProductVersion >= '0.9.182':
+            ComicRack.Theme.ApplyTheme(control)

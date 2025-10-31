@@ -10,6 +10,8 @@ using cYo.Common.Drawing;
 using cYo.Common.Mathematics;
 using cYo.Common.Threading;
 using cYo.Common.Win32;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Common.Windows.Properties;
 using Windows7.Multitouch;
 using Windows7.Multitouch.WinForms;
@@ -487,7 +489,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				base.AutoSize = true;
 				base.Overflow = ToolStripItemOverflow.Never;
-				tabBar.BackColor = Color.Transparent;
+				tabBar.BackColor = ThemeColors.TabBar.Back;
 				tabBar.TabHeight = 24;
 				tabBar.DrawBaseLine = false;
 			}
@@ -533,6 +535,7 @@ namespace cYo.Common.Windows.Forms
 			}
 		}
 
+		// seems to be unused
 		public class TabBarToolStripRenderer : ExtendedToolStripRenderer
 		{
 			public TabBarToolStripRenderer(ToolStripRenderer renderer)
@@ -810,12 +813,14 @@ namespace cYo.Common.Windows.Forms
 		{
 			get
 			{
-				Color result = SystemColors.AppWorkspace;
+				Color result = ThemeColors.TabBar.DefaultBorder;
 				if (Application.RenderWithVisualStyles)
 				{
 					VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(VisualStyleElement.Tab.Pane.Normal);
-					result = visualStyleRenderer.GetColor(ColorProperty.BorderColorHint);
-				}
+					//result = visualStyleRenderer.GetColor(ColorProperty.BorderColorHint);
+					result = visualStyleRenderer.GetTabBarBorderColor(ColorProperty.BorderColorHint);
+
+                }
 				return result;
 			}
 		}
@@ -1156,16 +1161,23 @@ namespace cYo.Common.Windows.Forms
 		{
 			VisualStyleRenderer visualStyleRenderer = null;
 			VisualStyleElement normal = VisualStyleElement.ToolTip.Standard.Normal;
+			//if (ThemeExtensions.IsDarkModeEnabled)
+			//{
+			//	e.Graphics.FillRectangle(new SolidBrush(ThemeColors.ToolTip.Back), new Rectangle(Point.Empty, e.Bounds.Size));
+			//}
 			if (VisualStyleRenderer.IsSupported && VisualStyleRenderer.IsElementDefined(normal))
 			{
 				visualStyleRenderer = new VisualStyleRenderer(normal);
-				visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);
-			}
+                //visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);
+                visualStyleRenderer.DrawThemeBackground(e);
+            }
 			else
 			{
-				e.DrawBackground();
-				e.DrawBorder();
-			}
+                e.DrawBackground();
+				//e.DrawBorder();
+				//e.DrawThemeBackground();
+                e.DrawThemeBorder();
+            }
 			if (OwnerDrawnTooltips && toolTipItem != null && !toolTipItem.ToolTipSize.IsEmpty)
 			{
 				toolTipItem.DrawTooltip(e.Graphics, e.Bounds);
@@ -1186,8 +1198,9 @@ namespace cYo.Common.Windows.Forms
 			using (FontDC dc = new FontDC(e.Graphics, e.Font))
 			{
 				Rectangle backgroundContentRectangle = vr.GetBackgroundContentRectangle(dc, e.Bounds);
-				vr.DrawText(dc, backgroundContentRectangle, e.ToolTipText);
-			}
+                //vr.DrawText(dc, backgroundContentRectangle, e.ToolTipText);
+                vr.DrawThemeText(e, dc, backgroundContentRectangle);
+            }
 		}
 
 		private void SetValue<T>(ref T old, T value)
@@ -1259,14 +1272,17 @@ namespace cYo.Common.Windows.Forms
 				tabItemState = TabItemState.Selected;
 				break;
 			}
-			DrawTabItem(gr, rc, tabItemState, buttonMode: true);
+			ThemeExtensions.InvokeAction(
+				() => DrawTabItem(gr, rc, tabItemState, buttonMode: true),
+                () => ThemeExtensions.DrawTabItem(gr, rc, tabItemState, buttonMode: true)
+            );
 			Rectangle rect = image.Size.Align(rc, System.Drawing.ContentAlignment.MiddleCenter);
 			gr.DrawImage(image, rect);
 		}
 
-		private void DrawTabItem(Graphics gr, Rectangle rc, TabItemState tabItemState, bool buttonMode)
+        private void DrawTabItem(Graphics gr, Rectangle rc, TabItemState tabItemState, bool buttonMode)
 		{
-			if (TabRenderer.IsSupported)
+            if (TabRenderer.IsSupported)
 			{
 				TabRenderer.DrawTabItem(gr, rc, tabItemState);
 				if (buttonMode)
@@ -1288,7 +1304,7 @@ namespace cYo.Common.Windows.Forms
 				}
 				border3DSide |= Border3DSide.Bottom;
 			}
-			using (Brush brush = new SolidBrush((tabItemState == TabItemState.Selected) ? SystemColors.ControlLightLight : BackColor))
+			using (Brush brush = new SolidBrush((tabItemState == TabItemState.Selected) ? ThemeColors.TabBar.SelectedBack : BackColor))
 			{
 				gr.FillRectangle(brush, rc);
 			}
@@ -1833,11 +1849,14 @@ namespace cYo.Common.Windows.Forms
 				return;
 			}
 			Rectangle bounds = item.Bounds;
-			DrawTabItem(gr, bounds, item.State, buttonMode: false);
-			bounds = bounds.Pad(2, 2, 2);
+            ThemeExtensions.InvokeAction(
+                () => DrawTabItem(gr, bounds, item.State, buttonMode: false),
+                () => ThemeExtensions.DrawTabItem(gr, bounds, item.State, buttonMode: false)
+            );
+            bounds = bounds.Pad(2, 2, 2);
 			if (Focused && item.State == TabItemState.Selected)
 			{
-				ControlPaint.DrawFocusRectangle(gr, bounds);
+				ControlPaintEx.DrawFocusRectangle(gr, bounds);
 			}
 			bounds = bounds.Pad(1);
 			if (item.Image != null)

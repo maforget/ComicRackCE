@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
+using cYo.Common.Windows.Forms;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
-	public class ComicPageControl : UserControl
+	public class ComicPageControl : UserControlEx
 	{
 		private bool pendingUpdate;
 

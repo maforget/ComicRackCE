@@ -1,3 +1,6 @@
+global using SystemColors = cYo.Common.Drawing.ExtendedColors.SystemColorsEx;
+global using SystemBrushes = cYo.Common.Drawing.ExtendedColors.SystemBrushesEx;
+global using SystemPens = cYo.Common.Drawing.ExtendedColors.SystemPensEx;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -41,8 +44,10 @@ using cYo.Projects.ComicRack.Viewer.Config;
 using cYo.Projects.ComicRack.Viewer.Dialogs;
 using cYo.Projects.ComicRack.Viewer.Properties;
 using Microsoft.Win32;
-using static IronPython.Modules._ast;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
+using cYo.Projects.ComicRack.Plugins.Theme;
 
 namespace cYo.Projects.ComicRack.Viewer
 {
@@ -735,7 +740,10 @@ namespace cYo.Projects.ComicRack.Viewer
 			CommandLineParser.Parse(EngineConfiguration.Default);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
-			ShellFile.DeleteAPI = ExtendedSettings.DeleteAPI;
+            ThemeManager.Initialize(ExtendedSettings.Theme); // if using dark mode, replace SystemColors and initialize native Windows theming
+			ResourceManagerEx.InitResourceManager(ExtendedSettings.Theme);
+			ThemePlugin.Register(ExtendedSettings.Theme); // Register the current theme for the IThemePlugin interface for plugins
+            ShellFile.DeleteAPI = ExtendedSettings.DeleteAPI;
 			DatabaseManager.FirstDatabaseAccess += delegate
 			{
 				StartupProgress(TR.Messages["OpenDatabase", "Opening Database"], -1);
@@ -826,21 +834,30 @@ namespace cYo.Projects.ComicRack.Viewer
 				ComicBook.FormatIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Formats*.zip"), SplitIconKeys);
 				ComicBook.SpecialIcons.AddRange(ZipFileFolder.CreateFromFiles(defaultLocations, "Special*.zip"), SplitIconKeys);
 				ComicBook.GenericIcons = CreateGenericsIcons(defaultLocations, "*.zip", "_", SplitIconKeys);
-				ToolStripRenderer renderer;
-				if (ExtendedSettings.SystemToolBars)
-				{
-					renderer = new ToolStripSystemRenderer();
-				}
-				else
-				{
-					bool flag = Environment.OSVersion.Platform == PlatformID.Win32NT && Environment.OSVersion.Version.Major == 5;
-					ProfessionalColorTable professionalColorTable = ((!(ExtendedSettings.ForceTanColorSchema || flag)) ? ((ProfessionalColorTable)new OptimizedProfessionalColorTable()) : ((ProfessionalColorTable)new OptimizedTanColorTable()));
-					renderer = new ToolStripProfessionalRenderer(professionalColorTable)
-					{
-						RoundedEdges = false
-					};
-				}
-				ToolStripManager.Renderer = renderer;
+                if (ExtendedSettings.UseDarkMode)
+                {
+                    ToolStripManager.Renderer = new ThemeToolStripProRenderer();
+                }
+                else
+                {
+                    ToolStripRenderer renderer;
+                    if (ExtendedSettings.SystemToolBars)
+                    {
+                        renderer = new ToolStripSystemRenderer();
+                    }
+                    else
+                    {
+                        // OSVersion 5 is Windows XP, Windows 2000 or Windows 2003
+                        bool isWinXp = Environment.OSVersion.Platform == PlatformID.Win32NT && Environment.OSVersion.Version.Major == 5;
+                        // Should consider moving OptimizedProfessionalColorTable and OptimizedTanColorTable
+                        ProfessionalColorTable professionalColorTable = ((!(ExtendedSettings.ForceTanColorSchema || isWinXp)) ? ((ProfessionalColorTable)new OptimizedProfessionalColorTable()) : ((ProfessionalColorTable)new OptimizedTanColorTable()));
+                        renderer = new ThemeToolStripProRenderer(professionalColorTable)
+                        {
+                            RoundedEdges = false
+                        };
+                    }
+                    ToolStripManager.Renderer = renderer;
+                }
 				if (ExtendedSettings.DisableHardware)
 				{
 					ImageDisplayControl.HardwareAcceleration = ImageDisplayControl.HardwareAccelerationType.Disabled;

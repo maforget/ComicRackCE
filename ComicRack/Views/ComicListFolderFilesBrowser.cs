@@ -103,7 +103,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			tvFolders.Font = SystemFonts.IconTitleFont;
 			components.Add(commands);
 			LocalizeUtility.Localize(this, components);
-		}
+        }
 
 		public ComicListFolderFilesBrowser(SmartList<string> paths)
 			: this()

@@ -23,6 +23,7 @@ using cYo.Common.Threading;
 using cYo.Common.Win32;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Controls;
 using cYo.Projects.ComicRack.Engine.Database;
@@ -47,7 +48,7 @@ using SaveFileDialog = System.Windows.Forms.SaveFileDialog;
 namespace cYo.Projects.ComicRack.Viewer
 {
 	[ComVisible(true)]
-	public partial class MainForm : Form, IMain, IContainerControl, IPluginConfig, IApplication, IBrowser
+	public partial class MainForm : FormEx, IMain, IContainerControl, IPluginConfig, IApplication, IBrowser
 	{
 		public partial class ComicReaderTab : TabBar.TabBarItem
 		{
@@ -99,7 +100,7 @@ namespace cYo.Projects.ComicRack.Viewer
 							}
 							rc.Height -= 10;
 						}
-						ThumbTileRenderer.DrawTile(gr, rc, itemLock.Item.GetThumbnail(rc.Height), comic, font, SystemColors.InfoText, Color.Transparent, ThumbnailDrawingOptions.DefaultWithoutBackground, ComicTextElements.DefaultComic, threeD: false, comic.GetIcons());
+						ThumbTileRenderer.DrawTile(gr, rc, itemLock?.Item.GetThumbnail(rc.Height), comic, font, ThemeColors.ToolTip.InfoText, Color.Transparent, ThumbnailDrawingOptions.DefaultWithoutBackground, ComicTextElements.DefaultComic, threeD: false, comic.GetIcons());
 					}
 				}
 				catch
