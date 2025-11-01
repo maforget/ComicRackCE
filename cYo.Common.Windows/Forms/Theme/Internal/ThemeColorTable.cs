@@ -85,6 +85,9 @@ internal class ThemeColorTable
     public virtual Color ItemViewGroupText => Color.DarkBlue;
     public virtual Color ItemViewGroupSeparator => System.Drawing.SystemColors.ControlDark;
 
+    // CoverViewItem
+    public virtual Color DetailRowHighlight => Color.LightGray;
+
     // ItemDrawInformation
     public virtual Color ItemDrawInfoText => Color.Black;
 
