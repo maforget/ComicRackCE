@@ -148,6 +148,11 @@ public static class ThemeColors
         public static Color GroupSeparator => ColorTable.ItemViewGroupSeparator;
     }
 
+    public static class CoverViewItem
+    {
+        public static Color DetailRowHighlight => ColorTable.DetailRowHighlight;
+	}
+
     public static class NiceTreeSkin
     {
         public static Color Separator => ColorTable.NiceTreeSkinDragSeparator;

@@ -82,7 +82,10 @@ internal class DarkThemeColorTable : ThemeColorTable
     public override Color ItemViewMainBack => DarkColors.UIComponent.Content;
     public override Color ItemViewDefaultBack => SystemColors.Window;
     public override Color ItemViewGroupText => Color.LightSkyBlue;
-    public override Color ItemViewGroupSeparator => SystemColors.InactiveCaptionText; //Color.FromArgb(190, 190, 190);
+    public override Color ItemViewGroupSeparator => SystemColors.InactiveCaptionText; // Color.FromArgb(190, 190, 190);
+
+    // CoverViewItem
+    public override Color DetailRowHighlight => Color.FromArgb(72, 72, 72); // This drawn on top of ItemViewMainBack blending at alpha 96 giving "#2F2F2F"
 
     // NiceTreeSkin
     public override Color NiceTreeSkinDragSeparator => SystemColors.InactiveCaptionText; // Color.FromArgb(190, 190, 190);
@@ -126,7 +129,7 @@ internal class DarkThemeColorTable : ThemeColorTable
 
     // Header
     public override Color HeaderBack => DarkColors.Header.Back;
-    public override Color HeaderSeparator => DarkColors.Header.Separator; //Color.FromArgb(99, 99, 99);
+    public override Color HeaderSeparator => DarkColors.Header.Separator; // Color.FromArgb(99, 99, 99);
     //public override Color HeaderText => SystemColors.WindowText; // only used in ThemeExtension.ListView_DrawColumnHeader, which is only used in dark mode
 
     // Control defaults
