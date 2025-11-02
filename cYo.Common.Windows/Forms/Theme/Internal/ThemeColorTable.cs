@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using cYo.Common.Drawing;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -86,7 +87,7 @@ internal class ThemeColorTable
     public virtual Color ItemViewGroupSeparator => System.Drawing.SystemColors.ControlDark;
 
     // CoverViewItem
-    public virtual Color DetailRowHighlight => Color.LightGray;
+    public virtual Color DetailRowHighlight => Color.LightGray.Transparent(96);
 
     // ItemDrawInformation
     public virtual Color ItemDrawInfoText => Color.Black;

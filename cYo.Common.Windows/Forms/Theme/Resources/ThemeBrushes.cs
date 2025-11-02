@@ -20,6 +20,11 @@ public static class ThemeBrushes
         public static Brush HeaderText => FromThemeColor(ThemeColors.CollapsibleGroupBox.HeaderText);
     }
 
+    public static class DetailView
+    {
+        public static Brush RowHighlight => FromThemeColor(ThemeColors.DetailView.RowHighlight);
+    }
+
     public static class Header
     {
         public static Brush Back => FromThemeColor(ThemeColors.Header.Back);

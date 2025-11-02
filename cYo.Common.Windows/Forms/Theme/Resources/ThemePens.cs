@@ -38,6 +38,11 @@ public static class ThemePens
         public static Pen Border => FromThemeColor(ThemeColors.Stack.Border);
     }
 
+    public static class ThumbnailViewItem
+    {
+        public static Pen Border => FromThemeColor(ThemeColors.ThumbnailViewItem.Border);
+    }
+
     public static Pen FromThemeColor(Color color)
     {
         if (!cache.TryGetValue(color, out var pen))
