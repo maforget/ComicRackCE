@@ -146,11 +146,11 @@ public static class ThemeColors
         public static Color MainBack => ColorTable.ItemViewMainBack;
         public static Color GroupText => ColorTable.ItemViewGroupText;
         public static Color GroupSeparator => ColorTable.ItemViewGroupSeparator;
-    }
+	}
 
-    public static class CoverViewItem
+    public static class DetailView
     {
-        public static Color DetailRowHighlight => ColorTable.DetailRowHighlight;
+        public static Color RowHighlight => ColorTable.DetailRowHighlight;
 	}
 
     public static class NiceTreeSkin
