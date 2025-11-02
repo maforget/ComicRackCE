@@ -35,16 +35,21 @@ public static class ThemeBrushes
         public static Brush Fill => FromThemeColor(ThemeColors.Stack.Fill);
     }
 
+    public static class DetailView
+    {
+		public static Brush RowHighlight => FromThemeColor(ThemeColors.DetailView.RowHighlight);
+	}
 
-    //public static class DarkMode
-    //{
-    //    public static class SelectedText
-    //    {
-    //        public static Brush Highlight => FromThemeColor(ThemeColors.DarkMode.SelectedText.Highlight);
-    //    }
-    //}
 
-    public static Brush FromThemeColor(Color color)
+	//public static class DarkMode
+	//{
+	//    public static class SelectedText
+	//    {
+	//        public static Brush Highlight => FromThemeColor(ThemeColors.DarkMode.SelectedText.Highlight);
+	//    }
+	//}
+
+	public static Brush FromThemeColor(Color color)
     {
         if (!cache.TryGetValue(color, out var brush))
         {

@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using cYo.Common.Drawing;
 using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 using cYo.Common.Windows.Forms.Theme.Internal;
 
@@ -150,7 +151,7 @@ public static class ThemeColors
 
     public static class DetailView
     {
-        public static Color RowHighlight => ColorTable.DetailRowHighlight;
+        public static Color RowHighlight => ColorTable.DetailRowHighlight.Transparent(96);
 	}
 
     public static class NiceTreeSkin
