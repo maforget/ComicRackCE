@@ -10,8 +10,9 @@ namespace cYo.Common.Windows.Forms.Theme.Resources;
 /// </summary>
 public class ThemeControlDefinition
 {
-    public bool AllowUXTheme = true;
-    public Color? ForeColor { get; set; }
+    public bool AllowUXTheme { get; set; } = true;
+    public bool ApplySetWindowUXTheme { get; set; } = false; // When using IThemeCustom so that we can specify that it's a Window so that the proper UXTheme is applied. Requires AllowUXTheme to be true
+	public Color? ForeColor { get; set; }
     public Color? BackColor { get; set; }
     public BorderStyle? BorderStyle { get; set; }
     public Action<Control> Theme { get; set; }

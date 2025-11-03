@@ -196,7 +196,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		public UIComponent UIComponent => UIComponent.None;
 
-		public ThemeControlDefinition ControlDefinition => new() { BackColor = ThemeColors.MatcherGroupEditor };
+		public ThemeControlDefinition ControlDefinition => new() { BackColor = ThemeColors.MatcherGroupEditor, ApplySetWindowUXTheme = true };
 
 		public event EventHandler Apply;
 
