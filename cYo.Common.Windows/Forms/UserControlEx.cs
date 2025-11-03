@@ -11,9 +11,9 @@ namespace cYo.Common.Windows.Forms
             ThemeExtensions.Theme(control ?? this);
         }
 
-        protected override void OnHandleCreated(EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
-            base.OnHandleCreated(e);
+            base.OnLoad(e);
             ApplyTheme();
         }
     }

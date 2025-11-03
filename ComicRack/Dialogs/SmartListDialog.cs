@@ -11,13 +11,15 @@ using cYo.Common.Localize;
 using cYo.Common.Text;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class SmartListDialog : FormEx, ISmartListDialog
+	public partial class SmartListDialog : FormEx, ISmartListDialog, IThemeCustom
 	{
 		private class ReferenceItem : ComboBoxSkinner.ComboBoxItem<string>
 		{
@@ -191,6 +193,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				matcherControls.AutoScrollPosition = new Point(0, value);
 			}
 		}
+
+		public UIComponent UIComponent => UIComponent.None;
+
+		public ThemeControlDefinition ControlDefinition => new() { BackColor = ThemeColors.MatcherGroupEditor };
 
 		public event EventHandler Apply;
 
