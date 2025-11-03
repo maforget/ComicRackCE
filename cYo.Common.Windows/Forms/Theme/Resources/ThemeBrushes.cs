@@ -40,12 +40,6 @@ public static class ThemeBrushes
         public static Brush Fill => FromThemeColor(ThemeColors.Stack.Fill);
     }
 
-    public static class DetailView
-    {
-		public static Brush RowHighlight => FromThemeColor(ThemeColors.DetailView.RowHighlight);
-	}
-
-
 	//public static class DarkMode
 	//{
 	//    public static class SelectedText
