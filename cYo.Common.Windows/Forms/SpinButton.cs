@@ -322,7 +322,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				Width = FormUtility.ScaleDpiX(11),
 				Enabled = textBox.Enabled,
-				Visible = !hidden, // && textBox.IsVisibleSet(),    // Doesn't work correctly because IsVisibleSet() only works if an handle was already created.
+				Visible = !hidden && textBox.Visible, // && textBox.IsVisibleSet(),    // Doesn't work correctly because IsVisibleSet() only works if an handle was already created.
 				Anchor = anchorStyles
 			};
 
