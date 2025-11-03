@@ -17,7 +17,7 @@ using static IronPython.Modules._ast;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class SmartListQueryDialog : FormEx, ISmartListDialog
+	public partial class SmartListQueryDialog : FormEx, ISmartListDialog, IThemeCustom
 	{
 		private class UndoItem
 		{
@@ -139,6 +139,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				btNext.Enabled = value;
 			}
 		}
+
+		public UIComponent UIComponent => UIComponent.None;
+
+		public ThemeControlDefinition ControlDefinition => new() { BackColor = ThemeColors.MatcherGroupEditor };
 
 		public event EventHandler Apply;
 

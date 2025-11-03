@@ -47,7 +47,7 @@ internal class DarkThemeColorTable : ThemeColorTable
     //public override Color MainViewBack => Color.Transparent;
     //public override Color MainViewToolStripBack => Color.Transparent;
 
-    public override Color MatcherGroupEditor => DarkColors.UIComponent.Window;
+    public override Color MatcherGroupEditor => DarkColors.UIComponent.Content;
 
     // SimpleScrollbarPanel
     //public override Color ScrollbarPanelBorder => ThemeColors.BlackSmoke;
