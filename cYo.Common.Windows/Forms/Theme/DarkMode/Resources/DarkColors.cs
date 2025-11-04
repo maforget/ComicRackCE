@@ -12,16 +12,16 @@ internal class DarkColors
 
     private static class Common
     {
-        public static readonly Color EditBack = Color.FromArgb(46, 46, 46); // RGB 46 HEX 2E : was RGB 56 HEX 38
+        public static readonly Color EditBack = SystemColors.ControlLight;  // RGB 46 HEX 2E : was RGB 56 HEX 38
         public static readonly Color ListBack = Color.FromArgb(40, 40, 40); // RGB 40 HEX 28 : framework uses RGB 46 HEX 2E; setting darker for Form contrast 
         public static readonly Color Border = SystemColors.ControlDarkDark; // RGB 90 HEX 5A
     }
 
     internal static class UIComponent
     {
+        public static readonly Color SidePanel = Color.FromArgb(25, 25, 25); // RGB 25 HEX 19 : ComicExplorerView.SidePanel [favView(ItemView) + ComicListBrowser + SmallComicPreview]
+        public static readonly Color Content = SystemColors.Control;         // RGB 32 HEX 20 : MainViewItemView + CollapsibleGroupBox + background
         public static readonly Color Window = SystemColors.Window;           // RGB 50 HEX 32 : Form Background 
-        public static readonly Color SidePanel = Color.FromArgb(25, 25, 25); // RGB 25 HEX 19 : ComicExplorerView.SidePanel [favView(ItemView) + ComicListBrowser + SmallComicPreview] 
-        public static readonly Color Content = SystemColors.Control;         // RGB 32 HEX 20 : MainViewItemView + CollapsibleGroupBox + background  
     }
 
     #region Color.Empty
