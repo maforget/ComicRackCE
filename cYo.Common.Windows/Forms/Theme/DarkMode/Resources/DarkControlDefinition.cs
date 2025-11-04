@@ -65,9 +65,11 @@ internal class DarkControlDefinition : ThemeControlDefinition
         if (!definition.ForeColor.HasValue && TryGetSystemColor(control.ForeColor, out Color systemForeColor))
 			definition.ForeColor = systemForeColor;
 
-        if (control is ITheme itheme && itheme.UIComponent != UIComponent.None)
+        if (control is ITheme itheme && itheme.UIComponent != UIComponent.None) // for controls that implement ITheme
 			definition.BackColor = DarkColors.GetUIComponentColor(itheme.UIComponent);
-        else if (!definition.BackColor.HasValue && TryGetSystemColor(control.BackColor, out Color systemBackColor))
+		else if (control.GetAttachedTheme() is ITheme attached && attached != null && attached.UIComponent != UIComponent.None) // for controls where ITheme is dynamically attached (plugins)
+			definition.BackColor = DarkColors.GetUIComponentColor(attached.UIComponent);
+		else if (!definition.BackColor.HasValue && TryGetSystemColor(control.BackColor, out Color systemBackColor))
 			definition.BackColor = systemBackColor;
 
         return definition;

@@ -17,14 +17,14 @@ namespace cYo.Projects.ComicRack.Plugins.Theme
 
 		public Themes CurrentTheme { get; } = Themes.Default;
 
-        public UIComponent UIComponent => UIComponent.Window;
+		public UIComponent UIComponent { get; set; } = UIComponent.Window; // Added setter so plugins can change it
 
-        public bool IsDarkModeEnabled => CurrentTheme == Themes.Dark;
+		public bool IsDarkModeEnabled => CurrentTheme == Themes.Dark;
 
 		private ToolStripRenderer toolStripRenderer;
 		public ToolStripRenderer ToolStripRenderer => toolStripRenderer ??= IsDarkModeEnabled ? new ThemeToolStripProRenderer() : new ToolStripSystemRenderer();
 
-		public ThemePlugin(Themes theme = Themes.Default)
+		private ThemePlugin(Themes theme = Themes.Default)
 		{
 			CurrentTheme = theme;
 		}
@@ -36,6 +36,7 @@ namespace cYo.Projects.ComicRack.Plugins.Theme
 
 		public void ApplyTheme(Control control = null)
 		{
+			control?.AttachTheme(this as ITheme); // Ataches the ITheme to the control
 			control?.Theme();
 		}
 	}
