@@ -41,7 +41,6 @@ internal partial class DarkControl
 
         [typeof(Form)] = new DarkControlDefinition
         {
-            BackColor = DarkColors.UIComponent.Window,
             UXTheme = c => UXTheme.SetWindowTheme(c.Handle) //SetWindowUXTheme((Form)c)
         },
 

@@ -40,9 +40,6 @@ internal class DarkControlDefinition : ThemeControlDefinition
         if (!definition.AllowUXTheme)
             UXTheme = null;
 
-        if (definition.AllowUXTheme && definition.ApplySetWindowUXTheme)
-            UXTheme = control => Win32.UXTheme.SetWindowTheme(control.Handle);
-
 		if (component != UIComponent.None)
             BackColor = DarkColors.GetUIComponentColor(component);
     }
@@ -67,7 +64,9 @@ internal class DarkControlDefinition : ThemeControlDefinition
         if (!ForeColor.HasValue && TryGetSystemColor(control.ForeColor, out systemForeColor))
             ForeColor = systemForeColor;
 
-        if (!BackColor.HasValue && TryGetSystemColor(control.BackColor, out systemBackColor))
+        if (control is ITheme itheme && itheme.UIComponent != UIComponent.None)
+            BackColor = DarkColors.GetUIComponentColor(itheme.UIComponent);
+        else if (!BackColor.HasValue && TryGetSystemColor(control.BackColor, out systemBackColor))
             BackColor = systemBackColor;
     }
 }

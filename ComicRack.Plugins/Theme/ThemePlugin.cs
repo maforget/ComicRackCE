@@ -17,7 +17,9 @@ namespace cYo.Projects.ComicRack.Plugins.Theme
 
 		public Themes CurrentTheme { get; } = Themes.Default;
 
-		public bool IsDarkModeEnabled => CurrentTheme == Themes.Dark;
+        public UIComponent UIComponent => UIComponent.Window;
+
+        public bool IsDarkModeEnabled => CurrentTheme == Themes.Dark;
 
 		private ToolStripRenderer toolStripRenderer;
 		public ToolStripRenderer ToolStripRenderer => toolStripRenderer ??= IsDarkModeEnabled ? new ThemeToolStripProRenderer() : new ToolStripSystemRenderer();

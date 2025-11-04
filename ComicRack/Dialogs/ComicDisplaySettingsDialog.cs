@@ -19,7 +19,7 @@ using cYo.Projects.ComicRack.Viewer.Config;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class ComicDisplaySettingsDialog : FormEx, IThemeCustom
+	public partial class ComicDisplaySettingsDialog : FormEx
 	{
 		private class TextureFileItem : ComboBoxSkinner.ComboBoxItem<string>
 		{
@@ -194,9 +194,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			set;
 		}
 
-		public UIComponent UIComponent => UIComponent.Content;
-
-		public ThemeControlDefinition ControlDefinition => new() { ApplySetWindowUXTheme = true };
+		public override UIComponent UIComponent => UIComponent.Content;
 
 		public ComicDisplaySettingsDialog()
 		{
