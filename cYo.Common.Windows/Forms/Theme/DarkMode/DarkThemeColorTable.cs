@@ -86,7 +86,7 @@ internal class DarkThemeColorTable : ThemeColorTable
     public override Color ItemViewGroupSeparator => SystemColors.InactiveCaptionText; // Color.FromArgb(190, 190, 190);
 
     // CoverViewItem
-    public override Color DetailRowHighlight => Color.FromArgb(72, 72, 72).Transparent(96); // This drawn on top of ItemViewMainBack blending at alpha 96 giving "#2F2F2F"
+    public override Color DetailRowHighlight => Color.FromArgb(72, 72, 72); // This drawn on top of ItemViewMainBack blending at alpha 96 giving "#2F2F2F"
 
     // NiceTreeSkin
     public override Color NiceTreeSkinDragSeparator => SystemColors.InactiveCaptionText; // Color.FromArgb(190, 190, 190);

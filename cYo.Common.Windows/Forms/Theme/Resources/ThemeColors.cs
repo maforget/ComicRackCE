@@ -141,17 +141,17 @@ public static class ThemeColors
         public static Color FavViewBack => ColorTable.ComicListLibraryBrowserFavViewBack;
     }
 
+    public static class DetailView
+    {
+        public static Color RowHighlight => ColorTable.DetailRowHighlight.Transparent(96);
+    }
+
     public static class ItemView
     {
         public static Color DefaultBack => ColorTable.ItemViewDefaultBack;
         public static Color MainBack => ColorTable.ItemViewMainBack;
         public static Color GroupText => ColorTable.ItemViewGroupText;
         public static Color GroupSeparator => ColorTable.ItemViewGroupSeparator;
-	}
-
-    public static class DetailView
-    {
-        public static Color RowHighlight => ColorTable.DetailRowHighlight.Transparent(96);
 	}
 
     public static class NiceTreeSkin

@@ -87,7 +87,7 @@ internal class ThemeColorTable
     public virtual Color ItemViewGroupSeparator => System.Drawing.SystemColors.ControlDark;
 
     // CoverViewItem
-    public virtual Color DetailRowHighlight => Color.LightGray.Transparent(96);
+    public virtual Color DetailRowHighlight => Color.LightGray;
 
     // ItemDrawInformation
     public virtual Color ItemDrawInfoText => Color.Black;
