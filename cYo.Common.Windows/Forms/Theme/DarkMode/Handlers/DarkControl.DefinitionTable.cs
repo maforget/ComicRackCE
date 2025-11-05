@@ -34,6 +34,11 @@ internal partial class DarkControl
             UXTheme = c => UXTheme.SetComboBoxTheme(c.Handle) //SetComboBoxUXTheme((ComboBox)c)
         },
 
+        [typeof(UserControl)] = new DarkControlDefinition
+        {
+            BackColor = Color.Transparent,
+        },
+
         [typeof(DataGridView)] = new DarkControlDefinition
         {
             Theme = c => DarkDataGridView((DataGridView)c)
