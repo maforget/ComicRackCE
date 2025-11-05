@@ -209,7 +209,6 @@ public static class ThemeColors
 
         public static class RatingControl
         {
-            public static readonly Color Back = DarkColors.RatingControl.Back;
             public static readonly Color Rated = DarkColors.RatingControl.Rated;
         }
     }

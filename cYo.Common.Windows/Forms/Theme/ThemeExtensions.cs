@@ -163,8 +163,8 @@ public static class ThemeExtensions
 	public static void DrawThemeBackground(this VisualStyleRenderer vsr, PaintEventArgs e, Rectangle rect, Color backColor)
         => InvokeAction(
 			() => vsr.DrawBackground(e.Graphics, rect),
-			() => DarkThemeExtensions.ControlPaint.DrawBackground(e, backColor)
-		);
+			() => DarkThemeExtensions.ControlPaint.DrawBackground(e, rect, backColor) // TODO : evaluate vsr to determine what should be drawn
+        );
 
     public static void DrawThemeBackground(this VisualStyleRenderer vsr, DrawToolTipEventArgs e)
         => InvokeAction(

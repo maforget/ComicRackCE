@@ -184,7 +184,6 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             SetStyle(ControlStyles.ResizeRedraw, value: true);
             SetStyle(ControlStyles.Selectable, value: true);
             SetStyle(ControlStyles.SupportsTransparentBackColor, value: true);
-            ThemeExtensions.InvokeAction(() => BackColor = ThemeColors.DarkMode.RatingControl.Back);
         }
 
         protected override void OnPaint(PaintEventArgs e)
