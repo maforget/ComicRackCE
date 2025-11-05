@@ -39,6 +39,8 @@ internal class DarkThemeHandler : IThemeHandler
             if (customControl.ControlDefinition != null)
             {
                 customDefinition = new DarkControlDefinition(customControl.ControlDefinition);
+                if (TryGetDarkControlDefinition(control.GetType(), out var darkControlDefinition))
+                    customDefinition.UXTheme = darkControlDefinition.UXTheme;
                 return true;
             }
         }
