@@ -19,7 +19,7 @@ using cYo.Projects.ComicRack.Viewer.Properties;
 
 namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
-	public partial class SmartListDialog : FormEx, ISmartListDialog, IThemeCustom
+	public partial class SmartListDialog : FormEx, ISmartListDialog
 	{
 		private class ReferenceItem : ComboBoxSkinner.ComboBoxItem<string>
 		{
@@ -194,9 +194,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			}
 		}
 
-		public UIComponent UIComponent => UIComponent.None;
-
-		public ThemeControlDefinition ControlDefinition => new() { BackColor = ThemeColors.MatcherGroupEditor, ApplySetWindowUXTheme = true };
+		public override UIComponent UIComponent => UIComponent.Content;
 
 		public event EventHandler Apply;
 

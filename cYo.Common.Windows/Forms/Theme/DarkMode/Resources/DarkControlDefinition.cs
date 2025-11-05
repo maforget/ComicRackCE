@@ -40,9 +40,6 @@ internal class DarkControlDefinition : ThemeControlDefinition
         if (!definition.AllowUXTheme)
             UXTheme = null;
 
-        if (definition.AllowUXTheme && definition.ApplySetWindowUXTheme)
-            UXTheme = control => Win32.UXTheme.SetWindowTheme(control.Handle);
-
 		if (component != UIComponent.None)
             BackColor = DarkColors.GetUIComponentColor(component);
     }
@@ -56,18 +53,25 @@ internal class DarkControlDefinition : ThemeControlDefinition
     /// </remarks>
     public DarkControlDefinition(Control control)
     {
-        SetColor(control);
+        DarkControlDefinition definition = SetColor(control);
+        this.ForeColor = definition.ForeColor;
+        this.BackColor = definition.BackColor;
     }
 
-    public void SetColor(Control control)
+    public DarkControlDefinition SetColor(Control control)
     {
-        Color systemForeColor;
-        Color systemBackColor;
+        DarkControlDefinition definition = new DarkControlDefinition(this); // Make a copy so we don't modify the DefinitionTable.
 
-        if (!ForeColor.HasValue && TryGetSystemColor(control.ForeColor, out systemForeColor))
-            ForeColor = systemForeColor;
+        if (!definition.ForeColor.HasValue && TryGetSystemColor(control.ForeColor, out Color systemForeColor))
+			definition.ForeColor = systemForeColor;
 
-        if (!BackColor.HasValue && TryGetSystemColor(control.BackColor, out systemBackColor))
-            BackColor = systemBackColor;
+        if (control is ITheme itheme && itheme.UIComponent != UIComponent.None) // for controls that implement ITheme
+			definition.BackColor = DarkColors.GetUIComponentColor(itheme.UIComponent);
+		else if (control.GetAttachedTheme() is ITheme attached && attached != null && attached.UIComponent != UIComponent.None) // for controls where ITheme is dynamically attached (plugins)
+			definition.BackColor = DarkColors.GetUIComponentColor(attached.UIComponent);
+		else if (!definition.BackColor.HasValue && TryGetSystemColor(control.BackColor, out Color systemBackColor))
+			definition.BackColor = systemBackColor;
+
+        return definition;
     }
 }
