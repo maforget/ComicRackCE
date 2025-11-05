@@ -60,7 +60,7 @@ internal class DarkControlDefinition : ThemeControlDefinition
 
     public DarkControlDefinition SetColor(Control control)
     {
-        DarkControlDefinition definition = new DarkControlDefinition(this); //Make a copy so we don't modify the Definition Table.
+        DarkControlDefinition definition = new DarkControlDefinition(this); // Make a copy so we don't modify the DefinitionTable.
 
         if (!definition.ForeColor.HasValue && TryGetSystemColor(control.ForeColor, out Color systemForeColor))
 			definition.ForeColor = systemForeColor;

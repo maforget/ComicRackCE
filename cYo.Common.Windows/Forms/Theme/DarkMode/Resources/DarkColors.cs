@@ -1,9 +1,21 @@
-﻿using cYo.Common.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 
 namespace cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 
+/// <summary>
+/// <para><see cref="Themes.Dark"/> Mode <b>Internal</b> <see cref="Color"/> definitions.</para>
+/// <para>
+/// <b>Internal <see cref="Color"/></b><br/>
+/// - Referenced within <see cref="Theme.DarkMode"/>.<br/>
+/// - Not intended to be user-customizable.<br/>
+/// - <see cref="ThemeExtensions"/>
+/// </para>
+/// </summary>
+/// <remarks>
+/// Exposed externally via <see cref="ThemeExtensions"/><br/>
+/// For <see cref="Themes.Dark"/> Mode <b>App</b> <see cref="Color"/> definitions, see <see cref="DarkThemeColorTable"/>.
+/// </remarks>
 internal class DarkColors
 {
     // WhiteSmoke replacement. WhiteSmoke is RGB 245 but RGB 10 would be too dark
@@ -155,7 +167,9 @@ internal class DarkColors
     }
 }
 
-
+/// <summary>
+/// Brushes for <see cref="DarkColors"/>.
+/// </summary>
 internal static class DarkBrushes
 {
     private static readonly Dictionary<Color, SolidBrush> cache = new();
@@ -172,15 +186,12 @@ internal static class DarkBrushes
         public static Brush Back => FromDarkColor(DarkColors.CheckBox.Back);
         public static Brush BackCorner => FromDarkColor(DarkColors.CheckBox.BackCorner);
         public static Brush BackVertex => FromDarkColor(DarkColors.CheckBox.BackVertex);
-        //public static Brush Border => FromDarkColor(DarkColors.CheckBox.Border);
         public static Brush BorderEdge => FromDarkColor(DarkColors.CheckBox.BorderEdge);
         public static Brush BorderCorner => FromDarkColor(DarkColors.CheckBox.BorderCorner);
-        //public static Brush UncheckedBorder => FromDarkColor(DarkColors.CheckBox.UncheckedBorder);
         public static Brush UncheckedBorderEdge => FromDarkColor(DarkColors.CheckBox.UncheckedBorderEdge);
         public static Brush UncheckedBack => FromDarkColor(DarkColors.CheckBox.UncheckedBack);
         public static Brush UncheckedBackCorner => FromDarkColor(DarkColors.CheckBox.UncheckedBackCorner);
         public static Brush UncheckedBackVertex => FromDarkColor(DarkColors.CheckBox.UncheckedBackVertex);
-        //public static Brush UncheckedDisabledBorder => FromDarkColor(DarkColors.CheckBox.UncheckedDisabledBorder);
         public static Brush UncheckedDisabledBorderEdge => FromDarkColor(DarkColors.CheckBox.UncheckedDisabledBorderEdge);
         public static Brush UncheckedDisabledBackCorner => FromDarkColor(DarkColors.CheckBox.UncheckedDisabledBackCorner);
         public static Brush UncheckedDisabledBackVertex => FromDarkColor(DarkColors.CheckBox.UncheckedDisabledBackVertex);
@@ -209,6 +220,9 @@ internal static class DarkBrushes
         public static Brush Back = FromDarkColor(DarkColors.ToolTip.Back);
     }
 
+    /// <summary>
+    /// Returns a <see cref="Brush"/> with the specified <paramref name="color"/>.
+    /// </summary>
     public static Brush FromDarkColor(Color color)
     {
         if (!cache.TryGetValue(color, out var brush))
@@ -220,6 +234,9 @@ internal static class DarkBrushes
     }
 }
 
+/// <summary>
+/// Pens for <see cref="DarkColors"/>.
+/// </summary>
 internal static class DarkPens
 {
     private static readonly Dictionary<Color, Pen> cache = new();
@@ -247,6 +264,9 @@ internal static class DarkPens
         public static Pen Border = FromDarkColor(DarkColors.TabBar.Border);
     }
 
+    /// <summary>
+    /// Returns a <see cref="Pen"/> with the specified <paramref name="color"/>.
+    /// </summary>
     public static Pen FromDarkColor(Color color)
     {
         if (!cache.TryGetValue(color, out var brush))

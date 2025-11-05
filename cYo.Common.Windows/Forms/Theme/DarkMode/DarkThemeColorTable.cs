@@ -1,5 +1,4 @@
-﻿using cYo.Common.Drawing;
-using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
+﻿using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 using cYo.Common.Windows.Forms.Theme.Internal;
 using cYo.Common.Windows.Forms.Theme.Resources;
 using System.Drawing;
@@ -7,7 +6,7 @@ using System.Drawing;
 namespace cYo.Common.Windows.Forms.Theme.DarkMode;
 
 /// <summary>
-/// Dark Mode application <see cref="Color"/> values.<br/>
+/// <see cref="Themes.Dark"/> Mode <b>App</b> <see cref="Color"/> definitions.<br/>
 /// </summary>
 /// <remarks>
 /// Does not include <see cref="System.Drawing.SystemColors"/> or <see cref="System.Windows.Forms.Control"/> colors.
@@ -35,23 +34,8 @@ internal class DarkThemeColorTable : ThemeColorTable
     // ComicListLibraryBrowserF
     public override Color ComicListLibraryBrowserFavViewBack => DarkColors.UIComponent.SidePanel;
 
-    // ControlStyleColorTable
-    //public override Color ControlStyleColorTableBorder => Color.Black;
-
     // DeviceEditControl
     public override Color DeviceEditControlBack => SystemColors.Control;
-
-    // MainForm
-    //public override Color MainFormToolStripBack => Color.Transparent;
-
-    //MainView
-    //public override Color MainViewBack => Color.Transparent;
-    //public override Color MainViewToolStripBack => Color.Transparent;
-
-    public override Color MatcherGroupEditor => DarkColors.UIComponent.Content;
-
-    // SimpleScrollbarPanel
-    //public override Color ScrollbarPanelBorder => ThemeColors.BlackSmoke;
 
     // SmallComicPreview
     public override Color SmallComicPreviewPageViewerBack => DarkColors.UIComponent.SidePanel;
@@ -62,8 +46,8 @@ internal class DarkThemeColorTable : ThemeColorTable
     public override Color StyledSelectionFocusedBack => SystemColors.Highlight;
 
     // ThumbTileRenderer
-    public override Color ThumbTileRendererEmboss => DarkColors.BlackSmoke; // Color.FromArgb(unchecked((int)0xFF303030));
-    public override Color ThumbTileRendererTitleText => Color.White; // Color.FromArgb(unchecked((int)0xFFD0D0D0));
+    public override Color ThumbTileRendererEmboss => DarkColors.BlackSmoke;
+    public override Color ThumbTileRendererTitleText => Color.White;
     public override Color ThumbTileRendererBodyText => Color.LightGray;
 
     // ThumbRenderer
@@ -114,12 +98,7 @@ internal class DarkThemeColorTable : ThemeColorTable
     public override Color TabBarSelectedBack => SystemColors.Window; // RGB 50 HEX 32
 
     // ToolTip
-    //public override Color ToolTipBack => SystemColors.Window; // should be SystemColors.Info; needs alpha-aware tweaks
     public override Color ToolTipText => SystemColors.ControlText; // should be SystemColors.InfoText; needs alpha-aware tweaks
-
-    // TreeView
-    //public override Color TreeViewBack => DarkColors.TreeView.Back;
-    //public override Color TreeViewText => DarkColors.TreeView.Text;
 
     // ComboBox
     public override Color ComboBoxSeparator => SystemColors.ControlText;
@@ -131,14 +110,8 @@ internal class DarkThemeColorTable : ThemeColorTable
     // Header
     public override Color HeaderBack => DarkColors.Header.Back;
     public override Color HeaderSeparator => DarkColors.Header.Separator; // Color.FromArgb(99, 99, 99);
-    //public override Color HeaderText => SystemColors.WindowText; // only used in ThemeExtension.ListView_DrawColumnHeader, which is only used in dark mode
-
-    // Control defaults
-    //public override Color ListBoxBack => Color.FromArgb(46, 46, 46); // to match ListView BackColor
 
     // RatingControl
-    //public override Color RatingControlBack => DarkColors.ListBox.Back;
-    //public override Color RatingControlRated => SystemColors.ControlText;
     public override Color RatingControlUnrated => SystemColors.GrayText;
 
     // SplitButton
@@ -148,4 +121,20 @@ internal class DarkThemeColorTable : ThemeColorTable
     // Stacks
     public override Color StackFill => Color.LightGray;
 	public override Color StackBorder => Color.Black;
+
+
+    // ControlStyleColorTable
+    //public override Color ControlStyleColorTableBorder => Color.Black;
+
+    // MainForm
+    //public override Color MainFormToolStripBack => Color.Transparent;
+
+    //MainView
+    //public override Color MainViewBack => Color.Transparent;
+    //public override Color MainViewToolStripBack => Color.Transparent;
+
+    //public override Color MatcherGroupEditor => DarkColors.UIComponent.Content;
+
+    // SimpleScrollbarPanel
+    //public override Color ScrollbarPanelBorder => ThemeColors.BlackSmoke;
 }

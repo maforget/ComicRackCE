@@ -251,7 +251,8 @@ public static class ControlPaintEx
 
 
 /// <summary>
-/// Extension methods used to attach <see cref="ITheme"/> to objects. Used for outside objects like plugins that needs it for selecting the <see cref="UIComponent"/>
+/// Extension methods used to attach <see cref="ITheme"/> to <see cref="Control"/> objects.<br/>
+/// Used for outside objects like plugins that need it for selecting the <see cref="UIComponent"/>
 /// </summary>
 public static class ThemeBinding
 {

@@ -36,7 +36,7 @@ namespace cYo.Projects.ComicRack.Plugins.Theme
 
 		public void ApplyTheme(Control control = null)
 		{
-			control?.AttachTheme(this as ITheme); // Ataches the ITheme to the control
+			control?.AttachTheme(this as ITheme); // Attaches the ITheme to the control
 			control?.Theme();
 		}
 	}
