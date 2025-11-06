@@ -8,14 +8,14 @@ namespace cYo.Common.Windows.Forms
     {
         public virtual UIComponent UIComponent => UIComponent.None;
 
-        public virtual void ApplyTheme(Control? control = null)
+        public virtual void ApplyTheme(Control control = null)
         {
             ThemeExtensions.Theme(control ?? this);
         }
 
-        protected override void OnLoad(EventArgs e)
+        protected override void OnHandleCreated(EventArgs e)
         {
-            base.OnLoad(e);
+            base.OnHandleCreated(e);
             ApplyTheme();
         }
     }
