@@ -58,6 +58,9 @@ internal class DarkThemeColorTable : ThemeColorTable
     //public override Color ThumbnailViewItemHighlightText => SystemColors.HighlightText; // FavoriteViewitem, FolderViewItem
     public override Color ThumbnailViewItemBorder => Color.FromArgb(64, SystemColors.InactiveCaptionText);
 
+    // MagnifySetupControl
+    public override Color MagnifySetupBackColor => DarkColors.UIComponent.Content;
+
     // PreferencesDialog
     public override Color PreferencesPanelReaderOverlay => DarkColors.BlackSmoke;
     public override Color PreferencesLabelOverlays => ThemeColors.Lossboro;

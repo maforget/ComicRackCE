@@ -164,6 +164,11 @@ public static class ThemeColors
         public static Color Back => ColorTable.DeviceEditControlBack;
     }
 
+    public static class MagnifySetup
+    {
+        public static Color Back => ColorTable.MagnifySetupBackColor;
+    }
+
     public static class Preferences
     {
         public static Color PanelReader => ColorTable.PreferencesPanelReaderOverlay;

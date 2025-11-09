@@ -57,6 +57,9 @@ internal class ThemeColorTable
     public virtual Color ThumbnailViewItemHighlightText => System.Drawing.SystemColors.HighlightText; // FavoriteViewitem, FolderViewItem
     public virtual Color ThumbnailViewItemBorder => Color.FromArgb(48, System.Drawing.SystemColors.ControlDark);
 
+    // MagnifySetupControl
+    public virtual Color MagnifySetupBackColor => System.Drawing.Color.Transparent;
+
     // PreferencesDialog
     public virtual Color PreferencesPanelReaderOverlay => Color.WhiteSmoke;
     public virtual Color PreferencesLabelOverlays => Color.Gainsboro;
