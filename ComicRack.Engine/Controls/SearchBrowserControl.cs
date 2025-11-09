@@ -692,7 +692,8 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			}
 			finally
 			{
-				listView.EndUpdate();
+                listView.Theme();
+                listView.EndUpdate();
 			}
 		}
 
