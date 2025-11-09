@@ -321,7 +321,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             SafeSetBounds(btNot2, cbType2.Right + 1, yOffset, width2, cbType2.Height + heightOffset);
             SafeSetBounds(btNot3, cbType3.Right + 1, yOffset, width2, cbType3.Height + heightOffset);
 				
-			//base.OnLayout(levent);
+			base.OnLayout(levent);
 		}
 
 		private static void SetListViewBounds(ListView lv, int x, int y, int w, int h)
