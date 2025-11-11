@@ -20,7 +20,7 @@ namespace cYo.Common.Windows.Forms
 
         public virtual UIComponent UIComponent => UIComponent.None;
 
-        public virtual void ApplyTheme(Control? control = null)
+        public virtual void ApplyTheme(Control control = null)
         {
             ThemeExtensions.Theme(control ?? this);
         }

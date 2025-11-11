@@ -98,7 +98,6 @@ internal partial class DarkControl
         [typeof(TextBox)] = new DarkControlDefinition
         {
             BackColor = DarkColors.TextBox.Back,
-            BorderStyle = BorderStyle.FixedSingle,
             Theme = c => DarkTextBoxBase((TextBox)c)
         },
 
