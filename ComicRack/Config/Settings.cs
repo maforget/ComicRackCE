@@ -2397,7 +2397,24 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		private List<VirtualTag> virtualTags = new List<VirtualTag>();
 		public List<VirtualTag> VirtualTags => virtualTags;
 
-        [field: NonSerialized]
+		private BackupManagerOptions backupManager = new BackupManagerOptions();
+		public BackupManagerOptions BackupManager
+		{ 
+			get => backupManager;
+			set
+			{
+				if(backupManager != value)
+				{
+					backupManager = value;
+					FireEvent(this.BackupManagerChanged);
+				}
+			}
+		}
+
+		[field: NonSerialized]
+		public event EventHandler BackupManagerChanged;
+
+		[field: NonSerialized]
 		public event EventHandler SettingsChanged;
 
 		[field: NonSerialized]

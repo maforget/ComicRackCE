@@ -118,6 +118,14 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.numThumbnailCacheSize = new System.Windows.Forms.NumericUpDown();
 			this.chkEnableThumbnailCache = new System.Windows.Forms.CheckBox();
 			this.lblThumbCacheUsage = new System.Windows.Forms.Label();
+			this.grpBackupManager = new cYo.Common.Windows.Forms.CollapsibleGroupBox();
+			this.chkIncludeAlternateConfig = new System.Windows.Forms.CheckBox();
+			this.numBackupsToKeep = new System.Windows.Forms.NumericUpDown();
+			this.lblBackupsToKeep = new System.Windows.Forms.Label();
+			this.lbBackupOptions = new System.Windows.Forms.CheckedListBox();
+			this.btBackupLocation = new System.Windows.Forms.Button();
+			this.txtBackupLocation = new System.Windows.Forms.TextBox();
+			this.lblBackupLocation = new System.Windows.Forms.Label();
 			this.grpDatabaseBackup = new cYo.Common.Windows.Forms.CollapsibleGroupBox();
 			this.btRestoreDatabase = new System.Windows.Forms.Button();
 			this.btBackupDatabase = new System.Windows.Forms.Button();
@@ -207,6 +215,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.tabBehavior = new System.Windows.Forms.CheckBox();
 			this.tabScripts = new System.Windows.Forms.CheckBox();
 			this.tabAdvanced = new System.Windows.Forms.CheckBox();
+			this.lblBackupOptions = new System.Windows.Forms.Label();
 			this.pageReader.SuspendLayout();
 			this.groupHardwareAcceleration.SuspendLayout();
 			this.grpMouse.SuspendLayout();
@@ -228,6 +237,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			((System.ComponentModel.ISupportInitialize)(this.numPageCacheSize)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numInternetCacheSize)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numThumbnailCacheSize)).BeginInit();
+			this.grpBackupManager.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numBackupsToKeep)).BeginInit();
 			this.grpDatabaseBackup.SuspendLayout();
 			this.groupOtherComics.SuspendLayout();
 			this.grpLanguages.SuspendLayout();
@@ -479,7 +490,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.labelVisiblePartOverlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelVisiblePartOverlay.BackColor = ThemeColors.Preferences.LabelOverlays;
-            this.labelVisiblePartOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelVisiblePartOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.labelVisiblePartOverlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.labelVisiblePartOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelVisiblePartOverlay.Location = new System.Drawing.Point(204, 75);
@@ -494,7 +505,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.labelNavigationOverlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.labelNavigationOverlay.BackColor = ThemeColors.Preferences.LabelOverlays;
-            this.labelNavigationOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelNavigationOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.labelNavigationOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelNavigationOverlay.Location = new System.Drawing.Point(55, 100);
 			this.labelNavigationOverlay.Name = "labelNavigationOverlay";
@@ -507,7 +518,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// labelStatusOverlay
 			// 
 			this.labelStatusOverlay.BackColor = ThemeColors.Preferences.LabelOverlays;
-            this.labelStatusOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelStatusOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.labelStatusOverlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.labelStatusOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelStatusOverlay.Location = new System.Drawing.Point(60, 49);
@@ -522,7 +533,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.labelPageOverlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.labelPageOverlay.BackColor = ThemeColors.Preferences.LabelOverlays;
-            this.labelPageOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelPageOverlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.labelPageOverlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.labelPageOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelPageOverlay.Location = new System.Drawing.Point(204, 3);
@@ -900,6 +911,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.pageAdvanced.Controls.Add(this.grpIntegration);
 			this.pageAdvanced.Controls.Add(this.groupMessagesAndSocial);
 			this.pageAdvanced.Controls.Add(this.groupMemory);
+			this.pageAdvanced.Controls.Add(this.grpBackupManager);
 			this.pageAdvanced.Controls.Add(this.grpDatabaseBackup);
 			this.pageAdvanced.Controls.Add(this.groupOtherComics);
 			this.pageAdvanced.Controls.Add(this.grpLanguages);
@@ -915,7 +927,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.grpWirelessSetup.Controls.Add(this.lblWifiAddresses);
 			this.grpWirelessSetup.Controls.Add(this.txWifiAddresses);
 			this.grpWirelessSetup.Dock = System.Windows.Forms.DockStyle.Top;
-			this.grpWirelessSetup.Location = new System.Drawing.Point(0, 1411);
+			this.grpWirelessSetup.Location = new System.Drawing.Point(0, 1645);
 			this.grpWirelessSetup.Name = "grpWirelessSetup";
 			this.grpWirelessSetup.Size = new System.Drawing.Size(498, 136);
 			this.grpWirelessSetup.TabIndex = 8;
@@ -966,7 +978,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.grpIntegration.Controls.Add(this.chkOverwriteAssociations);
 			this.grpIntegration.Controls.Add(this.lbFormats);
 			this.grpIntegration.Dock = System.Windows.Forms.DockStyle.Top;
-			this.grpIntegration.Location = new System.Drawing.Point(0, 1071);
+			this.grpIntegration.Location = new System.Drawing.Point(0, 1305);
 			this.grpIntegration.Name = "grpIntegration";
 			this.grpIntegration.Size = new System.Drawing.Size(498, 340);
 			this.grpIntegration.TabIndex = 0;
@@ -1020,7 +1032,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.groupMessagesAndSocial.Controls.Add(this.btResetMessages);
 			this.groupMessagesAndSocial.Controls.Add(this.labelReshowHidden);
 			this.groupMessagesAndSocial.Dock = System.Windows.Forms.DockStyle.Top;
-			this.groupMessagesAndSocial.Location = new System.Drawing.Point(0, 996);
+			this.groupMessagesAndSocial.Location = new System.Drawing.Point(0, 1230);
 			this.groupMessagesAndSocial.Name = "groupMessagesAndSocial";
 			this.groupMessagesAndSocial.Size = new System.Drawing.Size(498, 75);
 			this.groupMessagesAndSocial.TabIndex = 6;
@@ -1051,7 +1063,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.groupMemory.Controls.Add(this.grpMemoryCache);
 			this.groupMemory.Controls.Add(this.grpDiskCache);
 			this.groupMemory.Dock = System.Windows.Forms.DockStyle.Top;
-			this.groupMemory.Location = new System.Drawing.Point(0, 641);
+			this.groupMemory.Location = new System.Drawing.Point(0, 875);
 			this.groupMemory.Name = "groupMemory";
 			this.groupMemory.Size = new System.Drawing.Size(498, 355);
 			this.groupMemory.TabIndex = 1;
@@ -1443,6 +1455,103 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.lblThumbCacheUsage.Size = new System.Drawing.Size(106, 13);
 			this.lblThumbCacheUsage.TabIndex = 7;
 			this.lblThumbCacheUsage.Text = "usage Thumb Cache";
+			// 
+			// grpBackupManager
+			// 
+			this.grpBackupManager.Controls.Add(this.lblBackupOptions);
+			this.grpBackupManager.Controls.Add(this.chkIncludeAlternateConfig);
+			this.grpBackupManager.Controls.Add(this.numBackupsToKeep);
+			this.grpBackupManager.Controls.Add(this.lblBackupsToKeep);
+			this.grpBackupManager.Controls.Add(this.lbBackupOptions);
+			this.grpBackupManager.Controls.Add(this.btBackupLocation);
+			this.grpBackupManager.Controls.Add(this.txtBackupLocation);
+			this.grpBackupManager.Controls.Add(this.lblBackupLocation);
+			this.grpBackupManager.Dock = System.Windows.Forms.DockStyle.Top;
+			this.grpBackupManager.Location = new System.Drawing.Point(0, 641);
+			this.grpBackupManager.Name = "grpBackupManager";
+			this.grpBackupManager.Size = new System.Drawing.Size(498, 234);
+			this.grpBackupManager.TabIndex = 4;
+			this.grpBackupManager.Text = "Backup Manager";
+			// 
+			// chkIncludeAlternateConfig
+			// 
+			this.chkIncludeAlternateConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.chkIncludeAlternateConfig.AutoSize = true;
+			this.chkIncludeAlternateConfig.Location = new System.Drawing.Point(13, 204);
+			this.chkIncludeAlternateConfig.Name = "chkIncludeAlternateConfig";
+			this.chkIncludeAlternateConfig.Size = new System.Drawing.Size(176, 17);
+			this.chkIncludeAlternateConfig.TabIndex = 6;
+			this.chkIncludeAlternateConfig.Text = "Include Alternate Configurations";
+			this.chkIncludeAlternateConfig.UseVisualStyleBackColor = true;
+			// 
+			// numBackupsToKeep
+			// 
+			this.numBackupsToKeep.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.numBackupsToKeep.Location = new System.Drawing.Point(414, 204);
+			this.numBackupsToKeep.Name = "numBackupsToKeep";
+			this.numBackupsToKeep.Size = new System.Drawing.Size(69, 20);
+			this.numBackupsToKeep.TabIndex = 5;
+			this.toolTip.SetToolTip(this.numBackupsToKeep, "Setting this to 0 will keep all backups");
+			// 
+			// lblBackupsToKeep
+			// 
+			this.lblBackupsToKeep.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblBackupsToKeep.AutoSize = true;
+			this.lblBackupsToKeep.Location = new System.Drawing.Point(296, 206);
+			this.lblBackupsToKeep.Name = "lblBackupsToKeep";
+			this.lblBackupsToKeep.Size = new System.Drawing.Size(117, 13);
+			this.lblBackupsToKeep.TabIndex = 4;
+			this.lblBackupsToKeep.Text = "# of Backups to Keep :";
+			// 
+			// lbBackupOptions
+			// 
+			this.lbBackupOptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lbBackupOptions.CheckOnClick = true;
+			this.lbBackupOptions.FormattingEnabled = true;
+			this.lbBackupOptions.Location = new System.Drawing.Point(12, 85);
+			this.lbBackupOptions.Name = "lbBackupOptions";
+			this.lbBackupOptions.Size = new System.Drawing.Size(472, 109);
+			this.lbBackupOptions.TabIndex = 3;
+			// 
+			// btBackupLocation
+			// 
+			this.btBackupLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btBackupLocation.Location = new System.Drawing.Point(411, 31);
+			this.btBackupLocation.Name = "btBackupLocation";
+			this.btBackupLocation.Size = new System.Drawing.Size(75, 23);
+			this.btBackupLocation.TabIndex = 2;
+			this.btBackupLocation.Text = "Browse...";
+			this.btBackupLocation.UseVisualStyleBackColor = true;
+			this.btBackupLocation.Click += new System.EventHandler(this.btBackupLocation_Click);
+			// 
+			// txtBackupLocation
+			// 
+			this.txtBackupLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtBackupLocation.Location = new System.Drawing.Point(66, 34);
+			this.txtBackupLocation.Name = "txtBackupLocation";
+			this.txtBackupLocation.Size = new System.Drawing.Size(339, 20);
+			this.txtBackupLocation.TabIndex = 1;
+			// 
+			// lblBackupLocation
+			// 
+			this.lblBackupLocation.AutoSize = true;
+			this.lblBackupLocation.Location = new System.Drawing.Point(12, 37);
+			this.lblBackupLocation.Name = "lblBackupLocation";
+			this.lblBackupLocation.Size = new System.Drawing.Size(48, 13);
+			this.lblBackupLocation.TabIndex = 0;
+			this.lblBackupLocation.Text = "Location";
+			// 
+			// lblBackupOptions
+			// 
+			this.lblBackupOptions.AutoSize = true;
+			this.lblBackupOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblBackupOptions.Location = new System.Drawing.Point(11, 64);
+			this.lblBackupOptions.Name = "lblBackupOptions";
+			this.lblBackupOptions.Size = new System.Drawing.Size(132, 13);
+			this.lblBackupOptions.TabIndex = 7;
+			this.lblBackupOptions.Text = "Items to include in Backup";
 			// 
 			// grpDatabaseBackup
 			// 
@@ -2529,6 +2638,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			((System.ComponentModel.ISupportInitialize)(this.numPageCacheSize)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numInternetCacheSize)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numThumbnailCacheSize)).EndInit();
+			this.grpBackupManager.ResumeLayout(false);
+			this.grpBackupManager.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numBackupsToKeep)).EndInit();
 			this.grpDatabaseBackup.ResumeLayout(false);
 			this.groupOtherComics.ResumeLayout(false);
 			this.groupOtherComics.PerformLayout();
@@ -2653,6 +2765,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private CollapsibleGroupBox groupMessagesAndSocial;
 		private CollapsibleGroupBox groupOtherComics;
 		private CollapsibleGroupBox grpDatabaseBackup;
+		private CollapsibleGroupBox grpBackupManager;
 		private CollapsibleGroupBox groupMemory;
 		private CollapsibleGroupBox grpIntegration;
 		private Panel pageLibrary;
@@ -2763,5 +2876,13 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         private TextBox txtCaptionFormat;
         private Label lblCaptionFormat;
 		private Button btnVTagsHelp;
+		private TextBox txtBackupLocation;
+		private Label lblBackupLocation;
+		private Button btBackupLocation;
+		private CheckedListBox lbBackupOptions;
+		private Label lblBackupsToKeep;
+		private NumericUpDown numBackupsToKeep;
+		private CheckBox chkIncludeAlternateConfig;
+		private Label lblBackupOptions;
 	}
 }

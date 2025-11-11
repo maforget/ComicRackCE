@@ -225,6 +225,12 @@ namespace cYo.Projects.ComicRack.Viewer
 			private set;
 		}
 
+		public static BackupManager BackupManager
+		{
+			get;
+			private set;
+		}
+
 		public static ComicScanner Scanner => QueueManager.Scanner;
 
 		public static ComicDatabase Database => DatabaseManager.Database;
@@ -875,6 +881,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				CacheManager = new CacheManager(DatabaseManager, Paths, Settings, Resources.ResourceManager);
 				QueueManager = new QueueManager(DatabaseManager, CacheManager, Settings, Settings.Devices);
 				QueueManager.ComicScanned += ScannerCheckFileIgnore;
+				BackupManager = new BackupManager(Settings.BackupManager, Paths);
 				Settings.IgnoredCoverImagesChanged += IgnoredCoverImagesChanged;
 				IgnoredCoverImagesChanged(null, EventArgs.Empty);
 				SystemEvents.PowerModeChanged += SystemEventsPowerModeChanged;
