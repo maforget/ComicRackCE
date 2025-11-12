@@ -35,22 +35,23 @@ internal sealed class DarkProfessionalColors : ProfessionalColorTableEx
     public override Color MenuStripGradientEnd => SystemColors.ControlLightLight;
     //=> SystemColors.Control;
 
-    public override Color StatusStripGradientBegin => Color.FromArgb(51, 51, 51);
+    public override Color StatusStripGradientBegin => SystemColors.Window;
     //=> SystemColors.Control;
 
-    public override Color StatusStripGradientEnd => Color.FromArgb(51, 51, 51);
+    public override Color StatusStripGradientEnd => SystemColors.Window;
     //=> SystemColors.Control;
 
+    // RGB 43 HEX 2B : based on being same ComboBoxButtonOnOverflow; not observed, unsure if used anywhere
     public override Color ToolStripDropDownBackground => Color.FromArgb(43, 43, 43);
     //=> SystemColors.Control;
 
-    public override Color ImageMarginGradientBegin => Color.FromArgb(51, 51, 51);
+    public override Color ImageMarginGradientBegin => SystemColors.Window;
     //=> SystemColors.Control;
 
-    public override Color ImageMarginGradientMiddle => Color.FromArgb(51, 51, 51);
+    public override Color ImageMarginGradientMiddle => SystemColors.Window;
     //=> SystemColors.Control;
 
-    public override Color ImageMarginGradientEnd => Color.FromArgb(51, 51, 51);
+    public override Color ImageMarginGradientEnd => SystemColors.Window;
     //=> SystemColors.Control;
 
     public override Color ToolStripBorder => DarkColors.Border.Dark;

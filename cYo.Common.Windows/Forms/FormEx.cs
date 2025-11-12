@@ -6,7 +6,9 @@ namespace cYo.Common.Windows.Forms
 {
     public class FormEx : Form, ITheme
     {
-        public void ApplyTheme(Control? control = null)
+        public virtual UIComponent UIComponent => UIComponent.Window;
+
+        public virtual void ApplyTheme(Control control = null)
         {
             ThemeExtensions.Theme(control ?? this);
         }

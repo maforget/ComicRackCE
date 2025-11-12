@@ -10,8 +10,8 @@ namespace cYo.Common.Windows.Forms.Theme.Resources;
 /// </summary>
 public class ThemeControlDefinition
 {
-    public bool AllowUXTheme = true;
-    public Color? ForeColor { get; set; }
+    public bool AllowUXTheme { get; set; } = true;
+	public Color? ForeColor { get; set; }
     public Color? BackColor { get; set; }
     public BorderStyle? BorderStyle { get; set; }
     public Action<Control> Theme { get; set; }

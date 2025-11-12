@@ -49,10 +49,12 @@ internal static class DarkControlPaint
     #endregion
 
     #region DrawBackground
-    internal static void DrawBackground(PaintEventArgs e, Color backColor)
+    internal static void DrawBackground(PaintEventArgs e, Rectangle bounds, Color backColor)
     {
         //e.Graphics.Clear(backColor); // emulating non-VisualStyleRenderer path for now
         e.Graphics.Clear(backColor);
+        // TODO : use VisualStyleElement to determine if a Border should be drawn
+        ControlPaint.DrawBorder(e.Graphics, bounds, DarkColors.Border.Default, ButtonBorderStyle.Solid);
     }
 
     internal static void DrawBackground(DrawItemEventArgs e)

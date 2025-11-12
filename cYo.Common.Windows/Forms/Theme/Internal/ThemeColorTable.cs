@@ -1,16 +1,18 @@
 ﻿using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace cYo.Common.Windows.Forms.Theme.Internal;
 
 /// <summary>
-/// Base class, with default application <see cref="Color"/> values.
+/// <para><see cref="Themes.Default"/> Mode <b>App</b> <see cref="Color"/> definitions.</para>
+/// <para>
+/// <b>App <see cref="Color"/></b><br/>
+/// - Referenced in various places throughout the app.<br/>
+/// - Intended to be user-customizable.
+/// </para>
 /// </summary>
 /// <remarks>
-/// This only includes <see cref="Color"/> values which are directly referenced (i.e. hard-coded) in various places in the app.<br/>
-/// It does not include Theme colors which are only used for Dark Mode.<br/>
-/// It also omits ImageTransparentColor, which tends to be <see cref="Color.Magenta"/> and shouldn't be Theme-dependent.
+/// <see cref="ToolStripItem.ImageTransparentColor"/> (<see cref="Color.Magenta"/> or - rarely - <see cref="Color.Fuchsia"/>) is omitted as it is should not be Theme-dependent.
 /// </remarks>
 internal class ThemeColorTable
 {
@@ -38,21 +40,6 @@ internal class ThemeColorTable
     // DeviceEditControl
     public virtual Color DeviceEditControlBack => Color.Transparent;
 
-    // ControlStyleColorTable
-    //public virtual Color ControlStyleColorTableBorder => Color.Black;
-
-    // MainForm
-    //public virtual Color MainFormToolStripBack => Color.Transparent;
-
-    // MainView
-    //public virtual Color MainViewBack => Color.Transparent;
-    //public virtual Color MainViewToolStripBack => Color.Transparent;
-
-    public virtual Color MatcherGroupEditor => System.Drawing.SystemColors.Control;
-
-    // SimpleScrollbarPanel
-    //public virtual Color ScrollbarPanelBorder => Color.LightGray;
-
     // SmallComicPreview
     public virtual Color SmallComicPreviewPageViewerBack => System.Drawing.SystemColors.Window;
     public virtual Color SmallComicPreviewPageViewerText => Color.LightGray;
@@ -70,6 +57,9 @@ internal class ThemeColorTable
     public virtual Color ThumbnailViewItemHighlightText => System.Drawing.SystemColors.HighlightText; // FavoriteViewitem, FolderViewItem
     public virtual Color ThumbnailViewItemBorder => Color.FromArgb(48, System.Drawing.SystemColors.ControlDark);
 
+    // MagnifySetupControl
+    public virtual Color MagnifySetupBackColor => System.Drawing.Color.Transparent;
+
     // PreferencesDialog
     public virtual Color PreferencesPanelReaderOverlay => Color.WhiteSmoke;
     public virtual Color PreferencesLabelOverlays => Color.Gainsboro;
@@ -84,6 +74,9 @@ internal class ThemeColorTable
     public virtual Color ItemViewDefaultBack => System.Drawing.SystemColors.Window;
     public virtual Color ItemViewGroupText => Color.DarkBlue;
     public virtual Color ItemViewGroupSeparator => System.Drawing.SystemColors.ControlDark;
+
+    // CoverViewItem
+    public virtual Color DetailRowHighlight => Color.LightGray;
 
     // ItemDrawInformation
     public virtual Color ItemDrawInfoText => Color.Black;
@@ -119,10 +112,6 @@ internal class ThemeColorTable
     //public virtual Color ToolTipBack => Color.Empty;
     public virtual Color ToolTipText => System.Drawing.SystemColors.InfoText;
 
-    // TreeView
-    //public virtual Color TreeViewBack => Color.Empty;
-    //public virtual Color TreeViewText => Color.Empty;
-
     // ComboBox
     public virtual Color ComboBoxSeparator => System.Drawing.SystemColors.ControlLight;
 
@@ -133,14 +122,8 @@ internal class ThemeColorTable
     // Header
     public virtual Color HeaderBack => Color.White;
     public virtual Color HeaderSeparator => System.Drawing.SystemColors.ControlDark;
-    //public virtual Color HeaderText => Color.Empty; // only used in ThemeExtension.ListView_DrawColumnHeader, which is only used in dark mode
-
-    // Control defaults
-    //public virtual Color ListBoxBack => Color.Empty; // BackColor - ListBox.BackColor - System.Drawing.SystemColors.Window
 
     // RatingControl
-    //public virtual Color RatingControlBack => Color.Empty; // BackColor - Control.DefaultBackColor - System.Drawing.SystemColors.Control
-    //public virtual Color RatingControlRated => Color.Empty; // ForeColor - Control.DefaultForeColor - System.Drawing.SystemColors.ControlText
     public virtual Color RatingControlUnrated => Color.LightGray;
 
     // SplitButton
@@ -150,4 +133,20 @@ internal class ThemeColorTable
     // Stacks
     public virtual Color StackFill => System.Drawing.SystemColors.Control;
     public virtual Color StackBorder => Color.Black;
+
+
+    // ControlStyleColorTable
+    //public virtual Color ControlStyleColorTableBorder => Color.Black;
+
+    // MainForm
+    //public virtual Color MainFormToolStripBack => Color.Transparent;
+
+    // MainView
+    //public virtual Color MainViewBack => Color.Transparent;
+    //public virtual Color MainViewToolStripBack => Color.Transparent;
+
+    //public virtual Color MatcherGroupEditor => System.Drawing.SystemColors.Control;
+
+    // SimpleScrollbarPanel
+    //public virtual Color ScrollbarPanelBorder => Color.LightGray;
 }

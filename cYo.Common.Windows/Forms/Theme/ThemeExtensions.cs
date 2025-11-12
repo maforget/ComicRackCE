@@ -1,11 +1,12 @@
-﻿using cYo.Common.Win32;
+﻿using System;
+using System.Drawing;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using cYo.Common.Win32;
 using cYo.Common.Windows.Forms.Theme.DarkMode;
 using cYo.Common.Windows.Forms.Theme.Internal;
 using cYo.Common.Windows.Forms.Theme.Resources;
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace cYo.Common.Windows.Forms.Theme;
 
@@ -162,8 +163,8 @@ public static class ThemeExtensions
 	public static void DrawThemeBackground(this VisualStyleRenderer vsr, PaintEventArgs e, Rectangle rect, Color backColor)
         => InvokeAction(
 			() => vsr.DrawBackground(e.Graphics, rect),
-			() => DarkThemeExtensions.ControlPaint.DrawBackground(e, backColor)
-		);
+			() => DarkThemeExtensions.ControlPaint.DrawBackground(e, rect, backColor) // TODO : evaluate vsr to determine what should be drawn
+        );
 
     public static void DrawThemeBackground(this VisualStyleRenderer vsr, DrawToolTipEventArgs e)
         => InvokeAction(
@@ -246,4 +247,28 @@ public static class ControlPaintEx
             () => ControlPaint.DrawStringDisabled(g, text, font, color, rect, textFormatFlags),
             () => TextRenderer.DrawText(g, text, font, rect, SystemColors.GrayText, textFormatFlags)
         );
+}
+
+
+/// <summary>
+/// Extension methods used to attach <see cref="ITheme"/> to <see cref="Control"/> objects.<br/>
+/// Used for outside objects like plugins that need it for selecting the <see cref="UIComponent"/>
+/// </summary>
+public static class ThemeBinding
+{
+	private static readonly ConditionalWeakTable<Control, ITheme> _attachedThemes = new();
+
+	public static void AttachTheme(this Control control, ITheme theme)
+	{
+		if (control == null || theme == null)
+			return;
+
+		_attachedThemes.Remove(control);
+		_attachedThemes.Add(control, theme);
+	}
+
+	public static ITheme GetAttachedTheme(this Control control)
+	{
+		return control != null && _attachedThemes.TryGetValue(control, out var theme) ? theme : null;
+	}
 }

@@ -407,7 +407,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 			ComboBox comboBox = (ComboBox)sender;
 			SelectionEntry selectionEntry = (SelectionEntry)comboBox.SelectedItem;
 			ListView lv = comboBox.Tag as ListView;
-			workingSelectionInfos[selectionEntry.Index] = new SelectionInfo(selectionEntry, lv, GetNotButton(selectionEntry.Index).Checked);
+            workingSelectionInfos[selectionEntry.Index] = new SelectionInfo(selectionEntry, lv, GetNotButton(selectionEntry.Index).Checked);
 			listIsDirty = true;
 		}
 
@@ -444,12 +444,12 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 
 		public void UpdateLists()
 		{
-			while (listIsDirty)
+            while (listIsDirty)
 			{
-				listIsDirty = false;
+                listIsDirty = false;
 				BuildLists();
-			}
-		}
+            }
+        }
 
 		public SelectionEntry GetSelectionColumn(int column)
 		{
@@ -637,6 +637,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 					if (!selectionInfo.Items.SequenceEqual(list, StringComparer.CurrentCultureIgnoreCase))
 					{
 						FillSelectonInfoList(selectionInfo, list);
+						selectionInfo.ListView.Theme();
 					}
 				}
 				IMatcher<ComicBook> matcher = CreateMatcher(selectionInfo);
@@ -656,8 +657,10 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 
 		private void BuildLists()
 		{
-			BuildList(0);
-		}
+			this.SuspendLayout();
+            BuildList(0);
+			this.ResumeLayout();
+        }
 
 		private static void FillSelectonInfoList(SelectionInfo si, List<string> names)
 		{
@@ -682,17 +685,18 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 						si.SelectedItems.Add(names[i]);
 					}
 				}
-				if (listView.Items.Count > 0 && listView.SelectedIndices.Count == 0)
-				{
-					listView.Items[0].Selected = true;
-				}
-			}
+                if (listView.Items.Count > 0 && listView.SelectedIndices.Count == 0)
+                {
+                    listView.Items[0].Selected = true;
+                }
+            }
 			catch (Exception)
 			{
 			}
 			finally
 			{
-				listView.EndUpdate();
+				listView.Theme();
+                listView.EndUpdate();
 			}
 		}
 

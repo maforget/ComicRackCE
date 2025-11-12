@@ -92,6 +92,9 @@ internal partial class DarkControl
 
     private static void DarkTextBoxBase(TextBoxBase textBox)
     {
+        // Don't add a border if there's none to begin with (e.g. NumericUpDown)
+        if (textBox.BorderStyle != BorderStyle.None)
+            textBox.BorderStyle = BorderStyle.FixedSingle;
         DarkEventHandlers.TextBox_Mouse(textBox);
     }
 

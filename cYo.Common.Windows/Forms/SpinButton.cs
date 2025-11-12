@@ -322,9 +322,12 @@ namespace cYo.Common.Windows.Forms
 			{
 				Width = FormUtility.ScaleDpiX(11),
 				Enabled = textBox.Enabled,
-				Visible = (!hidden && textBox.IsVisibleSet()),
+				Visible = !hidden && textBox.Visible, // && textBox.IsVisibleSet(),    // Doesn't work correctly because IsVisibleSet() only works if an handle was already created.
 				Anchor = anchorStyles
 			};
+
+			// We can only set this when the textbox is fully visible. It's parent might not be fully visible yet or may be hidden in another tab
+			textBox.VisibleChanged += (s, e) => sb.Visible = !hidden && textBox.Visible;
 			Action position = delegate
 			{
 				sb.Top = textBox.Top;
@@ -385,6 +388,11 @@ namespace cYo.Common.Windows.Forms
 					e.Handled = sb.HandleKey(e.KeyCode);
 				};
 			}
+		}
+
+		private static void TextBox_VisibleChanged(object sender, EventArgs e)
+		{
+			throw new NotImplementedException();
 		}
 
 		private static void SetTextBoxValue(TextBoxBase textBox, int start, int min, int max, int increment)

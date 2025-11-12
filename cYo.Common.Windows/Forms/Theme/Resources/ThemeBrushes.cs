@@ -4,7 +4,7 @@ using System.Drawing;
 namespace cYo.Common.Windows.Forms.Theme.Resources;
 
 /// <summary>
-/// TODO : ADD SUMMARY
+/// Brushes for <see cref="ThemeColors"/>.
 /// </summary>
 public static class ThemeBrushes
 {
@@ -18,6 +18,11 @@ public static class ThemeBrushes
     public static class CollapsibleGroupBox
     {
         public static Brush HeaderText => FromThemeColor(ThemeColors.CollapsibleGroupBox.HeaderText);
+    }
+
+    public static class DetailView
+    {
+        public static Brush RowHighlight => FromThemeColor(ThemeColors.DetailView.RowHighlight);
     }
 
     public static class Header
@@ -35,15 +40,9 @@ public static class ThemeBrushes
         public static Brush Fill => FromThemeColor(ThemeColors.Stack.Fill);
     }
 
-
-    //public static class DarkMode
-    //{
-    //    public static class SelectedText
-    //    {
-    //        public static Brush Highlight => FromThemeColor(ThemeColors.DarkMode.SelectedText.Highlight);
-    //    }
-    //}
-
+    /// <summary>
+    /// Returns a <see cref="Brush"/> with the specified <paramref name="color"/>.
+    /// </summary>
     public static Brush FromThemeColor(Color color)
     {
         if (!cache.TryGetValue(color, out var brush))

@@ -18,7 +18,8 @@ namespace cYo.Common.Win32
 
 		public static bool IsVisibleSet(this Control c)
 		{
-			if (c == null || c.IsDisposed || !c.IsHandleCreated)
+			//BUG: Without !c.IsHandleCreated an exception might be thrown when an handle isn't created, but adding it changes the behavior of this function 
+			if (c == null || c.IsDisposed) // || !c.IsHandleCreated)
 			{
 				return false;
 			}

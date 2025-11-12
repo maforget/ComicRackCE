@@ -1956,7 +1956,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		private void FillBookSelector(IEnumerable<ComicBook> books, bool updateNow)
 		{
-			bookSelectorPanel.Books.Clear();
+			bookSelectorPanel.SuspendLayout();
+            bookSelectorPanel.Books.Clear();
 			if (searchBrowserVisible && BookList != null)
 			{
 				bookSelectorPanel.Books.AddRange(books);
@@ -1965,7 +1966,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				bookSelectorPanel.UpdateLists();
 			}
-		}
+            bookSelectorPanel.ResumeLayout();
+        }
 
 		private IEnumerable<ComicBook> GetCurrentList(bool withSelector)
 		{

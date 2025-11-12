@@ -878,10 +878,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 							}
 							else if (drawInfo.GroupItem % 2 == 0 && (drawInfo.State & ItemViewStates.Selected) == 0)
 							{
-								using (Brush brush2 = new SolidBrush(Color.LightGray.Transparent(96)))
-								{
-									drawInfo.Graphics.FillRectangle(brush2, rectangle);
-								}
+								drawInfo.Graphics.FillRectangle(ThemeBrushes.DetailView.RowHighlight, rectangle);
 							}
 							break;
 						}

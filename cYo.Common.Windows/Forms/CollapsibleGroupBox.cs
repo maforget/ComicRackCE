@@ -256,7 +256,7 @@ namespace cYo.Common.Windows.Forms
             {
                 VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(VisualStyleElement.Tab.Body.Normal);
                 //visualStyleRenderer.DrawBackground(e.Graphics, base.ClientRectangle);
-                visualStyleRenderer.DrawThemeBackground(e, base.ClientRectangle,BackColor);
+                visualStyleRenderer.DrawThemeBackground(e, base.ClientRectangle, BackColor);
             }
         }
 

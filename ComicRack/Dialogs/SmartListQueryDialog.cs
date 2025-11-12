@@ -140,6 +140,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			}
 		}
 
+		public override UIComponent UIComponent => UIComponent.Content;
+
 		public event EventHandler Apply;
 
 		public event EventHandler Next;
