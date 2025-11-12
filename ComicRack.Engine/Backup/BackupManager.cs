@@ -45,16 +45,22 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 			retentionManager.CleanOldBackups(Options.Location, Options.BackupsToKeep);
 
 			var backupLocations = GetBackupLocations();
-			var files = fileCollector.CollectFiles(backupLocations);
+			if(backupLocations.Any())
+			{
+				var files = fileCollector.CollectFiles(backupLocations);
 
-			if (useQueue)
-				backupQueue.AddItem(files, _ => ExecuteBackup(files, backupLocations));
-			else
-				ExecuteBackup(files, backupLocations);
+				if (useQueue)
+					backupQueue.AddItem(files, _ => ExecuteBackup(files, backupLocations));
+				else
+					ExecuteBackup(files, backupLocations);
+			}
 		}
 
 		private void ExecuteBackup(IEnumerable<BackupFileEntry> files, IEnumerable<BackupLocation> locations)
 		{
+			if (!files.Any())
+				return;
+
 			var backupTypes = locations.Select(x => x.BackupType);
 			archiveCreator.CreateBackup(Options.Location, files, backupTypes);
 		}

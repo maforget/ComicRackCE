@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using cYo.Common.IO;
@@ -22,6 +23,9 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 
 		public void CreateBackup(string backupLocation, IEnumerable<BackupFileEntry> files, IEnumerable<BackupOptions> backupTypes)
 		{
+			if (!files.Any())
+				return;
+
 			string backupFile = GenerateBackupFilePath(backupLocation);
 
 			try
