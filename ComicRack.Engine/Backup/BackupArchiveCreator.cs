@@ -90,7 +90,8 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		{
 			get
 			{
-				string basePath = Directory.GetParent(BasePath).FullName;
+				//string basePath = Directory.GetParent(BasePath).FullName;
+				string basePath = BasePath;
 				return Path.Substring(basePath.Length);
 			}
 		}
