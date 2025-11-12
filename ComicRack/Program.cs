@@ -881,7 +881,8 @@ namespace cYo.Projects.ComicRack.Viewer
 				CacheManager = new CacheManager(DatabaseManager, Paths, Settings, Resources.ResourceManager);
 				QueueManager = new QueueManager(DatabaseManager, CacheManager, Settings, Settings.Devices);
 				QueueManager.ComicScanned += ScannerCheckFileIgnore;
-				BackupManager = new BackupManager(Settings.BackupManager, Paths);
+				BackupManager = new BackupManager(Settings.BackupManager, Paths, defaultSettingsFile, DefaultListsFile, DefaultIconPackagesPath);
+				if(BackupManager.Options.OnStartup) BackupManager.RunBackup();
 				Settings.IgnoredCoverImagesChanged += IgnoredCoverImagesChanged;
 				IgnoredCoverImagesChanged(null, EventArgs.Empty);
 				SystemEvents.PowerModeChanged += SystemEventsPowerModeChanged;
@@ -1049,6 +1050,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				Settings.Save(defaultSettingsFile);
 				ImagePool.Dispose();
 				DatabaseManager.Dispose();
+				if (BackupManager.Options.OnExit) BackupManager.RunBackup(false);
 			}
 			catch (Exception ex)
 			{
