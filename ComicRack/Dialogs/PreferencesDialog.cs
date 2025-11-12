@@ -22,6 +22,7 @@ using cYo.Common.Windows.Forms.Theme;
 using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Common.Xml;
 using cYo.Projects.ComicRack.Engine;
+using cYo.Projects.ComicRack.Engine.Backup;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.Display;
 using cYo.Projects.ComicRack.Engine.IO.Network;
