@@ -3,7 +3,6 @@
     <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>cYo.Projects.ComicRack.Engine</RootNamespace>
-    <LangVersion>latest</LangVersion>
     <FileAlignment>4096</FileAlignment>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
@@ -90,11 +89,6 @@
     </PackageReference>
     <PackageReference Include="PDFiumSharpV2">
       <Version>1.1.4</Version>
-    </PackageReference>
-    <PackageReference Include="PolySharp">
-      <Version>1.15.0</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="SharpCompress">
       <Version>0.39.0</Version>

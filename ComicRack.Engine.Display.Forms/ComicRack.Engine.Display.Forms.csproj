@@ -3,7 +3,6 @@
     <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>cYo.Projects.ComicRack.Engine.Display.Forms</RootNamespace>
-    <LangVersion>latest</LangVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
@@ -31,13 +30,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\Windows7.Multitouch.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="PolySharp">
-      <Version>1.15.0</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ComicRack.Engine\ComicRack.Engine.csproj" />

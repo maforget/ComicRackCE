@@ -1,5 +1,13 @@
 <Project>
  <PropertyGroup>
     <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
+	<LangVersion>13.0</LangVersion>
  </PropertyGroup>
+     <ItemGroup>
+        <PackageReference Include="PolySharp">
+            <Version>1.15.0</Version>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
 </Project>

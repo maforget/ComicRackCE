@@ -4,7 +4,6 @@
         <PlatformTarget>AnyCPU</PlatformTarget>
         <OutputType>WinExe</OutputType>
         <RootNamespace>cYo.Projects.ComicRack.Viewer</RootNamespace>
-        <LangVersion>latest</LangVersion>
         <FileAlignment>4096</FileAlignment>
         <StartupObject>cYo.Projects.ComicRack.Viewer.Program</StartupObject>
         <PublishUrl>publish\</PublishUrl>
@@ -151,11 +150,6 @@
     <ItemGroup>
         <PackageReference Include="Microsoft-WindowsAPICodePack-Shell">
             <Version>1.1.5</Version>
-        </PackageReference>
-        <PackageReference Include="PolySharp">
-            <Version>1.15.0</Version>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-            <PrivateAssets>all</PrivateAssets>
         </PackageReference>
     </ItemGroup>
     <ItemGroup>
