@@ -430,6 +430,25 @@ namespace cYo.Common.Runtime
 			}
 		}
 
+		/// <summary>
+		/// Same as <see cref="GetDefaultLocations(string)"/> but doesn't include the <see cref="IniFile.StartupFolder"/>
+		/// </summary>
+		/// <param name="file"></param>
+		/// <returns></returns>
+		public static IEnumerable<string> GetUserLocations(string file)
+		{
+			yield return Path.Combine(CommonApplicationDataFolder, file);
+			if (extraDefaultLocation == null)
+			{
+				yield return Path.Combine(ApplicationDataFolder, file);
+				yield break;
+			}
+			foreach (string item in extraDefaultLocation)
+			{
+				yield return Path.Combine(item, file);
+			}
+		}
+
 		public static void AddDefaultLocation(string path)
 		{
 			if (extraDefaultLocation == null)
