@@ -1478,5 +1478,12 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				}
 			}
 		}
-	}
+
+
+        private void lbBackupOptions_Resize(object sender, EventArgs e)
+        {
+            int cw = (lbBackupOptions.Width / 2) - 22;
+            lbBackupOptions.ColumnWidth = cw;
+        }
+    }
 }
