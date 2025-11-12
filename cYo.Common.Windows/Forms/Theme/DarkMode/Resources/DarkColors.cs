@@ -66,12 +66,23 @@ internal class DarkColors
     // CheckBox
     internal static class CheckBox
     {
-        public static Color Back = Color.FromArgb(0, 95, 184);
-        public static Color BackCorner = Color.FromArgb(0, 95, 184);
-        public static Color BackVertex = Color.FromArgb(0, 95, 184);
-        public static Color Border = Color.FromArgb(0, 95, 184);
-        public static Color BorderEdge = Color.FromArgb(4, 87, 166);
-        public static Color BorderCorner = Color.FromArgb(28, 54, 74);
+        private static Color Enabled = Color.FromArgb(96, 205, 255);
+        private static Color Disabled = SystemColors.ControlDark;
+
+        public static Color Back = Enabled;
+        public static Color BackCorner = Enabled;
+        public static Color BackVertex = Enabled;
+        public static Color Border = Enabled;
+        public static Color BorderEdge = Color.FromArgb(93, 195, 242);
+        public static Color BorderCorner = Color.FromArgb(71, 126, 151);
+        public static Color Check = Color.FromArgb(24, 51, 64); //SystemColors.ControlLight;
+        public static Color DisabledBack = Disabled;
+        public static Color DisabledBackCorner = Disabled;
+        public static Color DisabledBackVertex = Disabled;
+        public static Color DisabledBorder = Disabled;
+        public static Color DisabledBorderEdge = Color.FromArgb(4, 87, 166);
+        public static Color DisabledBorderCorner = Color.FromArgb(28, 54, 74);
+        public static Color DisabledCheck = SystemColors.GrayText;
         public static Color UncheckedBorder = Color.FromArgb(98, 98, 98);
         public static Color UncheckedBorderEdge = Color.FromArgb(90, 90, 90);
         public static Color UncheckedBack = SystemColors.ControlLight;
@@ -187,6 +198,11 @@ internal static class DarkBrushes
         public static Brush BackVertex => FromDarkColor(DarkColors.CheckBox.BackVertex);
         public static Brush BorderEdge => FromDarkColor(DarkColors.CheckBox.BorderEdge);
         public static Brush BorderCorner => FromDarkColor(DarkColors.CheckBox.BorderCorner);
+        public static Brush DisabledBack => FromDarkColor(DarkColors.CheckBox.DisabledBack);
+        public static Brush DisabledBackCorner => FromDarkColor(DarkColors.CheckBox.DisabledBackCorner);
+        public static Brush DisabledBackVertex => FromDarkColor(DarkColors.CheckBox.DisabledBackVertex);
+        public static Brush DisabledBorderEdge => FromDarkColor(DarkColors.CheckBox.DisabledBorderEdge);
+        public static Brush DisabledBorderCorner => FromDarkColor(DarkColors.CheckBox.DisabledBorderCorner);
         public static Brush UncheckedBorderEdge => FromDarkColor(DarkColors.CheckBox.UncheckedBorderEdge);
         public static Brush UncheckedBack => FromDarkColor(DarkColors.CheckBox.UncheckedBack);
         public static Brush UncheckedBackCorner => FromDarkColor(DarkColors.CheckBox.UncheckedBackCorner);
@@ -243,6 +259,9 @@ internal static class DarkPens
     internal static class CheckBox
     {
         public static Pen Border => FromDarkColor(DarkColors.CheckBox.Border);
+        public static Pen Check => FromDarkColor(DarkColors.CheckBox.Check);
+        public static Pen DisabledBorder => FromDarkColor(DarkColors.CheckBox.DisabledBorder);
+        public static Pen DisabledCheck => FromDarkColor(DarkColors.CheckBox.DisabledCheck);
         public static Pen UncheckedBorder => FromDarkColor(DarkColors.CheckBox.UncheckedBorder);
         public static Pen UncheckedDisabledBorder => FromDarkColor(DarkColors.CheckBox.UncheckedDisabledBorder);
     }

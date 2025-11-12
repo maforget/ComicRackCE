@@ -65,53 +65,72 @@ internal static class DrawDark
         }
     }
 
-    private static void SetUncheckedBrushes(CheckBox checkBox, out Pen borderPen, out Brush borderEdgeBrush, out Brush backCornerBrush, out Brush backVertexBrush)
+    private static void SetBrushes(CheckBox checkBox, out Brush borderEdgeBrush, out Brush backCornerBrush, out Brush backVertexBrush)
     {
-        borderPen = DarkPens.CheckBox.UncheckedBorder;
-
-        borderEdgeBrush = DarkBrushes.CheckBox.UncheckedBorderEdge;
-        borderEdgeBrush = DarkBrushes.CheckBox.UncheckedBorderEdge;
-        backCornerBrush = DarkBrushes.CheckBox.UncheckedBackCorner;
-        backVertexBrush = DarkBrushes.CheckBox.UncheckedBackVertex;
-
-        if (!checkBox.Enabled)
+        if (checkBox.Checked)
         {
-            borderPen = DarkPens.CheckBox.UncheckedDisabledBorder;
-
-            borderEdgeBrush = DarkBrushes.CheckBox.UncheckedDisabledBorderEdge;
-            backCornerBrush = DarkBrushes.CheckBox.UncheckedDisabledBackCorner;
-            backVertexBrush = DarkBrushes.CheckBox.UncheckedDisabledBackVertex;
+            borderEdgeBrush = checkBox.Enabled ? DarkBrushes.CheckBox.BorderEdge : DarkBrushes.CheckBox.DisabledBorderEdge;
+            backCornerBrush = checkBox.Enabled ? DarkBrushes.CheckBox.BackCorner : DarkBrushes.CheckBox.DisabledBackCorner;
+            backVertexBrush = checkBox.Enabled ? DarkBrushes.CheckBox.BackVertex : DarkBrushes.CheckBox.DisabledBackVertex;
         }
+        else
+        {
+            borderEdgeBrush = checkBox.Enabled ? DarkBrushes.CheckBox.UncheckedBorderEdge : DarkBrushes.CheckBox.UncheckedDisabledBorderEdge;
+            backCornerBrush = checkBox.Enabled ? DarkBrushes.CheckBox.UncheckedBackCorner : DarkBrushes.CheckBox.UncheckedDisabledBackCorner;
+            backVertexBrush = checkBox.Enabled ? DarkBrushes.CheckBox.UncheckedBackVertex : DarkBrushes.CheckBox.UncheckedDisabledBackVertex;
+        }
+    }
+
+    private static void SetPen(CheckBox checkBox, out Pen borderPen)
+    {
+        borderPen = checkBox.Checked
+            ? (checkBox.Enabled ? DarkPens.CheckBox.Border : DarkPens.CheckBox.DisabledBorder)
+            : (checkBox.Enabled ? DarkPens.CheckBox.UncheckedBorder : DarkPens.CheckBox.UncheckedDisabledBorder);
     }
 
     private static void CheckMark(CheckBox checkBox, Graphics g, Rectangle boxRect)
     {
-        Point[] checkMark = new Point[6]
-            {
-                new Point(boxRect.Left + 2, boxRect.Top + (boxRect.Height/2)+2),
-                new Point(boxRect.Left + boxRect.Width / 2 -1, boxRect.Bottom - 1),
-                new Point(boxRect.Right - 2, boxRect.Top + 5),
-                new Point(boxRect.Right - 2, boxRect.Top + 3),
-                new Point(boxRect.Left + boxRect.Width / 2 - 1, boxRect.Bottom - 3),
-                new Point(boxRect.Left + 2, boxRect.Top + (boxRect.Height / 2)),
-             };
+        Point[] checkMark;
 
-        g.DrawPolygon(checkBox.Enabled ? SystemPens.ControlText : SystemPens.GrayText, checkMark);
-        g.FillPolygon(checkBox.Enabled ? SystemBrushes.ControlText : SystemBrushes.GrayText, checkMark);
+        if (checkBox.CheckState == CheckState.Checked)
+        {
+            checkMark = new Point[6] {
+                new Point(boxRect.Left + 3, boxRect.Top + (boxRect.Height/2) + 2),
+                new Point(boxRect.Left + boxRect.Width / 2 -1, boxRect.Bottom - 3),
+                new Point(boxRect.Right - 3, boxRect.Top + 5),
+                new Point(boxRect.Right - 3, boxRect.Top + 4),
+                new Point(boxRect.Left + boxRect.Width / 2 - 1, boxRect.Bottom - 4),
+                new Point(boxRect.Left + 3, boxRect.Top + (boxRect.Height / 2) + 1),
+            };
+        }
+        else
+        {
+            // CheckState.Indeterminate
+            checkMark = new Point[2] {
+                new Point(boxRect.Left + 4, boxRect.Top + (boxRect.Height/2) + 1),
+                new Point(boxRect.Right - 4, boxRect.Top + (boxRect.Height/2) + 1)
+            };
+        }
+            
+        g.DrawPolygon(checkBox.Enabled ? SystemPens.ControlLight : SystemPens.GrayText, checkMark);
     }
 
     internal static void CheckBox(CheckBox checkBox, Graphics g, Rectangle boxRect)
     {
+        // BUG : this doesn't work well when parent control has Color.Transparent BackColor
+        //       using .Clear(Color.Transparent) instead seems to work; needs some testing
         g.Clear(checkBox.BackColor);
 
-        Brush backBrush = checkBox.Checked ? DarkBrushes.CheckBox.Back : DarkBrushes.CheckBox.UncheckedBack;
+        // Fill background
+        Brush backBrush = checkBox.Checked
+            ? (checkBox.Enabled ? DarkBrushes.CheckBox.Back : DarkBrushes.CheckBox.DisabledBack)
+            : DarkBrushes.CheckBox.UncheckedBack;
         g.FillRectangle(backBrush, new Rectangle(boxRect.X + 2, boxRect.Y, boxRect.Width - 3, boxRect.Height));
         g.FillRectangle(backBrush, new Rectangle(boxRect.X, boxRect.Y + 2, boxRect.Width, boxRect.Height - 3));
 
         //boxRect.Inflate(-2, -3);
-        // Fill background
-        // Draw CheckMark, if checked
-        if (checkBox.Checked)
+        // Draw CheckMark, if checked/Indeterminate
+        if (checkBox.CheckState != CheckState.Unchecked)
             CheckMark(checkBox, g, boxRect);
 
         int left = boxRect.X;
@@ -119,14 +138,8 @@ internal static class DrawDark
         int top = boxRect.Y;
         int bottom = boxRect.Y + boxRect.Height;
 
-        Pen borderPen = DarkPens.CheckBox.Border;
-
-        Brush borderEdgeBrush = DarkBrushes.CheckBox.BorderEdge;
-        Brush backCornerBrush = DarkBrushes.CheckBox.BackCorner;
-        Brush backVertexBrush = DarkBrushes.CheckBox.BackVertex;
-
-        if (!checkBox.Checked)
-            SetUncheckedBrushes(checkBox, out borderPen, out borderEdgeBrush, out backCornerBrush, out backVertexBrush);
+        SetPen(checkBox, out Pen borderPen);
+        SetBrushes(checkBox, out Brush borderEdgeBrush, out Brush backCornerBrush, out Brush backVertexBrush);
 
         // Main Border
         g.DrawLine(borderPen, new Point(left + 3, top), new Point(right - 3, top));
@@ -170,7 +183,10 @@ internal static class DrawDark
 
         if (checkBox.Checked)
         {
-            Brush cornerBrush = DarkBrushes.CheckBox.BorderCorner;
+            Brush cornerBrush = checkBox.Enabled
+                ? DarkBrushes.CheckBox.BorderCorner
+                : DarkBrushes.CheckBox.DisabledBorderCorner;
+
             g.FillRectangle(cornerBrush, left + 1, top, 1, 1);
             g.FillRectangle(cornerBrush, left + 1, bottom, 1, 1);
             g.FillRectangle(cornerBrush, left, top + 1, 1, 1);
