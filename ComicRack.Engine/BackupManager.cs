@@ -36,8 +36,8 @@ namespace cYo.Projects.ComicRack.Engine
 	{
 		public string Location { get; set; } = null;
 
-		[DefaultValue(BackupOptions.None)]
-		public BackupOptions Options { get; set; } = BackupOptions.None;
+		[DefaultValue(BackupOptions.Full)]
+		public BackupOptions Options { get; set; } = BackupOptions.Full;
 
 		/// <summary>
 		/// Includes the <see cref="BackupOptions"/> from Alternate Configurations<br/>
@@ -53,5 +53,9 @@ namespace cYo.Projects.ComicRack.Engine
 		public TimeSpan Interval { get; set; } = TimeSpan.FromDays(7);
 
 		public DateTime LastBackupDate { get; set; } = DateTime.MinValue;
+
+		public bool OnStartup { get; set; } = false;
+
+		public bool OnExit { get; set; } = false;
 	}
 }

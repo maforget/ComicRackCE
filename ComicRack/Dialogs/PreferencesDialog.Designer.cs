@@ -216,6 +216,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.tabScripts = new System.Windows.Forms.CheckBox();
 			this.tabAdvanced = new System.Windows.Forms.CheckBox();
 			this.lblBackupOptions = new System.Windows.Forms.Label();
+			this.chkBackupOnStartup = new System.Windows.Forms.CheckBox();
+			this.chkBackupOnExit = new System.Windows.Forms.CheckBox();
 			this.pageReader.SuspendLayout();
 			this.groupHardwareAcceleration.SuspendLayout();
 			this.grpMouse.SuspendLayout();
@@ -1458,6 +1460,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// grpBackupManager
 			// 
+			this.grpBackupManager.Controls.Add(this.chkBackupOnExit);
+			this.grpBackupManager.Controls.Add(this.chkBackupOnStartup);
 			this.grpBackupManager.Controls.Add(this.lblBackupOptions);
 			this.grpBackupManager.Controls.Add(this.chkIncludeAlternateConfig);
 			this.grpBackupManager.Controls.Add(this.numBackupsToKeep);
@@ -1475,13 +1479,14 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkIncludeAlternateConfig
 			// 
-			this.chkIncludeAlternateConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.chkIncludeAlternateConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.chkIncludeAlternateConfig.AutoSize = true;
-			this.chkIncludeAlternateConfig.Location = new System.Drawing.Point(13, 204);
+			this.chkIncludeAlternateConfig.Location = new System.Drawing.Point(350, 63);
 			this.chkIncludeAlternateConfig.Name = "chkIncludeAlternateConfig";
-			this.chkIncludeAlternateConfig.Size = new System.Drawing.Size(176, 17);
+			this.chkIncludeAlternateConfig.Size = new System.Drawing.Size(139, 17);
 			this.chkIncludeAlternateConfig.TabIndex = 6;
-			this.chkIncludeAlternateConfig.Text = "Include Alternate Configurations";
+			this.chkIncludeAlternateConfig.Text = "Include Alternate Config";
+			this.chkIncludeAlternateConfig.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.chkIncludeAlternateConfig.UseVisualStyleBackColor = true;
 			// 
 			// numBackupsToKeep
@@ -1502,6 +1507,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.lblBackupsToKeep.Size = new System.Drawing.Size(117, 13);
 			this.lblBackupsToKeep.TabIndex = 4;
 			this.lblBackupsToKeep.Text = "# of Backups to Keep :";
+			this.lblBackupsToKeep.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// lbBackupOptions
 			// 
@@ -2581,6 +2587,28 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.tabAdvanced.UseVisualStyleBackColor = true;
 			this.tabAdvanced.CheckedChanged += new System.EventHandler(this.chkAdvanced_CheckedChanged);
 			// 
+			// chkBackupOnExit
+			// 
+			this.chkBackupOnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.chkBackupOnExit.AutoSize = true;
+			this.chkBackupOnExit.Location = new System.Drawing.Point(136, 204);
+			this.chkBackupOnExit.Name = "chkBackupOnExit";
+			this.chkBackupOnExit.Size = new System.Drawing.Size(134, 17);
+			this.chkBackupOnExit.TabIndex = 9;
+			this.chkBackupOnExit.Text = "Backup on Shut Down";
+			this.chkBackupOnExit.UseVisualStyleBackColor = true;
+			// 
+			// chkBackupOnStartup
+			// 
+			this.chkBackupOnStartup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.chkBackupOnStartup.AutoSize = true;
+			this.chkBackupOnStartup.Location = new System.Drawing.Point(12, 204);
+			this.chkBackupOnStartup.Name = "chkBackupOnStartup";
+			this.chkBackupOnStartup.Size = new System.Drawing.Size(115, 17);
+			this.chkBackupOnStartup.TabIndex = 8;
+			this.chkBackupOnStartup.Text = "Backup on Startup";
+			this.chkBackupOnStartup.UseVisualStyleBackColor = true;
+			// 
 			// PreferencesDialog
 			// 
 			this.AcceptButton = this.btOK;
@@ -2884,5 +2912,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private NumericUpDown numBackupsToKeep;
 		private CheckBox chkIncludeAlternateConfig;
 		private Label lblBackupOptions;
+		private CheckBox chkBackupOnExit;
+		private CheckBox chkBackupOnStartup;
 	}
 }
