@@ -4,8 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Windows.Forms;
 using cYo.Common.IO;
+using cYo.Common.Runtime;
 using ICSharpCode.SharpZipLib.Zip;
+using SysPath = System.IO.Path;
 
 namespace cYo.Projects.ComicRack.Engine.Backup
 {
@@ -83,6 +86,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// </summary>
 	internal class BackupFileEntry
 	{
+		private readonly string CommonApplicationDataPath = IniFile.CommonApplicationDataFolder;
 		public string Path { get; set; }
 		public string BasePath { get; set; }
 
@@ -90,9 +94,24 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		{
 			get
 			{
-				//string basePath = Directory.GetParent(BasePath).FullName;
-				string basePath = BasePath;
-				return Path.Substring(basePath.Length);
+				if (Path.StartsWith(BasePath))
+				{
+					return Path.Substring(BasePath.Length);
+				}
+				else
+				{
+					//string dir = SysPath.GetDirectoryName(Path);
+					//var test = Path.Substring(SysPath.GetPathRoot(Path).Length); // Removes the root and keeps the rest of the folder structure.
+					//var test2 = Path.Substring(Directory.GetParent(Path).FullName.Length); // This just uses the filename, so it may overwrite another file
+					//var test3 = Path.Substring(Directory.GetParent(dir).FullName.Length); // keeps the parent folder & filename
+					//var test4 = test.Replace(productAppData, ""); // Removes the company & product name from the path
+
+					string productAppData = SysPath.Combine(Application.CompanyName, Application.ProductName);  // Usually cYo\ComicRack Community Edition to remove from path names
+					string relativePath = Path.StartsWith(CommonApplicationDataPath)
+						? $"ProgramData\\{Path.Substring(CommonApplicationDataPath.Length)}" // When in ProgramData force ProgramData as the archive root folder
+						: Path.Substring(SysPath.GetPathRoot(Path).Length).Replace(productAppData, ""); // Removes the root and keeps the rest of the folder structure while taking out the company & product name from the path
+					return relativePath;
+				}
 			}
 		}
 
