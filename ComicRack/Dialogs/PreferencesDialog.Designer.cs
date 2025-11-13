@@ -1497,6 +1497,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.numBackupsToKeep.Name = "numBackupsToKeep";
 			this.numBackupsToKeep.Size = new System.Drawing.Size(69, 20);
 			this.numBackupsToKeep.TabIndex = 5;
+			this.numBackupsToKeep.TextAlign = HorizontalAlignment.Right;
 			this.toolTip.SetToolTip(this.numBackupsToKeep, "Setting this to 0 will keep all backups");
 			//
 			// lblBackupsToKeep
