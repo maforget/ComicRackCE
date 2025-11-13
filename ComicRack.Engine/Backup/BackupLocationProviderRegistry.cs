@@ -1,22 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using cYo.Common.Runtime;
 
 namespace cYo.Projects.ComicRack.Engine.Backup
 {
-	/// <summary>
-	/// Defines a strategy for locating backup items.
-	/// </summary>
-	internal interface IBackupLocationProvider
-	{
-		IEnumerable<string> GetPaths();
-		bool IsFile { get; }
-		string BaseFolder { get; }
-	}
-
 	/// <summary>
 	/// Describes how to create a backup location provider for a specific backup type.
 	/// Implements the Strategy pattern for provider creation.
@@ -25,35 +14,6 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	{
 		BackupOptions SupportedBackupOption { get; }
 		IBackupLocationProvider CreateProvider();
-	}
-
-	/// <summary>
-	/// Locates backup items from the file system.
-	/// </summary>
-	internal class FileBackupLocationProvider : IBackupLocationProvider
-	{
-		private readonly Func<IEnumerable<string>> pathProvider;
-
-		public bool IsFile { get; }
-		public string BaseFolder { get; }
-
-		public FileBackupLocationProvider(Func<IEnumerable<string>> pathProvider, bool isFile, string baseFolder)
-		{
-			this.pathProvider = pathProvider ?? throw new ArgumentNullException(nameof(pathProvider));
-			IsFile = isFile;
-			BaseFolder = baseFolder ?? throw new ArgumentNullException(nameof(baseFolder));
-		}
-
-		public IEnumerable<string> GetPaths()
-		{
-			var paths = pathProvider();
-			if (paths == null)
-				return Enumerable.Empty<string>();
-
-			return IsFile
-				? paths.Where(File.Exists)
-				: paths.Where(Directory.Exists);
-		}
 	}
 
 	/// <summary>
@@ -88,68 +48,6 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 			throw new ArgumentException(
 				$"Unsupported backup option: {backupOption}. No strategy registered.",
 				nameof(backupOption));
-		}
-	}
-
-	/// <summary>
-	/// Factory that initializes and provides the backup location provider registry.
-	/// Responsible for bootstrapping all default backup location strategies.
-	/// </summary>
-	internal class BackupLocationProviderFactory
-	{
-		private readonly BackupLocationProviderRegistry registry;
-
-		public BackupLocationProviderFactory(
-			SystemPaths systemPaths,
-			string configFile,
-			string defaultListsFile,
-			string defaultIconPackagesPath)
-		{
-			registry = new BackupLocationProviderRegistry();
-			InitializeStrategies(systemPaths, configFile, defaultListsFile, defaultIconPackagesPath);
-		}
-
-		/// <summary>
-		/// Creates a backup location provider for the specified backup option.
-		/// </summary>
-		public IBackupLocationProvider Create(BackupOptions backupOption)
-		{
-			return registry.Create(backupOption);
-		}
-
-		/// <summary>
-		/// Initializes all default backup location provider strategies.
-		/// This is where extension points can be added for custom backup types.
-		/// </summary>
-		private void InitializeStrategies(
-			SystemPaths systemPaths,
-			string configFile,
-			string defaultListsFile,
-			string defaultIconPackagesPath)
-		{
-			// Database backup
-			registry.Register(new DatabaseBackupStrategy(systemPaths));
-
-			// Config backup
-			registry.Register(new ConfigBackupStrategy(configFile, systemPaths));
-
-			// ComicRack INI backup
-			registry.Register(new ComicRackIniBackupStrategy(systemPaths));
-
-			// Default lists backup
-			registry.Register(new DefaultListsBackupStrategy(defaultListsFile, systemPaths));
-
-			// Scripts backup
-			registry.Register(new ScriptsBackupStrategy(systemPaths));
-
-			// Resources backup
-			registry.Register(new ResourcesBackupStrategy(defaultIconPackagesPath, systemPaths));
-
-			// Custom thumbnails backup
-			registry.Register(new CustomThumbnailsBackupStrategy(systemPaths));
-
-			// Cache backup
-			registry.Register(new CacheBackupStrategy(systemPaths));
 		}
 	}
 
