@@ -22,7 +22,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		private readonly BackupArchiveCreator archiveCreator = new BackupArchiveCreator();
 		private readonly BackupRetentionManager retentionManager = new BackupRetentionManager();
 
-		public BackupManagerOptions Options { get; }
+		private readonly BackupManagerOptions options;
 
 		public BackupManager(
 			BackupManagerOptions options,
@@ -31,7 +31,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 			string defaultListsFile,
 			string defaultIconPackagesPath)
 		{
-			Options = options ?? throw new ArgumentNullException(nameof(options));
+			this.options = options ?? throw new ArgumentNullException(nameof(options));
 
 			locationProviderFactory = new BackupLocationProviderFactory(paths, configFile, defaultListsFile, defaultIconPackagesPath);
 			backupQueue = new ProcessingQueue<IEnumerable<BackupFileEntry>>("Backup Queue", ThreadPriority.Lowest);
@@ -39,10 +39,10 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 
 		public void RunBackup(bool useQueue = true)
 		{
-			if (string.IsNullOrEmpty(Options.Location))
+			if (string.IsNullOrEmpty(options.Location))
 				return;
 
-			retentionManager.CleanOldBackups(Options.Location, Options.BackupsToKeep);
+			retentionManager.CleanOldBackups(options.Location, options.BackupsToKeep);
 
 			var backupLocations = GetBackupLocations();
 			if(backupLocations.Any())
@@ -62,7 +62,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 				return;
 
 			var backupTypes = locations.Select(x => x.BackupType);
-			archiveCreator.CreateBackup(Options.Location, files, backupTypes);
+			archiveCreator.CreateBackup(options.Location, files, backupTypes);
 		}
 
 		private IEnumerable<BackupLocation> GetBackupLocations()
@@ -71,7 +71,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 
 			foreach (BackupOptions flag in Enum.GetValues(typeof(BackupOptions)))
 			{
-				if (flag == BackupOptions.None || flag == BackupOptions.Full || flag == BackupOptions.FullWithCache || !Options.Options.HasFlag(flag))
+				if (flag == BackupOptions.None || flag == BackupOptions.Full || flag == BackupOptions.FullWithCache || !options.Options.HasFlag(flag))
 					continue;
 
 				try
