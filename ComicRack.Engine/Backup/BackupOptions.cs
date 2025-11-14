@@ -33,18 +33,16 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		/// Includes the <see cref="BackupOptions"/> from Alternate Configurations<br/>
 		/// Otherwise will only backup the current config
 		/// </summary>
-		[DefaultValue(true)]
-		public bool IncludeAlternateConfig { get; set; } = true;
+		[DefaultValue(false)]
+		public bool IncludeAlternateConfig { get; set; } = false;
 
 		[DefaultValue(5)]
 		public int BackupsToKeep { get; set; } = 5;
 
-		public TimeSpan Interval { get; set; } = TimeSpan.FromDays(7);
-
-		public DateTime LastBackupDate { get; set; } = DateTime.MinValue;
-
+		[DefaultValue (false)]
 		public bool OnStartup { get; set; } = false;
 
+		[DefaultValue(false)]
 		public bool OnExit { get; set; } = false;
 	}
 
