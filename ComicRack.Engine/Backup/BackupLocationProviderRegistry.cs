@@ -12,9 +12,16 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// </summary>
 	internal interface IBackupLocationProviderStrategy
 	{
-		BackupOptions SupportedBackupOption { get; }
+		ISupportedBackupOption SupportedBackupOption { get; }
 		IBackupLocationProvider CreateProvider(bool includeAllConfigs);
 	}
+
+	internal interface ISupportedBackupOption
+	{
+		BackupOptions BackupOption { get; }
+	}
+
+	internal record SupportedBackupOption(BackupOptions BackupOption) : ISupportedBackupOption;
 
 	/// <summary>
 	/// Registry for backup location provider creation strategies.
@@ -23,8 +30,8 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// </summary>
 	internal class BackupLocationProviderRegistry
 	{
-		private readonly Dictionary<BackupOptions, IBackupLocationProviderStrategy> strategies =
-			new Dictionary<BackupOptions, IBackupLocationProviderStrategy>();
+		private readonly Dictionary<ISupportedBackupOption, IBackupLocationProviderStrategy> strategies =
+			new Dictionary<ISupportedBackupOption, IBackupLocationProviderStrategy>();
 
 		/// <summary>
 		/// Registers a backup location provider strategy.
@@ -40,7 +47,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		/// <summary>
 		/// Creates a backup location provider for the specified backup option.
 		/// </summary>
-		public IBackupLocationProvider Create(BackupOptions backupOption, bool includeAllConfigs)
+		public IBackupLocationProvider Create(ISupportedBackupOption backupOption, bool includeAllConfigs)
 		{
 			if (strategies.TryGetValue(backupOption, out var strategy))
 				return strategy.CreateProvider(includeAllConfigs);
@@ -57,7 +64,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	{
 		protected readonly SystemPaths systemPaths;
 
-		public abstract BackupOptions SupportedBackupOption { get; }
+		public abstract ISupportedBackupOption SupportedBackupOption { get; }
 		public abstract IBackupLocationProvider CreateProvider(bool includeAllConfigs);
 
 		protected BackupLocationProviderStrategy(SystemPaths systemPaths)
@@ -79,7 +86,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// </summary>
 	internal class DatabaseBackupStrategy : BackupLocationProviderStrategy
 	{
-		public override BackupOptions SupportedBackupOption => BackupOptions.Database;
+		public override ISupportedBackupOption SupportedBackupOption => new SupportedBackupOption(BackupOptions.Database);
 
 		public DatabaseBackupStrategy(SystemPaths systemPaths) : base(systemPaths)
 		{
@@ -102,7 +109,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	{
 		private readonly string configFile;
 
-		public override BackupOptions SupportedBackupOption => BackupOptions.Config;
+		public override ISupportedBackupOption SupportedBackupOption => new SupportedBackupOption(BackupOptions.Config);
 
 		public ConfigBackupStrategy(string configFile, SystemPaths systemPaths) : base (systemPaths)
 		{
@@ -124,7 +131,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// </summary>
 	internal class ComicRackIniBackupStrategy : BackupLocationProviderStrategy
 	{
-		public override BackupOptions SupportedBackupOption => BackupOptions.ComicRackINI;
+ 		public override ISupportedBackupOption SupportedBackupOption => new SupportedBackupOption(BackupOptions.ComicRackINI);
 
 		public ComicRackIniBackupStrategy(SystemPaths systemPaths) : base(systemPaths)
 		{
@@ -152,7 +159,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	{
 		private readonly string defaultListsFile;
 
-		public override BackupOptions SupportedBackupOption => BackupOptions.DefaultLists;
+		public override ISupportedBackupOption SupportedBackupOption => new SupportedBackupOption(BackupOptions.DefaultLists);
 
 		public DefaultListsBackupStrategy(string defaultListsFile, SystemPaths systemPaths) : base(systemPaths)
 		{
@@ -174,7 +181,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// </summary>
 	internal class ScriptsBackupStrategy : BackupLocationProviderStrategy
 	{
-		public override BackupOptions SupportedBackupOption => BackupOptions.Scripts;
+		public override ISupportedBackupOption SupportedBackupOption => new SupportedBackupOption(BackupOptions.Scripts);
 
 		public ScriptsBackupStrategy(SystemPaths systemPaths) : base(systemPaths)
 		{
@@ -196,8 +203,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	internal class ResourcesBackupStrategy : BackupLocationProviderStrategy
 	{
 		private readonly string defaultIconPackagesPath;
-
-		public override BackupOptions SupportedBackupOption => BackupOptions.Resources;
+		public override ISupportedBackupOption SupportedBackupOption => new SupportedBackupOption(BackupOptions.Resources);
 
 		public ResourcesBackupStrategy(string defaultIconPackagesPath, SystemPaths systemPaths) : base (systemPaths)
 		{
@@ -219,7 +225,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// </summary>
 	internal class CustomThumbnailsBackupStrategy : BackupLocationProviderStrategy
 	{
-		public override BackupOptions SupportedBackupOption => BackupOptions.CustomThumbnails;
+		public override ISupportedBackupOption SupportedBackupOption => new SupportedBackupOption(BackupOptions.CustomThumbnails);
 
 		public CustomThumbnailsBackupStrategy(SystemPaths systemPaths) : base(systemPaths)
 		{
@@ -240,7 +246,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// </summary>
 	internal class CacheBackupStrategy : BackupLocationProviderStrategy
 	{
-		public override BackupOptions SupportedBackupOption => BackupOptions.Cache;
+		public override ISupportedBackupOption SupportedBackupOption => new SupportedBackupOption(BackupOptions.Cache);
 
 		public CacheBackupStrategy(SystemPaths systemPaths) : base(systemPaths)
 		{
