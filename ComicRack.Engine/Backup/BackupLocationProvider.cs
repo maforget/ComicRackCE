@@ -18,14 +18,14 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// <summary>
 	/// Locates backup items from the file system.
 	/// </summary>
-	internal class FileBackupLocationProvider : IBackupLocationProvider
+	internal class BackupLocationProvider : IBackupLocationProvider
 	{
 		private readonly Func<IEnumerable<string>> pathProvider;
 
 		public bool IsFile { get; }
 		public string BaseFolder { get; }
 
-		public FileBackupLocationProvider(Func<IEnumerable<string>> pathProvider, bool isFile, string baseFolder)
+		public BackupLocationProvider(Func<IEnumerable<string>> pathProvider, bool isFile, string baseFolder)
 		{
 			this.pathProvider = pathProvider ?? throw new ArgumentNullException(nameof(pathProvider));
 			IsFile = isFile;
