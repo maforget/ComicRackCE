@@ -90,15 +90,5 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		}
 	}
 
-	internal record BackupLocation
-	{
-		public IBackupLocationProvider Provider { get; init; }
-		public BackupOptions BackupType { get; init; }
-
-		public BackupLocation(IBackupLocationProvider provider, BackupOptions backupType)
-		{
-			Provider = provider;
-			BackupType = backupType;
-		}
-	}
+	internal record BackupLocation(IBackupLocationProvider Provider, BackupOptions BackupType) { }
 }
