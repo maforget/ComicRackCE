@@ -53,24 +53,43 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 
 	#region Concrete Backup Strategy Implementations
 
-	/// <summary>
-	/// Strategy for backing up the database files.
-	/// </summary>
-	internal class DatabaseBackupStrategy : IBackupLocationProviderStrategy
+	internal abstract class BackupLocationProviderStrategy : IBackupLocationProviderStrategy
 	{
-		private readonly SystemPaths systemPaths;
+		protected readonly SystemPaths systemPaths;
+		private bool includeAllConfigs = false; // FOR TESTING, need to hook this up to the config
 
-		public BackupOptions SupportedBackupOption => BackupOptions.Database;
+		public abstract BackupOptions SupportedBackupOption { get; }
+		public abstract IBackupLocationProvider CreateProvider();
 
-		public DatabaseBackupStrategy(SystemPaths systemPaths)
+		protected BackupLocationProviderStrategy(SystemPaths systemPaths)
 		{
 			this.systemPaths = systemPaths ?? throw new ArgumentNullException(nameof(systemPaths));
 		}
 
-		public IBackupLocationProvider CreateProvider()
+		protected IBackupLocationProvider GetBackupLocationProvider(IEnumerable<string> pathProvider, bool isFile, string baseFolder)
 		{
-			return new FileBackupLocationProvider(
-				() => [$"{systemPaths.DatabasePath}.xml", $"{systemPaths.DatabasePath}.xml.bak"],
+			if (includeAllConfigs)
+				return new FullBackupLocationProvider(pathProvider, isFile, baseFolder, systemPaths);
+			else
+				return new BackupLocationProvider(pathProvider, isFile, baseFolder);
+		}
+	}
+
+	/// <summary>
+	/// Strategy for backing up the database files.
+	/// </summary>
+	internal class DatabaseBackupStrategy : BackupLocationProviderStrategy
+	{
+		public override BackupOptions SupportedBackupOption => BackupOptions.Database;
+
+		public DatabaseBackupStrategy(SystemPaths systemPaths) : base(systemPaths)
+		{
+		}
+
+		public override IBackupLocationProvider CreateProvider()
+		{
+			return GetBackupLocationProvider(
+				[$"{systemPaths.DatabasePath}.xml", $"{systemPaths.DatabasePath}.xml.bak"],
 				isFile: true,
 				systemPaths.ApplicationDataPath);
 		}
@@ -79,23 +98,21 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// <summary>
 	/// Strategy for backing up the config file.
 	/// </summary>
-	internal class ConfigBackupStrategy : IBackupLocationProviderStrategy
+	internal class ConfigBackupStrategy : BackupLocationProviderStrategy
 	{
 		private readonly string configFile;
-		private readonly SystemPaths systemPaths;
 
-		public BackupOptions SupportedBackupOption => BackupOptions.Config;
+		public override BackupOptions SupportedBackupOption => BackupOptions.Config;
 
-		public ConfigBackupStrategy(string configFile, SystemPaths systemPaths)
+		public ConfigBackupStrategy(string configFile, SystemPaths systemPaths) : base (systemPaths)
 		{
 			this.configFile = configFile ?? throw new ArgumentNullException(nameof(configFile));
-			this.systemPaths = systemPaths ?? throw new ArgumentNullException(nameof(systemPaths));
 		}
 
-		public IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider()
 		{
-			return new FileBackupLocationProvider(
-				() => [configFile],
+			return GetBackupLocationProvider(
+				[configFile],
 				isFile: true,
 				systemPaths.ApplicationDataPath);
 		}
@@ -104,21 +121,18 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// <summary>
 	/// Strategy for backing up the ComicRack INI file.
 	/// </summary>
-	internal class ComicRackIniBackupStrategy : IBackupLocationProviderStrategy
+	internal class ComicRackIniBackupStrategy : BackupLocationProviderStrategy
 	{
-		private readonly SystemPaths systemPaths;
+		public override BackupOptions SupportedBackupOption => BackupOptions.ComicRackINI;
 
-		public BackupOptions SupportedBackupOption => BackupOptions.ComicRackINI;
-
-		public ComicRackIniBackupStrategy(SystemPaths systemPaths)
+		public ComicRackIniBackupStrategy(SystemPaths systemPaths) : base(systemPaths)
 		{
-			this.systemPaths = systemPaths ?? throw new ArgumentNullException(nameof(systemPaths));
 		}
 
-		public IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider()
 		{
-			return new FileBackupLocationProvider(
-				() => IniFile.GetUserLocations(GetComicRackIniFileName()),
+			return GetBackupLocationProvider(
+				IniFile.GetUserLocations(GetComicRackIniFileName()),
 				isFile: true,
 				systemPaths.ApplicationDataPath);
 		}
@@ -132,23 +146,21 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// <summary>
 	/// Strategy for backing up default lists files.
 	/// </summary>
-	internal class DefaultListsBackupStrategy : IBackupLocationProviderStrategy
+	internal class DefaultListsBackupStrategy : BackupLocationProviderStrategy
 	{
 		private readonly string defaultListsFile;
-		private readonly SystemPaths systemPaths;
 
-		public BackupOptions SupportedBackupOption => BackupOptions.DefaultLists;
+		public override BackupOptions SupportedBackupOption => BackupOptions.DefaultLists;
 
-		public DefaultListsBackupStrategy(string defaultListsFile, SystemPaths systemPaths)
+		public DefaultListsBackupStrategy(string defaultListsFile, SystemPaths systemPaths) : base(systemPaths)
 		{
 			this.defaultListsFile = defaultListsFile ?? throw new ArgumentNullException(nameof(defaultListsFile));
-			this.systemPaths = systemPaths ?? throw new ArgumentNullException(nameof(systemPaths));
 		}
 
-		public IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider()
 		{
-			return new FileBackupLocationProvider(
-				() => IniFile.GetUserLocations(defaultListsFile),
+			return GetBackupLocationProvider(
+				IniFile.GetUserLocations(defaultListsFile),
 				isFile: true,
 				systemPaths.ApplicationDataPath);
 		}
@@ -157,21 +169,18 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// <summary>
 	/// Strategy for backing up script files.
 	/// </summary>
-	internal class ScriptsBackupStrategy : IBackupLocationProviderStrategy
+	internal class ScriptsBackupStrategy : BackupLocationProviderStrategy
 	{
-		private readonly SystemPaths systemPaths;
+		public override BackupOptions SupportedBackupOption => BackupOptions.Scripts;
 
-		public BackupOptions SupportedBackupOption => BackupOptions.Scripts;
-
-		public ScriptsBackupStrategy(SystemPaths systemPaths)
+		public ScriptsBackupStrategy(SystemPaths systemPaths) : base(systemPaths)
 		{
-			this.systemPaths = systemPaths ?? throw new ArgumentNullException(nameof(systemPaths));
 		}
 
-		public IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider()
 		{
-			return new FileBackupLocationProvider(
-				() => [systemPaths.ScriptPathSecondary],
+			return GetBackupLocationProvider(
+				[systemPaths.ScriptPathSecondary],
 				isFile: false,
 				systemPaths.ApplicationDataPath);
 		}
@@ -180,23 +189,21 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// <summary>
 	/// Strategy for backing up resource files.
 	/// </summary>
-	internal class ResourcesBackupStrategy : IBackupLocationProviderStrategy
+	internal class ResourcesBackupStrategy : BackupLocationProviderStrategy
 	{
 		private readonly string defaultIconPackagesPath;
-		private readonly SystemPaths systemPaths;
 
-		public BackupOptions SupportedBackupOption => BackupOptions.Resources;
+		public override BackupOptions SupportedBackupOption => BackupOptions.Resources;
 
-		public ResourcesBackupStrategy(string defaultIconPackagesPath, SystemPaths systemPaths)
+		public ResourcesBackupStrategy(string defaultIconPackagesPath, SystemPaths systemPaths) : base (systemPaths)
 		{
 			this.defaultIconPackagesPath = defaultIconPackagesPath ?? throw new ArgumentNullException(nameof(defaultIconPackagesPath));
-			this.systemPaths = systemPaths ?? throw new ArgumentNullException(nameof(systemPaths));
 		}
 
-		public IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider()
 		{
-			return new FileBackupLocationProvider(
-				() => IniFile.GetUserLocations(defaultIconPackagesPath),
+			return GetBackupLocationProvider(
+				IniFile.GetUserLocations(defaultIconPackagesPath),
 				isFile: false,
 				systemPaths.ApplicationDataPath);
 		}
@@ -205,21 +212,18 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// <summary>
 	/// Strategy for backing up custom thumbnail files.
 	/// </summary>
-	internal class CustomThumbnailsBackupStrategy : IBackupLocationProviderStrategy
+	internal class CustomThumbnailsBackupStrategy : BackupLocationProviderStrategy
 	{
-		private readonly SystemPaths systemPaths;
+		public override BackupOptions SupportedBackupOption => BackupOptions.CustomThumbnails;
 
-		public BackupOptions SupportedBackupOption => BackupOptions.CustomThumbnails;
-
-		public CustomThumbnailsBackupStrategy(SystemPaths systemPaths)
+		public CustomThumbnailsBackupStrategy(SystemPaths systemPaths) : base(systemPaths)
 		{
-			this.systemPaths = systemPaths ?? throw new ArgumentNullException(nameof(systemPaths));
 		}
 
-		public IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider()
 		{
-			return new FileBackupLocationProvider(
-				() => [systemPaths.CustomThumbnailPath],
+			return GetBackupLocationProvider(
+				[systemPaths.CustomThumbnailPath],
 				isFile: false,
 				systemPaths.LocalApplicationDataPath);
 		}
@@ -228,21 +232,18 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	/// <summary>
 	/// Strategy for backing up cache files.
 	/// </summary>
-	internal class CacheBackupStrategy : IBackupLocationProviderStrategy
+	internal class CacheBackupStrategy : BackupLocationProviderStrategy
 	{
-		private readonly SystemPaths systemPaths;
+		public override BackupOptions SupportedBackupOption => BackupOptions.Cache;
 
-		public BackupOptions SupportedBackupOption => BackupOptions.Cache;
-
-		public CacheBackupStrategy(SystemPaths systemPaths)
+		public CacheBackupStrategy(SystemPaths systemPaths) : base(systemPaths)
 		{
-			this.systemPaths = systemPaths ?? throw new ArgumentNullException(nameof(systemPaths));
 		}
 
-		public IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider()
 		{
-			return new FileBackupLocationProvider(
-				() => [systemPaths.ImageCachePath, systemPaths.ThumbnailCachePath, systemPaths.FileCachePath],
+			return GetBackupLocationProvider(
+				[systemPaths.ImageCachePath, systemPaths.ThumbnailCachePath, systemPaths.FileCachePath],
 				isFile: false,
 				systemPaths.LocalApplicationDataPath);
 		}
