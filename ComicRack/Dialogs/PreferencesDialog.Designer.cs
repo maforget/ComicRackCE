@@ -119,7 +119,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.chkEnableThumbnailCache = new System.Windows.Forms.CheckBox();
 			this.lblThumbCacheUsage = new System.Windows.Forms.Label();
 			this.grpBackupManager = new cYo.Common.Windows.Forms.CollapsibleGroupBox();
-			this.chkIncludeAlternateConfig = new System.Windows.Forms.CheckBox();
+			this.chkIncludeAllAlternateConfigs = new System.Windows.Forms.CheckBox();
 			this.numBackupsToKeep = new System.Windows.Forms.NumericUpDown();
 			this.lblBackupsToKeep = new System.Windows.Forms.Label();
 			this.lbBackupOptions = new System.Windows.Forms.CheckedListBox();
@@ -1464,7 +1464,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.grpBackupManager.Controls.Add(this.gbBackupOn);
 			this.grpBackupManager.Controls.Add(this.lblBackupOptions);
-			this.grpBackupManager.Controls.Add(this.chkIncludeAlternateConfig);
+			this.grpBackupManager.Controls.Add(this.chkIncludeAllAlternateConfigs);
 			this.grpBackupManager.Controls.Add(this.numBackupsToKeep);
 			this.grpBackupManager.Controls.Add(this.lblBackupsToKeep);
 			this.grpBackupManager.Controls.Add(this.lbBackupOptions);
@@ -1480,15 +1480,14 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			// chkIncludeAlternateConfig
 			// 
-			this.chkIncludeAlternateConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.chkIncludeAlternateConfig.AutoSize = true;
-			this.chkIncludeAlternateConfig.Location = new System.Drawing.Point(12, 154);
-			this.chkIncludeAlternateConfig.Name = "chkIncludeAlternateConfig";
-			this.chkIncludeAlternateConfig.Size = new System.Drawing.Size(139, 17);
-			this.chkIncludeAlternateConfig.TabIndex = 6;
-			this.chkIncludeAlternateConfig.Text = "Include Alternate Config";
-			this.chkIncludeAlternateConfig.UseVisualStyleBackColor = true;
-			this.chkIncludeAlternateConfig.Visible = false;
+			this.chkIncludeAllAlternateConfigs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.chkIncludeAllAlternateConfigs.AutoSize = true;
+			this.chkIncludeAllAlternateConfigs.Location = new System.Drawing.Point(12, 154);
+			this.chkIncludeAllAlternateConfigs.Name = "chkIncludeAlternateConfig";
+			this.chkIncludeAllAlternateConfigs.Size = new System.Drawing.Size(139, 17);
+			this.chkIncludeAllAlternateConfigs.TabIndex = 6;
+			this.chkIncludeAllAlternateConfigs.Text = "Include all Alternate Configs";
+			this.chkIncludeAllAlternateConfigs.UseVisualStyleBackColor = true;
 			// 
 			// numBackupsToKeep
 			// 
@@ -2934,7 +2933,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private CheckedListBox lbBackupOptions;
 		private Label lblBackupsToKeep;
 		private NumericUpDown numBackupsToKeep;
-		private CheckBox chkIncludeAlternateConfig;
+		private CheckBox chkIncludeAllAlternateConfigs;
 		private Label lblBackupOptions;
 		private GroupBox gbBackupOn;
 		private CheckBox chkBackupOnExit;

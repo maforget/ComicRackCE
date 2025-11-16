@@ -861,7 +861,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             BackupManagerOptions backupManagerOptions = Program.Settings.BackupManager;
 
             txtBackupLocation.Text = backupManagerOptions.Location;
-			chkIncludeAlternateConfig.Checked = backupManagerOptions.IncludeAlternateConfig;
+			chkIncludeAllAlternateConfigs.Checked = backupManagerOptions.IncludeAllAlternateConfigs;
             numBackupsToKeep.Value = backupManagerOptions.BackupsToKeep;
             chkBackupOnStartup.Checked = backupManagerOptions.OnStartup;
             chkBackupOnExit.Checked = backupManagerOptions.OnExit;
@@ -888,7 +888,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
             Program.Settings.BackupManager.Location = string.IsNullOrWhiteSpace(txtBackupLocation.Text) ? null : txtBackupLocation.Text;
             Program.Settings.BackupManager.BackupsToKeep = (int)numBackupsToKeep.Value;
-            Program.Settings.BackupManager.IncludeAlternateConfig = chkIncludeAlternateConfig.Checked;
+            Program.Settings.BackupManager.IncludeAllAlternateConfigs = chkIncludeAllAlternateConfigs.Checked;
             Program.Settings.BackupManager.OnStartup = chkBackupOnStartup.Checked;
             Program.Settings.BackupManager.OnExit = chkBackupOnExit.Checked;
             Program.Settings.BackupManager.Options = backupOptions;

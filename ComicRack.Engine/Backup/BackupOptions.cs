@@ -34,7 +34,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		/// Otherwise will only backup the current config
 		/// </summary>
 		[DefaultValue(false)]
-		public bool IncludeAlternateConfig { get; set; } = false;
+		public bool IncludeAllAlternateConfigs { get; set; } = false;
 
 		[DefaultValue(5)]
 		public int BackupsToKeep { get; set; } = 5;
