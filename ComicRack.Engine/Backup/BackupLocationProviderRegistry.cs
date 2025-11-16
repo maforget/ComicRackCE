@@ -13,7 +13,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	internal interface IBackupLocationProviderStrategy
 	{
 		BackupOptions SupportedBackupOption { get; }
-		IBackupLocationProvider CreateProvider();
+		IBackupLocationProvider CreateProvider(bool includeAllConfigs);
 	}
 
 	/// <summary>
@@ -40,10 +40,10 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		/// <summary>
 		/// Creates a backup location provider for the specified backup option.
 		/// </summary>
-		public IBackupLocationProvider Create(BackupOptions backupOption)
+		public IBackupLocationProvider Create(BackupOptions backupOption, bool includeAllConfigs)
 		{
 			if (strategies.TryGetValue(backupOption, out var strategy))
-				return strategy.CreateProvider();
+				return strategy.CreateProvider(includeAllConfigs);
 
 			throw new ArgumentException(
 				$"Unsupported backup option: {backupOption}. No strategy registered.",
@@ -56,17 +56,16 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 	internal abstract class BackupLocationProviderStrategy : IBackupLocationProviderStrategy
 	{
 		protected readonly SystemPaths systemPaths;
-		private bool includeAllConfigs = false; // FOR TESTING, need to hook this up to the config
 
 		public abstract BackupOptions SupportedBackupOption { get; }
-		public abstract IBackupLocationProvider CreateProvider();
+		public abstract IBackupLocationProvider CreateProvider(bool includeAllConfigs);
 
 		protected BackupLocationProviderStrategy(SystemPaths systemPaths)
 		{
 			this.systemPaths = systemPaths ?? throw new ArgumentNullException(nameof(systemPaths));
 		}
 
-		protected IBackupLocationProvider GetBackupLocationProvider(IEnumerable<string> pathProvider, bool isFile, string baseFolder)
+		protected IBackupLocationProvider GetBackupLocationProvider(IEnumerable<string> pathProvider, bool isFile, string baseFolder, bool includeAllConfigs)
 		{
 			if (includeAllConfigs)
 				return new FullBackupLocationProvider(pathProvider, isFile, baseFolder, systemPaths);
@@ -86,12 +85,13 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		{
 		}
 
-		public override IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider(bool includeAllConfigs)
 		{
 			return GetBackupLocationProvider(
 				[$"{systemPaths.DatabasePath}.xml", $"{systemPaths.DatabasePath}.xml.bak"],
 				isFile: true,
-				systemPaths.ApplicationDataPath);
+				systemPaths.ApplicationDataPath,
+				includeAllConfigs);
 		}
 	}
 
@@ -109,12 +109,13 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 			this.configFile = configFile ?? throw new ArgumentNullException(nameof(configFile));
 		}
 
-		public override IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider(bool includeAllConfigs)
 		{
 			return GetBackupLocationProvider(
 				[configFile],
 				isFile: true,
-				systemPaths.ApplicationDataPath);
+				systemPaths.ApplicationDataPath,
+				includeAllConfigs);
 		}
 	}
 
@@ -129,12 +130,13 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		{
 		}
 
-		public override IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider(bool includeAllConfigs)
 		{
 			return GetBackupLocationProvider(
 				IniFile.GetUserLocations(GetComicRackIniFileName()),
 				isFile: true,
-				systemPaths.ApplicationDataPath);
+				systemPaths.ApplicationDataPath,
+				includeAllConfigs);
 		}
 
 		private string GetComicRackIniFileName()
@@ -157,12 +159,13 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 			this.defaultListsFile = defaultListsFile ?? throw new ArgumentNullException(nameof(defaultListsFile));
 		}
 
-		public override IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider(bool includeAllConfigs)
 		{
 			return GetBackupLocationProvider(
 				IniFile.GetUserLocations(defaultListsFile),
 				isFile: true,
-				systemPaths.ApplicationDataPath);
+				systemPaths.ApplicationDataPath,
+				includeAllConfigs);
 		}
 	}
 
@@ -177,12 +180,13 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		{
 		}
 
-		public override IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider(bool includeAllConfigs)
 		{
 			return GetBackupLocationProvider(
 				[systemPaths.ScriptPathSecondary],
 				isFile: false,
-				systemPaths.ApplicationDataPath);
+				systemPaths.ApplicationDataPath,
+				includeAllConfigs);
 		}
 	}
 
@@ -200,12 +204,13 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 			this.defaultIconPackagesPath = defaultIconPackagesPath ?? throw new ArgumentNullException(nameof(defaultIconPackagesPath));
 		}
 
-		public override IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider(bool includeAllConfigs)
 		{
 			return GetBackupLocationProvider(
 				IniFile.GetUserLocations(defaultIconPackagesPath),
 				isFile: false,
-				systemPaths.ApplicationDataPath);
+				systemPaths.ApplicationDataPath,
+				includeAllConfigs);
 		}
 	}
 
@@ -220,12 +225,13 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		{
 		}
 
-		public override IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider(bool includeAllConfigs)
 		{
 			return GetBackupLocationProvider(
 				[systemPaths.CustomThumbnailPath],
 				isFile: false,
-				systemPaths.LocalApplicationDataPath);
+				systemPaths.LocalApplicationDataPath,
+				includeAllConfigs);
 		}
 	}
 
@@ -240,12 +246,13 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		{
 		}
 
-		public override IBackupLocationProvider CreateProvider()
+		public override IBackupLocationProvider CreateProvider(bool includeAllConfigs)
 		{
 			return GetBackupLocationProvider(
 				[systemPaths.ImageCachePath, systemPaths.ThumbnailCachePath, systemPaths.FileCachePath],
 				isFile: false,
-				systemPaths.LocalApplicationDataPath);
+				systemPaths.LocalApplicationDataPath,
+				includeAllConfigs);
 		}
 	}
 

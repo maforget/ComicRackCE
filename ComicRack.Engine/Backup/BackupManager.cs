@@ -44,7 +44,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 
 			retentionManager.CleanOldBackups(options.Location, options.BackupsToKeep);
 
-			var backupLocations = GetBackupLocations();
+			var backupLocations = GetBackupLocations(options.IncludeAllAlternateConfigs);
 			if(backupLocations.Any())
 			{
 				var files = fileCollector.CollectFiles(backupLocations);
@@ -65,7 +65,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 			archiveCreator.CreateBackup(options.Location, files, backupTypes);
 		}
 
-		private IEnumerable<BackupLocation> GetBackupLocations()
+		private IEnumerable<BackupLocation> GetBackupLocations(bool includeAllConfigs)
 		{
 			var locations = new List<BackupLocation>();
 
@@ -76,7 +76,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 
 				try
 				{
-					var provider = locationProviderFactory.Create(flag);
+					var provider = locationProviderFactory.Create(flag, includeAllConfigs);
 					var location = new BackupLocation(provider, flag);
 					locations.Add(location);
 				}

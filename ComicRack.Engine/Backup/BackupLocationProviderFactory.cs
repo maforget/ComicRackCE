@@ -27,9 +27,9 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		/// <summary>
 		/// Creates a backup location provider for the specified backup option.
 		/// </summary>
-		public IBackupLocationProvider Create(BackupOptions backupOption)
+		public IBackupLocationProvider Create(BackupOptions backupOption, bool includeAllConfigs)
 		{
-			return registry.Create(backupOption);
+			return registry.Create(backupOption, includeAllConfigs);
 		}
 
 		/// <summary>
