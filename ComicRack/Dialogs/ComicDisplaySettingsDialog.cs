@@ -12,6 +12,8 @@ using cYo.Common.Localize;
 using cYo.Common.Text;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
+using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Engine.Display;
 using cYo.Projects.ComicRack.Viewer.Config;
 
@@ -191,6 +193,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			get;
 			set;
 		}
+
+		public override UIComponent UIComponent => UIComponent.Content;
 
 		public ComicDisplaySettingsDialog()
 		{

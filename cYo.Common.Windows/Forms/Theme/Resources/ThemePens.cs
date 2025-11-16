@@ -4,18 +4,11 @@ using System.Drawing;
 namespace cYo.Common.Windows.Forms.Theme.Resources;
 
 /// <summary>
-/// TODO : ADD SUMMARY
+/// Pens for <see cref="ThemeColors"/>.
 /// </summary>
 public static class ThemePens
 {
     private static readonly Dictionary<Color, Pen> cache = new();
-
-    //public static class CheckBox
-    //{
-    //    public static Pen Border => FromThemeColor(ThemeColors.CheckBox.Border);
-    //    public static Pen UncheckedBorder => FromThemeColor(ThemeColors.CheckBox.UncheckedBorder);
-    //    public static Pen UncheckedDisabledBorder => FromThemeColor(ThemeColors.CheckBox.UncheckedDisabledBorder);
-    //}
 
     public static class ComboBox
     {
@@ -38,6 +31,14 @@ public static class ThemePens
         public static Pen Border => FromThemeColor(ThemeColors.Stack.Border);
     }
 
+    public static class ThumbnailViewItem
+    {
+        public static Pen Border => FromThemeColor(ThemeColors.ThumbnailViewItem.Border);
+    }
+
+    /// <summary>
+    /// Returns a <see cref="Pen"/> with the specified <paramref name="color"/>.
+    /// </summary>
     public static Pen FromThemeColor(Color color)
     {
         if (!cache.TryGetValue(color, out var pen))

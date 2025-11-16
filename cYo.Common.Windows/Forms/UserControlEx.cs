@@ -6,7 +6,9 @@ namespace cYo.Common.Windows.Forms
 {
     public class UserControlEx : UserControl, ITheme
     {
-        public void ApplyTheme(Control? control = null)
+        public virtual UIComponent UIComponent => UIComponent.None;
+
+        public virtual void ApplyTheme(Control control = null)
         {
             ThemeExtensions.Theme(control ?? this);
         }

@@ -36,9 +36,11 @@ internal class DarkThemeHandler : IThemeHandler
         if (typeof(IThemeCustom).IsAssignableFrom(control.GetType()))
         {
             IThemeCustom customControl = (IThemeCustom)control;
-            if (customControl.ControlDefinition != null || customControl.UIComponent != UIComponent.None)
+            if (customControl.ControlDefinition != null)
             {
-                customDefinition = new DarkControlDefinition(customControl.ControlDefinition, customControl.UIComponent);
+                customDefinition = new DarkControlDefinition(customControl.ControlDefinition);
+                if (TryGetDarkControlDefinition(control.GetType(), out var darkControlDefinition))
+                    customDefinition.UXTheme = darkControlDefinition.UXTheme;
                 return true;
             }
         }
@@ -57,7 +59,7 @@ internal class DarkThemeHandler : IThemeHandler
 		{
 		    // Get a Dark Mode DarkControlDefinition if one exists. 
 			if (TryGetDarkControlDefinition(control.GetType(), out darkControlDefinition))
-				darkControlDefinition.SetColor(control);
+				darkControlDefinition = darkControlDefinition.SetColor(control);
 			// Fall back to default DarkControlDefinition
 			else
 				darkControlDefinition = new DarkControlDefinition(control);

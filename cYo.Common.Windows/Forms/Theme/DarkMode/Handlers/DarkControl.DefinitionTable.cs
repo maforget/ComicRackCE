@@ -41,7 +41,6 @@ internal partial class DarkControl
 
         [typeof(Form)] = new DarkControlDefinition
         {
-            BackColor = DarkColors.UIComponent.Window,
             UXTheme = c => UXTheme.SetWindowTheme(c.Handle) //SetWindowUXTheme((Form)c)
         },
 
@@ -99,7 +98,6 @@ internal partial class DarkControl
         [typeof(TextBox)] = new DarkControlDefinition
         {
             BackColor = DarkColors.TextBox.Back,
-            BorderStyle = BorderStyle.FixedSingle,
             Theme = c => DarkTextBoxBase((TextBox)c)
         },
 

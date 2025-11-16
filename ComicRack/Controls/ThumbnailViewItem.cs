@@ -275,12 +275,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 			}
 			Rectangle bounds = drawInfo.Bounds;
 			if (drawInfo.DrawBorder)
-			{
-				using (Pen pen = new Pen(ThemeColors.ThumbnailViewItem.Border, 1f))
-				{
-					drawInfo.Graphics.DrawLine(pen, bounds.Location, new Point(bounds.Left, bounds.Bottom));
-				}
-			}
+				drawInfo.Graphics.DrawLine(ThemePens.ThumbnailViewItem.Border, bounds.Location, new Point(bounds.Left, bounds.Bottom));
 		}
 
 		protected void MakePageThumbnail(ThumbnailKey key)

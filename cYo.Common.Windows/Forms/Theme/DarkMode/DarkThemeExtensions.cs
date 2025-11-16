@@ -77,7 +77,7 @@ internal static class DarkThemeExtensions
     // REVIEW : Maybe should just subclass...? ControlPaintEx : DarkControlPaint
     internal static class ControlPaint
     {
-        internal static void DrawBackground(PaintEventArgs e, Color backColor) => DarkControlPaint.DrawBackground(e, backColor);
+        internal static void DrawBackground(PaintEventArgs e, Rectangle bounds, Color backColor) => DarkControlPaint.DrawBackground(e, bounds, backColor);
         internal static void DrawBackground(DrawItemEventArgs e) => DarkControlPaint.DrawBackground(e);
         internal static void DrawBackground(DrawToolTipEventArgs e) => DarkControlPaint.DrawBackground(e);
         internal static void DrawBorder(Graphics g, Rectangle bounds) => DarkControlPaint.DrawBorder(g, bounds);

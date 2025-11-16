@@ -1,9 +1,21 @@
-﻿using cYo.Common.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 
 namespace cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 
+/// <summary>
+/// <para><see cref="Themes.Dark"/> Mode <b>Internal</b> <see cref="Color"/> definitions.</para>
+/// <para>
+/// <b>Internal <see cref="Color"/></b><br/>
+/// - Referenced within <see cref="Theme.DarkMode"/>.<br/>
+/// - Not intended to be user-customizable.<br/>
+/// - <see cref="ThemeExtensions"/>
+/// </para>
+/// </summary>
+/// <remarks>
+/// Exposed externally via <see cref="ThemeExtensions"/><br/>
+/// For <see cref="Themes.Dark"/> Mode <b>App</b> <see cref="Color"/> definitions, see <see cref="DarkThemeColorTable"/>.
+/// </remarks>
 internal class DarkColors
 {
     // WhiteSmoke replacement. WhiteSmoke is RGB 245 but RGB 10 would be too dark
@@ -12,16 +24,16 @@ internal class DarkColors
 
     private static class Common
     {
-        public static readonly Color EditBack = Color.FromArgb(46, 46, 46); // RGB 46 HEX 2E : was RGB 56 HEX 38
+        public static readonly Color EditBack = SystemColors.ControlLight;  // RGB 46 HEX 2E : was RGB 56 HEX 38
         public static readonly Color ListBack = Color.FromArgb(40, 40, 40); // RGB 40 HEX 28 : framework uses RGB 46 HEX 2E; setting darker for Form contrast 
         public static readonly Color Border = SystemColors.ControlDarkDark; // RGB 90 HEX 5A
     }
 
     internal static class UIComponent
     {
+        public static readonly Color SidePanel = Color.FromArgb(25, 25, 25); // RGB 25 HEX 19 : ComicExplorerView.SidePanel [favView(ItemView) + ComicListBrowser + SmallComicPreview]
+        public static readonly Color Content = SystemColors.Control;         // RGB 32 HEX 20 : MainViewItemView + CollapsibleGroupBox + background
         public static readonly Color Window = SystemColors.Window;           // RGB 50 HEX 32 : Form Background 
-        public static readonly Color SidePanel = Color.FromArgb(25, 25, 25); // RGB 25 HEX 19 : ComicExplorerView.SidePanel [favView(ItemView) + ComicListBrowser + SmallComicPreview] 
-        public static readonly Color Content = SystemColors.Control;         // RGB 32 HEX 20 : MainViewItemView + CollapsibleGroupBox + background  
     }
 
     #region Color.Empty
@@ -54,12 +66,23 @@ internal class DarkColors
     // CheckBox
     internal static class CheckBox
     {
-        public static Color Back = Color.FromArgb(0, 95, 184);
-        public static Color BackCorner = Color.FromArgb(0, 95, 184);
-        public static Color BackVertex = Color.FromArgb(0, 95, 184);
-        public static Color Border = Color.FromArgb(0, 95, 184);
-        public static Color BorderEdge = Color.FromArgb(4, 87, 166);
-        public static Color BorderCorner = Color.FromArgb(28, 54, 74);
+        private static Color Enabled = Color.FromArgb(96, 205, 255);
+        private static Color Disabled = SystemColors.ControlDark;
+
+        public static Color Back = Enabled;
+        public static Color BackCorner = Enabled;
+        public static Color BackVertex = Enabled;
+        public static Color Border = Enabled;
+        public static Color BorderEdge = Color.FromArgb(93, 195, 242);
+        public static Color BorderCorner = Color.FromArgb(71, 126, 151);
+        public static Color Check = Color.FromArgb(24, 51, 64); //SystemColors.ControlLight;
+        public static Color DisabledBack = Disabled;
+        public static Color DisabledBackCorner = Disabled;
+        public static Color DisabledBackVertex = Disabled;
+        public static Color DisabledBorder = Disabled;
+        public static Color DisabledBorderEdge = Color.FromArgb(4, 87, 166);
+        public static Color DisabledBorderCorner = Color.FromArgb(28, 54, 74);
+        public static Color DisabledCheck = SystemColors.GrayText;
         public static Color UncheckedBorder = Color.FromArgb(98, 98, 98);
         public static Color UncheckedBorderEdge = Color.FromArgb(90, 90, 90);
         public static Color UncheckedBack = SystemColors.ControlLight;
@@ -80,7 +103,6 @@ internal class DarkColors
 
     internal static class RatingControl
     {
-        public static readonly Color Back = Common.ListBack;
         public static readonly Color Rated = SystemColors.ControlText;
         public static readonly Color Unrated = SystemColors.GrayText;
     }
@@ -155,7 +177,9 @@ internal class DarkColors
     }
 }
 
-
+/// <summary>
+/// Brushes for <see cref="DarkColors"/>.
+/// </summary>
 internal static class DarkBrushes
 {
     private static readonly Dictionary<Color, SolidBrush> cache = new();
@@ -172,15 +196,17 @@ internal static class DarkBrushes
         public static Brush Back => FromDarkColor(DarkColors.CheckBox.Back);
         public static Brush BackCorner => FromDarkColor(DarkColors.CheckBox.BackCorner);
         public static Brush BackVertex => FromDarkColor(DarkColors.CheckBox.BackVertex);
-        //public static Brush Border => FromDarkColor(DarkColors.CheckBox.Border);
         public static Brush BorderEdge => FromDarkColor(DarkColors.CheckBox.BorderEdge);
         public static Brush BorderCorner => FromDarkColor(DarkColors.CheckBox.BorderCorner);
-        //public static Brush UncheckedBorder => FromDarkColor(DarkColors.CheckBox.UncheckedBorder);
+        public static Brush DisabledBack => FromDarkColor(DarkColors.CheckBox.DisabledBack);
+        public static Brush DisabledBackCorner => FromDarkColor(DarkColors.CheckBox.DisabledBackCorner);
+        public static Brush DisabledBackVertex => FromDarkColor(DarkColors.CheckBox.DisabledBackVertex);
+        public static Brush DisabledBorderEdge => FromDarkColor(DarkColors.CheckBox.DisabledBorderEdge);
+        public static Brush DisabledBorderCorner => FromDarkColor(DarkColors.CheckBox.DisabledBorderCorner);
         public static Brush UncheckedBorderEdge => FromDarkColor(DarkColors.CheckBox.UncheckedBorderEdge);
         public static Brush UncheckedBack => FromDarkColor(DarkColors.CheckBox.UncheckedBack);
         public static Brush UncheckedBackCorner => FromDarkColor(DarkColors.CheckBox.UncheckedBackCorner);
         public static Brush UncheckedBackVertex => FromDarkColor(DarkColors.CheckBox.UncheckedBackVertex);
-        //public static Brush UncheckedDisabledBorder => FromDarkColor(DarkColors.CheckBox.UncheckedDisabledBorder);
         public static Brush UncheckedDisabledBorderEdge => FromDarkColor(DarkColors.CheckBox.UncheckedDisabledBorderEdge);
         public static Brush UncheckedDisabledBackCorner => FromDarkColor(DarkColors.CheckBox.UncheckedDisabledBackCorner);
         public static Brush UncheckedDisabledBackVertex => FromDarkColor(DarkColors.CheckBox.UncheckedDisabledBackVertex);
@@ -209,6 +235,9 @@ internal static class DarkBrushes
         public static Brush Back = FromDarkColor(DarkColors.ToolTip.Back);
     }
 
+    /// <summary>
+    /// Returns a <see cref="Brush"/> with the specified <paramref name="color"/>.
+    /// </summary>
     public static Brush FromDarkColor(Color color)
     {
         if (!cache.TryGetValue(color, out var brush))
@@ -220,6 +249,9 @@ internal static class DarkBrushes
     }
 }
 
+/// <summary>
+/// Pens for <see cref="DarkColors"/>.
+/// </summary>
 internal static class DarkPens
 {
     private static readonly Dictionary<Color, Pen> cache = new();
@@ -227,6 +259,9 @@ internal static class DarkPens
     internal static class CheckBox
     {
         public static Pen Border => FromDarkColor(DarkColors.CheckBox.Border);
+        public static Pen Check => FromDarkColor(DarkColors.CheckBox.Check);
+        public static Pen DisabledBorder => FromDarkColor(DarkColors.CheckBox.DisabledBorder);
+        public static Pen DisabledCheck => FromDarkColor(DarkColors.CheckBox.DisabledCheck);
         public static Pen UncheckedBorder => FromDarkColor(DarkColors.CheckBox.UncheckedBorder);
         public static Pen UncheckedDisabledBorder => FromDarkColor(DarkColors.CheckBox.UncheckedDisabledBorder);
     }
@@ -247,6 +282,9 @@ internal static class DarkPens
         public static Pen Border = FromDarkColor(DarkColors.TabBar.Border);
     }
 
+    /// <summary>
+    /// Returns a <see cref="Pen"/> with the specified <paramref name="color"/>.
+    /// </summary>
     public static Pen FromDarkColor(Color color)
     {
         if (!cache.TryGetValue(color, out var brush))

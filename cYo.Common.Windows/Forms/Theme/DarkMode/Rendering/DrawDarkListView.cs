@@ -1,4 +1,5 @@
-﻿using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
+﻿using cYo.Common.Drawing;
+using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -79,7 +80,8 @@ internal static partial class DrawDarkListView
 		// Handle first column having images and/or checkBoxes
 		if (e.ColumnIndex == 0)
 		{
-			int leftPad = 4;
+			int padCheck, padImage;
+			padCheck = padImage = 4;
 			if (listView.CheckBoxes)
 			{
 				System.Windows.Forms.VisualStyles.CheckBoxState state = e.Item.Checked ?
@@ -88,27 +90,24 @@ internal static partial class DrawDarkListView
 
 				Size glyphSize = CheckBoxRenderer.GetGlyphSize(e.Graphics, state); // Should be DPI-aware
 				Size checkSize = checkImageList is not null ? checkImageList.ImageSize : glyphSize;
-				int checkY = bounds.Top + (bounds.Height - checkSize.Height) / 2;
-				int checkX = bounds.Left + leftPad;
-				leftPad = checkX + checkSize.Width + 4; // padding space for checkbox, don't move textRect.X because leftPad takes care of it on it's own
+				Rectangle checkRect = checkSize.Align(bounds, ContentAlignment.MiddleLeft);
+				checkRect.X += padCheck;
+				textRect.X = padCheck = checkRect.Right; // padding space for checkbox
 
-				CheckBoxRenderer.DrawCheckBox(e.Graphics, new Point(checkX, checkY), state); // Draw the checkbox
+				CheckBoxRenderer.DrawCheckBox(e.Graphics, checkRect.TopLeft(), state); // Draw the checkbox
 			}
 			if (imageList != null)
 			{
-				int imageWidth = imageList.ImageSize.Width;
-				int imageHeight = imageList.ImageSize.Height;
-				int imageY = bounds.Top + (bounds.Height - imageHeight) / 2;
-				int imageX = bounds.Left + leftPad; // small padding from left
-
-				// Shift text based on imageList != null, whether this item has an image or not
-				textRect.X += imageX + imageWidth;
+				Size imageSize = imageList.ImageSize;
+				Rectangle imageRect = imageSize.Align(bounds, ContentAlignment.MiddleLeft);
+				imageRect.X += padCheck + padImage; // small padding from left
+				textRect.X = imageRect.Right; // Shift text based on imageList != null, whether this item has an image or not
 
 				// Draw the image if there is one to draw
 				int imageIndex = e.Item.ImageIndex;
 				imageIndex = imageIndex < 0 && !string.IsNullOrEmpty(e.Item.ImageKey) ? imageList.Images.IndexOfKey(e.Item.ImageKey) : imageIndex;
 				if (imageIndex >= 0 && imageIndex < imageList.Images.Count)
-					imageList.Draw(e.Graphics, imageX, imageY, imageWidth, imageHeight, imageIndex);
+					imageList.Draw(e.Graphics, imageRect.X, imageRect.Y, imageRect.Width, imageRect.Height, imageIndex);
 			}
 		}
 

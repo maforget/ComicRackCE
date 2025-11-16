@@ -1,5 +1,6 @@
 using System.Windows.Forms;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme.Resources;
 
 namespace cYo.Projects.ComicRack.Engine.Controls
 {
@@ -205,7 +206,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = ThemeColors.MagnifySetup.Back;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "MagnifySetupControl";

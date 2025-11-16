@@ -724,15 +724,15 @@
   <data name="DarkGoFirst" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dark\GoFirst.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-	<data name="DarkGoLast" type="System.Resources.ResXFileRef, System.Windows.Forms">
-		<value>..\Resources\Dark\GoLast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-	</data>
-	<data name="DarkGoPrevious" type="System.Resources.ResXFileRef, System.Windows.Forms">
-		<value>..\Resources\Dark\GoPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-	</data>
-	<data name="DarkGoNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
-		<value>..\Resources\Dark\GoNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-	</data>
+  <data name="DarkGoLast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\GoLast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkGoPrevious" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\GoPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkGoNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\GoNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DarkGroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dark\Group.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -790,9 +790,6 @@
   <data name="DarkTileView" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dark\TileView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DarkDetailView" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dark\DetailView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="DarkThumbView" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dark\ThumbView.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -804,5 +801,8 @@
   </data>
   <data name="DarkRename" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dark\Rename.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DarkZoomClear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark\ZoomClear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

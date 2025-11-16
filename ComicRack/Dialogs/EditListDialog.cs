@@ -6,6 +6,7 @@ using cYo.Common.Localize;
 using cYo.Common.Text;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Viewer.Properties;
 
@@ -13,6 +14,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
 	public partial class EditListDialog : FormEx
 	{
+		public override UIComponent UIComponent => UIComponent.Content;
+
 		public EditListDialog()
 		{
 			LocalizeUtility.UpdateRightToLeft(this);
