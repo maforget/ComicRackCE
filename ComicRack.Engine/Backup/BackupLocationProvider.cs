@@ -65,7 +65,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 			string localAppData = SystemPaths.GetLocalApplicationDataPath(systemPaths.UseLocal, systemPaths.AlternateConfig);
 
 			currentAppData = BaseFolder == appData ? appData : localAppData;
-			currentBaseAppData = BaseFolder == baseAppData ? baseAppData : baseLocalAppData;
+			currentBaseAppData = currentAppData == appData ? baseAppData : baseLocalAppData;
 
 			if (ReplaceBasePath(BaseFolder, currentBaseAppData, currentAppData, out string newBaseFolder)) // Replace the BaseFolder
 				this.newBaseFolder = newBaseFolder;
