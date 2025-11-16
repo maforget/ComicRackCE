@@ -76,7 +76,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 
 				try
 				{
-					var provider = locationProviderFactory.Create(new SupportedBackupOption(options.Options), includeAllConfigs);
+					var provider = locationProviderFactory.Create(new SupportedBackupOption(flag), includeAllConfigs);
 					var location = new BackupLocation(provider, flag);
 					locations.Add(location);
 				}
