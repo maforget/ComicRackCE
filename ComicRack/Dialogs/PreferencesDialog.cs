@@ -22,6 +22,7 @@ using cYo.Common.Windows.Forms.Theme;
 using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Common.Xml;
 using cYo.Projects.ComicRack.Engine;
+using cYo.Projects.ComicRack.Engine.Backup;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.Display;
 using cYo.Projects.ComicRack.Engine.IO.Network;
@@ -127,6 +128,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             SetScanButtonText();
             btResetMessages.Enabled = Program.Settings.HiddenMessageBoxes != HiddenMessageBoxes.None;
             FillExtensionsList();
+            FillBackupOptions();
             chkOverwriteAssociations.Checked = Program.Settings.OverwriteAssociations;
             if (!FileFormat.CanRegisterShell)
             {
@@ -854,7 +856,45 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             }
         }
 
-        public void Apply()
+        private void FillBackupOptions()
+        {
+            BackupManagerOptions backupManagerOptions = Program.Settings.BackupManager;
+
+            txtBackupLocation.Text = backupManagerOptions.Location;
+			chkIncludeAllAlternateConfigs.Checked = backupManagerOptions.IncludeAllAlternateConfigs;
+            numBackupsToKeep.Value = backupManagerOptions.BackupsToKeep;
+            chkBackupOnStartup.Checked = backupManagerOptions.OnStartup;
+            chkBackupOnExit.Checked = backupManagerOptions.OnExit;
+
+            // Fill the CheckedListBox
+            lbBackupOptions.Items.Clear();
+			foreach (BackupOptions option in Enum.GetValues(typeof(BackupOptions)))
+            {
+                if (option != BackupOptions.None && option != BackupOptions.Full && option != BackupOptions.FullWithCache)
+                {
+                    bool value = backupManagerOptions.Options.HasFlag(option);
+                    int index = lbBackupOptions.Items.Add(option, value); 
+                }
+            }
+        }
+
+		private void SaveBackupManagerOptions()
+		{
+            BackupOptions backupOptions = BackupOptions.None;
+            foreach (BackupOptions item in lbBackupOptions.CheckedItems)
+            {
+                backupOptions |= item; 
+            }
+
+            Program.Settings.BackupManager.Location = string.IsNullOrWhiteSpace(txtBackupLocation.Text) ? null : txtBackupLocation.Text;
+            Program.Settings.BackupManager.BackupsToKeep = (int)numBackupsToKeep.Value;
+            Program.Settings.BackupManager.IncludeAllAlternateConfigs = chkIncludeAllAlternateConfigs.Checked;
+            Program.Settings.BackupManager.OnStartup = chkBackupOnStartup.Checked;
+            Program.Settings.BackupManager.OnExit = chkBackupOnExit.Checked;
+            Program.Settings.BackupManager.Options = backupOptions;
+		}
+
+		public void Apply()
         {
             string cultureName = ((TRInfo)lbLanguages.SelectedItem).CultureName;
             if (cultureName != Program.Settings.CultureName)
@@ -957,6 +997,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             }
             Program.Settings.ExtraWifiDeviceAddresses = txWifiAddresses.Text;
 			Program.Settings.CurrentWorkspace.PreferencesOutputSize = SafeSize;
+            SaveBackupManagerOptions();
 			SaveVirtualTags();
             Program.RefreshAllWindows();
             Program.ForAllForms(delegate (Form f)
@@ -968,7 +1009,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             });
 		}
 
-        private void SetScanButtonText()
+		private void SetScanButtonText()
         {
             btScan.Text = (Program.Scanner.IsScanning ? LocalizeUtility.GetText(this, "Stop", "Stop") : LocalizeUtility.GetText(this, "Scan", "Scan"));
         }
@@ -1424,5 +1465,26 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             Program.StartDocument(VTagWiki);
 		}
 		#endregion
-	}
+
+		private void btBackupLocation_Click(object sender, EventArgs e)
+		{
+			using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+			{
+				folderBrowserDialog.Description = LocalizeUtility.GetText(this, "SelectComicFolder", "Please select a folder to save your backups in");
+				folderBrowserDialog.ShowNewFolderButton = true;
+				if (folderBrowserDialog.ShowDialog(this) == DialogResult.OK && !string.IsNullOrEmpty(folderBrowserDialog.SelectedPath))
+				{
+                    // TODO: Check if folder is not empty and prompt user to confirm if not
+					txtBackupLocation.Text = folderBrowserDialog.SelectedPath;
+				}
+			}
+		}
+
+
+        private void lbBackupOptions_Resize(object sender, EventArgs e)
+        {
+            int cw = (lbBackupOptions.Width / 2) - 22;
+            lbBackupOptions.ColumnWidth = cw;
+        }
+    }
 }

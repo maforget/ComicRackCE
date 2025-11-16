@@ -16,6 +16,7 @@ using cYo.Common.Mathematics;
 using cYo.Common.Threading;
 using cYo.Common.Xml;
 using cYo.Projects.ComicRack.Engine;
+using cYo.Projects.ComicRack.Engine.Backup;
 using cYo.Projects.ComicRack.Engine.Database;
 using cYo.Projects.ComicRack.Engine.Display;
 using cYo.Projects.ComicRack.Engine.IO;
@@ -2397,7 +2398,24 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		private List<VirtualTag> virtualTags = new List<VirtualTag>();
 		public List<VirtualTag> VirtualTags => virtualTags;
 
-        [field: NonSerialized]
+		private BackupManagerOptions backupManager = new BackupManagerOptions();
+		public BackupManagerOptions BackupManager
+		{ 
+			get => backupManager;
+			set
+			{
+				if(backupManager != value)
+				{
+					backupManager = value;
+					FireEvent(this.BackupManagerChanged);
+				}
+			}
+		}
+
+		[field: NonSerialized]
+		public event EventHandler BackupManagerChanged;
+
+		[field: NonSerialized]
 		public event EventHandler SettingsChanged;
 
 		[field: NonSerialized]

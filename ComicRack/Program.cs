@@ -48,6 +48,7 @@ using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
 using cYo.Common.Windows.Forms.Theme;
 using cYo.Common.Windows.Forms.Theme.Resources;
 using cYo.Projects.ComicRack.Plugins.Theme;
+using cYo.Projects.ComicRack.Engine.Backup;
 
 namespace cYo.Projects.ComicRack.Viewer
 {
@@ -220,6 +221,12 @@ namespace cYo.Projects.ComicRack.Viewer
 		}
 
 		public static QueueManager QueueManager
+		{
+			get;
+			private set;
+		}
+
+		public static BackupManager BackupManager
 		{
 			get;
 			private set;
@@ -875,6 +882,8 @@ namespace cYo.Projects.ComicRack.Viewer
 				CacheManager = new CacheManager(DatabaseManager, Paths, Settings, Resources.ResourceManager);
 				QueueManager = new QueueManager(DatabaseManager, CacheManager, Settings, Settings.Devices);
 				QueueManager.ComicScanned += ScannerCheckFileIgnore;
+				BackupManager = new BackupManager(Settings.BackupManager, Paths, defaultSettingsFile, DefaultListsFile, DefaultIconPackagesPath);
+				if(Settings.BackupManager.OnStartup) BackupManager.RunBackup();
 				Settings.IgnoredCoverImagesChanged += IgnoredCoverImagesChanged;
 				IgnoredCoverImagesChanged(null, EventArgs.Empty);
 				SystemEvents.PowerModeChanged += SystemEventsPowerModeChanged;
@@ -1042,6 +1051,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				Settings.Save(defaultSettingsFile);
 				ImagePool.Dispose();
 				DatabaseManager.Dispose();
+				if (Settings.BackupManager.OnExit) BackupManager.RunBackup(false);
 			}
 			catch (Exception ex)
 			{

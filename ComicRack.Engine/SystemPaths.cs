@@ -33,8 +33,13 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public readonly string PendingScriptsPath;
 
+		public readonly bool UseLocal;
+
+		public readonly string AlternateConfig;
+
 		public SystemPaths(bool useLocal, string alternateConfig, string databasePath, string cachePath)
 		{
+			UseLocal = useLocal; AlternateConfig = alternateConfig; 
 			ApplicationDataPath = GetApplicationDataPath(useLocal, alternateConfig);
             LocalApplicationDataPath = GetLocalApplicationDataPath(useLocal, alternateConfig);
 
