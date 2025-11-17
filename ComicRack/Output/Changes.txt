@@ -1,6 +1,7 @@
 Community Edition Build 0.9.182:
 
 * NEW: Dark Mode !!! Enable via "UseDarkMode" setting in ComicRack.ini (or "-dark"). (Huge thanks to @gman-comicdb for doing the very hard work)
+* NEW: Added a built-in Backup Manager that will automatically backup at start or exit the your data. You can pick and choose what to backup like your Database, Config, Scripts, Cache or even your custom ComicRack.ini. See Preferences -> Advanced -> Backup Manager. (see Wiki for more Info).
 * NEW: Added an "escape" Virtual Tag function.
 * NEW: Added a new List Order sorting option for Devices, this will use the list current Sort order.
 

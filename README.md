@@ -60,7 +60,7 @@ You can also install it via winget `winget install ComicRackCE`.
 
 >[!TIP]
 >* Before installing the Community Edition, uninstalling the original ComicRack is suggested to avoid duplicates in the Open With menu.
->* An updated version of the [Backup Manager](https://github.com/maforget/cr-backup-manager) is provided to help you backup your database.
+>* There is now a built-in [Backup Manager](https://github.com/maforget/ComicRackCE/wiki/Backup-Manager) to help you backup your database.
 >* Use the News window within the application to stay informed about the latest builds.
 >* Check the [ComicRackCE wiki](https://github.com/maforget/ComicRackCE/wiki) for additional tips and information.
 
@@ -89,7 +89,7 @@ Check out my plugins for ComicRack Community Edition:
 - **[Android Client](https://github.com/maforget/ComicRackKeygen/releases/tag/1.0)**: Works with the Community Edition and Android 14 (requires ADB installation for 14+). ~Includes a Keygen and Support Pack for the original ComicRack, but these are~ (no longer needed for the Community Edition).
 - **[Amazon Scraper](https://github.com/maforget/ComicRack_AmazonScrapper)**: Scrapes data from Amazon books (formerly Comixology library).
 - **[Data Manager](https://github.com/maforget/CRDataManager)**: Lets you manipulate ComicRack data and fixes bugs from the latest v2 release.
-- **[Backup Manager](https://github.com/maforget/cr-backup-manager)**: Automates the backup of the ComicRack library file, supporting the Community Edition, Portable mode, and alternate configurations.
+- **~~[Backup Manager](https://github.com/maforget/cr-backup-manager)**: Automates the backup of the ComicRack library file, supporting the Community Edition, Portable mode, and alternate configurations.~~ It is now built-in directly in the program.
 - **[MangaUpdate Mini Scraper](https://github.com/maforget/ComicRack_MangaUpdateScraper)**: A mini scraper for mangaupdates.com, fetching genres (additional fields can be enabled manually).
 - **[Bédéthèque Scraper v2](https://github.com/maforget/Bedetheque-Scrapper-2)**: Scrapes data from the French BD site Bédéthèque.
 - **[Find Image Resolution](https://github.com/maforget/ComicRack_FindImageResolution)**: Determines the resolution of a comic. Right-click => Automation => Find Image Resolution (.NET). Configuration is in File => Automation => Find Image Resolution (.NET) Config.
