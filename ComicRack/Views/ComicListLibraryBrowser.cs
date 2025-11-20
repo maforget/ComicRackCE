@@ -98,7 +98,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 							if (questionResult.HasFlag(QuestionResult.Cancel))
 								return;
 
-							Program.Settings.MoveFilesToRecycleBin = questionResult.HasFlag(QuestionResult.Option);
+							if (!string.IsNullOrEmpty(moveToRecycleBin))
+								Program.Settings.MoveFilesToRecycleBin = questionResult.HasFlag(QuestionResult.Option);
 						}
 					}
 					else
@@ -125,7 +126,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 							{
 								Program.Settings.AlsoRemoveFromLibrary = deleteFromLibrary;
 							}
-							Program.Settings.MoveFilesToRecycleBin = questionResult2.HasFlag(QuestionResult.Option2);
+
+							if (!string.IsNullOrEmpty(moveToRecycleBin))
+								Program.Settings.MoveFilesToRecycleBin = questionResult2.HasFlag(QuestionResult.Option2);
 						}
 						foreach (ComicBook book in books)
 						{
