@@ -22,6 +22,8 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		private readonly BackupArchiveCreator archiveCreator = new BackupArchiveCreator();
 		private readonly BackupRetentionManager retentionManager = new BackupRetentionManager();
 
+		public bool IsInBackupProcess => backupQueue.IsActive;
+
 		private readonly BackupManagerOptions options;
 
 		public BackupManager(
@@ -87,6 +89,15 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 			}
 
 			return locations;
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				backupQueue.Dispose();
+			}
+			base.Dispose(disposing);
 		}
 	}
 

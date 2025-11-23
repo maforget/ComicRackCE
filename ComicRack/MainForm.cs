@@ -3873,19 +3873,21 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private void UpdateActivityTimerTick(object sender, EventArgs e)
 		{
-			ToolStripStatusLabel[] array = new ToolStripStatusLabel[5]
+			ToolStripStatusLabel[] array = new ToolStripStatusLabel[6]
 			{
 				tsReadInfoActivity,
 				tsWriteInfoActivity,
 				tsScanActivity,
 				tsExportActivity,
-				tsDeviceSyncActivity
+				tsDeviceSyncActivity,
+				tsBackupActivity
 			};
 			int num = Numeric.BinaryHash(array.Select((ToolStripStatusLabel l) => l.Visible).ToArray());
 			tsScanActivity.Visible = Program.Scanner.IsScanning;
 			tsWriteInfoActivity.Visible = Program.QueueManager.IsInComicFileUpdate;
 			tsReadInfoActivity.Visible = Program.QueueManager.IsInComicFileRefresh;
 			tsPageActivity.Visible = Program.ImagePool.IsWorking;
+			tsBackupActivity.Visible = Program.BackupManager.IsInBackupProcess;
 			bool isInComicConversion = Program.QueueManager.IsInComicConversion;
 			int pendingComicConversions = Program.QueueManager.PendingComicConversions;
 			int count = Program.QueueManager.ExportErrors.Count;

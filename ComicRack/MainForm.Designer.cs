@@ -223,6 +223,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.tsText = new System.Windows.Forms.ToolStripStatusLabel();
+			this.tsBackupActivity = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tsDeviceSyncActivity = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tsExportActivity = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tsReadInfoActivity = new System.Windows.Forms.ToolStripStatusLabel();
@@ -1786,7 +1787,8 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.statusStrip.AutoSize = false;
 			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsText,
-            this.tsDeviceSyncActivity,
+			this.tsBackupActivity,
+			this.tsDeviceSyncActivity,
             this.tsExportActivity,
             this.tsReadInfoActivity,
             this.tsWriteInfoActivity,
@@ -1811,6 +1813,19 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.tsText.Spring = true;
 			this.tsText.Text = "Ready";
 			this.tsText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// tsBackupActivity
+			// 
+			this.tsBackupActivity.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
+			| System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
+			| System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+			this.tsBackupActivity.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
+			this.tsBackupActivity.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tsBackupActivity.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.Backup;
+			this.tsBackupActivity.Name = "tsBackupActivity";
+			this.tsBackupActivity.Size = new System.Drawing.Size(20, 19);
+			this.tsBackupActivity.ToolTipText = "Backing Up";
+			this.tsBackupActivity.Visible = false;
 			// 
 			// tsDeviceSyncActivity
 			// 
@@ -3814,6 +3829,7 @@ namespace cYo.Projects.ComicRack.Viewer
 		private ToolStripMenuItem miHelpQuickIntro;
 		private ToolStripMenuItem miDevices;
 		private ToolStripMenuItem miSynchronizeDevices;
+		private ToolStripStatusLabel tsBackupActivity;
 		private ToolStripStatusLabel tsDeviceSyncActivity;
 		private ToolStripMenuItem tsSynchronizeDevices;
 		private ToolStripSeparator toolStripMenuItem21;
