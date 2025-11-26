@@ -470,7 +470,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 
 		public static bool ContentIsSame(ComicBook a, ComicBook b)
 		{
-			if (a.IsSameContent(b, withPages: false) && a.Rating == b.Rating && a.OpenedCount == b.OpenedCount && a.LastPageRead == b.LastPageRead && a.OpenedTime == b.OpenedTime && a.AddedTime == b.AddedTime && a.ReleasedTime == b.ReleasedTime)
+			if (a.IsSameContent(b, withPages: false, isSync: true) && a.Rating == b.Rating && a.OpenedCount == b.OpenedCount && a.LastPageRead == b.LastPageRead && a.OpenedTime == b.OpenedTime && a.AddedTime == b.AddedTime && a.ReleasedTime == b.ReleasedTime)
 			{
 				return PagesAreSame(a, b, withBookmarks: true);
 			}
