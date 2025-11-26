@@ -222,7 +222,9 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 				{
 					using (ItemMonitor.Lock(deviceAccessLock))
 					{
-						WriteBookInfo(book, Path.GetFileName(existing.FilePath));
+						string fileName = Path.GetFileName(existing.FilePath);
+						book.FilePath = fileName;
+						WriteBookInfo(book, fileName);
 					}
 					if (completedCallback != null)
 					{
