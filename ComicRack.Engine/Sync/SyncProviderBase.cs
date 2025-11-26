@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -449,6 +450,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			ComicPageInfo[] array2 = library.Pages.ToArray();
 			if (array.Length < array2.Length)
 			{
+				Debug.WriteLine($"Book {library.CaptionWithoutTitle} from device has less pages than in the library", "PagesAreSame");
 				return false;
 			}
 			for (int i = 0; i < Math.Min(array.Length, array2.Length); i++)
@@ -457,6 +459,9 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 				ComicPageInfo comicPageInfo2 = array2[i];
 				if (comicPageInfo.PageType != comicPageInfo2.PageType || (comicPageInfo2.ImageHeight != 0 && comicPageInfo2.ImageWidth != 0 && comicPageInfo.IsDoublePage != comicPageInfo2.IsDoublePage) || comicPageInfo.PagePosition != comicPageInfo2.PagePosition || (withBookmarks && comicPageInfo.Bookmark != comicPageInfo2.Bookmark))
 				{
+					Debug.Write($"Book {library.CaptionWithoutTitle} at Page {comicPageInfo.Key} ImageIndex {comicPageInfo.ImageIndex} aren't the same", "PagesAreSame");
+					Debug.WriteIf(comicPageInfo.IsDoublePage != comicPageInfo2.IsDoublePage, $" (double page discrepancy)");
+					Debug.WriteLine(string.Empty);
 					return false;
 				}
 			}
@@ -469,6 +474,7 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			{
 				return PagesAreSame(a, b, withBookmarks: true);
 			}
+			Debug.WriteLine($"Book {a.CaptionWithoutTitle} Content isn't the same", "ContentIsSame");
 			return false;
 		}
 
