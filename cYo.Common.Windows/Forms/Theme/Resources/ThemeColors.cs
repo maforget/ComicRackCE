@@ -107,6 +107,7 @@ public static class ThemeColors
         public static Color MainBack => ColorTable.ItemViewMainBack;
         public static Color GroupText => ColorTable.ItemViewGroupText;
         public static Color GroupSeparator => ColorTable.ItemViewGroupSeparator;
+        public static Color Marker => ColorTable.ItemViewMarker;
 	}
 
     public static class NiceTreeSkin

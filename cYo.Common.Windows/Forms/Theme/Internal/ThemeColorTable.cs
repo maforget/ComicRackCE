@@ -74,9 +74,10 @@ internal class ThemeColorTable
     public virtual Color ItemViewDefaultBack => System.Drawing.SystemColors.Window;
     public virtual Color ItemViewGroupText => Color.DarkBlue;
     public virtual Color ItemViewGroupSeparator => System.Drawing.SystemColors.ControlDark;
+    public virtual Color ItemViewMarker => Color.Black;
 
-    // CoverViewItem
-    public virtual Color DetailRowHighlight => Color.LightGray;
+	// CoverViewItem
+	public virtual Color DetailRowHighlight => Color.LightGray;
 
     // ItemDrawInformation
     public virtual Color ItemDrawInfoText => Color.Black;
@@ -135,18 +136,18 @@ internal class ThemeColorTable
     public virtual Color StackBorder => Color.Black;
 
 
-    // ControlStyleColorTable
-    //public virtual Color ControlStyleColorTableBorder => Color.Black;
+	// ControlStyleColorTable
+	//public virtual Color ControlStyleColorTableBorder => Color.Black;
 
-    // MainForm
-    //public virtual Color MainFormToolStripBack => Color.Transparent;
+	// MainForm
+	//public virtual Color MainFormToolStripBack => Color.Transparent;
 
-    // MainView
-    //public virtual Color MainViewBack => Color.Transparent;
-    //public virtual Color MainViewToolStripBack => Color.Transparent;
+	// MainView
+	//public virtual Color MainViewBack => Color.Transparent;
+	//public virtual Color MainViewToolStripBack => Color.Transparent;
 
-    //public virtual Color MatcherGroupEditor => System.Drawing.SystemColors.Control;
+	//public virtual Color MatcherGroupEditor => System.Drawing.SystemColors.Control;
 
-    // SimpleScrollbarPanel
-    //public virtual Color ScrollbarPanelBorder => Color.LightGray;
+	// SimpleScrollbarPanel
+	//public virtual Color ScrollbarPanelBorder => Color.LightGray;
 }

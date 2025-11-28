@@ -3262,7 +3262,7 @@ namespace cYo.Common.Windows.Forms
 			using (Brush brush = new SolidBrush(color))
 			{
 				gr.FillRectangle(brush, bounds);
-				gr.DrawRectangle(Pens.Black, bounds);
+				gr.DrawRectangle(ThemePens.ItemView.DragMarker, bounds);
 			}
 		}
 
@@ -3485,11 +3485,7 @@ namespace cYo.Common.Windows.Forms
 					{
 						Rectangle viewRectangle = ViewRectangle;
 						viewRectangle.X = GetColumnHeaderRectangle(resizeColumn).Right - base.ScrollPositionX;
-						using (Pen pen = new Pen(Color.Black))
-						{
-							pen.DashStyle = DashStyle.DashDot;
-							graphics.DrawLine(pen, viewRectangle.Location, new Point(viewRectangle.X, viewRectangle.Bottom));
-						}
+						graphics.DrawLine(ThemePens.ItemView.ResizeMarker, viewRectangle.Location, new Point(viewRectangle.X, viewRectangle.Bottom));
 					}
 					if (dragHeader != null)
 					{

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace cYo.Common.Windows.Forms.Theme.Resources;
 
@@ -36,10 +37,25 @@ public static class ThemePens
         public static Pen Border => FromThemeColor(ThemeColors.ThumbnailViewItem.Border);
     }
 
-    /// <summary>
-    /// Returns a <see cref="Pen"/> with the specified <paramref name="color"/>.
-    /// </summary>
-    public static Pen FromThemeColor(Color color)
+	public static class ItemView
+	{
+		public static Pen ResizeMarker
+		{
+			get
+			{
+				Pen pen = FromThemeColor(ThemeColors.ItemView.Marker);
+				pen.DashStyle = DashStyle.DashDot;
+                return pen;
+			}
+		}
+
+        public static Pen DragMarker => FromThemeColor(ThemeColors.ItemView.Marker);
+	}
+
+	/// <summary>
+	/// Returns a <see cref="Pen"/> with the specified <paramref name="color"/>.
+	/// </summary>
+	public static Pen FromThemeColor(Color color)
     {
         if (!cache.TryGetValue(color, out var pen))
         {
