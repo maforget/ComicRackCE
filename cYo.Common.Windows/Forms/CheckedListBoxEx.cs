@@ -39,14 +39,13 @@ namespace cYo.Common.Windows.Forms
 			}
 			if (!customDrawing)
 			{
+				// This doesn't appear to be used. Will need theme handling if that changes.
 				base.OnDrawItem(e);
 				return;
 			}
-			using (Brush brush = new SolidBrush(BackColor))
-			{
-				e.Graphics.FillRectangle(brush, e.Bounds);
-			}
-			CheckState itemCheckState = GetItemCheckState(e.Index);
+            // Provide control focus state to use alongside item state
+            e.DrawThemeBackground(focused: this.Focused);
+            CheckState itemCheckState = GetItemCheckState(e.Index);
 			Size size;
 			if (Application.RenderWithVisualStyles)
 			{
@@ -62,16 +61,15 @@ namespace cYo.Common.Windows.Forms
 				Rectangle rectangle = new Rectangle(e.Bounds.X + 1, e.Bounds.Y + (e.Bounds.Height - size.Height) / 2, size.Width, size.Height);
 				ControlPaint.DrawCheckBox(e.Graphics, rectangle, state2);
 			}
-			Rectangle rectangle2 = new Rectangle(e.Bounds.X + size.Width + 2, e.Bounds.Y, e.Bounds.Width - (size.Width + 2), e.Bounds.Height);
-			using (Brush brush2 = new SolidBrush(e.BackColor))
-			{
-				e.Graphics.FillRectangle(brush2, rectangle2);
-			}
-			OnDrawItemText(new DrawItemEventArgs(e.Graphics, e.Font, rectangle2, e.Index, e.State, e.ForeColor, e.BackColor));
-			if ((e.State & DrawItemState.Focus) != 0 && (e.State & DrawItemState.NoFocusRect) == 0)
-			{
-				ControlPaintEx.DrawFocusRectangle(e.Graphics, rectangle2);
-			}
+			Rectangle textRectangle = new Rectangle(e.Bounds.X + size.Width + 2, e.Bounds.Y, e.Bounds.Width - (size.Width + 2), e.Bounds.Height);
+			OnDrawItemText(new DrawItemEventArgs(e.Graphics, e.Font, textRectangle, e.Index, e.State, e.ForeColor, e.BackColor)); // BackColor is unused
+			// This doesn't accurately draw FocusRectangle in Dark Mode (and probably Light mode)
+			//if ((e.State & DrawItemState.Focus) != 0 && (e.State & DrawItemState.NoFocusRect) == 0)
+			//{
+            //  ControlPaint.DrawFocusRectangle(e.Graphics, textRectangle);
+    		//}
+			// Use extension method instead, providing control focus state to use alongside item state
+			e.DrawThemeFocusRectangle(textRectangle, focused: this.Focused);
 		}
 
 		protected override void OnMouseDown(MouseEventArgs e)

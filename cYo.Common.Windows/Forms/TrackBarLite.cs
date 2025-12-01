@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using cYo.Common.Mathematics;
+using cYo.Common.Windows.Forms.Theme;
 using Microsoft.Win32;
 
 namespace cYo.Common.Windows.Forms
@@ -483,8 +484,9 @@ namespace cYo.Common.Windows.Forms
 
 		private static void DrawFocusWithVisualStyle(Graphics gr, Rectangle rc)
 		{
-			ControlPaint.DrawFocusRectangle(gr, rc);
-		}
+            //ControlPaint.DrawFocusRectangle(gr, rc);
+            ControlPaintEx.DrawFocusRectangle(gr, rc);
+        }
 
 		private void DrawBarWithVisualStyle(Graphics gr, Rectangle rc)
 		{
@@ -537,16 +539,18 @@ namespace cYo.Common.Windows.Forms
 
 		private static void DrawFocusPlain(Graphics gr, Rectangle rc)
 		{
-			ControlPaint.DrawFocusRectangle(gr, rc);
-		}
+            //ControlPaint.DrawFocusRectangle(gr, rc);
+            ControlPaintEx.DrawFocusRectangle(gr, rc);
+        }
 
 		private void DrawBarPlain(Graphics gr, Rectangle rc)
 		{
 			Rectangle barRectangle = GetBarRectangle(rc);
 			if (barRectangle.Width >= 2 && barRectangle.Height >= 2)
 			{
-				ControlPaint.DrawBorder3D(gr, barRectangle, Border3DStyle.SunkenInner);
-			}
+                //ControlPaint.DrawBorder3D(gr, barRectangle, Border3DStyle.SunkenInner);
+                ControlPaintEx.DrawBorder3D(gr, barRectangle, Border3DStyle.SunkenInner);
+            }
 		}
 
 		private void DrawTicksPlain(Graphics gr, Rectangle rc)

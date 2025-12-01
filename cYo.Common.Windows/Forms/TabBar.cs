@@ -818,7 +818,7 @@ namespace cYo.Common.Windows.Forms
 				{
 					VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(VisualStyleElement.Tab.Pane.Normal);
 					//result = visualStyleRenderer.GetColor(ColorProperty.BorderColorHint);
-					result = visualStyleRenderer.GetTabBarBorderColor(ColorProperty.BorderColorHint);
+					result = visualStyleRenderer.GetThemeColor(ColorProperty.BorderColorHint);
 
                 }
 				return result;
@@ -1169,7 +1169,7 @@ namespace cYo.Common.Windows.Forms
 			{
 				visualStyleRenderer = new VisualStyleRenderer(normal);
                 //visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);
-                visualStyleRenderer.DrawThemeBackground(e);
+                visualStyleRenderer.DrawThemeBackground(e.Graphics, e.Bounds);
             }
 			else
 			{
@@ -1198,8 +1198,8 @@ namespace cYo.Common.Windows.Forms
 			using (FontDC dc = new FontDC(e.Graphics, e.Font))
 			{
 				Rectangle backgroundContentRectangle = vr.GetBackgroundContentRectangle(dc, e.Bounds);
-                //vr.DrawText(dc, backgroundContentRectangle, e.ToolTipText);
-                vr.DrawThemeText(e, dc, backgroundContentRectangle);
+                vr.DrawText(dc, backgroundContentRectangle, e.ToolTipText);
+                vr.DrawThemeText(dc, backgroundContentRectangle, e.ToolTipText);
             }
 		}
 
@@ -1272,11 +1272,8 @@ namespace cYo.Common.Windows.Forms
 				tabItemState = TabItemState.Selected;
 				break;
 			}
-			ThemeExtensions.InvokeAction(
-				() => DrawTabItem(gr, rc, tabItemState, buttonMode: true),
-                () => ThemeExtensions.DrawTabItem(gr, rc, tabItemState, buttonMode: true)
-            );
-			Rectangle rect = image.Size.Align(rc, System.Drawing.ContentAlignment.MiddleCenter);
+            DrawTabItem(gr, rc, tabItemState, buttonMode: true);
+            Rectangle rect = image.Size.Align(rc, System.Drawing.ContentAlignment.MiddleCenter);
 			gr.DrawImage(image, rect);
 		}
 
@@ -1284,8 +1281,9 @@ namespace cYo.Common.Windows.Forms
 		{
             if (TabRenderer.IsSupported)
 			{
-				TabRenderer.DrawTabItem(gr, rc, tabItemState);
-				if (buttonMode)
+                //TabRenderer.DrawTabItem(gr, rc, tabItemState);
+                TabRendererEx.DrawTabItem(gr, rc, tabItemState);
+                if (buttonMode)
 				{
 					using (Pen pen = new Pen(BorderColor))
 					{
@@ -1849,10 +1847,7 @@ namespace cYo.Common.Windows.Forms
 				return;
 			}
 			Rectangle bounds = item.Bounds;
-            ThemeExtensions.InvokeAction(
-                () => DrawTabItem(gr, bounds, item.State, buttonMode: false),
-                () => ThemeExtensions.DrawTabItem(gr, bounds, item.State, buttonMode: false)
-            );
+            DrawTabItem(gr, bounds, item.State, buttonMode: false);
             bounds = bounds.Pad(2, 2, 2);
 			if (Focused && item.State == TabItemState.Selected)
 			{

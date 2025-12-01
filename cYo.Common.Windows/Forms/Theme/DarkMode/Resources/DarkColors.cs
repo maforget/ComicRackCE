@@ -157,6 +157,8 @@ internal class DarkColors
     internal static class SelectedText
     {
         public static readonly Color Highlight = Color.FromArgb(52, 67, 86);
+        public static readonly Color InactiveHighlight = SystemColors.ActiveBorder;
+        public static readonly Color InactiveFocus = Color.FromArgb(64, SystemColors.InactiveCaptionText);
         public static readonly Color Focus = Color.FromArgb(40, 100, 180);
     }
     #endregion

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using cYo.Common.ComponentModel;
 using cYo.Common.Drawing;
 using cYo.Common.Windows.Forms;
+using cYo.Common.Windows.Forms.Theme;
 using cYo.Projects.ComicRack.Engine.Drawing;
 using cYo.Projects.ComicRack.Engine.IO;
 using cYo.Projects.ComicRack.Engine.IO.Cache;
@@ -524,8 +525,9 @@ namespace cYo.Projects.ComicRack.Engine.Controls
 						}
 						if (base.DesignMode)
 						{
-							ControlPaint.DrawFocusRectangle(e.Graphics, base.ClientRectangle);
-						}
+                            //ControlPaint.DrawFocusRectangle(e.Graphics, base.ClientRectangle);
+                            ControlPaintEx.DrawFocusRectangle(e.Graphics, base.ClientRectangle);
+                        }
 					}
 				}
 				finally

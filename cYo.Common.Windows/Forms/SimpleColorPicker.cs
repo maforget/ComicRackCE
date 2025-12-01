@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using cYo.Common.Text;
+using cYo.Common.Windows.Forms.Theme;
 
 namespace cYo.Common.Windows.Forms
 {
@@ -56,8 +57,11 @@ namespace cYo.Common.Windows.Forms
 		{
 			base.OnDrawItem(e);
 			Graphics graphics = e.Graphics;
-			e.DrawBackground();
-			using (StringFormat format = new StringFormat
+            //e.DrawBackground();
+            e.DrawThemeBackground();
+            // does not draw a FocusRectangle in light mode, maintaining current functionality
+            e.DrawThemeFocusRectangle();
+            using (StringFormat format = new StringFormat
 			{
 				Alignment = StringAlignment.Near,
 				LineAlignment = StringAlignment.Center

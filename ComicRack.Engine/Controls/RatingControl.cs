@@ -197,7 +197,7 @@ namespace cYo.Projects.ComicRack.Engine.Controls
                     VisualStyleElement element = (Focused ? VisualStyleElement.TextBox.TextEdit.Focused : VisualStyleElement.TextBox.TextEdit.Normal);
                     VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(element);
                     //visualStyleRenderer.DrawBackground(graphics, base.ClientRectangle);
-                    visualStyleRenderer.DrawThemeBackground(e, base.ClientRectangle, BackColor);
+                    visualStyleRenderer.DrawThemeBackground(graphics, base.ClientRectangle);
                 }
                 DrawContent(graphics);
                 return;

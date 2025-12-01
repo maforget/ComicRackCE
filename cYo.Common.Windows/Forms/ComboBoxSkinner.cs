@@ -288,10 +288,11 @@ namespace cYo.Common.Windows.Forms
 			bool flag = (e.State & DrawItemState.ComboBoxEdit) != 0;
 			bool flag2 = comboBoxItem != null && comboBoxItem.IsSeparator && !flag && e.Index > 0;
 
-            e.DrawThemeBackground();
-			//e.DrawFocusRectangle();
-			//e.DrawThemeBackground();
-			e.DrawThemeFocusRectangle(); // override SelectedText highlighting
+            //e.DrawBackground();
+            //e.DrawFocusRectangle();
+            // Provide control focus state to use alongside item state
+            e.DrawThemeBackground(focused: comboBox.Focused);
+			e.DrawThemeFocusRectangle(focused: comboBox.Focused);
 
 			using (Brush brush = new SolidBrush(e.ForeColor))
 			{

@@ -309,8 +309,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			Rectangle bounds = e.Bounds;
 			bounds.Width = Math.Min(bounds.Width, bounds.Width * progressState.ProgressPercentage / 100);
 			bounds.Height--;
-			e.DrawBackground();
-			e.Graphics.DrawStyledRectangle(bounds, StyledRenderer.AlphaStyle.Hot, Color.Green, StyledRenderer.Default.Frame(0, 1));
+            //e.DrawBackground();
+            e.DrawThemeBackground();
+            // TODO : tweak so that this is more visible in Dark Mode
+            e.Graphics.DrawStyledRectangle(bounds, StyledRenderer.AlphaStyle.Hot, Color.Green, StyledRenderer.Default.Frame(0, 1));
 			ListViewItem.ListViewSubItem listViewSubItem = e.Item.SubItems[1];
 			using (StringFormat format = new StringFormat
 			{
