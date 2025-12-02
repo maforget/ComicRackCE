@@ -1198,7 +1198,7 @@ namespace cYo.Common.Windows.Forms
 			using (FontDC dc = new FontDC(e.Graphics, e.Font))
 			{
 				Rectangle backgroundContentRectangle = vr.GetBackgroundContentRectangle(dc, e.Bounds);
-                vr.DrawText(dc, backgroundContentRectangle, e.ToolTipText);
+                //vr.DrawText(dc, backgroundContentRectangle, e.ToolTipText);
                 vr.DrawThemeText(dc, backgroundContentRectangle, e.ToolTipText);
             }
 		}
