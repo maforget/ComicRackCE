@@ -76,6 +76,7 @@ jobs:
     
   publish:
     runs-on: ubuntu-latest
+    if: github.repository == 'maforget/ComicRackCE'
     needs: build  # Ensure this runs after the build job
 
     steps:
