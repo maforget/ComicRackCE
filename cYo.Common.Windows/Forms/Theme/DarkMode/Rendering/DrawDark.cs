@@ -1,70 +1,12 @@
 ﻿
 using cYo.Common.Windows.Forms.Theme.DarkMode.Resources;
-using cYo.Common.Windows.Forms.Theme.Resources;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using static System.Windows.Forms.AxHost;
 
 namespace cYo.Common.Windows.Forms.Theme.DarkMode.Rendering;
 
-
 internal static class DrawDark
 {
-
-    internal static void ButtonBase(Graphics graphics, Rectangle clientRectangle, PushButtonState state)
-    {
-        if (state == PushButtonState.Hot)
-        {
-            using (Brush b = new SolidBrush(DarkColors.Button.MouseOverBack))
-                graphics.FillRectangle(b, clientRectangle);
-        }
-        else if (state == PushButtonState.Pressed)
-        {
-            using (Brush b = new SolidBrush(DarkColors.Button.CheckedBack))
-                graphics.FillRectangle(b, clientRectangle);
-        }
-        else
-        {
-            using (Brush b = new SolidBrush(DarkColors.Button.Back))
-                graphics.FillRectangle(b, clientRectangle);
-        }
-        ControlPaint.DrawBorder(graphics, clientRectangle, DarkColors.Button.Border, ButtonBorderStyle.Solid);
-    }
-
-    internal static void TabItem(Graphics g, Rectangle rect, TabItemState tabItemState, bool buttonMode)
-    {
-        using (Brush backgroundBrush = new SolidBrush((tabItemState == TabItemState.Selected) ? ThemeColors.TabBar.SelectedBack : ThemeColors.TabBar.Back))
-        {
-            g.FillRectangle(backgroundBrush, rect);
-        }
-        TabBorder(g, rect, tabItemState);
-    }
-
-    private static void TabBorder(Graphics gr, Rectangle rect, TabItemState tabItemState)
-    {
-        if (tabItemState == TabItemState.Selected)
-        {
-            using (Pen selectedBorderPen = new Pen(ThemeColors.TabBar.DefaultBorder))
-            {
-                gr.DrawLine(selectedBorderPen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
-                gr.DrawLine(selectedBorderPen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top
-                gr.DrawLine(selectedBorderPen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1); // Right
-            }
-            using (Pen borderPen = new Pen(ThemeColors.TabBar.DefaultBorder))
-            {
-                gr.DrawLine(borderPen, rect.Right - 1, rect.Top - 1, rect.Right - 1, rect.Bottom - 1);
-            }
-            return;
-        }
-        using (Pen borderPen = new Pen(ThemeColors.TabBar.DefaultBorder))
-        {
-            gr.DrawLine(borderPen, rect.Left, rect.Bottom - 1, rect.Left, rect.Top);           // Left
-            gr.DrawLine(borderPen, rect.Left, rect.Top, rect.Right - 1, rect.Top);             // Top
-            gr.DrawLine(borderPen, rect.Right - 1, rect.Top, rect.Right - 1, rect.Bottom - 1); // Right
-        }
-    }
-
     private static void SetBrushes(CheckBox checkBox, out Brush borderEdgeBrush, out Brush backCornerBrush, out Brush backVertexBrush)
     {
         if (checkBox.Checked)

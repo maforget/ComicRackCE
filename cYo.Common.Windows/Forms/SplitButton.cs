@@ -200,12 +200,14 @@ namespace cYo.Common.Windows.Forms
             {
                 Rectangle bounds = clientRectangle;
                 bounds.Inflate(-1, -1);
-                ButtonRenderer.DrawButton(graphics, bounds, State);
+                //ButtonRenderer.DrawButton(graphics, bounds, State);
+                ButtonRendererEx.DrawButton(graphics, bounds, State);
                 graphics.DrawRectangle(SystemPens.WindowFrame, 0, 0, clientRectangle.Width - 1, clientRectangle.Height - 1);
             }
             else
             {
-                ButtonRenderer.DrawButton(graphics, clientRectangle, State);
+                //ButtonRenderer.DrawButton(graphics, clientRectangle, State);
+                ButtonRendererEx.DrawButton(graphics, clientRectangle, State);
             }
         }
 
@@ -231,11 +233,10 @@ namespace cYo.Common.Windows.Forms
             if (Application.RenderWithVisualStyles)
             {
                 VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(base.Enabled ? VisualStyleElement.Button.PushButton.Default : VisualStyleElement.Button.PushButton.Disabled);
-                //using (FontDC dc = new FontDC(graphics, Font))
-                //{
-                    //visualStyleRenderer.DrawText(dc, rectangle, Text, drawDisabled: true, textFormatFlags);
-                //}
-                visualStyleRenderer.DrawThemeText(graphics, ForeColor, Font, rectangle, Text, drawDisabled: true, textFormatFlags);
+                using (FontDC dc = new FontDC(graphics, Font))
+                {
+                    visualStyleRenderer.DrawThemeText(dc, rectangle, Text, drawDisabled: true, textFormatFlags);
+                }
             }
             else if (base.Enabled)
             {
@@ -270,10 +271,7 @@ namespace cYo.Common.Windows.Forms
 
             Graphics graphics = pevent.Graphics;
             Rectangle clientRectangle = base.ClientRectangle;
-            ThemeExtensions.InvokeAction(
-                () => DrawButtonBase(graphics, clientRectangle),
-                () => ThemeExtensions.DrawSplitButtonBase(graphics, clientRectangle, State)
-            );
+            DrawButtonBase(graphics, clientRectangle);
             dropDownRectangle = new Rectangle(clientRectangle.Right - FormUtility.ScaleDpiX(PushButtonWidth) - 1, BorderSize, FormUtility.ScaleDpiX(PushButtonWidth), clientRectangle.Height - BorderSize * 2);
             int borderSize = BorderSize;
             Rectangle rectangle = new Rectangle(borderSize, borderSize, clientRectangle.Width - dropDownRectangle.Width - borderSize, clientRectangle.Height - borderSize * 2);
@@ -288,8 +286,9 @@ namespace cYo.Common.Windows.Forms
 
             PaintArrow(graphics, dropDownRectangle);
             DrawButtonText(graphics, rectangle);
-            if (State != PushButtonState.Pressed && Focused)
+            if (Focused && ShowFocusCues)
             {
+                //ControlPaint.DrawFocusRectangle(graphics, rectangle);
                 ControlPaintEx.DrawFocusRectangle(graphics, rectangle);
             }
         }

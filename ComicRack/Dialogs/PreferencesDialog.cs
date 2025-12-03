@@ -539,7 +539,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                 return;
             }
             TRInfo tRInfo = (TRInfo)lbLanguages.Items[e.Index];
-            e.DrawBackground();
+            //e.DrawBackground();
+            e.DrawThemeBackground(focused: ActiveForm == this);
             using (Brush brush = new SolidBrush((tRInfo.CompletionPercent > 95f) ? ForeColor : Color.Red))
             {
                 Rectangle bounds = e.Bounds;
@@ -569,10 +570,14 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                     }
                 }
             }
-            if ((e.State & DrawItemState.Focus) != 0)
-            {
-                ControlPaintEx.DrawFocusRectangle(e.Graphics, e.Bounds);
-            }
+            //if ((e.State & DrawItemState.Focus) != 0)
+            //{
+            //    ControlPaint.DrawFocusRectangle(e.Graphics, e.Bounds);
+            //}
+
+            // Default theme : ControlPaint.DrawFocusRectangle() -> e.DrawFocusRectangle()
+            // e.DrawFocusRectangle() considers DrawItemState.NoFocusRect + DrawItemState.Focus
+            e.DrawThemeFocusRectangle(focused: ActiveForm == this);
         }
 
         private void btBackupDatabase_Click(object sender, EventArgs e)

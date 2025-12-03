@@ -3252,13 +3252,13 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				{
 					VisualStyleRenderer visualStyleRenderer = new VisualStyleRenderer(normal);
                     //visualStyleRenderer.DrawBackground(e.Graphics, e.Bounds);
-                    visualStyleRenderer.DrawThemeBackground(e);
+                    visualStyleRenderer.DrawThemeBackground(e.Graphics, e.Bounds);
                 }
 				else
 				{
-                    e.DrawBackground();
+                    //e.DrawBackground();
 					//e.DrawBorder();
-					//e.DrawThemeBackground();
+					e.DrawThemeBackground();
 					e.DrawThemeBorder();
 				}
                 Rectangle bounds = e.Bounds;
