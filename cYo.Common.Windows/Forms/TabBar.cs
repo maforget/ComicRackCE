@@ -1851,7 +1851,8 @@ namespace cYo.Common.Windows.Forms
             bounds = bounds.Pad(2, 2, 2);
 			if (Focused && item.State == TabItemState.Selected)
 			{
-				ControlPaintEx.DrawFocusRectangle(gr, bounds);
+                //ControlPaint.DrawFocusRectangle(gr, bounds);
+                ControlPaintEx.DrawFocusRectangle(gr, bounds);
 			}
 			bounds = bounds.Pad(1);
 			if (item.Image != null)

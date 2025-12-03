@@ -540,7 +540,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             }
             TRInfo tRInfo = (TRInfo)lbLanguages.Items[e.Index];
             //e.DrawBackground();
-            e.DrawThemeBackground(focused: (sender as Control).Focused);
+            e.DrawThemeBackground(focused: ActiveForm == this);
             using (Brush brush = new SolidBrush((tRInfo.CompletionPercent > 95f) ? ForeColor : Color.Red))
             {
                 Rectangle bounds = e.Bounds;
@@ -570,15 +570,14 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                     }
                 }
             }
-            // idk why e.DrawFocusRectangle() is not used here
             //if ((e.State & DrawItemState.Focus) != 0)
             //{
             //    ControlPaint.DrawFocusRectangle(e.Graphics, e.Bounds);
             //}
-            // When using the default theme, this will call e.DrawFocusRectangle() instead of ControlPaint.DrawFocusRectangle().
-            // The if expression used to determine whether a focus should be drawn is below
-            // if ((state & DrawItemState.Focus) == DrawItemState.Focus && (state & DrawItemState.NoFocusRect) != DrawItemState.NoFocusRect)
-            e.DrawThemeFocusRectangle(focused: (sender as Control).Focused);
+
+            // Default theme : ControlPaint.DrawFocusRectangle() -> e.DrawFocusRectangle()
+            // e.DrawFocusRectangle() considers DrawItemState.NoFocusRect + DrawItemState.Focus
+            e.DrawThemeFocusRectangle(focused: ActiveForm == this);
         }
 
         private void btBackupDatabase_Click(object sender, EventArgs e)

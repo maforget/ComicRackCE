@@ -286,11 +286,11 @@ namespace cYo.Common.Windows.Forms
 
             PaintArrow(graphics, dropDownRectangle);
             DrawButtonText(graphics, rectangle);
-            // Pressed Buttons don't have a FocusRectangle in modern Windows versions
-            //if (State != PushButtonState.Pressed && Focused)
-            //{
-            //    ControlPaintEx.DrawFocusRectangle(graphics, rectangle);
-            //}
+            if (Focused && ShowFocusCues)
+            {
+                //ControlPaint.DrawFocusRectangle(graphics, rectangle);
+                ControlPaintEx.DrawFocusRectangle(graphics, rectangle);
+            }
         }
 
         protected override void OnContextMenuStripChanged(EventArgs e)
