@@ -70,15 +70,19 @@ namespace cYo.Projects.ComicRack.Engine.Database
 			public IEnumerable<ComicListItem> Match(string property)
 			{
 				return reversePropertyIndex.Match(property)
-					.Concat(reversePropertyIndex.Match("*"))
-					.Concat(reversePropertyIndex.Where(x => x.StartsWith("VirtualTag")));
+					.Concat(reversePropertyIndex.Match("*"));
 			}
 
 			public IEnumerable<ComicListItem> Match(Guid id)
 			{
 				return reverseBaseListIndex.Match(id);
 			}
-		}
+
+            public IEnumerable<ComicListItem> MatchVirtualTags()
+            {
+                return reversePropertyIndex.Where(x => x.StartsWith("VirtualTag"));
+            }
+        }
 
 		[NonSerialized]
 		private bool isDirty;
@@ -374,7 +378,8 @@ namespace cYo.Projects.ComicRack.Engine.Database
 			if (pendingCacheAction == ComicListItem.PendingCacheAction.Update)
 			{
 				enumerable = comicListItemLookup.Match(propertyHint);
-				propertyHint = null;
+				enumerable = enumerable.Concat(comicListItemLookup.MatchVirtualTags()); // Add Virtual tags to the list to invalidate
+                propertyHint = null;
 			}
 			else
 			{
