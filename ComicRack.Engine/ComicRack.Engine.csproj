@@ -79,19 +79,19 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="bblanchon.PDFium.Win32">
-      <Version>135.0.7033</Version>
+      <Version>145.0.7578</Version>
     </PackageReference>
     <PackageReference Include="CSJ2K" Version="3.0.0" />
     <PackageReference Include="LibHeifSharp" Version="3.2.0" />
-    <PackageReference Include="Microsoft.Bcl.Numerics" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Bcl.Numerics" Version="10.0.1" />
     <PackageReference Include="MySqlConnector">
-      <Version>2.4.0</Version>
+      <Version>2.5.0</Version>
     </PackageReference>
     <PackageReference Include="PDFiumSharpV2">
       <Version>1.1.4</Version>
     </PackageReference>
     <PackageReference Include="SharpCompress">
-      <Version>0.39.0</Version>
+      <Version>0.42.1</Version>
     </PackageReference>
     <PackageReference Include="SharpZipLib">
       <Version>1.4.2</Version>
