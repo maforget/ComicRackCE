@@ -1636,14 +1636,17 @@ namespace cYo.Projects.ComicRack.Engine
 		Dictionary<int, string> CachedVirtualTags = new Dictionary<int, string>();
 		public string GetVirtualTagValue(int id)
 		{
-			if (CachedVirtualTags.TryGetValue(id, out var value))
-				return value;
+			using (ItemMonitor.Lock(CachedVirtualTags))
+            {
+				if (CachedVirtualTags.TryGetValue(id, out var value))
+					return value;
 
-			string captionFormat = VirtualTagsCollection.Tags.GetValue(id).CaptionFormat;
-			string saved = (!string.IsNullOrEmpty(captionFormat)) ? GetFullTitle(captionFormat) : string.Empty;
+				string captionFormat = VirtualTagsCollection.Tags.GetValue(id).CaptionFormat;
+				string saved = (!string.IsNullOrEmpty(captionFormat)) ? GetFullTitle(captionFormat) : string.Empty;
 
-			CachedVirtualTags[id] = saved;
-			return saved; 
+				CachedVirtualTags[id] = saved;
+				return saved;
+			}
 		}
 
 		private void VirtualTagsCollection_TagsRefresh(object sender, EventArgs e)
