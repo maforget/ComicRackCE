@@ -46,5 +46,7 @@ namespace cYo.Projects.ComicRack.Engine
 				.Distinct() // Removes books that are both metadata AND path duplicates
 				.ToList();
 		}
-	}
+
+        protected override bool IsCompatibleWith(ComicBookValueMatcher matcher) => matcher is ComicBookDuplicateMatcher;
+    }
 }

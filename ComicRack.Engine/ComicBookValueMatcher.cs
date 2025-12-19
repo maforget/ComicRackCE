@@ -176,14 +176,13 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 		}
 
-		public virtual bool Set(ComicBookValueMatcher matcher)
+		protected abstract bool IsCompatibleWith(ComicBookValueMatcher matcher);
+
+        public virtual bool Set(ComicBookValueMatcher matcher)
 		{
-			Type type = GetType();
-			Type type2 = matcher.GetType();
-			if (type2 != type && type2.BaseType != type.BaseType)
-			{
+			if(!IsCompatibleWith(matcher))
 				return false;
-			}
+
 			matchOperator = matcher.matchOperator;
 			matchValue = matcher.matchValue;
 			matchValue2 = matcher.matchValue2;
@@ -429,5 +428,7 @@ namespace cYo.Projects.ComicRack.Engine
 		protected abstract bool MatchBook(ComicBook book, T value);
 
 		protected abstract T GetValue(ComicBook comicBook);
+
+		protected override bool IsCompatibleWith(ComicBookValueMatcher matcher) => matcher is ComicBookValueMatcher<T>;
 	}
 }

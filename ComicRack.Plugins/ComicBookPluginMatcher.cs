@@ -154,5 +154,7 @@ namespace cYo.Projects.ComicRack.Plugins
 				return Enumerable.Empty<ComicBook>();
 			}
 		}
-	}
+
+        protected override bool IsCompatibleWith(ComicBookValueMatcher matcher) => matcher is ComicBookPluginMatcher;
+    }
 }
