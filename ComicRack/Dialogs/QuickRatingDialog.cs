@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using cYo.Common.ComponentModel;
 using cYo.Common.Drawing;
+using cYo.Common.Localize;
 using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
 using cYo.Projects.ComicRack.Engine;
@@ -66,7 +67,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			}
 			using (QuickRatingDialog quickRatingDialog = new QuickRatingDialog())
 			{
-				quickRatingDialog.Text = quickRatingDialog.Text + " - " + book.CaptionWithoutTitle;
+				quickRatingDialog.Text = $"{LocalizeUtility.GetText(quickRatingDialog, nameof(QuickRatingDialog), quickRatingDialog.Text)} - {book.CaptionWithoutTitle}";
 				quickRatingDialog.txReview.Text = book.Review;
 				quickRatingDialog.txRating.Rating = book.Rating;
 				quickRatingDialog.chkShow.Checked = Program.Settings.AutoShowQuickReview;
