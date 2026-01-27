@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
+using cYo.Common.Localize;
 
 namespace cYo.Projects.ComicRack.Engine
 {
@@ -46,7 +47,7 @@ namespace cYo.Projects.ComicRack.Engine
         public string PropertyName => $"VirtualTag{ID:00}";
 
 		[XmlIgnore]
-        public string DisplayMember => $"{ID:00}: {Name}{(IsEnabled ? " (Enabled)" : "")}";
+        public string DisplayMember => $"{ID:00}: {Name}{(IsEnabled ? $" ({TR.Default["Enabled"]})" : "")}";
 
         public override bool Equals(object obj)
         {

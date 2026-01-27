@@ -328,7 +328,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                 //HACK: When a book contains only one page, display "1/1 Page(s)." Otherwise, it will incorrectly display "Page 2/1 Page(s)."
                 text = $"{comic.LastPageRead + (comic.PageCount == 1 ? 0 : 1)}/{text}";
 
-            string fileFormat = comic.ActualFileFormat != comic.FileFormat ? $"{comic.ActualFileFormat} (Actual){Environment.NewLine}{comic.FileFormat}" : comic.FileFormat;
+            string fileFormat = comic.ActualFileFormat != comic.FileFormat ? $"{comic.ActualFileFormat} ({TR.Default["Actual"]}){Environment.NewLine}{comic.FileFormat}" : comic.FileFormat;
 
             EditControlUtility.SetLabel(lblPages, text);
             EditControlUtility.SetLabel(lblType, $"{fileFormat}/{comic.FileSizeAsText}");
