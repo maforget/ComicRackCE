@@ -1483,7 +1483,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.chkIncludeAllAlternateConfigs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.chkIncludeAllAlternateConfigs.AutoSize = true;
 			this.chkIncludeAllAlternateConfigs.Location = new System.Drawing.Point(12, 154);
-			this.chkIncludeAllAlternateConfigs.Name = "chkIncludeAlternateConfig";
+			this.chkIncludeAllAlternateConfigs.Name = "chkIncludeAllAlternateConfigs";
 			this.chkIncludeAllAlternateConfigs.Size = new System.Drawing.Size(139, 17);
 			this.chkIncludeAllAlternateConfigs.TabIndex = 6;
 			this.chkIncludeAllAlternateConfigs.Text = "Include all Alternate Configs";
@@ -1801,7 +1801,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.btInsertValue.Size = new System.Drawing.Size(167, 23);
 			this.btInsertValue.TabIndex = 26;
 			this.btInsertValue.Text = "Choose Value";
-			this.btInsertValue.UseVisualStyleBackColor = true;
+            this.btInsertValue.UseVisualStyleBackColor = true;
 			// 
 			// lblVirtualTagDescription
 			// 

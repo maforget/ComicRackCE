@@ -1321,7 +1321,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             for (int id = 1; id <= 20; id++)
             {
                 VirtualTag vtag = Program.Settings.VirtualTags.FirstOrDefault(x => x.ID == id);
-				string name = $"Virtual Tag #{id:00}";
+                string vtagText = LocalizeUtility.GetText(this, "VirtualTag", "Virtual Tag");
+				string name = $"{vtagText} #{id:00}";
                 vtag = vtag is null 
 					? new VirtualTag(id, name, name, string.Empty, isDefault: true) //If the data doesn't already exists, create an empty tag.
 					: new VirtualTag(vtag.ID, vtag.Name, vtag.Description, vtag.CaptionFormat, vtag.IsEnabled, vtag.IsDefault); // Otherwise create a new instance so that it doesn't edit the original until we save.
@@ -1410,6 +1411,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         {
             //Reset Insert Value button, Prefix & Suffix Textbox
             btInsertValue.Text = "Choose Value";
+            LocalizeUtility.Localize(TR.Load(base.Name), btInsertValue);
             btInsertValue.Tag = null;
             txtCaptionPrefix.Text = string.Empty;
             txtCaptionSuffix.Text = string.Empty;
