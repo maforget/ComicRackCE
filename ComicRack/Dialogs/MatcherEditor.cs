@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using cYo.Common;
 using cYo.Common.Localize;
 using cYo.Common.Text;
+using cYo.Common.Windows;
 using cYo.Common.Windows.Forms;
 using cYo.Common.Windows.Forms.Theme;
 using cYo.Projects.ComicRack.Engine;
@@ -64,7 +65,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			base.Height = btEdit.Bottom + 2;
 			base.Width = width;
 			spacing = rtfMatchValue2.Left - rtfMatchValue.Right;
-			InitializeMatcher(comicBookMatcher);
+            LocalizeUtility.Localize(TR.Load("MatcherEditor"), cmEdit);
+            InitializeMatcher(comicBookMatcher);
             // a button pretending to be a dropdown combobox. lovely.
             // let's dress it up as one. Except for dropdown arrow to carot - that's asking too much
             // we also have to make it a bit smaller as otherwise borders are out of bounds
