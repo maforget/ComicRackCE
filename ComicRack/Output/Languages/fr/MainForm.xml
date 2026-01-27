@@ -270,5 +270,6 @@
     <Text Key="miCheckUpdate" Text="Vérifier les mises à jour" Comment="Check For Update" />
     <Text Key="miCacheThumbnails" Text="Générer les miniatures des couvertures" Comment="Generate Cover Thumbnails" />
     <Text Key="tbCacheThumbnails" Text="Générer les miniatures des couvertures" Comment="Generate Cover Thumbnails" />
+    <Text Key="miInfoPanel" Text="Panneaux d'information" Comment="Info Panel" />
   </Texts>
 </TR>
