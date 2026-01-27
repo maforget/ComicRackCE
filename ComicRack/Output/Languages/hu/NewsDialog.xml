@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="NewsDialog" CultureName="hu">
+  <Texts>
+    <Text Key="btClose" Text="&amp;Bezárás" Comment="&amp;Close" />
+    <Text Key="btMarkRead" Text="Mindet olvasottként jelöl" Comment="Mark all as Read" />
+    <Text Key="btRefresh" Text="Frissítés" Comment="Refresh" />
+    <Text Key="chkNewsStartup" Text="Hírek ellenőrzése indításkor" Comment="Check for News on Startup" />
+    <Text Key="colTitle" Text="Cím" Comment="Title" />
+    <Text Key="NewsDialog" Text="Legutóbbi ComicRack hírek" Comment="Latest ComicRack News" />
+  </Texts>
+</TR>

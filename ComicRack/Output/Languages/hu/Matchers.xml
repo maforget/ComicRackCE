@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Matchers" CultureName="hu">
+  <Texts>
+    <Text Key="ComicBookAddedMatcher" Text="Hozzáadva" Comment="Added" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="Mind" Comment="All" />
+    <Text Key="ComicBookAlternateCountMatcher" Text="Alternatív darab" Comment="Alternate Count" />
+    <Text Key="ComicBookAlternateNumberMatcher" Text="Alternatív szám" Comment="Alternate Number" />
+    <Text Key="ComicBookAlternateSeriesMatcher" Text="Alternatív sorozat" Comment="Alternate Series" />
+    <Text Key="ComicBookColoristMatcher" Text="Színező" Comment="Colorist" />
+    <Text Key="ComicBookFileMatcher" Text="Fájl" Comment="File" />
+    <Text Key="ComicBookGenreMatcher" Text="Típus" Comment="Genre" />
+    <Text Key="ComicBookImprintMatcher" Text="Család" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="Kihúzó" Comment="Inker" />
+    <Text Key="ComicBookLanguageMatcher" Text="Nyelv" Comment="Language" />
+    <Text Key="ComicBookMonthMatcher" Text="Hónap" Comment="Month" />
+    <Text Key="ComicBookNumberMatcher" Text="Szám" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="Megnyitva" Comment="Opened" />
+    <Text Key="ComicBookPageCountMatcher" Text="Oldalak száma" Comment="Page Count" />
+    <Text Key="ComicBookPencillerMatcher" Text="Rajzoló" Comment="Penciller" />
+    <Text Key="ComicBookPublisherMatcher" Text="Kiadó" Comment="Publisher" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="Elolvasott hányad" Comment="Read Percentage" />
+    <Text Key="ComicBookSeriesMatcher" Text="Sorozat" Comment="Series" />
+    <Text Key="ComicBookSummaryMatcher" Text="Összefoglaló" Comment="Summary" />
+    <Text Key="ComicBookTagsMatcher" Text="Címkék" Comment="Tags" />
+    <Text Key="ComicBookTitleMatcher" Text="Cím" Comment="Title" />
+    <Text Key="ComicBookVolumeMatcher" Text="Kötet" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="Író" Comment="Writer" />
+    <Text Key="ComicBookYearMatcher" Text="Év" Comment="Year" />
+    <Text Key="Days" Text="Nap" Comment="Days" />
+    <Text Key="NumericOperators" Text="egyenlő|nagyobb|kisebb|között van" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="YesNoOperators" Text="Igen|Nem|Ismeretlen" Comment="is Yes|is No|is Unknown" />
+    <Text Key="ComicBookMangaMatcher" Text="Manga" Comment="Manga" />
+    <Text Key="ComicBookBlackAndWhiteMatcher" Text="Fekete-fehér" Comment="Black and White" />
+    <Text Key="ComicBookCountMatcher" Text="Darab" Comment="Count" />
+    <Text Key="ComicBookFileFormatMatcher" Text="Fájl formátum" Comment="File Format" />
+    <Text Key="StringOperators" Text="egyenlő|tartalmazza|bármelyiket tartalmazza|mindet tartalmazza|kezdete|vége|lista tartalmazza|reguláris kifejezés" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
+    <Text Key="ComicBookAgeRatingMatcher" Text="Kor besorolás" Comment="Age Rating" />
+    <Text Key="ComicBookCharactersMatcher" Text="Szereplők" Comment="Characters" />
+    <Text Key="ComicBookEditorMatcher" Text="Szerkesztő" Comment="Editor" />
+    <Text Key="ComicBookFullPathMatcher" Text="Elérési útvonal" Comment="File Path" />
+    <Text Key="ComicBookCoverArtistMatcher" Text="Borító alkotója" Comment="Cover Artist" />
+    <Text Key="ComicBookPublishedMatcher" Text="Kiadás ideje" Comment="Published" />
+    <Text Key="ComicBookDirectoryMatcher" Text="Fájl könyvtár" Comment="File Directory" />
+    <Text Key="ComicBookPluginMatcher" Text="Felhasználói szkriptek" Comment="User Scripts" />
+    <Text Key="ComicBookModifiedMatcher" Text="Fájl módosítva" Comment="File Modified" />
+    <Text Key="ComicBookCreationMatcher" Text="Fájl létrehozva" Comment="File Created" />
+    <Text Key="ComicBookModifiedInfoMatcher" Text="Módosítás történt" Comment="Modified Info" />
+    <Text Key="ComicBookBookmarkCountMatcher" Text="Könyvjelzők száma" Comment="Bookmark Count" />
+    <Text Key="MangaYesNoOperators" Text="Igen|Igen (jobbról balra olvasható)|Nem|Ismeretlen" Comment="is Yes|is Yes (Right to Left)|is No|is Unknown" />
+    <Text Key="OnOffOperators" Text="Be|Ki" Comment="On|Off" />
+    <Text Key="TrueFalseOperators" Text="Igaz|Hamis" Comment="is True|is False" />
+    <Text Key="ComicBookSeriesCompleteMatcher" Text="Sorozat teljes" Comment="Series complete" />
+    <Text Key="ComicBookRatingMatcher" Text="Értékelés" Comment="My Rating" />
+    <Text Key="ComicBookCommunityRatingMatcher" Text="Közösségi értékelés" Comment="Community Rating" />
+    <Text Key="ComicBookNotesMatcher" Text="Megjegyzések" Comment="Notes" />
+    <Text Key="DateOperators" Text="egyenlő|később|korábban|utolsó|között van" Comment="is|is after|is before|is in the last|is in the range" />
+    <Text Key="ComicBookTeamsMatcher" Text="Csapatok" Comment="Teams" />
+    <Text Key="ComicBookLocationsMatcher" Text="Helyek" Comment="Locations" />
+    <Text Key="ComicBookExpressionMatcher" Text="Kifejezés" Comment="Expression" />
+    <Text Key="ComicBookIsLinkedMatcher" Text="Fájlhoz kapcsolva" Comment="Linked to File" />
+    <Text Key="ComicBookCheckedMatcher" Text="Pipálva van" Comment="Is Checked" />
+    <Text Key="ComicBookDuplicateMatcher" Text="Csak másolatok" Comment="Only Duplicates" />
+    <Text Key="ComicBookNewPagesMatcher" Text="Új oldalak" Comment="New Pages" />
+    <Text Key="ComicBookFileSizeMatcher" Text="Fájlméret" Comment="File Size" />
+    <Text Key="ComicBookBookPriceMatcher" Text="Képregény ára" Comment="Book Price" />
+    <Text Key="ComicBookBookStoreMatcher" Text="Képregény boltja" Comment="Book Store" />
+    <Text Key="ComicBookBookOwnerMatcher" Text="Képregény tulajdonosa" Comment="Book Owner" />
+    <Text Key="ComicBookBookAgeMatcher" Text="Képregény kora" Comment="Book Age" />
+    <Text Key="ComicBookBookConditionMatcher" Text="Képregény állapota" Comment="Book Condition" />
+    <Text Key="ComicBookBookCollectionStatusMatcher" Text="Beszerzés állapota" Comment="Book Collection Status" />
+    <Text Key="ComicBookBookLocationMatcher" Text="Képregény helye" Comment="Book Location" />
+    <Text Key="ComicBookBookNotesMatcher" Text="Képregény-megjegyzések" Comment="Book Notes" />
+    <Text Key="MB" Text="MB" Comment="MB" />
+    <Text Key="SmartListSeriesCountMatcher" Text="Sorozatok: Képregények" Comment="Series: Books" />
+    <Text Key="SmartListSeriesLastNumberMatcher" Text="Sorozatok: Utolsó szám" Comment="Series: Last Number" />
+    <Text Key="SmartListSeriesFirstNumberMatcher" Text="Sorozatok: Első szám" Comment="Series: First Number" />
+    <Text Key="SmartListSeriesMaxYearMatcher" Text="Sorozatok: Első év" Comment="Series: First Year" />
+    <Text Key="SmartListSeriesMinYearMatcher" Text="Sorozatok: Utolsó év" Comment="Series: Last Year" />
+    <Text Key="SmartListSeriesPageCountMatcher" Text="Sorozatok: Oldalszám" Comment="Series: Pages" />
+    <Text Key="SmartListSeriesPagesReadMatcher" Text="Sorozatok: Olvasott oldalak" Comment="Series: Pages Read" />
+    <Text Key="SmartListSeriesPercentReadMatcher" Text="Sorozatok: Olvasott százalék" Comment="Series: Percent Read" />
+    <Text Key="SmartListSeriesAverageRatingMatcher" Text="Sorozatok: Átlagos értékelésem" Comment="Series: My Average Rating" />
+    <Text Key="SmartListSeriesAverageCommunityRatingMatcher" Text="Sorozatok: Közösség átlagos értékelése" Comment="Series: Community Average Rating" />
+    <Text Key="SmartListSeriesRunningTimeYearsMatcher" Text="Sorozat: Futási idő években" Comment="Series: Running Time Years" />
+    <Text Key="SmartListSeriesGapsMatcher" Text="Sorozat: Hiányzó szakaszok" Comment="Series: Gaps" />
+    <Text Key="SmartListSeriesMaxGapSizeMatcher" Text="Sorozat: Legnagyobb hiányzó szakasz" Comment="Series: Biggest Gap" />
+    <Text Key="SmartListSeriesEndOfGapMatcher" Text="Sorozat: Hiányzó szakasz kezdete" Comment="Series: Start of Gap" />
+    <Text Key="SmartListSeriesStartOfGapMatcher" Text="Sorozat: Hiányzó szakasz vége" Comment="Series: End of Gap" />
+    <Text Key="ComicBookISBNMatcher" Text="ISBN" Comment="ISBN" />
+    <Text Key="SmartListSeriesLastAddedTimeMatcher" Text="Sorozat: Képregény hozzáadva" Comment="Series: Book added" />
+    <Text Key="SmartListSeriesLastOpenedTimeMatcher" Text="Sorozat: Megnyitva" Comment="Series: Opened" />
+    <Text Key="SmartListSeriesLastPublishedTimeMatcher" Text="Sorozat: Kiadás ideje" Comment="Series: Published" />
+    <Text Key="SmartListSeriesMaxCountMatcher" Text="Sorozat: Legnagyobb oldalszám" Comment="Series: Highest Count" />
+    <Text Key="SmartListSeriesMinCountMatcher" Text="Sorozat: Legkisebb oldalszám" Comment="Series: Lowest Count" />
+    <Text Key="SmartListSeriesAllCompleteMatcher" Text="Sorozat: Összes teljes" Comment="Series: All compelte" />
+    <Text Key="ComicBookScanInformationMatcher" Text="Scannelés információi" Comment="Scanning Information" />
+    <Text Key="ComicBookStoryArcMatcher" Text="Történet szál" Comment="Story Arc" />
+    <Text Key="ComicBookSeriesGroupMatcher" Text="Sorozat csoport" Comment="Series Group" />
+    <Text Key="ComicBookMainCharacterOrTeamMatcher" Text="Főszereplő/csoport" Comment="Main Character/Team" />
+    <Text Key="ComicBookReviewMatcher" Text="Kritika" Comment="Review" />
+  </Texts>
+</TR>

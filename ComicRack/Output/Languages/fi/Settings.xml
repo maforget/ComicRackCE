@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Settings" CultureName="fi">
+  <Texts>
+    <Text Key="Application" Text="Sovellus" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="Piilota suurennuslasi reunoilla" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="AutoNavigateComics" Text="Siirry automaattisesti seuraavaan/edelliseen eSarjikseen" Comment="Reading beyond the start or end opens the next eComic " />
+    <Text Key="Browser" Text="Selain" Comment="Browser" />
+    <Text Key="CloseBrowserOnOpen" Text="Sulje selain kun uusi eSarjis avataan" Comment="Close the Browser when a new eComic is opened" />
+    <Text Key="CloseMinimizesToTray" Text="Suljettaessa vie ComicRack tehtäväpalkkiin" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="Kuvakkeiden hidas häivytys" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="Piilota hiiren osoitin kokonäyttötilassa" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="Korkealaatuiset kuvakkeet (hitaampi)" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="CatalogOnlyForFileless" Text="Näytä kuvastokentät vain tiedostottomille sarjiksille" Comment="Show Catalog fields only for fileless Comics" />
+    <Text Key="MinimizeToTray" Text="Pienennys vie ComicRackin tehtäväpalkkiin" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="Tarkista uusimmat ComicRack-uutiset" Comment="Check for latest news on ComicRack" />
+    <Text Key="Opening an eComic" Text="Avaa eSarjista" Comment="Opening an eComic" />
+    <Text Key="OpenLastFile" Text="Avaa viimeksi luettu eSarjis" Comment="Reopen the last eComics read" />
+    <Text Key="OpenInNewTab" Text="Avaa uudelle välilehdelle" Comment="Open in new Tab" />
+    <Text Key="OpenLastPage" Text="Avaa eSarjis viimeksi luetulle sivulle" Comment="Open the eComic at the page where it was closed" />
+    <Text Key="PageChangeDelay" Text="Hiiren liike/rulla/klikkaus viivyttää sivunvaihtoa" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="Reading" Text="Lukeminen" Comment="Reading" />
+    <Text Key="ScanStartup" Text="Etsi kirjastokansioista uusia eSarjiksia" Comment="Rescan the Library Folders for new eComics" />
+    <Text Key="UpdateWebComicsStartup" Text="Päivitä nettisarjikset" Comment="Update Web Comics" />
+    <Text Key="ShowSplash" Text="Näytä latauskuva" Comment="Show Splash Screen" />
+    <Text Key="ShowToolTips" Text="Näytä eSarjiksille vihjeet selaimessa" Comment="Show Tooltips for eComics in the Browser" />
+    <Text Key="Starting ComicRack" Text="Avataan ComicRackia" Comment="Starting ComicRack" />
+    <Text Key="AddToLibraryOnOpen" Text="Lisää eSarjis kirjastoon" Comment="Add eComics to the Library" />
+    <Text Key="Manga" Text="Manga" Comment="Manga" />
+    <Text Key="TrueRightToLeftReading" Text="Aito oikealta vasemmalle luku" Comment="True right to left reading" />
+    <Text Key="LeftRightMovementReversed" Text="Vasen/oikea liikkuminen käänteisenä" Comment="Left/right movement is also reversed" />
+    <Text Key="Right to Left" Text="Oikealta vasemmalle" Comment="Right to Left" />
+    <Text Key="AutoMinimalGui" Text="Kokonäyttötilassa myös MiniGUI" Comment="Fullscreen also toggles Minimal User Interface" />
+    <Text Key="AnimatePanels" Text="Animoi taulujen avaus ja sulku" Comment="Animate expanding and collapsing Panels" />
+    <Text Key="ResetZoomOnPageChange" Text="Zoomin palautus vaihtaessa sivua" Comment="Zoom is reset to 100% on page change" />
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="Näytä aina selaimen ankkurointikahva" Comment="Always display Browser Docking Grip" />
+    <Text Key="ShowMainMenuNoComicOpen" Text="Näytä päävalikko jos ei avoimia eSarjiksia" Comment="Show Main Menu if no eComic is open" />
+    <Text Key="InformationCover3D" Text="Kannen 3D-kuva sarjiksen tiedoissa" Comment="3D display of covers in Comic Info Dialog" />
+    <Text Key="DogEarThumbnails" Text="Valitulla kuvakkeella hiirenkorva" Comment="Selected Thumbnails have dog-ear" />
+    <Text Key="NumericRatingThumbnails" Text="Kuvakkeissa numeroarvostelu" Comment="Thumbnails display numeric ratings" />
+    <Text Key="BlendWhilePaging" Text="SulautusAnimaatio myös Nopeasti selatessa" Comment="Blend animation also while fast paging" />
+    <Text Key="LocalQuickSearch" Text="Jokaisella listalla omat pikahakuasetukset" Comment="Each List has own Quick Search settings" />
+    <Text Key="ScrollingDoesBrowse" Text="Vieritys liikkuu uudelle sivulle" Comment="Scrolling to page margin browses to new pages" />
+    <Text Key="Import &amp; Export" Text="Tuonti ja lähetys" Comment="Import &amp; Export" />
+    <Text Key="ExportedListsContainFilenames" Text="Lähetetyt sarjislistat sisältävät myös tiedostonimet" Comment="Exported Comic Lists contain filenames" />
+    <Text Key="ShowSearchLinks" Text="Näytä hakulinkit" Comment="Show Search Links" />
+    <Text Key="ShowQuickOpen" Text="Näytä pika-avaus jos ei avoimia Kirjoja" Comment="Show Quick Open if no book is opened" />
+  </Texts>
+</TR>

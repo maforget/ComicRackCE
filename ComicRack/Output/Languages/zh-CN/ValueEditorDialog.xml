@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ValueEditorDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="ValueEditorDialog" Text="编辑值" Comment="Value Editor" />
+    <Text Key="btOK" Text="确定(&amp;O)" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btInsertValue" Text="插入值" Comment="Insert Value" />
+  </Texts>
+</TR>

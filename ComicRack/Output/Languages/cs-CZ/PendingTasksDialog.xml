@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PendingTasksDialog" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="btOk" Text="OK" Comment="OK" />
+    <Text Key="colTask" Text="Úloha" Comment="Task" />
+    <Text Key="colState" Text="Stav" Comment="State" />
+    <Text Key="lblItemCount" Text="{0} úloh čeká na vyřízení" Comment="{0} Tasks are pending" />
+    <Text Key="PendingTasksDialog" Text="Úlohy běžící na pozadí" Comment="Pending Background Tasks" />
+    <Text Key="btAbort" Text="Ukončit všechny úlohy" Comment="Abort all User Tasks" />
+  </Texts>
+</TR>

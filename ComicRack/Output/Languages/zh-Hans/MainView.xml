@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainView" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="靠近底部" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="填充" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="靠左" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="靠右" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="关闭" Comment="Close" />
+    <Text Key="tsbFolders" Text="文件夹" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="浏览文件夹" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="媒体库" Comment="Library" />
+    <Text Key="tsbLibrary.Tooltip" Text="漫画库" Comment="eComics Library" />
+    <Text Key="tsbPages" Text="页面" Comment="Pages" />
+    <Text Key="tsbPages.Tooltip" Text="当前漫画的页数" Comment="Pages of the current eComic" />
+    <Text Key="tsbShowMenu" Text="显示菜单" Comment="Show Menu" />
+    <Text Key="tsbInfoPanelLeft" Text="信息面板" Comment="Info Panel Right" />
+  </Texts>
+</TR>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListLibraryBrowser" CultureName="zh-CN">
+  <Texts>
+    <Text Key="miEditSmartList" Text="编辑(&amp;E)..." Comment="&amp;Edit..." />
+    <Text Key="miNewFolder" Text="新建文件夹(&amp;F)..." Comment="New &amp;Folder..." />
+    <Text Key="miNewList" Text="新建列表(&amp;L)..." Comment="New &amp;List..." />
+    <Text Key="miNewSmartList" Text="新建智能列表(&amp;N)..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="排序(&amp;S)" Comment="&amp;Sort" />
+    <Text Key="miOpenWindow" Text="在新窗口中打开(&amp;O)" Comment="&amp;Open in New Window" />
+    <Text Key="miQueryRename" Text="重命名(&amp;R)" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="刷新(&amp;F)" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="移除(&amp;R)..." Comment="&amp;Re&amp;move..." />
+    <Text Key="NewFolder" Text="新建文件夹" Comment="New Folder" />
+    <Text Key="NewList" Text="新建列表" Comment="New List" />
+    <Text Key="NewSmartList" Text="新建智能列表" Comment="New Smart List" />
+    <Text Key="tbNewFolder" Text="新建文件夹(&amp;F)" Comment="New &amp;Folder" />
+    <Text Key="tbNewFolder.Tooltip" Text="创建一个新文件夹来组织你的列表" Comment="Create a new folder to organize your lists" />
+    <Text Key="tbNewList" Text="新建列表(&amp;L)" Comment="New &amp;List" />
+    <Text Key="tbNewList.Tooltip" Text="创建一个新的自定义列表" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="新建智能列表(&amp;N)" Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="创建一个新的智能列表" Comment="Create a new Smart List" />
+    <Text Key="tbOpenWindow" Text="新建窗口" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="在新窗口中打开当前列表" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="刷新" Comment="Refresh" />
+    <Text Key="miCopyList" Text="复制列表" Comment="Copy List" />
+    <Text Key="miPasteList" Text="粘贴列表" Comment="Paste List" />
+    <Text Key="miExportReadingList" Text="导出阅读列表..." Comment="Export Reading List..." />
+    <Text Key="miImportReadingList" Text="导入阅读列表..." Comment="Import Reading List..." />
+    <Text Key="NewSmartListOption" Text="当前视图快照" Comment="Snapshot of current view" />
+    <Text Key="miOpenTab" Text="在新标签页中打开(&amp;O)" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="新建标签页" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="在新标签页中打开当前列表" Comment="Open current list in new Tab" />
+    <Text Key="miFavRemove" Text="移除" Comment="Remove" />
+    <Text Key="tbFavorites" Text="显示收藏夹" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="收藏夹" Comment="Favorites" />
+    <Text Key="miAddToFavorites" Text="添加到收藏夹" Comment="Add to Favorites" />
+    <Text Key="miFavRefresh" Text="刷新(&amp;R)" Comment="&amp;Refresh" />
+    <Text Key="tbExpandCollapseAll" Text="展开/折叠全部" Comment="Expand/Collapse all" />
+    <Text Key="tbPreferences" Text="选项" Comment="Preferences" />
+    <Text Key="tbGauges" Text="显示计数" Comment="Show Gauges" />
+    <Text Key="tbGaugesNew" Text="显示新书籍数" Comment="Show New Books Gauge" />
+    <Text Key="tbGaugesUnread" Text="显示未读书籍数" Comment="Show Unread Books Gauge" />
+    <Text Key="tbGaugesTotal" Text="显示总书籍数" Comment="Show Total Books Gauge" />
+    <Text Key="tbGaugesNumeric" Text="显示数字" Comment="Show Numbers" />
+  </Texts>
+</TR>

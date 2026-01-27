@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Default" CultureName="ru">
+  <Texts>
+    <Text Key="ClearAll" Text="Очистить выделение" Comment="Clear all" />
+    <Text Key="Copy" Text="Копировать" Comment="Copy" />
+    <Text Key="Invert" Text="Инвертировать" Comment="Invert" />
+    <Text Key="Layout" Text="Формат" Comment="Layout" />
+    <Text Key="None" Text="Ничего" Comment="None" />
+    <Text Key="NotAvailable" Text="-" Comment="NA" />
+    <Text Key="Paste" Text="Вставить" Comment="Paste" />
+    <Text Key="SetAll" Text="Выделить &amp;все" Comment="Set all" />
+    <Text Key="Unknown" Text="Неизвестно" Comment="Unknown" />
+    <Text Key="Unspecified" Text="Неопределено" Comment="Unspecified" />
+    <Text Key="Workspace" Text="Рабочая область" Comment="Workspace" />
+    <Text Key="System" Text="Система" Comment="System" />
+    <Text Key="Books" Text="Книги" Comment="books" />
+    <Text Key="Book" Text="Книга" Comment="book" />
+    <Text Key="Page" Text="Страница" Comment="page" />
+    <Text Key="Yes" Text="Да" Comment="Yes" />
+    <Text Key="No" Text="Нет" Comment="No" />
+    <Text Key="Not" Text="Нет" Comment="Not" />
+    <Text Key="Cancel" Text="Отмена" Comment="Cancel" />
+    <Text Key="Bookmark" Text="Закладка" Comment="Bookmark" />
+    <Text Key="Restart" Text="Перезапуск" Comment="Restart" />
+    <Text Key="All" Text="Все" Comment="All" />
+    <Text Key="Import" Text="Импортировать" Comment="Import" />
+    <Text Key="New" Text="Новый" Comment="New" />
+    <Text Key="Recent" Text="Повторить" Comment="Recent" />
+    <Text Key="Waiting" Text="Подождите" Comment="Waiting" />
+    <Text Key="Running" Text="Выполняется" Comment="Running" />
+    <Text Key="Completed" Text="Выполнено" Comment="Completed" />
+  </Texts>
+</TR>

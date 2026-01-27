@@ -1,0 +1,31 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SearchBrowser" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="AlternateSeries" Text="備用叢書" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="配色師" Comment="Colorists" />
+    <Text Key="Genre" Text="流派" Comment="Genres" />
+    <Text Key="Imprint" Text="出版標記" Comment="Imprints" />
+    <Text Key="Inker" Text="著墨員" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="語言" Comment="Languages" />
+    <Text Key="MonthAsText" Text="月份" Comment="Months" />
+    <Text Key="Penciller" Text="畫圖員" Comment="Pencillers" />
+    <Text Key="Publisher" Text="出版社" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="叢書" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="年代" Comment="Years" />
+    <Text Key="Writer" Text="作者" Comment="Writers" />
+    <Text Key="Unspecified" Text="未指定" Comment="Unspecified" />
+    <Text Key="AllItems" Text="所有 ({0} {1})" Comment="All ({0} {1})" />
+    <Text Key="ShadowTitle" Text="標題" Comment="Titles" />
+    <Text Key="ShadowFormat" Text="格式" Comment="Formats" />
+    <Text Key="Editor" Text="編輯" Comment="Editors" />
+    <Text Key="Characters" Text="角色" Comment="Characters" />
+    <Text Key="CoverArtist" Text="封面作者" Comment="Cover Artists" />
+    <Text Key="AgeRating" Text="年齡限定" Comment="Age Ratings" />
+    <Text Key="RatingAsText" Text="評分" Comment="Ratings" />
+    <Text Key="Tags" Text="標簽" Comment="Tags" />
+    <Text Key="Teams" Text="團隊" Comment="Teams" />
+    <Text Key="Locations" Text="位置" Comment="Locations" />
+    <Text Key="ShadowVolumeAsText" Text="卷" Comment="Volumes" />
+    <Text Key="Web" Text="網絡" Comment="Web" />
+  </Texts>
+</TR>

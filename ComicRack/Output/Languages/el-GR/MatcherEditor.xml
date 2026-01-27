@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MatcherEditor" CultureName="el-GR">
+  <Texts>
+    <Text Key="miNewRule" Text="Νέος Χάρακας" Comment="New Rule" />
+    <Text Key="miNewGroup" Text="Νέα Ομάδα" Comment="New Group" />
+    <Text Key="miDelete" Text="Διαγραφή" Comment="Delete" />
+    <Text Key="miCut" Text="Cut" Comment="Cut" />
+    <Text Key="miCopy" Text="Αντιγραφή" Comment="Copy" />
+    <Text Key="miPaste" Text="Επικόλληση" Comment="Paste" />
+    <Text Key="miMoveUp" Text="Μετακίνηση Πάνω" Comment="Move Up" />
+    <Text Key="miMoveDown" Text="Μετακίνηση Κάτω" Comment="Move Down" />
+  </Texts>
+</TR>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="EditListDialog" CultureName="es">
+  <Texts>
+    <Text Key="EditListDialog" Text="Edit List" Comment="Edit List" />
+    <Text Key="btCancel" Text="&amp;Cancelar" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelName" Text="Nombre:" Comment="Name:" />
+    <Text Key="labelBooks" Text="Libros:" Comment="Books:" />
+    <Text Key="labelNotes" Text="Notes:" Comment="Notes:" />
+    <Text Key="chkQuickOpen" Text="Apertura rápida" Comment="Quick Open" />
+    <Text Key="CombineMode" Text="Todos los Libros de cada lista|Solo los Libros existentes en todas las listas" Comment="All Books from every list|Only Books existing in every list|Empty list" />
+  </Texts>
+</TR>

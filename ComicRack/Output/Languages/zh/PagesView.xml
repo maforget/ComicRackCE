@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PagesView" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="miCopy" Text="複製頁面" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="反選" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="標記為已刪除" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="頁面類型" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="刷新" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="選擇所有" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="設置書簽" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="刪除書簽" Comment="Remove Bookmark" />
+    <Text Key="miMoveToStart" Text="移動到開始" Comment="Move to Start" />
+    <Text Key="miMoveToEnd" Text="移動到末尾" Comment="Move to End" />
+    <Text Key="miResetOriginalOrder" Text="重置為原始順序" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="頁面旋轉" Comment="Page Rotation" />
+  </Texts>
+</TR>

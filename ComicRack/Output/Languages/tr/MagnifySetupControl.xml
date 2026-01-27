@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MagnifySetupControl" CultureName="tr">
+  <Texts>
+    <Text Key="labelHeight" Text="Yükseklik" Comment="Height" />
+    <Text Key="labelOpacity" Text="Opaklık" Comment="Opacity" />
+    <Text Key="labelWidth" Text="Genişlik" Comment="Width" />
+    <Text Key="labelZoom" Text="Odak" Comment="Zoom" />
+  </Texts>
+</TR>

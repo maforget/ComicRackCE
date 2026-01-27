@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainForm" CultureName="hr">
+  <Texts>
+    <Text Key="browseMenu" Text="&amp;Pregled" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="&amp;Kopiranje stranice" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="&amp;Izvoz stranice..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="Prilagodba" Comment="Fit All" />
+    <Text Key="cmFitAutoRotate" Text="Prilagodba &amp;&amp; automatsko okretanje" Comment="Fit &amp;&amp; Auto Rotate" />
+    <Text Key="cmFitBest" Text="Najbolja prilagodba" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="Prilagodba zaslonu po visini" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="Prilagodba zaslonu po širini" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="&amp;Povečalo" Comment="&amp;Magnifier" />
+    <Text Key="cmNextFromList" Text="S&amp;ljedeći svezak" Comment="Ne&amp;xt eComic" />
+    <Text Key="cmNextTab" Text="Sljedeće &amp;mjesto" Comment="Next &amp;Tab" />
+    <Text Key="cmNotifyExit" Text="&amp;Izlazak" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="&amp;Ponovna uspostava" Comment="&amp;Restore" />
+    <Text Key="cmPrevFromList" Text="P&amp;rethodni svezak" Comment="Pre&amp;vious eComic" />
+    <Text Key="cmPrevTab" Text="Pr&amp;ethodno mjesto" Comment="&amp;Previous Tab" />
+    <Text Key="cmRate0" Text="Ništa" Comment="None" />
+    <Text Key="cmRate1" Text="* (1 Zvjezdica)" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** (2 Zvjezdice)" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** (3 Zvjezdice)" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** (4 Zvjezdice)" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** (5 Zvjezdica)" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="O&amp;cjena" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="&amp;Osvježavanje" Comment="&amp;Refresh" />
+    <Text Key="cmShowInfo" Text="&amp;Detalji o stripu..." Comment="&amp;Get Info..." />
+    <Text Key="cmSyncBrowser" Text="Prikaz u pregledniku" Comment="Show in &amp;Browser" />
+    <Text Key="ConvertingComics" Text="Promjena formata sveske: {0} u redu za obradu" Comment="Converting eComics: {0} queued" />
+    <Text Key="ConvertingErrors" Text="{0} grešaka. Kliknite za detaljne iformacije" Comment="{0} errors. Click for details" />
+    <Text Key="displayMenu" Text="Prik&amp;az" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="&amp;Obrada" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="&amp;Svezak" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="&amp;Pomoć" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack" Comment="ComicRack" />
+    <Text Key="miAbout" Text="&amp;O ComicRacku..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="&amp;Dodavanje foldera u biblioteku..." Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="Novo &amp;mjesto" Comment="New &amp;Tab" />
+    <Text Key="miAutoRotate" Text="Prilagodba &amp;&amp; automatsko okretanje" Comment="Fit &amp;&amp; Auto &amp;Rotate" />
+    <Text Key="miBestFit" Text="Najbolja prilagodba" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="Zatvaranje svega" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="Zatvaranje" Comment="&amp;Close" />
+    <Text Key="miDeleteListLayout" Text="Poništenje izgleda popisa..." Comment="&amp;Delete List Layout..." />
+    <Text Key="miDeleteWorkspace" Text="Pon&amp;ištenje izgleda radnog prostora..." Comment="&amp;Delete Workspace..." />
+    <Text Key="miEditListLayout" Text="&amp;Uređivanje izgleda popisa..." Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="&amp;Izlazak" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="A&amp;utomatiziranje" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="&amp;Prva stranica" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="Popunjavanje" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="Prilagodba po v&amp;isini" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="Prilagodba po š&amp;irini" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="&amp;Cijeli zaslon" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="&amp;Posljednja stranica" Comment="&amp;Last Page" />
+    <Text Key="miLastPageRead" Text="Zadnjepročitana stranica" Comment="L&amp;ast Page Read" />
+    <Text Key="miListLayouts" Text="Izgled popisa" Comment="List Layout" />
+    <Text Key="miNews" Text="&amp;Novosti..." Comment="&amp;News..." />
+    <Text Key="miNextFromList" Text="Sljedeća sveska" Comment="Ne&amp;xt eComic" />
+    <Text Key="miNextPage" Text="&amp;Sljedeća stranica" Comment="&amp;Next Page" />
+    <Text Key="miNextTab" Text="Sljedeće &amp;mjesto" Comment="Next &amp;Tab" />
+    <Text Key="miMagnify" Text="Povečalo" Comment="&amp;Magnifier" />
+    <Text Key="miOpenFile" Text="&amp;Otvaranje sveska..." Comment="&amp;Open eComic..." />
+    <Text Key="miOpenNow" Text="Otvaranje sveske" Comment="Open eCo&amp;mics" />
+    <Text Key="miOpenRecent" Text="&amp;Novije sveske" Comment="&amp;Recent eComics" />
+    <Text Key="miPageType" Text="&amp;Vrsta stranice" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="&amp;Osobne postavke..." Comment="&amp;Preferences..." />
+    <Text Key="miPrevFromList" Text="prethodna sveska" Comment="Pre&amp;vious eComic" />
+    <Text Key="miPrevPage" Text="Prethodna stranica" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="Prethodno mjesto" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="Ništa" Comment="None" />
+    <Text Key="miRate1" Text="* (1 Zvjezdica)" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** (2 Zvjezdice)" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** (3 Zvjezdice)" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** (4 Zvjezdice)" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** (5 Zvjezdica)" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="Ocjena" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="Iz početka" Comment="Rest&amp;art" />
+    <Text Key="miRotate0" Text="&amp;Bez okretanja" Comment="&amp;No Rotation" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="miRotation" Text="&amp;Okretanje" Comment="&amp;Rotation" />
+    <Text Key="miSaveAs" Text="&amp;Snimanje sveska kao..." Comment="&amp;Save eComic as..." />
+    <Text Key="miSaveListLayout" Text="&amp;Snimanje izgleda popisa..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="&amp;Snimanje izgleda radnog prostora..." Comment="&amp;Save Workspace..." />
+    <Text Key="miScan" Text="Traženje svezaka kroz&amp; foldere" Comment="Scan eComic &amp;Folders" />
+    <Text Key="miScrollMode" Text="&amp;Klizanje" Comment="&amp;Scroll Mode" />
+    <Text Key="miSearchBrowser" Text="Preg&amp;lednik za traženje" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="Postavljanje svih popisa na trenutni izgled" Comment="Set all Lists to current Layout" />
+    <Text Key="miShowInfo" Text="&amp;Detalji..." Comment="&amp;Get Info..." />
+    <Text Key="miSidebar" Text="&amp;Pokrajni prostor" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="S&amp;manjeni pregled" Comment="S&amp;mall Preview" />
+    <Text Key="miSyncBrowser" Text="Prikaz u &amp;pregledniku" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="&amp;Preglednik" Comment="&amp;Browser" />
+    <Text Key="miTwoPages" Text="&amp;Dvije stranice" Comment="&amp;Two Pages" />
+    <Text Key="miView100" Text="100 %" Comment="100 %" />
+    <Text Key="miView150" Text="150 %" Comment="150 %" />
+    <Text Key="miView200" Text="200 %" Comment="200 %" />
+    <Text Key="miView300" Text="300 %" Comment="300 %" />
+    <Text Key="miView400" Text="400 %" Comment="400 %" />
+    <Text Key="miViewFolders" Text="&amp;Folderi" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="Biblioteka" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="&amp;Stranice" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="&amp;Osvježavanje" Comment="&amp;Refresh" />
+    <Text Key="miWebHome" Text="ComicRack Homepage" Comment="ComicRack Homepage" />
+    <Text Key="miWebUserForum" Text="ComicRack - korisnički forum" Comment="ComicRack User Forum" />
+    <Text Key="miWorkspaces" Text="&amp;Radni prostor" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="Uvečanje i smanjenje" Comment="Zoom" />
+    <Text Key="readMenu" Text="&amp;Čitanje" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="Postavljanje izgleda '{0}'" Comment="Set '{0}' Layout" />
+    <Text Key="tbAutoRotate" Text="Prilagodba &amp;&amp; automatsko okretanje" Comment="Fit &amp;&amp; Auto Rotate" />
+    <Text Key="tbBestFit" Text="Najbolja prilagodba" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="Prikaz" Comment="Display" />
+    <Text Key="tbFirstPage" Text="Prva stranica" Comment="First Page" />
+    <Text Key="tbFirstPage.Tooltip" Text="Na prvu stranicu" Comment="Go to first page" />
+    <Text Key="tbFit" Text="Prilagodba" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="Preklop načina prilagodbe" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="Ispunjavanje prostora" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="Prilagodba po visini" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="Prilagodna po visini" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="Cijeli zaslon" Comment="Full Screen" />
+    <Text Key="tbLastPage" Text="Zadnja stranica" Comment="Last Page" />
+    <Text Key="tbLastPage.Tooltip" Text="Na zadnju stranicu" Comment="Go to last page" />
+    <Text Key="tbLock" Text="Zaključavanje" Comment="Lock" />
+    <Text Key="tbLock.Tooltip" Text="Toolbar se uvijek prikazuje" Comment="Check to always display the Toolbar" />
+    <Text Key="tbMagnify" Text="Povečalo" Comment="Magnifier" />
+    <Text Key="tbNextFromList" Text="Sljedeći svezak s popisa" Comment="Next eComic from List" />
+    <Text Key="tbNextFromList.Tooltip" Text="Otvaranje sljedećeg sveska na popisu" Comment="Open the next eComic in the list" />
+    <Text Key="tbNextPage" Text="Sljedeća stranica" Comment="Next Page" />
+    <Text Key="tbNextPage.Tooltip" Text="Na sljedeću stranicu" Comment="Go to next page" />
+    <Text Key="tbNextTab" Text="Sljedeće &amp;mjesto" Comment="Next &amp;Tab" />
+    <Text Key="tbNextTab.Tooltip" Text="Sljedeće mjesto" Comment="NĂ¤chster Tab" />
+    <Text Key="tbPrevFromList" Text="Prethodna sveska na popisu" Comment="Previous eComic from List" />
+    <Text Key="tbPrevFromList.Tooltip" Text="Otvaranje prethodnog sveska na popisu" Comment="Open the previous eComic in the list" />
+    <Text Key="tbPrevPage" Text="prethodna stranica" Comment="Previous Page" />
+    <Text Key="tbPrevPage.Tooltip" Text="Na prethodnu stranicu" Comment="Go to previous page" />
+    <Text Key="tbPrevTab" Text="&amp;Prethodna stranica" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="Prethodno mjesto" Comment="Vorheriger Tab" />
+    <Text Key="tbReadLabel" Text="Pročitan" Comment="Read" />
+    <Text Key="tbScrollMode" Text="Način klizanja" Comment="Scroll Mode" />
+    <Text Key="tbScrollMode.Tooltip" Text="Preklop između klizanja i razdvajanja" Comment="Switch between Scroll and Part Mode" />
+    <Text Key="tbShowInfo" Text="Detalji" Comment="Info" />
+    <Text Key="tbShowInfo.Tooltip" Text="Prikaz informacija" Comment="Show information" />
+    <Text Key="tbTwoPages" Text="Dvije stranice" Comment="Two Pages" />
+    <Text Key="tbTwoPages.Tooltip" Text="Prikaz jedne ili dvije stranice" Comment="Show one or two pages" />
+    <Text Key="tbZoomLabel" Text="Uvećanje/Smanjenje" Comment="Zoom" />
+    <Text Key="toolStripMenuItem22" Text="&amp;Dvije stranice" Comment="&amp;Two Pages" />
+    <Text Key="toolStripSplitButton1" Text="Izgled stranice" Comment="Page Layout" />
+    <Text Key="tsBook" Text="Sveska" Comment="Book" />
+    <Text Key="tsBook.Tooltip" Text="Naslov otvorene sveske" Comment="Name of the opened eComic" />
+    <Text Key="tsConvertActivity" Text="Promjena formata" Comment="Converting" />
+    <Text Key="tsCurrentPage" Text="Stranica" Comment="Page" />
+    <Text Key="tsCurrentPage.Tooltip" Text="Trenutna stranica otvorene sveske" Comment="Current Page of the open eComic" />
+    <Text Key="tsDeleteListLayout" Text="&amp;Brisanje izgleda popisa..." Comment="&amp;Delete List Layout..." />
+    <Text Key="tsDeleteWorkspace" Text="&amp;Brisanje izgleda radnog prostora..." Comment="&amp;Delete Workspace..." />
+    <Text Key="tsListLayouts" Text="Izgledi popisa" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="Upravljanje izgledima popisa" Comment="Manage List Layouts" />
+    <Text Key="tsPageActivity.Tooltip" Text="Dohvaćanje stranica i slikica" Comment="Getting Pages and Thumbnails" />
+    <Text Key="tsPageCount" Text="0 stranica" Comment="0 Pages" />
+    <Text Key="tsPageCount.Tooltip" Text="Broj stranica otvorene sveske" Comment="Page count of the open eComic" />
+    <Text Key="tsSaveListLayout" Text="&amp;Pamćenje izgleda popisa..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsSaveWorkspace" Text="&amp;Pamćenje izgleda radnog prostora..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsScanActivity.Tooltip" Text="Traženje u pozadini..." Comment="A scan is running in the background..." />
+    <Text Key="tsText" Text="Pripravan" Comment="Ready" />
+    <Text Key="tsUpdateInfoActivity.Tooltip" Text="Nadopuna aktivna u pozadini..." Comment="An update is running in the background..." />
+    <Text Key="tsWorkspaces" Text="Radni prostori" Comment="Workspaces" />
+    <Text Key="tsWorkspaces.Tooltip" Text="Upravljanje radnim prostorima" Comment="Manage Workspaces" />
+  </Texts>
+</TR>

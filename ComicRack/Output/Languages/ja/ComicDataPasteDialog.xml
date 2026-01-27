@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicDataPasteDialog" CultureName="ja">
+  <Texts>
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btMarkAll" Text="すべて(&amp;A)" Comment="&amp;All" />
+    <Text Key="btMarkDefined" Text="実在のみ(&amp;S)" Comment="Only &amp;Set" />
+    <Text Key="btMarkNone" Text="クリア(&amp;C)" Comment="&amp;Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="chkColor" Text="カラー調整" Comment="Color Adjustment" />
+    <Text Key="chkColorist" Text="カラーリスト" Comment="Colorist" />
+    <Text Key="chkCount" Text="総数" Comment="Total Number" />
+    <Text Key="chkEditor" Text="エディター" Comment="Editor" />
+    <Text Key="chkGenre" Text="ジャンル" Comment="Genre" />
+    <Text Key="chkImprint" Text="奥付け" Comment="Imprint" />
+    <Text Key="chkInker" Text="インカー" Comment="Inker" />
+    <Text Key="chkLanguage" Text="言語" Comment="Language" />
+    <Text Key="chkLetterer" Text="レタラー" Comment="Letterer" />
+    <Text Key="chkMonth" Text="月" Comment="Month" />
+    <Text Key="chkNotes" Text="ノート" Comment="Notes" />
+    <Text Key="chkNumber" Text="ナンバー" Comment="Number" />
+    <Text Key="chkPenciller" Text="ペンシラー" Comment="Penciller" />
+    <Text Key="chkPublisher" Text="発行者" Comment="Publisher" />
+    <Text Key="chkSeries" Text="シリーズ" Comment="Series" />
+    <Text Key="chkSummary" Text="概要" Comment="Summary" />
+    <Text Key="chkTags" Text="タグ" Comment="Tags" />
+    <Text Key="chkTitle" Text="タイトル" Comment="Title" />
+    <Text Key="chkVolume" Text="ボリューム" Comment="Volume" />
+    <Text Key="chkWriter" Text="作者" Comment="Writer" />
+    <Text Key="chkYear" Text="年" Comment="Year" />
+    <Text Key="chkManga" Text="マンガ" Comment="Manga" />
+    <Text Key="chkFormat" Text="フォーマット" Comment="Format" />
+    <Text Key="chkBlackAndWhite" Text="モノクロ" Comment="Black and White" />
+    <Text Key="ComicDataPasteDialog" Text="{0} コミックにデータを貼り付け" Comment="Paste Data to {0} eComics" />
+    <Text Key="grpArtists" Text="アーティスト/関係者" Comment="Artists / People Involved" />
+    <Text Key="grpMain" Text="メイン" Comment="Main" />
+    <Text Key="chkAgeRating" Text="年齢制限" Comment="Age Rating" />
+    <Text Key="chkCover" Text="カバー アーティスト" Comment="Cover Artist" />
+    <Text Key="chkRating" Text="評価" Comment="My Rating" />
+    <Text Key="chkCommunityRating" Text="コミュニティ評価" Comment="Community Rating" />
+    <Text Key="chkCharacters" Text="キャラクター" Comment="Characters" />
+    <Text Key="chkWeb" Text="ウェブ" Comment="Web" />
+    <Text Key="chkLocations" Text="場所" Comment="Locations" />
+    <Text Key="chkTeams" Text="チーム" Comment="Teams" />
+    <Text Key="chkAlternateCount" Text="別の総数" Comment="Alt. Total Number" />
+    <Text Key="chkAlternateNumber" Text="別ナンバー" Comment="Alt. Number" />
+    <Text Key="chkAlternateSeries" Text="別シリーズ" Comment="Alt. Series" />
+    <Text Key="chkBookPrice" Text="価格" Comment="Price" />
+    <Text Key="chkBookAge" Text="汚損" Comment="Age" />
+    <Text Key="chkBookCondition" Text="コンディション" Comment="Condition" />
+    <Text Key="chkBookStore" Text="ストア" Comment="Store" />
+    <Text Key="chkBookOwner" Text="オーナー" Comment="Owner" />
+    <Text Key="chkBookLocation" Text="場所" Comment="Location" />
+    <Text Key="chkBookCollectionStatus" Text="コレクションの状態" Comment="Collection Status" />
+    <Text Key="chkBookNotes" Text="ノート" Comment="Notes" />
+    <Text Key="grpPlotNotes" Text="プロットとノート" Comment="Plot &amp; Notes" />
+    <Text Key="grpCatalog" Text="カタログ" Comment="Catalog" />
+    <Text Key="chkISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="chkPagesAsTextSimple" Text="Pages" Comment="Pages" />
+  </Texts>
+</TR>

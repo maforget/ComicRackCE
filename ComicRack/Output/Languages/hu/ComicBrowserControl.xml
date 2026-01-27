@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBrowserControl" CultureName="hu">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Sorba rendezve {0} szerint" Comment="Arranged by {0}" />
+    <Text Key="ComicFiltered" Text="{0} leszűrve" Comment="{0} filtered" />
+    <Text Key="ComicSelected" Text="{0} kiválasztva" Comment="{0} selected" />
+    <Text Key="GroupedBy" Text="Csoportosítva {0} szerint" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="&amp;Hozzáadás a könyvtárhoz" Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="Automatizálás" Comment="Automation" />
+    <Text Key="miCopyData" Text="Adatok másolása" Comment="&amp;Copy Data" />
+    <Text Key="miInvertSelection" Text="&amp;Kiválasztás invertálása" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="&amp;Megjelölés mint" Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="&amp;Olvasott" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="&amp;Nem olvasott" Comment="&amp;Unread" />
+    <Text Key="miPasteData" Text="&amp;Beillesztés..." Comment="&amp;Paste Data..." />
+    <Text Key="miProperties" Text="&amp;Információ..." Comment="&amp;Get Info..." />
+    <Text Key="miRateMenu" Text="Értékelésem" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="Nincs" Comment="None" />
+    <Text Key="miRating1" Text="* (1 csillag)" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** (2 csillag)" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** (3 csillag)" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** (4 csillag)" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** (5 csillag)" Comment="***** (5 Stars)" />
+    <Text Key="miRead" Text="&amp;Megnyitás" Comment="&amp;Open" />
+    <Text Key="miReadTab" Text="Megnyitás új fülön" Comment="Open in new Tab" />
+    <Text Key="miRefreshInformation" Text="Frissítés" Comment="Refresh" />
+    <Text Key="miRemove" Text="Eltávolítás..." Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="Intézőben mutassa" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="Mind" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="Gyors keresés minden adat között" Comment="Quick Search is checking all available data" />
+    <Text Key="miSearchArtists" Text="Alkotók" Comment="Artists" />
+    <Text Key="miSearchArtists.Tooltip" Text="Gyors keresés a rajzolók/színezők stb. között" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="Leírás" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="Gyors keresés a szövegek és összefoglalók között" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="Fájlnév" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="Gyors keresés csak a fájlnevek között" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="Sorozat" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="Gyors keresés csak a sorozatcímek között" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="Író" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="Gyors keresés csak az irók között" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="Mindet kijelöli" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="Halom tetején mutassa" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="&amp;Képregény tallózás" Comment="&amp;Browse Comics" />
+    <Text Key="miShowOnlyAllComics" Text="Mindet mutatja" Comment="Show All" />
+    <Text Key="miShowOnlyReadComics" Text="Elolvasottakat mutatja" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="Éppen olvasottakat mutatja" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="Nem olvasottakat mutatja" Comment="Show not Read" />
+    <Text Key="miViewDetails" Text="&amp;Részletek" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="Miniatűrök" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Mozaik" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Nincs" Comment="None" />
+    <Text Key="NotArranged" Text="Nincs rendezve" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Nincs csoportosítva" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="Nincs halmozva" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="Halmozva {0} szerint" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="Csoportosítás" Comment="Group" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="Halom bezárása" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="Sorba rendezés" Comment="Arrange" />
+    <Text Key="tbbStack" Text="Halom" Comment="Stack" />
+    <Text Key="tbbView" Text="Megjelenítések" Comment="Views" />
+    <Text Key="tsEditListLayout" Text="&amp;Listanézet szerkesztése..." Comment="&amp;Edit List Layout..." />
+    <Text Key="tsSaveListLayout" Text="&amp;Listanézet mentése..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsListLayouts" Text="Listanézetek" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="Listanézetek kezelése" Comment="Manage List Layouts" />
+    <Text Key="miEdit" Text="Szerkesztés" Comment="Edit" />
+    <Text Key="miShowOnlyDuplicates" Text="Mutassa a duplikációkat" Comment="Show Duplicates" />
+    <Text Key="miSetListBackground" Text="Beállítás a lista háttérképeként" Comment="Set as List Background" />
+    <Text Key="miResetListBackground" Text="Lista háttérképének eltávolítása" Comment="Reset List Background" />
+    <Text Key="miAddList" Text="Hozzáadás listához" Comment="Add to List" />
+    <Text Key="miShowInList" Text="Mutassa listában" Comment="Show in List" />
+    <Text Key="tbbDuplicateList" Text="Lista sokszorosítása" Comment="Duplicate List" />
+    <Text Key="tbbDuplicateList.Tooltip" Text="Jelenlegi lista sokszorosítása" Comment="Duplicate current List" />
+    <Text Key="ComicMulti" Text="{0} képregény" Comment="{0} Books" />
+    <Text Key="ComicSingle" Text="{0} képregény" Comment="{0} Book" />
+    <Text Key="miMarkChecked" Text="Pipálva" Comment="Checked" />
+    <Text Key="miMarkUnchecked" Text="Nincs pipálva" Comment="Unchecked" />
+    <Text Key="miShowWeb" Text="Web..." Comment="Web..." />
+    <Text Key="miSearchCatalog" Text="Katalógus" Comment="Catalog" />
+    <Text Key="miSearchCatalog.Tooltip" Text="A Gyorskeresés csak a Katalógus bejegyzéseiben keres" Comment="Quick Search is only checking Catalog entries" />
+    <Text Key="miSetStackThumbnail" Text="Saját miniatűr a halomnak..." Comment="Set custom Stack Thumbnail..." />
+    <Text Key="miRemoveStackThumbnail" Text="Halom saját miniatűrének eltávolítása..." Comment="Remove custom Stack Thumbnail..." />
+    <Text Key="miShowOnlyComics" Text="Csak képregények mutatása" Comment="Show only Books" />
+    <Text Key="miShowOnlyFileless" Text="Csak fájl-nélküli bejegyzések mutatása" Comment="Show only fileless Entries" />
+    <Text Key="tbbGroup.Tooltip" Text="Képregények csoportosítása más szempont szerint" Comment="Group Books by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="Képregények rendezésének megváltoztatása" Comment="Change the sort order of the Books" />
+    <Text Key="tbbView.Tooltip" Text="Váltás a képregények megjelenítési módjai között" Comment="Change how and what Books are displayed" />
+    <Text Key="tsEditLayouts" Text="&amp;Nézetek szerkesztése" Comment="&amp;Edit Layouts..." />
+    <Text Key="miExportComics" Text="Képregények exportálása" Comment="Export Books" />
+    <Text Key="miExportComicsAs" Text="Képregények exportálása..." Comment="Export Books..." />
+    <Text Key="miExportComicsWithPrevious" Text="Exportálás ahogy legutóbb" Comment="Export with Previous" />
+    <Text Key="lblDisplayOptionText" Text="A 'Nézet' menü bekapcsolt beállításai miatt nem minden képregény látszódik" Comment="Because of active options in 'Views', not all Books are displayed" />
+    <Text Key="btDisplayAll" Text="Minden megjelenítése" Comment="Display &amp;All" />
+    <Text Key="miUpdateComicFiles" Text="Képregény fájlok frissítése" Comment="Update Book Files" />
+    <Text Key="btCloseStack" Text="Bezárás" Comment="&amp;Close Stack" />
+    <Text Key="SearchingLists" Text="Listák keresése..." Comment="Searching Lists..." />
+    <Text Key="tbUndo" Text="Visszavonás" Comment="Undo" />
+    <Text Key="tbRedo" Text="Mégis" Comment="Redo" />
+    <Text Key="btPrevStack" Text="&amp;Előző" Comment="&amp;Previous" />
+    <Text Key="btNextStack" Text="&amp;Következő" Comment="&amp;Next" />
+    <Text Key="btBrowseNext" Text="Következő" Comment="Next" />
+    <Text Key="btBrowsePrev" Text="Előző" Comment="Back" />
+    <Text Key="tbSidebar" Text="Oldalsáv" Comment="Sidebar" />
+    <Text Key="miExpandAllGroups" Text="Minden csoport összecsukása/kinyitása" Comment="Collapse/Expand all Groups" />
+    <Text Key="miEditList" Text="Lista szerkesztése" Comment="Edit List" />
+    <Text Key="miEditListMoveToTop" Text="Tetejére mozgat" Comment="Move to Top" />
+    <Text Key="miEditListMoveToBottom" Text="Aljára mozgat" Comment="Move to Bottom" />
+    <Text Key="miEditListApplyOrder" Text="Jelenlegi sorrend alkalmazása" Comment="Apply current Order" />
+    <Text Key="miClearData" Text="Adat törlése" Comment="Clear Data" />
+  </Texts>
+</TR>

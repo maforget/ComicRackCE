@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListLibraryBrowser" CultureName="de">
+  <Texts>
+    <Text Key="miEditSmartList" Text="&amp;Bearbeiten..." Comment="&amp;Edit..." />
+    <Text Key="miNewFolder" Text="Neues &amp;Verzeichnis..." Comment="New &amp;Folder..." />
+    <Text Key="miNewList" Text="Neue &amp;Liste..." Comment="New &amp;List..." />
+    <Text Key="miNewSmartList" Text="&amp;Neue Smart Liste..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="&amp;Sortieren" Comment="&amp;Sort" />
+    <Text Key="miOpenWindow" Text="&amp;In neuem Fenster öffnen" Comment="&amp;Open in New Window" />
+    <Text Key="miOpenTab" Text="&amp;In neuem Tab öffnen" Comment="&amp;Open in New Tab" />
+    <Text Key="miQueryRename" Text="&amp;Umbenennen" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="Aktualisieren" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="Entfernen" Comment="&amp;Re&amp;move..." />
+    <Text Key="NewFolder" Text="Neues Verzeichnis" Comment="New Folder" />
+    <Text Key="NewList" Text="Neue Liste" Comment="New List" />
+    <Text Key="NewSmartList" Text="Neue Smart Liste" Comment="New Smart List" />
+    <Text Key="NewSmartListOption" Text="Kopie der aktuellen Anzeige" Comment="Snapshot of current view" />
+    <Text Key="tbExpandCollapseAll" Text="Alles expandieren/kollabieren" Comment="Expand/Collapse all" />
+    <Text Key="tbNewFolder" Text="Neues Verzeichnis" Comment="New &amp;Folder" />
+    <Text Key="tbNewFolder.Tooltip" Text="Erstelt ein neues Verzeichnis um die Listen besser zu verwalten" Comment="Create a new folder to organize your lists" />
+    <Text Key="tbNewList" Text="Neue Liste" Comment="New &amp;List" />
+    <Text Key="tbNewList.Tooltip" Text="Erstellt eine neue Liste" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="Neue Smart List" Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="Erstellt eine neue Smart List" Comment="Create a new Smart List" />
+    <Text Key="tbOpenWindow" Text="Neues Fenster" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Öffnet die aktuelle Liste in einem neuen Fenster" Comment="Open current list in new Window" />
+    <Text Key="tbOpenTab" Text="Neuer Tab" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Öffnet die aktuelle Liste in einem neuen Tab" Comment="Open current list in new Tab" />
+    <Text Key="tbRefresh" Text="Aktualisieren" Comment="Refresh" />
+    <Text Key="miCopyList" Text="Liste kopieren" Comment="Copy List"/>
+    <Text Key="miPasteList" Text="Liste einfügen" Comment="Paste List"/>
+    <Text Key="miExportReadingList" Text="Leseliste exportieren..." Comment="Export Reading List..."/>
+    <Text Key="miImportReadingList" Text="Leseliste importieren..." Comment="Import Reading List..."/>
+    <Text Key="miFavRemove" Text="Entfernen" Comment="Remove" />
+    <Text Key="tbFavorites" Text="Zeige Favoriten" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Favoriten" Comment="Favorites" />
+    <Text Key="miAddToFavorites" Text="Zu Favoriten hinzufügen" Comment="Add to Favorites" />
+    <Text Key="miFavRefresh" Text="Aktualisieren" Comment="&amp;Refresh" />
+    <Text Key="tbPreferences" Text="Einstellungen" Comment="Preferences"/>
+    <Text Key="SyncDevices" Text="Synchronisiere mit" Comment="Sync with"/>
+    <Text Key="SyncDevice" Text="Synchronisiere mit {0}..." Comment="Sync with {0}..."/>
+    <Text Key="tsQuickSearch" Text="Schnellsuche" Comment="Quick Search"/>
+  </Texts>
+</TR>

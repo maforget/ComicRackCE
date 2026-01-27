@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SearchMenu" CultureName="de">
+  <Texts>
+    <Text Key="Search" Text="Suchen..." Comment="Search..."/>
+    <Text Key="NoResult" Text="Kein Ergebnis" Comment="No Result"/>
+  </Texts>
+</TR>
+

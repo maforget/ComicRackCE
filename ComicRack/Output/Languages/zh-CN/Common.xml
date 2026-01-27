@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Common" CultureName="zh-CN">
+  <Texts>
+    <Text Key="RelativeDateTimeFormat" Text="分|分|时|时|天|天|周|周|月|月|年|年|{0}以前|{0}内" Comment="minute|minutes|hour|hours|day|days|week|weeks|month|months|year|years|{0} ago|in {0}" />
+  </Texts>
+</TR>

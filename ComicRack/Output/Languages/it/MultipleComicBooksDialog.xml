@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MultipleComicBooksDialog" CultureName="it">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Annulla" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelAlternateSeries" Text="Titolo Alternativo Serie o Storyline:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelColorist" Text="Colori:" Comment="Colorist:" />
+    <Text Key="labelEditor" Text="Curatore:" Comment="Editor:" />
+    <Text Key="labelGenre" Text="Genere:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Collana:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Chine:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Lingua:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Lettering:" Comment="Letterer:" />
+    <Text Key="labelMonth" Text="Mese:" Comment="Month:" />
+    <Text Key="labelNumber" Text="Numero:" Comment="Number:" />
+    <Text Key="labelPenciller" Text="Disegnatore:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Editore:" Comment="Publisher:" />
+    <Text Key="labelSeries" Text="Serie:" Comment="Series:" />
+    <Text Key="labelSummary" Text="Sommario:" Comment="Summary:" />
+    <Text Key="labelTags" Text="Etichette:" Comment="Tags:" />
+    <Text Key="labelTitle" Text="Titolo:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Volume:" Comment="Volume:" />
+    <Text Key="labelWriter" Text="Autore:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Anno:" Comment="Year:" />
+    <Text Key="labelManga" Text="Manga:" Comment="Manga:" />
+    <Text Key="labelBlackAndWhite" Text="Bianco e Nero:" Comment="Black and White:" />
+    <Text Key="labelFormat" Text="Formato:" Comment="Format:" />
+    <Text Key="MultipleComicBooksDialog" Text="Informazioni su più Album ({0} Album)" Comment="Multiple Book Information ({0})" />
+    <Text Key="labelCount" Text="di:" Comment="of:" />
+    <Text Key="labelAlternateCount" Text="di:" Comment="of:" />
+    <Text Key="labelAlternateNumber" Text="Numero Alternativo:" Comment="Number:" />
+    <Text Key="labelCoverArtist" Text="Copertina:" Comment="Cover Artist:" />
+    <Text Key="labelRating" Text="Valutazione:" Comment="My Rating:" />
+    <Text Key="labelCommunityRating" Text="Valutazione Comunità:" Comment="Community Rating:" />
+    <Text Key="labelNotes" Text="Note:" Comment="Notes:" />
+    <Text Key="labelAgeRating" Text="Età Consigliata:" Comment="Age Rating:" />
+    <Text Key="labelEnableProposed" Text="Abilita Valori Proposti:" Comment="Enable Proposed:" />
+    <Text Key="labelCharacters" Text="Personaggi:" Comment="Characters:" />
+    <Text Key="labelTeams" Text="Gangs:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="Ubicazioni:" Comment="Locations:" />
+    <Text Key="labelWeb" Text="Web:" Comment="Web:" />
+    <Text Key="labelBookStore" Text="Acquistato presso:" Comment="Store:" />
+    <Text Key="labelBookOwner" Text="Proprietario:" Comment="Owner:" />
+    <Text Key="labelBookLocation" Text="Ubicazione:" Comment="Location:" />
+    <Text Key="labelBookAge" Text="Età:" Comment="Age:" />
+    <Text Key="labelBookCondition" Text="Condizione:" Comment="Condition:" />
+    <Text Key="labelBookCollectionStatus" Text="Stato Collezione:" Comment="Collection Status:" />
+    <Text Key="labelBookNotes" Text="Note:" Comment="Notes:" />
+    <Text Key="labelBookPrice" Text="Prezzo:" Comment="Price:" />
+    <Text Key="grpMain" Text="Principale" Comment="Main" />
+    <Text Key="grpPlotNotes" Text="Trama &amp; Note" Comment="Plot &amp; Notes" />
+    <Text Key="grpArtists" Text="Artisti / Persone Coinvolte" Comment="Artists / People Involved" />
+    <Text Key="grpCatalog" Text="Catalogo" Comment="Catalog" />
+    <Text Key="labelISBN" Text="ISBN:" Comment="ISBN:" />
+    <Text Key="labelPagesAsTextSimple" Text="Pagine:" Comment="Pages:" />
+    <Text Key="labelOpenedTime" Text="Aperti/Letti:" Comment="Opened/Read:" />
+    <Text Key="labelAddedTime" Text="Aggiunto\Acquistato il:" Comment="Added/Purchased:" />
+    <Text Key="labelSeriesComplete" Text="Serie completa:" Comment="Series complete:" />
+    <Text Key="labelScanInformation" Text="Informazioni sulla Scansione:" Comment="Scan Information:" />
+    <Text Key="labelStoryArc" Text="Story Arc:" Comment="Story Arc:" />
+    <Text Key="labelSeriesGroup" Text="Gruppo Serie:" Comment="Series Group:" />
+    <Text Key="labelMainCharacterOrTeam" Text="Personaggio o Team principale:" Comment="Main Character/Team:" />
+    <Text Key="labelReview" Text="Recensione:" Comment="Review:" />
+  </Texts>
+</TR>

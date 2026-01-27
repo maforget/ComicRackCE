@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Textures" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="WhitePaper" Text="Bílý papír" Comment="White Paper" />
+    <Text Key="WhitePaper2" Text="Bílý papír 2" Comment="White Paper 2" />
+    <Text Key="WhitePaper3" Text="Bílý papír 3" Comment="White Paper 3" />
+    <Text Key="Checkered" Text="Čtverečkovaný" Comment="Checkered" />
+    <Text Key="Ceramic" Text="Keramika" Comment="Cermamic" />
+    <Text Key="Ceramic2" Text="Keramika 2" Comment="Cermamic 2" />
+    <Text Key="Glass" Text="Sklo" Comment="Glass" />
+    <Text Key="LightWood" Text="Světlé dřevo" Comment="Light Wood" />
+    <Text Key="OrangeMetal" Text="Oranžový kov" Comment="Orange Metal" />
+    <Text Key="PlankWood" Text="Dřevěná prkna" Comment="Plank Wood" />
+    <Text Key="BrickWall" Text="Cihlová zeď" Comment="Brick Wall" />
+    <Text Key="BrushedMetal" Text="Natřený kov" Comment="Brushed Metal" />
+    <Text Key="BrushedMetal2" Text="Natřený kov 2" Comment="Brushed Metal 2" />
+    <Text Key="ChalkBoard" Text="Tabule od křídy" Comment="Chalk Board" />
+    <Text Key="Circles" Text="Kruhy" Comment="Circles" />
+    <Text Key="Grass" Text="Tráva" Comment="Grass" />
+    <Text Key="Sketch" Text="Skica" Comment="Sketch" />
+    <Text Key="Black" Text="Černá" Comment="Black" />
+  </Texts>
+</TR>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.Autonumber" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="Cancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="Caption" Text="自动编号向导" Comment="Autonumbering Wizard" />
+    <Text Key="chkTotal" Text="保存总数：" Comment="Save total Number:" />
+    <Text Key="labelBegin" Text="开始于号码：" Comment="Begin at Number:" />
+    <Text Key="Name" Text="自动编号向导..." Comment="Autonumber Wizard..." />
+    <Text Key="NumberAltSeries" Text="替换丛书号" Comment="Number Alternate Series" />
+    <Text Key="NumberSeries" Text="丛书号" Comment="Number Series" />
+    <Text Key="OK" Text="确定" Comment="&amp;OK" />
+    <Text Key="Description" Text="重新编号选中漫画的脚本" Comment="A script to renumbers the selected eComics" />
+  </Texts>
+</TR>

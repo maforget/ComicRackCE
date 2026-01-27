@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Keyboard" CultureName="nl-BE">
+  <Texts>
+    <Text Key="Browse" Text="Blader" Comment="Browse" />
+    <Text Key="Display Options" Text="Geef opties weer" Comment="Display Options" />
+    <Text Key="Exit" Text="Beëindig" Comment="Exit" />
+    <Text Key="FitAll" Text="Alles tonen" Comment="Fit All" />
+    <Text Key="FitBest" Text="Beste Invulling" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="Hoogte aanpassen" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="Breedte aanpassen" Comment="Fit Width" />
+    <Text Key="FitWidthAdaptive" Text="Breedte aanpassen (adaptief)" Comment="Fit Width (adaptive)" />
+    <Text Key="Library" Text="Bibliotheek" Comment="Library" />
+    <Text Key="MoveDown" Text="Neerwaarts" Comment="Down" />
+    <Text Key="MoveLeft" Text="Links" Comment="Left" />
+    <Text Key="MoveNextPart" Text="Volgend Deel" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="Vorig deel" Comment="Previous Part" />
+    <Text Key="MoveFirstPart" Text="Startpagina" Comment="Page Start" />
+    <Text Key="MoveLastPart" Text="Pagina Einde" Comment="Page End" />
+    <Text Key="MoveRight" Text="Rechts" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="Eerste Bladzijde" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="Laatste Pagina" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="Volgende Bladzijde" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="Vorige bladzijde" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="Up" Comment="Up" />
+    <Text Key="NextTab" Text="Volgende Tab" Comment="Next Tab" />
+    <Text Key="Other" Text="Andere" Comment="Other" />
+    <Text Key="Page Display" Text="Pagina Weergave" Comment="Page Display" />
+    <Text Key="Auto Scroll" Text="Auto Scrollen" Comment="Auto Scroll" />
+    <Text Key="PrevTab" Text="Vorige Tab" Comment="Previous Tab" />
+    <Text Key="RotateC" Text="Draai naar Rechts" Comment="Rotate Right" />
+    <Text Key="RotateCC" Text="Draai naar Links" Comment="Rotate Left" />
+    <Text Key="ZoomIn" Text="Vergroten" Comment="Zoom In" />
+    <Text Key="ZoomOut" Text="Zoem Uit" Comment="Zoom Out" />
+    <Text Key="Scroll" Text="Scrollen" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="Toon Browser" Comment="Show Browser" />
+    <Text Key="ToggleUndockReader" Text="Koppel 't Leesvenster los" Comment="Toggle Undock Reader" />
+    <Text Key="ToggleFullScreen" Text="Schakelaar 'Volledig Scherm'" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="Schakelaar 'Vergrootglas'" Comment="Toggle Magnifier" />
+    <Text Key="ToggleAutoScrolling" Text="Schakelaar 'Auto Scroll'" Comment="Toggle Auto Scrolling" />
+    <Text Key="ToggleTwoPages" Text="Schakelaar 'Twee Bladzijden'" Comment="Toggle Two Pages" />
+    <Text Key="Original" Text="Originele grootte" Comment="Original Size" />
+    <Text Key="MovePartDown10" Text="Verplaats 10% neerwaarts" Comment="Move Part 10% down" />
+    <Text Key="MovePartUp10" Text="Verplaats 10% naar boven" Comment="Move Part 10% up" />
+    <Text Key="DoublePageAutoScroll" Text="Dubbele pagina Auto Scroll" Comment="Double Page Auto Scroll" />
+    <Text Key="ToggleMenu" Text="Schakelaar 'Menu'" Comment="Toggle Menu" />
+    <Text Key="MoveToPrevBookmark" Text="Vorige Bladwijzer" Comment="Previous Bookmark" />
+    <Text Key="MoveToNextBookmark" Text="Volgende Bladwijzer" Comment="Next Bookmark" />
+    <Text Key="MoveToPrevPageSingle" Text="Enkel blad Terug" Comment="Single Page Back" />
+    <Text Key="MoveToNextPageSingle" Text="Enkel blad Voorwaarts" Comment="Single Page Forward" />
+    <Text Key="AutoRotate" Text="Auto Rotatie Dubbele Blz." Comment="Autorotate Double Pages" />
+    <Text Key="PageRotateC" Text="Draai Blz Rechts" Comment="RotatePageRight" />
+    <Text Key="PageRotateCC" Text="Draai Blz Links" Comment="RotatePageLeft" />
+    <Text Key="Edit" Text="Bewerk" Comment="Edit" />
+    <Text Key="ToggleRealisticPages" Text="Schakelaar 'Realistische weergave'" Comment="Toggle Realistic Display" />
+    <Text Key="OnlyFitIfOversized" Text="Alleen Inpassen indien Bovenmaats" Comment="Only Fit if oversized" />
+    <Text Key="SinglePage" Text="Enkel blad" Comment="Single Page" />
+    <Text Key="TwoPages" Text="Twee Bladzijden" Comment="Two Pages" />
+    <Text Key="RightToLeft" Text="Van Rechts naar Links" Comment="Right to Left" />
+    <Text Key="ZoomAndRotate" Text="Zoem en Rotatie" Comment="Zoom and Rotate" />
+    <Text Key="TwoPagesAdaptive" Text="Twee Bladzijden (Adaptief)" Comment="Two Pages (adaptive)" />
+    <Text Key="StepZoomIn" Text="'Zoem In' per stap" Comment="Step Zoom In" />
+    <Text Key="StepZoomOut" Text="'Zoem Out' per stap" Comment="Step Zoom Out" />
+    <Text Key="ToggleNavigationOverlay" Text="Schakel Navigatie Overlay in/uit" Comment="Toggle Navigation Overlay" />
+    <Text Key="ToggleZoom" Text="Schakelaar 'Zoom'" Comment="Toggle Zoom" />
+    <Text Key="NextComic" Text="Volgend Boek" Comment="Next Book" />
+    <Text Key="RandomComic" Text="Willekeurig Boek" Comment="Random Book" />
+    <Text Key="PrevComic" Text="Vorig Boek" Comment="Previous Book" />
+    <Text Key="ToggleManga" Text="Schakel Mangaweergave in/uit" Comment="Toggle Manga for Book" />
+  </Texts>
+</TR>

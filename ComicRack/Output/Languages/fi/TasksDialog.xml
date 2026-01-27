@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TasksDialog" CultureName="fi">
+  <Texts>
+    <Text Key="btClose" Text="Sulje" Comment="Close" />
+    <Text Key="tabTasks" Text="Taustatehtävät" Comment="Background Tasks" />
+    <Text Key="tabNetwork" Text="Palvelimen tilastot" Comment="Server Statistics" />
+    <Text Key="colTask" Text="Tehtävä" Comment="Task" />
+    <Text Key="colState" Text="Tila" Comment="State" />
+    <Text Key="lblItemCount" Text="{0} tehtävää odottaa" Comment="{0} Tasks are pending" />
+    <Text Key="TasksDialog" Text="Tehtävät" Comment="Tasks" />
+    <Text Key="btAbort" Text="Keskeytä kaikki tehtävät" Comment="Abort all User Tasks" />
+    <Text Key="Clients" Text="Asiakkaat: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="Tietopyyntöjä: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="KirjastoPyyntöjä: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="SivuPyyntöjä: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="Kuvakepyynnöt: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="Hylättyjä kirjautumisia: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="Kaikki jaot" Comment="All Shares" />
+    <Text Key="LastMinute" Text="Kuluva Minuutti" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="Viimeiset 5 minuuttia" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="Kuluva Tunti" Comment="Last Hour" />
+    <Text Key="Session" Text="Istunto" Comment="Session" />
+  </Texts>
+</TR>

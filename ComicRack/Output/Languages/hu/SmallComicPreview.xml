@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SmallComicPreview" CultureName="hu">
+  <Texts>
+    <Text Key="tbClose" Text="Bezárás" Comment="Close" />
+    <Text Key="tsbFirst" Text="Első" Comment="First" />
+    <Text Key="tsbFirst.Tooltip" Text="Ugrás első oldalra" Comment="Go to first page" />
+    <Text Key="tsbLast" Text="Utolsó" Comment="Last" />
+    <Text Key="tsbLast.Tooltip" Text="Ugrás utolsó oldalra" Comment="Go to last page" />
+    <Text Key="tsbNext" Text="Következő" Comment="Next" />
+    <Text Key="tsbNext.Tooltip" Text="Ugrás következő oldalra" Comment="Go to next page" />
+    <Text Key="tsbPrev" Text="Előző" Comment="Previous" />
+    <Text Key="tsbPrev.Tooltip" Text="Ugrás előző oldalra" Comment="Go to previous page" />
+    <Text Key="tsbRefresh" Text="Frissítés" Comment="Refresh" />
+    <Text Key="tsbTwoPages" Text="Két oldal" Comment="Two Pages" />
+    <Text Key="tsbTwoPages.Tooltip" Text="Váltás az egy- és kétoldalas nézet között" Comment="Show one or two pages" />
+    <Text Key="pageViewer" Text="Nincs kiválasztva képregény" Comment="Nothing Selected" />
+    <Text Key="tsbOpen" Text="Megnyitás" Comment="Open" />
+    <Text Key="PreviewOnlyForComics" Text="Az előnézet csak képregényekhez elérhető" Comment="Preview is only available for Books" />
+  </Texts>
+</TR>

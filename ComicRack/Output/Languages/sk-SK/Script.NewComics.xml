@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.NewComics" CultureName="sk-SK">
+  <Texts>
+    <Text Key="Name" Text="Nová séria komiksov..." Comment="New Comics Book Series..." />
+    <Text Key="Description" Text="Pridá novú sériu komiksových kníh" Comment="Adds a new Series of Comic Books" />
+    <Text Key="Caption" Text="Nová séria komiksov" Comment="New Comics Book Series" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Zrušiť" Comment="&amp;Cancel" />
+    <Text Key="labelSeries" Text="Séria:" Comment="Series:" />
+    <Text Key="labelFromNumber" Text="Číslo" Comment="Number:" />
+    <Text Key="labelToNumber" Text="to" Comment="to" />
+    <Text Key="labelVolume" Text="Diel:" Comment="Volume:" />
+  </Texts>
+</TR>

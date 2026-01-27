@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmallComicPreview" CultureName="ja">
+  <Texts>
+    <Text Key="tbClose" Text="閉じる" Comment="Close" />
+    <Text Key="tsbFirst" Text="最初へ" Comment="First" />
+    <Text Key="tsbFirst.Tooltip" Text="最初のページへ移動" Comment="Go to first page" />
+    <Text Key="tsbLast" Text="最後へ" Comment="Last" />
+    <Text Key="tsbLast.Tooltip" Text="最後のページへ移動" Comment="Go to last page" />
+    <Text Key="tsbNext" Text="次へ" Comment="Next" />
+    <Text Key="tsbNext.Tooltip" Text="次のページへ移動" Comment="Go to next page" />
+    <Text Key="tsbPrev" Text="前へ" Comment="Previous" />
+    <Text Key="tsbPrev.Tooltip" Text="前のページへ移動" Comment="Go to previous page" />
+    <Text Key="tsbRefresh" Text="再読込み" Comment="Refresh" />
+    <Text Key="tsbTwoPages" Text="見開き表示" Comment="Two Pages" />
+    <Text Key="tsbTwoPages.Tooltip" Text="単ページ/見開き 表示切換え" Comment="Show one or two pages" />
+    <Text Key="pageViewer" Text="選択されていません" Comment="Nothing Selected" />
+    <Text Key="PreviewOnlyForComics" Text="プレビューが利用できるのは e-コミックだけです" Comment="Preview is only available for eComics" />
+  </Texts>
+</TR>

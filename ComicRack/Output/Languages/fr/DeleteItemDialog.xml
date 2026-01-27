@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DeleteItemDialog" CultureName="fr">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Annuler" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="DeleteItemDialog" Text="Supprimer élément {0}" Comment="Delete Item {0}" />
+    <Text Key="lbCaption" Text="{0} :" Comment="{0}:" />
+  </Texts>
+</TR>

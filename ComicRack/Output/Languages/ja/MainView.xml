@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainView" CultureName="ja">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="下部にドック" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="全画面" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="左にドック" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="右にドック" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="閉じる" Comment="Close" />
+    <Text Key="tsbFolders" Text="フォルダ" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="フォルダの参照" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="ライブラリ" Comment="Library" />
+    <Text Key="tsbLibrary.Tooltip" Text="コミック ライブラリ" Comment="eComics Library" />
+    <Text Key="tsbPages" Text="ページ" Comment="Pages" />
+    <Text Key="tsbPages.Tooltip" Text="表示中のコミックのページ数" Comment="Pages of the current eComic" />
+    <Text Key="tsbShowMenu" Text="メニューの表示" Comment="Show Menu" />
+    <Text Key="tsbInfoPanelLeft" Text="情報パネルを右に" Comment="Info Panel Right" />
+  </Texts>
+</TR>

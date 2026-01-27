@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmartListDialog" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="btCancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定" Comment="&amp;OK" />
+    <Text Key="btApply" Text="应用" Comment="&amp;Apply" />
+    <Text Key="labelMatch" Text="匹配" Comment="Match" />
+    <Text Key="MatchMode" Text="所有|任何" Comment="All|Any" />
+    <Text Key="labelRules" Text="采用下列规则：" Comment="of the following rules in" />
+    <Text Key="chkLimit" Text="限制为" Comment="Limit to" />
+    <Text Key="cbLimitType.Item0" Text="书籍" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="FullLibrary" Text="全库" Comment="Full Library" />
+    <Text Key="btPrev" Text="前一个" Comment="&amp;Previous" />
+    <Text Key="btNext" Text="下一个" Comment="&amp;Next" />
+    <Text Key="SmartListDialog" Text="编辑智能列表" Comment="Edit Smart List" />
+    <Text Key="labelSubRules" Text="采用下列规则:" Comment="of the following rules:" />
+    <Text Key="labelName" Text="名称:" Comment="Name:" />
+  </Texts>
+</TR>

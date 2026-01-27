@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SmartListDialog" CultureName="pl">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Anuluj" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelMatch" Text="Dopasuj" Comment="Match" />
+    <Text Key="MatchMode" Text="Wszystkie|Którąkolwiek" Comment="All|Any" />
+    <Text Key="btApply" Text="&amp;Zastosuj" Comment="&amp;Apply" />
+    <Text Key="chkLimit" Text="Ogranicz do" Comment="Limit to" />
+    <Text Key="cbLimitType.Item0" Text="Komiksy" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="FullLibrary" Text="Cała Biblioteka" Comment="Full Library" />
+    <Text Key="labelSubRules" Text="z następujących reguł:" Comment="of the following rules:" />
+    <Text Key="btPrev" Text="&amp;Poprzedni" Comment="&amp;Previous" />
+    <Text Key="btNext" Text="&amp;Następny" Comment="&amp;Next" />
+    <Text Key="SmartListDialog" Text="Edytuj Smart Listę" Comment="Edit Smart List" />
+    <Text Key="labelName" Text="Nazwa:" Comment="Name:" />
+    <Text Key="labelRules" Text="spośród poniższych reguł" Comment="of the following rules on" />
+    <Text Key="chkQuickOpen" Text="Podr.Otwieranie" Comment="Quick Open" />
+    <Text Key="labelNotes" Text="Notatki:" Comment="Notes:" />
+    <Text Key="SmartListQueryDialog" Text="Edytuj Smart Listę" Comment="Edit Smart List" />
+    <Text Key="labelFilterReset" Text="Niektóre Komiksy zostały ręcznie usunięte z listy" Comment="Some Books have been manually remove from the list" />
+    <Text Key="btFilterReset" Text="Resetuj" Comment="Reset" />
+    <Text Key="miInsertMatch" Text="Wstaw" Comment="Insert Match" />
+    <Text Key="miInsertValue" Text="Wstaw wyrażenie" Comment="Insert Value" />
+  </Texts>
+</TR>

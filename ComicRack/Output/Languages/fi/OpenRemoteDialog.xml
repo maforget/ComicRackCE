@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBookDialog" CultureName="fi">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Peruuta" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="ShowList" Text="Näytä julkisesti" Comment="Show Public" />
+    <Text Key="RefreshList" Text="Virkistä" Comment="Refresh" />
+    <Text Key="OpenRemoteDialog" Text="Avaa etäkirjasto" Comment="Open Remote Library" />
+    <Text Key="labelServerAddress" Text="Kirjaston osoite:" Comment="Library Address:" />
+    <Text Key="colName" Text="Nimi" Comment="Name" />
+    <Text Key="colDescription" Text="Kuvaus" Comment="Description" />
+    <Text Key="colEdit" Text="Muokkaa" Comment="Edit" />
+    <Text Key="colExport" Text="Lähetä" Comment="Export" />
+    <Text Key="labelListPassword" Text="Yksityisen listan salasana:" Comment="Private List Password:" />
+    <Text Key="labelFailedServerList" Text="Palvelinlistaus epäonnistui!" Comment="Failed to get Server List!" />
+    <Text Key="groupLocal" Text="Paikalliset jaot" Comment="Local Shares" />
+    <Text Key="groupInternet" Text="Nettijaot" Comment="Internet Shares" />
+  </Texts>
+</TR>

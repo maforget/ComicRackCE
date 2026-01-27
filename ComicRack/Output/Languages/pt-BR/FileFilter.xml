@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FileFilter" CultureName="pt-BR">
+  <Texts>
+    <Text Key="PageImageSave" Text="Imagem JPEG|*.jpg|Imagem Bitmap do Windows|*.bmp|Imagem PNG|*.png|Imagem GIF|*.gif|Imagem TIFF|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif" />
+    <Text Key="ComicRackDatabase" Text="Banco de Dados do ComicRack|*.xml" Comment="ComicRack Database|*.xml" />
+    <Text Key="AllFiles" Text="Todos os Arquivos" Comment="All Files" />
+    <Text Key="AllSupportedFiles" Text="Todos os Arquivos suportados" Comment="All supported Files" />
+    <Text Key="ReadingListLoad" Text="Lista de Leitura do ComicRack|*.crl|Arquivo Xml|*.xml|Todos Arquivos|*.*" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml|All Files|*.*" />
+    <Text Key="FormatReadingList" Text="Lista de Leitura ComicRack" Comment="ComicRack Reading List" />
+    <Text Key="ScriptPackageOpen" Text="Plugin ComicRack|*.crplugin|Arquivo de Script|*.zip" Comment="ComicRack Plugin|*.crplugin|Script Archive|*.zip" />
+    <Text Key="KeyboardLayout" Text="Layout de Teclado" Comment="Keyboard Layout" />
+    <Text Key="KeyboardLayoutFilter" Text="Layout de Teclado|*.xml" Comment="Keyboard Layout|*.xml" />
+    <Text Key="LoadThumbnail" Text="Imagem JPEG|*.jpg|Imagem Windows Bitmap|*.bmp|Imagem PNG|*.png|Imagem GIF|*.gif|Imagem TIFF|*.tif|Imagem de Ícone|*.ico" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif|Icon Image|*.ico" />
+    <Text Key="ComicRackBackup" Text="Backup do ComicRack|*.zip" Comment="ComicRack Backup|*.zip" />
+    <Text Key="ReadingListSaveFilter" Text="Lista de Leitura do ComicRack|*.cbl|Lista de Leitura do ComicRack (Entrada Única)|*.cbl" Comment="ComicRack Reading List|*.cbl|ComicRack Reading List (Single Entries)|*.cbl" />
+  </Texts>
+</TR>

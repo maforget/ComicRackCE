@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListLibraryBrowser" CultureName="ru">
+  <Texts>
+    <Text Key="miEditSmartList" Text="&amp;Редактировать..." Comment="&amp;Edit..." />
+    <Text Key="miNewFolder" Text="Новая &amp;папка..." Comment="New &amp;Folder..." />
+    <Text Key="miNewList" Text="Новый &amp;список..." Comment="New &amp;List..." />
+    <Text Key="miNewSmartList" Text="Создать &amp;авто-список..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="Сор&amp;тировать" Comment="&amp;Sort" />
+    <Text Key="miOpenWindow" Text="&amp;Открыть в новом окне" Comment="&amp;Open in New Window" />
+    <Text Key="miQueryRename" Text="Пере&amp;именовать" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="Обновить" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="&amp;Удалить" Comment="&amp;Re&amp;move..." />
+    <Text Key="NewFolder" Text="Новая папка" Comment="New Folder" />
+    <Text Key="NewList" Text="Новый &amp;список" Comment="New List" />
+    <Text Key="NewSmartList" Text="Создать авто-список" Comment="New Smart List" />
+    <Text Key="tbNewFolder" Text="Новая &amp;папка" Comment="New &amp;Folder" />
+    <Text Key="tbNewFolder.Tooltip" Text="Создать новую папку для организации списков" Comment="Create a new folder to organize your lists" />
+    <Text Key="tbNewList" Text="Новый &amp;список" Comment="New &amp;List" />
+    <Text Key="tbNewList.Tooltip" Text="Создать новый настраиваемый список" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="Создать &amp;авто-список" Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="Создать авто-список" Comment="Create a new Smart List" />
+    <Text Key="tbOpenWindow" Text="Новое окно" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Открыть этот список в новом окне" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Обновить" Comment="Refresh" />
+    <Text Key="miCopyList" Text="Копировать список" Comment="Copy List" />
+    <Text Key="miPasteList" Text="Вставить список" Comment="Paste List" />
+    <Text Key="miExportReadingList" Text="Экспортировать список к прочтению..." Comment="Export Reading List..." />
+    <Text Key="miImportReadingList" Text="Импортировать список к прочтению..." Comment="Import Reading List..." />
+  </Texts>
+</TR>

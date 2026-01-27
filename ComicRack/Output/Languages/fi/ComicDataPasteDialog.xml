@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicDataPasteDialog" CultureName="fi">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Peruuta" Comment="&amp;Cancel" />
+    <Text Key="btMarkAll" Text="K&amp;aikki" Comment="&amp;All" />
+    <Text Key="btMarkDefined" Text="Vain &amp;asetetut" Comment="Only &amp;Set" />
+    <Text Key="btMarkNone" Text="&amp;Tyhjennä" Comment="&amp;Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="chkAlternateCount" Text="V.e. määrä" Comment="Alt. Total Number" />
+    <Text Key="chkAlternateNumber" Text="V.e. numero" Comment="Alt. Number" />
+    <Text Key="chkAlternateSeries" Text="Vaihtoehtoissarja" Comment="Alt. Series" />
+    <Text Key="chkColor" Text="Värinsäätö" Comment="Color Adjustment" />
+    <Text Key="chkColorist" Text="Värittäjä" Comment="Colorist" />
+    <Text Key="chkCount" Text="Yhteismäärä" Comment="Total Number" />
+    <Text Key="chkCover" Text="Kannen kuvittaja" Comment="Cover Artist" />
+    <Text Key="chkEditor" Text="Toimittaja" Comment="Editor" />
+    <Text Key="chkGenre" Text="Genre" Comment="Genre" />
+    <Text Key="chkImprint" Text="Merkintä" Comment="Imprint" />
+    <Text Key="chkInker" Text="Tussaaja" Comment="Inker" />
+    <Text Key="chkLanguage" Text="Kieli" Comment="Language" />
+    <Text Key="chkLetterer" Text="Tekstinpiirtäjä" Comment="Letterer" />
+    <Text Key="chkMonth" Text="Kuukausi" Comment="Month" />
+    <Text Key="chkNotes" Text="Muistiinpanot" Comment="Notes" />
+    <Text Key="chkNumber" Text="Numero" Comment="Number" />
+    <Text Key="chkPenciller" Text="Piirtäjä" Comment="Penciller" />
+    <Text Key="chkPublisher" Text="Kustantaja" Comment="Publisher" />
+    <Text Key="chkRating" Text="Oma arvio" Comment="My Rating" />
+    <Text Key="chkCommunityRating" Text="Yhteisön arvio" Comment="Community Rating" />
+    <Text Key="chkSeries" Text="Sarjat" Comment="Series" />
+    <Text Key="chkSummary" Text="Kooste" Comment="Summary" />
+    <Text Key="chkTags" Text="Välilehdet" Comment="Tags" />
+    <Text Key="chkTitle" Text="Nimike" Comment="Title" />
+    <Text Key="chkVolume" Text="Nidos" Comment="Volume" />
+    <Text Key="chkWriter" Text="Kirjoittaja" Comment="Writer" />
+    <Text Key="chkYear" Text="Vuosi" Comment="Year" />
+    <Text Key="chkManga" Text="Manga" Comment="Manga" />
+    <Text Key="chkFormat" Text="Tiedostomuoto" Comment="Format" />
+    <Text Key="chkBlackAndWhite" Text="MustaValkoinen" Comment="Black and White" />
+    <Text Key="ComicDataPasteDialog" Text="Liitä tiedot {0} eSarjikseen" Comment="Paste Data to {0} eComics" />
+    <Text Key="chkAgeRating" Text="Ikäsuositus" Comment="Age Rating" />
+    <Text Key="chkCharacters" Text="Hahmot" Comment="Characters" />
+    <Text Key="chkWeb" Text="Netti" Comment="Web" />
+    <Text Key="chkLocations" Text="Sijainnit" Comment="Locations" />
+    <Text Key="chkTeams" Text="Ryhmät" Comment="Teams" />
+    <Text Key="chkBookPrice" Text="Hinta" Comment="Price" />
+    <Text Key="chkBookAge" Text="Ikä" Comment="Age" />
+    <Text Key="chkBookCondition" Text="Kunto" Comment="Condition" />
+    <Text Key="chkBookStore" Text="Kauppa" Comment="Store" />
+    <Text Key="chkBookOwner" Text="Omistaja" Comment="Owner" />
+    <Text Key="chkBookLocation" Text="Sijainti" Comment="Location" />
+    <Text Key="chkBookCollectionStatus" Text="Kokoelman Tila" Comment="Collection Status" />
+    <Text Key="chkBookNotes" Text="Muistiinpanot" Comment="Notes" />
+    <Text Key="grpMain" Text="Ensisijainen" Comment="Main" />
+    <Text Key="grpPlotNotes" Text="Juoni &amp; muistiinpanot" Comment="Plot &amp; Notes" />
+    <Text Key="grpArtists" Text="Taiteilijat / Liittyvät Henkilöt" Comment="Artists / People Involved" />
+    <Text Key="grpCatalog" Text="Kuvasto" Comment="Catalog" />
+  </Texts>
+</TR>

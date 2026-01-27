@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicDataPasteDialog" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Storno" Comment="&amp;Cancel" />
+    <Text Key="btMarkAll" Text="&amp;Vše" Comment="&amp;All" />
+    <Text Key="btMarkDefined" Text="&amp;Nastavené" Comment="Only &amp;Set" />
+    <Text Key="btMarkNone" Text="&amp;Žádné" Comment="&amp;Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="chkColor" Text="Nastavení barev" Comment="Color Adjustment" />
+    <Text Key="chkColorist" Text="Kolorista" Comment="Colorist" />
+    <Text Key="chkCount" Text="Celkový počet" Comment="Total Number" />
+    <Text Key="chkCover" Text="Autor obálky" Comment="Cover Artist" />
+    <Text Key="chkEditor" Text="Editor" Comment="Editor" />
+    <Text Key="chkGenre" Text="Žánr" Comment="Genre" />
+    <Text Key="chkImprint" Text="Imprint" Comment="Imprint" />
+    <Text Key="chkInker" Text="Konturista" Comment="Inker" />
+    <Text Key="chkLanguage" Text="Jazyk" Comment="Language" />
+    <Text Key="chkLetterer" Text="Autor písma" Comment="Letterer" />
+    <Text Key="chkMonth" Text="Měsíc" Comment="Month" />
+    <Text Key="chkNotes" Text="Poznámky" Comment="Notes" />
+    <Text Key="chkNumber" Text="Číslo" Comment="Number" />
+    <Text Key="chkPenciller" Text="Kreslíř" Comment="Penciller" />
+    <Text Key="chkPublisher" Text="Vydavatel" Comment="Publisher" />
+    <Text Key="chkSeries" Text="Série" Comment="Series" />
+    <Text Key="chkSummary" Text="Obsah" Comment="Summary" />
+    <Text Key="chkTags" Text="Značky" Comment="Tags" />
+    <Text Key="chkTitle" Text="Název" Comment="Title" />
+    <Text Key="chkVolume" Text="Díl" Comment="Volume" />
+    <Text Key="chkWriter" Text="Autor" Comment="Writer" />
+    <Text Key="chkYear" Text="Rok" Comment="Year" />
+    <Text Key="chkManga" Text="Manga" Comment="Manga" />
+    <Text Key="chkFormat" Text="Formát" Comment="Format" />
+    <Text Key="chkBlackAndWhite" Text="Černobílý" Comment="Black and White" />
+    <Text Key="grpArtists" Text="Umělci / Zapojení lidé" Comment="Artists / People Involved" />
+    <Text Key="grpMain" Text="Hlavní" Comment="Main" />
+    <Text Key="chkAgeRating" Text="Věkové omezení" Comment="Age Rating" />
+    <Text Key="chkCharacters" Text="Postavy" Comment="Characters" />
+    <Text Key="chkWeb" Text="Web" Comment="Web" />
+    <Text Key="chkLocations" Text="Lokace" Comment="Locations" />
+    <Text Key="chkTeams" Text="Skupiny" Comment="Teams" />
+    <Text Key="chkRating" Text="Moje hodnocení" Comment="My Rating" />
+    <Text Key="chkCommunityRating" Text="Hodnocení veřejnosti" Comment="Community Rating" />
+    <Text Key="chkAlternateCount" Text="Alt. celkový počet" Comment="Alt. Total Number" />
+    <Text Key="chkAlternateNumber" Text="Alt. číslo" Comment="Alt. Number" />
+    <Text Key="chkAlternateSeries" Text="Alt. série" Comment="Alt. Series" />
+    <Text Key="chkBookPrice" Text="Cena" Comment="Price" />
+    <Text Key="chkBookAge" Text="Komiksový věk" Comment="Age" />
+    <Text Key="chkBookCondition" Text="Fyzický stav" Comment="Condition" />
+    <Text Key="chkBookStore" Text="Obchod" Comment="Store" />
+    <Text Key="chkBookOwner" Text="Vlastník" Comment="Owner" />
+    <Text Key="chkBookLocation" Text="Umístění" Comment="Location" />
+    <Text Key="chkBookCollectionStatus" Text="Stav ve sbírce" Comment="Collection Status" />
+    <Text Key="chkBookNotes" Text="Poznámky" Comment="Notes" />
+    <Text Key="grpPlotNotes" Text="Příběh &amp; Poznámky" Comment="Plot &amp; Notes" />
+    <Text Key="grpCatalog" Text="Katalog" Comment="Catalog" />
+    <Text Key="chkISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ComicDataPasteDialog" Text="Vložit data do {0} eKomiksů" Comment="Paste Data into {0} Books" />
+    <Text Key="chkPageCount" Text="Stránek" Comment="Pages" />
+    <Text Key="chkOpenTime" Text="Otevřeno/Přečteno" Comment="Opened/Read" />
+    <Text Key="chkAddedTime" Text="Přidáno/Zakoupeno" Comment="Added/Purchased" />
+    <Text Key="chkSeriesComplete" Text="Kompletní série" Comment="Series complete" />
+    <Text Key="chkStoryArc" Text="Děková linie" Comment="Story Arc" />
+    <Text Key="chkSeriesGroup" Text="Skupina sérií" Comment="Series Group" />
+    <Text Key="chkMainCharacterOrTeam" Text="Hlavní postava" Comment="Main Character" />
+    <Text Key="chkReview" Text="Recenze" Comment="Review" />
+  </Texts>
+</TR>

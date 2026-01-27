@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicListFolderFilesBrowser" CultureName="tr">
+  <Texts>
+    <Text Key="miAddFolderLibrary" Text="&amp;Klasörü Kütüphaneye ekle" Comment="&amp;Add Folder to Library" />
+    <Text Key="miAddToFavorites" Text="&amp;Klasörü Favorilere ekle" Comment="&amp;Add Folder to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Yenile" Comment="&amp;Refresh" />
+    <Text Key="miOpenWindow" Text="&amp;Yeni pencerede aç" Comment="&amp;Open in New Window" />
+    <Text Key="miRefresh" Text="&amp;Yenile" Comment="&amp;Refresh" />
+    <Text Key="miRemove" Text="&amp;Kaldır..." Comment="&amp;Remove..." />
+    <Text Key="tbFavorites" Text="Favorileri göster" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Favoriler" Comment="Favorites" />
+    <Text Key="tbIncludeSubFolders" Text="Bütün alt klasörleri dahil et" Comment="Include all Subfolders" />
+    <Text Key="tbOpenWindow" Text="Yeni Pencere" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Mevcut listeyi yeni pencerede aç" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Tazele" Comment="Refresh" />
+  </Texts>
+</TR>

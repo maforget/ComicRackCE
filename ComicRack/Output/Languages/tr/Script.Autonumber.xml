@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Script.Autonumber" CultureName="tr">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;İptal" Comment="&amp;Cancel" />
+    <Text Key="Caption" Text="Otomatik numaralandırma Sihirbazı" Comment="Autonumbering Wizard" />
+    <Text Key="chkTotal" Text="Toplam sayıyı kaydet:" Comment="Save total Number:" />
+    <Text Key="labelBegin" Text="Şu numaradan başla:" Comment="Begin at Number:" />
+    <Text Key="Name" Text="Otomatik numara Sihirbazı... " Comment="Autonumber Wizard..." />
+    <Text Key="NumberAltSeries" Text="Alternatif Seri Sayısı" Comment="Number Alternate Series" />
+    <Text Key="NumberSeries" Text="Serileri Numaralandır" Comment="Number Series" />
+    <Text Key="OK" Text="&amp;Tamam" Comment="&amp;OK" />
+  </Texts>
+</TR>

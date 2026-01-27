@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SmartListDialog" CultureName="tr">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;İptal" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Tamam" Comment="&amp;OK" />
+    <Text Key="btApply" Text="&amp;Uygula" Comment="&amp;Apply" />
+    <Text Key="labelMatch" Text="Eşle" Comment="Match" />
+    <Text Key="labelRules" Text="Aşağıdaki kurallar" Comment="of the following rules in" />
+    <Text Key="SmartListDialog" Text="Akıllı Listeyi düzenle" Comment="Edit the Smart List" />
+    <Text Key="MatchMode" Text="Hepsil|Herhangi biri" Comment="All|Any" />
+    <Text Key="chkLimit" Text="Sınırla" Comment="Limit to" />
+    <Text Key="cbLimitType.Item0" Text="Kitaplar" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB " Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB " Comment="GB" />
+    <Text Key="FullLibrary" Text="Tüm Kütüphane" Comment="Full Library" />
+  </Texts>
+</TR>

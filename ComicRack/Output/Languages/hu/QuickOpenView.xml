@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="QuickOpenView" CultureName="hu">
+  <Texts>
+    <Text Key="btOpen" Text="Megnyitás" Comment="Open" />
+    <Text Key="btBrowser" Text="Böngésző" Comment="Browser" />
+    <Text Key="btOpenFile" Text="Fájl megnyitása..." Comment="Open File..." />
+    <Text Key="panelQuickopen" Text="Képregények" Comment="Comics" />
+  </Texts>
+</TR>

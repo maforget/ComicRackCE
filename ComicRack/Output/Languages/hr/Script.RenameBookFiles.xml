@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.RenameBookFiles" CultureName="hr">
+  <Texts>
+    <Text Key="Name" Text="Preimenovanje datoteka u 'Svezak #Number (od Count) (Year)'" Comment="Rename Files to 'Series Volume #Number (of Count) (Year)'" />
+  </Texts>
+</TR>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmallComicPreview" CultureName="ru">
+  <Texts>
+    <Text Key="tbClose" Text="Закрыть" Comment="Close" />
+    <Text Key="tsbFirst" Text="В начало" Comment="First" />
+    <Text Key="tsbFirst.Tooltip" Text="На первую страницу" Comment="Go to first page" />
+    <Text Key="tsbLast" Text="В конец" Comment="Last" />
+    <Text Key="tsbLast.Tooltip" Text="На последнюю страницу" Comment="Go to last page" />
+    <Text Key="tsbNext" Text="Далее" Comment="Next" />
+    <Text Key="tsbNext.Tooltip" Text="На следующую страницу" Comment="Go to next page" />
+    <Text Key="tsbPrev" Text="Предыдущее" Comment="Previous" />
+    <Text Key="tsbPrev.Tooltip" Text="На предыдущую страницу" Comment="Go to previous page" />
+    <Text Key="tsbRefresh" Text="Обновить" Comment="Refresh" />
+    <Text Key="tsbTwoPages" Text="Две страницы" Comment="Two Pages" />
+    <Text Key="tsbTwoPages.Tooltip" Text="Показать одну/две страницы" Comment="Show one or two pages" />
+    <Text Key="pageViewer" Text="Снять выделение" Comment="Nothing Selected" />
+  </Texts>
+</TR>

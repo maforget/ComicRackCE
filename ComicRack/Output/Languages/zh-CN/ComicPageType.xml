@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPageType" CultureName="zh-CN">
+  <Texts>
+    <Text Key="BackCover" Text="封底" Comment="Back Cover" />
+    <Text Key="Deleted" Text="已删除" Comment="Deleted" />
+    <Text Key="Editorial" Text="版次" Comment="Editorial" />
+    <Text Key="FrontCover" Text="封面" Comment="Front Cover" />
+    <Text Key="InnerCover" Text="内封" Comment="Inner Cover" />
+    <Text Key="Letters" Text="文字" Comment="Letters" />
+    <Text Key="Other" Text="其它" Comment="Other" />
+    <Text Key="Preview" Text="预览" Comment="Preview" />
+    <Text Key="Roundup" Text="摘要" Comment="Roundup" />
+    <Text Key="Story" Text="故事" Comment="Story" />
+    <Text Key="Advertisement" Text="广告" Comment="Advertisement" />
+  </Texts>
+</TR>

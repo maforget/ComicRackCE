@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MainView" CultureName="es">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="Acoplarse a parte inferior" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="Llenar" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="Acoplarse a la Izquierda" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="Acoplarse a la Derecha" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="Cerrar" Comment="Close" />
+    <Text Key="tsbFolders" Text="Carpetas" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="Echar un vistazo a  tus Carpetas" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="Biblioteca" Comment="Library" />
+    <Text Key="tsbPages" Text="Páginas" Comment="Pages" />
+    <Text Key="tsbShowMenu" Text="Mostrar Menú" Comment="Show Menu" />
+    <Text Key="tsbInfoPanelLeft" Text="Panel Info a la Dcha." Comment="Info Panel Right" />
+    <Text Key="tsbLibrary.Tooltip" Text="Biblioteca con todos los Libros" Comment="Library with all Books" />
+    <Text Key="tsbPages.Tooltip" Text="Páginas del eCómic actual" Comment="Pages of the current Book" />
+    <Text Key="tsbAlignment" Text="Modo Acoplamiento" Comment="Docking Mode" />
+  </Texts>
+</TR>

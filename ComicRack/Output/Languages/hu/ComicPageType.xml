@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicPageType" CultureName="hu">
+  <Texts>
+    <Text Key="BackCover" Text="Hátsó borító" Comment="Back Cover" />
+    <Text Key="Deleted" Text="Törlendő" Comment="Deleted" />
+    <Text Key="Editorial" Text="Szerkesztői" Comment="Editorial" />
+    <Text Key="FrontCover" Text="Első borító" Comment="Front Cover" />
+    <Text Key="InnerCover" Text="Belső borító" Comment="Inner Cover" />
+    <Text Key="Letters" Text="Levelek" Comment="Letters" />
+    <Text Key="Other" Text="Egyéb" Comment="Other" />
+    <Text Key="Preview" Text="Előnézet" Comment="Preview" />
+    <Text Key="Roundup" Text="Összefoglaló" Comment="Roundup" />
+    <Text Key="Story" Text="Történet" Comment="Story" />
+    <Text Key="Advertisement" Text="Reklám" Comment="Advertisement" />
+  </Texts>
+</TR>

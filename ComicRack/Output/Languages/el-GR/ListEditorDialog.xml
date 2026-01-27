@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListEditorDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="btNew" Text="&amp;Νέο..." Comment="&amp;New..." />
+    <Text Key="btEdit" Text="&amp;Επεξεργασία..." Comment="&amp;Edit..." />
+    <Text Key="btActivate" Text="&amp;Ενεργοποίηση" Comment="&amp;Activate" />
+    <Text Key="btDelete" Text="Διαγραφή" Comment="Delete" />
+    <Text Key="btMoveTop" Text="Μετακίνηση &amp;Αρχή" Comment="Move &amp;Top" />
+    <Text Key="btMoveUp" Text="Μετακίνηση &amp;Πάνω" Comment="Move &amp;Up" />
+    <Text Key="btMoveDown" Text="Μετακίνηση &amp;Κάτω" Comment="Move &amp;Down" />
+    <Text Key="btMoveBottom" Text="Μετακίνηση &amp;Τέλος" Comment="Move &amp;Bottom" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="colName" Text="Όνομα" Comment="Name" />
+    <Text Key="colDescription" Text="Περιγραφή" Comment="Description" />
+  </Texts>
+</TR>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Common" CultureName="nl-BE">
+  <Texts>
+    <Text Key="RelativeDateTimeFormat" Text="minuut|minuten|uur|uren|dag|dagen|week|weeken|maand|maanden|jaar|jaren|{0} geleden|in {0}" Comment="minute|minutes|hour|hours|day|days|week|weeks|month|months|year|years|{0} ago|in {0}" />
+  </Texts>
+</TR>

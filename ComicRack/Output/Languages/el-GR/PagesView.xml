@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PagesView" CultureName="el-GR">
+  <Texts>
+    <Text Key="miCopy" Text="&amp;Αντιγραφή Σελίδας" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Αντίστροφη Επιλογή" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="Σήμανση ως &amp;Διαγραμμένο" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="Τύπος Σελίδας" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="Α&amp;νανέωση" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="Επιλογή Όλων" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="Ορισμός Σελιδοδείκτη" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="Απομάκρυνση Σελιδοδείκτη" Comment="Remove Bookmark" />
+    <Text Key="miResetOriginalOrder" Text="Επαναφορά αρχικής Διάταξης" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="Περιστροφή Σελίδας" Comment="Page Rotation" />
+    <Text Key="miMoveToTop" Text="Μετακίνηση στην Αρχή" Comment="Move to Top" />
+    <Text Key="miMoveToBottom" Text="Μετακίνηση στο Τέλος" Comment="Move to Bottom" />
+    <Text Key="miPagePosition" Text="Θέση Σελίδας " Comment="Page Position" />
+    <Text Key="miPagePositionDefault" Text="Προεπιλογή" Comment="Default" />
+    <Text Key="miPagePositionNear" Text="Near" Comment="Near" />
+    <Text Key="miPagePositionFar" Text="Far" Comment="Far" />
+  </Texts>
+</TR>

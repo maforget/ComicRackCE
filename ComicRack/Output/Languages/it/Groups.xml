@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Groups" CultureName="it">
+  <Texts>
+    <Text Key="AlphabetGroups" Text="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Altro" Comment="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Other" />
+    <Text Key="CountGroups" Text="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|Non Specificato" Comment="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|Unspecified" />
+    <Text Key="DateGroups" Text="Mai|Oggi|ieri|2 Giorni fa|3 Giorni fa|Questa Settimana|Settimana Scorsa|2 Settimane fa|3 Settimane fa|Questo Mese|Mese Scorso|2 Mesi fa|3 Mesi fa|4 Mesi fa|5 Mesi fa|6 Mesi fa|Quest'Anno|Anno Scorso|2 Anni fa|3 Anni fa|Oltre 3 Anni fa|Anno Prossimo|In Futuro" Comment="Never|Today|Yesterday|Two Days Ago|Three Days Ago|This Week|Last Week|Two Weeks Ago|Three Weeks Ago|This Month|Last Month|Two Months ago|Three Months ago|Four Months ago|Five Months ago|Six Months ago|This Year|Last Year|Two Years ago|Three Years ago|Older than Three Years|Next Year|In the Future" />
+    <Text Key="RatingGroups" Text="Non Valutato|0 Stelle|1 Stella|2 Stelle|3 Stelle|4 Stelle|5 Stelle" Comment="Not Rated|No Stars|1 Star|2 Stars|3 Stars|4 Stars|5 Stars" />
+    <Text Key="ReadPercentageGroups" Text="Non letto|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|Completato" Comment="Not Read|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|Completed" />
+    <Text Key="SizeGroups" Text="Vuoto|Molto PiccololPiccolo|Medio|Grande|Enorme" Comment="Empty|Very Small|Small|Medium|Big|Huge" />
+    <Text Key="VolumeGroups" Text="Nessuno|V{0}|Altro" Comment="None|V{0}|Other" />
+    <Text Key="MangaGroups" Text="Manga|Non Manga|Sconosciuto" Comment="Manga|No Manga|Unknown" />
+    <Text Key="SeriesCompleteGroups" Text="Serie completa|Serie non completa|Sconosciuta" Comment="Series complete|Series not complete|Unknown" />
+    <Text Key="EnableProposedGroups" Text="Uso Valori Proposti|Valori Proposti Ignorati" Comment="Proposed Values used|Proposed Values no used" />
+    <Text Key="BWGroups" Text="Bianco e Nero|Colore|Sconosciuto" Comment="Black and White|Color|Unknown" />
+    <Text Key="HasBeenReadGroups" Text="Letto|Non Letto" Comment="Read|Unread" />
+    <Text Key="LinkedGroups" Text="Collegato al File|Non Collegato al File" Comment="Linked to File|Not linked to File" />
+    <Text Key="PriceGroups" Text="Sconosciuto|Libero|0-10|10-20|20-30|30-40|40-50|50-100|oltre100" Comment="Unknown|Free|0-10|10-20|20-30|30-40|40-50|50-100|over 100" />
+    <Text Key="CheckedGroups" Text="Selezionato|Non Selezionato" Comment="Checked|Not Checked" />
+  </Texts>
+</TR>

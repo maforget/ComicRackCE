@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Matchers" CultureName="ru">
+  <Texts>
+    <Text Key="YesNoOperators" Text="Да|Нет|Неизвестно" Comment="is Yes|is No|is Unknown" />
+    <Text Key="ComicBookAddedMatcher" Text="Добавлен" Comment="Added" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="Все" Comment="All" />
+    <Text Key="ComicBookCountMatcher" Text="Количество" Comment="Count" />
+    <Text Key="ComicBookAlternateCountMatcher" Text="Альтернативное количество" Comment="Alternate Count" />
+    <Text Key="ComicBookAlternateNumberMatcher" Text="Альтернативный номер" Comment="Alternate Number" />
+    <Text Key="ComicBookAlternateSeriesMatcher" Text="Альтернативная серия" Comment="Alternate Series" />
+    <Text Key="ComicBookColoristMatcher" Text="Колорист" Comment="Colorist" />
+    <Text Key="ComicBookFileMatcher" Text="Файл" Comment="File" />
+    <Text Key="ComicBookFullPathMatcher" Text="Путь" Comment="Path" />
+    <Text Key="ComicBookGenreMatcher" Text="Жанр" Comment="Genre" />
+    <Text Key="ComicBookImprintMatcher" Text="Imprint" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="Прорисовщик" Comment="Inker" />
+    <Text Key="ComicBookLanguageMatcher" Text="Язык" Comment="Language" />
+    <Text Key="ComicBookMangaMatcher" Text="Manga" Comment="Manga" />
+    <Text Key="ComicBookBlackAndWhiteMatcher" Text="Черно-белый" Comment="Black and White" />
+    <Text Key="ComicBookMonthMatcher" Text="Месяц" Comment="Month" />
+    <Text Key="ComicBookNumberMatcher" Text="Номер Комикса" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="Открыт" Comment="Opened" />
+    <Text Key="ComicBookPageCountMatcher" Text="Количество страниц" Comment="Page Count" />
+    <Text Key="ComicBookPencillerMatcher" Text="Художник" Comment="Penciller" />
+    <Text Key="ComicBookPublisherMatcher" Text="Издатель Комикса" Comment="Publisher" />
+    <Text Key="ComicBookRatingMatcher" Text="Рейтинг" Comment="Rating" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="Процентов прочтено" Comment="Read Percentage" />
+    <Text Key="ComicBookSeriesMatcher" Text="Серия" Comment="Series" />
+    <Text Key="ComicBookSummaryMatcher" Text="Кратко" Comment="Summary" />
+    <Text Key="ComicBookTagsMatcher" Text="Метки" Comment="Tags" />
+    <Text Key="ComicBookTitleMatcher" Text="Название" Comment="Title" />
+    <Text Key="ComicBookVolumeMatcher" Text="Выпуск в серии" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="Автор" Comment="Writer" />
+    <Text Key="ComicBookYearMatcher" Text="Год" Comment="Year" />
+    <Text Key="ComicBookFileFormatMatcher" Text="Формат файла" Comment="File Format" />
+    <Text Key="DateOperators" Text="равен|перед|после|содержит|в диапазоне" Comment="is|is after|is before|is in the last|in in the range" />
+    <Text Key="Days" Text="Дни" Comment="Days" />
+    <Text Key="NumericOperators" Text="равен|больше|меньше|в диапазоне" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="StringOperators" Text="целиком|содержит|содержит любое из|содержит все из|начинается с|кончается на|список|регулярное выражение" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
+    <Text Key="ComicBookAgeRatingMatcher" Text="Возрастной ценз" Comment="Age Rating" />
+    <Text Key="ComicBookCharactersMatcher" Text="Персонажи" Comment="Characters" />
+    <Text Key="ComicBookEditorMatcher" Text="Редактор" Comment="Editor" />
+  </Texts>
+</TR>

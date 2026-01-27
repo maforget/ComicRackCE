@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DisplaySetupDialog" CultureName="fi">
+  <Texts>
+    <Text Key="ComicDisplaySettingsDialog" Text="Sarjisten näytön asetukset" Comment="Comic Display Settings" />
+    <Text Key="btCancel" Text="&amp;Peruuta" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btApply" Text="&amp;Käytä" Comment="&amp;Apply" />
+    <Text Key="chkRealisticPages" Text="Realistinen sarjakuvanäyttö" Comment="Realistic Comic Display" />
+    <Text Key="chkPageMargin" Text="Jätä sivun reunoille marginaalit" Comment="Leave margins around the pages" />
+    <Text Key="labelPaging" Text="Sivunvaihto:" Comment="Page Transition:" />
+    <Text Key="labelPaper" Text="Paperi:" Comment="Paper:" />
+    <Text Key="labelBackgroundColor" Text="Väri:" Comment="Color:" />
+    <Text Key="labelBackgroundType" Text="Laji:" Comment="Type:" />
+    <Text Key="labelBackgroundTexture" Text="Kuvio:" Comment="Texture:" />
+    <Text Key="cbBackgroundType.Item0" Text="Käytä nykyisen sivun väriä" Comment="Adjust Color to current Page" />
+    <Text Key="cbBackgroundType.Item1" Text="Väri" Comment="Color" />
+    <Text Key="cbBackgroundType.Item2" Text="Kuvio" Comment="Texture" />
+    <Text Key="cbPageTransition.Item0" Text="Ei sivunvaihtotehostetta" Comment="No Page Transition Effect" />
+    <Text Key="cbPageTransition.Item1" Text="Sivun häivytys" Comment="Page fades in" />
+    <Text Key="cbPageTransition.Item2" Text="Sivut vaihtuvat vaakasuuntaan" Comment="Page scrolls in horizontally" />
+    <Text Key="cbPageTransition.Item3" Text="Sivut vaihtuvat pystysuuntaan" Comment="Page scrolls in vertically" />
+    <Text Key="cbPageTransition.Item4" Text="Sivunkääntö" Comment="Page Turn Effect" />
+    <Text Key="grpGeneral" Text="Yleiset" Comment="General" />
+    <Text Key="grpEffects" Text="Tehosteet" Comment="Effects" />
+    <Text Key="grpBackground" Text="Tausta" Comment="Background" />
+    <Text Key="labelPaperStrength" Text="Paksuus:" Comment="Strength:" />
+    <Text Key="cbPaperLayout.Item0" Text="&lt;tyhjä&gt;" Comment="None" />
+    <Text Key="cbPaperLayout.Item1" Text="Toistuva" Comment="Tile" />
+    <Text Key="cbPaperLayout.Item2" Text="Keskitä" Comment="Center" />
+    <Text Key="cbPaperLayout.Item3" Text="Venytä" Comment="Stretch" />
+    <Text Key="cbPaperLayout.Item4" Text="Zoomaa" Comment="Zoom" />
+    <Text Key="cbTextureLayout.Item0" Text="&lt;tyhjä&gt;" Comment="None" />
+    <Text Key="cbTextureLayout.Item1" Text="Toistuva" Comment="Tile" />
+    <Text Key="cbTextureLayout.Item2" Text="Keskitä" Comment="Center" />
+    <Text Key="cbTextureLayout.Item3" Text="Venytä" Comment="Stretch" />
+    <Text Key="cbTextureLayout.Item4" Text="Zoomaa" Comment="Zoom" />
+  </Texts>
+</TR>

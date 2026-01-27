@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicPageType" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="BackCover" Text="Zadní obal" Comment="Back Cover" />
+    <Text Key="Deleted" Text="Smazáno" Comment="Deleted" />
+    <Text Key="Editorial" Text="Redakční článek" Comment="Editorial" />
+    <Text Key="FrontCover" Text="Přední obal" Comment="Front Cover" />
+    <Text Key="InnerCover" Text="Vnitřní přebal" Comment="Inner Cover" />
+    <Text Key="Letters" Text="Dopisy" Comment="Letters" />
+    <Text Key="Other" Text="Jiné" Comment="Other" />
+    <Text Key="Preview" Text="Náhled" Comment="Preview" />
+    <Text Key="Roundup" Text="Shrnutí" Comment="Roundup" />
+    <Text Key="Story" Text="Příběh" Comment="Story" />
+    <Text Key="Advertisement" Text="Reklama" Comment="Advertisement" />
+  </Texts>
+</TR>

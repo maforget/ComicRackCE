@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TextBoxContextMenu" CultureName="fi">
+  <Texts>
+    <Text Key="miUndo" Text="Peruuta" Comment="Undo" />
+    <Text Key="miCut" Text="Leikkaa" Comment="Cut" />
+    <Text Key="miCopy" Text="Kopioi" Comment="Copy" />
+    <Text Key="miPaste" Text="Liitä" Comment="Paste" />
+    <Text Key="miDelete" Text="Poista" Comment="Delete" />
+    <Text Key="miSelectAll" Text="Valitse kaikki" Comment="Select All" />
+  </Texts>
+</TR>

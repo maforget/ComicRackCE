@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PagesView" CultureName="sk-SK">
+  <Texts>
+    <Text Key="miCopy" Text="&amp;Kopírovať stránku" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Obrátiť výber" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="Označiť ako &amp;Zmazané" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="Typ strany" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="&amp;Obnoviť" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="Vybrať &amp;všetko" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="Nastaviť záložku" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="Odstrániť záložku" Comment="Remove Bookmark" />
+    <Text Key="miMoveToStart" Text="Posunúť na začiatok" Comment="Move to Start" />
+    <Text Key="miMoveToEnd" Text="Posunúť na koniec" Comment="Move to End" />
+    <Text Key="miResetOriginalOrder" Text="Obnoviť pôvodné poradie" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="Otáčanie strany" Comment="Page Rotation" />
+  </Texts>
+</TR>

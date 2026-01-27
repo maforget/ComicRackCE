@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Matchers" CultureName="hr">
+  <Texts>
+    <Text Key="BooleanOperators" Text="je istina|ja laž" Comment="is True|is False" />
+    <Text Key="ComicBookAddedMatcher" Text="Dodano" Comment="Added" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="Sve" Comment="All" />
+    <Text Key="ComicBookAlternateCountMatcher" Text="Broj nastavaka" Comment="Alternate Count" />
+    <Text Key="ComicBookAlternateNumberMatcher" Text="Broj nastavka" Comment="Alternate Number" />
+    <Text Key="ComicBookAlternateSeriesMatcher" Text="Nastavak serije" Comment="Alternate Series" />
+    <Text Key="ComicBookColoristMatcher" Text="Obojio" Comment="Colorist" />
+    <Text Key="ComicBookFileMatcher" Text="Datoteka" Comment="File" />
+    <Text Key="ComicBookFullPathMatcher" Text="Putanja" Comment="Path" />
+    <Text Key="ComicBookGenreMatcher" Text="Žanr" Comment="Genre" />
+    <Text Key="ComicBookImprintMatcher" Text="Tisak" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="Tuš" Comment="Inker" />
+    <Text Key="ComicBookLanguageMatcher" Text="Jezik" Comment="Language" />
+    <Text Key="ComicBookMangaStyleMatcher" Text="Manga Stil" Comment="Manga Style" />
+    <Text Key="ComicBookMonthMatcher" Text="Mjesec" Comment="Month" />
+    <Text Key="ComicBookNumberMatcher" Text="Broj" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="Otvoreno" Comment="Opened" />
+    <Text Key="ComicBookPageCountMatcher" Text="Broj stranica" Comment="Page Count" />
+    <Text Key="ComicBookPencillerMatcher" Text="Crtač" Comment="Penciller" />
+    <Text Key="ComicBookPublisherMatcher" Text="Izdavač" Comment="Publisher" />
+    <Text Key="ComicBookRatingMatcher" Text="Ocjena" Comment="Rating" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="Postotak pročitanosti" Comment="Read Percentage" />
+    <Text Key="ComicBookSeriesMatcher" Text="Serija" Comment="Series" />
+    <Text Key="ComicBookSummaryMatcher" Text="Sažetak" Comment="Summary" />
+    <Text Key="ComicBookTagsMatcher" Text="Oznake" Comment="Tags" />
+    <Text Key="ComicBookTitleMatcher" Text="Naslov" Comment="Title" />
+    <Text Key="ComicBookVolumeMatcher" Text="Svezak" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="Autor" Comment="Writer" />
+    <Text Key="ComicBookYearMatcher" Text="Godina" Comment="Year" />
+    <Text Key="DateOperators" Text="je|je poslije|je prije|je na kraju|je u rasponu" Comment="is|is after|is before|is in the last|in in the range" />
+    <Text Key="Days" Text="Dana" Comment="Days" />
+    <Text Key="NumericOperators" Text="je|je veći|je manji|je u rasponu" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="StringOperators" Text="je|sadrži|sadrži bilo koji od|sadrži sve od|počinje sa|završava sa" Comment="is|contains|contains any of|contains all of|starts with|ends with" />
+  </Texts>
+</TR>

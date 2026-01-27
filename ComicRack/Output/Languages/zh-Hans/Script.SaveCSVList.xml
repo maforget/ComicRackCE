@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.SaveCSVList" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="Name" Text="导出漫画列表..." Comment="Export Comic List..." />
+    <Text Key="Description" Text="将所有选中 eComics 导出到 CSV 文件的脚本" Comment="Simple script to export all selected eComics into a CSV file" />
+  </Texts>
+</TR>

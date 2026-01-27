@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.DummySearch" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Name" Text="[代码示例] 搜索样本" Comment="[Code Sample] Dummy Search" />
+    <Text Key="Description" Text="展示如何制作搜索脚本的示例脚本" Comment="A simple script for showing how Search scripts are done" />
+  </Texts>
+</TR>

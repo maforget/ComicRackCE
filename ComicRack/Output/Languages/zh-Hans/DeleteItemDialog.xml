@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DeleteItemDialog" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="btCancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定" Comment="&amp;OK" />
+    <Text Key="DeleteItemDialog" Text="删除第 {0} 项" Comment="Delete Item {0}" />
+    <Text Key="lbCaption" Text="{0}:" Comment="{0}:" />
+  </Texts>
+</TR>

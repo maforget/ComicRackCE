@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ItemView" CultureName="zh-CN">
+  <Texts>
+    <Text Key="AutoFitAllColumns" Text="自动按窗口大小调节所有列宽" Comment="Auto Fit All Columns" />
+    <Text Key="AutoSizeAllColumns" Text="自动按内容调节所有列宽" Comment="Auto Size All Columns" />
+    <Text Key="AutoSizeColumn" Text="自动按内容调节列宽" Comment="Auto Size Column" />
+    <Text Key="miArrange" Text="排序按" Comment="Arrange by" />
+    <Text Key="miGroup" Text="分组依据" Comment="Group by" />
+    <Text Key="miStack" Text="分堆依据" Comment="Stack by" />
+    <Text Key="miViewDetails" Text="详细信息" Comment="Details" />
+    <Text Key="miViewMode" Text="视图" Comment="View" />
+    <Text Key="miViewThumbs" Text="缩略图" Comment="Thumbnails" />
+    <Text Key="miViewTiles" Text="平铺" Comment="Tiles" />
+    <Text Key="NotGrouped" Text="无分组" Comment="Not Grouped" />
+    <Text Key="NotSorted" Text="未排序" Comment="Not Sorted" />
+    <Text Key="NotStacked" Text="未分堆" Comment="Not Stacked" />
+    <Text Key="Layout" Text="布局" Comment="Layout" />
+  </Texts>
+</TR>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PagesView" CultureName="ja">
+  <Texts>
+    <Text Key="miCopy" Text="ページのコピー(&amp;C)" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="選択の反転(&amp;I)" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="削除に登録(&amp;D)" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="ページの種類" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="再読込み(&amp;R)" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="すべて選択(&amp;A)" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="ブックマークにセット" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="ブックマーク削除" Comment="Remove Bookmark" />
+    <Text Key="miMoveToStart" Text="先頭へ移動" Comment="Move to Start" />
+    <Text Key="miMoveToEnd" Text="末尾へ移動" Comment="Move to End" />
+    <Text Key="miResetOriginalOrder" Text="ページ順序を変更" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="ページの回転" Comment="Page Rotation" />
+    <Text Key="miPagePosition" Text="ページ位置" Comment="Page Position" />
+    <Text Key="miPagePositionDefault" Text="デフォルト" Comment="Default" />
+    <Text Key="miPagePositionNear" Text="近い" Comment="Near" />
+    <Text Key="miPagePositionFar" Text="遠い" Comment="Far" />
+  </Texts>
+</TR>

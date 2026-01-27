@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="KeyboardShortcutEditor" CultureName="de">
+  <Texts>
+    <Text Key="chkAlt1" Text="Alt" Comment="Alt" />
+    <Text Key="chkAlt2" Text="Alt" Comment="Alt" />
+    <Text Key="chkAlt3" Text="Alt" Comment="Alt" />
+    <Text Key="chkAlt4" Text="Alt" Comment="Alt" />
+    <Text Key="chkCtrl1" Text="Strg" Comment="Ctrl" />
+    <Text Key="chkCtrl2" Text="Strg" Comment="Ctrl" />
+    <Text Key="chkCtrl3" Text="Strg" Comment="Ctrl" />
+    <Text Key="chkCtrl4" Text="Strg" Comment="Ctrl" />
+    <Text Key="chkShift1" Text="Umsch" Comment="Shift" />
+    <Text Key="chkShift2" Text="Umsch" Comment="Shift" />
+    <Text Key="chkShift3" Text="Umsch" Comment="Shift" />
+    <Text Key="chkShift4" Text="Umsch" Comment="Shift" />
+    <Text Key="colAction" Text="Aktion" Comment="Action" />
+    <Text Key="colKeys" Text="Tasten" Comment="Keys" />
+    <Text Key="labelAlternateKey" Text="Alternativ:" Comment="Alternate:" />
+    <Text Key="labelAlternate2Key" Text="Alternativ:" Comment="Alternate:" />
+    <Text Key="labelAlternate3Key" Text="Alternativ:" Comment="Alternate:" />
+    <Text Key="labelMainKey" Text="Taste:" Comment="Main:" />
+    <Text Key="NothingSelected" Text="Keine Aktion selektiert" Comment="No action selected"/>
+    <Text Key="GetKeyCaption" Text="Drücke Taste" Comment="Press Key"/>
+    <Text Key="GetKeyDescription" Text="Drücken Sie eine Taste oder schließen Sie dieses Fenster" Comment="Press your key combination or close this window"/>
+  </Texts>
+</TR>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SearchMenu" CultureName="sk-SK">
+  <Texts>
+    <Text Key="Search" Text="Hľadať..." Comment="Search..." />
+    <Text Key="NoResult" Text="Bez výsledku" Comment="No Result" />
+  </Texts>
+</TR>

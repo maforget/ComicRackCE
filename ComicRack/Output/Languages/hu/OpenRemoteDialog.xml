@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBookDialog" CultureName="hu">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Mégse" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="ShowList" Text="Nyilvánosan mutassa" Comment="Show Public" />
+    <Text Key="RefreshList" Text="Frissítés" Comment="Refresh" />
+    <Text Key="OpenRemoteDialog" Text="Távoli könyvtár megnyitása" Comment="Open Remote Library" />
+    <Text Key="labelServerAddress" Text="Könyvtár címe:" Comment="Library Address:" />
+    <Text Key="colName" Text="Név" Comment="Name" />
+    <Text Key="colDescription" Text="Leírás" Comment="Description" />
+    <Text Key="colEdit" Text="Szerkesztés" Comment="Edit" />
+    <Text Key="colExport" Text="Exportálás" Comment="Export" />
+    <Text Key="labelListPassword" Text="Privát lista jelszó:" Comment="Private List Password:" />
+    <Text Key="labelFailedServerList" Text="Szerver lista lekérése sikertelen!" Comment="Failed to get Server List!" />
+    <Text Key="groupLocal" Text="Helyi megosztások" Comment="Local Shares" />
+    <Text Key="groupInternet" Text="Internetes megosztások" Comment="Internet Shares" />
+  </Texts>
+</TR>

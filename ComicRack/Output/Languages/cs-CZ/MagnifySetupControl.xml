@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MagnifySetupControl" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="labelHeight" Text="Výška" Comment="Height" />
+    <Text Key="labelOpacity" Text="Průhlednost" Comment="Opacity" />
+    <Text Key="labelWidth" Text="Šířka" Comment="Width" />
+    <Text Key="labelZoom" Text="Přiblížení" Comment="Zoom" />
+    <Text Key="chkSimpleStyle" Text="Jednoduchý styl" Comment="Simple Style" />
+    <Text Key="chkAutoMagnifier" Text="Aktivovat 'dlouhým' kliknutím" Comment="Activate with 'long' Click" />
+    <Text Key="chkAutoHideMagnifier" Text="Schovat na okraji stránky" Comment="Hide at Page Border" />
+  </Texts>
+</TR>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListFolderFilesBrowser" CultureName="sk-SK">
+  <Texts>
+    <Text Key="miAddFolderLibrary" Text="&amp;Pridať priečinok do knižnice" Comment="&amp;Add Folder to Library" />
+    <Text Key="miAddToFavorites" Text="&amp;Pridať priečinok k obľúbeným" Comment="&amp;Add Folder to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Obnoviť" Comment="&amp;Refresh" />
+    <Text Key="miOpenWindow" Text="&amp;Otvoriť v novom okne" Comment="&amp;Open in New Window" />
+    <Text Key="miRefresh" Text="&amp;Obnoviť" Comment="&amp;Refresh" />
+    <Text Key="miRemove" Text="&amp;Odstrániť" Comment="&amp;Remove..." />
+    <Text Key="tbFavorites" Text="Ukázať obľúbené" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Obľúbené" Comment="Favorites" />
+    <Text Key="tbIncludeSubFolders" Text="Zahrnúť podpriečinky" Comment="Include all Subfolders" />
+    <Text Key="tbOpenWindow" Text="Nové okno" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Otvoriť aktuálny zoznam v novom okne" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Obnoviť" Comment="Refresh" />
+    <Text Key="miOpenTab" Text="&amp;Otvoriť na novej karte" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="Nová karta" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Otvoriť súčasný zoznam na novej karte" Comment="Open current list in new Tab" />
+  </Texts>
+</TR>

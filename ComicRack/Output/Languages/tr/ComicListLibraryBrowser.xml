@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicListLibraryBrowser" CultureName="tr">
+  <Texts>
+    <Text Key="miEditSmartList" Text="&amp;Düzenle..." Comment="&amp;Edit..." />
+    <Text Key="miNewFolder" Text="Yeni &amp;Klasör..." Comment="New &amp;Folder..." />
+    <Text Key="miNewList" Text="Yeni &amp;Liste..." Comment="New &amp;List..." />
+    <Text Key="miNewSmartList" Text="&amp;Yeni Akıllı Liste..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="&amp;Sınıflandır" Comment="&amp;Sort" />
+    <Text Key="miOpenWindow" Text="&amp;Yeni Pencerede aç" Comment="&amp;Open in New Window" />
+    <Text Key="miQueryRename" Text="&amp;Yeniden isimlendir" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="Ta&amp;zele" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="&amp;Kal&amp;dır..." Comment="&amp;Re&amp;move..." />
+    <Text Key="NewFolder" Text="Yeni Klasör" Comment="New Folder" />
+    <Text Key="NewList" Text="Yeni Liste" Comment="New List" />
+    <Text Key="NewSmartList" Text="Yeni Akıllı Liste" Comment="New Smart List" />
+    <Text Key="NewSmartListOption" Text="Mevcut görüntüyü kaydet" Comment="Snapshot of current view" />
+    <Text Key="tbNewFolder" Text="Yeni &amp;Klasör" Comment="New &amp;Folder" />
+    <Text Key="tbNewFolder.Tooltip" Text="Listelerini düzenlemek için yeni bir klasör yarat" Comment="Create a new folder to organize your lists" />
+    <Text Key="tbNewList" Text="Yeni &amp;Liste" Comment="New &amp;List" />
+    <Text Key="tbNewList.Tooltip" Text="Yeni bir özel liste oluştur" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="&amp;Yeni Akıllı Liste" Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="Yeni bir Akıllı Liste oluştur" Comment="Create a new Smart List" />
+    <Text Key="tbOpenWindow" Text="Yeni Pencere" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Mevcut listeyi yeni pencerede aç" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Tazele" Comment="Refresh" />
+    <Text Key="miCopyList" Text="Listeyi Kopyala" Comment="Copy List" />
+    <Text Key="miPasteList" Text="Listeyi Yapıştır" Comment="Paste List" />
+    <Text Key="miExportReadingList" Text="Okuma Listesinin çıkışını al..." Comment="Export Reading List..." />
+    <Text Key="miImportReadingList" Text="Okuma Listesi dosyası kullan..." Comment="Import Reading List..." />
+  </Texts>
+</TR>

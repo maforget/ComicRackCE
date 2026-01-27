@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.SearchAndReplace" CultureName="el-GR">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="OK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="Caption" Text="Αναζήτηση και Αντικατάσταση..." Comment="Search and Replace..." />
+    <Text Key="Name" Text="Αναζήτηση και Αντικατάσταση..." Comment="Search and Replace..." />
+    <Text Key="labelField" Text="Πεδία:" Comment="Fields:" />
+    <Text Key="labelSearch" Text="Αναζήτηση:" Comment="Search:" />
+    <Text Key="labelReplace" Text="Αντικατάσταση" Comment="Replace" />
+    <Text Key="Description" Text="Ένα script για αναζήτηση και αντικατάσταση των τιμών σε ένα eComics" Comment="A script to to search and replace values in Books" />
+  </Texts>
+</TR>

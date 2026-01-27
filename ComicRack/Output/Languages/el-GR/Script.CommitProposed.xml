@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.CommitProposed" CultureName="el-GR">
+  <Texts>
+    <Text Key="AskCommit" Text="Να διατηρηθούν μόνιμα οι προτεινόμενες τιμές;\nΟι προτεινόμενες τιμές έχουν δημιουργηθεί με βάση το όνομα του Αρχείου και θα εμφανίζονται με γκρι χρώμα" Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
+    <Text Key="Name" Text="Καταχώρηση Προτεινόμενων Τιμών… " Comment="Commit Proposed Values..." />
+    <Text Key="Overwrite" Text="&amp;Αντικατάσταση υπαρχόντων τιμών" Comment="&amp;Also overwrite existing values" />
+    <Text Key="Write" Text="Εγγραφή" Comment="Write" />
+    <Text Key="Description" Text="Ένα script για να κάνει τις προτεινόμενες τιμές στο eComics μόνιμες" Comment="A script to makes the proposed values for the Book permanent" />
+  </Texts>
+</TR>

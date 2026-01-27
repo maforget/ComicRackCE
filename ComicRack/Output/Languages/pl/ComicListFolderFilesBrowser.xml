@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicListFolderFilesBrowser" CultureName="pl">
+  <Texts>
+    <Text Key="miAddFolderLibrary" Text="Dodaj Folder do &amp;Biblioteki" Comment="&amp;Add Folder to Library" />
+    <Text Key="miAddToFavorites" Text="Dodaj Folder do &amp;Ulubionych" Comment="&amp;Add Folder to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Odśwież" Comment="&amp;Refresh" />
+    <Text Key="miOpenWindow" Text="Otwórz w &amp;Nowym Oknie" Comment="&amp;Open in New Window" />
+    <Text Key="miRefresh" Text="&amp;Odśwież" Comment="&amp;Refresh" />
+    <Text Key="miRemove" Text="&amp;Usuń..." Comment="&amp;Remove..." />
+    <Text Key="tbFavorites" Text="Pokaż Ulubione" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Ulubione" Comment="Favorites" />
+    <Text Key="tbIncludeSubFolders" Text="Pokaż pliki z podfolderów" Comment="Include all Subfolders" />
+    <Text Key="tbOpenWindow" Text="Nowe Okno Przeglądarki" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Otwórz bieżącą Listę w nowym Oknie" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Odśwież" Comment="Refresh" />
+    <Text Key="miOpenTab" Text="&amp;Otwórz w nowej Karcie" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="Nowa Karta" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Otwórz bieżącą Listę w nowej Karcie" Comment="Open current list in new Tab" />
+  </Texts>
+</TR>

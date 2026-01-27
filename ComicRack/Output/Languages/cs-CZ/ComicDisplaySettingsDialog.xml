@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DisplaySetupDialog" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Storno" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btApply" Text="&amp;Použít" Comment="&amp;Apply" />
+    <Text Key="chkPageMargin" Text="Ponechat okraje okolo stránek" Comment="Leave margins around the pages" />
+    <Text Key="labelPaging" Text="Stránkování:" Comment="Page Transition:" />
+    <Text Key="labelPaper" Text="Papír:" Comment="Paper:" />
+    <Text Key="labelBackgroundColor" Text="Barva:" Comment="Color:" />
+    <Text Key="labelBackgroundType" Text="Typ:" Comment="Type:" />
+    <Text Key="labelBackgroundTexture" Text="Textura:" Comment="Texture:" />
+    <Text Key="cbBackgroundType.Item0" Text="Přizpůsobit barvu aktuální stránce" Comment="Adjust Color to current Page" />
+    <Text Key="cbBackgroundType.Item1" Text="Barva" Comment="Color" />
+    <Text Key="cbBackgroundType.Item2" Text="Textura" Comment="Texture" />
+    <Text Key="cbPageTransition.Item0" Text="Žádný efekt přechodu mezi stránkami" Comment="No Page Transition Effect" />
+    <Text Key="cbPageTransition.Item1" Text="Stránka se zvolna rozsvítí" Comment="Page fades in" />
+    <Text Key="cbPageTransition.Item2" Text="Stránka se přisune horizontálně" Comment="Page scrolls in horizontally" />
+    <Text Key="cbPageTransition.Item3" Text="Stránka se přisune vertikálně" Comment="Page scrolls in vertically" />
+    <Text Key="cbPageTransition.Item4" Text="Efekt otáčení stránky" Comment="Page Turn Effect" />
+    <Text Key="grpGeneral" Text="Obecné" Comment="General" />
+    <Text Key="grpEffects" Text="Efekty" Comment="Effects" />
+    <Text Key="grpBackground" Text="Pozadí" Comment="Background" />
+    <Text Key="labelPaperStrength" Text="Zvýraznění:" Comment="Strength:" />
+    <Text Key="cbPaperLayout.Item0" Text="Žádné" Comment="None" />
+    <Text Key="cbPaperLayout.Item1" Text="Dlaždice" Comment="Tile" />
+    <Text Key="cbPaperLayout.Item2" Text="Na střed" Comment="Center" />
+    <Text Key="cbPaperLayout.Item3" Text="Roztažení" Comment="Stretch" />
+    <Text Key="cbPaperLayout.Item4" Text="Změna velikosti" Comment="Zoom" />
+    <Text Key="cbTextureLayout.Item0" Text="Žádné" Comment="None" />
+    <Text Key="cbTextureLayout.Item1" Text="Dlaždice" Comment="Tile" />
+    <Text Key="cbTextureLayout.Item2" Text="Na střed" Comment="Center" />
+    <Text Key="cbTextureLayout.Item3" Text="Roztažení" Comment="Stretch" />
+    <Text Key="cbTextureLayout.Item4" Text="Změna velikosti" Comment="Zoom" />
+    <Text Key="ComicDisplaySettingsDialog" Text="Volby zobrazení komksu" Comment="Book Display Settings" />
+    <Text Key="chkRealisticPages" Text="Realistické zobrazení komiksu" Comment="Realistic Page Display" />
+  </Texts>
+</TR>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBook" CultureName="hr">
+  <Texts>
+    <Text Key="Added" Text="Dodan:\t{0}" Comment="Added:\t{0}" />
+    <Text Key="Format" Text="Format:\t{0}" Comment="Format:\t{0}" />
+    <Text Key="LastPageReadIs" Text="Zadnja pročitana stranica: {0}" Comment="Last page read is {0}" />
+    <Text Key="LastTimeOpenedAt" Text="Zadnji puta otvoren: {0}" Comment="Last time opened at {0}" />
+    <Text Key="Library" Text="Biblioteka" Comment="Library" />
+    <Text Key="MyFavoritesList" Text="Omiljeni svesci" Comment="My Favorites" />
+    <Text Key="Never" Text="nikada" Comment="never" />
+    <Text Key="NeverReadList" Text="Nikada pročitani" Comment="Never Read" />
+    <Text Key="NoInformation" Text="Nema informacija" Comment="No information available" />
+    <Text Key="None" Text="Ništa" Comment="None" />
+    <Text Key="Of" Text="od" Comment="of" />
+    <Text Key="Opened" Text="Otvoreno:\t{0}" Comment="Opened:\t{0}" />
+    <Text Key="Pages" Text="{0} Stranica" Comment="{0} Page(s)" />
+    <Text Key="PageSize" Text="Veličina stranice:\t{0}" Comment="Size:\t{0}" />
+    <Text Key="PageText" Text="Stranica #{0}" Comment="Page #{0}" />
+    <Text Key="ReadingAtPage" Text="Trenutna stranica: {0}" Comment="Reading at page {0}" />
+    <Text Key="ReadingList" Text="Čitanje" Comment="Reading" />
+    <Text Key="ReadList" Text="Pročitano" Comment="Read" />
+    <Text Key="RecentlyAddedList" Text="Nedavno dodano" Comment="Recently Added" />
+    <Text Key="RecentlyReadList" Text="Nedavno pročitano" Comment="Recently Read" />
+    <Text Key="Resolution" Text="Razlučivanje:\t{0} x {1}" Comment="Resolution:\t{0} x {1}" />
+    <Text Key="Size" Text="Veličina:\t{0}/{1}" Comment="Size:\t{0}/{1}" />
+    <Text Key="SmartLists" Text="Pametni popis" Comment="Smart Lists" />
+    <Text Key="UnknownSize" Text="Nepoznata veličina" Comment="Unknown Size" />
+    <Text Key="Unknown" Text="Nepoznat" Comment="Unknown" />
+    <Text Key="Volume" Text="S{0}" Comment="V{0}" />
+  </Texts>
+</TR>

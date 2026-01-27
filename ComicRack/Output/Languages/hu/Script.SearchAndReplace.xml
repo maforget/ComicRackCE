@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Script.SearchAndReplace" CultureName="hu">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Mégse" Comment="&amp;Cancel" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="Description" Text="Egy szkript, amivel a képregények adataiban kereshetünk és cserélhetünk értékeket" Comment="A script to to search and replace values in Books" />
+    <Text Key="Caption" Text="Keresés és csere..." Comment="Search and Replace..." />
+    <Text Key="Name" Text="Keresés és csere..." Comment="Search and Replace..." />
+    <Text Key="labelField" Text="Mezők:" Comment="Fields:" />
+    <Text Key="labelSearch" Text="Keresés:" Comment="Search:" />
+    <Text Key="labelReplace" Text="Csere" Comment="Replace" />
+  </Texts>
+</TR>

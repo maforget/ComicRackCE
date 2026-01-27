@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Keyboard" CultureName="hu">
+  <Texts>
+    <Text Key="Browse" Text="Böngészés" Comment="Browse" />
+    <Text Key="Display Options" Text="Megjelenítési opciók" Comment="Display Options" />
+    <Text Key="Exit" Text="Kilépés" Comment="Exit" />
+    <Text Key="FitAll" Text="Mindenhez igazítás" Comment="Fit All" />
+    <Text Key="FitBest" Text="Legjobb igazítás" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="Magassághoz igazítás" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="Szélességhez igazítás" Comment="Fit Width" />
+    <Text Key="Library" Text="Könytár" Comment="Library" />
+    <Text Key="MoveDown" Text="Le" Comment="Down" />
+    <Text Key="MoveLeft" Text="Balra" Comment="Left" />
+    <Text Key="MoveNextPart" Text="Következő rész" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="Előző rész" Comment="Previous Part" />
+    <Text Key="MoveRight" Text="Jobbra" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="Első oldal" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="Utolsó oldal" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="Következő oldal" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="Előző oldal" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="Fel" Comment="Up" />
+    <Text Key="NextTab" Text="Következő fül" Comment="Next Tab" />
+    <Text Key="Other" Text="Egyéb" Comment="Other" />
+    <Text Key="Page Display" Text="Oldal megjelenítés" Comment="Page Display" />
+    <Text Key="PrevTab" Text="Előző fül" Comment="Previous Tab" />
+    <Text Key="Scroll" Text="Görgetés" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="Böngészőt mutassa" Comment="Show Browser" />
+    <Text Key="ToggleFullScreen" Text="Teljes képernyő be/ki" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="Nagyító be/ki" Comment="Toggle Magnifier" />
+    <Text Key="ToggleTwoPages" Text="Kétoldalas mód be/ki" Comment="Toggle Two Pages" />
+    <Text Key="RotateC" Text="Forgatás jobbra" Comment="Rotate Right" />
+    <Text Key="RotateCC" Text="Forgatás balra" Comment="Rotate Left" />
+    <Text Key="ZoomIn" Text="Nagyítás" Comment="Zoom In" />
+    <Text Key="ZoomOut" Text="Kicsinyítés" Comment="Zoom Out" />
+    <Text Key="ToggleUndockReader" Text="Olvasó külön ablakban" Comment="Toggle Undock Reader" />
+    <Text Key="Original" Text="Eredeti méret" Comment="Original Size" />
+    <Text Key="MovePartDown10" Text="Rész mozgatása lefelé 10%-kal" Comment="Move Part 10% down" />
+    <Text Key="MovePartUp10" Text="Rész mozgatása felfelé 10%-kal" Comment="Move Part 10% up" />
+    <Text Key="FitWidthAdaptive" Text="Szélességhez igazítás (adaptív)" Comment="Fit Width (adaptive)" />
+    <Text Key="MoveFirstPart" Text="Oldal eleje" Comment="Page Start" />
+    <Text Key="MoveLastPart" Text="Oldal vége" Comment="Page End" />
+    <Text Key="Auto Scroll" Text="Automatikus görgetés" Comment="Auto Scroll" />
+    <Text Key="ToggleAutoScrolling" Text="Automatikus görgetés be/ki" Comment="Toggle Auto Scrolling" />
+    <Text Key="DoublePageAutoScroll" Text="Kétoldalas automatikus görgetés" Comment="Double Page Auto Scroll" />
+    <Text Key="ToggleMenu" Text="Menü be/ki" Comment="Toggle Menu" />
+    <Text Key="MoveToPrevBookmark" Text="Előző könyvjelző" Comment="Previous Bookmark" />
+    <Text Key="MoveToNextBookmark" Text="Következő könyvjelző" Comment="Next Bookmark" />
+    <Text Key="MoveToPrevPageSingle" Text="Egy oldalt vissza" Comment="Single Page Back" />
+    <Text Key="MoveToNextPageSingle" Text="Egy oldalt előre" Comment="Single Page Forward" />
+    <Text Key="AutoRotate" Text="Dupla oldalak automatikus forgatása" Comment="Autorotate Double Pages" />
+    <Text Key="PageRotateC" Text="Oldal jobbra forgatása" Comment="RotatePageRight" />
+    <Text Key="PageRotateCC" Text="Oldal balra forgatása" Comment="RotatePageLeft" />
+    <Text Key="Edit" Text="Szerkesztés" Comment="Edit" />
+    <Text Key="OnlyFitIfOversized" Text="Csak akkor igazít, ha nem fér el" Comment="Only Fit if oversized" />
+    <Text Key="NextComic" Text="Következő képregény" Comment="Next Book" />
+    <Text Key="RandomComic" Text="Véletlen képregény" Comment="Random Book" />
+    <Text Key="PrevComic" Text="Előző képregény" Comment="Previous Book" />
+    <Text Key="StepZoomIn" Text="Lépésenként nagyít" Comment="Step Zoom In" />
+    <Text Key="StepZoomOut" Text="Lépésenként kicsinyít" Comment="Step Zoom Out" />
+    <Text Key="ToggleManga" Text="Képregény megjelölése Mangának" Comment="Toggle Manga for Book" />
+    <Text Key="ToggleRealisticPages" Text="Élethű megjelenítés" Comment="Toggle Realistic Display" />
+    <Text Key="SinglePage" Text="Egy oldal" Comment="Single Page" />
+    <Text Key="TwoPages" Text="Két oldal" Comment="Two Pages" />
+    <Text Key="TwoPagesAdaptive" Text="Két oldal (adaptív)" Comment="Two Pages (adaptive)" />
+    <Text Key="RightToLeft" Text="Jobbról balra" Comment="Right to Left" />
+    <Text Key="ZoomAndRotate" Text="Nagyítás és forgatás" Comment="Zoom and Rotate" />
+    <Text Key="ToggleNavigationOverlay" Text="Navigációs segéd" Comment="Toggle Navigation Overlay" />
+    <Text Key="ToggleZoom" Text="Nagyítás ki/bekapcsolása" Comment="Toggle Zoom" />
+  </Texts>
+</TR>

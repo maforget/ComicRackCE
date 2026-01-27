@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ExportErrorsDialog" CultureName="tr">
+  <Texts>
+    <Text Key="btOk" Text="Tamam" Comment="OK" />
+    <Text Key="coleComic" Text="e-Çizgi Roman" Comment="eComic" />
+    <Text Key="colProblem" Text="Sorun" Comment="Problem" />
+    <Text Key="ExportErrorsDialog" Text="e-Çizgi Roman Çıkış Hataları" Comment="Comic Export Errors" />
+  </Texts>
+</TR>

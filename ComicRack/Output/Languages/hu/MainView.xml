@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MainView" CultureName="hu">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="Alulra helyez" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="Kitölt" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="Balra helyez" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="Jobbra helyez" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="Bezárás" Comment="Close" />
+    <Text Key="tsbFolders" Text="Mappák" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="Böngészés a mappákban" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="Könyvtár" Comment="Library" />
+    <Text Key="tsbPages" Text="Oldalak" Comment="Pages" />
+    <Text Key="tsbShowMenu" Text="Menü megjelenítése" Comment="Show Menu" />
+    <Text Key="tsbLibrary.Tooltip" Text="A könyvtárban vannak a képregények" Comment="Library with all Books" />
+    <Text Key="tsbPages.Tooltip" Text="A megnyitott képregény oldalai" Comment="Pages of the current Book" />
+    <Text Key="tsbInfoPanelLeft" Text="Információs panel jobb oldalra" Comment="Info Panel Right" />
+    <Text Key="tsbAlignment" Text="Áthelyezés" Comment="Docking Mode" />
+  </Texts>
+</TR>

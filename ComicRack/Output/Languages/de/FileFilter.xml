@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FileFilter" CultureName="de">
+  <Texts>
+    <Text Key="ReadingListSaveFilter" Text="ComicRack Leseliste|*.cbl|ComicRack Leseliste (Einzelne Einträge)|*.cbl" Comment="ComicRack Reading List|*.cbl|ComicRack Reading List (Single Entries)|*.cbl"/>
+    <Text Key="ReadingListLoad" Text="ComicRack Leseliste|*.cbl|Xml Datei|*.xml|Alle Dateien|*.*" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml|All Files|*.*"/>
+    <Text Key="PageImageSave" Text="JPEG Datei|*.jpg|Windows Bitmap Datei|*.bmp|PNG Datei|*.png|GIF Datei|*.gif|TIFF Datei|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif"/>
+    <Text Key="LoadThumbnail" Text="JPEG Datei|*.jpg|Windows Bitmap Datei|*.bmp|PNG Datei|*.png|GIF Datei|*.gif|TIFF Datei|*.tif|Icon Datei|*.ico" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif|Icon Image|*.ico"/>
+    <Text Key="ComicRackDatabase" Text="ComicRack Datenbank|*.xml" Comment="ComicRack Database|*.xml"/>
+    <Text Key="ComicRackBackup" Text="ComicRack Backup|*.zip" Comment="ComicRack Backup|*.zip"/>
+    <Text Key="AllFiles" Text="Alle Dateien" Comment="All Files"/>
+    <Text Key="AllSupportedFiles" Text="Alle unterstützten Dateien" Comment="All supported Files"/>
+    <Text Key="FormatReadingList" Text="ComicRack Leseliste" Comment="ComicRack Reading List"/>
+    <Text Key="ScriptPackageOpen" Text="ComicRack Plugin|*.crplugin|Script Paket|*.zip" Comment="ComicRack Plugin|*.crplugin|Script Archive|*.zip"/>
+    <Text Key="KeyboardLayout" Text="Tatstur Layout" Comment="Keyboard Layout"/>
+    <Text Key="KeyboardLayoutFilter" Text="Tastatur Layout|*.xml" Comment="Keyboard Layout|*.xml"/>
+  </Texts>
+</TR>

@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MainForm" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="browseMenu" Text="&amp;Procházet" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="&amp;Kopírovat stránku" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="&amp;Exportovat stránku..." Comment="&amp;Export Page..." />
+    <Text Key="miCopyPage" Text="&amp;Kopírovat stránku" Comment="&amp;Copy Page" />
+    <Text Key="miExportPage" Text="&amp;Exportovat stránku..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="Přizpůsobit celkově" Comment="Fit All" />
+    <Text Key="cmFitBest" Text="Přizpůsobit nejlépe" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="Přizpůsobit na výšku" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="Přizpůsobit na šířku" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="&amp;Lupa" Comment="&amp;Magnifier" />
+    <Text Key="cmNotifyExit" Text="&amp;Ukončit" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="&amp;Obnovit" Comment="&amp;Restore" />
+    <Text Key="cmRate0" Text="Žádné" Comment="None" />
+    <Text Key="cmRate1" Text="* (1 Hvězdička)" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** (2 Hvězdičky)" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** (3 Hvězdičky)" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** (4 Hvězdičky)" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** (5 Hvězdiček)" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="Moje &amp;hodnocení" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="&amp;Aktualizovat" Comment="&amp;Refresh" />
+    <Text Key="cmSyncBrowser" Text="Ukázat v &amp;Průzkumníku" Comment="Show in &amp;Browser" />
+    <Text Key="ExportingErrors" Text="{0} chyb. Klikni pro více detailů" Comment="{0} errors. Click for details" />
+    <Text Key="displayMenu" Text="&amp;Zobrazit" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="&amp;Upravit" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="&amp;Soubor" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="&amp;Nápověda" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack" Comment="ComicRack" />
+    <Text Key="miAbout" Text="&amp;O programu..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="&amp;Přidat složku do Knihovny..." Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="Nový &amp;panel" Comment="New &amp;Tab" />
+    <Text Key="miBestFit" Text="Přizpůsobit &amp;nejlépe" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="Zavřít vše" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="&amp;Zavřít" Comment="&amp;Close" />
+    <Text Key="miEditListLayout" Text="&amp;Upravit rozvržení seznamu..." Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="&amp;Ukončit" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="A&amp;utomatizace" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="&amp;První stránka" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="Přizpůsobit &amp;celkově" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="Přizpůsobit na výš&amp;ku" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="Přizpůsobit na &amp;šířku" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="&amp;Celá obrazovka" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="&amp;Poslední stránka" Comment="&amp;Last Page" />
+    <Text Key="miLastPageRead" Text="&amp;Poslední čtená stránka" Comment="L&amp;ast Page Read" />
+    <Text Key="miListLayouts" Text="Rozvržení seznamu" Comment="List Layout" />
+    <Text Key="miNews" Text="&amp;Novinky..." Comment="&amp;News..." />
+    <Text Key="miNextTab" Text="Další &amp;panel" Comment="Next &amp;Tab" />
+    <Text Key="miPageType" Text="&amp;Typ stránky" Comment="&amp;Page Type" />
+    <Text Key="cmPageType" Text="&amp;Typ stránky" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="&amp;Nastavení..." Comment="&amp;Preferences..." />
+    <Text Key="miPrevPage" Text="Předchozí stránka" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="&amp;Předchozí panel" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="Žádné" Comment="None" />
+    <Text Key="miRate1" Text="* (1 Hvězdička)" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** (2 Hvězdičky)" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** (3 Hvězdičky)" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** (4 Hvězdičky)" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** (5 Hvězdiček)" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="Moje &amp;hodnocení" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="Rest&amp;artovat" Comment="Rest&amp;art" />
+    <Text Key="miRotate0" Text="&amp;Neotáčet" Comment="&amp;No Rotation" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="cmRotate0" Text="&amp;Neotáčet" Comment="&amp;No Rotation" />
+    <Text Key="cmRotate180" Text="180°" Comment="180°" />
+    <Text Key="cmRotate270" Text="270°" Comment="270°" />
+    <Text Key="cmRotate90" Text="90°" Comment="90°" />
+    <Text Key="miRotation" Text="&amp;Otočení" Comment="&amp;Rotation" />
+    <Text Key="miSaveListLayout" Text="&amp;Uložit rozvržení seznamu..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="&amp;Uložit pracovní plochu..." Comment="&amp;Save Workspace..." />
+    <Text Key="miAutoScroll" Text="Automaticky posunovat" Comment="Auto Scrolling" />
+    <Text Key="miSearchBrowser" Text="P&amp;rohledat" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="Nastavit všechny seznamy do aktuálního rozvržení" Comment="Set all Lists to current Layout" />
+    <Text Key="miSidebar" Text="&amp;Postranní lišta" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="M&amp;alý náhled" Comment="S&amp;mall Preview" />
+    <Text Key="miSupport" Text="Podpořte ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miSyncBrowser" Text="Ukázat v &amp;Průzkumníku" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="&amp;Průzkumník" Comment="&amp;Browser" />
+    <Text Key="miView100" Text="100 %" Comment="100 %" />
+    <Text Key="miView150" Text="150 %" Comment="150 %" />
+    <Text Key="miView200" Text="200 %" Comment="200 %" />
+    <Text Key="miView300" Text="300 %" Comment="300 %" />
+    <Text Key="miView400" Text="400 %" Comment="400 %" />
+    <Text Key="miViewFolders" Text="&amp;Složky" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="&amp;Knihovna" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="&amp;Stránky" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="&amp;Aktualizovat" Comment="&amp;Refresh" />
+    <Text Key="miWebHome" Text="Hlavní stránka ComicRacku..." Comment="ComicRack Homepage..." />
+    <Text Key="miWebUserForum" Text="Uživatelské fórum ComicRacku..." Comment="ComicRack User Forum..." />
+    <Text Key="miWorkspaces" Text="Pr&amp;acovní plochy" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="Přiblížení" Comment="Zoom" />
+    <Text Key="readMenu" Text="&amp;Číst" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="Nastavit rozvržení '{0}'" Comment="Set '{0}' Layout" />
+    <Text Key="tbBestFit" Text="Přizpůsobit nejlépe" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="Zobrazit" Comment="Display" />
+    <Text Key="tbFit" Text="Přizpůsobit" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="Způsob zobrazení" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="Přizpůsobit celkově" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="Přizpůsobit na výšku" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="Přizpůsobit na šířku" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="Celá obrazovka" Comment="Full Screen" />
+    <Text Key="tbMagnify" Text="Lupa" Comment="Magnifier" />
+    <Text Key="tbNextPage" Text="Další stránka" Comment="Next Page" />
+    <Text Key="tbNextTab" Text="Další &amp;panel" Comment="Next &amp;Tab" />
+    <Text Key="tbNextTab.Tooltip" Text="Další panel" Comment="Next Tab" />
+    <Text Key="tbPrevTab" Text="&amp;Předchozí panel" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="Předchozí záložka" Comment="Vorheriger Tab" />
+    <Text Key="tbReadLabel" Text="Číst" Comment="Read" />
+    <Text Key="tbAutoScroll" Text="Automaticky posunovat" Comment="Auto Scrolling" />
+    <Text Key="tbTwoPages" Text="Dvě stránky" Comment="Two Pages" />
+    <Text Key="tsBook" Text="Kniha" Comment="Book" />
+    <Text Key="tsExportActivity" Text="Exportování" Comment="Exporting" />
+    <Text Key="tsCurrentPage" Text="Stránka" Comment="Page" />
+    <Text Key="tsPageActivity.Tooltip" Text="Získávání stránek a miniatur..." Comment="Getting Pages and Thumbnails..." />
+    <Text Key="tsPageCount" Text="0 Stran" Comment="0 Pages" />
+    <Text Key="tsSaveWorkspace" Text="&amp;Uložit pracovní plochu..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsScanActivity.Tooltip" Text="Sken běží..." Comment="A scan is running..." />
+    <Text Key="tsText" Text="Připraven" Comment="Ready" />
+    <Text Key="tsWriteInfoActivity.Tooltip" Text="Zápis informací do souborů..." Comment="Writing info data to files..." />
+    <Text Key="tsReadInfoActivity.Tooltip" Text="Čtení informací ze souborů..." Comment="Reading info data from files..." />
+    <Text Key="tsWorkspaces" Text="Pracovní plochy" Comment="Workspaces" />
+    <Text Key="miReaderUndocked" Text="Číst v novém okně" Comment="Reader in own Window" />
+    <Text Key="tbReaderUndocked" Text="Číst v novém okně" Comment="Reader in own Window" />
+    <Text Key="miPageLayout" Text="Rozvržení stránky" Comment="Page Layout" />
+    <Text Key="cmPageLayout" Text="Rozvržení stránky" Comment="Page Layout" />
+    <Text Key="miAdaptiveTwoPageFitting" Text="Přizpůsobit rozšíření na dvojstránku" Comment="Adapt to double page spreads" />
+    <Text Key="cmAdaptiveTwoPageFitting" Text="Přizpůsobit rozšíření na dvojstránku" Comment="Adapt to double page spreads" />
+    <Text Key="tbAdaptiveTwoPageFitting" Text="Přizpůsobit rozšíření na dvojstránku" Comment="Adapt to double page spreads" />
+    <Text Key="miOriginal" Text="Původní velikost" Comment="Original Size" />
+    <Text Key="tbOriginal" Text="Původní velikost" Comment="Original Size" />
+    <Text Key="cmOriginal" Text="Původní velikost" Comment="Original Size" />
+    <Text Key="NotifyIconText" Text="Dvojklik pro obnovení" Comment="Double Click to restore" />
+    <Text Key="cmOnlyFitOversized" Text="Přizpůsobit jen větší" Comment="Only Fit if oversized" />
+    <Text Key="miOnlyFitOversized" Text="Přizpůsobit jen větší" Comment="Only Fit if oversized" />
+    <Text Key="tbOnlyFitOversized" Text="Přizpůsobit jen větší" Comment="Only Fit if oversized" />
+    <Text Key="ChangeItemSize" Text="Změnit velikost položek seznamu" Comment="Change size of the list items" />
+    <Text Key="miDoublePageAutoScroll" Text="Automatický posun dvojstrany" Comment="Double Page Auto Scrolling" />
+    <Text Key="cmFitWidthAdaptive" Text="Přizpůsobit na šířku (adaptivní)" Comment="Fit Width (adaptive)" />
+    <Text Key="miFitWidthAdaptive" Text="Přizpůsobit na šířku (adaptivní)" Comment="Fit Width (adaptive)" />
+    <Text Key="tbFitWidthAdaptive" Text="Přizpůsobit na šířku (adaptivní)" Comment="Fit Width (adaptive)" />
+    <Text Key="cmRightToLeft" Text="Zprava doleva" Comment="Right to Left" />
+    <Text Key="tbRightToLeft" Text="Zprava doleva" Comment="Right to Left" />
+    <Text Key="miRightToLeft" Text="Zprava doleva" Comment="Right to Left" />
+    <Text Key="miMinimalGui" Text="Jednoduché rozhraní" Comment="Minimal User Interface" />
+    <Text Key="tbMinimalGui" Text="Jednoduché rozhraní" Comment="Minimal User Interface" />
+    <Text Key="cmMinimalGui" Text="Jednoduché rozhraní" Comment="Minimal User Interface" />
+    <Text Key="miWebHelp" Text="Dokumentace ComicRacku..." Comment="ComicRack Documentation..." />
+    <Text Key="miBookmarks" Text="Záložky" Comment="Bookmarks" />
+    <Text Key="miSetBookmark" Text="Nastavit záložku..." Comment="Set Bookmark..." />
+    <Text Key="miRemoveBookmark" Text="Odstranit záložku" Comment="Remove Bookmark" />
+    <Text Key="tbBookmarks" Text="Záložky" Comment="Bookmarks" />
+    <Text Key="tbSetBookmark" Text="Nastavit záložku..." Comment="Set Bookmark..." />
+    <Text Key="tbRemoveBookmark" Text="Odstranit záložku" Comment="Remove Bookmark" />
+    <Text Key="tbLastPageRead" Text="Poslední přečtená stránka" Comment="Last Page Read" />
+    <Text Key="cmBookmarks" Text="Záložky" Comment="Bookmarks" />
+    <Text Key="cmSetBookmark" Text="Nastavit záložku..." Comment="Set Bookmark..." />
+    <Text Key="cmRemoveBookmark" Text="Odstranit záložku" Comment="Remove Bookmark" />
+    <Text Key="cmLastPageRead" Text="Poslední přečtená stránka" Comment="Last Page Read" />
+    <Text Key="miPrevBookmark" Text="Předchozí záložka" Comment="Previous Bookmark" />
+    <Text Key="miNextBookmark" Text="Další záložka" Comment="Next Bookmark" />
+    <Text Key="tbPrevBookmark" Text="Předchozí záložka" Comment="Previous Bookmark" />
+    <Text Key="tbNextBookmark" Text="Další záložka" Comment="Next Bookmark" />
+    <Text Key="cmPrevBookmark" Text="Předchozí záložka" Comment="Previous Bookmark" />
+    <Text Key="cmNextBookmark" Text="Další záložka" Comment="Next Bookmark" />
+    <Text Key="miZoomIn" Text="Přiblížit" Comment="Zoom In" />
+    <Text Key="tbZoomIn" Text="Přiblížit" Comment="Zoom In" />
+    <Text Key="miZoomOut" Text="Oddálit" Comment="Zoom Out" />
+    <Text Key="tbZoomOut" Text="Oddálit" Comment="Zoom Out" />
+    <Text Key="miZoomCustom" Text="Vlastní..." Comment="Custom..." />
+    <Text Key="tbZoomCustom" Text="Vlastní..." Comment="Custom..." />
+    <Text Key="tbZoom.Tooltip" Text="Změnit přiblížení stránky" Comment="Change the page zoom" />
+    <Text Key="tbRotate.Tooltip" Text="Změnit otočení stránky" Comment="Change the page rotation" />
+    <Text Key="miRotateLeft" Text="Otočit doleva" Comment="Rotate Left" />
+    <Text Key="miRotateRight" Text="Otočit doprava" Comment="Rotate Right" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="tbRotateLeft" Text="Otočit doleva" Comment="Rotate Left" />
+    <Text Key="tbRotateRight" Text="Otočit doprava" Comment="Rotate Right" />
+    <Text Key="tbRotate180" Text="180°" Comment="180°" />
+    <Text Key="tbRotate270" Text="270°" Comment="270°" />
+    <Text Key="tbRotate90" Text="90°" Comment="90°" />
+    <Text Key="tbAutoRotate" Text="Automaticky otáčet dvoustránky" Comment="Autorotate Double Pages" />
+    <Text Key="miAutoRotate" Text="Automaticky otáčet dvoustránky" Comment="Autorotate Double Pages" />
+    <Text Key="cmCloseAllButThis" Text="Zavřít vše kromě aktivního" Comment="Close All But This" />
+    <Text Key="cmCopyPath" Text="Kopírovat plnou cestu" Comment="Copy Full Path" />
+    <Text Key="cmRevealInExplorer" Text="Ukázat v Průzkumníku" Comment="Reveal in Explorer" />
+    <Text Key="cmClose" Text="Zavřít" Comment="Close" />
+    <Text Key="cmCloseComic" Text="Zavřít" Comment="Close" />
+    <Text Key="SavePageTitle" Text="Uložit stránku jako..." Comment="Save Page as..." />
+    <Text Key="cmPageRotate" Text="Otočení stránky" Comment="Page Rotation" />
+    <Text Key="miPageRotate" Text="Otočení stránky" Comment="Page Rotation" />
+    <Text Key="miOpenRemoteLibrary" Text="Otevřít vzdálenou knihovnu..." Comment="Open Remote Library..." />
+    <Text Key="miUndo" Text="Vrátit" Comment="Undo" />
+    <Text Key="miRedo" Text="Opakovat" Comment="Redo" />
+    <Text Key="cmShowInfo" Text="&amp;Informace..." Comment="&amp;Info..." />
+    <Text Key="tbAbout" Text="&amp;O programu..." Comment="&amp;About..." />
+    <Text Key="tbFirstPage" Text="&amp;První stránka" Comment="&amp;First Page" />
+    <Text Key="tbLastPage" Text="Poslední stránka" Comment="&amp;Last Page" />
+    <Text Key="miNextPage" Text="&amp;Další stránka" Comment="Next Page" />
+    <Text Key="miMagnify" Text="Lupa" Comment="Magnifier" />
+    <Text Key="tbPreferences" Text="&amp;Nastavení..." Comment="&amp;Preferences..." />
+    <Text Key="tbTools" Text="Nástroje" Comment="Tools" />
+    <Text Key="tbTools.Tooltip" Text="Přístup k důležitým příkazům" Comment="Access to important commands" />
+    <Text Key="tbShowMainMenu" Text="Zobrazit hlavní menu" Comment="Show Main Menu" />
+    <Text Key="tbPrevPage" Text="Předchozí stránka" Comment="&amp;Previous Page" />
+    <Text Key="miRotate0" Text="0°" Comment="0°" />
+    <Text Key="miShowInfo" Text="&amp;Informace..." Comment="&amp;Info..." />
+    <Text Key="tbShowInfo" Text="&amp;Informace" Comment="&amp;Info..." />
+    <Text Key="tbSupport" Text="Podpořte ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miTwoPages" Text="Dvě stránky" Comment="Two Pages" />
+    <Text Key="cmTwoPages" Text="Dvě stránky" Comment="Two Pages" />
+    <Text Key="miTwoPagesAdaptive" Text="Dvě stránky (adaptivní)" Comment="Two Pages (adaptive)" />
+    <Text Key="cmTwoPagesAdaptive" Text="Dvě stránky (adaptivní)" Comment="Two Pages (adaptive)" />
+    <Text Key="tbTwoPagesAdaptive" Text="Dvě stránky (adaptivní)" Comment="Two Pages (adaptive)" />
+    <Text Key="miSinglePage" Text="Jedna stránka" Comment="Single Page" />
+    <Text Key="cmSinglePage" Text="Jedna stránka" Comment="Single Page" />
+    <Text Key="tbSinglePage" Text="Jedna stránka" Comment="Single Page" />
+    <Text Key="tbRotate0" Text="0°" Comment="0°" />
+    <Text Key="miPreviousList" Text="Předchozí seznam" Comment="Previous List" />
+    <Text Key="miNextList" Text="Další seznam" Comment="Next List" />
+    <Text Key="miUpdateWebComics" Text="Aktualizovat webové komiksy" Comment="Update Web Comics" />
+    <Text Key="tbUpdateWebComics" Text="Aktualizovat webové komiksy" Comment="Update Web Comics" />
+    <Text Key="tbOpenRemoteLibrary" Text="Otevřít vzdálenou knihovnu..." Comment="Open Remote Library..." />
+    <Text Key="miToggleZoom" Text="Zapnout přiblížení" Comment="Toggle Zoom" />
+    <Text Key="miEditLayouts" Text="U&amp;pravit uložená rozvržení..." Comment="&amp;Edit Layouts..." />
+    <Text Key="miEditWorkspaces" Text="&amp;Upravit pracovní plochy..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="tsEditWorkspaces" Text="&amp;Upravit pracovní plochy..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="quickOpenView" Text="Rychlé otevření" Comment="Quick Open" />
+    <Text Key="miTasks" Text="Úlohy..." Comment="Tasks..." />
+    <Text Key="cmCloseAllToTheRight" Text="Zavřít vše napravo" Comment="Close All to the Right" />
+    <Text Key="cmNextFromList" Text="&amp;Další eKomiks" Comment="Ne&amp;xt Book" />
+    <Text Key="cmRandomFromList" Text="Náhodný eKomiks" Comment="Random Book" />
+    <Text Key="cmPrevFromList" Text="Pře&amp;dcházející eKomiks" Comment="Pre&amp;vious Book" />
+    <Text Key="ExportingComics" Text="Exportování eKomixů: {0} ve frontě" Comment="Exporting Books: {0} queued" />
+    <Text Key="miNextFromList" Text="Další eKomiks" Comment="Ne&amp;xt Book" />
+    <Text Key="miRandomFromList" Text="Náhodný eKomiks" Comment="Random Book" />
+    <Text Key="miOpenComic" Text="&amp;Otevřít eKomiks..." Comment="&amp;Open File..." />
+    <Text Key="cmOpenComic" Text="&amp;Otevřít eKomiks..." Comment="&amp;Open File..." />
+    <Text Key="tbOpenComic" Text="&amp;Otevřít eKomiks..." Comment="&amp;Open File..." />
+    <Text Key="miOpenNow" Text="Otevřené eKo&amp;miksy" Comment="Open Books" />
+    <Text Key="miOpenRecent" Text="&amp;Nedávno čtené eKomiksy" Comment="&amp;Recent Books" />
+    <Text Key="miPrevFromList" Text="Pře&amp;dcházející eKomiks" Comment="Pre&amp;vious Book" />
+    <Text Key="miScan" Text="Skenovat &amp;složky eKomiksů" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbScan" Text="Skenovat &amp;složky eKomiksů" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbNextFromList" Text="Další eKomiks ze seznamu" Comment="Next Book from List" />
+    <Text Key="tbRandomFromList" Text="Náhodný eKomiks" Comment="Random Book" />
+    <Text Key="tbPrevFromList" Text="Předchozí eKomiks ze seznamu" Comment="Previous Book from List" />
+    <Text Key="tsBook.Tooltip" Text="Název otevřeného eKomiksu" Comment="Name of the opened Book" />
+    <Text Key="tsCurrentPage.Tooltip" Text="Aktuální stránka otevřeného eKomiksu" Comment="Current Page of the open Book" />
+    <Text Key="tsPageCount.Tooltip" Text="Počet stran otevřeného eKomiksu" Comment="Page count of the open Book" />
+    <Text Key="tbPageLayout" Text="Rozvržení stránky" Comment="Page Layout" />
+    <Text Key="cmComics" Text="eKomiks" Comment="Books" />
+    <Text Key="miUpdateAllComicFiles" Text="Aktualizovat soubory všech eKomiksů" Comment="Update all Book Files" />
+    <Text Key="tbUpdateAllComicFiles" Text="Aktualizovat soubory všech eKomiksů" Comment="Update all Book Files" />
+    <Text Key="miComicDisplaySettings" Text="Volby zobrazení komiksu..." Comment="Book Display Settings..." />
+    <Text Key="tbComicDisplaySettings" Text="Volby zobrazení komiksu..." Comment="Book Display Settings..." />
+    <Text Key="miHelp" Text="Nápověda" Comment="Help" />
+    <Text Key="miChooseHelpSystem" Text="Vyberte systém nápovědy" Comment="Choose Help System" />
+    <Text Key="miHelpPlugins" Text="Zásuvné moduly" Comment="Plugins" />
+    <Text Key="miNewComic" Text="Nový prázdný záznam eKomiksu..." Comment="New fileless Book Entry..." />
+    <Text Key="miHelpQuickIntro" Text="Rychlý úvod do programu" Comment="Quick Introduction" />
+    <Text Key="DeviceSyncing" Text="Synchronizace zařízení: {0} ve frontě" Comment="Syncing Devices: {0} queued" />
+    <Text Key="DeviceSyncingErrors" Text="{0} chyb. Klikněte pro detaily" Comment="{0} errors. Click for details" />
+    <Text Key="miDevices" Text="Zařízení..." Comment="Devices..." />
+    <Text Key="miSynchronizeDevices" Text="Synchronizovat zařízení" Comment="Synchronize Devices" />
+    <Text Key="tsSynchronizeDevices" Text="Synchronizovat zařízení" Comment="Synchronize Devices" />
+  </Texts>
+</TR>

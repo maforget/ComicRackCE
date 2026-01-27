@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.ComicRackUserForum" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Name" Text="[代码示例] 显示ComicRack用户论坛" Comment="[Code Sample] Show ComicRack User Forum" />
+    <Text Key="Description" Text="在快速打开显示ComicRack用户论坛" Comment="A script to display the ComicRack User Forum in Quick Open" />
+  </Texts>
+</TR>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TwitterPinDialog" CultureName="de">
+  <Texts>
+    <Text Key="TwitterPinDialog" Text="Twitter Genehmigung" Comment="Twitter Authorization" />
+    <Text Key="btCancel" Text="&amp;Abbruch" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelCaption" Text="Bitte geben sie den Twitter PIN ein:" Comment="Please enter the Twitter PIN:"/>
+  </Texts>

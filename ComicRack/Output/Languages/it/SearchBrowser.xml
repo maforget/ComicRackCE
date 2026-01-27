@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SearchBrowser" CultureName="it">
+  <Texts>
+    <Text Key="AlternateSeries" Text="Serie Alternativa" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="Colori" Comment="Colorists" />
+    <Text Key="Genre" Text="Generi" Comment="Genres" />
+    <Text Key="Imprint" Text="Collane" Comment="Imprints" />
+    <Text Key="Inker" Text="Chine" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="Lingue disponibilie" Comment="Languages" />
+    <Text Key="MonthAsText" Text="Mesi" Comment="Months" />
+    <Text Key="Penciller" Text="Disegnatori" Comment="Pencillers" />
+    <Text Key="Publisher" Text="Editore" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="Serie" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="Anno Edizione" Comment="Years" />
+    <Text Key="Writer" Text="Autori" Comment="Writers" />
+    <Text Key="Unspecified" Text="Non Specificato" Comment="Unspecified" />
+    <Text Key="AllItems" Text="Tutti ({0} {1})" Comment="All ({0} {1})" />
+    <Text Key="ShadowTitle" Text="Titoli" Comment="Titles" />
+    <Text Key="ShadowFormat" Text="Formati" Comment="Formats" />
+    <Text Key="Editor" Text="Curatori" Comment="Editors" />
+    <Text Key="Letterer" Text="Lettering" Comment="Letterer" />
+    <Text Key="Characters" Text="Personaggi" Comment="Characters" />
+    <Text Key="Teams" Text="Gangs" Comment="Teams" />
+    <Text Key="Locations" Text="Ubicazioni:" Comment="Locations" />
+    <Text Key="CoverArtist" Text="Copertina" Comment="Cover Artists" />
+    <Text Key="AgeRating" Text="Età Consigliate" Comment="Age Ratings" />
+    <Text Key="RatingAsText" Text="Valutazioni personali" Comment="My Ratings" />
+    <Text Key="CommunityRatingAsText" Text="Valutazione Comunità" Comment="Community Ratings" />
+    <Text Key="Tags" Text="Etichette" Comment="Tags" />
+    <Text Key="ShadowVolumeAsText" Text="Volumi" Comment="Volumes" />
+    <Text Key="Web" Text="Web" Comment="Web" />
+    <Text Key="BookPriceAsText" Text="Prezzi Album" Comment="Book Prices" />
+    <Text Key="BookAge" Text="Periodo Album" Comment="Book Ages" />
+    <Text Key="BookStore" Text="Negozi Album" Comment="Book Stores" />
+    <Text Key="BookOwner" Text="Proprietari Album" Comment="Book Owners" />
+    <Text Key="BookCondition" Text="Condizioni Album" Comment="Book Conditions" />
+    <Text Key="BookCollectionStatus" Text="Stato Collezione Album" Comment="Book Collection Status" />
+    <Text Key="BookLocation" Text="Ubicazione Album" Comment="Book Locations" />
+    <Text Key="MainCharacterOrTeam" Text="Personaggi o Team principali" Comment="Main Characters/Teams" />
+    <Text Key="SeriesGroup" Text="Gruppi Serie" Comment="Series Groups" />
+    <Text Key="StoryArc" Text="Story Arcs" Comment="Story Arcs" />
+  </Texts>
+</TR>

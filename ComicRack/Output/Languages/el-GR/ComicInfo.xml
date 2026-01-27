@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicInfo" CultureName="el-GR">
+  <Texts>
+    <Text Key="YesRightToLeft" Text="Ναι (Δεξιά προς τα Αριστερά)" Comment="Yes (Right to Left)" />
+  </Texts>
+</TR>

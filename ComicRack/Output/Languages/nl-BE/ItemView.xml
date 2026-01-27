@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ItemView" CultureName="nl-BE">
+  <Texts>
+    <Text Key="AutoFitAllColumns" Text="Auto Fit alle Kolommen" Comment="Auto Fit All Columns" />
+    <Text Key="AutoSizeAllColumns" Text="Auto Size Alle Kolommen" Comment="Auto Size All Columns" />
+    <Text Key="AutoSizeColumn" Text="Auto Size Kolom" Comment="Auto Size Column" />
+    <Text Key="miArrange" Text="Sorteer volgens" Comment="Arrange by" />
+    <Text Key="miGroup" Text="Groepeer volgens" Comment="Group by" />
+    <Text Key="miStack" Text="Stapel volgens" Comment="Stack by" />
+    <Text Key="miViewDetails" Text="Details" Comment="Details" />
+    <Text Key="miViewMode" Text="Beeld" Comment="View" />
+    <Text Key="miViewThumbs" Text="Miniaturen" Comment="Thumbnails" />
+    <Text Key="miViewTiles" Text="Tegels" Comment="Tiles" />
+    <Text Key="NotGrouped" Text="Niet gegroepeerd" Comment="Not Grouped" />
+    <Text Key="NotSorted" Text="Niet gesorteerd" Comment="Not Sorted" />
+    <Text Key="NotStacked" Text="Niet gestapeld" Comment="Not Stacked" />
+    <Text Key="Layout" Text="Lay-out" Comment="Layout" />
+  </Texts>
+</TR>

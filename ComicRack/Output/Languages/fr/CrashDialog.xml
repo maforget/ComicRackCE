@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="CrashDialog" CultureName="fr">
+  <Texts>
+    <Text Key="labelMessage" Text="Aidez ComicRack à devenir un meilleur logiciel en soumettant le rapport d'erreur. Ce rapport ne contient aucunes informations personnelles." Comment="Please help to make ComicRack a better application by submitting the follwing report. This report does not contain any data that could identify you." />
+    <Text Key="chkSubmit" Text="Soumettre" Comment="Submit" />
+    <Text Key="btDetails" Text="Détails" Comment="Details" />
+    <Text Key="btResume" Text="Continuer" Comment="Try Resume" />
+    <Text Key="btRestart" Text="Redémarrer ComicRack" Comment="Restart" />
+    <Text Key="btExit" Text="Quitter" Comment="Exit" />
+    <Text Key="CrashDialog" Text="ComicRack a rencontré un problème..." Comment="ComicRack encountered a Problem..." />
+  </Texts>
+</TR>

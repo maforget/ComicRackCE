@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PluginEngine" CultureName="fi">
+  <Texts>
+    <Text Key="EditUpdateBooksCommands" Text="Muokkaa/Päivitä KirjaKomentoja" Comment="Edit/Update Books Commands" />
+    <Text Key="CreateNewBooksCommands" Text="Luo uusia kirjakomentoja" Comment="Create New Books Commands" />
+    <Text Key="CustomComicPathParser" Text="Sarjiksen Polun Jäsennin" Comment="Comic Path Parsers" />
+    <Text Key="ActionswhenBooksareopened" Text="Toiminnot kun avataan Kirjoja" Comment="Actions when Books are opened" />
+    <Text Key="ActionswhenReaderisresized" Text="Toiminto muutettaessa Lukijan kokoa" Comment="Actions when Reader is resized" />
+    <Text Key="AdditionalSearchProviders" Text="Lisää hakumoottoreita" Comment="Additional Search Providers" />
+    <Text Key="ComicInformationPanels" Text="SarjisTietoTaulut" Comment="Comic Information Panels" />
+    <Text Key="QuickOpenPanels" Text="Pika-avaa Taulut" Comment="Quick Open Panels" />
+    <Text Key="CustomComicThumbnailOverlays" Text="Oma päällys kuvakkeille" Comment="Custom Comic Thumbnail Overlays" />
+  </Texts>
+</TR>

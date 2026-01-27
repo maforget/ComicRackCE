@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListEditorDialog" CultureName="sk-SK">
+  <Texts>
+    <Text Key="btNew" Text="&amp;Nový..." Comment="&amp;New..." />
+    <Text Key="btEdit" Text="&amp;Zmeniť..." Comment="&amp;Edit..." />
+    <Text Key="btActivate" Text="&amp;Aktivovať" Comment="&amp;Activate" />
+    <Text Key="btDelete" Text="Delete" Comment="Delete" />
+    <Text Key="btMoveTop" Text="Move &amp;Top" Comment="Move &amp;Top" />
+    <Text Key="btMoveUp" Text="Move &amp;Up" Comment="Move &amp;Up" />
+    <Text Key="btMoveDown" Text="Move &amp;Down" Comment="Move &amp;Down" />
+    <Text Key="btMoveBottom" Text="Move &amp;Bottom" Comment="Move &amp;Bottom" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Zrušiť" Comment="&amp;Cancel" />
+    <Text Key="colName" Text="Meno" Comment="Name" />
+    <Text Key="colDescription" Text="Popis" Comment="Description" />
+  </Texts>
+</TR>

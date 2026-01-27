@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ValueEditorDialog" CultureName="es">
+  <Texts>
+    <Text Key="ValueEditorDialog" Text="Editor de valores" Comment="Value Editor" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Cancelar" Comment="&amp;Cancel" />
+    <Text Key="btInsertValue" Text="Insertar Valor" Comment="Insert Value" />
+  </Texts>
+</TR>

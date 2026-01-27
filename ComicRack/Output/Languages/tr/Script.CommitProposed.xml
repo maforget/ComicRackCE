@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Script.CommitProposed" CultureName="tr">
+  <Texts>
+    <Text Key="AskCommit" Text="Teklif edilmiş ayarları kalıcı hale getirmek istediğinize emin misiniz?\nTeklif edilmiş ayarlar dosya adı baz alınarak üretilir ve gri renkle gösterilir." Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
+    <Text Key="Name" Text="Önerilmiş değerlere bağlı kal..." Comment="Commit Proposed Values..." />
+    <Text Key="Overwrite" Text="&amp;ve mevcut değerlerin üzerine yaz" Comment="&amp;Also overwrite existing values" />
+    <Text Key="Write" Text="Yaz" Comment="Write" />
+  </Texts>
+</TR>

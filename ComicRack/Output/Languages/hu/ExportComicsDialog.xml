@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ExportComicsDialog" CultureName="hu">
+  <Texts>
+    <Text Key="grpExportLocation" Text="Exportálás helye" Comment="Export Location" />
+    <Text Key="grpFileFormat" Text="Fájl formátum" Comment="File Format" />
+    <Text Key="grpPageFormat" Text="Oldal formátum" Comment="Page Format" />
+    <Text Key="grpFileNaming" Text="Fájl elnevezése" Comment="File Naming" />
+    <Text Key="grpImageProcessing" Text="Képfeldolgozás" Comment="Image Processing" />
+    <Text Key="btRemovePreset" Text="Eltávolítás" Comment="Remove" />
+    <Text Key="labelExportTo" Text="Exportálás ide:" Comment="Export to:" />
+    <Text Key="cbExport.Item0" Text="Mappa kiválasztása" Comment="Select a Folder" />
+    <Text Key="cbExport.Item2" Text="Ugyanaz a mappa és cserélje a Könyvtárban" Comment="Same Folder and replace in Library" />
+    <Text Key="cbExport.Item3" Text="Kérdezzen exportálás előtt" Comment="Ask before Export" />
+    <Text Key="labelFolder" Text="Mappa:" Comment="Folder:" />
+    <Text Key="btChooseFolder" Text="Választ..." Comment="Choose..." />
+    <Text Key="cbComicFormat.Item0" Text="Maradjon ugyanaz " Comment="Same as Original" />
+    <Text Key="labelCompression" Text="Tömörítés" Comment="Compression" />
+    <Text Key="cbCompression.Item0" Text="Nincs" Comment="None" />
+    <Text Key="cbCompression.Item1" Text="Közepes" Comment="Medium" />
+    <Text Key="cbCompression.Item2" Text="Erős" Comment="Strong" />
+    <Text Key="labelRemovePageFilter" Text="Oldaltípusok eltávolítása:" Comment="Remove Pages:" />
+    <Text Key="cbPageFormat.Item0" Text="Ne változtassa" Comment="Preserve Original" />
+    <Text Key="labelPageQuality" Text="Minőség:" Comment="Quality:" />
+    <Text Key="labelPageResize" Text="Átméretezés:" Comment="Resize:" />
+    <Text Key="cbPageResize.Item0" Text="Ne változtassa" Comment="Preserve Original" />
+    <Text Key="cbPageResize.Item1" Text="Szélesség és magasság állítása" Comment="Best fit Width &amp; Height" />
+    <Text Key="cbPageResize.Item2" Text="Szélesség beállítása" Comment="Set Width" />
+    <Text Key="cbPageResize.Item3" Text="Magasság beállítása" Comment="Set Height" />
+    <Text Key="labelX" Text="x" Comment="x" />
+    <Text Key="chkDontEnlarge" Text="Ne nagyítson" Comment="Don't enlarge" />
+    <Text Key="chkSplitDouble" Text="Dupla oldalak megbontása" Comment="Split Double Pages" />
+    <Text Key="SelectExportFolder" Text="Válassza ki az exportálás mappát" Comment="Please select the Export Folder" />
+    <Text Key="btCancel" Text="&amp;Mégse" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelNamingTemplate" Text="Minta:" Comment="Template:" />
+    <Text Key="labelCustomNaming" Text="Egyéni:" Comment="Custom:" />
+    <Text Key="labelCustomStartIndex" Text="Kezdő szám:" Comment="Start:" />
+    <Text Key="cbNamingTemplate.Item0" Text="Eredeti fájlnév" Comment="Filename" />
+    <Text Key="cbNamingTemplate.Item2" Text="Egyéni" Comment="Custom" />
+    <Text Key="chkOverwrite" Text="Meglévő fájlok felülírása" Comment="Overwrite existing Files" />
+    <Text Key="chkCombine" Text="Kiválasztott fájlok egyesítése" Comment="Combine selected Files" />
+    <Text Key="ComicRackExportPresets" Text="ComicRack export minták" Comment="ComicRack Presets" />
+    <Text Key="UserExportPresets" Text="Felhasználói beállítások" Comment="User Presets" />
+    <Text Key="labelSharpening" Text="Élesség" Comment="Sharpening" />
+    <Text Key="chkAutoContrast" Text="Automatikus kontrasztjavítás" Comment="Automatic Contrast Enhancement" />
+    <Text Key="labelSaturation" Text="Szaturáció" Comment="Saturation" />
+    <Text Key="labelBrightness" Text="Fényerő" Comment="Brightness" />
+    <Text Key="labelContrast" Text="Kontraszt" Comment="Contrast" />
+    <Text Key="labelImagProcessingSource" Text="Eljárás:" Comment="Source:" />
+    <Text Key="labelImageProcessingCustom" Text="Egyéni:" Comment="Custom:" />
+    <Text Key="cbImageProcessingSource.Item0" Text="Egyéni beállítások" Comment="Custom Settings" />
+    <Text Key="chkIgnoreErrorPages" Text="Hibás oldalakkal ne törődjön" Comment="Ignore Pages with errors and continue export" />
+    <Text Key="ExportComicsDialog" Text="Képregények exportálása" Comment="Export Books" />
+    <Text Key="btSavePreset" Text="Minta mentése..." Comment="Save Preset..." />
+    <Text Key="cbExport.Item1" Text="Az eredeti képregény mappája" Comment="Same Folder as the original Book" />
+    <Text Key="chkDeleteOriginal" Text="Sikeres exportálás után törölje az eredeti képregényt" Comment="Delete original Book after successful Export" />
+    <Text Key="chkAddNewToLibrary" Text="Újonnan létrehozott képregényeket adja hozzá a Könyvtárhoz" Comment="Add newly created Book to Library" />
+    <Text Key="labelComicFormat" Text="Képregény formátuma" Comment="Format:" />
+    <Text Key="chkEmbedComicInfo" Text="Képregény infó beillesztése" Comment="Embed Book Info" />
+    <Text Key="labelIncludePages" Text="Tartalmazza ezen oldalakat:" Comment="Include Pages:" />
+    <Text Key="labelPageFormat" Text="Oldal formátum" Comment="Format:" />
+    <Text Key="cbNamingTemplate.Item1" Text="Képregény leírása" Comment="Book Caption" />
+    <Text Key="labelGamma" Text="Fényerő" Comment="Gamma" />
+    <Text Key="cbImageProcessingSource.Item1" Text="Képregény beállításait használja" Comment="Book settings are applied" />
+  </Texts>
+</TR>

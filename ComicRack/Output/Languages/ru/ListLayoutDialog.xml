@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListLayoutDialog" CultureName="ru">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="btHideAll" Text="&amp;Убрать все" Comment="&amp;Hide All" />
+    <Text Key="btMoveDown" Text="Двигать в&amp;верх" Comment="Move &amp;Down" />
+    <Text Key="btMoveUp" Text="Двигать в&amp;низ" Comment="Move &amp;Up" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btShowAll" Text="&amp;Показать все" Comment="&amp;Show All" />
+    <Text Key="chkHideCaption" Text="Не показывать текст" Comment="Do not show any Text" />
+    <Text Key="labelSelectColumn" Text="Выберите столбцы для показа:" Comment="Please select the columns you want to show:" />
+    <Text Key="labelHint" Text="Подсказка: Вы можете изменить отображаемые столбцы, нажав правой кнопкой на заголовок столбца." Comment="Hint: You can also change the displayed columns by right clicking on a column header." />
+    <Text Key="labelFirstLine" Text="Первая линия:" Comment="First Line:" />
+    <Text Key="labelSecondLine" Text="Вторая линия:" Comment="Second Line:" />
+    <Text Key="labelThirdLine" Text="Третья линия:" Comment="Third Line:" />
+    <Text Key="labelSelectThumbnailText" Text="Выберите текст, который будет виден под эскизами:" Comment="Please select the text you want to display below the thumbnails:" />
+    <Text Key="ListLayoutDialog" Text="Настройка списка" Comment="List Options" />
+    <Text Key="tabDetails" Text="Подробно" Comment="Details" />
+    <Text Key="tabThumbnails" Text="Эскизы" Comment="Thumbnails" />
+  </Texts>
+</TR>

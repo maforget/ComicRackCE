@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SaveWorkspaceDialog" CultureName="de">
+  <Texts>
+    <Text Key="SaveWorkspaceDialog" Text="Arbeitsbereich speichern" Comment="Save Workspace"/>
+    <Text Key="btCancel" Text="&amp;Abbruch" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="txtName" Text="Name:" Comment="Name:" />
+    <Text Key="labelSettings" Text="Dieser Arbeitsbereich enthält folgende Einstellungen:" Comment="This workspace includes settings for:" />
+    <Text Key="chkWindowLayouts" Text="Fenster Layouts" Comment="Window Layouts"/>
+    <Text Key="chkListLayouts" Text="Listen Layouts" Comment="List Layouts"/>
+    <Text Key="chkComicDisplayLayout" Text="Buch Anzeigen Layout" Comment="Book Display Layout"/>
+    <Text Key="chkComicDisplaySettings" Text="Buch Anzeigen Einstellungen" Comment="Book Display Settings"/>
+  </Texts>
+</TR>

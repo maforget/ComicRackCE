@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPagesView" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="ArrangedBy" Text="按 {0} 整理" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="改變縮略圖大小" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="按 {0} 分組" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="細節" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="縮略圖" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="信息卡" Comment="&amp;Tiles" />
+    <Text Key="None" Text="無" Comment="None" />
+    <Text Key="NotArranged" Text="未排序" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="未分組" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="組" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="將漫畫按不同規範分組" Comment="Group eComics by different criteria" />
+    <Text Key="tbbSort" Text="整理" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="更改漫畫的排列順序" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbView" Text="視圖" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="改編漫畫的顯示方式" Comment="Change how eComics are displayed" />
+    <Text Key="tbFilter" Text="頁面過濾器" Comment="Page Filter" />
+  </Texts>
+</TR>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MultipleComicBooksDialog" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="btCancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定" Comment="&amp;OK" />
+    <Text Key="labelAlternateSeries" Text="备用丛书或故事标题:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelColorist" Text="配色师：" Comment="Colorist:" />
+    <Text Key="labelEditor" Text="编辑：" Comment="Editor:" />
+    <Text Key="labelGenre" Text="流派：" Comment="Genre:" />
+    <Text Key="labelImprint" Text="出版标记：" Comment="Imprint:" />
+    <Text Key="labelInker" Text="着墨员：" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="语言：" Comment="Language:" />
+    <Text Key="labelLetterer" Text="文字书写员：" Comment="Letterer:" />
+    <Text Key="labelManga" Text="动漫：" Comment="Manga:" />
+    <Text Key="labelMonth" Text="月份：" Comment="Month:" />
+    <Text Key="labelNumber" Text="序号：" Comment="Number:" />
+    <Text Key="labelPenciller" Text="画图员：" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="出版社：" Comment="Publisher:" />
+    <Text Key="labelRating" Text="评价：" Comment="Rating:" />
+    <Text Key="labelSeries" Text="丛书：" Comment="Series:" />
+    <Text Key="labelSummary" Text="摘要：" Comment="Summary:" />
+    <Text Key="labelTags" Text="标签：" Comment="Tags:" />
+    <Text Key="labelTitle" Text="标题：" Comment="Title:" />
+    <Text Key="labelVolume" Text="卷：" Comment="Volume:" />
+    <Text Key="labelWriter" Text="作者：" Comment="Writer:" />
+    <Text Key="labelYear" Text="年代：" Comment="Year:" />
+    <Text Key="labelBlackAndWhite" Text="黑白" Comment="Black and White:" />
+    <Text Key="labelFormat" Text="格式" Comment="Format:" />
+    <Text Key="MultipleComicBooksDialog" Text="多本漫画信息 ({0} 本书)" Comment="Multiple eComic Information ({0} Books)" />
+    <Text Key="labelCount" Text="于:" Comment="of:" />
+    <Text Key="labelAlternateCount" Text="于:" Comment="of:" />
+    <Text Key="labelAlternateNumber" Text="备用号码：" Comment="Number:" />
+    <Text Key="labelCoverArtist" Text="封面作者:" Comment="Cover Artist:" />
+    <Text Key="labelNotes" Text="说明:" Comment="Notes:" />
+    <Text Key="labelAgeRating" Text="年龄限定:" Comment="Age Rating:" />
+    <Text Key="labelEnableProposed" Text="启用建议值:" Comment="Enable Proposed:" />
+    <Text Key="labelCharacters" Text="人物:" Comment="Characters:" />
+    <Text Key="labelTeams" Text="团队:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="位置:" Comment="Locations:" />
+  </Texts>
+</TR>

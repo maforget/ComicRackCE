@@ -1,0 +1,129 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PreferencesDialog" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="btAddFolder" Text="添加..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="添加文件夾..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="應用" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="更改..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="清除" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="清除" Comment="Clear" />
+    <Text Key="btOK" Text="確定" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="刷新" Comment="&amp;Remove" />
+    <Text Key="btResetColor" Text="重置" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="重置" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="恢復默認設置" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="掃描" Comment="Scan" />
+    <Text Key="chkAutoContrast" Text="自動增強對比度" Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="掃描時自動將不存在的文件從媒體庫中移除" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="頁面 [MB]" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableThumbnailCache" Text="縮略圖[MB]" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkLookForShared" Text="查找共享的漫畫庫" Comment="Look for shared Comic Libraries" />
+    <Text Key="chkOverwriteAssociations" Text="不使用&quot;用...打開&quot;，直接取代當前關聯" Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="需要密碼：" Comment="Require Password:" />
+    <Text Key="colOptions" Text="選項" Comment="Options" />
+    <Text Key="groupComicFolders" Text="漫畫文件夾" Comment="eComic Folders" />
+    <Text Key="groupDiskCache" Text="磁盤緩存" Comment="Disk Cache" />
+    <Text Key="groupMessages" Text="隱藏的消息" Comment="Hidden Messages" />
+    <Text Key="groupOtherComics" Text="漫畫" Comment="eComics" />
+    <Text Key="groupOverlays" Text="疊加層" Comment="Overlays" />
+    <Text Key="grpIntegration" Text="集成瀏覽器" Comment="Explorer Integration" />
+    <Text Key="labelBrightness" Text="亮度調整：" Comment="Brightness Adjustment:" />
+    <Text Key="labelCheckedFormats" Text="ComicRack 將關聯選中的格式" Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelContrast" Text="對比度調整:" Comment="Contrast Adjustment:" />
+    <Text Key="labelExcludeCover" Text="列表中的圖片將不會被作為封面縮略圖，請用分號隔開：" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelLanguage" Text="請選擇 ComicRack 用戶界面語言(需重啟ComicRack 才能使更改生效)：" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlaySize" Text="大小：" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="顯示隱藏消息，請按" Comment="To reshow hidden messages press" />
+    <Text Key="labelSaturation" Text="飽和度調整:" Comment="Saturation Adjustment:" />
+    <Text Key="labelScriptPaths" Text="不同腳本庫（例如 Python庫）路徑之間請用分號隔開：" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="共享名：" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="程序運行時將監視選中文件夾的更改（重命名，移動）" Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="選項" Comment="Preferences" />
+    <Text Key="rbShareAll" Text="全部共享" Comment="Share All" />
+    <Text Key="rbShareSelected" Text="共享選中的列表" Comment="Share selected Lists" />
+    <Text Key="Scan" Text="掃描" Comment="Scan" />
+    <Text Key="tabAdvanced" Text="高級" Comment="Advanced" />
+    <Text Key="tabBehavior" Text="行為" Comment="Behavior" />
+    <Text Key="Scanning" Text="掃描中 '{0}' ..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectComicFolder" Text="請打開一個包含漫畫的文件夾" Comment="Please select a folder containing eComics" />
+    <Text Key="SelectScriptFolder" Text="請選擇腳本庫文件夾" Comment="Please select a script library folder" />
+    <Text Key="Stop" Text="停止" Comment="Stop" />
+    <Text Key="labelMemPageCount" Text="頁面 [張]" Comment="Pages [count]" />
+    <Text Key="labelMemThumbSize" Text="縮略圖[MB]" Comment="Thumbnails [MB]" />
+    <Text Key="chkMemPageOptimized" Text="優化" Comment="optimized" />
+    <Text Key="chkMemThumbOptimized" Text="優化" Comment="optimized" />
+    <Text Key="groupMemoryCache" Text="內存緩存" Comment="Memory Cache" />
+    <Text Key="grpDatabaseBackup" Text="數據庫備份" Comment="Database Backup" />
+    <Text Key="btBackupDatabase" Text="備份數據庫" Comment="Backup Database..." />
+    <Text Key="btRestoreDatabase" Text="恢復數據庫..." Comment="Restore Database..." />
+    <Text Key="btTranslate" Text="幫助 ComicRack 本地化..." Comment="Help localizing ComicRack..." />
+    <Text Key="tabReader" Text="閱讀器" Comment="Reader" />
+    <Text Key="tabOverlaysAndEffects" Text="圖層 &amp;&amp; 效果" Comment="Overlays &amp;&amp; Effects" />
+    <Text Key="groupPageDisplayGeneral" Text="一般" Comment="General" />
+    <Text Key="chkCurrentPageOverlay" Text="當前頁面圖層" Comment="Current Page Overlay" />
+    <Text Key="chkVisiblePartOverlay" Text="可見頁面部分圖層" Comment="Visible Page Part Overlay" />
+    <Text Key="chkStatusOverlay" Text="狀態指示器圖層" Comment="Status Indicator Overlays" />
+    <Text Key="chkEnableHardware" Text="啟用硬件加速" Comment="Enable Hardware Acceleration" />
+    <Text Key="chkEnablePageTransition" Text="啟用頁面過渡效果" Comment="Enable Page Transitions" />
+    <Text Key="chkEnableDisplayChangeAnimation" Text="啟用頁面顯示轉換時的動畫" Comment="Enable Animation of Page Display changes" />
+    <Text Key="chkEnableFlowScroll" Text="啟用下列鼠標滾動" Comment="Enable flowing Mouse scrolling" />
+    <Text Key="chkSmoothAutoScrolling" Text="平滑自動滾屏" Comment="Smooth Auto Scrolling" />
+    <Text Key="btClearInternetCache" Text="清除" Comment="Clear" />
+    <Text Key="btOpenFolder" Text="打開" Comment="Open" />
+    <Text Key="chkHighQualityDisplay" Text="高畫質" Comment="&amp;High Quality" />
+    <Text Key="chkAnamorphicScaling" Text="變形縮放" Comment="Anamorphic Scaling" />
+    <Text Key="chkEnableInternetCache" Text="網絡 [MB]" Comment="&amp;Internet [MB]" />
+    <Text Key="chkDisableScripting" Text="禁用所有腳本" Comment="Disable all Scripts" />
+    <Text Key="rbShareNone" Text="無" Comment="None" />
+    <Text Key="chkClientsCanEdit" Text="客戶可以修改漫畫屬性" Comment="Clients can edit eComic Properties" />
+    <Text Key="chkClientsCanExport" Text="客戶可以輸出漫畫" Comment="Clients can export eComics" />
+    <Text Key="chkUpdateComicFiles" Text="允許寫入漫畫信息到文件" Comment="Allow writing of eComic info into files" />
+    <Text Key="chkAutoUpdateComicFiles" Text="漫畫文件已全部自動更新" Comment="eComic files are updated automatically" />
+    <Text Key="labelSharpening" Text="銳化:" Comment="Sharpening:" />
+    <Text Key="groupColors" Text="顏色調整" Comment="Color Adjustments" />
+    <Text Key="chkNavigationOverlay" Text="導航圖層" Comment="Navigation Overlay" />
+    <Text Key="chkNavOnTop" Text="導航圖層在頁頂" Comment="Navigation Overlay at top of Page" />
+    <Text Key="chkDisplayPageNames" Text="當前頁面圖層顯示頁數" Comment="Current Page overlay also displays Page Name" />
+    <Text Key="chkEnableHardwareFiltering" Text="啟用硬件濾鏡" Comment="Enable Hardware Filters" />
+    <Text Key="chkEnableSoftwareFiltering" Text="啟用軟件濾鏡" Comment="Enable Software Filters" />
+    <Text Key="groupHardwareAcceleration" Text="硬件加速" Comment="Hardware Acceleration" />
+    <Text Key="lblFast" Text="快" Comment="fast" />
+    <Text Key="lblSlow" Text="慢" Comment="slow" />
+    <Text Key="grpKeyboard" Text="鍵盤" Comment="Keyboard" />
+    <Text Key="grpMouse" Text="鼠標" Comment="Mouse" />
+    <Text Key="lblMouseWheel" Text="鼠標滾輪滾動:" Comment="Mouse Wheel scrolling:" />
+    <Text Key="grpSharing" Text="共享" Comment="Sharing" />
+    <Text Key="grpScanning" Text="掃描中" Comment="Scanning" />
+    <Text Key="grpLanguages" Text="語言" Comment="Languages" />
+    <Text Key="grpScripts" Text="可用腳本" Comment="Available Scripts" />
+    <Text Key="grpPackages" Text="腳本包" Comment="Script Packages" />
+    <Text Key="grpScriptSettings" Text="腳本設置" Comment="Script Settings" />
+    <Text Key="tabLibraries" Text="媒體庫" Comment="Libraries" />
+    <Text Key="tabScripts" Text="腳本" Comment="Scripts" />
+    <Text Key="colName" Text="名稱" Comment="Name" />
+    <Text Key="colType" Text="類型" Comment="Type" />
+    <Text Key="btInstallPackage" Text="安裝..." Comment="Install..." />
+    <Text Key="btRemovePackage" Text="刪除" Comment="Remove" />
+    <Text Key="colPackage" Text="包裹" Comment="Package" />
+    <Text Key="colAuthor" Text="作者" Comment="Author" />
+    <Text Key="colDescription" Text="描述" Comment="Description" />
+    <Text Key="packageGroupInstalled" Text="安裝完畢" Comment="Installed" />
+    <Text Key="packageGroupInstall" Text="已經安裝 (需要重啟)" Comment="To be installed (needs restart)" />
+    <Text Key="packageGroupRemove" Text="已經移除 (需要重啟)" Comment="To be removed (needs restart)" />
+    <Text Key="btAssociateExtensions" Text="改變..." Comment="Change..." />
+    <Text Key="grpServerSettings" Text="服務器設置" Comment="Server Settings" />
+    <Text Key="labelShareDescription" Text="描述:" Comment="Description:" />
+    <Text Key="chkPrivate" Text="私人" Comment="Private" />
+    <Text Key="chkShareInternet" Text="在 Internet 共享" Comment="Share on the Internet" />
+    <Text Key="btAddShare" Text="加入共享" Comment="Add Share" />
+    <Text Key="btRemoveShare" Text="刪除" Comment="Remove" />
+    <Text Key="labelPublicServerAddress" Text="如果ComicRack未正確匹配，擴展你的服務器地址:" Comment="External address of your server if ComicRack should not guess it correctly:" />
+    <Text Key="labelPrivateListPassword" Text="保護你私人網絡共享列表的密碼:" Comment="Password used to protect your private Internet Share list entries:" />
+    <Text Key="chkDontAddRemovedFiles" Text="手動移除庫的列表不會再被添加" Comment="Files manually removed from the Library will not be added again" />
+    <Text Key="btConfigScript" Text="配置..." Comment="Config..." />
+    <Text Key="btServerStats" Text="統計..." Comment="Statistic..." />
+    <Text Key="labelPageQuality" Text="頁面質量:" Comment="Page Quality:" />
+    <Text Key="labelThumbQuality" Text="縮略圖質量:" Comment="Thumb Quality:" />
+  </Texts>
+</TR>

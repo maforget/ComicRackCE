@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TasksDialog" CultureName="ja">
+  <Texts>
+    <Text Key="btClose" Text="閉じる" Comment="Close" />
+    <Text Key="tabTasks" Text="バックグラウンド タスク" Comment="Background Tasks" />
+    <Text Key="tabNetwork" Text="サーバーの統計" Comment="Server Statistics" />
+    <Text Key="colTask" Text="タスク" Comment="Task" />
+    <Text Key="colState" Text="状態" Comment="State" />
+    <Text Key="lblItemCount" Text="{0} タスクを実行中" Comment="{0} Tasks are pending" />
+    <Text Key="TasksDialog" Text="タスク" Comment="Tasks" />
+    <Text Key="btAbort" Text="すべてのユーザー タスクを中止" Comment="Abort all User Tasks" />
+    <Text Key="Clients" Text="クライアント: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="情報のリクエスト: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="ライブラリ リクエスト: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="ページ リクエスト: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="サムネイル リクエスト: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="認証の失敗: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="全共有" Comment="All Shares" />
+    <Text Key="LastMinute" Text="直近の 1 分間" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="最新の 5 分間" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="直近の 1 時間" Comment="Last Hour" />
+    <Text Key="Session" Text="セッション" Comment="Session" />
+  </Texts>
+</TR>

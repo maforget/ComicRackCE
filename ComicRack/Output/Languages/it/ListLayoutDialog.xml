@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ListLayoutDialog" CultureName="it">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Annulla" Comment="&amp;Cancel" />
+    <Text Key="btHideAll" Text="Nascondi Tutto" Comment="&amp;Hide All" />
+    <Text Key="btMoveDown" Text="Muovi in &amp;Basso" Comment="Move &amp;Down" />
+    <Text Key="btMoveUp" Text="Muovi in &amp;Alto" Comment="Move &amp;Up" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btShowAll" Text="Mostra Tutto" Comment="&amp;Show All" />
+    <Text Key="chkHideCaption" Text="Non mostrare alcun Testo" Comment="Do not show any Text" />
+    <Text Key="labelSelectColumn" Text="Seleziona le colonne che vuoi visualizzare:" Comment="Please select the columns you want to show:" />
+    <Text Key="labelHint" Text="Suggerimento: Puoi anche modificare le colonne mostrate cliccando con il tasto destro sul titolo di una colonna." Comment="Hint: You can also change the displayed columns by right clicking on a column header." />
+    <Text Key="labelFirstLine" Text="Prima Linea:" Comment="First Line:" />
+    <Text Key="labelSecondLine" Text="Seconda Linea:" Comment="Second Line:" />
+    <Text Key="labelThirdLine" Text="Terza Linea:" Comment="Third Line:" />
+    <Text Key="labelSelectThumbnailText" Text="Seleziona il testo che vuoi visualizzare sotto le miniature:" Comment="Please select the text you want to display below the thumbnails:" />
+    <Text Key="ListLayoutDialog" Text="Opzioni Lista" Comment="List Options" />
+    <Text Key="tabDetails" Text="Dettagli" Comment="Details" />
+    <Text Key="tabThumbnails" Text="Miniature" Comment="Thumbnails" />
+    <Text Key="btApply" Text="&amp;Applica" Comment="&amp;Apply" />
+    <Text Key="tabTiles" Text="Miniature" Comment="Tiles" />
+    <Text Key="colName" Text="Nome" Comment="Name" />
+    <Text Key="colDescription" Text="Descrizione" Comment="Description" />
+    <Text Key="btTilesDefault" Text="Default" Comment="Default" />
+  </Texts>
+</TR>

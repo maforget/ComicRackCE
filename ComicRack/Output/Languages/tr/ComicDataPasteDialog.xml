@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicDataPasteDialog" CultureName="tr">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;İptal" Comment="&amp;Cancel" />
+    <Text Key="btMarkAll" Text="&amp;Hepsi" Comment="&amp;All" />
+    <Text Key="btMarkDefined" Text="Yalnızca &amp;Kaydet" Comment="Only &amp;Set" />
+    <Text Key="btMarkNone" Text="&amp;Temizle" Comment="&amp;Clear" />
+    <Text Key="btOK" Text="&amp;Tamam" Comment="&amp;OK" />
+    <Text Key="chkAlternateCount" Text="Toplam Sayı" Comment="Total Number" />
+    <Text Key="chkAlternateNumber" Text="Sayı" Comment="Number" />
+    <Text Key="chkAlternateSeries" Text="Seriler" Comment="Series" />
+    <Text Key="chkColor" Text="Renk Ayarı" Comment="Color Adjustment" />
+    <Text Key="chkColorist" Text="Renklendirme" Comment="Colorist" />
+    <Text Key="chkCount" Text="Toplam Sayı" Comment="Total Number" />
+    <Text Key="chkCover" Text="Kapak Sanatçısı" Comment="Cover Artist" />
+    <Text Key="chkEditor" Text="Düzenleyen" Comment="Editor" />
+    <Text Key="chkGenre" Text="Tür" Comment="Genre" />
+    <Text Key="chkImprint" Text="Basım" Comment="Imprint" />
+    <Text Key="chkInker" Text="Çizer" Comment="Inker" />
+    <Text Key="chkLanguage" Text="Dil" Comment="Language" />
+    <Text Key="chkLetterer" Text="Baloncuk yazarı" Comment="Letterer" />
+    <Text Key="chkMonth" Text="Ay" Comment="Month" />
+    <Text Key="chkNotes" Text="Notlar" Comment="Notes" />
+    <Text Key="chkNumber" Text="Sayı" Comment="Number" />
+    <Text Key="chkPenciller" Text="Karakalemci" Comment="Penciller" />
+    <Text Key="chkPublisher" Text="Yayın Evi" Comment="Publisher" />
+    <Text Key="chkRating" Text="Puanlama" Comment="Rating" />
+    <Text Key="chkSeries" Text="Seriler" Comment="Series" />
+    <Text Key="chkSummary" Text="Özet" Comment="Summary" />
+    <Text Key="chkTags" Text="Künyeler" Comment="Tags" />
+    <Text Key="chkTitle" Text="Başlık" Comment="Title" />
+    <Text Key="chkVolume" Text="Cilt" Comment="Volume" />
+    <Text Key="chkWriter" Text="Yazar" Comment="Writer" />
+    <Text Key="chkYear" Text="Yıl" Comment="Year" />
+    <Text Key="chkManga" Text="Manga " Comment="Manga" />
+    <Text Key="chkFormat" Text="Format " Comment="Format" />
+    <Text Key="chkBlackAndWhite" Text="Siyah/Beyaz" Comment="Black and White" />
+    <Text Key="ComicDataPasteDialog" Text="Veriyi {0} e-Çizgi Romanlarına yapıştır" Comment="Paste Data to {0} eComics" />
+    <Text Key="grpAlternate" Text="Alternatif" Comment="Alternate" />
+    <Text Key="grpArtists" Text="Sanatçılar / Yaratıcı ekip" Comment="Artists / People Involved" />
+    <Text Key="grpLibrary" Text="Kütüphane" Comment="Library" />
+    <Text Key="grpMain" Text="Giriş" Comment="Main" />
+    <Text Key="chkAgeRating" Text="Yaş Sınırı" Comment="Age Rating" />
+    <Text Key="chkCharacters" Text="Karakterler" Comment="Characters" />
+  </Texts>
+</TR>

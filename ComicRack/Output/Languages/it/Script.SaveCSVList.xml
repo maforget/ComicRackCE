@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Script.SaveCSVList" CultureName="it">
+  <Texts>
+    <Text Key="Name" Text="Esporta Lista Album..." Comment="Export Book List..." />
+    <Text Key="Description" Text="Semplice script per esportare gli Album selezionati i un file CSV" Comment="Simple script to export all selected Books into a CSV file" />
+  </Texts>
+</TR>

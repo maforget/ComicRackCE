@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Columns" CultureName="nl-BE">
+  <Texts>
+    <Text Key="AlternateCountAsText" Text="Alternatief Totaal" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="Albumtotaal Alternatieve reeksnaam" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="Alternatieve Nr." Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="AlbumNr Alternatieve reeksnaam" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="Alternatieve Reeksnaam" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="Crossover/story naam" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="Bijschrift" Comment="Caption" />
+    <Text Key="Colorist" Text="Inkleurder" Comment="Colorist" />
+    <Text Key="CountAsText" Text="Aantal" Comment="Count" />
+    <Text Key="Cover" Text="Voorkaft" Comment="Cover" />
+    <Text Key="CoverArtist" Text="Tekenaar Voorkaft" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="De betrokken tekenaar van de Voorkaft" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="Editor" Comment="Editor" />
+    <Text Key="FileName" Text="Bestandsnaam (0-9, A-Z)" Comment="File Name" />
+    <Text Key="FileName.Description" Text="Bestandsnaam zonder extensie" Comment="Filename without the extension" />
+    <Text Key="FileFormat" Text="Bestandsextensie" Comment="File Format" />
+    <Text Key="Genre" Text="Genre" Comment="Genre" />
+    <Text Key="ImageHeightAsText" Text="Hoogte" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="Hoogte blz. in pixels" Comment="Height of the page in pixels" />
+    <Text Key="ImageWidthAsText" Text="Breedte" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="Breedte van de blz. in pixels" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="Imprint" Comment="Imprint" />
+    <Text Key="Inker" Text="Inker" Comment="Inker" />
+    <Text Key="Key" Text="Naam" Comment="Name" />
+    <Text Key="LanguageAsText" Text="Taal" Comment="Language" />
+    <Text Key="Letterer" Text="Letteraar" Comment="Letterer" />
+    <Text Key="MonthAsText" Text="Maand" Comment="Month" />
+    <Text Key="NumberAsText" Text="Nummer" Comment="Number" />
+    <Text Key="OpenedCountAsText" Text="Aantal Geopende" Comment="Opened Count" />
+    <Text Key="Page" Text="Bladzijde" Comment="Page" />
+    <Text Key="Page.Description" Text="PaginaNr. van het beeld" Comment="The page number of the image" />
+    <Text Key="PageTypeAsText" Text="Type" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="Bladtype (verhaal, voorkaft, enz.)" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="Tekenaar" Comment="Penciller" />
+    <Text Key="Position" Text="Positie" Comment="Position" />
+    <Text Key="Publisher" Text="Uitgever" Comment="Publisher" />
+    <Text Key="Rating" Text="Mijn Waardering" Comment="My Rating" />
+    <Text Key="ReadPercentageAsText" Text="Percentage Gelezen" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="Percentage gelezen" Comment="How much has been read" />
+    <Text Key="Series" Text="Reeks" Comment="Series" />
+    <Text Key="Series.Description" Text="ReeksNaam" Comment="Series name" />
+    <Text Key="State" Text="Status" Comment="State" />
+    <Text Key="Tags" Text="Tags (Labels)" Comment="Tags" />
+    <Text Key="Thumbnail" Text="Miniatuur" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="Miniatuurbeeld van de pagina" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="Titel (0-9, A-Z)" Comment="Title" />
+    <Text Key="VolumeAsText" Text="Jaargang" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="JaargangNr. van de Reeks" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="Schrijver" Comment="Writer" />
+    <Text Key="YearAsText" Text="Jaar" Comment="Year" />
+    <Text Key="MangaAsText" Text="Manga" Comment="Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="Z&amp;W" Comment="B&amp;W" />
+    <Text Key="Format" Text="Albumformaat" Comment="Format" />
+    <Text Key="Bookmark" Text="Bladwijzer" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="Bladwijzer tekst" Comment="Bookmark text" />
+    <Text Key="AgeRating" Text="Leeswijzer" Comment="Age Rating" />
+    <Text Key="Characters" Text="Personages" Comment="Characters" />
+    <Text Key="RotationAsText" Text="Rotatie" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="Blijvende rotatie van de blz." Comment="Permanent rotation of the page" />
+    <Text Key="FilePath" Text="Pad (Bestand)" Comment="File Path" />
+    <Text Key="FileSizeAsText" Text="Bestandsgrootte" Comment="File Size" />
+    <Text Key="ImageFileSizeAsText" Text="Grootte" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="Grootte van de Blz in bytes" Comment="Size of the page in bytes" />
+    <Text Key="FileDirectory" Text="Directory" Comment="File Directory" />
+    <Text Key="BookmarkCountAsText" Text="Bookmark [Aantal]" Comment="Bookmark Count" />
+    <Text Key="Number" Text="Nummer" Comment="Number" />
+    <Text Key="AlternateNumber" Text="Alternatieve Nr." Comment="Alternate Number" />
+    <Text Key="Web" Text="Web" Comment="Web" />
+    <Text Key="Notes" Text="Notities" Comment="Notes" />
+    <Text Key="Summary" Text="Synopsis" Comment="Summary" />
+    <Text Key="PagesAsTextSimple" Text="Pagina's" Comment="Pages" />
+    <Text Key="PagesAsTextSimple.Description" Text="Totaal aantal pagina's" Comment="The total count of pages" />
+    <Text Key="PublishedAsText" Text="Gepubliceerd" Comment="Published" />
+    <Text Key="NewPagesAsText" Text="Nieuwe pagina's" Comment="New Pages" />
+    <Text Key="NewPagesAsText.Description" Text="Telling van nieuwe pagina's" Comment="Count of new Pages" />
+    <Text Key="Teams" Text="Teams" Comment="Teams" />
+    <Text Key="Locations" Text="Locaties" Comment="Locations" />
+    <Text Key="Web.Description" Text="Een Weblink" Comment="A Web Link" />
+    <Text Key="CountAsText.Description" Text="Totaal aantal Albums in deze Reeks" Comment="Total number of issues in this series" />
+    <Text Key="CommunityRating" Text="Groepswaardering" Comment="Community Rating" />
+    <Text Key="IsLinkedAsText" Text="Gekoppeld à Bestand" Comment="Linked to File" />
+    <Text Key="BookAge" Text="Tijdvak - Era" Comment="Book Age" />
+    <Text Key="BookAge.Description" Text="Tijdvak van het boek" Comment="Age of the Book" />
+    <Text Key="BookPriceAsText" Text="Albumprijs" Comment="Book Price" />
+    <Text Key="BookPriceAsText.Description" Text="Aankoopprijs van het album" Comment="Price of the Book" />
+    <Text Key="BookCondition" Text="Albumconditie" Comment="Book Condition" />
+    <Text Key="BookCondition.Description" Text="Staat van het album/boek" Comment="Condition of the Book" />
+    <Text Key="BookStore" Text="Stripwinkel" Comment="Book Store" />
+    <Text Key="BookStore.Description" Text="De winkel waar het album werd aangekocht." Comment="Store the Book was bought" />
+    <Text Key="BookOwner" Text="Albumeigenaar" Comment="Book Owner" />
+    <Text Key="BookOwner.Description" Text="Eigenaar van het album" Comment="Owner of the Book" />
+    <Text Key="BookCollectionStatus" Text="Albumstatus in de Collectie" Comment="Book Collection Status" />
+    <Text Key="BookCollectionStatus.Description" Text="Albumstatus in de Collectie" Comment="Status of the Book in the Collection" />
+    <Text Key="BookLocation" Text="Albumlocatie" Comment="Book Location" />
+    <Text Key="BookLocationStatus.Description" Text="Albumlocatie" Comment="Location of the Book" />
+    <Text Key="PagePositionAsText" Text="Positie" Comment="Position" />
+    <Text Key="PagePositionAsText.Description" Text="Lay-out positie van de pagina" Comment="Layout position of the page" />
+    <Text Key="ISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ISBN.Description" Text="ISBN Nummer" Comment="ISBN Number" />
+    <Text Key="SeriesStatCountAsText" Text="Reeks: Boeken" Comment="Series: Books" />
+    <Text Key="SeriesStatCountAsText.Description" Text="Albums in de Reeks" Comment="Books in the Series" />
+    <Text Key="SeriesStatMinNumberAsText" Text="Reeks: Beginnummer" Comment="Series: First Number" />
+    <Text Key="SeriesStatMinNumberAsText.Description" Text="Beginnummer van de Reeks" Comment="First Number of the Series" />
+    <Text Key="SeriesStatMaxNumberAsText" Text="Reeks: Laatste Nummer" Comment="Series: Last Number" />
+    <Text Key="SeriesStatMaxNumberAsText.Description" Text="Laatste Nummer van de Reeks" Comment="Last Number of the Series" />
+    <Text Key="SeriesStatMinYearAsText" Text="Reeks: Eerste Jaar" Comment="Series: First Year" />
+    <Text Key="SeriesStatMinYearAsText.Description" Text="Eerste Jaar van de Reeks" Comment="First Year of the Series" />
+    <Text Key="SeriesStatMaxYearAsText" Text="Reeks: Laatste Jaar" Comment="Series: Last Year" />
+    <Text Key="SeriesStatMaxYearAsText.Description" Text="Laatste Jaar van de Reeks" Comment="last Year of the Series" />
+    <Text Key="SeriesStatPageCountAsText" Text="Reeks: Pagina's" Comment="Series: Pages" />
+    <Text Key="SeriesStatPageCountAsText.Description" Text="Pagina's in de Reeks" Comment="Pages in the Series" />
+    <Text Key="SeriesStatPageReadCountAsText" Text="Reeks: Gelezen Pagina's" Comment="Series: Pages Read" />
+    <Text Key="SeriesStatPageReadCountAsText.Description" Text="Gelezen pagina's van de Reeks" Comment="Pages of the Series read" />
+    <Text Key="SeriesStatReadPercentageAsText" Text="Reeks: Gelezen Percentage" Comment="Series: Percent Read" />
+    <Text Key="SeriesStatReadPercentageAsText.Description" Text="Leespercentage van de Reeks" Comment="Percent of the Series read" />
+    <Text Key="SeriesStatAverageRating" Text="Reeks: Mijn gemiddeld cijfer" Comment="Series: My Average Rating" />
+    <Text Key="SeriesStatAverageRating.Description" Text="Mijn gemiddeld waarderingscijfer voor de reeks" Comment="My average Rating of the Series" />
+    <Text Key="SeriesStatAverageCommunityRating" Text="Reeks: Gemiddeld groepscijfer" Comment="Series: Community Average Rating" />
+    <Text Key="SeriesStatAverageCommunityRating.Description" Text="Gemiddeld groepswaarderingscijfer" Comment="Community average Rating of the Series" />
+    <Text Key="SeriesStatRunningTimeAsText" Text="Reeks: Looptijd in Jaren" Comment="Series: Running Time Years" />
+    <Text Key="SeriesStatRunningTimeAsText.Description" Text="Looptijd van de Reeks in Jaren" Comment="Running time of the Series in years" />
+    <Text Key="SeriesStatGapCountAsText" Text="Reeks: Manco's" Comment="Series: Gaps" />
+    <Text Key="SeriesStatGapCountAsText.Description" Text="Manco's in de Reeks" Comment="Gaps in the Series" />
+    <Text Key="Caption.Description" Text="Volledig Bijschrift van 't Boek" Comment="Complete caption of the Book" />
+    <Text Key="Colorist.Description" Text="Inkleurder van 't Boek" Comment="Colorist of the Book" />
+    <Text Key="Cover.Description" Text="Voorkaft van 't Boek" Comment="Cover image of the Book" />
+    <Text Key="Editor.Description" Text="Editor van 't Boek" Comment="Editor of the Book" />
+    <Text Key="FilePath.Description" Text="Bewaarlocatie " Comment="Location where the Book is stored" />
+    <Text Key="FileFormat.Description" Text="Bestandsextensie van 't Boek" Comment="File format of the Book" />
+    <Text Key="FileSizeAsText.Description" Text="Bestandsgrootte in bytes" Comment="Size of the Book file in bytes" />
+    <Text Key="Genre.Description" Text="Genre van 't Boek" Comment="Genre of the Book" />
+    <Text Key="Imprint.Description" Text="Uitgiftelabel van 't Boek" Comment="Imprint of the Book" />
+    <Text Key="Inker.Description" Text="Inker van 't Boek" Comment="Inker of the Book" />
+    <Text Key="Key.Description" Text="Unieke sleutel voor deze blz. in 't Boek" Comment="Unique key for this page in the Book" />
+    <Text Key="LanguageAsText.Description" Text="Taal van 't Boek" Comment="Language of the Book" />
+    <Text Key="Letterer.Description" Text="Letteraar van deze eComic" Comment="Letterer of the Book" />
+    <Text Key="MonthAsText.Description" Text="Publicatiemaand" Comment="Month the Book was published" />
+    <Text Key="NumberAsText.Description" Text="Nummer in de Reeks" Comment="Number of the Book in the Series" />
+    <Text Key="OpenedCountAsText.Description" Text="Aantal openingen van het boek" Comment="Times the Book has been opened" />
+    <Text Key="Penciller.Description" Text="Tekenaar van 't Boek" Comment="Penciller of the Book" />
+    <Text Key="Position.Description" Text="Positie van 't Boek in de lijst" Comment="Position of the Book in the list" />
+    <Text Key="Publisher.Description" Text="Uitgever van dit Boek" Comment="Publisher of the Book" />
+    <Text Key="Rating.Description" Text="Je waardering voor dit Boek?" Comment="Your rating of the Book" />
+    <Text Key="CommunityRating.Description" Text="Groepswaardering van het boek" Comment="Community Rating of the Book" />
+    <Text Key="State.Description" Text="Status indicatoren voor dit Boek" Comment="State indicators for the Book" />
+    <Text Key="Tags.Description" Text="Labels van 't Boek" Comment="Tags of the Book" />
+    <Text Key="Title.Description" Text="Titel van 't Boek" Comment="Title of the Book" />
+    <Text Key="Writer.Description" Text="Schrijver van 't Boek" Comment="Writer of the Book" />
+    <Text Key="YearAsText.Description" Text="Publicatiejaar van 't Boek" Comment="Year the Book was published" />
+    <Text Key="MangaAsText.Description" Text="Ja als dit Manga is" Comment="Yes if the Book is a Manga" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="Ja als 't album B&amp;W is" Comment="Yes if the Book is black and white" />
+    <Text Key="Format.Description" Text="Albumformaat " Comment="Format of the Book" />
+    <Text Key="AgeRating.Description" Text="Leeftijd classificatie" Comment="Age rating of the Book" />
+    <Text Key="PublishedAsText.Description" Text="Publicatiedatum" Comment="Publication date of the Book" />
+    <Text Key="Characters.Description" Text="Plotpersonages van de eComic" Comment="Plot characters of the Book" />
+    <Text Key="Teams.Description" Text="Plotteams van de eComic" Comment="Plot teams of the Book" />
+    <Text Key="Locations.Description" Text="Plotlocatie van de eComic" Comment="Plot locations of the Book" />
+    <Text Key="FileDirectory.Description" Text="Directory van 't Boek" Comment="Directory of the Book" />
+    <Text Key="BookmarkCountAsText.Description" Text="Aantal bladwijzers voor dit boek" Comment="Count of Bookmarks for this Book" />
+    <Text Key="IsLinkedAsText.Description" Text="'t Boek is gekoppeld à Bestand" Comment="Book is linked to a File" />
+    <Text Key="SeriesCompleteAsText" Text="Volledige reeks" Comment="Series complete" />
+    <Text Key="SeriesCompleteAsText.Description" Text="Reeks is volledig" Comment="Series is complete" />
+    <Text Key="EnableProposedAsText" Text="Voorgestelde Waarden" Comment="Proposed Values" />
+    <Text Key="EnableProposedAsText.Description" Text="Gebruikt de voorgestelde waarde " Comment="Uses proposed Values from Filename" />
+    <Text Key="GapInformation" Text="Manco Informatie" Comment="Gap Information" />
+    <Text Key="GapInformation.Description" Text="Informeert of dit boek het eind- of startpunt is van het manco in de reeks" Comment="Information if this issue is the end or start of a gap in the series" />
+    <Text Key="HasBeenReadAsText" Text="Uitgelezen" Comment="Read" />
+    <Text Key="HasBeenReadAsText.Description" Text="Boek werd gelezen" Comment="Book has been read" />
+    <Text Key="AddedTime" Text="Toegevoegd" Comment="Added" />
+    <Text Key="AddedTime.Description" Text="Tijdstip dat het Boek werd toegevoegd aan de Database" Comment="Time the Book was added to the Database" />
+    <Text Key="FileModifiedTime" Text="Bestand Gewijzigd" Comment="File Modified" />
+    <Text Key="FileModifiedTime.Description" Text="Tijdstip dat het Boek laatst werd gewijzigd" Comment="Time the Book was modified the last time" />
+    <Text Key="OpenedTime" Text="Geopend" Comment="Opened" />
+    <Text Key="OpenedTime.Description" Text="De laatste keer dat het boek werd geopend" Comment="Last time the Book was opened" />
+    <Text Key="FileCreationTime" Text="Bestand Gecreëerd" Comment="File Created" />
+    <Text Key="FileCreationTime.Description" Text="Creatietijd van het Boekbestand" Comment="Creation time of the Book-File" />
+    <Text Key="Icons" Text="Iconen" Comment="Icons" />
+    <Text Key="Icons.Description" Text="Iconen voor dit Boek" Comment="Icons for this Book" />
+    <Text Key="ScanInformation" Text="Scan Informatie" Comment="Scan Information" />
+    <Text Key="SeriesStatLastOpenedTime" Text="Reeks: Laatst Geopend" Comment="Series: Opened" />
+    <Text Key="SeriesStatLastOpenedTime.Description" Text="De laatste keer dat een boek van deze Reeks werd geopend" Comment="Last time a book from this Series has been opened" />
+    <Text Key="SeriesStatLastAddedTime" Text="Reeks: Boek toegevoegd" Comment="Series: Book added" />
+    <Text Key="SeriesStatLastAddedTime.Description" Text="De laatste keer dat een boek werd toegevoegd aan deze Reeks" Comment="Last time a book was added to the Series" />
+    <Text Key="DateFormats" Text="Lang|Kort|Relatief" Comment="Long|Short|Relative" />
+    <Text Key="Checked" Text="Gemarkeerd" Comment="Checked" />
+    <Text Key="Checked.Description" Text="Boek is gemarkeerd" Comment="Book is checked" />
+    <Text Key="ScanInformation.Description" Text="Bijkomende informatie over de scan" Comment="Additional information about the scan" />
+    <Text Key="StoryArc" Text="Cyclustitel" Comment="Story Arc" />
+    <Text Key="StoryArc.Description" Text="Cyclustitel waar het boek toe behoort" Comment="Story Arc the Book belongs to" />
+    <Text Key="SeriesGroup" Text="Globale Reeksnaam" Comment="Series Group" />
+    <Text Key="SeriesGroup.Description" Text="De basisnaam waartoe de reeks behoort" Comment="Series Group the Book belongs to" />
+    <Text Key="MainCharacterOrTeam" Text="Protagonist/Team" Comment="Main Character/Team" />
+    <Text Key="MainCharacterOrTeam.Description" Text="Protagonist (Hoofdkarakter of Team)" Comment="Main Character or Team of the Book" />
+    <Text Key="Review" Text="Recensie" Comment="Review" />
+    <Text Key="Review.Description" Text="Een korte bespreking van het boek" Comment="A short Review of the Book" />
+    <Text Key="DayAsText" Text="Dag" Comment="Day" />
+    <Text Key="DayAsText.Description" Text="Publicatiedag van het boek" Comment="Day the Book was published" />
+    <Text Key="WeekAsText" Text="Week" Comment="Week" />
+    <Text Key="WeekAsText.Description" Text="Publicatieweek van het boek" Comment="Week the Book was published" />
+    <Text Key="ReleasedTime" Text="Publicatiedatum" Comment="Released" />
+    <Text Key="SeriesStatLastReleasedTime" Text="Reeks: Publicatie boek" Comment="Series: Book released" />
+    <Text Key="SeriesStatLastReleasedTime.Description" Text="Laatste keer dat een boek van deze Reeks werd gepubliceerd" Comment="Last time a book of this Series was released" />
+  </Texts>
+</TR>

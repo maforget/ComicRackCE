@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Settings" CultureName="hu">
+  <Texts>
+    <Text Key="Application" Text="Alkalmazás" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="Rejtse el a nagyítót, ha a kurzor a képernyő szélénél van" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="Browser" Text="Böngésző" Comment="Browser" />
+    <Text Key="CloseMinimizesToTray" Text="[x] A ComicRack kerüljön értesítése területre, ha bezárom" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="Az újonnan betöltött miniatűrök lassan tűnjenek fel" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="Rejtse el az egeret teljes képernyő módban" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="Jelenítse meg a miniatűröket a legjobb minőségben (lassabb)" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="MinimizeToTray" Text="A ComicRack kerüljön értesítése területre, ha tálcára mozgatom" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="Hívja le a legújabb ComicRack híreket" Comment="Check for latest news on ComicRack" />
+    <Text Key="Reading" Text="Olvasás közben" Comment="Reading" />
+    <Text Key="ShowSplash" Text="Mutasssa az indítóképernyőt" Comment="Show Splash Screen" />
+    <Text Key="Starting ComicRack" Text="ComicRack indítása" Comment="Starting ComicRack" />
+    <Text Key="Manga" Text="Manga" Comment="Manga" />
+    <Text Key="TrueRightToLeftReading" Text="Valódi jobbról balra történő olvasás" Comment="True right to left reading" />
+    <Text Key="LeftRightMovementReversed" Text="Jobb/bal mozgatás is megfordul" Comment="Left/right movement is also reversed" />
+    <Text Key="Right to Left" Text="Jobbról balra" Comment="Right to Left" />
+    <Text Key="AutoMinimalGui" Text="Teljes képernyő mód bekapcsolja a minimális felhasználói felületet" Comment="Fullscreen also toggles Minimal User Interface" />
+    <Text Key="PageChangeDelay" Text="Egérgörgő és kurzorgombok késleltetettek áttűnésnél" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="AnimatePanels" Text="Kinyíló és összecsukódó panelek animálása" Comment="Animate expanding and collapsing Panels" />
+    <Text Key="ResetZoomOnPageChange" Text="Zoom visszaállítása 100%-ra oldalváltáskor" Comment="Zoom is reset to 100% on page change" />
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="Mindig mutassa a böngésző átméretező fogóját" Comment="Always display Browser Docking Grip" />
+    <Text Key="DogEarThumbnails" Text="Kiválasztott minatűrökön szamárfül van" Comment="Selected Thumbnails have dog-ear" />
+    <Text Key="BlendWhilePaging" Text="Keverje az animációkat gyors lapozás közben" Comment="Blend animation also while fast paging" />
+    <Text Key="AutoNavigateComics" Text="Képregény kezdetén/végén túl olvasva nyissa meg a következőt" Comment="Reading beyond the start or end opens the next Book" />
+    <Text Key="CloseBrowserOnOpen" Text="Zárja be a böngészőt, ha megnyitok egy képregényt" Comment="Close the Browser when a new Book is opened" />
+    <Text Key="CatalogOnlyForFileless" Text="Katalógus mezőket csak a fájl nélküli képregényeknél mutassa" Comment="Show Catalog fields only for fileless Books" />
+    <Text Key="Opening a Book" Text="Képregény megnyitása" Comment="Opening a Book" />
+    <Text Key="OpenLastFile" Text="Nyissa meg a legutóbb olvasott képregényt" Comment="Reopen Books from last session" />
+    <Text Key="OpenInNewTab" Text="Megnyitás új fülön" Comment="Open in new Tab" />
+    <Text Key="OpenLastPage" Text="Ott nyissa ki a képregényeket, ahol legutóbb becsuktam" Comment="Open the Book at the page where it was closed" />
+    <Text Key="ScanStartup" Text="Keressen új képregényeket a könytár mappáiban" Comment="Rescan the Book Folders for new Books" />
+    <Text Key="UpdateWebComicsStartup" Text="Webes képregények frissítése" Comment="Update Web Comics" />
+    <Text Key="ShowToolTips" Text="Mutasson tippeket a képregényekhez a böngészőben" Comment="Show Tooltips for Books in the Browser" />
+    <Text Key="AddToLibraryOnOpen" Text="Képregények hozzáadása a Könytárhoz" Comment="Opened Files are added to the Library" />
+    <Text Key="ZoomInOutOnPageChange" Text="Lapozás után kizoomol a kép" Comment="During page change a zoom out is done" />
+    <Text Key="ShowMainMenuNoComicOpen" Text="Főmenüt mutassa, ha nincs nyitott képregény" Comment="Show Main Menu if no Book is open" />
+    <Text Key="InformationCover3D" Text="Borító 3D megjelenítése a képregény infó ablakban" Comment="3D display of covers in Book Info Dialog" />
+    <Text Key="NumericRatingThumbnails" Text="Miniatűrökön számmal van az értékelés" Comment="Thumbnails display numeric ratings" />
+    <Text Key="LocalQuickSearch" Text="Each List as own Quick Search settings" Comment="Each List has own Quick Search settings" />
+    <Text Key="ScrollingDoesBrowse" Text="A margóhoz görgetés új oldalt nyit meg" Comment="Scrolling to page margin browses to new pages" />
+    <Text Key="Import &amp; Export" Text="Importálás &amp; Exportálás" Comment="Import &amp; Export" />
+    <Text Key="ExportedListsContainFilenames" Text="Exportált képregény-listákban fájlnevek is vannak" Comment="Exported Book Lists contain filenames" />
+    <Text Key="ShowSearchLinks" Text="Keresési linkek mutatása" Comment="Show Search Links" />
+    <Text Key="ShowQuickOpen" Text="Gyors megnyitás ha nincs nyitott könyv" Comment="Show Quick Open if no book is opened" />
+  </Texts>
+</TR>

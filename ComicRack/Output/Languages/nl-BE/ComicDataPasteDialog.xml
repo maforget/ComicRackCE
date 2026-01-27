@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicDataPasteDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Annuleer" Comment="&amp;Cancel" />
+    <Text Key="btMarkAll" Text="&amp;Alles" Comment="&amp;All" />
+    <Text Key="btMarkDefined" Text="Aangevinkt" Comment="Only &amp;Set" />
+    <Text Key="btMarkNone" Text="&amp;Wis" Comment="&amp;Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="chkColor" Text="Kleur aanpassing" Comment="Color Adjustment" />
+    <Text Key="chkColorist" Text="Inkleurder" Comment="Colorist" />
+    <Text Key="chkCount" Text="Totaal aantal" Comment="Total Number" />
+    <Text Key="chkCover" Text="Voorkaft" Comment="Cover Artist" />
+    <Text Key="chkEditor" Text="Editor" Comment="Editor" />
+    <Text Key="chkGenre" Text="Genre" Comment="Genre" />
+    <Text Key="chkImprint" Text="Imprint" Comment="Imprint" />
+    <Text Key="chkInker" Text="Inker" Comment="Inker" />
+    <Text Key="chkLanguage" Text="Taal" Comment="Language" />
+    <Text Key="chkLetterer" Text="Letteraar" Comment="Letterer" />
+    <Text Key="chkMonth" Text="Maand" Comment="Month" />
+    <Text Key="chkNotes" Text="Notities" Comment="Notes" />
+    <Text Key="chkNumber" Text="Nummer" Comment="Number" />
+    <Text Key="chkPenciller" Text="Tekenaar" Comment="Penciller" />
+    <Text Key="chkPublisher" Text="Uitgever" Comment="Publisher" />
+    <Text Key="chkSeries" Text="Reeks" Comment="Series" />
+    <Text Key="chkSummary" Text="Synopsis" Comment="Summary" />
+    <Text Key="chkTags" Text="Tags (Labels)" Comment="Tags" />
+    <Text Key="chkTitle" Text="Titel" Comment="Title" />
+    <Text Key="chkVolume" Text="Jaargang" Comment="Volume" />
+    <Text Key="chkWriter" Text="Schrijver" Comment="Writer" />
+    <Text Key="chkYear" Text="Jaar" Comment="Year" />
+    <Text Key="chkManga" Text="Manga" Comment="Manga" />
+    <Text Key="chkFormat" Text="Formaat" Comment="Format" />
+    <Text Key="chkBlackAndWhite" Text="Zwart-wit" Comment="Black and White" />
+    <Text Key="grpArtists" Text="Auteurs / Medewerkers" Comment="Artists / People Involved" />
+    <Text Key="grpMain" Text="Hoofdinformatie" Comment="Main" />
+    <Text Key="chkAgeRating" Text="Leeswijzer" Comment="Age Rating" />
+    <Text Key="chkCharacters" Text="Personages" Comment="Characters" />
+    <Text Key="chkWeb" Text="Web" Comment="Web" />
+    <Text Key="chkLocations" Text="Locaties" Comment="Locations" />
+    <Text Key="chkTeams" Text="Teams" Comment="Teams" />
+    <Text Key="chkRating" Text="Mijn beoordeling" Comment="My Rating" />
+    <Text Key="chkCommunityRating" Text="Groepswaardering" Comment="Community Rating" />
+    <Text Key="chkAlternateCount" Text="Totaal aantal" Comment="Alt. Total Number" />
+    <Text Key="chkAlternateNumber" Text="Nummer" Comment="Alt. Number" />
+    <Text Key="chkAlternateSeries" Text="Reeksnaam" Comment="Alt. Series" />
+    <Text Key="chkBookPrice" Text="Aankoopprijs" Comment="Price" />
+    <Text Key="chkBookAge" Text="Tijdvak - Era" Comment="Age" />
+    <Text Key="chkBookCondition" Text="Conditie" Comment="Condition" />
+    <Text Key="chkBookStore" Text="Stripwinkel" Comment="Store" />
+    <Text Key="chkBookOwner" Text="Eigenaar" Comment="Owner" />
+    <Text Key="chkBookLocation" Text="Locatie" Comment="Location" />
+    <Text Key="chkBookCollectionStatus" Text="Status in collectie" Comment="Collection Status" />
+    <Text Key="chkBookNotes" Text="Nota's" Comment="Notes" />
+    <Text Key="grpPlotNotes" Text="Plot &amp; Nota's" Comment="Plot &amp; Notes" />
+    <Text Key="grpCatalog" Text="Catalogus" Comment="Catalog" />
+    <Text Key="chkISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ComicDataPasteDialog" Text="Plak Data in {0} eComics" Comment="Paste Data into {0} Books" />
+    <Text Key="chkPageCount" Text="Pagina's" Comment="Pages" />
+    <Text Key="chkOpenTime" Text="Geopend/Gelezen" Comment="Opened/Read" />
+    <Text Key="chkAddedTime" Text="Toegevoegd/Aangekocht" Comment="Added/Purchased" />
+    <Text Key="chkSeriesComplete" Text="Volledige reeks" Comment="Series complete" />
+    <Text Key="chkStoryArc" Text="Cyclustitel" Comment="Story Arc" />
+    <Text Key="chkSeriesGroup" Text="Globale Reeksnaam" Comment="Series Group" />
+    <Text Key="chkMainCharacterOrTeam" Text="Protagonist" Comment="Main Character" />
+    <Text Key="chkReview" Text="Recensie" Comment="Review" />
+    <Text Key="chkReleasedTime" Text="Publicatiedatum" Comment="Released" />
+  </Texts>
+</TR>

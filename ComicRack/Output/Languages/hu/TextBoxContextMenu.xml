@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="TextBoxContextMenu" CultureName="hu">
+  <Texts>
+    <Text Key="miUndo" Text="Visszavonás" Comment="Undo" />
+    <Text Key="miCut" Text="Kivágás" Comment="Cut" />
+    <Text Key="miCopy" Text="Másolás" Comment="Copy" />
+    <Text Key="miPaste" Text="Beillesztés" Comment="Paste" />
+    <Text Key="miDelete" Text="Törlés" Comment="Delete" />
+    <Text Key="miSelectAll" Text="Összes kijelölése" Comment="Select All" />
+  </Texts>
+</TR>

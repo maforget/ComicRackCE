@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Default" CultureName="fi">
+  <Texts>
+    <Text Key="ClearAll" Text="Tyhjennä kaikki" Comment="Clear all" />
+    <Text Key="Copy" Text="Kopioi" Comment="Copy" />
+    <Text Key="Invert" Text="Vastakkaiset" Comment="Invert" />
+    <Text Key="Layout" Text="Taitto" Comment="Layout" />
+    <Text Key="None" Text="&lt;tyhjä&gt;" Comment="None" />
+    <Text Key="NotAvailable" Text="Ei saatavilla" Comment="NA" />
+    <Text Key="Paste" Text="Liitä" Comment="Paste" />
+    <Text Key="SetAll" Text="Käytä kaikkia" Comment="Set all" />
+    <Text Key="Unknown" Text="&lt;tyhjä&gt;" Comment="Unknown" />
+    <Text Key="Unspecified" Text="&lt;tyhjä&gt;" Comment="Unspecified" />
+    <Text Key="Workspace" Text="Työtila" Comment="Workspace" />
+    <Text Key="Workspaces" Text="Työtilat" Comment="Workspaces" />
+    <Text Key="System" Text="Järjestelmä" Comment="System" />
+    <Text Key="Books" Text="kirjaa" Comment="books" />
+    <Text Key="Book" Text="kirja" Comment="book" />
+    <Text Key="Page" Text="sivu" Comment="page" />
+    <Text Key="Yes" Text="Kyllä" Comment="Yes" />
+    <Text Key="No" Text="Ei" Comment="No" />
+    <Text Key="Not" Text="Ei" Comment="Not" />
+    <Text Key="Cancel" Text="Peruuta" Comment="Cancel" />
+    <Text Key="Bookmark" Text="Kirjanmerkki" Comment="Bookmark" />
+    <Text Key="Restart" Text="Käynnistä uudelleen" Comment="Restart" />
+    <Text Key="All" Text="Kaikki" Comment="All" />
+    <Text Key="Import" Text="Tuonti" Comment="Import" />
+    <Text Key="New" Text="Uusi" Comment="New" />
+    <Text Key="Recent" Text="Viimeisin" Comment="Recent" />
+    <Text Key="Waiting" Text="Odottaa" Comment="Waiting" />
+    <Text Key="Running" Text="Käynnissä" Comment="Running" />
+    <Text Key="Completed" Text="Valmistuneet" Comment="Completed" />
+    <Text Key="Disable" Text="Poista käytöstä" Comment="Disable" />
+    <Text Key="Server" Text="Palvelin" Comment="Server" />
+    <Text Key="Keep" Text="Säilytä" Comment="Keep" />
+    <Text Key="Save" Text="Tallenna" Comment="Save" />
+    <Text Key="Search" Text="Etsi" Comment="Search" />
+    <Text Key="LogicNot" Text="Negaatio" Comment="Negation" />
+    <Text Key="Default" Text="Oletus" Comment="Default" />
+    <Text Key="Connect" Text="Yhdistä" Comment="Connect" />
+    <Text Key="Windows" Text="Ikkunat" Comment="Windows" />
+    <Text Key="Lists" Text="Listat" Comment="Lists" />
+    <Text Key="Layout" Text="Taitto" Comment="Layout" />
+    <Text Key="Display" Text="Näytä" Comment="Display" />
+  </Texts>
+</TR>

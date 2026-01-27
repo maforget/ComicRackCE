@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DevicesEditDialog" CultureName="hu">
+  <Texts>
+    <Text Key="DevicesEditDialog" Text="Készülékek" Comment="Devices" />
+    <Text Key="btPairDevice" Text="Készülék párosítása" Comment="Pair Device..." />
+    <Text Key="btCancel" Text="&amp;Mégse" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btSelectAll" Text="Összes kijelölése" Comment="Select All" />
+    <Text Key="btSelectNone" Text="Összes kijelölés megszüntetése" Comment="Select None" />
+    <Text Key="btSelectList" Text="Lista kijelölése" Comment="Select List" />
+    <Text Key="btDeselectList" Text="Lista kijelölésének megszüntetése" Comment="Deselect List" />
+    <Text Key="btUnpairDevice" Text="Készülék párosításának törlése" Comment="Unpair Device" />
+    <Text Key="chkOptimizeSize" Text="Méret optimalizálása" Comment="Optimize Size" />
+    <Text Key="chkOnlyUnread" Text="Csak a nem olvasottakat" Comment="Only Unread" />
+    <Text Key="chkOnlyChecked" Text="Csak a kipipáltakat" Comment="Only Checked" />
+    <Text Key="labelHint" Text="Kapcsolja a készüléket a számítógéphez, és nyomja meg a 'Készülék párosítása' gombot." Comment="Connect your Device with your Computer and press 'Pair Device...'" />
+    <Text Key="btRename" Text="Átnevezés..." Comment="Rename..." />
+    <Text Key="cbLimitType.Item0" Text="Képregények" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="chkLimit" Text="Korlátozás" Comment="Limit to" />
+    <Text Key="chkSortBy" Text="Rendezés" Comment="Sort by" />
+    <Text Key="labelLimitSort" Text="rendezési elv" Comment="sorted by" />
+    <Text Key="cbLimitSort.Item0" Text="Véletlenszerű" Comment="Random" />
+    <Text Key="cbLimitSort.Item1" Text="Sorozat" Comment="Series" />
+    <Text Key="cbLimitSort.Item2" Text="Alternatív sorozat" Comment="Alternate Series" />
+    <Text Key="cbLimitSort.Item3" Text="Kiadás ideje" Comment="Published" />
+    <Text Key="cbLimitSort.Item4" Text="Hozzáadva" Comment="Added" />
+    <Text Key="chkKeepLastRead" Text="De tartsa meg a legutóbb olvasottat" Comment="But keep last read" />
+  </Texts>
+</TR>

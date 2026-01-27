@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PendingTasksDialog" CultureName="fr">
+  <Texts>
+    <Text Key="btOk" Text="OK" Comment="OK" />
+    <Text Key="colTask" Text="Tâche" Comment="Task" />
+    <Text Key="lblItemCount" Text="{0} Tâches en attente" Comment="{0} Tasks are pending" />
+    <Text Key="PendingTasksDialog" Text="Tâches en arrière-plan en attente" Comment="Pending Background Tasks" />
+    <Text Key="colState" Text="État" Comment="State" />
+    <Text Key="btAbort" Text="Annuler les tâches de fond" Comment="Abort all User Tasks" />
+  </Texts>
+</TR>

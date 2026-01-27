@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Default" CultureName="ja">
+  <Texts>
+    <Text Key="ClearAll" Text="すべてクリア" Comment="Clear all" />
+    <Text Key="Copy" Text="コピー" Comment="Copy" />
+    <Text Key="Invert" Text="反転" Comment="Invert" />
+    <Text Key="Layout" Text="レイアウト" Comment="Layout" />
+    <Text Key="None" Text="なし" Comment="None" />
+    <Text Key="NotAvailable" Text="N/A" Comment="NA" />
+    <Text Key="Paste" Text="貼り付け" Comment="Paste" />
+    <Text Key="SetAll" Text="すべて選択" Comment="Set all" />
+    <Text Key="Unknown" Text="不明" Comment="Unknown" />
+    <Text Key="Unspecified" Text="未指定" Comment="Unspecified" />
+    <Text Key="Workspace" Text="ワークスペース" Comment="Workspace" />
+    <Text Key="System" Text="システム" Comment="System" />
+    <Text Key="Books" Text="冊" Comment="books" />
+    <Text Key="Book" Text="冊" Comment="book" />
+    <Text Key="Page" Text="ページ" Comment="page" />
+    <Text Key="Yes" Text="はい" Comment="Yes" />
+    <Text Key="No" Text="いいえ" Comment="No" />
+    <Text Key="Not" Text="Not" Comment="Not" />
+    <Text Key="Cancel" Text="キャンセル" Comment="Cancel" />
+    <Text Key="Bookmark" Text="ブックマーク" Comment="Bookmark" />
+    <Text Key="Restart" Text="再起動" Comment="Restart" />
+    <Text Key="All" Text="すべて" Comment="All" />
+    <Text Key="Import" Text="インポート" Comment="Import" />
+    <Text Key="New" Text="新規" Comment="New" />
+    <Text Key="Recent" Text="履歴" Comment="Recent" />
+    <Text Key="Waiting" Text="待機中" Comment="Waiting" />
+    <Text Key="Running" Text="実行中" Comment="Running" />
+    <Text Key="Completed" Text="完了" Comment="Completed" />
+    <Text Key="Disable" Text="無効化" Comment="Disable" />
+    <Text Key="Server" Text="サーバー" Comment="Server" />
+    <Text Key="Keep" Text="Keep" Comment="Keep" />
+    <Text Key="Save" Text="保存" Comment="Save" />
+    <Text Key="Search" Text="検索" Comment="Search" />
+    <Text Key="LogicNot" Text="この条件に不一致" Comment="Negation" />
+    <Text Key="Default" Text="デフォルト" Comment="Default" />
+    <Text Key="Connect" Text="接続" Comment="Connect" />
+    <Text Key="Workspaces" Text="ワークスペース" Comment="Workspaces" />
+    <Text Key="Windows" Text="ウィンドウ" Comment="Windows" />
+    <Text Key="Lists" Text="リスト" Comment="Lists" />
+    <Text Key="Display" Text="表示" Comment="Display" />
+  </Texts>
+</TR>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FileFilter" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="PageImageSave" Text="JPEG 图片|*.jpg|Windows Bitmap 图片|*.bmp|PNG 图片|*.png|GIF 图片|*.gif|TIFF 图片|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif" />
+    <Text Key="ComicRackDatabase" Text="ComicRack 数据库|*.xml" Comment="ComicRack Database|*.xml" />
+    <Text Key="AllFiles" Text="所有文件" Comment="All Files" />
+    <Text Key="AllSupportedFiles" Text="所有支持的文件" Comment="All supported Files" />
+    <Text Key="ReadingListSave" Text="ComicRack 阅读列表|*.crl|Xml File|*.xml" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml" />
+    <Text Key="ReadingListLoad" Text="ComicRack 阅读列表|*.crl|Xml File|*.xml|All Files|*.*" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml|All Files|*.*" />
+    <Text Key="FormatReadingList" Text="ComicRack 阅读列表" Comment="ComicRack Reading List" />
+    <Text Key="ScriptPackage" Text="脚本包|*.zip" Comment="Script Package|*.zip" />
+  </Texts>
+</TR>

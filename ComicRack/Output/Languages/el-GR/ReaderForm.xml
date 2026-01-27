@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ReaderForm" CultureName="el-GR">
+  <Texts>
+    <Text Key="ReaderForm" Text="Αναγνωστήριο" Comment="Reader" />
+  </Texts>
+</TR>

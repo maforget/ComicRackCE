@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBookDialog" CultureName="ru">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="btNext" Text="&amp;Далее" Comment="&amp;Next" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btResetPages" Text="Сброс" Comment="Reset" />
+    <Text Key="btResetColors" Text="Сброс" Comment="Reset" />
+    <Text Key="btPrev" Text="&amp;Назад" Comment="&amp;Previous" />
+    <Text Key="chkMangaStyle" Text="Стиль Manga" Comment="Manga Style" />
+    <Text Key="colImage" Text="Изображение" Comment="Image" />
+    <Text Key="colKey" Text="Ключ" Comment="Key" />
+    <Text Key="colPage" Text="Страница" Comment="Page" />
+    <Text Key="colType" Text="Тип" Comment="Type" />
+    <Text Key="ComicBookDialog" Text="Инфо" Comment="Info" />
+    <Text Key="labelAlternateNumber" Text="Номер:" Comment="Number:" />
+    <Text Key="labelAlternateCount" Text="из:" Comment="of:" />
+    <Text Key="labelAlternateSeries" Text="Альтернативная серия или сюжетная линия:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelBrightness" Text="Яркость" Comment="Brightness" />
+    <Text Key="labelColorist" Text="Колорист" Comment="Colorist:" />
+    <Text Key="labelContrast" Text="Контраст" Comment="Contrast" />
+    <Text Key="labelCoverArtist" Text="Обложка:" Comment="Cover Artist:" />
+    <Text Key="labelEditor" Text="Редактор:" Comment="Editor:" />
+    <Text Key="labelFormat" Text="Формат:" Comment="Format:" />
+    <Text Key="labelGenre" Text="Жанр:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Imprint:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Прорисовщик:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Язык:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Метранпаж:" Comment="Letterer:" />
+    <Text Key="labelMonth" Text="Месяц:" Comment="Month:" />
+    <Text Key="labelNoPages" Text="Этот Комикс никогда не открывался и количество страниц не известно." Comment="This eComic has never been opened and the page count is still unknown." />
+    <Text Key="labelNumber" Text="Номер:" Comment="Number:" />
+    <Text Key="labelCount" Text="из:" Comment="of:" />
+    <Text Key="labelOpened" Text="Открыт:" Comment="Opened:" />
+    <Text Key="labelPages" Text="Страниц:" Comment="Pages:" />
+    <Text Key="labelPagesRead" Text="Страниц прочитано:" Comment="Pages Read:" />
+    <Text Key="labelPenciller" Text="Художник:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Издатель Комикса:" Comment="Publisher:" />
+    <Text Key="labelSaturation" Text="Насыщение" Comment="Saturation" />
+    <Text Key="labelSeries" Text="Серия:" Comment="Series:" />
+    <Text Key="labelSize" Text="Размер:" Comment="Size:" />
+    <Text Key="labelTitle" Text="Название:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Выпуск:" Comment="Volume:" />
+    <Text Key="labelWhere" Text="Путь:" Comment="Where:" />
+    <Text Key="labelWriter" Text="Автор:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Год:" Comment="Year:" />
+    <Text Key="tabColors" Text="Картинка" Comment="Colors" />
+    <Text Key="tabInfo" Text="Информация" Comment="Info" />
+    <Text Key="tabPages" Text="Страницы" Comment="Pages" />
+    <Text Key="tabPlot" Text="Коментарии и заметки" Comment="Plot &amp; Notes" />
+    <Text Key="tabSummary" Text="Кратко" Comment="Summary" />
+    <Text Key="pageViewer" Text="Сделайте двойной щелчек мышью на белом цвете" Comment="Double Click on Color to set White Point" />
+    <Text Key="labelPagesInfo" Text="Измените порядок страниц путем перетаскивания или используйте контекстное меню для изменения типа страниц" Comment="Change the page order with drag &amp; drop or use the context menu to change page types:" />
+    <Text Key="labelType" Text="Тип:" Comment="Type:" />
+    <Text Key="labelManga" Text="Manga:" Comment="Manga:" />
+    <Text Key="labelEnableProposed" Text="Рекомендовать:" Comment="Enable Proposed:" />
+    <Text Key="labelBlackAndWhite" Text="Черно-белый" Comment="Black and White" />
+    <Text Key="btPageViews" Text="Вид..." Comment="Views" />
+    <Text Key="labelAgeRating" Text="Возрастной ценз" Comment="Age Rating" />
+    <Text Key="labelTags" Text="Метки:" Comment="Tags:" />
+    <Text Key="labelSummary" Text="Кратко:" Comment="Summary:" />
+    <Text Key="labelNotes" Text="Заметки:" Comment="Notes:" />
+    <Text Key="labelCharacters" Text="Персонажи:" Comment="Characters:" />
+    <Text Key="labelSharpening" Text="Резкость" Comment="Sharpening" />
+  </Texts>
+</TR>

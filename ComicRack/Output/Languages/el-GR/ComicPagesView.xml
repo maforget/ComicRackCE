@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPagesView" CultureName="el-GR">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Ταξινόμηση κατά {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Αλλαγή μεγέθους των μικρογραφιών" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Ομαδοποίηση κατά {0}" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="&amp;Λεπτομέρειες" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="&amp;Μικρογραφίες" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Πλακίδια" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Κανένα" Comment="None" />
+    <Text Key="NotArranged" Text="Μη ταξινομημένες" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Μη ομαδοποιημένες" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Ομάδα" Comment="Group" />
+    <Text Key="tbbSort" Text="Ταξινόμηση" Comment="Arrange" />
+    <Text Key="tbbView" Text="Προβολές" Comment="Views" />
+    <Text Key="tbFilter" Text="Φιλτράρισμα Σελίδας" Comment="Page Filter" />
+    <Text Key="tbbGroup.Tooltip" Text="Ομαδοποίηση των eComics με διαφορετικά κριτήρια" Comment="Group Pages by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="Αλλαγές σχετικές με τα κριτήρια ταξινόμησης των eComics" Comment="Change the sort order of the Pages" />
+    <Text Key="tbbView.Tooltip" Text="Αλλαγές σχετικές με την εμφάνιση των eComics" Comment="Change how Pages are displayed" />
+    <Text Key="miExpandAllGroups" Text="Σύμπτυξη/Ανάπτυξη όλων των Ομάδων" Comment="Collapse/Expand all Groups" />
+  </Texts>
+</TR>

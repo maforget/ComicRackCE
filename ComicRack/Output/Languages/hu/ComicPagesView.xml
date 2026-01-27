@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicPagesView" CultureName="hu">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Sorba rendezve {0} szerint" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Miniatűrök méretének változtatása" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Csoportosítva {0} szerint" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="&amp;Részletek" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="Miniatűrök" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Mozaik" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Nincs" Comment="None" />
+    <Text Key="NotArranged" Text="Nincs rendezve" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Nincs csoportosítva" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Csoportosítás" Comment="Group" />
+    <Text Key="tbbSort" Text="Sorba rendezés" Comment="Arrange" />
+    <Text Key="tbbView" Text="Megjelenítések" Comment="Views" />
+    <Text Key="tbFilter" Text="Oldalszűrő" Comment="Page Filter" />
+    <Text Key="tbbGroup.Tooltip" Text="Képregények csoportosítása más szempont szerint" Comment="Group Pages by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="Oldalak rendezésének megváltoztatása" Comment="Change the sort order of the Pages" />
+    <Text Key="tbbView.Tooltip" Text="Váltás az oldalak megjelenítési módjai között" Comment="Change how Pages are displayed" />
+    <Text Key="miExpandAllGroups" Text="Minden csoport összecsukása/kinyitása" Comment="Collapse/Expand all Groups" />
+  </Texts>
+</TR>

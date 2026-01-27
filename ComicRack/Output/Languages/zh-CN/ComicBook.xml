@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBook" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Added" Text="添加时间:\t{0}" Comment="Added:\t{0}" />
+    <Text Key="Format" Text="格式:\t{0}" Comment="Format:\t{0}" />
+    <Text Key="LastPageReadIs" Text="上次阅读的页面是 {0}" Comment="Last page read is {0}" />
+    <Text Key="LastTimeOpenedAt" Text="上次打开于 {0}" Comment="Last time opened at {0}" />
+    <Text Key="Library" Text="书库" Comment="Library" />
+    <Text Key="MyFavoritesList" Text="我的收藏" Comment="My Favorites" />
+    <Text Key="Never" Text="从未" Comment="never" />
+    <Text Key="NeverReadList" Text="从未阅读" Comment="Never Read" />
+    <Text Key="NoInformation" Text="无可用信息" Comment="No information available" />
+    <Text Key="None" Text="无" Comment="None" />
+    <Text Key="Of" Text="共" Comment="of" />
+    <Text Key="Opened" Text="打开时间:\t{0}" Comment="Opened:\t{0}" />
+    <Text Key="Pages" Text="共 {0} 页" Comment="{0} Page(s)" />
+    <Text Key="PageSize" Text="大小:\t{0}" Comment="Size:\t{0}" />
+    <Text Key="PageText" Text="第 {0} 页" Comment="Page #{0}" />
+    <Text Key="ReadingAtPage" Text="正在阅读第 {0} 页" Comment="Reading at page {0}" />
+    <Text Key="ReadingList" Text="阅读中" Comment="Reading" />
+    <Text Key="ReadList" Text="阅毕" Comment="Read" />
+    <Text Key="RecentlyAddedList" Text="最近添加" Comment="Recently Added" />
+    <Text Key="RecentlyReadList" Text="最近阅读" Comment="Recently Read" />
+    <Text Key="Resolution" Text="分辨率:\t{0} x {1}" Comment="Resolution:\t{0} x {1}" />
+    <Text Key="Size" Text="大小:\t{0}/{1}" Comment="Size:\t{0}/{1}" />
+    <Text Key="SmartLists" Text="智能列表" Comment="Smart Lists" />
+    <Text Key="UnknownSize" Text="未知大小" Comment="Unknown Size" />
+    <Text Key="Unknown" Text="未知" Comment="Unknown" />
+    <Text Key="Volume" Text="V{0}" Comment="V{0}" />
+    <Text Key="FilesUpdateList" Text="要更新的文件" Comment="Files to update" />
+    <Text Key="TempLists" Text="临时列表" Comment="Temporary Lists" />
+    <Text Key="FileName" Text="文件:\t{0}" Comment="File:\t{0}" />
+    <Text Key="Bookmark" Text="书签:\t{0}" Comment="Bookmark:\t{0}" />
+    <Text Key="Rotation" Text="旋转:\t{0}" Comment="Rotation:\t{0}" />
+    <Text Key="BookCount" Text="书籍:\t{0}" Comment="Books:\t{0}" />
+  </Texts>
+</TR>

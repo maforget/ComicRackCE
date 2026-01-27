@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ExportComicsDialog" CultureName="ja">
+  <Texts>
+    <Text Key="ExportComicsDialog" Text="コミックのエクスポート" Comment="Export eComics" />
+    <Text Key="grpExportLocation" Text="エクスポート場所" Comment="Export Location" />
+    <Text Key="grpFileFormat" Text="ファイル フォーマット" Comment="File Format" />
+    <Text Key="grpPageFormat" Text="ページ フォーマット" Comment="Page Format" />
+    <Text Key="grpFileNaming" Text="ファイルのネーミング" Comment="File Naming" />
+    <Text Key="grpImageProcessing" Text="画像の処理" Comment="Image Processing" />
+    <Text Key="btSavePreset" Text="プリセットの保存..." Comment="Save Preset..." />
+    <Text Key="btRemovePreset" Text="削除" Comment="Remove" />
+    <Text Key="labelExportTo" Text="エクスポート先:" Comment="Export to:" />
+    <Text Key="cbExport.Item0" Text="フォルダ選択" Comment="Select a Folder" />
+    <Text Key="cbExport.Item1" Text="同じフォルダにオリジナル コミックとして" Comment="Same Folder as the original eComic" />
+    <Text Key="cbExport.Item2" Text="同じフォルダでライブラリを置き換える" Comment="Same Folder and replace in Library" />
+    <Text Key="cbExport.Item3" Text="エクスポート時に確認" Comment="Ask before Export" />
+    <Text Key="labelFolder" Text="フォルダ:" Comment="Folder:" />
+    <Text Key="btChooseFolder" Text="選択..." Comment="Choose..." />
+    <Text Key="chkDeleteOriginal" Text="エクスポート完了後にオリジナルのコミックを削除" Comment="Delete original eComic after successful Export" />
+    <Text Key="chkAddNewToLibrary" Text="ライブラリに新規作成コミックを追加" Comment="Add newly created eComic to Library" />
+    <Text Key="labelComicFormat" Text="コミック フォーマット" Comment="eComic Format" />
+    <Text Key="cbComicFormat.Item0" Text="オリジナルと同じ" Comment="Same as Original" />
+    <Text Key="labelCompression" Text="圧縮" Comment="Compression" />
+    <Text Key="cbCompression.Item0" Text="なし" Comment="None" />
+    <Text Key="cbCompression.Item1" Text="中" Comment="Medium" />
+    <Text Key="cbCompression.Item2" Text="強" Comment="Strong" />
+    <Text Key="chkEmbedComicInfo" Text="コミック情報を埋め込む" Comment="Embed Comic Info" />
+    <Text Key="labelRemovePageFilter" Text="削除するページ:" Comment="Remove Pages:" />
+    <Text Key="labelIncludePages" Text="含めるページ:" Comment="Include Pages:" />
+    <Text Key="labelPageFormat" Text="ページ フォーマット" Comment="Page Format" />
+    <Text Key="cbPageFormat.Item0" Text="オリジナルを維持" Comment="Preserve Original" />
+    <Text Key="labelPageQuality" Text="品質:" Comment="Quality:" />
+    <Text Key="labelPageResize" Text="リサイズ:" Comment="Resize:" />
+    <Text Key="cbPageResize.Item0" Text="オリジナルを維持" Comment="Preserve Original" />
+    <Text Key="cbPageResize.Item1" Text="横幅と高さにベスト フィット" Comment="Best fit Width &amp; Height" />
+    <Text Key="cbPageResize.Item2" Text="横幅を設定" Comment="Set Width" />
+    <Text Key="cbPageResize.Item3" Text="高さを設定" Comment="Set Height" />
+    <Text Key="labelX" Text="x" Comment="x" />
+    <Text Key="chkDontEnlarge" Text="拡大しない" Comment="Don't enlarge" />
+    <Text Key="chkSplitDouble" Text="見開きページを分割" Comment="Split Double Pages" />
+    <Text Key="SelectExportFolder" Text="エクスポート フォルダを選択してください" Comment="Please select the Export Folder" />
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelNamingTemplate" Text="テンプレート:" Comment="Template:" />
+    <Text Key="labelCustomNaming" Text="カスタム:" Comment="Custom:" />
+    <Text Key="labelCustomStartIndex" Text="開始:" Comment="Start:" />
+    <Text Key="cbNamingTemplate.Item0" Text="ファイル名" Comment="Filename" />
+    <Text Key="cbNamingTemplate.Item1" Text="コミック キャプション" Comment="eComic Caption" />
+    <Text Key="cbNamingTemplate.Item2" Text="カスタム" Comment="Custom" />
+    <Text Key="chkOverwrite" Text="既存のファイルに上書き" Comment="Overwrite existing Files" />
+    <Text Key="chkCombine" Text="選択ファイルを結合" Comment="Combine selected Files" />
+    <Text Key="ComicRackExportPresets" Text="ComicRack プリセット" Comment="ComicRack Presets" />
+    <Text Key="UserExportPresets" Text="ユーザー プリセット" Comment="User Presets" />
+    <Text Key="labelSharpening" Text="シャープ" Comment="Sharpening" />
+    <Text Key="chkAutoContrast" Text="コントラストの自動調整" Comment="Automatic Contrast Enhancement" />
+    <Text Key="labelSaturation" Text="彩度" Comment="Saturation" />
+    <Text Key="labelBrightness" Text="明度" Comment="Brightness" />
+    <Text Key="labelContrast" Text="コントラスト" Comment="Contrast" />
+    <Text Key="labelImagProcessingSource" Text="ソース:" Comment="Source:" />
+    <Text Key="labelImageProcessingCustom" Text="カスタム:" Comment="Custom:" />
+    <Text Key="cbImageProcessingSource.Item0" Text="カスタム設定" Comment="Custom Settings" />
+    <Text Key="cbImageProcessingSource.Item1" Text="コミックの設定を適用" Comment="eComic settings are applied" />
+    <Text Key="chkIgnoreErrorPages" Text="エラーのページを無視してエクスポートを続行" Comment="Ignore Pages with errors and continue export" />
+    <Text Key="btResetColors" Text="リセット" Comment="Reset" />
+  </Texts>
+</TR>

@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainForm" CultureName="zh-CN">
+  <Texts>
+    <Text Key="browseMenu" Text="浏览(&amp;B)" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="复制页面(&amp;C)" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="导出页面(&amp;E)..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="适应全部" Comment="Fit All" />
+    <Text Key="cmFitBest" Text="适应最佳" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="适应高度" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="适应宽度" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="放大镜(&amp;M)" Comment="&amp;Magnifier" />
+    <Text Key="cmNotifyExit" Text="退出(&amp;E)" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="恢复(&amp;R)" Comment="&amp;Restore" />
+    <Text Key="cmRate0" Text="无" Comment="None" />
+    <Text Key="cmRate1" Text="* (1 星)" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** (2 星)" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** (3 星)" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** (4 星)" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** (5 星)" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="我的评分(&amp;R)" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="刷新(&amp;R)" Comment="&amp;Refresh" />
+    <Text Key="cmSyncBrowser" Text="在浏览器中显示(&amp;B)" Comment="Show in &amp;Browser" />
+    <Text Key="displayMenu" Text="显示(&amp;D)" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="编辑(&amp;E)" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="文件(&amp;F)" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="帮助(&amp;H)" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack" Comment="ComicRack" />
+    <Text Key="miAbout" Text="关于(&amp;A)..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="添加文件夹到书库(&amp;A)..." Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="新建标签页(&amp;T)" Comment="New &amp;Tab" />
+    <Text Key="miBestFit" Text="适应最佳(&amp;B)" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="关闭所有(&amp;L)" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="关闭(&amp;C)" Comment="&amp;Close" />
+    <Text Key="miEditListLayout" Text="编辑列表布局(&amp;E)..." Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="退出(&amp;E)" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="自动化(&amp;U)" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="首页(&amp;F)" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="适应全部(&amp;A)" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="适应高度(&amp;H)" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="适应宽度(&amp;W)" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="全屏(&amp;F)" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="末页(&amp;L)" Comment="&amp;Last Page" />
+    <Text Key="miListLayouts" Text="列表布局" Comment="List Layout" />
+    <Text Key="miNews" Text="新闻(&amp;N)..." Comment="&amp;News..." />
+    <Text Key="miNextTab" Text="下一个标签(&amp;T)" Comment="Next &amp;Tab" />
+    <Text Key="miPageType" Text="页面类型(&amp;P)" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="选项(&amp;P)..." Comment="&amp;Preferences..." />
+    <Text Key="miPrevPage" Text="上一页" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="上一个标签(&amp;P)" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="无" Comment="None" />
+    <Text Key="miRate1" Text="* (1 星)" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** (2 星)" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** (3 星)" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** (4 星)" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** (5 星)" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="我的评分(&amp;R)" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="重启(&amp;A)" Comment="Rest&amp;art" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="miRotation" Text="旋转(&amp;R)" Comment="&amp;Rotation" />
+    <Text Key="miSaveListLayout" Text="保存列表布局(&amp;S)..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="保存工作区(&amp;S)..." Comment="&amp;Save Workspace..." />
+    <Text Key="miAutoScroll" Text="智能滚动" Comment="Auto Scrolling" />
+    <Text Key="miSearchBrowser" Text="搜索浏览器(&amp;E)" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="将当前布局应用到所有列表" Comment="Set all Lists to current Layout" />
+    <Text Key="miSidebar" Text="侧边栏(&amp;S)" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="预览小窗(&amp;M)" Comment="S&amp;mall Preview" />
+    <Text Key="miSupport" Text="支持ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miSyncBrowser" Text="在浏览器中显示(&amp;B)" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="浏览器(&amp;B)" Comment="&amp;Browser" />
+    <Text Key="miView100" Text="100 %" Comment="100 %" />
+    <Text Key="miView150" Text="150 %" Comment="150 %" />
+    <Text Key="miView200" Text="200 %" Comment="200 %" />
+    <Text Key="miView300" Text="300 %" Comment="300 %" />
+    <Text Key="miView400" Text="400 %" Comment="400 %" />
+    <Text Key="miViewFolders" Text="文件夹(&amp;F)" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="书库(&amp;B)" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="页面(&amp;P)" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="刷新(&amp;R)" Comment="&amp;Refresh" />
+    <Text Key="miWorkspaces" Text="工作区(&amp;W)" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="缩放" Comment="Zoom" />
+    <Text Key="readMenu" Text="已读(&amp;R)" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="设置为 '{0}' 布局" Comment="Set '{0}' Layout" />
+    <Text Key="tbBestFit" Text="适应最佳" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="显示" Comment="Display" />
+    <Text Key="tbFit" Text="适应" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="切换适应模式" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="适应全部" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="适应高度" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="适应宽度" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="全屏" Comment="Full Screen" />
+    <Text Key="tbMagnify" Text="放大镜" Comment="Magnifier" />
+    <Text Key="tbNextPage" Text="下一页" Comment="Next Page" />
+    <Text Key="tbNextTab" Text="下一个标签(&amp;T)" Comment="Next &amp;Tab" />
+    <Text Key="tbNextTab.Tooltip" Text="下一个标签" Comment="Next Tab" />
+    <Text Key="tbPrevTab" Text="上一个标签(&amp;P)" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="上一标签页" Comment="Vorheriger Tab" />
+    <Text Key="tbReadLabel" Text="阅毕" Comment="Read" />
+    <Text Key="tbAutoScroll" Text="智能滚动" Comment="Auto Scrolling" />
+    <Text Key="tbTwoPages" Text="双页" Comment="Two Pages" />
+    <Text Key="tsBook" Text="书籍" Comment="Book" />
+    <Text Key="tsCurrentPage" Text="页面" Comment="Page" />
+    <Text Key="tsPageCount" Text="0 页" Comment="0 Pages" />
+    <Text Key="tsSaveWorkspace" Text="保存工作区(&amp;S)..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsText" Text="准备就绪" Comment="Ready" />
+    <Text Key="tsWorkspaces" Text="工作区" Comment="Workspaces" />
+    <Text Key="miReaderUndocked" Text="在独立窗口阅读" Comment="Reader in own Window" />
+    <Text Key="tbReaderUndocked" Text="在独立窗口阅读" Comment="Reader in own Window" />
+    <Text Key="miPageLayout" Text="页面布局" Comment="Page Layout" />
+    <Text Key="cmPageLayout" Text="页面布局" Comment="Page Layout" />
+    <Text Key="miAdaptiveTwoPageFitting" Text="适应双页面分布" Comment="Adapt to double page spreads" />
+    <Text Key="cmAdaptiveTwoPageFitting" Text="适应双页面分布" Comment="Adapt to double page spreads" />
+    <Text Key="tbAdaptiveTwoPageFitting" Text="适应双页面分布" Comment="Adapt to double page spreads" />
+    <Text Key="miOriginal" Text="原始大小" Comment="Original Size" />
+    <Text Key="tbOriginal" Text="原始大小" Comment="Original Size" />
+    <Text Key="cmOriginal" Text="原始大小" Comment="Original Size" />
+    <Text Key="NotifyIconText" Text="双击恢复" Comment="Double Click to restore" />
+    <Text Key="cmOnlyFitOversized" Text="仅在页面过大时应用适应模式" Comment="Only Fit if oversized" />
+    <Text Key="miOnlyFitOversized" Text="仅在页面过大时应用适应模式" Comment="Only Fit if oversized" />
+    <Text Key="tbOnlyFitOversized" Text="仅在页面过大时应用适应模式" Comment="Only Fit if oversized" />
+    <Text Key="ChangeItemSize" Text="更改列表项大小" Comment="Change size of the list items" />
+    <Text Key="miDoublePageAutoScroll" Text="双页智能滚动" Comment="Double Page Auto Scrolling" />
+    <Text Key="cmFitWidthAdaptive" Text="适应宽度(自适应)" Comment="Fit Width (adaptive)" />
+    <Text Key="miFitWidthAdaptive" Text="适应宽度(自适应)" Comment="Fit Width (adaptive)" />
+    <Text Key="tbFitWidthAdaptive" Text="适应宽度(自适应)" Comment="Fit Width (adaptive)" />
+    <Text Key="cmRightToLeft" Text="从右到左" Comment="Right to Left" />
+    <Text Key="tbRightToLeft" Text="从右到左" Comment="Right to Left" />
+    <Text Key="miRightToLeft" Text="从右到左" Comment="Right to Left" />
+    <Text Key="miMinimalGui" Text="迷你界面" Comment="Minimal User Interface" />
+    <Text Key="tbMinimalGui" Text="迷你界面" Comment="Minimal User Interface" />
+    <Text Key="cmMinimalGui" Text="迷你界面" Comment="Minimal User Interface" />
+    <Text Key="miBookmarks" Text="书签" Comment="Bookmarks" />
+    <Text Key="miSetBookmark" Text="插入书签..." Comment="Set Bookmark..." />
+    <Text Key="miRemoveBookmark" Text="移除书签" Comment="Remove Bookmark" />
+    <Text Key="tbBookmarks" Text="书签" Comment="Bookmarks" />
+    <Text Key="tbSetBookmark" Text="插入书签..." Comment="Set Bookmark..." />
+    <Text Key="tbRemoveBookmark" Text="移除书签" Comment="Remove Bookmark" />
+    <Text Key="tbLastPageRead" Text="上次阅读页面" Comment="Last Page Read" />
+    <Text Key="cmBookmarks" Text="书签" Comment="Bookmarks" />
+    <Text Key="cmSetBookmark" Text="插入书签..." Comment="Set Bookmark..." />
+    <Text Key="cmRemoveBookmark" Text="移除书签" Comment="Remove Bookmark" />
+    <Text Key="cmLastPageRead" Text="上次阅读页面" Comment="Last Page Read" />
+    <Text Key="miPrevBookmark" Text="上一个书签" Comment="Previous Bookmark" />
+    <Text Key="miNextBookmark" Text="下一个书签" Comment="Next Bookmark" />
+    <Text Key="tbPrevBookmark" Text="上一个书签" Comment="Previous Bookmark" />
+    <Text Key="tbNextBookmark" Text="下一个书签" Comment="Next Bookmark" />
+    <Text Key="cmPrevBookmark" Text="上一个书签" Comment="Previous Bookmark" />
+    <Text Key="cmNextBookmark" Text="下一个书签" Comment="Next Bookmark" />
+    <Text Key="miZoomIn" Text="放大" Comment="Zoom In" />
+    <Text Key="tbZoomIn" Text="放大" Comment="Zoom In" />
+    <Text Key="miZoomOut" Text="缩小" Comment="Zoom Out" />
+    <Text Key="tbZoomOut" Text="缩小" Comment="Zoom Out" />
+    <Text Key="miZoomCustom" Text="自定义..." Comment="Custom..." />
+    <Text Key="tbZoomCustom" Text="自定义..." Comment="Custom..." />
+    <Text Key="tbZoom.Tooltip" Text="更改页面缩放" Comment="Change the page zoom" />
+    <Text Key="tbRotate.Tooltip" Text="更改页面旋转" Comment="Change the page rotation" />
+    <Text Key="miRotateLeft" Text="向左旋转" Comment="Rotate Left" />
+    <Text Key="miRotateRight" Text="向右旋转" Comment="Rotate Right" />
+    <Text Key="tbRotateLeft" Text="向左旋转" Comment="Rotate Left" />
+    <Text Key="tbRotateRight" Text="向右旋转" Comment="Rotate Right" />
+    <Text Key="tbRotate180" Text="180°" Comment="180°" />
+    <Text Key="tbRotate270" Text="270°" Comment="270°" />
+    <Text Key="tbRotate90" Text="90°" Comment="90°" />
+    <Text Key="tbAutoRotate" Text="自动旋转双页" Comment="Autorotate Double Pages" />
+    <Text Key="miAutoRotate" Text="自动旋转双页" Comment="Autorotate Double Pages" />
+    <Text Key="miLastPageRead" Text="上次阅读页面(&amp;A)" Comment="L&amp;ast Page Read" />
+    <Text Key="tsPageActivity.Tooltip" Text="获取页面和缩略图中..." Comment="Getting Pages and Thumbnails..." />
+    <Text Key="tsScanActivity.Tooltip" Text="扫描中..." Comment="A scan is running..." />
+    <Text Key="tsWriteInfoActivity.Tooltip" Text="写入信息数据到文件..." Comment="Writing info data to files..." />
+    <Text Key="tsReadInfoActivity.Tooltip" Text="从文件读取信息中..." Comment="Reading info data from files..." />
+    <Text Key="cmCloseAllButThis" Text="关闭其他" Comment="Close All But This" />
+    <Text Key="cmCopyPath" Text="复制完整路径" Comment="Copy Full Path" />
+    <Text Key="cmRevealInExplorer" Text="在浏览器中检索" Comment="Reveal in Explorer" />
+    <Text Key="cmClose" Text="关闭" Comment="Close" />
+    <Text Key="miWebHome" Text="ComicRack主页..." Comment="ComicRack Homepage..." />
+    <Text Key="miWebUserForum" Text="ComicRack论坛..." Comment="ComicRack User Forum..." />
+    <Text Key="miWebHelp" Text="ComicRack文档..." Comment="ComicRack Documentation..." />
+    <Text Key="SavePageTitle" Text="页面另存为..." Comment="Save Page as..." />
+    <Text Key="miCopyPage" Text="复制页面(&amp;C)" Comment="&amp;Copy Page" />
+    <Text Key="miExportPage" Text="导出页面(&amp;E)..." Comment="&amp;Export Page..." />
+    <Text Key="ExportingErrors" Text="{0}个错误.点击查看详情" Comment="{0} errors. Click for details" />
+    <Text Key="cmPageType" Text="页面类型(&amp;P)" Comment="&amp;Page Type" />
+    <Text Key="tsExportActivity" Text="导出中" Comment="Exporting" />
+    <Text Key="cmCloseComic" Text="关闭" Comment="Close" />
+    <Text Key="cmRotate0" Text="不旋转(&amp;N)" Comment="&amp;No Rotation" />
+    <Text Key="cmRotate180" Text="180°" Comment="180°" />
+    <Text Key="cmRotate270" Text="270°" Comment="270°" />
+    <Text Key="cmRotate90" Text="90°" Comment="90°" />
+    <Text Key="cmPageRotate" Text="页面旋转" Comment="Page Rotation" />
+    <Text Key="miPageRotate" Text="页面旋转" Comment="Page Rotation" />
+    <Text Key="miOpenRemoteLibrary" Text="打开远程书库..." Comment="Open Remote Library..." />
+    <Text Key="miUndo" Text="撤消" Comment="Undo" />
+    <Text Key="miRedo" Text="重做" Comment="Redo" />
+    <Text Key="cmShowInfo" Text="信息(&amp;I)..." Comment="&amp;Info..." />
+    <Text Key="tbAbout" Text="关于(&amp;A)..." Comment="&amp;About..." />
+    <Text Key="tbFirstPage" Text="首页(&amp;F)" Comment="&amp;First Page" />
+    <Text Key="tbLastPage" Text="末页(&amp;L)" Comment="&amp;Last Page" />
+    <Text Key="miNextPage" Text="下一页" Comment="Next Page" />
+    <Text Key="miMagnify" Text="放大镜" Comment="Magnifier" />
+    <Text Key="tbPreferences" Text="选项(&amp;P)..." Comment="&amp;Preferences..." />
+    <Text Key="tbTools" Text="工具" Comment="Tools" />
+    <Text Key="tbTools.Tooltip" Text="访问重要命令" Comment="Access to important commands" />
+    <Text Key="tbShowMainMenu" Text="显示主菜单" Comment="Show Main Menu" />
+    <Text Key="tbPrevPage" Text="上一页" Comment="&amp;Previous Page" />
+    <Text Key="miRotate0" Text="0°" Comment="0°" />
+    <Text Key="miShowInfo" Text="信息(&amp;I)..." Comment="&amp;Info..." />
+    <Text Key="tbShowInfo" Text="信息(&amp;I)..." Comment="&amp;Info..." />
+    <Text Key="tbSupport" Text="支持ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miTwoPages" Text="双页" Comment="Two Pages" />
+    <Text Key="cmTwoPages" Text="双页" Comment="Two Pages" />
+    <Text Key="miSinglePage" Text="单页" Comment="Single Page" />
+    <Text Key="cmSinglePage" Text="单页" Comment="Single Page" />
+    <Text Key="tbSinglePage" Text="单页" Comment="Single Page" />
+    <Text Key="tbRotate0" Text="0°" Comment="0°" />
+    <Text Key="miPreviousList" Text="上一个列表" Comment="Previous List" />
+    <Text Key="miNextList" Text="下一列表" Comment="Next List" />
+    <Text Key="miTwoPagesAdaptive" Text="双页(自适应)" Comment="Two Pages (adaptive)" />
+    <Text Key="cmTwoPagesAdaptive" Text="双页(自适应)" Comment="Two Pages (adaptive)" />
+    <Text Key="tbTwoPagesAdaptive" Text="双页(自适应)" Comment="Two Pages (adaptive)" />
+    <Text Key="miUpdateWebComics" Text="更新在线漫画" Comment="Update Web Comics" />
+    <Text Key="tbUpdateWebComics" Text="更新在线漫画" Comment="Update Web Comics" />
+    <Text Key="tbOpenRemoteLibrary" Text="打开远程书库..." Comment="Open Remote Library..." />
+    <Text Key="miToggleZoom" Text="切换缩放" Comment="Toggle Zoom" />
+    <Text Key="miEditLayouts" Text="编辑布局(&amp;E)..." Comment="&amp;Edit Layouts..." />
+    <Text Key="miEditWorkspaces" Text="编辑工作区(&amp;E)..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="tsEditWorkspaces" Text="编辑工作区(&amp;E)..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="miTasks" Text="任务..." Comment="Tasks..." />
+    <Text Key="quickOpenView" Text="快速打开" Comment="Quick Open" />
+    <Text Key="cmCloseAllToTheRight" Text="关闭右边所有" Comment="Close All to the Right" />
+    <Text Key="cmNextFromList" Text="下一本(&amp;X)" Comment="Ne&amp;xt Book" />
+    <Text Key="cmRandomFromList" Text="随机" Comment="Random Book" />
+    <Text Key="cmPrevFromList" Text="上一本(&amp;V)" Comment="Pre&amp;vious Book" />
+    <Text Key="ExportingComics" Text="导出书籍中: {0} 个队列" Comment="Exporting Books: {0} queued" />
+    <Text Key="miNextFromList" Text="下一本(&amp;X)" Comment="Ne&amp;xt Book" />
+    <Text Key="miRandomFromList" Text="随机" Comment="Random Book" />
+    <Text Key="miOpenComic" Text="打开文件(&amp;O)..." Comment="&amp;Open File..." />
+    <Text Key="cmOpenComic" Text="打开文件(&amp;O)..." Comment="&amp;Open File..." />
+    <Text Key="tbOpenComic" Text="打开文件(&amp;O)..." Comment="&amp;Open File..." />
+    <Text Key="miOpenNow" Text="打开的书籍" Comment="Open Books" />
+    <Text Key="miOpenRecent" Text="最近阅读/添加(&amp;R)" Comment="&amp;Recent Books" />
+    <Text Key="miPrevFromList" Text="上一本(&amp;V)" Comment="Pre&amp;vious Book" />
+    <Text Key="miScan" Text="扫描书籍文件夹(&amp;F)" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbScan" Text="扫描书籍文件夹(&amp;F)" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbNextFromList" Text="列表中的下一本" Comment="Next Book from List" />
+    <Text Key="tbRandomFromList" Text="随机" Comment="Random Book" />
+    <Text Key="tbPrevFromList" Text="列表的上一本书籍" Comment="Previous Book from List" />
+    <Text Key="tsBook.Tooltip" Text="打开书籍的名称" Comment="Name of the opened Book" />
+    <Text Key="tsCurrentPage.Tooltip" Text="已打开书籍的当前页码" Comment="Current Page of the open Book" />
+    <Text Key="tsPageCount.Tooltip" Text="打开书籍的总页数" Comment="Page count of the open Book" />
+    <Text Key="tbPageLayout" Text="页面布局" Comment="Page Layout" />
+    <Text Key="cmComics" Text="书籍" Comment="Books" />
+    <Text Key="miUpdateAllComicFiles" Text="更新所有书籍文件" Comment="Update all Book Files" />
+    <Text Key="tbUpdateAllComicFiles" Text="更新所有书籍文件" Comment="Update all Book Files" />
+    <Text Key="miComicDisplaySettings" Text="书籍显示设置..." Comment="Book Display Settings..." />
+    <Text Key="tbComicDisplaySettings" Text="书籍显示设置..." Comment="Book Display Settings..." />
+    <Text Key="miHelp" Text="帮助" Comment="Help" />
+    <Text Key="miChooseHelpSystem" Text="选择帮助系统" Comment="Choose Help System" />
+    <Text Key="miHelpPlugins" Text="插件" Comment="Plugins" />
+    <Text Key="miNewComic" Text="新建无文件书籍条目..." Comment="New fileless Book Entry..." />
+    <Text Key="miHelpQuickIntro" Text="简介" Comment="Quick Introduction" />
+    <Text Key="DeviceSyncing" Text="同步设备中: {0} 个已队列" Comment="Syncing Devices: {0} queued" />
+    <Text Key="DeviceSyncingErrors" Text="{0}个错误.点击查看详情" Comment="{0} errors. Click for details" />
+    <Text Key="miDevices" Text="设备..." Comment="Devices..." />
+    <Text Key="miSynchronizeDevices" Text="同步设备" Comment="Synchronize Devices" />
+    <Text Key="tsSynchronizeDevices" Text="同步设备" Comment="Synchronize Devices" />
+    <Text Key="miInfoPanel" Text="信息面板(&amp;I)" Comment="&amp;Info Panel" />
+    <Text Key="tbExit" Text="退出" Comment="Exit" />
+  </Texts>
+</TR>

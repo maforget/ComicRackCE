@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SearchBrowser" CultureName="fi">
+  <Texts>
+    <Text Key="AlternateSeries" Text="Vaihtoehtoissarjaa" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="Värittäjää" Comment="Colorists" />
+    <Text Key="Genre" Text="Genreä" Comment="Genres" />
+    <Text Key="Imprint" Text="Merkintää" Comment="Imprints" />
+    <Text Key="Inker" Text="Tussaajaa" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="Kieltä" Comment="Languages" />
+    <Text Key="MonthAsText" Text="Kuukautta" Comment="Months" />
+    <Text Key="Penciller" Text="Piirtäjää" Comment="Pencillers" />
+    <Text Key="Publisher" Text="Kustantajaa" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="Sarjaa" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="Vuosilukua" Comment="Years" />
+    <Text Key="ShadowTitle" Text="Nimikettä" Comment="Titles" />
+    <Text Key="ShadowFormat" Text="Aineistolajia" Comment="Formats" />
+    <Text Key="Writer" Text="Kirjoittajaa" Comment="Writers" />
+    <Text Key="Editor" Text="Toimittajaa" Comment="Editors" />
+    <Text Key="Letterer" Text="Tekstinpiirtäjää" Comment="Letterer" />
+    <Text Key="Characters" Text="Hahmoa" Comment="Characters" />
+    <Text Key="Teams" Text="Ryhmää" Comment="Teams" />
+    <Text Key="Locations" Text="Tapahtumapaikkaa" Comment="Locations" />
+    <Text Key="CoverArtist" Text="Kannen kuvittajaa" Comment="Cover Artists" />
+    <Text Key="AgeRating" Text="Ikäsuositusta" Comment="Age Ratings" />
+    <Text Key="RatingAsText" Text="Omaa arviota" Comment="My Ratings" />
+    <Text Key="CommunityRatingAsText" Text="Yhteisön arviota" Comment="Community Ratings" />
+    <Text Key="Tags" Text="Välilehteä" Comment="Tags" />
+    <Text Key="ShadowVolumeAsText" Text="Nidosta" Comment="Volumes" />
+    <Text Key="Unspecified" Text="&lt;tyhjä&gt;" Comment="Unspecified" />
+    <Text Key="Web" Text="Netti" Comment="Web" />
+    <Text Key="Locations" Text="Sijaintia" Comment="Locations" />
+    <Text Key="BookPriceAsText" Text="Kirjojen hintaa" Comment="Book Prices" />
+    <Text Key="BookAge" Text="Kirjojen ikää" Comment="Book Ages" />
+    <Text Key="BookStore" Text="Kirjakauppaa" Comment="Book Stores" />
+    <Text Key="BookOwner" Text="Kirjojen omistajaa" Comment="Book Owners" />
+    <Text Key="BookCondition" Text="Kirjojen kuntoa" Comment="Book Conditions" />
+    <Text Key="BookCollectionStatus" Text="Kirjakokoelman Tila" Comment="Book Collection Status" />
+    <Text Key="BookLocation" Text="Kirjojen sijaintia" Comment="Book Locations" />
+    <Text Key="AllItems" Text="Kaikki ({0} {1})" Comment="All ({0} {1})" />
+  </Texts>
+</TR>

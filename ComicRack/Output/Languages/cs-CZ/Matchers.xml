@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Matchers" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="YesNoOperators" Text="je ano|je ne|je neznámé" Comment="is Yes|is No|is Unknown" />
+    <Text Key="ComicBookAddedMatcher" Text="Přidáno" Comment="Added" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="Vše" Comment="All" />
+    <Text Key="ComicBookCountMatcher" Text="Počet" Comment="Count" />
+    <Text Key="ComicBookAlternateCountMatcher" Text="Alternativní počet" Comment="Alternate Count" />
+    <Text Key="ComicBookAlternateNumberMatcher" Text="Alternativní číslo" Comment="Alternate Number" />
+    <Text Key="ComicBookAlternateSeriesMatcher" Text="Alternativní série" Comment="Alternate Series" />
+    <Text Key="ComicBookColoristMatcher" Text="Kolorista" Comment="Colorist" />
+    <Text Key="ComicBookFileMatcher" Text="Soubor" Comment="File" />
+    <Text Key="ComicBookGenreMatcher" Text="Žánr" Comment="Genre" />
+    <Text Key="ComicBookImprintMatcher" Text="Imprint" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="Konturista" Comment="Inker" />
+    <Text Key="ComicBookLanguageMatcher" Text="Jazyk" Comment="Language" />
+    <Text Key="ComicBookMangaMatcher" Text="Manga" Comment="Manga" />
+    <Text Key="ComicBookBlackAndWhiteMatcher" Text="Černobílý" Comment="Black and White" />
+    <Text Key="ComicBookMonthMatcher" Text="Měsíc" Comment="Month" />
+    <Text Key="ComicBookNumberMatcher" Text="Číslo" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="Otevřeno" Comment="Opened" />
+    <Text Key="ComicBookPageCountMatcher" Text="Počet stran" Comment="Page Count" />
+    <Text Key="ComicBookPencillerMatcher" Text="Kreslíř" Comment="Penciller" />
+    <Text Key="ComicBookPublisherMatcher" Text="Vydavatel" Comment="Publisher" />
+    <Text Key="ComicBookCoverArtistMatcher" Text="Autor obálky" Comment="Cover Artist" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="Přečteno procent" Comment="Read Percentage" />
+    <Text Key="ComicBookSeriesMatcher" Text="Série" Comment="Series" />
+    <Text Key="ComicBookSummaryMatcher" Text="Obsah" Comment="Summary" />
+    <Text Key="ComicBookTagsMatcher" Text="Značky" Comment="Tags" />
+    <Text Key="ComicBookTitleMatcher" Text="Název" Comment="Title" />
+    <Text Key="ComicBookVolumeMatcher" Text="Díl" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="Autor" Comment="Writer" />
+    <Text Key="ComicBookYearMatcher" Text="Rok" Comment="Year" />
+    <Text Key="ComicBookFileFormatMatcher" Text="Formát souboru" Comment="File Format" />
+    <Text Key="Days" Text="Dny" Comment="Days" />
+    <Text Key="NumericOperators" Text="je|je větší|je menší|je v rozsahu" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="StringOperators" Text="je|obsahuje|obsahuje nějaký|obsahuje všechny|začíná s|končí s|seznam obsahuje|regulární výraz" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
+    <Text Key="ComicBookAgeRatingMatcher" Text="Věkové omezení" Comment="Age Rating" />
+    <Text Key="ComicBookCharactersMatcher" Text="Postavy" Comment="Characters" />
+    <Text Key="ComicBookEditorMatcher" Text="Editor" Comment="Editor" />
+    <Text Key="ComicBookPublishedMatcher" Text="Vydáno" Comment="Published" />
+    <Text Key="ComicBookFullPathMatcher" Text="Cesta k souboru" Comment="File Path" />
+    <Text Key="ComicBookDirectoryMatcher" Text="Složka" Comment="File Directory" />
+    <Text Key="ComicBookPluginMatcher" Text="Uživatelské skripty" Comment="User Scripts" />
+    <Text Key="ComicBookModifiedMatcher" Text="Soubor upraven" Comment="File Modified" />
+    <Text Key="ComicBookCreationMatcher" Text="Soubor vytvořen" Comment="File Created" />
+    <Text Key="ComicBookModifiedInfoMatcher" Text="Modifikované info" Comment="Modified Info" />
+    <Text Key="OnOffOperators" Text="Zap|Vyp" Comment="On|Off" />
+    <Text Key="ComicBookBookmarkCountMatcher" Text="Počet záložek" Comment="Bookmark Count" />
+    <Text Key="ComicBookDuplicateMatcher" Text="Pouze duplikované" Comment="Only Duplicates" />
+    <Text Key="ComicBookNewPagesMatcher" Text="Nové stránky" Comment="New Pages" />
+    <Text Key="ComicBookTeamsMatcher" Text="Skupiny" Comment="Teams" />
+    <Text Key="ComicBookLocationsMatcher" Text="Lokace" Comment="Locations" />
+    <Text Key="ComicBookFileSizeMatcher" Text="Velikost souboru" Comment="File Size" />
+    <Text Key="MB" Text="MB" Comment="MB" />
+    <Text Key="ComicBookRatingMatcher" Text="Moje hodnocení" Comment="My Rating" />
+    <Text Key="ComicBookCommunityRatingMatcher" Text="Hodnocení veřejnosti" Comment="Community Rating" />
+    <Text Key="ComicBookIsLinkedMatcher" Text="Navázáno na soubor" Comment="Linked to File" />
+    <Text Key="DateOperators" Text="je|je po|je před|je na konci|je v rozsahu" Comment="is|is after|is before|is in the last|is in the range" />
+    <Text Key="ComicBookBookPriceMatcher" Text="Cena knihy" Comment="Book Price" />
+    <Text Key="ComicBookBookStoreMatcher" Text="Nákupní obchod" Comment="Book Store" />
+    <Text Key="ComicBookBookOwnerMatcher" Text="Vlastník knihy" Comment="Book Owner" />
+    <Text Key="ComicBookBookAgeMatcher" Text="Komiksový věk knihy" Comment="Book Age" />
+    <Text Key="ComicBookBookConditionMatcher" Text="Fyzický stav knihy" Comment="Book Condition" />
+    <Text Key="ComicBookBookCollectionStatusMatcher" Text="Stav knihy ve sbírce" Comment="Book Collection Status" />
+    <Text Key="ComicBookBookLocationMatcher" Text="Umístění knihy" Comment="Book Location" />
+    <Text Key="ComicBookBookNotesMatcher" Text="Poznámky ke knize" Comment="Book Notes" />
+    <Text Key="SmartListSeriesCountMatcher" Text="Série: Knihy" Comment="Series: Books" />
+    <Text Key="SmartListSeriesMaxYearMatcher" Text="Série: První rok" Comment="Series: First Year" />
+    <Text Key="SmartListSeriesMinYearMatcher" Text="Série: Poslední rok" Comment="Series: Last Year" />
+    <Text Key="SmartListSeriesPageCountMatcher" Text="Série: Stránky" Comment="Series: Pages" />
+    <Text Key="SmartListSeriesPagesReadMatcher" Text="Série: Přečteno stránek" Comment="Series: Pages Read" />
+    <Text Key="SmartListSeriesPercentReadMatcher" Text="Série: Přečteno procent" Comment="Series: Percent Read" />
+    <Text Key="SmartListSeriesAverageRatingMatcher" Text="Série: Moje průměrné hodnocení" Comment="Series: My Average Rating" />
+    <Text Key="SmartListSeriesAverageCommunityRatingMatcher" Text="Série: Průměrné hodnocení veřejnosti" Comment="Series: Community Average Rating" />
+    <Text Key="SmartListSeriesRunningTimeYearsMatcher" Text="Série: Doba vycházení" Comment="Series: Running Time Years" />
+    <Text Key="SmartListSeriesGapsMatcher" Text="Série: Pauzy ve vycházení" Comment="Series: Gaps" />
+    <Text Key="SmartListSeriesEndOfGapMatcher" Text="Série: Začátek pauzy" Comment="Series: Start of Gap" />
+    <Text Key="SmartListSeriesStartOfGapMatcher" Text="Série: Konec pauzy" Comment="Series: End of Gap" />
+    <Text Key="ComicBookISBNMatcher" Text="ISBN" Comment="ISBN" />
+    <Text Key="SmartListSeriesLastAddedTimeMatcher" Text="Série: Přidání knihy" Comment="Series: Book added" />
+    <Text Key="SmartListSeriesLastOpenedTimeMatcher" Text="Série: Otevření knihy" Comment="Series: Opened" />
+    <Text Key="TrueFalseOperators" Text="je pravda|je nepravda" Comment="is True|is False" />
+    <Text Key="ComicBookSeriesCompleteMatcher" Text="Kompletní série" Comment="Series complete" />
+    <Text Key="ComicBookNotesMatcher" Text="Poznámky" Comment="Notes" />
+    <Text Key="ComicBookExpressionMatcher" Text="Výraz" Comment="Expression" />
+    <Text Key="SmartListSeriesLastNumberMatcher" Text="Série: Poslední číslo" Comment="Series: Last Number" />
+    <Text Key="SmartListSeriesFirstNumberMatcher" Text="Série: První číslo" Comment="Series: First Number" />
+    <Text Key="SmartListSeriesMaxGapSizeMatcher" Text="Série: Největší pauza ve vycházení" Comment="Series: Biggest Gap" />
+    <Text Key="SmartListSeriesLastPublishedTimeMatcher" Text="Série: Vydáno" Comment="Series: Published" />
+    <Text Key="SmartListSeriesMaxCountMatcher" Text="Série: Nejvyšší počet" Comment="Series: Highest Count" />
+    <Text Key="SmartListSeriesMinCountMatcher" Text="Série: Nejnižší počet" Comment="Series: Lowest Count" />
+    <Text Key="SmartListSeriesAllCompleteMatcher" Text="Série: Vše kompletní" Comment="Series: All compelte" />
+    <Text Key="MangaYesNoOperators" Text="je ano|je ano (zprava doleva)|je ne|je neznámé" Comment="is Yes|is Yes (Right to Left)|is No|is Unknown" />
+    <Text Key="ComicBookScanInformationMatcher" Text="Informace o skenu" Comment="Scanning Information" />
+    <Text Key="ComicBookCheckedMatcher" Text="Označeno" Comment="Is Checked" />
+    <Text Key="ComicBookStoryArcMatcher" Text="Děková linie" Comment="Story Arc" />
+    <Text Key="ComicBookSeriesGroupMatcher" Text="Skupina sérií" Comment="Series Group" />
+    <Text Key="ComicBookMainCharacterOrTeamMatcher" Text="Hlavní postava/tým" Comment="Main Character/Team" />
+    <Text Key="ComicBookReviewMatcher" Text="Recenze" Comment="Review" />
+  </Texts>
+</TR>

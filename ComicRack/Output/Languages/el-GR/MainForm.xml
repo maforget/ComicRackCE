@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainForm" CultureName="el-GR">
+  <Texts>
+    <Text Key="browseMenu" Text="&amp;Περιήγηση" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="&amp;Αντιγραφή Σελίδας" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="&amp;Εξαγωγή Σελίδας..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="Προσαρμογή όλων" Comment="Fit All" />
+    <Text Key="cmFitBest" Text="Βέλτιστη Προσαρμογή" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="Προσαρμογή κατά Ύψος" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="Προσαρμογή κατά Πλάτος" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="&amp;Μεγεθυντικός φακός" Comment="&amp;Magnifier" />
+    <Text Key="cmNotifyExit" Text="&amp;Έξοδος" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="&amp;Αποκατάσταση" Comment="&amp;Restore" />
+    <Text Key="cmRate0" Text="Κανένα" Comment="None" />
+    <Text Key="cmRate1" Text="* (1 Αστέρι)" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** (2 Αστέρια)" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** (3 Αστέρια)" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** (4 Αστέρια)" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** (5 Αστέρια)" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="Η Α&amp;ξιολόγηση μου" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="Α&amp;νανέωση" Comment="&amp;Refresh" />
+    <Text Key="cmSyncBrowser" Text="Εμφάνιση στον &amp;Περιηγητή" Comment="Show in &amp;Browser" />
+    <Text Key="displayMenu" Text="&amp;Απεικόνιση" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="&amp;Επεξεργασία" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="&amp;Αρχείο" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="&amp;Βοήθεια" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack" Comment="ComicRack" />
+    <Text Key="miAbout" Text="&amp;Περί..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="&amp;Εισαγωγή φακέλου στη Βιβλιοθήκη..." Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="Νέα &amp;Καρτέλα" Comment="New &amp;Tab" />
+    <Text Key="miBestFit" Text="Βέλτιστη &amp;Προσαρμογή" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="Κλείσιμο Ό&amp;λων" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="&amp;Κλείσιμο" Comment="&amp;Close" />
+    <Text Key="miEditListLayout" Text="&amp;Επεξεργασία Διάταξης Λίστας..." Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="&amp;Έξοδος" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="Α&amp;υτοματισμός" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="&amp;Πρώτη Σελίδα" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="Προσαρμογή &amp;Όλων" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="Προσαρμογή κατά Ύ&amp;ψος" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="Προσαρμογή κατά &amp;Πλάτος" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="&amp;Πλήρης Οθόνη" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="&amp;Τελευταία Σελίδα" Comment="&amp;Last Page" />
+    <Text Key="miListLayouts" Text="Διάταξη Λίστας" Comment="List Layout" />
+    <Text Key="miNews" Text="&amp;Ειδήσεις..." Comment="&amp;News..." />
+    <Text Key="miNextTab" Text="Επόμενη &amp;Καρτέλα" Comment="Next &amp;Tab" />
+    <Text Key="miPageType" Text="&amp;Τύπος Σελίδας" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="&amp;Προτιμήσεις..." Comment="&amp;Preferences..." />
+    <Text Key="miPrevPage" Text="&amp;Προηγούμενη Σελίδα" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="&amp;Προηγούμενη Καρτέλα" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="Κανένα" Comment="None" />
+    <Text Key="miRate1" Text="* (1 Αστέρι)" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** (2 Αστέρια)" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** (3 Αστέρια)" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** (4 Αστέρια)" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** (5 Αστέρια)" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="Η Α&amp;ξιολόγηση μου" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="Επαν&amp;εκκίνηση" Comment="Rest&amp;art" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="miRotation" Text="&amp;Περιστροφή" Comment="&amp;Rotation" />
+    <Text Key="miSaveListLayout" Text="&amp;Αποθήκευση Διάταξης Λίστας..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="&amp;Αποθήκευση Επιφάνεια Εργασίας..." Comment="&amp;Save Workspace..." />
+    <Text Key="miSearchBrowser" Text="&amp;Περιηγητής Αναζήτησης" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="Εφαρμογή Τρέχουσας Διάταξης σε όλες τις Λίστες" Comment="Set all Lists to current Layout" />
+    <Text Key="miSidebar" Text="&amp;Πλευρική μπάρα" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="&amp;Μικρή Προεπισκόπηση" Comment="S&amp;mall Preview" />
+    <Text Key="miSyncBrowser" Text="Εμφάνιση στον &amp;Περιηγητή" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="&amp;Περιηγητής" Comment="&amp;Browser" />
+    <Text Key="miView100" Text="100 %" Comment="100 %" />
+    <Text Key="miView150" Text="150 %" Comment="150 %" />
+    <Text Key="miView200" Text="200 %" Comment="200 %" />
+    <Text Key="miView300" Text="300 %" Comment="300 %" />
+    <Text Key="miView400" Text="400 %" Comment="400 %" />
+    <Text Key="miViewFolders" Text="&amp;Φάκελοι" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="Βι&amp;βλιοθήκη" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="&amp;Σελίδες" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="Α&amp;νανέωση" Comment="&amp;Refresh" />
+    <Text Key="miWorkspaces" Text="&amp;Επιφάνειες Εργασίας" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="Εστίαση" Comment="Zoom" />
+    <Text Key="readMenu" Text="&amp;Ανάγνωση" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="Εφαρμογή '{0}' Διάταξης" Comment="Set '{0}' Layout" />
+    <Text Key="tbBestFit" Text="Βέλτιστη Προσαρμογή" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="Απεικόνιση" Comment="Display" />
+    <Text Key="tbFit" Text="Προσαρμογή" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="Εναλλαγή της κατάστασης Προσαρμογής" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="Προσαρμογή όλων" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="Προσαρμογή κατά Ύψος" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="Προσαρμογή κατά Πλάτος" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="Πλήρης Οθόνη" Comment="Full Screen" />
+    <Text Key="tbMagnify" Text="Μεγεθυντικός φακός" Comment="Magnifier" />
+    <Text Key="tbNextPage" Text="Επόμενη Σελίδα" Comment="Next Page" />
+    <Text Key="tbNextTab" Text="Επόμενη &amp;Καρτέλα" Comment="Next &amp;Tab" />
+    <Text Key="tbPrevTab" Text="&amp;Προηγούμενη Καρτέλα" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="Προηγούμενη Σύνδεση" Comment="Vorheriger Tab" />
+    <Text Key="tbReadLabel" Text="Αναγνωσμένο" Comment="Read" />
+    <Text Key="tbTwoPages" Text="Δύο Σελίδες" Comment="Two Pages" />
+    <Text Key="tsBook" Text="Βιβλίο" Comment="Book" />
+    <Text Key="tsCurrentPage" Text="Σελίδα" Comment="Page" />
+    <Text Key="tsPageCount" Text="0 Σελίδες" Comment="0 Pages" />
+    <Text Key="tsSaveWorkspace" Text="&amp;Αποθήκευση Επιφάνεια Εργασίας..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsText" Text="Έτοιμο" Comment="Ready" />
+    <Text Key="tsWorkspaces" Text="Επιφάνειες Εργασίας" Comment="Workspaces" />
+    <Text Key="miSupport" Text="Υποστήριξη του ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="tbNextTab.Tooltip" Text="Επόμενη Καρτέλα" Comment="Next Tab" />
+    <Text Key="miPageLayout" Text="Διάταξη Σελίδας" Comment="Page Layout" />
+    <Text Key="cmPageLayout" Text="Διάταξη Σελίδας" Comment="Page Layout" />
+    <Text Key="miAdaptiveTwoPageFitting" Text="Προσαρμογή σε ανάπτυγμα διπλής σελίδας" Comment="Adapt to double page spreads" />
+    <Text Key="cmAdaptiveTwoPageFitting" Text="Προσαρμογή σε ανάπτυγμα διπλής σελίδας" Comment="Adapt to double page spreads" />
+    <Text Key="tbAdaptiveTwoPageFitting" Text="Προσαρμογή σε ανάπτυγμα διπλής σελίδας" Comment="Adapt to double page spreads" />
+    <Text Key="miReaderUndocked" Text="Αναγνωστήριο σε δικό του Παράθυρο" Comment="Reader in own Window" />
+    <Text Key="tbReaderUndocked" Text="Αναγνωστήριο σε δικό του Παράθυρο" Comment="Reader in own Window" />
+    <Text Key="miOriginal" Text="Πραγματικό Μέγεθος" Comment="Original Size" />
+    <Text Key="tbOriginal" Text="Πραγματικό Μέγεθος" Comment="Original Size" />
+    <Text Key="cmOriginal" Text="Πραγματικό Μέγεθος" Comment="Original Size" />
+    <Text Key="NotifyIconText" Text="Διπλό κλικ για επαναφορά" Comment="Double Click to restore" />
+    <Text Key="miAutoScroll" Text="Αυτόματη Κύλιση" Comment="Auto Scrolling" />
+    <Text Key="tbAutoScroll" Text="Αυτόματη Κύλιση" Comment="Auto Scrolling" />
+    <Text Key="cmOnlyFitOversized" Text="Προσαρμογή μόνο αν είναι υπερμεγέθης" Comment="Only Fit if oversized" />
+    <Text Key="miOnlyFitOversized" Text="Προσαρμογή μόνο αν είναι υπερμεγέθης" Comment="Only Fit if oversized" />
+    <Text Key="tbOnlyFitOversized" Text="Προσαρμογή μόνο αν είναι υπερμεγέθης" Comment="Only Fit if oversized" />
+    <Text Key="ChangeItemSize" Text="Αλλαγή μεγέθους των αντικειμένων της λίστας" Comment="Change size of the list items" />
+    <Text Key="miDoublePageAutoScroll" Text="Αυτόματη Κύλιση Διπλής Σελίδας" Comment="Double Page Auto Scrolling" />
+    <Text Key="cmFitWidthAdaptive" Text="Προσαρμογή κατά Πλάτος (αυτόματα)" Comment="Fit Width (adaptive)" />
+    <Text Key="miFitWidthAdaptive" Text="Προσαρμογή κατά Πλάτος (αυτόματα)" Comment="Fit Width (adaptive)" />
+    <Text Key="tbFitWidthAdaptive" Text="Προσαρμογή κατά Πλάτος (αυτόματα)" Comment="Fit Width (adaptive)" />
+    <Text Key="cmRightToLeft" Text="Περιστροφή προς τ΄ Αριστερά" Comment="Right to Left" />
+    <Text Key="tbRightToLeft" Text="Περιστροφή προς τ΄ Αριστερά" Comment="Right to Left" />
+    <Text Key="miRightToLeft" Text="Περιστροφή προς τ΄ Αριστερά" Comment="Right to Left" />
+    <Text Key="miMinimalGui" Text="Ελάχιστο Περιβάλλον Χρήστη" Comment="Minimal User Interface" />
+    <Text Key="tbMinimalGui" Text="Ελάχιστο Περιβάλλον Χρήστη" Comment="Minimal User Interface" />
+    <Text Key="cmMinimalGui" Text="Ελάχιστο Περιβάλλον Χρήστη" Comment="Minimal User Interface" />
+    <Text Key="miBookmarks" Text="Σελιδοδείκτες" Comment="Bookmarks" />
+    <Text Key="miSetBookmark" Text="Ορισμός Σελιδοδείκτη..." Comment="Set Bookmark..." />
+    <Text Key="miRemoveBookmark" Text="Απομάκρυνση Σελιδοδείκτη" Comment="Remove Bookmark" />
+    <Text Key="tbBookmarks" Text="Σελιδοδείκτες" Comment="Bookmarks" />
+    <Text Key="tbSetBookmark" Text="Ορισμός Σελιδοδείκτη..." Comment="Set Bookmark..." />
+    <Text Key="tbRemoveBookmark" Text="Απομάκρυνση Σελιδοδείκτη" Comment="Remove Bookmark" />
+    <Text Key="tbLastPageRead" Text="Τελευταία Αναγνωσμένη Σελίδα" Comment="Last Page Read" />
+    <Text Key="cmBookmarks" Text="Σελιδοδείκτες" Comment="Bookmarks" />
+    <Text Key="cmSetBookmark" Text="Ορισμός Σελιδοδείκτη..." Comment="Set Bookmark..." />
+    <Text Key="cmRemoveBookmark" Text="Απομάκρυνση Σελιδοδείκτη" Comment="Remove Bookmark" />
+    <Text Key="cmLastPageRead" Text="Τελευταία Αναγνωσμένη Σελίδα" Comment="Last Page Read" />
+    <Text Key="miPrevBookmark" Text="Προηγούμενος Σελιδοδείκτης" Comment="Previous Bookmark" />
+    <Text Key="miNextBookmark" Text="Επόμενος Σελιδοδείκτης" Comment="Next Bookmark" />
+    <Text Key="tbPrevBookmark" Text="Προηγούμενος Σελιδοδείκτης" Comment="Previous Bookmark" />
+    <Text Key="tbNextBookmark" Text="Επόμενος Σελιδοδείκτης" Comment="Next Bookmark" />
+    <Text Key="cmPrevBookmark" Text="Προηγούμενος Σελιδοδείκτης" Comment="Previous Bookmark" />
+    <Text Key="cmNextBookmark" Text="Επόμενος Σελιδοδείκτης" Comment="Next Bookmark" />
+    <Text Key="miZoomIn" Text="Μεγέθυνση" Comment="Zoom In" />
+    <Text Key="tbZoomIn" Text="Μεγέθυνση" Comment="Zoom In" />
+    <Text Key="miZoomOut" Text="Σμίκρυνση" Comment="Zoom Out" />
+    <Text Key="tbZoomOut" Text="Σμίκρυνση" Comment="Zoom Out" />
+    <Text Key="miZoomCustom" Text="Προσαρμοσμένη..." Comment="Custom..." />
+    <Text Key="tbZoomCustom" Text="Προσαρμοσμένη..." Comment="Custom..." />
+    <Text Key="tbZoom.Tooltip" Text="Αλλαγή στην εστίαση σελίδας" Comment="Change the page zoom" />
+    <Text Key="tbRotate.Tooltip" Text="Αλλαγή στην περιστροφή σελίδας" Comment="Change the page rotation" />
+    <Text Key="tbRotate180" Text="180°" Comment="180°" />
+    <Text Key="tbRotate270" Text="270°" Comment="270°" />
+    <Text Key="tbRotate90" Text="90°" Comment="90°" />
+    <Text Key="miRotateLeft" Text="Αριστερόστροφη Περιστροφή" Comment="Rotate Left" />
+    <Text Key="miRotateRight" Text="Δεξιόστροφη Περιστροφή" Comment="Rotate Right" />
+    <Text Key="tbRotateLeft" Text="Αριστερόστροφη Περιστροφή" Comment="Rotate Left" />
+    <Text Key="tbRotateRight" Text="Δεξιόστροφη Περιστροφή" Comment="Rotate Right" />
+    <Text Key="tbAutoRotate" Text="Αυτόματη Περιστροφή Διπλών Σελίδων" Comment="Autorotate Double Pages" />
+    <Text Key="miAutoRotate" Text="Αυτόματη Περιστροφή Διπλών Σελίδων" Comment="Autorotate Double Pages" />
+    <Text Key="miLastPageRead" Text="&amp;Τελευταία Σελίδα που Αναγνώσθηκε" Comment="L&amp;ast Page Read" />
+    <Text Key="tsPageActivity.Tooltip" Text="Λήψη Σελίδων και Μικρογραφιών" Comment="Getting Pages and Thumbnails..." />
+    <Text Key="tsScanActivity.Tooltip" Text="Η Σάρωση εκτελείται..." Comment="A scan is running..." />
+    <Text Key="tsWriteInfoActivity.Tooltip" Text="Εγγραφή πληροφοριών στα αρχεία..." Comment="Writing info data to files..." />
+    <Text Key="tsReadInfoActivity.Tooltip" Text="Ανάγνωση πληροφοριών από τα αρχεία..." Comment="Reading info data from files..." />
+    <Text Key="cmCloseAllButThis" Text="Κλείσιμο Όλων Εκτός Από Αυτό" Comment="Close All But This" />
+    <Text Key="cmCopyPath" Text="Αντιγραφή Πλήρους Διαδρομής" Comment="Copy Full Path" />
+    <Text Key="cmRevealInExplorer" Text="Αποκάλυψη στον Περιηγητή" Comment="Reveal in Explorer" />
+    <Text Key="cmClose" Text="Κλείσιμο" Comment="Close" />
+    <Text Key="miWebHome" Text="Ιστοσελίδα ComicRack..." Comment="ComicRack Homepage..." />
+    <Text Key="miWebUserForum" Text="Συζητήσεις Χρηστών για το ComicRack..." Comment="ComicRack User Forum..." />
+    <Text Key="miWebHelp" Text="Τεκμηρίωση ComicRack..." Comment="ComicRack Documentation..." />
+    <Text Key="SavePageTitle" Text="Αποθήκευση Σελίδας ως..." Comment="Save Page as..." />
+    <Text Key="miCopyPage" Text="&amp;Αντιγραφή Σελίδας" Comment="&amp;Copy Page" />
+    <Text Key="miExportPage" Text="&amp;Εξαγωγή Σελίδας..." Comment="&amp;Export Page..." />
+    <Text Key="ExportingErrors" Text="{0} σφάλματα. Κάντε Κλικ για λεπτομερής αναφορά" Comment="{0} errors. Click for details" />
+    <Text Key="cmPageType" Text="&amp;Τύπος Σελίδας" Comment="&amp;Page Type" />
+    <Text Key="tsExportActivity" Text="Εξαγωγή " Comment="Exporting" />
+    <Text Key="cmCloseComic" Text="Κλείσιμο" Comment="Close" />
+    <Text Key="cmRotate0" Text="&amp;Χωρίς Περιστροφή" Comment="&amp;No Rotation" />
+    <Text Key="cmRotate180" Text="180°" Comment="180°" />
+    <Text Key="cmRotate270" Text="270°" Comment="270°" />
+    <Text Key="cmRotate90" Text="90°" Comment="90°" />
+    <Text Key="cmPageRotate" Text="Περιστροφή Σελίδας" Comment="Page Rotation" />
+    <Text Key="miPageRotate" Text="Περιστροφή Σελίδας" Comment="Page Rotation" />
+    <Text Key="miOpenRemoteLibrary" Text="Άνοιγμα Απομακρυσμένης Βιβλιοθήκης..." Comment="Open Remote Library..." />
+    <Text Key="miUndo" Text="Αναίρεση" Comment="Undo" />
+    <Text Key="miRedo" Text="Επαναφορά" Comment="Redo" />
+    <Text Key="cmShowInfo" Text="&amp;Πληροφορίες..." Comment="&amp;Info..." />
+    <Text Key="tbAbout" Text="&amp;Περί..." Comment="&amp;About..." />
+    <Text Key="tbFirstPage" Text="&amp;Πρώτη Σελίδα" Comment="&amp;First Page" />
+    <Text Key="tbLastPage" Text="&amp;Τελευταία Σελίδα" Comment="&amp;Last Page" />
+    <Text Key="miNextPage" Text="&amp;Επόμενη Σελίδα" Comment="Next Page" />
+    <Text Key="miMagnify" Text="&amp;Μεγεθυντικός φακός" Comment="Magnifier" />
+    <Text Key="tbPreferences" Text="&amp;Προτιμήσεις..." Comment="&amp;Preferences..." />
+    <Text Key="tbTools" Text="Εργαλεία" Comment="Tools" />
+    <Text Key="tbTools.Tooltip" Text="Πρόσβαση σε σημαντικές εντολές" Comment="Access to important commands" />
+    <Text Key="tbShowMainMenu" Text="Εμφάνιση του Κυρίος Μενού" Comment="Show Main Menu" />
+    <Text Key="tbPrevPage" Text="&amp;Προηγούμενη Σελίδα" Comment="&amp;Previous Page" />
+    <Text Key="miRotate0" Text="&amp;Χωρίς Περιστροφή" Comment="0°" />
+    <Text Key="miShowInfo" Text="&amp;Πληροφορίες..." Comment="&amp;Info..." />
+    <Text Key="tbShowInfo" Text="&amp;Πληροφορίες" Comment="&amp;Info..." />
+    <Text Key="tbSupport" Text="Υποστήριξη του ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miTwoPages" Text="&amp;Δύο Σελίδες" Comment="Two Pages" />
+    <Text Key="cmTwoPages" Text="&amp;Δύο Σελίδες" Comment="Two Pages" />
+    <Text Key="miTwoPagesAdaptive" Text="Δύο Σελίδες (προσαρμογή)" Comment="Two Pages (adaptive)" />
+    <Text Key="cmTwoPagesAdaptive" Text="Δύο Σελίδες (προσαρμογή)" Comment="Two Pages (adaptive)" />
+    <Text Key="tbTwoPagesAdaptive" Text="Δύο Σελίδες (προσαρμογή)" Comment="Two Pages (adaptive)" />
+    <Text Key="miSinglePage" Text="Μονή Σελίδα" Comment="Single Page" />
+    <Text Key="cmSinglePage" Text="Μονή Σελίδα" Comment="Single Page" />
+    <Text Key="tbSinglePage" Text="Μονή Σελίδα" Comment="Single Page" />
+    <Text Key="tbRotate0" Text="&amp;Χωρίς Περιστροφή" Comment="0°" />
+    <Text Key="miPreviousList" Text="Προηγούμενη Λίστα" Comment="Previous List" />
+    <Text Key="miNextList" Text="Επόμενη Λίστα" Comment="Next List" />
+    <Text Key="miUpdateWebComics" Text="Ενημέρωση των Web Κόμικς" Comment="Update Web Comics" />
+    <Text Key="tbUpdateWebComics" Text="Ενημέρωση των Web Κόμικς" Comment="Update Web Comics" />
+    <Text Key="tbOpenRemoteLibrary" Text="Άνοιγμα Απομακρυσμένης Βιβλιοθήκης..." Comment="Open Remote Library..." />
+    <Text Key="miEditLayouts" Text="&amp;Επεξεργασία Διατάξεων..." Comment="&amp;Edit Layouts..." />
+    <Text Key="miEditWorkspaces" Text="&amp;Προσαρμόγη Επιφανειών Εργασίας..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="miToggleZoom" Text="Εναλλαγή Εστίασης" Comment="Toggle Zoom" />
+    <Text Key="tsEditWorkspaces" Text="&amp;Προσαρμόγη Επιφανειών Εργασίας..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="quickOpenView" Text="Γρήγορο Άνοιγμα" Comment="Quick Open" />
+    <Text Key="miTasks" Text="Εργασίες..." Comment="Tasks..." />
+    <Text Key="cmCloseAllToTheRight" Text="Κλείσιμο όλων προς τα Δεξιά" Comment="Close All to the Right" />
+    <Text Key="cmNextFromList" Text="Επό&amp;μενο eComic" Comment="Ne&amp;xt Book" />
+    <Text Key="cmRandomFromList" Text="Τυχαίο eComic" Comment="Random Book" />
+    <Text Key="cmPrevFromList" Text="&amp;Προηγούμενο eComic" Comment="Pre&amp;vious Book" />
+    <Text Key="ExportingComics" Text="Εξαγωγή eComics: {0} queued" Comment="Exporting Books: {0} queued" />
+    <Text Key="miNextFromList" Text="Επό&amp;μενο eComic" Comment="Ne&amp;xt Book" />
+    <Text Key="miRandomFromList" Text="Τυχαίο eComic" Comment="Random Book" />
+    <Text Key="miOpenComic" Text="&amp;Άνοιγμα eComic..." Comment="&amp;Open File..." />
+    <Text Key="cmOpenComic" Text="&amp;Άνοιγμα eComic..." Comment="&amp;Open File..." />
+    <Text Key="tbOpenComic" Text="&amp;Άνοιγμα eComic..." Comment="&amp;Open File..." />
+    <Text Key="miOpenNow" Text="Άνοιγμα eCo&amp;mics" Comment="Open Books" />
+    <Text Key="miOpenRecent" Text="&amp;Πρόσφατο eComics" Comment="&amp;Recent Books" />
+    <Text Key="miPrevFromList" Text="&amp;Προηγούμενο eComic" Comment="Pre&amp;vious Book" />
+    <Text Key="miScan" Text="Σάρωση &amp;Φακέλων eComic" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbScan" Text="Σάρωση &amp;Φακέλων eComic" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbNextFromList" Text="Επόμενο eComic από τη Λίστα" Comment="Next Book from List" />
+    <Text Key="tbRandomFromList" Text="Τυχαίο eComic" Comment="Random Book" />
+    <Text Key="tbPrevFromList" Text="Προηγούμενο eComic από τη Λίστα" Comment="Previous Book from List" />
+    <Text Key="tsBook.Tooltip" Text="Το όνομα του ανοιγμένου 'eComic" Comment="Name of the opened Book" />
+    <Text Key="tsCurrentPage.Tooltip" Text="Η Τρέχουσα Σελίδα του ανοιγμένου eComic" Comment="Current Page of the open Book" />
+    <Text Key="tsPageCount.Tooltip" Text="Αρίθμηση σελίδων του ανοιγμένου eComic" Comment="Page count of the open Book" />
+    <Text Key="tbPageLayout" Text="Διάταξη Σελίδας" Comment="Page Layout" />
+    <Text Key="cmComics" Text="eComics" Comment="Books" />
+    <Text Key="miUpdateAllComicFiles" Text="Ενημέρωση όλων των αρχείων eComic" Comment="Update all Book Files" />
+    <Text Key="tbUpdateAllComicFiles" Text="Ενημέρωση όλων των αρχείων eComic" Comment="Update all Book Files" />
+    <Text Key="miComicDisplaySettings" Text="Ρυθμίσεις Εμφάνισης Κόμικς..." Comment="Book Display Settings..." />
+    <Text Key="tbComicDisplaySettings" Text="Ρυθμίσεις Εμφάνισης Κόμικς..." Comment="Book Display Settings..." />
+    <Text Key="miHelp" Text="Βοήθεια" Comment="Help" />
+    <Text Key="miNewComic" Text="Νέα εγγραφή κόμικς..." Comment="New fileless Book Entry..." />
+    <Text Key="miChooseHelpSystem" Text="Επιλογή Συστήματος Βοήθειας" Comment="Choose Help System" />
+    <Text Key="miHelpPlugins" Text="Πρόσθετα" Comment="Plugins" />
+    <Text Key="DeviceSyncing" Text="Συγχρονισμός Συσκευών: {0} σε σειρά αναμονής" Comment="Syncing Devices: {0} queued" />
+    <Text Key="DeviceSyncingErrors" Text="{0} σφάλματα. Κάντε κλικ για λεπτομέρειες" Comment="{0} errors. Click for details" />
+    <Text Key="miDevices" Text="Συσκευές..." Comment="Devices..." />
+    <Text Key="miSynchronizeDevices" Text="Συγχρονισμός Συσκευών" Comment="Synchronize Devices" />
+    <Text Key="tsSynchronizeDevices" Text="Συγχρονισμός Συσκευών" Comment="Synchronize Devices" />
+    <Text Key="miHelpQuickIntro" Text="Σύντομη Εισαγωγή" Comment="Quick Introduction" />
+  </Texts>
+</TR>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListLibraryBrowser" CultureName="el-GR">
+  <Texts>
+    <Text Key="miEditSmartList" Text="&amp;Επεξεργασία..." Comment="&amp;Edit..." />
+    <Text Key="miNewFolder" Text="Νέος &amp;Φάκελος..." Comment="New &amp;Folder..." />
+    <Text Key="miNewList" Text="Νέα &amp;Λίστα..." Comment="New &amp;List..." />
+    <Text Key="miNewSmartList" Text="&amp;Νέα Έξυπνη Λίστα..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="&amp;Ταξινόμηση" Comment="&amp;Sort" />
+    <Text Key="miOpenWindow" Text="&amp;Άνοιγμα σε νέο Παράθυρο" Comment="&amp;Open in New Window" />
+    <Text Key="miQueryRename" Text="&amp;Μετονομασία" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="Ανα&amp;νέωση" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="&amp;Απομάκρυνση..." Comment="&amp;Re&amp;move..." />
+    <Text Key="NewFolder" Text="Νέος Φάκελος" Comment="New Folder" />
+    <Text Key="NewList" Text="Νέα Λίστα" Comment="New List" />
+    <Text Key="NewSmartList" Text="Νέα Έξυπνη Λίστα" Comment="New Smart List" />
+    <Text Key="tbNewFolder" Text="Νέος &amp;Φάκελος" Comment="New &amp;Folder" />
+    <Text Key="tbNewFolder.Tooltip" Text="Δημιουργία νέου φακέλου για την οργάνωση των λιστών σας" Comment="Create a new folder to organize your lists" />
+    <Text Key="tbNewList" Text="Νέα &amp;Λίστα" Comment="New &amp;List" />
+    <Text Key="tbNewList.Tooltip" Text="Δημιουργία νέας προσαρμοσμένης Λίστας" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="&amp;Νέα Έξυπνη Λίστα" Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="Δημιουργία νέας Έξυπνης Λίστας" Comment="Create a new Smart List" />
+    <Text Key="tbOpenWindow" Text="Νέο Παράθυρο" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Άνοιγμα της τρέχουσας λίστας σε νέο Παράθυρο" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Ανανέωση" Comment="Refresh" />
+    <Text Key="miCopyList" Text="Αντιγραφή Λίστας" Comment="Copy List" />
+    <Text Key="miPasteList" Text="Επικόλληση Λίστας" Comment="Paste List" />
+    <Text Key="miExportReadingList" Text="Εξαγωγή Λίστας Ανάγνωσης..." Comment="Export Reading List..." />
+    <Text Key="miImportReadingList" Text="Εισαγωγή Λίστας Ανάγνωσης..." Comment="Import Reading List..." />
+    <Text Key="NewSmartListOption" Text="Στιγμιότυπο της τρέχουσας προβολής" Comment="Snapshot of current view" />
+    <Text Key="miOpenTab" Text="&amp;Άνοιγμα σε Νέα Καρτέλα" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="Νέα Καρτέλα" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Άνοιγμα τρέχουσας λίστας σε Νέα Καρτέλα" Comment="Open current list in new Tab" />
+    <Text Key="miFavRemove" Text="Απομάκρυνση" Comment="Remove" />
+    <Text Key="tbFavorites" Text="Εμφάνιση Αγαπημένων" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Αγαπημένα" Comment="Favorites" />
+    <Text Key="miAddToFavorites" Text="Προσθήκη στα Αγαπημένα" Comment="Add to Favorites" />
+    <Text Key="miFavRefresh" Text="Α&amp;νανέωση" Comment="&amp;Refresh" />
+    <Text Key="tbExpandCollapseAll" Text="Ανάπτυξη/Σύμπτυξη όλων" Comment="Expand/Collapse all" />
+    <Text Key="tbPreferences" Text="Προτιμήσεις" Comment="Preferences" />
+    <Text Key="tbGauges" Text="Εμφάνιση Υπολογισμών" Comment="Show Gauges" />
+    <Text Key="tbGaugesNew" Text="Εμφάνιση αριθμού Νέων Βιβλίων" Comment="Show New Books Gauge" />
+    <Text Key="tbGaugesUnread" Text="Εμφάνιση αριθμού μη αναγνωσμένων Βιβλίων" Comment="Show Unread Books Gauge" />
+    <Text Key="tbGaugesTotal" Text="Εμφάνιση συνολικού αριθμού  Βιβλίων" Comment="Show Total Books Gauge" />
+    <Text Key="tbGaugesNumeric" Text="Εμφάνιση Αριθμών" Comment="Show Numbers" />
+  </Texts>
+</TR>

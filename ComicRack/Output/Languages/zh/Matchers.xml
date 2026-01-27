@@ -1,0 +1,57 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Matchers" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="YesNoOperators" Text="是|否|未知" Comment="is Yes|is No|is Unknown" />
+    <Text Key="ComicBookAddedMatcher" Text="添加於" Comment="Added" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="所有" Comment="All" />
+    <Text Key="ComicBookCountMatcher" Text="總計" Comment="Count" />
+    <Text Key="ComicBookAlternateCountMatcher" Text="備用總計" Comment="Alternate Count" />
+    <Text Key="ComicBookAlternateNumberMatcher" Text="備用序號" Comment="Alternate Number" />
+    <Text Key="ComicBookAlternateSeriesMatcher" Text="備用叢書" Comment="Alternate Series" />
+    <Text Key="ComicBookColoristMatcher" Text="配色師" Comment="Colorist" />
+    <Text Key="ComicBookFileMatcher" Text="文件" Comment="File" />
+    <Text Key="ComicBookGenreMatcher" Text="流派" Comment="Genre" />
+    <Text Key="ComicBookImprintMatcher" Text="出版標記" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="上墨員" Comment="Inker" />
+    <Text Key="ComicBookLanguageMatcher" Text="語言" Comment="Language" />
+    <Text Key="ComicBookMangaMatcher" Text="動漫" Comment="Manga" />
+    <Text Key="ComicBookBlackAndWhiteMatcher" Text="黑白" Comment="Black and White" />
+    <Text Key="ComicBookMonthMatcher" Text="月份" Comment="Month" />
+    <Text Key="ComicBookNumberMatcher" Text="序號" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="打開於" Comment="Opened" />
+    <Text Key="ComicBookPageCountMatcher" Text="頁面總計" Comment="Page Count" />
+    <Text Key="ComicBookPencillerMatcher" Text="畫圖員" Comment="Penciller" />
+    <Text Key="ComicBookPublisherMatcher" Text="出版社" Comment="Publisher" />
+    <Text Key="ComicBookRatingMatcher" Text="評價" Comment="Rating" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="閱讀百分比" Comment="Read Percentage" />
+    <Text Key="ComicBookSeriesMatcher" Text="叢書" Comment="Series" />
+    <Text Key="ComicBookSummaryMatcher" Text="摘要" Comment="Summary" />
+    <Text Key="ComicBookTagsMatcher" Text="標簽" Comment="Tags" />
+    <Text Key="ComicBookTitleMatcher" Text="標題" Comment="Title" />
+    <Text Key="ComicBookVolumeMatcher" Text="卷" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="作者" Comment="Writer" />
+    <Text Key="ComicBookYearMatcher" Text="年代" Comment="Year" />
+    <Text Key="DateOperators" Text="是|在...之前|在...之後|在最後|在...範圍內" Comment="is|is after|is before|is in the last|in in the range" />
+    <Text Key="Days" Text="天" Comment="Days" />
+    <Text Key="NumericOperators" Text="等於|大於|小於|在...範圍內" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="StringOperators" Text="是|包含|包含任意一個|包含所有|已...開始|已...結束|列表包含|常規表達式" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
+    <Text Key="ComicBookCoverArtistMatcher" Text="封面作者" Comment="Cover Artist" />
+    <Text Key="ComicBookFileFormatMatcher" Text="文件格式" Comment="File Format" />
+    <Text Key="ComicBookAgeRatingMatcher" Text="年齡限定" Comment="Age Rating" />
+    <Text Key="ComicBookCharactersMatcher" Text="人物" Comment="Characters" />
+    <Text Key="ComicBookEditorMatcher" Text="編輯" Comment="Editor" />
+    <Text Key="ComicBookPublishedMatcher" Text="已出版" Comment="Published" />
+    <Text Key="OnOffOperators" Text="開|關" Comment="On|Off" />
+    <Text Key="ComicBookFullPathMatcher" Text="路徑" Comment="File Path" />
+    <Text Key="ComicBookTeamsMatcher" Text="團隊" Comment="Teams" />
+    <Text Key="ComicBookLocationsMatcher" Text="位置" Comment="Locations" />
+    <Text Key="ComicBookDirectoryMatcher" Text="文件目錄" Comment="File Directory" />
+    <Text Key="ComicBookPluginMatcher" Text="用戶腳本" Comment="User Scripts" />
+    <Text Key="ComicBookModifiedMatcher" Text="修改於" Comment="File Modified" />
+    <Text Key="ComicBookCreationMatcher" Text="文件創建於" Comment="File Created" />
+    <Text Key="ComicBookModifiedInfoMatcher" Text="修改的信息" Comment="Modified Info" />
+    <Text Key="ComicBookBookmarkCountMatcher" Text="書簽數目" Comment="Bookmark Count" />
+    <Text Key="ComicBookDuplicateMatcher" Text="只重複" Comment="Only Duplicates" />
+    <Text Key="ComicBookNewPagesMatcher" Text="新頁面" Comment="New Pages" />
+  </Texts>
+</TR>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Settings" CultureName="es">
+  <Texts>
+    <Text Key="Application" Text="Aplicación" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="Ocultar la lupa cuando el cursor esté cerca del borde" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="Browser" Text="Navegador" Comment="Browser" />
+    <Text Key="CloseMinimizesToTray" Text="Al cerrar, minimizar ComicRack en el área de Notificación" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="Presentar la carga de las miniaturas con un fundido lento" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="Ocultar el cursor al leer a Pantalla Completa" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="Mostrar Miniaturas en la mejor calidad (más lento)" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="MinimizeToTray" Text="Al Minimizar, mover ComicRack al área de Notificación" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="Buscar las últimas noticias sobre ComicRack" Comment="Check for latest news on ComicRack" />
+    <Text Key="Reading" Text="Leyendo" Comment="Reading" />
+    <Text Key="ShowSplash" Text="Mostrar la pantalla de presentación" Comment="Show Splash Screen" />
+    <Text Key="Starting ComicRack" Text="Iniciando ComicRack" Comment="Starting ComicRack" />
+    <Text Key="Manga" Text="Manga" Comment="Manga" />
+    <Text Key="TrueRightToLeftReading" Text="Lectura real de dcha. a izda." Comment="True right to left reading" />
+    <Text Key="LeftRightMovementReversed" Text="El movimiento Izda/Dcha también está invertido" Comment="Left/right movement is also reversed" />
+    <Text Key="Right to Left" Text="de Dcha. a Izda." Comment="Right to Left" />
+    <Text Key="AutoMinimalGui" Text="Ver a Pantalla completa también activa el Interfaz mínimo de usuario" Comment="Fullscreen also toggles Minimal User Interface" />
+    <Text Key="PageChangeDelay" Text="Retardo para la rueda del ratón y teclas del cursor al pasar página" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="AnimatePanels" Text="Animar los paneles que se expanden y contraen" Comment="Animate expanding and collapsing Panels" />
+    <Text Key="ResetZoomOnPageChange" Text="Reiniciar zoom al cambiar de página" Comment="Zoom is reset to 100% on page change" />
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="Controles de acoplamiento siempre visibles" Comment="Always display Browser Docking Grip" />
+    <Text Key="DogEarThumbnails" Text="Doblar la esquina de cada miniatura seleccionada" Comment="Selected Thumbnails have dog-ear" />
+    <Text Key="BlendWhilePaging" Text="Integrar animación incluso al hojear" Comment="Blend animation also while fast paging" />
+    <Text Key="ScrollingDoesBrowse" Text="Al desplazarse hasta el margen de la página te lleva a páginas nuevas" Comment="Scrolling to page margin browses to new pages" />
+    <Text Key="Import &amp; Export" Text="Importar y Exportar" Comment="Import &amp; Export" />
+    <Text Key="UpdateWebComicsStartup" Text="Actualizar Webcómics" Comment="Update Web Comics" />
+    <Text Key="ShowSearchLinks" Text="Mostrar enlaces de búsqueda" Comment="Show Search Links" />
+    <Text Key="OpenInNewTab" Text="Abrir en pestaña nueva" Comment="Open in new Tab" />
+    <Text Key="LocalQuickSearch" Text="Cada lista tiene sus propias preferencias para búsqueda rápida" Comment="Each List has own Quick Search settings" />
+    <Text Key="NumericRatingThumbnails" Text="Mostrar miniatura con valoreaciones numéricas" Comment="Thumbnails display numeric ratings" />
+    <Text Key="ShowQuickOpen" Text="Mostrar la apertura rápida si no hay ningún libro abierto" Comment="Show Quick Open if no book is opened" />
+    <Text Key="AutoNavigateComics" Text="Al leer más allá de su principio o final, abrir el siguiente Libro" Comment="Reading beyond the start or end opens the next Book" />
+    <Text Key="CloseBrowserOnOpen" Text="Cerrar el Navegador al abrir un nuevo Libro" Comment="Close the Browser when a new Book is opened" />
+    <Text Key="CatalogOnlyForFileless" Text="Mostar los campos del Catálogo sólo con los libros sin ficheros" Comment="Show Catalog fields only for fileless Books" />
+    <Text Key="Opening a Book" Text="Abriendo un Libro" Comment="Opening a Book" />
+    <Text Key="OpenLastFile" Text="Reabrir el último libro leído" Comment="Reopen Books from last session" />
+    <Text Key="OpenLastPage" Text="Abrirlo el libro en la página por donde se cerró" Comment="Open the Book at the page where it was closed" />
+    <Text Key="ScanStartup" Text="Buscar nuevos libros en las carpetas de la Biblioteca" Comment="Rescan the Book Folders for new Books" />
+    <Text Key="ShowToolTips" Text="Mostrar sugerencias en el Navegador" Comment="Show Tooltips for Books in the Browser" />
+    <Text Key="AddToLibraryOnOpen" Text="Al abrir los los archivos, añadirlos a la Biblioteca" Comment="Opened Files are added to the Library" />
+    <Text Key="ShowMainMenuNoComicOpen" Text="Mostrar el menú principal si no hay libros abiertos" Comment="Show Main Menu if no Book is open" />
+    <Text Key="InformationCover3D" Text="Portadas en vista 3D (en el diálogo Información del libro)" Comment="3D display of covers in Book Info Dialog" />
+    <Text Key="ExportedListsContainFilenames" Text="La lista de libros exportada contiene nombres de archivo" Comment="Exported Book Lists contain filenames" />
+    <Text Key="ZoomInOutOnPageChange" Text="Adorna el cambio de página alejándola" Comment="During page change a zoom out is done" />
+    <Text Key="ShowCustomBookFields" Text="Mostar campos personalizados del Libro" Comment="Show custom Book fields" />
+    <Text Key="CoverThumbnailsSameSize" Text="Todas las cubiertas de Miniaturas tienen el mismo Tamaño" Comment="All Cover Thumbnails have the same Size" />
+  </Texts>
+</TR>

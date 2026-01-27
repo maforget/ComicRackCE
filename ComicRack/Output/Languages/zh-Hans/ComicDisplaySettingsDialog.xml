@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DisplaySetupDialog" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="ComicDisplaySettingsDialog" Text="漫画显示设置" Comment="Comic Display Settings" />
+    <Text Key="btCancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定" Comment="&amp;OK" />
+    <Text Key="btApply" Text="应用" Comment="&amp;Apply" />
+    <Text Key="chkRealisticPages" Text="真实漫画浏览效果" Comment="Realistic Comic Display" />
+    <Text Key="chkPageMargin" Text="页边留空" Comment="Leave margins around the pages" />
+    <Text Key="labelPaging" Text="页面过渡:" Comment="Page Transition:" />
+    <Text Key="labelPaper" Text="纸张:" Comment="Paper:" />
+    <Text Key="labelBackgroundColor" Text="颜色:" Comment="Color:" />
+    <Text Key="labelBackgroundType" Text="类型：" Comment="Type:" />
+    <Text Key="labelBackgroundTexture" Text="质地:" Comment="Texture:" />
+    <Text Key="cbBackgroundType.Item0" Text="调整当前页颜色" Comment="Adjust Color to current Page" />
+    <Text Key="cbBackgroundType.Item1" Text="颜色" Comment="Color" />
+    <Text Key="cbBackgroundType.Item2" Text="质地" Comment="Texture" />
+    <Text Key="cbPageTransition.Item0" Text="无页面过渡效果" Comment="No Page Transition Effect" />
+    <Text Key="cbPageTransition.Item1" Text="页面淡入" Comment="Page fades in" />
+    <Text Key="cbPageTransition.Item2" Text="页面水平滚动" Comment="Page scrolls in horizontally" />
+    <Text Key="cbPageTransition.Item3" Text="页面垂直滚动" Comment="Page scrolls in vertically" />
+    <Text Key="cbPageTransition.Item4" Text="翻页效果" Comment="Page Turn Effect" />
+    <Text Key="grpGeneral" Text="一般" Comment="General" />
+    <Text Key="grpEffects" Text="效果" Comment="Effects" />
+    <Text Key="grpBackground" Text="背景" Comment="Background" />
+    <Text Key="labelPaperStrength" Text="强度:" Comment="Strength:" />
+    <Text Key="cbPaperLayout.Item0" Text="无" Comment="None" />
+    <Text Key="cbPaperLayout.Item1" Text="平铺" Comment="Tile" />
+    <Text Key="cbPaperLayout.Item2" Text="中央" Comment="Center" />
+    <Text Key="cbPaperLayout.Item3" Text="拉伸" Comment="Stretch" />
+    <Text Key="cbPaperLayout.Item4" Text="缩放" Comment="Zoom" />
+    <Text Key="cbTextureLayout.Item0" Text="无" Comment="None" />
+    <Text Key="cbTextureLayout.Item1" Text="平铺" Comment="Tile" />
+    <Text Key="cbTextureLayout.Item2" Text="中央" Comment="Center" />
+    <Text Key="cbTextureLayout.Item3" Text="拉伸" Comment="Stretch" />
+    <Text Key="cbTextureLayout.Item4" Text="缩放" Comment="Zoom" />
+  </Texts>
+</TR>

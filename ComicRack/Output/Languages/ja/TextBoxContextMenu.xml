@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TextBoxContextMenu" CultureName="ja">
+  <Texts>
+    <Text Key="miUndo" Text="アンドゥ" Comment="Undo" />
+    <Text Key="miCut" Text="切り取り" Comment="Cut" />
+    <Text Key="miCopy" Text="コピー" Comment="Copy" />
+    <Text Key="miPaste" Text="貼り付け" Comment="Paste" />
+    <Text Key="miDelete" Text="削除" Comment="Delete" />
+    <Text Key="miSelectAll" Text="すべて選択" Comment="Select All" />
+  </Texts>
+</TR>

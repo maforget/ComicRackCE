@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="KeyboardShortcutEditor" CultureName="pl">
+  <Texts>
+    <Text Key="chkAlt1" Text="Alt" Comment="Alt" />
+    <Text Key="chkAlt2" Text="Alt" Comment="Alt" />
+    <Text Key="chkCtrl1" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkCtrl2" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkShift1" Text="Shift" Comment="Shift" />
+    <Text Key="chkShift2" Text="Shift" Comment="Shift" />
+    <Text Key="colAction" Text="Akcja" Comment="Action" />
+    <Text Key="colKeys" Text="Skróty" Comment="Keys" />
+    <Text Key="labelAlternateKey" Text="Skrót 2:" Comment="Alternate:" />
+    <Text Key="labelMainKey" Text="Skrót 1:" Comment="Main:" />
+    <Text Key="NothingSelected" Text="Nie wybrano akcji" Comment="No action selected" />
+    <Text Key="chkAlt3" Text="Alt" Comment="Alt" />
+    <Text Key="chkCtrl3" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkShift3" Text="Shift" Comment="Shift" />
+    <Text Key="labelAlternate2Key" Text="Skrót 3:" Comment="Alternate:" />
+    <Text Key="GetKeyCaption" Text="Naciśnij Klawisze" Comment="Press Key" />
+    <Text Key="GetKeyDescription" Text="Naciśnij kombinację klawiszy lub zamknij okno" Comment="Press your key combination or close this window" />
+  </Texts>
+</TR>

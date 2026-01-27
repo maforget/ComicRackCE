@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ExportErrorsDialog" CultureName="hu">
+  <Texts>
+    <Text Key="btOk" Text="OK" Comment="OK" />
+    <Text Key="colProblem" Text="Probléma" Comment="Problem" />
+    <Text Key="coleComic" Text="Képregény" Comment="Book" />
+    <Text Key="ExportErrorsDialog" Text="Képregény exportálási hiba" Comment="Book Export Errors" />
+  </Texts>
+</TR>

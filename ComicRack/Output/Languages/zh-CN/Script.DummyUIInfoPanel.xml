@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.DummyUIInfoPanel" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Name" Text="[代码示例] 书籍信息用户界面样本" Comment="[Code Sample] Dummy Book Info UI" />
+    <Text Key="Description" Text="展示如何制作信息面板用户界面的示例脚本" Comment="A simple script to show how ui info panels are done" />
+  </Texts>
+</TR>

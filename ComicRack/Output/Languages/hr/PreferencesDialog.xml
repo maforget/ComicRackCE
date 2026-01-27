@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PreferencesDialog" CultureName="hr">
+  <Texts>
+    <Text Key="btAddFolder" Text="&amp;Dodavanje..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="Dodavanje foldera..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="&amp;Primjena" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="&amp;Odustanak" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="&amp;Promjena..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="Brisanje" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="Brisanje" Comment="Clear" />
+    <Text Key="btOK" Text="&amp;Potvrda" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="&amp;Uklanjanje" Comment="&amp;Remove" />
+    <Text Key="btResetColor" Text="&amp;Reset" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="Reset" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="Uspostava normalnih vrijednosti" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="Traženje" Comment="Scan" />
+    <Text Key="chHighQualityDisplay" Text="&amp;Visoka kvaliteta" Comment="&amp;High Quality" />
+    <Text Key="chkAutoBackgroundColor" Text="Prilagodba na trenutnu stranicu" Comment="Adjust to current &amp;Page" />
+    <Text Key="chkAutoContrast" Text="Poboljšanje kontrasta" Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="Automatsko uklanjanje datoteka koje nedostaju (kod traženja)" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="&amp;Stranica [MB]" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableScripting" Text="Omogućenje skripti" Comment="Enable Scripting" />
+    <Text Key="chkEnableThumbnailCache" Text="&amp;Slikica [MB]" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkLookForShared" Text="Traženje biblioteka dostupnih za razmjenu" Comment="Look for shared Comic Libraries" />
+    <Text Key="chkOverwriteAssociations" Text="Prepisivanje postojećih aoscijacija umjesto 'Open With ...'" Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="Potrebna lozinka:" Comment="Require Password:" />
+    <Text Key="chkShareOwn" Text="Biiblioteka na raspoloženje drugima" Comment="Share my Comic Library" />
+    <Text Key="chkTrackMovedFiles" Text="Ustanovljenje premještenih stripova pri traženju" Comment="Try to track moved files during Scan" />
+    <Text Key="chkUpdateComics" Text="Zapisivanje meta podataka na disk (operacija može promijeniti datoteke stripova)" Comment="Write Meta Data to Disk (may modify eComic files)" />
+    <Text Key="colAction" Text="Operacija" Comment="Action" />
+    <Text Key="colAlternate" Text="Alternativa" Comment="Alternate" />
+    <Text Key="colKey" Text="Ključ" Comment="Key" />
+    <Text Key="colOptions" Text="Mogućnosti" Comment="Options" />
+    <Text Key="groupBackground" Text="Pozadina" Comment="Background" />
+    <Text Key="groupComicFolders" Text="Folderi sa stripovima" Comment="eComic Folders" />
+    <Text Key="groupDiskCache" Text="Pomoćna memorija diska" Comment="Disk Cache" />
+    <Text Key="groupMessages" Text="Skrivene poruke" Comment="Hidden Messages" />
+    <Text Key="groupOtherComics" Text="Stripovi" Comment="eComics" />
+    <Text Key="groupOverlays" Text="Pokazivači" Comment="Overlays" />
+    <Text Key="groupPages" Text="Stranice" Comment="Pages" />
+    <Text Key="grpIntegration" Text="Intergracija s explorerom" Comment="Explorer Integration" />
+    <Text Key="labelAdmin" Text="Nedostatne dozvole za izmjenu postavki. Potrebno je pokrenuti ComicRack kao administrator." Comment="Not enough user rights to change settings. Run ComicRack with administrative privileges." />
+    <Text Key="labelBackgroundColor" Text="Boja:" Comment="Color:" />
+    <Text Key="labelBehavior" Text="Opće ponašanje ComicRacka:" Comment="Here you can define general behavior when using ComicRack:" />
+    <Text Key="labelBrightness" Text="Podešavanje svjetline:" Comment="Brightness Adjustment:" />
+    <Text Key="labelCheckedFormats" Text="Označeni formati će biti povezani s ComicRackom." Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelContrast" Text="Podešavanje kontrasta:" Comment="Contrast Adjustment:" />
+    <Text Key="labelExcludeCover" Text="Popis slika (odvojenih tockazarezom) koje se neće rabiti kao slikice za omot:" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelKeyboard" Text="Tipkovničke prečice za čitanje (neće raditi kod čitanja s preglednicima):" Comment="Here you can define the keys to use while reading (these shortcuts will not function when working with the Browser):" />
+    <Text Key="labelLanguage" Text="Izbor jezika korisničkog sučelja (ComicRack se mora ponovno pokrenuti):" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlayColors" Text="Boje:" Comment="Colors:" />
+    <Text Key="labelOverlaySize" Text="Veličina:" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="Za ponovno pojavljivanje skrivenih poruka pritistnite" Comment="To reshow hidden messages press" />
+    <Text Key="labelRestart" Text="Pormjena ovih postavki zahtjeva ponovno pokretanje ComicRacka." Comment="Changing these settings requires to restart ComicRack." />
+    <Text Key="labelSaturation" Text="Podešavanje zasičenja:" Comment="Saturation Adjustment:" />
+    <Text Key="labelScriptPaths" Text="Popis putanja do programskih biblioteka (odvojenih točkazarezom), prvenstveno Python biblioteka:" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="Naziv za dijeljenje:" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="Označavanje foldera koji će se motriti (preimenovanje, premještanje) dok ComicRack radi" Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="Osobne postavke" Comment="Preferences" />
+    <Text Key="rbShareAll" Text="Sve je dostupno drugima" Comment="Share All" />
+    <Text Key="rbShareSelected" Text="Označeni popis je dostupan drugima" Comment="Share selected Lists" />
+    <Text Key="Scan" Text="Scan" Comment="Traženje" />
+    <Text Key="tabAdvanced" Text="Napredno" Comment="Advanced" />
+    <Text Key="tabBehavior" Text="Ponašanje" Comment="Behavior" />
+    <Text Key="tabCaching" Text="Pomoćno spremanje" Comment="Caching" />
+    <Text Key="tabExplorer" Text="Explorer" Comment="Explorer" />
+    <Text Key="tabKeyboard" Text="Tipkovnica" Comment="Keyboard" />
+    <Text Key="tabLanguage" Text="Jezik" Comment="Language" />
+    <Text Key="tabLibrary" Text="Biblioteka" Comment="Library" />
+    <Text Key="tabOther" Text="Ostalo" Comment="Other" />
+    <Text Key="tabPageDisplay" Text="Prikaz stranice" Comment="Page Display" />
+    <Text Key="tabScripting" Text="Skripte" Comment="Scripting" />
+    <Text Key="tabSharing" Text="Dijeljenje" Comment="Sharing" />
+    <Text Key="Scanning" Text="Traženje '{0}' ..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectComicFolder" Text="Izbor foldera s bibliotekom stripova" Comment="Please select a folder containing eComics" />
+    <Text Key="SelectScriptFolder" Text="Izbor foldera s bibliotekom skripti" Comment="Please select a script library folder" />
+  </Texts>
+</TR>

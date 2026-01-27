@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="NetStatsDialog" CultureName="sk-SK">
+  <Texts>
+    <Text Key="NetStatsDialog" Text="Štatistiky servra" Comment="Server Statistics" />
+    <Text Key="Clients" Text="Klienti: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="Požiadavky na info: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="Požiadavky na knižnicu: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="Požiadavky na strany: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="Požiadavky na náhľad: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="Zlyhané autentifikácie: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="Všetky zdieľania" Comment="All Shares" />
+    <Text Key="LastMinute" Text="Posledná minúta" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="Posledných 5 minút" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="Posledná hodina" Comment="Last Hour" />
+    <Text Key="Session" Text="Sekvencia" Comment="Session" />
+  </Texts>
+</TR>

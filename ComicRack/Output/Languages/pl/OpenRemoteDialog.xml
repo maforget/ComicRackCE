@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBookDialog" CultureName="pl">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Anuluj" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="colName" Text="Nazwa" Comment="Name" />
+    <Text Key="colDescription" Text="Opis" Comment="Description" />
+    <Text Key="ShowList" Text="Pokaż Publiczne" Comment="Show Public" />
+    <Text Key="RefreshList" Text="Odśwież" Comment="Refresh" />
+    <Text Key="colEdit" Text="Edycja" Comment="Edit" />
+    <Text Key="colExport" Text="Eksport" Comment="Export" />
+    <Text Key="labelListPassword" Text="Hasło do listy Prywatnych:" Comment="Private List Password:" />
+    <Text Key="labelFailedServerList" Text="Nie udało się pobrać Listy Serwerów!" Comment="Failed to get Server List!" />
+    <Text Key="groupLocal" Text="Współdzielone Lokalnie" Comment="Local Shares" />
+    <Text Key="groupInternet" Text="Współdzielone w Internecie" Comment="Internet Shares" />
+    <Text Key="OpenRemoteDialog" Text="Otwórz zdalną Bibliotekę" Comment="Open Remote Library" />
+    <Text Key="labelServerAddress" Text="Adres Serwera:" Comment="Library Address:" />
+  </Texts>
+</TR>

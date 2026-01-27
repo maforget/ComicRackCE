@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Settings" CultureName="de">
+  <Texts>
+    <Text Key="Application" Text="Applikation" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="Verstecke Vergrößerungsglas am Seitenrand" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="AutoNavigateComics" Text="Lesen über den Anfang/Ende öffnet das nächste Buch" Comment="Reading beyond the start or end opens the next Book" />
+    <Text Key="Browser" Text="Browser" Comment="Browser" />
+    <Text Key="CloseBrowserOnOpen" Text="Schließt den Browser wenn ein neues Buch geöffnet wird" Comment="Close the Browser when a new Book is opened" />
+    <Text Key="CloseMinimizesToTray" Text="[x] minimiert ComicRack in den Nachrichten Bereich" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="Neue Thumbnails blenden langsam ein" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="Maus wird unsichtbar im Vollbild Modus" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="Zeige Thumbnails in der besten Qualität an (langsamer)" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="CatalogOnlyForFileless" Text="Buch-Sammmlungs Felder nur für dateilose Bücher anzeigen" Comment="Show Catalog fields only for fileless Books"/>
+    <Text Key="ShowCustomBookFields" Text="Benutzer-Werte für Bücher anzeigen" Comment="Show custom Book fields"/>
+    <Text Key="MinimizeToTray" Text="Minimiere ComicRack in den Nachrichten Bereich" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="Hole letzte ComicRack Nachrichten" Comment="Check for latest news on ComicRack" />
+    <Text Key="Opening a Book" Text="Buch Öffnen" Comment="Opening a Book" />
+    <Text Key="OpenLastFile" Text="Öffne die zuletzt geöffneten Bücher" Comment="Reopen Books from last session" />
+    <Text Key="OpenInNewTab" Text="In neuem Tab öffnen" Comment="Open in new Tab"/>
+    <Text Key="OpenLastPage" Text="Öffnet Buch auf der letzten gelesenen Seite" Comment="Open the Book at the page where it was closed" />
+    <Text Key="PageChangeDelay" Text="Maus Rad und Cursor Tasten pausieren bei Seitenwechsel" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="Reading" Text="Lesen" Comment="Reading" />
+    <Text Key="ScanStartup" Text="Scanne Buch Verzeichnisse nach neuen Büchern" Comment="Rescan the Book Folders for new Books" />
+    <Text Key="UpdateWebComicsStartup" Text="Aktualisiere Web Comics" Comment="Update Web Comics" />
+    <Text Key="ShowSplash" Text="Zeige den Start Bildschirm" Comment="Show Splash Screen" />
+    <Text Key="ShowToolTips" Text="Zeige Tooltips für Bücher im Browser" Comment="Show Tooltips for Books in the Browser" />
+    <Text Key="Starting ComicRack" Text="ComicRack startet" Comment="Starting ComicRack" />
+    <Text Key="AddToLibraryOnOpen" Text="Geöffnete Dateien werden der Bibliothek hinzugefügt" Comment="Opened Files are added to the Library"/>
+    <Text Key="Manga" Text="Manga" Comment="Manga"/>
+    <Text Key="TrueRightToLeftReading" Text="Echtes von rechts nach links lesen" Comment="True right to left reading"/>
+    <Text Key="LeftRightMovementReversed" Text="Links/rechts Navigation ist ebenfalls umgekehrt" Comment="Left/right movement is also reversed"/>
+    <Text Key="Right to Left" Text="Rechts nach Links" Comment="Right to Left"/>
+    <Text Key="AutoMinimalGui" Text="Vollbild schaltet reduzierte Benutzeroberfläche ein" Comment="Fullscreen also toggles Minimal User Interface"/>
+    <Text Key="AnimatePanels" Text="Auf- und zugehende Panele sind animiert" Comment="Animate expanding and collapsing Panels"/>
+    <Text Key="ResetZoomOnPageChange" Text="Zoom wird bei Seitenwechsel auf 100% zurückgesetzt" Comment="Zoom is reset to 100% on page change"/>
+    <Text Key="ZoomInOutOnPageChange" Text="Beim Seitenwechsel wird kurz herausgezoomt" Comment="During page change a zoom out is done"/>
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="Browser Docking Leiste immer anzeigen" Comment="Always display Browser Docking Grip"/>
+    <Text Key="ShowMainMenuNoComicOpen" Text="Hauptmenü anzeigen falls kein Buch offen ist" Comment="Show Main Menu if no Book is open"/>
+    <Text Key="InformationCover3D" Text="3D Anzeige von Bücher Covers im Informations Dialog" Comment="3D display of covers in Book Info Dialog"/>
+    <Text Key="NewBooksChecked" Text="Neue hinzugefügte Bücher sind markiert" Comment="Newly added books are checked"/>
+    <Text Key="DogEarThumbnails" Text="Selektierte Thumbnails haben ein Eselsohr" Comment="Selected Thumbnails have dog-ear"/>
+    <Text Key="NumericRatingThumbnails" Text="Thumbnails zeigen Bewertungen numerisch an" Comment="Thumbnails display numeric ratings"/>
+    <Text Key="BlendWhilePaging" Text="Seiten Animationen auch beim schnell blättern" Comment="Blend animation also while fast paging"/>
+    <Text Key="LocalQuickSearch" Text="Jede Liste hat eigene Sucheinstellungen" Comment="Each List has own Quick Search settings"/>
+    <Text Key="ScrollingDoesBrowse" Text="Scrollen zum Seitenrand wechselt die Seite" Comment="Scrolling to page margin browses to new pages"/>
+    <Text Key="Import &amp; Export" Text="Import &amp; Export" Comment="Import &amp; Export"/>
+    <Text Key="ExportedListsContainFilenames" Text="Exportierte Bücher Listen enthalten Datei-Namen" Comment="Exported Book Lists contain filenames"/>
+    <Text Key="ShowSearchLinks" Text="Links für das Suchen anzeigen" Comment="Show Search Links"/>
+    <Text Key="ShowQuickOpen" Text="Zeige Schnellöffner-Liste falls kein Buch geöffnet ist" Comment="Show Quick Open if no book is opened"/>
+    <Text Key="CoverThumbnailsSameSize" Text="Alle Cover Thumbnails haben die gleiche Größe" Comment="All Cover Thumbnails have the same Size"/>
+    <Text Key="CommonListStackLayout" Text="Alle Stapel in einer Liste haben das selbe Layout" Comment="All Stacks in a List have the same Layout"/>
+    <Text Key="AutoShowQuickReview" Text="Zeige Bwertungs-Dialog am Ende des Buches" Comment="Show Quick Rating Dialog when Book completed"/>
+  </Texts>
+</TR>

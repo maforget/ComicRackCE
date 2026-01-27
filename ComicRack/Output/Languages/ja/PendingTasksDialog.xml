@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PendingTasksDialog" CultureName="ja">
+  <Texts>
+    <Text Key="btOk" Text="OK" Comment="OK" />
+    <Text Key="colTask" Text="タスク" Comment="Task" />
+    <Text Key="lblItemCount" Text="{0} タスクを実行中" Comment="{0} Tasks are pending" />
+    <Text Key="PendingTasksDialog" Text="バックグラウンドで実行中のタスク..." Comment="Pending Background Tasks" />
+    <Text Key="colState" Text="状態" Comment="State" />
+    <Text Key="btAbort" Text="すべてのユーザー タスクを中止" Comment="Abort all User Tasks" />
+  </Texts>
+</TR>

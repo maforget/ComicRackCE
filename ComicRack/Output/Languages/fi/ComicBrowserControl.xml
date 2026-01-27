@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBrowserControl" CultureName="fi">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Järjestetty {0} mukaan" Comment="Arranged by {0}" />
+    <Text Key="ComicFiltered" Text="{0} suodatettu" Comment="{0} filtered" />
+    <Text Key="ComicMulti" Text="{0} eSarjista" Comment="{0} eComics" />
+    <Text Key="ComicSelected" Text="{0} valittu" Comment="{0} selected" />
+    <Text Key="ComicSingle" Text="{0} eSarjista" Comment="{0} eComic" />
+    <Text Key="GroupedBy" Text="Ryhmittely {0}" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="&amp;Lisää kirjastoon" Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="Automaatio" Comment="Automation" />
+    <Text Key="miCopyData" Text="&amp;Kopioi tiedot" Comment="&amp;Copy Data" />
+    <Text Key="miInvertSelection" Text="&amp;Vastakkaiset valinnat" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="&amp;Merkitse..." Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="&amp;Lue" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="&amp;Lukematon" Comment="&amp;Unread" />
+    <Text Key="miPasteData" Text="&amp;Liitä tiedot..." Comment="&amp;Paste Data..." />
+    <Text Key="miProperties" Text="&amp;Hae tiedot..." Comment="&amp;Get Info..." />
+    <Text Key="miEdit" Text="Muokkaa" Comment="Edit" />
+    <Text Key="miRateMenu" Text="Oma &amp;arvio" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="&lt;tyhjä&gt;" Comment="None" />
+    <Text Key="miRating1" Text="* (1 Tähti)" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** (2 Tähteä)" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** (3 Tähteä)" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** (4 Tähteä)" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** (5 Tähteä)" Comment="***** (5 Stars)" />
+    <Text Key="miRead" Text="&amp;Avaa" Comment="&amp;Open" />
+    <Text Key="miReadTab" Text="Avaa uudelle välilehdelle" Comment="Open in new Tab" />
+    <Text Key="miRefreshInformation" Text="Virkistä" Comment="Refresh" />
+    <Text Key="miRemove" Text="&amp;Poista" Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="Näytä kirja selaimessa" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="Kaikki" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="Pikahaku tarkistaa kaikki tiedot" Comment="Quick Search is checking all available data" />
+    <Text Key="miSearchArtists" Text="Taiteilijaa" Comment="Artists" />
+    <Text Key="miSearchArtists.Tooltip" Text="Pikahaku tarkistaa kaikki Taiteilijat" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="Kuvauksesta" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="Pikahaku tarkistaa kaikki muistiinpanot ja koosteet" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="Tiedostonimeä" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="Pikahaku tarkistaa tiedostonimen" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="Sarjaa" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="Pikahaku tarkistaaa sarjan nimen" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="Kirjoittajaa" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="Pikahaku tarkistaa tekijän" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="Valitse &amp;kaikki" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="Aseta pinon päälle" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="&amp;Selaa sarjiksia" Comment="&amp;Browse Comics" />
+    <Text Key="miShowOnlyAllComics" Text="Näytä kaikki" Comment="Show All" />
+    <Text Key="miShowOnlyReadComics" Text="Näytä luetut" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="Näytä lueskellut" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="Näytä lukemattomat" Comment="Show not Read" />
+    <Text Key="miShowOnlyDuplicates" Text="Näytä kaksoiskappaleet" Comment="Show Duplicates" />
+    <Text Key="miShowOnlyComics" Text="Näytä vain eSarjikset" Comment="Show only eComics" />
+    <Text Key="miShowOnlyFileless" Text="Näytä vain tiedostottomat nimikkeet" Comment="Show only fileless Entries" />
+    <Text Key="miViewDetails" Text="&amp;Lisätiedot" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="&amp;Kuvakkeet" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Laatat" Comment="&amp;Tiles" />
+    <Text Key="None" Text="&lt;tyhjä&gt;" Comment="None" />
+    <Text Key="NotArranged" Text="Järjestämätön" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Ei ryhmitelty" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="Ei pinottu" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="Pinoperuste {0}" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="Ryhmittely" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="eSarjisten ryhmittely ominaisuuksittain" Comment="Group eComics by different criteria" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="Sulje tämä pino" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="Järjestä" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="Vaihda eSarjisten lajittelujärjestys" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbStack" Text="Pino" Comment="Stack" />
+    <Text Key="tbbView" Text="Näkymät" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="Vaihda kuinka ja mitä eSarjiksia näytetään" Comment="Change how and what eComics are displayed" />
+    <Text Key="tsEditLayouts" Text="&amp;Muokkaa asetteluja..." Comment="&amp;Edit Layouts..." />
+    <Text Key="tsEditListLayout" Text="&amp;Muokkaa listan asettelua..." Comment="&amp;Edit List Layout..." />
+    <Text Key="tsSaveListLayout" Text="&amp;Tallenna listan asettelu..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsListLayouts" Text="Listojen asettelut" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="Muokkaa listojen asetteluja" Comment="Manage List Layouts" />
+    <Text Key="miExportComics" Text="Lähetä eSarjiksia" Comment="Export eComics" />
+    <Text Key="miExportComicsAs" Text="Lähetä eSarjiksia..." Comment="Export eComics..." />
+    <Text Key="miExportComicsWithPrevious" Text="Lähetä + aiemmat" Comment="Export with Previous" />
+    <Text Key="miSetListBackground" Text="Aseta listan taustaksi" Comment="Set as List Background" />
+    <Text Key="miResetListBackground" Text="Palauta listojen tausta" Comment="Reset List Background" />
+    <Text Key="lblDisplayOptionText" Text="Aktiivisten 'Näkymä'-valintojen vuoksi kaikkia eSarjiksia ei näytetä." Comment="Because of active options in 'Views', not all eComics are displayed" />
+    <Text Key="btDisplayAll" Text="Näytä &amp;kaikki" Comment="Display &amp;All" />
+    <Text Key="miUpdateComicFiles" Text="Päivitä eSarjis-tiedostot" Comment="Update eComic Files" />
+    <Text Key="btCloseStack" Text="&amp;Sulje pinot" Comment="&amp;Close Stack" />
+    <Text Key="miAddList" Text="Lisää listalle" Comment="Add to List" />
+    <Text Key="miShowInList" Text="Näytä listalla" Comment="Show in List" />
+    <Text Key="tbbDuplicateList" Text="Kahdenna Lista" Comment="Duplicate List" />
+    <Text Key="tbbDuplicateList.Tooltip" Text="Kahdenna nykyinen lista" Comment="Duplicate current List" />
+    <Text Key="SearchingLists" Text="Etsitään listoja..." Comment="Searching Lists..." />
+    <Text Key="tbUndo" Text="Peruuta" Comment="Undo" />
+    <Text Key="tbRedo" Text="Toista äskeinen" Comment="Redo" />
+    <Text Key="btPrevStack" Text="&amp;Edellinen" Comment="&amp;Previous" />
+    <Text Key="btNextStack" Text="&amp;Seuraava" Comment="&amp;Next" />
+    <Text Key="btBrowseNext" Text="Seuraava" Comment="Next" />
+    <Text Key="btBrowsePrev" Text="Takaisin" Comment="Back" />
+  </Texts>
+</TR>

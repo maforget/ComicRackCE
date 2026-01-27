@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBook" CultureName="tr">
+  <Texts>
+    <Text Key="Added" Text="Eklendi:\t{0}" Comment="Added:\t{0}" />
+    <Text Key="Format" Text="Format:\t{0} " Comment="Format:\t{0}" />
+    <Text Key="LastPageReadIs" Text="Son Sayfa Okuması {0}" Comment="Last page read is {0}" />
+    <Text Key="LastTimeOpenedAt" Text="Son açılış tarihi {0}" Comment="Last time opened at {0}" />
+    <Text Key="Library" Text="Kütüphane" Comment="Library" />
+    <Text Key="MyFavoritesList" Text="Favorilerim" Comment="My Favorites" />
+    <Text Key="Never" Text="asla" Comment="never" />
+    <Text Key="NeverReadList" Text="Hiç okunmadı" Comment="Never Read" />
+    <Text Key="NoInformation" Text="Bilgilendirme mevcut değil" Comment="No information available" />
+    <Text Key="None" Text="Yok" Comment="None" />
+    <Text Key="Of" Text="of " Comment="of" />
+    <Text Key="Opened" Text="Açıldı:\t{0}" Comment="Opened:\t{0}" />
+    <Text Key="Pages" Text="{0} Sayfa(lar)" Comment="{0} Page(s)" />
+    <Text Key="PageSize" Text="Boyut:\t{0}" Comment="Size:\t{0}" />
+    <Text Key="PageText" Text="Sayfa #{0}" Comment="Page #{0}" />
+    <Text Key="ReadingAtPage" Text="{0} numaralı sayfada" Comment="Reading at page {0}" />
+    <Text Key="ReadingList" Text="Okuyor" Comment="Reading" />
+    <Text Key="ReadList" Text="Oku" Comment="Read" />
+    <Text Key="RecentlyAddedList" Text="Yakın Tarihte Eklenenler" Comment="Recently Added" />
+    <Text Key="RecentlyReadList" Text="Yeni Okunmuşlar" Comment="Recently Read" />
+    <Text Key="Resolution" Text="Çözünürlük:\t{0} x {1}" Comment="Resolution:\t{0} x {1}" />
+    <Text Key="Size" Text="Boyut:\t{0}/{1}" Comment="Size:\t{0}/{1}" />
+    <Text Key="SmartLists" Text="Akıllı Listeler" Comment="Smart Lists" />
+    <Text Key="UnknownSize" Text="Bilinmeyen Boyut" Comment="Unknown Size" />
+    <Text Key="Unknown" Text="Bilinmiyor" Comment="Unknown" />
+    <Text Key="Volume" Text="V{0} " Comment="V{0}" />
+    <Text Key="Bookmark" Text="Yer İmi: {0}" Comment="Bookmark: {0}" />
+    <Text Key="Rotation" Text="Döndürme: {0}" Comment="Rotation: {0}" />
+    <Text Key="FilesUpdateList" Text="Güncellenecek dosyalar" Comment="Files to update" />
+  </Texts>
+</TR>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ItemView" CultureName="ja">
+  <Texts>
+    <Text Key="AutoFitAllColumns" Text="フレーム幅にすべてのカラムをフィット" Comment="Auto Fit All Columns" />
+    <Text Key="AutoSizeAllColumns" Text="すべてのカラム サイズを自動調整" Comment="Auto Size All Columns" />
+    <Text Key="AutoSizeColumn" Text="このカラム サイズを自動調整" Comment="Auto Size Column" />
+    <Text Key="miArrange" Text="整列方法:" Comment="Arrange by" />
+    <Text Key="miGroup" Text="グループ化" Comment="Group by" />
+    <Text Key="miStack" Text="スタック方法" Comment="Stack by" />
+    <Text Key="miViewDetails" Text="詳細" Comment="Details" />
+    <Text Key="miViewMode" Text="表示" Comment="View" />
+    <Text Key="miViewThumbs" Text="サムネイル" Comment="Thumbnails" />
+    <Text Key="miViewTiles" Text="並べて表示" Comment="Tiles" />
+    <Text Key="NotGrouped" Text="グループ化しない" Comment="Not Grouped" />
+    <Text Key="NotSorted" Text="ソートしない" Comment="Not Sorted" />
+    <Text Key="NotStacked" Text="スタックしない" Comment="Not Stacked" />
+    <Text Key="Layout" Text="レイアウト" Comment="Layout" />
+  </Texts>
+</TR>

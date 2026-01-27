@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SaveWorkspaceDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="SaveWorkspaceDialog" Text="Αποθήκευση Επιφάνειας Εργασίας" Comment="Save Workspace" />
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="txtName" Text="Όνομα:" Comment="Name:" />
+    <Text Key="labelSettings" Text="Αυτή η επιφάνεια εργασίας περιλαμβάνει ρυθμίσεις για: :" Comment="This workspace includes settings for:" />
+    <Text Key="chkWindowLayouts" Text="Διατάξεις Παραθύρου" Comment="Window Layouts" />
+    <Text Key="chkListLayouts" Text="Λίστα διατάξεων" Comment="List Layouts" />
+    <Text Key="chkComicDisplayLayout" Text="Διάταξη Εμφάνισης Κόμικς" Comment="Book Display Layout" />
+    <Text Key="chkComicDisplaySettings" Text="Ρυθμίσεις Εμφάνισης Κόμικς" Comment="Book Display Settings" />
+  </Texts>
+</TR>

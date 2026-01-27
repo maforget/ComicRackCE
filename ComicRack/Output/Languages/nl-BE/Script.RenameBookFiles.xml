@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.RenameBookFiles" CultureName="nl-BE">
+  <Texts>
+    <Text Key="Name" Text="Hernoem Bestand naar 'Reeks Volume #Nummer (van Aantal) (Jaar)' " Comment="Rename Files to 'Series Volume #Number (of Count) (Year)'" />
+    <Text Key="Description" Text="Script 'Hernoem geselecteerde Boeken volgens hun meta data'" Comment="Script to rename the selected Books based on the meta data" />
+  </Texts>
+</TR>

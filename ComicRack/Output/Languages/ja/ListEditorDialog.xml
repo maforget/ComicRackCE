@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListEditorDialog" CultureName="ja">
+  <Texts>
+    <Text Key="btMoveDown" Text="下へ移動(&amp;D)" Comment="Move &amp;Down" />
+    <Text Key="btMoveUp" Text="上へ移動(&amp;U)" Comment="Move &amp;Up" />
+    <Text Key="btDelete" Text="削除" Comment="Delete" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="colName" Text="名称" Comment="Name" />
+    <Text Key="colDescription" Text="説明" Comment="Description" />
+    <Text Key="btNew" Text="新規(&amp;N)..." Comment="&amp;New..." />
+    <Text Key="btEdit" Text="編集(&amp;E)..." Comment="&amp;Edit..." />
+    <Text Key="btActivate" Text="有効化(&amp;A)" Comment="&amp;Activate" />
+    <Text Key="btMoveTop" Text="先頭に移動(&amp;T)" Comment="Move &amp;Top" />
+    <Text Key="btMoveBottom" Text="末尾に移動(&amp;B)" Comment="Move &amp;Bottom" />
+  </Texts>
+</TR>

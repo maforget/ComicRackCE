@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainView" CultureName="hr">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="Smještanje uz dno" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="Ispun prostora" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="Smještanje slijeva" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="Smještanje zdesna" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="Zatvaranje" Comment="Close" />
+    <Text Key="tsbFolders" Text="Folderi" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="Pregled foldera" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="Biblioteka" Comment="Library" />
+    <Text Key="tsbLibrary.Tooltip" Text="Biblioteka stripova" Comment="eComics Library" />
+    <Text Key="tsbPages" Text="Stranica" Comment="Pages" />
+    <Text Key="tsbPages.Tooltip" Text="Broj stranica aktualne sveske" Comment="Pages of the current eComic" />
+  </Texts>
+</TR>

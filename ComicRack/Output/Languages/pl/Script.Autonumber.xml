@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Script.Autonumber" CultureName="pl">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Anuluj" Comment="&amp;Cancel" />
+    <Text Key="chkTotal" Text="Zapisz Ilość Rozdziałów:" Comment="Save total Number:" />
+    <Text Key="labelBegin" Text="Zacznij od:" Comment="Begin at Number:" />
+    <Text Key="Name" Text="Kreator Autonumeracji..." Comment="Autonumber Wizard..." />
+    <Text Key="NumberAltSeries" Text="Numeruj Alternatywne Rozdziały" Comment="Number Alternate Series" />
+    <Text Key="NumberSeries" Text="Numeruj Rozdziały Serii" Comment="Number Series" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="Caption" Text="Kreator Autonumeracji" Comment="Autonumber Wizard" />
+    <Text Key="Description" Text="Skrypt do zmiany numeracji wybranych Komiksów" Comment="A script to renumber the selected Books" />
+  </Texts>
+</TR>

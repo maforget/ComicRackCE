@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TextBoxContextMenu" CultureName="pt-BR">
+  <Texts>
+    <Text Key="miUndo" Text="Desfazer" Comment="Undo" />
+    <Text Key="miCut" Text="Cortar" Comment="Cut" />
+    <Text Key="miCopy" Text="Copiar" Comment="Copy" />
+    <Text Key="miPaste" Text="Colar" Comment="Paste" />
+    <Text Key="miDelete" Text="Apagar" Comment="Delete" />
+    <Text Key="miSelectAll" Text="Selecionar Tudo" Comment="Select All" />
+    <Text Key="miRedo" Text="Refazer" Comment="Redo" />
+  </Texts>
+</TR>

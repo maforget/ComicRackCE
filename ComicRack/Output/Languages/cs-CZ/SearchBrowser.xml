@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SearchBrowser" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="AlternateSeries" Text="Alternativní série" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="Koloristé" Comment="Colorists" />
+    <Text Key="Genre" Text="Žánry" Comment="Genres" />
+    <Text Key="Imprint" Text="Imprinty" Comment="Imprints" />
+    <Text Key="Inker" Text="Konturisté" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="Jazyky" Comment="Languages" />
+    <Text Key="MonthAsText" Text="Měsíce" Comment="Months" />
+    <Text Key="Penciller" Text="Kreslíři" Comment="Pencillers" />
+    <Text Key="Publisher" Text="Vydavatelé" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="Série" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="Roky" Comment="Years" />
+    <Text Key="ShadowTitle" Text="Názvy" Comment="Titles" />
+    <Text Key="ShadowFormat" Text="Formáty" Comment="Formats" />
+    <Text Key="Writer" Text="Autoři" Comment="Writers" />
+    <Text Key="Editor" Text="Editoři" Comment="Editors" />
+    <Text Key="Characters" Text="Postavy" Comment="Characters" />
+    <Text Key="CoverArtist" Text="Autoři obálky" Comment="Cover Artists" />
+    <Text Key="AgeRating" Text="Věková omezení" Comment="Age Ratings" />
+    <Text Key="Tags" Text="Značky" Comment="Tags" />
+    <Text Key="Unspecified" Text="Není definováno" Comment="Unspecified" />
+    <Text Key="AllItems" Text="Vše ({0} {1})" Comment="All ({0} {1})" />
+    <Text Key="ShadowVolumeAsText" Text="Díly" Comment="Volumes" />
+    <Text Key="Teams" Text="Skupiny" Comment="Teams" />
+    <Text Key="Locations" Text="Lokace" Comment="Locations" />
+    <Text Key="Web" Text="Web" Comment="Web" />
+    <Text Key="Letterer" Text="Autor písma" Comment="Letterer" />
+    <Text Key="RatingAsText" Text="Moje hodnocení" Comment="My Ratings" />
+    <Text Key="CommunityRatingAsText" Text="Hodnocení veřejnosti" Comment="Community Ratings" />
+    <Text Key="BookPriceAsText" Text="Ceny knih" Comment="Book Prices" />
+    <Text Key="BookAge" Text="Komiksové věky knih" Comment="Book Ages" />
+    <Text Key="BookStore" Text="Nákupní obchody" Comment="Book Stores" />
+    <Text Key="BookOwner" Text="Vlastníci knih" Comment="Book Owners" />
+    <Text Key="BookCondition" Text="Fyzické stavy knih" Comment="Book Conditions" />
+    <Text Key="BookCollectionStatus" Text="Stavy knihy ve sbírce" Comment="Book Collection Status" />
+    <Text Key="BookLocation" Text="Umístění knih" Comment="Book Locations" />
+    <Text Key="MainCharacterOrTeam" Text="Hlavní postavy/týmy" Comment="Main Characters/Teams" />
+    <Text Key="SeriesGroup" Text="Skupiny sérií" Comment="Series Groups" />
+    <Text Key="StoryArc" Text="Dějové linie" Comment="Story Arcs" />
+  </Texts>
+</TR>

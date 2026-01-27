@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PluginEngine" CultureName="ja">
+  <Texts>
+    <Text Key="EditUpdateBooksCommands" Text="コミック ブックの編集/アップデート コマンド" Comment="Edit/Update Books Commands" />
+    <Text Key="CreateNewBooksCommands" Text="新しいコミック ブック作成コマンド" Comment="Create New Books Commands" />
+    <Text Key="CustomComicPathParser" Text="コミックのパスの取得" Comment="Comic Path Parsers" />
+    <Text Key="ActionswhenBooksareopened" Text="コミックを開くときのアクション" Comment="Actions when Books are opened" />
+    <Text Key="ActionswhenReaderisresized" Text="リーダーのリサイズ時のアクション" Comment="Actions when Reader is resized" />
+    <Text Key="AdditionalSearchProviders" Text="検索プロバイダの追加" Comment="Additional Search Providers" />
+    <Text Key="ComicInformationPanels" Text="コミック情報パネル" Comment="Comic Information Panels" />
+    <Text Key="QuickOpenPanels" Text="クィック オープン パネル" Comment="Quick Open Panels" />
+    <Text Key="CustomComicThumbnailOverlays" Text="コミックのカスタム サムネイルのオーバーレイ" Comment="Custom Comic Thumbnail Overlays" />
+  </Texts>
+</TR>

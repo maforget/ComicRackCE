@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainForm" CultureName="fi">
+  <Texts>
+    <Text Key="browseMenu" Text="&amp;Selaa" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="&amp;Kopioi sivu" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="&amp;Lähetä sivu..." Comment="&amp;Export Page..." />
+    <Text Key="miCopyPage" Text="&amp;Kopioi sivu" Comment="&amp;Copy Page" />
+    <Text Key="miExportPage" Text="&amp;Lähetä sivu..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="Sovita kaikki" Comment="Fit All" />
+    <Text Key="cmFitBest" Text="Paras sovitus" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="Sovita korkeus" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="Sovita leveys" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="&amp;Suurennuslasi" Comment="&amp;Magnifier" />
+    <Text Key="cmNextFromList" Text="&amp;Seuraava eSarjis" Comment="Ne&amp;xt eComic" />
+    <Text Key="cmRandomFromList" Text="Satunnainen eSarjis" Comment="Random eComic" />
+    <Text Key="cmNotifyExit" Text="&amp;Sulje" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="&amp;Palauta" Comment="&amp;Restore" />
+    <Text Key="cmPrevFromList" Text="&amp;Edellinen eSarjis" Comment="Pre&amp;vious eComic" />
+    <Text Key="cmRate0" Text="&lt;tyhjä&gt;" Comment="None" />
+    <Text Key="cmRate1" Text="* (1 Tähti)" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** (2 Tähteä)" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** (3 Tähteä)" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** (4 Tähteä)" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** (5 Tähteä)" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="Oma &amp;arvio" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="&amp;Virkistä" Comment="&amp;Refresh" />
+    <Text Key="cmShowInfo" Text="&amp;Tiedot..." Comment="&amp;Info..." />
+    <Text Key="cmSyncBrowser" Text="Näytä &amp;selaimessa" Comment="Show in &amp;Browser" />
+    <Text Key="ExportingComics" Text="Lähettää eSarjiksia: {0} jonossa" Comment="Exporting eComics: {0} queued" />
+    <Text Key="ExportingErrors" Text="{0} virhettä. Katso lisätietoja" Comment="{0} errors. Click for details" />
+    <Text Key="displayMenu" Text="&amp;Näytä" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="&amp;Muokkaa" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="&amp;Tiedosto" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="&amp;Ohje" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack" Comment="ComicRack" />
+    <Text Key="miAbout" Text="&amp;Tietoja..." Comment="&amp;About..." />
+    <Text Key="tbAbout" Text="&amp;Tietoja..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="&amp;Lisää kansio kirjastoon..." Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="Uusi &amp;välilehti" Comment="New &amp;Tab" />
+    <Text Key="miBestFit" Text="&amp;Paras sovitus" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="Sulje &amp;kaikki" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="&amp;Sulje" Comment="&amp;Close" />
+    <Text Key="miEditLayouts" Text="&amp;Muokkaa asettelua..." Comment="&amp;Edit Layouts..." />
+    <Text Key="miEditWorkspaces" Text="&amp;Muokkaa työtilaa..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="miEditListLayout" Text="&amp;Muokkaa listojen asettelua..." Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="&amp;Sulje" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="A&amp;utomatisointi" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="&amp;Aloitussivu" Comment="&amp;First Page" />
+    <Text Key="tbFirstPage" Text="&amp;Aloitussivu" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="Sovita k&amp;aikki" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="Sovita &amp;korkeus" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="Sovita &amp;leveys" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="&amp;Kokonäyttö" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="&amp;Viimeinen sivu" Comment="&amp;Last Page" />
+    <Text Key="tbLastPage" Text="&amp;Viimeinen sivu" Comment="&amp;Last Page" />
+    <Text Key="miLastPageRead" Text="&amp;Viimeksi luettu sivu" Comment="L&amp;ast Page Read" />
+    <Text Key="miListLayouts" Text="Listan asettelu" Comment="List Layout" />
+    <Text Key="miNews" Text="&amp;Uutiset..." Comment="&amp;News..." />
+    <Text Key="miNextFromList" Text="&amp;Seuraava eSarjis" Comment="Ne&amp;xt eComic" />
+    <Text Key="miRandomFromList" Text="Satunnainen eSarjis" Comment="Random eComic" />
+    <Text Key="miNextPage" Text="Seuraava sivu" Comment="Next Page" />
+    <Text Key="tbNextPage" Text="Seuraava sivu" Comment="Next Page" />
+    <Text Key="miNextTab" Text="Seuraava &amp;välilehti" Comment="Next &amp;Tab" />
+    <Text Key="miMagnify" Text="Suurennuslasi" Comment="Magnifier" />
+    <Text Key="miOpenComic" Text="&amp;Avaa eSarjis..." Comment="&amp;Open eComic..." />
+    <Text Key="cmOpenComic" Text="&amp;Avaa eSarjis..." Comment="&amp;Open eComic..." />
+    <Text Key="tbOpenComic" Text="&amp;Avaa eSarjis..." Comment="&amp;Open eComic..." />
+    <Text Key="miOpenNow" Text="Avaa e&amp;Sarjis" Comment="Open eCo&amp;mics" />
+    <Text Key="miOpenRecent" Text="&amp;Uusimmat eSarjikset" Comment="&amp;Recent eComics" />
+    <Text Key="miPageType" Text="&amp;Sivulaji" Comment="&amp;Page Type" />
+    <Text Key="cmPageType" Text="&amp;Sivulaji" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="&amp;Asetukset..." Comment="&amp;Preferences..." />
+    <Text Key="tbPreferences" Text="&amp;Asetukset..." Comment="&amp;Preferences..." />
+    <Text Key="tbTools" Text="Työkalut" Comment="Tools" />
+    <Text Key="tbTools.Tooltip" Text="Siirry tärkeisiin komentoihin" Comment="Access to important commands" />
+    <Text Key="tbShowMainMenu" Text="Näytä päävalikko" Comment="Show Main Menu" />
+    <Text Key="miPrevFromList" Text="&amp;Edellinen eSarjis" Comment="Pre&amp;vious eComic" />
+    <Text Key="miPrevPage" Text="&amp;Edellinen sivu" Comment="&amp;Previous Page" />
+    <Text Key="tbPrevPage" Text="&amp;Edellinen sivu" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="&amp;Edellinen välilehti" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="&lt;tyhjä&gt;" Comment="None" />
+    <Text Key="miRate1" Text="* (1 Tähti)" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** (2 Tähteä)" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** (3 Tähteä)" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** (4 Tähteä)" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** (5 Tähteä)" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="Oma &amp;arvio" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="&amp;Käynnistä uudelleen" Comment="Rest&amp;art" />
+    <Text Key="miRotate0" Text="0°" Comment="0°" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="cmRotate0" Text="&amp;Ei kiertoa" Comment="&amp;No Rotation" />
+    <Text Key="cmRotate180" Text="180°" Comment="180°" />
+    <Text Key="cmRotate270" Text="270°" Comment="270°" />
+    <Text Key="cmRotate90" Text="90°" Comment="90°" />
+    <Text Key="miRotation" Text="&amp;Kierto" Comment="&amp;Rotation" />
+    <Text Key="miSaveListLayout" Text="&amp;Tallenna listojen asettelu..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="&amp;Tallenna työtila..." Comment="&amp;Save Workspace..." />
+    <Text Key="miScan" Text="&amp;Päivitä eSarjis-kansiot" Comment="Scan eComic &amp;Folders" />
+    <Text Key="tbScan" Text="&amp;Päivitä eSarjis-kansiot" Comment="Scan eComic &amp;Folders" />
+    <Text Key="miAutoScroll" Text="Automaattinen vieritys" Comment="Auto Scrolling" />
+    <Text Key="miSearchBrowser" Text="&amp;Etsi" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="Nykyinen asettelu kaikille listoille" Comment="Set all Lists to current Layout" />
+    <Text Key="miShowInfo" Text="&amp;Tiedot..." Comment="&amp;Info..." />
+    <Text Key="tbShowInfo" Text="&amp;Tiedot..." Comment="&amp;Info..." />
+    <Text Key="miSidebar" Text="&amp;Sivupalkki" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="P&amp;ieni esikatselu" Comment="S&amp;mall Preview" />
+    <Text Key="miSupport" Text="Tue ComicRackia..." Comment="Support ComicRack..." />
+    <Text Key="tbSupport" Text="Tue ComicRackia..." Comment="Support ComicRack..." />
+    <Text Key="miSyncBrowser" Text="Näytä &amp;selaimessa" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="&amp;Selain" Comment="&amp;Browser" />
+    <Text Key="miTwoPages" Text="Aukeama" Comment="Two Pages" />
+    <Text Key="cmTwoPages" Text="Aukeama" Comment="Two Pages" />
+    <Text Key="tbTwoPages" Text="Aukeama" Comment="Two Pages" />
+    <Text Key="miTwoPagesAdaptive" Text="Tuplasivut (mukautuva)" Comment="Two Pages (adaptive)" />
+    <Text Key="cmTwoPagesAdaptive" Text="Tuplasivut (mukautuva)" Comment="Two Pages (adaptive)" />
+    <Text Key="tbTwoPagesAdaptive" Text="Tuplasivut (mukautuva)" Comment="Two Pages (adaptive)" />
+    <Text Key="miSinglePage" Text="Yksi sivu" Comment="Single Page" />
+    <Text Key="cmSinglePage" Text="Yksi sivu" Comment="Single Page" />
+    <Text Key="tbSinglePage" Text="Yksi sivu" Comment="Single Page" />
+    <Text Key="miView100" Text="100 %" Comment="100 %" />
+    <Text Key="miView150" Text="150 %" Comment="150 %" />
+    <Text Key="miView200" Text="200 %" Comment="200 %" />
+    <Text Key="miView300" Text="300 %" Comment="300 %" />
+    <Text Key="miView400" Text="400 %" Comment="400 %" />
+    <Text Key="miViewFolders" Text="&amp;Kansiot" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="&amp;Kirjasto" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="&amp;Sivut" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="&amp;Virkistä" Comment="&amp;Refresh" />
+    <Text Key="miWebHome" Text="ComicRackin kotisivut..." Comment="ComicRack Homepage..." />
+    <Text Key="miWebUserForum" Text="ComicRackin keskustelupalsta..." Comment="ComicRack User Forum..." />
+    <Text Key="miWorkspaces" Text="&amp;Työtilat" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="Zoomaa" Comment="Zoom" />
+    <Text Key="miToggleZoom" Text="Käytä zoomausta" Comment="Toggle Zoom" />
+    <Text Key="readMenu" Text="&amp;Luku" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="Vaihda '{0}' asettelu" Comment="Set '{0}' Layout" />
+    <Text Key="tbBestFit" Text="Paras sovitus" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="Näytä" Comment="Display" />
+    <Text Key="tbFit" Text="Sovita" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="Käytä sovitusta" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="Sovita kaikki" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="Sovita korkeus" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="Sovita leveys" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="Kokonäyttö" Comment="Full Screen" />
+    <Text Key="tbMagnify" Text="Suurennuslasi" Comment="Magnifier" />
+    <Text Key="tbNextFromList" Text="Seuraava eSarjis Listalta" Comment="Next eComic from List" />
+    <Text Key="tbRandomFromList" Text="Satunnainen eSarjis" Comment="Random eComic" />
+    <Text Key="tbNextTab" Text="Seuraava &amp;välilehti" Comment="Next &amp;Tab" />
+    <Text Key="tbNextTab.Tooltip" Text="Seuraava välilehti" Comment="Next Tab" />
+    <Text Key="tbPrevFromList" Text="Edellinen eSarjis listalta" Comment="Previous eComic from List" />
+    <Text Key="tbPrevTab" Text="&amp;Edellinen välilehti" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="Edellinen välilehti" Comment="Previous Tab" />
+    <Text Key="tbReadLabel" Text="Luku" Comment="Read" />
+    <Text Key="tbAutoScroll" Text="Automaattinen vieritys" Comment="Auto Scrolling" />
+    <Text Key="tsBook" Text="Kirja" Comment="Book" />
+    <Text Key="tsBook.Tooltip" Text="Auki olevan eSarjiksen nimi" Comment="Name of the opened eComic" />
+    <Text Key="tsExportActivity" Text="Lähetys" Comment="Exporting" />
+    <Text Key="tsCurrentPage" Text="Sivu" Comment="Page" />
+    <Text Key="tsCurrentPage.Tooltip" Text="Nykyinen sivu" Comment="Current Page of the open eComic" />
+    <Text Key="tsEditWorkspaces" Text="&amp;Muokkaa työtilaa..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="tsPageActivity.Tooltip" Text="Haetaan sivuja ja kuvakkeita..." Comment="Getting Pages and Thumbnails..." />
+    <Text Key="tsPageCount" Text="0 sivua" Comment="0 Pages" />
+    <Text Key="tsPageCount.Tooltip" Text="Avoimen eSarjiksen sivumäärä" Comment="Page count of the open eComic" />
+    <Text Key="tsSaveWorkspace" Text="&amp;Tallenna työtila..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsScanActivity.Tooltip" Text="Tarkistaa..." Comment="A scan is running..." />
+    <Text Key="tsText" Text="Valmis" Comment="Ready" />
+    <Text Key="tsWriteInfoActivity.Tooltip" Text="Kirjoitetaan lisätietoja tiedostoihin" Comment="Writing info data to files..." />
+    <Text Key="tsReadInfoActivity.Tooltip" Text="Luetaan tiedostoista...tietoja..." Comment="Reading info data from files..." />
+    <Text Key="tsWorkspaces" Text="Työtilat" Comment="Workspaces" />
+    <Text Key="miReaderUndocked" Text="Avaa lukija omaan ikkunaan" Comment="Reader in own Window" />
+    <Text Key="tbReaderUndocked" Text="Avaa lukija omaan ikkunaan" Comment="Reader in own Window" />
+    <Text Key="miPageLayout" Text="Sivun asettelu" Comment="Page Layout" />
+    <Text Key="cmPageLayout" Text="Sivun asettelu" Comment="Page Layout" />
+    <Text Key="cmComics" Text="eSarjikset" Comment="eComics" />
+    <Text Key="miAdaptiveTwoPageFitting" Text="Mukaudu aukeamanäyttöön" Comment="Adapt to double page spreads" />
+    <Text Key="cmAdaptiveTwoPageFitting" Text="Mukaudu aukeamanäyttöön" Comment="Adapt to double page spreads" />
+    <Text Key="tbAdaptiveTwoPageFitting" Text="Mukaudu aukeamanäyttöön" Comment="Adapt to double page spreads" />
+    <Text Key="miOriginal" Text="Alkuperäiskoko" Comment="Original Size" />
+    <Text Key="tbOriginal" Text="Alkuperäiskoko" Comment="Original Size" />
+    <Text Key="cmOriginal" Text="Alkuperäiskoko" Comment="Original Size" />
+    <Text Key="NotifyIconText" Text="Palauta tuplaklikkauksella" Comment="Double Click to restore" />
+    <Text Key="cmOnlyFitOversized" Text="Sovita suurikokoiset" Comment="Only Fit if oversized" />
+    <Text Key="miOnlyFitOversized" Text="Sovita suurikokoiset" Comment="Only Fit if oversized" />
+    <Text Key="tbOnlyFitOversized" Text="Sovita suurikokoiset" Comment="Only Fit if oversized" />
+    <Text Key="ChangeItemSize" Text="Muuta kappaleiden kokoa listalla" Comment="Change size of the list items" />
+    <Text Key="miDoublePageAutoScroll" Text="Aukeamien automaattinen vieritys" Comment="Double Page Auto Scrolling" />
+    <Text Key="cmFitWidthAdaptive" Text="Sovita leveys (mukautuva)" Comment="Fit Width (adaptive)" />
+    <Text Key="miFitWidthAdaptive" Text="Sovita leveys (mukautuva)" Comment="Fit Width (adaptive)" />
+    <Text Key="tbFitWidthAdaptive" Text="Sovita leveys (mukautuva)" Comment="Fit Width (adaptive)" />
+    <Text Key="cmRightToLeft" Text="Oikealta vasemmalle" Comment="Right to Left" />
+    <Text Key="tbRightToLeft" Text="Oikealta vasemmalle" Comment="Right to Left" />
+    <Text Key="miRightToLeft" Text="Oikealta vasemmalle" Comment="Right to Left" />
+    <Text Key="miMinimalGui" Text="MiniGUI" Comment="Minimal User Interface" />
+    <Text Key="tbMinimalGui" Text="MiniGUI" Comment="Minimal User Interface" />
+    <Text Key="cmMinimalGui" Text="MiniGUI" Comment="Minimal User Interface" />
+    <Text Key="miWebHelp" Text="ComicRackin dokumentaatio..." Comment="ComicRack Documentation..." />
+    <Text Key="miBookmarks" Text="Kirjanmerkit" Comment="Bookmarks" />
+    <Text Key="miSetBookmark" Text="Laita kirjanmerkki..." Comment="Set Bookmark..." />
+    <Text Key="miRemoveBookmark" Text="Poista kirjanmerkki" Comment="Remove Bookmark" />
+    <Text Key="tbBookmarks" Text="Kirjanmerkit" Comment="Bookmarks" />
+    <Text Key="tbSetBookmark" Text="Laita kirjanmerkki..." Comment="Set Bookmark..." />
+    <Text Key="tbRemoveBookmark" Text="Poista kirjanmerkki" Comment="Remove Bookmark" />
+    <Text Key="tbLastPageRead" Text="Viimeksi luettu sivu" Comment="Last Page Read" />
+    <Text Key="cmBookmarks" Text="Kirjanmerkit" Comment="Bookmarks" />
+    <Text Key="cmSetBookmark" Text="Laita kirjanmerkki..." Comment="Set Bookmark..." />
+    <Text Key="cmRemoveBookmark" Text="Poista kirjanmerkki" Comment="Remove Bookmark" />
+    <Text Key="cmLastPageRead" Text="Viimeksi luettu sivu" Comment="Last Page Read" />
+    <Text Key="miPrevBookmark" Text="Edellinen kirjanmerkki" Comment="Previous Bookmark" />
+    <Text Key="miNextBookmark" Text="Seuraava kirjanmerkki" Comment="Next Bookmark" />
+    <Text Key="tbPrevBookmark" Text="Edellinen kirjanmerkki" Comment="Previous Bookmark" />
+    <Text Key="tbNextBookmark" Text="Seuraava kirjanmerkki" Comment="Next Bookmark" />
+    <Text Key="cmPrevBookmark" Text="Edellinen kirjanmerkki" Comment="Previous Bookmark" />
+    <Text Key="cmNextBookmark" Text="Seuraava kirjanmerkki" Comment="Next Bookmark" />
+    <Text Key="miZoomIn" Text="Zoom +" Comment="Zoom In" />
+    <Text Key="tbZoomIn" Text="Zoom +" Comment="Zoom In" />
+    <Text Key="miZoomOut" Text="Zoom -" Comment="Zoom Out" />
+    <Text Key="tbZoomOut" Text="Zoom -" Comment="Zoom Out" />
+    <Text Key="miZoomCustom" Text="Oma määrittely..." Comment="Custom..." />
+    <Text Key="tbZoomCustom" Text="Oma määrittely..." Comment="Custom..." />
+    <Text Key="tbZoom.Tooltip" Text="Muuta sivun zoomausta" Comment="Change the page zoom" />
+    <Text Key="tbRotate.Tooltip" Text="Muuta sivunkiertoa" Comment="Change the page rotation" />
+    <Text Key="miRotateLeft" Text="Kierto vasempaan" Comment="Rotate Left" />
+    <Text Key="miRotateRight" Text="Kierto oikeaan" Comment="Rotate Right" />
+    <Text Key="miRotate0" Text="0°" Comment="0°" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="tbRotateLeft" Text="Kierto vasempaan" Comment="Rotate Left" />
+    <Text Key="tbRotateRight" Text="Kierto oikeaan" Comment="Rotate Right" />
+    <Text Key="tbRotate0" Text="0°" Comment="0°" />
+    <Text Key="tbRotate180" Text="180°" Comment="180°" />
+    <Text Key="tbRotate270" Text="270°" Comment="270°" />
+    <Text Key="tbRotate90" Text="90°" Comment="90°" />
+    <Text Key="tbAutoRotate" Text="Aukeamien automaattinen kierto" Comment="Autorotate Double Pages" />
+    <Text Key="miAutoRotate" Text="Aukeamien automaattinen kierto" Comment="Autorotate Double Pages" />
+    <Text Key="cmCloseAllButThis" Text="Sulje kaikki muut" Comment="Close All But This" />
+    <Text Key="cmCloseAllToTheRight" Text="Sulje kaikki oikealta" Comment="Close All to the Right" />
+    <Text Key="cmCopyPath" Text="Kopioi koko polku" Comment="Copy Full Path" />
+    <Text Key="cmRevealInExplorer" Text="Näytä tiedostoselaimessa" Comment="Reveal in Explorer" />
+    <Text Key="cmClose" Text="Sulje" Comment="Close" />
+    <Text Key="cmCloseComic" Text="Sulje" Comment="Close" />
+    <Text Key="miTasks" Text="Tehtävät..." Comment="Tasks..." />
+    <Text Key="SavePageTitle" Text="Tallenna sivu nimellä..." Comment="Save Page as..." />
+    <Text Key="cmPageRotate" Text="Sivunkierto" Comment="Page Rotation" />
+    <Text Key="miPageRotate" Text="Sivunkierto" Comment="Page Rotation" />
+    <Text Key="miOpenRemoteLibrary" Text="Avaa etäkirjasto..." Comment="Open Remote Library..." />
+    <Text Key="tbOpenRemoteLibrary" Text="Avaa etäkirjasto..." Comment="Open Remote Library..." />
+    <Text Key="miUpdateAllComicFiles" Text="Päivitä kaikki eSarjis-tiedostot" Comment="Update all eComic Files" />
+    <Text Key="tbUpdateAllComicFiles" Text="Päivitä kaikki eSarjis-tiedostot" Comment="Update all eComic Files" />
+    <Text Key="miUndo" Text="Peruuta" Comment="Undo" />
+    <Text Key="miRedo" Text="Tee uudelleen" Comment="Redo" />
+    <Text Key="miComicDisplaySettings" Text="Sarjisten näytön asetukset..." Comment="Comic Display Settings..." />
+    <Text Key="tbComicDisplaySettings" Text="Sarjisten näytön asetukset..." Comment="Comic Display Settings..." />
+    <Text Key="miPreviousList" Text="Edellinen lista" Comment="Previous List" />
+    <Text Key="miNextList" Text="Suraava lista" Comment="Next List" />
+    <Text Key="miUpdateWebComics" Text="Päivitä nettisarjikset" Comment="Update Web Comics" />
+    <Text Key="tbUpdateWebComics" Text="Päivitä nettisarjikset" Comment="Update Web Comics" />
+    <Text Key="miNewComic" Text="Uusi sarjakuvanimike..." Comment="New Comic Entry..." />
+    <Text Key="quickOpenView" Text="Pika-avaus" Comment="Quick Open" />
+  </Texts>
+</TR>

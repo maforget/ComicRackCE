@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SmallComicPreview" CultureName="pl">
+  <Texts>
+    <Text Key="tbClose" Text="Zamknij" Comment="Close" />
+    <Text Key="tsbFirst" Text="Pierwsza" Comment="First" />
+    <Text Key="tsbFirst.Tooltip" Text="Idź do pierwszej Strony" Comment="Go to first page" />
+    <Text Key="tsbLast" Text="Ostatnia" Comment="Last" />
+    <Text Key="tsbLast.Tooltip" Text="Idź do ostatniej Strony" Comment="Go to last page" />
+    <Text Key="tsbNext" Text="Następna" Comment="Next" />
+    <Text Key="tsbNext.Tooltip" Text="Idź do następnej Strony" Comment="Go to next page" />
+    <Text Key="tsbPrev" Text="Poprzednia" Comment="Previous" />
+    <Text Key="tsbPrev.Tooltip" Text="Idź do poprzedniej Strony" Comment="Go to previous page" />
+    <Text Key="tsbRefresh" Text="Odśwież" Comment="Refresh" />
+    <Text Key="tsbTwoPages" Text="Wyświetl Dwie Strony" Comment="Two Pages" />
+    <Text Key="tsbTwoPages.Tooltip" Text="Pokaż jedną / dwie Strony na raz" Comment="Show one or two pages" />
+    <Text Key="pageViewer" Text="Nie wybrano Komiksu" Comment="Nothing Selected" />
+    <Text Key="tsbOpen" Text="Otwórz" Comment="Open" />
+    <Text Key="PreviewOnlyForComics" Text="Podgląd jest dostępny tylko dla Komiksów" Comment="Preview is only available for Books" />
+  </Texts>
+</TR>

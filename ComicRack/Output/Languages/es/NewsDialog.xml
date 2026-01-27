@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="NewsDialog" CultureName="es">
+  <Texts>
+    <Text Key="btClose" Text="&amp;Cerrar" Comment="&amp;Close" />
+    <Text Key="btMarkRead" Text="Marcar todos como Leído" Comment="Mark all as Read" />
+    <Text Key="btRefresh" Text="Actualizar" Comment="Refresh" />
+    <Text Key="chkNewsStartup" Text="Buscar Noticias durante el arranque" Comment="Check for News on Startup" />
+    <Text Key="colTitle" Text="Título" Comment="Title" />
+    <Text Key="NewsDialog" Text="Ultimas noticias sobre ComicRack" Comment="Latest ComicRack News" />
+  </Texts>
+</TR>

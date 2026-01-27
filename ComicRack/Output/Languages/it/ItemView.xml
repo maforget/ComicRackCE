@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ItemView" CultureName="it">
+  <Texts>
+    <Text Key="AutoFitAllColumns" Text="Adatta tutte le Colonne" Comment="Auto Fit All Columns" />
+    <Text Key="AutoSizeAllColumns" Text="Dim. Automaticamente tutte le Colonne" Comment="Auto Size All Columns" />
+    <Text Key="AutoSizeColumn" Text="Dim. Automatica Colonna" Comment="Auto Size Column" />
+    <Text Key="miArrange" Text="Disponi per" Comment="Arrange by" />
+    <Text Key="miGroup" Text="Raggruppa per" Comment="Group by" />
+    <Text Key="miStack" Text="Raccogli per" Comment="Stack by" />
+    <Text Key="miViewDetails" Text="Dettagli" Comment="Details" />
+    <Text Key="miViewMode" Text="Vista" Comment="View" />
+    <Text Key="miViewThumbs" Text="Icone" Comment="Thumbnails" />
+    <Text Key="miViewTiles" Text="Miniature" Comment="Tiles" />
+    <Text Key="NotGrouped" Text="Non Raggruppato" Comment="Not Grouped" />
+    <Text Key="NotSorted" Text="Non Ordinato" Comment="Not Sorted" />
+    <Text Key="NotStacked" Text="Non Raccolto" Comment="Not Stacked" />
+    <Text Key="Layout" Text="Disposizione" Comment="Layout" />
+  </Texts>
+</TR>

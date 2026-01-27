@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListFolderFilesBrowser" CultureName="ja">
+  <Texts>
+    <Text Key="miAddFolderLibrary" Text="フォルダをライブラリに追加(&amp;A)" Comment="&amp;Add Folder to Library" />
+    <Text Key="miAddToFavorites" Text="フォルダをお気に入りに追加(&amp;A)" Comment="&amp;Add Folder to Favorites" />
+    <Text Key="miFavRefresh" Text="再読込み(&amp;R)" Comment="&amp;Refresh" />
+    <Text Key="miOpenWindow" Text="新規ウィンドウで開く(&amp;O)" Comment="&amp;Open in New Window" />
+    <Text Key="miRefresh" Text="再読込み(&amp;R)" Comment="&amp;Refresh" />
+    <Text Key="miRemove" Text="削除(&amp;R)..." Comment="&amp;Remove..." />
+    <Text Key="tbFavorites" Text="お気に入りの表示" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="お気に入り" Comment="Favorites" />
+    <Text Key="tbIncludeSubFolders" Text="全サブフォルダを含める" Comment="Include all Subfolders" />
+    <Text Key="tbOpenWindow" Text="新規ウィンドウ" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="このリストを新規ウィンドウで開く" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="再読込み" Comment="Refresh" />
+    <Text Key="miOpenTab" Text="新しいタブで開く(&amp;O)" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="新規タブ" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="このリストを新規タブで開く" Comment="Open current list in new Tab" />
+  </Texts>
+</TR>

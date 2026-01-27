@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DonationDialog" CultureName="pl">
+  <Texts>
+    <Text Key="btCancel" Text="Nie teraz" Comment="Skip for now" />
+    <Text Key="btOK" Text="OK" Comment="OK" />
+    <Text Key="DonationDialog" Text="Wesprzyj ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="labelThankYou" Text="Dziękuję za wspieranie dla ComicRack!" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="Donacja" Comment="Donate" />
+    <Text Key="labelStepOne" Text="Krok pierwszy:\nOdwiedź stronę ComicRack, by przekazać donację." Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="btDonate" Text="Donacja PayPal" Comment="Donation Page" />
+    <Text Key="btValidate" Text="Potwierdź" Comment="Validate" />
+    <Text Key="labelEmail" Text="Adres E-mail:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="Uruchomiłeś ComicRack po raz {0}!" Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="Zarządzasz za pomocją ComicRack biblioteką liczącą {0} pozycji!" Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="Nie można było nawiązać połączenia z serwerem ComicRack, by potwierdzić adres E-mail. Proszę sprawdź swoje połączenie internetowe lub ustawienia firewall!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+    <Text Key="labelStepTwo" Text="Krok drugi:\nWpisz swój e-mail użyty przy donacji i potwierdź.\nZarejestrowanie przez system twojej donacji może zająć kilka minut, także możesz wykonać ten krok trochę później." Comment="Step Two:\nEnter your donation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+    <Text Key="labelDonationText" Text="ComicRack to owoc setek godzin pracy jednego człowieka. Jeśli lubisz ten program, to rozważ proszę wsparcie finansowe jego twórcy.\n\nMinimalna kwota donacji to 5$ - cena kufla piwa w Austrii. Po zakończeniu procesu możesz aktywować swoją kopię programu adresem e-mail donatora i nigdy wiecej nie ujrzysz tej wiadomości. " Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nYou can think of this as paying me a few beers for all the work. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+  </Texts>
+</TR>

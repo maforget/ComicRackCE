@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PagesView" CultureName="fr">
+  <Texts>
+    <Text Key="miCopy" Text="&amp;Copier la page" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Inverser la sélection" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="Marquer comme &amp;Supprimée" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="Type de page" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="&amp;Ratraîchir" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="&amp;Tout sélectionner" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="Mettre en favoris" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="Supprimer favoris" Comment="Remove Bookmark" />
+    <Text Key="miResetOriginalOrder" Text="Remettre dans l'ordre d'origine" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="Rotation de la page" Comment="Page Rotation" />
+    <Text Key="miPagePosition" Text="Position de la page" Comment="Page Position" />
+    <Text Key="miPagePositionDefault" Text="Par défaut" Comment="Default" />
+    <Text Key="miPagePositionNear" Text="Near" Comment="Near" />
+    <Text Key="miPagePositionFar" Text="Far" Comment="Far" />
+    <Text Key="miMoveToTop" Text="Mettre au début" Comment="Move to Top" />
+    <Text Key="miMoveToBottom" Text="Mettre à la fin" Comment="Move to Bottom" />
+  </Texts>
+</TR>

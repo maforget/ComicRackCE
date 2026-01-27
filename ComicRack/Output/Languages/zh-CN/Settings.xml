@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Settings" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Application" Text="程序" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="光标移到底部时自动隐藏放大镜" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="Browser" Text="浏览器" Comment="Browser" />
+    <Text Key="CloseMinimizesToTray" Text="点击关闭按钮时最小化到系统托盘栏" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="淡入新载入的缩略图" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="在全屏模式下阅读时隐藏光标" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="以最好质量显示缩略图(较慢)" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="MinimizeToTray" Text="最小化时最小化到系统托盘" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="检查ComicRack的最新消息" Comment="Check for latest news on ComicRack" />
+    <Text Key="Reading" Text="阅读中" Comment="Reading" />
+    <Text Key="ShowSplash" Text="显示启动画面" Comment="Show Splash Screen" />
+    <Text Key="Starting ComicRack" Text="启动ComicRack" Comment="Starting ComicRack" />
+    <Text Key="Manga" Text="漫画" Comment="Manga" />
+    <Text Key="TrueRightToLeftReading" Text="纯正右到左阅读" Comment="True right to left reading" />
+    <Text Key="LeftRightMovementReversed" Text="同时交换左右翻页" Comment="Left/right movement is also reversed" />
+    <Text Key="Right to Left" Text="从右到左" Comment="Right to Left" />
+    <Text Key="AutoMinimalGui" Text="全屏时依然启用迷你用户界面" Comment="Fullscreen also toggles Minimal User Interface" />
+    <Text Key="PageChangeDelay" Text="页面过渡时延迟鼠标滚轮与光标" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="AnimatePanels" Text="动画展开和折叠面板" Comment="Animate expanding and collapsing Panels" />
+    <Text Key="ResetZoomOnPageChange" Text="切换页面时重置缩放比例为100%" Comment="Zoom is reset to 100% on page change" />
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="总是显示浏览器停靠控制条" Comment="Always display Browser Docking Grip" />
+    <Text Key="DogEarThumbnails" Text="卷角选中书籍缩略图" Comment="Selected Thumbnails have dog-ear" />
+    <Text Key="BlendWhilePaging" Text="快速翻页时依然平滑翻页" Comment="Blend animation also while fast paging" />
+    <Text Key="ScrollingDoesBrowse" Text="滚动到页边时切换到新页" Comment="Scrolling to page margin browses to new pages" />
+    <Text Key="Import &amp; Export" Text="导入与导出" Comment="Import &amp; Export" />
+    <Text Key="UpdateWebComicsStartup" Text="更新在线漫画" Comment="Update Web Comics" />
+    <Text Key="ShowSearchLinks" Text="显示搜索链接" Comment="Show Search Links" />
+    <Text Key="OpenInNewTab" Text="在新标签页中打开" Comment="Open in new Tab" />
+    <Text Key="LocalQuickSearch" Text="每个列表拥有独立的快速查找设置" Comment="Each List has own Quick Search settings" />
+    <Text Key="NumericRatingThumbnails" Text="缩略图显示数字评分" Comment="Thumbnails display numeric ratings" />
+    <Text Key="ShowQuickOpen" Text="没有打开书籍时显示快速打开" Comment="Show Quick Open if no book is opened" />
+    <Text Key="AutoNavigateComics" Text="阅读到书籍开头或结尾后自动打开上一本/下一本" Comment="Reading beyond the start or end opens the next Book" />
+    <Text Key="CloseBrowserOnOpen" Text="打开新书籍时关闭浏览器" Comment="Close the Browser when a new Book is opened" />
+    <Text Key="CatalogOnlyForFileless" Text="只在无文件书籍显示概况栏" Comment="Show Catalog fields only for fileless Books" />
+    <Text Key="Opening a Book" Text="打开书籍" Comment="Opening a Book" />
+    <Text Key="OpenLastFile" Text="重新打开上次阅读的书籍" Comment="Reopen Books from last session" />
+    <Text Key="OpenLastPage" Text="打开书籍的上次阅读页面" Comment="Open the Book at the page where it was closed" />
+    <Text Key="ScanStartup" Text="重新扫描书籍文件夹查找新书籍" Comment="Rescan the Book Folders for new Books" />
+    <Text Key="ShowToolTips" Text="为浏览器中显示书籍工具提示" Comment="Show Tooltips for Books in the Browser" />
+    <Text Key="AddToLibraryOnOpen" Text="将打开的文件添加到书库" Comment="Opened Files are added to the Library" />
+    <Text Key="ShowMainMenuNoComicOpen" Text="没有打开书籍时显示主菜单" Comment="Show Main Menu if no Book is open" />
+    <Text Key="InformationCover3D" Text="在书籍信息窗口中显示3D封面" Comment="3D display of covers in Book Info Dialog" />
+    <Text Key="ExportedListsContainFilenames" Text="导出包含文件名的书籍列表" Comment="Exported Book Lists contain filenames" />
+    <Text Key="ZoomInOutOnPageChange" Text="切换页面时显示缩放动画" Comment="During page change a zoom out is done" />
+  </Texts>
+</TR>

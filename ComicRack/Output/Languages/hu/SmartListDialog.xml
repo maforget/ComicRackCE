@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SmartListDialog" CultureName="hu">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Mégse" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelMatch" Text="Megfelel" Comment="Match" />
+    <Text Key="MatchMode" Text="minden|bármely" Comment="All|Any" />
+    <Text Key="btApply" Text="&amp;Alkalmaz" Comment="&amp;Apply" />
+    <Text Key="chkLimit" Text="Korlátozás" Comment="Limit to" />
+    <Text Key="cbLimitType.Item0" Text="képregény" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="FullLibrary" Text="Teljes könyvtár" Comment="Full Library" />
+    <Text Key="labelSubRules" Text="a következő szabályok közül:" Comment="of the following rules:" />
+    <Text Key="btPrev" Text="&amp;Előző" Comment="&amp;Previous" />
+    <Text Key="btNext" Text="&amp;Következő" Comment="&amp;Next" />
+    <Text Key="labelRules" Text="szabálynak a következők közül:" Comment="of the following rules on" />
+    <Text Key="SmartListDialog" Text="Okos lista szerkesztése" Comment="Edit Smart List" />
+    <Text Key="chkQuickOpen" Text="Gyors megnyitás" Comment="Quick Open" />
+    <Text Key="labelName" Text="Név:" Comment="Name:" />
+    <Text Key="labelNotes" Text="Megjegyzés:" Comment="Notes:" />
+  </Texts>
+</TR>

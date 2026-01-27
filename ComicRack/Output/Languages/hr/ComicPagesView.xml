@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPagesView" CultureName="hr">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Razvrstano po {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Promjena veličine slikica" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Grupirano po {0}" Comment="Grouped by {0}" />
+    <Text Key="miCopy" Text="&amp;Kopiranje stranice" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Okretanje označenog" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="Označavanje kao izbrisano" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="Vrsta stranice" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="&amp;Označavanje" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="Označavanje &amp;svega" Comment="Select &amp;All" />
+    <Text Key="miViewDetails" Text="&amp;Detalji" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="S&amp;likice" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Pločice" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Ništa" Comment="None" />
+    <Text Key="NotArranged" Text="Nerazvrstano" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Negrupirano" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Grupirano" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="Grupiranje svezaka po različitim mjerilima" Comment="Group eComics by different criteria" />
+    <Text Key="tbbSort" Text="Razvrstavanje" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="Promjena načina razvrstavanja svezaka" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbView" Text="Pogledi" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="Promjena načina prikaza svezaka" Comment="Change how eComics are displayed" />
+    <Text Key="tbFilter" Text="Filtriranje stranica" Comment="Page Filter" />
+  </Texts>
+</TR>

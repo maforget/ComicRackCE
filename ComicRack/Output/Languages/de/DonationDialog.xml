@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DonationDialog" CultureName="de">
+  <Texts>
+    <Text Key="btCancel" Text="Später" Comment="Skip for now" />
+    <Text Key="btOK" Text="OK" Comment="OK" />
+    <Text Key="DonationDialog" Text="Unterstützen sie ComicRack..." Comment="Support ComicRack..."/>
+    <Text Key="labelDonationText"
+          Text="In ComicRack stecken hunderte Stunden Arbeit und es ist nicht das Produkt einer großen Software Firma. Wenn Sie ComicRack benutzen und Spass damit haben, wäre es nett wenn Sie mit einer Spende etwas zurückgeben.\n\nBetrachten Sie ihre Spende als eine Einladung auf ein paar Bier für all die Arbeit. Nachdem die Spende abgeschlossen ist, können sie ComicRack mit ihrer Spender-EMail aktivieren und werden diese Meldung nicht mehr sehen.\n\nComicRack ist auch ohne eine Spende uneingeschränkt verwendbar."
+          Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nYou can think of this as paying me a few beers for all the work. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation."/>
+    <Text Key="labelThankYou" Text="Danke, dass Sie ComicRack unterstützen!" Comment="Thank you for supporting ComicRack!"/>
+    <Text Key="groupDonate" Text="Spenden" Comment="Donate"/>
+    <Text Key="labelStepOne" Text="Schritt 1:\nBesuchen sie ComicRack im Internet um zu spenden" Comment="Step One:\nVisit ComicRack on the web to donate"/>
+    <Text Key="labelStepTwo"
+          Text="Schritt 2:\nGeben Sie ihre Spender-Email Adresse ein und überprüfen Sie sie.\nEs kann einige Minuten dauern bis ihre Spende registriert wird, also können Sie diesen Schritt auch etwas später ausführen."
+          Comment="Step Two:\nEnter your donation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later."/>
+    <Text Key="btDonate" Text="Spenden" Comment="Donation Page"/>
+    <Text Key="btValidate" Text="Überprüfen" Comment="Validate"/>
+    <Text Key="labelEmail" Text="Email-Adresse:" Comment="Email Address:"/>
+    <Text Key="TriggerRun" Text="Sie haben ComicRack bereits {0} mal gestarted!" Comment="You have started ComicRack {0} times!"/>
+    <Text Key="TriggerBooks" Text="Sie verwalten {0} Bücher mit ComicRack!" Comment="You are managing {0} books with ComicRack!"/>
+    <Text Key="ServerError" Text="Der ComicRack Server konnte nicht kontaktiert werden um Ihre Email-Adress zu überprüfen. Bitte stellen Sie sicher, dass Sie mit dem Internet verbunden sind!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!"/>
+  </Texts>
+</TR>

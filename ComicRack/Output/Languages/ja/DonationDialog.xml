@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DonationDialog" CultureName="ja">
+  <Texts>
+    <Text Key="btCancel" Text="ただちにスキップ" Comment="Skip for now" />
+    <Text Key="btOK" Text="OK" Comment="OK" />
+    <Text Key="DonationDialog" Text="ComicRack をサポート..." Comment="Support ComicRack..." />
+    <Text Key="labelDonationText" Text="ComicRack は何百時間もの作業の成果です。そして、大きいソフトウェア カンパニーなどを後ろ盾にしているわけでもありません。あなたが ComicRack を使用して楽しんでいるならば、それに対し何らかのお返しをすると考えてください。\n\n\n最小の寄付額は 5ドルです - それで私はビールが飲めます。寄付をしてくだされば、寄付用 Eメール アドレスでそのコピーのアクチベーションをおこない、このメッセージが二度と表示されないようできます。\n\n寄付をおこなわない場合でも ComicRack のすべての機能を使用することができます。" Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nThe minimum donation is $5 - paying me a beer. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+    <Text Key="labelThankYou" Text="ComicRack へのサポートに感謝します！" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="寄付" Comment="Donate" />
+    <Text Key="labelStepOne" Text="ステップ 1:\nComicRack の寄付用ウェブ ページに接続" Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="labelStepTwo" Text="ステップ 2:\n寄付用の Eメールを入力して確認を行ってください。\nあなたの寄付登録が済むまで数分かかります。このステップは少し時間をおいてから実行してください。" Comment="Step Two:\nEnter your dontation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+    <Text Key="btDonate" Text="寄付用ページ" Comment="Donation Page" />
+    <Text Key="btValidate" Text="確認" Comment="Validate" />
+    <Text Key="labelEmail" Text="Eメール アドレス:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="あなたは ComicRack を {0} 回起動しました！" Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="ComicRack で {0} 冊を管理しています！" Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="ComicRack のサーバーに接続できないため Eメール アドレスの確認がおこなえません。. インターネット接続をチェックしてください！" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+  </Texts>
+</TR>

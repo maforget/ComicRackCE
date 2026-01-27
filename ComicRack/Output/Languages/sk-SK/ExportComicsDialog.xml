@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ExportComicsDialog" CultureName="sk-SK">
+  <Texts>
+    <Text Key="ExportComicsDialog" Text="Exportovať eComic" Comment="Export eComics" />
+    <Text Key="grpExportLocation" Text="Lokácia exportu" Comment="Export Location" />
+    <Text Key="grpFileFormat" Text="Formát súboru" Comment="File Format" />
+    <Text Key="grpPageFormat" Text="Formát strán" Comment="Page Format" />
+    <Text Key="grpFileNaming" Text="Pomenovanie súboru" Comment="File Naming" />
+    <Text Key="grpImageProcessing" Text="Práca s obrázkom" Comment="Image Processing" />
+    <Text Key="btRemovePreset" Text="Odstrániť" Comment="Remove" />
+    <Text Key="labelExportTo" Text="Exportovať do:" Comment="Export to:" />
+    <Text Key="cbExport.Item0" Text="Vybrať priečinok" Comment="Select a Folder" />
+    <Text Key="cbExport.Item1" Text="Rovnaký priečinok ako pôvodný eComic" Comment="Same Folder as the original eComic" />
+    <Text Key="cbExport.Item2" Text="Rovnaký priečinok a nahradiť v knižnici" Comment="Same Folder and replace in Library" />
+    <Text Key="labelFolder" Text="Priečinok:" Comment="Folder:" />
+    <Text Key="btChooseFolder" Text="Výber..." Comment="Choose..." />
+    <Text Key="chkDeleteOriginal" Text="Zmazať pôvodný eComic po úspešnom exportovaní" Comment="Delete original eComic after successful Export" />
+    <Text Key="chkAddNewToLibrary" Text="Pridať novovytvorený eComic do knižnice" Comment="Add newly created eComic to Library" />
+    <Text Key="labelComicFormat" Text="Formát eComicsu" Comment="eComic Format" />
+    <Text Key="cbComicFormat.Item0" Text="Rovnaké ako originál" Comment="Same as Original" />
+    <Text Key="labelCompression" Text="Kompresia" Comment="Compression" />
+    <Text Key="cbCompression.Item0" Text="Žiadne" Comment="None" />
+    <Text Key="cbCompression.Item1" Text="Stredná" Comment="Medium" />
+    <Text Key="cbCompression.Item2" Text="Silná" Comment="Strong" />
+    <Text Key="chkEmbedComicInfo" Text="Vnoriť info komiksu" Comment="Embed Comic Info" />
+    <Text Key="labelRemovePageFilter" Text="Odstrániť strany:" Comment="Remove Pages:" />
+    <Text Key="labelPageFormat" Text="Formát strán" Comment="Page Format" />
+    <Text Key="cbPageFormat.Item0" Text="Uchovať originál" Comment="Preserve Original" />
+    <Text Key="labelPageQuality" Text="Kvalita:" Comment="Quality:" />
+    <Text Key="labelPageResize" Text="Zmeniť veľkosť:" Comment="Resize:" />
+    <Text Key="cbPageResize.Item0" Text="Uchovať originál" Comment="Preserve Original" />
+    <Text Key="cbPageResize.Item1" Text="Prispôsobiť V&amp;Š" Comment="Best fit Width &amp; Height" />
+    <Text Key="cbPageResize.Item2" Text="Nastaviť šírku" Comment="Set Width" />
+    <Text Key="cbPageResize.Item3" Text="Nastaviť výšku" Comment="Set Height" />
+    <Text Key="labelX" Text="x" Comment="x" />
+    <Text Key="chkDontEnlarge" Text="Nezväčšovať" Comment="Don't enlarge" />
+    <Text Key="chkSplitDouble" Text="Rozdeliť dvojstrany" Comment="Split Double Pages" />
+    <Text Key="SelectExportFolder" Text="Prosím vyberte priečinok pre export" Comment="Please select the Export Folder" />
+    <Text Key="btCancel" Text="&amp;Zrušiť" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelNamingTemplate" Text="Vzor:" Comment="Template:" />
+    <Text Key="labelCustomNaming" Text="Vlastné:" Comment="Custom:" />
+    <Text Key="labelCustomStartIndex" Text="Štart:" Comment="Start:" />
+    <Text Key="cbNamingTemplate.Item0" Text="Názov súboru" Comment="Filename" />
+    <Text Key="cbNamingTemplate.Item1" Text="Zosnímanie eComicsu" Comment="eComic Caption" />
+    <Text Key="cbNamingTemplate.Item2" Text="Vlastné" Comment="Custom" />
+    <Text Key="chkOverwrite" Text="Prepísať existujúce súbory" Comment="Overwrite existing Files" />
+    <Text Key="ComicRackExportPresets" Text="ComicRack presety" Comment="ComicRack Presets" />
+    <Text Key="UserExportPresets" Text="Použiť presety" Comment="User Presets" />
+    <Text Key="labelSharpening" Text="Zostrovanie" Comment="Sharpening" />
+    <Text Key="chkAutoContrast" Text="Automaticky prispôsobiť kontrast" Comment="Automatic Contrast Enhancement" />
+    <Text Key="labelSaturation" Text="Sýtosť" Comment="Saturation" />
+    <Text Key="labelBrightness" Text="Jas" Comment="Brightness" />
+    <Text Key="labelContrast" Text="Kontrast" Comment="Contrast" />
+    <Text Key="labelImagProcessingSource" Text="Zdroj:" Comment="Source:" />
+    <Text Key="labelImageProcessingCustom" Text="Vlastné:" Comment="Custom:" />
+    <Text Key="cbImageProcessingSource.Item0" Text="Vlastné nastavenia" Comment="Custom Settings" />
+    <Text Key="cbImageProcessingSource.Item1" Text="Použiť pôvodné" Comment="eComic settings are applied" />
+    <Text Key="chkIgnoreErrorPages" Text="Ignorovať chybné strany a pokračovať v exportovaní" Comment="Ignore Pages with errors and continue export" />
+    <Text Key="cbExport.Item3" Text="Opýtať sa pred exportovaním" Comment="Ask before Export" />
+    <Text Key="chkCombine" Text="Spojiť vybrané súbory" Comment="Combine selected Files" />
+    <Text Key="btSavePreset" Text="Uložiť preset..." Comment="Save Preset..." />
+    <Text Key="labelIncludePages" Text="Zahrnúť strany:" Comment="Include Pages:" />
+  </Texts>
+</TR>

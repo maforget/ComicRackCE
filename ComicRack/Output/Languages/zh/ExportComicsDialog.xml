@@ -1,0 +1,64 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ExportComicsDialog" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="ExportComicsDialog" Text="導出漫畫" Comment="Export eComics" />
+    <Text Key="grpExportLocation" Text="導出位置" Comment="Export Location" />
+    <Text Key="grpFileFormat" Text="文件格式" Comment="File Format" />
+    <Text Key="grpPageFormat" Text="頁面格式" Comment="Page Format" />
+    <Text Key="grpFileNaming" Text="文件命名" Comment="File Naming" />
+    <Text Key="grpImageProcessing" Text="圖片處理" Comment="Image Processing" />
+    <Text Key="btRemovePreset" Text="刪除" Comment="Remove" />
+    <Text Key="labelExportTo" Text="導出到：" Comment="Export to:" />
+    <Text Key="cbExport.Item0" Text="選擇文件夾" Comment="Select a Folder" />
+    <Text Key="cbExport.Item1" Text="與原始漫畫相同的文件夾" Comment="Same Folder as the original eComic" />
+    <Text Key="cbExport.Item2" Text="相同文件夾並更新庫" Comment="Same Folder and replace in Library" />
+    <Text Key="cbExport.Item3" Text="導出前總是詢問" Comment="Ask before Export" />
+    <Text Key="labelFolder" Text="文件夾：" Comment="Folder:" />
+    <Text Key="btChooseFolder" Text="選擇..." Comment="Choose..." />
+    <Text Key="chkDeleteOriginal" Text="成功導出後刪除原始漫畫" Comment="Delete original eComic after successful Export" />
+    <Text Key="chkAddNewToLibrary" Text="將新創建的漫畫加入到媒體庫" Comment="Add newly created eComic to Library" />
+    <Text Key="labelComicFormat" Text="漫畫格式" Comment="eComic Format" />
+    <Text Key="cbComicFormat.Item0" Text="與原始文件相同" Comment="Same as Original" />
+    <Text Key="labelCompression" Text="壓縮" Comment="Compression" />
+    <Text Key="cbCompression.Item0" Text="無" Comment="None" />
+    <Text Key="cbCompression.Item1" Text="中等" Comment="Medium" />
+    <Text Key="cbCompression.Item2" Text="加強" Comment="Strong" />
+    <Text Key="chkEmbedComicInfo" Text="嵌入漫畫信息" Comment="Embed Comic Info" />
+    <Text Key="labelRemovePageFilter" Text="刪除頁面：" Comment="Remove Pages:" />
+    <Text Key="labelPageFormat" Text="頁面格式" Comment="Page Format" />
+    <Text Key="cbPageFormat.Item0" Text="保持原始" Comment="Preserve Original" />
+    <Text Key="labelPageQuality" Text="質量：" Comment="Quality:" />
+    <Text Key="labelPageResize" Text="更改大小：" Comment="Resize:" />
+    <Text Key="cbPageResize.Item0" Text="保持原始" Comment="Preserve Original" />
+    <Text Key="cbPageResize.Item1" Text="最佳適應寬&amp;高" Comment="Best fit Width &amp; Height" />
+    <Text Key="cbPageResize.Item2" Text="設置寬度" Comment="Set Width" />
+    <Text Key="cbPageResize.Item3" Text="設置高度" Comment="Set Height" />
+    <Text Key="labelX" Text="x" Comment="x" />
+    <Text Key="chkDontEnlarge" Text="不放大" Comment="Don't enlarge" />
+    <Text Key="chkSplitDouble" Text="分開雙頁面" Comment="Split Double Pages" />
+    <Text Key="SelectExportFolder" Text="請選擇導出文件夾" Comment="Please select the Export Folder" />
+    <Text Key="btCancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="確定" Comment="&amp;OK" />
+    <Text Key="labelNamingTemplate" Text="模版:" Comment="Template:" />
+    <Text Key="labelCustomNaming" Text="自定義:" Comment="Custom:" />
+    <Text Key="labelCustomStartIndex" Text="開始：" Comment="Start:" />
+    <Text Key="cbNamingTemplate.Item0" Text="文件名" Comment="Filename" />
+    <Text Key="cbNamingTemplate.Item1" Text="漫畫說明" Comment="eComic Caption" />
+    <Text Key="cbNamingTemplate.Item2" Text="自定義" Comment="Custom" />
+    <Text Key="chkOverwrite" Text="覆蓋已存在的文件" Comment="Overwrite existing Files" />
+    <Text Key="chkCombine" Text="組合所選文件" Comment="Combine selected Files" />
+    <Text Key="ComicRackExportPresets" Text="ComicRack 預設" Comment="ComicRack Presets" />
+    <Text Key="UserExportPresets" Text="用戶預設" Comment="User Presets" />
+    <Text Key="labelSharpening" Text="銳化" Comment="Sharpening" />
+    <Text Key="chkAutoContrast" Text="自動增強對比度" Comment="Automatic Contrast Enhancement" />
+    <Text Key="labelSaturation" Text="飽和度" Comment="Saturation" />
+    <Text Key="labelBrightness" Text="亮度" Comment="Brightness" />
+    <Text Key="labelContrast" Text="對比度" Comment="Contrast" />
+    <Text Key="labelImagProcessingSource" Text="源:" Comment="Source:" />
+    <Text Key="labelImageProcessingCustom" Text="自定義:" Comment="Custom:" />
+    <Text Key="cbImageProcessingSource.Item0" Text="自定義設置" Comment="Custom Settings" />
+    <Text Key="cbImageProcessingSource.Item1" Text="漫畫設置已應用" Comment="eComic settings are applied" />
+    <Text Key="chkIgnoreErrorPages" Text="忽略有錯誤的頁面並繼續導出" Comment="Ignore Pages with errors and continue export" />
+    <Text Key="btSavePreset" Text="保存設定..." Comment="Save Preset..." />
+  </Texts>
+</TR>

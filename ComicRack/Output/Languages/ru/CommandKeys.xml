@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CommandKeys" CultureName="ru">
+  <Texts>
+    <Text Key="A" Text="A" Comment="A" />
+    <Text Key="Add" Text="NumPad +" Comment="Add" />
+    <Text Key="Alt" Text="Alt" Comment="Alt" />
+    <Text Key="B" Text="B" Comment="B" />
+    <Text Key="C" Text="C" Comment="C" />
+    <Text Key="Ctrl" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="D" Text="D" Comment="D" />
+    <Text Key="D0" Text="D0" Comment="D0" />
+    <Text Key="D1" Text="D1" Comment="D1" />
+    <Text Key="D2" Text="D2" Comment="D2" />
+    <Text Key="D3" Text="D3" Comment="D3" />
+    <Text Key="D4" Text="D4" Comment="D4" />
+    <Text Key="D5" Text="D5" Comment="D5" />
+    <Text Key="D6" Text="D6" Comment="D6" />
+    <Text Key="D7" Text="D7" Comment="D7" />
+    <Text Key="D8" Text="D8" Comment="D8" />
+    <Text Key="D9" Text="D9" Comment="D9" />
+    <Text Key="Decimal" Text="NumPad ." Comment="Decimal" />
+    <Text Key="Divide" Text="NumPad /" Comment="Divide" />
+    <Text Key="Down" Text="Стрелка вниз" Comment="Down" />
+    <Text Key="E" Text="E" Comment="E" />
+    <Text Key="End" Text="End" Comment="End" />
+    <Text Key="Enter" Text="Enter" Comment="Enter" />
+    <Text Key="Escape" Text="Escape" Comment="Escape" />
+    <Text Key="F" Text="F" Comment="F" />
+    <Text Key="G" Text="G" Comment="G" />
+    <Text Key="H" Text="H" Comment="H" />
+    <Text Key="Home" Text="Home" Comment="Home" />
+    <Text Key="I" Text="I" Comment="I" />
+    <Text Key="J" Text="J" Comment="J" />
+    <Text Key="K" Text="K" Comment="K" />
+    <Text Key="L" Text="L" Comment="L" />
+    <Text Key="Left" Text="Стрелка влево" Comment="Left" />
+    <Text Key="M" Text="M" Comment="M" />
+    <Text Key="MediaNextTrack" Text="MediaNextTrack" Comment="MediaNextTrack" />
+    <Text Key="MediaPlayPause" Text="MediaPlayPause" Comment="MediaPlayPause" />
+    <Text Key="MediaPreviousTrack" Text="MediaPreviousTrack" Comment="MediaPreviousTrack" />
+    <Text Key="MediaStop" Text="MediaStop" Comment="MediaStop" />
+    <Text Key="MouseButton4" Text="4 кнопка мыши" Comment="MouseButton4" />
+    <Text Key="MouseButton5" Text="5 кнопка мыши" Comment="MouseButton5" />
+    <Text Key="MouseDoubleButton4" Text="Двойной клик 4 кнопкой" Comment="MouseDoubleButton4" />
+    <Text Key="MouseDoubleButton5" Text="Двойной клик 5 кнопкой" Comment="MouseDoubleButton5" />
+    <Text Key="MouseDoubleLeft" Text="Двойной клик левой" Comment="MouseDoubleLeft" />
+    <Text Key="MouseDoubleMiddle" Text="Двойной клик средней" Comment="MouseDoubleMiddle" />
+    <Text Key="MouseDoubleRight" Text="Двойной клик правой" Comment="MouseDoubleRight" />
+    <Text Key="MouseLeft" Text="Левая кнопка мыши" Comment="MouseLeft" />
+    <Text Key="MouseMiddle" Text="Средняя кнопка мыши" Comment="MouseMiddle" />
+    <Text Key="MouseRight" Text="Правая кнопка мыши" Comment="MouseRight" />
+    <Text Key="MouseTiltLeft" Text="MouseTiltLeft" Comment="MouseTiltLeft" />
+    <Text Key="MouseTiltRight" Text="MouseTiltRight" Comment="MouseTiltRight" />
+    <Text Key="MouseWheelDown" Text="Колесико мыши вниз" Comment="MouseWheelDown" />
+    <Text Key="MouseWheelUp" Text="Колесико мыши вверх" Comment="MouseWheelUp" />
+    <Text Key="Multiply" Text="NumPad *" Comment="Multiply" />
+    <Text Key="N" Text="N" Comment="N" />
+    <Text Key="None" Text="Ничего" Comment="None" />
+    <Text Key="NumPad0" Text="NumPad0" Comment="NumPad0" />
+    <Text Key="NumPad1" Text="NumPad1" Comment="NumPad1" />
+    <Text Key="NumPad2" Text="NumPad2" Comment="NumPad2" />
+    <Text Key="NumPad3" Text="NumPad3" Comment="NumPad3" />
+    <Text Key="NumPad4" Text="NumPad4" Comment="NumPad4" />
+    <Text Key="NumPad5" Text="NumPad5" Comment="NumPad5" />
+    <Text Key="NumPad6" Text="NumPad6" Comment="NumPad6" />
+    <Text Key="NumPad7" Text="NumPad7" Comment="NumPad7" />
+    <Text Key="NumPad8" Text="NumPad8" Comment="NumPad8" />
+    <Text Key="NumPad9" Text="NumPad9" Comment="NumPad9" />
+    <Text Key="O" Text="O" Comment="O" />
+    <Text Key="P" Text="P" Comment="P" />
+    <Text Key="PageDown" Text="PageDown" Comment="PageDown" />
+    <Text Key="PageUp" Text="PageUp" Comment="PageUp" />
+    <Text Key="Q" Text="Q" Comment="Q" />
+    <Text Key="R" Text="R" Comment="R" />
+    <Text Key="Right" Text="Стрелка вправо" Comment="Right" />
+    <Text Key="S" Text="S" Comment="S" />
+    <Text Key="Shift" Text="Shift" Comment="Shift" />
+    <Text Key="Space" Text="Space" Comment="Space" />
+    <Text Key="Subtract" Text="NumPad -" Comment="Subtract" />
+    <Text Key="T" Text="T" Comment="T" />
+    <Text Key="Tab" Text="Tab" Comment="Tab" />
+    <Text Key="U" Text="U" Comment="U" />
+    <Text Key="Up" Text="Стрелка вверх" Comment="Up" />
+    <Text Key="V" Text="V" Comment="V" />
+    <Text Key="W" Text="W" Comment="W" />
+    <Text Key="X" Text="X" Comment="X" />
+    <Text Key="Y" Text="Y" Comment="Y" />
+    <Text Key="Z" Text="Z" Comment="Z" />
+    <Text Key="Zoom" Text="Zoom" Comment="Zoom" />
+  </Texts>
+</TR>

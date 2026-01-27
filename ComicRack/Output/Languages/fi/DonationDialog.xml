@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DonationDialog" CultureName="fi">
+  <Texts>
+    <Text Key="btCancel" Text="Ohita" Comment="Skip for now" />
+    <Text Key="btOK" Text="OK" Comment="OK" />
+    <Text Key="DonationDialog" Text="Tue ComicRackia..." Comment="Support ComicRack..." />
+    <Text Key="labelDonationText" Text="ComicRack on vaatinut satoja työtunteja, eikä sen takana ole suurta ohjelmistoyritystä. Jos käytät ComicRackia ja vieläpä pidät siitä, harkitse pientä lahjoitusta sen tekijälle.\n\nPienin lahjoitus on 5$ - sillä maksaa yhden oluen. Voit aktivoida ComicRackin lahjoitukseen käyttämälläsi email-osoitteella minkä jälkeen et näe tätä viestiä enää.\n\nComicRack pysyy täysin toimintakykyisenä, vaikka et tekisikään lahjoitusta." Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nThe minimum donation is $5 - paying me a beer. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+    <Text Key="labelThankYou" Text="ComicRack kiittää tuestasi!" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="Lahjoita" Comment="Donate" />
+    <Text Key="labelStepOne" Text="Kohta Yksi:\nMene ComicRackin kotisivulle tekemään lahjoitus" Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="labelStepTwo" Text="Kohta Kaksi:\nOdota muutama minuutti, että lahjoitus ehtii rekisteröityä.\nAnna lahjoitusta tehdessäsi käyttämä email-osoite tarkastusta varten." Comment="Step Two:\nEnter your donation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+    <Text Key="btDonate" Text="Lahjoitussivu" Comment="Donation Page" />
+    <Text Key="btValidate" Text="Vahvista" Comment="Validate" />
+    <Text Key="labelEmail" Text="Email-osoite:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="Olet avannut ComicRackin {0} kertaa!" Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="Hallitset {0} kirjaa ComicRackilla!" Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="ComicRackin palvelimeen ei saatu yhteyttä tarkistusta varten. Tarkista että nettiyhteytesi toimii!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+  </Texts>
+</TR>

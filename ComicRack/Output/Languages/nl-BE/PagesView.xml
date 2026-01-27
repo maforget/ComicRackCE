@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PagesView" CultureName="nl-BE">
+  <Texts>
+    <Text Key="miCopy" Text="&amp;Kopieer Bladzijde" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Selectie omkeren" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="Markeer als &amp;verwijdert" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="BladzijdeType" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="&amp;Vernieuwen" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="Selecteer &amp;Alles" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="Plaats Bladwijzer" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="Verwijder Bladwijzer" Comment="Remove Bookmark" />
+    <Text Key="miResetOriginalOrder" Text="Herzet naar originele rangorde" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="Bladrotatie" Comment="Page Rotation" />
+    <Text Key="miPagePosition" Text="Bladpositie" Comment="Page Position" />
+    <Text Key="miPagePositionDefault" Text="Standaard" Comment="Default" />
+    <Text Key="miPagePositionNear" Text="Dichtbij" Comment="Near" />
+    <Text Key="miPagePositionFar" Text="Ver" Comment="Far" />
+    <Text Key="miMoveToTop" Text="Bovenaan" Comment="Move to Top" />
+    <Text Key="miMoveToBottom" Text="Onderaan" Comment="Move to Bottom" />
+  </Texts>
+</TR>

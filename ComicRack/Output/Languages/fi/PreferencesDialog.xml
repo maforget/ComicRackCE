@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PreferencesDialog" CultureName="fi">
+  <Texts>
+    <Text Key="btAddFolder" Text="&amp;Lisää..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="Lisää kansio..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="&amp;Käytä" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="&amp;Peruuta" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="&amp;Vaihda..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="Tyhjennä" Comment="Clear" />
+    <Text Key="btClearInternetCache" Text="Tyhjennä" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="Tyhjennä" Comment="Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="&amp;Poista" Comment="&amp;Remove" />
+    <Text Key="btOpenFolder" Text="Avaa tiedosto" Comment="Open" />
+    <Text Key="btResetColor" Text="&amp;Palauta" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="Palauta" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="Palauta &amp;oletukset" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="Tarkista" Comment="Scan" />
+    <Text Key="chkHighQualityDisplay" Text="&amp;Korkea laatu" Comment="&amp;High Quality" />
+    <Text Key="chkAnamorphicScaling" Text="Anamorfinen skaalaus" Comment="Anamorphic Scaling" />
+    <Text Key="chkAutoContrast" Text="Automaattinen &amp;kontrastin parannus" Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="Poista automaattisesti puuttuvat tiedostot kirjastosta haun yhteydessä" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="&amp;Sivuja [MB]" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableInternetCache" Text="&amp;Netti [MB]" Comment="&amp;Internet [MB]" />
+    <Text Key="chkDisableScripting" Text="Kaikki skriptit pois käytöstä" Comment="Disable all Scripts" />
+    <Text Key="chkEnableThumbnailCache" Text="&amp;Kuvakkeet [MB]" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkLookForShared" Text="Etsi paikallisia sarjakuvajakoja" Comment="Look for local Comic Shares" />
+    <Text Key="chkAutoConnectShares" Text="Yhdistä automaattisesti" Comment="Connect automatically" />
+    <Text Key="chkOverwriteAssociations" Text="Ylikirjoita nykyiset tiedostosidokset mieluummin kuin käytä 'Avataan Sovelluksessa ...'" Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="Vaadi salasana:" Comment="Require Password:" />
+    <Text Key="chkClientsCanEdit" Text="Asiakas voi muokata eSarjista" Comment="Clients can edit eComics" />
+    <Text Key="chkClientsCanExport" Text="Asiakas voi lähettää (export) eSarjiksen" Comment="Clients can export eComics" />
+    <Text Key="chkUpdateComicFiles" Text="Tallenna tiedot eSarjisten omiin tiedostoihin" Comment="Allow writing of eComic info into files" />
+    <Text Key="chkAutoUpdateComicFiles" Text="eSarjiksen tiedostot päivitetään automaattisesti" Comment="eComic files are updated automatically" />
+    <Text Key="colOptions" Text="Valikko" Comment="Options" />
+    <Text Key="groupComicFolders" Text="eSarjis-kansiot" Comment="eComic Folders" />
+    <Text Key="groupDiskCache" Text="Levyvälimuisti" Comment="Disk Cache" />
+    <Text Key="groupMessages" Text="Piilotetut ilmoitukset" Comment="Hidden Messages" />
+    <Text Key="groupOtherComics" Text="eSarjikset" Comment="eComics" />
+    <Text Key="groupOverlays" Text="Päälliset" Comment="Overlays" />
+    <Text Key="grpIntegration" Text="Liitä tiedostoselaimeen" Comment="Explorer Integration" />
+    <Text Key="labelCheckedFormats" Text="Valitut tiedostotyypit avataan ComicRackissa" Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelExcludeCover" Text="Puolipisteellä erotettu lista niistä kuvanimistä joita ei käytetä kannen kuvakkeina:" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelLanguage" Text="Vaihda käyttöliittymän kieli (vaatii uudelleenkäynnistyksen):" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlaySize" Text="Koko:" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="Näyttääksesi piilotetut ilmoitukset paina" Comment="To reshow hidden messages press" />
+    <Text Key="labelScriptPaths" Text="Puolipistein eroteltu lista skriptien vaatimista kirjastoista (esim. python-kirjastot):" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="Jaettu nimi:" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="Valittuja kansioita tarkkaillaan päivitysten varalta (nimeämiset, siirrot) ohjelman ollessa käynnissä." Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="Asetukset" Comment="Preferences" />
+    <Text Key="Scan" Text="Tarkista" Comment="Scan" />
+    <Text Key="Scanning" Text="Tarkistaa '{0}' ..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectComicFolder" Text="Valitse eSarjisten sijaintikansio" Comment="Please select a folder containing eComics" />
+    <Text Key="SelectScriptFolder" Text="Valitse kansio jossa skriptikirjasto sijaitsee" Comment="Please select a script library folder" />
+    <Text Key="Stop" Text="Pysäytä" Comment="Stop" />
+    <Text Key="labelMemPageCount" Text="Sivuja [määrä]" Comment="Pages [count]" />
+    <Text Key="labelMemThumbSize" Text="Kuvakkeet [MB]" Comment="Thumbnails [MB]" />
+    <Text Key="chkMemPageOptimized" Text="optimoitu" Comment="optimized" />
+    <Text Key="chkMemThumbOptimized" Text="optimoitu" Comment="optimized" />
+    <Text Key="groupMemoryCache" Text="Välimuisti" Comment="Memory Cache" />
+    <Text Key="grpDatabaseBackup" Text="Varmistustietokanta" Comment="Database Backup" />
+    <Text Key="btBackupDatabase" Text="Varmuuskopioi tietokanta..." Comment="Backup Database..." />
+    <Text Key="btRestoreDatabase" Text="Palauta tietokanta..." Comment="Restore Database..." />
+    <Text Key="btTranslate" Text="Auta ComicRackin kääntämisessä..." Comment="Help localizing ComicRack..." />
+    <Text Key="labelSaturation" Text="Saturaatio:" Comment="Saturation Adjustment:" />
+    <Text Key="labelBrightness" Text="Kirkkaus:" Comment="Brightness Adjustment:" />
+    <Text Key="labelContrast" Text="Kontrasti:" Comment="Contrast Adjustment:" />
+    <Text Key="labelSharpening" Text="Terävöinti:" Comment="Sharpening:" />
+    <Text Key="groupPageDisplayGeneral" Text="Yleiset" Comment="General" />
+    <Text Key="groupColors" Text="Värisäädöt" Comment="Color Adjustments" />
+    <Text Key="chkEnableHardware" Text="Laitteistokiihdytys" Comment="Enable Hardware Acceleration" />
+    <Text Key="chkEnablePageTransition" Text="Käytä sivunvaihtotehostetta" Comment="Enable Page Transitions" />
+    <Text Key="chkEnableDisplayChangeAnimation" Text="Animoi sivunäkymän muutokset" Comment="Enable Animation of Page Display changes" />
+    <Text Key="chkEnableHardwareFiltering" Text="Laitteistosuotimet" Comment="Enable Hardware Filters" />
+    <Text Key="chkEnableSoftwareFiltering" Text="Ohjelmistosuotimet" Comment="Enable Software Filters" />
+    <Text Key="chkEnableFlowScroll" Text="Liukuva hiiren rullaus" Comment="Enable flowing Mouse scrolling" />
+    <Text Key="groupHardwareAcceleration" Text="Laitteistokiihdytys" Comment="Hardware Acceleration" />
+    <Text Key="chkSmoothAutoScrolling" Text="Pehmeä vieritys" Comment="Smooth Auto Scrolling" />
+    <Text Key="lblFast" Text="nopea" Comment="fast" />
+    <Text Key="lblSlow" Text="hidas" Comment="slow" />
+    <Text Key="grpKeyboard" Text="Näppäimistö" Comment="Keyboard" />
+    <Text Key="grpMouse" Text="Hiiri" Comment="Mouse" />
+    <Text Key="lblMouseWheel" Text="Hiiren rulla:" Comment="Mouse Wheel scrolling:" />
+    <Text Key="grpSharing" Text="Jakaminen" Comment="Sharing" />
+    <Text Key="grpScanning" Text="Tarkistaa" Comment="Scanning" />
+    <Text Key="grpLanguages" Text="Kielet" Comment="Languages" />
+    <Text Key="grpScripts" Text="Käytössä olevat skriptit" Comment="Available Scripts" />
+    <Text Key="grpPackages" Text="Skriptipaketit" Comment="Script Packages" />
+    <Text Key="grpScriptSettings" Text="Skriptien asetukset" Comment="Script Settings" />
+    <Text Key="tabOverlaysAndEffects" Text="Päälliset ja tehosteet" Comment="Overlays &amp;&amp; Effects" />
+    <Text Key="tabReader" Text="Lukija" Comment="Reader" />
+    <Text Key="tabLibraries" Text="Kirjastot" Comment="Libraries" />
+    <Text Key="tabBehavior" Text="Käyttäytyminen" Comment="Behavior" />
+    <Text Key="tabAdvanced" Text="Edistyneet" Comment="Advanced" />
+    <Text Key="tabScripts" Text="Skriptit" Comment="Scripts" />
+    <Text Key="colName" Text="Nimi" Comment="Name" />
+    <Text Key="colPackage" Text="Paketti" Comment="Package" />
+    <Text Key="btInstallPackage" Text="Asenna..." Comment="Install..." />
+    <Text Key="btRemovePackage" Text="Poista" Comment="Remove" />
+    <Text Key="colPackage" Text="Paketti" Comment="Package" />
+    <Text Key="colAuthor" Text="Tekijä" Comment="Author" />
+    <Text Key="colDescription" Text="Kuvaus" Comment="Description" />
+    <Text Key="packageGroupInstalled" Text="Asennettu" Comment="Installed" />
+    <Text Key="packageGroupInstall" Text="Asennetaan (vaatii uudelleenkäynnistyksen)" Comment="To be installed (needs restart)" />
+    <Text Key="packageGroupRemove" Text="Poistetaan (vaatii uudelleenkäynnistyksen)" Comment="To be removed (needs restart)" />
+    <Text Key="btAssociateExtensions" Text="Vaihda..." Comment="Change..." />
+    <Text Key="grpServerSettings" Text="Palvelinasetukset" Comment="Server Settings" />
+    <Text Key="labelShareDescription" Text="Kuvaus:" Comment="Description:" />
+    <Text Key="chkPrivate" Text="Yksityinen" Comment="Private" />
+    <Text Key="chkShareInternet" Text="Jaa netissä" Comment="Share on the Internet" />
+    <Text Key="btAddShare" Text="Lisää jako" Comment="Add Share" />
+    <Text Key="btRemoveShare" Text="Poista" Comment="Remove" />
+    <Text Key="labelPublicServerAddress" Text="Palvelimesi ulkoinen osoite jos ComicRack ei löydä sitä:" Comment="External address of your server if ComicRack should not guess it correctly:" />
+    <Text Key="labelPrivateListPassword" Text="Salasana suojaamaan yksityisiä nettijakolistojen nimikkeitä:" Comment="Password used to protect your private Internet Share list entries:" />
+    <Text Key="chkDontAddRemovedFiles" Text="Kirjastosta itse poistettuja nimikkeitä ei lisätä uudelleen" Comment="Files manually removed from the Library will not be added again" />
+    <Text Key="btConfigScript" Text="Määritykset..." Comment="Config..." />
+    <Text Key="labelPageQuality" Text="Sivun laatu:" Comment="Page Quality:" />
+    <Text Key="labelThumbQuality" Text="Kuvakkeen laatu:" Comment="Thumb Quality:" />
+    <Text Key="labelHelpSystem" Text="Kohdennetut ohjeet:" Comment="Context Sensitive Help:" />
+    <Text Key="grpHelp" Text="Avustaja:" Comment="Help System" />
+    <Text Key="btExportKeyboard" Text="Lähetä..." Comment="Export..." />
+    <Text Key="btImportKeyboard" Text="Tuonti..." Comment="Import..." />
+    <Text Key="miDefaultKeyboardLayout" Text="Oletus" Comment="Default" />
+    <Text Key="cbShare.Item0" Text="Älä jaa mitään" Comment="Share None" />
+    <Text Key="cbShare.Item1" Text="Jaa kaikki" Comment="Share All" />
+    <Text Key="cbShare.Item2" Text="Jaa valitut" Comment="Share Selected" />
+    <Text Key="grpShareSettings" Text="Asetukset" Comment="Settings" />
+    <Text Key="chkShowNavigationOverlay" Text="Näytä suunnisteet automaattisesti" Comment="Show Navigation automatically" />
+    <Text Key="chkShowCurrentPageOverlay" Text="Näytä nykyinen sivu" Comment="Show current Page" />
+    <Text Key="chkShowVisiblePartOverlay" Text="Näytä näkyvä sivutaide" Comment="Show visible Page Part" />
+    <Text Key="chkShowPageNames" Text="Nykyinen sivu näyttää myös sivun nimen" Comment="Current Page also displays Page Name" />
+    <Text Key="chkShowStatusOverlay" Text="Näytä ilmoitukset ja tila" Comment="Show Messages and Status" />
+    <Text Key="labelPageOverlay" Text="Sivu" Comment="Page" />
+    <Text Key="labelVisiblePartOverlay" Text="Näkyvä osa" Comment="Visible Part" />
+    <Text Key="labelStatusOverlay" Text="Ilmoitukset ja tila" Comment="Messages and Status" />
+    <Text Key="labelNavigationOverlay" Text="Suunnistus" Comment="Navigation" />
+    <Text Key="labelNavigationOverlayPosition" Text="Suunnistus:" Comment="Navigation:" />
+    <Text Key="cbNavigationOverlayPosition.Item0" Text="Alhaalla" Comment="at Bottom" />
+    <Text Key="cbNavigationOverlayPosition.Item1" Text="Ylhäällä" Comment="on Top" />
+    <Text Key="PageNumberOnly" Text="Sivu" Comment="Page" />
+    <Text Key="PageNumberAndName" Text="Sivu\nNimi" Comment="Page\nName" />
+  </Texts>
+</TR>

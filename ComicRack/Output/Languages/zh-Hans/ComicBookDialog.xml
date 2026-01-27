@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBookDialog" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="btCancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="btNext" Text="下一本" Comment="&amp;Next" />
+    <Text Key="btOK" Text="确定" Comment="&amp;OK" />
+    <Text Key="btResetPages" Text="重置" Comment="Reset" />
+    <Text Key="btResetColors" Text="重置" Comment="Reset" />
+    <Text Key="btPrev" Text="上一本" Comment="&amp;Previous" />
+    <Text Key="chkMangaStyle" Text="动漫类型" Comment="Manga Style" />
+    <Text Key="colImage" Text="图像" Comment="Image" />
+    <Text Key="colKey" Text="按键" Comment="Key" />
+    <Text Key="colPage" Text="页面" Comment="Page" />
+    <Text Key="colType" Text="类型" Comment="Type" />
+    <Text Key="ComicBookDialog" Text="信息" Comment="Info" />
+    <Text Key="labelAlternateNumber" Text="序号：" Comment="Number:" />
+    <Text Key="labelAlternateSeries" Text="备用丛书或故事标题：" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelBrightness" Text="亮度" Comment="Brightness" />
+    <Text Key="labelColorist" Text="配色师：" Comment="Colorist:" />
+    <Text Key="labelContrast" Text="对比度" Comment="Contrast" />
+    <Text Key="labelEditor" Text="编辑：" Comment="Editor:" />
+    <Text Key="labelFormat" Text="格式" Comment="Format:" />
+    <Text Key="labelGenre" Text="流派：" Comment="Genre:" />
+    <Text Key="labelImprint" Text="出版标记：" Comment="Imprint:" />
+    <Text Key="labelInker" Text="着墨员：" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="语言：" Comment="Language:" />
+    <Text Key="labelLetterer" Text="文字书写员：" Comment="Letterer:" />
+    <Text Key="labelMonth" Text="月份：" Comment="Month:" />
+    <Text Key="labelNoPages" Text="此漫画从未被打开所以页面数未知" Comment="This eComic has never been opened and the page count is still unknown." />
+    <Text Key="labelNotes" Text="注解：" Comment="Notes:" />
+    <Text Key="labelNumber" Text="序号：" Comment="Number:" />
+    <Text Key="labelOpened" Text="打开于：" Comment="Opened:" />
+    <Text Key="labelPages" Text="页面：" Comment="Pages:" />
+    <Text Key="labelPagesRead" Text="已读页面：" Comment="Pages Read:" />
+    <Text Key="labelPenciller" Text="画图员：" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="出版社：" Comment="Publisher:" />
+    <Text Key="labelSaturation" Text="饱和度" Comment="Saturation" />
+    <Text Key="labelSeries" Text="丛书：" Comment="Series:" />
+    <Text Key="labelSize" Text="大小：" Comment="Size:" />
+    <Text Key="labelSummary" Text="摘要：" Comment="Summary:" />
+    <Text Key="labelTags" Text="标签：" Comment="Tags:" />
+    <Text Key="labelTitle" Text="标题：" Comment="Title:" />
+    <Text Key="labelVolume" Text="卷：" Comment="Volume:" />
+    <Text Key="labelWhere" Text="位置：" Comment="Where:" />
+    <Text Key="labelWriter" Text="作者：" Comment="Writer:" />
+    <Text Key="labelYear" Text="年代：" Comment="Year:" />
+    <Text Key="tabColors" Text="颜色" Comment="Colors" />
+    <Text Key="tabPages" Text="页面" Comment="Pages" />
+    <Text Key="tabSummary" Text="摘要" Comment="Summary" />
+    <Text Key="pageViewer" Text="双击颜色来设置白点" Comment="Double Click on Color to set White Point" />
+    <Text Key="labelPagesInfo" Text="可通过鼠标拖拽来改变页面顺序，右键菜单设置页面类型：" Comment="Change the page order with drag &amp; drop or use the context menu to change page types:" />
+    <Text Key="labelType" Text="类型：" Comment="Type:" />
+    <Text Key="labelBlackAndWhite" Text="黑白" Comment="Black and White" />
+    <Text Key="labelAlternateCount" Text="于:" Comment="of:" />
+    <Text Key="labelCoverArtist" Text="封面作者:" Comment="Cover Artist:" />
+    <Text Key="labelCount" Text="于:" Comment="of:" />
+    <Text Key="tabPlot" Text="故事&amp;说明" Comment="Plot &amp; Notes" />
+    <Text Key="labelManga" Text="动漫" Comment="Manga:" />
+    <Text Key="labelEnableProposed" Text="启用建议值:" Comment="Enable Proposed:" />
+    <Text Key="labelAgeRating" Text="年龄限定" Comment="Age Rating" />
+    <Text Key="labelCharacters" Text="人物:" Comment="Characters:" />
+    <Text Key="labelSharpening" Text="锐化" Comment="Sharpening" />
+    <Text Key="tabDetails" Text="详情" Comment="Details" />
+    <Text Key="btPageView" Text="页面" Comment="Pages" />
+    <Text Key="labelTeams" Text="团队:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="位置:" Comment="Locations:" />
+    <Text Key="labelWeb" Text="网络:" Comment="Web:" />
+    <Text Key="labelEnableDynamicUpdate" Text="升级包含:" Comment="Include in Updates:" />
+  </Texts>
+</TR>

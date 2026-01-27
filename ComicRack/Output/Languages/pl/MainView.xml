@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MainView" CultureName="pl">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="Dokuj na Dole" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="Wypełnij Całe Okno" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="Dokuj po Lewej" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="Dokuj po Prawej" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="Zamknij" Comment="Close" />
+    <Text Key="tsbFolders" Text="Foldery" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="Przeglądaj Foldery" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="Biblioteka" Comment="Library" />
+    <Text Key="tsbPages" Text="Strony" Comment="Pages" />
+    <Text Key="tsbShowMenu" Text="Pokaż Menu" Comment="Show Menu" />
+    <Text Key="tsbInfoPanelLeft" Text="Info Panel po prawej" Comment="Info Panel Right" />
+    <Text Key="tsbLibrary.Tooltip" Text="Przeglądaj Bibliotekę Komiksów" Comment="Library with all Books" />
+    <Text Key="tsbPages.Tooltip" Text="Przeglądaj Strony otwartego Komiksu" Comment="Pages of the current Book" />
+    <Text Key="tsbAlignment" Text="Dokowanie Przeglądarki" Comment="Docking Mode" />
+  </Texts>
+</TR>

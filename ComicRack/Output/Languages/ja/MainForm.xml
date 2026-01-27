@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainForm" CultureName="ja">
+  <Texts>
+    <Text Key="browseMenu" Text="ブラウザ(&amp;B)" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="ページのコピー(&amp;C)" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="ページのエクスポート(&amp;E)..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="すべてにフィット" Comment="Fit All" />
+    <Text Key="cmFitBest" Text="ベスト フィット" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="高さにフィット" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="横幅にフィット" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="拡大鏡(&amp;M)" Comment="&amp;Magnifier" />
+    <Text Key="cmNextFromList" Text="次のコミックへ(&amp;X)" Comment="Ne&amp;xt eComic" />
+    <Text Key="cmNotifyExit" Text="終了(&amp;X)" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="ウィンドウを表示(&amp;R)" Comment="&amp;Restore" />
+    <Text Key="cmPrevFromList" Text="前のコミックへ(&amp;V)" Comment="Pre&amp;vious eComic" />
+    <Text Key="cmRate0" Text="なし" Comment="None" />
+    <Text Key="cmRate1" Text="* （星 x1）" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** （星 x2）" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** （星 x3）" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** （星 x4）" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** （星 x5）" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="評価(&amp;A)" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="再読込み(&amp;R)" Comment="&amp;Refresh" />
+    <Text Key="cmSyncBrowser" Text="ブラウザに表示(&amp;B)" Comment="Show in &amp;Browser" />
+    <Text Key="displayMenu" Text="表示(&amp;D)" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="編集(&amp;E)" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="ファイル(&amp;F)" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="ヘルプ(&amp;H)" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack" Comment="ComicRack" />
+    <Text Key="miAbout" Text="ComicRack について(&amp;A)..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="フォルダをライブラリに追加(&amp;A)..." Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="新規タブ&amp;(T)" Comment="New &amp;Tab" />
+    <Text Key="miBestFit" Text="ベスト フィット(&amp;B)" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="すべて閉じる(&amp;L)" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="閉じる(&amp;C)" Comment="&amp;Close" />
+    <Text Key="miEditListLayout" Text="リスト レイアウトの編集(&amp;E)..." Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="終了(&amp;X)" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="オートメーション(&amp;U)" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="最初のページ(&amp;F)" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="すべてにフィット(&amp;A)" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="高さにフィット(&amp;H)" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="横幅にフィット(&amp;W)" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="フルスクリーン(&amp;F)" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="最後のページへ(&amp;L)" Comment="&amp;Last Page" />
+    <Text Key="miListLayouts" Text="リスト レイアウト" Comment="List Layout" />
+    <Text Key="miNews" Text="ニュース(&amp;N)..." Comment="&amp;News..." />
+    <Text Key="miNextFromList" Text="次のコミックへ(&amp;X)" Comment="Ne&amp;xt eComic" />
+    <Text Key="miNextTab" Text="次のタブへ(&amp;T)" Comment="Next &amp;Tab" />
+    <Text Key="miOpenNow" Text="表示中(&amp;M)" Comment="Open eCo&amp;mics" />
+    <Text Key="miOpenRecent" Text="コミック履歴(&amp;R)" Comment="&amp;Recent eComics" />
+    <Text Key="miPageType" Text="ページの種類(&amp;P)" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="設定(&amp;P)..." Comment="&amp;Preferences..." />
+    <Text Key="miPrevFromList" Text="前のコミックへ(&amp;V)" Comment="Pre&amp;vious eComic" />
+    <Text Key="miPrevPage" Text="前のページへ(&amp;P)" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="前のタブへ(&amp;P)" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="なし" Comment="None" />
+    <Text Key="miRate1" Text="* （星 x1）" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** （星 x2）" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** （星 x3）" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** （星 x4）" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** （星 x5）" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="評価(&amp;A)" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="再起動(&amp;A)" Comment="Rest&amp;art" />
+    <Text Key="miRotate180" Text="180° " Comment="180°" />
+    <Text Key="miRotate270" Text="270° " Comment="270°" />
+    <Text Key="miRotate90" Text="90° " Comment="90°" />
+    <Text Key="miRotation" Text="回転(&amp;R)" Comment="&amp;Rotation" />
+    <Text Key="miSaveListLayout" Text="リスト レイアウトの保存(&amp;S)..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="ワークスペースの保存(&amp;S)..." Comment="&amp;Save Workspace..." />
+    <Text Key="miScan" Text="コミック フォルダのスキャン(&amp;F)" Comment="Scan eComic &amp;Folders" />
+    <Text Key="miAutoScroll" Text="オート スクロール" Comment="Auto Scrolling" />
+    <Text Key="miSearchBrowser" Text="検索ブラウザ(&amp;E)" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="現在のレイアウトをすべてのリストにセット" Comment="Set all Lists to current Layout" />
+    <Text Key="miSidebar" Text="サイドバー(&amp;S)" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="スモール プレビュー(&amp;A)" Comment="S&amp;mall Preview" />
+    <Text Key="miSupport" Text="ComicRack サポート..." Comment="Support ComicRack..." />
+    <Text Key="miSyncBrowser" Text="ブラウザに表示(&amp;B)" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="ブラウザ バー(&amp;B)" Comment="&amp;Browser" />
+    <Text Key="miView100" Text="100%" Comment="100 %" />
+    <Text Key="miView150" Text="150%" Comment="150 %" />
+    <Text Key="miView200" Text="200%" Comment="200 %" />
+    <Text Key="miView300" Text="300%" Comment="300 %" />
+    <Text Key="miView400" Text="400%" Comment="400 %" />
+    <Text Key="miViewFolders" Text="フォルダ(&amp;F)" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="ライブラリ(&amp;B)" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="ページ(&amp;P)" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="再読込み(&amp;R)" Comment="&amp;Refresh" />
+    <Text Key="miWorkspaces" Text="ワークスペース(&amp;W)" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="ズーム" Comment="Zoom" />
+    <Text Key="readMenu" Text="閲覧(&amp;R)" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="レイアウト '{0}' のセット" Comment="Set '{0}' Layout" />
+    <Text Key="tbBestFit" Text="ベスト フィット" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="表示" Comment="Display" />
+    <Text Key="tbFit" Text="フィット" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="フィット モードの切換え" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="すべてにフィット" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="高さにフィット" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="横幅にフィット" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="フルスクリーン" Comment="Full Screen" />
+    <Text Key="tbMagnify" Text="拡大鏡" Comment="Magnifier" />
+    <Text Key="tbNextFromList" Text="リストの次のコミックへ" Comment="Next eComic from List" />
+    <Text Key="tbNextPage" Text="次のページへ" Comment="Next Page" />
+    <Text Key="tbNextTab" Text="次のタブへ(&amp;T)" Comment="Next &amp;Tab" />
+    <Text Key="tbNextTab.Tooltip" Text="次のタブへ" Comment="Next Tab" />
+    <Text Key="tbPrevFromList" Text="リストのひとつ前のコミックへ" Comment="Previous eComic from List" />
+    <Text Key="tbPrevTab" Text="前のタブへ(&amp;P)" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="前のタブへ" Comment="Vorheriger Tab" />
+    <Text Key="tbReadLabel" Text="既読" Comment="Read" />
+    <Text Key="tbAutoScroll" Text="オート スクロール" Comment="Auto Scrolling" />
+    <Text Key="tbTwoPages" Text="見開き表示" Comment="Two Pages" />
+    <Text Key="tsBook" Text="ブック" Comment="Book" />
+    <Text Key="tsBook.Tooltip" Text="表示コミックのタイトル" Comment="Name of the opened eComic" />
+    <Text Key="tsCurrentPage" Text="ページ" Comment="Page" />
+    <Text Key="tsCurrentPage.Tooltip" Text="表示中のコミックの閲覧ページ" Comment="Current Page of the open eComic" />
+    <Text Key="tsPageCount" Text="0 ページ" Comment="0 Pages" />
+    <Text Key="tsPageCount.Tooltip" Text="表示コミックのページ数" Comment="Page count of the open eComic" />
+    <Text Key="tsSaveWorkspace" Text="ワークスペース保存(&amp;S)..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsText" Text="待機中..." Comment="Ready" />
+    <Text Key="tsWorkspaces" Text="ワークスペース" Comment="Workspaces" />
+    <Text Key="miReaderUndocked" Text="リーダーを別ウィンドウに" Comment="Reader in own Window" />
+    <Text Key="tbReaderUndocked" Text="リーダーを別ウィンドウに" Comment="Reader in own Window" />
+    <Text Key="miPageLayout" Text="ページ レイアウト" Comment="Page Layout" />
+    <Text Key="cmPageLayout" Text="ページ レイアウト" Comment="Page Layout" />
+    <Text Key="miAdaptiveTwoPageFitting" Text="見開きページを展げてフィット" Comment="Adapt to double page spreads" />
+    <Text Key="cmAdaptiveTwoPageFitting" Text="見開きページを展げてフィット" Comment="Adapt to double page spreads" />
+    <Text Key="tbAdaptiveTwoPageFitting" Text="見開きページを展げてフィット" Comment="Adapt to double page spreads" />
+    <Text Key="miOriginal" Text="オリジナル サイズ" Comment="Original Size" />
+    <Text Key="tbOriginal" Text="オリジナル サイズ" Comment="Original Size" />
+    <Text Key="cmOriginal" Text="オリジナル サイズ" Comment="Original Size" />
+    <Text Key="NotifyIconText" Text="W-クリックでウィンドウを表示" Comment="Double Click to restore" />
+    <Text Key="cmOnlyFitOversized" Text="オーバー サイズのみフィット" Comment="Only Fit if oversized" />
+    <Text Key="miOnlyFitOversized" Text="オーバー サイズのみフィット" Comment="Only Fit if oversized" />
+    <Text Key="tbOnlyFitOversized" Text="オーバー サイズのみフィット" Comment="Only Fit if oversized" />
+    <Text Key="ChangeItemSize" Text="リスト アイテムのサイズ変更" Comment="Change size of the list items" />
+    <Text Key="miDoublePageAutoScroll" Text="見開き表示をオート スクロール..." Comment="Double Page Auto Scrolling" />
+    <Text Key="cmFitWidthAdaptive" Text="横幅に単頁フィット（見開き表示）" Comment="Fit Width (adaptive)" />
+    <Text Key="miFitWidthAdaptive" Text="横幅に単頁フィット（見開き表示）" Comment="Fit Width (adaptive)" />
+    <Text Key="tbFitWidthAdaptive" Text="横幅に単頁フィット（見開き表示）" Comment="Fit Width (adaptive)" />
+    <Text Key="cmRightToLeft" Text="右から左へ" Comment="Right to Left" />
+    <Text Key="tbRightToLeft" Text="右から左へ" Comment="Right to Left" />
+    <Text Key="miRightToLeft" Text="右から左へ" Comment="Right to Left" />
+    <Text Key="miMinimalGui" Text="最小限のユーザー　インターフェース" Comment="Minimal User Interface" />
+    <Text Key="tbMinimalGui" Text="最小限のユーザー　インターフェース" Comment="Minimal User Interface" />
+    <Text Key="cmMinimalGui" Text="最小限のユーザー　インターフェース" Comment="Minimal User Interface" />
+    <Text Key="miBookmarks" Text="ブックマーク" Comment="Bookmarks" />
+    <Text Key="miSetBookmark" Text="ブックマークにセット..." Comment="Set Bookmark..." />
+    <Text Key="miRemoveBookmark" Text="ブックマーク削除" Comment="Remove Bookmark" />
+    <Text Key="tbBookmarks" Text="ブックマーク" Comment="Bookmarks" />
+    <Text Key="tbSetBookmark" Text="ブックマークにセット..." Comment="Set Bookmark..." />
+    <Text Key="tbRemoveBookmark" Text="ブックマーク削除" Comment="Remove Bookmark" />
+    <Text Key="tbLastPageRead" Text="既読にする" Comment="Last Page Read" />
+    <Text Key="cmBookmarks" Text="ブックマーク" Comment="Bookmarks" />
+    <Text Key="cmSetBookmark" Text="ブックマークにセット..." Comment="Set Bookmark..." />
+    <Text Key="cmRemoveBookmark" Text="ブックマーク削除" Comment="Remove Bookmark" />
+    <Text Key="cmLastPageRead" Text="既読にする" Comment="Last Page Read" />
+    <Text Key="miPrevBookmark" Text="前のブックマークへ" Comment="Previous Bookmark" />
+    <Text Key="miNextBookmark" Text="次のブックマークへ" Comment="Next Bookmark" />
+    <Text Key="tbPrevBookmark" Text="前のブックマークへ" Comment="Previous Bookmark" />
+    <Text Key="tbNextBookmark" Text="次のブックマークへ" Comment="Next Bookmark" />
+    <Text Key="cmPrevBookmark" Text="前のブックマークへ" Comment="Previous Bookmark" />
+    <Text Key="cmNextBookmark" Text="次のブックマークへ" Comment="Next Bookmark" />
+    <Text Key="miZoomIn" Text="ズームイン" Comment="Zoom In" />
+    <Text Key="tbZoomIn" Text="ズームイン" Comment="Zoom In" />
+    <Text Key="miZoomOut" Text="ズームアウト" Comment="Zoom Out" />
+    <Text Key="tbZoomOut" Text="ズームアウト" Comment="Zoom Out" />
+    <Text Key="miZoomCustom" Text="カスタム..." Comment="Custom..." />
+    <Text Key="tbZoomCustom" Text="カスタム..." Comment="Custom..." />
+    <Text Key="tbZoom.Tooltip" Text="ズームの変更" Comment="Change the page zoom" />
+    <Text Key="tbRotate.Tooltip" Text="回転表示の変更" Comment="Change the page rotation" />
+    <Text Key="miRotateLeft" Text="左回転" Comment="Rotate Left" />
+    <Text Key="miRotateRight" Text="右回転" Comment="Rotate Right" />
+    <Text Key="tbRotateLeft" Text="左回転" Comment="Rotate Left" />
+    <Text Key="tbRotateRight" Text="右回転" Comment="Rotate Right" />
+    <Text Key="tbRotate180" Text="180° " Comment="180°" />
+    <Text Key="tbRotate270" Text="270° " Comment="270°" />
+    <Text Key="tbRotate90" Text="90° " Comment="90°" />
+    <Text Key="tbAutoRotate" Text="見開きページを回転" Comment="Autorotate Double Pages" />
+    <Text Key="miAutoRotate" Text="見開きページを回転" Comment="Autorotate Double Pages" />
+    <Text Key="miCopyPage" Text="ページのコピー(&amp;C)" Comment="&amp;Copy Page" />
+    <Text Key="miExportPage" Text="ページのエクスポート(&amp;E)..." Comment="&amp;Export Page..." />
+    <Text Key="cmRandomFromList" Text="ランダム コミック" Comment="Random eComic" />
+    <Text Key="cmShowInfo" Text="情報(&amp;I)..." Comment="&amp;Info..." />
+    <Text Key="ExportingComics" Text="コミックのエクスポート: キュー {0} " Comment="Exporting eComics: {0} queued" />
+    <Text Key="ExportingErrors" Text="{0} エラー。クリックで詳細" Comment="{0} errors. Click for details" />
+    <Text Key="tbAbout" Text="ComicRack について(&amp;A)..." Comment="&amp;About..." />
+    <Text Key="tbFirstPage" Text="最初のページへ" Comment="&amp;First Page" />
+    <Text Key="tbLastPage" Text="最後のページへ" Comment="&amp;Last Page" />
+    <Text Key="miLastPageRead" Text="既読にする(%A)" Comment="L&amp;ast Page Read" />
+    <Text Key="miRandomFromList" Text="ランダム コミック" Comment="Random eComic" />
+    <Text Key="miNextPage" Text="次のページへ(&amp;N)" Comment="Next Page" />
+    <Text Key="miMagnify" Text="拡大鏡(&amp;M)" Comment="Magnifier" />
+    <Text Key="miOpenComic" Text="コミックを開く(&amp;O)..." Comment="&amp;Open eComic..." />
+    <Text Key="cmOpenComic" Text="コミックを開く(&amp;O)..." Comment="&amp;Open eComic..." />
+    <Text Key="tbOpenComic" Text="コミックを開く(&amp;O)..." Comment="&amp;Open eComic..." />
+    <Text Key="cmPageType" Text="ページ タイプ(&amp;P)" Comment="&amp;Page Type" />
+    <Text Key="tbPreferences" Text="設定(&amp;P)..." Comment="&amp;Preferences..." />
+    <Text Key="tbTools" Text="ツール" Comment="Tools" />
+    <Text Key="tbTools.Tooltip" Text="重要なコマンドへのアクセス" Comment="Access to important commands" />
+    <Text Key="tbShowMainMenu" Text="メイン メニューの表示" Comment="Show Main Menu" />
+    <Text Key="tbPrevPage" Text="前のページへ" Comment="&amp;Previous Page" />
+    <Text Key="miRotate0" Text="0° " Comment="0°" />
+    <Text Key="cmRotate0" Text="回転なし(&amp;N)" Comment="&amp;No Rotation" />
+    <Text Key="cmRotate180" Text="180° " Comment="180°" />
+    <Text Key="cmRotate270" Text="270° " Comment="270°" />
+    <Text Key="cmRotate90" Text="90° " Comment="90°" />
+    <Text Key="tbScan" Text="コミック フォルダのスキャン(&amp;F)" Comment="Scan eComic &amp;Folders" />
+    <Text Key="miShowInfo" Text="情報(&amp;I)..." Comment="&amp;Info..." />
+    <Text Key="tbShowInfo" Text="情報(&amp;I)" Comment="&amp;Info..." />
+    <Text Key="tbSupport" Text="ComicRack をサポート..." Comment="Support ComicRack..." />
+    <Text Key="miTwoPages" Text="見開き表示(&amp;T)" Comment="Two Pages" />
+    <Text Key="cmTwoPages" Text="見開き表示(&amp;T)" Comment="Two Pages" />
+    <Text Key="miTwoPagesAdaptive" Text="見開き表示 (旧式)" Comment="Two Pages (adaptive)" />
+    <Text Key="cmTwoPagesAdaptive" Text="見開き表示 (旧式)" Comment="Two Pages (adaptive)" />
+    <Text Key="tbTwoPagesAdaptive" Text="見開き表示 (旧式)" Comment="Two Pages (adaptive)" />
+    <Text Key="miSinglePage" Text="単ページ" Comment="Single Page" />
+    <Text Key="cmSinglePage" Text="単ページ" Comment="Single Page" />
+    <Text Key="tbSinglePage" Text="単ページ" Comment="Single Page" />
+    <Text Key="miWebHome" Text="ComicRack ホームページ" Comment="ComicRack Homepage..." />
+    <Text Key="miWebUserForum" Text="ComicRack ユーザー フォーラム" Comment="ComicRack User Forum..." />
+    <Text Key="tbRandomFromList" Text="ランダム コミック" Comment="Random eComic" />
+    <Text Key="tsExportActivity" Text="エクスポート中" Comment="Exporting" />
+    <Text Key="tsPageActivity.Tooltip" Text="ページとサムネイル表示..." Comment="Getting Pages and Thumbnails..." />
+    <Text Key="tsScanActivity.Tooltip" Text="スキャンを実行中..." Comment="A scan is running..." />
+    <Text Key="tsWriteInfoActivity.Tooltip" Text="情報データをファイルに書き込み中..." Comment="Writing info data to files..." />
+    <Text Key="tsReadInfoActivity.Tooltip" Text="情報データをファイルから読み込み中..." Comment="Reading info data from files..." />
+    <Text Key="cmComics" Text="コミック" Comment="eComics" />
+    <Text Key="miWebHelp" Text="ComicRack ドキュメント" Comment="ComicRack Documentation..." />
+    <Text Key="tbRotate0" Text="0° " Comment="0°" />
+    <Text Key="cmCloseAllButThis" Text="これ以外をすべて閉じる" Comment="Close All But This" />
+    <Text Key="cmCopyPath" Text="フル パスをコピー" Comment="Copy Full Path" />
+    <Text Key="cmRevealInExplorer" Text="エクスプローラで表示" Comment="Reveal in Explorer" />
+    <Text Key="cmClose" Text="閉じる" Comment="Close" />
+    <Text Key="cmCloseComic" Text="閉じる" Comment="Close" />
+    <Text Key="SavePageTitle" Text="ページを名付けて保存..." Comment="Save Page as..." />
+    <Text Key="cmPageRotate" Text="ページの回転" Comment="Page Rotation" />
+    <Text Key="miPageRotate" Text="ページの回転" Comment="Page Rotation" />
+    <Text Key="miOpenRemoteLibrary" Text="リモート ライブラリを開く..." Comment="Open Remote Library..." />
+    <Text Key="tbOpenRemoteLibrary" Text="リモート ライブラリを開く..." Comment="Open Remote Library..." />
+    <Text Key="miUpdateAllComicFiles" Text="すべてのコミック ファイルを更新" Comment="Update all eComic Files" />
+    <Text Key="tbUpdateAllComicFiles" Text="すべてのコミック ファイルを更新" Comment="Update all eComic Files" />
+    <Text Key="miUndo" Text="アンドゥ" Comment="Undo" />
+    <Text Key="miRedo" Text="リドゥ" Comment="Redo" />
+    <Text Key="miComicDisplaySettings" Text="コミックの表示設定..." Comment="Comic Display Settings..." />
+    <Text Key="tbComicDisplaySettings" Text="コミックの表示設定..." Comment="Comic Display Settings..." />
+    <Text Key="miPreviousList" Text="前のリスト" Comment="Previous List" />
+    <Text Key="miNextList" Text="次のリストへ" Comment="Next List" />
+    <Text Key="miUpdateWebComics" Text="ウェブ コミックの更新" Comment="Update Web Comics" />
+    <Text Key="tbUpdateWebComics" Text="ウェブ コミックの更新" Comment="Update Web Comics" />
+    <Text Key="miNewComic" Text="新規コミック エントリー..." Comment="New Comic Entry..." />
+    <Text Key="miToggleZoom" Text="ズームの切換え" Comment="Toggle Zoom" />
+    <Text Key="miEditLayouts" Text="レイアウトの編集(&amp;E)..." Comment="&amp;Edit Layouts..." />
+    <Text Key="miEditWorkspaces" Text="ワークスペースの編集(&amp;E)..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="tsEditWorkspaces" Text="ワークスペースの編集(&amp;E)..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="quickOpenView" Text="クィック オープン" Comment="Quick Open" />
+    <Text Key="miTasks" Text="タスク..." Comment="Tasks..." />
+    <Text Key="cmCloseAllToTheRight" Text="ここより右のタブをすべて閉じる" Comment="Close All to the Right" />
+       <Text Key="miInfoPanel" Text="情報パネル" Comment="Info Panel" />
+   <Text Key="tbExit" Text="終了(&amp;X)" Comment="&amp;Exit" />
+  </Texts>
+</TR>

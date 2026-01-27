@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ListLayoutDialog" CultureName="hu">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Mégse" Comment="&amp;Cancel" />
+    <Text Key="btHideAll" Text="Mind &amp;elrejti" Comment="&amp;Hide All" />
+    <Text Key="btMoveDown" Text="&amp;Le" Comment="Move &amp;Down" />
+    <Text Key="btMoveUp" Text="&amp;Fel" Comment="Move &amp;Up" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btShowAll" Text="Mind m&amp;utatja" Comment="&amp;Show All" />
+    <Text Key="chkHideCaption" Text="Ne jelenítsen meg szöveget" Comment="Do not show any Text" />
+    <Text Key="labelSelectColumn" Text="Megjelenítendő oszlopok kiválasztása:" Comment="Please select the columns you want to show:" />
+    <Text Key="labelHint" Text="Tipp: A megjelenített oszlopok módosíthatók a fejlécre való jobb egérklikkel is" Comment="Hint: You can also change the displayed columns by right clicking on a column header." />
+    <Text Key="labelFirstLine" Text="Első sor:" Comment="First Line:" />
+    <Text Key="labelSecondLine" Text="Második sor:" Comment="Second Line:" />
+    <Text Key="labelThirdLine" Text="Harmadik sor:" Comment="Third Line:" />
+    <Text Key="labelSelectThumbnailText" Text="Miniatűrök alatt megjelenítendő szöveg kiválasztása:" Comment="Please select the text you want to display below the thumbnails:" />
+    <Text Key="tabDetails" Text="Részletek" Comment="Details" />
+    <Text Key="tabThumbnails" Text="Miniatűrök" Comment="Thumbnails" />
+    <Text Key="ListLayoutDialog" Text="Lista opciók" Comment="List Options" />
+    <Text Key="btApply" Text="&amp;Alkalmaz" Comment="&amp;Apply" />
+    <Text Key="tabTiles" Text="Címek" Comment="Tiles" />
+    <Text Key="colName" Text="Név" Comment="Name" />
+    <Text Key="colDescription" Text="Leírás" Comment="Description" />
+    <Text Key="btTilesDefault" Text="Alapbeállítás" Comment="Default" />
+  </Texts>
+</TR>

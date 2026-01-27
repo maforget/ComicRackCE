@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Messages" CultureName="fi">
+  <Texts>
+    <Text Key="AlsoRemoveDatabase" Text="&amp;Poista tiedostot myös tietokannasta" Comment="&amp;Also remove the files from the Database" />
+    <Text Key="AskExport" Text="Olet poistamassa/korvaamassa alkuperäiset eSarjikset lähetyksessä? Haluatko varmasti jatkaa?\nPoistetut tiedostot siirretään Roskakoriin. Varmista riittävä levytila ja etteivät kohteet sijaitse verkkolevyllä!" Comment="You have chosen to delete or replace existing eComics during export? Are you sure you want to continue?\nThe deleted files will be moved to the Recycle Bin during export. Please make sure there is enough disk space available and the eComics are not located on a network drive!" />
+    <Text Key="AskMoveBin" Text="Haluetko varmasti siirtää nämä kirjat Roskakoriin?" Comment="Are you sure you want to move these books to the recycle bin?" />
+    <Text Key="AskRemoveComics" Text="Haluatko varmasti poistaa nämä kirjat listalta?" Comment="Are you sure you want to remove these books from the list?" />
+    <Text Key="AskRemoveFavorite" Text="Haluatko varmasti poistaa tämän 'suosikkikansio' -linkin?" Comment="Do you really want to remove this Favorite Folder link?" />
+    <Text Key="AskRemoveFromLibrary" Text="Haluatko varmasti poistaa nämä kirjat kirjastosta?\n\nKaikki tallentamattomat tiedot menetetään!\n(esim. Avausmäärä, Viimeksi Luettu, jne.)" Comment="Are you sure you want to remove these books from the library?\nAll information not stored in the files will be lost (like Open Count, Last Read etc.)!" />
+    <Text Key="AskRemoveItem" Text="Haluatko varmasti poistaa tämän kohteen?" Comment="Do you really want to remove this item?" />
+    <Text Key="Attention" Text="Huomio" Comment="Attention" />
+    <Text Key="BackgroundConvert" Text="Tiedostojen Päivitys/Muunto on käynnissä. Jos suljet nyt, osa tiedoista katoaa!" Comment="Files are still being updated/converted in the background. If you close now, some information will not be written to the eComics!" />
+    <Text Key="CloseComicRack" Text="Sulje ComicRack" Comment="Close ComicRack" />
+    <Text Key="ClosingComicRack" Text="Suljetaan ComicRack" Comment="Closing ComicRack" />
+    <Text Key="Export" Text="Lähetä" Comment="Export" />
+    <Text Key="CouldNotSaveComic" Text="eSarjiksen tallennus epäonnistui!\nSyy: {0}" Comment="Could not save eComic!\nReason: {0}" />
+    <Text Key="CouldNotExportKeyboardLayout" Text="Ei voitu lähettää näppäimistökarttaa!\nSyy: {0}" Comment="Could not export Keyboard Layout!\nReason: {0}" />
+    <Text Key="CouldNotImportKeyboardLayout" Text="Ei voitu tuoda näppäimistökarttaa!\nSyy: {0}" Comment="Could not import Keyboard Layout!\nReason: {0}" />
+    <Text Key="CouldNotLoadThumbnail" Text="Kuvaketta ei voitu avata!\nSyy: {0}" Comment="Could not open Thumbnail!\nReason: {0}" />
+    <Text Key="CouldNotSaveImage" Text="Sivun kuvaa ei voitu tallentaa!\nSyy: {0}" Comment="Could not save the page image!\nReason: {0}" />
+    <Text Key="CreateMainWindow" Text="Luodaan PääIkkuna" Comment="Creating Main Window" />
+    <Text Key="DatabaseNewEmpty" Text="Sarjis-tietokantaa ei voitu avata. Luotiin uusi, tyhjä tietokanta." Comment="There was a problem opening the Comic Database. A new empty Database has been created." />
+    <Text Key="DatabaseRestored" Text="Sarjis-tietokannan kanssa on ongelmia. Viimeisin toimiva versio on palautettu. Joitain merkintöjä on voinut kadota." Comment="There was a problem with the Comic Database. The last version to be known good has been restored. You may have lost some entries." />
+    <Text Key="Error" Text="Virhe" Comment="Error" />
+    <Text Key="ErrorShutDown" Text="Ohjelman sulkemisessa tapahtui virhe:\n{0}" Comment="There was an error shutting down the application:\n{0}" />
+    <Text Key="FailedDeleteBooks" Text="Joitain kirjoja ei voitu poistaa (ovat ehkä käytössä)!" Comment="Some books could not be deleted (maybe they are in use)!" />
+    <Text Key="FailedRetrieveDatabase" Text="Tietokannan haku palvelimelta epäonnistui!" Comment="Failed to retrieve the Database from the Server!" />
+    <Text Key="FailedToInitialize" Text="ComicRackin aloitus epäonnistui: {0}" Comment="Failed to initialize ComicRack: {0}" />
+    <Text Key="GetServerLibraryText" Text="Noudetaan jaettua kirjastoa palvelimelta" Comment="Retrieving the shared Library from the Server" />
+    <Text Key="ConnectToServer" Text="Yhdistetään palvelimelle" Comment="Connecting to Server" />
+    <Text Key="GetShareInfoText" Text="Haetaan jaetun kirjaston tietoja" Comment="Getting information about the shared Library" />
+    <Text Key="GettingList" Text="Noudetaan Lista eSarjiksista" Comment="Getting eComics List" />
+    <Text Key="GettingListText" Text="Etsitään kaikki eSarjikset valitusta kansiosta" Comment="Retrieving all eComics from the selected folder" />
+    <Text Key="InitCache" Text="Valmistellaan levyvälimuisti" Comment="Initialize Disk Caches" />
+    <Text Key="InitGUI" Text="Valmistellaan käyttöliittymä" Comment="Initalizing User Interface" />
+    <Text Key="InitScripts" Text="Valmistellaan skriptit" Comment="Initalizing Scripts" />
+    <Text Key="ListLayout" Text="Listan asettelu" Comment="List Layout" />
+    <Text Key="ListLayouts" Text="Listojen asettelut" Comment="List Layouts" />
+    <Text Key="LoadComic" Text="Ladataan eSarjis" Comment="Loading eComic" />
+    <Text Key="LoadCustomSettings" Text="Ladataan omat asetukset" Comment="Loading custom settings" />
+    <Text Key="LoadingThumbnail" Text="Lataa kuvaketta..." Comment="Loading Thumbnail..." />
+    <Text Key="LoadingPage" Text="Ladataan sivua {0}..." Comment="Loading Page {0}..." />
+    <Text Key="MoveBin" Text="Siirrä tiedostot &amp;Roskakoriin" Comment="&amp;Also move the files to the Recycle Bin" />
+    <Text Key="NotAskAgain" Text="&amp;Älä kysy tätä jatkossa" Comment="&amp;Do not ask me again" />
+    <Text Key="OpenDatabase" Text="Avataan tietokantaa" Comment="Opening Database" />
+    <Text Key="PasswordNeeded" Text="Salasana vaaditaan etäkirjastoon '{0}':" Comment="A password is needed for the remote Library '{0}':" />
+    <Text Key="ReadNewsFeed" Text="Luetaan Uutissyötettä" Comment="Reading News Feed" />
+    <Text Key="RefreshInfo" Text="Virkistetään tietoja" Comment="Refreshing Information" />
+    <Text Key="RefreshInfoText" Text="Virkistetään valittujen eSarjisten tietoja" Comment="Refreshing information for selected eComics" />
+    <Text Key="RefreshServer" Text="Virkistetään palvelimen kirjastoa" Comment="Refreshing Server Library" />
+    <Text Key="Remove" Text="Poista" Comment="Remove" />
+    <Text Key="RetrieveNews" Text="Noudetaan uutisia" Comment="Retrieving News" />
+    <Text Key="RetrieveNewsText" Text="Virkistetään uutiskanavia" Comment="Refreshing subscribed News Channels" />
+    <Text Key="SaveAllData" Text="Tallennetaan kaikki levyn tiedot..." Comment="Saving all Data to Disk..." />
+    <Text Key="SaveListLayout" Text="Tallenna listan asettelu" Comment="Save List Layout" />
+    <Text Key="SavingNewComic" Text="Tallennetaan uutta eSarjista..." Comment="Saving new eComic..." />
+    <Text Key="ScriptFailed" Text="Skriptin suoritus keskeytyi!" Comment="Execution of the script failed!" />
+    <Text Key="StartNetwork" Text="Käynnistetään verkkoa" Comment="Starting Network" />
+    <Text Key="WriteData" Text="Kirjoita tiedot" Comment="Write Data" />
+    <Text Key="WriteDataText" Text="Kirjoitetaan valittujen eSarjisten tietoja" Comment="Writing Data to selected eComics" />
+    <Text Key="WrongPassword" Text="Salasana ei käy kirjastolle '{0}'. Yritä uudelleen:" Comment="The specified password for the Library'{0}' is not correct. Please try again:" />
+    <Text Key="AddFolderLibrary" Text="eSarjikset kansiosta ja kaikista alikansioista lisätään kirjastoon." Comment="eComics in this Folder and all sub Folders will be added to the library." />
+    <Text Key="Set" Text="Käytä" Comment="Set" />
+    <Text Key="AskSetAllLists" Text="Haluatko varmasti käyttää asettelua kaikilla listoilla?" Comment="Are you sure you want to set all Lists to the current layout?" />
+    <Text Key="OpenError" Text="Kirjaa ei voitu avata '{0}'!" Comment="Could not open the book '{0}'!" />
+    <Text Key="PageFailedToLoad" Text="Sivua ei voitu ladata.\nKokeile virkistää kuva." Comment="Page failed to load.\nTry refresh to load again..." />
+    <Text Key="ExportQueueMessage" Text="Lähetä eSarjis '{0}'" Comment="Export eComic '{0}'" />
+    <Text Key="RefreshInfoQueueMessage" Text="Virkistetään eSarjiksen '{0}' tietoja" Comment="Refresh information for eComic '{0}'" />
+    <Text Key="WriteInfoQueueMessage" Text="Kirjoita tietoja eSarjikselle '{0}'" Comment="Write information to eComic '{0}'" />
+    <Text Key="FastThumbanilQueueMessage" Text="Nouda muistista kuvake sivulle {0} tiedostosta '{1}'" Comment="Retrieve cached thumbnail for page {0} in file '{1}'" />
+    <Text Key="SlowThumbnailQueueMessage" Text="Luo kuvake sivulle {0} tiedostossa '{1}'" Comment="Create thumbnail for page {0} in file '{1}'" />
+    <Text Key="GetImageQueueMessage" Text="Hae sivu {0} tiedostosta '{1}'" Comment="Get page {0} in file '{1}'" />
+    <Text Key="OpeningComic" Text="Avataan kirjaa '{0}'..." Comment="Opening the book '{0}'..." />
+    <Text Key="NoComicOpen" Text="Ei avoimia kirjoja" Comment="No book is open" />
+    <Text Key="CloseExternalReader" Text="Tämä sulkee vain lukijan, ei avoimia eSarjiksia!" Comment="This will only close the reader Window and not the open eComic(s)!" />
+    <Text Key="DontShowAgain" Text="Älä näytä tätä uudelleen" Comment="Do not show this again" />
+    <Text Key="RestartQuestion" Text="ComicRack pitää käynnistää uudelleen toimintoa varten! Käynnistetäänkö uudelleen nyt?" Comment="ComicRack needs to restart to complete the operation! Do you want to restart now?" />
+    <Text Key="DatabaseBackupError" Text="Tietokannan varmuuskopion tallennus epäonnistui" Comment="There was an error saving the Database backup" />
+    <Text Key="DatabaseBackupRestored" Text="Tietokannan aiemman varmuuskopion palautus onnistui!" Comment="A previous database backup has been successfully restored!" />
+    <Text Key="ScanComicQueueMessage" Text="Tarkistaa '{0}'" Comment="Scanning '{0}'" />
+    <Text Key="UpdateComicDynamicMessage" Text="Päivitetään nettisarjista '{0}'" Comment="Updating Web Comic '{0}'" />
+    <Text Key="ErrorWritingReadingList" Text="Lukulistaa lähettäessä tapahtui virhe '{0}'" Comment="There was an error exporting the Reading List '{0}'" />
+    <Text Key="ErrorOpeningReadingList" Text="Ei voitu avata lukulistaa '{0}'" Comment="There was an error importing the Reading List '{0}'" />
+    <Text Key="UnsolvedBookItems" Text="Seuraavia eSarjiksia ei löytynyt kirjastosta:\n{0}\nKäytetäänkö lukulistaa silti?" Comment="The following eComics were not found in the Library:\n{0}\nDo you still want to import the Reading List?" />
+    <Text Key="OutputFileExists" Text="Tiedosto '{0}' on jo olemassa!" Comment="Output File '{0}' already exists!" />
+    <Text Key="ConvertToCBZ" Text="Muuta CBZ-muotoon" Comment="Convert to CBZ" />
+    <Text Key="ConvertToCB7" Text="Muuta CB7-muotoon" Comment="Convert to CB7" />
+    <Text Key="ExportForPSP" Text="Lähetä PSP:lle" Comment="Export for PSP" />
+    <Text Key="AbortScan" Text="Keskeytä tarkistus" Comment="Abort Scanning" />
+    <Text Key="AbortExport" Text="Keskeytä lähetys" Comment="Abort Export" />
+    <Text Key="FailedToReadImage" Text="Kuvan lukeminen epäonnistui {0}!" Comment="Failed to read Image {0}!" />
+    <Text Key="InvalidExportSettings" Text="Lähetysasetukset ovat virheelliset (esim. väärän tiedostomuodon lisäys kirjastoon)" Comment="The export settings are not valid (e.g. adding a not supported format to the library)" />
+    <Text Key="SourceComicNotValid" Text="eSarjiksen lähde ei ole hyväksyttävä" Comment="Source eComic is not valid" />
+    <Text Key="ExportComicTitle" Text="Lähetä eSarjis" Comment="Export eComic to" />
+    <Text Key="ComicRackMinimizedTitle" Text="ComicRack on yhä käynnissä" Comment="ComicRack is still running" />
+    <Text Key="ComicRackMinimized" Text="Sulje ComicRack valitsemalla Tiedosto-&gt;Lopeta tai vaihda käyttäytymistä Asetuksista.\nPaina tästä jos haluat ettei viestiä näytetä uudelleen." Comment="You either close ComicRack with File/Exit or you can change this behavior in the Preferences Dialog.\nClick here to not show this message again" />
+    <Text Key="ConnectRemoteError" Text="Yhdistäminen epäonnistui palvelimelle '{0}'" Comment="Could not connect to Remote Server '{0}'" />
+    <Text Key="CheckingDatabase" Text="Tarkistaa tietokantaa" Comment="Checking Database" />
+    <Text Key="CheckingDatabaseText" Text="Tarkistetään eheys ja päiviteään puuttuvat tiedot" Comment="Checking integrity and updating any missing Data" />
+    <Text Key="AskDirtyItems" Text="Tallenna muuttuneet tiedot eSarjiksille jotka eivät ole tietokannassa?\nTallentamattomat muutokset katoavat!" Comment="Save changed information for eComics that are not in the database?\nAll changes not saved now will be lost!" />
+    <Text Key="AlwaysSaveDirty" Text="Tallenna aina muutokset" Comment="Always save changes" />
+    <Text Key="SaveInfo" Text="eSarjisten tallennus" Comment="Saving eComics" />
+    <Text Key="SaveInfoText" Text="Tietoja tallennetaan... Odota hetki!" Comment="Please wait while all unsaved information is stored!" />
+    <Text Key="UndoEditMultipleComics" Text="Muokkaa useaa eSarjista" Comment="Edit multiple eComics" />
+    <Text Key="UndoShowInfo" Text="eSarjiksen tiedot" Comment="eComic Info" />
+    <Text Key="UndoScript" Text="Automaatio '{0}'" Comment="Automation '{0}'" />
+    <Text Key="UndoEditColumn" Text="Muuta saraketta '{0}'" Comment="Edit Column '{0}'" />
+    <Text Key="UndoRating" Text="Muuta Arvostelua" Comment="Change Rating" />
+    <Text Key="ScriptPackageExists" Text="Samanniminen Skriptipaketti on jo asennettu! Poistetaanko aiempi paketti?" Comment="A Script Package with the same name already exists! Do you want to overwrite this Package?" />
+    <Text Key="SelectLocalFolder" Text="Valitse paikallinen kansio ei-paikallisten eSarjisten tallennukseen" Comment="Select a local folder to store the remote eComics" />
+    <Text Key="ServerActivity" Text="{0} palvelinta käynnissä" Comment="{0} Server(s) running" />
+    <Text Key="ConnectServerText" Text="Yhdistetään palvelimelle" Comment="Opening connection to the remote Server" />
+    <Text Key="ErrorFileUsed" Text="Tiedosto on jo Kirjastossa" Comment="This file is already used in the Library" />
+    <Text Key="CreateMissingBooks" Text="Lisää puuttuvat eSarjikset kirjastoon" Comment="Add missing eComics to Library" />
+    <Text Key="ImportReadingList" Text="Tuo lukulista" Comment="Import Reading List" />
+    <Text Key="MatchBooksWithLibrary" Text="Verrataan listaa kirjastoon" Comment="Matching list with Library" />
+    <Text Key="ListMore" Text="{0} lisää..." Comment="{0} more..." />
+    <Text Key="TaskGroupLoadThumbnails" Text="Lataa kuvakkeet" Comment="Load Thumbnails" />
+    <Text Key="TaskGroupCreateThumbnails" Text="Luo Kuvakkeet" Comment="Create Thumbnails" />
+    <Text Key="TaskGroupLoadPages" Text="Lataa sivut" Comment="Load Pages" />
+    <Text Key="TaskGroupCreatePages" Text="Luo Sivuja" Comment="Create Pages" />
+    <Text Key="TaskGroupReadInfo" Text="Lukutiedot" Comment="Read Info" />
+    <Text Key="TaskGroupWriteInfo" Text="Kirjoita tietoja" Comment="Write Info" />
+    <Text Key="TaskGroupUpdateDynamic" Text="Päivitä nettisarjikset" Comment="Update Web Comics" />
+    <Text Key="TaskGroupExport" Text="Lähetä Sarjiksia" Comment="Export Comics" />
+    <Text Key="TaskGroupScanning" Text="Tarkistaa" Comment="Scanning" />
+  </Texts>
+</TR>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmallComicPreview" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="tbClose" Text="关闭" Comment="Close" />
+    <Text Key="tsbFirst" Text="第一个" Comment="First" />
+    <Text Key="tsbFirst.Tooltip" Text="转到首页" Comment="Go to first page" />
+    <Text Key="tsbLast" Text="最后一个" Comment="Last" />
+    <Text Key="tsbLast.Tooltip" Text="转到末页" Comment="Go to last page" />
+    <Text Key="tsbNext" Text="下一个" Comment="Next" />
+    <Text Key="tsbNext.Tooltip" Text="转到下一页" Comment="Go to next page" />
+    <Text Key="tsbPrev" Text="上一个" Comment="Previous" />
+    <Text Key="tsbPrev.Tooltip" Text="转到上一页" Comment="Go to previous page" />
+    <Text Key="tsbRefresh" Text="刷新" Comment="Refresh" />
+    <Text Key="tsbTwoPages" Text="双页" Comment="Two Pages" />
+    <Text Key="tsbTwoPages.Tooltip" Text="切换单双页显示" Comment="Show one or two pages" />
+    <Text Key="pageViewer" Text="未选中任何项目" Comment="Nothing Selected" />
+  </Texts>
+</TR>

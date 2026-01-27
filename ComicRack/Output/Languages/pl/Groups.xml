@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Groups" CultureName="pl">
+  <Texts>
+    <Text Key="AlphabetGroups" Text="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Inne" Comment="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Other" />
+    <Text Key="CountGroups" Text="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|Nieoznaczone" Comment="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|Unspecified" />
+    <Text Key="ReadPercentageGroups" Text="Nie Przeczytane|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|Przeczytane" Comment="Not Read|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|Completed" />
+    <Text Key="SizeGroups" Text="Pusta|Bardzo Mała|Mała|Średnia|Duża|Ogromna" Comment="Empty|Very Small|Small|Medium|Big|Huge" />
+    <Text Key="RatingGroups" Text="Nie Ocenione|Brak Gwiazdek|1 Gwiazdka|2 Gwiazdki|3 Gwiazdki|4 Gwiazdki|5 Gwiazdek" Comment="Not Rated|No Stars|1 Star|2 Stars|3 Stars|4 Stars|5 Stars" />
+    <Text Key="VolumeGroups" Text="Brak|V0|V1|V2|V3|V4|V5|V6|V7|V8|V9|V10|V11|V12|Inny" Comment="None|V{0}|Other" />
+    <Text Key="MangaGroups" Text="Manga|Nie Manga|Nieokreślony" Comment="Manga|No Manga|Unknown" />
+    <Text Key="BWGroups" Text="Czarno-Biały|Kolorowy|Nieznany" Comment="Black and White|Color|Unknown" />
+    <Text Key="LinkedGroups" Text="Zlinkowane z Plikiem|Nie zlinkowane z Plikiem" Comment="Linked to File|Not linked to File" />
+    <Text Key="PriceGroups" Text="Nieznana|Za darmo|0-10|10-20|20-30|30-40|40-50|50-100|ponad 100" Comment="Unknown|Free|0-10|10-20|20-30|30-40|40-50|50-100|over 100" />
+    <Text Key="DateGroups" Text="Nigdy|Dzisiaj|Wczoraj|Przedwczoraj|Trzy Dni Temu|W Tym Tygodniu|W zeszłym tygodniu|Dwa Tygodnie Temu|Trzy Tygodnie Temy|W Tym Miesiącu|W zeszłym Miesiącu|Dwa Miesiące Temu|Trzy Miesiące Temu|Cztery Miesiące Temu|Pięć Miesięcy Temu|Sześć Miesięcy Temu|W Tym Roku|W Zeszłym Roku|Dwa Lata Temu|Trzy Lata Temu|Więcej Niż Trzy Lata Temu" Comment="Never|Today|Yesterday|Two Days Ago|Three Days Ago|This Week|Last Week|Two Weeks Ago|Three Weeks Ago|This Month|Last Month|Two Months ago|Three Months ago|Four Months ago|Five Months ago|Six Months ago|This Year|Last Year|Two Years ago|Three Years ago|Older than Three Years|Next Year|In the Future" />
+    <Text Key="SeriesCompleteGroups" Text="Seria skończona|Seria nie skończona|Brak Informacji" Comment="Series complete|Series not complete|Unknown" />
+    <Text Key="EnableProposedGroups" Text="Użyto Proponowanych Wartości|Nie użyto Proponowanych Wartości" Comment="Proposed Values used|Proposed Values no used" />
+    <Text Key="HasBeenReadGroups" Text="Przeczytane|Nieprzeczytane" Comment="Read|Unread" />
+    <Text Key="CheckedGroups" Text="Zaznaczona|Nie Zaznaczona" Comment="Checked|Not Checked" />
+  </Texts>
+</TR>

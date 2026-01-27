@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SearchBrowser" CultureName="hu">
+  <Texts>
+    <Text Key="AlternateSeries" Text="Alternatív sorozat" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="Színező" Comment="Colorists" />
+    <Text Key="Genre" Text="Típus" Comment="Genres" />
+    <Text Key="Imprint" Text="Családok" Comment="Imprints" />
+    <Text Key="Inker" Text="Kihúzó" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="Nyelv" Comment="Languages" />
+    <Text Key="MonthAsText" Text="Hónap" Comment="Months" />
+    <Text Key="Penciller" Text="Rajzoló" Comment="Pencillers" />
+    <Text Key="Publisher" Text="Kiadó" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="Sorozat" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="Év" Comment="Years" />
+    <Text Key="Writer" Text="Író" Comment="Writers" />
+    <Text Key="Unspecified" Text="Nem megadott" Comment="Unspecified" />
+    <Text Key="AllItems" Text="Mind ({0} {1})" Comment="All ({0} {1})" />
+    <Text Key="ShadowTitle" Text="Címek" Comment="Titles" />
+    <Text Key="ShadowFormat" Text="Formátum" Comment="Formats" />
+    <Text Key="Editor" Text="Szerkesztők" Comment="Editors" />
+    <Text Key="Characters" Text="Szereplők" Comment="Characters" />
+    <Text Key="CoverArtist" Text="Borító alkotók" Comment="Cover Artists" />
+    <Text Key="AgeRating" Text="Kor besorolások:" Comment="Age Ratings" />
+    <Text Key="Tags" Text="Címkék" Comment="Tags" />
+    <Text Key="ShadowVolumeAsText" Text="Kötetek" Comment="Volumes" />
+    <Text Key="Letterer" Text="Betűk" Comment="Letterer" />
+    <Text Key="Teams" Text="Csapatok" Comment="Teams" />
+    <Text Key="Locations" Text="Helyszínek" Comment="Locations" />
+    <Text Key="RatingAsText" Text="Kor besorolások" Comment="My Ratings" />
+    <Text Key="CommunityRatingAsText" Text="Közösség értékelései" Comment="Community Ratings" />
+    <Text Key="Web" Text="Web" Comment="Web" />
+    <Text Key="BookPriceAsText" Text="Képregény árak" Comment="Book Prices" />
+    <Text Key="BookAge" Text="Képregény korok" Comment="Book Ages" />
+    <Text Key="BookStore" Text="Képregény boltok" Comment="Book Stores" />
+    <Text Key="BookOwner" Text="Képregény tulajdonosok" Comment="Book Owners" />
+    <Text Key="BookCondition" Text="Képregény állapotok" Comment="Book Conditions" />
+    <Text Key="BookCollectionStatus" Text="Beszerzés állapota" Comment="Book Collection Status" />
+    <Text Key="BookLocation" Text="Képregény helyek" Comment="Book Locations" />
+    <Text Key="MainCharacterOrTeam" Text="Főszereplő/csapat" Comment="Main Characters/Teams" />
+    <Text Key="SeriesGroup" Text="Sorozat csoportok" Comment="Series Groups" />
+    <Text Key="StoryArc" Text="Történet szálak" Comment="Story Arcs" />
+  </Texts>
+</TR>

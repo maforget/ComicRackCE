@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.CommitProposed" CultureName="nl-BE">
+  <Texts>
+    <Text Key="AskCommit" Text="Wil u de voorgestelde Waarde werkelijk bevestigen?\nVoorgestelde Waarden worden uit de Bestandsnaam voortgebracht en worden in het grijs voorgesteld." Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
+    <Text Key="Name" Text="Bewaar de voorgestelde Waarde..." Comment="Commit Proposed Values..." />
+    <Text Key="Overwrite" Text="&amp;Overschrijf ook bestaande waarden" Comment="&amp;Also overwrite existing values" />
+    <Text Key="Write" Text="Schrijf" Comment="Write" />
+    <Text Key="Description" Text="Het script maakt de 'voorgestelde waarde' blijvend voor het Boek" Comment="A script to makes the proposed values for the Book permanent" />
+  </Texts>
+</TR>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Default" CultureName="nl-BE">
+  <Texts>
+    <Text Key="ClearAll" Text="Wis alles" Comment="Clear all" />
+    <Text Key="Copy" Text="Kopiëren" Comment="Copy" />
+    <Text Key="Invert" Text="Omkeren" Comment="Invert" />
+    <Text Key="Layout" Text="Lay-out" Comment="Layout" />
+    <Text Key="None" Text="Geen" Comment="None" />
+    <Text Key="NotAvailable" Text="-" Comment="NA" />
+    <Text Key="Paste" Text="Invoegen" Comment="Paste" />
+    <Text Key="SetAll" Text="Kies alles" Comment="Set all" />
+    <Text Key="Unknown" Text="Onbekend" Comment="Unknown" />
+    <Text Key="Unspecified" Text="Niet van toepassing" Comment="Unspecified" />
+    <Text Key="Workspace" Text="Werkomgeving" Comment="Workspace" />
+    <Text Key="System" Text="Systeem" Comment="System" />
+    <Text Key="Books" Text="Boeken" Comment="books" />
+    <Text Key="Book" Text="Boek" Comment="book" />
+    <Text Key="Page" Text="Bladzijde" Comment="page" />
+    <Text Key="Yes" Text="Ja" Comment="Yes" />
+    <Text Key="No" Text="Nee" Comment="No" />
+    <Text Key="Not" Text="Niet" Comment="Not" />
+    <Text Key="Cancel" Text="Annuleer" Comment="Cancel" />
+    <Text Key="Bookmark" Text="Bladwijzer" Comment="Bookmark" />
+    <Text Key="Restart" Text="Herstart" Comment="Restart" />
+    <Text Key="All" Text="Alle" Comment="All" />
+    <Text Key="Import" Text="Importeer" Comment="Import" />
+    <Text Key="New" Text="Nieuw" Comment="New" />
+    <Text Key="Recent" Text="Recent" Comment="Recent" />
+    <Text Key="Waiting" Text="In afwachting" Comment="Waiting" />
+    <Text Key="Running" Text="In uitvoering.." Comment="Running" />
+    <Text Key="Completed" Text="Uitgevoerd" Comment="Completed" />
+    <Text Key="Disable" Text="Uitschakelen" Comment="Disable" />
+    <Text Key="Server" Text="Server" Comment="Server" />
+    <Text Key="Keep" Text="Behoud" Comment="Keep" />
+    <Text Key="Save" Text="Bewaar" Comment="Save" />
+    <Text Key="Search" Text="Zoek" Comment="Search" />
+    <Text Key="LogicNot" Text="Negatie" Comment="Negation" />
+    <Text Key="Default" Text="Standaard" Comment="Default" />
+    <Text Key="Connect" Text="Verbinden" Comment="Connect" />
+    <Text Key="Workspaces" Text="Werkomgevingen" Comment="Workspaces" />
+    <Text Key="Windows" Text="Windows" Comment="Windows" />
+    <Text Key="Lists" Text="Lijsten" Comment="Lists" />
+    <Text Key="Display" Text="Weergave" Comment="Display" />
+    <Text Key="Start" Text="Start" Comment="Start" />
+    <Text Key="End" Text="End" Comment="End" />
+    <Text Key="Clear" Text="Wis" Comment="Clear" />
+    <Text Key="Configure" Text="Configureer" Comment="Configure" />
+    <Text Key="Unlimited" Text="Onbegrensd" Comment="Unlimited" />
+  </Texts>
+</TR>

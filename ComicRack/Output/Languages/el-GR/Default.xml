@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Default" CultureName="el-GR">
+  <Texts>
+    <Text Key="ClearAll" Text="Εκκαθάριση όλων" Comment="Clear all" />
+    <Text Key="Copy" Text="Αντιγραφή" Comment="Copy" />
+    <Text Key="Invert" Text="Αντιστροφή" Comment="Invert" />
+    <Text Key="Layout" Text="Διάταξη" Comment="Layout" />
+    <Text Key="None" Text="Κανένα" Comment="None" />
+    <Text Key="NotAvailable" Text="ΜΔ" Comment="NA" />
+    <Text Key="Paste" Text="Επικόλληση" Comment="Paste" />
+    <Text Key="SetAll" Text="Εφαρμογή όλων" Comment="Set all" />
+    <Text Key="Unknown" Text="Άγνωστο" Comment="Unknown" />
+    <Text Key="Unspecified" Text="Ακαθόριστο" Comment="Unspecified" />
+    <Text Key="Workspace" Text="Επιφάνεια Εργασίας" Comment="Workspace" />
+    <Text Key="System" Text="Σύστημα" Comment="System" />
+    <Text Key="Books" Text="βιβλία" Comment="books" />
+    <Text Key="Book" Text="βιβλίο" Comment="book" />
+    <Text Key="Page" Text="σελίδα" Comment="page" />
+    <Text Key="Yes" Text="Ναι" Comment="Yes" />
+    <Text Key="No" Text="Όχι" Comment="No" />
+    <Text Key="Not" Text="Όχι" Comment="Not" />
+    <Text Key="Cancel" Text="Ακύρωση" Comment="Cancel" />
+    <Text Key="Bookmark" Text="Σελιδοδείκτης" Comment="Bookmark" />
+    <Text Key="Restart" Text="Επανεκκίνηση" Comment="Restart" />
+    <Text Key="All" Text="Όλα" Comment="All" />
+    <Text Key="Import" Text="Εισαγωγή" Comment="Import" />
+    <Text Key="New" Text="Νέο" Comment="New" />
+    <Text Key="Recent" Text="Αλλαγή μεγέθους" Comment="Recent" />
+    <Text Key="Waiting" Text="Αναμονή" Comment="Waiting" />
+    <Text Key="Running" Text="Εκτελείται" Comment="Running" />
+    <Text Key="Completed" Text="Ολοκληρώθηκε" Comment="Completed" />
+    <Text Key="Disable" Text="Ανενεργό" Comment="Disable" />
+    <Text Key="Server" Text="Διακομιστής" Comment="Server" />
+    <Text Key="Keep" Text="Συγκράτηση" Comment="Keep" />
+    <Text Key="Save" Text="Αποθήκευση" Comment="Save" />
+    <Text Key="Search" Text="Ανίχνευση" Comment="Search" />
+    <Text Key="LogicNot" Text="Άρνηση" Comment="Negation" />
+    <Text Key="Default" Text="Προεπιλογή" Comment="Default" />
+    <Text Key="Workspaces" Text="Επιφάνειες Εργασίας" Comment="Workspaces" />
+    <Text Key="Connect" Text="Σύνδεση" Comment="Connect" />
+    <Text Key="Windows" Text="Παράθύρα" Comment="Windows" />
+    <Text Key="Lists" Text="Λίστες" Comment="Lists" />
+    <Text Key="Display" Text="Απεικόνιση" Comment="Display" />
+    <Text Key="Start" Text="Έναρξη" Comment="Start" />
+    <Text Key="End" Text="Τέλος" Comment="End" />
+    <Text Key="Configure" Text="Ρύθμιση" Comment="Configure" />
+    <Text Key="Clear" Text="Εκκαθάριση" Comment="Clear" />
+  </Texts>
+</TR>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicTextElements" CultureName="it">
+  <Texts>
+    <Text Key="Caption" Text="Titolo" Comment="Caption" />
+    <Text Key="CaptionWithoutTitle" Text="Titolo senza Nome" Comment="Caption without Title" />
+    <Text Key="AlternateCaption" Text="Titolo Alternativo" Comment="Alternate Caption" />
+    <Text Key="Title" Text="Titolo" Comment="Title" />
+    <Text Key="ArtistInfo" Text="Artisti" Comment="Artists" />
+    <Text Key="Summary" Text="Sommario" Comment="Summary" />
+    <Text Key="FileSize" Text="Grandezza File" Comment="File Size" />
+    <Text Key="Opened" Text="Aperto" Comment="Opened" />
+    <Text Key="FileName" Text="Nome File" Comment="File Name" />
+    <Text Key="FileFormat" Text="Formato File" Comment="File Format" />
+    <Text Key="Added" Text="Aggiunto il..." Comment="Added" />
+    <Text Key="PublisherAndImprint" Text="Editore e Collana" Comment="Publischer and Imprint" />
+    <Text Key="AgeRating" Text="Età Consigliata" Comment="Age Rating" />
+    <Text Key="Genre" Text="Genere" Comment="Genre" />
+    <Text Key="CharactersAndTeams" Text="Personaggi e Gang" Comment="Characters and Teams" />
+    <Text Key="Locations" Text="Siti" Comment="Locations" />
+    <Text Key="Notes" Text="Note" Comment="Notes" />
+    <Text Key="PurchaseInformation" Text="Informazioni sull'Acquisto" Comment="Purchase Information" />
+    <Text Key="StorageInfoformation" Text="Informazioni sulla Conservazione" Comment="Storage Information" />
+    <Text Key="CollectionStatus" Text="Status Collezione" Comment="Collection Status" />
+  </Texts>
+</TR>

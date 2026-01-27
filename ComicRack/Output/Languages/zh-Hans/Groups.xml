@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Groups" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="AlphabetGroups" Text="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|其它" Comment="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Other" />
+    <Text Key="CountGroups" Text="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|未指定" Comment="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|Unspecified" />
+    <Text Key="DateGroups" Text="从不|今天|昨天|两天以前|三天以前|本周|上周|两周以前|三周以前|本月|上个月|两个月以前|三个月以前|四个月以前|五个月以前|六个月以前|今年|去年|两年以前|三年以前|更长" Comment="Never|Today|Yesterday|Two Days Ago|Three Days Ago|This Week|Last Week|Two Weeks Ago|Three Weeks Ago|This Month|Last Month|Two Months ago|Three Months ago|Four Months ago|Five Months ago|Six Months ago|This Year|Last Year|Two Years ago|Three Years ago|Older than Three Years" />
+    <Text Key="RatingGroups" Text="未评分|无|一星|二星|三星|四星|五星" Comment="Not Rated|No Stars|1 Star|2 Stars|3 Stars|4 Stars|5 Stars" />
+    <Text Key="ReadPercentageGroups" Text="未读|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|完成" Comment="Not Read|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|Completed" />
+    <Text Key="SizeGroups" Text="空|很小|小|中等|大|巨大" Comment="Empty|Very Small|Small|Medium|Big|Huge" />
+    <Text Key="VolumeGroups" Text="没有|V{0}|其它" Comment="None|V{0}|Other" />
+    <Text Key="MangaGroups" Text="动漫|非动漫|未知" Comment="Manga|No Manga|Unknown" />
+    <Text Key="BWGroups" Text="黑白|彩色|未知" Comment="Black and White|Color|Unknown" />
+  </Texts>
+</TR>

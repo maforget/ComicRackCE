@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AddItemDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="btCheck" Text="&amp;Controleer" Comment="&amp;Check" />
+    <Text Key="btLists" Text="&amp;Lijsten" Comment="&amp;Lists" />
+    <Text Key="btText" Text="&amp;Tekst" Comment="&amp;Text" />
+  </Texts>
+</TR>

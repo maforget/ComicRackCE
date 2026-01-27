@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="TasksDialog" CultureName="fr">
+  <Texts>
+    <Text Key="btClose" Text="Fermer" Comment="Close" />
+    <Text Key="tabTasks" Text="Tâches en arrière-plan" Comment="Background Tasks" />
+    <Text Key="tabNetwork" Text="Statistiques du serveur" Comment="Server Statistics" />
+    <Text Key="colTask" Text="Tâche" Comment="Task" />
+    <Text Key="colState" Text="État" Comment="State" />
+    <Text Key="lblItemCount" Text="{0} Tâches en attente" Comment="{0} Tasks are pending" />
+    <Text Key="TasksDialog" Text="Tâches" Comment="Tasks" />
+    <Text Key="btAbort" Text="Annuler toutes les tâches" Comment="Abort all User Tasks" />
+    <Text Key="Clients" Text="Clients : {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="Demandes d'information : {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="Requête(s) de Bibliothèque(s) : {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="Pages demandées : {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="Miniatures demandées : {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="Authentification(s) échouée(s) : {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="Tous les partages" Comment="All Shares" />
+    <Text Key="LastMinute" Text="Dernière minute" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="5 dernières minutes" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="Dernière heure" Comment="Last Hour" />
+    <Text Key="Session" Text="Session" Comment="Session" />
+  </Texts>
+</TR>

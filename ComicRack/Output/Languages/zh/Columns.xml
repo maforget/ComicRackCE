@@ -1,0 +1,127 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Columns" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="AddedTimeAsText" Text="添加於" Comment="Added" />
+    <Text Key="AddedTimeAsText.Description" Text="漫畫添加到數據庫中的時間" Comment="Time the eComic was added to the Database" />
+    <Text Key="AlternateCountAsText" Text="備用總計" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="合輯/故事總發行量" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="備用號碼" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="合輯/故事發行數" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="備用叢書" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="合輯/故事名稱" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="說明" Comment="Caption" />
+    <Text Key="Caption.Description" Text="漫畫完整說明" Comment="Complete caption of the eComic" />
+    <Text Key="Colorist" Text="配色師" Comment="Colorist" />
+    <Text Key="Colorist.Description" Text="漫畫上色" Comment="Colorist of the eComic" />
+    <Text Key="CountAsText" Text="總計" Comment="Count" />
+    <Text Key="CountAsText.Description" Text="該叢書總發行量" Comment="Total number of issued in this series" />
+    <Text Key="Cover" Text="封面" Comment="Cover" />
+    <Text Key="Cover.Description" Text="漫畫封面圖片" Comment="Cover image of the eComic" />
+    <Text Key="CoverArtist" Text="封面藝術家" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="負責封面製作的藝術家" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="編輯" Comment="Editor" />
+    <Text Key="Editor.Description" Text="漫畫編輯" Comment="Editor of the eComic" />
+    <Text Key="FileName" Text="文件名" Comment="File Name" />
+    <Text Key="FileName.Description" Text="文件名（不帶擴展名）" Comment="Filename without the extension" />
+    <Text Key="FilePath.Description" Text="漫畫存儲位置" Comment="Location where the eComic is stored" />
+    <Text Key="FileSizeAsText.Description" Text="漫畫字節大小" Comment="Size of the eComic in bytes" />
+    <Text Key="Genre" Text="流派" Comment="Genre" />
+    <Text Key="Genre.Description" Text="漫畫流派" Comment="Genre of the eComic" />
+    <Text Key="ImageHeightAsText" Text="高度" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="頁面高度（像素）" Comment="Height of the page in pixels" />
+    <Text Key="ImageWidthAsText" Text="寬度" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="頁面寬度（像素）" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="出版標記" Comment="Imprint" />
+    <Text Key="Imprint.Description" Text="漫畫出版標記" Comment="Imprint of the eComic" />
+    <Text Key="Inker" Text="上墨" Comment="Inker" />
+    <Text Key="Inker.Description" Text="漫畫上墨" Comment="Inker of the eComic" />
+    <Text Key="Key" Text="名稱" Comment="Name" />
+    <Text Key="Key.Description" Text="漫畫中此頁面的唯一關鍵值" Comment="Unique key for this page in the eComic" />
+    <Text Key="LanguageAsText" Text="語言" Comment="Language" />
+    <Text Key="LanguageAsText.Description" Text="漫畫語言" Comment="Language of the eComic" />
+    <Text Key="Letterer" Text="文字書寫員" Comment="Letterer" />
+    <Text Key="MonthAsText" Text="月份" Comment="Month" />
+    <Text Key="MonthAsText.Description" Text="漫畫出版月份" Comment="Month the eComic was published" />
+    <Text Key="NumberAsText" Text="序號" Comment="Number" />
+    <Text Key="NumberAsText.Description" Text="漫畫在叢書中的序號" Comment="Number of the eComic in the Series" />
+    <Text Key="OpenedCountAsText" Text="打開次數總計" Comment="Opened Count" />
+    <Text Key="OpenedCountAsText.Description" Text="打開漫畫時的時間" Comment="Times the eComic has been opened" />
+    <Text Key="OpenedTimeAsText" Text="打開於" Comment="Opened" />
+    <Text Key="OpenedTimeAsText.Description" Text="此漫畫上次打開的時間" Comment="Last time the eComic was opened" />
+    <Text Key="Page" Text="頁面" Comment="Page" />
+    <Text Key="Page.Description" Text="圖片頁碼" Comment="The page number of the image" />
+    <Text Key="PageTypeAsText" Text="類型" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="頁面類型（故事，封面等等）" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="畫圖員" Comment="Penciller" />
+    <Text Key="Penciller.Description" Text="漫畫描圖" Comment="Penciller of the eComic" />
+    <Text Key="Position" Text="位置" Comment="Position" />
+    <Text Key="Position.Description" Text="漫畫在列表中的位置" Comment="Position of the eComic in the list" />
+    <Text Key="Publisher" Text="出版社" Comment="Publisher" />
+    <Text Key="Rating" Text="我的評價" Comment="My Rating" />
+    <Text Key="ReadPercentageAsText" Text="閱讀百分比" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="已讀百分比" Comment="How much has been read" />
+    <Text Key="Series" Text="叢書" Comment="Series" />
+    <Text Key="Series.Description" Text="叢書名" Comment="Series name" />
+    <Text Key="State" Text="說明" Comment="State" />
+    <Text Key="Tags" Text="標簽" Comment="Tags" />
+    <Text Key="Tags.Description" Text="漫畫標簽" Comment="Tags of the eComic" />
+    <Text Key="Thumbnail" Text="縮略圖" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="頁面縮略圖" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="標題" Comment="Title" />
+    <Text Key="Title.Description" Text="漫畫標題" Comment="Title of the eComic" />
+    <Text Key="VolumeAsText" Text="卷" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="該叢書的卷數" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="作者" Comment="Writer" />
+    <Text Key="Writer.Description" Text="漫畫作者" Comment="Writer of the eComic" />
+    <Text Key="YearAsText" Text="年代" Comment="Year" />
+    <Text Key="YearAsText.Description" Text="漫畫出版年份" Comment="Year the eComic was published" />
+    <Text Key="MangaAsText" Text="動漫" Comment="Manga" />
+    <Text Key="MangaAsText.Description" Text="是，如果該漫畫是一本日式漫畫" Comment="Yes if the eComic is a Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="黑白" Comment="B&amp;W" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="是，如果該漫畫是黑白" Comment="Yes if the eComic is black and white" />
+    <Text Key="Format" Text="格式" Comment="Format" />
+    <Text Key="FileFormat" Text="文件格式" Comment="File Format" />
+    <Text Key="FileFormat.Description" Text="漫畫畫文件格式" Comment="File format of the eComic" />
+    <Text Key="Format.Description" Text="漫畫格式" Comment="Format of the eComic" />
+    <Text Key="Bookmark" Text="書簽" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="書簽文字" Comment="Bookmark text" />
+    <Text Key="AgeRating" Text="年齡限定" Comment="Age Rating" />
+    <Text Key="AgeRating.Description" Text="此漫畫年齡限定" Comment="Age rating of the eComic" />
+    <Text Key="Characters" Text="人物" Comment="Characters" />
+    <Text Key="Characters.Description" Text="漫畫故事人物" Comment="Plot characters of the eComic" />
+    <Text Key="RotationAsText" Text="旋轉" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="頁面永久旋轉" Comment="Permanent rotation of the page" />
+    <Text Key="FileModifiedTimeAsText" Text="修改於" Comment="File Modified" />
+    <Text Key="FileModifiedTimeAsText.Description" Text="上次修改漫畫的時間" Comment="Time the eComic was modified the last time" />
+    <Text Key="FilePath" Text="路徑" Comment="File Path" />
+    <Text Key="FileSizeAsText" Text="大小" Comment="File Size" />
+    <Text Key="ImageFileSizeAsText" Text="大小" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="該頁字節大小" Comment="Size of the page in bytes" />
+    <Text Key="Letterer.Description" Text="漫畫文字書寫員" Comment="Letterer of the eComic" />
+    <Text Key="PagesAsTextSimple" Text="頁數" Comment="Pages" />
+    <Text Key="PagesAsTextSimple.Description" Text="總頁數" Comment="The total count of pages" />
+    <Text Key="Publisher.Description" Text="漫畫出版社" Comment="Publisher of the eComic" />
+    <Text Key="Rating.Description" Text="你對這本漫畫的評價" Comment="Your rating of the eComic" />
+    <Text Key="State.Description" Text="此漫畫的狀態指示器" Comment="State indicators for the eComic" />
+    <Text Key="PublishedAsText" Text="已出版" Comment="Published" />
+    <Text Key="PublishedAsText.Description" Text="出版日期" Comment="Publication date of the eComic" />
+    <Text Key="Teams" Text="團隊" Comment="Teams" />
+    <Text Key="Teams.Description" Text="漫畫故事團隊" Comment="Plot teams of the eComic" />
+    <Text Key="Locations" Text="位置" Comment="Locations" />
+    <Text Key="Locations.Description" Text="漫畫故事位置" Comment="Plot locations of the eComic" />
+    <Text Key="FileDirectory" Text="文件目錄" Comment="File Directory" />
+    <Text Key="FileDirectory.Description" Text="漫畫文件夾" Comment="Directory of the eComic" />
+    <Text Key="FileCreationTimeAsText" Text="文件創建於" Comment="File Created" />
+    <Text Key="FileCreationTimeAsText.Description" Text="漫畫創建時間" Comment="Creation time of the eComic" />
+    <Text Key="BookmarkCountAsText" Text="書簽數目" Comment="Bookmark Count" />
+    <Text Key="BookmarkCountAsText.Description" Text="該漫畫書簽數" Comment="Count of Bookmarks for this eComic" />
+    <Text Key="Web" Text="網絡" Comment="Web" />
+    <Text Key="Web.Description" Text="網絡鏈接" Comment="A Web Link" />
+    <Text Key="NewPagesAsText" Text="新頁面" Comment="New Pages" />
+    <Text Key="NewPagesAsText.Description" Text="新頁數" Comment="Count of new Pages" />
+    <Text Key="Notes" Text="注解" Comment="Notes" />
+    <Text Key="Summary" Text="摘要" Comment="Summary" />
+    <Text Key="Number" Text="序號" Comment="Number" />
+    <Text Key="AlternateNumber" Text="備用號碼" Comment="Alternate Number" />
+  </Texts>
+</TR>

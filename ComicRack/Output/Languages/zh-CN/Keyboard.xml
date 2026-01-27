@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Keyboard" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Browse" Text="浏览" Comment="Browse" />
+    <Text Key="Display Options" Text="显示选项" Comment="Display Options" />
+    <Text Key="Exit" Text="退出" Comment="Exit" />
+    <Text Key="FitAll" Text="适应全部" Comment="Fit All" />
+    <Text Key="FitBest" Text="最佳大小" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="适应高度" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="适应宽度" Comment="Fit Width" />
+    <Text Key="FitWidthAdaptive" Text="适应宽度(自适应)" Comment="Fit Width (adaptive)" />
+    <Text Key="Library" Text="书库" Comment="Library" />
+    <Text Key="MoveDown" Text="向下" Comment="Down" />
+    <Text Key="MoveLeft" Text="向左" Comment="Left" />
+    <Text Key="MoveNextPart" Text="下一区域" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="上一区域" Comment="Previous Part" />
+    <Text Key="MoveFirstPart" Text="页面起始处" Comment="Page Start" />
+    <Text Key="MoveLastPart" Text="页面尾部" Comment="Page End" />
+    <Text Key="MoveRight" Text="向右" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="首页" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="末页" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="下一页" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="上一页" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="向上" Comment="Up" />
+    <Text Key="NextTab" Text="下一个标签" Comment="Next Tab" />
+    <Text Key="Other" Text="其它" Comment="Other" />
+    <Text Key="Page Display" Text="页面显示" Comment="Page Display" />
+    <Text Key="Auto Scroll" Text="智能滚动" Comment="Auto Scroll" />
+    <Text Key="PrevTab" Text="上一个标签页" Comment="Previous Tab" />
+    <Text Key="RotateC" Text="向右旋转" Comment="Rotate Right" />
+    <Text Key="RotateCC" Text="向左旋转" Comment="Rotate Left" />
+    <Text Key="ZoomIn" Text="放大" Comment="Zoom In" />
+    <Text Key="ZoomOut" Text="缩小" Comment="Zoom Out" />
+    <Text Key="Scroll" Text="滚动" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="显示浏览器" Comment="Show Browser" />
+    <Text Key="ToggleUndockReader" Text="开启/关闭独立阅读器" Comment="Toggle Undock Reader" />
+    <Text Key="ToggleFullScreen" Text="开启/关闭全屏模式" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="开启/关闭放大镜" Comment="Toggle Magnifier" />
+    <Text Key="ToggleAutoScrolling" Text="开启/关闭智能滚动" Comment="Toggle Auto Scrolling" />
+    <Text Key="ToggleTwoPages" Text="切换双页模式" Comment="Toggle Two Pages" />
+    <Text Key="Original" Text="原始大小" Comment="Original Size" />
+    <Text Key="MovePartDown10" Text="下移10%" Comment="Move Part 10% down" />
+    <Text Key="MovePartUp10" Text="上移10%" Comment="Move Part 10% up" />
+    <Text Key="DoublePageAutoScroll" Text="双页智能滚动" Comment="Double Page Auto Scroll" />
+    <Text Key="ToggleMenu" Text="显示/隐藏菜单" Comment="Toggle Menu" />
+    <Text Key="MoveToPrevBookmark" Text="上一个书签" Comment="Previous Bookmark" />
+    <Text Key="MoveToNextBookmark" Text="下一个书签" Comment="Next Bookmark" />
+    <Text Key="MoveToPrevPageSingle" Text="单页后退" Comment="Single Page Back" />
+    <Text Key="MoveToNextPageSingle" Text="单页前进" Comment="Single Page Forward" />
+    <Text Key="AutoRotate" Text="自动旋转双页" Comment="Autorotate Double Pages" />
+    <Text Key="PageRotateC" Text="向右旋转页面" Comment="RotatePageRight" />
+    <Text Key="PageRotateCC" Text="向左旋转页面" Comment="RotatePageLeft" />
+    <Text Key="Edit" Text="编辑" Comment="Edit" />
+    <Text Key="ToggleRealisticPages" Text="开启/关闭真实显示" Comment="Toggle Realistic Display" />
+    <Text Key="OnlyFitIfOversized" Text="仅在页面过大时应用适应模式" Comment="Only Fit if oversized" />
+    <Text Key="SinglePage" Text="单页" Comment="Single Page" />
+    <Text Key="TwoPages" Text="双页" Comment="Two Pages" />
+    <Text Key="RightToLeft" Text="从右到左" Comment="Right to Left" />
+    <Text Key="ZoomAndRotate" Text="缩放与旋转" Comment="Zoom and Rotate" />
+    <Text Key="TwoPagesAdaptive" Text="双页(自适应)" Comment="Two Pages (adaptive)" />
+    <Text Key="StepZoomIn" Text="单步放大" Comment="Step Zoom In" />
+    <Text Key="StepZoomOut" Text="单步缩小" Comment="Step Zoom Out" />
+    <Text Key="ToggleNavigationOverlay" Text="显示/隐藏导航图层" Comment="Toggle Navigation Overlay" />
+    <Text Key="ToggleZoom" Text="切换缩放" Comment="Toggle Zoom" />
+    <Text Key="NextComic" Text="下一本" Comment="Next Book" />
+    <Text Key="RandomComic" Text="随机" Comment="Random Book" />
+    <Text Key="PrevComic" Text="上一本" Comment="Previous Book" />
+    <Text Key="ToggleManga" Text="开启/关闭书籍漫画模式" Comment="Toggle Manga for Book" />
+  </Texts>
+</TR>

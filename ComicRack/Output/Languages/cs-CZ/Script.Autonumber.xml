@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Script.Autonumber" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Storno" Comment="&amp;Cancel" />
+    <Text Key="chkTotal" Text="Uložit celkový počet:" Comment="Save total Number:" />
+    <Text Key="labelBegin" Text="Začít od čísla:" Comment="Begin at Number:" />
+    <Text Key="Name" Text="Průvodce očíslováním..." Comment="Autonumber Wizard..." />
+    <Text Key="NumberAltSeries" Text="Očíslovat alternativní sérii" Comment="Number Alternate Series" />
+    <Text Key="NumberSeries" Text="Očíslovat sérii" Comment="Number Series" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="Caption" Text="Průvodce očíslováním" Comment="Autonumber Wizard" />
+    <Text Key="Description" Text="Skript, který přečísluje zvolené eKomiksy" Comment="A script to renumber the selected Books" />
+  </Texts>
+</TR>

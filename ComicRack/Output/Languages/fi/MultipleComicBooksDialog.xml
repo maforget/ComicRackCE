@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MultipleComicBooksDialog" CultureName="fi">
+  <Texts>
+    <Text Key="MultipleComicBooksDialog" Text="Monen eSarjiksen tiedot ({0} Kirjaa)" Comment="Multiple eComic Information ({0} Books)" />
+    <Text Key="btCancel" Text="&amp;Peruuta" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelCount" Text=":" Comment="of:" />
+    <Text Key="labelAlternateCount" Text=":" Comment="of:" />
+    <Text Key="labelAlternateNumber" Text="Numero:" Comment="Number:" />
+    <Text Key="labelAlternateSeries" Text="Vaihtoehtoissarja tai -nimike:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelColorist" Text="Värittäjä:" Comment="Colorist:" />
+    <Text Key="labelCoverArtist" Text="Kannen kuvittaja:" Comment="Cover Artist:" />
+    <Text Key="labelEditor" Text="Toimittaja:" Comment="Editor:" />
+    <Text Key="labelGenre" Text="Genre:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Merkintä:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Tussaaja:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Kieli:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Tekstinpiirtäjä:" Comment="Letterer:" />
+    <Text Key="labelManga" Text="Manga:" Comment="Manga:" />
+    <Text Key="labelMonth" Text="Kuukausi:" Comment="Month:" />
+    <Text Key="labelNumber" Text="Numero:" Comment="Number:" />
+    <Text Key="labelPenciller" Text="Piirtäjä:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Kustantaja:" Comment="Publisher:" />
+    <Text Key="labelRating" Text="Oma arvio:" Comment="My Rating:" />
+    <Text Key="labelCommunityRating" Text="Yhteisön arvio:" Comment="Community Rating:" />
+    <Text Key="labelSeries" Text="Sarjat:" Comment="Series:" />
+    <Text Key="labelSummary" Text="Kooste:" Comment="Summary:" />
+    <Text Key="labelNotes" Text="Muistiinpanot:" Comment="Notes:" />
+    <Text Key="labelTags" Text="Välilehdet" Comment="Tags:" />
+    <Text Key="labelTitle" Text="Nimike:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Nidos:" Comment="Volume:" />
+    <Text Key="labelWriter" Text="Kirjoittaja:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Vuosi:" Comment="Year:" />
+    <Text Key="labelBlackAndWhite" Text="MustaValkoinen:" Comment="Black and White:" />
+    <Text Key="labelFormat" Text="Tiedostomuoto:" Comment="Format:" />
+    <Text Key="labelAgeRating" Text="Ikäsuositus:" Comment="Age Rating:" />
+    <Text Key="labelEnableProposed" Text="Käytä Ehdotettuja:" Comment="Enable Proposed:" />
+    <Text Key="labelCharacters" Text="Hahmot:" Comment="Characters:" />
+    <Text Key="labelTeams" Text="Ryhmät:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="Sijainnit:" Comment="Locations:" />
+    <Text Key="labelFormat" Text="Tiedostomuoto:" Comment="Format:" />
+    <Text Key="labelWeb" Text="Netti:" Comment="Web:" />
+    <Text Key="labelBookStore" Text="Kauppa:" Comment="Store:" />
+    <Text Key="labelBookOwner" Text="Omistaja:" Comment="Owner:" />
+    <Text Key="labelBookLocation" Text="Sijainti:" Comment="Location:" />
+    <Text Key="labelBookAge" Text="Ikä:" Comment="Age:" />
+    <Text Key="labelBookCondition" Text="Kunto:" Comment="Condition:" />
+    <Text Key="labelBookCollectionStatus" Text="Kokoelman Tila:" Comment="Collection Status:" />
+    <Text Key="labelBookNotes" Text="Muistiinpanot:" Comment="Notes:" />
+    <Text Key="labelBookPrice" Text="Hinta:" Comment="Price:" />
+    <Text Key="grpMain" Text="Ensisijainen" Comment="Main" />
+    <Text Key="grpPlotNotes" Text="Juoni &amp; muistiinpanot" Comment="Plot &amp; Notes" />
+    <Text Key="grpArtists" Text="Taiteilijat / Liittyvät Henkilöt" Comment="Artists / People Involved" />
+    <Text Key="grpCatalog" Text="Kuvasto" Comment="Catalog" />
+  </Texts>
+</TR>

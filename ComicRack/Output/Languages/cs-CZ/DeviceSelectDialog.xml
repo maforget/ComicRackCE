@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DeviceSelectDialog" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="DeviceSelectDialog" Text="Zvolte zařízení" Comment="Select Device" />
+    <Text Key="btCancel" Text="&amp;Storno" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="colName" Text="Název" Comment="Name" />
+    <Text Key="colModel" Text="Model" Comment="Model" />
+    <Text Key="colSerial" Text="Výrobní číslo" Comment="Serial" />
+  </Texts>
+</TR>

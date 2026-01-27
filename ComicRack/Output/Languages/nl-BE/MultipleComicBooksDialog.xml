@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MultipleComicBooksDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Annuleer" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelAlternateSeries" Text="Alternatieve Reeksnaam:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelColorist" Text="Inkleurder:" Comment="Colorist:" />
+    <Text Key="labelEditor" Text="Editor:" Comment="Editor:" />
+    <Text Key="labelGenre" Text="Genre:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Imprint:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Inker:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Taal:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Letteraar:" Comment="Letterer:" />
+    <Text Key="labelManga" Text="Manga:" Comment="Manga:" />
+    <Text Key="labelMonth" Text="Maand:" Comment="Month:" />
+    <Text Key="labelNumber" Text="Nummer:" Comment="Number:" />
+    <Text Key="labelPenciller" Text="Tekenaar:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Uitgever:" Comment="Publisher:" />
+    <Text Key="labelSeries" Text="Reeks:" Comment="Series:" />
+    <Text Key="labelSummary" Text="Synopsis:" Comment="Summary:" />
+    <Text Key="labelTags" Text="Labels:" Comment="Tags:" />
+    <Text Key="labelTitle" Text="Titel:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Jaargang:" Comment="Volume:" />
+    <Text Key="labelWriter" Text="Schrijver:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Jaar:" Comment="Year:" />
+    <Text Key="labelBlackAndWhite" Text="Zwart-wit:" Comment="Black and White:" />
+    <Text Key="labelFormat" Text="Albumformaat:" Comment="Format:" />
+    <Text Key="labelEnableProposed" Text="Label zoals voorgesteld:" Comment="Enable Proposed:" />
+    <Text Key="labelAgeRating" Text="Leeswijzer:" Comment="Age Rating:" />
+    <Text Key="labelNotes" Text="Nota's:" Comment="Notes:" />
+    <Text Key="labelCharacters" Text="Personages:" Comment="Characters:" />
+    <Text Key="labelCount" Text="van:" Comment="of:" />
+    <Text Key="labelAlternateCount" Text="van:" Comment="of:" />
+    <Text Key="labelAlternateNumber" Text="Alternatieve ReeksNr.:" Comment="Number:" />
+    <Text Key="labelCoverArtist" Text="Voorkaft:" Comment="Cover Artist:" />
+    <Text Key="labelTeams" Text="Teams:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="Locaties:" Comment="Locations:" />
+    <Text Key="labelRating" Text="Mijn beoordeling:" Comment="My Rating:" />
+    <Text Key="labelCommunityRating" Text="Groepswaardering:" Comment="Community Rating:" />
+    <Text Key="labelWeb" Text="Web:" Comment="Web:" />
+    <Text Key="labelBookStore" Text="Stripwinkel:" Comment="Store:" />
+    <Text Key="labelBookOwner" Text="Eigenaar:" Comment="Owner:" />
+    <Text Key="labelBookLocation" Text="Locatie:" Comment="Location:" />
+    <Text Key="labelBookAge" Text="Tijdvak - Era:" Comment="Age:" />
+    <Text Key="labelBookCondition" Text="Conditie:" Comment="Condition:" />
+    <Text Key="labelBookCollectionStatus" Text="Status van het album in je collectie:" Comment="Collection Status:" />
+    <Text Key="labelBookNotes" Text="Nota's:" Comment="Notes:" />
+    <Text Key="labelBookPrice" Text="Aankoopprijs:" Comment="Price:" />
+    <Text Key="grpMain" Text="Main" Comment="Main" />
+    <Text Key="grpPlotNotes" Text="Plot &amp; Nota's" Comment="Plot &amp; Notes" />
+    <Text Key="grpArtists" Text="Auteurs / Assistenten" Comment="Artists / People Involved" />
+    <Text Key="grpCatalog" Text="Catalogus" Comment="Catalog" />
+    <Text Key="labelISBN" Text="ISBN:" Comment="ISBN:" />
+    <Text Key="labelPagesAsTextSimple" Text="Pagina's:" Comment="Pages:" />
+    <Text Key="MultipleComicBooksDialog" Text="Informatie voor meerdere Boeken ({0}" Comment="Multiple Book Information ({0})" />
+    <Text Key="labelOpenedTime" Text="Geopend/Gelezen:" Comment="Opened/Read:" />
+    <Text Key="labelAddedTime" Text="Toegevoegd/Aangekocht:" Comment="Added/Purchased:" />
+    <Text Key="labelSeriesComplete" Text="Volledige reeks:" Comment="Series complete:" />
+    <Text Key="labelScanInformation" Text="Scan Informatie:" Comment="Scan Information:" />
+    <Text Key="labelStoryArc" Text="Cyclustitel:" Comment="Story Arc:" />
+    <Text Key="labelSeriesGroup" Text="Globale Reeksnaam:" Comment="Series Group:" />
+    <Text Key="labelMainCharacterOrTeam" Text="Protagonist/Team:" Comment="Main Character/Team:" />
+    <Text Key="labelReview" Text="Recensie:" Comment="Review:" />
+    <Text Key="labelDay" Text="Dag:" Comment="Day:" />
+    <Text Key="labelReleasedTime" Text="Publicatiedatum:" Comment="Veröffentlicht:" />
+  </Texts>
+</TR>

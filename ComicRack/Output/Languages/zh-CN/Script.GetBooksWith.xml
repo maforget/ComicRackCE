@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.GetBooksWith" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Name" Text="[代码示例] 所有书籍起始于" Comment="[Code Sample] All Books starting with" />
+    <Text Key="Description" Text="显示如何编写自定义智能列表脚本的示例脚本" Comment="Sample script to show how to write custom smartlist scripts" />
+  </Texts>
+</TR>

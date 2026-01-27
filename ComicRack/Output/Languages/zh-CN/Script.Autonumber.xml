@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.Autonumber" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Cancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="chkTotal" Text="保存总话数:" Comment="Save total Number:" />
+    <Text Key="labelBegin" Text="起始话数:" Comment="Begin at Number:" />
+    <Text Key="Name" Text="自动编号向导..." Comment="Autonumber Wizard..." />
+    <Text Key="NumberAltSeries" Text="编号候选系列的话数" Comment="Number Alternate Series" />
+    <Text Key="NumberSeries" Text="编号系列的话数" Comment="Number Series" />
+    <Text Key="OK" Text="确定(&amp;O)" Comment="&amp;OK" />
+    <Text Key="Caption" Text="自动编号向导" Comment="Autonumber Wizard" />
+    <Text Key="Description" Text="重新编号选定的书籍的话数" Comment="A script to renumber the selected Books" />
+  </Texts>
+</TR>

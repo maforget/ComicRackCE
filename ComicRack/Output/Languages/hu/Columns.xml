@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Columns" CultureName="hu">
+  <Texts>
+    <Text Key="AlternateCountAsText" Text="Alternatív darab" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="Ebben az alternatív sorozatban/történetben megjelent képregények száma" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="Alternatív szám" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="A kiadványa száma az alternatív sorozatban/történetben" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="Alternatív sorozat" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="Alternatív sorozat/történet neve" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="Leírás" Comment="Caption" />
+    <Text Key="Colorist" Text="Színező" Comment="Colorist" />
+    <Text Key="CountAsText" Text="Darab" Comment="Count" />
+    <Text Key="Cover" Text="Borító" Comment="Cover" />
+    <Text Key="CoverArtist" Text="Borító alkotója" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="A borítót megalkotó személy" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="Szerkesztő" Comment="Editor" />
+    <Text Key="FileName" Text="Fájlnév" Comment="File Name" />
+    <Text Key="FileName.Description" Text="Fájlnév kiterjesztés nélkül" Comment="Filename without the extension" />
+    <Text Key="Genre" Text="Típus" Comment="Genre" />
+    <Text Key="ImageHeightAsText" Text="Magasság" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="Oldal magassága pixelben" Comment="Height of the page in pixels" />
+    <Text Key="ImageWidthAsText" Text="Szélesség" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="Oldal szélessége pixelben" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="Család" Comment="Imprint" />
+    <Text Key="Inker" Text="Kihúzó" Comment="Inker" />
+    <Text Key="Key" Text="Név" Comment="Name" />
+    <Text Key="LanguageAsText" Text="Nyelv" Comment="Language" />
+    <Text Key="Letterer" Text="Betűk" Comment="Letterer" />
+    <Text Key="MonthAsText" Text="Hónap" Comment="Month" />
+    <Text Key="NumberAsText" Text="Szám" Comment="Number" />
+    <Text Key="OpenedCountAsText" Text="Megnyitások" Comment="Opened Count" />
+    <Text Key="Page" Text="Oldal" Comment="Page" />
+    <Text Key="Page.Description" Text="Kép oldalszáma" Comment="The page number of the image" />
+    <Text Key="PageTypeAsText" Text="Oldaltípus" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="Oldal típusa (borító, történet, stb.)" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="Rajzoló" Comment="Penciller" />
+    <Text Key="Position" Text="Pozíció" Comment="Position" />
+    <Text Key="Publisher" Text="Kiadó" Comment="Publisher" />
+    <Text Key="Rating" Text="Értékelésem" Comment="My Rating" />
+    <Text Key="ReadPercentageAsText" Text="Elolvasott hányad" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="Mekkora részét olvasták már el a képregénynek" Comment="How much has been read" />
+    <Text Key="Series" Text="Sorozat" Comment="Series" />
+    <Text Key="Series.Description" Text="Sorozat neve" Comment="Series name" />
+    <Text Key="State" Text="Státusz" Comment="State" />
+    <Text Key="Tags" Text="Címkék" Comment="Tags" />
+    <Text Key="Thumbnail" Text="Miniatűr" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="Az oldal miniatűrje" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="Cím" Comment="Title" />
+    <Text Key="VolumeAsText" Text="Kötet" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="Sorozat kötetszáma" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="Író" Comment="Writer" />
+    <Text Key="YearAsText" Text="Év" Comment="Year" />
+    <Text Key="MangaAsText" Text="Manga" Comment="Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="FF" Comment="B&amp;W" />
+    <Text Key="Format" Text="Formátum" Comment="Format" />
+    <Text Key="FileFormat" Text="Fájl formátum" Comment="File Format" />
+    <Text Key="Bookmark" Text="Könyvjelző" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="Könyvjelző szöveg" Comment="Bookmark text" />
+    <Text Key="AgeRating" Text="Kor besorolás" Comment="Age Rating" />
+    <Text Key="Characters" Text="Szereplők" Comment="Characters" />
+    <Text Key="FilePath" Text="Útvonal" Comment="File Path" />
+    <Text Key="FileSizeAsText" Text="Méret" Comment="File Size" />
+    <Text Key="ImageFileSizeAsText" Text="Méret" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="Oldal mérete bájtban" Comment="Size of the page in bytes" />
+    <Text Key="RotationAsText" Text="Forgatás" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="Oldal végleges elforgatása" Comment="Permanent rotation of the page" />
+    <Text Key="FileDirectory" Text="Fájl könyvtára" Comment="File Directory" />
+    <Text Key="BookmarkCountAsText" Text="Könyvjelzők száma" Comment="Bookmark Count" />
+    <Text Key="AddedTime" Text="Hozzáadás ideje" Comment="Added" />
+    <Text Key="AddedTime.Description" Text="Mikor adták hozzá a Képregényt az adatbázishoz?" Comment="Time the Book was added to the Database" />
+    <Text Key="Caption.Description" Text="A képregény teljes leírása" Comment="Complete caption of the Book" />
+    <Text Key="Colorist.Description" Text="A képregény színezője" Comment="Colorist of the Book" />
+    <Text Key="CountAsText.Description" Text="Ebben a sorozatban megjelent képregények száma" Comment="Total number of issues in this series" />
+    <Text Key="Cover.Description" Text="A képregény borítóképe" Comment="Cover image of the Book" />
+    <Text Key="Editor.Description" Text="A képregény szerkesztője" Comment="Editor of the Book" />
+    <Text Key="FileModifiedTime" Text="Fájl módosítva" Comment="File Modified" />
+    <Text Key="FileModifiedTime.Description" Text="Mikor módosult utoljára a képregény?" Comment="Time the Book was modified the last time" />
+    <Text Key="FilePath.Description" Text="Képregény elérési útvonala" Comment="Location where the Book is stored" />
+    <Text Key="FileFormat.Description" Text="A képregény fájl formátuma" Comment="File format of the Book" />
+    <Text Key="FileSizeAsText.Description" Text="Képregény mérete bájtban" Comment="Size of the Book file in bytes" />
+    <Text Key="Genre.Description" Text="Képregény típusa" Comment="Genre of the Book" />
+    <Text Key="Imprint.Description" Text="A képregény kiadón belüli alcsoportja, családja (ha van)" Comment="Imprint of the Book" />
+    <Text Key="Inker.Description" Text="Képregény kihúzója (tintarajz, tus)" Comment="Inker of the Book" />
+    <Text Key="Key.Description" Text="Az oldal egyedi azonosítója" Comment="Unique key for this page in the Book" />
+    <Text Key="LanguageAsText.Description" Text="Képregény nyelve" Comment="Language of the Book" />
+    <Text Key="Letterer.Description" Text="Képregény betűinek alkotója" Comment="Letterer of the Book" />
+    <Text Key="MonthAsText.Description" Text="A hónap, amikor a képregényt kiadták" Comment="Month the Book was published" />
+    <Text Key="NumberAsText.Description" Text="Képregény sorszáma a sorozatban" Comment="Number of the Book in the Series" />
+    <Text Key="OpenedCountAsText.Description" Text="Mutatja, hogy hány alkalommal nyitották meg a képregényt" Comment="Times the Book has been opened" />
+    <Text Key="OpenedTime" Text="Megnyitás ideje" Comment="Opened" />
+    <Text Key="OpenedTime.Description" Text="Mikor volt utoljára megnyitva?" Comment="Last time the Book was opened" />
+    <Text Key="PagesAsTextSimple" Text="Oldalak" Comment="Pages" />
+    <Text Key="PagesAsTextSimple.Description" Text="Az összes oldal száma" Comment="The total count of pages" />
+    <Text Key="Penciller.Description" Text="Képregény rajzolója (ceruzarajz)" Comment="Penciller of the Book" />
+    <Text Key="Position.Description" Text="Képregény pozíciója a listában" Comment="Position of the Book in the list" />
+    <Text Key="Checked" Text="Pipálva" Comment="Checked" />
+    <Text Key="Checked.Description" Text="Ki van-e pipálva?" Comment="Book is checked" />
+    <Text Key="Publisher.Description" Text="Képregény kiadója" Comment="Publisher of the Book" />
+    <Text Key="Rating.Description" Text="Képregény saját értékelése" Comment="Your rating of the Book" />
+    <Text Key="CommunityRating" Text="Közösség értékelése" Comment="Community Rating" />
+    <Text Key="CommunityRating.Description" Text="A Képregény értékelése a közösség szerint" Comment="Community Rating of the Book" />
+    <Text Key="State.Description" Text="Képregény státusza" Comment="State indicators for the Book" />
+    <Text Key="Tags.Description" Text="Képregényhez rendelt címkék" Comment="Tags of the Book" />
+    <Text Key="Title.Description" Text="Képregény történetének címe" Comment="Title of the Book" />
+    <Text Key="Writer.Description" Text="Képregény írója" Comment="Writer of the Book" />
+    <Text Key="YearAsText.Description" Text="Képregény megjelenésének éve" Comment="Year the Book was published" />
+    <Text Key="MangaAsText.Description" Text="Igen, ha a képregény Manga" Comment="Yes if the Book is a Manga" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="Igen, ha a képregény fekete-fehér" Comment="Yes if the Book is black and white" />
+    <Text Key="Format.Description" Text="Képregény formátuma" Comment="Format of the Book" />
+    <Text Key="AgeRating.Description" Text="A képregény ajánlott korosztály szerinti besorolása" Comment="Age rating of the Book" />
+    <Text Key="PublishedAsText" Text="Kiadva" Comment="Published" />
+    <Text Key="PublishedAsText.Description" Text="Képregény kiadásának dátuma" Comment="Publication date of the Book" />
+    <Text Key="Characters.Description" Text="A képregény szereplői" Comment="Plot characters of the Book" />
+    <Text Key="Teams" Text="Csapatok" Comment="Teams" />
+    <Text Key="Teams.Description" Text="Csapatok a képregény cselekményében" Comment="Plot teams of the Book" />
+    <Text Key="Locations" Text="Helyszínek" Comment="Locations" />
+    <Text Key="Locations.Description" Text="A cselekmény helyzínei a képregényben" Comment="Plot locations of the Book" />
+    <Text Key="FileDirectory.Description" Text="A képregény könyvtára" Comment="Directory of the Book" />
+    <Text Key="FileCreationTime" Text="Fájl létrehozva" Comment="File Created" />
+    <Text Key="FileCreationTime.Description" Text="Képregény-Fájl készítési ideje" Comment="Creation time of the Book-File" />
+    <Text Key="BookmarkCountAsText.Description" Text="Könyvjelzők száma ennél a képregénynél" Comment="Count of Bookmarks for this Book" />
+    <Text Key="Web" Text="Web" Comment="Web" />
+    <Text Key="Web.Description" Text="Link egy weboldalra" Comment="A Web Link" />
+    <Text Key="NewPagesAsText" Text="Új oldalak" Comment="New Pages" />
+    <Text Key="NewPagesAsText.Description" Text="Új Oldalak száma" Comment="Count of new Pages" />
+    <Text Key="Notes" Text="Megjegyzések" Comment="Notes" />
+    <Text Key="Summary" Text="Összefoglaló" Comment="Summary" />
+    <Text Key="Number" Text="Szám" Comment="Number" />
+    <Text Key="AlternateNumber" Text="Alternatív szám" Comment="Alternate Number" />
+    <Text Key="IsLinkedAsText" Text="Fájlhoz kapcsolva" Comment="Linked to File" />
+    <Text Key="IsLinkedAsText.Description" Text="Egy fájlhoz van kapcsolva" Comment="Book is linked to a File" />
+    <Text Key="BookAge" Text="Képregény kora" Comment="Book Age" />
+    <Text Key="BookAge.Description" Text="A képregény kora" Comment="Age of the Book" />
+    <Text Key="BookPriceAsText" Text="Képregény ára" Comment="Book Price" />
+    <Text Key="BookPriceAsText.Description" Text="Mennyibe került a képregény?" Comment="Price of the Book" />
+    <Text Key="BookCondition" Text="Képregény állapota" Comment="Book Condition" />
+    <Text Key="BookCondition.Description" Text="Képregény papírjának állapota" Comment="Condition of the Book" />
+    <Text Key="BookStore" Text="Képregény boltja" Comment="Book Store" />
+    <Text Key="BookStore.Description" Text="Hol adták el a képregényt?" Comment="Store the Book was bought" />
+    <Text Key="BookOwner" Text="Képregény tulajdonosa" Comment="Book Owner" />
+    <Text Key="BookOwner.Description" Text="Kié a képregény?" Comment="Owner of the Book" />
+    <Text Key="BookCollectionStatus" Text="Beszerzés állapota" Comment="Book Collection Status" />
+    <Text Key="BookCollectionStatus.Description" Text="A képregény beszerzésének aktuális állapota" Comment="Status of the Book in the Collection" />
+    <Text Key="BookLocation" Text="Képregény helye" Comment="Book Location" />
+    <Text Key="BookLocationStatus.Description" Text="Hol van a Képregény?" Comment="Location of the Book" />
+    <Text Key="PagePositionAsText" Text="Pozíció" Comment="Position" />
+    <Text Key="PagePositionAsText.Description" Text="Layout position of the page" Comment="Layout position of the page" />
+    <Text Key="ISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ISBN.Description" Text="ISBN-azonostó" Comment="ISBN Number" />
+    <Text Key="SeriesCompleteAsText" Text="Sorozat teljes" Comment="Series complete" />
+    <Text Key="SeriesCompleteAsText.Description" Text="A sorozat be van fejezve" Comment="Series is complete" />
+    <Text Key="EnableProposedAsText" Text="Javasolt értékek" Comment="Proposed Values" />
+    <Text Key="EnableProposedAsText.Description" Text="A fájlnév alapján javasolt értékek használata" Comment="Uses proposed Values from Filename" />
+    <Text Key="GapInformation" Text="Hiányzó szakasz információ" Comment="Gap Information" />
+    <Text Key="GapInformation.Description" Text="Megmutatja, ha ez a rész a kezdete vagy a vége egy hiányzó szakasznak a sorozatban" Comment="Information if this issue is the end or start of a gap in the series" />
+    <Text Key="HasBeenReadAsText" Text="Elolvasva" Comment="Read" />
+    <Text Key="HasBeenReadAsText.Description" Text="A képregény már olvasott" Comment="Book has been read" />
+    <Text Key="Icons" Text="Ikonok" Comment="Icons" />
+    <Text Key="Icons.Description" Text="A képregény ikonjai" Comment="Icons for this Book" />
+    <Text Key="ScanInformation" Text="Scannelés információi" Comment="Scan Information" />
+    <Text Key="ScanInformation.Description" Text="Információ a scannelésről" Comment="Additional information about the scan" />
+    <Text Key="StoryArc" Text="Történet szál" Comment="Story Arc" />
+    <Text Key="StoryArc.Description" Text="Történet szál, amihez a képregény tartozik" Comment="Story Arc the Book belongs to" />
+    <Text Key="SeriesGroup" Text="Sorozat csoport" Comment="Series Group" />
+    <Text Key="SeriesGroup.Description" Text="Sorozatok csoportja, amelyhez a képregény tartozik" Comment="Series Group the Book belongs to" />
+    <Text Key="MainCharacterOrTeam" Text="Főszereplő/csapat" Comment="Main Character/Team" />
+    <Text Key="MainCharacterOrTeam.Description" Text="A képregény főszereplője/ fő csapata" Comment="Main Character or Team of the Book" />
+    <Text Key="Review" Text="Kritika" Comment="Review" />
+    <Text Key="Review.Description" Text="Egy rövid kritika" Comment="A short Review of the Book" />
+    <Text Key="SeriesStatCountAsText" Text="Sorozat: Képregények" Comment="Series: Books" />
+    <Text Key="SeriesStatCountAsText.Description" Text="Képregények a sorozatban" Comment="Books in the Series" />
+    <Text Key="SeriesStatMinNumberAsText" Text="Sorozat: Első szám" Comment="Series: First Number" />
+    <Text Key="SeriesStatMinNumberAsText.Description" Text="Első Szám a sorozatban" Comment="First Number of the Series" />
+    <Text Key="SeriesStatMaxNumberAsText" Text="Sorozat: Utolsó szám" Comment="Series: Last Number" />
+    <Text Key="SeriesStatMaxNumberAsText.Description" Text="Az utolsó szám a sorozatban" Comment="Last Number of the Series" />
+    <Text Key="SeriesStatMinYearAsText" Text="Sorozat: Első év" Comment="Series: First Year" />
+    <Text Key="SeriesStatMinYearAsText.Description" Text="Első év a sorozatban" Comment="First Year of the Series" />
+    <Text Key="SeriesStatMaxYearAsText" Text="Sorozat: Utolsó év" Comment="Series: Last Year" />
+    <Text Key="SeriesStatMaxYearAsText.Description" Text="Utolsó év a sorozatban" Comment="last Year of the Series" />
+    <Text Key="SeriesStatPageCountAsText" Text="Sorozat: Oldaszám" Comment="Series: Pages" />
+    <Text Key="SeriesStatPageCountAsText.Description" Text="Egész sorozat oldalszáma" Comment="Pages in the Series" />
+    <Text Key="SeriesStatPageReadCountAsText" Text="Sorozat: Elolvasott oldalak száma" Comment="Series: Pages Read" />
+    <Text Key="SeriesStatPageReadCountAsText.Description" Text="A sorozat elolvasott oldalai" Comment="Pages of the Series read" />
+    <Text Key="SeriesStatReadPercentageAsText" Text="Sorozat: Elolvasott százalék" Comment="Series: Percent Read" />
+    <Text Key="SeriesStatReadPercentageAsText.Description" Text="Ennyi százalékát olvastam a sorozatnak" Comment="Percent of the Series read" />
+    <Text Key="SeriesStatAverageRating" Text="Sorozat: Saját átlagos értékelésem" Comment="Series: My Average Rating" />
+    <Text Key="SeriesStatAverageRating.Description" Text="Az én átlagos értékelésem a sorozatra" Comment="My average Rating of the Series" />
+    <Text Key="SeriesStatAverageCommunityRating" Text="Sorozat: Közösség átlagos értékelése" Comment="Series: Community Average Rating" />
+    <Text Key="SeriesStatAverageCommunityRating.Description" Text="A közösség átlagos értékelése a sorozatra" Comment="Community average Rating of the Series" />
+    <Text Key="SeriesStatRunningTimeAsText" Text="Sorozat: Futási idő években" Comment="Series: Running Time Years" />
+    <Text Key="SeriesStatRunningTimeAsText.Description" Text="Ennyi évig futott a sorozat" Comment="Running time of the Series in years" />
+    <Text Key="SeriesStatGapCountAsText" Text="Sorozat: Hiányzó szakaszok" Comment="Series: Gaps" />
+    <Text Key="SeriesStatGapCountAsText.Description" Text="Hiányzó szakaszok a sorozatban" Comment="Gaps in the Series" />
+    <Text Key="SeriesStatLastOpenedTime" Text="Sorozat: Megnyitva" Comment="Series: Opened" />
+    <Text Key="SeriesStatLastOpenedTime.Description" Text="Mikor volt legutóbb megnyitva egy képregény a sorozatból?" Comment="Last time a book from this Series has been opened" />
+    <Text Key="SeriesStatLastAddedTime" Text="Sorozat: Képregény hozzáadva" Comment="Series: Book added" />
+    <Text Key="SeriesStatLastAddedTime.Description" Text="Mikor adtak hozzá legutóbb képregényt a sorozathoz?" Comment="Last time a book was added to the Series" />
+    <Text Key="DateFormats" Text="Hosszú|Rövid|Relatív" Comment="Long|Short|Relative" />
+  </Texts>
+</TR>

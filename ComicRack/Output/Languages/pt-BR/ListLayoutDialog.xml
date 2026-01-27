@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListLayoutDialog" CultureName="pt-BR">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Cancelar" Comment="&amp;Cancel" />
+    <Text Key="btHideAll" Text="&amp;Esconder tudo" Comment="&amp;Hide All" />
+    <Text Key="btMoveDown" Text="&amp;Descer" Comment="Move &amp;Down" />
+    <Text Key="btMoveUp" Text="S&amp;ubir" Comment="Move &amp;Up" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btShowAll" Text="&amp;Exibir tudo" Comment="&amp;Show All" />
+    <Text Key="chkHideCaption" Text="Não exibir qualquer texto" Comment="Do not show any Text" />
+    <Text Key="labelSelectColumn" Text="Selecione as colunas que deseja exibir:" Comment="Please select the columns you want to show:" />
+    <Text Key="labelHint" Text="Dica: Você também pode mudar as colunas exibidas clicando com o botão direito do mouse sobre o título de uma coluna." Comment="Hint: You can also change the displayed columns by right clicking on a column header." />
+    <Text Key="labelFirstLine" Text="Primeira linha:" Comment="First Line:" />
+    <Text Key="labelSecondLine" Text="Segunda linha:" Comment="Second Line:" />
+    <Text Key="labelThirdLine" Text="Terceira linha:" Comment="Third Line:" />
+    <Text Key="labelSelectThumbnailText" Text="Selecione o texto que deseja exibir sob as miniaturas:" Comment="Please select the text you want to display below the thumbnails:" />
+    <Text Key="tabDetails" Text="Detalhes" Comment="Details" />
+    <Text Key="tabThumbnails" Text="Miniaturas" Comment="Thumbnails" />
+    <Text Key="ListLayoutDialog" Text="Lista de opções" Comment="List Options" />
+    <Text Key="btApply" Text="&amp;Aplicar" Comment="&amp;Apply" />
+    <Text Key="tabTiles" Text="Ladrilhos" Comment="Tiles" />
+    <Text Key="colName" Text="Nome" Comment="Name" />
+    <Text Key="colDescription" Text="Descrição" Comment="Description" />
+    <Text Key="btTilesDefault" Text="Padrão" Comment="Default" />
+  </Texts>
+</TR>

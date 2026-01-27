@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Columns" CultureName="it">
+  <Texts>
+    <Text Key="AlternateCountAsText" Text="Conteggio Alternativo" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="Numero Album in crossover/storia" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="Numero Alternativo" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="Numero Album in Crossover/Storyline" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="Serie Alternativa" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="Crossover/Nome Storia" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="Titolo" Comment="Caption" />
+    <Text Key="Caption.Description" Text="Titolo Completo dell'Album" Comment="Complete caption of the Book" />
+    <Text Key="Colorist" Text="Colori" Comment="Colorist" />
+    <Text Key="Colorist.Description" Text="Colori Album" Comment="Colorist of the Book" />
+    <Text Key="CountAsText" Text="Conta" Comment="Count" />
+    <Text Key="CountAsText.Description" Text="Numero Totale Album nella Serie" Comment="Total number of issues in this series" />
+    <Text Key="Cover" Text="Copertina" Comment="Cover" />
+    <Text Key="Cover.Description" Text="Immagine Copertina Album" Comment="Cover image of the Book" />
+    <Text Key="CoverArtist" Text="Copertina" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="Autore della Copertina" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="Curatore" Comment="Editor" />
+    <Text Key="Editor.Description" Text="Curatore Album" Comment="Editor of the Book" />
+    <Text Key="FileName" Text="Nome File" Comment="File Name" />
+    <Text Key="FileName.Description" Text="Nome del File senza Estensione" Comment="Filename without the extension" />
+    <Text Key="FilePath" Text="Percorso File" Comment="File Path" />
+    <Text Key="FilePath.Description" Text="Ubicazione Fisica Album" Comment="Location where the Book is stored" />
+    <Text Key="FileFormat" Text="Formato File" Comment="File Format" />
+    <Text Key="FileFormat.Description" Text="Formato File Album" Comment="File format of the Book" />
+    <Text Key="FileSizeAsText" Text="Grandezza File" Comment="File Size" />
+    <Text Key="FileSizeAsText.Description" Text="Grandezza Album in bytes" Comment="Size of the Book file in bytes" />
+    <Text Key="Genre" Text="Genere" Comment="Genre" />
+    <Text Key="Genre.Description" Text="Genere Album" Comment="Genre of the Book" />
+    <Text Key="ImageHeightAsText" Text="Altezza" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="Alteza Pagina in Pixels" Comment="Height of the page in pixels" />
+    <Text Key="ImageFileSizeAsText" Text="Grandezza" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="Grandezza Pagine in bytes" Comment="Size of the page in bytes" />
+    <Text Key="ImageWidthAsText" Text="Larghezza" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="Largh. Pagina in Pixels" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="Collana" Comment="Imprint" />
+    <Text Key="Imprint.Description" Text="Collana Album" Comment="Imprint of the Book" />
+    <Text Key="Inker" Text="Chine" Comment="Inker" />
+    <Text Key="Inker.Description" Text="Chine Album" Comment="Inker of the Book" />
+    <Text Key="Key" Text="Nome" Comment="Name" />
+    <Text Key="Key.Description" Text="Chiave Univoca per questa Pagina nell'Album" Comment="Unique key for this page in the Book" />
+    <Text Key="LanguageAsText" Text="Lingua" Comment="Language" />
+    <Text Key="LanguageAsText.Description" Text="Lingua Album" Comment="Language of the Book" />
+    <Text Key="Letterer" Text="Lettering" Comment="Letterer" />
+    <Text Key="Letterer.Description" Text="Lettering Album" Comment="Letterer of the Book" />
+    <Text Key="MonthAsText" Text="Mese" Comment="Month" />
+    <Text Key="MonthAsText.Description" Text="Mese di Pubblicazione Album" Comment="Month the Book was published" />
+    <Text Key="NumberAsText" Text="Numero" Comment="Number" />
+    <Text Key="NumberAsText.Description" Text="Numero dell'Album in questa Serie" Comment="Number of the Book in the Series" />
+    <Text Key="OpenedCountAsText" Text="Conteggio Aperti" Comment="Opened Count" />
+    <Text Key="OpenedCountAsText.Description" Text="Ora in cui l'Album è stato Aperto" Comment="Times the Book has been opened" />
+    <Text Key="Page" Text="Pagina" Comment="Page" />
+    <Text Key="Page.Description" Text="Il Numero Pagina dell'Immgine" Comment="The page number of the image" />
+    <Text Key="PagesAsTextSimple" Text="Pagine" Comment="Pages" />
+    <Text Key="PagesAsTextSimple.Description" Text="Totale Conteggio Pagine" Comment="The total count of pages" />
+    <Text Key="PageTypeAsText" Text="Tipo" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="Tipo Pagina (storia, copertina, ecc.)" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="Disegnatore" Comment="Penciller" />
+    <Text Key="Penciller.Description" Text="Disegnatore Album" Comment="Penciller of the Book" />
+    <Text Key="Position" Text="Posizione" Comment="Position" />
+    <Text Key="Position.Description" Text="Posizione dell'Album nella Lista" Comment="Position of the Book in the list" />
+    <Text Key="Publisher" Text="Editore" Comment="Publisher" />
+    <Text Key="Publisher.Description" Text="Editore Album" Comment="Publisher of the Book" />
+    <Text Key="Rating" Text="Valutazione Personale" Comment="My Rating" />
+    <Text Key="Rating.Description" Text="Tua Valutazione Album" Comment="Your rating of the Book" />
+    <Text Key="CommunityRating" Text="Giudizio Comunità" Comment="Community Rating" />
+    <Text Key="CommunityRating.Description" Text="Giudizio medio Album della Comunità " Comment="Community Rating of the Book" />
+    <Text Key="ReadPercentageAsText" Text="Percentuale Lettura" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="Percentuale Letta" Comment="How much has been read" />
+    <Text Key="Series" Text="Serie" Comment="Series" />
+    <Text Key="Series.Description" Text="Nome Serie" Comment="Series name" />
+    <Text Key="State" Text="Stato" Comment="State" />
+    <Text Key="State.Description" Text="Indicatori di Stato dell'Album" Comment="State indicators for the Book" />
+    <Text Key="Tags" Text="Etichette" Comment="Tags" />
+    <Text Key="Tags.Description" Text="Etichette Album" Comment="Tags of the Book" />
+    <Text Key="Thumbnail" Text="Icona" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="La Miniatiura della Pagina" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="Titolo" Comment="Title" />
+    <Text Key="Title.Description" Text="Titolo Album" Comment="Title of the Book" />
+    <Text Key="VolumeAsText" Text="Volume" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="Numero del Volume nella Serie" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="Autore" Comment="Writer" />
+    <Text Key="Writer.Description" Text="Autore Album" Comment="Writer of the Book" />
+    <Text Key="YearAsText" Text="Anno" Comment="Year" />
+    <Text Key="YearAsText.Description" Text="Anno Pubblicazione Album" Comment="Year the Book was published" />
+    <Text Key="MangaAsText" Text="Manga" Comment="Manga" />
+    <Text Key="MangaAsText.Description" Text="Si, se Album è un Manga" Comment="Yes if the Book is a Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="B&amp;N" Comment="B&amp;W" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="Si, se Album è in B//N" Comment="Yes if the Book is black and white" />
+    <Text Key="Format" Text="Formato" Comment="Format" />
+    <Text Key="Format.Description" Text="Formato Album" Comment="Format of the Book" />
+    <Text Key="Bookmark" Text="Segnalibro" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="Testo Segnalibro" Comment="Bookmark text" />
+    <Text Key="AgeRating" Text="Età Consigliata" Comment="Age Rating" />
+    <Text Key="AgeRating.Description" Text="Età Consigliata per l'Album" Comment="Age rating of the Book" />
+    <Text Key="PublishedAsText" Text="Pubblicato" Comment="Published" />
+    <Text Key="PublishedAsText.Description" Text="Data di Pubblicazione dell'Album" Comment="Publication date of the Book" />
+    <Text Key="Characters" Text="Personaggi" Comment="Characters" />
+    <Text Key="Characters.Description" Text="Personaggi della Trama dell'Album" Comment="Plot characters of the Book" />
+    <Text Key="Teams" Text="Gang" Comment="Teams" />
+    <Text Key="Teams.Description" Text="Gang della Trama dell'Album" Comment="Plot teams of the Book" />
+    <Text Key="Locations" Text="Siti" Comment="Locations" />
+    <Text Key="Locations.Description" Text="Siti della Trama dell'Album" Comment="Plot locations of the Book" />
+    <Text Key="RotationAsText" Text="Rotazione" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="Rotazione Permanente della Pagina" Comment="Permanent rotation of the page" />
+    <Text Key="FileDirectory" Text="Cartella File" Comment="File Directory" />
+    <Text Key="FileDirectory.Description" Text="Cartella dell'Album" Comment="Directory of the Book" />
+    <Text Key="BookmarkCountAsText" Text="Conteggio Segnalibri" Comment="Bookmark Count" />
+    <Text Key="BookmarkCountAsText.Description" Text="Conteggio Segnalibri per questo Album" Comment="Count of Bookmarks for this Book" />
+    <Text Key="Web" Text="Web" Comment="Web" />
+    <Text Key="Web.Description" Text="Collegamento Webk" Comment="A Web Link" />
+    <Text Key="NewPagesAsText" Text="Nuove Pagine" Comment="New Pages" />
+    <Text Key="NewPagesAsText.Description" Text="Conteggio Nuove Pagine" Comment="Count of new Pages" />
+    <Text Key="Notes" Text="Note" Comment="Notes" />
+    <Text Key="Summary" Text="Sommario" Comment="Summary" />
+    <Text Key="Number" Text="Numero" Comment="Number" />
+    <Text Key="AlternateNumber" Text="Numero Alternativo" Comment="Alternate Number" />
+    <Text Key="IsLinkedAsText" Text="File Collegato" Comment="Linked to File" />
+    <Text Key="IsLinkedAsText.Description" Text="L'Album è collegato ad un File" Comment="Book is linked to a File" />
+    <Text Key="BookAge" Text="Periodo Album" Comment="Book Age" />
+    <Text Key="BookAge.Description" Text="Età Album" Comment="Age of the Book" />
+    <Text Key="BookPriceAsText" Text="Prezzo Album" Comment="Book Price" />
+    <Text Key="BookPriceAsText.Description" Text="Priezzo Abum" Comment="Price of the Book" />
+    <Text Key="BookCondition" Text="Condizioni Album" Comment="Book Condition" />
+    <Text Key="BookCondition.Description" Text="Condizioni Album" Comment="Condition of the Book" />
+    <Text Key="BookStore" Text="Acquistato presso" Comment="Book Store" />
+    <Text Key="BookStore.Description" Text="Album Acquistato presso" Comment="Store the Book was bought" />
+    <Text Key="BookOwner" Text="Proprietario Album" Comment="Book Owner" />
+    <Text Key="BookOwner.Description" Text="Proprietario Album" Comment="Owner of the Book" />
+    <Text Key="BookCollectionStatus" Text="Status Collezione Album" Comment="Book Collection Status" />
+    <Text Key="BookCollectionStatus.Description" Text="Stato dell'Album nella Collezione" Comment="Status of the Book in the Collection" />
+    <Text Key="BookLocation" Text="Ubicazione Album" Comment="Book Location" />
+    <Text Key="BookLocationStatus.Description" Text="Ubicazione Album" Comment="Location of the Book" />
+    <Text Key="PagePositionAsText" Text="Posizione" Comment="Position" />
+    <Text Key="PagePositionAsText.Description" Text="Disposizione e Posizione della pagina" Comment="Layout position of the page" />
+    <Text Key="ISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ISBN.Description" Text="Numero ISBN" Comment="ISBN Number" />
+    <Text Key="SeriesCompleteAsText" Text="Serie completa" Comment="Series complete" />
+    <Text Key="SeriesCompleteAsText.Description" Text="Serie completa" Comment="Series is complete" />
+    <Text Key="EnableProposedAsText" Text="Valori Proposti" Comment="Proposed Values" />
+    <Text Key="EnableProposedAsText.Description" Text="Utilizza i Valori Proposti dal Nome File" Comment="Uses proposed Values from Filename" />
+    <Text Key="GapInformation" Text="Informazioni Num. Mancanti" Comment="Gap Information" />
+    <Text Key="GapInformation.Description" Text="Informazione se questo Numero è la fine o l'inizio dei Mancanti" Comment="Information if this issue is the end or start of a gap in the series" />
+    <Text Key="HasBeenReadAsText" Text="Letto" Comment="Read" />
+    <Text Key="HasBeenReadAsText.Description" Text="L'Album è stato letto" Comment="Book has been read" />
+    <Text Key="SeriesStatCountAsText" Text="Serie: Album" Comment="Series: Books" />
+    <Text Key="SeriesStatCountAsText.Description" Text="Album nella Serie" Comment="Books in the Series" />
+    <Text Key="SeriesStatMinNumberAsText" Text="Serie: Primo Numero" Comment="Series: First Number" />
+    <Text Key="SeriesStatMinNumberAsText.Description" Text="Primo Numero della Serie" Comment="First Number of the Series" />
+    <Text Key="SeriesStatMaxNumberAsText" Text="Serie: Ultimo Numero" Comment="Series: Last Number" />
+    <Text Key="SeriesStatMaxNumberAsText.Description" Text="Ultimo Numero della Serie" Comment="Last Number of the Series" />
+    <Text Key="SeriesStatMinYearAsText" Text="Serie: Primo Anno" Comment="Series: First Year" />
+    <Text Key="SeriesStatMinYearAsText.Description" Text="Primo Anno della Serie" Comment="First Year of the Series" />
+    <Text Key="SeriesStatMaxYearAsText" Text="Serie: Ultimo Anno" Comment="Series: Last Year" />
+    <Text Key="SeriesStatMaxYearAsText.Description" Text="Ultimo Anno della Serie" Comment="last Year of the Series" />
+    <Text Key="SeriesStatPageCountAsText" Text="Series: Pagine" Comment="Series: Pages" />
+    <Text Key="SeriesStatPageCountAsText.Description" Text="Pagine nella Serie" Comment="Pages in the Series" />
+    <Text Key="SeriesStatPageReadCountAsText" Text="Serie: Pagine Lette" Comment="Series: Pages Read" />
+    <Text Key="SeriesStatPageReadCountAsText.Description" Text="Pagine Lette della Serie" Comment="Pages of the Series read" />
+    <Text Key="SeriesStatReadPercentageAsText" Text="Serie: Percentuale Letta" Comment="Series: Percent Read" />
+    <Text Key="SeriesStatReadPercentageAsText.Description" Text="Percentuale Letta della Serie" Comment="Percent of the Series read" />
+    <Text Key="SeriesStatAverageRating" Text="Serie: Valutazione Personale Media" Comment="Series: My Average Rating" />
+    <Text Key="SeriesStatAverageRating.Description" Text="Valutazione Personale Media Serie" Comment="My average Rating of the Series" />
+    <Text Key="SeriesStatAverageCommunityRating" Text="Serie: Valutazione Media Comunità" Comment="Series: Community Average Rating" />
+    <Text Key="SeriesStatAverageCommunityRating.Description" Text="Giudizio medio Serie della Comunità" Comment="Community average Rating of the Series" />
+    <Text Key="SeriesStatRunningTimeAsText" Text="Serie: Durata in Anni" Comment="Series: Running Time Years" />
+    <Text Key="SeriesStatRunningTimeAsText.Description" Text="Durata della Serie in Anni" Comment="Running time of the Series in years" />
+    <Text Key="SeriesStatGapCountAsText" Text="Serie: Mancanti" Comment="Series: Gaps" />
+    <Text Key="SeriesStatGapCountAsText.Description" Text="Mancanti della Serie" Comment="Gaps in the Series" />
+    <Text Key="Icons" Text="Icone" Comment="Icons" />
+    <Text Key="AddedTime" Text="Aggiunto il..." Comment="Added" />
+    <Text Key="AddedTime.Description" Text="Ora di aggiunta al Database" Comment="Time the Book was added to the Database" />
+    <Text Key="FileModifiedTime" Text="File Modificato il..." Comment="File Modified" />
+    <Text Key="FileModifiedTime.Description" Text="Ora di modifica dell'ultima modifica all'Album" Comment="Time the Book was modified the last time" />
+    <Text Key="OpenedTime" Text="Aperto" Comment="Opened" />
+    <Text Key="OpenedTime.Description" Text="Ultima volta che un Album è stato aperto" Comment="Last time the Book was opened" />
+    <Text Key="FileCreationTime" Text="File Creato il..." Comment="File Created" />
+    <Text Key="FileCreationTime.Description" Text="Data Creazione del File Album" Comment="Creation time of the Book-File" />
+    <Text Key="SeriesStatLastOpenedTime" Text="Serie: Aperte" Comment="Series: Opened" />
+    <Text Key="SeriesStatLastOpenedTime.Description" Text="Ultima volta che un Album di questa Serie è stato aperto" Comment="Last time a book from this Series has been opened" />
+    <Text Key="SeriesStatLastAddedTime" Text="Series: Album aggiunti" Comment="Series: Book added" />
+    <Text Key="SeriesStatLastAddedTime.Description" Text="Ultima volta che un Album è stato aggiunto alla Serie" Comment="Last time a book was added to the Series" />
+    <Text Key="DateFormats" Text="Lungo|Corto|Relativo" Comment="Long|Short|Relative" />
+    <Text Key="Icons.Description" Text="Icone per questi Album" Comment="Icons for this Book" />
+    <Text Key="ScanInformation" Text="Informazioni sulla Scansione" Comment="Scan Information" />
+    <Text Key="Checked" Text="Selezionato" Comment="Checked" />
+    <Text Key="Checked.Description" Text="Album selezionato" Comment="Book is checked" />
+    <Text Key="ScanInformation.Description" Text="Informazioni aggiuntive sulla scansione" Comment="Additional information about the scan" />
+    <Text Key="StoryArc" Text="Story Arc" Comment="Story Arc" />
+    <Text Key="StoryArc.Description" Text="L'album appartiene allo Story Arc" Comment="Story Arc the Book belongs to" />
+    <Text Key="SeriesGroup" Text="Gruppo Serie" Comment="Series Group" />
+    <Text Key="SeriesGroup.Description" Text="L'Album appartiene al Gruppo Serie" Comment="Series Group the Book belongs to" />
+    <Text Key="MainCharacterOrTeam" Text="Personaggio o Team principale" Comment="Main Character/Team" />
+    <Text Key="MainCharacterOrTeam.Description" Text="Personaggio o Team principale dell'Album" Comment="Main Character or Team of the Book" />
+    <Text Key="Review" Text="Recensione" Comment="Review" />
+    <Text Key="Review.Description" Text="Breve recensione dell'Album" Comment="A short Review of the Book" />
+  </Texts>
+</TR>

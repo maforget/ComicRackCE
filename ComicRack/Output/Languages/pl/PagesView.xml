@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PagesView" CultureName="pl">
+  <Texts>
+    <Text Key="miCopy" Text="&amp;Kopiuj Stronę" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Odwróć Zaznaczenie" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="Oznacz jako &quot;&amp;Usuniętą&quot;" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="Typ Strony" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="&amp;Odśwież" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="Zaznacz &amp;Wszystkie" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="Utwórz Zakładkę" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="Usuń Zakładkę" Comment="Remove Bookmark" />
+    <Text Key="miResetOriginalOrder" Text="Przywróć oryginalną kolejność" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="Rotacja Strony" Comment="Page Rotation" />
+    <Text Key="miPagePosition" Text="Kotwica Strony" Comment="Page Position" />
+    <Text Key="miPagePositionDefault" Text="Standardowa" Comment="Default" />
+    <Text Key="miPagePositionNear" Text="Nieparzysta" Comment="Near" />
+    <Text Key="miPagePositionFar" Text="Parzysta" Comment="Far" />
+    <Text Key="miMoveToTop" Text="Przesuń na górę" Comment="Move to Top" />
+    <Text Key="miMoveToBottom" Text="Przesuń na dół" Comment="Move to Bottom" />
+  </Texts>
+</TR>

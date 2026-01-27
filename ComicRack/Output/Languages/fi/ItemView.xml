@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ItemView" CultureName="fi">
+  <Texts>
+    <Text Key="AutoFitAllColumns" Text="Sovita kaikki sarakkeet automaattisesti" Comment="Auto Fit All Columns" />
+    <Text Key="AutoSizeAllColumns" Text="Muuta kaikkien sarakkeiden koot automaattisesti" Comment="Auto Size All Columns" />
+    <Text Key="AutoSizeColumn" Text="Muuta sarakkeen koko automaattisesti" Comment="Auto Size Column" />
+    <Text Key="miArrange" Text="Järjestysperuste" Comment="Arranged by" />
+    <Text Key="miGroup" Text="Ryhmitysperuste" Comment="Group by" />
+    <Text Key="miStack" Text="Pinoperuste" Comment="Stack by" />
+    <Text Key="miViewDetails" Text="Lisätiedot" Comment="Details" />
+    <Text Key="miViewMode" Text="Näkymä" Comment="View" />
+    <Text Key="miViewThumbs" Text="Kuvakkeet" Comment="Thumbnails" />
+    <Text Key="miViewTiles" Text="Laatat" Comment="Tiles" />
+    <Text Key="NotGrouped" Text="Ei ryhmitelty" Comment="Not Grouped" />
+    <Text Key="NotSorted" Text="Järjestämätön" Comment="Not Sorted" />
+    <Text Key="NotStacked" Text="Ei pinottu" Comment="Not Stacked" />
+    <Text Key="Layout" Text="Asettelu" Comment="Layout" />
+  </Texts>
+</TR>

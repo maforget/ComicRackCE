@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Textures" CultureName="fi">
+  <Texts>
+    <Text Key="WhitePaper" Text="Valkea paperi" Comment="White Paper" />
+    <Text Key="WhitePaper2" Text="Valkea paperi 2" Comment="White Paper 2" />
+    <Text Key="WhitePaper3" Text="Valkea paperi 3" Comment="White Paper 3" />
+    <Text Key="Checkered" Text="Sahkkiruutu" Comment="Checkered" />
+    <Text Key="Ceramic" Text="Keramiikka" Comment="Ceramic" />
+    <Text Key="Ceramic2" Text="Keramiikka 2" Comment="Ceramic 2" />
+    <Text Key="Glass" Text="Lasi" Comment="Glass" />
+    <Text Key="LightWood" Text="Vaalea puu" Comment="Light Wood" />
+    <Text Key="OrangeMetal" Text="Oranssi metalli" Comment="Orange Metal" />
+    <Text Key="PlankWood" Text="Lauta" Comment="Plank Wood" />
+    <Text Key="BrickWall" Text="Tiilimuuri" Comment="Brick Wall" />
+    <Text Key="BrushedMetal" Text="Harjattu metalli" Comment="Brushed Metal" />
+    <Text Key="BrushedMetal2" Text="Harjattu metalli 2" Comment="Brushed Metal 2" />
+    <Text Key="ChalkBoard" Text="Liitutaulu" Comment="Chalk Board" />
+    <Text Key="Circles" Text="Ympyrät" Comment="Circles" />
+    <Text Key="Grass" Text="Ruoho" Comment="Grass" />
+    <Text Key="Sketch" Text="Piirros" Comment="Sketch" />
+  </Texts>
+</TR>

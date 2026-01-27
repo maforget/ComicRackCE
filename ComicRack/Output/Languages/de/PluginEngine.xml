@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PluginEngine" CultureName="de">
+  <Texts>
+    <Text Key="EditUpdateBooksCommands" Text="Befehle um Bücher zu bearbeiten/upzudaten" Comment="Edit/Update Books Commands"/>
+    <Text Key="CreateNewBooksCommands" Text="Befehle um neue Bücher anzulegen" Comment="Create New Books Commands"/>
+    <Text Key="BookPathParsers" Text="Buch Pfad Parsers" Comment="Book Path Parsers"/>
+    <Text Key="ActionswhenComicRackstarts" Text="Aktionen beim Starten von ComicRack" Comment="Actions when ComicRack starts"/>
+    <Text Key="ActionswhenComicRackshutsdown" Text="Aktionen beim Beenden von ComicRack" Comment="Actions when ComicRack shuts down"/>
+    <Text Key="ActionswhenBooksareopened" Text="Aktionen wenn Bücher geöffnet werden" Comment="Actions when Books are opened"/>
+    <Text Key="ActionswhenReaderisresized" Text="Aktionen wenn die Größe des Readers verändert wird" Comment="Actions when Reader is resized"/>
+    <Text Key="AdditionalSearchProviders" Text="Zusätzliche Such-Anbieter" Comment="Additional Search Providers"/>
+    <Text Key="BookInformationPanels" Text="Buch Informations Panele" Comment="Book Information Panels"/>
+    <Text Key="QuickOpenPanels" Text="Schnellöffner Panele" Comment="Quick Open Panels"/>
+    <Text Key="CustomBookThumbnailOverlays" Text="Zusätzliche Buch Thumbnail Overlays" Comment="Custom Book Thumbnail Overlays"/>
+  </Texts>
+</TR>

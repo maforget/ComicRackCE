@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Keyboard" CultureName="tr">
+  <Texts>
+    <Text Key="Browse" Text="Gözat" Comment="Browse" />
+    <Text Key="Display Options" Text="Gösterme tercihleri" Comment="Display Options" />
+    <Text Key="Exit" Text="Çıkış" Comment="Exit" />
+    <Text Key="FitAll" Text="Hepsini Sığdır" Comment="Fit All" />
+    <Text Key="FitBest" Text="İdeal Ölçü" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="Yükseklemesine Sığdır" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="Genişlemesine Sığdır" Comment="Fit Width" />
+    <Text Key="FitWidthAdaptive" Text="Genişlemesine Sığdır (uyumlu)" Comment="Fit Width (adaptive)" />
+    <Text Key="OnlyFitOversized" Text="Eğer çok büyükse yeniden boyutlandır" Comment="Only Fit if oversized" />
+    <Text Key="Library" Text="Kütüphane" Comment="Library" />
+    <Text Key="MoveDown" Text="Aşağı" Comment="Down" />
+    <Text Key="MoveLeft" Text="Sol" Comment="Left" />
+    <Text Key="MoveNextPart" Text="Sonraki Parça" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="Önceki bölüm" Comment="Previous Part" />
+    <Text Key="MoveFirstPart" Text="Sayfa başlangıcı" Comment="Page Start" />
+    <Text Key="MoveLastPart" Text="Sayfa Sonu" Comment="Page End" />
+    <Text Key="MoveRight" Text="Sağ" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="İlk Sayfa" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="Son Sayfa" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="Sonraki Sayfa" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="Önceki sayfa" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="Yukarı" Comment="Up" />
+    <Text Key="NextComic" Text="Sonraki e-Çizgi Roman" Comment="Next eComic" />
+    <Text Key="NextTab" Text="Sonraki Sekme" Comment="Next Tab" />
+    <Text Key="Other" Text="Diğer" Comment="Other" />
+    <Text Key="Page Display" Text="Sayfa Görünümü" Comment="Page Display" />
+    <Text Key="Auto Scroll" Text="Otomatik Kaydır" Comment="Auto Scroll" />
+    <Text Key="PrevComic" Text="Önceki Çizgiroman" Comment="Previous eComic" />
+    <Text Key="PrevTab" Text="Önceki sekme" Comment="Previous Tab" />
+    <Text Key="RotateC" Text="Sağa Çevir" Comment="Rotate Right" />
+    <Text Key="RotateCC" Text="Sola Döndür" Comment="Rotate Left" />
+    <Text Key="ZoomIn" Text="Yaklaş" Comment="Zoom In" />
+    <Text Key="ZoomOut" Text="Uzaklaş" Comment="Zoom Out" />
+    <Text Key="Scroll" Text="Kaydır" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="Tarayıcıyı göster" Comment="Show Browser" />
+    <Text Key="ToggleUndockReader" Text="Ana Pencere Mıknatısı Kapat" Comment="Toggle Undock Reader" />
+    <Text Key="ToggleFullScreen" Text="Tam Ekran Moduna Geçiş Yap" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="Büyütece Geçiş Yap" Comment="Toggle Magnifier" />
+    <Text Key="ToggleAutoScrolling" Text="Otomatik Kaydırma Moduna Geçiş Yap" Comment="Toggle Auto Scrolling" />
+    <Text Key="ToggleTwoPages" Text="Çift Sayfaya Geçiş Yap" Comment="Toggle Two Pages" />
+    <Text Key="Original" Text="Orjinal Boyut" Comment="Original Size" />
+    <Text Key="MovePartDown10" Text="10% azaltarak hareket ettir" Comment="Move Part 10% down" />
+    <Text Key="MovePartUp10" Text="10% artırarak hareket ettir" Comment="Move Part 10% up" />
+    <Text Key="ToggleManga" Text="Manga'dan e-Çizgi Roman'a Geçiş Yap" Comment="Toggle Manga for eComic" />
+    <Text Key="DoublePageAutoScroll" Text="Otomatik Çift Sayfa Kaydırmak" Comment="Double Page Auto Scroll" />
+    <Text Key="ToggleMenu" Text="Menüye Geçiş Yap" Comment="Toggle Menu" />
+    <Text Key="MoveToPrevBookmark" Text="Önceki yer imi" Comment="Previous Bookmark" />
+    <Text Key="MoveToNextBookmark" Text="Sonraki Yer İmi" Comment="Next Bookmark" />
+    <Text Key="MoveToPrevPageSingle" Text="Tek Sayfa Geri" Comment="Single Page Back" />
+    <Text Key="MoveToNextPageSingle" Text="Bir Sayfa İleri" Comment="Single Page Forward" />
+    <Text Key="AutoRotate" Text="Çift sayfaları otomatik döndür" Comment="Autorotate Double Pages" />
+    <Text Key="PageRotateC" Text="SayfayıSağaÇevir" Comment="RotatePageRight" />
+    <Text Key="PageRotateCC" Text="SayfayıSolaÇevir" Comment="RotatePageLeft" />
+    <Text Key="Edit" Text="Düzenle" Comment="Edit" />
+  </Texts>
+</TR>

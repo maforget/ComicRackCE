@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Columns" CultureName="ru">
+  <Texts>
+    <Text Key="AddedTimeAsText" Text="Добавлен" Comment="Added" />
+    <Text Key="AddedTimeAsText.Description" Text="Дата добавления Комикса в базу данных" Comment="Time the eComic was added to the Database" />
+    <Text Key="AlternateCountAsText" Text="Альтернативное количество" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="Количество выпусков в альтернативной серии/кроссовере/сюжетной линии" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="Альтернативный номер" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="Номер в альтернативной серии/кроссовере/сюжетной линии" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="Альтернативная серия" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="Серия/кроссовер/сюжетная линия" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="Заголовок" Comment="Caption" />
+    <Text Key="Caption.Description" Text="Полный заголовок Комикса" Comment="Complete caption of the eComic" />
+    <Text Key="Colorist" Text="Колорист" Comment="Colorist" />
+    <Text Key="Colorist.Description" Text="Колорист Комикса" Comment="Colorist of the eComic" />
+    <Text Key="CountAsText" Text="Количество Выпусков" Comment="Count" />
+    <Text Key="CountAsText.Description" Text="Количество выпусков в этой серии" Comment="Total number of issued in this series" />
+    <Text Key="Cover" Text="Обложка" Comment="Cover" />
+    <Text Key="Cover.Description" Text="Изображение обложки Комикса" Comment="Cover image of the eComic" />
+    <Text Key="CoverArtist" Text="Художник обложки" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="Художник, нарисовавший обложку" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="Редактор" Comment="Editor" />
+    <Text Key="Editor.Description" Text="Редактор Комикса" Comment="Editor of the eComic" />
+    <Text Key="FileModifiedTimeAsText" Text="Изменен" Comment="Modified" />
+    <Text Key="FileModifiedTimeAsText.Description" Text="Дата последнего изменения Комикса" Comment="Time this eComic was modified the last time" />
+    <Text Key="FileName" Text="Имя файла" Comment="File Name" />
+    <Text Key="FileName.Description" Text="Имя файла без расширения" Comment="Filename without the extension" />
+    <Text Key="FilePath" Text="Путь" Comment="Path" />
+    <Text Key="FilePath.Description" Text="Путь хранения Комикса" Comment="Location where the eComic is stored" />
+    <Text Key="FileFormat" Text="Формат файла" Comment="File Format" />
+    <Text Key="FileFormat.Description" Text="Формат файла Комикса" Comment="File format of the eComic" />
+    <Text Key="FileSizeAsText" Text="Размер Комикса" Comment="Size" />
+    <Text Key="FileSizeAsText.Description" Text="Размер Комикса в байтах" Comment="Size of the eComic in bytes" />
+    <Text Key="Genre" Text="Жанр Комикса" Comment="Genre" />
+    <Text Key="Genre.Description" Text="Жанр Комикса" Comment="Genre of the eComic" />
+    <Text Key="ImageHeightAsText" Text="Высота страницы" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="Высота страницы в пикселях" Comment="Height of the page in pixels" />
+    <Text Key="ImageSizeAsText" Text="Размер страницы" Comment="Size" />
+    <Text Key="ImageSizeAsText.Description" Text="Размер страницы в байтах" Comment="Size of the page in bytes" />
+    <Text Key="ImageWidthAsText" Text="Ширина страницы" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="Ширина страницы в пикселях" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="Imprint" Comment="Imprint" />
+    <Text Key="Imprint.Description" Text="Imprint Комикса" Comment="Imprint of the eComic" />
+    <Text Key="Inker" Text="Прорисовщик" Comment="Inker" />
+    <Text Key="Inker.Description" Text="Прорисовщик Комикса" Comment="Inker of the eComic" />
+    <Text Key="Key" Text="Ключ" Comment="Name" />
+    <Text Key="Key.Description" Text="Уникальный ключ страницы Комикса" Comment="Unique key for this page in the eComic" />
+    <Text Key="LanguageAsText" Text="Язык" Comment="Language" />
+    <Text Key="LanguageAsText.Description" Text="Язык Комикса" Comment="Language of the eComic" />
+    <Text Key="Letterer" Text="Метранпаж" Comment="Letterer" />
+    <Text Key="Letterer.Description" Text="Метранпаж Комикса" Comment="Letterer of this eComic" />
+    <Text Key="MonthAsText" Text="Месяц публикации" Comment="Month" />
+    <Text Key="MonthAsText.Description" Text="Месяц в котором издан Комикс" Comment="Month the eComic was published" />
+    <Text Key="NumberAsText" Text="Номер Комикса" Comment="Number" />
+    <Text Key="NumberAsText.Description" Text="Номер Комикса в серии" Comment="Number of the eComic in the Series" />
+    <Text Key="OpenedCountAsText" Text="Открыт раз" Comment="Opened Count" />
+    <Text Key="OpenedCountAsText.Description" Text="Количество открытий Комикса" Comment="Times the eComic has been opened" />
+    <Text Key="OpenedTimeAsText" Text="Открыт" Comment="Opened" />
+    <Text Key="OpenedTimeAsText.Description" Text="Последнее время открытия Комикса" Comment="Last time the eComic was opened" />
+    <Text Key="Page" Text="Страница" Comment="Page" />
+    <Text Key="Page.Description" Text="Номер страницы изображения" Comment="The page number of the image" />
+    <Text Key="PagesAsText" Text="Страниц в Комиксе" Comment="Pages" />
+    <Text Key="PagesAsText.Description" Text="Полное количество страниц" Comment="The total count of pages" />
+    <Text Key="PageTypeAsText" Text="Тип страницы" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="Тип страницы (обложка, история и т.д.)" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="Художник" Comment="Penciller" />
+    <Text Key="Penciller.Description" Text="Художник Комикса" Comment="Penciller of the eComic" />
+    <Text Key="Position" Text="Позиция" Comment="Position" />
+    <Text Key="Position.Description" Text="Позиция Комикса в списке" Comment="Position of the eComic in the list" />
+    <Text Key="Publisher" Text="Издатель Комикса" Comment="Publisher" />
+    <Text Key="Publisher.Description" Text="Издатель Комикса" Comment="Publisher of this eComic" />
+    <Text Key="Rating" Text="Мой рейтинг" Comment="My Rating" />
+    <Text Key="Rating.Description" Text="Ваш Рейтинг Комикса" Comment="Your rating of this eComic" />
+    <Text Key="ReadPercentageAsText" Text="Процент прочитанного" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="Сколько было прочитано" Comment="How much has been read" />
+    <Text Key="Series" Text="Серия" Comment="Series" />
+    <Text Key="Series.Description" Text="Название серии" Comment="Series name" />
+    <Text Key="State" Text="Состояние" Comment="State" />
+    <Text Key="State.Description" Text="Состояние индикатора Комикса" Comment="State indicators for this eComic" />
+    <Text Key="Tags" Text="Метки" Comment="Tags" />
+    <Text Key="Tags.Description" Text="Метки в Комиксе" Comment="Tags of the eComic" />
+    <Text Key="Thumbnail" Text="Эскизы" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="Эскизы страниц" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="Название Комикса" Comment="Title" />
+    <Text Key="Title.Description" Text="Название Комикса" Comment="Title of the eComic" />
+    <Text Key="VolumeAsText" Text="Выпуск в серии" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="Номер выпуска в серии" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="Автор" Comment="Writer" />
+    <Text Key="Writer.Description" Text="Автор Комикса" Comment="Writer of the eComic" />
+    <Text Key="YearAsText" Text="Год публикации" Comment="Year" />
+    <Text Key="YearAsText.Description" Text="Год публикации Комикс" Comment="Year the eComic was published" />
+    <Text Key="MangaAsText" Text="Manga" Comment="Manga" />
+    <Text Key="MangaAsText.Description" Text="Да, Комикс -  Manga" Comment="Yes if the eComic is a Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="Ч&amp;Б" Comment="B&amp;W" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="Да, Комикс черно-белый" Comment="Yes if the eComic is black and white" />
+    <Text Key="Format" Text="Формат Комикса" Comment="Format" />
+    <Text Key="Format.Description" Text="Формат Комикса" Comment="Format of the eComic" />
+    <Text Key="Bookmark" Text="Закладка" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="Текст закладки" Comment="Bookmark text" />
+    <Text Key="AgeRating" Text="Возрастной ценз" Comment="Age Rating" />
+    <Text Key="AgeRating.Description" Text="Возрастной ценз Комикса" Comment="Age rating of the eComic" />
+    <Text Key="Published" Text="Дата Публикации" Comment="Published" />
+    <Text Key="Published.Description" Text="Дата выхода Комикса" Comment="Publication date of the eComic" />
+    <Text Key="Characters" Text="Персонажи" Comment="Characters" />
+    <Text Key="Characters.Description" Text="Описание персонажей Комикса" Comment="Plot characters of the eComic" />
+  </Texts>
+</TR>

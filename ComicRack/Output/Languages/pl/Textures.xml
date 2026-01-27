@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Textures" CultureName="pl">
+  <Texts>
+    <Text Key="Ceramic" Text="Ceramika" Comment="Cermamic" />
+    <Text Key="Glass" Text="Szkło" Comment="Glass" />
+    <Text Key="LightWood" Text="Lekkie Drewno" Comment="Light Wood" />
+    <Text Key="OrangeMetal" Text="Rdzawy Metal" Comment="Orange Metal" />
+    <Text Key="PlankWood" Text="Ciemne Drewno" Comment="Plank Wood" />
+    <Text Key="WhitePaper" Text="Biały Papier" Comment="White Paper" />
+    <Text Key="WhitePaper2" Text="Biały Papier 2" Comment="White Paper 2" />
+    <Text Key="WhitePaper3" Text="Biały Papier 3" Comment="White Paper 3" />
+    <Text Key="Checkered" Text="W kratkę" Comment="Checkered" />
+    <Text Key="Ceramic2" Text="Ceramika 2" Comment="Cermamic 2" />
+    <Text Key="BrickWall" Text="Cegłówka" Comment="Brick Wall" />
+    <Text Key="BrushedMetal" Text="Metal" Comment="Brushed Metal" />
+    <Text Key="BrushedMetal2" Text="Metal 2" Comment="Brushed Metal 2" />
+    <Text Key="ChalkBoard" Text="Tablica" Comment="Chalk Board" />
+    <Text Key="Circles" Text="Okręgi" Comment="Circles" />
+    <Text Key="Grass" Text="Trawa" Comment="Grass" />
+    <Text Key="Sketch" Text="Szkic" Comment="Sketch" />
+    <Text Key="Black" Text="Czarny" Comment="Black" />
+  </Texts>
+</TR>

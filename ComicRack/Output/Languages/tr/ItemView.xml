@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ItemView" CultureName="tr">
+  <Texts>
+    <Text Key="AutoFitAllColumns" Text="Bütün sütunları otomatik sığdır" Comment="Auto Fit All Columns" />
+    <Text Key="AutoSizeAllColumns" Text="Bütün sütunları otomatik boyutla" Comment="Auto Size All Columns" />
+    <Text Key="AutoSizeColumn" Text="Sütunu otomatik boyutla" Comment="Auto Size Column" />
+    <Text Key="miArrange" Text="Düzenleme kriteri" Comment="Arrange by" />
+    <Text Key="miGroup" Text="Gruplanma kriteri" Comment="Group by" />
+    <Text Key="miStack" Text="Dizilme kriteri" Comment="Stack by" />
+    <Text Key="miViewDetails" Text="Detaylar" Comment="Details" />
+    <Text Key="miViewMode" Text="Görüntüle" Comment="View" />
+    <Text Key="miViewThumbs" Text="Küçük İkonlar" Comment="Thumbnails" />
+    <Text Key="miViewTiles" Text="Mozaik" Comment="Tiles" />
+    <Text Key="NotGrouped" Text="Gruplanmamış" Comment="Not Grouped" />
+    <Text Key="NotSorted" Text="Sıralanmamış" Comment="Not Sorted" />
+    <Text Key="NotStacked" Text="Dizilmemiş" Comment="Not Stacked" />
+    <Text Key="Layout" Text="Düzen" Comment="Layout" />
+  </Texts>
+</TR>

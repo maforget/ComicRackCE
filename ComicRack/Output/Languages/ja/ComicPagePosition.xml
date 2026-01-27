@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPagePosition" CultureName="ja">
+  <Texts>
+    <Text Key="Default" Text="デフォルト" Comment="Default" />
+    <Text Key="Near" Text="近い" Comment="Near" />
+    <Text Key="Far" Text="遠い" Comment="Far" />
+  </Texts>
+</TR>

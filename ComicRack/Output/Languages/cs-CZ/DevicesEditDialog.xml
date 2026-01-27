@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DevicesEditDialog" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="DevicesEditDialog" Text="Zařízení" Comment="Devices" />
+    <Text Key="btPairDevice" Text="Spojit se zařízením..." Comment="Pair Device..." />
+    <Text Key="btCancel" Text="&amp;Storno" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btSelectAll" Text="Vybrat vše" Comment="Select All" />
+    <Text Key="btSelectNone" Text="Nevybrat žádný" Comment="Select None" />
+    <Text Key="btUnpairDevice" Text="Odpojit zařízení" Comment="Unpair Device" />
+    <Text Key="chkOptimizeSize" Text="Optimalizovat velikost" Comment="Optimize Size" />
+    <Text Key="chkOnlyUnread" Text="Pouze nepřečtené" Comment="Only Unread" />
+    <Text Key="labelHint" Text="Připojte vaše zařízení k počítači a stiskněte 'Spojit se zařízením...'" Comment="Connect your Device with your Computer and press 'Pair Device...'" />
+    <Text Key="btRename" Text="Přejmenovat..." Comment="Rename..." />
+    <Text Key="chkOnlyChecked" Text="Pouze označené" Comment="Only Checked" />
+    <Text Key="btSelectList" Text="Označit seznam" Comment="Select List" />
+    <Text Key="btDeselectList" Text="Odoznačit seznam" Comment="Deselect List" />
+    <Text Key="cbLimitType.Item0" Text="Knihy" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="chkLimit" Text="Omezit na" Comment="Limit to" />
+    <Text Key="chkSortBy" Text="Setřídit podle" Comment="Sort by" />
+    <Text Key="labelLimitSort" Text="tříděno podle" Comment="sorted by" />
+    <Text Key="cbLimitSort.Item0" Text="Náhodně" Comment="Random" />
+    <Text Key="cbLimitSort.Item1" Text="Série" Comment="Series" />
+    <Text Key="cbLimitSort.Item2" Text="Alternativní série" Comment="Alternate Series" />
+    <Text Key="cbLimitSort.Item3" Text="Vydáno" Comment="Published" />
+    <Text Key="cbLimitSort.Item4" Text="Přidáno" Comment="Added" />
+    <Text Key="chkKeepLastRead" Text="Zachovat procenta přečtení" Comment="But keep last read" />
+  </Texts>
+</TR>

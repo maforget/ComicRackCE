@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DonationDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="btCancel" Text="Παράβλεψη" Comment="Skip for now" />
+    <Text Key="btOK" Text="Εντάξει" Comment="OK" />
+    <Text Key="DonationDialog" Text="Υποστήριξη του ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="labelThankYou" Text="Σας ευχαριστώ για την υποστήριξη του ComicRack!" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="Δωρεά" Comment="Donate" />
+    <Text Key="labelStepOne" Text="Βήμα πρώτο:\nΕπισκεφθείτε το ComicRack στο διαδίκτυο για να κάνετε δωρεά" Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="labelStepTwo" Text="Βήμα δεύτερο:\nΕισάγετε την ηλεκτρονική διευθυνση σας.\nΜπορεί να χρειαστούν μερικά λεπτά για να καταχωρηθεί η δωρεά σας, έτσι μπορείτε να κάνετε αυτό το βήμα λίγο αργότερα." Comment="Step Two:\nEnter your dontation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+    <Text Key="btDonate" Text="Σελίδα Δωρεάς" Comment="Donation Page" />
+    <Text Key="btValidate" Text="Επικύρωση" Comment="Validate" />
+    <Text Key="labelEmail" Text="Διεύθυνση:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="Έχετε εκκινήσει το ComicRack {0} φορές!" Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="Έχετε διαχειριστεί {0} βιβλία με το ComicRack!" Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="Αδυναμία σύνδεσης με το διακομιστή ComicRack για να επικυρωθεί η διεύθυνση του ηλεκτρονικού ταχυδρομείου. Ελέγξτε τη σύνδεσή σας!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+    <Text Key="labelDonationText" Text="ComicRack είναι προϊόν εκατοντάδων ωρών εργασίας και δεν υπάρχει καμία μεγάλη εταιρεία λογισμικού πίσω από αυτό. Παρακαλώ, σκεφτείτε τί σας προσφέρει η χρήση του ComicRack και πώς διασκεδάζετε με αυτό.\n\nΗ ελάχιστη δωρεά είναι $ 5 - η αξία μιας μπίρας. Μετά την  ολοκλήρωση της διαδικασίας δωρεάς, μπορείτε να ενεργοποιήσετε το αντίγραφο αυτό με τη διεύθυνση ηλεκτρονικού ταχυδρομείου που δηλώσατε κατά την δωρεά σας και ποτέ πια αυτό το μήνυμα δεν θα εμφανιστεί ξανά.\n\nComicRack είναι πλήρως λειτουργικό ακόμη και αν αποφασίσετε να μην κάνετε καμία δωρεά." Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nThe minimum donation is $5 - paying me a beer. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+  </Texts>
+</TR>

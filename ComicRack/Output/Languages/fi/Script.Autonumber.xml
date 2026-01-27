@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.Autonumber" CultureName="fi">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Peruuta" Comment="&amp;Cancel" />
+    <Text Key="Caption" Text="Autonumeroinnin avustaja" Comment="Autonumber Wizard" />
+    <Text Key="chkTotal" Text="Tallenna kokonaismäärä:" Comment="Save total Number:" />
+    <Text Key="labelBegin" Text="Aloita numerosta:" Comment="Begin at Number:" />
+    <Text Key="Name" Text="Autonumeroinnin avustaja..." Comment="Autonumber Wizard..." />
+    <Text Key="NumberAltSeries" Text="Vaihtoehtoissarjan numero" Comment="Number Alternate Series" />
+    <Text Key="NumberSeries" Text="Numeroi sarjat" Comment="Number Series" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="Description" Text="Skripti valittujen eSarjisten uudelleennumerointiin" Comment="A script to renumber the selected eComics" />
+  </Texts>
+</TR>

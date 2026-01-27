@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Settings" CultureName="el-GR">
+  <Texts>
+    <Text Key="Application" Text="Εφαρμογή" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="Αυτόματη απόκρυψη του  Μεγεθυντικού φακού όταν ο Κέρσορας πλησιάζει στα περιθώρια" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="Browser" Text="Περιηγητής" Comment="Browser" />
+    <Text Key="CloseMinimizesToTray" Text="Κλείσιμο κινήσεων ComicRack μέσα στη Περιοχή Ειδοποιήσεων" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="Αργή εμφάνιση των νέων Μικρογραφιών κατά την φόρτωση τους" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="Απόκρυψη κέρσορα ποντικιού κατά τη ανάγνωση σε  Πλήρη Οθόνη" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="Απεικόνιση Μικρογραφιών με μέγιστη ποιότητα (αργό) " Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="MinimizeToTray" Text="Ελαχιστοποίηση των κινήσεων του  ComicRack μέσα στην Περιοχή Ειδοποιήσεων" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="Έλεγχος για Νέες Ειδήσεις στο ComicRack" Comment="Check for latest news on ComicRack" />
+    <Text Key="Reading" Text="Ανάγνωση" Comment="Reading" />
+    <Text Key="ShowSplash" Text="Εμφάνιση της Οθόνης Eκκίνησης" Comment="Show Splash Screen" />
+    <Text Key="Starting ComicRack" Text="Έναρξη ComicRack" Comment="Starting ComicRack" />
+    <Text Key="Manga" Text="Manga" Comment="Manga" />
+    <Text Key="TrueRightToLeftReading" Text="Ανάγνωση από τα Δεξιά προς τα Αριστερά" Comment="True right to left reading" />
+    <Text Key="LeftRightMovementReversed" Text="Οι κινήσεις Δεξιά/Αριστερά να είναι αντιστρέψιμες επίσης" Comment="Left/right movement is also reversed" />
+    <Text Key="Right to Left" Text="Περιστροφή προς τ΄ Αριστερά" Comment="Right to Left" />
+    <Text Key="AutoMinimalGui" Text="Ελάχιστο Περιβάλλον Χρήστη και σε Πλήρη Οθόνη" Comment="Fullscreen also toggles Minimal User Interface" />
+    <Text Key="PageChangeDelay" Text="Καθυστέρηση της Ρόδας Ποντικιού και του Δρομέα κατά την αλλαγή Σελίδας" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="AnimatePanels" Text="Ανάπτυξη κίνησης και Πίνακες κατάρρευσης" Comment="Animate expanding and collapsing Panels" />
+    <Text Key="ResetZoomOnPageChange" Text="Η Εστίαση εκ νέου στο 100% κατά την αλλαγή σελίδας" Comment="Zoom is reset to 100% on page change" />
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="Να εμφανίζετε πάντα η Αγκύρωση του Περιηγητή" Comment="Always display Browser Docking Grip" />
+    <Text Key="DogEarThumbnails" Text="Οι επιλεγμένες Μικρογραφίες διαθέτουν 'dog-ear'" Comment="Selected Thumbnails have dog-ear" />
+    <Text Key="BlendWhilePaging" Text="Ανάμιξη κίνησης γραφικών το ίδιο γρήγορη όσο και η σελιδοποίηση" Comment="Blend animation also while fast paging" />
+    <Text Key="UpdateWebComicsStartup" Text="Ενημέρωση των Web Κόμικς" Comment="Update Web Comics" />
+    <Text Key="ScrollingDoesBrowse" Text="Κύλιση στο περιθώριο της σελίδας για να μεταβείτε σε νέες σελίδες" Comment="Scrolling to page margin browses to new pages" />
+    <Text Key="Import &amp; Export" Text="Εισαγωγή &amp; Εξαγωγή" Comment="Import &amp; Export" />
+    <Text Key="ShowSearchLinks" Text="Εμφάνιση Αναζήτησης Συνδέσμων" Comment="Show Search Links" />
+    <Text Key="OpenInNewTab" Text="Άνοιγμα σε νέα Καρτέλα" Comment="Open in new Tab" />
+    <Text Key="LocalQuickSearch" Text="Κάθε λίστα διαθέτει δικές της ρυθμίσεις γρήγορης αναζήτησης" Comment="Each List has own Quick Search settings" />
+    <Text Key="NumericRatingThumbnails" Text="Εμφάνιση μικρογραφιών αριθμητικής αξιολόγησης" Comment="Thumbnails display numeric ratings" />
+    <Text Key="ShowQuickOpen" Text="Εμφάνιση Γρήγορου Ανοίγματος, εάν το βιβλίο δεν έχει ανοιχτεί " Comment="Show Quick Open if no book is opened" />
+    <Text Key="AutoNavigateComics" Text="Ανάγνωση σε συνέχεια (προς το προηγούμενο ή προς τα επόμενο eComic) " Comment="Reading beyond the start or end opens the next Book" />
+    <Text Key="CloseBrowserOnOpen" Text="Κλείσιμο του Περιηγητή κατά το άνοιγμα νέου eComic" Comment="Close the Browser when a new Book is opened" />
+    <Text Key="CatalogOnlyForFileless" Text="Εμφάνιση πεδίων καταλόγου μόνο για τα Κόμικς" Comment="Show Catalog fields only for fileless Books" />
+    <Text Key="Opening a Book" Text="Άνοιγμα ενός Βιβλίου" Comment="Opening a Book" />
+    <Text Key="OpenLastFile" Text="Κατά την εκκίνηση επαναφόρτωση του τελευταίου προς ανάγνωση eComic" Comment="Reopen Books from last session" />
+    <Text Key="OpenLastPage" Text="Άνοιγμα του eComic στην σελίδα πού είχε κλείσει" Comment="Open the Book at the page where it was closed" />
+    <Text Key="ScanStartup" Text="Επανέλεγχος της Βιβλιοθήκης για νέα eComics" Comment="Rescan the Book Folders for new Books" />
+    <Text Key="ShowToolTips" Text="Εμφάνιση Υποδείξεων για τα eComics στον Περιηγητή" Comment="Show Tooltips for Books in the Browser" />
+    <Text Key="AddToLibraryOnOpen" Text="Προσθήκη eComics στη Βιβλιοθήκη" Comment="Opened Files are added to the Library" />
+    <Text Key="ShowMainMenuNoComicOpen" Text="Εμφάνιση του Κυρίος Μενού όταν δεν είνα είναι ανοιχτό το eComic " Comment="Show Main Menu if no Book is open" />
+    <Text Key="InformationCover3D" Text="Τρισδιάστατη προβολή (3D) των εξώφυλλων στο διάλογο Πληροφορίες" Comment="3D display of covers in Book Info Dialog" />
+    <Text Key="ExportedListsContainFilenames" Text="Εξαχθείσα λίστα Κόμικς περιέχει ονόματα αρχείων" Comment="Exported Book Lists contain filenames" />
+    <Text Key="ZoomInOutOnPageChange" Text="Κατά τη διαδικασία αλλαγής σελίδας ολοκληρώθηκε η σμίκρυνση" Comment="During page change a zoom out is done" />
+  </Texts>
+</TR>

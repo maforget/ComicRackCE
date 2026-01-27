@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBook" CultureName="nl-BE">
+  <Texts>
+    <Text Key="Added" Text="Toegevoegd:\t{0}" Comment="Added:\t{0}" />
+    <Text Key="Format" Text="Albumformaat:\t{0}" Comment="Format:\t{0}" />
+    <Text Key="LastPageReadIs" Text="Laatst Gelezen Bladzijde: {0}" Comment="Last page read is {0}" />
+    <Text Key="LastTimeOpenedAt" Text="Laatste keer geopend: {0}" Comment="Last time opened at {0}" />
+    <Text Key="Library" Text="Bibliotheek" Comment="Library" />
+    <Text Key="MyFavoritesList" Text="Mijn Favorieten" Comment="My Favorites" />
+    <Text Key="Never" Text="Neen" Comment="never" />
+    <Text Key="NeverReadList" Text="Ongelezen" Comment="Never Read" />
+    <Text Key="NoInformation" Text="Geen Informatie beschikbaar" Comment="No information available" />
+    <Text Key="None" Text="Geen" Comment="None" />
+    <Text Key="Of" Text="van" Comment="of" />
+    <Text Key="Opened" Text="Geopend:\t{0}" Comment="Opened:\t{0}" />
+    <Text Key="Pages" Text="{0} Bladzijde(n)" Comment="{0} Page(s)" />
+    <Text Key="PageSize" Text="Grootte:\t{0}" Comment="Size:\t{0}" />
+    <Text Key="PageText" Text="Pagina #{0}" Comment="Page #{0}" />
+    <Text Key="ReadingAtPage" Text="Huidige pagina: {0}" Comment="Reading at page {0}" />
+    <Text Key="ReadingList" Text="Aan het lezen" Comment="Reading" />
+    <Text Key="ReadList" Text="Gelezen" Comment="Read" />
+    <Text Key="RecentlyAddedList" Text="Recent toegevoegd" Comment="Recently Added" />
+    <Text Key="RecentlyReadList" Text="Recent gelezen" Comment="Recently Read" />
+    <Text Key="Resolution" Text="Resolutie:\t{0} x {1}" Comment="Resolution:\t{0} x {1}" />
+    <Text Key="Size" Text="Grootte:\t{0}/{1}" Comment="Size:\t{0}/{1}" />
+    <Text Key="SmartLists" Text="Smart Lists" Comment="Smart Lists" />
+    <Text Key="UnknownSize" Text="Onbekende Grootte" Comment="Unknown Size" />
+    <Text Key="Unknown" Text="Onbekend" Comment="Unknown" />
+    <Text Key="Volume" Text="V{0}" Comment="V{0}" />
+    <Text Key="FilesUpdateList" Text="Te verversen Bestanden" Comment="Files to update" />
+    <Text Key="TempLists" Text="Tijdelijke Lijsten" Comment="Temporary Lists" />
+    <Text Key="FileName" Text="Bestand:\t{0}" Comment="File:\t{0}" />
+    <Text Key="Bookmark" Text="Bladwijzer: {0}" Comment="Bookmark:\t{0}" />
+    <Text Key="Rotation" Text="Rotatie: {0}" Comment="Rotation:\t{0}" />
+    <Text Key="BookCount" Text="Boeken:\t{0}" Comment="Books:\t{0}" />
+    <Text Key="Released" Text="Publicatiedatum:\t{0}" Comment="Released:\t{0}" />
+  </Texts>
+</TR>

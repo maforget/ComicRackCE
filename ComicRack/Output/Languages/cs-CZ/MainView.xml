@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MainView" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="Dokovat dole" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="Vyplnit" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="Dokovat vlevo" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="Dokovat vpravo" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="Zavřít" Comment="Close" />
+    <Text Key="tsbFolders" Text="Složky" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="Procházet vaše složky" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="Knihovna" Comment="Library" />
+    <Text Key="tsbPages" Text="Stránky" Comment="Pages" />
+    <Text Key="tsbShowMenu" Text="Ukázat menu" Comment="Show Menu" />
+    <Text Key="tsbInfoPanelLeft" Text="Info Panel vpravo" Comment="Info Panel Right" />
+    <Text Key="tsbLibrary.Tooltip" Text="Knihovna eKomiksů" Comment="Library with all Books" />
+    <Text Key="tsbPages.Tooltip" Text="Stránky aktuálního eKomiksu" Comment="Pages of the current Book" />
+    <Text Key="tsbAlignment" Text="Dokovací režim" Comment="Docking Mode" />
+  </Texts>
+</TR>

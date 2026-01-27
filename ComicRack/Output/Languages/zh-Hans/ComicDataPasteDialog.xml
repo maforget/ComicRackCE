@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicDataPasteDialog" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="btCancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="btMarkAll" Text="所有" Comment="&amp;All" />
+    <Text Key="btMarkDefined" Text="只设置" Comment="Only &amp;Set" />
+    <Text Key="btMarkNone" Text="清除" Comment="&amp;Clear" />
+    <Text Key="btOK" Text="确定" Comment="&amp;OK" />
+    <Text Key="chkAlternateCount" Text="总数" Comment="Total Number" />
+    <Text Key="chkAlternateNumber" Text="序号" Comment="Number" />
+    <Text Key="chkAlternateSeries" Text="丛书" Comment="Series" />
+    <Text Key="chkColor" Text="颜色调整" Comment="Color Adjustment" />
+    <Text Key="chkColorist" Text="配色师" Comment="Colorist" />
+    <Text Key="chkCount" Text="总数" Comment="Total Number" />
+    <Text Key="chkEditor" Text="编辑" Comment="Editor" />
+    <Text Key="chkGenre" Text="流派" Comment="Genre" />
+    <Text Key="chkImprint" Text="出版标记" Comment="Imprint" />
+    <Text Key="chkInker" Text="着墨员" Comment="Inker" />
+    <Text Key="chkLanguage" Text="语言" Comment="Language" />
+    <Text Key="chkLetterer" Text="文字书写员" Comment="Letterer" />
+    <Text Key="chkMonth" Text="月份" Comment="Month" />
+    <Text Key="chkNotes" Text="注解" Comment="Notes" />
+    <Text Key="chkNumber" Text="序号" Comment="Number" />
+    <Text Key="chkPenciller" Text="画图员" Comment="Penciller" />
+    <Text Key="chkPublisher" Text="出版社" Comment="Publisher" />
+    <Text Key="chkRating" Text="评价" Comment="Rating" />
+    <Text Key="chkSeries" Text="丛书" Comment="Series" />
+    <Text Key="chkSummary" Text="摘要" Comment="Summary" />
+    <Text Key="chkTags" Text="标签" Comment="Tags" />
+    <Text Key="chkTitle" Text="标题" Comment="Title" />
+    <Text Key="chkVolume" Text="卷" Comment="Volume" />
+    <Text Key="chkWriter" Text="作者" Comment="Writer" />
+    <Text Key="chkYear" Text="年代" Comment="Year" />
+    <Text Key="chkManga" Text="动漫" Comment="Manga" />
+    <Text Key="chkFormat" Text="格式" Comment="Format" />
+    <Text Key="chkBlackAndWhite" Text="黑白" Comment="Black and White" />
+    <Text Key="ComicDataPasteDialog" Text="粘贴数据到 {0} 漫画" Comment="Paste Data to {0} eComics" />
+    <Text Key="grpAlternate" Text="备用" Comment="Alternate" />
+    <Text Key="grpArtists" Text="艺术家 / 相关人员" Comment="Artists / People Involved" />
+    <Text Key="grpLibrary" Text="媒体库" Comment="Library" />
+    <Text Key="grpMain" Text="主要" Comment="Main" />
+    <Text Key="chkCover" Text="封面" Comment="Cover Artist" />
+    <Text Key="chkAgeRating" Text="年龄限定" Comment="Age Rating" />
+    <Text Key="chkCharacters" Text="人物" Comment="Characters" />
+    <Text Key="chkWeb" Text="网络" Comment="Web" />
+    <Text Key="chkLocations" Text="位置" Comment="Locations" />
+    <Text Key="chkTeams" Text="团队" Comment="Teams" />
+  </Texts>
+</TR>

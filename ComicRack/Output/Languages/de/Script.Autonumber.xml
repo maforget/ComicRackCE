@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.Autonumber" CultureName="de">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Abbruch" Comment="&amp;Cancel" />
+    <Text Key="Caption" Text="Autonummerierung" Comment="Autonumber Wizard" />
+    <Text Key="chkTotal" Text="Speichere Gesamtzahl:" Comment="Save total Number:" />
+    <Text Key="labelBegin" Text="Beginn bei Nummer:" Comment="Begin at Number:" />
+    <Text Key="Name" Text="Autonummerierung..." Comment="Autonumber Wizard..." />
+    <Text Key="NumberAltSeries" Text="Nummeriere Alternative" Comment="Number Alternate Series" />
+    <Text Key="NumberSeries" Text="Nummeriere Serie" Comment="Number Series" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="Description" Text="Ein Script um die selektieren Bücher neu zu nummerieren" Comment="A script to renumber the selected Books"/>
+  </Texts>
+</TR>

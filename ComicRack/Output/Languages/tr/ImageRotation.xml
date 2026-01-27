@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ImageRotation" CultureName="tr">
+  <Texts>
+    <Text Key="None" Text="Yok" Comment="None" />
+    <Text Key="Rotate90" Text="90° " Comment="90°" />
+    <Text Key="Rotate180" Text="180° " Comment="180°" />
+    <Text Key="Rotate270" Text="270° " Comment="270°" />
+  </Texts>
+</TR>

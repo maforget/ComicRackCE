@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBook" CultureName="el-GR">
+  <Texts>
+    <Text Key="Added" Text="Προστέθηκε:\t{0}" Comment="Added:\t{0}" />
+    <Text Key="Format" Text="Διαμόρφωση:\t{0}" Comment="Format:\t{0}" />
+    <Text Key="LastPageReadIs" Text="Τελευταία αναγνωσμένη σελίδα {0}" Comment="Last page read is {0}" />
+    <Text Key="LastTimeOpenedAt" Text="Τελευταίο άνοιγμα {0}" Comment="Last time opened at {0}" />
+    <Text Key="Library" Text="Βιβλιοθήκη" Comment="Library" />
+    <Text Key="MyFavoritesList" Text="Τα Αγαπημένα μου" Comment="My Favorites" />
+    <Text Key="Never" Text="ποτέ" Comment="never" />
+    <Text Key="NeverReadList" Text="Μη Αναγνωσμένο" Comment="Never Read" />
+    <Text Key="NoInformation" Text="Δεν υπάρχουν διαθέσιμες πληροφορίες" Comment="No information available" />
+    <Text Key="None" Text="Καμία" Comment="None" />
+    <Text Key="Of" Text="από" Comment="of" />
+    <Text Key="Opened" Text="Ανοίχθηκε:\t{0}" Comment="Opened:\t{0}" />
+    <Text Key="Pages" Text="{0} Σελίδα(ες)" Comment="{0} Page(s)" />
+    <Text Key="PageSize" Text="Μέγεθος:\t{0}" Comment="Size:\t{0}" />
+    <Text Key="PageText" Text="Σελίδα #{0}" Comment="Page #{0}" />
+    <Text Key="ReadingAtPage" Text="Ανάγνωση σελίδας {0}" Comment="Reading at page {0}" />
+    <Text Key="ReadingList" Text="Ανάγνωση" Comment="Reading" />
+    <Text Key="ReadList" Text="Αναγνωσμένο" Comment="Read" />
+    <Text Key="RecentlyAddedList" Text="Τελευταία Τροποποίηση" Comment="Recently Added" />
+    <Text Key="RecentlyReadList" Text="Τελευταία Ανάγνωση" Comment="Recently Read" />
+    <Text Key="Resolution" Text="Ανάλυση:\t{0} x {1}" Comment="Resolution:\t{0} x {1}" />
+    <Text Key="Size" Text="Μέγεθος:\t{0}/{1}" Comment="Size:\t{0}/{1}" />
+    <Text Key="SmartLists" Text="Έξυπνες Λίστες" Comment="Smart Lists" />
+    <Text Key="UnknownSize" Text="Άγνωστο Μέγεθος" Comment="Unknown Size" />
+    <Text Key="Volume" Text="V{0}" Comment="V{0}" />
+    <Text Key="Unknown" Text="Άγνωστο" Comment="Unknown" />
+    <Text Key="FilesUpdateList" Text="Αρχεία προς ενημέρωση" Comment="Files to update" />
+    <Text Key="TempLists" Text="Προσωρινές Λίστες" Comment="Temporary Lists" />
+    <Text Key="FileName" Text="Αρχείο:\t{0}" Comment="File:\t{0}" />
+    <Text Key="Bookmark" Text="Σελιδοδείκτης:\t{0}" Comment="Bookmark:\t{0}" />
+    <Text Key="Rotation" Text="Περιστροφή:\t{0}" Comment="Rotation:\t{0}" />
+    <Text Key="BookCount" Text="Βιβλία:\t{0}" Comment="Books:\t{0}" />
+  </Texts>
+</TR>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="NetStatsDialog" CultureName="fi">
+  <Texts>
+    <Text Key="NetStatsDialog" Text="Palvelimen tilastot" Comment="Server Statistics" />
+    <Text Key="Clients" Text="Asiakkaita: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="Tietopyynnöt: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="Kirjastopyyntöjä: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="Sivupyyntöjä: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="Kuvakepyynnöt: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="Hylättyjä kirjautumisia: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="Kaikkij aot" Comment="All Shares" />
+    <Text Key="LastMinute" Text="Viime minuuttina" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="Viime 5 minuuttina" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="Viime tuntina" Comment="Last Hour" />
+    <Text Key="Session" Text="Istunto" Comment="Session" />
+  </Texts>
+</TR>

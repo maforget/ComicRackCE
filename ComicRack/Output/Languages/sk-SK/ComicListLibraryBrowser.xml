@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListLibraryBrowser" CultureName="sk-SK">
+  <Texts>
+    <Text Key="miEditSmartList" Text="&amp;Zmeniť..." Comment="&amp;Edit..." />
+    <Text Key="miNewFolder" Text="Nový &amp;priečinok..." Comment="New &amp;Folder..." />
+    <Text Key="miNewList" Text="Nový &amp;zoznam" Comment="New &amp;List..." />
+    <Text Key="miNewSmartList" Text="&amp;Nový Smart List..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="&amp;Triediť" Comment="&amp;Sort" />
+    <Text Key="miOpenWindow" Text="&amp;Otvoriť v novom okne" Comment="&amp;Open in New Window" />
+    <Text Key="miQueryRename" Text="&amp;Premenovať" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="Ob&amp;noviť" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="&amp;Z&amp;mazať..." Comment="&amp;Re&amp;move..." />
+    <Text Key="NewFolder" Text="Nový priečinok" Comment="New Folder" />
+    <Text Key="NewList" Text="Nový zoznam" Comment="New List" />
+    <Text Key="NewSmartList" Text="Nový Smart List" Comment="New Smart List" />
+    <Text Key="tbNewFolder" Text="Nový &amp;priečinok" Comment="New &amp;Folder" />
+    <Text Key="tbNewFolder.Tooltip" Text="Vytvoriť priečinok na usporiadanie vaších zoznamov" Comment="Create a new folder to organize your lists" />
+    <Text Key="tbNewList" Text="Nový &amp;zoznam" Comment="New &amp;List" />
+    <Text Key="tbNewList.Tooltip" Text="Vytvoriť vlastný zoznam" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="&amp;Nový Smart List" Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="Vytvoriť nový Smart List" Comment="Create a new Smart List" />
+    <Text Key="tbOpenWindow" Text="Nové okno" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Otvoriť aktuálny zoznam v novom okne" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Obnoviť" Comment="Refresh" />
+    <Text Key="miCopyList" Text="Kopírovať zoznam" Comment="Copy List" />
+    <Text Key="miPasteList" Text="Vložiť zoznam" Comment="Paste List" />
+    <Text Key="miExportReadingList" Text="Exportovať zoznam čítaných..." Comment="Export Reading List..." />
+    <Text Key="miImportReadingList" Text="Importovať zoznam čítaných..." Comment="Import Reading List..." />
+    <Text Key="NewSmartListOption" Text="Snímok aktuálneho zobrazenia" Comment="Snapshot of current view" />
+    <Text Key="miOpenTab" Text="&amp;Otvoriť na novej karte" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="Nová karta" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Otvoriť súčasný zoznam na novej karte" Comment="Open current list in new Tab" />
+    <Text Key="miFavRemove" Text="Zmazať" Comment="Remove" />
+    <Text Key="tbFavorites" Text="Ukázať obľúbené" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Obľúbené" Comment="Favorites" />
+    <Text Key="miAddToFavorites" Text="Pridať k obľúbeným" Comment="Add to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Obnoviť" Comment="&amp;Refresh" />
+  </Texts>
+</TR>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBrowserControl" CultureName="ja">
+  <Texts>
+    <Text Key="ArrangedBy" Text="整列方法: {0}" Comment="Arranged by {0}" />
+    <Text Key="ComicFiltered" Text="{0} フィルター済み" Comment="{0} filtered" />
+    <Text Key="ComicMulti" Text="{0} コミック" Comment="{0} eComics" />
+    <Text Key="ComicSelected" Text="{0} を選択" Comment="{0} selected" />
+    <Text Key="ComicSingle" Text="{0} コミック" Comment="{0} eComic" />
+    <Text Key="GroupedBy" Text="グループ化: {0}" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="ライブラリに追加(&amp;A)..." Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="オートメーション" Comment="Automation" />
+    <Text Key="miCopyData" Text="データのコピー(&amp;C)" Comment="&amp;Copy Data" />
+    <Text Key="miInvertSelection" Text="選択を反転(&amp;I)" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="マークの付加(&amp;M)" Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="既読(&amp;R)" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="未読(&amp;U)" Comment="&amp;Unread" />
+    <Text Key="miPasteData" Text="データの貼り付け(&amp;P)..." Comment="&amp;Paste Data..." />
+    <Text Key="miProperties" Text="情報を表示(&amp;G)..." Comment="&amp;Get Info..." />
+    <Text Key="miRateMenu" Text="評価(&amp;R)" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="なし" Comment="None" />
+    <Text Key="miRating1" Text="* （星 x1）" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** （星 x2）" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** （星 x3）" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** （星 x4）" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** （星 x5）" Comment="***** (5 Stars)" />
+    <Text Key="miRead" Text="開く(&amp;O)" Comment="&amp;Open" />
+    <Text Key="miReadTab" Text="新しいタブで開く" Comment="Open in new Tab" />
+    <Text Key="miRefreshInformation" Text="再読込み" Comment="Refresh" />
+    <Text Key="miRemove" Text="削除(&amp;R)..." Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="格納フォルダを開く(&amp;E)" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="すべて" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="データをクィック サーチ中" Comment="Quick Search is checking all available data" />
+    <Text Key="miSearchArtists" Text="アーティスト" Comment="Artists" />
+    <Text Key="miSearchArtists.Tooltip" Text="アーティストをクィック サーチ中" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="説明" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="テキストと概要をクィック サーチ中" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="ファイル名" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="ファイル名のみをクィック サーチ中" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="シリーズ名" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="シリーズ名をクィック サーチ中" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="作者" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="ライターのみをクィック サーチ中" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="すべて選択(&amp;A)" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="スタックの先頭に" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="コミックの参照" Comment="&amp;Browse Comics" />
+    <Text Key="miShowOnlyAllComics" Text="すべて表示" Comment="Show All" />
+    <Text Key="miShowOnlyReadComics" Text="既読を表示" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="閲覧中を表示" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="未読を表示" Comment="Show not Read" />
+    <Text Key="miViewDetails" Text="詳細(&amp;D)" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="サムネイル(&amp;N)" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="並べて表示(&amp;T)" Comment="&amp;Tiles" />
+    <Text Key="None" Text="なし" Comment="None" />
+    <Text Key="NotArranged" Text="ソートしない" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="グループ化しない" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="スタックしない" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="スタック方法: {0}" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="グループ" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="別分類によるコミック グループ" Comment="Group eComics by different criteria" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="このスタックを閉じる" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="整列" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="コミックのソート順を変更" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbStack" Text="スタック" Comment="Stack" />
+    <Text Key="tbbView" Text="表示" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="表示するコミックと表示方法を変更" Comment="Change how and what eComics are displayed" />
+    <Text Key="tsEditListLayout" Text="リスト レイアウトの編集(&amp;E)..." Comment="&amp;Edit List Layout..." />
+    <Text Key="tsSaveListLayout" Text="リスト レイアウトの保存(&amp;S)..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsListLayouts" Text="リスト レイアウト" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="リスト レイアウトの管理" Comment="Manage List Layouts" />
+    <Text Key="miEdit" Text="編集" Comment="Edit" />
+    <Text Key="miShowOnlyDuplicates" Text="重複を表示" Comment="Show Duplicates" />
+    <Text Key="miExportComics" Text="コミックのエクスポート" Comment="Export eComics" />
+    <Text Key="miExportComicsAs" Text="コミックのエクスポート..." Comment="Export eComics..." />
+    <Text Key="miExportComicsWithPrevious" Text="プレビュー付きエクスポート" Comment="Export with Previous" />
+    <Text Key="miSetListBackground" Text="リストの背景にセット" Comment="Set as List Background" />
+    <Text Key="miResetListBackground" Text="リスト背景のリセット" Comment="Reset List Background" />
+    <Text Key="lblDisplayOptionText" Text="'表示' のオプションがすべてのコミックを表示するになっていません" Comment="Because of active options in 'Views', not all eComics are displayed" />
+    <Text Key="btDisplayAll" Text="すべて表示(&amp;A)" Comment="Display &amp;All" />
+    <Text Key="miUpdateComicFiles" Text="コミック ファイルの更新" Comment="Update eComic Files" />
+    <Text Key="btCloseStack" Text="スタックを閉じる(&amp;C)" Comment="&amp;Close Stack" />
+    <Text Key="miAddList" Text="リストに追加" Comment="Add to List" />
+    <Text Key="miShowInList" Text="リストに表示" Comment="Show in List" />
+    <Text Key="tbbDuplicateList" Text="リストの複製" Comment="Duplicate List" />
+    <Text Key="tbbDuplicateList.Tooltip" Text="現在のリストを複製" Comment="Duplicate current List" />
+    <Text Key="SearchingLists" Text="リストの検索中..." Comment="Searching Lists..." />
+    <Text Key="tbUndo" Text="アンドゥ" Comment="Undo" />
+    <Text Key="tbRedo" Text="リドゥ" Comment="Redo" />
+    <Text Key="btPrevStack" Text="戻る(&amp;P)" Comment="&amp;Previous" />
+    <Text Key="btNextStack" Text="次へ(&amp;N)" Comment="&amp;Next" />
+    <Text Key="miShowOnlyComics" Text="コミックのみ表示" Comment="Show only eComics" />
+    <Text Key="miShowOnlyFileless" Text="ファイルの無いエントリーのみ表示" Comment="Show only fileless Entries" />
+    <Text Key="tsEditLayouts" Text="レイアウトの編集(&amp;E)..." Comment="&amp;Edit Layouts..." />
+    <Text Key="btBrowseNext" Text="次へ" Comment="Next" />
+    <Text Key="btBrowsePrev" Text="戻る" Comment="Back" />
+    <Text Key="miSearchCatalog" Text="カタログ" Comment="Catalog" />
+    <Text Key="miSearchCatalog.Tooltip" Text="クィック サーチはカタログ エントリーのみチェックします" Comment="Quick Search is only checking Catalog entries" />
+    <Text Key="miSetStackThumbnail" Text="カスタム サムネイルのセット..." Comment="Set custom Stack Thumbnail..." />
+    <Text Key="miRemoveStackThumbnail" Text="カスタム サムネイルの削除..." Comment="Remove custom Stack Thumbnail..." />
+    <Text Key="miExpandAllGroups" Text="すべてのグループを折畳む/展開" Comment="Collapse/Expand all Groups" />
+  </Texts>
+</TR>

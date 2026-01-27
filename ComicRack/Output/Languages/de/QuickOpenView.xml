@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="QuickOpenView" CultureName="de">
+  <Texts>
+    <Text Key="btOpen" Text="Öffnen" Comment="Open" />
+    <Text Key="btBrowser" Text="Browser" Comment="Browser" />
+    <Text Key="btOpenFile" Text="Öffne Datei..." Comment="Open File..."/>
+    <Text Key="panelQuickopen" Text="Comics 743" Comment="Comics"/>
+  </Texts>
+</TR>

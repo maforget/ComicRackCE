@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.NewComics" CultureName="pt-BR">
+  <Texts>
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Cancelar" Comment="&amp;Cancel" />
+    <Text Key="labelSeries" Text="Série:" Comment="Series:" />
+    <Text Key="labelFromNumber" Text="Número:" Comment="Number:" />
+    <Text Key="labelToNumber" Text="para" Comment="to" />
+    <Text Key="labelVolume" Text="Volume:" Comment="Volume:" />
+    <Text Key="Name" Text="Nova Série de Livros sem arquivos..." Comment="New fileless Book Series..." />
+    <Text Key="Description" Text="Adiciona uma nova Série de Livros" Comment="Adds a new Series of Books" />
+    <Text Key="Caption" Text="Nova Série de Livros sem arquivos" Comment="New fileless Book Series" />
+  </Texts>
+</TR>

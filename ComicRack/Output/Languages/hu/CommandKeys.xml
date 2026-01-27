@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="CommandKeys" CultureName="hu">
+  <Texts>
+    <Text Key="A" Text="A" Comment="A" />
+    <Text Key="Add" Text="+" Comment="Add" />
+    <Text Key="Alt" Text="Alt" Comment="Alt" />
+    <Text Key="B" Text="B" Comment="B" />
+    <Text Key="C" Text="C" Comment="C" />
+    <Text Key="Ctrl" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="D" Text="D" Comment="D" />
+    <Text Key="D0" Text="D0" Comment="D0" />
+    <Text Key="D1" Text="D1" Comment="D1" />
+    <Text Key="D2" Text="D2" Comment="D2" />
+    <Text Key="D3" Text="D3" Comment="D3" />
+    <Text Key="D4" Text="D4" Comment="D4" />
+    <Text Key="D5" Text="D5" Comment="D5" />
+    <Text Key="D6" Text="D6" Comment="D6" />
+    <Text Key="D7" Text="D7" Comment="D7" />
+    <Text Key="D8" Text="D8" Comment="D8" />
+    <Text Key="D9" Text="D9" Comment="D9" />
+    <Text Key="Decimal" Text="." Comment="Decimal" />
+    <Text Key="Divide" Text="/" Comment="Divide" />
+    <Text Key="Down" Text="Le nyíl" Comment="Down" />
+    <Text Key="E" Text="E" Comment="E" />
+    <Text Key="End" Text="End" Comment="End" />
+    <Text Key="Enter" Text="Enter" Comment="Enter" />
+    <Text Key="Escape" Text="Esc" Comment="Escape" />
+    <Text Key="F" Text="F" Comment="F" />
+    <Text Key="G" Text="G" Comment="G" />
+    <Text Key="H" Text="H" Comment="H" />
+    <Text Key="Home" Text="Home" Comment="Home" />
+    <Text Key="I" Text="I" Comment="I" />
+    <Text Key="J" Text="J" Comment="J" />
+    <Text Key="K" Text="K" Comment="K" />
+    <Text Key="L" Text="L" Comment="L" />
+    <Text Key="Left" Text="Bal nyíl" Comment="Left" />
+    <Text Key="M" Text="M" Comment="M" />
+    <Text Key="MediaNextTrack" Text="Média következő szám" Comment="MediaNextTrack" />
+    <Text Key="MediaPlayPause" Text="Media lejátszás/szünet" Comment="MediaPlayPause" />
+    <Text Key="MediaPreviousTrack" Text="Media előző szám" Comment="MediaPreviousTrack" />
+    <Text Key="MediaStop" Text="Media leállítás" Comment="MediaStop" />
+    <Text Key="MouseButton4" Text="Egér 4 klikk" Comment="MouseButton4" />
+    <Text Key="MouseButton5" Text="Egér 5 klikk" Comment="MouseButton5" />
+    <Text Key="MouseDoubleButton4" Text="Egér 4 duplaklikk" Comment="MouseDoubleButton4" />
+    <Text Key="MouseDoubleButton5" Text="Egér 5 duplaklikk" Comment="MouseDoubleButton5" />
+    <Text Key="MouseDoubleLeft" Text="Egér bal duplaklikk" Comment="MouseDoubleLeft" />
+    <Text Key="MouseDoubleMiddle" Text="Egér középső duplaklikk" Comment="MouseDoubleMiddle" />
+    <Text Key="MouseDoubleRight" Text="Egér jobb duplaklikk" Comment="MouseDoubleRight" />
+    <Text Key="MouseLeft" Text="Egér bal klikk" Comment="MouseLeft" />
+    <Text Key="MouseMiddle" Text="Egér középső klikk" Comment="MouseMiddle" />
+    <Text Key="MouseRight" Text="Egér jobb klikk" Comment="MouseRight" />
+    <Text Key="MouseTiltLeft" Text="Egér döntés balra" Comment="MouseTiltLeft" />
+    <Text Key="MouseTiltRight" Text="Egér döntés jobbra" Comment="MouseTiltRight" />
+    <Text Key="MouseWheelDown" Text="Egérgörgő le" Comment="MouseWheelDown" />
+    <Text Key="MouseWheelUp" Text="Egérgörgő fel" Comment="MouseWheelUp" />
+    <Text Key="Multiply" Text="*" Comment="Multiply" />
+    <Text Key="N" Text="N" Comment="N" />
+    <Text Key="None" Text="Semmi" Comment="None" />
+    <Text Key="NumPad0" Text="NumPad0" Comment="NumPad0" />
+    <Text Key="NumPad1" Text="NumPad1" Comment="NumPad1" />
+    <Text Key="NumPad2" Text="NumPad2" Comment="NumPad2" />
+    <Text Key="NumPad3" Text="NumPad3" Comment="NumPad3" />
+    <Text Key="NumPad4" Text="NumPad4" Comment="NumPad4" />
+    <Text Key="NumPad5" Text="NumPad5" Comment="NumPad5" />
+    <Text Key="NumPad6" Text="NumPad6" Comment="NumPad6" />
+    <Text Key="NumPad7" Text="NumPad7" Comment="NumPad7" />
+    <Text Key="NumPad8" Text="NumPad8" Comment="NumPad8" />
+    <Text Key="NumPad9" Text="NumPad9" Comment="NumPad9" />
+    <Text Key="O" Text="O" Comment="O" />
+    <Text Key="P" Text="P" Comment="P" />
+    <Text Key="PageDown" Text="PageDown" Comment="PageDown" />
+    <Text Key="PageUp" Text="PageUp" Comment="PageUp" />
+    <Text Key="Q" Text="Q" Comment="Q" />
+    <Text Key="R" Text="R" Comment="R" />
+    <Text Key="Right" Text="Jobb nyíl" Comment="Right" />
+    <Text Key="S" Text="S" Comment="S" />
+    <Text Key="Shift" Text="Shift" Comment="Shift" />
+    <Text Key="Space" Text="Szóköz" Comment="Space" />
+    <Text Key="Subtract" Text="-" Comment="Subtract" />
+    <Text Key="T" Text="T" Comment="T" />
+    <Text Key="Tab" Text="Tab" Comment="Tab" />
+    <Text Key="U" Text="U" Comment="U" />
+    <Text Key="Up" Text="Fel nyíl" Comment="Up" />
+    <Text Key="V" Text="V" Comment="V" />
+    <Text Key="W" Text="W" Comment="W" />
+    <Text Key="X" Text="X" Comment="X" />
+    <Text Key="Y" Text="Y" Comment="Y" />
+    <Text Key="Z" Text="Z" Comment="Z" />
+    <Text Key="Zoom" Text="Zoom" Comment="Zoom" />
+    <Text Key="Gesture1" Text="Mozdulat 1" Comment="Gesture 1" />
+    <Text Key="Gesture2" Text="Mozdulat 2" Comment="Gesture 2" />
+    <Text Key="Gesture3" Text="Mozdulat 3" Comment="Gesture 3" />
+    <Text Key="Gesture4" Text="Mozdulat 4" Comment="Gesture 4" />
+    <Text Key="Gesture5" Text="Mozdulat 5" Comment="Gesture 5" />
+    <Text Key="Gesture6" Text="Mozdulat 6" Comment="Gesture 6" />
+    <Text Key="Gesture7" Text="Mozdulat 7" Comment="Gesture 7" />
+    <Text Key="Gesture8" Text="Mozdulat 8" Comment="Gesture 8" />
+    <Text Key="Gesture9" Text="Mozdulat 9" Comment="Gesture 9" />
+    <Text Key="GestureDouble1" Text="Dupla mozdulat 1" Comment="Gesture Double 1" />
+    <Text Key="GestureDouble2" Text="Dupla mozdulat 2" Comment="Gesture Double 2" />
+    <Text Key="GestureDouble3" Text="Dupla mozdulat 3" Comment="Gesture Double 3" />
+    <Text Key="GestureDouble4" Text="Dupla mozdulat 4" Comment="Gesture Double 4" />
+    <Text Key="GestureDouble5" Text="Dupla mozdulat 5" Comment="Gesture Double 5" />
+    <Text Key="GestureDouble6" Text="Dupla mozdulat 6" Comment="Gesture Double 6" />
+    <Text Key="GestureDouble7" Text="Dupla mozdulat 7" Comment="Gesture Double 7" />
+    <Text Key="GestureDouble8" Text="Dupla mozdulat 8" Comment="Gesture Double 8" />
+    <Text Key="GestureDouble9" Text="Dupla mozdulat 9" Comment="Gesture Double 9" />
+    <Text Key="TouchPressAndTap" Text="Lenyomás és tapintás" Comment="Press and Tap" />
+    <Text Key="TouchTwoFingerTap" Text="Kétujjas tapintás" Comment="Two Finger Tap" />
+    <Text Key="TouchTap" Text="Tap" Comment="Tap" />
+    <Text Key="TouchDoubleTap" Text="Dupla tapintás" Comment="Double Tap" />
+  </Texts>
+</TR>

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicDataPasteDialog" CultureName="pl">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Anuluj" Comment="&amp;Cancel" />
+    <Text Key="btMarkAll" Text="&amp;Wszystkie" Comment="&amp;All" />
+    <Text Key="btMarkDefined" Text="&amp;Niepuste" Comment="Only &amp;Set" />
+    <Text Key="btMarkNone" Text="&amp;Żadne" Comment="&amp;Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="chkColor" Text="Regulacja Kolorów" Comment="Color Adjustment" />
+    <Text Key="chkColorist" Text="Kolory" Comment="Colorist" />
+    <Text Key="chkCount" Text="Ilość Rozdz." Comment="Total Number" />
+    <Text Key="chkCover" Text="Okładka" Comment="Cover Artist" />
+    <Text Key="chkEditor" Text="Edytor" Comment="Editor" />
+    <Text Key="chkGenre" Text="Gatunek" Comment="Genre" />
+    <Text Key="chkImprint" Text="Imprint" Comment="Imprint" />
+    <Text Key="chkInker" Text="Tusz" Comment="Inker" />
+    <Text Key="chkLanguage" Text="Język" Comment="Language" />
+    <Text Key="chkLetterer" Text="Napisy" Comment="Letterer" />
+    <Text Key="chkMonth" Text="Miesiąc Wydania" Comment="Month" />
+    <Text Key="chkNotes" Text="Notatki" Comment="Notes" />
+    <Text Key="chkNumber" Text="Rozdział" Comment="Number" />
+    <Text Key="chkPenciller" Text="Rysownik" Comment="Penciller" />
+    <Text Key="chkPublisher" Text="Wydawnictwo" Comment="Publisher" />
+    <Text Key="chkSeries" Text="Nazwy Serii" Comment="Series" />
+    <Text Key="chkSummary" Text="Streszczenie" Comment="Summary" />
+    <Text Key="chkTags" Text="Tagi" Comment="Tags" />
+    <Text Key="chkTitle" Text="Tytuł Rozdz." Comment="Title" />
+    <Text Key="chkVolume" Text="Tom" Comment="Volume" />
+    <Text Key="chkWriter" Text="Scenarzysta" Comment="Writer" />
+    <Text Key="chkYear" Text="Rok Wydania" Comment="Year" />
+    <Text Key="chkManga" Text="Manga" Comment="Manga" />
+    <Text Key="chkFormat" Text="Format" Comment="Format" />
+    <Text Key="chkBlackAndWhite" Text="Czarno-Biały" Comment="Black and White" />
+    <Text Key="grpArtists" Text="Twórcy / Ludzie Współpracujący" Comment="Artists / People Involved" />
+    <Text Key="grpMain" Text="Podstawowe" Comment="Main" />
+    <Text Key="chkAgeRating" Text="Ogran. Wiek." Comment="Age Rating" />
+    <Text Key="chkCharacters" Text="Postacie" Comment="Characters" />
+    <Text Key="chkWeb" Text="Link" Comment="Web" />
+    <Text Key="chkLocations" Text="Lokalizacje" Comment="Locations" />
+    <Text Key="chkTeams" Text="Drużyny" Comment="Teams" />
+    <Text Key="chkRating" Text="Ocena" Comment="My Rating" />
+    <Text Key="chkCommunityRating" Text="Ocena czytelników" Comment="Community Rating" />
+    <Text Key="chkAlternateCount" Text="Ilość Rozdz." Comment="Alt. Total Number" />
+    <Text Key="chkAlternateNumber" Text="Rozdział" Comment="Alt. Number" />
+    <Text Key="chkAlternateSeries" Text="Nazwy Serii" Comment="Alt. Series" />
+    <Text Key="chkBookPrice" Text="Cena" Comment="Price" />
+    <Text Key="chkBookAge" Text="Wiek" Comment="Age" />
+    <Text Key="chkBookCondition" Text="Stan Egzemplarza" Comment="Condition" />
+    <Text Key="chkBookStore" Text="Kupiono od" Comment="Store" />
+    <Text Key="chkBookOwner" Text="Właściciel" Comment="Owner" />
+    <Text Key="chkBookLocation" Text="Miejsce znajdowania się" Comment="Location" />
+    <Text Key="chkBookCollectionStatus" Text="Status Egzemplarza" Comment="Collection Status" />
+    <Text Key="chkBookNotes" Text="Uwagi o Egzemplarzu" Comment="Notes" />
+    <Text Key="grpPlotNotes" Text="Fabuła i Notatki" Comment="Plot &amp; Notes" />
+    <Text Key="grpCatalog" Text="Wydanie Papierowe" Comment="Catalog" />
+    <Text Key="chkISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ComicDataPasteDialog" Text="Wklej Informacje do {0} Komiksów" Comment="Paste Data into {0} Books" />
+    <Text Key="chkPageCount" Text="Strony" Comment="Pages" />
+    <Text Key="chkOpenTime" Text="Otworzono/Przeczytano" Comment="Opened/Read" />
+    <Text Key="chkAddedTime" Text="Dodano/Zakupiono:" Comment="Added/Purchased" />
+    <Text Key="chkSeriesComplete" Text="Seria skończona" Comment="Series complete" />
+    <Text Key="chkStoryArc" Text="Linia Fabularna" Comment="Story Arc" />
+    <Text Key="chkSeriesGroup" Text="Grupa Serii" Comment="Series Group" />
+    <Text Key="chkMainCharacterOrTeam" Text="Główne Postacie" Comment="Main Character" />
+    <Text Key="chkReview" Text="Recenzja" Comment="Review" />
+    <Text Key="chkReleasedTime" Text="Ost. Wydano" Comment="Released" />
+    <Text Key="grpCustom" Text="Własne" Comment="Custom" />
+  </Texts>
+</TR>

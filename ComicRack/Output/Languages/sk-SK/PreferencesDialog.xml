@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PreferencesDialog" CultureName="sk-SK">
+  <Texts>
+    <Text Key="btAddFolder" Text="&amp;Pridať..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="Pridať priečinok..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="&amp;Použiť" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="&amp;Zrušiť" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="&amp;Zmeniť..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="Vyčistiť" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="Vyčistiť" Comment="Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="&amp;Odstrániť" Comment="&amp;Remove" />
+    <Text Key="btResetColor" Text="&amp;Resetovať" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="Obnoviť" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="Obnoviť &amp;Pôvodne predvolené" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="Skenovať" Comment="Scan" />
+    <Text Key="chkAutoContrast" Text="Automaticky prispôsobiť &amp;kontrast" Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="Automaticky odstrániť chýbajúce súbory z knižnice počas skenovania" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="&amp;Strany [MB]" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableThumbnailCache" Text="&amp;Ikony [MB]" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkOverwriteAssociations" Text="Prepíš existujúce asociácie namiesto použitia 'Otvoriť s ...'" Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="Vyžaduje heslo:" Comment="Require Password:" />
+    <Text Key="colOptions" Text="Nastavenia" Comment="Options" />
+    <Text Key="groupComicFolders" Text="Priečinky eComicsu" Comment="eComic Folders" />
+    <Text Key="groupDiskCache" Text="Cache disku" Comment="Disk Cache" />
+    <Text Key="groupMessages" Text="Skryté správy" Comment="Hidden Messages" />
+    <Text Key="groupOtherComics" Text="eComicsy" Comment="eComics" />
+    <Text Key="groupOverlays" Text="Prekrytia" Comment="Overlays" />
+    <Text Key="grpIntegration" Text="Integrácia prehliadača" Comment="Explorer Integration" />
+    <Text Key="labelBrightness" Text="Prispôsobiť jas:" Comment="Brightness Adjustment:" />
+    <Text Key="labelCheckedFormats" Text="Vybrané formátu budu asociované s ComicRackom" Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelContrast" Text="Prispôsobiť kontrast:" Comment="Contrast Adjustment:" />
+    <Text Key="labelExcludeCover" Text="List mien obrázkov oddelených bodkočiarkov nikdy nepoužívaný ako coverové náhľady:" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelLanguage" Text="Vyberte jazyk ComicRacku (ComicRack musíte reštartovať aby zmeny nadobudli efekt)" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlaySize" Text="velkost" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="Pre zviditeľnenie ukrytých správ stlačte" Comment="To reshow hidden messages press" />
+    <Text Key="labelSaturation" Text="Prispôsobiť sýtosť:" Comment="Saturation Adjustment:" />
+    <Text Key="labelScriptPaths" Text="Bodkočiarkami oddelený list knižničných ciest pre skripty (napr. python knižnice)" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="Zdieľané mená:" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="Vo vybraných priečinkoch budú sledované zmeny (premenovanie, presúvanie) počas chodu programu." Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="Preferencie" Comment="Preferences" />
+    <Text Key="Scan" Text="Skenovať" Comment="Scan" />
+    <Text Key="tabAdvanced" Text="Pokročilé" Comment="Advanced" />
+    <Text Key="tabBehavior" Text="Správanie" Comment="Behavior" />
+    <Text Key="Scanning" Text="Skenujem '{0}' ..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectComicFolder" Text="Prosim vyberte priečinok obsahujúci eComicsy" Comment="Please select a folder containing eComics" />
+    <Text Key="SelectScriptFolder" Text="Prosim vyberte priečinok knižnice skriptov" Comment="Please select a script library folder" />
+    <Text Key="Stop" Text="Zastaviť" Comment="Stop" />
+    <Text Key="labelMemPageCount" Text="Strany [počet]" Comment="Pages [count]" />
+    <Text Key="labelMemThumbSize" Text="Náhľady [MB]" Comment="Thumbnails [MB]" />
+    <Text Key="chkMemPageOptimized" Text="prispôsobiť" Comment="optimized" />
+    <Text Key="chkMemThumbOptimized" Text="prispôsobiť" Comment="optimized" />
+    <Text Key="groupMemoryCache" Text="Cache pamäte" Comment="Memory Cache" />
+    <Text Key="grpDatabaseBackup" Text="Záloha databázy" Comment="Database Backup" />
+    <Text Key="btBackupDatabase" Text="Zálohovať databázu..." Comment="Backup Database..." />
+    <Text Key="btRestoreDatabase" Text="Obnoviť databázu..." Comment="Restore Database..." />
+    <Text Key="btTranslate" Text="Pomôžte prekladať ComicRack..." Comment="Help localizing ComicRack..." />
+    <Text Key="tabReader" Text="Čítacie okno" Comment="Reader" />
+    <Text Key="tabOverlaysAndEffects" Text="Prekrytia &amp;&amp; Efekty" Comment="Overlays &amp;&amp; Effects" />
+    <Text Key="groupPageDisplayGeneral" Text="Hlavné" Comment="General" />
+    <Text Key="chkEnableHardware" Text="Povoliť hardwarovú akceleráciu" Comment="Enable Hardware Acceleration" />
+    <Text Key="chkEnablePageTransition" Text="Povoliť prechody medzi stanami" Comment="Enable Page Transitions" />
+    <Text Key="chkEnableDisplayChangeAnimation" Text="Povoliť animovanie zmien zobrazenia strany" Comment="Enable Animation of Page Display changes" />
+    <Text Key="chkEnableFlowScroll" Text="Povoliť plynulé scrollovanie myšky" Comment="Enable flowing Mouse scrolling" />
+    <Text Key="chkSmoothAutoScrolling" Text="Hladké Autoscrollovanie" Comment="Smooth Auto Scrolling" />
+    <Text Key="chkUpdateComicFiles" Text="Povoliť zápis eComic info do súborov" Comment="Allow writing of eComic info into files" />
+    <Text Key="chkAutoUpdateComicFiles" Text="eComic súbory sú updatované automaticky" Comment="eComic files are updated automatically" />
+    <Text Key="lblFast" Text="rýchlo" Comment="fast" />
+    <Text Key="lblSlow" Text="pomaly" Comment="slow" />
+    <Text Key="grpKeyboard" Text="Klávesnica" Comment="Keyboard" />
+    <Text Key="grpMouse" Text="Myš" Comment="Mouse" />
+    <Text Key="lblMouseWheel" Text="Scrollovanie kolieska myši:" Comment="Mouse Wheel scrolling:" />
+    <Text Key="chkHighQualityDisplay" Text="&amp;Vysoká kvalita" Comment="&amp;High Quality" />
+    <Text Key="groupColors" Text="Nastavenie farieb" Comment="Color Adjustments" />
+    <Text Key="chkEnableHardwareFiltering" Text="Povoliť hardvérové filtre" Comment="Enable Hardware Filters" />
+    <Text Key="chkEnableSoftwareFiltering" Text="Povoliť softvérové filtre" Comment="Enable Software Filters" />
+    <Text Key="groupHardwareAcceleration" Text="Hardvérová akcelerácia" Comment="Hardware Acceleration" />
+    <Text Key="grpSharing" Text="Zdielanie" Comment="Sharing" />
+    <Text Key="grpScanning" Text="Skenovanie" Comment="Scanning" />
+    <Text Key="grpLanguages" Text="Jazyky" Comment="Languages" />
+    <Text Key="tabLibraries" Text="Knižnice" Comment="Libraries" />
+    <Text Key="colName" Text="Meno" Comment="Name" />
+    <Text Key="colType" Text="Typ" Comment="Type" />
+    <Text Key="chkAnamorphicScaling" Text="Povoliť &quot;&amp;Anamorphic Scaling&quot;" Comment="Anamorphic Scaling" />
+    <Text Key="chkDisableScripting" Text="Vypnúť všetky skripty" Comment="Disable all Scripts" />
+    <Text Key="grpScripts" Text="Dostupné skripty" Comment="Available Scripts" />
+    <Text Key="grpPackages" Text="Balíky skriptov" Comment="Script Packages" />
+    <Text Key="grpScriptSettings" Text="Nastavenia skriptu" Comment="Script Settings" />
+    <Text Key="tabScripts" Text="Skripty" Comment="Scripts" />
+    <Text Key="btInstallPackage" Text="Inštalovať..." Comment="Install..." />
+    <Text Key="btRemovePackage" Text="Odstrániť" Comment="Remove" />
+    <Text Key="colPackage" Text="Balík" Comment="Package" />
+    <Text Key="colAuthor" Text="Autor" Comment="Author" />
+    <Text Key="colDescription" Text="Popis" Comment="Description" />
+    <Text Key="packageGroupInstalled" Text="Nainštalované" Comment="Installed" />
+    <Text Key="packageGroupInstall" Text="Bude inštalované (vyžaduje reštart)" Comment="To be installed (needs restart)" />
+    <Text Key="packageGroupRemove" Text="Bude odstránené (vyžaduje reštart)" Comment="To be removed (needs restart)" />
+    <Text Key="btAssociateExtensions" Text="Zmeniiť..." Comment="Change..." />
+    <Text Key="btClearInternetCache" Text="Vyčistiť" Comment="Clear" />
+    <Text Key="chkEnableInternetCache" Text="&amp;Internet [MB]" Comment="&amp;Internet [MB]" />
+    <Text Key="chkClientsCanExport" Text="Klienti môžu exportovať eComicsy" Comment="Clients can export eComics" />
+    <Text Key="grpServerSettings" Text="Nastavenia servra" Comment="Server Settings" />
+    <Text Key="labelShareDescription" Text="Popis:" Comment="Description:" />
+    <Text Key="chkPrivate" Text="Súkromné" Comment="Private" />
+    <Text Key="chkShareInternet" Text="Zdielať na internete" Comment="Share on the Internet" />
+    <Text Key="btAddShare" Text="Pridať zdielanie" Comment="Add Share" />
+    <Text Key="btRemoveShare" Text="Odstrániť" Comment="Remove" />
+    <Text Key="labelPrivateListPassword" Text="Heslo použité na ochranu zoznamu vaších internetových zdielaní:" Comment="Password used to protect your private Internet Share list entries:" />
+    <Text Key="labelSharpening" Text="Ostrenie:" Comment="Sharpening:" />
+    <Text Key="labelPublicServerAddress" Text="Externá adresa vášho servra, ak ju ComicRack neuhádne správne:" Comment="External address of your server if ComicRack should not guess it correctly:" />
+    <Text Key="chkDontAddRemovedFiles" Text="Súbory manuálne odstránené z knižnice nebudú znova pridané" Comment="Files manually removed from the Library will not be added again" />
+    <Text Key="btConfigScript" Text="Config..." Comment="Config..." />
+    <Text Key="btOpenFolder" Text="Otvoriť" Comment="Open" />
+    <Text Key="labelPageQuality" Text="Kvalita strany:" Comment="Page Quality:" />
+    <Text Key="labelThumbQuality" Text="Kvalita náhľadu:" Comment="Thumb Quality:" />
+    <Text Key="labelHelpSystem" Text="Pomoc v kontexte:" Comment="Context Sensitive Help:" />
+    <Text Key="grpHelp" Text="Systém pomoci" Comment="Help System" />
+    <Text Key="chkLookForShared" Text="Hľadať zdielané knižnice komiksov" Comment="Look for local Comic Shares" />
+    <Text Key="chkAutoConnectShares" Text="Pripojiť automaticky" Comment="Connect automatically" />
+    <Text Key="chkClientsCanEdit" Text="Klienti môžu meniť eComic nastavenia" Comment="Clients can edit eComics" />
+    <Text Key="btExportKeyboard" Text="Export..." Comment="Export..." />
+    <Text Key="btImportKeyboard" Text="Import..." Comment="Import..." />
+    <Text Key="miDefaultKeyboardLayout" Text="Základné" Comment="Default" />
+    <Text Key="cbShare.Item0" Text="Nezdielať žiadne" Comment="Share None" />
+    <Text Key="cbShare.Item1" Text="Zdielať všetky" Comment="Share All" />
+    <Text Key="cbShare.Item2" Text="Zdielať vybraté" Comment="Share Selected" />
+    <Text Key="grpShareSettings" Text="Nastavenia" Comment="Settings" />
+    <Text Key="chkShowNavigationOverlay" Text="Zobraziť navigáciu automaticky" Comment="Show Navigation automatically" />
+    <Text Key="chkShowCurrentPageOverlay" Text="Zobraziť súčasnú stranu" Comment="Show current Page" />
+    <Text Key="chkShowVisiblePartOverlay" Text="Ukázať viditeľnú čast strany" Comment="Show visible Page Part" />
+    <Text Key="chkShowPageNames" Text="Súčasná strana tiež zobrazuje meno strany" Comment="Current Page also displays Page Name" />
+    <Text Key="chkShowStatusOverlay" Text="Zobraziť správy a stav" Comment="Show Messages and Status" />
+    <Text Key="labelPageOverlay" Text="Strana" Comment="Page" />
+    <Text Key="labelVisiblePartOverlay" Text="Viditeľná strana" Comment="Visible Part" />
+    <Text Key="labelStatusOverlay" Text="Správy a stav" Comment="Messages and Status" />
+    <Text Key="labelNavigationOverlay" Text="Navigácia" Comment="Navigation" />
+    <Text Key="labelNavigationOverlayPosition" Text="Navigácia:" Comment="Navigation:" />
+    <Text Key="cbNavigationOverlayPosition.Item0" Text="na Spodku" Comment="at Bottom" />
+    <Text Key="cbNavigationOverlayPosition.Item1" Text="na Vrchol" Comment="on Top" />
+    <Text Key="PageNumberOnly" Text="Strana" Comment="Page" />
+    <Text Key="PageNumberAndName" Text="Meno\nStrany" Comment="Page\nName" />
+  </Texts>
+</TR>

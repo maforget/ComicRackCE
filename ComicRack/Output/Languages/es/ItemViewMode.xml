@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ItemViewMode" CultureName="es">
+  <Texts>
+    <Text Key="Thumbnail" Text="Miniatura" Comment="Thumbnail" />
+    <Text Key="Tile" Text="Mosaico" Comment="Tile" />
+    <Text Key="Detail" Text="Detalle" Comment="Detail" />
+  </Texts>
+</TR>

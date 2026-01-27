@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Groups" CultureName="sk-SK">
+  <Texts>
+    <Text Key="AlphabetGroups" Text="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Iné" Comment="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Other" />
+    <Text Key="CountGroups" Text="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|Neudané" Comment="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|Unspecified" />
+    <Text Key="DateGroups" Text="Nikdy|Dnes|Včera|Pred dvoma dňami|Pred troma dňami|Tento týždeň|Minulý týždeň|Pred dvoma týždňami|Pred troma týždňami|Tento mesiac|Minulý mesiac|Pred dvoma mesiacmi|Pred troma mesiacmi|Pred štyroma mesiacmi|Pred piatimi mesiacmi|Pred šiestimi mesiacmi|Tento rok|Minulý rok|Pred dvoma rokmi|Pred troma rokmi|Viac než pred troma rokmi" Comment="Never|Today|Yesterday|Two Days Ago|Three Days Ago|This Week|Last Week|Two Weeks Ago|Three Weeks Ago|This Month|Last Month|Two Months ago|Three Months ago|Four Months ago|Five Months ago|Six Months ago|This Year|Last Year|Two Years ago|Three Years ago|Older than Three Years" />
+    <Text Key="ReadPercentageGroups" Text="Nečítané|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|Prečítané" Comment="Not Read|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|Completed" />
+    <Text Key="SizeGroups" Text="Prázdny|Veľmy malý|MalýStredný|Veľký|Obrovský" Comment="Empty|Very Small|Small|Medium|Big|Huge" />
+    <Text Key="RatingGroups" Text="Bez ratingu|Žiadne hviezdičky|1 Hviezdička|2 Hviezdičky|3 Hviezdičky|4 Hviezdičky|5 Hviezdičiek" Comment="Not Rated|No Stars|1 Star|2 Stars|3 Stars|4 Stars|5 Stars" />
+    <Text Key="VolumeGroups" Text="Žiaden|V{0}|Iný" Comment="None|V{0}|Other" />
+    <Text Key="MangaGroups" Text="Manga|Nie Manga|Neznáme" Comment="Manga|No Manga|Unknown" />
+    <Text Key="BWGroups" Text="Čiernobiele|Farba|Neznáme" Comment="Black and White|Color|Unknown" />
+    <Text Key="LinkedGroups" Text="Spojené so súborom|Nespojené so súborom" Comment="Linked to File|Not linked to File" />
+    <Text Key="PriceGroups" Text="Neznáme|Zadarmo|0-10|10-20|20-30|30-40|40-50|50-100|over 100" Comment="Unknown|Free|0-10|10-20|20-30|30-40|40-50|50-100|over 100" />
+  </Texts>
+</TR>

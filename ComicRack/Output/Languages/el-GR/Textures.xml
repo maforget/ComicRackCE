@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Textures" CultureName="el-GR">
+  <Texts>
+    <Text Key="Ceramic" Text="Κεραμικό" Comment="Cermamic" />
+    <Text Key="Glass" Text="Γυαλί" Comment="Glass" />
+    <Text Key="LightWood" Text="Ελαφρύ ξύλο" Comment="Light Wood" />
+    <Text Key="OrangeMetal" Text="Πορτοκαλί (μεταλλικό)" Comment="Orange Metal" />
+    <Text Key="PlankWood" Text="Σανίδα ξύλου" Comment="Plank Wood" />
+    <Text Key="WhitePaper" Text="Λευκό Χαρτί" Comment="White Paper" />
+    <Text Key="WhitePaper2" Text="Λευκό Χαρτί 2" Comment="White Paper 2" />
+    <Text Key="WhitePaper3" Text="Λευκό Χαρτί 3" Comment="White Paper 3" />
+    <Text Key="Checkered" Text="Ελέγχθηκε" Comment="Checkered" />
+    <Text Key="Ceramic2" Text="Κεραμικό 2" Comment="Cermamic 2" />
+    <Text Key="BrickWall" Text="Πλινθοδομή" Comment="Brick Wall" />
+    <Text Key="BrushedMetal" Text="Μέταλλο" Comment="Brushed Metal" />
+    <Text Key="BrushedMetal2" Text="Μέταλλο 2" Comment="Brushed Metal 2" />
+    <Text Key="ChalkBoard" Text="Μαυροπίνακας" Comment="Chalk Board" />
+    <Text Key="Circles" Text="Κύκλοι" Comment="Circles" />
+    <Text Key="Grass" Text="Χορτάρι" Comment="Grass" />
+    <Text Key="Sketch" Text="Σχέδιο" Comment="Sketch" />
+    <Text Key="Black" Text="Μαύρο" Comment="Black" />
+  </Texts>
+</TR>

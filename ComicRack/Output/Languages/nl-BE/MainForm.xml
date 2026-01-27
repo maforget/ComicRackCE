@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainForm" CultureName="nl-BE">
+  <Texts>
+    <Text Key="browseMenu" Text="&amp;Blader" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="&amp;Kopieer Bladzijde" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="&amp;Exporteer pagina..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="Alles zichtbaar" Comment="Fit All" />
+    <Text Key="cmFitBest" Text="Beste invulling" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="Hoogte aanpassen" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="Breedte aanpassen" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="&amp;Vergrootglas" Comment="&amp;Magnifier" />
+    <Text Key="cmNotifyExit" Text="&amp;Beëindigen" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="&amp;Ongedaan maken" Comment="&amp;Restore" />
+    <Text Key="cmRate0" Text="Geen" Comment="None" />
+    <Text Key="cmRate1" Text="* (1 Ster)" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** (2 Ster)" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** (3 Ster)" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** (4 Ster)" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** (5 Ster)" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="Mijn &amp;Waardering" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="&amp;Vernieuwen" Comment="&amp;Refresh" />
+    <Text Key="cmSyncBrowser" Text="Toon in &amp;Browser" Comment="Show in &amp;Browser" />
+    <Text Key="displayMenu" Text="&amp;Weergeven" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="&amp;Bewerken" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="&amp;Bestand" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="&amp;Help" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack" Comment="ComicRack" />
+    <Text Key="miAbout" Text="&amp;Over..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="&amp;Voeg Map toe aan Bibliotheek" Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="Nieuw Tabblad" Comment="New &amp;Tab" />
+    <Text Key="miBestFit" Text="Beste invulling" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="Alles afsluiten" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="Afsluiten" Comment="&amp;Close" />
+    <Text Key="miEditListLayout" Text="&amp;Wijzig de Lijst Lay-out..." Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="&amp;Beëindigen" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="A&amp;utomatiseren" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="&amp;Eerste Bladzijde" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="Alles zichtbaar" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="Hoogte aanpassen" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="Breedte aanpassen" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="&amp;Volledig Scherm" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="&amp;Laatste Bladzijde" Comment="&amp;Last Page" />
+    <Text Key="miListLayouts" Text="Lijst Lay-out" Comment="List Layout" />
+    <Text Key="miNews" Text="&amp;Nieuws..." Comment="&amp;News..." />
+    <Text Key="miNextTab" Text="Volgende &amp;Tab" Comment="Next &amp;Tab" />
+    <Text Key="miPageType" Text="&amp;Blad type" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="&amp;Instellingen..." Comment="&amp;Preferences..." />
+    <Text Key="miPrevPage" Text="Vorige Bladzijde" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="Vorige Tab" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="Geen" Comment="None" />
+    <Text Key="miRate1" Text="* (1 Ster)" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** (2 Ster)" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** (3 Ster)" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** (4 Ster)" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** (5 Ster)" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="Mijn Waardering" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="Herstarten" Comment="Rest&amp;art" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="miRotation" Text="&amp;Draaien" Comment="&amp;Rotation" />
+    <Text Key="miSaveListLayout" Text="&amp;Bewaar Lijst Lay-out..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="&amp;Werkomgeving opslaan..." Comment="&amp;Save Workspace..." />
+    <Text Key="miAutoScroll" Text="Auto Scrollen" Comment="Auto Scrolling" />
+    <Text Key="miSearchBrowser" Text="Z&amp;oek Browser" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="Koppel alle Lijsten aan de huidige Lay-out" Comment="Set all Lists to current Layout" />
+    <Text Key="miSidebar" Text="&amp;Zijbalk" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="K&amp;leine Voorbeschouwing" Comment="S&amp;mall Preview" />
+    <Text Key="miSupport" Text="Steun ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miSyncBrowser" Text="Toon in &amp;Browser" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="&amp;Browser" Comment="&amp;Browser" />
+    <Text Key="miView100" Text="100 %" Comment="100 %" />
+    <Text Key="miView150" Text="150 %" Comment="150 %" />
+    <Text Key="miView200" Text="200 %" Comment="200 %" />
+    <Text Key="miView300" Text="300 %" Comment="300 %" />
+    <Text Key="miView400" Text="400 %" Comment="400 %" />
+    <Text Key="miViewFolders" Text="&amp;Mappen" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="Bibliotheek" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="&amp;Bladzijden" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="&amp;Vernieuwen" Comment="&amp;Refresh" />
+    <Text Key="miWorkspaces" Text="&amp;Werkomgevingen" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="Zoem" Comment="Zoom" />
+    <Text Key="readMenu" Text="&amp;Lees" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="Gebruik Lay-out '{0}'" Comment="Set '{0}' Layout" />
+    <Text Key="tbBestFit" Text="Beste invulling" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="Beeld" Comment="Display" />
+    <Text Key="tbFit" Text="Aanpassen" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="Verander Invulmodus" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="Alles zichtbaar" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="Hoogte aanpassen" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="Breedte aanpassen" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="Volledig Scherm" Comment="Full Screen" />
+    <Text Key="tbMagnify" Text="Vergrootglas" Comment="Magnifier" />
+    <Text Key="tbNextPage" Text="Volgende Bladzijde" Comment="Next Page" />
+    <Text Key="tbNextTab" Text="Volgende &amp;Tab" Comment="Next &amp;Tab" />
+    <Text Key="tbNextTab.Tooltip" Text="Volgende Tab" Comment="Next Tab" />
+    <Text Key="tbPrevTab" Text="&amp;VorigeTab" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="Vorige Tab" Comment="Vorheriger Tab" />
+    <Text Key="tbReadLabel" Text="Lees" Comment="Read" />
+    <Text Key="tbAutoScroll" Text="Auto Scrollen" Comment="Auto Scrolling" />
+    <Text Key="tbTwoPages" Text="Twee Pagina's" Comment="Two Pages" />
+    <Text Key="tsBook" Text="Boek" Comment="Book" />
+    <Text Key="tsCurrentPage" Text="Bladzijde" Comment="Page" />
+    <Text Key="tsPageCount" Text="0 Bladzijden" Comment="0 Pages" />
+    <Text Key="tsSaveWorkspace" Text="&amp;'Werkomgeving' opslaan..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsText" Text="Klaar" Comment="Ready" />
+    <Text Key="tsWorkspaces" Text="Werkomgeving" Comment="Workspaces" />
+    <Text Key="miReaderUndocked" Text="Plaats Lezer in eigen Venster" Comment="Reader in own Window" />
+    <Text Key="tbReaderUndocked" Text="Plaats Lezer in eigen Venster" Comment="Reader in own Window" />
+    <Text Key="miPageLayout" Text="Blad Lay-out" Comment="Page Layout" />
+    <Text Key="cmPageLayout" Text="Blad Lay-out" Comment="Page Layout" />
+    <Text Key="miAdaptiveTwoPageFitting" Text="Aan Duo Bladzijde aanpassen" Comment="Adapt to double page spreads" />
+    <Text Key="cmAdaptiveTwoPageFitting" Text="Aan Duo Bladzijde aanpassen" Comment="Adapt to double page spreads" />
+    <Text Key="tbAdaptiveTwoPageFitting" Text="Aan Duo Bladzijde aanpassen" Comment="Adapt to double page spreads" />
+    <Text Key="miOriginal" Text="Originele grootte" Comment="Original Size" />
+    <Text Key="tbOriginal" Text="Originele grootte" Comment="Original Size" />
+    <Text Key="cmOriginal" Text="Originele grootte" Comment="Original Size" />
+    <Text Key="NotifyIconText" Text="Dubbelklik voor Herstel" Comment="Double Click to restore" />
+    <Text Key="cmOnlyFitOversized" Text="Alleen Inpassen indien Bovenmaats" Comment="Only Fit if oversized" />
+    <Text Key="miOnlyFitOversized" Text="Alleen Inpassen indien Bovenmaats" Comment="Only Fit if oversized" />
+    <Text Key="tbOnlyFitOversized" Text="Alleen Inpassen indien Bovenmaats" Comment="Only Fit if oversized" />
+    <Text Key="ChangeItemSize" Text="Wijzig de grootte van de getoonde Miniaturen" Comment="Change size of the list items" />
+    <Text Key="miDoublePageAutoScroll" Text="Duo Pagina Auto Scroll" Comment="Double Page Auto Scrolling" />
+    <Text Key="cmFitWidthAdaptive" Text="Breedte aanpassen (adaptief)" Comment="Fit Width (adaptive)" />
+    <Text Key="miFitWidthAdaptive" Text="Breedte aanpassen (adaptief)" Comment="Fit Width (adaptive)" />
+    <Text Key="tbFitWidthAdaptive" Text="Breedte aanpassen (adaptief)" Comment="Fit Width (adaptive)" />
+    <Text Key="cmRightToLeft" Text="Van Rechts naar Links" Comment="Right to Left" />
+    <Text Key="tbRightToLeft" Text="Van Rechts naar Links" Comment="Right to Left" />
+    <Text Key="miRightToLeft" Text="Van Rechts naar Links" Comment="Right to Left" />
+    <Text Key="miMinimalGui" Text="Minimale Gebruiksinterface" Comment="Minimal User Interface" />
+    <Text Key="tbMinimalGui" Text="Minimale Gebruiksinterface" Comment="Minimal User Interface" />
+    <Text Key="cmMinimalGui" Text="Minimale Gebruiksinterface" Comment="Minimal User Interface" />
+    <Text Key="miBookmarks" Text="Bladwijzers" Comment="Bookmarks" />
+    <Text Key="miSetBookmark" Text="Plaats Bladwijzer..." Comment="Set Bookmark..." />
+    <Text Key="miRemoveBookmark" Text="Verwijder Bladwijzer" Comment="Remove Bookmark" />
+    <Text Key="tbBookmarks" Text="Bladwijzers" Comment="Bookmarks" />
+    <Text Key="tbSetBookmark" Text="Plaats Bladwijzer..." Comment="Set Bookmark..." />
+    <Text Key="tbRemoveBookmark" Text="Verwijder Bladwijzer" Comment="Remove Bookmark" />
+    <Text Key="tbLastPageRead" Text="Laatst Gelezen Bladzijde" Comment="Last Page Read" />
+    <Text Key="cmBookmarks" Text="Bladwijzers" Comment="Bookmarks" />
+    <Text Key="cmSetBookmark" Text="Plaats Bladwijzer..." Comment="Set Bookmark..." />
+    <Text Key="cmRemoveBookmark" Text="Verwijder Bladwijzer" Comment="Remove Bookmark" />
+    <Text Key="cmLastPageRead" Text="Laatst Gelezen Bladzijde" Comment="Last Page Read" />
+    <Text Key="miPrevBookmark" Text="Vorige Bladwijzer" Comment="Previous Bookmark" />
+    <Text Key="miNextBookmark" Text="Volgende Bladwijzer" Comment="Next Bookmark" />
+    <Text Key="tbPrevBookmark" Text="Vorige Bladwijzer" Comment="Previous Bookmark" />
+    <Text Key="tbNextBookmark" Text="Volgende Bladwijzer" Comment="Next Bookmark" />
+    <Text Key="cmPrevBookmark" Text="Vorige Bladwijzer" Comment="Previous Bookmark" />
+    <Text Key="cmNextBookmark" Text="Volgende Bladwijzer" Comment="Next Bookmark" />
+    <Text Key="miZoomIn" Text="Inzoemen" Comment="Zoom In" />
+    <Text Key="tbZoomIn" Text="Inzoemen" Comment="Zoom In" />
+    <Text Key="miZoomOut" Text="Zoem Uit" Comment="Zoom Out" />
+    <Text Key="tbZoomOut" Text="Zoem Uit" Comment="Zoom Out" />
+    <Text Key="miZoomCustom" Text="Aanpassen..." Comment="Custom..." />
+    <Text Key="tbZoomCustom" Text="Aanpassen..." Comment="Custom..." />
+    <Text Key="tbZoom.Tooltip" Text="Verander zoem van blz." Comment="Change the page zoom" />
+    <Text Key="tbRotate.Tooltip" Text="Verander rotatie van blz." Comment="Change the page rotation" />
+    <Text Key="miRotateLeft" Text="Rotatie Links" Comment="Rotate Left" />
+    <Text Key="miRotateRight" Text="Rotatie Rechts" Comment="Rotate Right" />
+    <Text Key="tbRotateLeft" Text="Rotatie Links" Comment="Rotate Left" />
+    <Text Key="tbRotateRight" Text="Rotatie Rechts" Comment="Rotate Right" />
+    <Text Key="tbRotate180" Text="180°" Comment="180°" />
+    <Text Key="tbRotate270" Text="270°" Comment="270°" />
+    <Text Key="tbRotate90" Text="90°" Comment="90°" />
+    <Text Key="tbAutoRotate" Text="Aanpassen &amp;&amp; automatisch draaien" Comment="Autorotate Double Pages" />
+    <Text Key="miAutoRotate" Text="Aanpassen &amp;&amp; automatisch draaien" Comment="Autorotate Double Pages" />
+    <Text Key="miLastPageRead" Text="Laatst Gelezene Bladzijde" Comment="L&amp;ast Page Read" />
+    <Text Key="tsPageActivity.Tooltip" Text="Opvragen Bladzijden en Miniaturen" Comment="Getting Pages and Thumbnails..." />
+    <Text Key="tsScanActivity.Tooltip" Text="Scan activiteit in de achtergrond..." Comment="A scan is running..." />
+    <Text Key="tsWriteInfoActivity.Tooltip" Text="Bezig met informatie weg te schrijven naar de bestanden ..." Comment="Writing info data to files..." />
+    <Text Key="tsReadInfoActivity.Tooltip" Text="De bestandsinfo wordt gelezen..." Comment="Reading info data from files..." />
+    <Text Key="cmCloseAllButThis" Text="Sluit alles behalve dit" Comment="Close All But This" />
+    <Text Key="cmCopyPath" Text="Kopieer het volledige pad" Comment="Copy Full Path" />
+    <Text Key="cmRevealInExplorer" Text="Toon in Verkenner" Comment="Reveal in Explorer" />
+    <Text Key="cmClose" Text="Afsluiten" Comment="Close" />
+    <Text Key="miWebHome" Text="ComicRack Homepagina" Comment="ComicRack Homepage..." />
+    <Text Key="miWebUserForum" Text="ComicRack Gebruikers Forum" Comment="ComicRack User Forum..." />
+    <Text Key="miWebHelp" Text="ComicRack Documentatie" Comment="ComicRack Documentation..." />
+    <Text Key="SavePageTitle" Text="Blz opslaan als..." Comment="Save Page as..." />
+    <Text Key="miCopyPage" Text="&amp;Kopieer Bladzijde" Comment="&amp;Copy Page" />
+    <Text Key="miExportPage" Text="&amp;Exporteer pagina..." Comment="&amp;Export Page..." />
+    <Text Key="ExportingErrors" Text="{0} fouten. Klik voor details" Comment="{0} errors. Click for details" />
+    <Text Key="cmPageType" Text="&amp;Pagina type" Comment="&amp;Page Type" />
+    <Text Key="tsExportActivity" Text="Bezig met uitvoer (export)" Comment="Exporting" />
+    <Text Key="cmCloseComic" Text="Sluiten" Comment="Close" />
+    <Text Key="cmRotate0" Text="&amp;Geen rotatie" Comment="&amp;No Rotation" />
+    <Text Key="cmRotate180" Text="180°" Comment="180°" />
+    <Text Key="cmRotate270" Text="270°" Comment="270°" />
+    <Text Key="cmRotate90" Text="90°" Comment="90°" />
+    <Text Key="cmPageRotate" Text="Bladrotatie" Comment="Page Rotation" />
+    <Text Key="miPageRotate" Text="Bladrotatie" Comment="Page Rotation" />
+    <Text Key="miOpenRemoteLibrary" Text="Open de externe Bibliotheek..." Comment="Open Remote Library..." />
+    <Text Key="miUndo" Text="Ongedaan maken" Comment="Undo" />
+    <Text Key="miRedo" Text="Herdoe" Comment="Redo" />
+    <Text Key="cmShowInfo" Text="&amp;Informatie..." Comment="&amp;Info..." />
+    <Text Key="tbAbout" Text="&amp;Over..." Comment="&amp;About..." />
+    <Text Key="tbFirstPage" Text="Eerste Bladzijde" Comment="&amp;First Page" />
+    <Text Key="tbLastPage" Text="Laatste Bladzijde" Comment="&amp;Last Page" />
+    <Text Key="miNextPage" Text="&amp;Volgende Bladzijde" Comment="Next Page" />
+    <Text Key="miMagnify" Text="Vergrootglas" Comment="Magnifier" />
+    <Text Key="tbPreferences" Text="&amp;Voorkeuren..." Comment="&amp;Preferences..." />
+    <Text Key="tbTools" Text="Tools" Comment="Tools" />
+    <Text Key="tbTools.Tooltip" Text="Toegang tot belangrijke commando's" Comment="Access to important commands" />
+    <Text Key="tbShowMainMenu" Text="Toon Hoofdmenu" Comment="Show Main Menu" />
+    <Text Key="tbPrevPage" Text="Vorige bladzijde" Comment="&amp;Previous Page" />
+    <Text Key="miRotate0" Text="&amp;Geen rotatie" Comment="0°" />
+    <Text Key="miShowInfo" Text="&amp;Informatie..." Comment="&amp;Info..." />
+    <Text Key="tbShowInfo" Text="Informatie" Comment="&amp;Info..." />
+    <Text Key="tbSupport" Text="Ondersteun ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miTwoPages" Text="&amp;Twee Bladzijden" Comment="Two Pages" />
+    <Text Key="cmTwoPages" Text="&amp;Twee Bladzijden" Comment="Two Pages" />
+    <Text Key="miSinglePage" Text="Enkel blad" Comment="Single Page" />
+    <Text Key="cmSinglePage" Text="Enkel blad" Comment="Single Page" />
+    <Text Key="tbSinglePage" Text="Enkel blad" Comment="Single Page" />
+    <Text Key="tbRotate0" Text="&amp;Geen rotatie" Comment="0°" />
+    <Text Key="miPreviousList" Text="Vorige Lijst" Comment="Previous List" />
+    <Text Key="miNextList" Text="Volgende Lijst" Comment="Next List" />
+    <Text Key="miTwoPagesAdaptive" Text="Twee Bladzijden (Adaptief)" Comment="Two Pages (adaptive)" />
+    <Text Key="cmTwoPagesAdaptive" Text="Twee Bladzijden (Adaptief)" Comment="Two Pages (adaptive)" />
+    <Text Key="tbTwoPagesAdaptive" Text="Twee Bladzijden (Adaptief)" Comment="Two Pages (adaptive)" />
+    <Text Key="miUpdateWebComics" Text="Ververs Web Comics" Comment="Update Web Comics" />
+    <Text Key="tbUpdateWebComics" Text="Ververs Web Comics" Comment="Update Web Comics" />
+    <Text Key="tbOpenRemoteLibrary" Text="Open de externe Bibliotheek..." Comment="Open Remote Library..." />
+    <Text Key="miToggleZoom" Text="Schakelaar 'Zoom'" Comment="Toggle Zoom" />
+    <Text Key="miEditLayouts" Text="&amp;Wijzig Lay-outs..." Comment="&amp;Edit Layouts..." />
+    <Text Key="miEditWorkspaces" Text="&amp;Wijzig Werkomgeving..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="tsEditWorkspaces" Text="&amp;Wijzig Werkomgeving..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="miTasks" Text="Taken..." Comment="Tasks..." />
+    <Text Key="quickOpenView" Text="Snel Open" Comment="Quick Open" />
+    <Text Key="cmCloseAllToTheRight" Text="Sluit alles à Rechterzijde" Comment="Close All to the Right" />
+    <Text Key="cmNextFromList" Text="V&amp;olgende Boek" Comment="Ne&amp;xt Book" />
+    <Text Key="cmRandomFromList" Text="Willekeurig Boek" Comment="Random Book" />
+    <Text Key="cmPrevFromList" Text="Vor&amp;ig Boek" Comment="Pre&amp;vious Book" />
+    <Text Key="ExportingComics" Text="Bezig met export Boeken: {0} wachtrij" Comment="Exporting Books: {0} queued" />
+    <Text Key="miNextFromList" Text="Volgend Boek" Comment="Ne&amp;xt Book" />
+    <Text Key="miRandomFromList" Text="Willekeurig Boek" Comment="Random Book" />
+    <Text Key="miOpenComic" Text="&amp;Open Bestand..." Comment="&amp;Open File..." />
+    <Text Key="cmOpenComic" Text="&amp;Open Bestand..." Comment="&amp;Open File..." />
+    <Text Key="tbOpenComic" Text="&amp;Open Bestand..." Comment="&amp;Open File..." />
+    <Text Key="miOpenNow" Text="Geopende Boeken" Comment="Open Books" />
+    <Text Key="miOpenRecent" Text="&amp;Recent gelezen boeken" Comment="&amp;Recent Books" />
+    <Text Key="miPrevFromList" Text="Vorig Boek" Comment="Pre&amp;vious Book" />
+    <Text Key="miScan" Text="Scan Boeken &amp;Mappen" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbScan" Text="Scan Boeken &amp;Mappen" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbNextFromList" Text="Volgend Boek uit de Lijst" Comment="Next Book from List" />
+    <Text Key="tbRandomFromList" Text="Willekeurig Boek" Comment="Random Book" />
+    <Text Key="tbPrevFromList" Text="Vorig Boek uit de Lijst" Comment="Previous Book from List" />
+    <Text Key="tsBook.Tooltip" Text="Titel van 't geopende Boek" Comment="Name of the opened Book" />
+    <Text Key="tsCurrentPage.Tooltip" Text="Huidige pagina van de geopende Boeken" Comment="Current Page of the open Book" />
+    <Text Key="tsPageCount.Tooltip" Text="Het totaal aantal bladzijden van 't geopende Boek" Comment="Page count of the open Book" />
+    <Text Key="tbPageLayout" Text="Pagina Lay-out" Comment="Page Layout" />
+    <Text Key="cmComics" Text="Boeken" Comment="Books" />
+    <Text Key="miUpdateAllComicFiles" Text="Ververs alle Boekbestanden" Comment="Update all Book Files" />
+    <Text Key="tbUpdateAllComicFiles" Text="Ververs alle Boekbestanden" Comment="Update all Book Files" />
+    <Text Key="miComicDisplaySettings" Text="Boek Weergave Instellingen..." Comment="Book Display Settings..." />
+    <Text Key="tbComicDisplaySettings" Text="Boek Weergave Instellingen..." Comment="Book Display Settings..." />
+    <Text Key="miHelp" Text="Help" Comment="Help" />
+    <Text Key="miChooseHelpSystem" Text="Kies Helpsysteem" Comment="Choose Help System" />
+    <Text Key="miHelpPlugins" Text="Plug-ins" Comment="Plugins" />
+    <Text Key="miNewComic" Text="Ingave nieuw bestandloos Boek..." Comment="New fileless Book Entry..." />
+    <Text Key="miHelpQuickIntro" Text="Snelle kennismaking" Comment="Quick Introduction" />
+    <Text Key="DeviceSyncing" Text="Synchronisatie apparaten: {0} in wachtrij" Comment="Syncing Devices: {0} queued" />
+    <Text Key="DeviceSyncingErrors" Text="{0} fouten. Klik voor details" Comment="{0} errors. Click for details" />
+    <Text Key="miDevices" Text="Apparaten..." Comment="Devices..." />
+    <Text Key="miSynchronizeDevices" Text="Synchroniseer Apparaten" Comment="Synchronize Devices" />
+    <Text Key="tsSynchronizeDevices" Text="Synchroniseer Apparaten" Comment="Synchronize Devices" />
+    <Text Key="miTrackCurrentPage" Text="Track huidige Pagina" Comment="Track current Page" />
+  </Texts>
+</TR>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="NewsDialog" CultureName="hr">
+  <Texts>
+    <Text Key="btClose" Text="&amp;Zatvraranje" Comment="&amp;Close" />
+    <Text Key="btMarkRead" Text="Označavanje kao pročitano" Comment="Mark all as Read" />
+    <Text Key="btRefresh" Text="Osvježavanje" Comment="Refresh" />
+    <Text Key="chkNewsStartup" Text="Provjera novosti na početku" Comment="Check for News on Startup" />
+    <Text Key="colDate" Text="Datum" Comment="Date" />
+    <Text Key="colTitle" Text="Naslov" Comment="Title" />
+    <Text Key="colCategory" Text="Kategorija" Comment="Category" />
+    <Text Key="NewsDialog" Text="Novosti oko ComicRacka" Comment="Latest ComicRack News" />
+  </Texts>
+</TR>

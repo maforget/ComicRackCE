@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmallComicPreview" CultureName="sk-SK">
+  <Texts>
+    <Text Key="tbClose" Text="Zavrieť" Comment="Close" />
+    <Text Key="tsbFirst" Text="Prvý" Comment="First" />
+    <Text Key="tsbFirst.Tooltip" Text="Ísť na prvú stranu" Comment="Go to first page" />
+    <Text Key="tsbLast" Text="Posledný" Comment="Last" />
+    <Text Key="tsbLast.Tooltip" Text="Ísť na poslednú stranu" Comment="Go to last page" />
+    <Text Key="tsbNext" Text="Ďalej" Comment="Next" />
+    <Text Key="tsbNext.Tooltip" Text="Ísť na ďalšiu stranu" Comment="Go to next page" />
+    <Text Key="tsbPrev" Text="Predchádzajúci" Comment="Previous" />
+    <Text Key="tsbPrev.Tooltip" Text="Ísť na predošlú stranu" Comment="Go to previous page" />
+    <Text Key="tsbRefresh" Text="Obnoviť" Comment="Refresh" />
+    <Text Key="tsbTwoPages" Text="Dve strany" Comment="Two Pages" />
+    <Text Key="tsbTwoPages.Tooltip" Text="Zobraziť jednu alebo dve strany" Comment="Show one or two pages" />
+    <Text Key="pageViewer" Text="Nič nevybraté" Comment="Nothing Selected" />
+    <Text Key="PreviewOnlyForComics" Text="Náhľad je dostupný len pre eComicsy" Comment="Preview is only available for eComics" />
+  </Texts>
+</TR>

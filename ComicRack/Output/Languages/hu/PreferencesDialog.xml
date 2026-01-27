@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PreferencesDialog" CultureName="hu">
+  <Texts>
+    <Text Key="btAddFolder" Text="&amp;Hozzáadás..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="Mappa hozzáadása..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="&amp;Alkalmaz" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="&amp;Mégse" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="&amp;Módosítás..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="Törlés" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="Törlés" Comment="Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="&amp;Eltávolítás" Comment="&amp;Remove" />
+    <Text Key="btResetColor" Text="&amp;Vissza" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="Vissza" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="Alap vissza" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="Keres" Comment="Scan" />
+    <Text Key="chkAutoContrast" Text="Automatikus kontrasztjavítás" Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="Keresés közben automatikusan távolítsa el a hiányzó fájlokat a könyvtárból" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="&amp;Oldalak [MB]" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableThumbnailCache" Text="&amp;Miniatűrök [MB]" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkOverwriteAssociations" Text="Meglévő hozzárendelések felülírása" Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="Jelszó szükséges:" Comment="Require Password:" />
+    <Text Key="colOptions" Text="Opciók" Comment="Options" />
+    <Text Key="groupDiskCache" Text="Merevlemez gyorsítótár" Comment="Disk Cache" />
+    <Text Key="groupMessages" Text="Rejtett üzenetek" Comment="Hidden Messages" />
+    <Text Key="groupOverlays" Text="Segédek" Comment="Overlays" />
+    <Text Key="grpIntegration" Text="Intéző integráció" Comment="Explorer Integration" />
+    <Text Key="labelBrightness" Text="Fényerő beállítás:" Comment="Brightness Adjustment:" />
+    <Text Key="labelCheckedFormats" Text="A kiválasztott fájlformátumok a ComicRack-hez lesznek rendelve." Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelContrast" Text="Kontraszt beállítás:" Comment="Contrast Adjustment:" />
+    <Text Key="labelExcludeCover" Text="Képek neveinek pontosvesszővel elválasztott listája, amelyek nem használhatók miniatűrként:" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelLanguage" Text="Válassza ki a ComicRack nyelvét (újraindítás szükséges a változás életbe léptetéséhez):" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlaySize" Text="Méret:" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="Az elrejtett üzenetek megjelenítéséhez kattints ide:" Comment="To reshow hidden messages press" />
+    <Text Key="labelSaturation" Text="Szaturáció beállítás:" Comment="Saturation Adjustment:" />
+    <Text Key="labelScriptPaths" Text="A szkript-könyvtárak pontosvesszővel elválasztott listája (pl. python könytárak)" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="Megosztási név:" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="A kiválasztott mappákat a ComicRack folyamatosan ellenőrzi változásokat keresve (mozgatás, átnevezés)" Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="Beállítások" Comment="Preferences" />
+    <Text Key="Scan" Text="Keres" Comment="Scan" />
+    <Text Key="tabAdvanced" Text="Speciális" Comment="Advanced" />
+    <Text Key="tabBehavior" Text="Viselkedés" Comment="Behavior" />
+    <Text Key="Scanning" Text="Keresés: '{0}' ..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectScriptFolder" Text="Válaszzon ki egy szkript könytár mappát" Comment="Please select a script library folder" />
+    <Text Key="Stop" Text="Leállít" Comment="Stop" />
+    <Text Key="labelMemPageCount" Text="Oldalak [darab]" Comment="Pages [count]" />
+    <Text Key="labelMemThumbSize" Text="Miniatűrök [MB]" Comment="Thumbnails [MB]" />
+    <Text Key="chkMemPageOptimized" Text="optimalizálás" Comment="optimized" />
+    <Text Key="chkMemThumbOptimized" Text="optimalizálás" Comment="optimized" />
+    <Text Key="groupMemoryCache" Text="Memória gyorsítótár" Comment="Memory Cache" />
+    <Text Key="grpDatabaseBackup" Text="Adatbázis biztonsági másolat" Comment="Database Backup" />
+    <Text Key="btBackupDatabase" Text="Biztonsági másolat készítésel..." Comment="Backup Database..." />
+    <Text Key="btRestoreDatabase" Text="Adatbázis visszaállítása..." Comment="Restore Database..." />
+    <Text Key="btTranslate" Text="Segíts lefordítani a ComicRack-et..." Comment="Help localizing ComicRack..." />
+    <Text Key="chkHighQualityDisplay" Text="&amp;Magas minőség" Comment="&amp;High Quality" />
+    <Text Key="chkEnableHardware" Text="Hardveres gyorsítás engedélyezése" Comment="Enable Hardware Acceleration" />
+    <Text Key="chkEnablePageTransition" Text="Oldalak áttűnésének engedélyezése" Comment="Enable Page Transitions" />
+    <Text Key="chkEnableDisplayChangeAnimation" Text="Animáció az oldal igazítás módjának változtatásakor" Comment="Enable Animation of Page Display changes" />
+    <Text Key="chkEnableHardwareFiltering" Text="Hardveres szűrők engedélyezése" Comment="Enable Hardware Filters" />
+    <Text Key="chkEnableSoftwareFiltering" Text="Szoftveres szűrők engedélyezése" Comment="Enable Software Filters" />
+    <Text Key="groupHardwareAcceleration" Text="Hardveres gyorsítás" Comment="Hardware Acceleration" />
+    <Text Key="chkSmoothAutoScrolling" Text="Automata finom görgetés" Comment="Smooth Auto Scrolling" />
+    <Text Key="lblFast" Text="gyors" Comment="fast" />
+    <Text Key="lblSlow" Text="lassú" Comment="slow" />
+    <Text Key="grpKeyboard" Text="Billentyűzet" Comment="Keyboard" />
+    <Text Key="lblMouseWheel" Text="Egér görgetés sebessége:" Comment="Mouse Wheel scrolling:" />
+    <Text Key="grpSharing" Text="Megosztás" Comment="Sharing" />
+    <Text Key="grpScanning" Text="Keresés" Comment="Scanning" />
+    <Text Key="grpLanguages" Text="Nyelvek" Comment="Languages" />
+    <Text Key="tabOverlaysAndEffects" Text="Segédek &amp;&amp; Effektek" Comment="Overlays &amp;&amp; Effects" />
+    <Text Key="tabReader" Text="Olvasó" Comment="Reader" />
+    <Text Key="tabLibraries" Text="Könyvtárak" Comment="Libraries" />
+    <Text Key="colName" Text="Név" Comment="Name" />
+    <Text Key="btClearInternetCache" Text="Clear" Comment="Clear" />
+    <Text Key="btOpenFolder" Text="Megnyitás" Comment="Open" />
+    <Text Key="chkAnamorphicScaling" Text="&amp;Anamorfikus skálázás engedélyezése" Comment="Anamorphic Scaling" />
+    <Text Key="chkEnableInternetCache" Text="&amp;Internet [MB]" Comment="&amp;Internet [MB]" />
+    <Text Key="chkDisableScripting" Text="Minden szkript kikapcsolása" Comment="Disable all Scripts" />
+    <Text Key="chkLookForShared" Text="Keressen megosztott képregény könytárakat" Comment="Look for local Book Shares" />
+    <Text Key="chkAutoConnectShares" Text="Automatikus csatlakozás" Comment="Connect automatically" />
+    <Text Key="chkClientsCanEdit" Text="Kliensek szerkeszthetnek Képregényeket" Comment="Clients can edit Books" />
+    <Text Key="chkClientsCanExport" Text="Kliensek exportálhatnak Képregényeket" Comment="Clients can export Books" />
+    <Text Key="chkUpdateComicFiles" Text="Engedélyezze a Képregény információ fájlokba írását" Comment="Allow writing of Book info into files" />
+    <Text Key="chkAutoUpdateComicFiles" Text="Képregény fájlok automatikus frissítése" Comment="Book files are updated automatically" />
+    <Text Key="groupComicFolders" Text="Képregény mappák" Comment="Book Folders" />
+    <Text Key="groupOtherComics" Text="Képregények" Comment="Books" />
+    <Text Key="SelectComicFolder" Text="Válaszzon ki egy képregényeket tartalmazó mappát" Comment="Please select a folder containing Books" />
+    <Text Key="labelGamma" Text="Fényerő-beállítás:" Comment="Gamma Adjustment:" />
+    <Text Key="labelSharpening" Text="Élesítés:" Comment="Sharpening:" />
+    <Text Key="grpDisplay" Text="Megjelenítés" Comment="Display" />
+    <Text Key="chkEnableInertialMouseScrolling" Text="Enable Inertial Mouse scrolling" Comment="Enable Inertial Mouse scrolling" />
+    <Text Key="grpMouse" Text="Egér" Comment="Mouse &amp; Scrolling" />
+    <Text Key="grpScripts" Text="Elérhető szkriptek" Comment="Available Scripts" />
+    <Text Key="grpPackages" Text="Szkript csomagok" Comment="Script Packages" />
+    <Text Key="grpScriptSettings" Text="Szkript beállítások" Comment="Script Settings" />
+    <Text Key="tabScripts" Text="Szkriptek" Comment="Scripts" />
+    <Text Key="colPackage" Text="Csomag" Comment="Package" />
+    <Text Key="btInstallPackage" Text="Telepítés..." Comment="Install..." />
+    <Text Key="btRemovePackage" Text="Törlés" Comment="Remove" />
+    <Text Key="colAuthor" Text="Szerző" Comment="Author" />
+    <Text Key="colDescription" Text="Leírás" Comment="Description" />
+    <Text Key="packageGroupInstalled" Text="Telepítve" Comment="Installed" />
+    <Text Key="packageGroupInstall" Text="Telepítésre vár (újraindítás szükséges)" Comment="To be installed (needs restart)" />
+    <Text Key="packageGroupRemove" Text="Törlésre vár (újraindítás szükséges)" Comment="To be removed (needs restart)" />
+    <Text Key="btAssociateExtensions" Text="Változtatás..." Comment="Change..." />
+    <Text Key="grpServerSettings" Text="Szerver beállítások" Comment="Server Settings" />
+    <Text Key="labelShareDescription" Text="Leírás:" Comment="Description:" />
+    <Text Key="chkPrivate" Text="Privát" Comment="Private" />
+    <Text Key="chkShareInternet" Text="Megosztás az Interneten" Comment="Share on the Internet" />
+    <Text Key="btAddShare" Text="Megosztás hozzáadása" Comment="Add Share" />
+    <Text Key="btRemoveShare" Text="Törlés" Comment="Remove" />
+    <Text Key="labelPublicServerAddress" Text="Szerver külső címe, ha a ComicRack rosszul állapítja meg:" Comment="External address of your server if ComicRack should not guess it correctly:" />
+    <Text Key="labelPrivateListPassword" Text="Jelszó, ami a privát Internetes megosztási listát védi:" Comment="Password used to protect your private Internet Share list entries:" />
+    <Text Key="chkDontAddRemovedFiles" Text="A könyvtárból manuálisan törölt fájlokat ne adja hozzá többet" Comment="Files manually removed from the Library will not be added again" />
+    <Text Key="btConfigScript" Text="Konfigurálás..." Comment="Config..." />
+    <Text Key="labelPageQuality" Text="Oldal minősége:" Comment="Page Quality:" />
+    <Text Key="labelThumbQuality" Text="Miniatűr minősége:" Comment="Thumb Quality:" />
+    <Text Key="btExportKeyboard" Text="Exportálás..." Comment="Export..." />
+    <Text Key="btImportKeyboard" Text="Importálás..." Comment="Import..." />
+    <Text Key="miDefaultKeyboardLayout" Text="Eredeti" Comment="Default" />
+    <Text Key="cbShare.Item0" Text="Ne osszon meg semmit" Comment="Share None" />
+    <Text Key="cbShare.Item1" Text="Minden megosztása" Comment="Share All" />
+    <Text Key="cbShare.Item2" Text="Kiválasztottak megosztása" Comment="Share Selected" />
+    <Text Key="grpShareSettings" Text="Beállítások" Comment="Settings" />
+    <Text Key="chkShowNavigationOverlay" Text="Navigáció automatikus mutatása" Comment="Show Navigation automatically" />
+    <Text Key="chkShowCurrentPageOverlay" Text="Jelenlegi oldal mutatása" Comment="Show current Page" />
+    <Text Key="chkShowVisiblePartOverlay" Text="Aktuális oldalrész mutatása" Comment="Show visible Page Part" />
+    <Text Key="chkShowPageNames" Text="Jelenlegi oldalon megjelenik az oldal neve is" Comment="Current Page also displays Page Name" />
+    <Text Key="chkShowStatusOverlay" Text="Üzenetek és állapot mutatása" Comment="Show Messages and Status" />
+    <Text Key="labelPageOverlay" Text="Oldal" Comment="Page" />
+    <Text Key="labelVisiblePartOverlay" Text="Aktuális oldalrész" Comment="Visible Part" />
+    <Text Key="labelStatusOverlay" Text="Üzenetek és állapot" Comment="Messages and Status" />
+    <Text Key="labelNavigationOverlay" Text="Navigáció" Comment="Navigation" />
+    <Text Key="labelNavigationOverlayPosition" Text="Navigáció:" Comment="Navigation:" />
+    <Text Key="cbNavigationOverlayPosition.Item0" Text="alul" Comment="at Bottom" />
+    <Text Key="cbNavigationOverlayPosition.Item1" Text="felül" Comment="on Top" />
+    <Text Key="PageNumberOnly" Text="Page" Comment="Page" />
+    <Text Key="PageNumberAndName" Text="Oldal\nNév" Comment="Page\nName" />
+    <Text Key="chkHideSampleScripts" Text="Minta szkriptek elrejtése" Comment="Hide sample Scripts" />
+  </Texts>
+</TR>

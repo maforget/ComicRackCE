@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ShowErrorsDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="btOk" Text="确定" Comment="OK" />
+    <Text Key="chItem" Text="位置" Comment="Position" />
+    <Text Key="chProblem" Text="问题" Comment="Problem" />
+    <Text Key="ShowErrorsDialog" Text="错误" Comment="Errors" />
+  </Texts>
+</TR>

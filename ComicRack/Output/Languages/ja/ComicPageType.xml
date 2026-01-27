@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPageType" CultureName="ja">
+  <Texts>
+    <Text Key="BackCover" Text="バック カバー" Comment="Back Cover" />
+    <Text Key="Deleted" Text="削除済み" Comment="Deleted" />
+    <Text Key="Editorial" Text="エディション:" Comment="Editorial" />
+    <Text Key="FrontCover" Text="カバー" Comment="Front Cover" />
+    <Text Key="InnerCover" Text="インナー カバー" Comment="Inner Cover" />
+    <Text Key="Letters" Text="レタラー" Comment="Letters" />
+    <Text Key="Other" Text="その他" Comment="Other" />
+    <Text Key="Preview" Text="プレビュー" Comment="Preview" />
+    <Text Key="Roundup" Text="概要" Comment="Roundup" />
+    <Text Key="Story" Text="ストーリー" Comment="Story" />
+    <Text Key="Advertisement" Text="広告" Comment="Advertisement" />
+  </Texts>
+</TR>

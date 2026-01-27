@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PagesView" CultureName="zh-CN">
+  <Texts>
+    <Text Key="miCopy" Text="复制页面(&amp;C)" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="反选(&amp;I)" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="标记为已删除(&amp;D)" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="页面类型" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="刷新(&amp;R)" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="全选(&amp;A)" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="插入书签" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="移除书签" Comment="Remove Bookmark" />
+    <Text Key="miResetOriginalOrder" Text="重置为原始顺序" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="页面旋转" Comment="Page Rotation" />
+    <Text Key="miPagePosition" Text="页面位置" Comment="Page Position" />
+    <Text Key="miPagePositionDefault" Text="默认" Comment="Default" />
+    <Text Key="miPagePositionNear" Text="近" Comment="Near" />
+    <Text Key="miPagePositionFar" Text="远" Comment="Far" />
+    <Text Key="miMoveToTop" Text="移到顶部" Comment="Move to Top" />
+    <Text Key="miMoveToBottom" Text="移到底部" Comment="Move to Bottom" />
+  </Texts>
+</TR>

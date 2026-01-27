@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EditListDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="EditListDialog" Text="编辑列表" Comment="Edit List" />
+    <Text Key="btCancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定(&amp;O)" Comment="&amp;OK" />
+    <Text Key="labelName" Text="名称:" Comment="Name:" />
+    <Text Key="labelBooks" Text="书籍:" Comment="Books:" />
+    <Text Key="labelNotes" Text="笔记:" Comment="Notes:" />
+    <Text Key="chkQuickOpen" Text="快速打开" Comment="Quick Open" />
+    <Text Key="CombineMode" Text="所有列表的所有书籍|仅所有列表都存在的书籍|空列表" Comment="All Books from every list|Only Books existing in every list|Empty list" />
+  </Texts>
+</TR>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmartListDialog" CultureName="ja">
+  <Texts>
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btApply" Text="適用(&amp;A)" Comment="&amp;Apply" />
+    <Text Key="labelMatch" Text="一致:" Comment="Match" />
+    <Text Key="MatchMode" Text="すべて|いくつか" Comment="All|Any" />
+    <Text Key="btPrev" Text="戻る(&amp;P)" Comment="&amp;Previous" />
+    <Text Key="btNext" Text="次へ(&amp;N)" Comment="&amp;Next" />
+    <Text Key="SmartListDialog" Text="スマート リストの編集" Comment="Edit Smart List" />
+    <Text Key="chkLimit" Text="上限:" Comment="Limit to" />
+    <Text Key="cbLimitType.Item0" Text="冊" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="FullLibrary" Text="フル ライブラリ" Comment="Full Library" />
+    <Text Key="labelSubRules" Text="が以下のルールと一致:" Comment="of the following rules:" />
+    <Text Key="labelName" Text="名称:" Comment="Name:" />
+    <Text Key="labelRules" Text="が以下のルールと一致:　　次の対象から" Comment="of the following rules on" />
+    <Text Key="chkQuickOpen" Text="クィック オープン" Comment="Quick Open" />
+    <Text Key="labelNotes" Text="ノート:" Comment="Notes:" />
+  </Texts>
+</TR>

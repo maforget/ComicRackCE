@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Settings" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="Application" Text="Aplikace" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="Automaticky schovat lupu, když je kurzor blízko okraje" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="Browser" Text="Průzkumník" Comment="Browser" />
+    <Text Key="CloseMinimizesToTray" Text="Po zavření se ComicRack minimalizuje do oznamovací oblasti" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="Nové miniatury se pomalu vysvítí" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="Schovat myš při čtení v řežimu celé obrazovky" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="Zobrazit miniatury v nejlepší kvalitě (pomalejší)" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="MinimizeToTray" Text="Při minimalizaci se ComicRack přesune do oznamovací oblasti" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="Zkontrolovat nejnovější zprávy o ComicRacku" Comment="Check for latest news on ComicRack" />
+    <Text Key="PageChangeDelay" Text="Pozdržení kolečka myši a kurzorových šipek při přechodu stránek" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="Reading" Text="Čtení" Comment="Reading" />
+    <Text Key="ShowSplash" Text="Zobrazit uvítací okénko" Comment="Show Splash Screen" />
+    <Text Key="Starting ComicRack" Text="Startování ComicRacku" Comment="Starting ComicRack" />
+    <Text Key="Manga" Text="Manga" Comment="Manga" />
+    <Text Key="TrueRightToLeftReading" Text="Opravdové čtení zprava doleva" Comment="True right to left reading" />
+    <Text Key="LeftRightMovementReversed" Text="Navigace doleva/doprava je také otočena" Comment="Left/right movement is also reversed" />
+    <Text Key="Right to Left" Text="Zprava doleva" Comment="Right to Left" />
+    <Text Key="AutoMinimalGui" Text="Režim celé obrazovky také zapne jednoduché uživatelské rozhraní" Comment="Fullscreen also toggles Minimal User Interface" />
+    <Text Key="AnimatePanels" Text="Animovat stahování a roztahování panelů" Comment="Animate expanding and collapsing Panels" />
+    <Text Key="ResetZoomOnPageChange" Text="Při změně stránky se přiblížení vrátí zpět na 100%" Comment="Zoom is reset to 100% on page change" />
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="Vždy v Průzkumníku zobrazovat dokovací lištu" Comment="Always display Browser Docking Grip" />
+    <Text Key="UpdateWebComicsStartup" Text="Aktualizovat webové komiksy" Comment="Update Web Comics" />
+    <Text Key="DogEarThumbnails" Text="Zvolené miniatury mají ohnuté rohy" Comment="Selected Thumbnails have dog-ear" />
+    <Text Key="BlendWhilePaging" Text="Animace prolínání i při rychlém stránkování" Comment="Blend animation also while fast paging" />
+    <Text Key="ScrollingDoesBrowse" Text="Posun na okraj stránky přepne na další stránku" Comment="Scrolling to page margin browses to new pages" />
+    <Text Key="Import &amp; Export" Text="Import a export" Comment="Import &amp; Export" />
+    <Text Key="ShowSearchLinks" Text="Zobrazit odkazy hledání" Comment="Show Search Links" />
+    <Text Key="OpenInNewTab" Text="Otevřít v novém panelu" Comment="Open in new Tab" />
+    <Text Key="LocalQuickSearch" Text="Každý seznam má vlastní nastavení rychlého hledání" Comment="Each List has own Quick Search settings" />
+    <Text Key="NumericRatingThumbnails" Text="Na miniaturách zobrazit číselné hodnocení" Comment="Thumbnails display numeric ratings" />
+    <Text Key="ShowQuickOpen" Text="Zobrazit Rychlé otevření, pokud není otevřena žádná kniha" Comment="Show Quick Open if no book is opened" />
+    <Text Key="AutoNavigateComics" Text="Otočení před první nebo za poslední stránku otevře nový eKomiks" Comment="Reading beyond the start or end opens the next Book" />
+    <Text Key="CloseBrowserOnOpen" Text="Zavřít Průzkumník po otevření nového eKomiksu" Comment="Close the Browser when a new Book is opened" />
+    <Text Key="CatalogOnlyForFileless" Text="Zobrazit katalogizační položky jen u komiksů bez souboru" Comment="Show Catalog fields only for fileless Books" />
+    <Text Key="Opening a Book" Text="Otevření knihy" Comment="Opening a Book" />
+    <Text Key="OpenLastFile" Text="Otevřít poslední čtený eKomiks" Comment="Reopen Books from last session" />
+    <Text Key="OpenLastPage" Text="Otevřít eKomiks na stránce, kde byl zavřen" Comment="Open the Book at the page where it was closed" />
+    <Text Key="ScanStartup" Text="Skenovat adresáře Knihovny pro nalezení nových eKomiksů" Comment="Rescan the Book Folders for new Books" />
+    <Text Key="ShowToolTips" Text="Ukazovat v Průzkumníku nad eKomiksy informační okénka" Comment="Show Tooltips for Books in the Browser" />
+    <Text Key="AddToLibraryOnOpen" Text="Přidat eKomiks do Knihovny" Comment="Opened Files are added to the Library" />
+    <Text Key="ShowMainMenuNoComicOpen" Text="Pokud není otevřen žádný eKomiks, zobrazit hlavní menu" Comment="Show Main Menu if no Book is open" />
+    <Text Key="InformationCover3D" Text="V informačním okně ukázat 3D náhledy obalů eKomiksů" Comment="3D display of covers in Book Info Dialog" />
+    <Text Key="ExportedListsContainFilenames" Text="Exportované seznamy komiksů obsahují jména souborů" Comment="Exported Book Lists contain filenames" />
+    <Text Key="ZoomInOutOnPageChange" Text="Při otočení strany se provede oddálení" Comment="During page change a zoom out is done" />
+  </Texts>
+</TR>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmartListDialog" CultureName="de">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Abbruch" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btApply" Text="&amp;Anwenden" Comment="&amp;Apply" />
+    <Text Key="btPrev" Text="&amp;Vorherige" Comment="&amp;Previous"/>
+    <Text Key="btNext" Text="&amp;Nächste" Comment="&amp;Next"/>
+    <Text Key="labelMatch" Text="Teste" Comment="Match" />
+    <Text Key="labelRules" Text="der folgenden Regeln an" Comment="of the following rules on" />
+    <Text Key="SmartListDialog" Text="Smart List bearbeiten" Comment="Edit Smart List" />
+    <Text Key="SmartListQueryDialog" Text="Smart List bearbeiten" Comment="Edit Smart List" />
+    <Text Key="MatchMode" Text="alle|eine" Comment="All|Any" />
+    <Text Key="chkLimit" Text="Begrenze auf" Comment="Limit to"/>
+    <Text Key="chkQuickOpen" Text="Schnellöffner" Comment="Quick Open"/>
+    <Text Key="cbLimitType.Item0" Text="Bücher" Comment="Books"/>
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB"/>
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB"/>
+    <Text Key="FullLibrary" Text="Ganze Bibliothek" Comment="Full Library"/>
+    <Text Key="labelSubRules" Text="der folgenden Regeln:" Comment ="of the following rules:"/>
+    <Text Key="labelName" Text="Name:" Comment="Name:" />
+    <Text Key="labelNotes" Text="Notiz:" Comment="Notes:" />
+    <Text Key="labelFilterReset" Text="Einige Bücher wurden aus dieser Liste gelöscht" Comment="Some Books have been manually remove from the list"/>
+    <Text Key="btFilterReset" Text="Reset" Comment="Reset"/>
+    <Text Key="miInsertMatch" Text="Match einfügen" Comment="Insert Match"/>
+    <Text Key="miInsertValue" Text="Wert einfügen" Comment="Insert Value"/>
+    <Text Key="btQuery" Text="Query" Comment="Query"/>
+    <Text Key="btDesigner" Text="Designer" Comment="Designer"/>
+  </Texts>
+</TR>

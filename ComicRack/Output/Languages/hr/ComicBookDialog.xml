@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBookDialog" CultureName="hr">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Odustanak" Comment="&amp;Cancel" />
+    <Text Key="btNext" Text="&amp;Sljedeći" Comment="&amp;Next" />
+    <Text Key="btOK" Text="&amp;Potvrda" Comment="&amp;OK" />
+    <Text Key="btPageBottom" Text="Dno" Comment="Bottom" />
+    <Text Key="btPageDown" Text="Dolje" Comment="Down" />
+    <Text Key="btPageReset" Text="Izravnavanje vrijednosti" Comment="Reset" />
+    <Text Key="btPageTop" Text="Vrh" Comment="Top" />
+    <Text Key="btPageUp" Text="Gore" Comment="Up" />
+    <Text Key="btPrev" Text="&amp;Prethodni" Comment="&amp;Previous" />
+    <Text Key="btReset" Text="Izravnavanje vrijednosti" Comment="Reset" />
+    <Text Key="chkMangaStyle" Text="Manga Stil" Comment="Manga Style" />
+    <Text Key="colImage" Text="Slika" Comment="Image" />
+    <Text Key="colKey" Text="Naziv datoteke" Comment="Key" />
+    <Text Key="colPage" Text="Stranica" Comment="Page" />
+    <Text Key="colType" Text="Vrsta" Comment="Type" />
+    <Text Key="ComicBookDialog" Text="Info" Comment="Info" />
+    <Text Key="labelAlternateNumber" Text="Broj:" Comment="Number:" />
+    <Text Key="labelAlternateOf" Text="od" Comment="of" />
+    <Text Key="labelAlternateSeries" Text="Naslov nastavka:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelBrightness" Text="Svjetlina" Comment="Brightness" />
+    <Text Key="labelColorist" Text="Boja:" Comment="Colorist:" />
+    <Text Key="labelContrast" Text="Kontrast" Comment="Contrast" />
+    <Text Key="labelCover" Text="Korice:" Comment="Cover:" />
+    <Text Key="labelEditor" Text="Urednik:" Comment="Editor:" />
+    <Text Key="labelFormat" Text="Format:" Comment="Format:" />
+    <Text Key="labelGenre" Text="Žanr:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Tisak:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Tuš:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Jezik:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Tekstopisac:" Comment="Letterer:" />
+    <Text Key="labelMonth" Text="Mjesec:" Comment="Month:" />
+    <Text Key="labelNoPages" Text="Ova sveska još nije otvarana pa nije poznat ni broj stranica." Comment="This eComic has never been opened and the page count is still unknown." />
+    <Text Key="labelNotes" Text="Bilješke:" Comment="Notes:" />
+    <Text Key="labelNumber" Text="Broj:" Comment="Number:" />
+    <Text Key="labelOf" Text="od" Comment="of" />
+    <Text Key="labelOpened" Text="Otvorena:" Comment="Opened:" />
+    <Text Key="labelPages" Text="Stranica:" Comment="Pages:" />
+    <Text Key="labelPagesRead" Text="Stanica pročitano:" Comment="Pages Read:" />
+    <Text Key="labelPenciller" Text="Crtač:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Izdavač:" Comment="Publisher:" />
+    <Text Key="labelRating" Text="Ocjena:" Comment="Rating:" />
+    <Text Key="labelSaturation" Text="Zasičenost" Comment="Saturation" />
+    <Text Key="labelSeries" Text="Serija:" Comment="Series:" />
+    <Text Key="labelSize" Text="Veličina:" Comment="Size:" />
+    <Text Key="labelSummary" Text="Sažetak:" Comment="Summary:" />
+    <Text Key="labelTags" Text="Oznake:" Comment="Tags:" />
+    <Text Key="labelTitle" Text="Naslov:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Svezak:" Comment="Volume:" />
+    <Text Key="labelWhere" Text="Gdje:" Comment="Where:" />
+    <Text Key="labelWriter" Text="Autor:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Godina:" Comment="Year:" />
+    <Text Key="tabColors" Text="Boje" Comment="Colors" />
+    <Text Key="tabInfo" Text="Detalji" Comment="Info" />
+    <Text Key="tabInfo2" Text="Dodatni detalji" Comment="Additional Info" />
+    <Text Key="tabPages" Text="Stranica" Comment="Pages" />
+    <Text Key="tabSummary" Text="Sažetak" Comment="Summary" />
+    <Text Key="pageViewer" Text="Dvoklik na boju će podesiti bijelu boju" Comment="Double Click on Color to set White Point" />
+  </Texts>
+</TR>

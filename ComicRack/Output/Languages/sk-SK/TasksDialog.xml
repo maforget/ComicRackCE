@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TasksDialog" CultureName="sk-SK">
+  <Texts>
+    <Text Key="btClose" Text="Zavrieť" Comment="Close" />
+    <Text Key="tabTasks" Text="Úlohy na pozadí" Comment="Background Tasks" />
+    <Text Key="tabNetwork" Text="Štatistiky Servra" Comment="Server Statistics" />
+    <Text Key="colTask" Text="Úloha" Comment="Task" />
+    <Text Key="colState" Text="Stav" Comment="State" />
+    <Text Key="lblItemCount" Text="{0} Úloh na zozname" Comment="{0} Tasks are pending" />
+    <Text Key="TasksDialog" Text="Úlohy" Comment="Tasks" />
+    <Text Key="btAbort" Text="Zrušiť všetky užívateľské úlohy" Comment="Abort all User Tasks" />
+    <Text Key="Clients" Text="Klienti: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="Poziadavky na info: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="Požiadavky knižníc: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="Požiadavky strán: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="Požiadavky na náhľady: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="Overenia zlyhali: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="Všetky zdielania" Comment="All Shares" />
+    <Text Key="LastMinute" Text="Posledná minúta" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="Posledných 5 minút" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="Posledná hodina" Comment="Last Hour" />
+    <Text Key="Session" Text="Sekcia" Comment="Session" />
+  </Texts>
+</TR>

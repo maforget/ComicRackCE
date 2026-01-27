@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBrowserControl" CultureName="el-GR">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Ταξινόμηση κατά {0}" Comment="Arranged by {0}" />
+    <Text Key="ComicFiltered" Text="{0} ταξινομήθηκαν " Comment="{0} filtered" />
+    <Text Key="ComicSelected" Text="{0} επιλέχθηκαν" Comment="{0} selected" />
+    <Text Key="GroupedBy" Text="Ομαδοποίηση κατά {0}" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="&amp;Εισαγωγή στην Βιβλιοθήκη" Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="Αυτοματισμός" Comment="Automation" />
+    <Text Key="miCopyData" Text="&amp;Αντιγραφή Δεδομένων" Comment="&amp;Copy Data" />
+    <Text Key="miInvertSelection" Text="&amp;Αντίστροφη Επιλογή" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="&amp;Σήμανση ως" Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="&amp;Ανάγνωση" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="&amp;Μη αναγνωσμένο" Comment="&amp;Unread" />
+    <Text Key="miPasteData" Text="&amp;Επικόλληση δεδομένων..." Comment="&amp;Paste Data..." />
+    <Text Key="miProperties" Text="&amp;Πληροφορίες..." Comment="&amp;Get Info..." />
+    <Text Key="miRateMenu" Text="Η Α&amp;ξιολόγηση μου" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="Κανένα" Comment="None" />
+    <Text Key="miRating1" Text="* (1 Αστέρι)" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** (2 Αστέρια)" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** (3 Αστέρια)" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** (4 Αστέρια)" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** (5 Αστέρια)" Comment="***** (5 Stars)" />
+    <Text Key="miRead" Text="&amp;Άνοιγμα" Comment="&amp;Open" />
+    <Text Key="miReadTab" Text="Άνοιγμα σε νέα Καρτέλα" Comment="Open in new Tab" />
+    <Text Key="miRefreshInformation" Text="Ανανέωση" Comment="Refresh" />
+    <Text Key="miRemove" Text="Απο&amp;μάκρυνση..." Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="Αποκάλυψη Βιβλίου από τον &amp;Περιηγητή" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="Όλα" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="Η Γρήγορη Αναζήτηση ελέγχει όλα τα διαθέσιμα δεδομένα" Comment="Quick Search is checking all available data" />
+    <Text Key="miSearchArtists" Text="Καλλιτέχνες" Comment="Artists" />
+    <Text Key="miSearchArtists.Tooltip" Text="Η Γρήγορη Αναζήτηση ελέγχει όλους τους Καλλιτέχνες" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="Περιγραφικά" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="Η Γρήγορη Αναζήτηση ελέγχει όλες τις σημειώσεις και τις περιλήψεις" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="Διαμόρφωση Αρχείου" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="Η Γρήγορη Αναζήτηση ελέγχει μόνο το Όνομα Αρχείου" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="Σειρά" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="Η Γρήγορη Αναζήτηση ελέγχει μόνο το όνομα Σειράς" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="Συγγραφέας" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="Η Γρήγορη Αναζήτηση ελέγχει μόνο τον Συγγραφέα" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="&amp;Επιλογή Όλων" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="Εφαρμογή στην Κορυφή της Στοίβαξης" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="&amp;Περιήγηση στα Κόμικς" Comment="&amp;Browse Comics" />
+    <Text Key="miShowOnlyAllComics" Text="Εμφάνιση όλων" Comment="Show All" />
+    <Text Key="miShowOnlyReadComics" Text="Εμφάνιση Αναγνωσμένων" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="Εμφάνιση των προς Ανάγνωση" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="Εμφάνιση Μη Αναγνωσμένων" Comment="Show not Read" />
+    <Text Key="miViewDetails" Text="&amp;Λεπτομέρειες" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="&amp;Μικρογραφίες" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Πλακίδια" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Κανένα" Comment="None" />
+    <Text Key="NotArranged" Text="Μη ταξινομημένα" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Μη ομαδοποιημένα" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="Μη στοιβαγμένα" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="Στοίβαγμα κατά {0}" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="Ομάδα" Comment="Group" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="Κλείσιμο αυτής της Στοίβαξης" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="Ταξινόμηση" Comment="Arrange" />
+    <Text Key="tbbStack" Text="Στοίβαγμα" Comment="Stack" />
+    <Text Key="tbbView" Text="Προβολές" Comment="Views" />
+    <Text Key="tsEditListLayout" Text="&amp;Επεξεργασία Διάταξης Λίστας..." Comment="&amp;Edit List Layout..." />
+    <Text Key="tsSaveListLayout" Text="&amp;Αποθήκευση Διάταξης Λίστας..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsListLayouts" Text="Διατάξεις Λίστας" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="Διαχείριση Διάταξης Λίστας" Comment="Manage List Layouts" />
+    <Text Key="miSetListBackground" Text="Ορισμός ως Λίστας Υπόβαθρου" Comment="Set as List Background" />
+    <Text Key="miResetListBackground" Text="Επαναφορά Λίστας Υπόβαθρου" Comment="Reset List Background" />
+    <Text Key="miShowOnlyDuplicates" Text="Εμφάνιση Αντιγράφων" Comment="Show Duplicates" />
+    <Text Key="miAddList" Text="Προσθήκη στη λίστα" Comment="Add to List" />
+    <Text Key="miEdit" Text="Επεξεργασία" Comment="Edit" />
+    <Text Key="miShowInList" Text="Εμφάνιση στη Λίστα" Comment="Show in List" />
+    <Text Key="tbbDuplicateList" Text="Αντίγραφο Λίστας" Comment="Duplicate List" />
+    <Text Key="tbbDuplicateList.Tooltip" Text="Αντίγραφο τρέχουσας Λίστας" Comment="Duplicate current List" />
+    <Text Key="miExportComicsWithPrevious" Text="Εξαγωγή με τα προηγούμενα" Comment="Export with Previous" />
+    <Text Key="SearchingLists" Text="Αναζήτηση και Αντικατάσταση..." Comment="Searching Lists..." />
+    <Text Key="tbUndo" Text="Αναίρεση" Comment="Undo" />
+    <Text Key="tbRedo" Text="Επανάληψη" Comment="Redo" />
+    <Text Key="btDisplayAll" Text="Απεικόνιση &amp;Όλων" Comment="Display &amp;All" />
+    <Text Key="btCloseStack" Text="&amp;Κλείσιμο Στοιβάγματος" Comment="&amp;Close Stack" />
+    <Text Key="btPrevStack" Text="&amp;Προηγούμενο" Comment="&amp;Previous" />
+    <Text Key="btNextStack" Text="&amp;Επόμενο" Comment="&amp;Next" />
+    <Text Key="miShowOnlyFileless" Text="Εμφάνιση μόνο καταχωρήσεων αρχείων" Comment="Show only fileless Entries" />
+    <Text Key="tsEditLayouts" Text="&amp;Επεξεργασία Διατάξεων..." Comment="&amp;Edit Layouts..." />
+    <Text Key="btBrowseNext" Text="Επόμενο" Comment="Next" />
+    <Text Key="btBrowsePrev" Text="Επιστροφή" Comment="Back" />
+    <Text Key="ComicMulti" Text="{0} eComics" Comment="{0} Books" />
+    <Text Key="ComicSingle" Text="{0} eComic" Comment="{0} Book" />
+    <Text Key="miSearchCatalog" Text="Κατάλογος" Comment="Catalog" />
+    <Text Key="miSearchCatalog.Tooltip" Text="Η Γρήγορη Αναζήτηση, ελέγχει μόνο τις καταχωρήσεις του Καταλόγου" Comment="Quick Search is only checking Catalog entries" />
+    <Text Key="miSetStackThumbnail" Text="Ορισμός προσαρμοσμένων,,," Comment="Set custom Stack Thumbnail..." />
+    <Text Key="miRemoveStackThumbnail" Text="Απομάκρυνση Μικρογραφίας..." Comment="Remove custom Stack Thumbnail..." />
+    <Text Key="miShowOnlyComics" Text="Εμφάνιση μόνο eComics" Comment="Show only Books" />
+    <Text Key="tbbGroup.Tooltip" Text="Ομαδοποίηση των eComics με διαφορετικά κριτήρια" Comment="Group Books by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="Αλλαγές σχετικές με τα κριτήρια ταξινόμησης των eComics" Comment="Change the sort order of the Books" />
+    <Text Key="tbbView.Tooltip" Text="Αλλαγές σχετικές με την εμφάνιση των eComics" Comment="Change how and what Books are displayed" />
+    <Text Key="miExportComics" Text="Εξαγωγή eComics" Comment="Export Books" />
+    <Text Key="miExportComicsAs" Text="Εξαγωγή eComics..." Comment="Export Books..." />
+    <Text Key="lblDisplayOptionText" Text="Λόγω των ενεργών επιλογών στο ΄Προβολές', δεν είναι εμφανίσιμα όλα τα  eComics" Comment="Because of active options in 'Views', not all Books are displayed" />
+    <Text Key="miUpdateComicFiles" Text="Ενημέρωση των αρχείων eComic" Comment="Update Book Files" />
+    <Text Key="tbSidebar" Text="Πλευρική Εργαλειοθήκη" Comment="Sidebar" />
+    <Text Key="miExpandAllGroups" Text="Σύμπτυξη/Ανάπτυξη όλων των Ομάδων" Comment="Collapse/Expand all Groups" />
+    <Text Key="miEditList" Text="Επεξεργασία Λίστας" Comment="Edit List" />
+    <Text Key="miEditListMoveToTop" Text="Μετακίνηση στην Αρχή" Comment="Move to Top" />
+    <Text Key="miEditListMoveToBottom" Text="Μετακίνηση στο Τέλος" Comment="Move to Bottom" />
+    <Text Key="miEditListApplyOrder" Text="Εφαρμογή τρεχουσών" Comment="Apply current Order" />
+    <Text Key="miClearData" Text="Εκκαθάριση Δεδομένων" Comment="Clear Data" />
+    <Text Key="miMarkChecked" Text="Ελέγχθηκε" Comment="Checked" />
+    <Text Key="miMarkUnchecked" Text="Ανέλεγκτο" Comment="Unchecked" />
+    <Text Key="miShowWeb" Text="Web..." Comment="Web..." />
+  </Texts>
+</TR>

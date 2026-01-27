@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Keyboard" CultureName="sk-SK">
+  <Texts>
+    <Text Key="Browse" Text="Hľadať" Comment="Browse" />
+    <Text Key="Display Options" Text="Nastavenie zobrazenia" Comment="Display Options" />
+    <Text Key="Exit" Text="Vypnúť" Comment="Exit" />
+    <Text Key="FitAll" Text="Prispôsobiť všetko" Comment="Fit All" />
+    <Text Key="FitBest" Text="Najvhodnejšie prispôsobiť" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="Prispôsobiť navýšku" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="Prispôsobiť našírku" Comment="Fit Width" />
+    <Text Key="Library" Text="Knižnica" Comment="Library" />
+    <Text Key="MoveDown" Text="Dole" Comment="Down" />
+    <Text Key="MoveLeft" Text="Doľava" Comment="Left" />
+    <Text Key="MoveNextPart" Text="Nasledujúca časť" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="Predošlá časť" Comment="Previous Part" />
+    <Text Key="MoveRight" Text="Doprava" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="Prvá strana" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="Posledná strana" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="Nasledujúca strana" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="Predošlá strana" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="Nahor" Comment="Up" />
+    <Text Key="NextComic" Text="Nasledujúci eComic" Comment="Next eComic" />
+    <Text Key="NextTab" Text="Nasledujúca karta" Comment="Next Tab" />
+    <Text Key="Other" Text="Iné" Comment="Other" />
+    <Text Key="Page Display" Text="Zobrazenie strany" Comment="Page Display" />
+    <Text Key="PrevComic" Text="Predošlý eComic" Comment="Previous eComic" />
+    <Text Key="PrevTab" Text="Predošlá karta" Comment="Previous Tab" />
+    <Text Key="Scroll" Text="Scrollovanie" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="Ukázať prehľadač" Comment="Show Browser" />
+    <Text Key="ToggleFullScreen" Text="Nastaviť celú obrazovku" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="Nastaviť lupu" Comment="Toggle Magnifier" />
+    <Text Key="ToggleTwoPages" Text="Nastaviť dve strany" Comment="Toggle Two Pages" />
+    <Text Key="ToggleUndockReader" Text="Nastaviť odpojenie čítacieho okna" Comment="Toggle Undock Reader" />
+    <Text Key="RotateC" Text="Otočiť doprava" Comment="Rotate Right" />
+    <Text Key="RotateCC" Text="Otočiť doľava" Comment="Rotate Left" />
+    <Text Key="ZoomIn" Text="Priblížiť" Comment="Zoom In" />
+    <Text Key="ZoomOut" Text="Vzdialiť" Comment="Zoom Out" />
+    <Text Key="Original" Text="Pôvodná veľkosť" Comment="Original Size" />
+    <Text Key="MovePartDown10" Text="Posunúť o 10% nadol" Comment="Move Part 10% down" />
+    <Text Key="MovePartUp10" Text="Posunúť o 10% nahor" Comment="Move Part 10% up" />
+    <Text Key="ToggleManga" Text="Nastaviť Mangu pre eComic" Comment="Toggle Manga for eComic" />
+    <Text Key="FitWidthAdaptive" Text="Prispôsobiť našírku (adaptívne)" Comment="Fit Width (adaptive)" />
+    <Text Key="MoveFirstPart" Text="Začiatok strany" Comment="Page Start" />
+    <Text Key="MoveLastPart" Text="Koniec strany" Comment="Page End" />
+    <Text Key="Auto Scroll" Text="Auto Scrollovať" Comment="Auto Scroll" />
+    <Text Key="ToggleAutoScrolling" Text="Nastaviť Autoscrollovanie" Comment="Toggle Auto Scrolling" />
+    <Text Key="DoublePageAutoScroll" Text="Auto Scrollovať Dvojstrany" Comment="Double Page Auto Scroll" />
+    <Text Key="ToggleMenu" Text="Nastaviť menu" Comment="Toggle Menu" />
+    <Text Key="MoveToPrevBookmark" Text="Predošlá záložka" Comment="Previous Bookmark" />
+    <Text Key="MoveToNextBookmark" Text="Nasledujúca Záložka" Comment="Next Bookmark" />
+    <Text Key="MoveToPrevPageSingle" Text="O jednu stranu späť" Comment="Single Page Back" />
+    <Text Key="MoveToNextPageSingle" Text="O jednu stranu dopredu" Comment="Single Page Forward" />
+    <Text Key="AutoRotate" Text="Otáčať dvojité strany" Comment="Autorotate Double Pages" />
+    <Text Key="PageRotateC" Text="OtočitStranuDoprava" Comment="RotatePageRight" />
+    <Text Key="PageRotateCC" Text="OtočiťStranuDoľava" Comment="RotatePageLeft" />
+    <Text Key="Edit" Text="Zmeniť" Comment="Edit" />
+    <Text Key="ToggleRealisticPages" Text="Nastaviť realistické zobrazenie" Comment="Toggle Realistic Display" />
+    <Text Key="OnlyFitIfOversized" Text="Prispôsob len ak príliš veľké" Comment="Only Fit if oversized" />
+    <Text Key="SinglePage" Text="Jedna strana" Comment="Single Page" />
+    <Text Key="TwoPages" Text="Dve strany" Comment="Two Pages" />
+    <Text Key="RightToLeft" Text="Zprava doľava" Comment="Right to Left" />
+    <Text Key="ZoomAndRotate" Text="Zoom a rotácia" Comment="Zoom and Rotate" />
+    <Text Key="TwoPagesAdaptive" Text="Dve strany (prispôsobujúce)" Comment="Two Pages (adaptive)" />
+    <Text Key="StepZoomIn" Text="Priblížiť" Comment="Step Zoom In" />
+    <Text Key="StepZoomOut" Text="Vzdialiť" Comment="Step Zoom Out" />
+    <Text Key="ToggleNavigationOverlay" Text="Nastaviť prekrytie navigácie" Comment="Toggle Navigation Overlay" />
+    <Text Key="ToggleZoom" Text="Nastaviť zoom" Comment="Toggle Zoom" />
+  </Texts>
+</TR>

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Matchers" CultureName="sk-SK">
+  <Texts>
+    <Text Key="ComicBookAddedMatcher" Text="Pridané" Comment="Added" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="Všetko" Comment="All" />
+    <Text Key="ComicBookAlternateCountMatcher" Text="Iné počítadlo" Comment="Alternate Count" />
+    <Text Key="ComicBookAlternateNumberMatcher" Text="Iné číslo" Comment="Alternate Number" />
+    <Text Key="ComicBookAlternateSeriesMatcher" Text="Iná séria" Comment="Alternate Series" />
+    <Text Key="ComicBookColoristMatcher" Text="Vyfarbil" Comment="Colorist" />
+    <Text Key="ComicBookFileMatcher" Text="Súbor" Comment="File" />
+    <Text Key="ComicBookGenreMatcher" Text="Žáner" Comment="Genre" />
+    <Text Key="ComicBookImprintMatcher" Text="Známka" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="Tušoval" Comment="Inker" />
+    <Text Key="ComicBookLanguageMatcher" Text="Jazyk" Comment="Language" />
+    <Text Key="ComicBookMonthMatcher" Text="Mesiac" Comment="Month" />
+    <Text Key="ComicBookNumberMatcher" Text="Číslo" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="Otvorené" Comment="Opened" />
+    <Text Key="ComicBookPageCountMatcher" Text="Počítadlo strán" Comment="Page Count" />
+    <Text Key="ComicBookPencillerMatcher" Text="Nakreslil" Comment="Penciller" />
+    <Text Key="ComicBookPublisherMatcher" Text="Vydavateľ" Comment="Publisher" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="Načítať percentá" Comment="Read Percentage" />
+    <Text Key="ComicBookSeriesMatcher" Text="Séria" Comment="Series" />
+    <Text Key="ComicBookSummaryMatcher" Text="Zhrnutie" Comment="Summary" />
+    <Text Key="ComicBookTagsMatcher" Text="Tagy" Comment="Tags" />
+    <Text Key="ComicBookTitleMatcher" Text="Titul" Comment="Title" />
+    <Text Key="ComicBookVolumeMatcher" Text="Diel" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="Napísal" Comment="Writer" />
+    <Text Key="ComicBookYearMatcher" Text="Rok" Comment="Year" />
+    <Text Key="Days" Text="Dni" Comment="Days" />
+    <Text Key="NumericOperators" Text="je|je väčší|je menší|je v rozsahu" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="YesNoOperators" Text="je Áno|je Nie|je neznáme" Comment="is Yes|is No|is Unknown" />
+    <Text Key="ComicBookMangaMatcher" Text="Manga" Comment="Manga" />
+    <Text Key="ComicBookBlackAndWhiteMatcher" Text="Čiernobiele" Comment="Black and White" />
+    <Text Key="ComicBookCountMatcher" Text="Počítadlo" Comment="Count" />
+    <Text Key="StringOperators" Text="je|obsahuje|obsahuje akýkoľvek|obsahuje všetky|začína s|končí s|zoznam obsahuje|bežné vyjadrenie" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
+    <Text Key="ComicBookFileFormatMatcher" Text="Formát súboru" Comment="File Format" />
+    <Text Key="ComicBookAgeRatingMatcher" Text="Vekový rating" Comment="Age Rating" />
+    <Text Key="ComicBookCharactersMatcher" Text="Postavy" Comment="Characters" />
+    <Text Key="ComicBookEditorMatcher" Text="Editoval" Comment="Editor" />
+    <Text Key="ComicBookCoverArtistMatcher" Text="Autor titulnej strany" Comment="Cover Artist" />
+    <Text Key="ComicBookPublishedMatcher" Text="Vydané" Comment="Published" />
+    <Text Key="ComicBookFullPathMatcher" Text="Cesta súboru" Comment="File Path" />
+    <Text Key="ComicBookDirectoryMatcher" Text="Zložka súboru" Comment="File Directory" />
+    <Text Key="ComicBookPluginMatcher" Text="Uživateľské skripty" Comment="User Scripts" />
+    <Text Key="ComicBookModifiedMatcher" Text="Súbor zmenený" Comment="File Modified" />
+    <Text Key="ComicBookCreationMatcher" Text="Súbor vytvorený" Comment="File Created" />
+    <Text Key="ComicBookModifiedInfoMatcher" Text="Zmenené info" Comment="Modified Info" />
+    <Text Key="ComicBookBookmarkCountMatcher" Text="Počítadlo záložiek" Comment="Bookmark Count" />
+    <Text Key="OnOffOperators" Text="Zapnúť|Výpnúť" Comment="On|Off" />
+    <Text Key="ComicBookDuplicateMatcher" Text="Len duplikáty" Comment="Only Duplicates" />
+    <Text Key="ComicBookNewPagesMatcher" Text="Nové strany" Comment="New Pages" />
+    <Text Key="ComicBookTeamsMatcher" Text="Tímy" Comment="Teams" />
+    <Text Key="ComicBookLocationsMatcher" Text="Lokácie" Comment="Locations" />
+    <Text Key="ComicBookFileSizeMatcher" Text="Veľkosť súboru" Comment="File Size" />
+    <Text Key="MB" Text="MB" Comment="MB" />
+    <Text Key="ComicBookRatingMatcher" Text="Hodnotenie" Comment="My Rating" />
+    <Text Key="ComicBookCommunityRatingMatcher" Text="Hodnotenie komunity" Comment="Community Rating" />
+    <Text Key="DateOperators" Text="je|je po|je pred|je v poslednom|in rozsahu" Comment="is|is after|is before|is in the last|is in the range" />
+    <Text Key="ComicBookIsLinkedMatcher" Text="Spojené so súborom" Comment="Linked to File" />
+    <Text Key="ComicBookBookPriceMatcher" Text="Cena knihy" Comment="Book Price" />
+    <Text Key="ComicBookBookStoreMatcher" Text="Obchod s knihami" Comment="Book Store" />
+    <Text Key="ComicBookBookOwnerMatcher" Text="Vlastník knihy" Comment="Book Owner" />
+    <Text Key="ComicBookBookAgeMatcher" Text="Vek knihy" Comment="Book Age" />
+    <Text Key="ComicBookBookConditionMatcher" Text="Stav knihy" Comment="Book Condition" />
+    <Text Key="ComicBookBookCollectionStatusMatcher" Text="Stav zbierky kníh" Comment="Book Collection Status" />
+    <Text Key="ComicBookBookLocationMatcher" Text="Poloha knihy" Comment="Book Location" />
+    <Text Key="ComicBookBookNotesMatcher" Text="Poznámky knihy" Comment="Book Notes" />
+  </Texts>
+</TR>

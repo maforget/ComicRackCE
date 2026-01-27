@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmartListDialog" CultureName="fi">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Peruuta" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btApply" Text="&amp;Käytä" Comment="&amp;Apply" />
+    <Text Key="btPrev" Text="&amp;Edellinen" Comment="&amp;Previous" />
+    <Text Key="btNext" Text="&amp;Seuraava" Comment="&amp;Next" />
+    <Text Key="labelMatch" Text="Vertaa" Comment="Match" />
+    <Text Key="labelRules" Text="seuraavin säännöin" Comment="of the following rules on" />
+    <Text Key="SmartListDialog" Text="Muokkaa älylistaa" Comment="Edit Smart List" />
+    <Text Key="MatchMode" Text="Kaikki|Jokin" Comment="All|Any" />
+    <Text Key="chkLimit" Text="Rajoitus" Comment="Limit to" />
+    <Text Key="chkQuickOpen" Text="Pika-avaus" Comment="Quick Open" />
+    <Text Key="cbLimitType.Item0" Text="Kirjat" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="FullLibrary" Text="Koko Kirjasto" Comment="Full Library" />
+    <Text Key="labelSubRules" Text="seuraavista säännöistä:" Comment="of the following rules:" />
+    <Text Key="labelName" Text="Nimi:" Comment="Name:" />
+  </Texts>
+</TR>

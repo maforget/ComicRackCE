@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DonationDialog" CultureName="sk-SK">
+  <Texts>
+    <Text Key="btCancel" Text="Teraz nie" Comment="Skip for now" />
+    <Text Key="btOK" Text="OK" Comment="OK" />
+    <Text Key="DonationDialog" Text="Podporiť ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="labelThankYou" Text="Ďakujeme za podporu ComicRacku!" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="Prispieť" Comment="Donate" />
+    <Text Key="labelStepOne" Text="Krok jedna:\nNavštívte stránku prispievania ComicRacku" Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="labelStepTwo" Text="Krok dva:\nVložte vašu prispievateľskú emailovú adresu a potvrdte ju.\nMôže trvať pár minút kým bude váš príspevok registrovaný, takže môžte vykonať tento krok trocha neskôr." Comment="Step Two:\nEnter your dontation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+    <Text Key="btDonate" Text="Stránka prispievania" Comment="Donation Page" />
+    <Text Key="btValidate" Text="Potvrdiť" Comment="Validate" />
+    <Text Key="labelEmail" Text="Emailová adresa:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="Spustili ste ComicRack {0} krát!" Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="Spravujete {0} kníh s ComicRackom!" Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="Nepodarilo sa kontaktovať ComicRack server na potvrdenie Emailovej adresy. Prosím skontrolujte vaše pripojenie do internetu!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+    <Text Key="labelDonationText" Text="ComicRack je produktom stoviek hodín práce a nestojí za ním žiadna veľká spoločnosť. Prosím zvážte dať niečo späť ak ho používate a bavíte sa s ním.\n\nMinimálny príspevok je 5$ - asi jedno pivo. Po prispení si môžete aktivovať túto kópiu pomocov vašej emailovej adresy a už nikdy nevidieť túto správu.\n\nComicRack je plne funkčný aj keď sa rozhodnete neprispieť." Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nThe minimum donation is $5 - paying me a beer. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+  </Texts>
+</TR>

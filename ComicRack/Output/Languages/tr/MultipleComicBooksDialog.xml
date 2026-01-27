@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MultipleComicBooksDialog" CultureName="tr">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;İptal" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Tamam" Comment="&amp;OK" />
+    <Text Key="labelCount" Text="of:" Comment="of:" />
+    <Text Key="labelAlternateCount" Text="of:" Comment="of:" />
+    <Text Key="labelAlternateNumber" Text="Sayı:" Comment="Number:" />
+    <Text Key="labelAlternateSeries" Text="Alternatif Seriler veya Hikaye Başlığı:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelColorist" Text="Renklendirme:" Comment="Colorist:" />
+    <Text Key="labelCoverArtist" Text="Kapak Sanatçısı:" Comment="Cover Artist:" />
+    <Text Key="labelEditor" Text="Düzenleyen:" Comment="Editor:" />
+    <Text Key="labelGenre" Text="Tür:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Basım:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Çizer:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Dil:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Baloncuk yazarı" Comment="Letterer:" />
+    <Text Key="labelManga" Text="Manga: " Comment="Manga:" />
+    <Text Key="labelMonth" Text="Ay:" Comment="Month:" />
+    <Text Key="labelNumber" Text="Sayı:" Comment="Number:" />
+    <Text Key="labelPenciller" Text="Karakalem:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Yayın Evi" Comment="Publisher:" />
+    <Text Key="labelRating" Text="Puan:" Comment="Rating:" />
+    <Text Key="labelSeries" Text="Seriler:" Comment="Series:" />
+    <Text Key="labelSummary" Text="Özet:" Comment="Summary:" />
+    <Text Key="labelNotes" Text="Notlar:" Comment="Notes:" />
+    <Text Key="labelTags" Text="Künyeler:" Comment="Tags:" />
+    <Text Key="labelTitle" Text="Başlık:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Cilt:" Comment="Volume:" />
+    <Text Key="labelWriter" Text="Yazar:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Yıl:" Comment="Year:" />
+    <Text Key="labelBlackAndWhite" Text="Siyah/Beyaz:" Comment="Black and White:" />
+    <Text Key="labelFormat" Text="Format: " Comment="Format:" />
+    <Text Key="labelAgeRating" Text="Yaş Sınırlaması:" Comment="Age Rating:" />
+    <Text Key="labelEnableProposed" Text="Teklifi Etkinleştir:" Comment="Enable Proposed:" />
+    <Text Key="labelCharacters" Text="Karakterler:" Comment="Characters:" />
+    <Text Key="labelFormat" Text="Format: " Comment="Format:" />
+    <Text Key="MultipleComicBooksDialog" Text="Çoklu e-Çizgi Roman bilgilendirmesi ({0} Books)" Comment="Multiple eComic Information ({0} Books)" />
+  </Texts>
+</TR>

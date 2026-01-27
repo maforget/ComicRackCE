@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainView" CultureName="el-GR">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="Προσάρτηση κάτω" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="Γέμισμα" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="Προσάρτηση αριστερά" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="Προσάρτηση δεξιά" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="Κλείσιμο" Comment="Close" />
+    <Text Key="tsbFolders" Text="Φάκελοι" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="Περιήγηση στους φακέλους σας" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="Βιβλιοθήκη" Comment="Library" />
+    <Text Key="tsbPages" Text="Σελίδες" Comment="Pages" />
+    <Text Key="tsbShowMenu" Text="Εμφάνιση Μενού" Comment="Show Menu" />
+    <Text Key="tsbInfoPanelLeft" Text="Πάνελ πληροφοριών δεξιά" Comment="Info Panel Right" />
+    <Text Key="tsbLibrary.Tooltip" Text="Βιβλιοθήκη eComics" Comment="Library with all Books" />
+    <Text Key="tsbPages.Tooltip" Text="Σελίδες του παρόντος eComic" Comment="Pages of the current Book" />
+    <Text Key="tsbAlignment" Text="Λειτουργία Τοποθέτησης" Comment="Docking Mode" />
+  </Texts>
+</TR>

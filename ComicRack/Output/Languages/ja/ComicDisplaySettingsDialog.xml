@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DisplaySetupDialog" CultureName="ja">
+  <Texts>
+    <Text Key="ComicDisplaySettingsDialog" Text="コミックの表示設定" Comment="Comic Display Settings" />
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btApply" Text="適用(&amp;A)" Comment="&amp;Apply" />
+    <Text Key="chkRealisticPages" Text="リアリスティック ディスプレイ" Comment="Realistic Comic Display" />
+    <Text Key="chkPageMargin" Text="ページ周囲にマージンを残す" Comment="Leave margins around the pages" />
+    <Text Key="labelPaging" Text="ページ切換え:" Comment="Page Transition:" />
+    <Text Key="labelPaper" Text="用紙:" Comment="Paper:" />
+    <Text Key="labelBackgroundColor" Text="カラー:" Comment="Color:" />
+    <Text Key="labelBackgroundType" Text="タイプ:" Comment="Type:" />
+    <Text Key="labelBackgroundTexture" Text="テクスチャー:" Comment="Texture:" />
+    <Text Key="cbBackgroundType.Item0" Text="表示ページから色を取得" Comment="Adjust Color to current Page" />
+    <Text Key="cbBackgroundType.Item1" Text="カラー" Comment="Color" />
+    <Text Key="cbBackgroundType.Item2" Text="テクスチャー" Comment="Texture" />
+    <Text Key="cbPageTransition.Item0" Text="切換え時の効果なし" Comment="No Page Transition Effect" />
+    <Text Key="cbPageTransition.Item1" Text="ページをフェード イン" Comment="Page fades in" />
+    <Text Key="cbPageTransition.Item2" Text="ページを水平スクロール" Comment="Page scrolls in horizontally" />
+    <Text Key="cbPageTransition.Item3" Text="ページを垂直スクロール" Comment="Page scrolls in vertically" />
+    <Text Key="cbPageTransition.Item4" Text="ページ切換えの効果" Comment="Page Turn Effect" />
+    <Text Key="grpGeneral" Text="一般" Comment="General" />
+    <Text Key="grpEffects" Text="エフェクト" Comment="Effects" />
+    <Text Key="grpBackground" Text="背景" Comment="Background" />
+    <Text Key="labelPaperStrength" Text="強度:" Comment="Strength:" />
+    <Text Key="cbPaperLayout.Item0" Text="なし" Comment="None" />
+    <Text Key="cbPaperLayout.Item1" Text="並べて表示" Comment="Tile" />
+    <Text Key="cbPaperLayout.Item2" Text="中央に表示" Comment="Center" />
+    <Text Key="cbPaperLayout.Item3" Text="ストレッチ" Comment="Stretch" />
+    <Text Key="cbPaperLayout.Item4" Text="ズーム" Comment="Zoom" />
+    <Text Key="cbTextureLayout.Item0" Text="なし" Comment="None" />
+    <Text Key="cbTextureLayout.Item1" Text="並べて表示" Comment="Tile" />
+    <Text Key="cbTextureLayout.Item2" Text="中央に表示" Comment="Center" />
+    <Text Key="cbTextureLayout.Item3" Text="ストレッチ" Comment="Stretch" />
+    <Text Key="cbTextureLayout.Item4" Text="ズーム" Comment="Zoom" />
+  </Texts>
+</TR>

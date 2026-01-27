@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Columns" CultureName="pt-BR">
+  <Texts>
+    <Text Key="AlternateCountAsText" Text="Contagem Alternativa" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="Número de edições do cruzamento/história" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="Número alternativo" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="Número do episódio na história/crossover" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="Série alternativa" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="Nome da história/crossover" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="Título" Comment="Caption" />
+    <Text Key="Colorist" Text="Colorista" Comment="Colorist" />
+    <Text Key="CountAsText" Text="Contagem" Comment="Count" />
+    <Text Key="Cover" Text="Capa" Comment="Cover" />
+    <Text Key="CoverArtist" Text="Capista" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="Artista responsável pela capa" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="Editor" Comment="Editor" />
+    <Text Key="FileName" Text="Nome do arquivo" Comment="File Name" />
+    <Text Key="FileName.Description" Text="Nome do arquivo sem extensão" Comment="Filename without the extension" />
+    <Text Key="Genre" Text="Gênero" Comment="Genre" />
+    <Text Key="ImageHeightAsText" Text="Altura" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="Altura da página em pixels" Comment="Height of the page in pixels" />
+    <Text Key="ImageWidthAsText" Text="Largura" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="Largura da página em pixels" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="Selo" Comment="Imprint" />
+    <Text Key="Inker" Text="Pintor" Comment="Inker" />
+    <Text Key="Key" Text="Nome" Comment="Name" />
+    <Text Key="LanguageAsText" Text="Língua" Comment="Language" />
+    <Text Key="Letterer" Text="Letrista" Comment="Letterer" />
+    <Text Key="MonthAsText" Text="Mês" Comment="Month" />
+    <Text Key="NumberAsText" Text="Número" Comment="Number" />
+    <Text Key="OpenedCountAsText" Text="Total de abertos" Comment="Opened Count" />
+    <Text Key="Page" Text="Página" Comment="Page" />
+    <Text Key="Page.Description" Text="Número da página da imagem" Comment="The page number of the image" />
+    <Text Key="PageTypeAsText" Text="Tipo" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="Tipo da página (história, capa, etc.)" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="Desenhista" Comment="Penciller" />
+    <Text Key="Position" Text="Posição" Comment="Position" />
+    <Text Key="Publisher" Text="Editora" Comment="Publisher" />
+    <Text Key="Rating" Text="Minha Avaliação" Comment="My Rating" />
+    <Text Key="ReadPercentageAsText" Text="Percentual lido" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="Quanto foi lido" Comment="How much has been read" />
+    <Text Key="Series" Text="Série" Comment="Series" />
+    <Text Key="Series.Description" Text="Nome da série" Comment="Series name" />
+    <Text Key="State" Text="Estado" Comment="State" />
+    <Text Key="Tags" Text="Palavras Chaves" Comment="Tags" />
+    <Text Key="Thumbnail" Text="Miniatura" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="Miniatura da página" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="Título" Comment="Title" />
+    <Text Key="VolumeAsText" Text="Volume" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="Número do volume na série" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="Escritor" Comment="Writer" />
+    <Text Key="YearAsText" Text="Ano" Comment="Year" />
+    <Text Key="MangaAsText" Text="Mangá" Comment="Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="P&amp;B" Comment="B&amp;W" />
+    <Text Key="Format" Text="Formato" Comment="Format" />
+    <Text Key="FileFormat" Text="Formato de Arquivo" Comment="File Format" />
+    <Text Key="Bookmark" Text="Marcador" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="Texto de marcação" Comment="Bookmark text" />
+    <Text Key="AgeRating" Text="Classificação Etária" Comment="Age Rating" />
+    <Text Key="Characters" Text="Personagens" Comment="Characters" />
+    <Text Key="RotationAsText" Text="Rotação" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="Rotação da página permanente" Comment="Permanent rotation of the page" />
+    <Text Key="FilePath" Text="Caminho do Arquivo" Comment="File Path" />
+    <Text Key="FileSizeAsText" Text="Tamanho do Arquivo" Comment="File Size" />
+    <Text Key="ImageFileSizeAsText" Text="Tamanho" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="Tamanho da página em bytes" Comment="Size of the page in bytes" />
+    <Text Key="FileDirectory" Text="Diretório do Arquivo" Comment="File Directory" />
+    <Text Key="BookmarkCountAsText" Text="Contador de Marcadores" Comment="Bookmark Count" />
+    <Text Key="Number" Text="Número" Comment="Number" />
+    <Text Key="AlternateNumber" Text="Número Alternativo" Comment="Alternate Number" />
+    <Text Key="Web" Text="Web" Comment="Web" />
+    <Text Key="Notes" Text="Notas" Comment="Notes" />
+    <Text Key="Summary" Text="Sumário" Comment="Summary" />
+    <Text Key="PagesAsTextSimple" Text="Páginas" Comment="Pages" />
+    <Text Key="PagesAsTextSimple.Description" Text="A contagem total de páginas" Comment="The total count of pages" />
+    <Text Key="PublishedAsText" Text="Publicada" Comment="Published" />
+    <Text Key="NewPagesAsText" Text="Novas Páginas" Comment="New Pages" />
+    <Text Key="NewPagesAsText.Description" Text="Contagem de novas Páginas" Comment="Count of new Pages" />
+    <Text Key="Teams" Text="Equipes" Comment="Teams" />
+    <Text Key="Locations" Text="Locais" Comment="Locations" />
+    <Text Key="Web.Description" Text="Um Link da Rede" Comment="A Web Link" />
+    <Text Key="CountAsText.Description" Text="Número total de edições nesta série" Comment="Total number of issues in this series" />
+    <Text Key="CommunityRating" Text="Avaliação da Comunidade" Comment="Community Rating" />
+    <Text Key="IsLinkedAsText" Text="Ligada a Arquivo" Comment="Linked to File" />
+    <Text Key="BookAge" Text="Idade do Livro" Comment="Book Age" />
+    <Text Key="BookAge.Description" Text="Idade do Livro" Comment="Age of the Book" />
+    <Text Key="BookPriceAsText" Text="Preço do Livro" Comment="Book Price" />
+    <Text Key="BookPriceAsText.Description" Text="Preço do Livro" Comment="Price of the Book" />
+    <Text Key="BookCondition" Text="Condição do Livro" Comment="Book Condition" />
+    <Text Key="BookCondition.Description" Text="Condição do Livro" Comment="Condition of the Book" />
+    <Text Key="BookStore" Text="Loja de Livro" Comment="Book Store" />
+    <Text Key="BookStore.Description" Text="Loja que o Livro foi comprado" Comment="Store the Book was bought" />
+    <Text Key="BookOwner" Text="Dono do Livro" Comment="Book Owner" />
+    <Text Key="BookOwner.Description" Text="Dono do Livro" Comment="Owner of the Book" />
+    <Text Key="BookCollectionStatus" Text="Status da Coleção de Livros" Comment="Book Collection Status" />
+    <Text Key="BookCollectionStatus.Description" Text="Status do Livro na Coleção" Comment="Status of the Book in the Collection" />
+    <Text Key="BookLocation" Text="Localização do Livro" Comment="Book Location" />
+    <Text Key="BookLocationStatus.Description" Text="Localização do Livro" Comment="Location of the Book" />
+    <Text Key="AddedTime" Text="Adicionado" Comment="Added" />
+    <Text Key="AddedTime.Description" Text="Momento que o Livro foi adicionado ao Banco de Dados" Comment="Time the Book was added to the Database" />
+    <Text Key="Caption.Description" Text="Completar legenda do Livro" Comment="Complete caption of the Book" />
+    <Text Key="Colorist.Description" Text="Colorista do Livro" Comment="Colorist of the Book" />
+    <Text Key="Cover.Description" Text="Imagem da capa do Livro" Comment="Cover image of the Book" />
+    <Text Key="Editor.Description" Text="Editor do Livro" Comment="Editor of the Book" />
+    <Text Key="FileModifiedTime" Text="Arquivo Modificado" Comment="File Modified" />
+    <Text Key="FileModifiedTime.Description" Text="Momento que o Livro foi modificado a última vez" Comment="Time the Book was modified the last time" />
+    <Text Key="FilePath.Description" Text="Local onde o Livro está armazenado" Comment="Location where the Book is stored" />
+    <Text Key="FileFormat.Description" Text="Formato de arquivo do Livro" Comment="File format of the Book" />
+    <Text Key="FileSizeAsText.Description" Text="Tamanho do arquivo do Livro em bytes" Comment="Size of the Book file in bytes" />
+    <Text Key="Genre.Description" Text="Gênero do Livro" Comment="Genre of the Book" />
+    <Text Key="Imprint.Description" Text="Selo do Livro" Comment="Imprint of the Book" />
+    <Text Key="Inker.Description" Text="Pintor do Livro" Comment="Inker of the Book" />
+    <Text Key="Key.Description" Text="Chave única para esta página no Livro" Comment="Unique key for this page in the Book" />
+    <Text Key="LanguageAsText.Description" Text="Língua do Livro" Comment="Language of the Book" />
+    <Text Key="Letterer.Description" Text="Letrista do Livro" Comment="Letterer of the Book" />
+    <Text Key="MonthAsText.Description" Text="Mês que o Livro foi publicado" Comment="Month the Book was published" />
+    <Text Key="NumberAsText.Description" Text="Número do Livro na série" Comment="Number of the Book in the Series" />
+    <Text Key="OpenedCountAsText.Description" Text="Vezes que o Livro foi aberto" Comment="Times the Book has been opened" />
+    <Text Key="OpenedTime" Text="Aberto" Comment="Opened" />
+    <Text Key="OpenedTime.Description" Text="Última vez que o Livro foi aberto" Comment="Last time the Book was opened" />
+    <Text Key="Penciller.Description" Text="Desenhista do Livro" Comment="Penciller of the Book" />
+    <Text Key="Position.Description" Text="Posição do Livro na lista" Comment="Position of the Book in the list" />
+    <Text Key="Publisher.Description" Text="Editora do Livro" Comment="Publisher of the Book" />
+    <Text Key="Rating.Description" Text="Sua avaliação do Livro" Comment="Your rating of the Book" />
+    <Text Key="CommunityRating.Description" Text="Avaliação da Comunidade do Livro" Comment="Community Rating of the Book" />
+    <Text Key="State.Description" Text="Indicadores de estado para o Livro" Comment="State indicators for the Book" />
+    <Text Key="Tags.Description" Text="Palavras Chaves do Livro" Comment="Tags of the Book" />
+    <Text Key="Title.Description" Text="Título do Livro" Comment="Title of the Book" />
+    <Text Key="Writer.Description" Text="Escritor do Livro" Comment="Writer of the Book" />
+    <Text Key="YearAsText.Description" Text="Ano que o Livro foi publicado" Comment="Year the Book was published" />
+    <Text Key="MangaAsText.Description" Text="Sim se o Livro for um mangá" Comment="Yes if the Book is a Manga" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="Sim se o Livro for preto e branco" Comment="Yes if the Book is black and white" />
+    <Text Key="Format.Description" Text="Formato do Livro" Comment="Format of the Book" />
+    <Text Key="AgeRating.Description" Text="Classificação Etária do Livro" Comment="Age rating of the Book" />
+    <Text Key="PublishedAsText.Description" Text="Data de publicação do Livro" Comment="Publication date of the Book" />
+    <Text Key="Characters.Description" Text="Personagens do Livro" Comment="Plot characters of the Book" />
+    <Text Key="Teams.Description" Text="Equipe do Enredo do Livro" Comment="Plot teams of the Book" />
+    <Text Key="Locations.Description" Text="Local do enredo do Livro" Comment="Plot locations of the Book" />
+    <Text Key="FileDirectory.Description" Text="Diretório do Livro" Comment="Directory of the Book" />
+    <Text Key="FileCreationTime" Text="Arquivo Criado" Comment="File Created" />
+    <Text Key="FileCreationTime.Description" Text="Hora de criação do Arquivo-Livro" Comment="Creation time of the Book-File" />
+    <Text Key="BookmarkCountAsText.Description" Text="Contador de Marcadores para este Livro" Comment="Count of Bookmarks for this Book" />
+    <Text Key="IsLinkedAsText.Description" Text="Livro está ligado a um Arquivo" Comment="Book is linked to a File" />
+    <Text Key="PagePositionAsText" Text="Posição" Comment="Position" />
+    <Text Key="PagePositionAsText.Description" Text="Posição do layout da página" Comment="Layout position of the page" />
+    <Text Key="ISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ISBN.Description" Text="Número ISBN" Comment="ISBN Number" />
+    <Text Key="SeriesCompleteAsText" Text="Série completa" Comment="Series complete" />
+    <Text Key="SeriesCompleteAsText.Description" Text="Série está completa" Comment="Series is complete" />
+    <Text Key="EnableProposedAsText" Text="Valores Propostos" Comment="Proposed Values" />
+    <Text Key="EnableProposedAsText.Description" Text="Usa os Valores propostos do Nome do Arquivo" Comment="Uses proposed Values from Filename" />
+    <Text Key="GapInformation" Text="Informação de Intervalo" Comment="Gap Information" />
+    <Text Key="GapInformation.Description" Text="Informação se esta edição for o fim ou início de um intervalo na série" Comment="Information if this issue is the end or start of a gap in the series" />
+    <Text Key="HasBeenReadAsText" Text="Lido" Comment="Read" />
+    <Text Key="HasBeenReadAsText.Description" Text="O Livro foi lido" Comment="Book has been read" />
+    <Text Key="Icons" Text="Ícones" Comment="Icons" />
+    <Text Key="Icons.Description" Text="Ícones para este Livro" Comment="Icons for this Book" />
+    <Text Key="ScanInformation" Text="Informação do Scan" Comment="Scan Information" />
+    <Text Key="SeriesStatCountAsText" Text="Série: Livros" Comment="Series: Books" />
+    <Text Key="SeriesStatCountAsText.Description" Text="Livros na Série" Comment="Books in the Series" />
+    <Text Key="SeriesStatMinNumberAsText" Text="Série: Primeiro Número" Comment="Series: First Number" />
+    <Text Key="SeriesStatMinNumberAsText.Description" Text="Primeiro Número da Série" Comment="First Number of the Series" />
+    <Text Key="SeriesStatMaxNumberAsText" Text="Série: Último Número" Comment="Series: Last Number" />
+    <Text Key="SeriesStatMaxNumberAsText.Description" Text="Último Número da Série" Comment="Last Number of the Series" />
+    <Text Key="SeriesStatMinYearAsText" Text="Série: Primeiro Ano" Comment="Series: First Year" />
+    <Text Key="SeriesStatMinYearAsText.Description" Text="Primeiro Ano da Série" Comment="First Year of the Series" />
+    <Text Key="SeriesStatMaxYearAsText" Text="Série: Último Ano" Comment="Series: Last Year" />
+    <Text Key="SeriesStatMaxYearAsText.Description" Text="último Ano da Série" Comment="last Year of the Series" />
+    <Text Key="SeriesStatPageCountAsText" Text="Série: Páginas" Comment="Series: Pages" />
+    <Text Key="SeriesStatPageCountAsText.Description" Text="Páginas na Série" Comment="Pages in the Series" />
+    <Text Key="SeriesStatPageReadCountAsText" Text="Série: Páginas Lidas" Comment="Series: Pages Read" />
+    <Text Key="SeriesStatPageReadCountAsText.Description" Text="Páginas lidas da Série" Comment="Pages of the Series read" />
+    <Text Key="SeriesStatReadPercentageAsText" Text="Série: Percentual Lido" Comment="Series: Percent Read" />
+    <Text Key="SeriesStatReadPercentageAsText.Description" Text="Percentual da Série lida" Comment="Percent of the Series read" />
+    <Text Key="SeriesStatAverageRating" Text="Série: Minha Avaliação Média" Comment="Series: My Average Rating" />
+    <Text Key="SeriesStatAverageRating.Description" Text="Minha Avaliação média da Série" Comment="My average Rating of the Series" />
+    <Text Key="SeriesStatAverageCommunityRating" Text="Série: Avaliação Média da Comunidade" Comment="Series: Community Average Rating" />
+    <Text Key="SeriesStatAverageCommunityRating.Description" Text="Avaliação média da comunidade para a Série" Comment="Community average Rating of the Series" />
+    <Text Key="SeriesStatRunningTimeAsText" Text="Série: Tempo de Andamento em Anos" Comment="Series: Running Time Years" />
+    <Text Key="SeriesStatRunningTimeAsText.Description" Text="Tempo de andamento da Série em anos" Comment="Running time of the Series in years" />
+    <Text Key="SeriesStatGapCountAsText" Text="Série: Intervalos" Comment="Series: Gaps" />
+    <Text Key="SeriesStatGapCountAsText.Description" Text="Intervalos na Série" Comment="Gaps in the Series" />
+    <Text Key="SeriesStatLastOpenedTime" Text="Série: Aberto" Comment="Series: Opened" />
+    <Text Key="SeriesStatLastOpenedTime.Description" Text="Última vez que um livro desta Série foi aberto" Comment="Last time a book from this Series has been opened" />
+    <Text Key="SeriesStatLastAddedTime" Text="Série: Livro adicionado" Comment="Series: Book added" />
+    <Text Key="SeriesStatLastAddedTime.Description" Text="Última vez que um livro foi adicionado à Série" Comment="Last time a book was added to the Series" />
+    <Text Key="DateFormats" Text="Longo|Curto|Relativo" Comment="Long|Short|Relative" />
+    <Text Key="Checked" Text="Assinalado" Comment="Checked" />
+    <Text Key="Checked.Description" Text="Livro assinalado" Comment="Book is checked" />
+    <Text Key="ScanInformation.Description" Text="Informação adicional sobre o scan" Comment="Additional information about the scan" />
+    <Text Key="StoryArc" Text="Arco da História" Comment="Story Arc" />
+    <Text Key="StoryArc.Description" Text="Arco da História ao qual o Livro pertence" Comment="Story Arc the Book belongs to" />
+    <Text Key="SeriesGroup" Text="Grupo da Série" Comment="Series Group" />
+    <Text Key="SeriesGroup.Description" Text="Grupo de Séries ao qual o Livro pertence" Comment="Series Group the Book belongs to" />
+    <Text Key="MainCharacterOrTeam" Text="Personagem/Equipe Principal" Comment="Main Character/Team" />
+    <Text Key="MainCharacterOrTeam.Description" Text="Personagem ou Equipe principal do Livro" Comment="Main Character or Team of the Book" />
+    <Text Key="Review" Text="Crítica" Comment="Review" />
+    <Text Key="Review.Description" Text="Uma Crítica curta do Livro" Comment="A short Review of the Book" />
+    <Text Key="DayAsText" Text="Dia" Comment="Day" />
+    <Text Key="DayAsText.Description" Text="Dia que o Livro foi publicado" Comment="Day the Book was published" />
+    <Text Key="WeekAsText" Text="Semana" Comment="Week" />
+    <Text Key="WeekAsText.Description" Text="Semana que o Livro foi publicado" Comment="Week the Book was published" />
+    <Text Key="ReleasedTime" Text="Lançado" Comment="Released" />
+    <Text Key="SeriesStatLastReleasedTime" Text="Série: Livro lançado" Comment="Series: Book released" />
+    <Text Key="SeriesStatLastReleasedTime.Description" Text="Última vez que um livro desta Série foi lançado" Comment="Last time a book of this Series was released" />
+  </Texts>
+</TR>

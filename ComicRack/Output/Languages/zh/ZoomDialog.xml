@@ -1,0 +1,9 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ZoomDialog" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="lblPercentage" Text="縮放百分比:" Comment="Percentage zoom:" />
+    <Text Key="ZoomDialog" Text="自定義縮放" Comment="Custom Zoom" />
+    <Text Key="btCancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="確定" Comment="&amp;OK" />
+  </Texts>
+</TR>

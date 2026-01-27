@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SearchBrowser" CultureName="tr">
+  <Texts>
+    <Text Key="AlternateSeries" Text="Diğer Seriler" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="Renklendirme" Comment="Colorists" />
+    <Text Key="Genre" Text="Türler" Comment="Genres" />
+    <Text Key="Imprint" Text="Basımlar" Comment="Imprints" />
+    <Text Key="Inker" Text="Çizerler" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="Diller" Comment="Languages" />
+    <Text Key="MonthAsText" Text="Aylar" Comment="Months" />
+    <Text Key="Penciller" Text="Karakalemciler" Comment="Pencillers" />
+    <Text Key="Publisher" Text="Yayın Evi" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="Series" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="Yıllar" Comment="Years" />
+    <Text Key="ShadowTitle" Text="Başlıklar" Comment="Titles" />
+    <Text Key="ShadowFormat" Text="Formatlar" Comment="Formats" />
+    <Text Key="Writer" Text="Yazarlar" Comment="Writers" />
+    <Text Key="Editor" Text="Düzenleyenler" Comment="Editors" />
+    <Text Key="Characters" Text="Karakterler" Comment="Characters" />
+    <Text Key="CoverArtist" Text="Kapak Sanatçıları" Comment="Cover Artists" />
+    <Text Key="AgeRating" Text="Yaş Sınırlamaları" Comment="Age Ratings" />
+    <Text Key="RatingAsText" Text="Puanlamalar" Comment="Ratings" />
+    <Text Key="Tags" Text="Künyeler" Comment="Tags" />
+    <Text Key="ShadowVolumeAsText" Text="Ciltler" Comment="Volumes" />
+    <Text Key="Unspecified" Text="Belirtilmemiş" Comment="Unspecified" />
+    <Text Key="AllItems" Text="Hepsi ({0} {1})" Comment="All ({0} {1})" />
+  </Texts>
+</TR>

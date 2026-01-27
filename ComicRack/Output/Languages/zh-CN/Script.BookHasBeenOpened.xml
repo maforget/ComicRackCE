@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.BookHasBeenOpened" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Name" Text="[代码示例] 已打开书籍" Comment="[Code Sample] Book Opened" />
+    <Text Key="Description" Text="示范挂钩书籍打开事件的示例脚本" Comment="A sample script to demonstrate hooking into the open book event" />
+  </Texts>
+</TR>

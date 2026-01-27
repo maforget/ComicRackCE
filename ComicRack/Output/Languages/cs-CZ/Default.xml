@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Default" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="ClearAll" Text="Vyčistit vše" Comment="Clear all" />
+    <Text Key="Copy" Text="Kopírovat" Comment="Copy" />
+    <Text Key="Invert" Text="Invertovat" Comment="Invert" />
+    <Text Key="Layout" Text="Rozvržení" Comment="Layout" />
+    <Text Key="None" Text="Žádné" Comment="None" />
+    <Text Key="NotAvailable" Text="-" Comment="NA" />
+    <Text Key="Paste" Text="Vložit" Comment="Paste" />
+    <Text Key="SetAll" Text="Nastavit vše" Comment="Set all" />
+    <Text Key="Unknown" Text="Neznámý" Comment="Unknown" />
+    <Text Key="Unspecified" Text="Není definováno" Comment="Unspecified" />
+    <Text Key="Workspace" Text="Pracovní plocha" Comment="Workspace" />
+    <Text Key="System" Text="Systém" Comment="System" />
+    <Text Key="Books" Text="knih" Comment="books" />
+    <Text Key="Book" Text="kniha" Comment="book" />
+    <Text Key="Page" Text="stránka" Comment="page" />
+    <Text Key="Yes" Text="Ano" Comment="Yes" />
+    <Text Key="No" Text="Ne" Comment="No" />
+    <Text Key="Not" Text="Ne" Comment="Not" />
+    <Text Key="Cancel" Text="Storno" Comment="Cancel" />
+    <Text Key="Bookmark" Text="Záložka" Comment="Bookmark" />
+    <Text Key="Restart" Text="Restartovat" Comment="Restart" />
+    <Text Key="All" Text="Vše" Comment="All" />
+    <Text Key="Import" Text="Importovat" Comment="Import" />
+    <Text Key="New" Text="Nová" Comment="New" />
+    <Text Key="Recent" Text="Nedávné" Comment="Recent" />
+    <Text Key="Waiting" Text="Čekám" Comment="Waiting" />
+    <Text Key="Running" Text="Program běží" Comment="Running" />
+    <Text Key="Completed" Text="Dokončeno" Comment="Completed" />
+    <Text Key="Disable" Text="Vypnout" Comment="Disable" />
+    <Text Key="Server" Text="Server" Comment="Server" />
+    <Text Key="Keep" Text="Ponechat" Comment="Keep" />
+    <Text Key="Save" Text="Uložit" Comment="Save" />
+    <Text Key="Search" Text="Hledat" Comment="Search" />
+    <Text Key="LogicNot" Text="Negace" Comment="Negation" />
+    <Text Key="Default" Text="Defaultní" Comment="Default" />
+    <Text Key="Connect" Text="Připojit" Comment="Connect" />
+    <Text Key="Workspaces" Text="Pracovní plochy" Comment="Workspaces" />
+    <Text Key="Windows" Text="Okna" Comment="Windows" />
+    <Text Key="Lists" Text="Seznamy" Comment="Lists" />
+    <Text Key="Display" Text="Zobrazení" Comment="Display" />
+    <Text Key="Start" Text="Start" Comment="Start" />
+    <Text Key="End" Text="End" Comment="End" />
+    <Text Key="Configure" Text="Konfigurovat" Comment="Configure" />
+    <Text Key="Clear" Text="Vymazat" Comment="Clear" />
+  </Texts>
+</TR>

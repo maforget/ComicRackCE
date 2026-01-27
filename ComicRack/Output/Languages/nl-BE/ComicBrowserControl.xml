@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBrowserControl" CultureName="nl-BE">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Gesorteerd volgens {0}" Comment="Arranged by {0}" />
+    <Text Key="ComicFiltered" Text="{0} gefilterd" Comment="{0} filtered" />
+    <Text Key="ComicSelected" Text="{0} geselecteerd" Comment="{0} selected" />
+    <Text Key="GroupedBy" Text="Groepeer volgens {0}" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="&amp;Voeg toe aan Bibliotheek..." Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="Automatiseren" Comment="Automation" />
+    <Text Key="miCopyData" Text="Kopieer data" Comment="&amp;Copy Data" />
+    <Text Key="miInvertSelection" Text="Selectie Omkeren" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="&amp;Markeren als" Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="&amp;Gelezen" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="&amp;Ongelezen" Comment="&amp;Unread" />
+    <Text Key="miPasteData" Text="&amp;Gegevens invoegen..." Comment="&amp;Paste Data..." />
+    <Text Key="miProperties" Text="&amp;Informatie..." Comment="&amp;Get Info..." />
+    <Text Key="miRateMenu" Text="Mijn &amp;Waardering" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="Geen" Comment="None" />
+    <Text Key="miRating1" Text="* (1 Ster)" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** (2 Ster)" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** (3 Ster)" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** (4 Ster)" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** (5 Ster)" Comment="***** (5 Stars)" />
+    <Text Key="miRead" Text="&amp;Open" Comment="&amp;Open" />
+    <Text Key="miReadTab" Text="Open in een nieuw Tab-blad" Comment="Open in new Tab" />
+    <Text Key="miRefreshInformation" Text="Vernieuwen" Comment="Refresh" />
+    <Text Key="miRemove" Text="Verwijderen..." Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="Toon het boek in Verkenner" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="Alle" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="Quick Search checkt alle beschikbare gegevens" Comment="Quick Search is checking all available data" />
+    <Text Key="miSearchArtists" Text="Alle Medewerkers" Comment="Artists" />
+    <Text Key="miSearchArtists.Tooltip" Text="Quick Search checkt alle Medewerkers" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="Tekst en Notities" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="Quick Search checkt alle notities en synopsissen" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="Bestandnaam" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="Quick Search checkt enkel de Bestandsnaam" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="Reeks" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="Quick Search checkt enkel de Reeksnaam" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="Schrijver" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="Quick Search checkt enkel de Schrijver" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="Alles selecteren" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="Leg bovenaan de Stapel" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="Blader door Comics" Comment="&amp;Browse Comics" />
+    <Text Key="miShowOnlyAllComics" Text="Toon Alles" Comment="Show All" />
+    <Text Key="miShowOnlyReadComics" Text="Toon Gelezen" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="Toon In lezing" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="Toon Ongelezen" Comment="Show not Read" />
+    <Text Key="miViewDetails" Text="&amp;Details" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="M&amp;iniaturen" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Tegels" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Geen" Comment="None" />
+    <Text Key="NotArranged" Text="Niet gesorteerd" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Niet gegroepeerd" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="Niet gestapeld" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="Gestapeld volgens {0}" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="Groeperen" Comment="Group" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="Sluit deze Stapel" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="Sorteren" Comment="Arrange" />
+    <Text Key="tbbStack" Text="Stapelen" Comment="Stack" />
+    <Text Key="tbbView" Text="Beeld" Comment="Views" />
+    <Text Key="tsEditListLayout" Text="&amp;Wijzig de Lijst Lay-out..." Comment="&amp;Edit List Layout..." />
+    <Text Key="tsSaveListLayout" Text="&amp;Bewaar Lijst Lay-out..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsListLayouts" Text="Lijst Lay-outs" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="Lijst Lay-outs bewerken" Comment="Manage List Layouts" />
+    <Text Key="miSetListBackground" Text="Zet als Lijst Achtergrond" Comment="Set as List Background" />
+    <Text Key="miResetListBackground" Text="Herzet Lijst Achtergrond" Comment="Reset List Background" />
+    <Text Key="miShowOnlyDuplicates" Text="Toon duplicaten" Comment="Show Duplicates" />
+    <Text Key="miEdit" Text="Bewerk" Comment="Edit" />
+    <Text Key="miAddList" Text="Voeg toe aan Lijst" Comment="Add to List" />
+    <Text Key="miShowInList" Text="Toon in Lijst" Comment="Show in List" />
+    <Text Key="tbbDuplicateList" Text="Duplicaten Lijst" Comment="Duplicate List" />
+    <Text Key="tbbDuplicateList.Tooltip" Text="Dupliceer de huidige Lijst" Comment="Duplicate current List" />
+    <Text Key="miExportComicsWithPrevious" Text="Exporteer met Vorige" Comment="Export with Previous" />
+    <Text Key="SearchingLists" Text="Zoek Lijsten..." Comment="Searching Lists..." />
+    <Text Key="tbUndo" Text="Ongedaan maken" Comment="Undo" />
+    <Text Key="tbRedo" Text="Herdoe" Comment="Redo" />
+    <Text Key="btDisplayAll" Text="Geef alles weer" Comment="Display &amp;All" />
+    <Text Key="btCloseStack" Text="Sluit Stapel" Comment="&amp;Close Stack" />
+    <Text Key="btPrevStack" Text="Vorige" Comment="&amp;Previous" />
+    <Text Key="btNextStack" Text="Volgende" Comment="&amp;Next" />
+    <Text Key="miShowOnlyFileless" Text="Toon enkel lege eComics" Comment="Show only fileless Entries" />
+    <Text Key="tsEditLayouts" Text="&amp;Wijzig Lay-outs..." Comment="&amp;Edit Layouts..." />
+    <Text Key="btBrowseNext" Text="Volgende" Comment="Next" />
+    <Text Key="btBrowsePrev" Text="Terug" Comment="Back" />
+    <Text Key="miSearchCatalog" Text="Catalogus" Comment="Catalog" />
+    <Text Key="miSearchCatalog.Tooltip" Text="Quick Search checkt enkel Catalogus ingaves" Comment="Quick Search is only checking Catalog entries" />
+    <Text Key="miSetStackThumbnail" Text="Zet eigen Miniatuur bovenaan de Boekstapel..." Comment="Set custom Stack Thumbnail..." />
+    <Text Key="miRemoveStackThumbnail" Text="Verwijder eigen geplaatste Miniatuur van Stapel..." Comment="Remove custom Stack Thumbnail..." />
+    <Text Key="miExpandAllGroups" Text="Alle Groepen In-/Uitklappen" Comment="Collapse/Expand all Groups" />
+    <Text Key="ComicMulti" Text="{0} Boeken" Comment="{0} Books" />
+    <Text Key="ComicSingle" Text="{0} Boeken" Comment="{0} Book" />
+    <Text Key="miShowOnlyComics" Text="Toon enkel Boeken" Comment="Show only Books" />
+    <Text Key="tbbGroup.Tooltip" Text="Groepeer Boeken volgens diverse criteria" Comment="Group Books by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="Wijzig de sorteerorde van de Boeken" Comment="Change the sort order of the Books" />
+    <Text Key="tbbView.Tooltip" Text="Wijzig hoe en welke Boeken worden weergegeven" Comment="Change how and what Books are displayed" />
+    <Text Key="miExportComics" Text="Exporteer Boeken" Comment="Export Books" />
+    <Text Key="miExportComicsAs" Text="Exporteer Boeken..." Comment="Export Books..." />
+    <Text Key="lblDisplayOptionText" Text="Ingevolge actieve opties in 'Beeld' worden niet alle Boeken getoond." Comment="Because of active options in 'Views', not all Books are displayed" />
+    <Text Key="miUpdateComicFiles" Text="Ververs Boekbestanden" Comment="Update Book Files" />
+    <Text Key="tbSidebar" Text="Zijbalk" Comment="Sidebar" />
+    <Text Key="miEditList" Text="Wijzig Lijst" Comment="Edit List" />
+    <Text Key="miEditListMoveToTop" Text="Bovenaan" Comment="Move to Top" />
+    <Text Key="miEditListMoveToBottom" Text="Onderaan" Comment="Move to Bottom" />
+    <Text Key="miEditListApplyOrder" Text="Pas huidige ordening toe" Comment="Apply current Order" />
+    <Text Key="miClearData" Text="Wis Data" Comment="Clear Data" />
+    <Text Key="miShowWeb" Text="Web..." Comment="Web..." />
+    <Text Key="miMarkChecked" Text="Gemarkeerd" Comment="Checked" />
+    <Text Key="miMarkUnchecked" Text="Niet aangevinkt" Comment="Unchecked" />
+  </Texts>
+</TR>

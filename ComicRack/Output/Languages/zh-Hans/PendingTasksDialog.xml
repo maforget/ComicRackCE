@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PendingTasksDialog" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="btOk" Text="确定" Comment="OK" />
+    <Text Key="colTask" Text="任务" Comment="Task" />
+    <Text Key="lblItemCount" Text="{0} 个任务被挂起" Comment="{0} Tasks are pending" />
+    <Text Key="PendingTasksDialog" Text="挂起后台任务" Comment="Pending Background Tasks" />
+    <Text Key="colState" Text="状态" Comment="State" />
+    <Text Key="btAbort" Text="中止所有用户任务" Comment="Abort all User Tasks" />
+  </Texts>
+</TR>

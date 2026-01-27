@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DevicesEditDialog" CultureName="es">
+  <Texts>
+    <Text Key="DevicesEditDialog" Text="Dispositivos" Comment="Devices" />
+    <Text Key="btPairDevice" Text="Emparejar Dispositivo..." Comment="Pair Device..." />
+    <Text Key="btCancel" Text="&amp;Cancelar" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Aceptar" Comment="&amp;OK" />
+    <Text Key="btSelectAll" Text="Seleccionar Todos" Comment="Select All" />
+    <Text Key="btSelectNone" Text="Seleccionar Ninguno" Comment="Select None" />
+    <Text Key="chkOptimizeSize" Text="Optimizar Tamaño" Comment="Optimize Size" />
+    <Text Key="chkOnlyUnread" Text="Solo Sin Leer" Comment="Only Unread" />
+    <Text Key="labelHint" Text="Conecta tu Dispositivo con tu Ordenador y pulsa 'Emparejar Dispositivo...'" Comment="Connect your Device with your Computer and press 'Pair Device...'" />
+    <Text Key="chkOnlyChecked" Text="Sólo Seleccionado" Comment="Only Checked" />
+    <Text Key="btSelectList" Text="Seleccionar Lista" Comment="Select List" />
+    <Text Key="btDeselectList" Text="Deseleccionar Lista" Comment="Deselect List" />
+    <Text Key="cbLimitType.Item0" Text="Libros" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="chkLimit" Text="Limitar a" Comment="Limit to" />
+    <Text Key="labelLimitSort" Text="ordenado por" Comment="sorted by" />
+    <Text Key="cbLimitSort.Item0" Text="Aleatorio" Comment="Random" />
+    <Text Key="cbLimitSort.Item1" Text="Serie" Comment="Series" />
+    <Text Key="cbLimitSort.Item2" Text="Serie Alternativa" Comment="Alternate Series" />
+    <Text Key="cbLimitSort.Item3" Text="Publicado" Comment="Published" />
+    <Text Key="cbLimitSort.Item4" Text="Añadido" Comment="Added" />
+    <Text Key="chkSortBy" Text="Ordenar por" Comment="Sort by" />
+    <Text Key="chkKeepLastRead" Text="Pero mantener último leído" Comment="But keep last read" />
+    <Text Key="chkOnlyShowSelected" Text="Solo mostrar seleccionados" Comment="Only show selected" />
+    <Text Key="btDevice" Text="Dispositivo" Comment="Device" />
+    <Text Key="miDeviceCopy" Text="Copiar" Comment="Copy" />
+    <Text Key="miDevicePaste" Text="Pegar" Comment="Paste" />
+    <Text Key="miDeviceCopyToAll" Text="Copiar A Todos" Comment="Copy To All" />
+    <Text Key="miDeviceRename" Text="Renombrar..." Comment="Rename..." />
+    <Text Key="miDeviceUnpair" Text="Desvincular Dispositivo" Comment="Unpair Device" />
+  </Texts>
+</TR>

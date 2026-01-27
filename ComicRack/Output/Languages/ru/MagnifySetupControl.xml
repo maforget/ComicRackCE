@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MagnifySetupControl" CultureName="ru">
+  <Texts>
+    <Text Key="labelHeight" Text="Высота" Comment="Height" />
+    <Text Key="labelOpacity" Text="Прозрачность" Comment="Opacity" />
+    <Text Key="labelWidth" Text="Ширина" Comment="Width" />
+    <Text Key="labelZoom" Text="Масштаб" Comment="Zoom" />
+  </Texts>
+</TR>

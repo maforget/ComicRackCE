@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.SearchAndReplace" CultureName="de">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Abbruch" Comment="&amp;Cancel" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="Description" Text="Ein Script um Werte in Büchern zu suchen und zu ersetzen" Comment="A script to to search and replace values in Books"/>
+    <Text Key="Caption" Text="Suchen und Ersetzen..." Comment="Search and Replace..." />
+    <Text Key="Name" Text="Suchen und Ersetzen..." Comment="Search and Replace..." />
+    <Text Key="labelField" Text="Felder:" Comment="Fields:"/>
+    <Text Key="labelSearch" Text="Suchen:" Comment="Search:"/>
+    <Text Key="labelReplace" Text="Ersetzen:" Comment="Replace"/>
+  </Texts>
+</TR>

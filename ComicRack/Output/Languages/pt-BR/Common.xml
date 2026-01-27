@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Common" CultureName="pt-BR">
+  <Texts>
+    <Text Key="RelativeDateTimeFormat" Text="minuto|minutos|hora|horas|dia|dias|semana|semanas|mês|meses|ano|anos|{0} atrás|em {0}" Comment="minute|minutes|hour|hours|day|days|week|weeks|month|months|year|years|{0} ago|in {0}" />
+  </Texts>
+</TR>

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBrowserControl" CultureName="sk-SK">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Zoradené podľa {0}" Comment="Arranged by {0}" />
+    <Text Key="ComicFiltered" Text="{0} filtrované" Comment="{0} filtered" />
+    <Text Key="ComicMulti" Text="{0} eComicsov" Comment="{0} eComics" />
+    <Text Key="ComicSelected" Text="{0} vybraných" Comment="{0} selected" />
+    <Text Key="ComicSingle" Text="{0} eComic" Comment="{0} eComic" />
+    <Text Key="GroupedBy" Text="Zoskupené podľa {0}" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="&amp;Pridať do knižnice" Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="Automatizácia" Comment="Automation" />
+    <Text Key="miCopyData" Text="&amp;Kopírovať data" Comment="&amp;Copy Data" />
+    <Text Key="miInvertSelection" Text="&amp;Obrátiť výber" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="&amp;Označiť ako" Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="&amp;Čítané" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="&amp;Nečítané" Comment="&amp;Unread" />
+    <Text Key="miPasteData" Text="&amp;Vložiť data..." Comment="&amp;Paste Data..." />
+    <Text Key="miProperties" Text="&amp;Zobraziť info..." Comment="&amp;Get Info..." />
+    <Text Key="miRateMenu" Text="Moje &amp;hodnotenie" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="Žiadne" Comment="None" />
+    <Text Key="miRating1" Text="* (1 Hviezdička)" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** (2 Hviezdičky)" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** (3 Hviezdičky)" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** (4 hviezdičky)" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** (5 Hviezdičiek)" Comment="***** (5 Stars)" />
+    <Text Key="miRead" Text="&amp;Otvoriť" Comment="&amp;Open" />
+    <Text Key="miReadTab" Text="Otvoriť na novej karte" Comment="Open in new Tab" />
+    <Text Key="miRefreshInformation" Text="Obnoviť" Comment="Refresh" />
+    <Text Key="miRemove" Text="Z&amp;mazať..." Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="Otvoriť knihu v Pri&amp;eskumníku" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="Všetko" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="Rýchle hľadanie prezerá všetké dostupné data" Comment="Quick Search is checking all available data" />
+    <Text Key="miSearchArtists" Text="Autori" Comment="Artists" />
+    <Text Key="miSearchArtists.Tooltip" Text="Rýchle hľadanie prezerá všetkých autorov" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="Opisný" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="Rýchle hľadanie prezerá všetky poznámky a sumáre" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="Názov súboru" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="Rýchle hľadanie prezerá len názov súboru" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="Séria" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="Rýchle hľadanie prezerá len názvy sérii" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="Autor príbehu" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="Rýchle hľadanie prezerá len tvorcov príbehov" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="Vybr&amp;ať všetko" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="Nastaviť ako najvyšší v zoskupení" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="&amp;Prehľadávať komiksy" Comment="&amp;Browse Comics" />
+    <Text Key="miShowOnlyAllComics" Text="Ukázať všetko" Comment="Show All" />
+    <Text Key="miShowOnlyReadComics" Text="Ukázať čítané" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="Ukázať čítané" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="Ukázať nečítané" Comment="Show not Read" />
+    <Text Key="miViewDetails" Text="&amp;Detaily" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="Ná&amp;hľady" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Dláždice" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Žiadne" Comment="None" />
+    <Text Key="NotArranged" Text="Bez zaradenia" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Bez skupiny" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="Bez zoskupenia" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="Zoskupené podľa {0}" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="Skupina" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="Zoskupiť eComicsy podľa odlišného kritéria" Comment="Group eComics by different criteria" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="Zatvoriť túto skupinu" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="Zoradiť" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="Zmeniť poradie triedenia eComicsov" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbStack" Text="Zoskupiť" Comment="Stack" />
+    <Text Key="tbbView" Text="Prezerať" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="Zmeňte ako a ktoré eComicsy budú zobrazené" Comment="Change how and what eComics are displayed" />
+    <Text Key="tsEditListLayout" Text="&amp;Zmeniť vzhľad zoznamu..." Comment="&amp;Edit List Layout..." />
+    <Text Key="tsSaveListLayout" Text="&amp;Uložiť vzhľad zoznamu..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsListLayouts" Text="Vzhľady zoznamu" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="Spravovať vzhľad zoznamov" Comment="Manage List Layouts" />
+    <Text Key="miExportComics" Text="Exportovať eComic" Comment="Export eComics" />
+    <Text Key="miExportComicsAs" Text="Exportovať eComic..." Comment="Export eComics..." />
+    <Text Key="miSetListBackground" Text="Nastaviť ako pozadie zoznamu" Comment="Set as List Background" />
+    <Text Key="miResetListBackground" Text="Resetovať pozadie zoznamu" Comment="Reset List Background" />
+    <Text Key="miShowOnlyDuplicates" Text="Ukázať duplikáty" Comment="Show Duplicates" />
+    <Text Key="lblDisplayOptionText" Text="Kôli súčasným nastaveniach v 'Prezeranie', nie sú zobrazené všetky eComicsy" Comment="Because of active options in 'Views', not all eComics are displayed" />
+    <Text Key="miUpdateComicFiles" Text="Updatnuť eComic súbory" Comment="Update eComic Files" />
+    <Text Key="miEdit" Text="Zmeniť" Comment="Edit" />
+    <Text Key="miAddList" Text="Pridať do zoznamu" Comment="Add to List" />
+    <Text Key="miShowInList" Text="Zobraziť v zozname" Comment="Show in List" />
+    <Text Key="tbbDuplicateList" Text="Zdvojiť zoznam" Comment="Duplicate List" />
+    <Text Key="tbbDuplicateList.Tooltip" Text="Zdvojiť súčasný zoznam" Comment="Duplicate current List" />
+    <Text Key="miExportComicsWithPrevious" Text="Exportovať s predchádzajúcim" Comment="Export with Previous" />
+    <Text Key="SearchingLists" Text="Hľadám v zoznamoch..." Comment="Searching Lists..." />
+    <Text Key="tbUndo" Text="Späť" Comment="Undo" />
+    <Text Key="tbRedo" Text="Znova" Comment="Redo" />
+    <Text Key="btDisplayAll" Text="Zobraziť všetko" Comment="Display &amp;All" />
+    <Text Key="btCloseStack" Text="Zatvoriť skupinu" Comment="&amp;Close Stack" />
+    <Text Key="btPrevStack" Text="Predchádzajúci" Comment="&amp;Previous" />
+    <Text Key="btNextStack" Text="Ďalej" Comment="&amp;Next" />
+    <Text Key="miShowOnlyComics" Text="Zobraziť len eComicsy" Comment="Show only eComics" />
+    <Text Key="miShowOnlyFileless" Text="Zobraziť len príspevky bez súborov" Comment="Show only fileless Entries" />
+    <Text Key="tsEditLayouts" Text="&amp;Zmeniť vzhľady..." Comment="&amp;Edit Layouts..." />
+    <Text Key="btBrowseNext" Text="Next" Comment="Next" />
+    <Text Key="btBrowsePrev" Text="Dozadu" Comment="Back" />
+  </Texts>
+</TR>

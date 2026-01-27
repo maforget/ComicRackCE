@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="NewsDialog" CultureName="tr">
+  <Texts>
+    <Text Key="btClose" Text="&amp;Kapat" Comment="&amp;Close" />
+    <Text Key="btMarkRead" Text="Hepsini okundu varsay" Comment="Mark all as Read" />
+    <Text Key="btRefresh" Text="Tazele" Comment="Refresh" />
+    <Text Key="chkNewsStartup" Text="Başlangıçta haberleri kontrol et" Comment="Check for News on Startup" />
+    <Text Key="colDate" Text="Tarih" Comment="Date" />
+    <Text Key="colTitle" Text="Başlık" Comment="Title" />
+    <Text Key="colCategory" Text="Kategori" Comment="Category" />
+    <Text Key="NewsDialog" Text="ComicRack'den Haberler" Comment="Latest ComicRack News" />
+  </Texts>
+</TR>

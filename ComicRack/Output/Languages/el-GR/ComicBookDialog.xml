@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBookDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btNext" Text="&amp;Επόμενο" Comment="&amp;Next" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="btPrev" Text="&amp;Προηγούμενο" Comment="&amp;Previous" />
+    <Text Key="chkMangaStyle" Text="Τεχνοτροπία Manga" Comment="Manga Style" />
+    <Text Key="colImage" Text="Εικόνα" Comment="Image" />
+    <Text Key="colKey" Text="Κλειδί" Comment="Key" />
+    <Text Key="colPage" Text="Σελίδα" Comment="Page" />
+    <Text Key="colType" Text="Τύπος" Comment="Type" />
+    <Text Key="ComicBookDialog" Text="Πληροφορίες" Comment="Info" />
+    <Text Key="labelAlternateNumber" Text="Αριθμός:" Comment="Number:" />
+    <Text Key="labelAlternateSeries" Text="Εναλλακτική Σειρά ή Εναλλακτικό Σενάριο:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelBrightness" Text="Φωτεινότητα" Comment="Brightness" />
+    <Text Key="labelColorist" Text="Βαφέας:" Comment="Colorist:" />
+    <Text Key="labelContrast" Text="Αντίθεση" Comment="Contrast" />
+    <Text Key="labelEditor" Text="Συντάκτης:" Comment="Editor:" />
+    <Text Key="labelFormat" Text="Διαμόρφωση:" Comment="Format:" />
+    <Text Key="labelGenre" Text="Είδος:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Αποτύπωση:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Μελανωτήρας:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Γλώσσα:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Σεναριογράφος:" Comment="Letterer:" />
+    <Text Key="labelMonth" Text="Μήνας:" Comment="Month:" />
+    <Text Key="labelNotes" Text="Σημειώσεις:" Comment="Notes:" />
+    <Text Key="labelNumber" Text="Αριθμός:" Comment="Number:" />
+    <Text Key="labelOpened" Text="Ανοίχθηκε:" Comment="Opened:" />
+    <Text Key="labelPages" Text="Σελίδες:" Comment="Pages:" />
+    <Text Key="labelPenciller" Text="Σκιτσογράφος:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Εκδότης:" Comment="Publisher:" />
+    <Text Key="labelSaturation" Text="Κορεσμός" Comment="Saturation" />
+    <Text Key="labelSeries" Text="Σειρά:" Comment="Series:" />
+    <Text Key="labelSummary" Text="Περίληψη:" Comment="Summary:" />
+    <Text Key="labelTags" Text="Καρτέλες:" Comment="Tags:" />
+    <Text Key="labelTitle" Text="Τίτλος:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Τόμος:" Comment="Volume:" />
+    <Text Key="labelWhere" Text="Θέση:" Comment="Where:" />
+    <Text Key="labelWriter" Text="Συγγραφέας:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Έτος:" Comment="Year:" />
+    <Text Key="tabColors" Text="Χρώματα" Comment="Colors" />
+    <Text Key="tabPages" Text="Σελίδες" Comment="Pages" />
+    <Text Key="tabSummary" Text="Περίληψη" Comment="Summary" />
+    <Text Key="pageViewer" Text="Διπλό κλικ σε οποιοδήποτε σημείο της σελίδας για να οριστεί η Ισορροπία Λευκού" Comment="Double Click on Color to set White Point" />
+    <Text Key="labelPagesInfo" Text="Αλλαγή της διάταξης των σελίδων με σύρσιμο &amp; ελευθέρωση ή με τη χρήση του προεπιλεγμένου μενού συντόμευσης:" Comment="Change the page order with drag &amp; drop or use the context menu to change page types:" />
+    <Text Key="btResetPages" Text="Επαναφορά" Comment="Reset" />
+    <Text Key="btResetColors" Text="Επαναφορά" Comment="Reset" />
+    <Text Key="labelType" Text="Τύπος:" Comment="Type:" />
+    <Text Key="labelBlackAndWhite" Text="Ασπρόμαυρο:" Comment="Black and White" />
+    <Text Key="labelManga" Text="Manga:" Comment="Manga:" />
+    <Text Key="labelEnableProposed" Text="Ενεργοποίηση Eισήγησης:" Comment="Enable Proposed:" />
+    <Text Key="labelAgeRating" Text="Αξιολόγηση Ηλικιακά:" Comment="Age Rating" />
+    <Text Key="tabPlot" Text="Πλοκή &amp; Σημειώσεις" Comment="Plot &amp; Notes" />
+    <Text Key="labelCharacters" Text="Χαρακτήρες:" Comment="Characters:" />
+    <Text Key="labelAlternateCount" Text="από:" Comment="of:" />
+    <Text Key="labelCoverArtist" Text="Καλλιτέχνης Εξώφυλλου:" Comment="Cover Artist:" />
+    <Text Key="labelCount" Text="από:" Comment="of:" />
+    <Text Key="labelSharpening" Text="Όξυνση" Comment="Sharpening" />
+    <Text Key="btPageView" Text="Σελίδες" Comment="Pages" />
+    <Text Key="labelWeb" Text="Ιστός:" Comment="Web:" />
+    <Text Key="labelEnableDynamicUpdate" Text="Να περιληφθεί στις αναβαθμίσεις:" Comment="Include in Updates:" />
+    <Text Key="labelTeams" Text="Ομάδες:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="Τοποθεσίες:" Comment="Locations:" />
+    <Text Key="tabDetails" Text="Λεπτομέρειες" Comment="Details" />
+    <Text Key="btLinkFile" Text="Σύνδεση με το αρχείο..." Comment="Link to File..." />
+    <Text Key="btThumbnail" Text="Μικρογραφία..." Comment="Thumbnail..." />
+    <Text Key="labelMyRating" Text="Η Αξιολόγηση μου:" Comment="My Rating:" />
+    <Text Key="labelCommunityRating" Text="Αξιολόγηση Κοινότητας:" Comment="Community Rating:" />
+    <Text Key="miResetThumbnail" Text="&amp;Προεπιλογή" Comment="&amp;Default" />
+    <Text Key="labelBookStore" Text="Βιβλιοπωλείο:" Comment="Store:" />
+    <Text Key="labelBookOwner" Text="Ιδιοκτήτης:" Comment="Owner:" />
+    <Text Key="labelBookLocation" Text="Τοποθεσία:" Comment="Location:" />
+    <Text Key="labelBookAge" Text="Ηλικία:" Comment="Age:" />
+    <Text Key="labelBookCondition" Text="Κατάσταση:" Comment="Condition:" />
+    <Text Key="labelBookCollectionStatus" Text="Κατάσταση Συλλογής:" Comment="Collection Status:" />
+    <Text Key="labelBookNotes" Text="Σημειώσεις:" Comment="Notes:" />
+    <Text Key="labelBookPrice" Text="Τιμή:" Comment="Price:" />
+    <Text Key="tabCatalog" Text="Κατάλογος" Comment="Catalog" />
+    <Text Key="labelGamma" Text="Gamma" Comment="Gamma" />
+    <Text Key="labelISBN" Text="ISBN:" Comment="ISBN:" />
+    <Text Key="labelPagesAsTextSimple" Text="Σελίδες:" Comment="Pages:" />
+    <Text Key="labelOpenedTime" Text="Άνοιξε/Αναγνώστηκε:" Comment="Opened/Read:" />
+    <Text Key="labelAddedTime" Text="Προστέθηκε/Αγοράστηκε:" Comment="Added/Purchased:" />
+    <Text Key="labelSeriesComplete" Text="Πλήρης σειρά:" Comment="Series complete:" />
+    <Text Key="chkShowImageControls" Text="Έλεγχοι Εικόνας " Comment="Image Controls" />
+    <Text Key="labelScanInformation" Text="Αναζήτηση Πληροφοριών:" Comment="Scan Information:" />
+    <Text Key="labelStoryArc" Text="Story Arc:" Comment="Story Arc:" />
+    <Text Key="labelSeriesGroup" Text="Series Group:" Comment="Series Group:" />
+    <Text Key="labelMainCharacterOrTeam" Text="Πρωταγωνιστής / Χαρακτήρες:" Comment="Main Character/Team:" />
+    <Text Key="tabPageReview" Text="Αναθεώρηση" Comment="Review" />
+    <Text Key="tabPageNotes" Text="Σημειώσεις" Comment="Notes" />
+    <Text Key="tabPageSummary" Text="Περίληψη" Comment="Summary" />
+  </Texts>
+</TR>

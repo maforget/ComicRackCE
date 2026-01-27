@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicListFolderFilesBrowser" CultureName="hu">
+  <Texts>
+    <Text Key="miAddFolderLibrary" Text="&amp;Mappa hozzáadása a könyvtárhoz" Comment="&amp;Add Folder to Library" />
+    <Text Key="miAddToFavorites" Text="&amp;Mappa hozzáadása a kedvencekhez" Comment="&amp;Add Folder to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Frissítés" Comment="&amp;Refresh" />
+    <Text Key="miOpenWindow" Text="&amp;Megnyitás új ablakban" Comment="&amp;Open in New Window" />
+    <Text Key="miRefresh" Text="&amp;Frissítés" Comment="&amp;Refresh" />
+    <Text Key="miRemove" Text="&amp;Eltávolítás" Comment="&amp;Remove..." />
+    <Text Key="tbFavorites" Text="Kedvenceket mutatja" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Kedvencek" Comment="Favorites" />
+    <Text Key="tbIncludeSubFolders" Text="Tartalmazza az összes almappát" Comment="Include all Subfolders" />
+    <Text Key="tbOpenWindow" Text="Új ablak" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Aktuális lista megnyitása új ablakban" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Frissítés" Comment="Refresh" />
+    <Text Key="miOpenTab" Text="&amp;Megnyitás új fülön" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="Új fül" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Jelenlegi lista megnyitása új fülön" Comment="Open current list in new Tab" />
+  </Texts>
+</TR>

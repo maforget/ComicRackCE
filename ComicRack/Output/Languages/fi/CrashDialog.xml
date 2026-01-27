@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CrashDialog" CultureName="fi">
+  <Texts>
+    <Text Key="labelMessage" Text="Auta parantamaan ComicRackia lähettämällä virheraportti. Mitään tunnistetietoja ei liitetä mukaan." Comment="Please help to make ComicRack a better application by submitting the follwing report. This report does not contain any data that could identify you." />
+    <Text Key="chkSubmit" Text="Lähetä" Comment="Submit" />
+    <Text Key="btDetails" Text="Lisätiedot" Comment="Details" />
+    <Text Key="btResume" Text="Ohita" Comment="Try Resume" />
+    <Text Key="btRestart" Text="Käynnistä uudelleen" Comment="Restart" />
+    <Text Key="btExit" Text="Sulje" Comment="Exit" />
+    <Text Key="CrashDialog" Text="ComicRack kohtasi ongelman..." Comment="ComicRack encountered a Problem..." />
+  </Texts>
+</TR>

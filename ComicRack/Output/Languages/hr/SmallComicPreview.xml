@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmallComicPreview" CultureName="hr">
+  <Texts>
+    <Text Key="tbClose" Text="Zatvaranje" Comment="Close" />
+    <Text Key="tsbFirst" Text="Prvi" Comment="First" />
+    <Text Key="tsbFirst.Tooltip" Text="Na prvu stranicu" Comment="Go to first page" />
+    <Text Key="tsbLast" Text="Zadnji" Comment="Last" />
+    <Text Key="tsbLast.Tooltip" Text="Na posljednju stranicu" Comment="Go to last page" />
+    <Text Key="tsbNext" Text="Sljedeći" Comment="Next" />
+    <Text Key="tsbNext.Tooltip" Text="Na sljedeću stranicu" Comment="Go to next page" />
+    <Text Key="tsbPrev" Text="Prethodni" Comment="Previous" />
+    <Text Key="tsbPrev.Tooltip" Text="Na prethodnu stranicu" Comment="Go to previous page" />
+    <Text Key="tsbRefresh" Text="Osvježavanje" Comment="Refresh" />
+    <Text Key="tsbTwoPages" Text="Dvije stranice" Comment="Two Pages" />
+    <Text Key="tsbTwoPages.Tooltip" Text="Prikaz jedne ili dvije stranice" Comment="Show one or two pages" />
+    <Text Key="pageViewer" Text="Ništa nije označeno" Comment="Nothing Selected" />
+  </Texts>
+</TR>

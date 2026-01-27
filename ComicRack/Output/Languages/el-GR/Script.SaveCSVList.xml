@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.SaveCSVList" CultureName="el-GR">
+  <Texts>
+    <Text Key="Name" Text="Εξαγωγή Λίστας Κόμικς..." Comment="Export Book List..." />
+    <Text Key="Description" Text="Απλό Script που εξάγει όλα τα επιλεγμένα eComics σε ένα αρχείο CSV" Comment="Simple script to export all selected Books into a CSV file" />
+  </Texts>
+</TR>

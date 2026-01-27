@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainForm" CultureName="pt-BR">
+  <Texts>
+    <Text Key="browseMenu" Text="&amp;Pesquisar" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="&amp;Copiar página" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="&amp;Exportar Página..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="Encaixar Tudo" Comment="Fit All" />
+    <Text Key="cmFitBest" Text="Melhor Encaixe" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="Encaixar Altura" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="Encaixar Largura" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="&amp;Lupa" Comment="&amp;Magnifier" />
+    <Text Key="cmNotifyExit" Text="&amp;Sair" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="&amp;Restaurar" Comment="&amp;Restore" />
+    <Text Key="cmRate0" Text="Nenhuma" Comment="None" />
+    <Text Key="cmRate1" Text="* (1 estrela)" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** (2 estrelas)" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** (3 estrelas)" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** (4 estrelas)" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** (5 estrelas)" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="Minha &amp;Avaliação" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="&amp;Atualizar" Comment="&amp;Refresh" />
+    <Text Key="cmSyncBrowser" Text="Exibir no &amp;Pesquisador" Comment="Show in &amp;Browser" />
+    <Text Key="displayMenu" Text="&amp;Exibir" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="&amp;Editar" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="&amp;Arquivo" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="&amp;Ajuda" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack" Comment="ComicRack" />
+    <Text Key="miAbout" Text="&amp;Sobre..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="&amp;Adicionar pasta à biblioteca..." Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="Nova &amp;Aba" Comment="New &amp;Tab" />
+    <Text Key="miBestFit" Text="&amp;Melhor Encaixe" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="Fechar &amp;tudo" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="&amp;Fechar" Comment="&amp;Close" />
+    <Text Key="miEditListLayout" Text="&amp;Editar Layout de Lista..." Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="&amp;Sair" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="A&amp;utomação" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="&amp;Primeira Página" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="Encaixar &amp;Tudo" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="Encaixar &amp;Altura" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="Encaixar &amp;Largura" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="&amp;Tela Cheia" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="&amp;Ultima página" Comment="&amp;Last Page" />
+    <Text Key="miLastPageRead" Text="&amp;Ultima página lida" Comment="L&amp;ast Page Read" />
+    <Text Key="miListLayouts" Text="Layout de Lista" Comment="List Layout" />
+    <Text Key="miNews" Text="&amp;Novidades..." Comment="&amp;News..." />
+    <Text Key="miNextTab" Text="Próxima &amp;Aba" Comment="Next &amp;Tab" />
+    <Text Key="miPageType" Text="Tipo de &amp;Página" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="&amp;Preferências..." Comment="&amp;Preferences..." />
+    <Text Key="miPrevPage" Text="&amp;Página anterior" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="&amp;Aba anterior" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="Nenhuma" Comment="None" />
+    <Text Key="miRate1" Text="* (1 estrela)" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** (2 estrelas)" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** (3 estrelas)" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** (4 estrelas)" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** (5 estrelas)" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="Minha &amp;Avaliação" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="Reinici&amp;ar" Comment="Rest&amp;art" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="miRotation" Text="&amp;Rotação" Comment="&amp;Rotation" />
+    <Text Key="miSaveListLayout" Text="&amp;Salvar Layout de Lista..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="&amp;Salvar Área de Trabalho..." Comment="&amp;Save Workspace..." />
+    <Text Key="miSearchBrowser" Text="P&amp;esquisar Resultados" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="Usar layout atual em todas as listas" Comment="Set all Lists to current Layout" />
+    <Text Key="miSidebar" Text="&amp;Barra lateral" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="&amp;Pequena visualização" Comment="S&amp;mall Preview" />
+    <Text Key="miSyncBrowser" Text="Exibir no &amp;Pesquisador" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="&amp;Pesquisador" Comment="&amp;Browser" />
+    <Text Key="miView100" Text="100 %" Comment="100 %" />
+    <Text Key="miView150" Text="150 %" Comment="150 %" />
+    <Text Key="miView200" Text="200 %" Comment="200 %" />
+    <Text Key="miView300" Text="300 %" Comment="300 %" />
+    <Text Key="miView400" Text="400 %" Comment="400 %" />
+    <Text Key="miViewFolders" Text="&amp;Pastas" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="Bi&amp;blioteca" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="&amp;Páginas" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="&amp;Atualizar" Comment="&amp;Refresh" />
+    <Text Key="miWorkspaces" Text="&amp;Áreas de Trabalho" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="Zoom" Comment="Zoom" />
+    <Text Key="readMenu" Text="&amp;Ler" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="Usar layout '{0}'" Comment="Set '{0}' Layout" />
+    <Text Key="tbBestFit" Text="Melhor Encaixe" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="Exibir" Comment="Display" />
+    <Text Key="tbFit" Text="Encaixar" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="Alternar modo de encaixe" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="Encaixar Tudo" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="Encaixar Altura" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="Encaixar Largura" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="Tela cheia" Comment="Full Screen" />
+    <Text Key="tbMagnify" Text="Lupa" Comment="Magnifier" />
+    <Text Key="tbNextPage" Text="Próxima Página" Comment="Next Page" />
+    <Text Key="tbNextTab" Text="Próxima &amp;Aba" Comment="Next &amp;Tab" />
+    <Text Key="tbPrevTab" Text="&amp;Aba anterior" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="Aba anterior" Comment="Vorheriger Tab" />
+    <Text Key="tbReadLabel" Text="Ler" Comment="Read" />
+    <Text Key="tbTwoPages" Text="Duas páginas" Comment="Two Pages" />
+    <Text Key="tsBook" Text="Livro" Comment="Book" />
+    <Text Key="tsCurrentPage" Text="Página" Comment="Page" />
+    <Text Key="tsPageCount" Text="0 páginas" Comment="0 Pages" />
+    <Text Key="tsSaveWorkspace" Text="&amp;Salvar Área de Trabalho..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsText" Text="Pronto" Comment="Ready" />
+    <Text Key="tsWorkspaces" Text="Áreas de trabalho" Comment="Workspaces" />
+    <Text Key="miSupport" Text="Apóie o ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="tbNextTab.Tooltip" Text="Próxima Aba" Comment="Next Tab" />
+    <Text Key="miPageLayout" Text="Layout da Página" Comment="Page Layout" />
+    <Text Key="cmPageLayout" Text="Layout da Página" Comment="Page Layout" />
+    <Text Key="miAdaptiveTwoPageFitting" Text="Adaptar para páginas duplas" Comment="Adapt to double page spreads" />
+    <Text Key="cmAdaptiveTwoPageFitting" Text="Adaptar para páginas duplas" Comment="Adapt to double page spreads" />
+    <Text Key="tbAdaptiveTwoPageFitting" Text="Adaptar para páginas duplas" Comment="Adapt to double page spreads" />
+    <Text Key="miReaderUndocked" Text="&amp;Leitor em janela separada" Comment="Reader in own Window" />
+    <Text Key="tbReaderUndocked" Text="Leitor em janela dedicada" Comment="Reader in own Window" />
+    <Text Key="miOriginal" Text="Tamanho original" Comment="Original Size" />
+    <Text Key="tbOriginal" Text="Tamanho original" Comment="Original Size" />
+    <Text Key="cmOriginal" Text="Tamanho original" Comment="Original Size" />
+    <Text Key="NotifyIconText" Text="Duplo clique para restaurar" Comment="Double Click to restore" />
+    <Text Key="miAutoScroll" Text="Rolagem automática" Comment="Auto Scrolling" />
+    <Text Key="tbAutoScroll" Text="Rolagem automática" Comment="Auto Scrolling" />
+    <Text Key="cmOnlyFitOversized" Text="Ajustar apenas quando maior" Comment="Only Fit if oversized" />
+    <Text Key="miOnlyFitOversized" Text="Ajustar apenas quando maior" Comment="Only Fit if oversized" />
+    <Text Key="tbOnlyFitOversized" Text="Ajustar apenas quando maior" Comment="Only Fit if oversized" />
+    <Text Key="ChangeItemSize" Text="Alterar tamanho dos itens na lista" Comment="Change size of the list items" />
+    <Text Key="miDoublePageAutoScroll" Text="Rolagem automática em página dupla" Comment="Double Page Auto Scrolling" />
+    <Text Key="cmFitWidthAdaptive" Text="Encaixar Largura (adaptativo)" Comment="Fit Width (adaptive)" />
+    <Text Key="miFitWidthAdaptive" Text="Encaixar Largura (adaptativo)" Comment="Fit Width (adaptive)" />
+    <Text Key="tbFitWidthAdaptive" Text="Encaixar Largura (adaptativo)" Comment="Fit Width (adaptive)" />
+    <Text Key="cmRightToLeft" Text="Direita para Esquerda" Comment="Right to Left" />
+    <Text Key="tbRightToLeft" Text="Direita para Esquerda" Comment="Right to Left" />
+    <Text Key="miRightToLeft" Text="Direita para Esquerda" Comment="Right to Left" />
+    <Text Key="tsPageActivity.Tooltip" Text="Obtendo páginas e miniaturas" Comment="Getting Pages and Thumbnails..." />
+    <Text Key="tsScanActivity.Tooltip" Text="Uma varredura está rodando em segundo plano..." Comment="A scan is running..." />
+    <Text Key="tsWriteInfoActivity.Tooltip" Text="Escrevendo dados de informação aos arquivos..." Comment="Writing info data to files..." />
+    <Text Key="tsReadInfoActivity.Tooltip" Text="Lendo dados de informação dos arquivos..." Comment="Reading info data from files..." />
+    <Text Key="miMinimalGui" Text="Interface de Usuário Mínima" Comment="Minimal User Interface" />
+    <Text Key="tbMinimalGui" Text="Interface de Usuário Mínima" Comment="Minimal User Interface" />
+    <Text Key="cmMinimalGui" Text="Interface de Usuário Mínima" Comment="Minimal User Interface" />
+    <Text Key="miBookmarks" Text="Marcações" Comment="Bookmarks" />
+    <Text Key="miSetBookmark" Text="Inserir Marcador..." Comment="Set Bookmark..." />
+    <Text Key="miRemoveBookmark" Text="Remover Marcador" Comment="Remove Bookmark" />
+    <Text Key="tbBookmarks" Text="Marcações" Comment="Bookmarks" />
+    <Text Key="tbSetBookmark" Text="Inserir Marcador..." Comment="Set Bookmark..." />
+    <Text Key="tbRemoveBookmark" Text="Remover Marcador" Comment="Remove Bookmark" />
+    <Text Key="tbLastPageRead" Text="Última Página Lida" Comment="Last Page Read" />
+    <Text Key="cmBookmarks" Text="Marcações" Comment="Bookmarks" />
+    <Text Key="cmSetBookmark" Text="Inserir Marcador..." Comment="Set Bookmark..." />
+    <Text Key="cmRemoveBookmark" Text="Remover Marcador" Comment="Remove Bookmark" />
+    <Text Key="cmLastPageRead" Text="Última Página Lida" Comment="Last Page Read" />
+    <Text Key="miPrevBookmark" Text="Marcador Anterior" Comment="Previous Bookmark" />
+    <Text Key="miNextBookmark" Text="Próximo Marcador" Comment="Next Bookmark" />
+    <Text Key="tbPrevBookmark" Text="Marcador Anterior" Comment="Previous Bookmark" />
+    <Text Key="tbNextBookmark" Text="Próximo Marcador" Comment="Next Bookmark" />
+    <Text Key="cmPrevBookmark" Text="Marcador Anterior" Comment="Previous Bookmark" />
+    <Text Key="cmNextBookmark" Text="Próximo Marcador" Comment="Next Bookmark" />
+    <Text Key="miZoomIn" Text="Aproximar" Comment="Zoom In" />
+    <Text Key="tbZoomIn" Text="Aproximar" Comment="Zoom In" />
+    <Text Key="miZoomOut" Text="Afastar" Comment="Zoom Out" />
+    <Text Key="tbZoomOut" Text="Afastar" Comment="Zoom Out" />
+    <Text Key="miZoomCustom" Text="Customizando..." Comment="Custom..." />
+    <Text Key="tbZoomCustom" Text="Customizando..." Comment="Custom..." />
+    <Text Key="tbZoom.Tooltip" Text="Mudar o zoom da página" Comment="Change the page zoom" />
+    <Text Key="tbRotate.Tooltip" Text="Mudar a rotação da página" Comment="Change the page rotation" />
+    <Text Key="miRotateLeft" Text="Rotacionar à Esquerda" Comment="Rotate Left" />
+    <Text Key="miRotateRight" Text="Rotacionar à Direita" Comment="Rotate Right" />
+    <Text Key="tbRotateLeft" Text="Rotacionar à Esquerda" Comment="Rotate Left" />
+    <Text Key="tbRotateRight" Text="Rotacionar à Direita" Comment="Rotate Right" />
+    <Text Key="tbRotate180" Text="180°" Comment="180°" />
+    <Text Key="tbRotate270" Text="270°" Comment="270°" />
+    <Text Key="tbRotate90" Text="90°" Comment="90°" />
+    <Text Key="tbAutoRotate" Text="Auto-rotacionar Páginas Duplas" Comment="Autorotate Double Pages" />
+    <Text Key="miAutoRotate" Text="Auto-rotacionar Páginas Duplas" Comment="Autorotate Double Pages" />
+    <Text Key="cmCloseAllButThis" Text="Fechar tudo menos isso" Comment="Close All But This" />
+    <Text Key="cmCopyPath" Text="Copiar Caminho Completo" Comment="Copy Full Path" />
+    <Text Key="cmRevealInExplorer" Text="Mostrar no Explorer" Comment="Reveal in Explorer" />
+    <Text Key="cmClose" Text="Fechar" Comment="Close" />
+    <Text Key="miWebHome" Text="Homepage do ComicRack..." Comment="ComicRack Homepage..." />
+    <Text Key="miWebUserForum" Text="Fórum de usuários do ComicRack..." Comment="ComicRack User Forum..." />
+    <Text Key="miWebHelp" Text="Documentação do ComicRack..." Comment="ComicRack Documentation..." />
+    <Text Key="SavePageTitle" Text="Salvar Página como..." Comment="Save Page as..." />
+    <Text Key="miCopyPage" Text="&amp;Copiar Página" Comment="&amp;Copy Page" />
+    <Text Key="miExportPage" Text="&amp;Exportar Página..." Comment="&amp;Export Page..." />
+    <Text Key="ExportingErrors" Text="{0} erros. Clique para detalhes" Comment="{0} errors. Click for details" />
+    <Text Key="cmPageType" Text="&amp;Tipo de Página" Comment="&amp;Page Type" />
+    <Text Key="tsExportActivity" Text="Exportando" Comment="Exporting" />
+    <Text Key="cmCloseComic" Text="Fechar" Comment="Close" />
+    <Text Key="cmRotate0" Text="&amp;Sem Rotação" Comment="&amp;No Rotation" />
+    <Text Key="cmRotate180" Text="180°" Comment="180°" />
+    <Text Key="cmRotate270" Text="270°" Comment="270°" />
+    <Text Key="cmRotate90" Text="90°" Comment="90°" />
+    <Text Key="cmPageRotate" Text="Rotação de Página" Comment="Page Rotation" />
+    <Text Key="miPageRotate" Text="Rotação de Página" Comment="Page Rotation" />
+    <Text Key="miOpenRemoteLibrary" Text="Abrir Biblioteca Remota..." Comment="Open Remote Library..." />
+    <Text Key="miUndo" Text="Desfaça" Comment="Undo" />
+    <Text Key="miRedo" Text="Refaça" Comment="Redo" />
+    <Text Key="cmShowInfo" Text="&amp;Informações..." Comment="&amp;Info..." />
+    <Text Key="tbAbout" Text="&amp;Sobre..." Comment="&amp;About..." />
+    <Text Key="tbFirstPage" Text="&amp;Primeira Página" Comment="&amp;First Page" />
+    <Text Key="tbLastPage" Text="&amp;Última Página" Comment="&amp;Last Page" />
+    <Text Key="miNextPage" Text="Próxima Página" Comment="Next Page" />
+    <Text Key="miMagnify" Text="Lupa" Comment="Magnifier" />
+    <Text Key="tbPreferences" Text="&amp;Preferências..." Comment="&amp;Preferences..." />
+    <Text Key="tbTools" Text="Ferramentas" Comment="Tools" />
+    <Text Key="tbTools.Tooltip" Text="Acesso a comandos importantes" Comment="Access to important commands" />
+    <Text Key="tbShowMainMenu" Text="Exibir Menu Principal" Comment="Show Main Menu" />
+    <Text Key="tbPrevPage" Text="Página Anterior" Comment="&amp;Previous Page" />
+    <Text Key="miRotate0" Text="0°" Comment="0°" />
+    <Text Key="miShowInfo" Text="&amp;Informações..." Comment="&amp;Info..." />
+    <Text Key="tbShowInfo" Text="&amp;Informações..." Comment="&amp;Info..." />
+    <Text Key="tbSupport" Text="Apoiar ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miTwoPages" Text="Páginas Duplas" Comment="Two Pages" />
+    <Text Key="cmTwoPages" Text="Páginas Duplas" Comment="Two Pages" />
+    <Text Key="miSinglePage" Text="Página Simples" Comment="Single Page" />
+    <Text Key="cmSinglePage" Text="Página Simples" Comment="Single Page" />
+    <Text Key="tbSinglePage" Text="Página Simples" Comment="Single Page" />
+    <Text Key="tbRotate0" Text="0°" Comment="0°" />
+    <Text Key="miPreviousList" Text="Lista Anterior" Comment="Previous List" />
+    <Text Key="miNextList" Text="Próxima Lista" Comment="Next List" />
+    <Text Key="miTwoPagesAdaptive" Text="Páginas Duplas (Adaptativo)" Comment="Two Pages (adaptive)" />
+    <Text Key="cmTwoPagesAdaptive" Text="Páginas Duplas (Adaptativo)" Comment="Two Pages (adaptive)" />
+    <Text Key="tbTwoPagesAdaptive" Text="Páginas Duplas (Adaptativo)" Comment="Two Pages (adaptive)" />
+    <Text Key="miUpdateWebComics" Text="Atualizar Web HQs" Comment="Update Web Comics" />
+    <Text Key="tbUpdateWebComics" Text="Atualizar Web HQs" Comment="Update Web Comics" />
+    <Text Key="tbOpenRemoteLibrary" Text="Abrir Biblioteca Remota..." Comment="Open Remote Library..." />
+    <Text Key="miToggleZoom" Text="Alternar Zoom" Comment="Toggle Zoom" />
+    <Text Key="miEditLayouts" Text="&amp;Editar Layouts..." Comment="&amp;Edit Layouts..." />
+    <Text Key="miEditWorkspaces" Text="&amp;Editar Área de Trabalho..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="tsEditWorkspaces" Text="&amp;Editar Área de Trabalho..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="quickOpenView" Text="Abertura Rápida" Comment="Quick Open" />
+    <Text Key="miTasks" Text="Tarefas..." Comment="Tasks..." />
+    <Text Key="cmCloseAllToTheRight" Text="Fechar Tudo a Direita" Comment="Close All to the Right" />
+    <Text Key="cmNextFromList" Text="Próximo Livro" Comment="Ne&amp;xt Book" />
+    <Text Key="cmRandomFromList" Text="Livro Aleatório" Comment="Random Book" />
+    <Text Key="cmPrevFromList" Text="Li&amp;vro Anterior" Comment="Pre&amp;vious Book" />
+    <Text Key="ExportingComics" Text="Exportando Livros: {0} na fila" Comment="Exporting Books: {0} queued" />
+    <Text Key="miNextFromList" Text="Próximo Livro" Comment="Ne&amp;xt Book" />
+    <Text Key="miRandomFromList" Text="Livro Aleatório" Comment="Random Book" />
+    <Text Key="miOpenComic" Text="&amp;Abrir Arquivo..." Comment="&amp;Open File..." />
+    <Text Key="cmOpenComic" Text="&amp;Abrir Arquivo..." Comment="&amp;Open File..." />
+    <Text Key="tbOpenComic" Text="&amp;Abrir Arquivo..." Comment="&amp;Open File..." />
+    <Text Key="miOpenNow" Text="Abrir Livros" Comment="Open Books" />
+    <Text Key="miOpenRecent" Text="Livros &amp;Recentes" Comment="&amp;Recent Books" />
+    <Text Key="miPrevFromList" Text="Li&amp;vro Anterior" Comment="Pre&amp;vious Book" />
+    <Text Key="miScan" Text="&amp;Varrer Livros e Pastas" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbScan" Text="Varrer Pastas de Livros" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbNextFromList" Text="Próximo Livro da Lista" Comment="Next Book from List" />
+    <Text Key="tbRandomFromList" Text="Livro Aleatório" Comment="Random Book" />
+    <Text Key="tbPrevFromList" Text="Livro anterior da Lista" Comment="Previous Book from List" />
+    <Text Key="tsBook.Tooltip" Text="Nome do Livro aberto" Comment="Name of the opened Book" />
+    <Text Key="tsCurrentPage.Tooltip" Text="Página atual do Livro aberto" Comment="Current Page of the open Book" />
+    <Text Key="tsPageCount.Tooltip" Text="Contagem de Páginas do Livro aberto" Comment="Page count of the open Book" />
+    <Text Key="tbPageLayout" Text="Layout de Página" Comment="Page Layout" />
+    <Text Key="cmComics" Text="Livros" Comment="Books" />
+    <Text Key="miUpdateAllComicFiles" Text="Atualizar todos os Arquivos de Livros" Comment="Update all Book Files" />
+    <Text Key="tbUpdateAllComicFiles" Text="Atualizar todos os Arquivos de Livros" Comment="Update all Book Files" />
+    <Text Key="miComicDisplaySettings" Text="Configurações de Visualização de Livros..." Comment="Book Display Settings..." />
+    <Text Key="tbComicDisplaySettings" Text="Configurações de Visualização de Livros..." Comment="Book Display Settings..." />
+    <Text Key="miNewComic" Text="Nova Entrada de Livro sem arquivo..." Comment="New fileless Book Entry..." />
+    <Text Key="miHelp" Text="Ajuda" Comment="Help" />
+    <Text Key="miChooseHelpSystem" Text="Escolha Sistema de Ajuda" Comment="Choose Help System" />
+    <Text Key="miHelpPlugins" Text="Plugins" Comment="Plugins" />
+    <Text Key="miHelpQuickIntro" Text="Introdução Rápida" Comment="Quick Introduction" />
+    <Text Key="DeviceSyncing" Text="Sincronizando Dispositivos: {0} na fila" Comment="Syncing Devices: {0} queued" />
+    <Text Key="DeviceSyncingErrors" Text="{0} erros. Clique para detalhes" Comment="{0} errors. Click for details" />
+    <Text Key="miDevices" Text="Dispositivos..." Comment="Devices..." />
+    <Text Key="miSynchronizeDevices" Text="Sincronizar Dispositivos" Comment="Synchronize Devices" />
+    <Text Key="tsSynchronizeDevices" Text="Sincronizar Dispositivos" Comment="Synchronize Devices" />
+    <Text Key="miTrackCurrentPage" Text="Rastrear Página atual" Comment="Track current Page" />
+  </Texts>
+</TR>

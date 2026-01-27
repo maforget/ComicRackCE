@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TRInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Author>Petr Baštan, ERRA</Author>
+  <Notes>Česká lokalizace (0.9.155); první verze Petr Baštan (snb7@seznam.cz), poslední verze ERRA (errain@seznam.cz)</Notes>
+  <RightToLeft>false</RightToLeft>
+  <Language>cs-CZ</Language>
+</TRInfo>

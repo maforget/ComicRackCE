@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Matchers" CultureName="nl-BE">
+  <Texts>
+    <Text Key="YesNoOperators" Text="is Ja|is Nee|is Onbekend" Comment="is Yes|is No|is Unknown" />
+    <Text Key="ComicBookAddedMatcher" Text="Toegevoegd" Comment="Added" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="Alles" Comment="All" />
+    <Text Key="ComicBookCountMatcher" Text="Aantal" Comment="Count" />
+    <Text Key="ComicBookAlternateCountMatcher" Text="Alternatieve Serie Albumaantal" Comment="Alternate Count" />
+    <Text Key="ComicBookAlternateNumberMatcher" Text="Alternatieve ReeksNr." Comment="Alternate Number" />
+    <Text Key="ComicBookAlternateSeriesMatcher" Text="Alternatieve Reeksnaam" Comment="Alternate Series" />
+    <Text Key="ComicBookColoristMatcher" Text="Inkleurder" Comment="Colorist" />
+    <Text Key="ComicBookFileMatcher" Text="Bestand" Comment="File" />
+    <Text Key="ComicBookGenreMatcher" Text="Genre" Comment="Genre" />
+    <Text Key="ComicBookImprintMatcher" Text="Imprint" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="Inker" Comment="Inker" />
+    <Text Key="ComicBookLanguageMatcher" Text="Taal" Comment="Language" />
+    <Text Key="ComicBookMangaMatcher" Text="Manga" Comment="Manga" />
+    <Text Key="ComicBookBlackAndWhiteMatcher" Text="Zwart-wit" Comment="Black and White" />
+    <Text Key="ComicBookMonthMatcher" Text="Maand" Comment="Month" />
+    <Text Key="ComicBookNumberMatcher" Text="Nummer" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="Geopend" Comment="Opened" />
+    <Text Key="ComicBookPageCountMatcher" Text="Aantal Bladzijdes" Comment="Page Count" />
+    <Text Key="ComicBookPencillerMatcher" Text="Tekenaar" Comment="Penciller" />
+    <Text Key="ComicBookPublisherMatcher" Text="Uitgever" Comment="Publisher" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="Percentage Gelezen" Comment="Read Percentage" />
+    <Text Key="ComicBookSeriesMatcher" Text="Reeks" Comment="Series" />
+    <Text Key="ComicBookSummaryMatcher" Text="Synopsis" Comment="Summary" />
+    <Text Key="ComicBookTagsMatcher" Text="Labels" Comment="Tags" />
+    <Text Key="ComicBookTitleMatcher" Text="Titel" Comment="Title" />
+    <Text Key="ComicBookVolumeMatcher" Text="Jaargang" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="Schrijver" Comment="Writer" />
+    <Text Key="ComicBookYearMatcher" Text="Jaar" Comment="Year" />
+    <Text Key="Days" Text="Dagen" Comment="Days" />
+    <Text Key="NumericOperators" Text="is|is groter|is kleiner|is in het bereik van" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="StringOperators" Text="is|bevat|bevat één van|bevat alles|start met|eindigt op|Lijst bevat|Regular Expression" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
+    <Text Key="ComicBookFileFormatMatcher" Text="Bestandsformaat" Comment="File Format" />
+    <Text Key="ComicBookAgeRatingMatcher" Text="Leeswijzer" Comment="Age Rating" />
+    <Text Key="ComicBookCharactersMatcher" Text="Personages" Comment="Characters" />
+    <Text Key="ComicBookEditorMatcher" Text="Editor" Comment="Editor" />
+    <Text Key="ComicBookCoverArtistMatcher" Text="Tekenaar Voorkaft" Comment="Cover Artist" />
+    <Text Key="ComicBookPublishedMatcher" Text="Uitgegeven" Comment="Published" />
+    <Text Key="ComicBookFullPathMatcher" Text="Pad" Comment="File Path" />
+    <Text Key="ComicBookDirectoryMatcher" Text="Directory" Comment="File Directory" />
+    <Text Key="ComicBookPluginMatcher" Text="Gebruiker Scripts" Comment="User Scripts" />
+    <Text Key="ComicBookModifiedMatcher" Text="Gewijzigd bestand" Comment="File Modified" />
+    <Text Key="ComicBookCreationMatcher" Text="Creatietijd Bestand" Comment="File Created" />
+    <Text Key="ComicBookModifiedInfoMatcher" Text="Gewijzigde Info" Comment="Modified Info" />
+    <Text Key="ComicBookBookmarkCountMatcher" Text="Bookmark [Aantal]" Comment="Bookmark Count" />
+    <Text Key="OnOffOperators" Text="Aan|Uit" Comment="On|Off" />
+    <Text Key="ComicBookDuplicateMatcher" Text="Alleen Duplicaten" Comment="Only Duplicates" />
+    <Text Key="ComicBookNewPagesMatcher" Text="Nieuwe pagina's" Comment="New Pages" />
+    <Text Key="ComicBookTeamsMatcher" Text="Teams" Comment="Teams" />
+    <Text Key="ComicBookLocationsMatcher" Text="Locaties" Comment="Locations" />
+    <Text Key="ComicBookRatingMatcher" Text="Mijn beoordeling" Comment="My Rating" />
+    <Text Key="ComicBookCommunityRatingMatcher" Text="Groepswaardering" Comment="Community Rating" />
+    <Text Key="ComicBookFileSizeMatcher" Text="Bestand grootte" Comment="File Size" />
+    <Text Key="MB" Text="MB" Comment="MB" />
+    <Text Key="ComicBookIsLinkedMatcher" Text="Gekoppeld à Bestand" Comment="Linked to File" />
+    <Text Key="DateOperators" Text="is|is na|is voor|is in de laatste|is in het bereik van" Comment="is|is after|is before|is in the last|is in the range" />
+    <Text Key="ComicBookBookPriceMatcher" Text="Albumprijs" Comment="Book Price" />
+    <Text Key="ComicBookBookStoreMatcher" Text="Stripwinkel" Comment="Book Store" />
+    <Text Key="ComicBookBookOwnerMatcher" Text="Albumeigenaar" Comment="Book Owner" />
+    <Text Key="ComicBookBookAgeMatcher" Text="Tijdvak - Era" Comment="Book Age" />
+    <Text Key="ComicBookBookConditionMatcher" Text="Albumconditie" Comment="Book Condition" />
+    <Text Key="ComicBookBookCollectionStatusMatcher" Text="Albumstatus in de Collectie" Comment="Book Collection Status" />
+    <Text Key="ComicBookBookLocationMatcher" Text="Albumlocatie" Comment="Book Location" />
+    <Text Key="ComicBookBookNotesMatcher" Text="Albumnota's" Comment="Book Notes" />
+    <Text Key="SmartListSeriesCountMatcher" Text="Reeks: Boeken" Comment="Series: Books" />
+    <Text Key="SmartListSeriesPageCountMatcher" Text="Reeks: Pagina's" Comment="Series: Pages" />
+    <Text Key="SmartListSeriesPagesReadMatcher" Text="Reeks: Gelezen Pagina's" Comment="Series: Pages Read" />
+    <Text Key="SmartListSeriesPercentReadMatcher" Text="Reeks: Gelezen Percentage" Comment="Series: Percent Read" />
+    <Text Key="SmartListSeriesAverageRatingMatcher" Text="Reeks: Mijn gemiddeld cijfer" Comment="Series: My Average Rating" />
+    <Text Key="SmartListSeriesAverageCommunityRatingMatcher" Text="Reeks: Gemiddeld groepscijfer" Comment="Series: Community Average Rating" />
+    <Text Key="SmartListSeriesRunningTimeYearsMatcher" Text="Reeks: Looptijd in Jaren" Comment="Series: Running Time Years" />
+    <Text Key="SmartListSeriesGapsMatcher" Text="Reeks: Manco's" Comment="Series: Gaps" />
+    <Text Key="SmartListSeriesEndOfGapMatcher" Text="Reeks: Manco-Start " Comment="Series: Start of Gap" />
+    <Text Key="SmartListSeriesStartOfGapMatcher" Text="Reeks: Manco-einde" Comment="Series: End of Gap" />
+    <Text Key="ComicBookISBNMatcher" Text="ISBN" Comment="ISBN" />
+    <Text Key="SmartListSeriesLastAddedTimeMatcher" Text="Reeks: Toegevoegde Boeken" Comment="Series: Book added" />
+    <Text Key="SmartListSeriesLastOpenedTimeMatcher" Text="Reeks: Geopend" Comment="Series: Opened" />
+    <Text Key="TrueFalseOperators" Text="is Juist|is Onjuist" Comment="is True|is False" />
+    <Text Key="ComicBookSeriesCompleteMatcher" Text="Volledige reeks" Comment="Series complete" />
+    <Text Key="ComicBookNotesMatcher" Text="Nota" Comment="Notes" />
+    <Text Key="ComicBookExpressionMatcher" Text="Expressie" Comment="Expression" />
+    <Text Key="SmartListSeriesLastNumberMatcher" Text="Reeks: Laatste Nummer" Comment="Series: Last Number" />
+    <Text Key="SmartListSeriesFirstNumberMatcher" Text="Reeks: 1ste Nummer" Comment="Series: First Number" />
+    <Text Key="SmartListSeriesMaxGapSizeMatcher" Text="Reeks: Grootste Manco" Comment="Series: Biggest Gap" />
+    <Text Key="SmartListSeriesLastPublishedTimeMatcher" Text="Reeks: Gepubliceerd" Comment="Series: Published" />
+    <Text Key="SmartListSeriesMaxCountMatcher" Text="Reeks: Hoogste aantal" Comment="Series: Highest Count" />
+    <Text Key="SmartListSeriesMinCountMatcher" Text="Reeks: Laagste aantal" Comment="Series: Lowest Count" />
+    <Text Key="SmartListSeriesAllCompleteMatcher" Text="Reeks: Alle volledige" Comment="Series: All compelte" />
+    <Text Key="MangaYesNoOperators" Text="is Ja|is Ja (Rechts naar Links)|is Nee|is Onbekend" Comment="is Yes|is Yes (Right to Left)|is No|is Unknown" />
+    <Text Key="ComicBookScanInformationMatcher" Text="Scanning Informatie" Comment="Scanning Information" />
+    <Text Key="ComicBookCheckedMatcher" Text="Is Aangevinkt" Comment="Is Checked" />
+    <Text Key="ComicBookStoryArcMatcher" Text="Cyclustitel" Comment="Story Arc" />
+    <Text Key="ComicBookSeriesGroupMatcher" Text="Globale Reeksnaam" Comment="Series Group" />
+    <Text Key="ComicBookMainCharacterOrTeamMatcher" Text="Protagonist/Team" Comment="Main Character/Team" />
+    <Text Key="ComicBookReviewMatcher" Text="Recensie" Comment="Review" />
+    <Text Key="ComicBookDayMatcher" Text="Dag" Comment="Day" />
+    <Text Key="SmartListSeriesMinYearMatcher" Text="Reeks: Laatste Jaar" Comment="Series: First Year" />
+    <Text Key="SmartListSeriesMaxYearMatcher" Text="Reeks: Eerste Jaar" Comment="Series: Last Year" />
+    <Text Key="ComicBookReleasedMatcher" Text="Publicatiedatum" Comment="Released" />
+    <Text Key="ComicBookWeekMatcher" Text="Week" Comment="Week" />
+    <Text Key="SmartListSeriesLastReleasedTimeMatcher" Text="Reeks: Publicatie boek" Comment="Series: Book released" />
+  </Texts>
+</TR>

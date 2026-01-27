@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="FileFilter" CultureName="tr">
+  <Texts>
+    <Text Key="ReadingListSave" Text="ComicRack Okuma Listesi|*.crl|Xml File|*.xml" Comment="ComicRack Reading List|*.crl|Xml File|*.xml" />
+    <Text Key="ReadingListLoad" Text="ComicRack Okuma Listesi|*.crl|Xml File|*.xml|Tüm Dosyalar|*.*" Comment="ComicRack Reading List|*.crl|Xml File|*.xml|All Files|*.*" />
+    <Text Key="PageImageSave" Text="JPEG|*.jpg|Windows Bitmap|*.bmp|PNG|*.png|GIF|*.gif|TIFF|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif" />
+    <Text Key="ComicRackDatabase" Text="ComicRack Veritabanı|*.xml" Comment="ComicRack Database|*.xml" />
+    <Text Key="AllFiles" Text="Bütün Dosyalar" Comment="All Files" />
+    <Text Key="AllSupportedFiles" Text="Bütün desteklenen Dosyalar" Comment="All supported Files" />
+  </Texts>
+</TR>

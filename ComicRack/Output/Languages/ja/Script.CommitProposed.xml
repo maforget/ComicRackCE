@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.CommitProposed" CultureName="ja">
+  <Texts>
+    <Text Key="AskCommit" Text="暫定値を正式データとしますか？\n暫定データはファイル名から取得され、グレー表示されています。." Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
+    <Text Key="Name" Text="暫定データの取得..." Comment="Commit Proposed Values..." />
+    <Text Key="Overwrite" Text="既存の値でも上書き(&amp;A)" Comment="&amp;Also overwrite existing values" />
+    <Text Key="Write" Text="書き込み" Comment="Write" />
+    <Text Key="Description" Text="暫定データをコミックの正式データに変更するスクリプト" Comment="A script to makes the proposed values for the eComics permanent" />
+  </Texts>
+</TR>

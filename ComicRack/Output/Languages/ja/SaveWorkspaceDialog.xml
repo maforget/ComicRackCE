@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SaveWorkspaceDialog" CultureName="ja">
+  <Texts>
+    <Text Key="SaveWorkspaceDialog" Text="ワークスペースの保存" Comment="Save Workspace" />
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="txtName" Text="名称:" Comment="Name:" />
+    <Text Key="labelSettings" Text="このワークスペースに含める設定:" Comment="This workspace includes settings for:" />
+    <Text Key="chkWindowLayouts" Text="ウィンドウ レイアウト" Comment="Window Layouts" />
+    <Text Key="chkListLayouts" Text="リストのレイアウト" Comment="List Layouts" />
+    <Text Key="chkComicDisplayLayout" Text="コミックの表示レイアウト" Comment="Comic Display Layout" />
+    <Text Key="chkComicDisplaySettings" Text="コミックの表示設定" Comment="Comic Display Settings" />
+  </Texts>
+</TR>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PagesView" CultureName="fi">
+  <Texts>
+    <Text Key="miCopy" Text="&amp;Kopioi sivu" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Vastakkaiset valinnat" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="Merkitse &amp;poistetuksi" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="Sivulaji" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="&amp;Virkistä" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="Valitse &amp;kaikki" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="Laita kirjanmerkki" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="Poista Kirjanmerkki" Comment="Remove Bookmark" />
+    <Text Key="miMoveToStart" Text="Siirry alkuun" Comment="Move to Start" />
+    <Text Key="miMoveToEnd" Text="Siirry loppuun" Comment="Move to End" />
+    <Text Key="miResetOriginalOrder" Text="Palauta alkuperäisjärjestys" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="Sivunkierto" Comment="Page Rotation" />
+  </Texts>
+</TR>

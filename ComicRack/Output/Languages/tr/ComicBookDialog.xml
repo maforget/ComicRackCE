@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBookDialog" CultureName="tr">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;İptal" Comment="&amp;Cancel" />
+    <Text Key="btNext" Text="&amp;İleri" Comment="&amp;Next" />
+    <Text Key="btOK" Text="&amp;Tamam" Comment="&amp;OK" />
+    <Text Key="btResetPages" Text="Sıfırla" Comment="Reset" />
+    <Text Key="btResetColors" Text="Sıfırla" Comment="Reset" />
+    <Text Key="btPrev" Text="&amp;Önceki" Comment="&amp;Previous" />
+    <Text Key="chkMangaStyle" Text="Manga Tarzı" Comment="Manga Style" />
+    <Text Key="colImage" Text="Görsel" Comment="Image" />
+    <Text Key="colKey" Text="Tuş" Comment="Key" />
+    <Text Key="colPage" Text="Sayfa" Comment="Page" />
+    <Text Key="colType" Text="Tür" Comment="Type" />
+    <Text Key="ComicBookDialog" Text="Bilgi" Comment="Info" />
+    <Text Key="labelAlternateNumber" Text="Sayı:" Comment="Number:" />
+    <Text Key="labelAlternateCount" Text="of: " Comment="of:" />
+    <Text Key="labelAlternateSeries" Text="Alternatif Seriler veya Hikaye Başlığı:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelBrightness" Text="Parlaklık" Comment="Brightness" />
+    <Text Key="labelColorist" Text="Renklendirme:" Comment="Colorist:" />
+    <Text Key="labelContrast" Text="Kontrast" Comment="Contrast" />
+    <Text Key="labelCoverArtist" Text="Kapak Sanatçısı:" Comment="Cover Artist:" />
+    <Text Key="labelEditor" Text="Düzenleyen:" Comment="Editor:" />
+    <Text Key="labelFormat" Text="Format: " Comment="Format:" />
+    <Text Key="labelGenre" Text="Tür:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Basım:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Çizer:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Dil:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Baloncuk yazarı:" Comment="Letterer:" />
+    <Text Key="labelMonth" Text="Ay:" Comment="Month:" />
+    <Text Key="labelNoPages" Text="Bu e-Çizgi Roman henüz açılmadı ve sayfa sayısı halen bilinmemektedir." Comment="This eComic has never been opened and the page count is still unknown." />
+    <Text Key="labelNumber" Text="Sayı:" Comment="Number:" />
+    <Text Key="labelCount" Text="of: " Comment="of:" />
+    <Text Key="labelOpened" Text="Açıldı:" Comment="Opened:" />
+    <Text Key="labelPages" Text="Sayfalar:" Comment="Pages:" />
+    <Text Key="labelPagesRead" Text="Okunmuş sayfa:" Comment="Pages Read:" />
+    <Text Key="labelPenciller" Text="Karakalem:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Yayın Evi:" Comment="Publisher:" />
+    <Text Key="labelSaturation" Text="Satürasyon" Comment="Saturation" />
+    <Text Key="labelSeries" Text="Seriler:" Comment="Series:" />
+    <Text Key="labelSize" Text="Boyut:" Comment="Size:" />
+    <Text Key="labelTitle" Text="Başlık:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Cilt:" Comment="Volume:" />
+    <Text Key="labelWhere" Text="Bulunduğu Yer:" Comment="Where:" />
+    <Text Key="labelWriter" Text="Yazar:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Yıl:" Comment="Year:" />
+    <Text Key="tabColors" Text="Renkler" Comment="Colors" />
+    <Text Key="tabInfo" Text="Bilgi" Comment="Info" />
+    <Text Key="tabPages" Text="Sayfalar" Comment="Pages" />
+    <Text Key="tabPlot" Text="Konu &amp; Notlar" Comment="Plot &amp; Notes" />
+    <Text Key="tabSummary" Text="Özet" Comment="Summary" />
+    <Text Key="pageViewer" Text="Renge Çift Tıklayarak Beyaz Nokta'yı yerleştirin" Comment="Double Click on Color to set White Point" />
+    <Text Key="labelPagesInfo" Text="Sayfa düzenini sürükle ve  bırak yöntemiyle ya da ilgili menüde sayfa türlerinden değiştirebilirsiniz:" Comment="Change the page order with drag &amp; drop or use the context menu to change page types:" />
+    <Text Key="labelType" Text="Tür:" Comment="Type:" />
+    <Text Key="labelManga" Text="Manga: " Comment="Manga:" />
+    <Text Key="labelEnableProposed" Text="Teklifi Etkinleştir:" Comment="Enable Proposed:" />
+    <Text Key="labelBlackAndWhite" Text="Siyah/Beyaz" Comment="Black and White" />
+    <Text Key="btPageViews" Text="Görüntülenme" Comment="Views" />
+    <Text Key="labelAgeRating" Text="Yaş Sınırı" Comment="Age Rating" />
+    <Text Key="labelTags" Text="Künyeler:" Comment="Tags:" />
+    <Text Key="labelSummary" Text="Özet:" Comment="Summary:" />
+    <Text Key="labelNotes" Text="Notlar:" Comment="Notes:" />
+    <Text Key="labelCharacters" Text="Karakterler:" Comment="Characters:" />
+    <Text Key="labelSharpening" Text="Netleştirilme" Comment="Sharpening" />
+  </Texts>
+</TR>

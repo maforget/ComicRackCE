@@ -1,0 +1,9 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="QuickRatingDialog" CultureName="de">
+  <Texts>
+    <Text Key="QuickRatingDialog" Text="Schnelle Bewertung" Comment="Quick Rating" />
+    <Text Key="btCancel" Text="&amp;Abbruch" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="chkShow" Text="Zeige wenn Buch gelesen" Comment="Show when book read" />
+    <Text Key="chkTweet" Text="Tweet" Comment="Tweet" />
+  </Texts>

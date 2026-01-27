@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicTextElements" CultureName="es">
+  <Texts>
+    <Text Key="Caption" Text="Título" Comment="Caption" />
+    <Text Key="CaptionWithoutTitle" Text="Leyenda sin Título" Comment="Caption without Title" />
+    <Text Key="AlternateCaption" Text="Leyenda Alternativa" Comment="Alternate Caption" />
+    <Text Key="Title" Text="Título" Comment="Title" />
+    <Text Key="ArtistInfo" Text="Artistas" Comment="Artists" />
+    <Text Key="Summary" Text="Resumen" Comment="Summary" />
+    <Text Key="FileSize" Text="Tamaño del archivo" Comment="File Size" />
+    <Text Key="Opened" Text="Abierto" Comment="Opened" />
+    <Text Key="FileName" Text="Nombre de archivo" Comment="File Name" />
+    <Text Key="FileFormat" Text="Formato de fichero" Comment="File Format" />
+    <Text Key="Added" Text="Añadido" Comment="Added" />
+    <Text Key="PublisherAndImprint" Text="Editor e Impresión" Comment="Publischer and Imprint" />
+    <Text Key="AgeRating" Text="Antiguedad valoración" Comment="Age Rating" />
+    <Text Key="Genre" Text="Género" Comment="Genre" />
+    <Text Key="CharactersAndTeams" Text="Personajes y Equipos" Comment="Characters and Teams" />
+    <Text Key="Locations" Text="Emplazamientos" Comment="Locations" />
+    <Text Key="Notes" Text="Notas" Comment="Notes" />
+    <Text Key="PurchaseInformation" Text="Información de Compra" Comment="Purchase Information" />
+    <Text Key="StorageInfoformation" Text="Información de Almacenamiento" Comment="Storage Information" />
+    <Text Key="CollectionStatus" Text="Estdo de la Colección" Comment="Collection Status" />
+    <Text Key="Released" Text="Lanzado" Comment="Released" />
+  </Texts>
+</TR>

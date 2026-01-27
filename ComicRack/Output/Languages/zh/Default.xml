@@ -1,0 +1,40 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Default" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="ClearAll" Text="全部清除" Comment="Clear all" />
+    <Text Key="Copy" Text="複製" Comment="Copy" />
+    <Text Key="Invert" Text="翻轉" Comment="Invert" />
+    <Text Key="Layout" Text="佈局" Comment="Layout" />
+    <Text Key="None" Text="無" Comment="None" />
+    <Text Key="NotAvailable" Text="不可用" Comment="NA" />
+    <Text Key="Paste" Text="粘貼" Comment="Paste" />
+    <Text Key="SetAll" Text="全部設置" Comment="Set all" />
+    <Text Key="Unknown" Text="未知" Comment="Unknown" />
+    <Text Key="Unspecified" Text="未指定" Comment="Unspecified" />
+    <Text Key="Workspace" Text="工作空間" Comment="Workspace" />
+    <Text Key="System" Text="系統" Comment="System" />
+    <Text Key="Books" Text="書籍" Comment="books" />
+    <Text Key="Book" Text="書籍" Comment="book" />
+    <Text Key="Page" Text="頁面" Comment="page" />
+    <Text Key="Yes" Text="是" Comment="Yes" />
+    <Text Key="No" Text="否" Comment="No" />
+    <Text Key="Not" Text="否" Comment="Not" />
+    <Text Key="Cancel" Text="取消" Comment="Cancel" />
+    <Text Key="Bookmark" Text="書簽" Comment="Bookmark" />
+    <Text Key="Restart" Text="重啟" Comment="Restart" />
+    <Text Key="All" Text="全部" Comment="All" />
+    <Text Key="Import" Text="導入" Comment="Import" />
+    <Text Key="New" Text="新" Comment="New" />
+    <Text Key="Recent" Text="最近" Comment="Recent" />
+    <Text Key="Waiting" Text="等待" Comment="Waiting" />
+    <Text Key="Running" Text="運行中" Comment="Running" />
+    <Text Key="Completed" Text="完成" Comment="Completed" />
+    <Text Key="Disable" Text="禁用" Comment="Disable" />
+    <Text Key="Server" Text="服務器" Comment="Server" />
+    <Text Key="Keep" Text="保持" Comment="Keep" />
+    <Text Key="Save" Text="保存" Comment="Save" />
+    <Text Key="Search" Text="搜索" Comment="Search" />
+    <Text Key="LogicNot" Text="否" Comment="Negation" />
+    <Text Key="Default" Text="默認" Comment="Default" />
+  </Texts>
+</TR>

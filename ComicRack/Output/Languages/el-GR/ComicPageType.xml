@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPageType" CultureName="el-GR">
+  <Texts>
+    <Text Key="BackCover" Text="Οπισθόφυλλο" Comment="Back Cover" />
+    <Text Key="Deleted" Text="Διαγραμμένη/ες" Comment="Deleted" />
+    <Text Key="Editorial" Text="Σύνταξη" Comment="Editorial" />
+    <Text Key="FrontCover" Text="Εξώφυλλο" Comment="Front Cover" />
+    <Text Key="InnerCover" Text="Εσωτερική πλευρά εξώφυλλου" Comment="Inner Cover" />
+    <Text Key="Letters" Text="Σεναριογράφοι" Comment="Letters" />
+    <Text Key="Other" Text="Άλλα" Comment="Other" />
+    <Text Key="Preview" Text="Προεπισκόπηση" Comment="Preview" />
+    <Text Key="Roundup" Text="Αναστροφή" Comment="Roundup" />
+    <Text Key="Story" Text="Ιστορία" Comment="Story" />
+    <Text Key="Advertisement" Text="Διαφήμιση" Comment="Advertisement" />
+  </Texts>
+</TR>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBookDialog" CultureName="ja">
+  <Texts>
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="ShowList" Text="公開する" Comment="Show Public" />
+    <Text Key="RefreshList" Text="再読込み" Comment="Refresh" />
+    <Text Key="OpenRemoteDialog" Text="リモート ライブラリを開く" Comment="Open Remote Library" />
+    <Text Key="labelServerAddress" Text="ライブラリ アドレス:" Comment="Library Address:" />
+    <Text Key="colName" Text="名称" Comment="Name" />
+    <Text Key="colDescription" Text="説明" Comment="Description" />
+    <Text Key="colEdit" Text="編集" Comment="Edit" />
+    <Text Key="colExport" Text="エクスポート" Comment="Export" />
+    <Text Key="labelListPassword" Text="プライベート リストのパスワード:" Comment="Private List Password:" />
+    <Text Key="labelFailedServerList" Text="サーバー リストの取得に失敗！" Comment="Failed to get Server List!" />
+    <Text Key="groupLocal" Text="ローカル共有" Comment="Local Shares" />
+    <Text Key="groupInternet" Text="インターネットで共有" Comment="Internet Shares" />
+  </Texts>
+</TR>

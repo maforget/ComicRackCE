@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Default" CultureName="hu">
+  <Texts>
+    <Text Key="ClearAll" Text="Mindet törli" Comment="Clear all" />
+    <Text Key="Copy" Text="Másolás" Comment="Copy" />
+    <Text Key="Invert" Text="Invertálás" Comment="Invert" />
+    <Text Key="Layout" Text="Elrendezés" Comment="Layout" />
+    <Text Key="None" Text="Nincs" Comment="None" />
+    <Text Key="NotAvailable" Text="-" Comment="NA" />
+    <Text Key="Paste" Text="Beillesztés" Comment="Paste" />
+    <Text Key="SetAll" Text="Mindet beállítja" Comment="Set all" />
+    <Text Key="Unknown" Text="Ismeretlen" Comment="Unknown" />
+    <Text Key="Unspecified" Text="Nem megadott" Comment="Unspecified" />
+    <Text Key="Workspace" Text="Munkaterület" Comment="Workspace" />
+    <Text Key="System" Text="Rendszer" Comment="System" />
+    <Text Key="Books" Text="könyv" Comment="books" />
+    <Text Key="Book" Text="könyv" Comment="book" />
+    <Text Key="Page" Text="oldal" Comment="page" />
+    <Text Key="Yes" Text="Igen" Comment="Yes" />
+    <Text Key="No" Text="Nem" Comment="No" />
+    <Text Key="Not" Text="Nem" Comment="Not" />
+    <Text Key="Cancel" Text="Mégse" Comment="Cancel" />
+    <Text Key="Bookmark" Text="Könyvjelző" Comment="Bookmark" />
+    <Text Key="Restart" Text="Újraindítás" Comment="Restart" />
+    <Text Key="All" Text="Mind" Comment="All" />
+    <Text Key="Import" Text="Importálás" Comment="Import" />
+    <Text Key="New" Text="Új" Comment="New" />
+    <Text Key="Recent" Text="Nem régi" Comment="Recent" />
+    <Text Key="Waiting" Text="Várakozás" Comment="Waiting" />
+    <Text Key="Running" Text="Futás..." Comment="Running" />
+    <Text Key="Completed" Text="Kész" Comment="Completed" />
+    <Text Key="Disable" Text="Tiltás" Comment="Disable" />
+    <Text Key="Server" Text="Szerver" Comment="Server" />
+    <Text Key="Keep" Text="Megtart" Comment="Keep" />
+    <Text Key="Save" Text="Elment" Comment="Save" />
+    <Text Key="Search" Text="Keresés" Comment="Search" />
+    <Text Key="Clear" Text="Törlés" Comment="Clear" />
+    <Text Key="Workspaces" Text="Munkaterületek" Comment="Workspaces" />
+    <Text Key="LogicNot" Text="Tagadás" Comment="Negation" />
+    <Text Key="Default" Text="Gyári" Comment="Default" />
+    <Text Key="Connect" Text="Kapcsolódás" Comment="Connect" />
+    <Text Key="Windows" Text="Windows" Comment="Windows" />
+    <Text Key="Lists" Text="Listák" Comment="Lists" />
+    <Text Key="Display" Text="Megjelenítés" Comment="Display" />
+    <Text Key="Start" Text="Eleje" Comment="Start" />
+    <Text Key="End" Text="Vége" Comment="End" />
+    <Text Key="Configure" Text="Beállítás" Comment="Configure" />
+  </Texts>
+</TR>

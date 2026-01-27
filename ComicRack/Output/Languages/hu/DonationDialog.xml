@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DonationDialog" CultureName="hu">
+  <Texts>
+    <Text Key="btCancel" Text="Egyelőre nem" Comment="Skip for now" />
+    <Text Key="btOK" Text="OK" Comment="OK" />
+    <Text Key="DonationDialog" Text="A ComicRack támogatása..." Comment="Support ComicRack..." />
+    <Text Key="labelDonationText" Text="A ComicRack sok száz óra munka eredménye, mégsem áll mögötte nagy szoftvercég. Ha használja a ComicRacket, és tetszik, fontolja meg, hogy visszaad valamit.\n\nA legkisebb adomány $5 - egy sör ára. Az adomány befejezésével aktiválható ez a program az adakozó e-mail címével, és többet nem bukkan fel ez az üzenet.\n\nA ComicRack teljesen működőképes akkor is, ha úgy dönt, hogy nem adakozik." Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nThe minimum donation is $5 - paying me a beer. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+    <Text Key="labelThankYou" Text="Köszönjük, hogy támogatta a ComicRack-et!" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="Adomány" Comment="Donate" />
+    <Text Key="labelStepOne" Text="Első lépés:\nLátogassa meg a ComicRack honlapját" Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="labelStepTwo" Text="Második lépés:\nAdja meg az e-mail címet, amiről adakozott és hitelesítse!\nEltarthat pár percig, amíg regisztrálják az adományt, ezt a lépést későbbre is halaszthatja." Comment="Step Two:\nEnter your donation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+    <Text Key="btDonate" Text="Adományozó oldal" Comment="Donation Page" />
+    <Text Key="btValidate" Text="Hitelesítés" Comment="Validate" />
+    <Text Key="labelEmail" Text="Email cím:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="{0} alkalommal indította el a ComicRack-et!" Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="{0} db képregényt kezel a ComicRack-el!" Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="Nem sikerült csatlakozni a ComicRack szerverhez a hitelesítéshez. Ellenőrizze az internetkapcsolatot!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+  </Texts>
+</TR>

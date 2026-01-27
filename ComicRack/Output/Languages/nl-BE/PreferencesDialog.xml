@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PreferencesDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="btAddFolder" Text="&amp;Voeg toe..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="Voeg MAP toe..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="&amp;Toepassen" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="&amp;Annuleer" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="&amp;Wijzig..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="Wissen" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="Wissen" Comment="Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="&amp;Verwijderen" Comment="&amp;Remove" />
+    <Text Key="btResetColor" Text="&amp;Herzet" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="Herzet" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="Standaard herstellen" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="Scan" Comment="Scan" />
+    <Text Key="chkAutoContrast" Text="Automatische Contrastverbetering" Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="Verwijder tijdens de Scan de ontbrekende eComics uit de Bibliotheek" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="&amp;Bladzijden [MB]" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableThumbnailCache" Text="&amp;Miniaturen [MB]" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkOverwriteAssociations" Text="Overschrijf bestaande associaties" Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="Paswoord vereist:" Comment="Require Password:" />
+    <Text Key="colOptions" Text="Opties" Comment="Options" />
+    <Text Key="groupMessages" Text="Verborgen Berichten" Comment="Hidden Messages" />
+    <Text Key="groupOverlays" Text="Overlays" Comment="Overlays" />
+    <Text Key="grpIntegration" Text="Verkenner Integratie" Comment="Explorer Integration" />
+    <Text Key="labelBrightness" Text="Helderheid aanpassing:" Comment="Brightness Adjustment:" />
+    <Text Key="labelCheckedFormats" Text="Aangekruiste extensies worden met ComicRack geassocieerd." Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelContrast" Text="Contrast aanpassing:" Comment="Contrast Adjustment:" />
+    <Text Key="labelExcludeCover" Text="Met Puntkomma gescheiden lijst van Namen die nooit als Voorkaft-Miniatuur gebruikt mogen worden:" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelLanguage" Text="Selecteer de gebruikstaal (de wijziging treedt slechts in voege na het heropstarten):" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlaySize" Text="Grootte:" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="Om verborgen berichten weer te geven druk" Comment="To reshow hidden messages press" />
+    <Text Key="labelSaturation" Text="Saturatie aanpassing:" Comment="Saturation Adjustment:" />
+    <Text Key="labelScriptPaths" Text="Met Puntkomma gescheiden lijst van Bibliotheek locaties voor scripts (bv Python):" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="Gedeelde Naam:" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="Aangekruiste folders worden opgevolgd bij wijzigingen!" Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="Instellingen" Comment="Preferences" />
+    <Text Key="Scan" Text="Scan" Comment="Scan" />
+    <Text Key="tabAdvanced" Text="Geavanceerd" Comment="Advanced" />
+    <Text Key="tabBehavior" Text="Gedrag" Comment="Behavior" />
+    <Text Key="Scanning" Text="Scannen '{0}' ..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectScriptFolder" Text="Selecteer een Script-map" Comment="Please select a script library folder" />
+    <Text Key="Stop" Text="Stop" Comment="Stop" />
+    <Text Key="labelMemPageCount" Text="Bladzijden [Aantal]" Comment="Pages [count]" />
+    <Text Key="labelMemThumbSize" Text="Miniaturen [MB]" Comment="Thumbnails [MB]" />
+    <Text Key="chkMemPageOptimized" Text="optimaliseren" Comment="optimized" />
+    <Text Key="chkMemThumbOptimized" Text="optimaliseren" Comment="optimized" />
+    <Text Key="grpDatabaseBackup" Text="Database back-up" Comment="Database Backup" />
+    <Text Key="btBackupDatabase" Text="Back-up database..." Comment="Backup Database..." />
+    <Text Key="btRestoreDatabase" Text="Herstel database..." Comment="Restore Database..." />
+    <Text Key="btTranslate" Text="Help ComicRack te vertalen..." Comment="Help localizing ComicRack..." />
+    <Text Key="tabReader" Text="Lezer" Comment="Reader" />
+    <Text Key="tabOverlaysAndEffects" Text="Overlays &amp;&amp; Effecten" Comment="Overlays &amp;&amp; Effects" />
+    <Text Key="chkEnableHardware" Text="Activeer Hardware versnelling" Comment="Enable Hardware Acceleration" />
+    <Text Key="chkEnablePageTransition" Text="Activeer pagina overgangen" Comment="Enable Page Transitions" />
+    <Text Key="chkEnableDisplayChangeAnimation" Text="Activeer animatie bij bladwissels" Comment="Enable Animation of Page Display changes" />
+    <Text Key="chkSmoothAutoScrolling" Text="Soepele Auto Scrolling" Comment="Smooth Auto Scrolling" />
+    <Text Key="lblFast" Text="snel" Comment="fast" />
+    <Text Key="lblSlow" Text="traag" Comment="slow" />
+    <Text Key="grpKeyboard" Text="Toetsenbord" Comment="Keyboard" />
+    <Text Key="lblMouseWheel" Text="Muiswiel scrolling:" Comment="Mouse Wheel scrolling:" />
+    <Text Key="chkHighQualityDisplay" Text="&amp;Hoge Kwaliteit" Comment="&amp;High Quality" />
+    <Text Key="chkEnableHardwareFiltering" Text="Activeer Hardware filters" Comment="Enable Hardware Filters" />
+    <Text Key="chkEnableSoftwareFiltering" Text="Activeer Software filters" Comment="Enable Software Filters" />
+    <Text Key="groupHardwareAcceleration" Text="Hardware Acceleratie" Comment="Hardware Acceleration" />
+    <Text Key="grpSharing" Text="Delen" Comment="Sharing" />
+    <Text Key="grpScanning" Text="Scanning" Comment="Scanning" />
+    <Text Key="grpLanguages" Text="Talen" Comment="Languages" />
+    <Text Key="tabLibraries" Text="Bibliotheken" Comment="Libraries" />
+    <Text Key="colName" Text="Naam" Comment="Name" />
+    <Text Key="chkAnamorphicScaling" Text="Activeer &amp;Anamorphe Schaling" Comment="Anamorphic Scaling" />
+    <Text Key="chkDisableScripting" Text="Schakel Alle Scripts Uit" Comment="Disable all Scripts" />
+    <Text Key="grpScripts" Text="Beschikbare Scripts" Comment="Available Scripts" />
+    <Text Key="grpPackages" Text="Script Pakketten" Comment="Script Packages" />
+    <Text Key="grpScriptSettings" Text="Script Instellingen" Comment="Script Settings" />
+    <Text Key="tabScripts" Text="Scripts" Comment="Scripts" />
+    <Text Key="btInstallPackage" Text="Instaleer..." Comment="Install..." />
+    <Text Key="btRemovePackage" Text="Verwijder" Comment="Remove" />
+    <Text Key="colPackage" Text="Pakket" Comment="Package" />
+    <Text Key="colAuthor" Text="Auteur" Comment="Author" />
+    <Text Key="colDescription" Text="Beschrijving" Comment="Description" />
+    <Text Key="packageGroupInstalled" Text="Geinstalleerd" Comment="Installed" />
+    <Text Key="packageGroupInstall" Text="Te installeren (herstart nodig)" Comment="To be installed (needs restart)" />
+    <Text Key="packageGroupRemove" Text="Te verwijderen (herstart nodig)" Comment="To be removed (needs restart)" />
+    <Text Key="btAssociateExtensions" Text="Wijzig..." Comment="Change..." />
+    <Text Key="btClearInternetCache" Text="Wissen" Comment="Clear" />
+    <Text Key="chkEnableInternetCache" Text="&amp;Internet [MB]" Comment="&amp;Internet [MB]" />
+    <Text Key="grpServerSettings" Text="Server Instellingen" Comment="Server Settings" />
+    <Text Key="labelShareDescription" Text="Omschrijving:" Comment="Description:" />
+    <Text Key="chkPrivate" Text="Privaat" Comment="Private" />
+    <Text Key="chkShareInternet" Text="Deel op het Internet" Comment="Share on the Internet" />
+    <Text Key="btAddShare" Text="Voeg toe" Comment="Add Share" />
+    <Text Key="btRemoveShare" Text="Verwijder" Comment="Remove" />
+    <Text Key="labelPrivateListPassword" Text="Paswoord ter bescherming van je private 'Internet Share list entries':" Comment="Password used to protect your private Internet Share list entries:" />
+    <Text Key="labelSharpening" Text="Scherpen:" Comment="Sharpening:" />
+    <Text Key="labelPublicServerAddress" Text="Extern Server Adres (mocht ComicRack het niet juist raden):" Comment="External address of your server if ComicRack should not guess it correctly:" />
+    <Text Key="chkDontAddRemovedFiles" Text="Manueel verwijderde bestanden uit de Bibliotheek worden niet meer opgeroepen" Comment="Files manually removed from the Library will not be added again" />
+    <Text Key="btConfigScript" Text="Config..." Comment="Config..." />
+    <Text Key="btOpenFolder" Text="Open" Comment="Open" />
+    <Text Key="labelPageQuality" Text="Pagina Kwaliteit:" Comment="Page Quality:" />
+    <Text Key="labelThumbQuality" Text="Miniatuur Kwaliteit:" Comment="Thumb Quality:" />
+    <Text Key="chkAutoConnectShares" Text="Automatisch verbinden" Comment="Connect automatically" />
+    <Text Key="btExportKeyboard" Text="Exporteer..." Comment="Export..." />
+    <Text Key="btImportKeyboard" Text="Importeer..." Comment="Import..." />
+    <Text Key="miDefaultKeyboardLayout" Text="Standaard" Comment="Default" />
+    <Text Key="cbShare.Item0" Text="Deel Niets" Comment="Share None" />
+    <Text Key="cbShare.Item1" Text="Deel Alles" Comment="Share All" />
+    <Text Key="cbShare.Item2" Text="Deel Selectie" Comment="Share Selected" />
+    <Text Key="grpShareSettings" Text="Instellingen" Comment="Settings" />
+    <Text Key="chkShowNavigationOverlay" Text="Toon Navigatie automatisch" Comment="Show Navigation automatically" />
+    <Text Key="chkShowCurrentPageOverlay" Text="Toon nummer van weergegeven Pagina" Comment="Show current Page" />
+    <Text Key="chkShowVisiblePartOverlay" Text="Toon het weergeven bladdeel" Comment="Show visible Page Part" />
+    <Text Key="chkShowPageNames" Text="Huidige pagina geeft zijn naam weer" Comment="Current Page also displays Page Name" />
+    <Text Key="chkShowStatusOverlay" Text="Toon Berichten en Status" Comment="Show Messages and Status" />
+    <Text Key="labelPageOverlay" Text="Pagina" Comment="Page" />
+    <Text Key="labelVisiblePartOverlay" Text="Zichtbaar deel" Comment="Visible Part" />
+    <Text Key="labelStatusOverlay" Text="Berichten en Status" Comment="Messages and Status" />
+    <Text Key="labelNavigationOverlay" Text="Navigatie" Comment="Navigation" />
+    <Text Key="labelNavigationOverlayPosition" Text="Navigatie:" Comment="Navigation:" />
+    <Text Key="cbNavigationOverlayPosition.Item0" Text="Onderaan" Comment="at Bottom" />
+    <Text Key="cbNavigationOverlayPosition.Item1" Text="Bovenaan" Comment="on Top" />
+    <Text Key="PageNumberOnly" Text="Pagina" Comment="Page" />
+    <Text Key="PageNumberAndName" Text="Page\nName" Comment="Page\nName" />
+    <Text Key="chkLookForShared" Text="Zoek naar gedeelde Boeken" Comment="Look for local Book Shares" />
+    <Text Key="chkClientsCanEdit" Text="Cliënten kunnen Boeken wijzigen" Comment="Clients can edit Books" />
+    <Text Key="chkClientsCanExport" Text="Cliënten kunnen Boeken exporteren" Comment="Clients can export Books" />
+    <Text Key="chkUpdateComicFiles" Text="Het schrijven van Boekinfo in Bestanden toelaten." Comment="Allow writing of Book info into files" />
+    <Text Key="chkAutoUpdateComicFiles" Text="Boeken worden automatisch ververst" Comment="Book files are updated automatically" />
+    <Text Key="groupComicFolders" Text="Boek Mappen" Comment="Book Folders" />
+    <Text Key="groupOtherComics" Text="Boeken" Comment="Books" />
+    <Text Key="SelectComicFolder" Text="Selecteer een Map die Boeken bevat" Comment="Please select a folder containing Books" />
+    <Text Key="labelGamma" Text="Gamma Aanpassing:" Comment="Gamma Adjustment:" />
+    <Text Key="grpDisplay" Text="Weergave" Comment="Display" />
+    <Text Key="chkEnableInertialMouseScrolling" Text="Activeer 't trager muisscrollen" Comment="Enable Inertial Mouse scrolling" />
+    <Text Key="grpMouse" Text="Muis" Comment="Mouse &amp; Scrolling" />
+    <Text Key="chkHideSampleScripts" Text="Verberg voorbeeld-Scripts" Comment="Hide sample Scripts" />
+    <Text Key="groupMemory" Text="Buffer &amp; Geheugen Gebruik" Comment="Caches &amp; Memory Usage" />
+    <Text Key="grpMaximumMemoryUsage" Text="Maximum Geheugen Gebruik" Comment="Maximum Memory Usage" />
+    <Text Key="lblMaximumMemoryUsage" Text="Het beperken van het geheugen kan de prestatie ongunstig beïnvloeden." Comment="Limiting the memory can adversely affect the performance." />
+    <Text Key="groupLibraryDisplay" Text="Weergave" Comment="Display" />
+    <Text Key="chkLibraryGauges" Text="Activeer Tellers" Comment="Enable Live Counters" />
+    <Text Key="chkLibraryGaugesNew" Text="Voor Nieuwe Boeken" Comment="For New Books" />
+    <Text Key="chkLibraryGaugesUnread" Text="Voor Ongelezen boeken" Comment="For Unread Books" />
+    <Text Key="chkLibraryGaugesTotal" Text="Voor Totaliteit Boeken" Comment="For Total of Books" />
+    <Text Key="chkLibraryGaugesNumeric" Text="Toon in de balken ook de cijfers" Comment="Also show numbers and not only bars" />
+  </Texts>
+</TR>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ItemView" CultureName="hr">
+  <Texts>
+    <Text Key="AutoFitAllColumns" Text="Samoprilagođavanje svih kolona" Comment="Auto Fit All Columns" />
+    <Text Key="AutoSizeAllColumns" Text="Automatska veličina svih kolona" Comment="Auto Size All Columns" />
+    <Text Key="AutoSizeColumn" Text="Automatska veličina kolone" Comment="Auto Size Column" />
+    <Text Key="miArrange" Text="Razvrstavanje prema" Comment="Arrange by" />
+    <Text Key="miGroup" Text="Grupiranje prema" Comment="Group by" />
+    <Text Key="miStack" Text="Po hrpama prema" Comment="Stack by" />
+    <Text Key="miViewDetails" Text="Detalji" Comment="Details" />
+    <Text Key="miViewMode" Text="Pogled" Comment="View" />
+    <Text Key="miViewThumbs" Text="Slikice" Comment="Thumbnails" />
+    <Text Key="miViewTiles" Text="Tablica" Comment="Tiles" />
+    <Text Key="NotGrouped" Text="Negrupirano" Comment="Not Grouped" />
+    <Text Key="NotSorted" Text="Nerazvrstano" Comment="Not Sorted" />
+    <Text Key="NotStacked" Text="Ne na hrpama" Comment="Not Stacked" />
+  </Texts>
+</TR>

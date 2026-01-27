@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.SaveCSVList" CultureName="ja">
+  <Texts>
+    <Text Key="Name" Text="コミック リストのエクスポート..." Comment="Export Comic List..." />
+    <Text Key="Description" Text="すべての選択コミックを CSV ファイルにエクスポートするシンプル スクリプト" Comment="Simple script to export all selected eComics into a CSV file" />
+  </Texts>
+</TR>
