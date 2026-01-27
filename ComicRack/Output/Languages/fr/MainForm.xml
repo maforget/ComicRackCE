@@ -265,7 +265,8 @@
     <Text Key="miSynchronizeDevices" Text="Synchronisation des appareils" Comment="Synchronize Devices" />
     <Text Key="tsSynchronizeDevices" Text="Synchronisation des appareils" Comment="Synchronize Devices" />
     <Text Key="miTrackCurrentPage" Text="Mémoriser la page courante" Comment="Track current Page" />
-    <Text Key="cmQuickRating" Text="Évaluation et critique rapide" Comment="Quickly Rate and Review..." />
+    <Text Key="miQuickRating" Text="Évaluation et analyse rapide" Comment="Quickly Rate and Review..." />
+    <Text Key="cmQuickRating" Text="Évaluation et analyse rapide" Comment="Quickly Rate and Review..." />
     <Text Key="miCheckUpdate" Text="Vérifier les mises à jour" Comment="Check For Update" />
     <Text Key="miCacheThumbnails" Text="Générer les miniatures des couvertures" Comment="Generate Cover Thumbnails" />
     <Text Key="tbCacheThumbnails" Text="Générer les miniatures des couvertures" Comment="Generate Cover Thumbnails" />
