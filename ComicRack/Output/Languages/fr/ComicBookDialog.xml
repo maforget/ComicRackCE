@@ -40,8 +40,8 @@
     <Text Key="tabSummary" Text="Résumé" Comment="Summary" />
     <Text Key="pageViewer" Text="Double-cliquez sur une couleur pour la définir en tant que point blanc" Comment="Double Click on Color to set White Point" />
     <Text Key="labelPagesInfo" Text="Utiliser un glisser/déposer ou le menu contextuel pour changer l'ordre ou le type des pages :" Comment="Change the page order with drag &amp; drop or use the context menu to change page types:" />
-    <Text Key="btResetPages" Text="Reset" Comment="Reset" />
-    <Text Key="btResetColors" Text="Reset" Comment="Reset" />
+    <Text Key="btResetPages" Text="Réinitialiser" Comment="Reset" />
+    <Text Key="btResetColors" Text="Réinitialiser" Comment="Reset" />
     <Text Key="labelType" Text="Type :" Comment="Type:" />
     <Text Key="labelBlackAndWhite" Text="Noir et Blanc" Comment="Black and White" />
     <Text Key="labelManga" Text="Manga :" Comment="Manga:" />

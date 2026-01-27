@@ -41,16 +41,16 @@
     <Text Key="MediaStop" Text="MediaStop" Comment="MediaStop" />
     <Text Key="MouseButton4" Text="Bouton 4 de la souris" Comment="MouseButton4" />
     <Text Key="MouseButton5" Text="Bouton 5 de la souris" Comment="MouseButton5" />
-    <Text Key="MouseDoubleButton4" Text="MouseDoubleButton4" Comment="MouseDoubleButton4" />
-    <Text Key="MouseDoubleButton5" Text="MouseDoubleButton5" Comment="MouseDoubleButton5" />
+    <Text Key="MouseDoubleButton4" Text="Double-clic du bouton 4 de la souris" Comment="MouseDoubleButton4" />
+    <Text Key="MouseDoubleButton5" Text="Double-clic du bouton 5 de la souris" Comment="MouseDoubleButton5" />
     <Text Key="MouseDoubleLeft" Text="Double-clic gauche" Comment="MouseDoubleLeft" />
-    <Text Key="MouseDoubleMiddle" Text="MouseDoubleMiddle" Comment="MouseDoubleMiddle" />
+    <Text Key="MouseDoubleMiddle" Text="Double-clic du milieu" Comment="MouseDoubleMiddle" />
     <Text Key="MouseDoubleRight" Text="Double-clic droit" Comment="MouseDoubleRight" />
     <Text Key="MouseLeft" Text="Clic gauche" Comment="MouseLeft" />
-    <Text Key="MouseMiddle" Text="MouseMiddle" Comment="MouseMiddle" />
+    <Text Key="MouseMiddle" Text="Clic du milieu" Comment="MouseMiddle" />
     <Text Key="MouseRight" Text="Clic droit" Comment="MouseRight" />
-    <Text Key="MouseTiltLeft" Text="MouseTiltLeft" Comment="MouseTiltLeft" />
-    <Text Key="MouseTiltRight" Text="MouseTiltRight" Comment="MouseTiltRight" />
+    <Text Key="MouseTiltLeft" Text="Inclinaison molette gauche" Comment="MouseTiltLeft" />
+    <Text Key="MouseTiltRight" Text="Inclinaison molette droite" Comment="MouseTiltRight" />
     <Text Key="MouseWheelDown" Text="Molette vers le bas" Comment="MouseWheelDown" />
     <Text Key="MouseWheelUp" Text="Molette vers le haut" Comment="MouseWheelUp" />
     <Text Key="Multiply" Text="Multiplier" Comment="Multiply" />
@@ -98,15 +98,15 @@
     <Text Key="Gesture9" Text="Geste 9" Comment="Gesture 9" />
     <Text Key="TouchPressAndTap" Text="Appuyer et taper" Comment="Press and Tap" />
     <Text Key="TouchTwoFingerTap" Text="Taper avec deux doigts" Comment="Two Finger Tap" />
-    <Text Key="GestureDouble1" Text="Gesture Double 1" Comment="Gesture Double 1" />
-    <Text Key="GestureDouble2" Text="Gesture Double 2" Comment="Gesture Double 2" />
-    <Text Key="GestureDouble3" Text="Gesture Double 3" Comment="Gesture Double 3" />
-    <Text Key="GestureDouble4" Text="Gesture Double 4" Comment="Gesture Double 4" />
-    <Text Key="GestureDouble5" Text="Gesture Double 5" Comment="Gesture Double 5" />
-    <Text Key="GestureDouble6" Text="Gesture Double 6" Comment="Gesture Double 6" />
-    <Text Key="GestureDouble7" Text="Gesture Double 7" Comment="Gesture Double 7" />
-    <Text Key="GestureDouble8" Text="Gesture Double 8" Comment="Gesture Double 8" />
-    <Text Key="GestureDouble9" Text="Gesture Double 9" Comment="Gesture Double 9" />
+    <Text Key="GestureDouble1" Text="Geste Double 1" Comment="Gesture Double 1" />
+    <Text Key="GestureDouble2" Text="Geste Double 2" Comment="Gesture Double 2" />
+    <Text Key="GestureDouble3" Text="Geste Double 3" Comment="Gesture Double 3" />
+    <Text Key="GestureDouble4" Text="Geste Double 4" Comment="Gesture Double 4" />
+    <Text Key="GestureDouble5" Text="Geste Double 5" Comment="Gesture Double 5" />
+    <Text Key="GestureDouble6" Text="Geste Double 6" Comment="Gesture Double 6" />
+    <Text Key="GestureDouble7" Text="Geste Double 7" Comment="Gesture Double 7" />
+    <Text Key="GestureDouble8" Text="Geste Double 8" Comment="Gesture Double 8" />
+    <Text Key="GestureDouble9" Text="Geste Double 9" Comment="Gesture Double 9" />
     <Text Key="TouchTap" Text="Tape" Comment="Tap" />
     <Text Key="TouchDoubleTap" Text="Double Tape" Comment="Double Tap" />
     <Text Key="FlickLeft" Text="Glisser sur la gauche" Comment="Flick Left" />

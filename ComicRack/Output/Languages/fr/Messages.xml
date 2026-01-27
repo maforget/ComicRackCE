@@ -146,5 +146,7 @@
     <Text Key="DataSourceProblem" Text="Il y a eu un problème ({0}) à l'ouverture de la source de données. ComicRack utilise la base de données locale à la place." Comment="There was a problem ({0}) opening the data source. ComicRack is using the local database instead." />
     <Text Key="DataSourceConnected" Text="Connecté à la source de données" Comment="Connected to data source" />
     <Text Key="DataSourceDisconnected" Text="Déconnecté de la source de données !" Comment="Disconnected from data source!" />
+    <Text Key="TwitterAuth" Text="Une fenêtre de navigateur s'ouvrira pour permettre à ComicRack d'être autoriser sur Twitter." Comment="A Browser window will open to authorize ComicRack to post on Twitter." />
+    <Text Key="QuickRating" Text="Évaluation rapide" Comment="Quick Rating" />
   </Texts>
 </TR>

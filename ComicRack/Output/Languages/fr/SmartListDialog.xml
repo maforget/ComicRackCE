@@ -21,8 +21,10 @@
     <Text Key="labelNotes" Text="Annotations :" Comment="Notes:" />
     <Text Key="SmartListQueryDialog" Text="Éditer List intelligente" Comment="Edit Smart List" />
     <Text Key="labelFilterReset" Text="Certains Livres ont été manuellement supprimés de la Liste." Comment="Some Books have been manually remove from the list" />
-    <Text Key="btFilterReset" Text="Reset" Comment="Reset" />
-    <Text Key="miInsertMatch" Text="Insert Match" Comment="Insert Match" />
+    <Text Key="btFilterReset" Text="Réinitialiser" Comment="Reset" />
+    <Text Key="miInsertMatch" Text="Insérer une correspondance" Comment="Insert Match" />
     <Text Key="miInsertValue" Text="Insérer valeur" Comment="Insert Value" />
+    <Text Key="btQuery" Text="Requête" Comment="Query" />
+    <Text Key="btDesigner" Text="Éditeur" Comment="Designer" />
   </Texts>
 </TR>

@@ -65,5 +65,7 @@
     <Text Key="cbDoublePages.Item0" Text="Garder" Comment="Keep" />
     <Text Key="cbDoublePages.Item1" Text="Séparer" Comment="Split" />
     <Text Key="cbDoublePages.Item2" Text="Rotation 90°" Comment="Roatete 90°" />
+    <Text Key="cbDoublePages.Item3" Text="Ajuster à la largeur" Comment="Adapt Width" />
+    <Text Key="chkKeepOriginalNames" Text="Conserver le nom original des pages" Comment="Keep original page names" />
   </Texts>
 </TR>

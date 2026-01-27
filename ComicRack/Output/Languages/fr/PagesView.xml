@@ -13,8 +13,8 @@
     <Text Key="cmPageRotate" Text="Rotation de la page" Comment="Page Rotation" />
     <Text Key="miPagePosition" Text="Position de la page" Comment="Page Position" />
     <Text Key="miPagePositionDefault" Text="Par défaut" Comment="Default" />
-    <Text Key="miPagePositionNear" Text="Near" Comment="Near" />
-    <Text Key="miPagePositionFar" Text="Far" Comment="Far" />
+    <Text Key="miPagePositionNear" Text="Proche" Comment="Near" />
+    <Text Key="miPagePositionFar" Text="Loin" Comment="Far" />
     <Text Key="miMoveToTop" Text="Mettre au début" Comment="Move to Top" />
     <Text Key="miMoveToBottom" Text="Mettre à la fin" Comment="Move to Bottom" />
   </Texts>

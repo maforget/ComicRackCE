@@ -97,7 +97,7 @@
     <Text Key="BookLocation" Text="Lieu(x) dans le Livre" Comment="Book Location" />
     <Text Key="BookLocationStatus.Description" Text="Lieu(x) dans le Livre" Comment="Location of the Book" />
     <Text Key="PagePositionAsText" Text="Position" Comment="Position" />
-    <Text Key="PagePositionAsText.Description" Text="Layout position of the page" Comment="Layout position of the page" />
+    <Text Key="PagePositionAsText.Description" Text="Position de la page sur l'affichage" Comment="Layout position of the page" />
     <Text Key="ISBN" Text="ISBN" Comment="ISBN" />
     <Text Key="ISBN.Description" Text="Numéro ISBN" Comment="ISBN Number" />
     <Text Key="SeriesStatCountAsText" Text="Série : Numéros" Comment="Series: Books" />

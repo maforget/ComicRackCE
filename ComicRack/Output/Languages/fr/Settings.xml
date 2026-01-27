@@ -18,7 +18,7 @@
     <Text Key="LeftRightMovementReversed" Text="Les mouvements droite / gauche sont aussi inversés" Comment="Left/right movement is also reversed" />
     <Text Key="Right to Left" Text="Droite à Gauche" Comment="Right to Left" />
     <Text Key="AutoMinimalGui" Text="L'affichage plein écran active aussi la mini interface." Comment="Fullscreen also toggles Minimal User Interface" />
-    <Text Key="PageChangeDelay" Text="Mouse Wheel and Cursor Keys delay on page transitions" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="PageChangeDelay" Text="Délai molette et flèches sur transitions de page" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
     <Text Key="AnimatePanels" Text="Aggrandissement/réduction des panneaux animé" Comment="Animate expanding and collapsing Panels" />
     <Text Key="ResetZoomOnPageChange" Text="Le zoom est remis à zéro en changeant de page." Comment="Zoom is reset to 100% on page change" />
     <Text Key="AlwaysDisplayBrowserDockingGrip" Text="Toujours afficher la poignée d'ancrage de l'Explorateur" Comment="Always display Browser Docking Grip" />
@@ -48,5 +48,7 @@
     <Text Key="CoverThumbnailsSameSize" Text="Tous les aperçus de couvertures ont la même taille" Comment="All Cover Thumbnails have the same Size" />
     <Text Key="ShowCustomBookFields" Text="Afficher champs personnalisés" Comment="Show custom Book fields" />
     <Text Key="NewBooksChecked" Text="Les nouveaux Livres sont inspectés" Comment="Newly added books are checked" />
+    <Text Key="CommonListStackLayout" Text="Toutes les piles d'une liste ont le même affichage" Comment="All Stacks in a List have the same Layout" />
+    <Text Key="AutoShowQuickReview" Text="Afficher l'évaluation rapide une fois le livre terminé" Comment="Show Quick Rating Dialog when Book completed" />
   </Texts>
 </TR>

@@ -46,7 +46,7 @@
     <Text Key="ComicBookCreationMatcher" Text="Fichier créé le" Comment="File Created" />
     <Text Key="ComicBookModifiedInfoMatcher" Text="Informations modifiées" Comment="Modified Info" />
     <Text Key="ComicBookBookmarkCountMatcher" Text="Nombre de favoris" Comment="Bookmark Count" />
-    <Text Key="OnOffOperators" Text="On|Off" Comment="On|Off" />
+    <Text Key="OnOffOperators" Text="Oui|Non" Comment="On|Off" />
     <Text Key="ComicBookTeamsMatcher" Text="Équipes" Comment="Teams" />
     <Text Key="ComicBookLocationsMatcher" Text="Lieu(x)" Comment="Locations" />
     <Text Key="ComicBookDuplicateMatcher" Text="Seulement les doublons" Comment="Only Duplicates" />

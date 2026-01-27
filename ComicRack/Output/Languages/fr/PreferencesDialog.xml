@@ -10,8 +10,8 @@
     <Text Key="btClearThumbnailCache" Text="Effacer" Comment="Clear" />
     <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
     <Text Key="btRemoveFolder" Text="&amp;Supprimer..." Comment="&amp;Remove" />
-    <Text Key="btResetColor" Text="&amp;Reset" Comment="&amp;Reset" />
-    <Text Key="btResetMessages" Text="Reset" Comment="Reset" />
+    <Text Key="btResetColor" Text="&amp;Réinitialiser" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="Réinitialiser" Comment="Reset" />
     <Text Key="btRestoreDefault" Text="Reset" Comment="Restore &amp;Defaults" />
     <Text Key="btScan" Text="Scanner" Comment="Scan" />
     <Text Key="chkAutoContrast" Text="Amélioration automatique du &amp;contraste" Comment="Automatic &amp;Contrast Enhancement" />
@@ -21,7 +21,6 @@
     <Text Key="chkOverwriteAssociations" Text="Remplacer les associations de fichier existantes" Comment="Overwrite existing associations instead of 'Open With ...'" />
     <Text Key="chkRequirePassword" Text="Mot de passe requis :" Comment="Require Password:" />
     <Text Key="colOptions" Text="Options" Comment="Options" />
-    <Text Key="groupMessages" Text="Messages cachés" Comment="Hidden Messages" />
     <Text Key="groupOverlays" Text="Informations visuelles" Comment="Overlays" />
     <Text Key="grpIntegration" Text="Intégration dans l'explorateur" Comment="Explorer Integration" />
     <Text Key="labelBrightness" Text="Ajuster la luminosité :" Comment="Brightness Adjustment:" />
@@ -149,5 +148,8 @@
     <Text Key="lblWifiAddresses" Text="IP des appareils sans fil non détectés automatiquement séparées par des points-virgules :" Comment="Semicolon separated list of IP addresses for Wireless Devices which where not detected automatically:" />
     <Text Key="btTestWifi" Text="Test" Comment="Test" />
     <Text Key="grpWirelessSetup" Text="Configuration sans fil" Comment="Wireless Setup" />
+    <Text Key="btResetTwitter" Text="Réinitialiser" Comment="Reset" />
+    <Text Key="groupMessagesAndSocial" Text="Messages et Réseaux sociaux" Comment="Messages and Social" />
+    <Text Key="labelResetTwitter" Text="Pour réinitialiser l'autorisation Twitter, appuyez sur" Comment="To reset the Twitter authorization, press" />
   </Texts>
 </TR>
