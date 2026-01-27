@@ -266,7 +266,7 @@ namespace cYo.Projects.ComicRack.Viewer
 						TRDictionary tRDictionary = null;
 						try
 						{
-							tRDictionary = new TRDictionary(TR.ResourceFolder, "de");
+							tRDictionary = new TRDictionary(TR.ResourceFolder, "fr");
 						}
 						catch (Exception)
 						{
