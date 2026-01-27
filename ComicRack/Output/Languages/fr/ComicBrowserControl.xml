@@ -109,5 +109,7 @@
     <Text Key="CustomFieldDescription" Text="Affiche la valeur du champ personnalisé '{0}'" Comment="Shows the value of the custom field '{0}'" />
     <Text Key="miQuickRating" Text="Évaluation et critique rapide" Comment="Quickly Rate and Review..." />
     <Text Key="miShowGroupHeaders" Text="Afficher les en-têtes de groupe" Comment="Show Group Headers" />
+    <Text Key="miOpenWith" Text="Ouvrir Avec" Comment="Open With" />
+    <Text Key="miOpenWithManager" Text="Gérer les Programmes..." Comment="Manage Programs..."/>
   </Texts>
 </TR>

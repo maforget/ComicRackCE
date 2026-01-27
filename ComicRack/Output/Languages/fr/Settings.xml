@@ -49,6 +49,7 @@
     <Text Key="ShowCustomBookFields" Text="Afficher champs personnalisés" Comment="Show custom Book fields" />
     <Text Key="NewBooksChecked" Text="Les nouveaux Livres sont inspectés" Comment="Newly added books are checked" />
     <Text Key="CommonListStackLayout" Text="Toutes les piles d'une liste ont le même affichage" Comment="All Stacks in a List have the same Layout" />
-    <Text Key="AutoShowQuickReview" Text="Afficher l'évaluation rapide une fois le livre terminé" Comment="Show Quick Rating Dialog when Book completed" />
+      <Text Key="AutoShowQuickReview" Text="Afficher l'évaluation rapide une fois le livre terminé" Comment="Show Quick Rating Dialog when Book completed" />
+      <Text Key="DisableDragDrop" Text="Désactiver l’ouverture des fichiers par glisser/déposer" Comment="Disable opening files via drag-and-drop" />
   </Texts>
 </TR>

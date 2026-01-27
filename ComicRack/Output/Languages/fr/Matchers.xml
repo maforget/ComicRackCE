@@ -105,5 +105,8 @@
     <Text Key="Name" Text="Nom" Comment="Name" />
     <Text Key="ComicBookHasCustomValuesMatcher" Text="A des valeurs personnalisées" Comment="Has Custom Values" />
     <Text Key="ComicBookCustomValuesMatcher" Text="Valeur personnalisée" Comment="Custom Value" />
+    <Text Key="ComicBookWebMatcher" Text="Web" Comment="Web" />
+    <Text Key="ComicBookIsMissingMatcher" Text="Est manquant" Comment="Is Missing" />
+    <Text Key="ComicBookTranslatorMatcher" Text="Traducteur" Comment="Translator" />
   </Texts>
 </TR>

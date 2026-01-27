@@ -17,5 +17,6 @@
     <Text Key="miPagePositionFar" Text="Loin" Comment="Far" />
     <Text Key="miMoveToTop" Text="Mettre au début" Comment="Move to Top" />
     <Text Key="miMoveToBottom" Text="Mettre à la fin" Comment="Move to Bottom" />
+    <Text Key="miMergePages" Text="Fusionner les pages" Comment="Merge Pages" />
   </Texts>
 </TR>

@@ -39,6 +39,6 @@
     <Text Key="tbPreferences" Text="Einstellungen" Comment="Preferences"/>
     <Text Key="SyncDevices" Text="Synchronisiere mit" Comment="Sync with"/>
     <Text Key="SyncDevice" Text="Synchronisiere mit {0}..." Comment="Sync with {0}..."/>
-    <Text Key="tsQuickSearch" Text="Schnellsuche" Comment="Quick Search"/>
+    <Text Key="tsQuickSearch" Text="Schnellsuche (Strg+Alt+F)" Comment="Quick Search (Ctrl+Alt+F)"/>
   </Texts>
 </TR>

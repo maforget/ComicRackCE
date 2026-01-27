@@ -46,5 +46,8 @@
     <Text Key="Configure" Text="Configurer" Comment="Configure" />
     <Text Key="Clear" Text="Effacer" Comment="Clear" />
     <Text Key="Unlimited" Text="Illimitée" Comment="Unlimited" />
+    <Text Key="Download" Text="Télécharger" Comment="Download" />
+    <Text Key="Actual" Text="Réel" Comment="Actual" />
+    <Text Key="Enabled" Text="Activé" Comment="Enabled" />
   </Texts>
 </TR>

@@ -203,5 +203,11 @@
     <Text Key="ReleasedTime" Text="Sorti" Comment="Released" />
     <Text Key="SeriesStatLastReleasedTime" Text="Série : Livre publié" Comment="Series: Book released" />
     <Text Key="SeriesStatLastReleasedTime.Description" Text="Dernière publication d'un Livre dans la Série" Comment="Last time a book of this Series was released" />
+    <Text Key="ActualFileFormat" Text="Format du fichier réel (lent)" Comment="Actual File Format (slow)" />
+    <Text Key="ActualFileFormat.Description" Text="Format de fichier réel du Livre (basé sur l'en-tête" Comment="Actual File format of the Book (based on the header)" />
+    <Text Key="PublishedRegional" Text="Publié le (Regional)" Comment="Published (Regional)" />
+    <Text Key="PublishedRegional.Description" Text="Date de publication du Livre (format régional)" Comment="Publication date of the Book (regional formating)" />
+    <Text Key="Translator" Text="Traducteur" Comment="Translator" />
+    <Text Key="Translator.Description" Text="Traducteur du Livre" Comment="Translator of the Book" />
   </Texts>
 </TR>

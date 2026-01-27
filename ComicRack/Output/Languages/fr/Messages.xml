@@ -147,6 +147,12 @@
     <Text Key="DataSourceConnected" Text="Connecté à la source de données" Comment="Connected to data source" />
     <Text Key="DataSourceDisconnected" Text="Déconnecté de la source de données !" Comment="Disconnected from data source!" />
     <Text Key="TwitterAuth" Text="Une fenêtre de navigateur s'ouvrira pour permettre à ComicRack d'être autoriser sur Twitter." Comment="A Browser window will open to authorize ComicRack to post on Twitter." />
-    <Text Key="QuickRating" Text="Évaluation rapide" Comment="Quick Rating" />
+    <Text Key="QuickRating" Text="Évaluation rapide" Comment="Quick Rating" />    
+    <Text Key="UpdateAvailable" Text="Une mise à jour est disponible, voulez-vous la télécharger?" Comment="An update is available download it?" />
+    <Text Key="UpdateNotAvailable" Text="Aucune mise à jour disponible" Comment="There are no updates available" />
+    <Text Key="NeverCheckForUpdate" Text="&amp;Ne jamais vérifier pour une mise à jour au démarrage"  Comment="&amp;Never check for updates on startup" />
+    <Text Key="ZipFileOption" Text="&amp;Télécharger le fichier zip au lieu du programme d'installation" Comment="&amp;Download zip file instead of installer" />
+    <Text Key="SlowThumbnailQueueUnlimitedMessage" Text="Création d'une miniature pour la couverture du fichier '{0}'" Comment="Create thumbnail for cover in file '{0}'" />
+    <Text Key="AlreadyExistsInDatabase" Text="Cette opération créerait un doublon dans la base de données. Le fichier de sortie '{0}' existe déjà dans la Bibliothèque." Comment="This operation would result in a duplicate entry in the database, Output file '{0}' already exists in the library" />
   </Texts>
 </TR>

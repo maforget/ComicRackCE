@@ -95,5 +95,6 @@
     <Text Key="tabCustom" Text="Personnalisé" Comment="Custom" />
     <Text Key="CustomValueKey" Text="Nom" Comment="Name" />
     <Text Key="CustomValueValue" Text="Valeur" Comment="Value" />
+    <Text Key="labelTranslator" Text="Traducteur :" Comment="Translator:" />
   </Texts>
 </TR>

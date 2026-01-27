@@ -151,5 +151,29 @@
     <Text Key="btResetTwitter" Text="Réinitialiser" Comment="Reset" />
     <Text Key="groupMessagesAndSocial" Text="Messages et Réseaux sociaux" Comment="Messages and Social" />
     <Text Key="labelResetTwitter" Text="Pour réinitialiser l'autorisation Twitter, appuyez sur" Comment="To reset the Twitter authorization, press" />
+    <Text Key="grpVirtualTags" Text="Étiquettes Virtuelle" Comment="Virtual Tags" />
+    <Text Key="lblCaptionFormat" Text="Format" Comment="Format" />
+    <Text Key="txtCaptionFormat.ToolTip" Text="Utiliser le format numérique de la documentation 'Chaînes de format numériques personnalisées' .NET de Microsoft" Comment="Use the number formattingfrom the 'Custom numeric format strings' documentation from Microsoft .NET." /><!--"Not being applied, needs program support-->
+    <Text Key="btInsertValue" Text="Choisir la Valeur" Comment="Choose Value" />
+    <Text Key="lblVirtualTagDescription" Text="Description : " Comment="Description : " />
+    <Text Key="lblVirtualTagName" Text="Nom : " Comment="Name : " />
+    <Text Key="chkVirtualTagEnable" Text="Activer" Comment="Enable" />
+    <Text Key="lblCaptionText" Text="Légende : " Comment="Caption : " />
+    <Text Key="lblCaptionSuffix" Text="Suffixe" Comment="Suffix" />
+    <Text Key="lblCaptionPrefix" Text="Prefixe" Comment="Prefix" />
+    <Text Key="lblFieldConfig" Text="Champ" Comment="Field" />
+    <Text Key="btnCaptionInsert" Text="Insérer" Comment="Insert" />
+    <Text Key="lblVirtualTags" Text="Tag # : " Comment="Tag # : " /> <!--"Étiquettes # : " takes too much space-->
+    <Text Key="grpBackupManager" Text="Gestionnaire de Savegarde" Comment="Backup Manager" />
+    <Text Key="chkIncludeAllAlternateConfigs" Text="Inclure toutes les configurations alternatives" Comment="Include all Alternate Configs" />
+    <Text Key="numBackupsToKeep.ToolTip" Text="Définir cette valeur à 0 conservera toutes les sauvegardes" Comment="Setting this to 0 will keep all backups" /><!--"Not being applied, needs program support-->
+    <Text Key="lblBackupsToKeep" Text="# de sauv. à conserver" Comment="# of Backups to Keep :" />
+    <Text Key="btBackupLocation" Text="Parcourir..." Comment="Browse..." />
+    <Text Key="lblBackupLocation" Text="Location" Comment="Location" />
+    <Text Key="lblBackupOptions" Text="Items à inclures dans la sauvegarde" Comment="Items to include in Backup" />
+    <Text Key="gbBackupOn" Text="Sauvegarde sur" Comment="Backup On" />
+    <Text Key="chkBackupOnStartup" Text="Démarrage" Comment="Startup" />
+    <Text Key="chkBackupOnExit" Text="Fermeture" Comment="Shut Down" />
+    <Text Key="VirtualTag" Text="Étiquette Virtuelle" Comment="Virtual Tag" />
   </Texts>
 </TR>

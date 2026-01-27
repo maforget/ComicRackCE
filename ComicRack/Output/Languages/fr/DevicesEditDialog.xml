@@ -32,6 +32,7 @@
     <Text Key="miDeviceCopyToAll" Text="Copier sur tous" Comment="Copy To All" />
     <Text Key="miDeviceRename" Text="Renommer..." Comment="Rename..." />
     <Text Key="miDeviceUnpair" Text="Délier appareil" Comment="Unpair Device" />
-    <Text Key="cbLimitSort.Item5" Text="Arc narratif" Comment="Story Arc" />
+      <Text Key="cbLimitSort.Item5" Text="Arc narratif" Comment="Story Arc" />
+      <Text Key="cbLimitSort.Item6" Text="Ordre de liste" Comment="List Order" />
   </Texts>
 </TR>

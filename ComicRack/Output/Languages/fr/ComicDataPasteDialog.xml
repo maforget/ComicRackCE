@@ -65,5 +65,6 @@
     <Text Key="chkReview" Text="Analyse" Comment="Review" />
     <Text Key="chkReleasedTime" Text="Sorti" Comment="Released" />
     <Text Key="grpCustom" Text="Personnalisé" Comment="Custom" />
+    <Text Key="chkTranslator" Text="Traducteur" Comment="Translator" />
   </Texts>
 </TR>

@@ -64,5 +64,6 @@
     <Text Key="labelDay" Text="Jour :" Comment="Day:" />
     <Text Key="labelReleasedTime" Text="Publié :" Comment="Veröffentlicht:" />
     <Text Key="grpCustom" Text="Personnalisé" Comment="Custom" />
+    <Text Key="labelTranslator" Text="Traducteur :" Comment="Translator:" />
   </Texts>
 </TR>
