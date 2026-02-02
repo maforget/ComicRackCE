@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="KeyboardShortcutEditor" CultureName="zh-CN">
+  <Texts>
+    <Text Key="chkAlt1" Text="Alt" Comment="Alt" />
+    <Text Key="chkAlt2" Text="Alt" Comment="Alt" />
+    <Text Key="chkCtrl1" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkCtrl2" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkShift1" Text="Shift" Comment="Shift" />
+    <Text Key="chkShift2" Text="Shift" Comment="Shift" />
+    <Text Key="colAction" Text="动作" Comment="Action" />
+    <Text Key="colKeys" Text="按键" Comment="Keys" />
+    <Text Key="labelAlternateKey" Text="备用:" Comment="Alternate:" />
+    <Text Key="labelMainKey" Text="默认:" Comment="Main:" />
+    <Text Key="NothingSelected" Text="未选择动作" Comment="No action selected" />
+    <Text Key="chkAlt3" Text="Alt" Comment="Alt" />
+    <Text Key="chkCtrl3" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkShift3" Text="Shift" Comment="Shift" />
+    <Text Key="labelAlternate2Key" Text="备用:" Comment="Alternate:" />
+    <Text Key="GetKeyCaption" Text="按下按键" Comment="Press Key" />
+    <Text Key="GetKeyDescription" Text="按下您想要设置的快捷键组合或关闭本窗口" Comment="Press your key combination or close this window" />
+  </Texts>
+</TR>

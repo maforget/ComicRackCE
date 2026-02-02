@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="EditListDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="EditListDialog" Text="Επεξεργασία Λίστας" Comment="Edit List" />
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="labelName" Text="Όνομα:" Comment="Name:" />
+    <Text Key="labelBooks" Text="Βιβλία:" Comment="Books:" />
+    <Text Key="labelNotes" Text="Σημειώσεις:" Comment="Notes:" />
+    <Text Key="chkQuickOpen" Text="Γρήγορο Άνοιγμα" Comment="Quick Open" />
+    <Text Key="CombineMode" Text="Όλα τα Βιβλία από κάθε λίστα| Μόνο τα υπαρκτά Βιβλία σε κάθε λίστα" Comment="All Books from every list|Only Books existing in every list|Empty list" />
+  </Texts>
+</TR>

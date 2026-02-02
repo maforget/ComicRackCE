@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AddItemDialog" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="btCancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定" Comment="&amp;OK" />
+    <Text Key="lblName" Text="名称：" Comment="Name:" />
+  </Texts>
+</TR>

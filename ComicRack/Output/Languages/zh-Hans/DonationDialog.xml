@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DonationDialog" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="btCancel" Text="现在跳过" Comment="Skip for now" />
+    <Text Key="btOK" Text="确定" Comment="OK" />
+    <Text Key="DonationDialog" Text="支持 ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="labelText" Text="ComicRack 是数百个小时的工作成果，它没有大软件公司在背后。如果你觉得用ComicRack很愉快请考虑投桃报李.\n\n最少捐助 $5 - 买杯啤酒. 捐助结束后你可以用捐助的邮箱地址激活该副本并不会在看到此信息。\n\n即使你决定不捐助 ComicRack 也是提供完全功能的。" Comment="ComicRack is the product of hundrets of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nThe minimum donation is $5 - paying me a beer. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+    <Text Key="labelThankYou" Text="感谢支持 ComicRack!" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="捐助" Comment="Donate" />
+    <Text Key="labelStepOne" Text="步骤1:\n访问 ComicRack 网站捐助" Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="labelStepTwo" Text="步骤2:\n进入你的 email 并确认.\n捐助注册要几分钟所以可稍后再做." Comment="Step Two:\nEnter your dontation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+    <Text Key="btDonate" Text="捐助页面" Comment="Donation Page" />
+    <Text Key="btValidate" Text="验证" Comment="Validate" />
+    <Text Key="labelEmail" Text="Email 地址:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="你已启动了 ComicRack {0}次!" Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="你用ComicRack管理了 {0} 本书!" Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="不能连接 ComicRack服务器验证 Email 地址. 请检查网络连接!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+  </Texts>
+</TR>

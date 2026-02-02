@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBookDialog" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="btCancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定" Comment="&amp;OK" />
+    <Text Key="ShowList" Text="显示公共" Comment="Show Public" />
+    <Text Key="RefreshList" Text="刷新" Comment="Refresh" />
+    <Text Key="OpenRemoteDialog" Text="打开远程库" Comment="Open Remote Library" />
+    <Text Key="labelServerAddress" Text="库地址:" Comment="Library Address:" />
+    <Text Key="colName" Text="名称" Comment="Name" />
+    <Text Key="colDescription" Text="描述" Comment="Description" />
+    <Text Key="colEdit" Text="编辑" Comment="Edit" />
+    <Text Key="colExport" Text="导出" Comment="Export" />
+    <Text Key="labelListFilter" Text="列表筛选:" Comment="List Filter:" />
+    <Text Key="labelListPassword" Text="私人列表密码:" Comment="Private List Password:" />
+    <Text Key="labelFailedServerList" Text="服务器列表获取失败!" Comment="Failed to get Server List!" />
+    <Text Key="groupLocal" Text="本地共享" Comment="Local Shares" />
+    <Text Key="groupInternet" Text="Internet 共享" Comment="Internet Shares" />
+  </Texts>
+</TR>

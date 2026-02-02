@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBrowserControl" CultureName="hr">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Razvrstano po {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Izmjena veličine slikica" Comment="Change size of thumbnails" />
+    <Text Key="ComicFiltered" Text="{0} filtrirano" Comment="{0} filtered" />
+    <Text Key="ComicMulti" Text="{0} eComics" Comment="{0} eComics" />
+    <Text Key="ComicSelected" Text="{0} označeno" Comment="{0} selected" />
+    <Text Key="ComicSingle" Text="{0} svezaka" Comment="{0} eComic" />
+    <Text Key="GroupedBy" Text="Grupirano po {0}" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="&amp;Dodavanje u biblioteku..." Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="Automatiziranje" Comment="Automation" />
+    <Text Key="miConvertCBT" Text="CBT eComic(s)" Comment="CBT eComics(s)" />
+    <Text Key="miConvertCBZ" Text="CBZ eComic(s)" Comment="CBZ eComic(s)" />
+    <Text Key="miConvertPDF" Text="PDF eComic(s)" Comment="PDF eComic(s)" />
+    <Text Key="miConvertTo" Text="Promjena formata u" Comment="Convert&amp; to" />
+    <Text Key="miCopyData" Text="Kopiranje podataka" Comment="&amp;Copy Data" />
+    <Text Key="miInvertSelection" Text="Obrtanje označenog" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="&amp;Označavanje kao" Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="&amp;Pročitano" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="&amp;Nepročitano" Comment="&amp;Unread" />
+    <Text Key="miPasteData" Text="&amp;Umetanje podataka..." Comment="&amp;Paste Data..." />
+    <Text Key="miProperties" Text="&amp;Detalji..." Comment="&amp;Get Info..." />
+    <Text Key="miRateMenu" Text="&amp;Ocjena" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="Ništa" Comment="None" />
+    <Text Key="miRating1" Text="* (1 zvjezdica)" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** (2 zvjezdice)" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** (3 zvjezdice)" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** (4 zvjezdice)" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** (5 zvjezdica)" Comment="***** (5 Stars)" />
+    <Text Key="miRead" Text="&amp;Otvoreno" Comment="&amp;Open" />
+    <Text Key="miReadTab" Text="Otvaranje na novom mjestu" Comment="Open in new Tab" />
+    <Text Key="miRefreshInformation" Text="Osvježavanje" Comment="Refresh" />
+    <Text Key="miRemove" Text="Uklanjanje..." Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="Prikaz u pregledniku" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="Sve" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="Brzom pretragom se provjeravaju svi dostupni podaci" Comment="Quick Search is checking all available data" />
+    <Text Key="miSearchArtists" Text="Dizajner" Comment="Artists" />
+    <Text Key="miSearchArtists.Tooltip" Text="Brzom pretragom  se provjeravaju svi dizajneri" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="Opis" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="Brzom pretragom se provjeravaju sve bilješke i zažeci" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="Naziv datoteke" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="Brzom pretragom se provjeravju samo nazivi datoteka" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="Naslov serije" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="Brzom pretragom se provjeravaju samo nazzivi serija" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="Autor" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="Brzom pretragom se provjeravju samo autori" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="Označavanje svega" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="Postavljeno kao vrh stoga" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="Pregledavanje svezaka" Comment="&amp;Browse Comics" />
+    <Text Key="miShowOnlyAllComics" Text="Prikaz svega" Comment="Show All" />
+    <Text Key="miShowOnlyReadComics" Text="Prikaz pročitanih" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="Prikaz čitanih" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="Prikaz nepročitanih" Comment="Show not Read" />
+    <Text Key="miViewDetails" Text="&amp;Detalji" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="S&amp;likice" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;U tablici" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Ništa" Comment="None" />
+    <Text Key="NotArranged" Text="Nerazvrstano" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Negrupirano" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="Bez hrpa" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="Na hrpi prema {0}" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="Grupirano" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="Grupiranje svezaka po raznim mjerilima" Comment="Group eComics by different criteria" />
+    <Text Key="tbbGroupFilter" Text="Sve" Comment="All" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="Zatvaranje hrpe" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="Razvrstano" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="Izmjena načina razvrstavanja svezaka" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbStack" Text="Hrpa" Comment="Stack" />
+    <Text Key="tbbView" Text="Pogledi" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="Koje sveske su prikazane i kako" Comment="Change how and what eComics are displayed" />
+  </Texts>
+</TR>

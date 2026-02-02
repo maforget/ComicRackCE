@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Keyboard" CultureName="ru">
+  <Texts>
+    <Text Key="Browse" Text="Обзор" Comment="Browse" />
+    <Text Key="Display Options" Text="Параметры экрана" Comment="Display Options" />
+    <Text Key="Exit" Text="Выход" Comment="Exit" />
+    <Text Key="FitAll" Text="В размер окна" Comment="Fit All" />
+    <Text Key="FitBest" Text="Лучшее представление" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="Растянуть по высоте" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="Растянуть по ширине" Comment="Fit Width" />
+    <Text Key="FitWidthAdaptive" Text="Растянуть по ширине (адаптивно)" Comment="Fit Width (adaptive)" />
+    <Text Key="OnlyFitOversized" Text="Подгонять если больше размера экрана" Comment="Only Fit if oversized" />
+    <Text Key="Library" Text="Библиотека" Comment="Library" />
+    <Text Key="MoveDown" Text="Вниз" Comment="Down" />
+    <Text Key="MoveLeft" Text="Влево" Comment="Left" />
+    <Text Key="MoveNextPart" Text="Следующая часть" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="Следующая часть" Comment="Previous Part" />
+    <Text Key="MoveFirstPart" Text="Начало страницы" Comment="Page Start" />
+    <Text Key="MoveLastPart" Text="Конец страницы" Comment="Page End" />
+    <Text Key="MoveRight" Text="Вправо" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="Первая страница" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="Последняя страница" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="Следующая страница" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="Предыдущая страница" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="Вверх" Comment="Up" />
+    <Text Key="NextComic" Text="Следующий Комикс" Comment="Next eComic" />
+    <Text Key="NextTab" Text="Следующая вкладка" Comment="Next Tab" />
+    <Text Key="Other" Text="Другое" Comment="Other" />
+    <Text Key="Page Display" Text="Отображение страниц" Comment="Page Display" />
+    <Text Key="Auto Scroll" Text="Автопрокрутка" Comment="Auto Scroll" />
+    <Text Key="PrevComic" Text="Предыдущий Комикс" Comment="Previous eComic" />
+    <Text Key="PrevTab" Text="Предыдущая вкладка" Comment="Previous Tab" />
+    <Text Key="RotateC" Text="Повернуть вправо" Comment="Rotate Right" />
+    <Text Key="RotateCC" Text="Повернуть влево" Comment="Rotate Left" />
+    <Text Key="ZoomIn" Text="Приблизить" Comment="Zoom In" />
+    <Text Key="ZoomOut" Text="Отдалить" Comment="Zoom Out" />
+    <Text Key="Scroll" Text="Прокрутка" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="Показать обозреватель" Comment="Show Browser" />
+    <Text Key="ToggleUndockReader" Text="Отстыковать просмотрщик" Comment="Toggle Undock Reader" />
+    <Text Key="ToggleFullScreen" Text="Переключить в полный экран" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="Включить лупу" Comment="Toggle Magnifier" />
+    <Text Key="ToggleAutoScrolling" Text="Включить автопрокрутку" Comment="Toggle Auto Scrolling" />
+    <Text Key="ToggleTwoPages" Text="Переключить на две страницы" Comment="Toggle Two Pages" />
+    <Text Key="Original" Text="Оригинальный размер" Comment="Original Size" />
+    <Text Key="MovePartDown10" Text="На 10% вниз" Comment="Move Part 10% down" />
+    <Text Key="MovePartUp10" Text="На 10% вверх" Comment="Move Part 10% up" />
+    <Text Key="ToggleManga" Text="Пометить Комикс как Manga" Comment="Toggle Manga for eComic" />
+    <Text Key="DoublePageAutoScroll" Text="Автопрокрутка двойных страниц" Comment="Double Page Auto Scroll" />
+    <Text Key="ToggleMenu" Text="Включить меню" Comment="Toggle Menu" />
+    <Text Key="MoveToPrevBookmark" Text="Предыдущая закладка" Comment="Previous Bookmark" />
+    <Text Key="MoveToNextBookmark" Text="Следующая закладка" Comment="Next Bookmark" />
+    <Text Key="MoveToPrevPageSingle" Text="Одна страница назад" Comment="Single Page Back" />
+    <Text Key="MoveToNextPageSingle" Text="Одна страница вперед" Comment="Single Page Forward" />
+    <Text Key="AutoRotate" Text="Автоповорот двойных страниц" Comment="Autorotate Double Pages" />
+  </Texts>
+</TR>

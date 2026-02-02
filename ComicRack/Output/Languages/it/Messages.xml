@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Messages" CultureName="it">
+  <Texts>
+    <Text Key="AskRemoveComics" Text="Sei sicuro di voler rimuovere questi Album dalla lista?" Comment="Are you sure you want to remove these books from the list?" />
+    <Text Key="AskRemoveFavorite" Text="Sei sicuro di voler rimuovere questo link alle Cartelle Preferite?" Comment="Do you really want to remove this Favorite Folder link?" />
+    <Text Key="AskRemoveFromLibrary" Text="Sei sicuro di voler rimuovere questi Album dalla Libreria?\nTutte le informazioni non contenute nei file saranno perdute (contatore letture, ultima data lettura, ecc.)!" Comment="Are you sure you want to remove these books from the library?\nAll information not stored in the files will be lost (like Open Count, Last Read etc.)!" />
+    <Text Key="AskRemoveItem" Text="Sei sicuro di voler rimuovere questo oggetto?" Comment="Do you really want to remove this item?" />
+    <Text Key="Attention" Text="Attenzione" Comment="Attention" />
+    <Text Key="CloseComicRack" Text="Chiudi ComicRack" Comment="Close ComicRack" />
+    <Text Key="ClosingComicRack" Text="ComicRack in chiusura" Comment="Closing ComicRack" />
+    <Text Key="CouldNotSaveImage" Text="Impossibile salvare l'immagine della pagina!\nMotivo: {0}" Comment="Could not save the page image!\nReason: {0}" />
+    <Text Key="CreateMainWindow" Text="Creazione Finestra Principale" Comment="Creating Main Window" />
+    <Text Key="Error" Text="Errore" Comment="Error" />
+    <Text Key="ErrorShutDown" Text="C'è stato un errore durante la chiusura dell'applicazione:\n{0}" Comment="There was an error shutting down the application:\n{0}" />
+    <Text Key="FailedRetrieveDatabase" Text="Impossibile recuperare il Database dal Server!" Comment="Failed to retrieve the Database from the Server!" />
+    <Text Key="FailedToInitialize" Text="Inizializzazione ComicRack Fallita: {0}" Comment="Failed to initialize ComicRack: {0}" />
+    <Text Key="GetServerLibraryText" Text="Recupero Libreria condivisa dal Server" Comment="Retrieving the shared Library from the Server" />
+    <Text Key="InitCache" Text="Inizializza Cache Disco" Comment="Initialize Disk Caches" />
+    <Text Key="InitGUI" Text="Inizializzazione Interfaccia Utente" Comment="Initalizing User Interface" />
+    <Text Key="InitScripts" Text="Inizializzazione Script" Comment="Initalizing Scripts" />
+    <Text Key="ListLayout" Text="Disposizione Lista" Comment="List Layout" />
+    <Text Key="LoadCustomSettings" Text="Caricamento impostazioni personalizzate" Comment="Loading custom settings" />
+    <Text Key="LoadingThumbnail" Text="Caricamento Miniature..." Comment="Loading Thumbnail..." />
+    <Text Key="MoveBin" Text="Sposta i files nel Cestino" Comment="&amp;Also move the files to the Recycle Bin" />
+    <Text Key="NotAskAgain" Text="Non chiedermelo nuovamente" Comment="&amp;Do not ask me again" />
+    <Text Key="OpenDatabase" Text="Apertura Database" Comment="Opening Database" />
+    <Text Key="PasswordNeeded" Text="E' richiesta una password per la Libreria remota '{0}':" Comment="A password is needed for the remote Library '{0}':" />
+    <Text Key="ReadNewsFeed" Text="Lettura News Feed" Comment="Reading News Feed" />
+    <Text Key="RefreshInfo" Text="Aggiornamento Informazioni" Comment="Refreshing Information" />
+    <Text Key="RefreshServer" Text="Aggiornamento Libreria Server" Comment="Refreshing Server Library" />
+    <Text Key="Remove" Text="Rimuovi" Comment="Remove" />
+    <Text Key="RetrieveNews" Text="Recupero News" Comment="Retrieving News" />
+    <Text Key="RetrieveNewsText" Text="Aggiornamento Canali News sottoscritti" Comment="Refreshing subscribed News Channels" />
+    <Text Key="SaveAllData" Text="Salvataggio Dati su Disco..." Comment="Saving all Data to Disk..." />
+    <Text Key="SaveListLayout" Text="Salva Disposizione Lista" Comment="Save List Layout" />
+    <Text Key="ScriptFailed" Text="Esecuzione dello script fallito!" Comment="Execution of the script failed!" />
+    <Text Key="WrongPassword" Text="La password specificata per la Libreria'{0}' non è corretta. Riprova ancora:" Comment="The specified password for the Library'{0}' is not correct. Please try again:" />
+    <Text Key="Set" Text="Imposta" Comment="Set" />
+    <Text Key="AskSetAllLists" Text="Sei sicuro di voler impostare tutte le liste con questa disposizione?" Comment="Are you sure you want to set all Lists to the current layout?" />
+    <Text Key="PageFailedToLoad" Text="Impossibile caricare la pagina.\nUsa Aggiorna per riprovare..." Comment="Page failed to load.\nTry refresh to load again..." />
+    <Text Key="AskExport" Text="Stai per eliminare o sostituire dei file esistenti durnate l'Esportazione. Sei sicuro di questa operazione ?\nI file rimossi saranno spostati nel Cestino durante la procedura. Asicurati che ci sia abbastanza spazio e che gli Album non siano ubicati su un disco di rete !" Comment="You have chosen to delete or replace existing files during export. Are you sure you want to continue?\nThe deleted files will be moved to the Recycle Bin during export. Please make sure there is enough disk space available and the eComics are not located on a network drive!" />
+    <Text Key="Export" Text="Esporta" Comment="Export" />
+    <Text Key="CouldNotSaveComic" Text="Impossibile salvare l'Album!\nMotivo: {0}" Comment="Could not save Book!\nReason: {0}" />
+    <Text Key="CouldNotExportKeyboardLayout" Text="Non sono riuscito ad esportare la Configurazione diTastiera!\nCausa: {0}" Comment="Could not export Keyboard Layout!\nReason: {0}" />
+    <Text Key="CouldNotImportKeyboardLayout" Text="Non sono riuscito ad importare !\nCausa: {0}" Comment="Could not import Keyboard Layout!\nReason: {0}" />
+    <Text Key="CouldNotLoadThumbnail" Text="Impossibile aprire Miniatura!\nCausa: {0}" Comment="Could not open Thumbnail!\nReason: {0}" />
+    <Text Key="DatabaseNewEmpty" Text="C'è stato un problema nell'apertura del Database degli Album. Un nuovo Database vuoto è stato creato." Comment="There was a problem opening the Database. A new empty Database has been created." />
+    <Text Key="DatabaseRestored" Text="C'è stato un problema con il Database degli Album. L'ultima versione funzionante è stata ripristinata. Potresti aver perso alcune informazioni." Comment="There was a problem with the Database. The last version to be known good has been restored. You may have lost some entires." />
+    <Text Key="FailedDeleteBooks" Text="Alcuni Album non sono stati eliminati (probabilmente perchè in uso)!" Comment="Some files could not be deleted (maybe they are in use)!" />
+    <Text Key="ConnectToServer" Text="Connessione al Server" Comment="Connecting to Server" />
+    <Text Key="GetShareInfoText" Text="Recupero Informazioni sulla Libreria condivisa" Comment="Getting information about the shared Library" />
+    <Text Key="GettingList" Text="Caricamento Lista Album" Comment="Getting List of Books" />
+    <Text Key="GettingListText" Text="Recupero Album dalle Cartelle Selezionate" Comment="Retrieving all Books from the selected folder" />
+    <Text Key="ListLayouts" Text="Disposizione Lista" Comment="List Layouts" />
+    <Text Key="LoadComic" Text="Caricamento Album" Comment="Opening Files" />
+    <Text Key="LoadingPage" Text="Caricamento Pagine {0}..." Comment="Loading Page {0}..." />
+    <Text Key="RefreshInfoText" Text="Aggiornamento informazioni per l'Album selezionato" Comment="Refreshing information for selected Books" />
+    <Text Key="SavingNewComic" Text="Salvataggio nuovo Album..." Comment="Saving new Book..." />
+    <Text Key="WriteData" Text="Scrivi Data" Comment="Pasting Data" />
+    <Text Key="WriteDataText" Text="Scrittura dati negli Album selezionati" Comment="Pasting Data into selected Books" />
+    <Text Key="AddFolderLibrary" Text="Gli Album in questa cartella ed in tutte le sottodirectory verranno aggiunti alla Libreria." Comment="Books in this Folder and all sub Folders will be added to the library." />
+    <Text Key="OpenError" Text="Impossibile aprire il file '{0}'!" Comment="Could not open the book '{0}'!" />
+    <Text Key="ExportQueueMessage" Text="Esporta Album '{0}'" Comment="Export Book '{0}'" />
+    <Text Key="RefreshInfoQueueMessage" Text="Aggiorna informazioni per Album '{0}'" Comment="Refresh information for Book '{0}'" />
+    <Text Key="WriteInfoQueueMessage" Text="Scrivi Informazioni sul File '{0}'" Comment="Write information to Book file '{0}'" />
+    <Text Key="FastThumbanilQueueMessage" Text="Recupera Miniatura {0} nel  file '{1}'" Comment="Retrieve cached thumbnail for page {0} in file '{1}'" />
+    <Text Key="SlowThumbnailQueueMessage" Text="Crea Minaitura per pagina {0} nel file '{1}'" Comment="Create thumbnail for page {0} in file '{1}'" />
+    <Text Key="GetImageQueueMessage" Text="Rrecupera Pagina {0} nel file '{1}'" Comment="Get page {0} in file '{1}'" />
+    <Text Key="OpeningComic" Text="Sto aprendo l'Album '{0}'..." Comment="Opening the book '{0}'..." />
+    <Text Key="NoComicOpen" Text="Nessun Album Aperto" Comment="No book is open" />
+    <Text Key="CloseExternalReader" Text="Questa operazione chiuderà solamente la finestra del Lettore e non l'Album aperto!" Comment="This will only close the reader Window and not the open Book(s)!" />
+    <Text Key="DontShowAgain" Text="Non mostrarlo più" Comment="Do not show this again" />
+    <Text Key="RestartQuestion" Text="ComicRack deve essere riavviato per completare l'operazione. Vuoi riavviare adesso ?" Comment="ComicRack needs to restart to complete the operation! Do you want to restart now?" />
+    <Text Key="DatabaseBackupError" Text="C'è stato un errore nel salvataggio del Backup del Database" Comment="There was an error saving the Database backup" />
+    <Text Key="DatabaseBackupRestored" Text="Il backup è stato installato correttamente !" Comment="A previous database backup has been successfully restored!" />
+    <Text Key="ScanComicQueueMessage" Text="Scansione '{0}'" Comment="Scanning '{0}'" />
+    <Text Key="UpdateComicDynamicMessage" Text="Aggiornamento Web Comic '{0}'" Comment="Updating Web Comic '{0}'" />
+    <Text Key="ErrorWritingReadingList" Text="C'è stato un erroe nell'esportazione della Lista di Lettura '{0}'" Comment="There was an error exporting the Reading List '{0}'" />
+    <Text Key="ErrorOpeningReadingList" Text="C'è stato un errore nell'importazione della Lista di Lettura: '{0}'" Comment="There was an error importing the Reading List '{0}'" />
+    <Text Key="UnsolvedBookItems" Text="Gli Album seguenti non sono stati trovati nella Libreria:\n{0}\nVuoi Importare comunque la Lista di Lettura ?" Comment="The following Books were not found in the Library:\n{0}\nDo you still want to import the Reading List?" />
+    <Text Key="OutputFileExists" Text="Il File in scrittura '{0}' esiste di già!" Comment="Output File '{0}' already exists!" />
+    <Text Key="ConvertToCBZ" Text="Converti in CBZ" Comment="Convert to CBZ" />
+    <Text Key="ConvertToCB7" Text="Converti in CB7" Comment="Convert to CB7" />
+    <Text Key="ExportForPSP" Text="Esporta per PSP" Comment="Export for PSP" />
+    <Text Key="AbortScan" Text="Annulla Scansione" Comment="Abort Scanning" />
+    <Text Key="AbortExport" Text="Annulla Esportazione" Comment="Abort Export" />
+    <Text Key="FailedToReadImage" Text="Impossibile leggere l'Immagine {0}!" Comment="Failed to read Image {0}!" />
+    <Text Key="InvalidExportSettings" Text="Le Impostazioni di Esportazione non sono valide (es. aggiunto un formato non supoortato)" Comment="The export settings are not valid (e.g. adding a not supported format to the library)" />
+    <Text Key="SourceComicNotValid" Text="Origine dell'Album non Valida" Comment="Source of Book is not valid" />
+    <Text Key="ExportComicTitle" Text="Esporta Album in" Comment="Export Book to" />
+    <Text Key="ComicRackMinimizedTitle" Text="ComicRack sta ancora funzionando" Comment="ComicRack is still running" />
+    <Text Key="ComicRackMinimized" Text="Chiudi ComicRack da File/Esci oppure cambia l'impostazione nella pagina delle Preferenze\nClicca qua per non mostrare più questo messaggio." Comment="You either close ComicRack with File/Exit or you can change this behavior in the Preferences Dialog.\nClick here to not show this message again" />
+    <Text Key="ConnectRemoteError" Text="Impossibile connettersi al Server '{0}'" Comment="Could not connect to Remote Server '{0}'" />
+    <Text Key="CheckingDatabase" Text="Controllo Database" Comment="Checking Database" />
+    <Text Key="CheckingDatabaseText" Text="Controllo Integrità e aggiornamento dati mancanti" Comment="Checking integrity and updating any missing Data" />
+    <Text Key="AskDirtyItems" Text="Confermi Slavataggio delle Informazioni Album che non sono presenti nel Datbaase?\nTutti i cambiamenti non salvati adesso saranno persi!" Comment="Save changed information for Books that are not in the database?\nAll changes not saved now will be lost!" />
+    <Text Key="AlwaysSaveDirty" Text="Salva sempre i cambiamenti" Comment="Always save changes" />
+    <Text Key="SaveInfo" Text="Salvataggio Informazioni Album" Comment="Saving Book Information" />
+    <Text Key="SaveInfoText" Text="Attendere prego: salvataggio informazioni in corso!" Comment="Please wait while all unsaved information is stored!" />
+    <Text Key="UndoEditMultipleComics" Text="Modifica più Album" Comment="Edit multiple Books" />
+    <Text Key="UndoShowInfo" Text="Informazioni Album" Comment="Book Info" />
+    <Text Key="UndoScript" Text="Automazione '{0}'" Comment="Automation '{0}'" />
+    <Text Key="UndoEditColumn" Text="Modifica Colonna '{0}'" Comment="Edit Column '{0}'" />
+    <Text Key="UndoRating" Text="Cambia Valutazione" Comment="Change Rating" />
+    <Text Key="ScriptPackageExists" Text="Un pacchetto di script con lo stesso nome esiste di già: vuoi sovrascriverlo?" Comment="A Script Package with the same name already exists! Do you want to overwrite this Package?" />
+    <Text Key="SelectLocalFolder" Text="Seleziona una Cartella locale per memorizzare gli Album remoti" Comment="Select a local folder to store the remote Books" />
+    <Text Key="ServerActivity" Text="{0} Server(s) funzionanti" Comment="{0} Server(s) running" />
+    <Text Key="ConnectServerText" Text="Apertura connessione al Server remoto" Comment="Opening connection to the remote Server" />
+    <Text Key="ErrorFileUsed" Text="Questo File è già in uso nella Libreria" Comment="This file is already used in the Library" />
+    <Text Key="CreateMissingBooks" Text="Aggiungi gli Album mancanti alla Libreria" Comment="Add missing Books to Library" />
+    <Text Key="ImportReadingList" Text="Importa Lista di Lettura" Comment="Import Reading List" />
+    <Text Key="MatchBooksWithLibrary" Text="Corrispondenza Lista con la Libreria" Comment="Matching list with Library" />
+    <Text Key="ListMore" Text="{0} ancora..." Comment="{0} more..." />
+    <Text Key="TaskGroupLoadThumbnails" Text="Carica Miniature" Comment="Load Thumbnails" />
+    <Text Key="TaskGroupCreateThumbnails" Text="Crea Miniatura" Comment="Create Thumbnails" />
+    <Text Key="TaskGroupLoadPages" Text="Carica Pagine" Comment="Load Pages" />
+    <Text Key="TaskGroupCreatePages" Text="Crea Pagina" Comment="Create Pages" />
+    <Text Key="TaskGroupReadInfo" Text="Leggi Informazioni" Comment="Read Info" />
+    <Text Key="TaskGroupWriteInfo" Text="Scrivi Informazioni" Comment="Write Info" />
+    <Text Key="TaskGroupUpdateDynamic" Text="Aggiorna Web Comic" Comment="Update Web Comics" />
+    <Text Key="TaskGroupExport" Text="Esporta Album" Comment="Export Books" />
+    <Text Key="TaskGroupScanning" Text="Scansione" Comment="Scanning" />
+    <Text Key="DatabaseBackup" Text="Backup Database" Comment="Database Backup" />
+    <Text Key="DatabaseBackupText" Text="Creazione e Salvataggio di un File Backup" Comment="Creating and saving the Backup File" />
+    <Text Key="DatabaseRestore" Text="Restore Database" Comment="Database Restore" />
+    <Text Key="DatabaseRestoreText" Text="Sto facendo il Restore del Database dal File di Backup" Comment="Restoring Database from Backup File" />
+    <Text Key="DatabaseRestoreError" Text="C'è stato un errore nel Restore del Backup del Database" Comment="There was an error restoring the Database Backup" />
+    <Text Key="ClearComicData" Text="Pulisci Album" Comment="Clear Books" />
+    <Text Key="ClearComicDataText" Text="Sto rimuovendo tutti dati dall'Album" Comment="Removing all entered data from the Books" />
+    <Text Key="AskClearComicData" Text="Vuoi veramente rimuovere tutte le informazioni inderite dagli Album selezionati  (puoi sempre fare Annulla) ?" Comment="Do you want to remove all entered data from the selected Books (can be reverted with Undo)?" />
+    <Text Key="AlsoRemoveFromLibrary" Text="Rimuovi anche l'Album dalla Libreri&amp;a (le informazioni non salvate saranno perse)" Comment="&amp;Additionally remove the books from the Library (all information not stored in the files will be lost)" />
+    <Text Key="AskMoveBin" Text="Sei sicuro di voler spostare questi Album nel Cestino?" Comment="Are you sure you want to move these files to the Recycle Bin?" />
+    <Text Key="BackgroundConvert" Text="Ci sono file in aggiornamento/conversione in background. Se chiudi ora, alcune informazioni non saranno scritte nell'Album!" Comment="Files are still being updated/converted/synchronized in the background. If you close now, some information will not be written!" />
+    <Text Key="DeviceSyncQueueMessage" Text="Sincronizzazione Dispositivo '{0}'" Comment="Syncing Device '{0}'" />
+    <Text Key="AbortDeviceSync" Text="Annulla sincronizzazione" Comment="Abort syncinc Devices" />
+    <Text Key="TaskGroupDeviceSync" Text="Sincronizzazione Dispositivo" Comment="Syncing Devices" />
+    <Text Key="DiscoveringDevicesCaption" Text="Ricerca Dispositivi" Comment="Discovering devices" />
+    <Text Key="DiscoveringDevicesDescription" Text="Ricerca Dispositivi Connessi" Comment="Searching for connected devices" />
+    <Text Key="DeviceOutOfSpace" Text="Il Dispositivo '{0}' non ha spazio sufficente" Comment="Device '{0}' does not have enough free space" />
+    <Text Key="RenameDevice" Text="Rinomia Dispositivo" Comment="Rename Device" />
+    <Text Key="ErrorPasteQuery" Text="Non ho potuto copiare la Lista a causa dell'errore:" Comment="Could not paste List because of following error:" />
+  </Texts>
+</TR>

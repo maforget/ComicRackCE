@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicDataPasteDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btMarkAll" Text="&amp;Όλα" Comment="&amp;All" />
+    <Text Key="btMarkDefined" Text="Μόνο &amp;Ορίσμα" Comment="Only &amp;Set" />
+    <Text Key="btMarkNone" Text="&amp;Εκκαθάριση" Comment="&amp;Clear" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="chkColor" Text="Ρύθμιση χρώματος" Comment="Color Adjustment" />
+    <Text Key="chkColorist" Text="Βαφέας" Comment="Colorist" />
+    <Text Key="chkCount" Text="Συνολικός Αριθμός" Comment="Total Number" />
+    <Text Key="chkCover" Text="Καλλιτέχνης Εξώφυλλου" Comment="Cover Artist" />
+    <Text Key="chkEditor" Text="Συντάκτης" Comment="Editor" />
+    <Text Key="chkGenre" Text="Είδος" Comment="Genre" />
+    <Text Key="chkImprint" Text="Αποτύπωση" Comment="Imprint" />
+    <Text Key="chkInker" Text="Μελανωτήρας" Comment="Inker" />
+    <Text Key="chkLanguage" Text="Γλώσσα" Comment="Language" />
+    <Text Key="chkLetterer" Text="Σεναριογράφος" Comment="Letterer" />
+    <Text Key="chkMonth" Text="Μήνας" Comment="Month" />
+    <Text Key="chkNotes" Text="Σημειώσεις" Comment="Notes" />
+    <Text Key="chkNumber" Text="Αριθμός" Comment="Number" />
+    <Text Key="chkPenciller" Text="Σκιτσογράφος" Comment="Penciller" />
+    <Text Key="chkPublisher" Text="Εκδότης" Comment="Publisher" />
+    <Text Key="chkSeries" Text="Σειρά" Comment="Series" />
+    <Text Key="chkSummary" Text="Περίληψη" Comment="Summary" />
+    <Text Key="chkTags" Text="Καρτέλες" Comment="Tags" />
+    <Text Key="chkTitle" Text="Τίτλος" Comment="Title" />
+    <Text Key="chkVolume" Text="Τόμος" Comment="Volume" />
+    <Text Key="chkWriter" Text="Συγγραφέας" Comment="Writer" />
+    <Text Key="chkYear" Text="Έτος" Comment="Year" />
+    <Text Key="chkManga" Text="Manga" Comment="Manga" />
+    <Text Key="chkFormat" Text="Διαμόρφωση" Comment="Format" />
+    <Text Key="chkBlackAndWhite" Text="Ασπρόμαυρο" Comment="Black and White" />
+    <Text Key="grpArtists" Text="Καλλιτέχνες / Εμπλεκόμενα άτομα" Comment="Artists / People Involved" />
+    <Text Key="grpMain" Text="Κύριο" Comment="Main" />
+    <Text Key="chkAgeRating" Text="Αξιολόγηση Ηλικιακά" Comment="Age Rating" />
+    <Text Key="chkCharacters" Text="Χαρακτήρες" Comment="Characters" />
+    <Text Key="chkWeb" Text="Ιστός" Comment="Web" />
+    <Text Key="chkLocations" Text="Τοποθεσίες" Comment="Locations" />
+    <Text Key="chkTeams" Text="Ομάδες" Comment="Teams" />
+    <Text Key="chkRating" Text="Η Αξιολόγηση μου" Comment="My Rating" />
+    <Text Key="chkCommunityRating" Text="Αξιολόγηση Κοινότητας" Comment="Community Rating" />
+    <Text Key="chkAlternateCount" Text="Εναλ. Συνολικός Αριθμός" Comment="Alt. Total Number" />
+    <Text Key="chkAlternateNumber" Text="Εναλ. Αριθμός" Comment="Alt. Number" />
+    <Text Key="chkAlternateSeries" Text="Εναλ. Σειρά" Comment="Alt. Series" />
+    <Text Key="chkBookPrice" Text="Τιμή" Comment="Price" />
+    <Text Key="chkBookAge" Text="Ηλικία" Comment="Age" />
+    <Text Key="chkBookCondition" Text="Κατάσταση" Comment="Condition" />
+    <Text Key="chkBookStore" Text="Βιβλιοπωλείο:" Comment="Store" />
+    <Text Key="chkBookOwner" Text="Ιδιοκτήτης " Comment="Owner" />
+    <Text Key="chkBookLocation" Text="Τοποθεσία" Comment="Location" />
+    <Text Key="chkBookCollectionStatus" Text="Κατάσταση Συλλογής" Comment="Collection Status" />
+    <Text Key="chkBookNotes" Text="Σημειώσεις" Comment="Notes" />
+    <Text Key="grpPlotNotes" Text="Πλοκή &amp; Σημειώσεις" Comment="Plot &amp; Notes" />
+    <Text Key="grpCatalog" Text="Κατάλογος" Comment="Catalog" />
+    <Text Key="ComicDataPasteDialog" Text="Επικόλληση Δεδομένων στο {0} eComics" Comment="Paste Data into {0} Books" />
+    <Text Key="chkISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="chkPageCount" Text="Σελίδες" Comment="Pages" />
+    <Text Key="chkOpenTime" Text="Άνοιξε/Αναγνώστηκε" Comment="Opened/Read" />
+    <Text Key="chkAddedTime" Text="Προστέθηκε/Αγοράστηκε" Comment="Added/Purchased" />
+    <Text Key="chkSeriesComplete" Text="Πλήρης σειρά" Comment="Series complete" />
+    <Text Key="chkStoryArc" Text="Story Arc" Comment="Story Arc" />
+    <Text Key="chkSeriesGroup" Text="Series Group" Comment="Series Group" />
+    <Text Key="chkMainCharacterOrTeam" Text="Πρωταγωνιστής" Comment="Main Character" />
+    <Text Key="chkReview" Text="Αναθεώρηση" Comment="Review" />
+  </Texts>
+</TR>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.CommitProposed" CultureName="hr">
+  <Texts>
+    <Text Key="AskCommit" Text="Želite li trajno spremiti promjene?\nPredložene vrijednosti su izvedene iz naziva datoteka i prikazane su u sivoj boji." Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
+    <Text Key="Name" Text="Trajno pohrani predložene vrijednosti..." Comment="Commit Proposed Values..." />
+    <Text Key="Overwrite" Text="&amp;Također se prepisuju postojeće vrijednosti" Comment="&amp;Also overwrite existing values" />
+    <Text Key="Write" Text="Pisanje" Comment="Write" />
+  </Texts>
+</TR>

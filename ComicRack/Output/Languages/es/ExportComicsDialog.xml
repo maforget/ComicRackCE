@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ExportComicsDialog" CultureName="es">
+  <Texts>
+    <Text Key="grpExportLocation" Text="Dónde Exportar" Comment="Export Location" />
+    <Text Key="grpFileFormat" Text="Formato de archivo" Comment="File Format" />
+    <Text Key="grpPageFormat" Text="Formato de Página" Comment="Page Format" />
+    <Text Key="grpFileNaming" Text="Nombramiento de Archivos" Comment="File Naming" />
+    <Text Key="grpImageProcessing" Text="Tratamiento de las Imágenes" Comment="Image Processing" />
+    <Text Key="btRemovePreset" Text="Eliminar" Comment="Remove" />
+    <Text Key="labelExportTo" Text="Exportar a:" Comment="Export to:" />
+    <Text Key="cbExport.Item0" Text="Elegir una carpeta" Comment="Select a Folder" />
+    <Text Key="cbExport.Item2" Text="La misma carpeta y cambiar en la Biblioteca" Comment="Same Folder and replace in Library" />
+    <Text Key="labelFolder" Text="Carpeta:" Comment="Folder:" />
+    <Text Key="btChooseFolder" Text="Escoger..." Comment="Choose..." />
+    <Text Key="cbComicFormat.Item0" Text="El mismo que el Original" Comment="Same as Original" />
+    <Text Key="labelCompression" Text="Compresión" Comment="Compression" />
+    <Text Key="cbCompression.Item0" Text="Ninguna" Comment="None" />
+    <Text Key="cbCompression.Item1" Text="Media" Comment="Medium" />
+    <Text Key="cbCompression.Item2" Text="Alta" Comment="Strong" />
+    <Text Key="labelRemovePageFilter" Text="Eliminar Páginas:" Comment="Remove Pages:" />
+    <Text Key="cbPageFormat.Item0" Text="Preservar el Original" Comment="Preserve Original" />
+    <Text Key="labelPageQuality" Text="Calidad:" Comment="Quality:" />
+    <Text Key="labelPageResize" Text="Redimensionar:" Comment="Resize:" />
+    <Text Key="cbPageResize.Item0" Text="Preservar el Original" Comment="Preserve Original" />
+    <Text Key="cbPageResize.Item1" Text="Como mejor encaje (Ancho+Alto)" Comment="Best fit Width &amp; Height" />
+    <Text Key="cbPageResize.Item2" Text="Establecer Anchura" Comment="Set Width" />
+    <Text Key="cbPageResize.Item3" Text="Establecer Altura" Comment="Set Height" />
+    <Text Key="labelX" Text="x" Comment="x" />
+    <Text Key="chkDontEnlarge" Text="No agrandar" Comment="Don't enlarge" />
+    <Text Key="SelectExportFolder" Text="Escoja la Carpeta donde Exportar" Comment="Please select the Export Folder" />
+    <Text Key="btCancel" Text="&amp;Cancelar" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Aceptar" Comment="&amp;OK" />
+    <Text Key="labelNamingTemplate" Text="Plantilla:" Comment="Template:" />
+    <Text Key="labelCustomNaming" Text="Personalizado:" Comment="Custom:" />
+    <Text Key="labelCustomStartIndex" Text="Comienzo:" Comment="Start:" />
+    <Text Key="cbNamingTemplate.Item0" Text="Nombre de archivo" Comment="Filename" />
+    <Text Key="cbNamingTemplate.Item2" Text="Personalizado" Comment="Custom" />
+    <Text Key="chkOverwrite" Text="Sobrescribir los ficheros ya existentes" Comment="Overwrite existing Files" />
+    <Text Key="ComicRackExportPresets" Text="Preajustes de ComicRack" Comment="ComicRack Presets" />
+    <Text Key="UserExportPresets" Text="Preajustes del Usuario" Comment="User Presets" />
+    <Text Key="labelSharpening" Text="Nitidez" Comment="Sharpening" />
+    <Text Key="chkAutoContrast" Text="Contraste Automático" Comment="Automatic Contrast Enhancement" />
+    <Text Key="labelSaturation" Text="Saturación" Comment="Saturation" />
+    <Text Key="labelBrightness" Text="Brillo" Comment="Brightness" />
+    <Text Key="labelContrast" Text="Contraste" Comment="Contrast" />
+    <Text Key="labelImagProcessingSource" Text="Origen:" Comment="Source:" />
+    <Text Key="labelImageProcessingCustom" Text="Personalizado:" Comment="Custom:" />
+    <Text Key="cbImageProcessingSource.Item0" Text="Configuraciones Personalizadas" Comment="Custom Settings" />
+    <Text Key="chkIgnoreErrorPages" Text="Ignorar las páginas con errores y seguir exportando" Comment="Ignore Pages with errors and continue export" />
+    <Text Key="cbExport.Item3" Text="Preguntar antes de exportar" Comment="Ask before Export" />
+    <Text Key="chkCombine" Text="Combinar los ficheros seleccionados" Comment="Combine selected Files" />
+    <Text Key="btSavePreset" Text="Guardar Preferencia..." Comment="Save Preset..." />
+    <Text Key="labelIncludePages" Text="Incluir páginas:" Comment="Include Pages:" />
+    <Text Key="ExportComicsDialog" Text="Exportar Libros" Comment="Export Books" />
+    <Text Key="cbExport.Item1" Text="La misma carpeta que el libro original" Comment="Same Folder as the original Book" />
+    <Text Key="chkDeleteOriginal" Text="Eliminar el libro original tras Exportarlo con éxito" Comment="Delete original Book after successful Export" />
+    <Text Key="chkAddNewToLibrary" Text="Añadir a la Biblioteca el nuevo Libro creado" Comment="Add newly created Book to Library" />
+    <Text Key="labelComicFormat" Text="Formato:" Comment="Format:" />
+    <Text Key="chkEmbedComicInfo" Text="Insertar Comicinfo.xml" Comment="Embed Book Info" />
+    <Text Key="labelPageFormat" Text="Formato:" Comment="Format:" />
+    <Text Key="cbNamingTemplate.Item1" Text="Título del libro" Comment="Book Caption" />
+    <Text Key="labelGamma" Text="Gamma" Comment="Gamma" />
+    <Text Key="cbImageProcessingSource.Item1" Text="Aplicar los parámetros del Libro" Comment="Book settings are applied" />
+    <Text Key="labelDoublePages" Text="Páginas Dobles:" Comment="Double Pages:" />
+    <Text Key="cbDoublePages.Item0" Text="Mantener" Comment="Keep" />
+    <Text Key="cbDoublePages.Item1" Text="Dividir" Comment="Split" />
+    <Text Key="cbDoublePages.Item2" Text="Rotar 90°" Comment="Roatete 90°" />
+  </Texts>
+</TR>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FolderListDialog" CultureName="ja">
+  <Texts>
+    <Text Key="FolderListDialog" Text="フォルダ リストの編集" Comment="Edit Folder List" />
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelName" Text="名称:" Comment="Name:" />
+    <Text Key="labelBooks" Text="コミック:" Comment="eComics:" />
+    <Text Key="CombineMode" Text="各リスト中のすべてのコミック|各リストの実在するコミックのみ" Comment="All eComics from every list|Only eComics existing in every list" />
+    <Text Key="labelNotes" Text="ノート:" Comment="Notes:" />
+  </Texts>
+</TR>

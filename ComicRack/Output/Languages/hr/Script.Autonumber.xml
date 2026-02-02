@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.Autonumber" CultureName="hr">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Odustanak" Comment="&amp;Cancel" />
+    <Text Key="Caption" Text="Vođena autonumeracija" Comment="Autonumbering Wizard" />
+    <Text Key="chkTotal" Text="Spremanje ukupnog broja:" Comment="Save total Number:" />
+    <Text Key="labelBegin" Text="Početak s brojem:" Comment="Begin at Number:" />
+    <Text Key="Name" Text="Vođena autonumeracija..." Comment="Autonumber Wizard..." />
+    <Text Key="NumberAltSeries" Text="Numeriranje nastavaka serije" Comment="Number Alternate Series" />
+    <Text Key="NumberSeries" Text="Broj serije" Comment="Number Series" />
+    <Text Key="OK" Text="&amp;Potvrda" Comment="&amp;OK" />
+  </Texts>
+</TR>

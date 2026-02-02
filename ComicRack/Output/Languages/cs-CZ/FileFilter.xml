@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="FileFilter" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="PageImageSave" Text="formát JPEG|*.jpg|formát Windows Bitmap|*.bmp|formát PNG|*.png|formát GIF|*.gif|formát TIFF|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif" />
+    <Text Key="ComicRackDatabase" Text="Databáze ComicRacku|*.xml" Comment="ComicRack Database|*.xml" />
+    <Text Key="AllFiles" Text="Všechny soubory" Comment="All Files" />
+    <Text Key="AllSupportedFiles" Text="Všechny podporované soubory" Comment="All supported Files" />
+    <Text Key="ReadingListLoad" Text="Čtenářský seznam ComicRacku|*.cbl|Xml soubor|*.xml|Všechny soubory|*.*" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml|All Files|*.*" />
+    <Text Key="FormatReadingList" Text="Čtenářský seznam ComicRacku" Comment="ComicRack Reading List" />
+    <Text Key="ScriptPackageOpen" Text="zásuvný modul ComicRacku|*.crplugin|archiv scriptů|*.zip" Comment="ComicRack Plugin|*.crplugin|Script Archive|*.zip" />
+    <Text Key="KeyboardLayout" Text="Rozvržení kláves" Comment="Keyboard Layout" />
+    <Text Key="KeyboardLayoutFilter" Text="Rozvržení kláves|*.xml" Comment="Keyboard Layout|*.xml" />
+    <Text Key="LoadThumbnail" Text="formát JPEG|*.jpg|formát Windows Bitmap|*.bmp|formát PNG|*.png|formát GIF|*.gif|formát TIFF|*.tif|formát ikony|*.ico" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif|Icon Image|*.ico" />
+    <Text Key="ComicRackBackup" Text="Záloha ComicRacku|*.zip" Comment="ComicRack Backup|*.zip" />
+    <Text Key="ReadingListSaveFilter" Text="ComicRack Reading List|*.cbl|ComicRack Reading List (Single Entries)|*.cbl" Comment="ComicRack Reading List|*.cbl|ComicRack Reading List (Single Entries)|*.cbl" />
+  </Texts>
+</TR>

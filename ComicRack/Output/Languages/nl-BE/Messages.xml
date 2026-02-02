@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Messages" CultureName="nl-BE">
+  <Texts>
+    <Text Key="AskRemoveComics" Text="Bent u zeker dat u deze Lectuur wil verwijderen uit de lijst?" Comment="Are you sure you want to remove these books from the list?" />
+    <Text Key="AskRemoveFavorite" Text="Wilt u echt de link naar deze Favorietenmap verwijderen?" Comment="Do you really want to remove this Favorite Folder link?" />
+    <Text Key="AskRemoveFromLibrary" Text="Bent u zeker dat u deze Albums uit de Bibliotheek wenst te verwijderen?\nAlle nog niet opgeslagen Informatie gaat daardoor verloren (bv Huidig blz., laatste opening enz)!" Comment="Are you sure you want to remove these books from the library?\nAll information not stored in the files will be lost (like Open Count, Last Read etc.)!" />
+    <Text Key="AskRemoveItem" Text="Wilt u dit echt verwijderen?" Comment="Do you really want to remove this item?" />
+    <Text Key="Attention" Text="Opgelet" Comment="Attention" />
+    <Text Key="CloseComicRack" Text="Sluit ComicRack" Comment="Close ComicRack" />
+    <Text Key="ClosingComicRack" Text="ComicRack wordt afgesloten" Comment="Closing ComicRack" />
+    <Text Key="CouldNotSaveImage" Text="Fout bij het opslaan van de pagina!\nReden: {0}" Comment="Could not save the page image!\nReason: {0}" />
+    <Text Key="CreateMainWindow" Text="Creatie Hoofdscherm" Comment="Creating Main Window" />
+    <Text Key="Error" Text="Fout" Comment="Error" />
+    <Text Key="ErrorShutDown" Text="Een fout trad op tijdens het afsluiten:\n{0}" Comment="There was an error shutting down the application:\n{0}" />
+    <Text Key="FailedRetrieveDatabase" Text="Slaagde er niet in de database op te halen van de Server!" Comment="Failed to retrieve the Database from the Server!" />
+    <Text Key="FailedToInitialize" Text="ComicRack kon niet geinitialiseerd worden. Reden: {0}" Comment="Failed to initialize ComicRack: {0}" />
+    <Text Key="GetServerLibraryText" Text="De gedeelde Bibliotheek wordt van de Server opgehaald" Comment="Retrieving the shared Library from the Server" />
+    <Text Key="InitCache" Text="Initialiseer Disk Caches" Comment="Initialize Disk Caches" />
+    <Text Key="InitGUI" Text="Initialiseer Gebruiksinterface" Comment="Initalizing User Interface" />
+    <Text Key="InitScripts" Text="Initialiseer Scripts" Comment="Initalizing Scripts" />
+    <Text Key="ListLayout" Text="Lijst Lay-out" Comment="List Layout" />
+    <Text Key="LoadCustomSettings" Text="Laad de gebruiker instellingen" Comment="Loading custom settings" />
+    <Text Key="LoadingThumbnail" Text="Laad Miniatuur..." Comment="Loading Thumbnail..." />
+    <Text Key="LoadingPage" Text="Laden van de Pagina {0}..." Comment="Loading Page {0}..." />
+    <Text Key="MoveBin" Text="&amp;Verplaats de bestanden ook naar de Prullenbak" Comment="&amp;Also move the files to the Recycle Bin" />
+    <Text Key="NotAskAgain" Text="&amp;Vraag me dit niet meer" Comment="&amp;Do not ask me again" />
+    <Text Key="OpenDatabase" Text="Database wordt geopend" Comment="Opening Database" />
+    <Text Key="PasswordNeeded" Text="Een passwoord is nodig voor deze Bibliotheek '{0}' :" Comment="A password is needed for the remote Library '{0}':" />
+    <Text Key="ReadNewsFeed" Text="Lees Nieuwe Berichten" Comment="Reading News Feed" />
+    <Text Key="RefreshInfo" Text="Vernieuw de informatie" Comment="Refreshing Information" />
+    <Text Key="RefreshServer" Text="Vernieuwen Server Bibliotheek" Comment="Refreshing Server Library" />
+    <Text Key="Remove" Text="Verwijderen" Comment="Remove" />
+    <Text Key="RetrieveNews" Text="Haal Nieuwsberichten op" Comment="Retrieving News" />
+    <Text Key="RetrieveNewsText" Text="Ververst geabonneerde Nieuwskanalen" Comment="Refreshing subscribed News Channels" />
+    <Text Key="SaveAllData" Text="Alle gegevens worden opgeslagen..." Comment="Saving all Data to Disk..." />
+    <Text Key="SaveListLayout" Text="Bewaar de Lay-out van de Lijst" Comment="Save List Layout" />
+    <Text Key="ScriptFailed" Text="De uitvoering van het script mislukte!" Comment="Execution of the script failed!" />
+    <Text Key="WrongPassword" Text="Foutief passwoord '{0}' . Probeer opnieuw:" Comment="The specified password for the Library'{0}' is not correct. Please try again:" />
+    <Text Key="Set" Text="Gebruik" Comment="Set" />
+    <Text Key="AskSetAllLists" Text="Bent u zeker dat u alle Lijsten wil linken met de Huidige Lay-out?" Comment="Are you sure you want to set all Lists to the current layout?" />
+    <Text Key="PageFailedToLoad" Text="Blad kon niet gelezen worden.\nDruk Vernieuw om terug te laden..." Comment="Page failed to load.\nTry refresh to load again..." />
+    <Text Key="FastThumbanilQueueMessage" Text="Laad Miniatuur voor Blz {0} in bestand {1}" Comment="Retrieve cached thumbnail for page {0} in file '{1}'" />
+    <Text Key="SlowThumbnailQueueMessage" Text="Creëer Miniatuur voor de pagina {0} in Bestand {1}" Comment="Create thumbnail for page {0} in file '{1}'" />
+    <Text Key="GetImageQueueMessage" Text="Laad Bladzijde {0} in Bestand {1}" Comment="Get page {0} in file '{1}'" />
+    <Text Key="OpenError" Text="Kon het Bestand '{0}' niet openen!" Comment="Could not open the book '{0}'!" />
+    <Text Key="OpeningComic" Text="Het boek wordt geopend '{0}'..." Comment="Opening the book '{0}'..." />
+    <Text Key="NoComicOpen" Text="Geen open Lectuur teruggevonden" Comment="No book is open" />
+    <Text Key="RestartQuestion" Text="Hiervoor is wel een herstart vereist! Ok?" Comment="ComicRack needs to restart to complete the operation! Do you want to restart now?" />
+    <Text Key="DatabaseBackupError" Text="Er was een fout bij het back-uppen van de database!" Comment="There was an error saving the Database backup" />
+    <Text Key="DatabaseBackupRestored" Text="Succesvolle installatie van een vorige database back-up!" Comment="A previous database backup has been successfully restored!" />
+    <Text Key="ScanComicQueueMessage" Text="Scannen '{0}'" Comment="Scanning '{0}'" />
+    <Text Key="ErrorWritingReadingList" Text="Een fout trad op bij het exporteren van de Leeslijst '{0}'" Comment="There was an error exporting the Reading List '{0}'" />
+    <Text Key="ErrorOpeningReadingList" Text="Een fout trad op bij het importeren van de Leeslijst '{0}'" Comment="There was an error importing the Reading List '{0}'" />
+    <Text Key="Export" Text="Exporteert" Comment="Export" />
+    <Text Key="OutputFileExists" Text="Uitvoer Bestand '{0}' bestaat al!" Comment="Output File '{0}' already exists!" />
+    <Text Key="ConvertToCBZ" Text="Converteer naar CBZ" Comment="Convert to CBZ" />
+    <Text Key="ConvertToCB7" Text="Converteer naar CB7" Comment="Convert to CB7" />
+    <Text Key="ExportForPSP" Text="Export voor PSP" Comment="Export for PSP" />
+    <Text Key="AbortScan" Text="Annuleer 't Scannen" Comment="Abort Scanning" />
+    <Text Key="AbortExport" Text="Annuleer 't Exporteren" Comment="Abort Export" />
+    <Text Key="FailedToReadImage" Text="Lezing Beeld mislukte {0}!" Comment="Failed to read Image {0}!" />
+    <Text Key="InvalidExportSettings" Text="De export instellingen zijn ongeldig (bv toevoeging van een niet ondersteunde bestandsextensie)" Comment="The export settings are not valid (e.g. adding a not supported format to the library)" />
+    <Text Key="DontShowAgain" Text="Toon dit NIET meer!" Comment="Do not show this again" />
+    <Text Key="ComicRackMinimizedTitle" Text="ComicRack is nog in uitvoering" Comment="ComicRack is still running" />
+    <Text Key="ComicRackMinimized" Text="Ofwel sluit je ComicRack via Bestand/Beëindigen ofwel verander je dit gedrag in de Instellingen.\nKlik hier om dit bericht niet meer te tonen." Comment="You either close ComicRack with File/Exit or you can change this behavior in the Preferences Dialog.\nClick here to not show this message again" />
+    <Text Key="ConnectRemoteError" Text="Connectie naar de Remote Server faalde '{0}'" Comment="Could not connect to Remote Server '{0}'" />
+    <Text Key="CheckingDatabase" Text="Controle Database" Comment="Checking Database" />
+    <Text Key="CheckingDatabaseText" Text="Controle integriteit en verversen ontbrekende Data" Comment="Checking integrity and updating any missing Data" />
+    <Text Key="SaveInfoText" Text="Wacht a.u.b. tot alle informatie is opgeslagen!" Comment="Please wait while all unsaved information is stored!" />
+    <Text Key="UndoScript" Text="Automatiseer '{0}'" Comment="Automation '{0}'" />
+    <Text Key="UndoEditColumn" Text="Bewerk Kolom '{0}'" Comment="Edit Column '{0}'" />
+    <Text Key="UndoRating" Text="Wijzig Waardering" Comment="Change Rating" />
+    <Text Key="ScriptPackageExists" Text="Een 'Script'-pakket met dezelfde naam bestaat al! Overschrijf je dit pakket?" Comment="A Script Package with the same name already exists! Do you want to overwrite this Package?" />
+    <Text Key="UpdateComicDynamicMessage" Text="Web Comic verversing '{0}'" Comment="Updating Web Comic '{0}'" />
+    <Text Key="ConnectToServer" Text="Verbinding met Server" Comment="Connecting to Server" />
+    <Text Key="GetShareInfoText" Text="Ontvangen van informatie over de gedeelde Bibliotheek" Comment="Getting information about the shared Library" />
+    <Text Key="ServerActivity" Text="{0} Server(s) actief" Comment="{0} Server(s) running" />
+    <Text Key="ConnectServerText" Text="Open de verbinding met de externe Server" Comment="Opening connection to the remote Server" />
+    <Text Key="ErrorFileUsed" Text="Dit bestand is al in gebruik in de Bibliotheek" Comment="This file is already used in the Library" />
+    <Text Key="ImportReadingList" Text="Importeer Leeslijst" Comment="Import Reading List" />
+    <Text Key="MatchBooksWithLibrary" Text="Lijst harmoniseren met Bibiliotheek" Comment="Matching list with Library" />
+    <Text Key="CouldNotExportKeyboardLayout" Text="Export Toetsenbordlay-out mislukte!\nReden: {0}" Comment="Could not export Keyboard Layout!\nReason: {0}" />
+    <Text Key="CouldNotImportKeyboardLayout" Text="Import Toetsenbordlay-out mislukt!\nReden: {0}" Comment="Could not import Keyboard Layout!\nReason: {0}" />
+    <Text Key="CouldNotLoadThumbnail" Text="Opening Miniatuur mislukt!\nReden: {0}" Comment="Could not open Thumbnail!\nReason: {0}" />
+    <Text Key="ListLayouts" Text="Lijst Lay-outs" Comment="List Layouts" />
+    <Text Key="AlwaysSaveDirty" Text="Bewaar steeds elke wijziging" Comment="Always save changes" />
+    <Text Key="ListMore" Text="{0} meer..." Comment="{0} more..." />
+    <Text Key="TaskGroupLoadThumbnails" Text="Laad Miniaturen" Comment="Load Thumbnails" />
+    <Text Key="TaskGroupCreateThumbnails" Text="Creëer Miniaturen" Comment="Create Thumbnails" />
+    <Text Key="TaskGroupLoadPages" Text="Laad Pagina's" Comment="Load Pages" />
+    <Text Key="TaskGroupCreatePages" Text="Creëer Pagina's" Comment="Create Pages" />
+    <Text Key="TaskGroupReadInfo" Text="Read Info" Comment="Read Info" />
+    <Text Key="TaskGroupWriteInfo" Text="Schrijf Info" Comment="Write Info" />
+    <Text Key="TaskGroupUpdateDynamic" Text="Ververst Web Comics" Comment="Update Web Comics" />
+    <Text Key="TaskGroupScanning" Text="Scanning" Comment="Scanning" />
+    <Text Key="AskExport" Text="U koos om bestaande Boeken te verwijderen of te verplaatsen tijdens export? Bent u zeker van die keuze?\nDe verwijderde bestanden zullen naar de Prullenbak verplaatst worden. Zorg voor voldoende schijfruimte en let op dat de eComics niet op een netwerkschijf staan!" Comment="You have chosen to delete or replace existing files during export. Are you sure you want to continue?\nThe deleted files will be moved to the Recycle Bin during export. Please make sure there is enough disk space available and the eComics are not located on a network drive!" />
+    <Text Key="CouldNotSaveComic" Text="Het boek kon niet weggeschreven worden!\nReden: {0}" Comment="Could not save Book!\nReason: {0}" />
+    <Text Key="DatabaseNewEmpty" Text="Een probleem trad op tijdens de opening van de database. Een nieuwe lege database werd gecreëerd!" Comment="There was a problem opening the Database. A new empty Database has been created." />
+    <Text Key="DatabaseRestored" Text="Een probleem trad op. De oudere versie is terug geinstalleerd. Nieuwe input is wellicht verloren gegaan." Comment="There was a problem with the Database. The last version to be known good has been restored. You may have lost some entires." />
+    <Text Key="FailedDeleteBooks" Text="Enkele Boeken konden niet verwijderd worden (mogelijk zijn ze momenteel in gebruik)!" Comment="Some files could not be deleted (maybe they are in use)!" />
+    <Text Key="GettingList" Text="Boekenlijst wordt opgehaald" Comment="Getting List of Books" />
+    <Text Key="GettingListText" Text="Haalt alle Boeken uit de geselecteerde map" Comment="Retrieving all Books from the selected folder" />
+    <Text Key="LoadComic" Text="Boeken worden geladen" Comment="Opening Files" />
+    <Text Key="RefreshInfoText" Text="Hernieuw de informatie voor de geselecteerde Boeken" Comment="Refreshing information for selected Books" />
+    <Text Key="SavingNewComic" Text="Het nieuwe Boek wordt opgeslagen..." Comment="Saving new Book..." />
+    <Text Key="WriteData" Text="Plak Data" Comment="Pasting Data" />
+    <Text Key="WriteDataText" Text="Plakt de Data in de geselecteerde Boeken" Comment="Pasting Data into selected Books" />
+    <Text Key="AddFolderLibrary" Text="Boeken in deze Map en haar Submappen worden toegevoegd aan de Bibliotheek." Comment="Books in this Folder and all sub Folders will be added to the library." />
+    <Text Key="ExportQueueMessage" Text="Exporteer Boek '{0}'" Comment="Export Book '{0}'" />
+    <Text Key="RefreshInfoQueueMessage" Text="Vernieuw de informatie voor 't Boek '{0}'" Comment="Refresh information for Book '{0}'" />
+    <Text Key="WriteInfoQueueMessage" Text="Schrijf informatie naar 't Boek '{0}'" Comment="Write information to Book file '{0}'" />
+    <Text Key="CloseExternalReader" Text="Dit sluit enkel de 'Lezer' en niet 't(de) open Boek(en)!" Comment="This will only close the reader Window and not the open Book(s)!" />
+    <Text Key="UnsolvedBookItems" Text="De volgende boeken werden niet teruggevonden in de Bibliotheek:\n{0}\nWil je nog steeds de Leeslijst importeren?" Comment="The following Books were not found in the Library:\n{0}\nDo you still want to import the Reading List?" />
+    <Text Key="SourceComicNotValid" Text="De bron van 't Boek is ongeldig" Comment="Source of Book is not valid" />
+    <Text Key="ExportComicTitle" Text="Exporteer Boek naar" Comment="Export Book to" />
+    <Text Key="AskDirtyItems" Text="Bewaar gewijzigde info van niet in de Database opgenomen Boeken?\nAlle wijzigingen gaan anders verloren!" Comment="Save changed information for Books that are not in the database?\nAll changes not saved now will be lost!" />
+    <Text Key="SaveInfo" Text="De informatie wordt opgeslagen" Comment="Saving Book Information" />
+    <Text Key="UndoEditMultipleComics" Text="Bewerk diverse Boeken" Comment="Edit multiple Books" />
+    <Text Key="UndoShowInfo" Text="Boekinfo" Comment="Book Info" />
+    <Text Key="SelectLocalFolder" Text="Selecteer een lokale map om te bewaren" Comment="Select a local folder to store the remote Books" />
+    <Text Key="CreateMissingBooks" Text="Voeg missende Boeken toe aan de Bibliotheek" Comment="Add missing Books to Library" />
+    <Text Key="TaskGroupExport" Text="Exporteer Boeken" Comment="Export Books" />
+    <Text Key="DatabaseBackup" Text="Database Back-up" Comment="Database Backup" />
+    <Text Key="DatabaseBackupText" Text="Het Back-up bestand wordt gecreëerd en opgeslagen." Comment="Creating and saving the Backup File" />
+    <Text Key="DatabaseRestore" Text="Database Herstel" Comment="Database Restore" />
+    <Text Key="DatabaseRestoreText" Text="Wedersamenstelling Database van Back-upbestand" Comment="Restoring Database from Backup File" />
+    <Text Key="DatabaseRestoreError" Text="Er trad een fout op tijdens de wedersamenstelling van je Back-up database" Comment="There was an error restoring the Database Backup" />
+    <Text Key="ClearComicData" Text="Wis boeken" Comment="Clear Books" />
+    <Text Key="ClearComicDataText" Text="Alle ingebrachte data wordt gewist uit de geselecteerde boeken" Comment="Removing all entered data from the Books" />
+    <Text Key="AskClearComicData" Text="Wens je alle ingevoegde data van de geselecteerde boeken te verwijderen (kan ongedaan worden via Ongedaan maken)?" Comment="Do you want to remove all entered data from the selected Books (can be reverted with Undo)?" />
+    <Text Key="BackgroundConvert" Text="Er worden in de achtergrond bestanden geactualiseerd/geconverteerd/gesynchroniseerd. Wanneer u nu reeds afsluit ondermijnt u die bewerkingen!" Comment="Files are still being updated/converted/synchronized in the background. If you close now, some information will not be written!" />
+    <Text Key="DeviceSyncQueueMessage" Text="Synchronisatie apparaat '{0}'" Comment="Syncing Device '{0}'" />
+    <Text Key="AbortDeviceSync" Text="Synchronisatie afbreken" Comment="Abort syncinc Devices" />
+    <Text Key="TaskGroupDeviceSync" Text="Synchronisatie apparaten" Comment="Syncing Devices" />
+    <Text Key="DiscoveringDevicesCaption" Text="Apparaten gededecteerd" Comment="Discovering devices" />
+    <Text Key="DiscoveringDevicesDescription" Text="Zoekend naar aangesloten apparaten" Comment="Searching for connected devices" />
+    <Text Key="DeviceOutOfSpace" Text="Apparaat '{0}' heeft onvoldoende vrije ruimte" Comment="Device '{0}' does not have enough free space" />
+    <Text Key="RenameDevice" Text="Apparaat hernoemen" Comment="Rename Device" />
+    <Text Key="AlsoRemoveFromLibrary" Text="&amp;Verwijder de Boeken eveneens uit de Bibliotheek (alle niet in de Bestanden opgeslagen informatie zal verloren zijn)" Comment="&amp;Additionally remove the books from the Library (all information not stored in the files will be lost)" />
+    <Text Key="AskMoveBin" Text="Bent u zeker dat deze Lectuur naar de Prullenbak mag?" Comment="Are you sure you want to move these files to the Recycle Bin?" />
+    <Text Key="ErrorPasteQuery" Text="Kon Lijst niet plakken ingevolge fout:" Comment="Could not paste List because of following error:" />
+    <Text Key="SyncGetStatus" Text="Huidige status van het apparaat wordt opgehaald" Comment="Retrieving current status from device" />
+    <Text Key="SyncUpdateLibrary" Text="Ververs Bibliotheek van '{0}'" Comment="Updating library from '{0}'" />
+    <Text Key="SyncRemoveBook" Text="Verwijdering '{0}' van apparaat" Comment="Removing '{0}' from device" />
+    <Text Key="SyncCopyBook" Text="Kopiëring '{0}' naar apparaat" Comment="Copying '{0}' to device" />
+  </Texts>
+</TR>

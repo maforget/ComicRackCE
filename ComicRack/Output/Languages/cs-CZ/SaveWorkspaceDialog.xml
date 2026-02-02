@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SaveWorkspaceDialog" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="SaveWorkspaceDialog" Text="Uložit pracovní plochu" Comment="Save Workspace" />
+    <Text Key="btCancel" Text="&amp;Storno" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="txtName" Text="Jméno:" Comment="Name:" />
+    <Text Key="labelSettings" Text="Tato pracovní plocha bude obsahovat nastavení pro:" Comment="This workspace includes settings for:" />
+    <Text Key="chkWindowLayouts" Text="Rozvržení okna" Comment="Window Layouts" />
+    <Text Key="chkListLayouts" Text="Rozvržení seznamů" Comment="List Layouts" />
+    <Text Key="chkComicDisplayLayout" Text="Rozvržení zobrazení komksu" Comment="Book Display Layout" />
+    <Text Key="chkComicDisplaySettings" Text="Volby zobrazení komksu" Comment="Book Display Settings" />
+  </Texts>
+</TR>

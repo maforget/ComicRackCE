@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FolderListDialog" CultureName="pt-BR">
+  <Texts>
+    <Text Key="FolderListDialog" Text="Editar Lista de Pastas" Comment="Edit Folder List" />
+    <Text Key="btCancel" Text="&amp;Cancelar" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelName" Text="Nome:" Comment="Name:" />
+    <Text Key="labelBooks" Text="eGibis:" Comment="eComics:" />
+    <Text Key="CombineMode" Text="Todas os eGibis de cada lista|Apenas eGibis exitentes em cada lista" Comment="All eComics from every list|Only eComics existing in every list" />
+    <Text Key="labelNotes" Text="Notas:" Comment="Notes:" />
+  </Texts>
+</TR>

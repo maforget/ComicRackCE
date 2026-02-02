@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SearchBrowser" CultureName="hr">
+  <Texts>
+    <Text Key="AlternateSeries" Text="Nastavak" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="Boja" Comment="Colorists" />
+    <Text Key="Genre" Text="Žanr" Comment="Genres" />
+    <Text Key="Imprint" Text="Tisak" Comment="Imprints" />
+    <Text Key="Inker" Text="Tuš" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="Jezik" Comment="Languages" />
+    <Text Key="MonthAsText" Text="Mjesec" Comment="Months" />
+    <Text Key="Penciller" Text="Crtač" Comment="Pencillers" />
+    <Text Key="Publisher" Text="Izdavač" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="Serija" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="Godina" Comment="Years" />
+    <Text Key="Title" Text="Naslovi" Comment="Titles" />
+    <Text Key="Writer" Text="Autori" Comment="Writers" />
+    <Text Key="Unspecified" Text="Neodređeno" Comment="Unspecified" />
+    <Text Key="AllItems" Text="Sve ({0} {1})" Comment="All ({0} {1})" />
+  </Texts>
+</TR>

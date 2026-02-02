@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.RenameBookFiles" CultureName="fi">
+  <Texts>
+    <Text Key="Name" Text="Uudelleennimeä tiedostot seuraavasti: 'Sarja Nidos #Numero (Nidosmäärä) (Vuosi)'" Comment="Rename Files to 'Series Volume #Number (of Count) (Year)'" />
+    <Text Key="Description" Text="Skripti valittujen eSarjisten uudelleennimeämiseen metatietojen perusteella" Comment="Script to rename the selected eComics based on the meta data" />
+  </Texts>
+</TR>

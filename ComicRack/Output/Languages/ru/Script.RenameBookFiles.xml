@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.RenameBookFiles" CultureName="ru">
+  <Texts>
+    <Text Key="Name" Text="Переименовать файлы в 'Series Vol #Nummer (из *) (Год)'" Comment="Rename Files to 'Series Volume #Number (of Count) (Year)'" />
+  </Texts>
+</TR>

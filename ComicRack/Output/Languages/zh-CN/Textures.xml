@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Textures" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Ceramic" Text="陶瓷" Comment="Cermamic" />
+    <Text Key="Glass" Text="玻璃" Comment="Glass" />
+    <Text Key="LightWood" Text="轻木" Comment="Light Wood" />
+    <Text Key="OrangeMetal" Text="橙色金属" Comment="Orange Metal" />
+    <Text Key="PlankWood" Text="木板" Comment="Plank Wood" />
+    <Text Key="WhitePaper" Text="白纸" Comment="White Paper" />
+    <Text Key="WhitePaper2" Text="白纸2" Comment="White Paper 2" />
+    <Text Key="WhitePaper3" Text="白纸3" Comment="White Paper 3" />
+    <Text Key="Checkered" Text="网格" Comment="Checkered" />
+    <Text Key="Ceramic2" Text="陶瓷2" Comment="Cermamic 2" />
+    <Text Key="BrickWall" Text="砖墙" Comment="Brick Wall" />
+    <Text Key="BrushedMetal" Text="磨砂金属" Comment="Brushed Metal" />
+    <Text Key="BrushedMetal2" Text="磨砂金属2" Comment="Brushed Metal 2" />
+    <Text Key="ChalkBoard" Text="黑板" Comment="Chalk Board" />
+    <Text Key="Circles" Text="圈" Comment="Circles" />
+    <Text Key="Grass" Text="草地" Comment="Grass" />
+    <Text Key="Sketch" Text="素描" Comment="Sketch" />
+    <Text Key="Black" Text="黑色" Comment="Black" />
+  </Texts>
+</TR>

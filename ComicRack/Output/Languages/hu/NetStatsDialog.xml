@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="NetStatsDialog" CultureName="hu">
+  <Texts>
+    <Text Key="NetStatsDialog" Text="Szerver statisztikák" Comment="Server Statistics" />
+    <Text Key="Clients" Text="Kliens: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="Információ lekérések: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="Könyvtár lekérések: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="Oldal lekérések: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="Miniatűr lekérések: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="Sikertelen azonosítások: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="Minden megosztás" Comment="All Shares" />
+    <Text Key="LastMinute" Text="Utolsó perc" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="Utolsó 5 perc" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="Utolsó óra" Comment="Last Hour" />
+    <Text Key="Session" Text="Munkaszakasz" Comment="Session" />
+  </Texts>
+</TR>

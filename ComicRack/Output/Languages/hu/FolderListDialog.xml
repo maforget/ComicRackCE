@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="FolderListDialog" CultureName="hu">
+  <Texts>
+    <Text Key="FolderListDialog" Text="Mappa lista szerkesztése" Comment="Edit Folder List" />
+    <Text Key="btCancel" Text="&amp;Mégse" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelName" Text="Név:" Comment="Name:" />
+    <Text Key="labelBooks" Text="Képregények:" Comment="eComics:" />
+    <Text Key="labelNotes" Text="Megjegyzések:" Comment="Notes:" />
+    <Text Key="CombineMode" Text="Minden képregény minden listáról|Csak az összes listán szereplő képregények" Comment="All eComics from every list|Only eComics existing in every list" />
+  </Texts>
+</TR>

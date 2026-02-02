@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicTextElements" CultureName="nl-BE">
+  <Texts>
+    <Text Key="Caption" Text="Bijschrift" Comment="Caption" />
+    <Text Key="CaptionWithoutTitle" Text="Bijschrift zonder titel" Comment="Caption without Title" />
+    <Text Key="AlternateCaption" Text="Alternatief Bijschrift" Comment="Alternate Caption" />
+    <Text Key="Title" Text="Titel" Comment="Title" />
+    <Text Key="ArtistInfo" Text="Auteurs" Comment="Artists" />
+    <Text Key="Summary" Text="Samenvatting" Comment="Summary" />
+    <Text Key="FileSize" Text="Bestandsgrootte" Comment="File Size" />
+    <Text Key="Opened" Text="Geopend" Comment="Opened" />
+    <Text Key="FileName" Text="Bestandsnaam" Comment="File Name" />
+    <Text Key="FileFormat" Text="Bestandsformaat" Comment="File Format" />
+    <Text Key="Added" Text="Toegevoegd" Comment="Added" />
+    <Text Key="PublisherAndImprint" Text="Uitgever en Imprint" Comment="Publischer and Imprint" />
+    <Text Key="AgeRating" Text="Leeftijd classificatie" Comment="Age Rating" />
+    <Text Key="Genre" Text="Genre" Comment="Genre" />
+    <Text Key="CharactersAndTeams" Text="Personages en Teams" Comment="Characters and Teams" />
+    <Text Key="Locations" Text="Locaties" Comment="Locations" />
+    <Text Key="Notes" Text="Nota" Comment="Notes" />
+    <Text Key="PurchaseInformation" Text="Aankoop informatie" Comment="Purchase Information" />
+    <Text Key="StorageInfoformation" Text="Opslag informatie" Comment="Storage Information" />
+    <Text Key="CollectionStatus" Text="Collectie Status" Comment="Collection Status" />
+    <Text Key="Released" Text="Publicatiedatum" Comment="Released" />
+  </Texts>
+</TR>

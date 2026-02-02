@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="NetStatsDialog" CultureName="ja">
+  <Texts>
+    <Text Key="NetStatsDialog" Text="サーバーの統計" Comment="Server Statistics" />
+    <Text Key="Clients" Text="クライアント: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="情報のリクエスト: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="ライブラリのリクエスト: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="ページのリクエスト: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="サムネイルのリクエスト: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="認証に失敗: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="すべての共有" Comment="All Shares" />
+    <Text Key="LastMinute" Text="直近の 1 分間" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="直近の 5 分間" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="直近の 1 時間" Comment="Last Hour" />
+    <Text Key="Session" Text="セッション" Comment="Session" />
+  </Texts>
+</TR>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPageType" CultureName="fi">
+  <Texts>
+    <Text Key="Advertisment" Text="Mainos" Comment="Advertisement" />
+    <Text Key="BackCover" Text="Takakansi" Comment="Back Cover" />
+    <Text Key="Deleted" Text="Poistettu" Comment="Deleted" />
+    <Text Key="Editorial" Text="Toimitus" Comment="Editorial" />
+    <Text Key="FrontCover" Text="Etukansi" Comment="Front Cover" />
+    <Text Key="InnerCover" Text="Sisäkansi" Comment="Inner Cover" />
+    <Text Key="Letters" Text="Kirjeet" Comment="Letters" />
+    <Text Key="Other" Text="Jokin muu" Comment="Other" />
+    <Text Key="Preview" Text="Esikatselu" Comment="Preview" />
+    <Text Key="Roundup" Text="Sisällys" Comment="Roundup" />
+    <Text Key="Story" Text="Tarina" Comment="Story" />
+  </Texts>
+</TR>

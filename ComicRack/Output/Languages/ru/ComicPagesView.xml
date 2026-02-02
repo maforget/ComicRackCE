@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPagesView" CultureName="ru">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Упорядочено по {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Изменить размер эскизов" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Сгруппировано по {0}" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="&amp;Подробно" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="&amp;Эскизы" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Значки" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Ничего" Comment="None" />
+    <Text Key="NotArranged" Text="Нет сортировки" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Не сгруппировано" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Группировать" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="Группировать Комиксы по разным параметрам" Comment="Group eComics by different criteria" />
+    <Text Key="tbbSort" Text="Упорядочить" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="Изменить порядок сортировки Комиксов" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbView" Text="Вид" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="Изменить отображение Комикса" Comment="Change how eComics are displayed" />
+    <Text Key="tbFilter" Text="Фильтр страниц" Comment="Page Filter" />
+  </Texts>
+</TR>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MagnifySetupControl" CultureName="fi">
+  <Texts>
+    <Text Key="labelHeight" Text="Korkeus" Comment="Height" />
+    <Text Key="labelOpacity" Text="Läpinäkyvyys" Comment="Opacity" />
+    <Text Key="labelWidth" Text="Leveys" Comment="Width" />
+    <Text Key="labelZoom" Text="Zoomaa" Comment="Zoom" />
+    <Text Key="chkSimpleStyle" Text="Yksinkertainen tyyli" Comment="Simple Style" />
+    <Text Key="chkAutoMagnifier" Text="Aktivoi 'pitkään' klikkaamalla" Comment="Activate with 'long' Click" />
+    <Text Key="chkAutoHideMagnifier" Text="Piilota sivun reunoilla" Comment="Hide at Page Border" />
+  </Texts>
+</TR>

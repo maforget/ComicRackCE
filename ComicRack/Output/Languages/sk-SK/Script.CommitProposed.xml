@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.CommitProposed" CultureName="sk-SK">
+  <Texts>
+    <Text Key="AskCommit" Text="Naozaj chcete navrhované hodnoty uložiť?\nNavrhované hodnoty sú generované z názvu súboru a zobrazené sivo" Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
+    <Text Key="Name" Text="Nastaviť odporúčané hodnoty..." Comment="Commit Proposed Values..." />
+    <Text Key="Overwrite" Text="&amp;Tiež prepísať existujúce hodnoty" Comment="&amp;Also overwrite existing values" />
+    <Text Key="Write" Text="Písať" Comment="Write" />
+    <Text Key="Description" Text="Skript nastaví predložené hodnoty pre eComicsy permamentne" Comment="A script to makes the proposed values for the eComics permanent" />
+  </Texts>
+</TR>

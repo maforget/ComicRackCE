@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Settings" CultureName="hr">
+  <Texts>
+    <Text Key="Application" Text="Aplikacija" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="Automatsko micanje povećala blizu rubova" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="AutoNavigateComics" Text="Nakon zadnje stranice otvara se sljedeći svezak" Comment="Reading beyond the start or end opens the next eComic " />
+    <Text Key="Browser" Text="Preglednik" Comment="Browser" />
+    <Text Key="CloseBrowserOnOpen" Text="Kada je novi svezak otvoren, zatvara se preglednik web stranica" Comment="Close the Browser when a new eComic is opened" />
+    <Text Key="CloseMinimizesToTray" Text="Zatvaranje smješta ComicRack u područje za obavijesti" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="Novoučitana slikica se polako pojavljuje" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="Pokazivač miša je skriven kod čitanja na cijelom zaslonu" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="Prikaz slikica u najboljoj kvaliteti (sporo)" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="MinimizeToTray" Text="Izmicanje smješta ComicRack u područje za obavijesti" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="Provjera novosti o ComicRack programu" Comment="Check for latest news on ComicRack" />
+    <Text Key="Opening an eComic" Text="Otvranje sveska" Comment="Opening an eComic" />
+    <Text Key="OpenLastFile" Text="Otvaranje zanječitane sveske" Comment="Reopen the last eComics read" />
+    <Text Key="OpenLastPage" Text="Otvaranje sveske na stranici na kojoj je i zatvorena" Comment="Open the eComic at the page where it was closed" />
+    <Text Key="PageTransitionDelay" Text="Kotač miša i strelice na tipkovnici usporavaju prijelaz na novu stranicu" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="Reading" Text="Čitanje" Comment="Reading" />
+    <Text Key="ScanStartup" Text="Traženje novih svezaka u folderima biblioteke" Comment="Rescan the Library Folders for new eComics" />
+    <Text Key="ShowCurrentPageOverlay" Text="Prikaz pokazivača trenutne stranice" Comment="Show current Page Overlay" />
+    <Text Key="ShowNavigationBar" Text="Prikaz pokazivača za upravljanje kod čitanja" Comment="Show Navigation Overlays while reading" />
+    <Text Key="ShowSplash" Text="Prikaz početnog ekrana" Comment="Show Splash Screen" />
+    <Text Key="ShowToolTips" Text="Prikaz savjeta za sveske u pregledniku" Comment="Show Tooltips for eComics in the Browser" />
+    <Text Key="ShowVisiblePagePartOverlay" Text="Prikaz pokazivača vidljivosti stranice" Comment="Show visible Page Part Overlay" />
+    <Text Key="Starting ComicRack" Text="ComicRack se pokreće" Comment="Starting ComicRack" />
+    <Text Key="UseSystemColors" Text="Korisničko sučelje rabi trenutnu temu iz sistemskih tema za boje" Comment="The User Interface uses the current System Theme Colors" />
+  </Texts>
+</TR>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmartListDialog" CultureName="ru">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btApply" Text="&amp;Применить" Comment="&amp;Apply" />
+    <Text Key="labelMatch" Text="Проверка" Comment="Match" />
+    <Text Key="labelRules" Text="по следующим правилам:" Comment="of the following rules:" />
+    <Text Key="SmartListDialog" Text="Редактировать авто-список" Comment="Edit the Smart List" />
+    <Text Key="MatchMode" Text="Все|Любой" Comment="All|Any" />
+  </Texts>
+</TR>

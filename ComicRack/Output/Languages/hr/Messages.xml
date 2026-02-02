@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Messages" CultureName="hr">
+  <Texts>
+    <Text Key="AlsoRemoveDatabase" Text="&amp;Također, briše datoteke iz baze podataka" Comment="&amp;Also remove the files from the Database" />
+    <Text Key="AskConvert" Text="Jeste li sigurni da želite pretvoriti označeni svezak u drugi format\nIzvorne datoteke će biti premještene u Koš za recikliranje nakon izvršene promjene formata\nPobrinite se za dostatan prostor na disku!" Comment="Are you sure you want to convert the selected eComics?\nThe original files will be moved to the Recycle Bin after conversion. Please make sure there is enough disk space available!" />
+    <Text Key="AskMoveBin" Text="Jeste li sigurni da želite premjestiti sveske u Košaru za recikliranje?" Comment="Are you sure you want to move these books to the recycle bin?" />
+    <Text Key="AskRemoveComics" Text="Jeste li sigurni da želite ukloniti sveske iz popisa?" Comment="Are you sure you want to remove these books from the list?" />
+    <Text Key="AskRemoveFavorite" Text="Želite li zaista ukloniti vezu na omiljene foldere?" Comment="Do you really want to remove this Favorite Folder link?" />
+    <Text Key="AskRemoveFromLibrary" Text="Jeste li sugurni da želite ukloniti ove sveske iz biblioteke?\nSve informacije koje nisu zabilježene u datoteke će se izgubiti (Zadnjepročitani svezak, itd.)!" Comment="Are you sure you want to remove these books from the library?\nAll information not stored in the files will be lost (like Open Count, Last Read etc.)!" />
+    <Text Key="AskRemoveItem" Text="Želite li zaista ukloniti ovo?" Comment="Do you really want to remove this item?" />
+    <Text Key="Attention" Text="Oprez" Comment="Attention" />
+    <Text Key="BackgroundConvert" Text="Dateotek se još nadopunjuju u pozadini. Ako zatvorite program sada, neke informacije neće biti zabilježene!" Comment="Files are still being updated/converted in the background. If you close now, some information will not be written to the eComics!" />
+    <Text Key="CloseComicRack" Text="Zatvaranje programa ComicRack" Comment="Close ComicRack" />
+    <Text Key="ClosingComicRack" Text="Program ComicRack se zatvara" Comment="Closing ComicRack" />
+    <Text Key="Convert" Text="Promjena formata" Comment="Convert" />
+    <Text Key="CouldNotSaveComic" Text="Ne da se snimiti sveska!\nRazlog: {0}" Comment="Could not save eComic!\nReason: {0}" />
+    <Text Key="CouldNotSaveImage" Text="Ne da se snimiti slika stranice!\nRazlog: {0}" Comment="Could not save the page image!\nReason: {0}" />
+    <Text Key="CreateMainWindow" Text="Izrađuje se glavni prozor" Comment="Creating Main Window" />
+    <Text Key="DatabaseNewEmpty" Text="Pojavio se je problem pri otvaranju baze podataka stripova. Nova prazna baza podataka je napravljena!" Comment="There was a problem opening the Comic Database. A new empty Database has been created." />
+    <Text Key="DatabaseRestored" Text="Pojavio se je probem s bazom podataka stripova. Ponovno je uspostavljena zadnja poznata verzija. Moguće je da su neke stavke izgubljene." Comment="There was a problem with the Comic Database. The last version to be known good has been restored. You may have lost some entires." />
+    <Text Key="Error" Text="Greška" Comment="Error" />
+    <Text Key="ErrorShutDown" Text="Pojavila se je greška u spuštanju aplikacije ComicRack :\n{0}" Comment="There was an error shutting down the application:\n{0}" />
+    <Text Key="FailedDeleteBooks" Text="Neke sveske se ne dadu izbrisati (možda se upravo čitaju)!" Comment="Some books could not be deleted (maybe they are in use)!" />
+    <Text Key="FailedRetrieveDatabase" Text="Neuspješan dohvat baze podataka s poslužitelja!" Comment="Failed to retrieve the Database from the Server!" />
+    <Text Key="FailedToInitialize" Text="ComicRack se ne da pokrenuti. Razlog: {0}" Comment="Failed to initialize ComicRack: {0}" />
+    <Text Key="GetServerLibrary" Text="Dohvaćanje biblioteke s poslužitelja" Comment="Getting Server Library" />
+    <Text Key="GetServerLibraryText" Text="Dohvaćanje podataka iz biblioteke poslužitelja" Comment="Retrieving the shared Library from the Server" />
+    <Text Key="GettingList" Text="Dohvaćanje popisa svezaka" Comment="Getting eComics List" />
+    <Text Key="GettingListText" Text="Dohvaćanje svih svezaka iz označenog folera" Comment="Retrieving all eComics from the selected folder" />
+    <Text Key="InitCache" Text="Početno podešenje pomoćnog spremnika diska" Comment="Initialize Disk Caches" />
+    <Text Key="InitGUI" Text="Početno podešenje korisničkog sučelja" Comment="Initalizing User Interface" />
+    <Text Key="InitialScan" Text="Početno traženje" Comment="Initial Scan" />
+    <Text Key="InitScripts" Text="Početno podešenje skripti" Comment="Initalizing Scripts" />
+    <Text Key="ListLayout" Text="Izgled popisa" Comment="List Layout" />
+    <Text Key="LoadComic" Text="Svezak se učitava" Comment="Loading eComic" />
+    <Text Key="LoadCustomSettings" Text="Učitavaju se osobne postavke" Comment="Loading custom settings" />
+    <Text Key="LoadingThumbnail" Text="Učitavaju se slikice..." Comment="Loading Thumbnail..." />
+    <Text Key="MoveBin" Text="&amp;Datoteke se također sele u Koš za recikliranje" Comment="&amp;Also move the files to the Recycle Bin" />
+    <Text Key="NotAskAgain" Text="&amp;Nemojte ponovno pitati" Comment="&amp;Do not ask me again" />
+    <Text Key="OpenDatabase" Text="Otvara se baza podataka" Comment="Opening Database" />
+    <Text Key="PasswordNeeded" Text="Potrebna je lozinka za udeljenu biblioteku '{0}':" Comment="A password is needed for the remote Library '{0}':" />
+    <Text Key="ReadNewsFeed" Text="Iščitavaju se novosti" Comment="Reading News Feed" />
+    <Text Key="RefreshInfo" Text="Podaci se osvježavaju" Comment="Refreshing Information" />
+    <Text Key="RefreshInfoText" Text="Dohvaćanje podataka u označenoj svesci" Comment="Refreshing information for selected eComics" />
+    <Text Key="RefreshServer" Text="Osvježava se biblioteka na poslužitelju" Comment="Refreshing Server Library" />
+    <Text Key="Remove" Text="Uklanjanje" Comment="Remove" />
+    <Text Key="RetrieveNews" Text="Dohvaćanje novosti" Comment="Retrieving News" />
+    <Text Key="RetrieveNewsText" Text="Osvježavanje kanala za obavijesti" Comment="Refreshing subscribed News Channels" />
+    <Text Key="SaveAllData" Text="Svi podaci se spremaju na disk..." Comment="Saving all Data to Disk..." />
+    <Text Key="SaveListLayout" Text="Pamćenje načina ispisa" Comment="Save List Layout" />
+    <Text Key="SaveWorkspace" Text="Pamćenje izgleda radnog prostora" Comment="Save Workspace" />
+    <Text Key="SavingNewComic" Text="Spremaju se nove sveske..." Comment="Saving new eComic..." />
+    <Text Key="ScriptFailed" Text="Izvršavenje skripte nije uspjelo!" Comment="Execution of the script failed!" />
+    <Text Key="StartNetwork" Text="Pokretanje mreže" Comment="Starting Network" />
+    <Text Key="WriteData" Text="Zapisivanje podataka" Comment="Write Data" />
+    <Text Key="WriteDataText" Text="Podaci se bilježe u označenu svesku" Comment="Writing Data to selected eComics" />
+    <Text Key="WrongPassword" Text="Upisana lozinka za ulaz u biblioteku'{0}' nije ispravna. Pokušajte ponovno:" Comment="The specified password for the Library'{0}' is not correct. Please try again:" />
+    <Text Key="AddFolderLibrary" Text="Stripovi u ovom folderu i svim njegovim podfolderima će biti dodani u biblioteku." Comment="eComics in this Folder and all sub Folders will be added to the library." />
+    <Text Key="Set" Text="Postavljeno" Comment="Set" />
+    <Text Key="AskSetAllLists" Text="Jeste li sigurni da želite sve popise gledati kao trenutni popis?" Comment="Are you sure you want to set all Lists to the current layout?" />
+  </Texts>
+</TR>

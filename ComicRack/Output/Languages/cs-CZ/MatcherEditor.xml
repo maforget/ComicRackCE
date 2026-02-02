@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MatcherEditor" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="miNewRule" Text="Nové pravidlo" Comment="New Rule" />
+    <Text Key="miNewGroup" Text="Nová skupina" Comment="New Group" />
+    <Text Key="miDelete" Text="Smazat" Comment="Delete" />
+    <Text Key="miCut" Text="Vyjmout" Comment="Cut" />
+    <Text Key="miCopy" Text="Kopírovat" Comment="Copy" />
+    <Text Key="miPaste" Text="Vložit" Comment="Paste" />
+    <Text Key="miMoveUp" Text="Přesunout výše" Comment="Move Up" />
+    <Text Key="miMoveDown" Text="Přesunout níže" Comment="Move Down" />
+  </Texts>
+</TR>

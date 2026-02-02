@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MultipleComicBooksDialog" CultureName="hu">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Mégse" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelAlternateSeries" Text="Alternatív sorozat:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelColorist" Text="Színező:" Comment="Colorist:" />
+    <Text Key="labelEditor" Text="Szerkesztő:" Comment="Editor:" />
+    <Text Key="labelGenre" Text="Típus:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Család:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Kihúzó:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Nyelv:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Betűk:" Comment="Letterer:" />
+    <Text Key="labelMonth" Text="Hónap:" Comment="Month:" />
+    <Text Key="labelNumber" Text="Szám:" Comment="Number:" />
+    <Text Key="labelPenciller" Text="Rajzoló:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Kiadó:" Comment="Publisher:" />
+    <Text Key="labelSeries" Text="Sorozat:" Comment="Series:" />
+    <Text Key="labelSummary" Text="Összefoglaló:" Comment="Summary:" />
+    <Text Key="labelTags" Text="Címkék:" Comment="Tags:" />
+    <Text Key="labelTitle" Text="Cím:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Kötet:" Comment="Volume:" />
+    <Text Key="labelWriter" Text="Író:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Év:" Comment="Year:" />
+    <Text Key="labelManga" Text="Manga:" Comment="Manga:" />
+    <Text Key="labelBlackAndWhite" Text="Fekete-fehér:" Comment="Black and White:" />
+    <Text Key="labelFormat" Text="Formátum:" Comment="Format:" />
+    <Text Key="labelNotes" Text="Megjegyzések:" Comment="Notes:" />
+    <Text Key="labelAgeRating" Text="Kor besorolás:" Comment="Age Rating:" />
+    <Text Key="labelEnableProposed" Text="Ajánlottak engedélyezése:" Comment="Enable Proposed:" />
+    <Text Key="labelCharacters" Text="Szereplők:" Comment="Characters:" />
+    <Text Key="labelCount" Text="Összesen:" Comment="of:" />
+    <Text Key="labelAlternateCount" Text="Összesen:" Comment="of:" />
+    <Text Key="labelAlternateNumber" Text="Alternatív szám:" Comment="Number:" />
+    <Text Key="labelCoverArtist" Text="Borító alkotója:" Comment="Cover Artist:" />
+    <Text Key="MultipleComicBooksDialog" Text="Információ {0} képregényről" Comment="Multiple Book Information ({0})" />
+    <Text Key="labelRating" Text="Értékelés:" Comment="My Rating:" />
+    <Text Key="labelCommunityRating" Text="Közösségi értékelés:" Comment="Community Rating:" />
+    <Text Key="labelTeams" Text="Csapatok:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="Helyszínek:" Comment="Locations:" />
+    <Text Key="labelWeb" Text="Web:" Comment="Web:" />
+    <Text Key="labelBookStore" Text="Bolt:" Comment="Store:" />
+    <Text Key="labelBookOwner" Text="Tulajdonos:" Comment="Owner:" />
+    <Text Key="labelBookLocation" Text="Képregény helye:" Comment="Location:" />
+    <Text Key="labelBookAge" Text="Kor:" Comment="Age:" />
+    <Text Key="labelBookCondition" Text="Állapot:" Comment="Condition:" />
+    <Text Key="labelBookCollectionStatus" Text="Beszerzés állapota:" Comment="Collection Status:" />
+    <Text Key="labelBookNotes" Text="Notes:" Comment="Notes:" />
+    <Text Key="labelBookPrice" Text="Ár:" Comment="Price:" />
+    <Text Key="grpMain" Text="Főoldal" Comment="Main" />
+    <Text Key="grpPlotNotes" Text="Cselekmény &amp; Megjegyzések" Comment="Plot &amp; Notes" />
+    <Text Key="grpArtists" Text="Alkotók / Résztvevők" Comment="Artists / People Involved" />
+    <Text Key="grpCatalog" Text="Katalógus" Comment="Catalog" />
+    <Text Key="labelISBN" Text="ISBN:" Comment="ISBN:" />
+    <Text Key="labelPagesAsTextSimple" Text="Oldalszám:" Comment="Pages:" />
+    <Text Key="labelOpenedTime" Text="Megnyitva/Elolvasva" Comment="Opened/Read:" />
+    <Text Key="labelAddedTime" Text="Hozzáadva/Megvásárolva:" Comment="Added/Purchased:" />
+    <Text Key="labelSeriesComplete" Text="Sorozat teljes:" Comment="Series complete:" />
+    <Text Key="labelScanInformation" Text="Scannelés információi:" Comment="Scan Information:" />
+    <Text Key="labelStoryArc" Text="Történet szál:" Comment="Story Arc:" />
+    <Text Key="labelSeriesGroup" Text="Sorozat csoport:" Comment="Series Group:" />
+    <Text Key="labelMainCharacterOrTeam" Text="Főszereplő/csapat:" Comment="Main Character/Team:" />
+    <Text Key="labelReview" Text="Kritika:" Comment="Review:" />
+  </Texts>
+</TR>

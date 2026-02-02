@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TasksDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="btClose" Text="Κλείσιμο" Comment="Close" />
+    <Text Key="tabTasks" Text="Εργασίες Υπόβαθρου" Comment="Background Tasks" />
+    <Text Key="tabNetwork" Text="Στατιστικά Διακομιστή" Comment="Server Statistics" />
+    <Text Key="colTask" Text="Εργασία" Comment="Task" />
+    <Text Key="colState" Text="Κατάσταση" Comment="State" />
+    <Text Key="lblItemCount" Text="{0} Eργασίες σε εκκρεμότητα" Comment="{0} Tasks are pending" />
+    <Text Key="TasksDialog" Text="Εργασίες" Comment="Tasks" />
+    <Text Key="btAbort" Text="Ακύρωση όλων των Εργασιών Χρήστη" Comment="Abort all User Tasks" />
+    <Text Key="Clients" Text="Πελάτες δικτύου: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="Αιτήσεις Πληροφοριών: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="Αιτήσεις Βιβλιοθήκης: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="Αιτήσεις Σελίδων: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="Αιτήσεις Μικρογραφίας: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="Αποτυχημένες Ταυτοποίησεις: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="Όλα τα Κοινόχρηστα" Comment="All Shares" />
+    <Text Key="LastMinute" Text="Τελευταίο λεπτό" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="Τελευταία 5 λεπτά" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="Τελευταία ώρα" Comment="Last Hour" />
+    <Text Key="Session" Text="Σύνοδος" Comment="Session" />
+  </Texts>
+</TR>

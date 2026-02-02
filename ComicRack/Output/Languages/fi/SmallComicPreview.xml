@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmallComicPreview" CultureName="fi">
+  <Texts>
+    <Text Key="tbClose" Text="Sulje" Comment="Close" />
+    <Text Key="tsbFirst" Text="Ensimmäinen" Comment="First" />
+    <Text Key="tsbFirst.Tooltip" Text="Aloitussivulle" Comment="Go to first page" />
+    <Text Key="tsbLast" Text="Viimeinen" Comment="Last" />
+    <Text Key="tsbLast.Tooltip" Text="Viimeiselle sivulle" Comment="Go to last page" />
+    <Text Key="tsbNext" Text="Seuraava" Comment="Next" />
+    <Text Key="tsbNext.Tooltip" Text="Seuraavalle Sivulle" Comment="Go to next page" />
+    <Text Key="tsbPrev" Text="Edellinen" Comment="Previous" />
+    <Text Key="tsbPrev.Tooltip" Text="Edelliselle sivulle" Comment="Go to previous page" />
+    <Text Key="tsbRefresh" Text="Virkistä" Comment="Refresh" />
+    <Text Key="tsbTwoPages" Text="Aukeama" Comment="Two Pages" />
+    <Text Key="tsbTwoPages.Tooltip" Text="Näytä yksi tai kaksi sivua" Comment="Show one or two pages" />
+    <Text Key="pageViewer" Text="Ei valittuja" Comment="Nothing Selected" />
+    <Text Key="PreviewOnlyForComics" Text="Esikatselu vain sarjakuville" Comment="Preview is only available for eComics" />
+  </Texts>
+</TR>

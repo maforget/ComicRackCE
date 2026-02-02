@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListLayoutDialog" CultureName="ja">
+  <Texts>
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btHideAll" Text="すべて隠す(&amp;H)" Comment="&amp;Hide All" />
+    <Text Key="btMoveDown" Text="下へ移動(&amp;D)" Comment="Move &amp;Down" />
+    <Text Key="btMoveUp" Text="上に移動(&amp;U)" Comment="Move &amp;Up" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btShowAll" Text="すべて表示(&amp;A)" Comment="&amp;Show All" />
+    <Text Key="chkHideCaption" Text="テキストを表示しない" Comment="Do not show any Text" />
+    <Text Key="labelSelectColumn" Text="表示するカラムを選択:" Comment="Please select the columns you want to show:" />
+    <Text Key="labelHint" Text="ヒント:  カラム ヘッダの右クリックメニューから表示カラムを変更できます。" Comment="Hint: You can also change the displayed columns by right clicking on a column header." />
+    <Text Key="labelFirstLine" Text="第一行:" Comment="First Line:" />
+    <Text Key="labelSecondLine" Text="第二行:" Comment="Second Line:" />
+    <Text Key="labelThirdLine" Text="第三行:" Comment="Third Line:" />
+    <Text Key="labelSelectThumbnailText" Text="サムネイルに表示するテキストの選択" Comment="Please select the text you want to display below the thumbnails:" />
+    <Text Key="ListLayoutDialog" Text="リスト オプション" Comment="List Options" />
+    <Text Key="tabDetails" Text="詳細" Comment="Details" />
+    <Text Key="tabThumbnails" Text="サムネイル" Comment="Thumbnails" />
+    <Text Key="colName" Text="名称" Comment="Name" />
+    <Text Key="colDescription" Text="説明" Comment="Description" />
+  </Texts>
+</TR>

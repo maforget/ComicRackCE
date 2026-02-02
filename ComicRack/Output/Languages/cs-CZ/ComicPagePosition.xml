@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicPagePosition" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="Default" Text="Výchozí" Comment="Default" />
+    <Text Key="Near" Text="Vlevo" Comment="Near" />
+    <Text Key="Far" Text="Vpravo" Comment="Far" />
+  </Texts>
+</TR>

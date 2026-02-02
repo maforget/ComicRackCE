@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.RenameBookFiles" CultureName="ja">
+  <Texts>
+    <Text Key="Name" Text="ファイルを 'シリーズ ボリューム #ナンバー (総数) (年)' にリネーム" Comment="Rename Files to 'Series Volume #Number (of Count) (Year)'" />
+    <Text Key="Description" Text="選択コミックをメタ データに基づいてリネームするスクリプト" Comment="Script to rename the selected eComics based on the meta data" />
+  </Texts>
+</TR>

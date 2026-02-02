@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PluginEngine" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="EditUpdateBooksCommands" Text="Příkazy pro editaci/aktualizaci komiksů" Comment="Edit/Update Books Commands" />
+    <Text Key="CreateNewBooksCommands" Text="Příkazy ohledně otevření nového komiksu" Comment="Create New Books Commands" />
+    <Text Key="ActionswhenBooksareopened" Text="Akce při otevření komiksu" Comment="Actions when Books are opened" />
+    <Text Key="ActionswhenReaderisresized" Text="Akce při změně velikosti čtecího okna" Comment="Actions when Reader is resized" />
+    <Text Key="AdditionalSearchProviders" Text="Další rozšíření pro hledání" Comment="Additional Search Providers" />
+    <Text Key="QuickOpenPanels" Text="Panely rychlého otevření" Comment="Quick Open Panels" />
+    <Text Key="BookPathParsers" Text="Analýza cesty ke knize" Comment="Book Path Parsers" />
+    <Text Key="ActionswhenComicRackstarts" Text="Akce při startu ComicRacku" Comment="Actions when ComicRack starts" />
+    <Text Key="BookInformationPanels" Text="Panely s informacemi i knize" Comment="Book Information Panels" />
+    <Text Key="CustomBookThumbnailOverlays" Text="Vlastní miniatury komiksů" Comment="Custom Book Thumbnail Overlays" />
+  </Texts>
+</TR>

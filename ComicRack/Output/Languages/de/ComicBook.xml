@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBook" CultureName="de">
+  <Texts>
+    <Text Key="Added" Text="Hinzugefügt:\t{0}" Comment="Added:\t{0}" />
+    <Text Key="Released" Text="Veröffentlicht:\t{0}" Comment="Released:\t{0}" />
+    <Text Key="Format" Text="Format:\t{0}" Comment="Format:\t{0}" />
+    <Text Key="LastPageReadIs" Text="Letzte gelesene Seite: {0}" Comment="Last page read is {0}" />
+    <Text Key="LastTimeOpenedAt" Text="Letztes mal geöffnet: {0}" Comment="Last time opened at {0}" />
+    <Text Key="Library" Text="Bibliothek" Comment="Library" />
+    <Text Key="MyFavoritesList" Text="Meine Favoriten" Comment="My Favorites" />
+    <Text Key="Never" Text="niemals" Comment="never" />
+    <Text Key="NeverReadList" Text="Ungelesen" Comment="Never Read" />
+    <Text Key="NoInformation" Text="Keine Information verfügbar" Comment="No information available" />
+    <Text Key="None" Text="Nichts" Comment="None" />
+    <Text Key="Of" Text="von" Comment="of" />
+    <Text Key="Opened" Text="Geöffnet:\t{0}" Comment="Opened:\t{0}" />
+    <Text Key="Pages" Text="{0} Seite(n)" Comment="{0} Page(s)" />
+    <Text Key="PageSize" Text="Größe:\t{0}" Comment="Size:\t{0}" />
+    <Text Key="PageText" Text="Seite #{0}" Comment="Page #{0}" />
+    <Text Key="FileName" Text="Datei:\t{0}" Comment="File:\t{0}" />
+    <Text Key="ReadingAtPage" Text="Aktuelle Seite: {0}" Comment="Reading at page {0}" />
+    <Text Key="ReadingList" Text="Lese gerade" Comment="Reading" />
+    <Text Key="ReadList" Text="Gelesen" Comment="Read" />
+    <Text Key="RecentlyAddedList" Text="Kürzlich hinzugefügt" Comment="Recently Added" />
+    <Text Key="RecentlyReadList" Text="Kürzlich gelesen" Comment="Recently Read" />
+    <Text Key="Resolution" Text="Autflösung:\t{0} x {1}" Comment="Resolution:\t{0} x {1}" />
+    <Text Key="Size" Text="Größe:\t{0}/{1}" Comment="Size:\t{0}/{1}" />
+    <Text Key="SmartLists" Text="Smart Listen" Comment="Smart Lists" />
+    <Text Key="UnknownSize" Text="Unbekannte Größe" Comment="Unknown Size" />
+    <Text Key="Unknown" Text="Unbekannt" Comment="Unknown" />
+    <Text Key="Volume" Text="V{0}" Comment="V{0}" />
+    <Text Key="Bookmark" Text="Lesezeichen:\t{0}" Comment="Bookmark:\t{0}"/>
+    <Text Key="Rotation" Text="Drehung:\t{0}" Comment="Rotation:\t{0}"/>
+    <Text Key="FilesUpdateList" Text="Zu aktualisierende Dateien" Comment="Files to update"/>
+    <Text Key="TempLists" Text="Temporäre Listen" Comment="Temporary Lists"/>
+    <Text Key="BookCount" Text="Bücher:\t{0}" Comment="Books:\t{0}"/>
+  </Texts>
+</TR>

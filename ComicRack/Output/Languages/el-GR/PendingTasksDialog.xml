@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PendingTasksDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="btOk" Text="Εντάξει" Comment="OK" />
+    <Text Key="colTask" Text="Εργασία" Comment="Task" />
+    <Text Key="lblItemCount" Text="{0} Eργασίες σε εκκρεμότητα " Comment="{0} Tasks are pending" />
+    <Text Key="PendingTasksDialog" Text="Εργασίες που Εκκρεμούν στο Παρασκήνιο" Comment="Pending Background Tasks" />
+    <Text Key="colState" Text="Κατάσταση" Comment="State" />
+    <Text Key="btAbort" Text="Ακύρωση όλων των Εργασιών Χρήστη" Comment="Abort all User Tasks" />
+  </Texts>
+</TR>

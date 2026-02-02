@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ItemView" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="AutoFitAllColumns" Text="Automaticky přizpůsobovat všechny sloupce" Comment="Auto Fit All Columns" />
+    <Text Key="AutoSizeAllColumns" Text="Automatická velikost všech sloupců" Comment="Auto Size All Columns" />
+    <Text Key="AutoSizeColumn" Text="Automatická velikost sloupce" Comment="Auto Size Column" />
+    <Text Key="miArrange" Text="Uspořádat podle" Comment="Arrange by" />
+    <Text Key="miGroup" Text="Seskupit podle" Comment="Group by" />
+    <Text Key="miStack" Text="Svazek podle" Comment="Stack by" />
+    <Text Key="miViewDetails" Text="Detaily" Comment="Details" />
+    <Text Key="miViewMode" Text="Zobrazit" Comment="View" />
+    <Text Key="miViewThumbs" Text="Miniatury" Comment="Thumbnails" />
+    <Text Key="miViewTiles" Text="Dlaždice" Comment="Tiles" />
+    <Text Key="NotGrouped" Text="Bez seskupení" Comment="Not Grouped" />
+    <Text Key="NotSorted" Text="Bez setřídění" Comment="Not Sorted" />
+    <Text Key="NotStacked" Text="Bez svazku" Comment="Not Stacked" />
+    <Text Key="Layout" Text="Rozvržení" Comment="Layout" />
+  </Texts>
+</TR>

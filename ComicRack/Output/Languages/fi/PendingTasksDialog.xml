@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PendingTasksDialog" CultureName="fi">
+  <Texts>
+    <Text Key="btOk" Text="OK" Comment="OK" />
+    <Text Key="colTask" Text="Tehtävä" Comment="Task" />
+    <Text Key="colState" Text="Tila" Comment="State" />
+    <Text Key="lblItemCount" Text="{0} tehtävää odottaa" Comment="{0} Tasks are pending" />
+    <Text Key="PendingTasksDialog" Text="Odottavia taustatehtäviä" Comment="Pending Background Tasks" />
+    <Text Key="btAbort" Text="Keskeytä kaikki tehtävät" Comment="Abort all User Tasks" />
+  </Texts>
+</TR>

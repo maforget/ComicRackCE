@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MagnifySetupControl" CultureName="zh-CN">
+  <Texts>
+    <Text Key="labelHeight" Text="高" Comment="Height" />
+    <Text Key="labelOpacity" Text="不透明度" Comment="Opacity" />
+    <Text Key="labelWidth" Text="宽" Comment="Width" />
+    <Text Key="labelZoom" Text="缩放" Comment="Zoom" />
+    <Text Key="chkSimpleStyle" Text="简约风格" Comment="Simple Style" />
+    <Text Key="chkAutoMagnifier" Text="长按激活" Comment="Activate with 'long' Click" />
+    <Text Key="chkAutoHideMagnifier" Text="靠近边框时隐藏" Comment="Hide at Page Border" />
+  </Texts>
+</TR>

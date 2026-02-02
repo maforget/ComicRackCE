@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Columns" CultureName="ja">
+  <Texts>
+    <Text Key="AddedTimeAsText" Text="追加" Comment="Added" />
+    <Text Key="AddedTimeAsText.Description" Text="コミックのデータベース追加日時" Comment="Time the eComic was added to the Database" />
+    <Text Key="AlternateCountAsText" Text="別のカウント" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="クロスオーバー/ストーリーの総発行数" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="別ナンバー" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="クロスオーバー/ストーリーの発行ナンバー" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="シリーズの別名" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="クロスオーバー/ストーリーの名称" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="キャプション" Comment="Caption" />
+    <Text Key="Caption.Description" Text="コミックのすべてのキャプション" Comment="Complete caption of the eComic" />
+    <Text Key="Colorist" Text="カラーリスト" Comment="Colorist" />
+    <Text Key="Colorist.Description" Text="コミックのカラーリスト" Comment="Colorist of the eComic" />
+    <Text Key="CountAsText" Text="カウント" Comment="Count" />
+    <Text Key="Cover" Text="カバー" Comment="Cover" />
+    <Text Key="Cover.Description" Text="コミック カバー画像" Comment="Cover image of the eComic" />
+    <Text Key="CoverArtist" Text="カバー アーティスト" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="カバーの作家" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="エディター" Comment="Editor" />
+    <Text Key="Editor.Description" Text="コミックのエディター" Comment="Editor of the eComic" />
+    <Text Key="FileName" Text="ファイル名" Comment="File Name" />
+    <Text Key="FileName.Description" Text="ファイル名（拡張し抜き）" Comment="Filename without the extension" />
+    <Text Key="FilePath.Description" Text="コミックの保存パス" Comment="Location where the eComic is stored" />
+    <Text Key="FileSizeAsText.Description" Text="コミックのサイズ（バイト）" Comment="Size of the eComic in bytes" />
+    <Text Key="Genre" Text="ジャンル" Comment="Genre" />
+    <Text Key="Genre.Description" Text="コミックのジャンル" Comment="Genre of the eComic" />
+    <Text Key="ImageHeightAsText" Text="高さ" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="ページの高さ（ピクセル）" Comment="Height of the page in pixels" />
+    <Text Key="ImageWidthAsText" Text="横幅" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="ページ横幅のピクセル数" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="奥付" Comment="Imprint" />
+    <Text Key="Imprint.Description" Text="コミックの奥付け" Comment="Imprint of the eComic" />
+    <Text Key="Inker" Text="インカー" Comment="Inker" />
+    <Text Key="Inker.Description" Text="コミックのインカー" Comment="Inker of the eComic" />
+    <Text Key="Key" Text="名称" Comment="Name" />
+    <Text Key="Key.Description" Text="コミックのこのページに割り当てるキー" Comment="Unique key for this page in the eComic" />
+    <Text Key="LanguageAsText" Text="言語" Comment="Language" />
+    <Text Key="LanguageAsText.Description" Text="コミックの使用言語" Comment="Language of the eComic" />
+    <Text Key="Letterer" Text="レタラー" Comment="Letterer" />
+    <Text Key="MonthAsText" Text="月" Comment="Month" />
+    <Text Key="MonthAsText.Description" Text="コミックの発行月" Comment="Month the eComic was published" />
+    <Text Key="NumberAsText" Text="ナンバー" Comment="Number" />
+    <Text Key="NumberAsText.Description" Text="コミックのシリーズ中のナンバー" Comment="Number of the eComic in the Series" />
+    <Text Key="OpenedCountAsText" Text="閲覧回数" Comment="Opened Count" />
+    <Text Key="OpenedCountAsText.Description" Text="コミックを閲覧した日時" Comment="Times the eComic has been opened" />
+    <Text Key="OpenedTimeAsText" Text="閲覧日時" Comment="Opened" />
+    <Text Key="OpenedTimeAsText.Description" Text="コミックの最終閲覧日時" Comment="Last time the eComic was opened" />
+    <Text Key="Page" Text="ページ" Comment="Page" />
+    <Text Key="Page.Description" Text="画像のページナンバー" Comment="The page number of the image" />
+    <Text Key="PageTypeAsText" Text="タイプ" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="ページの種類（ストーリー、カバー等）" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="ペンシラー" Comment="Penciller" />
+    <Text Key="Penciller.Description" Text="コミックのペンシラー" Comment="Penciller of the eComic" />
+    <Text Key="Position" Text="整列" Comment="Position" />
+    <Text Key="Position.Description" Text="リスト中のコミックの整列順" Comment="Position of the eComic in the list" />
+    <Text Key="Publisher" Text="発行者" Comment="Publisher" />
+    <Text Key="Rating" Text="評価" Comment="My Rating" />
+    <Text Key="ReadPercentageAsText" Text="既読ページの割合 (%)" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="既に閲覧したページの量" Comment="How much has been read" />
+    <Text Key="Series" Text="シリーズ" Comment="Series" />
+    <Text Key="Series.Description" Text="シリーズ名" Comment="Series name" />
+    <Text Key="State" Text="ステータス" Comment="State" />
+    <Text Key="Tags" Text="タグ" Comment="Tags" />
+    <Text Key="Tags.Description" Text="コミックのタグ" Comment="Tags of the eComic" />
+    <Text Key="Thumbnail" Text="サムネイル" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="ページのサムネイル画像" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="タイトル" Comment="Title" />
+    <Text Key="Title.Description" Text="コミックのタイトル" Comment="Title of the eComic" />
+    <Text Key="VolumeAsText" Text="ボリューム" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="シリーズの Vol.ナンバー" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="作者" Comment="Writer" />
+    <Text Key="Writer.Description" Text="コミック のライター" Comment="Writer of the eComic" />
+    <Text Key="YearAsText" Text="年" Comment="Year" />
+    <Text Key="YearAsText.Description" Text="コミックの発行年度" Comment="Year the eComic was published" />
+    <Text Key="MangaAsText" Text="マンガ" Comment="Manga" />
+    <Text Key="MangaAsText.Description" Text="マンガ形式のコミックなら「はい」" Comment="Yes if the eComic is a Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="モノクロ" Comment="B&amp;W" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="モノクロのコミックなら「はい」" Comment="Yes if the eComic is black and white" />
+    <Text Key="Format" Text="フォーマット" Comment="Format" />
+    <Text Key="Bookmark" Text="ブックマーク" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="ブックマーク テキスト" Comment="Bookmark text" />
+    <Text Key="FileFormat" Text="ファイル フォーマット" Comment="File Format" />
+    <Text Key="FileFormat.Description" Text="コミックのファイル フォーマット" Comment="File format of the eComic" />
+    <Text Key="AgeRating" Text="年齢制限" Comment="Age Rating" />
+    <Text Key="AgeRating.Description" Text="コミックの年齢制限" Comment="Age rating of the eComic" />
+    <Text Key="CountAsText.Description" Text="シリーズの総発行数" Comment="Total number of issues in this series" />
+    <Text Key="FileModifiedTimeAsText" Text="ファイル更新日時" Comment="File Modified" />
+    <Text Key="FileModifiedTimeAsText.Description" Text="コミックの最終更新日時" Comment="Time the eComic was modified the last time" />
+    <Text Key="FilePath" Text="パス" Comment="File Path" />
+    <Text Key="FileSizeAsText" Text="サイズ" Comment="File Size" />
+    <Text Key="ImageFileSizeAsText" Text="サイズ" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="ページ サイズをバイト数で" Comment="Size of the page in bytes" />
+    <Text Key="Letterer.Description" Text="コミックのレタラー" Comment="Letterer of the eComic" />
+    <Text Key="PagesAsTextSimple" Text="ページ" Comment="Pages" />
+    <Text Key="PagesAsTextSimple.Description" Text="総ページ数" Comment="The total count of pages" />
+    <Text Key="Publisher.Description" Text="コミックの発行者" Comment="Publisher of the eComic" />
+    <Text Key="Rating.Description" Text="コミックのユーザー評価" Comment="Your rating of the eComic" />
+    <Text Key="CommunityRating" Text="コミュニティ評価" Comment="Community Rating" />
+    <Text Key="CommunityRating.Description" Text="コミックのコミュニティ評価" Comment="Community Rating of the eComic" />
+    <Text Key="State.Description" Text="このコミックのステータス" Comment="State indicators for the eComic" />
+    <Text Key="Format.Description" Text="コミックのフォーマット" Comment="Format of the eComic" />
+    <Text Key="PublishedAsText" Text="出版" Comment="Published" />
+    <Text Key="PublishedAsText.Description" Text="コミックの発行日付" Comment="Publication date of the eComic" />
+    <Text Key="Characters" Text="キャラクター" Comment="Characters" />
+    <Text Key="Characters.Description" Text="コミックの登場キャラクター" Comment="Plot characters of the eComic" />
+    <Text Key="Teams" Text="チーム" Comment="Teams" />
+    <Text Key="Teams.Description" Text="コミックの原作チーム" Comment="Plot teams of the eComic" />
+    <Text Key="Locations" Text="場所" Comment="Locations" />
+    <Text Key="Locations.Description" Text="コミックの場所設定" Comment="Plot locations of the eComic" />
+    <Text Key="RotationAsText" Text="回転" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="ページをつねに回転" Comment="Permanent rotation of the page" />
+    <Text Key="FileDirectory" Text="ファイル ディレクトリ" Comment="File Directory" />
+    <Text Key="FileDirectory.Description" Text="コミックのディレクトリ" Comment="Directory of the eComic" />
+    <Text Key="FileCreationTimeAsText" Text="ファイル作成日時" Comment="File Created" />
+    <Text Key="FileCreationTimeAsText.Description" Text="コミックの作成日時" Comment="Creation time of the eComic" />
+    <Text Key="BookmarkCountAsText" Text="ブックマーク数" Comment="Bookmark Count" />
+    <Text Key="BookmarkCountAsText.Description" Text="このコミックのブックマーク数" Comment="Count of Bookmarks for this eComic" />
+    <Text Key="Web" Text="ウェブ" Comment="Web" />
+    <Text Key="Web.Description" Text="ウェブ リンク" Comment="A Web Link" />
+    <Text Key="NewPagesAsText" Text="新規ページ" Comment="New Pages" />
+    <Text Key="NewPagesAsText.Description" Text="新しいページの数" Comment="Count of new Pages" />
+    <Text Key="Notes" Text="ノート" Comment="Notes" />
+    <Text Key="Summary" Text="概要" Comment="Summary" />
+    <Text Key="Number" Text="ナンバー" Comment="Number" />
+    <Text Key="AlternateNumber" Text="別ナンバー" Comment="Alternate Number" />
+    <Text Key="IsLinkedAsText" Text="ファイルにリンク" Comment="Linked to File" />
+    <Text Key="IsLinkedAsText.Description" Text="ファイルにリンクしているコミック" Comment="eComic is linked to a File" />
+    <Text Key="BookAge" Text="本の汚損" Comment="Book Age" />
+    <Text Key="BookAge.Description" Text="本の傷み具合" Comment="Age of the Book" />
+    <Text Key="BookPriceAsText" Text="価格" Comment="Book Price" />
+    <Text Key="BookPriceAsText.Description" Text="価格" Comment="Price of the Book" />
+    <Text Key="BookCondition" Text="コンディション" Comment="Book Condition" />
+    <Text Key="BookCondition.Description" Text="ブック コンディション" Comment="Condition of the Book" />
+    <Text Key="BookStore" Text="購入店" Comment="Book Store" />
+    <Text Key="BookStore.Description" Text="購入したブック ストア" Comment="Store the Book was bought" />
+    <Text Key="BookOwner" Text="オーナー" Comment="Book Owner" />
+    <Text Key="BookOwner.Description" Text="ブックの所有者" Comment="Owner of the Book" />
+    <Text Key="BookCollectionStatus" Text="コレクションの状態" Comment="Book Collection Status" />
+    <Text Key="BookCollectionStatus.Description" Text="コレクション中の状態" Comment="Status of the Book in the Collection" />
+    <Text Key="BookLocation" Text="本の場所" Comment="Book Location" />
+    <Text Key="BookLocationStatus.Description" Text="本の置き場所" Comment="Location of the Book" />
+    <Text Key="PagePositionAsText" Text="位置" Comment="Position" />
+    <Text Key="PagePositionAsText.Description" Text="ページのレイアウト位置" Comment="Layout position of the page" />
+    <Text Key="ISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ISBN.Description" Text="ISBN ナンバー" Comment="ISBN Number" />
+    <Text Key="SeriesStatCountAsText" Text="シリーズ: ブック" Comment="Series: Books" />
+    <Text Key="SeriesStatCountAsText.Description" Text="ブック シリーズ" Comment="Books in the Series" />
+    <Text Key="SeriesStatMinNumberAsText" Text="シリーズ: 最初のナンバー" Comment="Series: First Number" />
+    <Text Key="SeriesStatMinNumberAsText.Description" Text="シリーズの最初のナンバー" Comment="First Number of the Series" />
+    <Text Key="SeriesStatMaxNumberAsText" Text="シリーズ: 最後のナンバー" Comment="Series: Last Number" />
+    <Text Key="SeriesStatMaxNumberAsText.Description" Text="シリーズの最後のナンバー" Comment="Last Number of the Series" />
+    <Text Key="SeriesStatMinYearAsText" Text="シリーズ: 最初の年" Comment="Series: First Year" />
+    <Text Key="SeriesStatMinYearAsText.Description" Text="シリーズの最初の年" Comment="First Year of the Series" />
+    <Text Key="SeriesStatMaxYearAsText" Text="シリーズ: 最後の年" Comment="Series: Last Year" />
+    <Text Key="SeriesStatMaxYearAsText.Description" Text="シリーズの最後の年" Comment="last Year of the Series" />
+    <Text Key="SeriesStatPageCountAsText" Text="シリーズ: ページ" Comment="Series: Pages" />
+    <Text Key="SeriesStatPageCountAsText.Description" Text="シリーズのページ数" Comment="Pages in the Series" />
+    <Text Key="SeriesStatPageReadCountAsText" Text="シリーズ: 既読ページ" Comment="Series: Pages Read" />
+    <Text Key="SeriesStatPageReadCountAsText.Description" Text="シリーズの既読ページ" Comment="Pages of the Series read" />
+    <Text Key="SeriesStatReadPercentageAsText" Text="シリーズ: 既読率" Comment="Series: Percent Read" />
+    <Text Key="SeriesStatReadPercentageAsText.Description" Text="シリーズの既読率" Comment="Percent of the Series read" />
+    <Text Key="SeriesStatAverageRating" Text="シリーズ: 平均評価" Comment="Series: My Average Rating" />
+    <Text Key="SeriesStatAverageRating.Description" Text="シリーズの平均評価" Comment="My average Rating of the Series" />
+    <Text Key="SeriesStatAverageCommunityRating" Text="シリーズ: 平均コミュニティ評価" Comment="Series: Community Average Rating" />
+    <Text Key="SeriesStatAverageCommunityRating.Description" Text="シリーズの平均コミュニティ評価" Comment="Community average Rating of the Series" />
+    <Text Key="SeriesStatRunningTimeAsText" Text="シリーズ: 通年数" Comment="Series: Running Time Years" />
+    <Text Key="SeriesStatRunningTimeAsText.Description" Text="シリーズの通年数" Comment="Running time of the Series in years" />
+    <Text Key="SeriesStatGapCountAsText" Text="シリーズ: 欠落" Comment="Series: Gaps" />
+    <Text Key="SeriesStatGapCountAsText.Description" Text="シリーズの欠落" Comment="Gaps in the Series" />
+    <Text Key="SeriesStatLastOpenedTimeAsText" Text="シリーズ: 閲覧" Comment="Series: Opened" />
+    <Text Key="SeriesStatLastOpenedTimeAsText.Description" Text="このシリーズの前回閲覧したブック" Comment="Last time a book from this Series has been opened" />
+    <Text Key="SeriesStatLastAddedTimeAsText" Text="シリーズ: ブックの追加" Comment="Series: Book added" />
+    <Text Key="SeriesStatLastAddedTimeAsText.Description" Text="このシリーズに追加された最新のブック" Comment="Last time a book was added to the Series" />
+        <Text Key="BookNotes" Text="ブック ノート" Comment="Book Notes" />
+    <Text Key="CustomThumbnailKey" Text="カスタム サムネイル" Comment="CustomThumbnail" />
+  </Texts>
+</TR>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DevicesEditDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="DevicesEditDialog" Text="设备" Comment="Devices" />
+    <Text Key="btPairDevice" Text="配对设备..." Comment="Pair Device..." />
+    <Text Key="btCancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定(&amp;O)" Comment="&amp;OK" />
+    <Text Key="btSelectAll" Text="全选" Comment="Select All" />
+    <Text Key="btSelectNone" Text="全不选" Comment="Select None" />
+    <Text Key="btUnpairDevice" Text="取消配对设备" Comment="Unpair Device" />
+    <Text Key="chkOptimizeSize" Text="最优大小" Comment="Optimize Size" />
+    <Text Key="chkOnlyUnread" Text="仅未读的" Comment="Only Unread" />
+    <Text Key="chkOnlyChecked" Text="仅已检查的" Comment="Only Checked" />
+    <Text Key="labelHint" Text="将设备连接到电脑并点击 '配对设备...'" Comment="Connect your Device with your Computer and press 'Pair Device...'" />
+    <Text Key="btRename" Text="重命名..." Comment="Rename..." />
+    <Text Key="cbLimitType.Item0" Text="书籍" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="chkLimit" Text="限制为" Comment="Limit to" />
+    <Text Key="labelLimitSort" Text="排序按" Comment="LimitSort" />
+    <Text Key="cbLimitSort.Item0" Text="随机" Comment="Random" />
+    <Text Key="cbLimitSort.Item1" Text="系列" Comment="Series" />
+    <Text Key="cbLimitSort.Item2" Text="系列别名" Comment="Alternate Series" />
+    <Text Key="cbLimitSort.Item3" Text="出版时间" Comment="Published" />
+    <Text Key="cbLimitSort.Item4" Text="已添加" Comment="Added" />
+    <Text Key="chkLimitSortReverse" Text="反序" Comment="Reverse" />
+    <Text Key="btSelectList" Text="选择列表" Comment="Select List" />
+    <Text Key="btDeselectList" Text="取消选择列表" Comment="Deselect List" />
+  </Texts>
+</TR>

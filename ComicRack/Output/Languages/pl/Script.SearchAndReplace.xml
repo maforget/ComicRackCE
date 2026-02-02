@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Script.SearchAndReplace" CultureName="pl">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Anuluj" Comment="&amp;Cancel" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="Caption" Text="Szukaj i Zamień..." Comment="Search and Replace..." />
+    <Text Key="Name" Text="Szukaj i Zamień..." Comment="Search and Replace..." />
+    <Text Key="labelField" Text="Pola:" Comment="Fields:" />
+    <Text Key="labelSearch" Text="Szukaj:" Comment="Search:" />
+    <Text Key="labelReplace" Text="Zamień" Comment="Replace" />
+    <Text Key="Description" Text="Skrypt do wyszukiwania i zamiany wartości w Komiksach" Comment="A script to to search and replace values in Books" />
+  </Texts>
+</TR>

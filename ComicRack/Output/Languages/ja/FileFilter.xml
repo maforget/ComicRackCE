@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FileFilter" CultureName="ja">
+  <Texts>
+    <Text Key="ReadingListSave" Text="ComicRack 閲覧リスト (*.cbl)|*.cbl|Xml ファイル (*.xml)|*.xml" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml" />
+    <Text Key="ReadingListLoad" Text="ComicRack 閲覧リスト (*.cbl)|*.cbl|Xml ファイル (*.xml|)|*.xml|すべてのファイル (*.*)|*.*" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml|All Files|*.*" />
+    <Text Key="PageImageSave" Text="JPEG 画像 (*.jpg)|*.jpg|Windows ビットマップ画像 (*.bmp)|*.bmp|PNG 画像(*.png)|*.png|GIF 画像 (*.gif)|*.gif|TIFF 画像 (*.tif)|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif" />
+    <Text Key="ComicRackDatabase" Text="ComicRack データベース (*.xml)|*.xml" Comment="ComicRack Database|*.xml" />
+    <Text Key="AllFiles" Text="すべてのファイル" Comment="All Files" />
+    <Text Key="AllSupportedFiles" Text="すべての対応可能なファイル" Comment="All supported Files" />
+    <Text Key="FormatReadingList" Text="ComicRack 閲覧リスト" Comment="ComicRack Reading List" />
+    <Text Key="ScriptPackageOpen" Text="ComicRack プラグイン (*.crplugin)|*.crplugin|スクリプト アーカイブ (*.zip)|*.zip" Comment="ComicRack Plugin|*.crplugin|Script Archive|*.zip" />
+    <Text Key="KeyboardLayout" Text="キーボード レイアウト" Comment="Keyboard Layout" />
+    <Text Key="KeyboardLayoutFilter" Text="キーボード レイアウト(*.xml)|*.xml" Comment="Keyboard Layout|*.xml" />
+    <Text Key="LoadThumbnail" Text="JPEG 画像 (*.jpg)|*.jpg|Windows ビットマップ画像 (*.bmp)|*.bmp|PNG 画像(*.png)|*.png|GIF 画像 (*.gif)|*.gif|TIFF 画像 (*.tif)|*.tif|アイコン ファイル (*.ico)|*.ico" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif|Icon Image|*.ico" />
+  </Texts>
+</TR>

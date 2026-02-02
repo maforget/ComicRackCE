@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.CommitProposed" CultureName="fi">
+  <Texts>
+    <Text Key="AskCommit" Text="Haluatko varmasti asettaa ehdotetut arvot pysyviksi?\nEhdotetut arvot on generoitu tiedostonimestä ja näkyvät harmaina." Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
+    <Text Key="Name" Text="Suorita ehdotetuin arvoin..." Comment="Commit Proposed Values..." />
+    <Text Key="Overwrite" Text="&amp;Ylikirjoita nykyiset arvot" Comment="&amp;Also overwrite existing values" />
+    <Text Key="Write" Text="Kirjoita" Comment="Write" />
+    <Text Key="Description" Text="Skripti eSarjikselle ehdotettujen arvojen pysyviksi tekemiseen" Comment="A script to makes the proposed values for the eComics permanent" />
+  </Texts>
+</TR>

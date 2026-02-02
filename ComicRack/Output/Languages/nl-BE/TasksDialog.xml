@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TasksDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="btClose" Text="Sluit" Comment="Close" />
+    <Text Key="tabTasks" Text="Achtergrondtaken" Comment="Background Tasks" />
+    <Text Key="tabNetwork" Text="Server Statistieken" Comment="Server Statistics" />
+    <Text Key="colTask" Text="Taak" Comment="Task" />
+    <Text Key="colState" Text="Status" Comment="State" />
+    <Text Key="lblItemCount" Text="{0} Taken in afwachting" Comment="{0} Tasks are pending" />
+    <Text Key="TasksDialog" Text="Taken" Comment="Tasks" />
+    <Text Key="btAbort" Text="Annuleer alle taken" Comment="Abort all User Tasks" />
+    <Text Key="Clients" Text="Cliënten: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="Info Verzoeken: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="Bibliotheek Aanvragen: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="Pagina Aanvragen: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="Miniatuur Aanvragen: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="Mislukte Authenticaties: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="Alle Shares" Comment="All Shares" />
+    <Text Key="LastMinute" Text="Laatste Minuut" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="Laatste 5 Minuten" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="Laatste Uur" Comment="Last Hour" />
+    <Text Key="Session" Text="Sessie" Comment="Session" />
+  </Texts>
+</TR>

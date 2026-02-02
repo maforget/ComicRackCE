@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListLayoutDialog" CultureName="de">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Abbruch" Comment="&amp;Cancel" />
+    <Text Key="btApply" Text="&amp;Anwenden" Comment="&amp;Apply" />
+    <Text Key="btHideAll" Text="&amp;Keine zeigen" Comment="&amp;Hide All" />
+    <Text Key="btMoveDown" Text="Nach unten" Comment="Move &amp;Down" />
+    <Text Key="btMoveUp" Text="Nach oben" Comment="Move &amp;Up" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btShowAll" Text="&amp;Alle zeigen" Comment="&amp;Show All" />
+    <Text Key="chkHideCaption" Text="Keinerlei Text anzeigen" Comment="Do not show any Text" />
+    <Text Key="labelSelectColumn" Text="Bitte wählen Sie die Spalten zur Anzeige aus:" Comment="Please select the columns you want to show:" />
+    <Text Key="labelHint" Text="Hinweis: Sie können die angezeigten Spalten durch rechts clicken auf die Kopfzeile ändern." Comment="Hint: You can also change the displayed columns by right clicking on a column header." />
+    <Text Key="labelFirstLine" Text="Erste Zeile:" Comment="First Line:" />
+    <Text Key="labelSecondLine" Text="Zweite Zeile:" Comment="Second Line:" />
+    <Text Key="labelThirdLine" Text="Dritte Zeile:" Comment="Third Line:" />
+    <Text Key="labelSelectThumbnailText" Text="Bitte wählen sie den Text aus der unter der Minaturansicht angezeit werden soll:" Comment="Please select the text you want to display below the thumbnails:" />
+    <Text Key="ListLayoutDialog" Text="Listen Optionen" Comment="List Options" />
+    <Text Key="tabDetails" Text="Details" Comment="Details" />
+    <Text Key="tabThumbnails" Text="Thumbnail" Comment="Thumbnails" />
+    <Text Key="tabTiles" Text="Kacheln" Comment="Tiles" />
+    <Text Key="colName" Text="Name" Comment="Name"/>
+    <Text Key="colDescription" Text="Beschreibung" Comment="Description"/>
+    <Text Key="btTilesDefault" Text="Standard" Comment="Default"/>
+  </Texts>
+</TR>

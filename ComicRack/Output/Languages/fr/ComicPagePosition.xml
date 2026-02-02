@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicPagePosition" CultureName="fr">
+  <Texts>
+    <Text Key="Default" Text="Par défaut" Comment="Default" />
+    <Text Key="Near" Text="Proche" Comment="Near" />
+    <Text Key="Far" Text="Loin" Comment="Far" />
+  </Texts>
+</TR>

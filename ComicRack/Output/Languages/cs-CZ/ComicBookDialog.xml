@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBookDialog" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Storno" Comment="&amp;Cancel" />
+    <Text Key="btNext" Text="&amp;Další" Comment="&amp;Next" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btResetPages" Text="Obnovit" Comment="Reset" />
+    <Text Key="btResetColors" Text="Obnovit" Comment="Reset" />
+    <Text Key="btPrev" Text="&amp;Předchozí" Comment="&amp;Previous" />
+    <Text Key="chkMangaStyle" Text="Styl Manga" Comment="Manga Style" />
+    <Text Key="colImage" Text="Obrázek" Comment="Image" />
+    <Text Key="colKey" Text="Klíč" Comment="Key" />
+    <Text Key="colPage" Text="Stránka" Comment="Page" />
+    <Text Key="colType" Text="Typ" Comment="Type" />
+    <Text Key="ComicBookDialog" Text="Informace" Comment="Info" />
+    <Text Key="labelAlternateNumber" Text="Číslo:" Comment="Number:" />
+    <Text Key="labelAlternateCount" Text="z:" Comment="of:" />
+    <Text Key="labelAlternateSeries" Text="Alternativní série nebo název příběhové linie:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelBrightness" Text="Jas" Comment="Brightness" />
+    <Text Key="labelColorist" Text="Kolorista:" Comment="Colorist:" />
+    <Text Key="labelContrast" Text="Kontrast" Comment="Contrast" />
+    <Text Key="labelCoverArtist" Text="Autor obálky:" Comment="Cover Artist:" />
+    <Text Key="labelEditor" Text="Editor:" Comment="Editor:" />
+    <Text Key="labelFormat" Text="Formát:" Comment="Format:" />
+    <Text Key="labelGenre" Text="Žánr:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Imprint:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Konturista:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Jazyk:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Autor písma:" Comment="Letterer:" />
+    <Text Key="labelMonth" Text="Měsíc:" Comment="Month:" />
+    <Text Key="labelNumber" Text="Číslo:" Comment="Number:" />
+    <Text Key="labelCount" Text="z:" Comment="of:" />
+    <Text Key="labelOpened" Text="Otevřeno:" Comment="Opened:" />
+    <Text Key="labelPages" Text="Stránky:" Comment="Pages:" />
+    <Text Key="labelPenciller" Text="Kreslíř:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Vydavatel:" Comment="Publisher:" />
+    <Text Key="labelSaturation" Text="Sytost" Comment="Saturation" />
+    <Text Key="labelSeries" Text="Série:" Comment="Series:" />
+    <Text Key="labelTitle" Text="Název:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Díl:" Comment="Volume:" />
+    <Text Key="labelWhere" Text="Kde:" Comment="Where:" />
+    <Text Key="labelWriter" Text="Autor:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Rok:" Comment="Year:" />
+    <Text Key="tabColors" Text="Barvy" Comment="Colors" />
+    <Text Key="tabPages" Text="Stránky" Comment="Pages" />
+    <Text Key="tabPlot" Text="Příběh &amp; Poznámky" Comment="Plot &amp; Notes" />
+    <Text Key="tabSummary" Text="Obsah" Comment="Summary" />
+    <Text Key="pageViewer" Text="Dvojklik na barvu nastaví bílý bod" Comment="Double Click on Color to set White Point" />
+    <Text Key="labelPagesInfo" Text="Změňte pořadí stránek přetáhnutím myší, nebo v menu na pravý klik změňte typ stránek:" Comment="Change the page order with drag &amp; drop or use the context menu to change page types:" />
+    <Text Key="labelType" Text="Typ:" Comment="Type:" />
+    <Text Key="labelManga" Text="Manga:" Comment="Manga:" />
+    <Text Key="labelEnableProposed" Text="Povolit navrhované:" Comment="Enable Proposed:" />
+    <Text Key="labelBlackAndWhite" Text="Černobílý" Comment="Black and White" />
+    <Text Key="labelAgeRating" Text="Věkové omezení" Comment="Age Rating" />
+    <Text Key="labelTags" Text="Značky:" Comment="Tags:" />
+    <Text Key="labelSummary" Text="Obsah:" Comment="Summary:" />
+    <Text Key="labelNotes" Text="Poznámky:" Comment="Notes:" />
+    <Text Key="labelCharacters" Text="Postavy:" Comment="Characters:" />
+    <Text Key="labelSharpening" Text="Doostření" Comment="Sharpening" />
+    <Text Key="btPageView" Text="Stránky" Comment="Pages" />
+    <Text Key="labelWeb" Text="Web:" Comment="Web:" />
+    <Text Key="labelEnableDynamicUpdate" Text="Zahrnout do aktualizací:" Comment="Include in Updates:" />
+    <Text Key="labelTeams" Text="Skupiny:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="Lokace:" Comment="Locations:" />
+    <Text Key="tabDetails" Text="Detaily" Comment="Details" />
+    <Text Key="btLinkFile" Text="Navázat na soubor..." Comment="Link to File..." />
+    <Text Key="btThumbnail" Text="Miniatura..." Comment="Thumbnail..." />
+    <Text Key="labelMyRating" Text="Moje hodnocení:" Comment="My Rating:" />
+    <Text Key="labelCommunityRating" Text="Hodnocení veřejnosti:" Comment="Community Rating:" />
+    <Text Key="miResetThumbnail" Text="&amp;Základní" Comment="&amp;Default" />
+    <Text Key="labelBookStore" Text="Obchod:" Comment="Store:" />
+    <Text Key="labelBookOwner" Text="Vlastník:" Comment="Owner:" />
+    <Text Key="labelBookLocation" Text="Umístění:" Comment="Location:" />
+    <Text Key="labelBookAge" Text="Komiksový věk:" Comment="Age:" />
+    <Text Key="labelBookCondition" Text="Fyzický stav:" Comment="Condition:" />
+    <Text Key="labelBookCollectionStatus" Text="Stav ve sbírce:" Comment="Collection Status:" />
+    <Text Key="labelBookNotes" Text="Poznámky:" Comment="Notes:" />
+    <Text Key="labelBookPrice" Text="Cena:" Comment="Price:" />
+    <Text Key="tabCatalog" Text="Katalog" Comment="Catalog" />
+    <Text Key="labelISBN" Text="ISBN:" Comment="ISBN:" />
+    <Text Key="labelPagesAsTextSimple" Text="Stránek:" Comment="Pages:" />
+    <Text Key="labelGamma" Text="Gamma" Comment="Gamma" />
+    <Text Key="labelOpenedTime" Text="Otevřeno/Přečteno:" Comment="Opened/Read:" />
+    <Text Key="labelAddedTime" Text="Přidáno/Zakoupeno:" Comment="Added/Purchased:" />
+    <Text Key="labelSeriesComplete" Text="Kompletní série:" Comment="Series complete:" />
+    <Text Key="chkShowImageControls" Text="Úprava zobrazení" Comment="Image Controls" />
+    <Text Key="labelScanInformation" Text="Informace o skenu:" Comment="Scan Information:" />
+    <Text Key="labelStoryArc" Text="Dějová linie:" Comment="Story Arc:" />
+    <Text Key="labelSeriesGroup" Text="Skupina sérií:" Comment="Series Group:" />
+    <Text Key="labelMainCharacterOrTeam" Text="Hlavní postava/tým:" Comment="Main Character/Team:" />
+    <Text Key="tabPageReview" Text="Recenze" Comment="Review" />
+    <Text Key="tabPageNotes" Text="Poznámky" Comment="Notes" />
+    <Text Key="tabPageSummary" Text="Obsah" Comment="Summary" />
+  </Texts>
+</TR>

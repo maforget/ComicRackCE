@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MultipleComicBooksDialog" CultureName="hr">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Odustanak" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Potvrda" Comment="&amp;OK" />
+    <Text Key="labelOfNumber" Text="od" Comment="of" />
+    <Text Key="labelOfAlternateNumer" Text="od" Comment="of" />
+    <Text Key="labelAlternateNumber" Text="Broj nastavka:" Comment="Alternate Number:" />
+    <Text Key="labelAlternateSeries" Text="Nastavak iz serije:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelColorist" Text="Obojao:" Comment="Colorist:" />
+    <Text Key="labelCover" Text="Korice:" Comment="Cover:" />
+    <Text Key="labelEditor" Text="Urednik:" Comment="Editor:" />
+    <Text Key="labelGenre" Text="Žanr:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Tisak:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Tuš:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Jezik:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Tekstopisac:" Comment="Letterer:" />
+    <Text Key="labelMangaStyle" Text="Manga Stil:" Comment="Manga Style:" />
+    <Text Key="labelMonth" Text="Mjesec:" Comment="Month:" />
+    <Text Key="labelNumber" Text="Broj:" Comment="Number:" />
+    <Text Key="labelPenciller" Text="Crtač:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Izdavač:" Comment="Publisher:" />
+    <Text Key="labelRating" Text="Ocjena:" Comment="Rating:" />
+    <Text Key="labelSeries" Text="Serija:" Comment="Series:" />
+    <Text Key="labelSummary" Text="Sažetak:" Comment="Summary:" />
+    <Text Key="labelTags" Text="Oznake:" Comment="Tags:" />
+    <Text Key="labelTitle" Text="Nalov:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Svezak:" Comment="Volume:" />
+    <Text Key="labelWriter" Text="Autor:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Godina:" Comment="Year:" />
+    <Text Key="MultipleComicBooksDialog" Text="Informacije o više svezaka ({0} svezaka)" Comment="Multiple eComic Information ({0} Books)" />
+  </Texts>
+</TR>

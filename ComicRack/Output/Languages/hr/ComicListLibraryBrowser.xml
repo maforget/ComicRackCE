@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListLibraryBrowser" CultureName="hr">
+  <Texts>
+    <Text Key="miEditSmartList" Text="&amp;Obrada..." Comment="&amp;Edit..." />
+    <Text Key="miNewFolder" Text="Novi &amp;folder..." Comment="New &amp;Folder..." />
+    <Text Key="miNewList" Text="Novie &amp;popis..." Comment="New &amp;List..." />
+    <Text Key="miNewSmartList" Text="&amp;Novi pametni popis..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="&amp;Razvrstavanje" Comment="&amp;Sort" />
+    <Text Key="miOpenWindow" Text="&amp;Otvaranje u novom prozoru" Comment="&amp;Open in New Window" />
+    <Text Key="miQueryRename" Text="&amp;Preimenovanje" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="Osvježavanje" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="Uklanjanje" Comment="&amp;Re&amp;move..." />
+    <Text Key="NewFolder" Text="Novi folder" Comment="New Folder" />
+    <Text Key="NewList" Text="Novi popis" Comment="New List" />
+    <Text Key="NewSmartList" Text="Novi pametni popis" Comment="New Smart List" />
+    <Text Key="tbNewFolder" Text="Novi folder" Comment="New &amp;Folder" />
+    <Text Key="tbNewFolder.Tooltip" Text="Stvaranje novog foldera za organiziranje popisa" Comment="Create a new folder to organize your lists" />
+    <Text Key="tbNewList" Text="Novi popis" Comment="New &amp;List" />
+    <Text Key="tbNewList.Tooltip" Text="Stvaranje novog osobnog popisa" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="Novi pametni popis" Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="Stvaranje novog pametnog popisa" Comment="Create a new Smart List" />
+    <Text Key="tbOpenWindow" Text="Novi prozor" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Otvaranje trenutnog popisa u novom prozoru" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Osvježavnje" Comment="Refresh" />
+  </Texts>
+</TR>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Keyboard" CultureName="hr">
+  <Texts>
+    <Text Key="Browse" Text="Prebiranje" Comment="Browse" />
+    <Text Key="Display Options" Text="Prikaz mogućnosti" Comment="Display Options" />
+    <Text Key="Exit" Text="Izlaz" Comment="Exit" />
+    <Text Key="FitAll" Text="Alles zeigen" Comment="Fit All" />
+    <Text Key="FitAutoRotate" Text="Anpassen &amp; automatisch drehen" Comment="Fit &amp; Auto Rotate" />
+    <Text Key="FitBest" Text="najbolja prilagodba" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="Prilagodba po visini" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="Prilagodba po širini" Comment="Fit Width" />
+    <Text Key="Library" Text="Biblioteka" Comment="Library" />
+    <Text Key="MoveDown" Text="Dolje" Comment="Down" />
+    <Text Key="MoveLeft" Text="Lijevo" Comment="Left" />
+    <Text Key="MoveNextPart" Text="Sljedeći dio" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="Prethodni dio" Comment="Previous Part" />
+    <Text Key="MoveRight" Text="Desno" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="Prva stranica" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="Zadnja stranica" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="Sljedeća stranica" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="Prethodna stranica" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="Prema gore" Comment="Up" />
+    <Text Key="NextComic" Text="Sljedeći svezak" Comment="Next eComic" />
+    <Text Key="NextTab" Text="Sljedeće mjesto" Comment="Next Tab" />
+    <Text Key="Other" Text="Drugo" Comment="Other" />
+    <Text Key="Page Display" Text="Prikaz stranice" Comment="Page Display" />
+    <Text Key="Parts" Text="Djelovi" Comment="Parts" />
+    <Text Key="PrevComic" Text="Prethodna sveska" Comment="Previous eComic" />
+    <Text Key="PrevTab" Text="prethodno mjesto" Comment="Previous Tab" />
+    <Text Key="Rotate" Text="Okretanje" Comment="Rotate" />
+    <Text Key="Scroll" Text="Klizanje" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="Prikaz preglednika" Comment="Show Browser" />
+    <Text Key="ToggleFullScreen" Text="Preklop na cijeli zaslon" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="Preklop na povečalo" Comment="Toggle Magnifier" />
+    <Text Key="ToggleScrolling" Text="Preklop na klizanje" Comment="Toggle Scroll Mode" />
+    <Text Key="ToggleTwoPages" Text="Preklop na dvostrano" Comment="Toggle Two Pages" />
+    <Text Key="Zoom" Text="Zoom" Comment="Uvećanje/smanjenje" />
+  </Texts>
+</TR>

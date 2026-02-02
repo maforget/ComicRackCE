@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PendingTasksDialog" CultureName="tr">
+  <Texts>
+    <Text Key="btOk" Text="Tamam" Comment="OK" />
+    <Text Key="colTask" Text="Görev" Comment="Task" />
+    <Text Key="colState" Text="Durum" Comment="State" />
+    <Text Key="lblItemCount" Text="{0} Beklemede kalan işlemler" Comment="{0} Tasks are pending" />
+    <Text Key="PendingTasksDialog" Text="Beklemede Kalan Arkaplan işlemleri" Comment="Pending Background Tasks" />
+    <Text Key="btAbort" Text="Bütün kullanıcı işlemlerini iptal et" Comment="Abort all User Tasks" />
+  </Texts>
+</TR>

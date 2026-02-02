@@ -66,7 +66,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 				if (File.Exists(targetPath) && existsInDatabase && setting.Target == ExportTarget.ReplaceSource)
 				{
 					// If the file exists in the database and we are replacing the source, we throw an exception
-					throw new InvalidOperationException(StringUtility.Format(TR.Messages["AlreadyExistsInDatabase", "Resulting operation would result in a duplicate entry in the database, Output file '{0}' already exists in the library"], targetPath));
+					throw new InvalidOperationException(StringUtility.Format(TR.Messages["AlreadyExistsInDatabase", "This operation would result in a duplicate entry in the database, Output file '{0}' already exists in the library"], targetPath));
 				}
 				if ((setting.AddToLibrary || setting.Target == ExportTarget.ReplaceSource) && Providers.Readers.GetFormatProviderType(setting.FormatId) == null)
 				{

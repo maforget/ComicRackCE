@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Default" CultureName="hr">
+  <Texts>
+    <Text Key="ClearAll" Text="Čiščenje svega" Comment="Clear all" />
+    <Text Key="Copy" Text="Spremanje" Comment="Copy" />
+    <Text Key="Invert" Text="Obrtanje" Comment="Invert" />
+    <Text Key="Layout" Text="Izgled" Comment="Layout" />
+    <Text Key="None" Text="Ništa" Comment="None" />
+    <Text Key="NotAvailable" Text="-" Comment="NA" />
+    <Text Key="Paste" Text="Vraćanje" Comment="Paste" />
+    <Text Key="SetAll" Text="Sve postavljeno" Comment="Set all" />
+    <Text Key="Unknown" Text="Nepoznato" Comment="Unknown" />
+    <Text Key="Unspecified" Text="Neodređeno" Comment="Unspecified" />
+    <Text Key="Workspace" Text="Radni prostor" Comment="Workspace" />
+    <Text Key="System" Text="Sustav" Comment="System" />
+    <Text Key="Books" Text="Svesci" Comment="books" />
+    <Text Key="Book" Text="Svezak" Comment="book" />
+    <Text Key="Page" Text="Stranica" Comment="page" />
+    <Text Key="Yes" Text="Da" Comment="Yes" />
+    <Text Key="No" Text="ne" Comment="No" />
+    <Text Key="Not" Text="Nije" Comment="Not" />
+  </Texts>
+</TR>

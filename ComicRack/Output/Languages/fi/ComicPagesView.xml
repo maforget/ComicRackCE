@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPagesView" CultureName="fi">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Järjestetty {0} mukaan" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Muuta kuvakkeiden kokoa" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Ryhmittely {0}" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="&amp;Lisätiedot" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="&amp;Kuvakkeet" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Laatat" Comment="&amp;Tiles" />
+    <Text Key="None" Text="&lt;tyhjä&gt;" Comment="None" />
+    <Text Key="NotArranged" Text="Järjestämätön" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Ei ryhmitelty" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Ryhmittely" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="eSarjisten ryhmittely ominaisuuksittain" Comment="Group eComics by different criteria" />
+    <Text Key="tbbSort" Text="Järjestä" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="Vaihda eSarjisten lajittelujärjestys" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbView" Text="Näkymät" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="Vaihda eSarjisten näyttötapa" Comment="Change how eComics are displayed" />
+    <Text Key="tbFilter" Text="Suodatin" Comment="Page Filter" />
+  </Texts>
+</TR>

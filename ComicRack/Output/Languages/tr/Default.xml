@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Default" CultureName="tr">
+  <Texts>
+    <Text Key="ClearAll" Text="Hepsini Temizle" Comment="Clear all" />
+    <Text Key="Copy" Text="Kopyala" Comment="Copy" />
+    <Text Key="Invert" Text="Ters Çevir" Comment="Invert" />
+    <Text Key="Layout" Text="Düzen" Comment="Layout" />
+    <Text Key="None" Text="Yok" Comment="None" />
+    <Text Key="NotAvailable" Text="Bilgi Yok" Comment="NA" />
+    <Text Key="Paste" Text="Yapıştır" Comment="Paste" />
+    <Text Key="SetAll" Text="Tümünü kaydet" Comment="Set all" />
+    <Text Key="Unknown" Text="Bilinmiyor" Comment="Unknown" />
+    <Text Key="Unspecified" Text="Belirtilmemiş" Comment="Unspecified" />
+    <Text Key="Workspace" Text="Çalışma Alanı" Comment="Workspace" />
+    <Text Key="System" Text="Sistem" Comment="System" />
+    <Text Key="Books" Text="kitaplar" Comment="books" />
+    <Text Key="Book" Text="kitap" Comment="book" />
+    <Text Key="Page" Text="sayfa" Comment="page" />
+    <Text Key="Yes" Text="Evet" Comment="Yes" />
+    <Text Key="No" Text="Hayır" Comment="No" />
+    <Text Key="Not" Text="Değil" Comment="Not" />
+    <Text Key="Cancel" Text="İptal" Comment="Cancel" />
+    <Text Key="Bookmark" Text="Yer İmi" Comment="Bookmark" />
+    <Text Key="Restart" Text="Yeniden Başlat" Comment="Restart" />
+    <Text Key="All" Text="Hepsi" Comment="All" />
+    <Text Key="Import" Text="Girdi Al" Comment="Import" />
+    <Text Key="New" Text="Yeni" Comment="New" />
+    <Text Key="Recent" Text="Yakın Tarihtekiler" Comment="Recent" />
+    <Text Key="Waiting" Text="Bekliyor" Comment="Waiting" />
+    <Text Key="Running" Text="Çalışıyor" Comment="Running" />
+    <Text Key="Completed" Text="Tamamlandı" Comment="Completed" />
+    <Text Key="Disable" Text="Devre Dışı Bırak" Comment="Disable" />
+    <Text Key="Server" Text="Sunucu" Comment="Server" />
+    <Text Key="Keep" Text="Tut" Comment="Keep" />
+    <Text Key="Save" Text="Kaydet" Comment="Save" />
+    <Text Key="Search" Text="Araştır" Comment="Search" />
+  </Texts>
+</TR>

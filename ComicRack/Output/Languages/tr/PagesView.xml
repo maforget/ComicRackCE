@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PagesView" CultureName="tr">
+  <Texts>
+    <Text Key="miCopy" Text="&amp;Sayfayı Kopyala" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Seçimi tersine çevir" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="&amp;Silindi olarak işaretle" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="Sayfa türü" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="&amp;Yenile" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="Select &amp;All" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="Yer İmi Kaydet" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="Yer İmini kaldır" Comment="Remove Bookmark" />
+    <Text Key="miMoveToStart" Text="Başa git" Comment="Move to Start" />
+    <Text Key="miMoveToEnd" Text="Sona git" Comment="Move to End" />
+    <Text Key="miResetOriginalOrder" Text="Orjinal sıralamayı kullan" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="Sayfa Döndürme" Comment="Page Rotation" />
+  </Texts>
+</TR>

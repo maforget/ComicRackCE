@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListEditorDialog" CultureName="fi">
+  <Texts>
+    <Text Key="btNew" Text="&amp;Uusi..." Comment="&amp;New..." />
+    <Text Key="btEdit" Text="&amp;Muokkaa..." Comment="&amp;Edit..." />
+    <Text Key="btActivate" Text="&amp;Aktivoi" Comment="&amp;Activate" />
+    <Text Key="btDelete" Text="Poista" Comment="Delete" />
+    <Text Key="btMoveTop" Text="Tuo &amp;eteen" Comment="Move &amp;Top" />
+    <Text Key="btMoveUp" Text="Siirrä &amp;ylös" Comment="Move &amp;Up" />
+    <Text Key="btMoveDown" Text="Siirrä &amp;alas" Comment="Move &amp;Down" />
+    <Text Key="btMoveBottom" Text="Vie &amp;taakse" Comment="Move &amp;Bottom" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Peruuta" Comment="&amp;Cancel" />
+    <Text Key="colName" Text="Nimi" Comment="Name" />
+    <Text Key="colDescription" Text="Kuvaus" Comment="Description" />
+  </Texts>
+</TR>

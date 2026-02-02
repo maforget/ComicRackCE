@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBook" CultureName="hu">
+  <Texts>
+    <Text Key="Added" Text="Hozzáadva:\t{0}" Comment="Added:\t{0}" />
+    <Text Key="Format" Text="Formátum:\t{0}" Comment="Format:\t{0}" />
+    <Text Key="LastPageReadIs" Text="Utolsó olvasott oldal: {0}" Comment="Last page read is {0}" />
+    <Text Key="LastTimeOpenedAt" Text="Legutóbb megnyitva: {0}" Comment="Last time opened at {0}" />
+    <Text Key="Library" Text="Könyvtár" Comment="Library" />
+    <Text Key="MyFavoritesList" Text="Kedvenceim" Comment="My Favorites" />
+    <Text Key="Never" Text="soha" Comment="never" />
+    <Text Key="NeverReadList" Text="Nem olvasott" Comment="Never Read" />
+    <Text Key="NoInformation" Text="Nincs elérhető információ" Comment="No information available" />
+    <Text Key="None" Text="Nincs" Comment="None" />
+    <Text Key="Of" Text="összesen" Comment="of" />
+    <Text Key="Opened" Text="Megnyitva: \t{0}" Comment="Opened:\t{0}" />
+    <Text Key="Pages" Text="{0} Oldal" Comment="{0} Page(s)" />
+    <Text Key="PageSize" Text="Méret:\t{0}" Comment="Size:\t{0}" />
+    <Text Key="PageText" Text="Oldal #{0}" Comment="Page #{0}" />
+    <Text Key="ReadingAtPage" Text="Aktuális oldal: {0}" Comment="Reading at page {0}" />
+    <Text Key="ReadingList" Text="Olvasás alatt" Comment="Reading" />
+    <Text Key="ReadList" Text="Olvasott" Comment="Read" />
+    <Text Key="RecentlyAddedList" Text="Nemrég hozzáadva" Comment="Recently Added" />
+    <Text Key="RecentlyReadList" Text="Nemrég olvasott" Comment="Recently Read" />
+    <Text Key="Resolution" Text="Felbontás:\t{0} x {1}" Comment="Resolution:\t{0} x {1}" />
+    <Text Key="Size" Text="Méret:\t{0}/{1}" Comment="Size:\t{0}/{1}" />
+    <Text Key="SmartLists" Text="Okos listák" Comment="Smart Lists" />
+    <Text Key="UnknownSize" Text="Ismeretlen méret" Comment="Unknown Size" />
+    <Text Key="Volume" Text="V{0}" Comment="V{0}" />
+    <Text Key="Unknown" Text="Ismeretlen" Comment="Unknown" />
+    <Text Key="FilesUpdateList" Text="Frissítendő fájlok" Comment="Files to update" />
+    <Text Key="TempLists" Text="Ideiglenes listák" Comment="Temporary Lists" />
+    <Text Key="FileName" Text="Fájl:\t{0}" Comment="File:\t{0}" />
+    <Text Key="Bookmark" Text="Könyvjelző: {0}" Comment="Bookmark:\t{0}" />
+    <Text Key="Rotation" Text="Rotation: {0}" Comment="Rotation:\t{0}" />
+    <Text Key="BookCount" Text="Képregények:\t{0}" Comment="Books:\t{0}" />
+  </Texts>
+</TR>

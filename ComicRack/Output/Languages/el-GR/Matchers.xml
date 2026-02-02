@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Matchers" CultureName="el-GR">
+  <Texts>
+    <Text Key="ComicBookAddedMatcher" Text="Προστέθηκε" Comment="Added" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="Όλα" Comment="All" />
+    <Text Key="ComicBookAlternateCountMatcher" Text="Εναλλακτική Αρίθμηση" Comment="Alternate Count" />
+    <Text Key="ComicBookAlternateNumberMatcher" Text="Εναλλακτικός Αριθμός" Comment="Alternate Number" />
+    <Text Key="ComicBookAlternateSeriesMatcher" Text="Εναλλακτική Σειρά" Comment="Alternate Series" />
+    <Text Key="ComicBookColoristMatcher" Text="Βαφέας" Comment="Colorist" />
+    <Text Key="ComicBookFileMatcher" Text="Αρχείο" Comment="File" />
+    <Text Key="ComicBookGenreMatcher" Text="Είδος" Comment="Genre" />
+    <Text Key="ComicBookImprintMatcher" Text="Αποτύπωση" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="Μελανωτήρας" Comment="Inker" />
+    <Text Key="ComicBookLanguageMatcher" Text="Γλώσσα" Comment="Language" />
+    <Text Key="ComicBookMonthMatcher" Text="Μήνας" Comment="Month" />
+    <Text Key="ComicBookNumberMatcher" Text="Αριθμός" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="Ανοίχθηκε" Comment="Opened" />
+    <Text Key="ComicBookPageCountMatcher" Text="Αρίθμηση Σελίδων" Comment="Page Count" />
+    <Text Key="ComicBookPencillerMatcher" Text="Σκιτσογράφος" Comment="Penciller" />
+    <Text Key="ComicBookPublisherMatcher" Text="Εκδότης" Comment="Publisher" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="Ποσοστό Ανάγνωσης" Comment="Read Percentage" />
+    <Text Key="ComicBookSeriesMatcher" Text="Σειρά" Comment="Series" />
+    <Text Key="ComicBookSummaryMatcher" Text="Περίληψη" Comment="Summary" />
+    <Text Key="ComicBookTagsMatcher" Text="Καρτέλες" Comment="Tags" />
+    <Text Key="ComicBookTitleMatcher" Text="Τίτλος" Comment="Title" />
+    <Text Key="ComicBookVolumeMatcher" Text="Τόμος" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="Συγγραφέας" Comment="Writer" />
+    <Text Key="ComicBookYearMatcher" Text="Έτος" Comment="Year" />
+    <Text Key="Days" Text="Ημέρες" Comment="Days" />
+    <Text Key="NumericOperators" Text="είναι|είναι μεγαλύτερο|είναι μικρότερο|είναι εντός εύρους" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="YesNoOperators" Text="είναι Ναι|είναι Όχι|είναι Άγνωστο" Comment="is Yes|is No|is Unknown" />
+    <Text Key="ComicBookMangaMatcher" Text="Manga" Comment="Manga" />
+    <Text Key="ComicBookBlackAndWhiteMatcher" Text="Ασπρόμαυρο" Comment="Black and White" />
+    <Text Key="ComicBookCountMatcher" Text="Αρίθμηση" Comment="Count" />
+    <Text Key="StringOperators" Text="είναι|περιέχει|περιέχει οτιδήποτε από|περιέχει όλα από|αρχίζει με|τελειώνει με|περιέχετε στη λίστα|κανονική έκφραση" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
+    <Text Key="ComicBookFileFormatMatcher" Text="Διαμόρφωση Αρχείου" Comment="File Format" />
+    <Text Key="ComicBookAgeRatingMatcher" Text="Αξιολόγηση Ηλικιακά" Comment="Age Rating" />
+    <Text Key="ComicBookCharactersMatcher" Text="Χαρακτήρες" Comment="Characters" />
+    <Text Key="ComicBookEditorMatcher" Text="Συντάκτης" Comment="Editor" />
+    <Text Key="ComicBookCoverArtistMatcher" Text="Καλλιτέχνης Εξώφυλλου" Comment="Cover Artist" />
+    <Text Key="ComicBookPublishedMatcher" Text="Δημοσιεύτηκε" Comment="Published" />
+    <Text Key="ComicBookFullPathMatcher" Text="Διαδρομή Αρχείου" Comment="File Path" />
+    <Text Key="ComicBookDirectoryMatcher" Text="Φάκελος Αρχείου" Comment="File Directory" />
+    <Text Key="ComicBookPluginMatcher" Text="Scripts Χρήστη" Comment="User Scripts" />
+    <Text Key="ComicBookModifiedMatcher" Text="Τροποποιήθηκε" Comment="File Modified" />
+    <Text Key="ComicBookCreationMatcher" Text="Δημιουργήθηκε" Comment="File Created" />
+    <Text Key="ComicBookModifiedInfoMatcher" Text="Πληροφορίες Τροποποίησης" Comment="Modified Info" />
+    <Text Key="ComicBookBookmarkCountMatcher" Text="Αρίθμηση Σελιδοδεικτών " Comment="Bookmark Count" />
+    <Text Key="OnOffOperators" Text="Ανοικτό|Κλειστό" Comment="On|Off" />
+    <Text Key="ComicBookDuplicateMatcher" Text="Μόνο Αντίγραφα" Comment="Only Duplicates" />
+    <Text Key="ComicBookNewPagesMatcher" Text="Νέες Σελίδες" Comment="New Pages" />
+    <Text Key="ComicBookTeamsMatcher" Text="Ομάδες" Comment="Teams" />
+    <Text Key="ComicBookLocationsMatcher" Text="Τοποθεσίες" Comment="Locations" />
+    <Text Key="ComicBookFileSizeMatcher" Text="Μέγεθος Αρχείου" Comment="File Size" />
+    <Text Key="MB" Text="MB" Comment="MB" />
+    <Text Key="ComicBookRatingMatcher" Text="Αξιολόγηση" Comment="My Rating" />
+    <Text Key="ComicBookCommunityRatingMatcher" Text="Αξιολόγηση Κοινότητας" Comment="Community Rating" />
+    <Text Key="DateOperators" Text="είναι|είναι πριν|είναι μετά|είναι στο τέλος|είναι εντός εύρους" Comment="is|is after|is before|is in the last|is in the range" />
+    <Text Key="ComicBookIsLinkedMatcher" Text="Σύνδεση στο αρχείο" Comment="Linked to File" />
+    <Text Key="ComicBookBookPriceMatcher" Text="Τιμή Βιβλίου" Comment="Book Price" />
+    <Text Key="ComicBookBookStoreMatcher" Text="Βιβλιοπωλείο" Comment="Book Store" />
+    <Text Key="ComicBookBookOwnerMatcher" Text="Ιδιοκτήτης βιβλίου" Comment="Book Owner" />
+    <Text Key="ComicBookBookAgeMatcher" Text="Ηλικία βιβλίου" Comment="Book Age" />
+    <Text Key="ComicBookBookConditionMatcher" Text="Συνθήκη βιβλίου" Comment="Book Condition" />
+    <Text Key="ComicBookBookCollectionStatusMatcher" Text="Κατάσταση συλλογής βιβλίου" Comment="Book Collection Status" />
+    <Text Key="ComicBookBookLocationMatcher" Text="Τοποθεσία βιβλίου" Comment="Book Location" />
+    <Text Key="ComicBookBookNotesMatcher" Text="Σημειώσεις βιβλίου" Comment="Book Notes" />
+    <Text Key="TrueFalseOperators" Text="Αληθές|Ψευδές" Comment="is True|is False" />
+    <Text Key="ComicBookSeriesCompleteMatcher" Text="Πλήρης σειρά" Comment="Series complete" />
+    <Text Key="ComicBookNotesMatcher" Text="Σημειώσεις" Comment="Notes" />
+    <Text Key="ComicBookExpressionMatcher" Text="Έκφραση" Comment="Expression" />
+    <Text Key="SmartListSeriesCountMatcher" Text="Σειρά: Βιβλία" Comment="Series: Books" />
+    <Text Key="SmartListSeriesLastNumberMatcher" Text="Σειρά: Τελευταίος Αριθμός" Comment="Series: Last Number" />
+    <Text Key="SmartListSeriesFirstNumberMatcher" Text="Σειρά: Πρώτος Αριθμός" Comment="Series: First Number" />
+    <Text Key="SmartListSeriesMaxYearMatcher" Text="Σειρά: Πρώτο Έτος" Comment="Series: First Year" />
+    <Text Key="SmartListSeriesMinYearMatcher" Text="Σειρά: Τελευταίο Έτος" Comment="Series: Last Year" />
+    <Text Key="SmartListSeriesPageCountMatcher" Text="Σειρά: Σελίδες" Comment="Series: Pages" />
+    <Text Key="SmartListSeriesPagesReadMatcher" Text="Σειρά: Σελίδες που Αναγνώστηκαν" Comment="Series: Pages Read" />
+    <Text Key="SmartListSeriesPercentReadMatcher" Text="Σειρά: Ποσοστό Ανάγνωσης" Comment="Series: Percent Read" />
+    <Text Key="SmartListSeriesAverageRatingMatcher" Text="Σειρά: Μέσος Όρος βαθμολογίας μου" Comment="Series: My Average Rating" />
+    <Text Key="SmartListSeriesAverageCommunityRatingMatcher" Text="Σειρά: Μέσος Όρος βαθμολογίας Κοινότητας" Comment="Series: Community Average Rating" />
+    <Text Key="SmartListSeriesRunningTimeYearsMatcher" Text="Series: Running Time Years" Comment="Series: Running Time Years" />
+    <Text Key="SmartListSeriesGapsMatcher" Text="Series: Gaps" Comment="Series: Gaps" />
+    <Text Key="SmartListSeriesMaxGapSizeMatcher" Text="Series: Biggest Gap" Comment="Series: Biggest Gap" />
+    <Text Key="SmartListSeriesEndOfGapMatcher" Text="Series: Start of Gap" Comment="Series: Start of Gap" />
+    <Text Key="SmartListSeriesStartOfGapMatcher" Text="Series: End of Gap" Comment="Series: End of Gap" />
+    <Text Key="ComicBookISBNMatcher" Text="ISBN" Comment="ISBN" />
+    <Text Key="SmartListSeriesLastAddedTimeMatcher" Text="Σειρά: Προστέθηκε" Comment="Series: Book added" />
+    <Text Key="SmartListSeriesLastOpenedTimeMatcher" Text="Σειρά: Ανοίχθηκε" Comment="Series: Opened" />
+    <Text Key="SmartListSeriesLastPublishedTimeMatcher" Text="Σειρά: Δημοσίευση" Comment="Series: Published" />
+    <Text Key="SmartListSeriesMaxCountMatcher" Text="Σειρά: Αύξουσα Αρίθμηση" Comment="Series: Highest Count" />
+    <Text Key="SmartListSeriesMinCountMatcher" Text="Σειρά: Φθίνουσα Αρίθμηση" Comment="Series: Lowest Count" />
+    <Text Key="SmartListSeriesAllCompleteMatcher" Text="Σειρά: Όλες Ολοκληρωμένες" Comment="Series: All compelte" />
+    <Text Key="MangaYesNoOperators" Text="Ναι|Ναι (Δεξιά προς τα Αρ\nιστερά)|Όχι|Άγνωστη" Comment="is Yes|is Yes (Right to Left)|is No|is Unknown" />
+    <Text Key="ComicBookScanInformationMatcher" Text="Αναζήτηση" Comment="Scanning Information" />
+    <Text Key="ComicBookCheckedMatcher" Text="Ελέγχθηκε" Comment="Is Checked" />
+    <Text Key="ComicBookStoryArcMatcher" Text="Story Arc" Comment="Story Arc" />
+    <Text Key="ComicBookSeriesGroupMatcher" Text="Series Group" Comment="Series Group" />
+    <Text Key="ComicBookMainCharacterOrTeamMatcher" Text="Πρωταγωνιστής / Χαρακτήρες " Comment="Main Character/Team" />
+    <Text Key="ComicBookReviewMatcher" Text="Αναθεώρηση" Comment="Review" />
+  </Texts>
+</TR>

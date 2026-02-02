@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListFolderFilesBrowser" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="miAddFolderLibrary" Text="將文件夾添加到媒體庫" Comment="&amp;Add Folder to Library" />
+    <Text Key="miAddToFavorites" Text="將文件夾添加到收藏" Comment="&amp;Add Folder to Favorites" />
+    <Text Key="miFavRefresh" Text="刷新" Comment="&amp;Refresh" />
+    <Text Key="miOpenWindow" Text="在新窗口中打開" Comment="&amp;Open in New Window" />
+    <Text Key="miRefresh" Text="刷新" Comment="&amp;Refresh" />
+    <Text Key="miRemove" Text="刷新" Comment="&amp;Remove..." />
+    <Text Key="tbFavorites" Text="顯示收藏" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="收藏" Comment="Favorites" />
+    <Text Key="tbIncludeSubFolders" Text="包括所有子文件夾" Comment="Include all Subfolders" />
+    <Text Key="tbOpenWindow" Text="新建窗口" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="將當前列表在新窗口中打開" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="刷新" Comment="Refresh" />
+    <Text Key="miOpenTab" Text="在新標簽中打開" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="新標簽" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="將當前列表在新標簽中打開" Comment="Open current list in new Tab" />
+  </Texts>
+</TR>

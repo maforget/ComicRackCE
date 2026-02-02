@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBrowserControl" CultureName="fr">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Trier par {0}" Comment="Arranged by {0}" />
+    <Text Key="ComicFiltered" Text="{0} filtré(s)" Comment="{0} filtered" />
+    <Text Key="ComicSelected" Text="{0} selectionnés" Comment="{0} selected" />
+    <Text Key="GroupedBy" Text="Grouper par {0}" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="&amp;Ajouter à la Bibliothèque" Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="Automatisation" Comment="Automation" />
+    <Text Key="miCopyData" Text="&amp;Copier les informations" Comment="&amp;Copy Data" />
+    <Text Key="miInvertSelection" Text="&amp;Inverser la sélection" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="&amp;Marquer comme" Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="&amp;Lu" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="&amp;Non-lu" Comment="&amp;Unread" />
+    <Text Key="miPasteData" Text="&amp;Coller les informations..." Comment="&amp;Paste Data..." />
+    <Text Key="miProperties" Text="&amp;Informations..." Comment="&amp;Get Info..." />
+    <Text Key="miRateMenu" Text="Mon &amp;évaluation" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="Aucun" Comment="None" />
+    <Text Key="miRating1" Text="* (1 Étoile)" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** (2 Étoiles)" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** (3 Étoiles)" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** (4 Étoiles)" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** (5 Étoiles)" Comment="***** (5 Stars)" />
+    <Text Key="miRead" Text="&amp;Ouvrir" Comment="&amp;Open" />
+    <Text Key="miReadTab" Text="Ouvrir dans un nouvel onglet" Comment="Open in new Tab" />
+    <Text Key="miRefreshInformation" Text="Rafraîchir" Comment="Refresh" />
+    <Text Key="miRemove" Text="Suppri&amp;mer..." Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="Afficher dans l'&amp;Explorateur Windows" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="Tout" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="La recherche rapide vérifie toutes les données disponibles" Comment="Quick Search is checking all available data" />
+    <Text Key="miSearchArtists" Text="Artistes" Comment="Artists" />
+    <Text Key="miSearchArtists.Tooltip" Text="La recherche rapide vérifie tous les artistes" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="Descriptions" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="La recherche rapide vérifie toutes les notes et tous les résumés" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="Noms des fichiers" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="La recherche rapide ne vérifie que les noms des fichiers" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="Série" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="La recherche rapide ne vérifie que les noms des séries" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="Scénaristes" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="La recherche rapide ne vérifie que les Scénaristes" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="Tout sé&amp;lectioner" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="Définir comme haut de la pile" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="&amp;Parcourir les Livres" Comment="&amp;Browse Comics" />
+    <Text Key="miShowOnlyAllComics" Text="Tout afficher" Comment="Show All" />
+    <Text Key="miShowOnlyReadComics" Text="Afficher les Livres marqués comme &quot;lus&quot;" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="Afficher les Livres marqués comme &quot;en cours de lecture&quot;" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="Afficher les Livres marqués comme &quot;non-lus&quot;" Comment="Show not Read" />
+    <Text Key="miViewDetails" Text="&amp;Détails" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="&amp;Miniatures" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Étiquettes" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Aucun" Comment="None" />
+    <Text Key="NotArranged" Text="Non classé(s)" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Non groupé(s)" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="Pas empilé(s)" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="Empiler par {0}" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="Groupe" Comment="Group" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="Fermer la pile" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="Trier" Comment="Arrange" />
+    <Text Key="tbbStack" Text="Empiler" Comment="Stack" />
+    <Text Key="tbbView" Text="Vues" Comment="Views" />
+    <Text Key="tsEditListLayout" Text="&amp;Éditer l'affichage de la Liste..." Comment="&amp;Edit List Layout..." />
+    <Text Key="tsSaveListLayout" Text="&amp;Sauvegarder l'affichage de la Liste..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsListLayouts" Text="Affichage des Listes" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="Gestion des profils d'affichage des Listes" Comment="Manage List Layouts" />
+    <Text Key="miSetListBackground" Text="Définir en tant qu'arrière-plan de la Liste" Comment="Set as List Background" />
+    <Text Key="miResetListBackground" Text="Arrière-plan par défaut" Comment="Reset List Background" />
+    <Text Key="miShowOnlyDuplicates" Text="Afficher les doublons" Comment="Show Duplicates" />
+    <Text Key="miAddList" Text="Ajouter à la Liste" Comment="Add to List" />
+    <Text Key="miEdit" Text="Éditer" Comment="Edit" />
+    <Text Key="miShowInList" Text="Afficher dans la Liste" Comment="Show in List" />
+    <Text Key="tbbDuplicateList" Text="Dupliquer Liste" Comment="Duplicate List" />
+    <Text Key="tbbDuplicateList.Tooltip" Text="Dupliquer Liste actuelle" Comment="Duplicate current List" />
+    <Text Key="miExportComicsWithPrevious" Text="Convertir avec les précédents" Comment="Export with Previous" />
+    <Text Key="SearchingLists" Text="Recherche dans les Listes..." Comment="Searching Lists..." />
+    <Text Key="tbUndo" Text="Annuler" Comment="Undo" />
+    <Text Key="tbRedo" Text="Rétablir" Comment="Redo" />
+    <Text Key="btDisplayAll" Text="Tout &amp;afficher" Comment="Display &amp;All" />
+    <Text Key="btCloseStack" Text="&amp;Fermer la pile" Comment="&amp;Close Stack" />
+    <Text Key="btPrevStack" Text="Précédent" Comment="&amp;Previous" />
+    <Text Key="btNextStack" Text="&amp;Suivant" Comment="&amp;Next" />
+    <Text Key="miShowOnlyFileless" Text="Afficher seulement les Livres sans fichiers" Comment="Show only fileless Entries" />
+    <Text Key="tsEditLayouts" Text="&amp;Éditer les affichages de Listes..." Comment="&amp;Edit Layouts..." />
+    <Text Key="btBrowseNext" Text="Suivante" Comment="Next" />
+    <Text Key="btBrowsePrev" Text="Précédente" Comment="Back" />
+    <Text Key="miSearchCatalog" Text="Bibliothèque" Comment="Catalog" />
+    <Text Key="miSearchCatalog.Tooltip" Text="La recherche rapide ne vérifie que les entrées dans la Bibliothèque." Comment="Quick Search is only checking Catalog entries" />
+    <Text Key="miSetStackThumbnail" Text="Couverture personnalisée de la pile..." Comment="Set custom Stack Thumbnail..." />
+    <Text Key="miRemoveStackThumbnail" Text="Enlever la couverture personnalisée du tas..." Comment="Remove custom Stack Thumbnail..." />
+    <Text Key="miExpandAllGroups" Text="Réduire/Développer tous les groupes" Comment="Collapse/Expand all Groups" />
+    <Text Key="ComicMulti" Text="{0} Livres" Comment="{0} Books" />
+    <Text Key="ComicSingle" Text="{0} Livre" Comment="{0} Book" />
+    <Text Key="miShowOnlyComics" Text="Afficher seulement les Livres" Comment="Show only Books" />
+    <Text Key="tbbGroup.Tooltip" Text="Grouper les Livres par différents critères" Comment="Group Books by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="Changer l'ordre d'affichage des Livres" Comment="Change the sort order of the Books" />
+    <Text Key="tbbView.Tooltip" Text="Changer comment et quels Livres sont affichés" Comment="Change how and what Books are displayed" />
+    <Text Key="miExportComics" Text="Convertir en..." Comment="Export Books" />
+    <Text Key="miExportComicsAs" Text="Convertir..." Comment="Export Books..." />
+    <Text Key="lblDisplayOptionText" Text="Dû aux options sélectionnées dans 'Vues', tous les Livres ne sont pas affichés." Comment="Because of active options in 'Views', not all Books are displayed" />
+    <Text Key="miUpdateComicFiles" Text="Mettre à jour ce Livre" Comment="Update Book Files" />
+    <Text Key="tbSidebar" Text="Barre latérale" Comment="Sidebar" />
+    <Text Key="miEditList" Text="Éditer la Liste" Comment="Edit List" />
+    <Text Key="miEditListMoveToTop" Text="Mettre au début" Comment="Move to Top" />
+    <Text Key="miEditListMoveToBottom" Text="Mettre à la fin" Comment="Move to Bottom" />
+    <Text Key="miEditListApplyOrder" Text="Appliquer l'ordre actuel" Comment="Apply current Order" />
+    <Text Key="miClearData" Text="Effacer les informations" Comment="Clear Data" />
+    <Text Key="miShowWeb" Text="Web..." Comment="Web..." />
+    <Text Key="miMarkChecked" Text="Sélectionné" Comment="Checked" />
+    <Text Key="miMarkUnchecked" Text="Désélectionné" Comment="Unchecked" />
+    <Text Key="CustomFieldDescription" Text="Affiche la valeur du champ personnalisé '{0}'" Comment="Shows the value of the custom field '{0}'" />
+    <Text Key="miQuickRating" Text="Évaluation et critique rapide" Comment="Quickly Rate and Review..." />
+    <Text Key="miShowGroupHeaders" Text="Afficher les en-têtes de groupe" Comment="Show Group Headers" />
+    <Text Key="miOpenWith" Text="Ouvrir Avec" Comment="Open With" />
+    <Text Key="miOpenWithManager" Text="Gérer les Programmes..." Comment="Manage Programs..."/>
+  </Texts>
+</TR>

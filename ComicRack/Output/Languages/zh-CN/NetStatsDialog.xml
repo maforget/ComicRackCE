@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="NetStatsDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="NetStatsDialog" Text="服务器统计" Comment="Server Statistics" />
+    <Text Key="Clients" Text="客户端: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="请求信息: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="请求书库: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="请求页面: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="请求缩略图: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="验证失败: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="所有共享" Comment="All Shares" />
+    <Text Key="LastMinute" Text="前1分钟" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="前5分钟" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="前1小时" Comment="Last Hour" />
+    <Text Key="Session" Text="会话" Comment="Session" />
+  </Texts>
+</TR>

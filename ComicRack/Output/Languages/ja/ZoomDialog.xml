@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ZoomDialog" CultureName="ja">
+  <Texts>
+    <Text Key="lblPercentage" Text="ズーム倍率 (%):" Comment="Percentage zoom:" />
+    <Text Key="ZoomDialog" Text="カスタム ズーム" Comment="Custom Zoom" />
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+  </Texts>
+</TR>

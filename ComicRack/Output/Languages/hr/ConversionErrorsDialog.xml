@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ConversionErrorsDialog" CultureName="hr">
+  <Texts>
+    <Text Key="btOk" Text="Potvrda" Comment="OK" />
+    <Text Key="coleComic" Text="Sveska" Comment="eComic" />
+    <Text Key="colProblem" Text="Neprilika" Comment="Problem" />
+    <Text Key="ConversionErrorsDialog" Text="Greška pri promjeni formata sveske" Comment="Comic Conversion Errors" />
+  </Texts>
+</TR>

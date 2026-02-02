@@ -1,0 +1,37 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DevicesEditDialog" CultureName="de">
+  <Texts>
+    <Text Key="DevicesEditDialog" Text="Geräte" Comment="Devices" />
+    <Text Key="btPairDevice" Text="Gerät verbinden..." Comment="Pair Device..." />
+    <Text Key="btCancel" Text="&amp;Abbruch" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btSelectAll" Text="Alle wählen" Comment="Select All"/>
+    <Text Key="btSelectNone" Text="Nichts wählen" Comment="Select None"/>
+    <Text Key="btSelectList" Text="Liste wählen" Comment="Select List"/>
+    <Text Key="btDeselectList" Text="Liste abwählen" Comment="Deselect List"/>
+    <Text Key="chkOptimizeSize" Text="Optimiere Größe" Comment="Optimize Size"/>
+    <Text Key="chkOnlyUnread" Text="Nur ungelesene" Comment="Only Unread"/>
+    <Text Key="chkOnlyChecked" Text="Nur markierte" Comment="Only Checked"/>
+    <Text Key="labelHint" Text="Verbinden Sie Ihr Gerät mit Ihrem Computer and drücken Sie 'Gerät verbinden...'" Comment="Connect your Device with your Computer and press 'Pair Device...'"/>
+    <Text Key="cbLimitType.Item0" Text="Bücher" Comment="Books"/>
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB"/>
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB"/>
+    <Text Key="chkLimit" Text="Begrenze auf" Comment="Limit to"/>
+    <Text Key="chkSortBy" Text="Sortieren nach" Comment="Sort by"/>
+    <Text Key="labelLimitSort" Text ="sortiert nach" Comment="sorted by"/>
+    <Text Key="cbLimitSort.Item0" Text="Zufällig" Comment="Random"/>
+    <Text Key="cbLimitSort.Item1" Text="Serie" Comment="Series"/>
+    <Text Key="cbLimitSort.Item2" Text="Alternative Serie" Comment="Alternate Series"/>
+    <Text Key="cbLimitSort.Item3" Text="Publiziert" Comment="Published"/>
+    <Text Key="cbLimitSort.Item4" Text="Hinzugefügt" Comment="Added"/>
+    <Text Key="cbLimitSort.Item5" Text="Handlungsbogen" Comment="Story Arc"/>
+    <Text Key="chkKeepLastRead" Text="Behalte zuletzt gelesene" Comment="But keep last read"/>
+    <Text Key="chkOnlyShowSelected" Text="Nur selektierte anzeigen" Comment="Only show selected"/>
+    <Text Key="btDevice" Text="Gerät" Comment="Device"/>
+    <Text Key="miDeviceCopy" Text="Kopieren" Comment="Copy"/>
+    <Text Key="miDevicePaste" Text="Einfügen" Comment="Paste"/>
+    <Text Key="miDeviceCopyToAll" Text="Zu Allen Kopieren" Comment="Copy To All"/>
+    <Text Key="miDeviceRename" Text="Umbenennen..." Comment="Rename..."/>
+    <Text Key="miDeviceUnpair" Text="Gerät trennen" Comment="Unpair Device"/>
+  </Texts>
+</TR>

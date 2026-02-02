@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SearchBrowser" CultureName="ja">
+  <Texts>
+    <Text Key="AlternateSeries" Text="シリーズの別名" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="カラーリスト" Comment="Colorists" />
+    <Text Key="Genre" Text="ジャンル" Comment="Genres" />
+    <Text Key="Imprint" Text="奥付け" Comment="Imprints" />
+    <Text Key="Inker" Text="インカー" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="言語" Comment="Languages" />
+    <Text Key="MonthAsText" Text="月" Comment="Months" />
+    <Text Key="Penciller" Text="ペンシラー" Comment="Pencillers" />
+    <Text Key="Publisher" Text="発行者" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="シリーズ" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="年" Comment="Years" />
+    <Text Key="Writer" Text="ライター" Comment="Writers" />
+    <Text Key="Unspecified" Text="未指定" Comment="Unspecified" />
+    <Text Key="AllItems" Text="すべて ({0} {1})" Comment="All ({0} {1})" />
+    <Text Key="ShadowTitle" Text="タイトル" Comment="Titles" />
+    <Text Key="ShadowFormat" Text="フォーマット" Comment="Formats" />
+    <Text Key="Editor" Text="エディター" Comment="Editors" />
+    <Text Key="Letterer" Text="レタラー" Comment="Letterer" />
+    <Text Key="Characters" Text="キャラクター" Comment="Characters" />
+    <Text Key="Teams" Text="チーム" Comment="Teams" />
+    <Text Key="Locations" Text="場所" Comment="Locations" />
+    <Text Key="CoverArtist" Text="カバー アーティスト" Comment="Cover Artists" />
+    <Text Key="AgeRating" Text="年齢制限" Comment="Age Ratings" />
+    <Text Key="Tags" Text="タグ" Comment="Tags" />
+    <Text Key="ShadowVolumeAsText" Text="ボリューム" Comment="Volumes" />
+    <Text Key="Web" Text="ウェブ" Comment="Web" />
+    <Text Key="RatingAsText" Text="評価" Comment="My Ratings" />
+    <Text Key="CommunityRatingAsText" Text="コミュニティ評価" Comment="Community Ratings" />
+    <Text Key="BookPriceAsText" Text="価格" Comment="Book Prices" />
+    <Text Key="BookAge" Text="本の汚損" Comment="Book Ages" />
+    <Text Key="BookStore" Text="購入店" Comment="Book Stores" />
+    <Text Key="BookOwner" Text="オーナー" Comment="Book Owners" />
+    <Text Key="BookCondition" Text="コンディション" Comment="Book Conditions" />
+    <Text Key="BookCollectionStatus" Text="コレクションの状態" Comment="Book Collection Status" />
+    <Text Key="BookLocation" Text="場所" Comment="Book Locations" />
+  </Texts>
+</TR>

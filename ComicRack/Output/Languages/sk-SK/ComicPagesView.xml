@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPagesView" CultureName="sk-SK">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Zoradené podľa {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Zmeniť veľkosť náhľadov" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Zoskupené podľa {0}" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="&amp;Detaily" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="Ná&amp;hľady" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Dláždice" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Žiadne" Comment="None" />
+    <Text Key="NotArranged" Text="Bez zaradenia" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Bez skupiny" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Skupina" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="Zoskupiť eComicsy podľa odlišného kritéria" Comment="Group eComics by different criteria" />
+    <Text Key="tbbSort" Text="Zoradiť" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="Zmeniť poradie triedenia eComicsov" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbView" Text="Prezerať" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="Zmeniť ako budú eComicsy zobrazené" Comment="Change how eComics are displayed" />
+    <Text Key="tbFilter" Text="Filter strán" Comment="Page Filter" />
+  </Texts>
+</TR>

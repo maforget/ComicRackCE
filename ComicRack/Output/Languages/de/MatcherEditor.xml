@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MatcherEditor" CultureName="de">
+  <Texts>
+    <Text Key="miNewRule" Text="Neue Regel" Comment="New Rule"/>
+    <Text Key="miNewGroup" Text="Neue Gruppe" Comment="New Group"/>
+    <Text Key="miDelete" Text="Entfernen" Comment="Delete"/>
+    <Text Key="miCut" Text="Ausschneiden" Comment="Cut"/>
+    <Text Key="miCopy" Text="Kopieren" Comment="Copy"/>
+    <Text Key="miPaste" Text="Einfügen" Comment="Paste"/>
+    <Text Key="miMoveUp" Text="Nach Oben" Comment="Move Up"/>
+    <Text Key="miMoveDown" Text="Nach Unten" Comment="Move Down"/>
+  </Texts>
+</TR>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Columns" CultureName="hr">
+  <Texts>
+    <Text Key="AddedTimeAsText" Text="Vrijeme dodavanja" Comment="Added" />
+    <Text Key="AddedTimeAsText.Description" Text="Vrijeme dodavanja u bibliotaku" Comment="Time the eComic was added to the Database" />
+    <Text Key="AlternateCountAsText" Text="Ukupno nastavaka" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="Ukupan broja nastavaka priče" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="Broj nastavka" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="Broj nastavka priče" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="Nastavak" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="Ime nastavka" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="Tekst" Comment="Caption" />
+    <Text Key="Caption.Description" Text="Cjelokupan tekst stripa" Comment="Complete caption of the eComic" />
+    <Text Key="Colorist" Text="Obojio" Comment="Colorist" />
+    <Text Key="Colorist.Description" Text="Strip obojio" Comment="Colorist of the eComic" />
+    <Text Key="CountAsText" Text="Ukupno primjeraka" Comment="Count" />
+    <Text Key="CountAsText.Description" Text="Broj izdanih primjeraka u seriji" Comment="Total number of issued in this series" />
+    <Text Key="Cover" Text="Slika s korica" Comment="Cover" />
+    <Text Key="Cover.Description" Text="Slika s korica" Comment="Cover image of the eComic" />
+    <Text Key="CoverArtist" Text="Dizajn korica" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="Umjetnik koji je dizajnirao korice" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="Urednik" Comment="Editor" />
+    <Text Key="Editor.Description" Text="Urednik" Comment="Editor of the eComic" />
+    <Text Key="FileModifiedTimeAsText" Text="Mijenjan" Comment="Modified" />
+    <Text Key="FileModifiedTimeAsText.Description" Text="Vrijeme kada je strip zadnji puta mijenjan" Comment="Time this eComic was modified the last time" />
+    <Text Key="FileName" Text="Datoteka" Comment="File Name" />
+    <Text Key="FileName.Description" Text="Naziv datoteke (bez ekstenzije)" Comment="Filename without the extension" />
+    <Text Key="FilePath" Text="Putanja" Comment="Path" />
+    <Text Key="FilePath.Description" Text="Gdje je strip smješten" Comment="Location where the eComic is stored" />
+    <Text Key="FileSizeAsText" Text="Veličina" Comment="Size" />
+    <Text Key="FileSizeAsText.Description" Text="Veličina stripa u byteovima" Comment="Size of the eComic in bytes" />
+    <Text Key="Genre" Text="Žanr" Comment="Genre" />
+    <Text Key="Genre.Description" Text="Žanr stripa" Comment="Genre of the eComic" />
+    <Text Key="ImageHeightAsText" Text="Visina" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="Visina stranice u točkicama" Comment="Height of the page in pixels" />
+    <Text Key="ImageSizeAsText" Text="Veličina" Comment="Size" />
+    <Text Key="ImageSizeAsText.Description" Text="Veličina stranice u byteovima" Comment="Size of the page in bytes" />
+    <Text Key="ImageWidthAsText" Text="Širina" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="Širina stranice u točkicama" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="Verlagszeichen" Comment="Imprint" />
+    <Text Key="Imprint.Description" Text="Tisak stripa" Comment="Imprint of the eComic" />
+    <Text Key="Inker" Text="Tuš" Comment="Inker" />
+    <Text Key="Inker.Description" Text="Tuširao" Comment="Inker of the eComic" />
+    <Text Key="Key" Text="Naziv" Comment="Name" />
+    <Text Key="Key.Description" Text="Jedinstveno ime stranice" Comment="Unique key for this page in the eComic" />
+    <Text Key="LanguageAsText" Text="Jezik" Comment="Language" />
+    <Text Key="LanguageAsText.Description" Text="Jezik stripa" Comment="Language of the eComic" />
+    <Text Key="Letterer" Text="Tekstopisac" Comment="Letterer" />
+    <Text Key="Letterer.Description" Text="Tekstopisac stripa" Comment="Letterer of this eComic" />
+    <Text Key="MonthAsText" Text="Mjesec" Comment="Month" />
+    <Text Key="MonthAsText.Description" Text="Mjesec izdavanja" Comment="Month the eComic was published" />
+    <Text Key="NumberAsText" Text="Broj" Comment="Number" />
+    <Text Key="NumberAsText.Description" Text="Broj stripa (u seriji)" Comment="Number of the eComic in the Series" />
+    <Text Key="OpenedCountAsText" Text="Broj otvaranja" Comment="Opened Count" />
+    <Text Key="OpenedCountAsText.Description" Text="Koliko puta je strip otvoren" Comment="Times the eComic has been opened" />
+    <Text Key="OpenedTimeAsText" Text="Otvoren" Comment="Opened" />
+    <Text Key="OpenedTimeAsText.Description" Text="Vrijeme zadnjeg otvaranja" Comment="Last time the eComic was opened" />
+    <Text Key="Page" Text="Stranica" Comment="Page" />
+    <Text Key="Page.Description" Text="Broj stranice sa slike" Comment="The page number of the image" />
+    <Text Key="PagesAsText" Text="Stranice" Comment="Pages" />
+    <Text Key="PagesAsText.Description" Text="Broj stranica" Comment="The total count of pages" />
+    <Text Key="PageTypeAsText" Text="Vrsta" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="Vrsta stranice" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="Crtač" Comment="Penciller" />
+    <Text Key="Penciller.Description" Text="Strip tuširao" Comment="Penciller of the eComic" />
+    <Text Key="Position" Text="Smještaj" Comment="Position" />
+    <Text Key="Position.Description" Text="Smještaj stripa u popisu" Comment="Position of the eComic in the list" />
+    <Text Key="Publisher" Text="Izdavač" Comment="Publisher" />
+    <Text Key="Publisher.Description" Text="Izdavač stripa" Comment="Publisher of this eComic" />
+    <Text Key="Rating" Text="Ocjena" Comment="My Rating" />
+    <Text Key="Rating.Description" Text="Opisna ocjena stripa" Comment="Your rating of this eComic" />
+    <Text Key="ReadPercentageAsText" Text="Postotak pročitan" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="Koliko je pročitano" Comment="How much has been read" />
+    <Text Key="Series" Text="Serija" Comment="Series" />
+    <Text Key="Series.Description" Text="Naziv serije" Comment="Series name" />
+    <Text Key="State" Text="Stanje" Comment="State" />
+    <Text Key="State.Description" Text="Status sveska" Comment="State indicators for this eComic" />
+    <Text Key="Tags" Text="Oznake" Comment="Tags" />
+    <Text Key="Tags.Description" Text="Oznake sveske" Comment="Tags of the eComic" />
+    <Text Key="Thumbnail" Text="Slikica" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="Slikica stranice" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="Naslov" Comment="Title" />
+    <Text Key="Title.Description" Text="Naslov sveske" Comment="Title of the eComic" />
+    <Text Key="VolumeAsText" Text="Svezak" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="Broj svezaka u seriji" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="Autor" Comment="Writer" />
+    <Text Key="Writer.Description" Text="Autor stripa" Comment="Writer of the eComic" />
+    <Text Key="YearAsText" Text="Godina" Comment="Year" />
+    <Text Key="YearAsText.Description" Text="Godina izdavanja" Comment="Year the eComic was published" />
+  </Texts>
+</TR>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PluginEngine" CultureName="hu">
+  <Texts>
+    <Text Key="EditUpdateBooksCommands" Text="Képregény parancsok szerkesztése/frissítése" Comment="Edit/Update Books Commands" />
+    <Text Key="CreateNewBooksCommands" Text="Új Képregény parancsok létrehozása" Comment="Create New Books Commands" />
+    <Text Key="BookPathParsers" Text="Képregény elérési út elemzők" Comment="Book Path Parsers" />
+    <Text Key="ActionswhenComicRackstarts" Text="Akciók a ComicRack indításánál" Comment="Actions when ComicRack starts" />
+    <Text Key="ActionswhenBooksareopened" Text="Akciók képregény megnyitásánál" Comment="Actions when Books are opened" />
+    <Text Key="ActionswhenReaderisresized" Text="Akció az olvasó átméretezésénél" Comment="Actions when Reader is resized" />
+    <Text Key="AdditionalSearchProviders" Text="További keresők" Comment="Additional Search Providers" />
+    <Text Key="BookInformationPanels" Text="Képregény információs panelek" Comment="Book Information Panels" />
+    <Text Key="QuickOpenPanels" Text="Quick Open Panels" Comment="Quick Open Panels" />
+    <Text Key="CustomBookThumbnailOverlays" Text="Egyedi miniatűr segédek" Comment="Custom Book Thumbnail Overlays" />
+  </Texts>
+</TR>

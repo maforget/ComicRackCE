@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MultipleComicBooksDialog" CultureName="ja">
+  <Texts>
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelAlternateSeries" Text="シリーズの別名、あらすじのタイトル:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelColorist" Text="カラーリスト:" Comment="Colorist:" />
+    <Text Key="labelEditor" Text="エディター:" Comment="Editor:" />
+    <Text Key="labelGenre" Text="ジャンル:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="奥付け:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="インカー:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="言語:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="レタラー:" Comment="Letterer:" />
+    <Text Key="labelManga" Text="マンガ:" Comment="Manga:" />
+    <Text Key="labelMonth" Text="月:" Comment="Month:" />
+    <Text Key="labelNumber" Text="ナンバー:" Comment="Number:" />
+    <Text Key="labelPenciller" Text="ペンシラー" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="発行者:" Comment="Publisher:" />
+    <Text Key="labelSeries" Text="シリーズ:" Comment="Series:" />
+    <Text Key="labelSummary" Text="概要:" Comment="Summary:" />
+    <Text Key="labelTags" Text="タグ:" Comment="Tags:" />
+    <Text Key="labelTitle" Text="タイトル:" Comment="Title:" />
+    <Text Key="labelVolume" Text="ボリューム:" Comment="Volume:" />
+    <Text Key="labelWriter" Text="作者:" Comment="Writer:" />
+    <Text Key="labelYear" Text="年:" Comment="Year:" />
+    <Text Key="labelBlackAndWhite" Text="モノクロ:" Comment="Black and White:" />
+    <Text Key="labelFormat" Text="形式:" Comment="Format:" />
+    <Text Key="MultipleComicBooksDialog" Text="複数コミックの情報 ({0} 冊)" Comment="Multiple eComic Information ({0} Books)" />
+    <Text Key="labelEnableProposed" Text="暫定データを有効化:" Comment="Enable Proposed:" />
+    <Text Key="labelAgeRating" Text="年齢制限:" Comment="Age Rating:" />
+    <Text Key="labelCount" Text="トータル:" Comment="of:" />
+    <Text Key="labelAlternateCount" Text="トータル:" Comment="of:" />
+    <Text Key="labelAlternateNumber" Text="ナンバー:" Comment="Number:" />
+    <Text Key="labelCoverArtist" Text="カバー アーティスト:" Comment="Cover Artist:" />
+    <Text Key="labelRating" Text="評価:" Comment="My Rating:" />
+    <Text Key="labelCommunityRating" Text="コミュニティ評価:" Comment="Community Rating:" />
+    <Text Key="labelNotes" Text="ノート:" Comment="Notes:" />
+    <Text Key="labelCharacters" Text="キャラクター:" Comment="Characters:" />
+    <Text Key="labelTeams" Text="チーム:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="場所:" Comment="Locations:" />
+    <Text Key="labelWeb" Text="ウェブ:" Comment="Web:" />
+    <Text Key="labelBookStore" Text="ストア:" Comment="Store:" />
+    <Text Key="labelBookOwner" Text="オーナー:" Comment="Owner:" />
+    <Text Key="labelBookLocation" Text="場所:" Comment="Location:" />
+    <Text Key="labelBookAge" Text="汚損:" Comment="Age:" />
+    <Text Key="labelBookCondition" Text="コンディション:" Comment="Condition:" />
+    <Text Key="labelBookCollectionStatus" Text="コレクションの状態:" Comment="Collection Status:" />
+    <Text Key="labelBookNotes" Text="ノート:" Comment="Notes:" />
+    <Text Key="labelBookPrice" Text="価格:" Comment="Price:" />
+    <Text Key="grpMain" Text="メイン" Comment="Main" />
+    <Text Key="grpPlotNotes" Text="プロットとノート" Comment="Plot &amp; Notes" />
+    <Text Key="grpArtists" Text="アーティスト / 関係者" Comment="Artists / People Involved" />
+    <Text Key="grpCatalog" Text="カタログ" Comment="Catalog" />
+    <Text Key="labelISBN" Text="ISBN:" Comment="ISBN:" />
+    <Text Key="labelPagesAsTextSimple" Text="Pages:" Comment="Pages:" />
+  </Texts>
+</TR>

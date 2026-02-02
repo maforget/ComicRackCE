@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PagesView" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="miCopy" Text="&amp;Kopírovat stránku" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Invertovat výběr" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="Označit jako &amp;smazané" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="Typ stránky" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="&amp;Aktualizovat" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="Vybrat &amp;vše" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="Nastavit záložku" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="Odstranit záložku" Comment="Remove Bookmark" />
+    <Text Key="miResetOriginalOrder" Text="Obnovit původní pořadí" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="Otočení stránky" Comment="Page Rotation" />
+    <Text Key="miPagePosition" Text="Pozice stránky" Comment="Page Position" />
+    <Text Key="miPagePositionDefault" Text="Výchozí" Comment="Default" />
+    <Text Key="miPagePositionNear" Text="Vlevo" Comment="Near" />
+    <Text Key="miPagePositionFar" Text="Vpravo" Comment="Far" />
+    <Text Key="miMoveToTop" Text="Přesunout na začátek" Comment="Move to Top" />
+    <Text Key="miMoveToBottom" Text="Přesunout na konec" Comment="Move to Bottom" />
+  </Texts>
+</TR>

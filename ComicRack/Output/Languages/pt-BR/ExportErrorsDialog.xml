@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ExportErrorsDialog" CultureName="pt-BR">
+  <Texts>
+    <Text Key="btOk" Text="OK" Comment="OK" />
+    <Text Key="colProblem" Text="Problema" Comment="Problem" />
+    <Text Key="coleComic" Text="Livro" Comment="Book" />
+    <Text Key="ExportErrorsDialog" Text="Erros de Exportação do Livro" Comment="Book Export Errors" />
+  </Texts>
+</TR>

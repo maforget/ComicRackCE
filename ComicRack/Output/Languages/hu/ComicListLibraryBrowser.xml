@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicListLibraryBrowser" CultureName="hu">
+  <Texts>
+    <Text Key="miEditSmartList" Text="&amp;Szerkesztés..." Comment="&amp;Edit..." />
+    <Text Key="miNewFolder" Text="Új mappa..." Comment="New &amp;Folder..." />
+    <Text Key="miNewList" Text="Új lista..." Comment="New &amp;List..." />
+    <Text Key="miNewSmartList" Text="&amp;Új okos lista..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="&amp;Sorba rendezés" Comment="&amp;Sort" />
+    <Text Key="miOpenWindow" Text="&amp;Megnyitás új ablakban" Comment="&amp;Open in New Window" />
+    <Text Key="miQueryRename" Text="&amp;Átnevezés" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="Frissítés" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="Eltávolítás" Comment="&amp;Re&amp;move..." />
+    <Text Key="NewFolder" Text="Új mappa" Comment="New Folder" />
+    <Text Key="NewList" Text="Új lista" Comment="New List" />
+    <Text Key="NewSmartList" Text="Új okos lista" Comment="New Smart List" />
+    <Text Key="tbNewFolder" Text="Új mappa" Comment="New &amp;Folder" />
+    <Text Key="tbNewFolder.Tooltip" Text="Új mappa készítése a listák rendszerezéséhez" Comment="Create a new folder to organize your lists" />
+    <Text Key="tbNewList" Text="Új lista" Comment="New &amp;List" />
+    <Text Key="tbNewList.Tooltip" Text="Új lista készítése" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="&amp;Új okos lista..." Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="Új okos lista készítése" Comment="Create a new Smart List" />
+    <Text Key="tbOpenWindow" Text="Új ablak" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Aktuális lista megnyitása új ablakban" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Frissítés" Comment="Refresh" />
+    <Text Key="miOpenTab" Text="&amp;Megnyitás új fülön" Comment="&amp;Open in New Tab" />
+    <Text Key="NewSmartListOption" Text="Pillanatkép a jelenlegi nézetről" Comment="Snapshot of current view" />
+    <Text Key="tbOpenTab" Text="Új fül" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Jelenlegi lista megnyitása új fülön" Comment="Open current list in new Tab" />
+    <Text Key="miCopyList" Text="Lista másolása" Comment="Copy List" />
+    <Text Key="miPasteList" Text="Lista beillesztése" Comment="Paste List" />
+    <Text Key="miExportReadingList" Text="Olvasási lista exportálás..." Comment="Export Reading List..." />
+    <Text Key="miImportReadingList" Text="Olvasási lista importálás..." Comment="Import Reading List..." />
+    <Text Key="tbExpandCollapseAll" Text="Összes kinyitása/összecsukása" Comment="Expand/Collapse all" />
+    <Text Key="miFavRemove" Text="Eltávolít" Comment="Remove" />
+    <Text Key="tbFavorites" Text="Kedvencek mutatása" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Kedvencek" Comment="Favorites" />
+    <Text Key="miAddToFavorites" Text="Hozzáadás a kedvencekhez" Comment="Add to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Frissítés" Comment="&amp;Refresh" />
+    <Text Key="tbPreferences" Text="Beállítások" Comment="Preferences" />
+    <Text Key="tbGauges" Text="Mércék mutatása" Comment="Show Gauges" />
+    <Text Key="tbGaugesNew" Text="Új képregény mérce mutatása" Comment="Show New Books Gauge" />
+    <Text Key="tbGaugesUnread" Text="Nem olvasott képregény mérce mutatása" Comment="Show Unread Books Gauge" />
+    <Text Key="tbGaugesTotal" Text="Összes képregény mérce mutatása" Comment="Show Total Books Gauge" />
+    <Text Key="tbGaugesNumeric" Text="Számok mutatása" Comment="Show Numbers" />
+  </Texts>
+</TR>

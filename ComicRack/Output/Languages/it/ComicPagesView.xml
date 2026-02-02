@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicPagesView" CultureName="it">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Disposti per {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Cambia Grandezza Miniature" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Raggruppato per {0}" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="&amp;Dettagli" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="&amp;Icone" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Miniature" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Nessuno" Comment="None" />
+    <Text Key="NotArranged" Text="Non Ordinato" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Non Raggruppato" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Gruppo" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="Raggruppa Pagine per  Criteri Differenti" Comment="Group Pages by different criteria" />
+    <Text Key="tbbSort" Text="Disponi" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="Cambia l'ordine delle Pagine" Comment="Change the sort order of the Pages" />
+    <Text Key="tbbView" Text="Viste" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="Modfica Visualizzazione Pagine" Comment="Change how Pages are displayed" />
+    <Text Key="tbFilter" Text="Filtro Pagina" Comment="Page Filter" />
+    <Text Key="miExpandAllGroups" Text="Riduci/Espandi Tutti i Gruppi" Comment="Collapse/Expand all Groups" />
+  </Texts>
+</TR>

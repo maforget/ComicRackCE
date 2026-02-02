@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Script.RenameBookFiles" CultureName="es">
+  <Texts>
+    <Text Key="Name" Text="Renombrar Archivos a 'Serie Volumen #Número (de Total) (Año)'" Comment="Rename Files to 'Series Volume #Number (of Count) (Year)'" />
+    <Text Key="Description" Text="Script para renombrar los libros seleccionados en base a los metadatos" Comment="Script to rename the selected Books based on the meta data" />
+  </Texts>
+</TR>

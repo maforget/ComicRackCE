@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListFolderFilesBrowser" CultureName="fi">
+  <Texts>
+    <Text Key="miAddFolderLibrary" Text="&amp;Lisää kansio kirjastoon" Comment="&amp;Add Folder to Library" />
+    <Text Key="miAddToFavorites" Text="&amp;Lisää kansio suosikkeihin" Comment="&amp;Add Folder to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Virkistä" Comment="&amp;Refresh" />
+    <Text Key="miOpenWindow" Text="&amp;Avaa uudessa ikkunassa" Comment="&amp;Open in New Window" />
+    <Text Key="miOpenTab" Text="&amp;Avaa uudelle välilehdelle" Comment="&amp;Open in New Tab" />
+    <Text Key="miRefresh" Text="&amp;Virkistä" Comment="&amp;Refresh" />
+    <Text Key="miRemove" Text="&amp;Poista..." Comment="&amp;Remove..." />
+    <Text Key="tbFavorites" Text="Näytä suosikit" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Suosikit" Comment="Favorites" />
+    <Text Key="tbIncludeSubFolders" Text="Sisällytä alikansiot" Comment="Include all Subfolders" />
+    <Text Key="tbOpenWindow" Text="Uusi ikkuna" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Avaa lista uuteen ikkunaan" Comment="Open current list in new Window" />
+    <Text Key="tbOpenTab" Text="Uusi välilehti" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Avaa lista uudelle välilehdelle" Comment="Open current list in new Tab" />
+    <Text Key="tbRefresh" Text="Virkistä" Comment="Refresh" />
+  </Texts>
+</TR>

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="CommandKeys" CultureName="it">
+  <Texts>
+    <Text Key="A" Text="A" Comment="A" />
+    <Text Key="Add" Text="Aggiungi" Comment="Add" />
+    <Text Key="Alt" Text="Alt" Comment="Alt" />
+    <Text Key="B" Text="B" Comment="B" />
+    <Text Key="C" Text="C" Comment="C" />
+    <Text Key="Ctrl" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="D" Text="D" Comment="D" />
+    <Text Key="D0" Text="D0" Comment="D0" />
+    <Text Key="D1" Text="D1" Comment="D1" />
+    <Text Key="D2" Text="D2" Comment="D2" />
+    <Text Key="D3" Text="D3" Comment="D3" />
+    <Text Key="D4" Text="D4" Comment="D4" />
+    <Text Key="D5" Text="D5" Comment="D5" />
+    <Text Key="D6" Text="D6" Comment="D6" />
+    <Text Key="D7" Text="D7" Comment="D7" />
+    <Text Key="D8" Text="D8" Comment="D8" />
+    <Text Key="D9" Text="D9" Comment="D9" />
+    <Text Key="Decimal" Text="Punto Tastierino" Comment="Decimal" />
+    <Text Key="Divide" Text="Dividi" Comment="Divide" />
+    <Text Key="Down" Text="Giù" Comment="Down" />
+    <Text Key="E" Text="E" Comment="E" />
+    <Text Key="End" Text="Fine" Comment="End" />
+    <Text Key="Enter" Text="Invio" Comment="Enter" />
+    <Text Key="Escape" Text="Escape" Comment="Escape" />
+    <Text Key="F" Text="F" Comment="F" />
+    <Text Key="G" Text="G" Comment="G" />
+    <Text Key="H" Text="H" Comment="H" />
+    <Text Key="Home" Text="Home" Comment="Home" />
+    <Text Key="I" Text="I" Comment="I" />
+    <Text Key="J" Text="J" Comment="J" />
+    <Text Key="K" Text="K" Comment="K" />
+    <Text Key="L" Text="L" Comment="L" />
+    <Text Key="Left" Text="Sinistra" Comment="Left" />
+    <Text Key="M" Text="M" Comment="M" />
+    <Text Key="MediaNextTrack" Text="MediaProssima Traccia" Comment="MediaNextTrack" />
+    <Text Key="MediaPlayPause" Text="MediaPlayPausa" Comment="MediaPlayPause" />
+    <Text Key="MediaPreviousTrack" Text="MediaPrecedente Traccia" Comment="MediaPreviousTrack" />
+    <Text Key="MediaStop" Text="MediaStop" Comment="MediaStop" />
+    <Text Key="MouseButton4" Text="TastoMouse4" Comment="MouseButton4" />
+    <Text Key="MouseButton5" Text="TastoMouse5" Comment="MouseButton5" />
+    <Text Key="MouseDoubleButton4" Text="DoppioClickTastoMouse4" Comment="MouseDoubleButton4" />
+    <Text Key="MouseDoubleButton5" Text="DoppioClickTastoMouse5" Comment="MouseDoubleButton5" />
+    <Text Key="MouseDoubleLeft" Text="DoppioClickMouseSinistra" Comment="MouseDoubleLeft" />
+    <Text Key="MouseDoubleMiddle" Text="DoppioClickMouseCentro" Comment="MouseDoubleMiddle" />
+    <Text Key="MouseDoubleRight" Text="DoppioClickMouseDestra" Comment="MouseDoubleRight" />
+    <Text Key="MouseLeft" Text="MouseClickSinistra" Comment="MouseLeft" />
+    <Text Key="MouseMiddle" Text="MouseClickCentro" Comment="MouseMiddle" />
+    <Text Key="MouseRight" Text="MouseClickDestra" Comment="MouseRight" />
+    <Text Key="MouseTiltLeft" Text="MouseMuoviSinistra" Comment="MouseTiltLeft" />
+    <Text Key="MouseTiltRight" Text="MouseMuoviDestra" Comment="MouseTiltRight" />
+    <Text Key="MouseWheelDown" Text="MouseRotellaGiù" Comment="MouseWheelDown" />
+    <Text Key="MouseWheelUp" Text="MouseRotellaSu" Comment="MouseWheelUp" />
+    <Text Key="Multiply" Text="Moltiplica" Comment="Multiply" />
+    <Text Key="N" Text="N" Comment="N" />
+    <Text Key="None" Text="Nessuno" Comment="None" />
+    <Text Key="NumPad0" Text="Tastierino0" Comment="NumPad0" />
+    <Text Key="NumPad1" Text="Tastierino1" Comment="NumPad1" />
+    <Text Key="NumPad2" Text="Tastierino2" Comment="NumPad2" />
+    <Text Key="NumPad3" Text="Tastierino3" Comment="NumPad3" />
+    <Text Key="NumPad4" Text="Tastierino4" Comment="NumPad4" />
+    <Text Key="NumPad5" Text="Tastierino5" Comment="NumPad5" />
+    <Text Key="NumPad6" Text="Tastierino6" Comment="NumPad6" />
+    <Text Key="NumPad7" Text="Tastierino7" Comment="NumPad7" />
+    <Text Key="NumPad8" Text="Tastierino8" Comment="NumPad8" />
+    <Text Key="NumPad9" Text="Tastierino9" Comment="NumPad9" />
+    <Text Key="O" Text="O" Comment="O" />
+    <Text Key="P" Text="P" Comment="P" />
+    <Text Key="PageDown" Text="PagGiù" Comment="PageDown" />
+    <Text Key="PageUp" Text="PagSu" Comment="PageUp" />
+    <Text Key="Q" Text="Q" Comment="Q" />
+    <Text Key="R" Text="R" Comment="R" />
+    <Text Key="Right" Text="Destra" Comment="Right" />
+    <Text Key="S" Text="S" Comment="S" />
+    <Text Key="Shift" Text="Maiusc." Comment="Shift" />
+    <Text Key="Space" Text="Spazio" Comment="Space" />
+    <Text Key="Subtract" Text="Sottrai" Comment="Subtract" />
+    <Text Key="T" Text="T" Comment="T" />
+    <Text Key="Tab" Text="Tab" Comment="Tab" />
+    <Text Key="U" Text="U" Comment="U" />
+    <Text Key="Up" Text="Su" Comment="Up" />
+    <Text Key="V" Text="V" Comment="V" />
+    <Text Key="W" Text="W" Comment="W" />
+    <Text Key="X" Text="X" Comment="X" />
+    <Text Key="Y" Text="Y" Comment="Y" />
+    <Text Key="Z" Text="Z" Comment="Z" />
+    <Text Key="Zoom" Text="Zoom" Comment="Zoom" />
+    <Text Key="Gesture1" Text="Gesture 1" Comment="Gesture 1" />
+    <Text Key="Gesture2" Text="Gesture 2" Comment="Gesture 2" />
+    <Text Key="Gesture3" Text="Gesture 3" Comment="Gesture 3" />
+    <Text Key="Gesture4" Text="Gesture 4" Comment="Gesture 4" />
+    <Text Key="Gesture5" Text="Gesture 5" Comment="Gesture 5" />
+    <Text Key="Gesture6" Text="Gesture 6" Comment="Gesture 6" />
+    <Text Key="Gesture7" Text="Gesture 7" Comment="Gesture 7" />
+    <Text Key="Gesture8" Text="Gesture 8" Comment="Gesture 8" />
+    <Text Key="Gesture9" Text="Gesture 9" Comment="Gesture 9" />
+    <Text Key="GestureDouble1" Text="Doppia Gesture 1" Comment="Gesture Double 1" />
+    <Text Key="GestureDouble2" Text="Doppia Gesture 2" Comment="Gesture Double 2" />
+    <Text Key="GestureDouble3" Text="Doppia Gesture 3" Comment="Gesture Double 3" />
+    <Text Key="GestureDouble4" Text="Doppia Gesture 4" Comment="Gesture Double 4" />
+    <Text Key="GestureDouble5" Text="Doppia Gesture 5" Comment="Gesture Double 5" />
+    <Text Key="GestureDouble6" Text="Doppia Gesture 6" Comment="Gesture Double 6" />
+    <Text Key="GestureDouble7" Text="Doppia Gesture 7" Comment="Gesture Double 7" />
+    <Text Key="GestureDouble8" Text="Doppia Gesture 8" Comment="Gesture Double 8" />
+    <Text Key="GestureDouble9" Text="Doppia Gesture 9" Comment="Gesture Double 9" />
+    <Text Key="TouchPressAndTap" Text="Premi e Tocca" Comment="Press and Tap" />
+    <Text Key="TouchTwoFingerTap" Text="Tocca con 2 Dita" Comment="Two Finger Tap" />
+    <Text Key="TouchTap" Text="Tocca" Comment="Tap" />
+    <Text Key="TouchDoubleTap" Text="Doppio Tap" Comment="Double Tap" />
+  </Texts>
+</TR>

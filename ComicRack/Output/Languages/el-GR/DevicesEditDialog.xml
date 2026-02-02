@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DevicesEditDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="DevicesEditDialog" Text="Συσκευές" Comment="Devices" />
+    <Text Key="btPairDevice" Text="Σύζευξη συσκευής..." Comment="Pair Device..." />
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="btSelectAll" Text="Επιλογή Όλων" Comment="Select All" />
+    <Text Key="btSelectNone" Text="Καμία Επιλογή" Comment="Select None" />
+    <Text Key="btSelectList" Text="Επιλογή Λίστας" Comment="Select List" />
+    <Text Key="btDeselectList" Text="Αποεπιλογή Λίστας" Comment="Deselect List" />
+    <Text Key="btUnpairDevice" Text="Διάζευξη Συσκευής" Comment="Unpair Device" />
+    <Text Key="chkOptimizeSize" Text="Βελτιστοποίηση Μεγέθους " Comment="Optimize Size" />
+    <Text Key="chkOnlyUnread" Text="Μόνο Μη Αναγνωρισμένες" Comment="Only Unread" />
+    <Text Key="chkOnlyChecked" Text="Μόνο Ελεγμένες" Comment="Only Checked" />
+    <Text Key="labelHint" Text="Συνδέστε τη συσκευή με τον υπολογιστή σας και πατήστε 'Σύζευξη συσκευής...'" Comment="Connect your Device with your Computer and press 'Pair Device...'" />
+    <Text Key="btRename" Text="Μετονομασία..." Comment="Rename..." />
+    <Text Key="cbLimitType.Item0" Text="Βιβλία" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="chkLimit" Text="Όριο στο" Comment="Limit to" />
+    <Text Key="labelLimitSort" />
+    <Text Key="cbLimitSort.Item0" Text="Τυχαία" Comment="Random" />
+    <Text Key="cbLimitSort.Item1" Text="Σειρά" Comment="Series" />
+    <Text Key="cbLimitSort.Item2" Text="Εναλλακτική Σειρά" Comment="Alternate Series" />
+    <Text Key="cbLimitSort.Item3" Text="Δημοσιεύθηκε" Comment="Published" />
+    <Text Key="cbLimitSort.Item4" Text="Προστέθηκε" Comment="Added" />
+    <Text Key="chkLimitSortReverse" Text="Αντιστροφή" Comment="Reverse" />
+  </Texts>
+</TR>

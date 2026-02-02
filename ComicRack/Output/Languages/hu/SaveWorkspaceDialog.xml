@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SaveWorkspaceDialog" CultureName="hu">
+  <Texts>
+    <Text Key="SaveWorkspaceDialog" Text="Munkaterület mentése" Comment="Save Workspace" />
+    <Text Key="btCancel" Text="&amp;Mégse" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="txtName" Text="Név:" Comment="Name:" />
+    <Text Key="labelSettings" Text="Ez a munkaterület beállítja: " Comment="This workspace includes settings for:" />
+    <Text Key="chkWindowLayouts" Text="Ablak elrendezések" Comment="Window Layouts" />
+    <Text Key="chkListLayouts" Text="Lista elrendezések" Comment="List Layouts" />
+    <Text Key="chkComicDisplayLayout" Text="Képregény nézet elrendezés" Comment="Book Display Layout" />
+    <Text Key="chkComicDisplaySettings" Text="Képregény megjelenítési beállítások" Comment="Book Display Settings" />
+  </Texts>
+</TR>

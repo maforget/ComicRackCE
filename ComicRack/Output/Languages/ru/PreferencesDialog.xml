@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PreferencesDialog" CultureName="ru">
+  <Texts>
+    <Text Key="btAddFolder" Text="&amp;Добавить..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="Добавить папку..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="&amp;Применить" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="&amp;Изменить..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="Очистить" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="Очистить" Comment="Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="&amp;Удалить" Comment="&amp;Remove" />
+    <Text Key="btResetColor" Text="&amp;Сброс" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="Сброс" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="Восстановить стандартные настройки" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="Сканировать" Comment="Scan" />
+    <Text Key="chHighQualityDisplay" Text="&amp;Высокое качество" Comment="&amp;High Quality" />
+    <Text Key="chkAutoBackgroundColor" Text="Установить для &amp;данной страницы" Comment="Adjust to current &amp;Page" />
+    <Text Key="chkAutoContrast" Text="Автоматические настройки контраста" Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="Автоматически удалять отсутствующие файлы из библиотеки при сканировании" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="&amp;Страницы [MB]" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableScripting" Text="Включить поддержку скриптов" Comment="Enable Scripting" />
+    <Text Key="chkEnableThumbnailCache" Text="&amp;Эскизы [MB]" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkLookForShared" Text="Поиск открытых библиотек Комиксов" Comment="Look for shared Comic Libraries" />
+    <Text Key="chkOverwriteAssociations" Text="Заменить существующие ассоциации вместо 'Открыть с помощью'" Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="Требует пароль:" Comment="Require Password:" />
+    <Text Key="chkShareOwn" Text="Открыть доступ к библиотеке" Comment="Share my Comic Library" />
+    <Text Key="chkUpdateComics" Text="Записать метаданные на диск (может изменить файл Комикса)" Comment="Write Meta Data to Disk (may modify eComic files)" />
+    <Text Key="colOptions" Text="Опции" Comment="Options" />
+    <Text Key="groupComicFolders" Text="Папки Комиксов" Comment="eComic Folders" />
+    <Text Key="groupDiskCache" Text="Кеш на диске" Comment="Disk Cache" />
+    <Text Key="groupMessages" Text="Скрытые сообщения" Comment="Hidden Messages" />
+    <Text Key="groupOtherComics" Text="Комикс" Comment="eComics" />
+    <Text Key="groupOverlays" Text="Наложение" Comment="Overlays" />
+    <Text Key="grpIntegration" Text="Интеграция в проводник" Comment="Explorer Integration" />
+    <Text Key="labelAdmin" Text="Нет достаточных прав для изменения настроек. Запустите ComicRack с правами Администратора." Comment="Not enough user rights to change settings. Run ComicRack with administrative privileges." />
+    <Text Key="labelBackgroundColor" Text="Фон:" Comment="Color:" />
+    <Text Key="labelBehavior" Text="Здесть Вы можете настроить возможности программы ComicRack:" Comment="Here you can define general behavior when using ComicRack:" />
+    <Text Key="labelCheckedFormats" Text="Данные расширения файлов будут ассоциированы с ComicRack." Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelExcludeCover" Text="Имена изображений, разделенных ';' никогда не будут использованы для эскизов обложки:" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelLanguage" Text="Выберите язык интерфейса для ComicRack (для принятия изменений в силу перезагрузите программу):" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlaySize" Text="Размер:" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="Нажать для скрытых сообщений" Comment="To reshow hidden messages press" />
+    <Text Key="labelRestart" Text="Изменение этих настроек требует перезапуска ComicRack." Comment="Changing these settings requires to restart ComicRack." />
+    <Text Key="labelScriptPaths" Text="Список разделенных ';' путей для библиотек скриптов (например python libraries):" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="Сетевое имя:" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="Указанные папки будут наблюдаться на случай изменения (переименование, перемещение) пока программа работает." Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="Настройки" Comment="Preferences" />
+    <Text Key="rbShareAll" Text="Открыть доступ ко всему" Comment="Share All" />
+    <Text Key="rbShareSelected" Text="Открыть доступ к выбраным спискам" Comment="Share selected Lists" />
+    <Text Key="Scan" Text="Сканировать" Comment="Scan" />
+    <Text Key="tabAdvanced" Text="Дополнительно" Comment="Advanced" />
+    <Text Key="tabBehavior" Text="Возможности" Comment="Behavior" />
+    <Text Key="tabCaching" Text="Кеширование" Comment="Caching" />
+    <Text Key="tabExplorer" Text="Проводник" Comment="Explorer" />
+    <Text Key="tabKeyboard" Text="Клавиатура" Comment="Keyboard" />
+    <Text Key="tabLanguage" Text="Язык" Comment="Language" />
+    <Text Key="tabLibrary" Text="Библиотека" Comment="Library" />
+    <Text Key="tabOther" Text="Другое" Comment="Other" />
+    <Text Key="tabPageDisplay" Text="Отображение страниц" Comment="Page Display" />
+    <Text Key="tabScripting" Text="Скрипты" Comment="Scripting" />
+    <Text Key="tabSharing" Text="Открытие доступа" Comment="Sharing" />
+    <Text Key="Scanning" Text="Сканирование '{0}' ..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectComicFolder" Text="Выберите папку с Комиксами" Comment="Please select a folder containing eComics" />
+    <Text Key="SelectScriptFolder" Text="Выберите папку со скриптами" Comment="Please select a script library folder" />
+    <Text Key="Stop" Text="Стоп" Comment="Stop" />
+    <Text Key="labelMemOptmizeDescription" Text="Включение оптимизации может значительно уменьшить занимаемую память, но частично снизится производительность." Comment="Turning on optimize can significantly reduce memory consumption, but may lead to some performance loss" />
+    <Text Key="labelMemPageCount" Text="Страниц [Количество]" Comment="Pages [count]" />
+    <Text Key="labelMemThumbSize" Text="Эскизы [MB]" Comment="Thumbnails [MB]" />
+    <Text Key="chkMemPageOptimized" Text="оптимизировано" Comment="optimized" />
+    <Text Key="chkMemThumbOptimized" Text="оптимизировано" Comment="optimized" />
+    <Text Key="groupMemoryCache" Text="Кеш в памяти" Comment="Memory Cache" />
+    <Text Key="chkDoublePageSeparator" Text="Разделитель двойных страниц" Comment="Double Page Separator" />
+    <Text Key="grpDatabaseBackup" Text="Резервная копия базы данных" Comment="Database Backup" />
+    <Text Key="btBackupDatabase" Text="Создать резервную копию базы данных..." Comment="Backup Database..." />
+    <Text Key="btRestoreDatabase" Text="Восстановить базу данных из резервной копии..." Comment="Restore Database..." />
+    <Text Key="btTranslate" Text="Помощь в локализации ComicRack..." Comment="Help localizing ComicRack..." />
+    <Text Key="labelSaturation" Text="Настройки насыщения:" Comment="Saturation Adjustment:" />
+    <Text Key="labelBrightness" Text="Настройки яркости:" Comment="Brightness Adjustment:" />
+    <Text Key="labelContrast" Text="Настройки контраста:" Comment="Contrast Adjustment:" />
+    <Text Key="tabReader" Text="Просмотрщик" Comment="Reader" />
+    <Text Key="tabOverlaysAndEffects" Text="Наложение и эффекты" Comment="Overlays &amp;&amp; Effects" />
+    <Text Key="groupPageDisplayGeneral" Text="Главное" Comment="General" />
+    <Text Key="groupPageDisplayAdjustments" Text="Настройки отображения страниц" Comment="Page Display Adjustments" />
+    <Text Key="chkCurrentPageOverlay" Text="Наложение страниц" Comment="Current Page Overlay" />
+    <Text Key="chkVisiblePartOverlay" Text="Наложение видимой части страницы" Comment="Visible Page Part Overlay" />
+    <Text Key="chkNavigationOverlay" Text="Наложение при навигации мышью" Comment="Mouse Navigation Overlays" />
+    <Text Key="chkStatusOverlay" Text="Наложение индикаторов статуса" Comment="Status Indicator Overlays" />
+    <Text Key="chkEnableHardware" Text="Включить аппаратное ускорение" Comment="Enable Hardware Acceleration" />
+    <Text Key="chkEnablePageTransition" Text="Включить переходы страниц" Comment="Enable Page Transitions" />
+    <Text Key="chkEnableDisplayChangeAnimation" Text="Включить анимацию при смене страниц" Comment="Enable Animation of Page Display changes" />
+    <Text Key="chkEnableFlowScroll" Text="Включить плавный скроллинг мышью" Comment="Enable flowing Mouse scrolling" />
+    <Text Key="groupEffects" Text="Эффекты" Comment="Effects" />
+    <Text Key="chkSmoothAutoScrolling" Text="Сглаженый автоскроллинг" Comment="Smooth Auto Scrolling" />
+    <Text Key="cbPageTransition.Item0" Text="Нет эффектов при смене страниц" Comment="No Page Transition Effect" />
+    <Text Key="cbPageTransition.Item1" Text="Страницы появляются постепенно" Comment="Page fades in" />
+    <Text Key="cbPageTransition.Item2" Text="Страница прокручивается горизонтально" Comment="Page scrolls in horizontally" />
+    <Text Key="cbPageTransition.Item3" Text="Страница прокручивается вертикально" Comment="Page scrolls in vertically" />
+  </Texts>
+</TR>

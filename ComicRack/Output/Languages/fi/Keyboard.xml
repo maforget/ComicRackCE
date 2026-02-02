@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Keyboard" CultureName="fi">
+  <Texts>
+    <Text Key="Browse" Text="Selaa" Comment="Browse" />
+    <Text Key="Display Options" Text="Näytä valikko" Comment="Display Options" />
+    <Text Key="Exit" Text="Sulje" Comment="Exit" />
+    <Text Key="FitAll" Text="Sovita Kaikki" Comment="Fit All" />
+    <Text Key="FitBest" Text="Paras Sovitus" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="Sovita Korkeus" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="Sovita Leveys" Comment="Fit Width" />
+    <Text Key="FitWidthAdaptive" Text="Sovita Leveys (mukautuva)" Comment="Fit Width (adaptive)" />
+    <Text Key="OnlyFitIfOversized" Text="Sovita suurikokoiset" Comment="Only Fit if oversized" />
+    <Text Key="Library" Text="Kirjasto" Comment="Library" />
+    <Text Key="MoveDown" Text="Alas" Comment="Down" />
+    <Text Key="MoveLeft" Text="Vasemmalle" Comment="Left" />
+    <Text Key="MoveNextPart" Text="Seuraava osa" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="Edellinen osa" Comment="Previous Part" />
+    <Text Key="MoveFirstPart" Text="Sivun alkuun" Comment="Page Start" />
+    <Text Key="MoveLastPart" Text="Sivun loppuun" Comment="Page End" />
+    <Text Key="MoveRight" Text="Oikealle" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="Aloitussivu" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="Viimeinen sivu" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="Seuraava sivu" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="Edellinen sivu" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="Ylös" Comment="Up" />
+    <Text Key="NextComic" Text="Seuraava eSarjis" Comment="Next eComic" />
+    <Text Key="NextTab" Text="Seuraava välilehti" Comment="Next Tab" />
+    <Text Key="Other" Text="Jokin muu" Comment="Other" />
+    <Text Key="Page Display" Text="Sivun näyttö" Comment="Page Display" />
+    <Text Key="Auto Scroll" Text="Liiku Sivuin" Comment="Auto Scroll" />
+    <Text Key="PrevComic" Text="Edellinen eSarjis" Comment="Previous eComic" />
+    <Text Key="PrevTab" Text="Edellinen välilehti" Comment="Previous Tab" />
+    <Text Key="RotateC" Text="Kierto oikeaan" Comment="Rotate Right" />
+    <Text Key="RotateCC" Text="Kierto vasempaan" Comment="Rotate Left" />
+    <Text Key="ZoomIn" Text="Lähennä" Comment="Zoom In" />
+    <Text Key="ZoomOut" Text="Loitonna" Comment="Zoom Out" />
+    <Text Key="StepZoomIn" Text="Zoom +askel+" Comment="Step Zoom In" />
+    <Text Key="StepZoomOut" Text="Zoom -askel-" Comment="Step Zoom Out" />
+    <Text Key="Scroll" Text="Vieritä" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="Näytä selain" Comment="Show Browser" />
+    <Text Key="ToggleUndockReader" Text="Ankkuroi lukija" Comment="Toggle Undock Reader" />
+    <Text Key="ToggleFullScreen" Text="Kokoruutu" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="Suurennuslasi" Comment="Toggle Magnifier" />
+    <Text Key="ToggleAutoScrolling" Text="Automaattinen vieritys" Comment="Toggle Auto Scrolling" />
+    <Text Key="ToggleTwoPages" Text="Aukeama" Comment="Toggle Two Pages" />
+    <Text Key="Original" Text="Alkuperäiskoko" Comment="Original Size" />
+    <Text Key="MovePartDown10" Text="Siirrä 10% Ylös" Comment="Move Part 10% down" />
+    <Text Key="MovePartUp10" Text="Siirrä 10% Alas" Comment="Move Part 10% up" />
+    <Text Key="ToggleManga" Text="Mangatila" Comment="Toggle Manga for eComic" />
+    <Text Key="DoublePageAutoScroll" Text="Liiku aukeamittain" Comment="Double Page Auto Scroll" />
+    <Text Key="ToggleMenu" Text="Näytä valikko" Comment="Toggle Menu" />
+    <Text Key="MoveToPrevBookmark" Text="Edellinen kirjanmerkki" Comment="Previous Bookmark" />
+    <Text Key="MoveToNextBookmark" Text="Seuraava Kirjanmerkki" Comment="Next Bookmark" />
+    <Text Key="MoveToPrevPageSingle" Text="Edellinen sivu" Comment="Single Page Back" />
+    <Text Key="MoveToNextPageSingle" Text="Seuraava sivu" Comment="Single Page Forward" />
+    <Text Key="AutoRotate" Text="Aukeamien automaattinen kierto" Comment="Autorotate Double Pages" />
+    <Text Key="PageRotateC" Text="Sivunkerto oikeaan" Comment="RotatePageRight" />
+    <Text Key="PageRotateCC" Text="Sivunkierto vasempaan" Comment="RotatePageLeft" />
+    <Text Key="ToggleRealisticPages" Text="Realistinen näyttö" Comment="Toggle Realistic Display" />
+    <Text Key="Edit" Text="Muokkaa" Comment="Edit" />
+    <Text Key="SinglePage" Text="Yksi sivu" Comment="Single Page" />
+    <Text Key="TwoPages" Text="Aukeama" Comment="Two Pages" />
+    <Text Key="TwoPagesAdaptive" Text="Aukeama (mukautuva)" Comment="Two Pages (adaptive)" />
+    <Text Key="RightToLeft" Text="Oikealta vasemmalle" Comment="Right to Left" />
+    <Text Key="ZoomAndRotate" Text="Zoomaa ja kierrä" Comment="Zoom and Rotate" />
+    <Text Key="ToggleNavigationOverlay" Text="Näytä suunnisteet päällimmäisenä" Comment="Toggle Navigation Overlay" />
+    <Text Key="ToggleZoom" Text="Käytä zoomausta" Comment="Toggle Zoom" />
+  </Texts>
+</TR>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.SearchAndReplace" CultureName="sk-SK">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Zrušiť" Comment="&amp;Cancel" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="Description" Text="Skript vyhľadá a prepíše hodnoty v eComicsoch" Comment="A script to to search and replace values in eComics" />
+    <Text Key="Caption" Text="Nájsť a nahradiť..." Comment="Search and Replace..." />
+    <Text Key="Name" Text="Nájsť a nahradiť..." Comment="Search and Replace..." />
+    <Text Key="labelField" Text="Polia:" Comment="Fields:" />
+    <Text Key="labelSearch" Text="Hľadať:" Comment="Search:" />
+    <Text Key="labelReplace" Text="Nahradiť" Comment="Replace" />
+  </Texts>
+</TR>

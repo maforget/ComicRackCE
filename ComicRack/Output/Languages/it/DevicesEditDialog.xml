@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DevicesEditDialog" CultureName="it">
+  <Texts>
+    <Text Key="DevicesEditDialog" Text="Dispositivi" Comment="Devices" />
+    <Text Key="btPairDevice" Text="Connetti Dispositivo..." Comment="Pair Device..." />
+    <Text Key="btCancel" Text="&amp;Annulla" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btSelectAll" Text="Seleziona Tutto" Comment="Select All" />
+    <Text Key="btSelectNone" Text="Annulla Selezione" Comment="Select None" />
+    <Text Key="btSelectList" Text="Seleziona Lista" Comment="Select List" />
+    <Text Key="btDeselectList" Text="Deseleziona Lista" Comment="Deselect List" />
+    <Text Key="btUnpairDevice" Text="Disconnetti Dispositivo" Comment="Unpair Device" />
+    <Text Key="chkOptimizeSize" Text="Ottimizza Grandezza" Comment="Optimize Size" />
+    <Text Key="chkOnlyUnread" Text="Solo Non Letti" Comment="Only Unread" />
+    <Text Key="chkOnlyChecked" Text="Solo Selezionati" Comment="Only Checked" />
+    <Text Key="labelHint" Text="Connetti il tuo Dispositivo al Computer e premi 'Connetti Dispositivo...'" Comment="Connect your Device with your Computer and press 'Pair Device...'" />
+    <Text Key="btRename" Text="Rinomina..." Comment="Rename..." />
+    <Text Key="cbLimitType.Item0" Text="Album" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="chkLimit" Text="Limita a" Comment="Limit to" />
+    <Text Key="chkSortBy" Text="Ordina per" Comment="Sort by" />
+    <Text Key="labelLimitSort" Text="Ordinato per" Comment="sorted by" />
+    <Text Key="cbLimitSort.Item0" Text="Casuale" Comment="Random" />
+    <Text Key="cbLimitSort.Item1" Text="Serie" Comment="Series" />
+    <Text Key="cbLimitSort.Item2" Text="Serie Alternativa" Comment="Alternate Series" />
+    <Text Key="cbLimitSort.Item3" Text="Pubblicato" Comment="Published" />
+    <Text Key="cbLimitSort.Item4" Text="Aggiunto il..." Comment="Added" />
+    <Text Key="chkKeepLastRead" Text="Mantieni l'ultimo letto" Comment="But keep last read" />
+  </Texts>
+</TR>

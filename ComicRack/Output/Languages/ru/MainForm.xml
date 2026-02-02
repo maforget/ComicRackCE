@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainForm" CultureName="ru">
+  <Texts>
+    <Text Key="browseMenu" Text="&amp;Вид" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="&amp;Копировать страницу" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="&amp;Экспорт страницы..." Comment="&amp;Export Page..." />
+    <Text Key="miCopyPage" Text="&amp;Копировать страницу" Comment="&amp;Copy Page" />
+    <Text Key="miExportPage" Text="&amp;Экспорт страницы..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="В размер окна" Comment="Fit All" />
+    <Text Key="cmFitBest" Text="Растянуть максимально" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="Растянуть по высоте" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="Растянуть по ширине" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="&amp;Лупа" Comment="&amp;Magnifier" />
+    <Text Key="cmNextFromList" Text="С&amp;ледующий Комикс" Comment="Ne&amp;xt eComic" />
+    <Text Key="cmNotifyExit" Text="&amp;Выход" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="&amp;Восстановить" Comment="&amp;Restore" />
+    <Text Key="cmPrevFromList" Text="Пре&amp;дыдущий Комикс" Comment="Pre&amp;vious eComic" />
+    <Text Key="cmRate0" Text="Ничего" Comment="None" />
+    <Text Key="cmRate1" Text="* (1 Звезда)" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** (2 Звезды)" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** (3 Звезды)" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** (4 Звезды)" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** (5 Звезд)" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="Мой &amp;рейтинг" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="&amp;Обновить" Comment="&amp;Refresh" />
+    <Text Key="cmShowInfo" Text="&amp;Информация..." Comment="&amp;Get Info..." />
+    <Text Key="cmSyncBrowser" Text="Открыть в  &amp;обозревателе" Comment="Show in &amp;Browser" />
+    <Text Key="ExportingComics" Text="Экспорт Комикса: {0} в очереди" Comment="Exporting eComics: {0} queued" />
+    <Text Key="ExportingErrors" Text="{0} Ошибка. Нажмите для просмотра деталей" Comment="{0} errors. Click for details" />
+    <Text Key="displayMenu" Text="&amp;Окно" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="&amp;Правка" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="&amp;Файл" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="&amp;Справка" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack" Comment="ComicRack" />
+    <Text Key="miAbout" Text="&amp;О программе..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="&amp;Добавить папку в библиотеку..." Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="Новая &amp;вкладка" Comment="New &amp;Tab" />
+    <Text Key="miBestFit" Text="&amp;Лучшее представление" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="Закрыть все" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="&amp;Закрыть Комикс" Comment="&amp;Close" />
+    <Text Key="miDeleteListLayout" Text="&amp;Удалить список форматов..." Comment="&amp;Delete List Layout..." />
+    <Text Key="miDeleteWorkspace" Text="&amp;Удалить рабочую область..." Comment="&amp;Delete Workspace..." />
+    <Text Key="miEditListLayout" Text="&amp;Редактировать формат списка..." Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="&amp;Выход" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="А&amp;втоматизация" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="&amp;В начало" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="В размер &amp;окна" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="Растянуть по &amp;высоте" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="Растянуть по &amp;ширине" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="&amp;Полный экран" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="&amp;В конец" Comment="&amp;Last Page" />
+    <Text Key="miLastPageRead" Text="&amp;Последняя прочитанная страница" Comment="L&amp;ast Page Read" />
+    <Text Key="miListLayouts" Text="Формат списка" Comment="List Layout" />
+    <Text Key="miNews" Text="&amp;Новости..." Comment="&amp;News..." />
+    <Text Key="miNextFromList" Text="С&amp;ледующий Комикс" Comment="Ne&amp;xt eComic" />
+    <Text Key="miNextPage" Text="&amp;Следующая страница" Comment="&amp;Next Page" />
+    <Text Key="miNextTab" Text="Следующая &amp;вкладка" Comment="Next &amp;Tab" />
+    <Text Key="miMagnify" Text="&amp;Лупа" Comment="&amp;Magnifier" />
+    <Text Key="miOpenComic" Text="&amp;Открыть..." Comment="&amp;Open eComic..." />
+    <Text Key="cmOpenComic" Text="&amp;Открыть..." Comment="&amp;Open eComic..." />
+    <Text Key="miOpenNow" Text="&amp;Открыть Комикс" Comment="Open eCo&amp;mics" />
+    <Text Key="miOpenRecent" Text="&amp;Последние Комиксы" Comment="&amp;Recent eComics" />
+    <Text Key="miPageType" Text="&amp;Тип страницы" Comment="&amp;Page Type" />
+    <Text Key="cmPageType" Text="&amp;Тип страницы" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="&amp;Настройки..." Comment="&amp;Preferences..." />
+    <Text Key="miPrevFromList" Text="Пре&amp;дыдущий Комикс" Comment="Pre&amp;vious eComic" />
+    <Text Key="miPrevPage" Text="&amp;Предыдущая страница" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="&amp;Предыдущая вкладка" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="Ничего" Comment="None" />
+    <Text Key="miRate1" Text="* (1 Звезда)" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** (2 Звезды)" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** (3 Звезды)" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** (4 Звезды)" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** (5 Звезд)" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="Мой &amp;рейтинг" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="&amp;Рестарт" Comment="Rest&amp;art" />
+    <Text Key="miRotate0" Text="&amp;Не вращать" Comment="&amp;No Rotation" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="miRotation" Text="&amp;Повернуть" Comment="&amp;Rotation" />
+    <Text Key="miSaveListLayout" Text="&amp;Сохранить формат списка..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="&amp;Сохранить рабочую область..." Comment="&amp;Save Workspace..." />
+    <Text Key="miScan" Text="Сканировать &amp;папки Комиксов" Comment="Scan eComic &amp;Folders" />
+    <Text Key="miAutoScroll" Text="Автопрокрутка" Comment="Auto Scrolling" />
+    <Text Key="miSearchBrowser" Text="Поиск в обозревателе" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="Все списки этого формата" Comment="Set all Lists to current Layout" />
+    <Text Key="miShowInfo" Text="&amp;Информация..." Comment="&amp;Get Info..." />
+    <Text Key="miSidebar" Text="&amp;Боковая панель" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="&amp;Предпросмотр миниатюр" Comment="S&amp;mall Preview" />
+    <Text Key="miSupport" Text="Поддержка ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miSyncBrowser" Text="Открыть в  &amp;обозревателе" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="&amp;Обозреватель" Comment="&amp;Browser" />
+    <Text Key="miTwoPages" Text="&amp;Две страницы" Comment="&amp;Two Pages" />
+    <Text Key="miView100" Text="100 %" Comment="100 %" />
+    <Text Key="miView150" Text="150 %" Comment="150 %" />
+    <Text Key="miView200" Text="200 %" Comment="200 %" />
+    <Text Key="miView300" Text="300 %" Comment="300 %" />
+    <Text Key="miView400" Text="400 %" Comment="400 %" />
+    <Text Key="miViewFolders" Text="&amp;Папки" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="Библиотека" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="&amp;Страницы" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="&amp;Обновить" Comment="&amp;Refresh" />
+    <Text Key="miWebHome" Text="Домашняя страница ComicRack..." Comment="ComicRack Homepage..." />
+    <Text Key="miWebUserForum" Text="Форум пользователей ComicRack..." Comment="ComicRack User Forum..." />
+    <Text Key="miWorkspaces" Text="&amp;Рабочая область" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="Масштаб" Comment="Zoom" />
+    <Text Key="readMenu" Text="&amp;Комикс" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="Установить формат '{0}'" Comment="Set '{0}' Layout" />
+    <Text Key="tbBestFit" Text="Растянуть максимально" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="Экран" Comment="Display" />
+    <Text Key="tbFirstPage" Text="Первая страница" Comment="First Page" />
+    <Text Key="tbFirstPage.Tooltip" Text="На первую страницу" Comment="Go to first page" />
+    <Text Key="tbFit" Text="Подогнать" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="Переключить способ представления" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="В размер окна" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="Растянуть по высоте" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="Растянуть по ширине" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="Полный экран" Comment="Full Screen" />
+    <Text Key="tbLastPage" Text="Последняя страница" Comment="Last Page" />
+    <Text Key="tbLastPage.Tooltip" Text="На последнюю страницу" Comment="Go to last page" />
+    <Text Key="tbLock" Text="Закрепить" Comment="Lock" />
+    <Text Key="tbLock.Tooltip" Text="Всегда показывать панель" Comment="Check to always display the Toolbar" />
+    <Text Key="tbMagnify" Text="Лупа" Comment="Magnifier" />
+    <Text Key="tbNextFromList" Text="Следующий комикс из списка" Comment="Next eComic from List" />
+    <Text Key="tbNextFromList.Tooltip" Text="Открыть следующий комикс из списка" Comment="Open the next eComic in the list" />
+    <Text Key="tbNextPage" Text="Следующая страница" Comment="Next Page" />
+    <Text Key="tbNextPage.Tooltip" Text="Следующая страница" Comment="Go to next page" />
+    <Text Key="tbNextTab" Text="Следующая &amp;вкладка" Comment="Next &amp;Tab" />
+    <Text Key="tbNextTab.Tooltip" Text="Следующая вкладка" Comment="Next Tab" />
+    <Text Key="tbPrevFromList" Text="Предыдущий комикс из списка" Comment="Previous eComic from List" />
+    <Text Key="tbPrevFromList.Tooltip" Text="Открыть предыдущий комикс из списка" Comment="Open the previous eComic in the list" />
+    <Text Key="tbPrevPage" Text="Предыдущая страница" Comment="Previous Page" />
+    <Text Key="tbPrevPage.Tooltip" Text="Предыдущая страница" Comment="Go to previous page" />
+    <Text Key="tbPrevTab" Text="&amp;Предыдущая вкладка" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="Vorheriger Tab" Comment="Vorheriger Tab" />
+    <Text Key="tbReadLabel" Text="Читать" Comment="Read" />
+    <Text Key="tbAutoScroll" Text="Автопрокрутка" Comment="Auto Scrolling" />
+    <Text Key="tbAutoScroll.Tooltip" Text="Включить/выключить автопрокрутку" Comment="Toggles Auto scrolling on or off" />
+    <Text Key="tbShowInfo" Text="Информация" Comment="Info" />
+    <Text Key="tbShowInfo.Tooltip" Text="Показать информацию" Comment="Show information" />
+    <Text Key="tbTwoPages" Text="Две страницы" Comment="Two Pages" />
+    <Text Key="tbTwoPages.Tooltip" Text="Показать одну/две страницы" Comment="Show one or two pages" />
+    <Text Key="cmTwoPages" Text="&amp;Две страницы" Comment="&amp;Two Pages" />
+    <Text Key="toolStripSplitButton1" Text="Макет страницы" Comment="Page Layout" />
+    <Text Key="tsBook" Text="Книга" Comment="Book" />
+    <Text Key="tsBook.Tooltip" Text="Имя открытого Комикса" Comment="Name of the opened eComic" />
+    <Text Key="tsExportActivity" Text="Экспорт" Comment="Exporting" />
+    <Text Key="tsCurrentPage" Text="Страница" Comment="Page" />
+    <Text Key="tsCurrentPage.Tooltip" Text="Текущая страница открытого Комикса" Comment="Current Page of the open eComic" />
+    <Text Key="tsDeleteWorkspace" Text="&amp;Удалить рабочую область..." Comment="&amp;Delete Workspace..." />
+    <Text Key="tsPageActivity.Tooltip" Text="Получение страницы и эскизы..." Comment="Getting Pages and Thumbnails..." />
+    <Text Key="tsPageCount" Text="0 страниц" Comment="0 Pages" />
+    <Text Key="tsPageCount.Tooltip" Text="Количество страниц открытого Комикса" Comment="Page count of the open eComic" />
+    <Text Key="tsSaveWorkspace" Text="&amp;Сохранить рабочую область..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsScanActivity.Tooltip" Text="Процесс сканирования..." Comment="A scan is running..." />
+    <Text Key="tsText" Text="Готово" Comment="Ready" />
+    <Text Key="tsWriteInfoActivity.Tooltip" Text="Запись информации в файлы..." Comment="Writing info data to files..." />
+    <Text Key="tsReadInfoActivity.Tooltip" Text="Чтение данных из файлов..." Comment="Reading info data from files..." />
+    <Text Key="tsWorkspaces" Text="Рабочие области" Comment="Workspaces" />
+    <Text Key="tsWorkspaces.Tooltip" Text="Управление рабочими областями" Comment="Manage Workspaces" />
+    <Text Key="miReaderUndocked" Text="Просмотрщик в отдельном окне" Comment="Reader in own Window" />
+    <Text Key="tbReaderUndocked" Text="Просмотрщик в отдельном окне" Comment="Reader in own Window" />
+    <Text Key="miPageLayout" Text="Макет страницы" Comment="Page Layout" />
+    <Text Key="cmPageLayout" Text="Макет страницы" Comment="Page Layout" />
+    <Text Key="miAdaptiveTwoPageFitting" Text="Адаптировать к двухстраничному представлению" Comment="Adapt to double page spreads" />
+    <Text Key="cmAdaptiveTwoPageFitting" Text="Адаптировать к двухстраничному представлению" Comment="Adapt to double page spreads" />
+    <Text Key="tbAdaptiveTwoPageFitting" Text="Адаптировать к двухстраничному представлению" Comment="Adapt to double page spreads" />
+    <Text Key="miOriginal" Text="Оригинальный Размер" Comment="Original Size" />
+    <Text Key="tbOriginal" Text="Оригинальный Размер" Comment="Original Size" />
+    <Text Key="cmOriginal" Text="Оригинальный Размер" Comment="Original Size" />
+    <Text Key="NotifyIconText" Text="Двойной щелчек для восстановления" Comment="Double Click to restore" />
+    <Text Key="cmOnlyFitOversized" Text="Подгонять если больше размера экрана" Comment="Only Fit if oversized" />
+    <Text Key="miOnlyFitOversized" Text="Подгонять если больше размера экрана" Comment="Only Fit if oversized" />
+    <Text Key="tbOnlyFitOversized" Text="Подгонять если больше размера экрана" Comment="Only Fit if oversized" />
+    <Text Key="ChangeItemSize" Text="Изменить размер элементов списка" Comment="Change size of the list items" />
+    <Text Key="miDoublePageAutoScroll" Text="Автопрокрутка двойных страниц" Comment="Double Page Auto Scrolling" />
+    <Text Key="cmFitWidthAdaptive" Text="Растянуть по ширине (адаптивно)" Comment="Fit Width (adaptive)" />
+    <Text Key="miFitWidthAdaptive" Text="Растянуть по ширине (адаптивно)" Comment="Fit Width (adaptive)" />
+    <Text Key="tbFitWidthAdaptive" Text="Растянуть по ширине (адаптивно)" Comment="Fit Width (adaptive)" />
+    <Text Key="cmRightToLeft" Text="Справа налево" Comment="Right to Left" />
+    <Text Key="tbRightToLeft" Text="Справа налево" Comment="Right to Left" />
+    <Text Key="miRightToLeft" Text="Справа налево" Comment="Right to Left" />
+    <Text Key="miMinimalGui" Text="Минимизировать пользовательский интерфейс" Comment="Minimal User Interface" />
+    <Text Key="tbMinimalGui" Text="Минимизировать пользовательский интерфейс" Comment="Minimal User Interface" />
+    <Text Key="cmMinimalGui" Text="Минимизировать пользовательский интерфейс" Comment="Minimal User Interface" />
+    <Text Key="miWebHelp" Text="Справка о ComicRack..." Comment="ComicRack Documentation..." />
+    <Text Key="miBookmarks" Text="Закладки" Comment="Bookmarks" />
+    <Text Key="miSetBookmark" Text="Создать закладку" Comment="Set Bookmark..." />
+    <Text Key="miRemoveBookmark" Text="Удалить закладку" Comment="Remove Bookmark" />
+    <Text Key="tbBookmarks" Text="Закладки" Comment="Bookmarks" />
+    <Text Key="tbBookmarks.Tooltip" Text="Закладки" Comment="Bookmarks" />
+    <Text Key="tbSetBookmark" Text="Создать закладку" Comment="Set Bookmark..." />
+    <Text Key="tbRemoveBookmark" Text="Удалить закладку" Comment="Remove Bookmark" />
+    <Text Key="tbLastPageRead" Text="Последняя прочитанная страница" Comment="Last Page Read" />
+    <Text Key="cmBookmarks" Text="Закладки" Comment="Bookmarks" />
+    <Text Key="cmSetBookmark" Text="Создать закладку" Comment="Set Bookmark..." />
+    <Text Key="cmRemoveBookmark" Text="Удалить закладку" Comment="Remove Bookmark" />
+    <Text Key="cmLastPageRead" Text="Последняя прочитанная страница" Comment="Last Page Read" />
+    <Text Key="miPrevBookmark" Text="Предыдущая закладка" Comment="Previous Bookmark" />
+    <Text Key="miNextBookmark" Text="Следующая закладка" Comment="Next Bookmark" />
+    <Text Key="tbPrevBookmark" Text="Предыдущая закладка" Comment="Previous Bookmark" />
+    <Text Key="tbNextBookmark" Text="Следующая закладка" Comment="Next Bookmark" />
+    <Text Key="cmPrevBookmark" Text="Предыдущая закладка" Comment="Previous Bookmark" />
+    <Text Key="cmNextBookmark" Text="Следующая закладка" Comment="Next Bookmark" />
+    <Text Key="miZoomIn" Text="Приблизить" Comment="Zoom In" />
+    <Text Key="tbZoomIn" Text="Приблизить" Comment="Zoom In" />
+    <Text Key="miZoomOut" Text="Отдалить" Comment="Zoom Out" />
+    <Text Key="tbZoomOut" Text="Отдалить" Comment="Zoom Out" />
+    <Text Key="miZoomCustom" Text="Вручную..." Comment="Custom..." />
+    <Text Key="tbZoomCustom" Text="Вручную..." Comment="Custom..." />
+    <Text Key="tbZoom.Tooltip" Text="Изменить масштаб страницы" Comment="Change the page zoom" />
+    <Text Key="tbRotate.Tooltip" Text="Повернуть страницу" Comment="Change the page rotation" />
+    <Text Key="miRotateLeft" Text="Повернуть влево" Comment="Rotate Left" />
+    <Text Key="miRotateRight" Text="Повернуть вправо" Comment="Rotate Right" />
+    <Text Key="miRotate0" Text="&amp;Не вращать" Comment="&amp;No Rotation" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="tbRotateLeft" Text="Повернуть влево" Comment="Rotate Left" />
+    <Text Key="tbRotateRight" Text="Повернуть вправо" Comment="Rotate Right" />
+    <Text Key="tbRotate0" Text="&amp;Не вращать" Comment="&amp;No Rotation" />
+    <Text Key="tbRotate180" Text="180°" Comment="180°" />
+    <Text Key="tbRotate270" Text="270°" Comment="270°" />
+    <Text Key="tbRotate90" Text="90°" Comment="90°" />
+    <Text Key="tbAutoRotate" Text="Автоматически поворачивать двойные страницы" Comment="Autorotate Double Pages" />
+    <Text Key="miAutoRotate" Text="Автоматически поворачивать двойные страницы" Comment="Autorotate Double Pages" />
+    <Text Key="cmCloseAllButThis" Text="Закрыть все кроме этой" Comment="Close All But This" />
+    <Text Key="cmCopyPath" Text="Копировать полный путь" Comment="Copy Full Path" />
+    <Text Key="cmRevealInExplorer" Text="Показать в проводнике" Comment="Reveal in Explorer" />
+    <Text Key="cmClose" Text="Закрыть" Comment="Close" />
+    <Text Key="cmCloseComic" Text="Закрыть" Comment="Close" />
+    <Text Key="miPendingTasks" Text="Незаконченные задания..." Comment="Pending Tasks..." />
+    <Text Key="SavePageTitle" Text="Сохранить страницу как..." Comment="Save Page as..." />
+  </Texts>
+</TR>

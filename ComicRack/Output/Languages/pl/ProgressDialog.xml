@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ProgressDialog" CultureName="pl">
+  <Texts>
+    <Text Key="btCancel" Text="Anuluj" Comment="Cancel" />
+  </Texts>
+</TR>

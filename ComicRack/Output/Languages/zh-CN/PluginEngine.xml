@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PluginEngine" CultureName="zh-CN">
+  <Texts>
+    <Text Key="EditUpdateBooksCommands" Text="编辑/更新书籍命令" Comment="Edit/Update Books Commands" />
+    <Text Key="CreateNewBooksCommands" Text="创建一个书籍指令" Comment="Create New Books Commands" />
+    <Text Key="ActionswhenBooksareopened" Text="打开书籍时的动作" Comment="Actions when Books are opened" />
+    <Text Key="ActionswhenReaderisresized" Text="调整阅读器大小时的动作" Comment="Actions when Reader is resized" />
+    <Text Key="AdditionalSearchProviders" Text="附加搜索提供商" Comment="Additional Search Providers" />
+    <Text Key="QuickOpenPanels" Text="快速打开面板" Comment="Quick Open Panels" />
+    <Text Key="CustomComicPathParser" Text="书籍路径解析器" Comment="Book Path Parsers" />
+    <Text Key="ComicInformationPanels" Text="书籍信息面板" Comment="Book Information Panels" />
+    <Text Key="CustomComicThumbnailOverlays" Text="自定义书籍缩略图" Comment="Custom Book Thumbnail Overlays" />
+    <Text Key="BookPathParsers" Text="书籍路径解析器" Comment="Book Path Parsers" />
+    <Text Key="CustomBookThumbnailOverlays" Text="自定义书籍缩略图图层" Comment="Custom Book Thumbnail Overlays" />
+  </Texts>
+</TR>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="FolderListDialog" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="FolderListDialog" Text="Editace seznamu složky" Comment="Edit Folder List" />
+    <Text Key="btCancel" Text="&amp;Storno" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelName" Text="Jméno:" Comment="Name:" />
+    <Text Key="labelBooks" Text="eKomiksy:" Comment="eComics:" />
+    <Text Key="CombineMode" Text="Všechny eKomiksy ze všech seznamů|eKomiksy jsou pouze v jednotlivých seznamech" Comment="All eComics from every list|Only eComics existing in every list" />
+    <Text Key="labelNotes" Text="Poznámky:" Comment="Notes:" />
+  </Texts>
+</TR>

@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Messages" CultureName="es">
+  <Texts>
+    <Text Key="AskRemoveComics" Text="¿Eliminar todos estos libros de la lista?" Comment="Are you sure you want to remove these books from the list?" />
+    <Text Key="AskRemoveFavorite" Text="¿De verdad quieres eliminar este Enlace de la Carpeta de Favoritos?" Comment="Do you really want to remove this Favorite Folder link?" />
+    <Text Key="AskRemoveFromLibrary" Text="¿Seguro que quiere borrar estos libros de la biblioteca?\n¡Se perderá toda información que no esté guardada en los archivos! (como nº de veces abierto, última lectura, etc.)" Comment="Are you sure you want to remove these books from the library?\nAll information not stored in the files will be lost (like Open Count, Last Read etc.)!" />
+    <Text Key="AskRemoveItem" Text="¿De verdad quieres borrar este elemento?" Comment="Do you really want to remove this item?" />
+    <Text Key="Attention" Text="Atención" Comment="Attention" />
+    <Text Key="CloseComicRack" Text="Cerrar ComicRack" Comment="Close ComicRack" />
+    <Text Key="ClosingComicRack" Text="Cerrando ComicRack" Comment="Closing ComicRack" />
+    <Text Key="CouldNotSaveImage" Text="¡No se pudo guardar la imagen de la página!\nRazón: {0}" Comment="Could not save the page image!\nReason: {0}" />
+    <Text Key="CreateMainWindow" Text="Creando la ventana principal" Comment="Creating Main Window" />
+    <Text Key="Error" Text="Error" Comment="Error" />
+    <Text Key="ErrorShutDown" Text="Hubo un error al cerrar la aplicación:\n{0}" Comment="There was an error shutting down the application:\n{0}" />
+    <Text Key="FailedRetrieveDatabase" Text="¡No se pudo recuperar la Base de Datos desde el Servidor!" Comment="Failed to retrieve the Database from the Server!" />
+    <Text Key="FailedToInitialize" Text="No se pudo inicializar ComicRack: {0}" Comment="Failed to initialize ComicRack: {0}" />
+    <Text Key="GetServerLibraryText" Text="Recuperando la Biblioteca compartida desde el servidor" Comment="Retrieving the shared Library from the Server" />
+    <Text Key="InitCache" Text="Inicializar cachés de Disco" Comment="Initialize Disk Caches" />
+    <Text Key="InitGUI" Text="Inicializando Interfaz de Usuario" Comment="Initalizing User Interface" />
+    <Text Key="InitScripts" Text="Inicializando scripts" Comment="Initalizing Scripts" />
+    <Text Key="ListLayout" Text="Diseño del listado" Comment="List Layout" />
+    <Text Key="LoadCustomSettings" Text="Cargando ajustes personalizados" Comment="Loading custom settings" />
+    <Text Key="LoadingThumbnail" Text="Cargando Miniatura..." Comment="Loading Thumbnail..." />
+    <Text Key="MoveBin" Text="&amp;Mover también los archivos a la Papelera de Reciclaje" Comment="&amp;Also move the files to the Recycle Bin" />
+    <Text Key="NotAskAgain" Text="&amp;No volver a preguntármelo" Comment="&amp;Do not ask me again" />
+    <Text Key="OpenDatabase" Text="Abriendo la Base de Datos" Comment="Opening Database" />
+    <Text Key="PasswordNeeded" Text="Se necesita una contraseña para la Biblioteca remota '{0}':" Comment="A password is needed for the remote Library '{0}':" />
+    <Text Key="ReadNewsFeed" Text="Leyendo Noticias" Comment="Reading News Feed" />
+    <Text Key="RefreshInfo" Text="Actualizando Información" Comment="Refreshing Information" />
+    <Text Key="RefreshServer" Text="Actualizando el Servidor  de la Biblioteca" Comment="Refreshing Server Library" />
+    <Text Key="Remove" Text="Eliminar" Comment="Remove" />
+    <Text Key="RetrieveNews" Text="Recuperando Noticias" Comment="Retrieving News" />
+    <Text Key="RetrieveNewsText" Text="Actualizando los canales de noticias suscritos" Comment="Refreshing subscribed News Channels" />
+    <Text Key="SaveAllData" Text="Guardando todos los datos en la Unidad de Disco..." Comment="Saving all Data to Disk..." />
+    <Text Key="SaveListLayout" Text="Guardar Diseño del listado" Comment="Save List Layout" />
+    <Text Key="ScriptFailed" Text="¡Falló la ejecución del guión!" Comment="Execution of the script failed!" />
+    <Text Key="WrongPassword" Text="La contraseña indicada para la Biblioteca'{0}' no es correcta. Por favor vuelva a intentarlo:" Comment="The specified password for the Library'{0}' is not correct. Please try again:" />
+    <Text Key="Set" Text="Configurar" Comment="Set" />
+    <Text Key="AskSetAllLists" Text="¿Configurar Todas las listas con el diseño actual?" Comment="Are you sure you want to set all Lists to the current layout?" />
+    <Text Key="PageFailedToLoad" Text="No se pudo cargar la página.\nIntente refrescar para cargarla de nuevo..." Comment="Page failed to load.\nTry refresh to load again..." />
+    <Text Key="LoadingPage" Text="Cargando la página {0}..." Comment="Loading Page {0}..." />
+    <Text Key="FastThumbanilQueueMessage" Text="Recuperar de la caché las miniaturas de la página {0} del archivo '{1}'" Comment="Retrieve cached thumbnail for page {0} in file '{1}'" />
+    <Text Key="SlowThumbnailQueueMessage" Text="Crear miniaturas para la página {0} del archivo '{1}'" Comment="Create thumbnail for page {0} in file '{1}'" />
+    <Text Key="GetImageQueueMessage" Text="Conseguir la página {0} del archivo '{1}'" Comment="Get page {0} in file '{1}'" />
+    <Text Key="OpenError" Text="¡No se pudo abrir el libro '{0}'!" Comment="Could not open the book '{0}'!" />
+    <Text Key="OpeningComic" Text="Abriendo el libro '{0}'..." Comment="Opening the book '{0}'..." />
+    <Text Key="NoComicOpen" Text="No hay ningún libro abierto" Comment="No book is open" />
+    <Text Key="RestartQuestion" Text="¡ComicRack ha de reiniciarse para completar la operación! ¿Quiere hacerlo ahora?" Comment="ComicRack needs to restart to complete the operation! Do you want to restart now?" />
+    <Text Key="DatabaseBackupError" Text="Ocurrió un error al guardar la copia de seguridad de la Base de Datos" Comment="There was an error saving the Database backup" />
+    <Text Key="DatabaseBackupRestored" Text="¡Recuperada con éxito una copia de seguridad de la base de datos!" Comment="A previous database backup has been successfully restored!" />
+    <Text Key="ScanComicQueueMessage" Text="Examinando '{0}'" Comment="Scanning '{0}'" />
+    <Text Key="ErrorWritingReadingList" Text="Ocurrió un error al exportar la Lista de Lectura '{0}'" Comment="There was an error exporting the Reading List '{0}'" />
+    <Text Key="ErrorOpeningReadingList" Text="Ocurrió un error al importar la Lista de Lectura '{0}'" Comment="There was an error importing the Reading List '{0}'" />
+    <Text Key="Export" Text="Exportar" Comment="Export" />
+    <Text Key="OutputFileExists" Text="¡El archivo de salida '{0}' ya existía!" Comment="Output File '{0}' already exists!" />
+    <Text Key="ConvertToCBZ" Text="Convertir en CBZ" Comment="Convert to CBZ" />
+    <Text Key="ConvertToCB7" Text="Convertir en CB7" Comment="Convert to CB7" />
+    <Text Key="ExportForPSP" Text="Exportar para PSP" Comment="Export for PSP" />
+    <Text Key="AbortScan" Text="Abortar el Examen" Comment="Abort Scanning" />
+    <Text Key="AbortExport" Text="Abortar la Exportación" Comment="Abort Export" />
+    <Text Key="FailedToReadImage" Text="No se pudo leer la Imagen {0}!" Comment="Failed to read Image {0}!" />
+    <Text Key="InvalidExportSettings" Text="Las preferencias para exportar NO son válidas (p.ej. añadiendo un formato no soportado a la biblioteca)" Comment="The export settings are not valid (e.g. adding a not supported format to the library)" />
+    <Text Key="DontShowAgain" Text="No volver a mostrarlo" Comment="Do not show this again" />
+    <Text Key="ComicRackMinimizedTitle" Text="ComicRack aún está funcionando" Comment="ComicRack is still running" />
+    <Text Key="ComicRackMinimized" Text="Cerrar ComicRack mediante Archivo -&gt;Salir (se puede cambiar en el diálogo Preferencias).\nHaga clic aquí para no volver a mostrar este mensaje.\n" Comment="You either close ComicRack with File/Exit or you can change this behavior in the Preferences Dialog.\nClick here to not show this message again" />
+    <Text Key="ConnectRemoteError" Text="Imposible conectar al servidor remoto '{0}'" Comment="Could not connect to Remote Server '{0}'" />
+    <Text Key="CheckingDatabase" Text="Comprobando la  base de datos" Comment="Checking Database" />
+    <Text Key="CheckingDatabaseText" Text="Comprobando la integridad y actualizando cualquier dato ausente" Comment="Checking integrity and updating any missing Data" />
+    <Text Key="SaveInfoText" Text="Guardando la información, espere por favor." Comment="Please wait while all unsaved information is stored!" />
+    <Text Key="UndoScript" Text="Automatización '{0}'" Comment="Automation '{0}'" />
+    <Text Key="UndoEditColumn" Text="Editar Columna '{0}'" Comment="Edit Column '{0}'" />
+    <Text Key="UndoRating" Text="Cambiar la valoración" Comment="Change Rating" />
+    <Text Key="ScriptPackageExists" Text="¡Ya existe un paquete de scripts con el mismo nombre! ¿Quiere sobrescribirlo?" Comment="A Script Package with the same name already exists! Do you want to overwrite this Package?" />
+    <Text Key="UpdateComicDynamicMessage" Text="Actualizando el Webcómic '{0}'" Comment="Updating Web Comic '{0}'" />
+    <Text Key="ConnectToServer" Text="Conectando al Servidor" Comment="Connecting to Server" />
+    <Text Key="GetShareInfoText" Text="Recogiendo información sobre la biblioteca compartida" Comment="Getting information about the shared Library" />
+    <Text Key="ServerActivity" Text="{0} Servidor(es) funcionando" Comment="{0} Server(s) running" />
+    <Text Key="ConnectServerText" Text="Abriendo conexiones hacia el servidor remoto" Comment="Opening connection to the remote Server" />
+    <Text Key="ErrorFileUsed" Text="Este fichero ya se usa en la Biblioteca" Comment="This file is already used in the Library" />
+    <Text Key="ImportReadingList" Text="Importar Lista de Lectura" Comment="Import Reading List" />
+    <Text Key="MatchBooksWithLibrary" Text="Cruzando la lista contra la biblioteca" Comment="Matching list with Library" />
+    <Text Key="CouldNotExportKeyboardLayout" Text="¡No se pudo exportar la distribución del teclado!\nRazón: {0}" Comment="Could not export Keyboard Layout!\nReason: {0}" />
+    <Text Key="CouldNotImportKeyboardLayout" Text="¡No se pudo importar la distribución del teclado!\nRazón: {0}" Comment="Could not import Keyboard Layout!\nReason: {0}" />
+    <Text Key="CouldNotLoadThumbnail" Text="¡No se pudo abrir la miniatura!\nRazón: {0}" Comment="Could not open Thumbnail!\nReason: {0}" />
+    <Text Key="ListLayouts" Text="Lista de diseños" Comment="List Layouts" />
+    <Text Key="AlwaysSaveDirty" Text="Guardar siempre los cambios" Comment="Always save changes" />
+    <Text Key="ListMore" Text="{0} mas..." Comment="{0} more..." />
+    <Text Key="TaskGroupLoadThumbnails" Text="Cargar Miniaturas" Comment="Load Thumbnails" />
+    <Text Key="TaskGroupCreateThumbnails" Text="Crear Miniaturas" Comment="Create Thumbnails" />
+    <Text Key="TaskGroupLoadPages" Text="Cargar Páginas" Comment="Load Pages" />
+    <Text Key="TaskGroupCreatePages" Text="Crear Páginas" Comment="Create Pages" />
+    <Text Key="TaskGroupReadInfo" Text="Leer Info" Comment="Read Info" />
+    <Text Key="TaskGroupWriteInfo" Text="Guardar Info" Comment="Write Info" />
+    <Text Key="TaskGroupUpdateDynamic" Text="Actualizar Webcómics" Comment="Update Web Comics" />
+    <Text Key="TaskGroupScanning" Text="Examinando" Comment="Scanning" />
+    <Text Key="AskExport" Text="¡Ha elegido eliminar o sustituir los ficheros originales al exportarlos! ¿Seguro que quiere seguir?\nLos ficheros eliminados se enviarán a la Papelera de reciclaje durante la exportación.  Por favor, ¡asegúrese de disponer de suficiente espacio en disco y de que los eComics no estén en una unidad de red!" Comment="You have chosen to delete or replace existing files during export. Are you sure you want to continue?\nThe deleted files will be moved to the Recycle Bin during export. Please make sure there is enough disk space available and the eComics are not located on a network drive!" />
+    <Text Key="CouldNotSaveComic" Text="¡No se pudo guardar el Libro!\nRazón: {0}" Comment="Could not save Book!\nReason: {0}" />
+    <Text Key="DatabaseNewEmpty" Text="Hubo un problema al abrir la Base de Datos. Se ha creado una nueva Base de Datos vacía." Comment="There was a problem opening the Database. A new empty Database has been created." />
+    <Text Key="DatabaseRestored" Text="Hubo un problema con la Base de Datos. Se restauró la última versión buena conocida. Puede que se hayan perdido algunos datos." Comment="There was a problem with the Database. The last version to be known good has been restored. You may have lost some entires." />
+    <Text Key="FailedDeleteBooks" Text="¡Algunos ficheros no pudieron eliminarse! (tal vez estén usándose)" Comment="Some files could not be deleted (maybe they are in use)!" />
+    <Text Key="GettingList" Text="Obteniendo la Lista de libros" Comment="Getting List of Books" />
+    <Text Key="GettingListText" Text="Recuperando todos los libros de la carpeta seleccionada" Comment="Retrieving all Books from the selected folder" />
+    <Text Key="LoadComic" Text="Cargando archivos" Comment="Opening Files" />
+    <Text Key="RefreshInfoText" Text="Actualizando información de los Libros seleccionados" Comment="Refreshing information for selected Books" />
+    <Text Key="SavingNewComic" Text="Guardar nuevo libro..." Comment="Saving new Book..." />
+    <Text Key="WriteData" Text="Pegando Datos" Comment="Pasting Data" />
+    <Text Key="WriteDataText" Text="Pegando datos en los Libros seleccionados" Comment="Pasting Data into selected Books" />
+    <Text Key="AddFolderLibrary" Text="Se añadirán a la biblioteca los libros de esta Carpeta y de todas sus subcarpetas." Comment="Books in this Folder and all sub Folders will be added to the library." />
+    <Text Key="ExportQueueMessage" Text="Exportar el Libro '{0}'" Comment="Export Book '{0}'" />
+    <Text Key="RefreshInfoQueueMessage" Text="Actualizar la información del Libro '{0}'" Comment="Refresh information for Book '{0}'" />
+    <Text Key="WriteInfoQueueMessage" Text="Guardar la información en el libro '{0}'" Comment="Write information to Book file '{0}'" />
+    <Text Key="CloseExternalReader" Text="Esto sólo cerrará la ventana de lectura, ¡no la del libro(s) abierto(s)!" Comment="This will only close the reader Window and not the open Book(s)!" />
+    <Text Key="UnsolvedBookItems" Text="Los siguientes libro no se han encontrado en la Biblioteca:\n{0}\n¿Aún quiere importar la Lista de lectura?" Comment="The following Books were not found in the Library:\n{0}\nDo you still want to import the Reading List?" />
+    <Text Key="SourceComicNotValid" Text="El libro original no es válido" Comment="Source of Book is not valid" />
+    <Text Key="ExportComicTitle" Text="Exportar libro a" Comment="Export Book to" />
+    <Text Key="AskDirtyItems" Text="¿Guardar la información sobre los Libros que haya cambiado y que aún no esté en la base de datos?\n¡Se perderán todos los cambios que no guarde ahora!" Comment="Save changed information for Books that are not in the database?\nAll changes not saved now will be lost!" />
+    <Text Key="SaveInfo" Text="Guardando información sobre los libros" Comment="Saving Book Information" />
+    <Text Key="UndoEditMultipleComics" Text="Editar varios Libros" Comment="Edit multiple Books" />
+    <Text Key="UndoShowInfo" Text="Info sobre el libro" Comment="Book Info" />
+    <Text Key="SelectLocalFolder" Text="Seleccione una carpeta local donde almacenar los libros remotos" Comment="Select a local folder to store the remote Books" />
+    <Text Key="CreateMissingBooks" Text="Añadir a la Biblioteca los Libros ausentes" Comment="Add missing Books to Library" />
+    <Text Key="TaskGroupExport" Text="Exportar Libros" Comment="Export Books" />
+    <Text Key="DatabaseBackup" Text="Copia de seguridad de la base de datos" Comment="Database Backup" />
+    <Text Key="DatabaseBackupText" Text="Creando y guardando la copia de seguridad" Comment="Creating and saving the Backup File" />
+    <Text Key="DatabaseRestore" Text="Recuperación de la base de datos" Comment="Database Restore" />
+    <Text Key="DatabaseRestoreText" Text="Recuperar la base de datos desde una copia de seguridad" Comment="Restoring Database from Backup File" />
+    <Text Key="DatabaseRestoreError" Text="Ocurrió un error al recuperar la copia de seguridad de la base de datos" Comment="There was an error restoring the Database Backup" />
+    <Text Key="BackgroundConvert" Text="Algunos archivos están siendo actualizados / convertidos en segundo plano. !Si cierra ahora, parte de la información no se escribirá!" Comment="Files are still being updated/converted/synchronized in the background. If you close now, some information will not be written!" />
+    <Text Key="DeviceSyncQueueMessage" Text="Sincronizando Dispositivo '{0}'" Comment="Syncing Device '{0}'" />
+    <Text Key="AbortDeviceSync" Text="Abortar Dispositivos en Sincronización" Comment="Abort syncinc Devices" />
+    <Text Key="TaskGroupDeviceSync" Text="Dispositivos en Sincronización" Comment="Syncing Devices" />
+    <Text Key="ClearComicData" Text="Limpiar Libros" Comment="Clear Books" />
+    <Text Key="ClearComicDataText" Text="Quitando todos los datos de los Libros" Comment="Removing all entered data from the Books" />
+    <Text Key="AskClearComicData" Text="¿Desea quitar todos los datos introducidos de los Libros seleccionados? (puede deshacerse con 'Deshacer')" Comment="Do you want to remove all entered data from the selected Books (can be reverted with Undo)?" />
+    <Text Key="DiscoveringDevicesCaption" Text="Descubriendo Dispositivos" Comment="Discovering devices" />
+    <Text Key="DiscoveringDevicesDescription" Text="Buscando Dispositivos conectados" Comment="Searching for connected devices" />
+    <Text Key="DeviceOutOfSpace" Text="Dispositivo '{0}' no tiene suficiente espacio libre" Comment="Device '{0}' does not have enough free space" />
+    <Text Key="RenameDevice" Text="Renombrar Dispositivo" Comment="Rename Device" />
+    <Text Key="AlsoRemoveFromLibrary" Text="&amp;Adicionalmente quitar los libros de la Librería (toda información no guardada en los archivos se perderá)" Comment="&amp;Additionally remove the books from the Library (all information not stored in the files will be lost)" />
+    <Text Key="AskMoveBin" Text="¿Está seguro que desea mover estos ficheros a la papelera de reciclaje?" Comment="Are you sure you want to move these files to the Recycle Bin?" />
+    <Text Key="ErrorPasteQuery" Text="No se pudo pegar la Lista debido al siguiente error:" Comment="Could not paste List because of following error:" />
+    <Text Key="SyncGetStatus" Text="Obteniendo estado actual del dispositivo" Comment="Retrieving current status from device" />
+    <Text Key="SyncUpdateLibrary" Text="Actualizando librería desde '{0}'" Comment="Updating library from '{0}'" />
+    <Text Key="SyncRemoveBook" Text="Quitando '{0}' del dispositivo" Comment="Removing '{0}' from device" />
+    <Text Key="SyncCopyBook" Text="Copiando '{0}' al dispositivo" Comment="Copying '{0}' to device" />
+    <Text Key="DataSourceProblem" Text="Hubo un problema ({0}) abriendo los datos de origen. ComicRack usará la base de datos local en su lugar." Comment="There was a problem ({0}) opening the data source. ComicRack is using the local database instead." />
+    <Text Key="DataSourceConnected" Text="Conectado a la fuente de datos" Comment="Connected to data source" />
+    <Text Key="DataSourceDisconnected" Text="Desconectado de la fuente de datos!" Comment="Disconnected from data source!" />
+  </Texts>
+</TR>

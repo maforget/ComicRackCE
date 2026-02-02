@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Script.CommitProposed" CultureName="hu">
+  <Texts>
+    <Text Key="AskCommit" Text="Tényleg véglegesíteni akarja a javasolt értékeket?\nA javasolt értékeket a fájlnévből hozza létre a program, szürkével vannak kiírva" Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
+    <Text Key="Name" Text="Javasolt értékek véglegesítése" Comment="Commit Proposed Values..." />
+    <Text Key="Overwrite" Text="&amp;Meglévő értékek felülírása" Comment="&amp;Also overwrite existing values" />
+    <Text Key="Write" Text="Írás" Comment="Write" />
+    <Text Key="Description" Text="Egy szkript, ami véglegesíti a Képregény számára javasolt értékeket" Comment="A script to makes the proposed values for the Book permanent" />
+  </Texts>
+</TR>

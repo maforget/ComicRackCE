@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Textures" CultureName="ja">
+  <Texts>
+    <Text Key="WhitePaper" Text="ホワイト ペーパー" Comment="White Paper" />
+    <Text Key="WhitePaper2" Text="ホワイト ペーパー 2" Comment="White Paper 2" />
+    <Text Key="WhitePaper3" Text="ホワイト ペーパー 3" Comment="White Paper 3" />
+    <Text Key="Checkered" Text="チェッカー" Comment="Checkered" />
+    <Text Key="Ceramic" Text="セラミック" Comment="Cermamic" />
+    <Text Key="Ceramic2" Text="セラミック 2" Comment="Cermamic 2" />
+    <Text Key="Glass" Text="ガラス" Comment="Glass" />
+    <Text Key="LightWood" Text="ライト ウッド" Comment="Light Wood" />
+    <Text Key="OrangeMetal" Text="オレンジ メタル" Comment="Orange Metal" />
+    <Text Key="PlankWood" Text="板張り" Comment="Plank Wood" />
+    <Text Key="BrickWall" Text="レンガ" Comment="Brick Wall" />
+    <Text Key="BrushedMetal" Text="ブラッシュ メタル" Comment="Brushed Metal" />
+    <Text Key="BrushedMetal2" Text="ブラッシュ メタル 2" Comment="Brushed Metal 2" />
+    <Text Key="ChalkBoard" Text="チョーク ボード" Comment="Chalk Board" />
+    <Text Key="Circles" Text="サークル" Comment="Circles" />
+    <Text Key="Grass" Text="芝" Comment="Grass" />
+    <Text Key="Sketch" Text="スケッチ" Comment="Sketch" />
+  </Texts>
+</TR>

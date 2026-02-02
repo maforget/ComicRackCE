@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ValueEditorDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="ValueEditorDialog" Text="Επιμελητής τιμών " Comment="Value Editor" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btInsertValue" Text="Εισαγωγή Τιμής" Comment="Insert Value" />
+  </Texts>
+</TR>

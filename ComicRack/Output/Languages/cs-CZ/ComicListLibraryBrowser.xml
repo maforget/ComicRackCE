@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicListLibraryBrowser" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="miEditSmartList" Text="&amp;Upravit..." Comment="&amp;Edit..." />
+    <Text Key="miNewFolder" Text="Nová &amp;složka..." Comment="New &amp;Folder..." />
+    <Text Key="miNewList" Text="Nový s&amp;eznam..." Comment="New &amp;List..." />
+    <Text Key="miNewSmartList" Text="&amp;Nový chytrý seznam..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="&amp;Setřídit" Comment="&amp;Sort" />
+    <Text Key="miOpenWindow" Text="&amp;Otevřít v novém okně" Comment="&amp;Open in New Window" />
+    <Text Key="miQueryRename" Text="&amp;Přejmenovat" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="&amp;Obnovit" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="&amp;Odstranit" Comment="&amp;Re&amp;move..." />
+    <Text Key="NewFolder" Text="Nová složka" Comment="New Folder" />
+    <Text Key="NewList" Text="Nový seznam" Comment="New List" />
+    <Text Key="NewSmartList" Text="Nový chytrý seznam" Comment="New Smart List" />
+    <Text Key="NewSmartListOption" Text="Snímek aktuální stránky" Comment="Snapshot of current view" />
+    <Text Key="tbNewFolder" Text="Nová &amp;složka" Comment="New &amp;Folder" />
+    <Text Key="tbNewFolder.Tooltip" Text="Vytvořit novou složku pro organizaci vašich seznamů" Comment="Create a new folder to organize your lists" />
+    <Text Key="tbNewList" Text="Nový s&amp;eznam" Comment="New &amp;List" />
+    <Text Key="tbNewList.Tooltip" Text="Vytvořit vlastní seznam" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="&amp;Nový chytrý seznam" Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="Vytvořit nový chytrý seznam" Comment="Create a new Smart List" />
+    <Text Key="tbOpenWindow" Text="Nové okno" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Otevřít aktuální seznam v novém okně" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Obnovit" Comment="Refresh" />
+    <Text Key="miCopyList" Text="Kopírovat seznam" Comment="Copy List" />
+    <Text Key="miPasteList" Text="Vložit seznam" Comment="Paste List" />
+    <Text Key="miExportReadingList" Text="Exportovat čtenářský seznam..." Comment="Export Reading List..." />
+    <Text Key="miImportReadingList" Text="Importovat čtenářský seznam..." Comment="Import Reading List..." />
+    <Text Key="miOpenTab" Text="&amp;Otevřít v novém panelu" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="Nový panel" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Otevřít aktuální seznam v novém panelu" Comment="Open current list in new Tab" />
+    <Text Key="miFavRemove" Text="Odstranit" Comment="Remove" />
+    <Text Key="tbFavorites" Text="Zobrazit oblíbené" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Oblíbené" Comment="Favorites" />
+    <Text Key="miAddToFavorites" Text="Přidat k oblíbeným" Comment="Add to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Aktualizovat" Comment="&amp;Refresh" />
+    <Text Key="tbExpandCollapseAll" Text="Rozvinout/Sbalit vše" Comment="Expand/Collapse all" />
+    <Text Key="tbPreferences" Text="Možnosti" Comment="Preferences" />
+    <Text Key="tbGauges" Text="Zobrazit měřítka" Comment="Show Gauges" />
+    <Text Key="tbGaugesNew" Text="Zobrazit měřítko nových knih" Comment="Show New Books Gauge" />
+    <Text Key="tbGaugesUnread" Text="Zobrazit měřítko nepřečtených knih" Comment="Show Unread Books Gauge" />
+    <Text Key="tbGaugesTotal" Text="Zobrazit měřítko celkového počtu knih" Comment="Show Total Books Gauge" />
+    <Text Key="tbGaugesNumeric" Text="Zobrazit počty" Comment="Show Numbers" />
+  </Texts>
+</TR>

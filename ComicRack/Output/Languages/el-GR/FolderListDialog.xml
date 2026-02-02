@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FolderListDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="FolderListDialog" Text="Επεξεργασία Στήλης φακέλου " Comment="Edit Folder List" />
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="labelName" Text="Όνομα:" Comment="Name:" />
+    <Text Key="labelBooks" Text="eComics:" Comment="eComics:" />
+    <Text Key="CombineMode" Text="Όλα τα eComics από κάθε λίστα| Μόνο τα υπαρκτά eComics σε κάθε λίστα" Comment="All eComics from every list|Only eComics existing in every list" />
+    <Text Key="labelNotes" Text="Σημειώσεις:" Comment="Notes:" />
+  </Texts>
+</TR>

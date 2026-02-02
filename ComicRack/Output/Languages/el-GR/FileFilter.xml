@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FileFilter" CultureName="el-GR">
+  <Texts>
+    <Text Key="PageImageSave" Text="Εικόνα JPEG|*.jpg|Εικόνα Windows Bitmap|*.bmp|Εικόνα PNG|*.png|Εικόνα GIF|*.gif|Εικόνα TIFF|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif" />
+    <Text Key="ComicRackDatabase" Text="Βάση Δεδομένων ComicRack|*.xml" Comment="ComicRack Database|*.xml" />
+    <Text Key="AllFiles" Text="Όλα τα Αρχεία" Comment="All Files" />
+    <Text Key="AllSupportedFiles" Text="Όλα τα υποστηριζόμενα Αρχεία" Comment="All supported Files" />
+    <Text Key="ReadingListSave" Text="Λίστας Ανάγνωσης ComicRack|*.crl|Αρχείο Xml|*.xml" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml" />
+    <Text Key="ReadingListLoad" Text="Λίστας Ανάγνωσης ComicRack|*.crl|Αρχείο Xml|*.xml|Όλα τα Αρχεία|*.*" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml|All Files|*.*" />
+    <Text Key="FormatReadingList" Text="Λίστας Ανάγνωσης ComicRack" Comment="ComicRack Reading List" />
+    <Text Key="ScriptPackageOpen" Text="ComicRack Plugin|*.crplugin|Script Archive|*.zip" Comment="ComicRack Plugin|*.crplugin|Script Archive|*.zip" />
+    <Text Key="KeyboardLayout" Text="Διάταξη Πληκτρολογίου" Comment="Keyboard Layout" />
+    <Text Key="KeyboardLayoutFilter" Text="Διάταξη Πληκτρολογίου|*.xml" Comment="Keyboard Layout|*.xml" />
+    <Text Key="LoadThumbnail" Text="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif|Icon Image|*.ico" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif|Icon Image|*.ico" />
+    <Text Key="ComicRackBackup" Text="ComicRack Backup|*.zip" Comment="ComicRack Backup|*.zip" />
+  </Texts>
+</TR>

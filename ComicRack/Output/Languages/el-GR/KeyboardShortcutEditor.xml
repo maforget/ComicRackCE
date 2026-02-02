@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="KeyboardShortcutEditor" CultureName="el-GR">
+  <Texts>
+    <Text Key="chkAlt1" Text="Alt" Comment="Alt" />
+    <Text Key="chkAlt2" Text="Alt" Comment="Alt" />
+    <Text Key="chkCtrl1" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkCtrl2" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkShift1" Text="Shift" Comment="Shift" />
+    <Text Key="chkShift2" Text="Shift" Comment="Shift" />
+    <Text Key="colAction" Text="Ενέργεια" Comment="Action" />
+    <Text Key="colKeys" Text="Κλειδιά" Comment="Keys" />
+    <Text Key="labelAlternateKey" Text="Εναλλακτικό:" Comment="Alternate:" />
+    <Text Key="labelMainKey" Text="Κύριο:" Comment="Main:" />
+    <Text Key="NothingSelected" Text="Δεν έχουν επιλεχθεί ενέργειες" Comment="No action selected" />
+    <Text Key="chkAlt3" Text="Alt" Comment="Alt" />
+    <Text Key="chkCtrl3" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkShift3" Text="Shift" Comment="Shift" />
+    <Text Key="labelAlternate2Key" Text="Εναλλακτικό:" Comment="Alternate:" />
+    <Text Key="GetKeyCaption" Text="Πατήστε το Πλήκτρο" Comment="Press Key" />
+    <Text Key="GetKeyDescription" Text="Πατήστε το συνδυασμό πλήκτρων ή κλείστε αυτό το παράθυρο" Comment="Press your key combination or close this window" />
+  </Texts>
+</TR>

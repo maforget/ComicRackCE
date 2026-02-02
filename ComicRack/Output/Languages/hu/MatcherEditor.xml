@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MatcherEditor" CultureName="hu">
+  <Texts>
+    <Text Key="miNewRule" Text="Új szabály" Comment="New Rule" />
+    <Text Key="miNewGroup" Text="Új csoport" Comment="New Group" />
+    <Text Key="miDelete" Text="Törlés" Comment="Delete" />
+    <Text Key="miCut" Text="Kivágás" Comment="Cut" />
+    <Text Key="miCopy" Text="Másolás" Comment="Copy" />
+    <Text Key="miPaste" Text="Beillesztés" Comment="Paste" />
+    <Text Key="miMoveUp" Text="Felfelve mozgatás" Comment="Move Up" />
+    <Text Key="miMoveDown" Text="Lefele mozgatás" Comment="Move Down" />
+  </Texts>
+</TR>

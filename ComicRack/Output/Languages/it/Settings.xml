@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Settings" CultureName="it">
+  <Texts>
+    <Text Key="Application" Text="Applicazione" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="Nascondi automaticamente la Lente d'ingrandimento quando il Cursore è vicino al bordo" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="Browser" Text="Browser" Comment="Browser" />
+    <Text Key="CloseMinimizesToTray" Text="Chiudi sposta ComicRack nella Notification Area" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="Le Nuove Miniature caricate appaiono lentamente" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="Nascondi il Cursore quando si legge a Schermo Intero" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="Mostra Miniature nella migliore qualità (lento)" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="MinimizeToTray" Text="Minimizzando si sposta ComicRack nella Notification Area" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="Controlla le ultime news su ComicRack" Comment="Check for latest news on ComicRack" />
+    <Text Key="Reading" Text="In Lettura" Comment="Reading" />
+    <Text Key="ShowSplash" Text="Mostra Splash Screen" Comment="Show Splash Screen" />
+    <Text Key="Starting ComicRack" Text="Avvio ComicRack" Comment="Starting ComicRack" />
+    <Text Key="AutoNavigateComics" Text="Scorrendo oltre l'inizio o la fine, apre Album successivo" Comment="Reading beyond the start or end opens the next Book" />
+    <Text Key="CloseBrowserOnOpen" Text="Chiudi il Browser quando un nuovo Album viene aperto" Comment="Close the Browser when a new Book is opened" />
+    <Text Key="CatalogOnlyForFileless" Text="Mostra i campi catalogo solo per gli Album &quot;senza file&quot;" Comment="Show Catalog fields only for fileless Books" />
+    <Text Key="Opening a Book" Text="Apertura Album" Comment="Opening a Book" />
+    <Text Key="OpenLastFile" Text="Riapri l'ultimo Album letto" Comment="Reopen Books from last session" />
+    <Text Key="OpenInNewTab" Text="Apri in un Nuovo Tab" Comment="Open in new Tab" />
+    <Text Key="OpenLastPage" Text="Apri l'Album alla pagina a cui era stato chiuso" Comment="Open the Book at the page where it was closed" />
+    <Text Key="PageChangeDelay" Text="Ritardo transizione Pagina per scorrimento con Tastiera o Mouse" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="ScanStartup" Text="Cerca nelle Cartelle della Libreria per nuovi Album" Comment="Rescan the Book Folders for new Books" />
+    <Text Key="UpdateWebComicsStartup" Text="Aggiorna Web Comic" Comment="Update Web Comics" />
+    <Text Key="ShowToolTips" Text="Mostra i Suggerimenti nel Browser" Comment="Show Tooltips for Books in the Browser" />
+    <Text Key="AddToLibraryOnOpen" Text="Aggiungi Album alla Libreria" Comment="Opened Files are added to the Library" />
+    <Text Key="Manga" Text="Manga" Comment="Manga" />
+    <Text Key="TrueRightToLeftReading" Text="Lettura da Destra a Sinistra" Comment="True right to left reading" />
+    <Text Key="LeftRightMovementReversed" Text="IlMovimento Sinistra/Destra è invertito" Comment="Left/right movement is also reversed" />
+    <Text Key="Right to Left" Text="Da Destra a Sinistra" Comment="Right to Left" />
+    <Text Key="AutoMinimalGui" Text="Attiva Interfaccia Utente Minima a pieno schermo" Comment="Fullscreen also toggles Minimal User Interface" />
+    <Text Key="AnimatePanels" Text="Animazione dei Pannelli in espansione e riduzione" Comment="Animate expanding and collapsing Panels" />
+    <Text Key="ResetZoomOnPageChange" Text="Reset dello Zoom al 100% al Cambio Pagina" Comment="Zoom is reset to 100% on page change" />
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="Mostra sempre la Griglia del Browser" Comment="Always display Browser Docking Grip" />
+    <Text Key="ShowMainMenuNoComicOpen" Text="Mostra il Menu Principale se non ci sono Album aperti" Comment="Show Main Menu if no Book is open" />
+    <Text Key="InformationCover3D" Text="Mostra copertine in 3D display in Informazioni Album" Comment="3D display of covers in Book Info Dialog" />
+    <Text Key="DogEarThumbnails" Text="Le Miniature selezionate avranno un'&quot;orecchia&quot;" Comment="Selected Thumbnails have dog-ear" />
+    <Text Key="NumericRatingThumbnails" Text="Mostra Valutazione nelle Miniatiure" Comment="Thumbnails display numeric ratings" />
+    <Text Key="BlendWhilePaging" Text="Animazione anche con cambio Pagina veloce" Comment="Blend animation also while fast paging" />
+    <Text Key="LocalQuickSearch" Text="Ogni Lista ha le sue Impostazioni di Ricerca Veloce" Comment="Each List has own Quick Search settings" />
+    <Text Key="ScrollingDoesBrowse" Text="Scorrendo oltre il Margine Pagina, cambia Pagina" Comment="Scrolling to page margin browses to new pages" />
+    <Text Key="Import &amp; Export" Text="Importa &amp; Esporta" Comment="Import &amp; Export" />
+    <Text Key="ExportedListsContainFilenames" Text="La Lista degli Album esportata contine i nomi dei File" Comment="Exported Book Lists contain filenames" />
+    <Text Key="ShowSearchLinks" Text="Mostra Collegamento Ricerca" Comment="Show Search Links" />
+    <Text Key="ShowQuickOpen" Text="Mostra Apri Rapido senon ci sono Album Aperti" Comment="Show Quick Open if no book is opened" />
+    <Text Key="ZoomInOutOnPageChange" Text="Zoom - al cambio di Pagina" Comment="During page change a zoom out is done" />
+  </Texts>
+</TR>

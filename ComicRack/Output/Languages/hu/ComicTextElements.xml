@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicTextElements" CultureName="hu">
+  <Texts>
+    <Text Key="Caption" Text="Felirat" Comment="Caption" />
+    <Text Key="CaptionWithoutTitle" Text="Feliart cím nélkül" Comment="Caption without Title" />
+    <Text Key="AlternateCaption" Text="Alternatív felirat" Comment="Alternate Caption" />
+    <Text Key="Title" Text="Cím" Comment="Title" />
+    <Text Key="ArtistInfo" Text="Alkotók" Comment="Artists" />
+    <Text Key="Summary" Text="Összegzés" Comment="Summary" />
+    <Text Key="FileSize" Text="Fájl méret" Comment="File Size" />
+    <Text Key="Opened" Text="Megnyitás ideje" Comment="Opened" />
+    <Text Key="FileName" Text="Fájlnév" Comment="File Name" />
+    <Text Key="FileFormat" Text="Fájl formátum" Comment="File Format" />
+    <Text Key="Added" Text="Hozzáadás ideje" Comment="Added" />
+    <Text Key="PublisherAndImprint" Text="Kiadó és Család" Comment="Publischer and Imprint" />
+    <Text Key="AgeRating" Text="Korhatár" Comment="Age Rating" />
+    <Text Key="Genre" Text="Műfaj" Comment="Genre" />
+    <Text Key="CharactersAndTeams" Text="Szereplők és csapatok" Comment="Characters and Teams" />
+    <Text Key="Locations" Text="Helyszínek" Comment="Locations" />
+    <Text Key="Notes" Text="Megjegyzések" Comment="Notes" />
+    <Text Key="PurchaseInformation" Text="Vásárlás adatai" Comment="Purchase Information" />
+    <Text Key="StorageInfoformation" Text="Tárolás adatai" Comment="Storage Information" />
+    <Text Key="CollectionStatus" Text="Beszerzés állapota" Comment="Collection Status" />
+  </Texts>
+</TR>

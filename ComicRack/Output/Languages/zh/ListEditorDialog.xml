@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListEditorDialog" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="btNew" Text="新建..." Comment="&amp;New..." />
+    <Text Key="btEdit" Text="編輯..." Comment="&amp;Edit..." />
+    <Text Key="btActivate" Text="激活" Comment="&amp;Activate" />
+    <Text Key="btDelete" Text="刪除" Comment="Delete" />
+    <Text Key="btMoveTop" Text="置頂" Comment="Move &amp;Top" />
+    <Text Key="btMoveUp" Text="上移" Comment="Move &amp;Up" />
+    <Text Key="btMoveDown" Text="下移" Comment="Move &amp;Down" />
+    <Text Key="btMoveBottom" Text="置底" Comment="Move &amp;Bottom" />
+    <Text Key="btOK" Text="確定" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="colName" Text="名稱" Comment="Name" />
+    <Text Key="colDescription" Text="描述" Comment="Description" />
+  </Texts>
+</TR>

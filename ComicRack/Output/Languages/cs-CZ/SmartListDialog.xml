@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SmartListDialog" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Storno" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btApply" Text="&amp;Použít" Comment="&amp;Apply" />
+    <Text Key="labelMatch" Text="Splnit" Comment="Match" />
+    <Text Key="MatchMode" Text="všechna|kterékoli" Comment="All|Any" />
+    <Text Key="chkLimit" Text="Omezit na" Comment="Limit to" />
+    <Text Key="cbLimitType.Item0" Text="knih" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="FullLibrary" Text="Celá knihovna" Comment="Full Library" />
+    <Text Key="btPrev" Text="&amp;Předchozí" Comment="&amp;Previous" />
+    <Text Key="btNext" Text="&amp;Další" Comment="&amp;Next" />
+    <Text Key="SmartListDialog" Text="Upravit chytrý seznam" Comment="Edit Smart List" />
+    <Text Key="labelSubRules" Text="z následujících pravidel:" Comment="of the following rules:" />
+    <Text Key="labelName" Text="Jméno:" Comment="Name:" />
+    <Text Key="labelRules" Text="z násled. pravidel v" Comment="of the following rules on" />
+    <Text Key="chkQuickOpen" Text="Rychlé otevření" Comment="Quick Open" />
+    <Text Key="labelNotes" Text="Pozn.:" Comment="Notes:" />
+  </Texts>
+</TR>

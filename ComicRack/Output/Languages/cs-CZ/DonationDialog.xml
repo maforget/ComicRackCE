@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DonationDialog" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="btCancel" Text="Zatím přeskočit" Comment="Skip for now" />
+    <Text Key="btOK" Text="OK" Comment="OK" />
+    <Text Key="DonationDialog" Text="Podpořte ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="labelThankYou" Text="Děkuji Vám za podporu ComicRacku!" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="Jak přispět" Comment="Donate" />
+    <Text Key="labelStepOne" Text="Krok první:\nNavštivtě stránku podpory ComicRacku na webu" Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="btDonate" Text="Stránka podpory" Comment="Donation Page" />
+    <Text Key="btValidate" Text="Ověřit" Comment="Validate" />
+    <Text Key="labelEmail" Text="Email. adresa:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="ComicRack jste zatím spustili {0}-krát." Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="ComicRack spravuje {0} vašich knih." Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="Nelze kontaktovat server ComicRacku a ověřit emailovou adresu. Prosím zkontrolujte vaše internetové připojení!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+    <Text Key="labelDonationText" Text="ComicRack je produktem stovek hodin práce a nestojí ze ním žádná velká softwarová společnost. Pokud ComicRack používáte a líbí se vám, prosím zvažte, zda nedat něco na oplátku.\n\nMinimální darovací částka je 5 dolarů - na zaplacení piva. Po dokončení darování si můžete aktivovat tuto kopii programu pomocí vaší darovací emailové adresy a tím navždy skrýt toto hlášení.\n\nComicRack je plně funkční i pokud se pro dar nerozhodnete." Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nThe minimum donation is $5 - paying me a beer. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+    <Text Key="labelStepTwo" Text="Krok druhý:\nZadejte darovací emailovou adresu a ověřte ji.\nZaregistrování vašeho příspevku může trvat několik minut, vraťte se tedy k tomuto kroku později." Comment="Step Two:\nEnter your donation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+  </Texts>
+</TR>

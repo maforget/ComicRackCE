@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBook" CultureName="ru">
+  <Texts>
+    <Text Key="Added" Text="Добавлено:\t{0}" Comment="Added:\t{0}" />
+    <Text Key="Format" Text="Формат:\t{0}" Comment="Format:\t{0}" />
+    <Text Key="LastPageReadIs" Text="Последняя прочитанная страница: {0}" Comment="Last page read is {0}" />
+    <Text Key="LastTimeOpenedAt" Text="Последний раз открывалось: {0}" Comment="Last time opened at {0}" />
+    <Text Key="Library" Text="Библиотека" Comment="Library" />
+    <Text Key="MyFavoritesList" Text="Мое избранное" Comment="My Favorites" />
+    <Text Key="Never" Text="никогда" Comment="never" />
+    <Text Key="NeverReadList" Text="Не читалось" Comment="Never Read" />
+    <Text Key="NoInformation" Text="Нет информации" Comment="No information available" />
+    <Text Key="None" Text="Не определено" Comment="None" />
+    <Text Key="Of" Text="из" Comment="of" />
+    <Text Key="Opened" Text="Открыто:\t{0}" Comment="Opened:\t{0}" />
+    <Text Key="Pages" Text="{0} страниц" Comment="{0} Page(s)" />
+    <Text Key="PageSize" Text="Размер:\t{0}" Comment="Size:\t{0}" />
+    <Text Key="PageText" Text="Страница #{0}" Comment="Page #{0}" />
+    <Text Key="ReadingAtPage" Text="Текущая страница: {0}" Comment="Reading at page {0}" />
+    <Text Key="ReadingList" Text="Читается" Comment="Reading" />
+    <Text Key="ReadList" Text="Читать?" Comment="Read" />
+    <Text Key="RecentlyAddedList" Text="Недавно добавлено" Comment="Recently Added" />
+    <Text Key="RecentlyReadList" Text="Недавно прочитано" Comment="Recently Read" />
+    <Text Key="Resolution" Text="Разрешение:\t{0} x {1}" Comment="Resolution:\t{0} x {1}" />
+    <Text Key="Size" Text="Размер:\t{0}/{1}" Comment="Size:\t{0}/{1}" />
+    <Text Key="SmartLists" Text="Авто-списки" Comment="Smart Lists" />
+    <Text Key="UnknownSize" Text="Неизвестный размер" Comment="Unknown Size" />
+    <Text Key="Unknown" Text="Неизвестно" Comment="Unknown" />
+    <Text Key="Volume" Text="В{0}" Comment="V{0}" />
+    <Text Key="Bookmark" Text="Закладка: {0}" Comment="Bookmark: {0}" />
+  </Texts>
+</TR>

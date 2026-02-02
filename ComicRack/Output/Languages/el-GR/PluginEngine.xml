@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PluginEngine" CultureName="el-GR">
+  <Texts>
+    <Text Key="EditUpdateBooksCommands" Text="Επεξεργασία/Ενημέρωση Εντολών" Comment="Edit/Update Books Commands" />
+    <Text Key="CreateNewBooksCommands" Text="Δημιουργία νέων Εντολών" Comment="Create New Books Commands" />
+    <Text Key="ActionswhenBooksareopened" Text="Ενέργειες όταν ανοίγουν τα Βιβλία" Comment="Actions when Books are opened" />
+    <Text Key="ActionswhenReaderisresized" Text="Ενέργειες όταν το Αναγνωστήριο αλλάζει διαστάσεις" Comment="Actions when Reader is resized" />
+    <Text Key="AdditionalSearchProviders" Text="Πρόσθετες ρυθμίσεις αναζήτησης" Comment="Additional Search Providers" />
+    <Text Key="QuickOpenPanels" Text="Γρήγορο Άνοιγμα Πίνακα" Comment="Quick Open Panels" />
+    <Text Key="CustomComicPathParser" Text="Διαδρομή Συντακτικών Αναλυτών Κόμικς" Comment="Book Path Parsers" />
+    <Text Key="ComicInformationPanels" Text="Πίνακας Πληροφορίων Κόμικς" Comment="Book Information Panels" />
+    <Text Key="CustomComicThumbnailOverlays" Text="Προσαρμογή επικαλύψεων Μικρογραφίας κόμικς" Comment="Custom Book Thumbnail Overlays" />
+  </Texts>
+</TR>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainView" CultureName="ru">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="Стыковка снизу" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="Заполнение" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="Стыковка слева" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="Стыковка справа" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="Закрыть" Comment="Close" />
+    <Text Key="tsbFolders" Text="Папки" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="Обзор папок" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="Библиотека" Comment="Library" />
+    <Text Key="tsbLibrary.Tooltip" Text="Библиотека Комиксов" Comment="eComics Library" />
+    <Text Key="tsbPages" Text="Страницы" Comment="Pages" />
+    <Text Key="tsbPages.Tooltip" Text="Страницы этого Комикса" Comment="Pages of the current eComic" />
+    <Text Key="tsbShowMenu" Text="Показать меню" Comment="Show Menu" />
+  </Texts>
+</TR>

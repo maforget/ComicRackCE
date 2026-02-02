@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Keyboard" CultureName="el-GR">
+  <Texts>
+    <Text Key="Browse" Text="Περιηγητής" Comment="Browse" />
+    <Text Key="Display Options" Text="Επιλογές Απεικόνισης" Comment="Display Options" />
+    <Text Key="Exit" Text="Έξοδος" Comment="Exit" />
+    <Text Key="FitAll" Text="Προσαρμογή όλων" Comment="Fit All" />
+    <Text Key="FitBest" Text="Βέλτιστο Ταίριασμα" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="Προσαρμογή κατά Ύψος" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="Προσαρμογή κατά Πλάτος" Comment="Fit Width" />
+    <Text Key="Library" Text="Βιβλιοθήκη" Comment="Library" />
+    <Text Key="MoveDown" Text="Κάτω" Comment="Down" />
+    <Text Key="MoveLeft" Text="Αριστερό" Comment="Left" />
+    <Text Key="MoveNextPart" Text="Επόμενο Τμήμα" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="Προηγούμενο Τμήμα" Comment="Previous Part" />
+    <Text Key="MoveRight" Text="Δεξιά" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="Πρώτη Σελίδα" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="Τελευταία Σελίδα" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="Επόμενη Σελίδα" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="Προηγούμενη Σελίδα" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="Πάνω" Comment="Up" />
+    <Text Key="NextTab" Text="Επόμενη Καρτέλα" Comment="Next Tab" />
+    <Text Key="Other" Text="Άλλα" Comment="Other" />
+    <Text Key="Page Display" Text="Απεικόνιση Σελίδας" Comment="Page Display" />
+    <Text Key="PrevTab" Text="Προηγούμενη Καρτέλα" Comment="Previous Tab" />
+    <Text Key="Scroll" Text="Κύλιση" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="Εμφάνιση Περιηγητή" Comment="Show Browser" />
+    <Text Key="ToggleFullScreen" Text="Εναλλαγή λειτουργίας Πλήρους Οθόνης" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="Εναλλαγή Μεγεθυντικού Φακού" Comment="Toggle Magnifier" />
+    <Text Key="ToggleTwoPages" Text="Εναλλαγή Διπλής Σελίδας" Comment="Toggle Two Pages" />
+    <Text Key="ToggleUndockReader" Text="Εναλλαγή Ξεκλειδώματος Αναγνώστη" Comment="Toggle Undock Reader" />
+    <Text Key="RotateC" Text="Περιστροφή Δεξιά" Comment="Rotate Right" />
+    <Text Key="RotateCC" Text="Περιστροφή Αριστερά" Comment="Rotate Left" />
+    <Text Key="ZoomIn" Text="Μεγέθυνση" Comment="Zoom In" />
+    <Text Key="ZoomOut" Text="Σμίκρυνση" Comment="Zoom Out" />
+    <Text Key="Original" Text="Πραγματικό Μέγεθος" Comment="Original Size" />
+    <Text Key="MovePartDown10" Text="Μετακίνηση Τμήματος 10% κάτω" Comment="Move Part 10% down" />
+    <Text Key="MovePartUp10" Text="Μετακίνηση Τμήματος 10% πάνω" Comment="Move Part 10% up" />
+    <Text Key="FitWidthAdaptive" Text="Προσαρμογή κατά Πλάτος (αυτόματα)" Comment="Fit Width (adaptive)" />
+    <Text Key="MoveFirstPart" Text="Αρχή Σελίδας" Comment="Page Start" />
+    <Text Key="MoveLastPart" Text="Τέλος Σελίδας" Comment="Page End" />
+    <Text Key="Auto Scroll" Text="Αυτόματη Κύλιση" Comment="Auto Scroll" />
+    <Text Key="ToggleAutoScrolling" Text="Εναλλαγή λειτουργίας Αυτόματης Κύλισης" Comment="Toggle Auto Scrolling" />
+    <Text Key="DoublePageAutoScroll" Text="Αυτόματη Κύλιση Διπλής Σελίδας" Comment="Double Page Auto Scroll" />
+    <Text Key="ToggleMenu" Text="Εναλλαγή λειτουργίας Μενού" Comment="Toggle Menu" />
+    <Text Key="MoveToPrevBookmark" Text="Προηγούμενος Σελιδοδείκτης" Comment="Previous Bookmark" />
+    <Text Key="MoveToNextBookmark" Text="Επόμενος Σελιδοδείκτης" Comment="Next Bookmark" />
+    <Text Key="MoveToPrevPageSingle" Text="Πίσω μια Μονή Σελίδα" Comment="Single Page Back" />
+    <Text Key="MoveToNextPageSingle" Text="Μπροστά μια Μονή Σελίδα" Comment="Single Page Forward" />
+    <Text Key="AutoRotate" Text="Αυτόματη Περιστροφή Διπλών Σελίδων" Comment="Autorotate Double Pages" />
+    <Text Key="PageRotateC" Text="Περιστροφή Σελίδας Δεξιά" Comment="RotatePageRight" />
+    <Text Key="PageRotateCC" Text="Περιστροφή Σελίδας Αριστερά" Comment="RotatePageLeft" />
+    <Text Key="Edit" Text="Επεξεργασία" Comment="Edit" />
+    <Text Key="ToggleRealisticPages" Text="Εναλλαγή Ρεαλιστικής Εμφάνισης" Comment="Toggle Realistic Display" />
+    <Text Key="OnlyFitIfOversized" Text="Προσαρμογή μόνο αν είναι υπερμεγέθης" Comment="Only Fit if oversized" />
+    <Text Key="SinglePage" Text="Μονή Σελίδα" Comment="Single Page" />
+    <Text Key="TwoPages" Text="Δύο Σελίδες" Comment="Two Pages" />
+    <Text Key="TwoPagesAdaptive" Text="Δύο Σελίδες (προσαρμογή)" Comment="Two Pages (adaptive)" />
+    <Text Key="RightToLeft" Text="Περιστροφή προς τ΄ Αριστερά" Comment="Right to Left" />
+    <Text Key="ZoomAndRotate" Text="Μεγέθυνση και Περιστροφή" Comment="Zoom and Rotate" />
+    <Text Key="StepZoomIn" Text="Βήμα Μεγέθυνσης" Comment="Step Zoom In" />
+    <Text Key="StepZoomOut" Text="Βήμα Σμίκρυνσης" Comment="Step Zoom Out" />
+    <Text Key="ToggleNavigationOverlay" Text="Εναλλαγή Επικάλυψης Πλοήγησης" Comment="Toggle Navigation Overlay" />
+    <Text Key="ToggleZoom" Text="Εναλλαγή Εστίασης" Comment="Toggle Zoom" />
+    <Text Key="NextComic" Text="Επόμενο eComic" Comment="Next Book" />
+    <Text Key="RandomComic" Text="Τυχαίο Βιβλίο" Comment="Random Book" />
+    <Text Key="PrevComic" Text="Προηγούμενο eComic" Comment="Previous Book" />
+    <Text Key="ToggleManga" Text="Εναλλαγή λειτουργίας Manga για το eComic" Comment="Toggle Manga for Book" />
+  </Texts>
+</TR>

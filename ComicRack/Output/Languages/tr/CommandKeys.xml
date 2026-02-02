@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="CommandKeys" CultureName="tr">
+  <Texts>
+    <Text Key="A" Text="A " Comment="A" />
+    <Text Key="Add" Text="Ekle" Comment="Add" />
+    <Text Key="Alt" Text="Alt " Comment="Alt" />
+    <Text Key="B" Text="B " Comment="B" />
+    <Text Key="C" Text="C " Comment="C" />
+    <Text Key="Ctrl" Text="Ctrl " Comment="Ctrl" />
+    <Text Key="D" Text="D " Comment="D" />
+    <Text Key="D0" Text="D0 " Comment="D0" />
+    <Text Key="D1" Text="D1 " Comment="D1" />
+    <Text Key="D2" Text="D2 " Comment="D2" />
+    <Text Key="D3" Text="D3 " Comment="D3" />
+    <Text Key="D4" Text="D4 " Comment="D4" />
+    <Text Key="D5" Text="D5 " Comment="D5" />
+    <Text Key="D6" Text="D6 " Comment="D6" />
+    <Text Key="D7" Text="D7 " Comment="D7" />
+    <Text Key="D8" Text="D8 " Comment="D8" />
+    <Text Key="D9" Text="D9 " Comment="D9" />
+    <Text Key="Decimal" Text="Ondalık" Comment="Decimal" />
+    <Text Key="Divide" Text="Böl" Comment="Divide" />
+    <Text Key="Down" Text="Aşağı" Comment="Down" />
+    <Text Key="E" Text="E " Comment="E" />
+    <Text Key="End" Text="Son" Comment="End" />
+    <Text Key="Enter" Text="Gir" Comment="Enter" />
+    <Text Key="Escape" Text="Çıkış" Comment="Escape" />
+    <Text Key="F" Text="F " Comment="F" />
+    <Text Key="G" Text="G " Comment="G" />
+    <Text Key="H" Text="H " Comment="H" />
+    <Text Key="Home" Text="Home " Comment="Home" />
+    <Text Key="I" Text="I " Comment="I" />
+    <Text Key="J" Text="J " Comment="J" />
+    <Text Key="K" Text="K " Comment="K" />
+    <Text Key="L" Text="L " Comment="L" />
+    <Text Key="Left" Text="Sol" Comment="Left" />
+    <Text Key="M" Text="M " Comment="M" />
+    <Text Key="MediaNextTrack" Text="MedyaSonrakiParça" Comment="MediaNextTrack" />
+    <Text Key="MediaPlayPause" Text="MedyaOynatDondur" Comment="MediaPlayPause" />
+    <Text Key="MediaPreviousTrack" Text="MedyaÖncekiParça" Comment="MediaPreviousTrack" />
+    <Text Key="MediaStop" Text="MedyaDurdur" Comment="MediaStop" />
+    <Text Key="MouseButton4" Text="FareTuşu4" Comment="MouseButton4" />
+    <Text Key="MouseButton5" Text="FareTuşu5" Comment="MouseButton5" />
+    <Text Key="MouseDoubleButton4" Text="ÇiftFareTuşu4" Comment="MouseDoubleButton4" />
+    <Text Key="MouseDoubleButton5" Text="ÇiftFareTuşu5" Comment="MouseDoubleButton5" />
+    <Text Key="MouseDoubleLeft" Text="ÇiftFareTuşuSol" Comment="MouseDoubleLeft" />
+    <Text Key="MouseDoubleMiddle" Text="ÇiftFareTuşuOrta" Comment="MouseDoubleMiddle" />
+    <Text Key="MouseDoubleRight" Text="ÇiftFareTuşuSağ" Comment="MouseDoubleRight" />
+    <Text Key="MouseLeft" Text="FareSol" Comment="MouseLeft" />
+    <Text Key="MouseMiddle" Text="FareOrta" Comment="MouseMiddle" />
+    <Text Key="MouseRight" Text="FareSağ" Comment="MouseRight" />
+    <Text Key="MouseTiltLeft" Text="FareSolaDoğru" Comment="MouseTiltLeft" />
+    <Text Key="MouseTiltRight" Text="FareSağaDoğru" Comment="MouseTiltRight" />
+    <Text Key="MouseWheelDown" Text="FareTekerleğiAşağı" Comment="MouseWheelDown" />
+    <Text Key="MouseWheelUp" Text="FareTekerleğiYukarı" Comment="MouseWheelUp" />
+    <Text Key="Multiply" Text="Çoğalt" Comment="Multiply" />
+    <Text Key="N" Text="N " Comment="N" />
+    <Text Key="None" Text="Yok" Comment="None" />
+    <Text Key="NumPad0" Text="NumPad0 " Comment="NumPad0" />
+    <Text Key="NumPad1" Text="NumPad1 " Comment="NumPad1" />
+    <Text Key="NumPad2" Text="NumPad2 " Comment="NumPad2" />
+    <Text Key="NumPad3" Text="NumPad3 " Comment="NumPad3" />
+    <Text Key="NumPad4" Text="NumPad4 " Comment="NumPad4" />
+    <Text Key="NumPad5" Text="NumPad5 " Comment="NumPad5" />
+    <Text Key="NumPad6" Text="NumPad6 " Comment="NumPad6" />
+    <Text Key="NumPad7" Text="NumPad7 " Comment="NumPad7" />
+    <Text Key="NumPad8" Text="NumPad8 " Comment="NumPad8" />
+    <Text Key="NumPad9" Text="NumPad9 " Comment="NumPad9" />
+    <Text Key="O" Text="O " Comment="O" />
+    <Text Key="P" Text="P " Comment="P" />
+    <Text Key="PageDown" Text="SayfaAşağı" Comment="PageDown" />
+    <Text Key="PageUp" Text="SayfaYukarı" Comment="PageUp" />
+    <Text Key="Q" Text="Q " Comment="Q" />
+    <Text Key="R" Text="R " Comment="R" />
+    <Text Key="Right" Text="Sağ" Comment="Right" />
+    <Text Key="S" Text="S " Comment="S" />
+    <Text Key="Shift" Text="Shift " Comment="Shift" />
+    <Text Key="Space" Text="Boşluk" Comment="Space" />
+    <Text Key="Subtract" Text="Çıkar" Comment="Subtract" />
+    <Text Key="T" Text="T " Comment="T" />
+    <Text Key="Tab" Text="Sekme" Comment="Tab" />
+    <Text Key="U" Text="U " Comment="U" />
+    <Text Key="Up" Text="Yukarı" Comment="Up" />
+    <Text Key="V" Text="V " Comment="V" />
+    <Text Key="W" Text="W " Comment="W" />
+    <Text Key="X" Text="X " Comment="X" />
+    <Text Key="Y" Text="Y " Comment="Y" />
+    <Text Key="Z" Text="Z " Comment="Z" />
+    <Text Key="Zoom" Text="Odak" Comment="Zoom" />
+  </Texts>
+</TR>

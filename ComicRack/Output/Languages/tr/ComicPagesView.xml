@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicPagesView" CultureName="tr">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Düzenleme kriteri {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Küçük ikon boyutlarını değiştir" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Gruplanma kriteri {0}" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="&amp;Detaylar" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="Küçük İ&amp;konlar" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Büyük İkonlar" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Yok" Comment="None" />
+    <Text Key="NotArranged" Text="Sıralanmamış" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Gruplanmadı" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Grupla" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="e-Çizgi Romanları farklı bir kritere göre gruplandır" Comment="Group eComics by different criteria" />
+    <Text Key="tbbSort" Text="Düzenle" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="e-Çizgi Romanların tür düzenlemesini değiştir" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbView" Text="Görüntülenme" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="e-Çizgi Romanların nasıl görüntüleneceklerini belirle" Comment="Change how eComics are displayed" />
+    <Text Key="tbFilter" Text="Sayfa filtresi" Comment="Page Filter" />
+  </Texts>
+</TR>

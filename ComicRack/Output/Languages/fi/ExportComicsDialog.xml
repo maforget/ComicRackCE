@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ExportComicsDialog" CultureName="fi">
+  <Texts>
+    <Text Key="ExportComicsDialog" Text="Lähetä eSarjiksia" Comment="Export eComics" />
+    <Text Key="grpExportLocation" Text="Lähetä Sijainti" Comment="Export Location" />
+    <Text Key="grpFileFormat" Text="Tiedostomuoto" Comment="File Format" />
+    <Text Key="grpPageFormat" Text="Sivun tallennusmuoto" Comment="Page Format" />
+    <Text Key="grpFileNaming" Text="Tiedoston Nimeäminen" Comment="File Naming" />
+    <Text Key="grpImageProcessing" Text="Kuvankäsittely" Comment="Image Processing" />
+    <Text Key="btSavePreset" Text="Tallenna esiasetus..." Comment="Save Preset..." />
+    <Text Key="btRemovePreset" Text="Poista" Comment="Remove" />
+    <Text Key="labelExportTo" Text="Lähetä:" Comment="Export to:" />
+    <Text Key="cbExport.Item0" Text="Valitse kansio" Comment="Select a Folder" />
+    <Text Key="cbExport.Item1" Text="Sama kuin alkuperäiskansio" Comment="Same Folder as the original eComic" />
+    <Text Key="cbExport.Item2" Text="Sama kansio ja korvaa kirjastossa" Comment="Same Folder and replace in Library" />
+    <Text Key="cbExport.Item3" Text="Kysy ennen Lähetystä" Comment="Ask before Export" />
+    <Text Key="labelFolder" Text="Kansio:" Comment="Folder:" />
+    <Text Key="btChooseFolder" Text="Valitse..." Comment="Choose..." />
+    <Text Key="chkDeleteOriginal" Text="Poista alkuperäinen eSarjis lähetyksen onnistuttua" Comment="Delete original eComic after successful Export" />
+    <Text Key="chkAddNewToLibrary" Text="Lisää juuri luotu eSarjis kirjastoon" Comment="Add newly created eComic to Library" />
+    <Text Key="labelComicFormat" Text="eSarjiksen tiedostomuoto" Comment="eComic Format" />
+    <Text Key="cbComicFormat.Item0" Text="Sama kuin alkuperäinen" Comment="Same as Original" />
+    <Text Key="labelCompression" Text="Pakkaus" Comment="Compression" />
+    <Text Key="cbCompression.Item0" Text="&lt;tyhjä&gt;" Comment="None" />
+    <Text Key="cbCompression.Item1" Text="Keskikoko" Comment="Medium" />
+    <Text Key="cbCompression.Item2" Text="Vahva" Comment="Strong" />
+    <Text Key="chkEmbedComicInfo" Text="Sulauta Sarjisten Tiedot" Comment="Embed Comic Info" />
+    <Text Key="labelRemovePageFilter" Text="Poista sivut:" Comment="Remove Pages:" />
+    <Text Key="labelIncludePages" Text="Sisällytä sivut:" Comment="Include Pages:" />
+    <Text Key="labelPageFormat" Text="Sivun tallennusmuoto" Comment="Page Format" />
+    <Text Key="cbPageFormat.Item0" Text="Säilytä Alkuperäinen" Comment="Preserve Original" />
+    <Text Key="labelPageQuality" Text="Laatu:" Comment="Quality:" />
+    <Text Key="labelPageResize" Text="Muuta kokoa:" Comment="Resize:" />
+    <Text Key="cbPageResize.Item0" Text="Säilytä Alkuperäinen" Comment="Preserve Original" />
+    <Text Key="cbPageResize.Item1" Text="Paras leveys &amp; korkeus -sovitus" Comment="Best fit Width &amp; Height" />
+    <Text Key="cbPageResize.Item2" Text="Aseta leveys" Comment="Set Width" />
+    <Text Key="cbPageResize.Item3" Text="Aseta korkeus" Comment="Set Height" />
+    <Text Key="labelX" Text="x" Comment="x" />
+    <Text Key="chkDontEnlarge" Text="Älä suurenna" Comment="Don't enlarge" />
+    <Text Key="chkSplitDouble" Text="Puolita aukeamat" Comment="Split Double Pages" />
+    <Text Key="SelectExportFolder" Text="Valitse lähetyskansio" Comment="Please select the Export Folder" />
+    <Text Key="btCancel" Text="&amp;Peruuta" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelNamingTemplate" Text="Malli:" Comment="Template:" />
+    <Text Key="labelCustomNaming" Text="Oma Määrittely:" Comment="Custom:" />
+    <Text Key="labelCustomStartIndex" Text="Aloita:" Comment="Start:" />
+    <Text Key="cbNamingTemplate.Item0" Text="Tiedostonimi" Comment="Filename" />
+    <Text Key="cbNamingTemplate.Item1" Text="eSarjiksen kuvaus" Comment="eComic Caption" />
+    <Text Key="cbNamingTemplate.Item2" Text="Oma määrittely" Comment="Custom" />
+    <Text Key="chkOverwrite" Text="Ylikirjoita tiedostot" Comment="Overwrite existing Files" />
+    <Text Key="chkCombine" Text="Yhdistä valitut tiedostot" Comment="Combine selected Files" />
+    <Text Key="ComicRackExportPresets" Text="ComicRackin esiasetukset" Comment="ComicRack Presets" />
+    <Text Key="UserExportPresets" Text="Omat esiasetukset" Comment="User Presets" />
+    <Text Key="labelSharpening" Text="Terävöinti" Comment="Sharpening" />
+    <Text Key="chkAutoContrast" Text="Automaattinen kontrastin parannus" Comment="Automatic Contrast Enhancement" />
+    <Text Key="labelSaturation" Text="Saturaatio" Comment="Saturation" />
+    <Text Key="labelBrightness" Text="Kirkkaus" Comment="Brightness" />
+    <Text Key="labelContrast" Text="Kontrasti" Comment="Contrast" />
+    <Text Key="labelImagProcessingSource" Text="Lähde:" Comment="Source:" />
+    <Text Key="labelImageProcessingCustom" Text="Oma Määrittely:" Comment="Custom:" />
+    <Text Key="cbImageProcessingSource.Item0" Text="Omat asetukset" Comment="Custom Settings" />
+    <Text Key="cbImageProcessingSource.Item1" Text="eSarjiksen asetukset käytössä" Comment="eComic settings are applied" />
+    <Text Key="chkIgnoreErrorPages" Text="Lähetä välittämättä virheellisistä sivuista" Comment="Ignore Pages with errors and continue export" />
+  </Texts>
+</TR>

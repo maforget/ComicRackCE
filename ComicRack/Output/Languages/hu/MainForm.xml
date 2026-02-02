@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MainForm" CultureName="hu">
+  <Texts>
+    <Text Key="browseMenu" Text="&amp;Tallózás" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="&amp;Oldal másolása" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="&amp;Oldal exportálása..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="Mindenhez igazítás" Comment="Fit All" />
+    <Text Key="cmFitBest" Text="Legjobb igazítás" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="Magassághoz igazítás" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="Szélességhez igazítás" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="&amp;Nagyító" Comment="&amp;Magnifier" />
+    <Text Key="cmNotifyExit" Text="&amp;Kilépés" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="&amp;Visszaállítás" Comment="&amp;Restore" />
+    <Text Key="cmRate0" Text="Nincs" Comment="None" />
+    <Text Key="cmRate1" Text="* (1 csillag)" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** (2 csillag)" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** (3 csillag)" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** (4 csillag)" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** (5 csillag)" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="&amp;Értékelésem" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="&amp;Frissítés" Comment="&amp;Refresh" />
+    <Text Key="cmSyncBrowser" Text="Böngészőben mutassa" Comment="Show in &amp;Browser" />
+    <Text Key="displayMenu" Text="&amp;Megjelenítés" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="&amp;Szerkesztés" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="&amp;Fájl" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="&amp;Súgó" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack" Comment="ComicRack" />
+    <Text Key="miAbout" Text="&amp;Névjegy..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="&amp;Mappa hozzáadása a könyvtárhoz" Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="Új fül" Comment="New &amp;Tab" />
+    <Text Key="miBestFit" Text="Legjobb igazítás" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="Mindent bezár" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="&amp;Bezárás" Comment="&amp;Close" />
+    <Text Key="miEditListLayout" Text="&amp;Listanézet szerkesztése..." Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="&amp;Kilépés" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="Automatizálás" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="&amp;Első oldal" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="Mindenhez igazítás" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="Magassághoz igazítás" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="Szélességhez igazítás" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="&amp;Teljes képernyő" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="&amp;Utolsó oldal" Comment="&amp;Last Page" />
+    <Text Key="miLastPageRead" Text="Utolsó olvasott oldal" Comment="L&amp;ast Page Read" />
+    <Text Key="miListLayouts" Text="Listanézet" Comment="List Layout" />
+    <Text Key="miNews" Text="&amp;Hírek..." Comment="&amp;News..." />
+    <Text Key="miNextTab" Text="Következő &amp;fül" Comment="Next &amp;Tab" />
+    <Text Key="miPageType" Text="&amp;Oldaltípus" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="&amp;Beállítások" Comment="&amp;Preferences..." />
+    <Text Key="miPrevPage" Text="Előző oldal" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="&amp;Előző fül" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="Nincs" Comment="None" />
+    <Text Key="miRate1" Text="* (1 csillag)" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** (2 csillag)" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** (3 csillag)" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** (4 csillag)" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** (5 csillag)" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="Értékelésem" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="Újraindítás" Comment="Rest&amp;art" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="miRotation" Text="&amp;Forgatás" Comment="&amp;Rotation" />
+    <Text Key="miSaveListLayout" Text="&amp;Listanézet mentése..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="&amp;Munkaterület mentése..." Comment="&amp;Save Workspace..." />
+    <Text Key="miSearchBrowser" Text="Keresés" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="Minden listához a jelenlegi nézet" Comment="Set all Lists to current Layout" />
+    <Text Key="miSidebar" Text="&amp;Oldalsáv" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="Előnézet" Comment="S&amp;mall Preview" />
+    <Text Key="miSyncBrowser" Text="Böngészőben mutassa" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="&amp;Tallózó" Comment="&amp;Browser" />
+    <Text Key="miView100" Text="100 %" Comment="100 %" />
+    <Text Key="miView150" Text="150 %" Comment="150 %" />
+    <Text Key="miView200" Text="200 %" Comment="200 %" />
+    <Text Key="miView300" Text="300 %" Comment="300 %" />
+    <Text Key="miView400" Text="400 %" Comment="400 %" />
+    <Text Key="miViewFolders" Text="&amp;Mappák" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="Könyvtár" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="&amp;Oldalak" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="&amp;Frissítés" Comment="&amp;Refresh" />
+    <Text Key="miWorkspaces" Text="&amp;Munkaterületek" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="Nagyítás/kicsinyítés" Comment="Zoom" />
+    <Text Key="readMenu" Text="&amp;Olvasás" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="'{0}' nézet beállítása" Comment="Set '{0}' Layout" />
+    <Text Key="tbBestFit" Text="Legjobb igazítás" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="Megjelenítés" Comment="Display" />
+    <Text Key="tbFit" Text="Igazítás" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="Igazítás módjának kiválasztása" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="Mindenhez igazítás" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="Magassághoz igazítás" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="Szélességhez igazítás" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="Teljes képernyő" Comment="Full Screen" />
+    <Text Key="tbMagnify" Text="Nagyító" Comment="Magnifier" />
+    <Text Key="tbNextPage" Text="Következő oldal" Comment="Next Page" />
+    <Text Key="tbNextTab" Text="Következő &amp;fül" Comment="Next &amp;Tab" />
+    <Text Key="tbPrevTab" Text="&amp;Előző fül" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="Előző fül" Comment="Vorheriger Tab" />
+    <Text Key="tbReadLabel" Text="Olvasás" Comment="Read" />
+    <Text Key="tbTwoPages" Text="Kétoldalas mód" Comment="Two Pages" />
+    <Text Key="tsBook" Text="Könyv" Comment="Book" />
+    <Text Key="tsCurrentPage" Text="Oldal" Comment="Page" />
+    <Text Key="tsPageCount" Text="0 Oldal" Comment="0 Pages" />
+    <Text Key="tsSaveWorkspace" Text="&amp;Munkaterület mentése..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsText" Text="Kész" Comment="Ready" />
+    <Text Key="tsWorkspaces" Text="Munkaterületek" Comment="Workspaces" />
+    <Text Key="miSupport" Text="Támogasd a ComicRack-et..." Comment="Support ComicRack..." />
+    <Text Key="tbNextTab.Tooltip" Text="Következő fül" Comment="Next Tab" />
+    <Text Key="miReaderUndocked" Text="Olvasó saját ablakban" Comment="Reader in own Window" />
+    <Text Key="tbReaderUndocked" Text="Olvasó saját ablakban" Comment="Reader in own Window" />
+    <Text Key="miPageLayout" Text="Oldalnézet" Comment="Page Layout" />
+    <Text Key="cmPageLayout" Text="Oldalnézet" Comment="Page Layout" />
+    <Text Key="miAdaptiveTwoPageFitting" Text="Kétoldalas képek kezelése" Comment="Adapt to double page spreads" />
+    <Text Key="cmAdaptiveTwoPageFitting" Text="Kétoldalas képek kezelése" Comment="Adapt to double page spreads" />
+    <Text Key="tbAdaptiveTwoPageFitting" Text="Kétoldalas képek kezelése" Comment="Adapt to double page spreads" />
+    <Text Key="miOriginal" Text="Eredeti méret" Comment="Original Size" />
+    <Text Key="tbOriginal" Text="Eredeti méret" Comment="Original Size" />
+    <Text Key="cmOriginal" Text="Eredeti méret" Comment="Original Size" />
+    <Text Key="NotifyIconText" Text="Duplaklikk a visszaállításhoz" Comment="Double Click to restore" />
+    <Text Key="miAutoScroll" Text="Automatikus görgetés" Comment="Auto Scrolling" />
+    <Text Key="tbAutoScroll" Text="Automatikus görgetés" Comment="Auto Scrolling" />
+    <Text Key="tsPageActivity.Tooltip" Text="Oldalak és miniatűrök betöltése" Comment="Getting Pages and Thumbnails..." />
+    <Text Key="tsScanActivity.Tooltip" Text="Keresés fut háttérben..." Comment="A scan is running..." />
+    <Text Key="tsWriteInfoActivity.Tooltip" Text="Adat írása fájlokba..." Comment="Writing info data to files..." />
+    <Text Key="tsReadInfoActivity.Tooltip" Text="Adat olvasása fájlokból..." Comment="Reading info data from files..." />
+    <Text Key="cmOnlyFitOversized" Text="Csak túlméretezettet igazít" Comment="Only Fit if oversized" />
+    <Text Key="miOnlyFitOversized" Text="Csak túlméretezettet igazít" Comment="Only Fit if oversized" />
+    <Text Key="tbOnlyFitOversized" Text="Csak túlméretezettet igazít" Comment="Only Fit if oversized" />
+    <Text Key="ChangeItemSize" Text="Lista elemek méretének módosítása" Comment="Change size of the list items" />
+    <Text Key="miDoublePageAutoScroll" Text="Kétoldalas automatikus görgetés" Comment="Double Page Auto Scrolling" />
+    <Text Key="cmFitWidthAdaptive" Text="Szélességhez igazítás (adaptív)" Comment="Fit Width (adaptive)" />
+    <Text Key="miFitWidthAdaptive" Text="Szélességhez igazítás (adaptív)" Comment="Fit Width (adaptive)" />
+    <Text Key="tbFitWidthAdaptive" Text="Szélességhez igazítás (adaptív)" Comment="Fit Width (adaptive)" />
+    <Text Key="cmRightToLeft" Text="Jobbról balra" Comment="Right to Left" />
+    <Text Key="tbRightToLeft" Text="Jobbról balra" Comment="Right to Left" />
+    <Text Key="miRightToLeft" Text="Jobbról balra" Comment="Right to Left" />
+    <Text Key="miMinimalGui" Text="Minimális felhasználói felület" Comment="Minimal User Interface" />
+    <Text Key="tbMinimalGui" Text="Minimális felhasználói felület" Comment="Minimal User Interface" />
+    <Text Key="cmMinimalGui" Text="Minimális felhasználói felület" Comment="Minimal User Interface" />
+    <Text Key="miBookmarks" Text="Könyvjelzők" Comment="Bookmarks" />
+    <Text Key="miSetBookmark" Text="Könyvjelző elhelyezése..." Comment="Set Bookmark..." />
+    <Text Key="miRemoveBookmark" Text="Könyvjelző eltávolítása" Comment="Remove Bookmark" />
+    <Text Key="tbBookmarks" Text="Könyvjelzők" Comment="Bookmarks" />
+    <Text Key="tbSetBookmark" Text="Könyvjelző elhelyezése..." Comment="Set Bookmark..." />
+    <Text Key="tbRemoveBookmark" Text="Könyvjelző eltávolítása" Comment="Remove Bookmark" />
+    <Text Key="tbLastPageRead" Text="Utolsó olvasott oldal" Comment="Last Page Read" />
+    <Text Key="cmBookmarks" Text="Könyvjelzők" Comment="Bookmarks" />
+    <Text Key="cmSetBookmark" Text="Könyvjelző elhelyezése..." Comment="Set Bookmark..." />
+    <Text Key="cmRemoveBookmark" Text="Könyvjelző eltávolítása" Comment="Remove Bookmark" />
+    <Text Key="cmLastPageRead" Text="Utolsó olvasott oldal" Comment="Last Page Read" />
+    <Text Key="miPrevBookmark" Text="Előző könyvjelző" Comment="Previous Bookmark" />
+    <Text Key="miNextBookmark" Text="Következő könyvjelző" Comment="Next Bookmark" />
+    <Text Key="tbPrevBookmark" Text="Előző könyvjelző" Comment="Previous Bookmark" />
+    <Text Key="tbNextBookmark" Text="Következő könyvjelző" Comment="Next Bookmark" />
+    <Text Key="cmPrevBookmark" Text="Előző könyvjelző" Comment="Previous Bookmark" />
+    <Text Key="cmNextBookmark" Text="Következő könyvjelző" Comment="Next Bookmark" />
+    <Text Key="miZoomIn" Text="Nagyítás" Comment="Zoom In" />
+    <Text Key="tbZoomIn" Text="Nagyítás" Comment="Zoom In" />
+    <Text Key="miZoomOut" Text="Kicsinyítés" Comment="Zoom Out" />
+    <Text Key="tbZoomOut" Text="Kicsinyítés" Comment="Zoom Out" />
+    <Text Key="miZoomCustom" Text="Egyéni..." Comment="Custom..." />
+    <Text Key="tbZoomCustom" Text="Egyéni..." Comment="Custom..." />
+    <Text Key="tbZoom.Tooltip" Text="Oldal nagyítása/kicsinyítése" Comment="Change the page zoom" />
+    <Text Key="tbRotate.Tooltip" Text="Olda forgatása" Comment="Change the page rotation" />
+    <Text Key="miRotateLeft" Text="Forgatás balra" Comment="Rotate Left" />
+    <Text Key="miRotateRight" Text="Forgatás jobbra" Comment="Rotate Right" />
+    <Text Key="tbRotateLeft" Text="Forgatás balra" Comment="Rotate Left" />
+    <Text Key="tbRotateRight" Text="Forgatás jobbra" Comment="Rotate Right" />
+    <Text Key="tbRotate180" Text="180°" Comment="180°" />
+    <Text Key="tbRotate270" Text="270°" Comment="270°" />
+    <Text Key="tbRotate90" Text="90°" Comment="90°" />
+    <Text Key="tbAutoRotate" Text="Igazítás &amp;&amp; automatikus forgatás" Comment="Autorotate Double Pages" />
+    <Text Key="miAutoRotate" Text="Igazítás &amp;&amp; automatikus forgatás" Comment="Autorotate Double Pages" />
+    <Text Key="cmCloseAllButThis" Text="Minden mást bezár" Comment="Close All But This" />
+    <Text Key="cmCopyPath" Text="Teljes útvonal másolása" Comment="Copy Full Path" />
+    <Text Key="cmRevealInExplorer" Text="Intézőben mutassa" Comment="Reveal in Explorer" />
+    <Text Key="cmClose" Text="Bezárás" Comment="Close" />
+    <Text Key="miCopyPage" Text="&amp;Oldal másolása" Comment="&amp;Copy Page" />
+    <Text Key="miExportPage" Text="&amp;Oldal exportálása..." Comment="&amp;Export Page..." />
+    <Text Key="ExportingErrors" Text="{0} hiba. Klikk a részletekért" Comment="{0} errors. Click for details" />
+    <Text Key="cmPageType" Text="&amp;Oldaltípus" Comment="&amp;Page Type" />
+    <Text Key="cmRotate0" Text="&amp;Nincs forgatás" Comment="&amp;No Rotation" />
+    <Text Key="cmRotate180" Text="180°" Comment="180°" />
+    <Text Key="cmRotate270" Text="270°" Comment="270°" />
+    <Text Key="cmRotate90" Text="90°" Comment="90°" />
+    <Text Key="miWebHome" Text="ComicRack honlap" Comment="ComicRack Homepage..." />
+    <Text Key="miWebUserForum" Text="ComicRack felhasználói fórum" Comment="ComicRack User Forum..." />
+    <Text Key="tsExportActivity" Text="Exportálás" Comment="Exporting" />
+    <Text Key="miWebHelp" Text="ComicRack dokumentáció" Comment="ComicRack Documentation..." />
+    <Text Key="cmCloseComic" Text="Bezárás" Comment="Close" />
+    <Text Key="SavePageTitle" Text="Oldal mentése másként" Comment="Save Page as..." />
+    <Text Key="cmPageRotate" Text="Oldal forgatása" Comment="Page Rotation" />
+    <Text Key="miPageRotate" Text="Oldal forgatása" Comment="Page Rotation" />
+    <Text Key="miOpenRemoteLibrary" Text="Távoli könytár megnyitása..." Comment="Open Remote Library..." />
+    <Text Key="miUndo" Text="Visszavonás" Comment="Undo" />
+    <Text Key="miRedo" Text="Újra" Comment="Redo" />
+    <Text Key="cmNextFromList" Text="K&amp;övetkező képregény" Comment="Ne&amp;xt Book" />
+    <Text Key="cmRandomFromList" Text="Képregény találomra" Comment="Random Book" />
+    <Text Key="cmPrevFromList" Text="Előző képregény" Comment="Pre&amp;vious Book" />
+    <Text Key="cmShowInfo" Text="&amp;Információ..." Comment="&amp;Info..." />
+    <Text Key="ExportingComics" Text="Képregények exportálása: {0} sorbaáll" Comment="Exporting Books: {0} queued" />
+    <Text Key="DeviceSyncing" Text="Készülékek szinkronizálása: {0} sorbaáll" Comment="Syncing Devices: {0} queued" />
+    <Text Key="DeviceSyncingErrors" Text="{0} hiba. Kattintson a részletekért." Comment="{0} errors. Click for details" />
+    <Text Key="tbAbout" Text="&amp;About..." Comment="&amp;About..." />
+    <Text Key="miEditLayouts" Text="&amp;Nézetek szerkesztése" Comment="&amp;Edit Layouts..." />
+    <Text Key="miEditWorkspaces" Text="&amp;Munkaterületek szerkesztése..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="tbFirstPage" Text="Első oldal" Comment="&amp;First Page" />
+    <Text Key="tbLastPage" Text="Utolsó oldal" Comment="&amp;Last Page" />
+    <Text Key="miNextFromList" Text="K&amp;övetkező képregény" Comment="Ne&amp;xt Book" />
+    <Text Key="miRandomFromList" Text="Képregény találomra" Comment="Random Book" />
+    <Text Key="miNextPage" Text="&amp;Következő oldal" Comment="Next Page" />
+    <Text Key="miMagnify" Text="&amp;Nagyító" Comment="Magnifier" />
+    <Text Key="miOpenComic" Text="&amp;Képregény megnyitása" Comment="&amp;Open File..." />
+    <Text Key="cmOpenComic" Text="&amp;Képregény megnyitása" Comment="&amp;Open File..." />
+    <Text Key="tbOpenComic" Text="&amp;Képregény megnyitása" Comment="&amp;Open File..." />
+    <Text Key="miOpenNow" Text="Ké&amp;pregények megnyitása" Comment="Open Books" />
+    <Text Key="miOpenRecent" Text="&amp;Nemrég olvasott képregények" Comment="&amp;Recent Books" />
+    <Text Key="miDevices" Text="Készülékek..." Comment="Devices..." />
+    <Text Key="tbPreferences" Text="&amp;Preferences..." Comment="&amp;Preferences..." />
+    <Text Key="tbTools" Text="Eszközök" Comment="Tools" />
+    <Text Key="tbTools.Tooltip" Text="Fontos parancsok elérése" Comment="Access to important commands" />
+    <Text Key="tbShowMainMenu" Text="Főmenü mutatása" Comment="Show Main Menu" />
+    <Text Key="miPrevFromList" Text="Előző képregény" Comment="Pre&amp;vious Book" />
+    <Text Key="tbPrevPage" Text="Előző oldal" Comment="&amp;Previous Page" />
+    <Text Key="miRotate0" Text="&amp;Nincs forgatás" Comment="0°" />
+    <Text Key="miScan" Text="Keresés a képregény mappákban" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbScan" Text="Scan Book &amp;Folders" Comment="Scan Book &amp;Folders" />
+    <Text Key="miShowInfo" Text="&amp;Információ..." Comment="&amp;Info..." />
+    <Text Key="tbShowInfo" Text="Infó" Comment="&amp;Info..." />
+    <Text Key="tbSupport" Text="Support ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miTwoPages" Text="&amp;Kétoldalas mód" Comment="Two Pages" />
+    <Text Key="cmTwoPages" Text="&amp;Kétoldalas mód" Comment="Two Pages" />
+    <Text Key="miTwoPagesAdaptive" Text="Két oldal (adaptív)" Comment="Two Pages (adaptive)" />
+    <Text Key="cmTwoPagesAdaptive" Text="Két oldal (adaptív)" Comment="Two Pages (adaptive)" />
+    <Text Key="tbTwoPagesAdaptive" Text="Két oldal (adaptív)" Comment="Two Pages (adaptive)" />
+    <Text Key="miSinglePage" Text="Egy oldal" Comment="Single Page" />
+    <Text Key="cmSinglePage" Text="Egy oldal" Comment="Single Page" />
+    <Text Key="tbSinglePage" Text="Egy oldal" Comment="Single Page" />
+    <Text Key="miToggleZoom" Text="Nagyítás ki/bekapcsolása" Comment="Toggle Zoom" />
+    <Text Key="tbNextFromList" Text="Következő képregény a listáról" Comment="Next Book from List" />
+    <Text Key="tbRandomFromList" Text="Képregény találomra" Comment="Random Book" />
+    <Text Key="tbPrevFromList" Text="Előző képregény a listáról" Comment="Previous Book from List" />
+    <Text Key="tsBook.Tooltip" Text="Megnyitott képregény neve" Comment="Name of the opened Book" />
+    <Text Key="tsCurrentPage.Tooltip" Text="Megnyitott képregény aktuális oldala" Comment="Current Page of the open Book" />
+    <Text Key="tsEditWorkspaces" Text="&amp;Munkaterületek szerkesztése..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="tsPageCount.Tooltip" Text="A megnyitott képregény oldalainak száma" Comment="Page count of the open Book" />
+    <Text Key="tbPageLayout" Text="Page Layout" Comment="Page Layout" />
+    <Text Key="cmComics" Text="Képregények" Comment="Books" />
+    <Text Key="tbRotate0" Text="&amp;Nincs forgatás" Comment="0°" />
+    <Text Key="cmCloseAllToTheRight" Text="Minden jobbra lévő bezárása" Comment="Close All to the Right" />
+    <Text Key="miTasks" Text="Feladatok.." Comment="Tasks..." />
+    <Text Key="tbOpenRemoteLibrary" Text="Open Remote Library..." Comment="Open Remote Library..." />
+    <Text Key="miUpdateAllComicFiles" Text="Minden képregény fájl frissítése" Comment="Update all Book Files" />
+    <Text Key="tbUpdateAllComicFiles" Text="Minden képregény fájl frissítése" Comment="Update all Book Files" />
+    <Text Key="miComicDisplaySettings" Text="Képregény megjelenítési beállításai..." Comment="Book Display Settings..." />
+    <Text Key="tbComicDisplaySettings" Text="Képregény megjelenítési beállításai..." Comment="Book Display Settings..." />
+    <Text Key="miPreviousList" Text="Előző lista" Comment="Previous List" />
+    <Text Key="miNextList" Text="Következő lista" Comment="Next List" />
+    <Text Key="miUpdateWebComics" Text="Webes képregények frissítése" Comment="Update Web Comics" />
+    <Text Key="tbUpdateWebComics" Text="Webes képregények frissítése" Comment="Update Web Comics" />
+    <Text Key="miSynchronizeDevices" Text="Készülékek szinkronizálása" Comment="Synchronize Devices" />
+    <Text Key="tsSynchronizeDevices" Text="Készülékek szinkronizálása" Comment="Synchronize Devices" />
+    <Text Key="miNewComic" Text="Új fájl nélküli képregény bejegyzés..." Comment="New fileless Book Entry..." />
+    <Text Key="quickOpenView" Text="Gyors megnyitás" Comment="Quick Open" />
+    <Text Key="miHelp" Text="Súgó" Comment="Help" />
+    <Text Key="miChooseHelpSystem" Text="Súgó rendszer választása" Comment="Choose Help System" />
+    <Text Key="miHelpPlugins" Text="Bővítmények" Comment="Plugins" />
+    <Text Key="miHelpQuickIntro" Text="Gyors bemutatás" Comment="Quick Introduction" />
+  </Texts>
+</TR>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="TextBoxContextMenu" CultureName="zh-CN">
+  <Texts>
+    <Text Key="miUndo" Text="撤消" Comment="Undo" />
+    <Text Key="miCut" Text="剪切" Comment="Cut" />
+    <Text Key="miCopy" Text="复制" Comment="Copy" />
+    <Text Key="miPaste" Text="粘贴" Comment="Paste" />
+    <Text Key="miDelete" Text="删除" Comment="Delete" />
+    <Text Key="miSelectAll" Text="全选" Comment="Select All" />
+  </Texts>
+</TR>

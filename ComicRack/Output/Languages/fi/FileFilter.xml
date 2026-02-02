@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FileFilter" CultureName="fi">
+  <Texts>
+    <Text Key="ReadingListSave" Text="ComicRackin lukulista|*.cbl|Xml-tiedosto|*.xml" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml" />
+    <Text Key="ReadingListLoad" Text="ComicRackin lukulista|*.cbl|Xml-tiedosto|*.xml|Kaikki tiedostot|*.*" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml|All Files|*.*" />
+    <Text Key="PageImageSave" Text="JPEG-kuva|*.jpg|Windowsin bittikartta|*.bmp|PNG-kuva|*.png|GIF-kuva|*.gif|TIFF-kuva|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif" />
+    <Text Key="ComicRackDatabase" Text="ComicRackin tietokanta|*.xml" Comment="ComicRack Database|*.xml" />
+    <Text Key="AllFiles" Text="Kaikki tiedostot" Comment="All Files" />
+    <Text Key="AllSupportedFiles" Text="Kaikki tuetut tiedostot" Comment="All supported Files" />
+    <Text Key="FormatReadingList" Text="ComicRackin lukulista" Comment="ComicRack Reading List" />
+    <Text Key="ScriptPackageOpen" Text="ComicRackin liitännäinen|*.crplugin|Skripti-arkisto|*.zip" Comment="ComicRack Plugin|*.crplugin|Script Archive|*.zip" />
+    <Text Key="KeyboardLayout" Text="Näppäimistökartta" Comment="Keyboard Layout" />
+    <Text Key="KeyboardLayoutFilter" Text="Näppäimistökartta|*.xml" Comment="Keyboard Layout|*.xml" />
+  </Texts>
+</TR>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicPagesView" CultureName="pl">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Posortowane wg {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Zmień rozmiar miniatur" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Pogrupowane wg {0}" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="&amp;Szczegóły" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="&amp;Miniatury" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Kafelki" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Brak" Comment="None" />
+    <Text Key="NotArranged" Text="Nie posortowane" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Niepogrupowane" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Grupuj" Comment="Group" />
+    <Text Key="tbbSort" Text="Sortuj" Comment="Arrange" />
+    <Text Key="tbbView" Text="Widok" Comment="Views" />
+    <Text Key="tbFilter" Text="Filtruj Strony" Comment="Page Filter" />
+    <Text Key="miExpandAllGroups" Text="Rozwiń/zwiń wszystkie Grupy" Comment="Collapse/Expand all Groups" />
+    <Text Key="tbbGroup.Tooltip" Text="Grupuj Strony wg różnych kryteriów" Comment="Group Pages by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="Zmień porządek sortowania Stron" Comment="Change the sort order of the Pages" />
+    <Text Key="tbbView.Tooltip" Text="Zmień sposób wyświetlania Stron" Comment="Change how Pages are displayed" />
+  </Texts>
+</TR>

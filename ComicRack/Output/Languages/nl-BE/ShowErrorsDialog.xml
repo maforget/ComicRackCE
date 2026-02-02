@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ShowErrorsDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="btOk" Text="OK" Comment="OK" />
+    <Text Key="chItem" Text="Positie" Comment="Position" />
+    <Text Key="chProblem" Text="Probleem" Comment="Problem" />
+    <Text Key="ShowErrorsDialog" Text="Fouten" Comment="Errors" />
+  </Texts>
+</TR>

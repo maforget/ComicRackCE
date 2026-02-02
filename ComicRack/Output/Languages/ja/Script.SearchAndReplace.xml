@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.SearchAndReplace" CultureName="ja">
+  <Texts>
+    <Text Key="Cancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="Description" Text="コミック データの検索と置換用スクリプト" Comment="A script to to search and replace values in eComics" />
+    <Text Key="Caption" Text="検索と置換..." Comment="Search and Replace..." />
+    <Text Key="Name" Text="検索と置換..." Comment="Search and Replace..." />
+    <Text Key="labelField" Text="種類:" Comment="Fields:" />
+    <Text Key="labelSearch" Text="検索:" Comment="Search:" />
+    <Text Key="labelReplace" Text="置換" Comment="Replace" />
+       <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+   <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+  </Texts>
+</TR>

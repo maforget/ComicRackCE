@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CrashDialog" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="labelMessage" Text="請提交以下報告以幫助我們改進 ComicRack。此報告不包含任何可以識別您身份的信息。" Comment="Please help to make ComicRack a better application by submitting the follwing report. This report does not contain any data that could identify you." />
+    <Text Key="chkSubmit" Text="提交" Comment="Submit" />
+    <Text Key="btDetails" Text="詳情" Comment="Details" />
+    <Text Key="btResume" Text="嘗試繼續" Comment="Try Resume" />
+    <Text Key="btRestart" Text="重啟" Comment="Restart" />
+    <Text Key="btExit" Text="退出" Comment="Exit" />
+    <Text Key="CrashDialog" Text="ComicRack 遇到問題..." Comment="ComicRack encountered a Problem..." />
+  </Texts>
+</TR>

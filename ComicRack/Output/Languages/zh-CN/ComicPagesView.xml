@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPagesView" CultureName="zh-CN">
+  <Texts>
+    <Text Key="ArrangedBy" Text="按 {0} 排序" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="更改缩略图大小" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="按 {0} 分组" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="详细信息(&amp;D)" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="缩略图(&amp;H)" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="平铺(&amp;T)" Comment="&amp;Tiles" />
+    <Text Key="None" Text="无" Comment="None" />
+    <Text Key="NotArranged" Text="未排序" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="无分组" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="分组" Comment="Group" />
+    <Text Key="tbbSort" Text="排序" Comment="Arrange" />
+    <Text Key="tbbView" Text="视图" Comment="Views" />
+    <Text Key="tbFilter" Text="页面筛选" Comment="Page Filter" />
+    <Text Key="miExpandAllGroups" Text="折叠/展开所有分组" Comment="Collapse/Expand all Groups" />
+    <Text Key="tbbGroup.Tooltip" Text="按不同标准分组页面" Comment="Group Pages by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="更改页面的排序依据" Comment="Change the sort order of the Pages" />
+    <Text Key="tbbView.Tooltip" Text="更改页面的显示方式" Comment="Change how Pages are displayed" />
+  </Texts>
+</TR>

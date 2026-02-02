@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.SearchAndReplace" CultureName="fi">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Peruuta" Comment="&amp;Cancel" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="Description" Text="Etsi ja korvaa -skripti eSarjiksen arvoille" Comment="A script to to search and replace values in eComics" />
+    <Text Key="Caption" Text="Etsi ja korvaa..." Comment="Search and Replace..." />
+    <Text Key="Name" Text="Etsi ja korvaa..." Comment="Search and Replace..." />
+    <Text Key="labelField" Text="Kentät:" Comment="Fields:" />
+    <Text Key="labelSearch" Text="Etsi:" Comment="Search:" />
+    <Text Key="labelReplace" Text="Korvaa" Comment="Replace" />
+  </Texts>
+</TR>

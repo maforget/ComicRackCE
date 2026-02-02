@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Settings" CultureName="tr">
+  <Texts>
+    <Text Key="Application" Text="Uygulama" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="İmleç sınır yakınındaysa büyüteci otomatik olarak kaldır" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="AutoNavigateComics" Text="İlk veya son sayfanın ötesinde sayfaya geçmek sıradaki e-Çizgi Romanı açar" Comment="Reading beyond the start or end opens the next eComic " />
+    <Text Key="Browser" Text="Tarayıcı" Comment="Browser" />
+    <Text Key="CloseBrowserOnOpen" Text="Yeni bir e-Çizgi Roman açıldığında tarayıcıyı kapat" Comment="Close the Browser when a new eComic is opened" />
+    <Text Key="CloseMinimizesToTray" Text="Kapatma eylemi ComicRack'ı Bildirim Alanı'na gönderir" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="Yeni yüklenmiş küçük ikonlara 'yavaşça belirginleşme' efekti uygulansın" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="Tam Ekran Durumundayken fare imlecini gizle" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="Küçük İkonları en yüksek kalitede göster (Yavaş)" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="MinimizeToTray" Text="Pencere küçültme eylemi ComicRack'ı Bildirim Alanı'na gönderir" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="ComicRack'den son haberleri kontrol et" Comment="Check for latest news on ComicRack" />
+    <Text Key="Opening an eComic" Text="e-Çizgi Roman Aç" Comment="Opening an eComic" />
+    <Text Key="OpenLastFile" Text="Son okunmuş e-Çizgi Romanı yeniden aç" Comment="Reopen the last eComics read" />
+    <Text Key="OpenLastPage" Text="e-Çizgi Romanın son kapatıldığı sayfayı aç" Comment="Open the eComic at the page where it was closed" />
+    <Text Key="PageChangeDelay" Text="Sayfa geçişlerinde Fare Tekerleği ve Tuşlarını gecikmeli çalıştır" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="Reading" Text="Okuma Ayarları" Comment="Reading" />
+    <Text Key="ScanStartup" Text="Yeni e-Çizgi Romanlar için Kütüphane Klasörleri içinde tarama yap" Comment="Rescan the Library Folders for new eComics" />
+    <Text Key="ShowSplash" Text="Sıçrama Ekranını Görüntüle" Comment="Show Splash Screen" />
+    <Text Key="ShowToolTips" Text="e-Çizgi Roman için Tarayıcı içinde araç ipuçlarını görüntüle" Comment="Show Tooltips for eComics in the Browser" />
+    <Text Key="Starting ComicRack" Text="ComicRack Başlangıç Ayarları" Comment="Starting ComicRack" />
+    <Text Key="UseSystemColors" Text="Kullanıcı arayüzü mevcut Sistem Renk Tercihlerini kullanır" Comment="The User Interface uses the current System Theme Colors" />
+    <Text Key="AddToLibraryOnOpen" Text="e-Çizgi Romanları Kütüphaneye ekle " Comment="Add eComics to the Library" />
+    <Text Key="Manga" Text="Manga " Comment="Manga" />
+    <Text Key="TrueRightToLeftReading" Text="Tümüyle sağdan sola okuma düzeni" Comment="True right to left reading" />
+    <Text Key="LeftRightMovementReversed" Text="Sol/sağ hareketi de tersine çevrildi" Comment="Left/right movement is also reversed" />
+    <Text Key="Right to Left" Text="Sağdan sola" Comment="Right to Left" />
+    <Text Key="AutoMinimalGui" Text="Tam Ekran aynı zamanda minimal kullanıcı arayüzünü çalıştırır" Comment="Fullscreen also toggles Minimal User Interface" />
+    <Text Key="AlwaysShowTabs" Text="e-Çizgi Roman sekmelerini her zaman göster" Comment="Always show eComic Tabs" />
+    <Text Key="AnimatePanels" Text="Açılan ve kapanan panellere animasyonlar ekle" Comment="Animate expanding and collapsing Panels" />
+    <Text Key="ResetZoomOnPageChange" Text="Sayfa değişimlerinde odak %100'e geri döner" Comment="Zoom is reset to 100% on page change" />
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="Tarayıcı penceresinin Yanaşma Efekti'ni her zaman uygula" Comment="Always display Browser Docking Grip" />
+    <Text Key="AutoHideMainMenu" Text="Ana Menüyü otomatik gizle (Alt tuşuyla göster)" Comment="Autohide Main Menu (show with Alt)" />
+    <Text Key="InformationCover3D" Text="e-Çizgi Roman Bilgi Bölümündeki kapakların 3D görünümü" Comment="3D display of covers in Comic Info Dialog" />
+  </Texts>
+</TR>

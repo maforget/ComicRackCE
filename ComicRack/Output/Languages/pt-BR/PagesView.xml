@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PagesView" CultureName="pt-BR">
+  <Texts>
+    <Text Key="miCopy" Text="&amp;Copiar Página" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Inverter Seleção" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="Marcar como &amp;Deletado" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="Tipo de página" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="&amp;Atualizar" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="Selecionar &amp;Tudo" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="Inserir Marcador" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="Remover Marcador" Comment="Remove Bookmark" />
+    <Text Key="miResetOriginalOrder" Text="Resetar Ordem original" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="Rotação de Página" Comment="Page Rotation" />
+    <Text Key="miMoveToTop" Text="Mover para o Topo" Comment="Move to Top" />
+    <Text Key="miMoveToBottom" Text="Mover para o Rodapé" Comment="Move to Bottom" />
+    <Text Key="miPagePosition" Text="Posição de Página" Comment="Page Position" />
+    <Text Key="miPagePositionDefault" Text="Padrão" Comment="Default" />
+    <Text Key="miPagePositionNear" Text="Próximo" Comment="Near" />
+    <Text Key="miPagePositionFar" Text="Distante" Comment="Far" />
+  </Texts>
+</TR>

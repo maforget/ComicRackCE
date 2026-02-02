@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.CommitProposed" CultureName="zh-CN">
+  <Texts>
+    <Text Key="AskCommit" Text="确定要使用建议值吗?\n建议值根据文件名生成并以灰色显示" Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
+    <Text Key="Name" Text="生成信息建议值..." Comment="Commit Proposed Values..." />
+    <Text Key="Overwrite" Text="并覆盖当前值(&amp;A)" Comment="&amp;Also overwrite existing values" />
+    <Text Key="Write" Text="写入" Comment="Write" />
+    <Text Key="Description" Text="生成书籍信息的建议值" Comment="A script to makes the proposed values for the Book permanent" />
+  </Texts>
+</TR>

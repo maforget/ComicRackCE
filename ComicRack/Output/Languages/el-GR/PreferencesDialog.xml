@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PreferencesDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="btAddFolder" Text="&amp;Εισαγωγή..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="Προσθήκη Φακέλου..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="&amp;Εφαρμογή" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="&amp;Αλλαγή..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="Εκκαθάριση" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="Εκκαθάριση" Comment="Clear" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="&amp;Απομάκρυνση" Comment="&amp;Remove" />
+    <Text Key="btResetColor" Text="&amp;Επαναφορά" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="Επαναφορά" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="Επαναφορά &amp;Προεπιλεγμένων" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="Σάρωση" Comment="Scan" />
+    <Text Key="chkAutoContrast" Text="Αυτόματη Βελτίωση της &amp;Αντίθεσης  " Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="Αυτόματη απομάκρυνση των απόντων αρχείων από τη Βιβλιοθήκη" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="&amp;Σελίδες [MB]" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableThumbnailCache" Text="&amp;Μικρογραφίες [MB]" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkOverwriteAssociations" Text="Ενσωμάτωση των τρεχουσών συνεργασιών στο  Άνοιγμα με...  " Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="Συνθηματικό:" Comment="Require Password:" />
+    <Text Key="colOptions" Text="Επιλογές" Comment="Options" />
+    <Text Key="groupDiskCache" Text="Μνήμη στον Δίσκο" Comment="Disk Cache" />
+    <Text Key="groupMessages" Text="Απόκρυψη Μηνυμάτων" Comment="Hidden Messages" />
+    <Text Key="groupOverlays" Text="Επικαλύψεις" Comment="Overlays" />
+    <Text Key="grpIntegration" Text="Ενσωμάτωση στο Περιηγητή" Comment="Explorer Integration" />
+    <Text Key="labelBrightness" Text="Ρύθμιση Φωτεινότητας:" Comment="Brightness Adjustment:" />
+    <Text Key="labelCheckedFormats" Text="Επιλογή τύπου αρχείων που θα συνεργάζονται με το ComicRack" Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelContrast" Text="Ρύθμιση Αντίθεσης:" Comment="Contrast Adjustment:" />
+    <Text Key="labelExcludeCover" Text="Προσθέστε μια άνω τελεία ανάμεσα στα ονόματα των εικόνων για να μην χρησιμοποιούνται ως μικρογραφίες εξώφυλλου:" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelLanguage" Text="Επιλογή γλώσσας για το Περιβάλλον Χρήστη (απαιτείται επανεκκίνηση του ComicRack για να εφαρμοστούν οι αλλαγές):" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlaySize" Text="Μέγεθος:" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="Επανεμφάνιση των κρυφών Ειδήσεων" Comment="To reshow hidden messages press" />
+    <Text Key="labelSaturation" Text="Ρύθμιση Κορεσμού:" Comment="Saturation Adjustment:" />
+    <Text Key="labelScriptPaths" Text="Προσθέστε μια άνω τελεία ανάμεσα στις διαδρομές των βιβλιοθηκών για τις Δέσμες ενεργειών (π.χ. python):" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="Διαμοιραστής:" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="Έλεγχος φακέλων για τυχόν αλλαγές (απομάκρυνση, μετονομασία) κατά την εκτέλεση του προγράμματος." Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="Προτιμήσεις" Comment="Preferences" />
+    <Text Key="Scan" Text="Σάρωση" Comment="Scan" />
+    <Text Key="tabAdvanced" Text="Εξειδικευμένες" Comment="Advanced" />
+    <Text Key="tabBehavior" Text="Προσαρμογή" Comment="Behavior" />
+    <Text Key="Scanning" Text="Σάρωση '{0}' ..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectScriptFolder" Text="Παρακαλώ, επιλέξτε φάκελο για τη βιβλιοθήκη των Δεσμών ενεργειών" Comment="Please select a script library folder" />
+    <Text Key="Stop" Text="Διακοπή" Comment="Stop" />
+    <Text Key="labelMemPageCount" Text="Σελίδες [αριθμός]" Comment="Pages [count]" />
+    <Text Key="labelMemThumbSize" Text="Μικρογραφίες [MB]" Comment="Thumbnails [MB]" />
+    <Text Key="chkMemPageOptimized" Text="βέλτιστη" Comment="optimized" />
+    <Text Key="chkMemThumbOptimized" Text="βέλτιστη" Comment="optimized" />
+    <Text Key="groupMemoryCache" Text="Λανθάνουσα Μνήμη" Comment="Memory Cache" />
+    <Text Key="grpDatabaseBackup" Text="Αντίγραφο Ασφαλείας Βάσης Δεδομένων" Comment="Database Backup" />
+    <Text Key="btBackupDatabase" Text="Αντίγραφο Ασφαλείας Βάσης Δεδομένων..." Comment="Backup Database..." />
+    <Text Key="btRestoreDatabase" Text="Επανάκτηση Βάσης Δεδομένων..." Comment="Restore Database..." />
+    <Text Key="btTranslate" Text="Βοηθήστε στη μετάφραση του ComicRack..." Comment="Help localizing ComicRack..." />
+    <Text Key="tabReader" Text="Αναγνωστήριο" Comment="Reader" />
+    <Text Key="tabOverlaysAndEffects" Text="Επικαλύψεις &amp;&amp; Εφέ" Comment="Overlays &amp;&amp; Effects" />
+    <Text Key="chkEnableHardware" Text="Ενεργοποίηση Επιτάχυνσης Υλικού" Comment="Enable Hardware Acceleration" />
+    <Text Key="chkEnablePageTransition" Text="Ενεργοποίηση Μεταβάσεων Σελίδας" Comment="Enable Page Transitions" />
+    <Text Key="chkEnableDisplayChangeAnimation" Text="Ενεργοποίηση Κίνησης κατά την αλλαγή Σελίδων" Comment="Enable Animation of Page Display changes" />
+    <Text Key="chkSmoothAutoScrolling" Text="Απαλή Αυτόματη Κύλιση" Comment="Smooth Auto Scrolling" />
+    <Text Key="lblFast" Text="γρήγορη" Comment="fast" />
+    <Text Key="lblSlow" Text="αργή" Comment="slow" />
+    <Text Key="grpKeyboard" Text="Πληκτρολόγιο" Comment="Keyboard" />
+    <Text Key="lblMouseWheel" Text="Κύλιση Ρόδας Ποντικιού:" Comment="Mouse Wheel scrolling:" />
+    <Text Key="chkHighQualityDisplay" Text="&amp;Υψηλή Ποιότητα" Comment="&amp;High Quality" />
+    <Text Key="groupHardwareAcceleration" Text="Επιτάχυνση Υλικού" Comment="Hardware Acceleration" />
+    <Text Key="grpSharing" Text="Διαμοιρασμός" Comment="Sharing" />
+    <Text Key="grpScanning" Text="Αναζήτηση" Comment="Scanning" />
+    <Text Key="grpLanguages" Text="Γλώσσες" Comment="Languages" />
+    <Text Key="tabLibraries" Text="Βιβλιοθήκες" Comment="Libraries" />
+    <Text Key="chkEnableHardwareFiltering" Text="Ενεργοποίηση Φίλτρων (Υλικό)" Comment="Enable Hardware Filters" />
+    <Text Key="chkEnableSoftwareFiltering" Text="Ενεργοποίηση Φίλτρων (Λογισμικό) " Comment="Enable Software Filters" />
+    <Text Key="colName" Text="Όνομα" Comment="Name" />
+    <Text Key="chkAnamorphicScaling" Text="Ενεργή Αναμόρφωση" Comment="Anamorphic Scaling" />
+    <Text Key="chkDisableScripting" Text="Απενεργοποίηση όλων τον Scripts" Comment="Disable all Scripts" />
+    <Text Key="grpScripts" Text="Διαθέσιμα Scripts" Comment="Available Scripts" />
+    <Text Key="grpPackages" Text="Πακέτα Script" Comment="Script Packages" />
+    <Text Key="grpScriptSettings" Text="Ρυθμίσεις Script" Comment="Script Settings" />
+    <Text Key="tabScripts" Text="Scripts" Comment="Scripts" />
+    <Text Key="btInstallPackage" Text="Εγκατάσταση..." Comment="Install..." />
+    <Text Key="btRemovePackage" Text="Απομάκρυνση" Comment="Remove" />
+    <Text Key="colPackage" Text="Πακέτο" Comment="Package" />
+    <Text Key="colAuthor" Text="Συντάκτης" Comment="Author" />
+    <Text Key="colDescription" Text="Περιγραφή" Comment="Description" />
+    <Text Key="packageGroupInstalled" Text="Εγκαταστάθηκε" Comment="Installed" />
+    <Text Key="packageGroupInstall" Text="Για να εγκατασταθεί (απαιτείται επανεκκίνηση)" Comment="To be installed (needs restart)" />
+    <Text Key="packageGroupRemove" Text="Για να αφαιρεθεί (απαιτείται επανεκκίνηση)" Comment="To be removed (needs restart)" />
+    <Text Key="btClearInternetCache" Text="Εκκαθάριση" Comment="Clear" />
+    <Text Key="chkEnableInternetCache" Text="&amp;Διαδίκτυο [MB]" Comment="&amp;Internet [MB]" />
+    <Text Key="btAssociateExtensions" Text="Αλλαγή..." Comment="Change..." />
+    <Text Key="grpServerSettings" Text="Ρυθμίσεις Διακομιστή" Comment="Server Settings" />
+    <Text Key="labelShareDescription" Text="Περιγραφή:" Comment="Description:" />
+    <Text Key="chkPrivate" Text="Ιδιωτικό" Comment="Private" />
+    <Text Key="chkShareInternet" Text="Κοινόχρηστα στο Διαδικτύο" Comment="Share on the Internet" />
+    <Text Key="btAddShare" Text="Προσθήκη Κοινόχρηστου" Comment="Add Share" />
+    <Text Key="btRemoveShare" Text="Απομάκρυνση" Comment="Remove" />
+    <Text Key="labelPrivateListPassword" Text="Κωδικός πρόσβασης για την προστασία των κοινόχρηστων στο Διαδικτύο:" Comment="Password used to protect your private Internet Share list entries:" />
+    <Text Key="labelSharpening" Text="Όξυνση:" Comment="Sharpening:" />
+    <Text Key="labelPublicServerAddress" Text="Εξωτερική διεύθυνση κοι κοινόχρηστου διακομιστή:" Comment="External address of your server if ComicRack should not guess it correctly:" />
+    <Text Key="chkDontAddRemovedFiles" Text="Τα αρχεία απομακρύνθηκαν χειροκίνητα από τη βιβλιοθήκη και δεν θα προστεθούν ξανά" Comment="Files manually removed from the Library will not be added again" />
+    <Text Key="btConfigScript" Text="Ρύθμιση..." Comment="Config..." />
+    <Text Key="btOpenFolder" Text="Άνοιγμα" Comment="Open" />
+    <Text Key="labelPageQuality" Text="Ποιότητα Σελίδας:" Comment="Page Quality:" />
+    <Text Key="labelThumbQuality" Text="Ποιότητα Μικρογραφίας:" Comment="Thumb Quality:" />
+    <Text Key="chkAutoConnectShares" Text="Αυτόματη Σύνδεση" Comment="Connect automatically" />
+    <Text Key="btExportKeyboard" Text="Εξαγωγή..." Comment="Export..." />
+    <Text Key="btImportKeyboard" Text="Εισαγωγή..." Comment="Import..." />
+    <Text Key="miDefaultKeyboardLayout" Text="Προεπιλογή" Comment="Default" />
+    <Text Key="cbShare.Item0" Text="Όχι Κοινόχρηστα " Comment="Share None" />
+    <Text Key="cbShare.Item1" Text="Όλα Κοινόχρηστα" Comment="Share All" />
+    <Text Key="cbShare.Item2" Text="Επιλεγμένα Κοινόχρηστα" Comment="Share Selected" />
+    <Text Key="grpShareSettings" Text="Ρυθμίσεις" Comment="Settings" />
+    <Text Key="chkShowNavigationOverlay" Text="Αυτόματη εμφάνιση Πλοήγησης " Comment="Show Navigation automatically" />
+    <Text Key="chkShowCurrentPageOverlay" Text="Εμφάνιση τρέχουσας Σελίδας" Comment="Show current Page" />
+    <Text Key="chkShowVisiblePartOverlay" Text="Εμφάνιση ορατού τμήματος σελίδας" Comment="Show visible Page Part" />
+    <Text Key="chkShowPageNames" Text="Εμφάνιση τρέχουσας σελίδας και όνομα σελίδας" Comment="Current Page also displays Page Name" />
+    <Text Key="chkShowStatusOverlay" Text="Παρουσίαση μηνυμάτων και κατάστασης" Comment="Show Messages and Status" />
+    <Text Key="labelPageOverlay" Text="Σελίδα" Comment="Page" />
+    <Text Key="labelVisiblePartOverlay" Text="Ορατό τμήμα" Comment="Visible Part" />
+    <Text Key="labelStatusOverlay" Text="Μηνυμάτα και κατάσταση" Comment="Messages and Status" />
+    <Text Key="labelNavigationOverlay" Text="Πλοήγηση " Comment="Navigation" />
+    <Text Key="labelNavigationOverlayPosition" Text="Πλοήγηση:" Comment="Navigation:" />
+    <Text Key="cbNavigationOverlayPosition.Item0" Text="στα τελευταία" Comment="at Bottom" />
+    <Text Key="cbNavigationOverlayPosition.Item1" Text="στην κορυφή" Comment="on Top" />
+    <Text Key="PageNumberOnly" Text="Σελίδα" Comment="Page" />
+    <Text Key="PageNumberAndName" Text="Σελίδα\nΌνομα" Comment="Page\nName" />
+    <Text Key="chkLookForShared" Text="Αναζήτηση για κοινόχρηστες Βιβλιοθήκες Κόμικς" Comment="Look for local Book Shares" />
+    <Text Key="chkClientsCanEdit" Text="Οι πελάτες μπορούν να επεξεργαστούν τις ιδιότητες του eComic " Comment="Clients can edit Books" />
+    <Text Key="chkClientsCanExport" Text="Πελάτες μπορούν να εξάγουν eComics" Comment="Clients can export Books" />
+    <Text Key="chkUpdateComicFiles" Text="Επιτρέπεται η εγγραφή πληροφοριών του eComic στα αρχεία" Comment="Allow writing of Book info into files" />
+    <Text Key="chkAutoUpdateComicFiles" Text="Τα αρχεία του eComic θα ενημερωθούν αυτόματα" Comment="Book files are updated automatically" />
+    <Text Key="groupComicFolders" Text="Φάκελοι eComic" Comment="Book Folders" />
+    <Text Key="groupOtherComics" Text="eComics" Comment="Books" />
+    <Text Key="SelectComicFolder" Text="Παρακαλώ, επιλέξτε ένα φάκελο που να περιέχει eComics" Comment="Please select a folder containing Books" />
+    <Text Key="labelGamma" Text="Προσαρμογή Gamma:" Comment="Gamma Adjustment:" />
+    <Text Key="grpDisplay" Text="Απεικόνιση" Comment="Display" />
+    <Text Key="chkEnableInertialMouseScrolling" Text="Ενεργοποίηση Αδρανειακής κύλισης ποντικιού " Comment="Enable Inertial Mouse scrolling" />
+    <Text Key="grpMouse" Text="Ποντίκι" Comment="Mouse &amp; Scrolling" />
+    <Text Key="chkHideSampleScripts" Text="Απόκρυψη δειγμάτων Scripts" Comment="Hide sample Scripts" />
+  </Texts>
+</TR>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PluginEngine" CultureName="nl-BE">
+  <Texts>
+    <Text Key="EditUpdateBooksCommands" Text="Bewerk/Ververs Boek Commando's" Comment="Edit/Update Books Commands" />
+    <Text Key="CreateNewBooksCommands" Text="Creëer Nieuwe Boeken Commando's" Comment="Create New Books Commands" />
+    <Text Key="ActionswhenBooksareopened" Text="Acties bij geopende boeken" Comment="Actions when Books are opened" />
+    <Text Key="ActionswhenReaderisresized" Text="Acties bij het herschalen van het Leesvenster" Comment="Actions when Reader is resized" />
+    <Text Key="AdditionalSearchProviders" Text="Bijkomende zoekmodules" Comment="Additional Search Providers" />
+    <Text Key="QuickOpenPanels" Text="Snel Open vensters" Comment="Quick Open Panels" />
+    <Text Key="BookPathParsers" Text="Boek Pad Parsers" Comment="Book Path Parsers" />
+    <Text Key="ActionswhenComicRackstarts" Text="Acties wanneer ComicRack start" Comment="Actions when ComicRack starts" />
+    <Text Key="BookInformationPanels" Text="Boek Informatie vensters" Comment="Book Information Panels" />
+    <Text Key="CustomBookThumbnailOverlays" Text="Aangepaste boekminiaturen overlays" Comment="Custom Book Thumbnail Overlays" />
+  </Texts>
+</TR>

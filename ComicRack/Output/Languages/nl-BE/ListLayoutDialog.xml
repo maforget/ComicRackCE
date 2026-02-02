@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListLayoutDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Annuleer" Comment="&amp;Cancel" />
+    <Text Key="btHideAll" Text="&amp;Verberg alles" Comment="&amp;Hide All" />
+    <Text Key="btMoveDown" Text="Neerwaarts" Comment="Move &amp;Down" />
+    <Text Key="btMoveUp" Text="Naar Boven" Comment="Move &amp;Up" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btShowAll" Text="&amp;Toon Alles" Comment="&amp;Show All" />
+    <Text Key="chkHideCaption" Text="Toon geen tekst" Comment="Do not show any Text" />
+    <Text Key="labelSelectColumn" Text="Selecteer de kolommen die u wil weergeven:" Comment="Please select the columns you want to show:" />
+    <Text Key="labelHint" Text="Hint: De kolomweergave kan ook gewijzigd worden door een Rechts-klik op de 'Columnheader'." Comment="Hint: You can also change the displayed columns by right clicking on a column header." />
+    <Text Key="labelFirstLine" Text="Eerste lijn:" Comment="First Line:" />
+    <Text Key="labelSecondLine" Text="Tweede lijn:" Comment="Second Line:" />
+    <Text Key="labelThirdLine" Text="Derde lijn:" Comment="Third Line:" />
+    <Text Key="labelSelectThumbnailText" Text="Selecteer de tekst die u onder de Miniaturen wil weergeven:" Comment="Please select the text you want to display below the thumbnails:" />
+    <Text Key="ListLayoutDialog" Text="Lijst Opties" Comment="List Options" />
+    <Text Key="tabDetails" Text="Details" Comment="Details" />
+    <Text Key="tabThumbnails" Text="Miniaturen" Comment="Thumbnails" />
+    <Text Key="colName" Text="Naam" Comment="Name" />
+    <Text Key="colDescription" Text="Omschrijving" Comment="Description" />
+    <Text Key="btApply" Text="&amp;Toepassen" Comment="&amp;Apply" />
+    <Text Key="tabTiles" Text="Tegels" Comment="Tiles" />
+    <Text Key="btTilesDefault" Text="Standaard" Comment="Default" />
+  </Texts>
+</TR>

@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBrowserControl" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Uspořádat podle {0}" Comment="Arranged by {0}" />
+    <Text Key="ComicFiltered" Text="{0} filtrováno" Comment="{0} filtered" />
+    <Text Key="ComicSelected" Text="{0} vybráno" Comment="{0} selected" />
+    <Text Key="GroupedBy" Text="Seskupit podle {0}" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="&amp;Přidat do Knihovny..." Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="Automatizace" Comment="Automation" />
+    <Text Key="miCopyData" Text="&amp;Kopírovat data" Comment="&amp;Copy Data" />
+    <Text Key="miInvertSelection" Text="&amp;Invertovat výběr" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="&amp;Označit jako" Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="&amp;Přečteno" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="&amp;Nepřečteno" Comment="&amp;Unread" />
+    <Text Key="miPasteData" Text="&amp;Vložit data..." Comment="&amp;Paste Data..." />
+    <Text Key="miProperties" Text="&amp;Informace..." Comment="&amp;Get Info..." />
+    <Text Key="miRateMenu" Text="Moje &amp;hodnocení" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="Žádné" Comment="None" />
+    <Text Key="miRating1" Text="* (1 Hvězdička)" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** (2 Hvězdičky)" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** (3 Hvězdičky)" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** (4 Hvězdičky)" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** (5 Hvězdiček)" Comment="***** (5 Stars)" />
+    <Text Key="miRead" Text="&amp;Otevřít" Comment="&amp;Open" />
+    <Text Key="miReadTab" Text="Otevřít v novém panelu" Comment="Open in new Tab" />
+    <Text Key="miRefreshInformation" Text="Obnovit" Comment="Refresh" />
+    <Text Key="miRemove" Text="&amp;Odstranit..." Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="Ukázat knihu v &amp;Průzkumníku" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="Vše" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="Rychlé hledání kontroluje všechna dostupná data" Comment="Quick Search is checking all available data" />
+    <Text Key="miSearchArtists" Text="Umělce" Comment="Artists" />
+    <Text Key="miSearchArtists.Tooltip" Text="Rychlé hledání prohledává všechny umělce" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="Poznámku" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="Rychlé hledání prohledává všechny poznámky a obsahy" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="Soubor" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="Rychlé hledání prohledává jen názvy souborů" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="Sérii" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="Rychlé hledání prohledává jen názvy sérií" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="Autora" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="Rychlé hledání prohledává jen autory" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="Vybrat &amp;vše" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="Nastavit jako výtisk na vrchu svazku" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="&amp;Procházet komiksy" Comment="&amp;Browse Comics" />
+    <Text Key="miShowOnlyAllComics" Text="Ukázat vše" Comment="Show All" />
+    <Text Key="miShowOnlyReadComics" Text="Ukázat přečtené" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="Ukázat právě čtené" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="Ukázat ještě nečtené" Comment="Show not Read" />
+    <Text Key="miShowOnlyDuplicates" Text="Zobrazit duplikáty" Comment="Show Duplicates" />
+    <Text Key="miViewDetails" Text="&amp;Detaily" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="M&amp;iniatury" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Dlaždice" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Žádné" Comment="None" />
+    <Text Key="NotArranged" Text="Bez setřídění" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Bez seskupení" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="Bez svazku" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="Do svazku podle {0}" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="Seskupit" Comment="Group" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="Zavřít tento svazek" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="Uspořádat" Comment="Arrange" />
+    <Text Key="tbbStack" Text="Do svazku" Comment="Stack" />
+    <Text Key="tbbView" Text="Zobrazení" Comment="Views" />
+    <Text Key="tsEditListLayout" Text="&amp;Upravit rozvržení seznamu..." Comment="&amp;Edit List Layout..." />
+    <Text Key="tsSaveListLayout" Text="&amp;Uložit rozvržení seznamu..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsListLayouts" Text="Rozvržení seznamů" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="Upravit rozvržení seznamů" Comment="Manage List Layouts" />
+    <Text Key="miSetListBackground" Text="Nastavit jako pozadí seznamu" Comment="Set as List Background" />
+    <Text Key="miResetListBackground" Text="Obnovit pozadí seznamu" Comment="Reset List Background" />
+    <Text Key="miAddList" Text="Přidat do seznamu" Comment="Add to List" />
+    <Text Key="miEdit" Text="Upravit" Comment="Edit" />
+    <Text Key="miExportComicsWithPrevious" Text="Exportovat dle posledního nastavení" Comment="Export with Previous" />
+    <Text Key="miShowInList" Text="Zobrazit v seznamu" Comment="Show in List" />
+    <Text Key="tbbDuplicateList" Text="Duplikovat seznam" Comment="Duplicate List" />
+    <Text Key="tbbDuplicateList.Tooltip" Text="Duplikovat aktuální seznam" Comment="Duplicate current List" />
+    <Text Key="SearchingLists" Text="Prohledávání seznamů..." Comment="Searching Lists..." />
+    <Text Key="tbUndo" Text="Vrátit" Comment="Undo" />
+    <Text Key="tbRedo" Text="Opakovat" Comment="Redo" />
+    <Text Key="btDisplayAll" Text="Zobrazit vše" Comment="Display &amp;All" />
+    <Text Key="btCloseStack" Text="Zavřít svazek" Comment="&amp;Close Stack" />
+    <Text Key="btPrevStack" Text="Předešlý" Comment="&amp;Previous" />
+    <Text Key="btNextStack" Text="Další" Comment="&amp;Next" />
+    <Text Key="miShowOnlyFileless" Text="Zobrazit pouze položky bez souboru" Comment="Show only fileless Entries" />
+    <Text Key="tsEditLayouts" Text="U&amp;pravit uložená rozvržení..." Comment="&amp;Edit Layouts..." />
+    <Text Key="btBrowseNext" Text="Další" Comment="Next" />
+    <Text Key="btBrowsePrev" Text="Předchozí" Comment="Back" />
+    <Text Key="miSearchCatalog" Text="Katalog" Comment="Catalog" />
+    <Text Key="miSearchCatalog.Tooltip" Text="Rychlé hledání prohledává jen záznamy v katalozích" Comment="Quick Search is only checking Catalog entries" />
+    <Text Key="miSetStackThumbnail" Text="Nastavit vlastní miniaturu svazku..." Comment="Set custom Stack Thumbnail..." />
+    <Text Key="miRemoveStackThumbnail" Text="Odstranit vlastní miniaturu svazku..." Comment="Remove custom Stack Thumbnail..." />
+    <Text Key="miExpandAllGroups" Text="Zabalit/rozbalit všechny skupiny" Comment="Collapse/Expand all Groups" />
+    <Text Key="ComicMulti" Text="{0} eKomiksů" Comment="{0} Books" />
+    <Text Key="ComicSingle" Text="{0} eKomiks" Comment="{0} Book" />
+    <Text Key="miShowOnlyComics" Text="Zobrazit pouze eKomiksy" Comment="Show only Books" />
+    <Text Key="tbbGroup.Tooltip" Text="Seskupit eKomiksy podle jiného kritéria" Comment="Group Books by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="Změnit systém řazení eKomiksů" Comment="Change the sort order of the Books" />
+    <Text Key="tbbView.Tooltip" Text="Změnit jak a které eKomiksy se zobrazují" Comment="Change how and what Books are displayed" />
+    <Text Key="miExportComics" Text="Exportovat eKomiksy" Comment="Export Books" />
+    <Text Key="miExportComicsAs" Text="Exportovat eKomiksy..." Comment="Export Books..." />
+    <Text Key="lblDisplayOptionText" Text="Kvůli aktivovaným nastavením v sekci 'Zobrazení' neuvidíte úplně všechny eKomiksy" Comment="Because of active options in 'Views', not all Books are displayed" />
+    <Text Key="miUpdateComicFiles" Text="Upravit soubory eKomiksů" Comment="Update Book Files" />
+    <Text Key="tbSidebar" Text="Postranní panel" Comment="Sidebar" />
+    <Text Key="miEditList" Text="Upravit seznam" Comment="Edit List" />
+    <Text Key="miEditListMoveToTop" Text="Přesunout na začátek" Comment="Move to Top" />
+    <Text Key="miEditListMoveToBottom" Text="Přesunout na konec" Comment="Move to Bottom" />
+    <Text Key="miEditListApplyOrder" Text="Použít aktuální pořadí" Comment="Apply current Order" />
+    <Text Key="miClearData" Text="Vymazat data" Comment="Clear Data" />
+    <Text Key="miShowWeb" Text="Web..." Comment="Web..." />
+    <Text Key="miMarkChecked" Text="Označeno" Comment="Checked" />
+    <Text Key="miMarkUnchecked" Text="Neoznačeno" Comment="Unchecked" />
+  </Texts>
+</TR>

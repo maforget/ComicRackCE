@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Keyboard" CultureName="pl">
+  <Texts>
+    <Text Key="Browse" Text="Przeglądanie" Comment="Browse" />
+    <Text Key="Display Options" Text="Opcje Wyświetlania" Comment="Display Options" />
+    <Text Key="Exit" Text="Wyjście" Comment="Exit" />
+    <Text Key="FitAll" Text="Dopasuj do Okna" Comment="Fit All" />
+    <Text Key="FitBest" Text="Dopasuj Najlepiej" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="Dopasuj do Wysokości" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="Dopasuj do Szerokości" Comment="Fit Width" />
+    <Text Key="Library" Text="Biblioteka" Comment="Library" />
+    <Text Key="MoveDown" Text="W Dół" Comment="Down" />
+    <Text Key="MoveLeft" Text="W Lewo" Comment="Left" />
+    <Text Key="MoveNextPart" Text="Przewiń Stronę w Dół" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="Przewiń Stronę w Górę" Comment="Previous Part" />
+    <Text Key="MoveRight" Text="W Prawo" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="Pierwsza Strona" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="Ostatnia Strona" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="Następna Strona" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="Poprzednia Strona" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="W Górę" Comment="Up" />
+    <Text Key="NextTab" Text="Następna Karta" Comment="Next Tab" />
+    <Text Key="Other" Text="Pozostałe" Comment="Other" />
+    <Text Key="Page Display" Text="Układ Stron" Comment="Page Display" />
+    <Text Key="PrevTab" Text="Poprzednia Karta" Comment="Previous Tab" />
+    <Text Key="Scroll" Text="Przewijanie" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="Pokaż Przeglądarkę" Comment="Show Browser" />
+    <Text Key="ToggleFullScreen" Text="Przełącz Pełny Ekran" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="Przełącz Lupę" Comment="Toggle Magnifier" />
+    <Text Key="ToggleTwoPages" Text="Przełącz Tryb Dwustronny" Comment="Toggle Two Pages" />
+    <Text Key="ToggleUndockReader" Text="Przełącz podgląd w nowym Oknie" Comment="Toggle Undock Reader" />
+    <Text Key="RotateC" Text="Obróć w Prawo" Comment="Rotate Right" />
+    <Text Key="RotateCC" Text="Obróć w Lewo" Comment="Rotate Left" />
+    <Text Key="ZoomIn" Text="Powiększ" Comment="Zoom In" />
+    <Text Key="ZoomOut" Text="Pomniejsz" Comment="Zoom Out" />
+    <Text Key="Original" Text="Oryginalny Rozmiar" Comment="Original Size" />
+    <Text Key="MovePartDown10" Text="Przewiń 10% w dół" Comment="Move Part 10% down" />
+    <Text Key="MovePartUp10" Text="Przewiń 10% w górę" Comment="Move Part 10% up" />
+    <Text Key="FitWidthAdaptive" Text="Dopasuj do Szerokości (adaptacyjnie)" Comment="Fit Width (adaptive)" />
+    <Text Key="MoveFirstPart" Text="Początek Strony" Comment="Page Start" />
+    <Text Key="MoveLastPart" Text="Koniec Strony" Comment="Page End" />
+    <Text Key="Auto Scroll" Text="Auto przewijanie" Comment="Auto Scroll" />
+    <Text Key="ToggleAutoScrolling" Text="Włącz / wyłącz Auto Przewijanie" Comment="Toggle Auto Scrolling" />
+    <Text Key="DoublePageAutoScroll" Text="Przewijaj Podwójna Stronę poziomo" Comment="Double Page Auto Scroll" />
+    <Text Key="ToggleMenu" Text="Przełącz Menu" Comment="Toggle Menu" />
+    <Text Key="MoveToPrevBookmark" Text="Poprzednia Zakładka" Comment="Previous Bookmark" />
+    <Text Key="MoveToNextBookmark" Text="Następna Zakładka" Comment="Next Bookmark" />
+    <Text Key="MoveToPrevPageSingle" Text="Jedna Strona do Tyłu" Comment="Single Page Back" />
+    <Text Key="MoveToNextPageSingle" Text="Jedna Strona do Przodu" Comment="Single Page Forward" />
+    <Text Key="AutoRotate" Text="Obracaj Podwójne Sstrony" Comment="Autorotate Double Pages" />
+    <Text Key="PageRotateC" Text="Obróć w Prawo" Comment="RotatePageRight" />
+    <Text Key="PageRotateCC" Text="Obróć w Lewo" Comment="RotatePageLeft" />
+    <Text Key="Edit" Text="Edycja" Comment="Edit" />
+    <Text Key="ToggleRealisticPages" Text="Przełącz cień na brzegach Stron" Comment="Toggle Realistic Display" />
+    <Text Key="OnlyFitIfOversized" Text="Dopasuj tylko za duże" Comment="Only Fit if oversized" />
+    <Text Key="SinglePage" Text="Jedna Strona" Comment="Single Page" />
+    <Text Key="TwoPages" Text="Dwie Strony" Comment="Two Pages" />
+    <Text Key="RightToLeft" Text="Od Prawej do Lewej" Comment="Right to Left" />
+    <Text Key="ZoomAndRotate" Text="Powieksz i obróć" Comment="Zoom and Rotate" />
+    <Text Key="TwoPagesAdaptive" Text="Dwie Strony (adaptacyjnie)" Comment="Two Pages (adaptive)" />
+    <Text Key="StepZoomIn" Text="Powiększ o 1 poziom" Comment="Step Zoom In" />
+    <Text Key="StepZoomOut" Text="Pomniejsz o 1 poziom" Comment="Step Zoom Out" />
+    <Text Key="ToggleNavigationOverlay" Text="Przełącz Pasek nawigacyjny" Comment="Toggle Navigation Overlay" />
+    <Text Key="ToggleZoom" Text="Przełącz Powiększenie" Comment="Toggle Zoom" />
+    <Text Key="NextComic" Text="Następny Plik" Comment="Next Book" />
+    <Text Key="RandomComic" Text="Losowy Komiks" Comment="Random Book" />
+    <Text Key="PrevComic" Text="Poprzedni Plik" Comment="Previous Book" />
+    <Text Key="ToggleManga" Text="Przełącz tryb Mangi dla Komiksu" Comment="Toggle Manga for Book" />
+  </Texts>
+</TR>

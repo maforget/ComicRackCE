@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBookDialog" CultureName="es">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Cancelar" Comment="&amp;Cancel" />
+    <Text Key="btNext" Text="&amp;Siguiente" Comment="&amp;Next" />
+    <Text Key="btOK" Text="&amp;Aceptar" Comment="&amp;OK" />
+    <Text Key="btPrev" Text="&amp;Anterior" Comment="&amp;Previous" />
+    <Text Key="chkMangaStyle" Text="Estilo Manga" Comment="Manga Style" />
+    <Text Key="ComicBookDialog" Text="Información" Comment="Info" />
+    <Text Key="labelAlternateNumber" Text="Número:" Comment="Number:" />
+    <Text Key="labelAlternateSeries" Text="Título de la serie o Línea argumental alternativa:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelBrightness" Text="Brillo" Comment="Brightness" />
+    <Text Key="labelColorist" Text="Colorista:" Comment="Colorist:" />
+    <Text Key="labelContrast" Text="Contraste" Comment="Contrast" />
+    <Text Key="labelEditor" Text="Editor:" Comment="Editor:" />
+    <Text Key="labelFormat" Text="Formato:" Comment="Format:" />
+    <Text Key="labelGenre" Text="Género:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Imprime:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Entintador:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Idioma:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Rotulación:" Comment="Letterer:" />
+    <Text Key="labelMonth" Text="Mes:" Comment="Month:" />
+    <Text Key="labelNotes" Text="Notas:" Comment="Notes:" />
+    <Text Key="labelNumber" Text="Número:" Comment="Number:" />
+    <Text Key="labelOpened" Text="Abierto:" Comment="Opened:" />
+    <Text Key="labelPages" Text="Páginas:" Comment="Pages:" />
+    <Text Key="labelPenciller" Text="Dibujante:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Editorial:" Comment="Publisher:" />
+    <Text Key="labelSaturation" Text="Saturación" Comment="Saturation" />
+    <Text Key="labelSeries" Text="Serie:" Comment="Series:" />
+    <Text Key="labelSummary" Text="Resumen:" Comment="Summary:" />
+    <Text Key="labelTags" Text="Etiquetas:" Comment="Tags:" />
+    <Text Key="labelTitle" Text="Título:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Volumen:" Comment="Volume:" />
+    <Text Key="labelWhere" Text="Dónde:" Comment="Where:" />
+    <Text Key="labelWriter" Text="Guiónista:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Año:" Comment="Year:" />
+    <Text Key="tabColors" Text="Colores" Comment="Colors" />
+    <Text Key="tabPages" Text="Páginas" Comment="Pages" />
+    <Text Key="tabSummary" Text="Resumen" Comment="Summary" />
+    <Text Key="pageViewer" Text="Doble clic sobre Color para configurar un Punto Blanco" Comment="Double Click on Color to set White Point" />
+    <Text Key="btResetPages" Text="Reiniciar" Comment="Reset" />
+    <Text Key="btResetColors" Text="Reiniciar" Comment="Reset" />
+    <Text Key="labelPagesInfo" Text="Reordene las páginas mediante arrastrar y soltar y use el menú contextual para cambiarles el tipo:" Comment="Change the page order with drag &amp; drop or use the context menu to change page types:" />
+    <Text Key="labelType" Text="Tipo:" Comment="Type:" />
+    <Text Key="labelBlackAndWhite" Text="Blanco y Negro" Comment="Black and White" />
+    <Text Key="labelManga" Text="Manga" Comment="Manga:" />
+    <Text Key="labelEnableProposed" Text="Activar lo propuesto:" Comment="Enable Proposed:" />
+    <Text Key="labelAgeRating" Text="Clasificación por edades" Comment="Age Rating" />
+    <Text Key="tabPlot" Text="Trama y Notas" Comment="Plot &amp; Notes" />
+    <Text Key="labelCharacters" Text="Personajes:" Comment="Characters:" />
+    <Text Key="labelAlternateCount" Text="de:" Comment="of:" />
+    <Text Key="labelCoverArtist" Text="Artista de Portada:" Comment="Cover Artist:" />
+    <Text Key="labelCount" Text="de:" Comment="of:" />
+    <Text Key="labelSharpening" Text="Nitidez" Comment="Sharpening" />
+    <Text Key="btPageView" Text="Páginas" Comment="Pages" />
+    <Text Key="labelWeb" Text="Web:" Comment="Web:" />
+    <Text Key="labelEnableDynamicUpdate" Text="Incluir en actualizaciones:" Comment="Include in Updates:" />
+    <Text Key="labelTeams" Text="Equipos:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="Emplazamientos:" Comment="Locations:" />
+    <Text Key="tabDetails" Text="Detalles" Comment="Details" />
+    <Text Key="btLinkFile" Text="Enlazar al Archivo..." Comment="Link to File..." />
+    <Text Key="btThumbnail" Text="Miniatura..." Comment="Thumbnail..." />
+    <Text Key="labelMyRating" Text="Mi Valoración:" Comment="My Rating:" />
+    <Text Key="labelCommunityRating" Text="Valoración de la Comunidad:" Comment="Community Rating:" />
+    <Text Key="miResetThumbnail" Text="&amp;Por defecto" Comment="&amp;Default" />
+    <Text Key="labelBookStore" Text="Tienda:" Comment="Store:" />
+    <Text Key="labelBookOwner" Text="Propietario:" Comment="Owner:" />
+    <Text Key="labelBookLocation" Text="Ubicación:" Comment="Location:" />
+    <Text Key="labelBookAge" Text="Antigüedad:" Comment="Age:" />
+    <Text Key="labelBookCondition" Text="Condición:" Comment="Condition:" />
+    <Text Key="labelBookCollectionStatus" Text="Estado de la colección:" Comment="Collection Status:" />
+    <Text Key="labelBookNotes" Text="Notas:" Comment="Notes:" />
+    <Text Key="labelBookPrice" Text="Precio:" Comment="Price:" />
+    <Text Key="tabCatalog" Text="Catálogo" Comment="Catalog" />
+    <Text Key="labelISBN" Text="ISBN:" Comment="ISBN:" />
+    <Text Key="labelPagesAsTextSimple" Text="Páginas:" Comment="Pages:" />
+    <Text Key="labelGamma" Text="Gamma" Comment="Gamma" />
+    <Text Key="labelOpenedTime" Text="Abierto/Leído:" Comment="Opened/Read:" />
+    <Text Key="labelAddedTime" Text="Añadido/Comprado:" Comment="Added/Purchased:" />
+    <Text Key="labelSeriesComplete" Text="Serie completa:" Comment="Series complete:" />
+    <Text Key="chkShowImageControls" Text="Controles de imagen" Comment="Image Controls" />
+    <Text Key="labelScanInformation" Text="Información de Escaneo:" Comment="Scan Information:" />
+    <Text Key="labelStoryArc" Text="Arco Argumental:" Comment="Story Arc:" />
+    <Text Key="labelSeriesGroup" Text="Grupo de Serie:" Comment="Series Group:" />
+    <Text Key="labelMainCharacterOrTeam" Text="Personaje Principal/Equipo:" Comment="Main Character/Team:" />
+    <Text Key="tabPageReview" Text="Reseña" Comment="Review" />
+    <Text Key="tabPageNotes" Text="Notas" Comment="Notes" />
+    <Text Key="tabPageSummary" Text="Resumen" Comment="Summary" />
+    <Text Key="btApply" Text="&amp;Aplicar" Comment="&amp;Apply" />
+    <Text Key="miOrderByName" Text="Ordenar por Nombre" Comment="Order by Name" />
+    <Text Key="miOrderByNameNumeric" Text="Ordenar por Nombre (numérico)" Comment="Order by Name (numeric)" />
+    <Text Key="labelDay" Text="Día:" Comment="Day:" />
+    <Text Key="tabCustom" Text="Personalizar" Comment="Custom" />
+    <Text Key="labelReleasedTime" Text="Lanzamiento:" Comment="Released:" />
+    <Text Key="CustomValueKey" Text="Nombre" Comment="Name" />
+    <Text Key="CustomValueValue" Text="Valor" Comment="Value" />
+  </Texts>
+</TR>

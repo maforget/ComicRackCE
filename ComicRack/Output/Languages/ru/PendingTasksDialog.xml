@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PendingTasksDialog" CultureName="ru">
+  <Texts>
+    <Text Key="btOk" Text="OK" Comment="OK" />
+    <Text Key="colTask" Text="Задача" Comment="Task" />
+    <Text Key="colState" Text="Статус" Comment="State" />
+    <Text Key="lblItemCount" Text="{0} задачи выполняются" Comment="{0} Tasks are pending" />
+    <Text Key="PendingTasksDialog" Text="Выполнение фоновых задач" Comment="Pending Background Tasks" />
+    <Text Key="btAbort" Text="Отменить все задачи пльзователя" Comment="Abort all User Tasks" />
+  </Texts>
+</TR>

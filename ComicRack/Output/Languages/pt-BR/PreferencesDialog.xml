@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PreferencesDialog" CultureName="pt-BR">
+  <Texts>
+    <Text Key="btAddFolder" Text="&amp;Adicionar..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="Adicionar pasta..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="&amp;Aplicar" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="&amp;Cancelar" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="&amp;Modificar..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="Limpar" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="Limpar" Comment="Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="&amp;Remover" Comment="&amp;Remove" />
+    <Text Key="btResetColor" Text="&amp;Redefinir" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="Redefinir" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="Restaurar Pa&amp;drões" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="Varrer" Comment="Scan" />
+    <Text Key="chkAutoContrast" Text="Melhoria automática de &amp;contraste" Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="Remover arquivos ausentes da biblioteca durante varredura" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="&amp;Páginas [MB]" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableThumbnailCache" Text="&amp;Miniaturas [MB]" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkOverwriteAssociations" Text="Substituir associações existentes ao invés de 'Abrir com ...'" Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="Requer senha:" Comment="Require Password:" />
+    <Text Key="colOptions" Text="Opções" Comment="Options" />
+    <Text Key="groupMessages" Text="Mensagens ocultas" Comment="Hidden Messages" />
+    <Text Key="groupOverlays" Text="Destaques" Comment="Overlays" />
+    <Text Key="grpIntegration" Text="Integração com o Explorer" Comment="Explorer Integration" />
+    <Text Key="labelBrightness" Text="Ajuste de brilho:" Comment="Brightness Adjustment:" />
+    <Text Key="labelCheckedFormats" Text="Os formatos marcados serão associados ao ComicRack" Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelContrast" Text="Ajuste de contraste:" Comment="Contrast Adjustment:" />
+    <Text Key="labelExcludeCover" Text="Nomes de imagens separadas por ponto-e-vírgula nunca usadas como miniaturas de capas:" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelLanguage" Text="Selecione uma língua (ComicRack precisa ser reiniciado para que as mudanças surtam efeito):" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlaySize" Text="Tamanho:" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="Para reexibir mensagens escondidas pressione" Comment="To reshow hidden messages press" />
+    <Text Key="labelSaturation" Text="Ajuste de saturação:" Comment="Saturation Adjustment:" />
+    <Text Key="labelScriptPaths" Text="Nomes de pastas com scripts separadas por ponto-e-vírgula (ex.: rotinas python):" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="Nome:" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="As pastas marcadas serão monitoradas para alterações (renomear, mover) enquanto o programa estiver rodando." Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="Preferências" Comment="Preferences" />
+    <Text Key="Scan" Text="Varrer" Comment="Scan" />
+    <Text Key="tabAdvanced" Text="Avançado" Comment="Advanced" />
+    <Text Key="tabBehavior" Text="Comportamento" Comment="Behavior" />
+    <Text Key="Scanning" Text="Varrendo '{0}' ..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectScriptFolder" Text="Selecione uma pasta de scripts" Comment="Please select a script library folder" />
+    <Text Key="labelMemPageCount" Text="Páginas [contagem]" Comment="Pages [count]" />
+    <Text Key="labelMemThumbSize" Text="Miniaturas [MB]" Comment="Thumbnails [MB]" />
+    <Text Key="chkMemPageOptimized" Text="otimizada" Comment="optimized" />
+    <Text Key="chkMemThumbOptimized" Text="otimizada" Comment="optimized" />
+    <Text Key="Stop" Text="Parar" Comment="Stop" />
+    <Text Key="grpDatabaseBackup" Text="Backup do Banco de Dados" Comment="Database Backup" />
+    <Text Key="btBackupDatabase" Text="Salvar Banco de Dados..." Comment="Backup Database..." />
+    <Text Key="btRestoreDatabase" Text="Restaurar Banco de Dados..." Comment="Restore Database..." />
+    <Text Key="btTranslate" Text="Ajude traduzindo o ComicRack..." Comment="Help localizing ComicRack..." />
+    <Text Key="tabReader" Text="Leitor" Comment="Reader" />
+    <Text Key="tabOverlaysAndEffects" Text="Sobrepostos &amp;&amp; Efeitos" Comment="Overlays &amp;&amp; Effects" />
+    <Text Key="chkEnableHardware" Text="Habilitar Aceleração de Hardware" Comment="Enable Hardware Acceleration" />
+    <Text Key="chkEnablePageTransition" Text="Habilitar Transições de Páginas" Comment="Enable Page Transitions" />
+    <Text Key="chkEnableDisplayChangeAnimation" Text="Habilitar Animação de mudanças de Visualização de Página" Comment="Enable Animation of Page Display changes" />
+    <Text Key="chkSmoothAutoScrolling" Text="Auto-Rolamento Suave" Comment="Smooth Auto Scrolling" />
+    <Text Key="lblFast" Text="rápido" Comment="fast" />
+    <Text Key="lblSlow" Text="devagar" Comment="slow" />
+    <Text Key="grpKeyboard" Text="Teclado" Comment="Keyboard" />
+    <Text Key="lblMouseWheel" Text="Botão de rolagem do Mouse:" Comment="Mouse Wheel scrolling:" />
+    <Text Key="chkHighQualityDisplay" Text="&amp;Alta Qualidade" Comment="&amp;High Quality" />
+    <Text Key="chkEnableHardwareFiltering" Text="Habilitar Filtros de Hardware" Comment="Enable Hardware Filters" />
+    <Text Key="chkEnableSoftwareFiltering" Text="Habilitar Filtros de Software" Comment="Enable Software Filters" />
+    <Text Key="groupHardwareAcceleration" Text="Aceleração de Hardware" Comment="Hardware Acceleration" />
+    <Text Key="grpSharing" Text="Compartilhamento" Comment="Sharing" />
+    <Text Key="grpScanning" Text="Escaneando" Comment="Scanning" />
+    <Text Key="grpLanguages" Text="Idiomas" Comment="Languages" />
+    <Text Key="tabLibraries" Text="Bibliotecas" Comment="Libraries" />
+    <Text Key="colName" Text="Nome" Comment="Name" />
+    <Text Key="chkAnamorphicScaling" Text="Escala Anamórfica" Comment="Anamorphic Scaling" />
+    <Text Key="chkDisableScripting" Text="Desabilitar todos os Scripts" Comment="Disable all Scripts" />
+    <Text Key="grpScripts" Text="Scripts Disponíveis" Comment="Available Scripts" />
+    <Text Key="grpPackages" Text="Pacotes de Script" Comment="Script Packages" />
+    <Text Key="grpScriptSettings" Text="Configurações de Script" Comment="Script Settings" />
+    <Text Key="tabScripts" Text="Scripts" Comment="Scripts" />
+    <Text Key="btInstallPackage" Text="Instalar..." Comment="Install..." />
+    <Text Key="btRemovePackage" Text="Remover" Comment="Remove" />
+    <Text Key="colPackage" Text="Pacote" Comment="Package" />
+    <Text Key="colAuthor" Text="Autor" Comment="Author" />
+    <Text Key="colDescription" Text="Descrição" Comment="Description" />
+    <Text Key="packageGroupInstalled" Text="Instalado" Comment="Installed" />
+    <Text Key="packageGroupInstall" Text="Foi instalado (precisa reiniciar)" Comment="To be installed (needs restart)" />
+    <Text Key="packageGroupRemove" Text="Foi removido (precisa reiniciar)" Comment="To be removed (needs restart)" />
+    <Text Key="btAssociateExtensions" Text="Mudar..." Comment="Change..." />
+    <Text Key="btClearInternetCache" Text="Limpar" Comment="Clear" />
+    <Text Key="chkEnableInternetCache" Text="&amp;Internet [MB]" Comment="&amp;Internet [MB]" />
+    <Text Key="grpServerSettings" Text="Configurações de Servidor" Comment="Server Settings" />
+    <Text Key="labelShareDescription" Text="Descrição:" Comment="Description:" />
+    <Text Key="chkPrivate" Text="Privada" Comment="Private" />
+    <Text Key="chkShareInternet" Text="Compartilhar na Internet" Comment="Share on the Internet" />
+    <Text Key="btAddShare" Text="Adicionar Compartilhamento" Comment="Add Share" />
+    <Text Key="btRemoveShare" Text="Remover" Comment="Remove" />
+    <Text Key="labelPrivateListPassword" Text="Senha usada para proteger suas entradas de listas privadas de Compartilhamento de Internet:" Comment="Password used to protect your private Internet Share list entries:" />
+    <Text Key="labelSharpening" Text="Avivamento:" Comment="Sharpening:" />
+    <Text Key="labelPublicServerAddress" Text="Endereço externo de seu servidor caso o ComicRack não o descubra corretamente:" Comment="External address of your server if ComicRack should not guess it correctly:" />
+    <Text Key="chkDontAddRemovedFiles" Text="Arquivos manualmente removidos da Biblioteca não serão adicionados novamente" Comment="Files manually removed from the Library will not be added again" />
+    <Text Key="btConfigScript" Text="Configuração..." Comment="Config..." />
+    <Text Key="btOpenFolder" Text="Abrir" Comment="Open" />
+    <Text Key="labelPageQuality" Text="Qualidade da Página:" Comment="Page Quality:" />
+    <Text Key="labelThumbQuality" Text="Qualidade da Miniatura:" Comment="Thumb Quality:" />
+    <Text Key="chkAutoConnectShares" Text="Conectar automaticamente" Comment="Connect automatically" />
+    <Text Key="btExportKeyboard" Text="Exportar..." Comment="Export..." />
+    <Text Key="btImportKeyboard" Text="Importar..." Comment="Import..." />
+    <Text Key="miDefaultKeyboardLayout" Text="Padrão" Comment="Default" />
+    <Text Key="cbShare.Item0" Text="Compartilhar Nada" Comment="Share None" />
+    <Text Key="cbShare.Item1" Text="Compartilhar Tudo" Comment="Share All" />
+    <Text Key="cbShare.Item2" Text="Compartilhar Selecionadas" Comment="Share Selected" />
+    <Text Key="grpShareSettings" Text="Configurações" Comment="Settings" />
+    <Text Key="chkShowNavigationOverlay" Text="Exibir Navegação automaticamente" Comment="Show Navigation automatically" />
+    <Text Key="chkShowCurrentPageOverlay" Text="Exibir Página atual" Comment="Show current Page" />
+    <Text Key="chkShowVisiblePartOverlay" Text="Exibir Parte da Página visível" Comment="Show visible Page Part" />
+    <Text Key="chkShowPageNames" Text="Pág. Atual também exibe Nome de Página" Comment="Current Page also displays Page Name" />
+    <Text Key="chkShowStatusOverlay" Text="Exibir Mensagens e Status" Comment="Show Messages and Status" />
+    <Text Key="labelPageOverlay" Text="Página" Comment="Page" />
+    <Text Key="labelVisiblePartOverlay" Text="Parte Visível" Comment="Visible Part" />
+    <Text Key="labelStatusOverlay" Text="Mensagens e Status" Comment="Messages and Status" />
+    <Text Key="labelNavigationOverlay" Text="Navegação" Comment="Navigation" />
+    <Text Key="labelNavigationOverlayPosition" Text="Navegação:" Comment="Navigation:" />
+    <Text Key="cbNavigationOverlayPosition.Item0" Text="no Rodapé" Comment="at Bottom" />
+    <Text Key="cbNavigationOverlayPosition.Item1" Text="no Topo" Comment="on Top" />
+    <Text Key="PageNumberOnly" Text="Página" Comment="Page" />
+    <Text Key="PageNumberAndName" Text="Página\nNome" Comment="Page\nName" />
+    <Text Key="chkLookForShared" Text="Procurar por Compartilhamentos de Livros locais" Comment="Look for local Book Shares" />
+    <Text Key="chkClientsCanEdit" Text="Clientes podem editar Livros" Comment="Clients can edit Books" />
+    <Text Key="chkClientsCanExport" Text="Clientes podem exportar Livros" Comment="Clients can export Books" />
+    <Text Key="chkUpdateComicFiles" Text="Permitir escrever info dos Livros nos arquivos" Comment="Allow writing of Book info into files" />
+    <Text Key="chkAutoUpdateComicFiles" Text="Arquivos de Livros são atualizados automaticamente" Comment="Book files are updated automatically" />
+    <Text Key="groupComicFolders" Text="Pastas de Livros" Comment="Book Folders" />
+    <Text Key="groupOtherComics" Text="Livros" Comment="Books" />
+    <Text Key="SelectComicFolder" Text="Por favor selecione uma pasta contendo Livros" Comment="Please select a folder containing Books" />
+    <Text Key="labelGamma" Text="Ajuste de Gama:" Comment="Gamma Adjustment:" />
+    <Text Key="grpDisplay" Text="Mostrar" Comment="Display" />
+    <Text Key="chkEnableInertialMouseScrolling" Text="Ativar rolagem de Mouse Inercial" Comment="Enable Inertial Mouse scrolling" />
+    <Text Key="grpMouse" Text="Mouse &amp; Rolagem" Comment="Mouse &amp; Scrolling" />
+    <Text Key="chkHideSampleScripts" Text="Ocultar Scripts de exemplos" Comment="Hide sample Scripts" />
+    <Text Key="groupMemory" Text="Caches &amp; Uso de Memória" Comment="Caches &amp; Memory Usage" />
+    <Text Key="grpMaximumMemoryUsage" Text="Uso Máximo de Memória" Comment="Maximum Memory Usage" />
+    <Text Key="lblMaximumMemoryUsage" Text="Limitar a memória pode afetar desfavoravelmente a performance." Comment="Limiting the memory can adversely affect the performance." />
+    <Text Key="groupLibraryDisplay" Text="Exibição" Comment="Display" />
+    <Text Key="chkLibraryGauges" Text="Ativar Contadores Ativos" Comment="Enable Live Counters" />
+    <Text Key="chkLibraryGaugesNew" Text="Para Livros Novos" Comment="For New Books" />
+    <Text Key="chkLibraryGaugesUnread" Text="Para Livros Não Lidos" Comment="For Unread Books" />
+    <Text Key="chkLibraryGaugesTotal" Text="Para Total de Livros" Comment="For Total of Books" />
+    <Text Key="chkLibraryGaugesNumeric" Text="Também exibir números e não somente barras" Comment="Also show numbers and not only bars" />
+  </Texts>
+</TR>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmartListDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Annuleer" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btApply" Text="&amp;Toepassen" Comment="&amp;Apply" />
+    <Text Key="labelMatch" Text="Koppel" Comment="Match" />
+    <Text Key="MatchMode" Text="alles aan|aan één van" Comment="All|Any" />
+    <Text Key="chkLimit" Text="Begrens tot" Comment="Limit to" />
+    <Text Key="cbLimitType.Item0" Text="Boeken" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="FullLibrary" Text="de gehele Bibliotheek" Comment="Full Library" />
+    <Text Key="labelSubRules" Text="de volgende regels:" Comment="of the following rules:" />
+    <Text Key="btPrev" Text="&amp;Vorige" Comment="&amp;Previous" />
+    <Text Key="btNext" Text="&amp;Volgende" Comment="&amp;Next" />
+    <Text Key="SmartListDialog" Text="Wijzig de 'Smart List' " Comment="Edit Smart List" />
+    <Text Key="labelName" Text="Naam:" Comment="Name:" />
+    <Text Key="labelRules" Text="de volgende regels:" Comment="of the following rules on" />
+    <Text Key="chkQuickOpen" Text="Snel Open" Comment="Quick Open" />
+    <Text Key="labelNotes" Text="Nota's:" Comment="Notes:" />
+    <Text Key="SmartListQueryDialog" Text="Wijzig Smart List" Comment="Edit Smart List" />
+    <Text Key="labelFilterReset" Text="Sommige Boeken werden manueel uit de Lijst gewist" Comment="Some Books have been manually remove from the list" />
+    <Text Key="btFilterReset" Text="Herzet" Comment="Reset" />
+    <Text Key="miInsertMatch" Text="Insert Match" Comment="Insert Match" />
+    <Text Key="miInsertValue" Text="Voeg Waarde toe" Comment="Insert Value" />
+  </Texts>
+</TR>

@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CommandKeys" CultureName="sk-SK">
+  <Texts>
+    <Text Key="A" Text="A" Comment="A" />
+    <Text Key="Add" Text="Pridať" Comment="Add" />
+    <Text Key="Alt" Text="Alt" Comment="Alt" />
+    <Text Key="B" Text="B" Comment="B" />
+    <Text Key="C" Text="C" Comment="C" />
+    <Text Key="Ctrl" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="D" Text="D" Comment="D" />
+    <Text Key="D0" Text="D0" Comment="D0" />
+    <Text Key="D1" Text="D1" Comment="D1" />
+    <Text Key="D2" Text="D2" Comment="D2" />
+    <Text Key="D3" Text="D3" Comment="D3" />
+    <Text Key="D4" Text="D4" Comment="D4" />
+    <Text Key="D5" Text="D5" Comment="D5" />
+    <Text Key="D6" Text="D6" Comment="D6" />
+    <Text Key="D7" Text="D7" Comment="D7" />
+    <Text Key="D8" Text="D8" Comment="D8" />
+    <Text Key="D9" Text="D9" Comment="D9" />
+    <Text Key="Decimal" Text="Decimal" Comment="Decimal" />
+    <Text Key="Divide" Text="Deliť" Comment="Divide" />
+    <Text Key="Down" Text="Dole" Comment="Down" />
+    <Text Key="E" Text="E" Comment="E" />
+    <Text Key="End" Text="End" Comment="End" />
+    <Text Key="Enter" Text="Enter" Comment="Enter" />
+    <Text Key="Escape" Text="Escape" Comment="Escape" />
+    <Text Key="F" Text="F" Comment="F" />
+    <Text Key="G" Text="G" Comment="G" />
+    <Text Key="H" Text="H" Comment="H" />
+    <Text Key="Home" Text="Domov" Comment="Home" />
+    <Text Key="I" Text="I" Comment="I" />
+    <Text Key="J" Text="J" Comment="J" />
+    <Text Key="K" Text="K" Comment="K" />
+    <Text Key="L" Text="L" Comment="L" />
+    <Text Key="Left" Text="Doľava" Comment="Left" />
+    <Text Key="M" Text="M" Comment="M" />
+    <Text Key="MediaNextTrack" Text="MediaNextTrack" Comment="MediaNextTrack" />
+    <Text Key="MediaPlayPause" Text="MediaPlayPause" Comment="MediaPlayPause" />
+    <Text Key="MediaPreviousTrack" Text="MediaPreviousTrack" Comment="MediaPreviousTrack" />
+    <Text Key="MediaStop" Text="MediaStop" Comment="MediaStop" />
+    <Text Key="MouseButton4" Text="MouseButton4" Comment="MouseButton4" />
+    <Text Key="MouseButton5" Text="MouseButton5" Comment="MouseButton5" />
+    <Text Key="MouseDoubleButton4" Text="MouseDoubleButton4" Comment="MouseDoubleButton4" />
+    <Text Key="MouseDoubleButton5" Text="MouseDoubleButton5" Comment="MouseDoubleButton5" />
+    <Text Key="MouseDoubleLeft" Text="MouseDoubleLeft" Comment="MouseDoubleLeft" />
+    <Text Key="MouseDoubleMiddle" Text="MouseDoubleMiddle" Comment="MouseDoubleMiddle" />
+    <Text Key="MouseDoubleRight" Text="MouseDoubleRight" Comment="MouseDoubleRight" />
+    <Text Key="MouseLeft" Text="MouseLeft" Comment="MouseLeft" />
+    <Text Key="MouseMiddle" Text="MouseMiddle" Comment="MouseMiddle" />
+    <Text Key="MouseRight" Text="MouseRight" Comment="MouseRight" />
+    <Text Key="MouseTiltLeft" Text="MouseTiltLeft" Comment="MouseTiltLeft" />
+    <Text Key="MouseTiltRight" Text="MouseTiltRight" Comment="MouseTiltRight" />
+    <Text Key="MouseWheelDown" Text="MouseWheelDown" Comment="MouseWheelDown" />
+    <Text Key="MouseWheelUp" Text="MouseWheelUp" Comment="MouseWheelUp" />
+    <Text Key="Multiply" Text="Multiply" Comment="Multiply" />
+    <Text Key="N" Text="N" Comment="N" />
+    <Text Key="None" Text="Žiadne" Comment="None" />
+    <Text Key="NumPad0" Text="NumPad0" Comment="NumPad0" />
+    <Text Key="NumPad1" Text="NumPad1" Comment="NumPad1" />
+    <Text Key="NumPad2" Text="NumPad2" Comment="NumPad2" />
+    <Text Key="NumPad3" Text="NumPad3" Comment="NumPad3" />
+    <Text Key="NumPad4" Text="NumPad4" Comment="NumPad4" />
+    <Text Key="NumPad5" Text="NumPad5" Comment="NumPad5" />
+    <Text Key="NumPad6" Text="NumPad6" Comment="NumPad6" />
+    <Text Key="NumPad7" Text="NumPad7" Comment="NumPad7" />
+    <Text Key="NumPad8" Text="NumPad8" Comment="NumPad8" />
+    <Text Key="NumPad9" Text="NumPad9" Comment="NumPad9" />
+    <Text Key="O" Text="O" Comment="O" />
+    <Text Key="P" Text="P" Comment="P" />
+    <Text Key="PageDown" Text="PageDown" Comment="PageDown" />
+    <Text Key="PageUp" Text="PageUp" Comment="PageUp" />
+    <Text Key="Q" Text="Q" Comment="Q" />
+    <Text Key="R" Text="R" Comment="R" />
+    <Text Key="Right" Text="Right" Comment="Right" />
+    <Text Key="S" Text="S" Comment="S" />
+    <Text Key="Shift" Text="Shift" Comment="Shift" />
+    <Text Key="Space" Text="Space" Comment="Space" />
+    <Text Key="Subtract" Text="Subtract" Comment="Subtract" />
+    <Text Key="T" Text="T" Comment="T" />
+    <Text Key="Tab" Text="Tab" Comment="Tab" />
+    <Text Key="U" Text="U" Comment="U" />
+    <Text Key="Up" Text="Hore" Comment="Up" />
+    <Text Key="V" Text="V" Comment="V" />
+    <Text Key="W" Text="W" Comment="W" />
+    <Text Key="X" Text="X" Comment="X" />
+    <Text Key="Y" Text="Y" Comment="Y" />
+    <Text Key="Z" Text="Z" Comment="Z" />
+    <Text Key="Zoom" Text="Zoom" Comment="Zoom" />
+    <Text Key="Gesture1" Text="Gesture 1" Comment="Gesture 1" />
+    <Text Key="Gesture2" Text="Gesture 2" Comment="Gesture 2" />
+    <Text Key="Gesture3" Text="Gesture 3" Comment="Gesture 3" />
+    <Text Key="Gesture4" Text="Gesture 4" Comment="Gesture 4" />
+    <Text Key="Gesture5" Text="Gesture 5" Comment="Gesture 5" />
+    <Text Key="Gesture6" Text="Gesture 6" Comment="Gesture 6" />
+    <Text Key="Gesture7" Text="Gesture 7" Comment="Gesture 7" />
+    <Text Key="Gesture8" Text="Gesture 8" Comment="Gesture 8" />
+    <Text Key="Gesture9" Text="Gesture 9" Comment="Gesture 9" />
+    <Text Key="TouchPressAndTap" Text="Tlačiť a ťahať" Comment="Press and Tap" />
+    <Text Key="TouchTwoFingerTap" Text="Posun dvoma prstami" Comment="Two Finger Tap" />
+    <Text Key="GestureDouble1" Text="Gesture Double 1" Comment="Gesture Double 1" />
+    <Text Key="GestureDouble2" Text="Gesture Double 2" Comment="Gesture Double 2" />
+    <Text Key="GestureDouble3" Text="Gesture Double 3" Comment="Gesture Double 3" />
+    <Text Key="GestureDouble4" Text="Gesture Double 4" Comment="Gesture Double 4" />
+    <Text Key="GestureDouble5" Text="Gesture Double 5" Comment="Gesture Double 5" />
+    <Text Key="GestureDouble6" Text="Gesture Double 6" Comment="Gesture Double 6" />
+    <Text Key="GestureDouble7" Text="Gesture Double 7" Comment="Gesture Double 7" />
+    <Text Key="GestureDouble8" Text="Gesture Double 8" Comment="Gesture Double 8" />
+    <Text Key="GestureDouble9" Text="Gesture Double 9" Comment="Gesture Double 9" />
+  </Texts>
+</TR>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainView" CultureName="sk-SK">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="Pripnúť dole" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="Vyplniť" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="Pripnúť vľavo" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="Pripnúť vpravo" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="Zavrieť" Comment="Close" />
+    <Text Key="tsbFolders" Text="Priečinky" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="Hľadať v priečinkoch" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="Knižnica" Comment="Library" />
+    <Text Key="tsbLibrary.Tooltip" Text="eComics knižnica" Comment="eComics Library" />
+    <Text Key="tsbPages" Text="Strany" Comment="Pages" />
+    <Text Key="tsbPages.Tooltip" Text="Strany aktuálneho eComicsu" Comment="Pages of the current eComic" />
+    <Text Key="tsbShowMenu" Text="Ukázať menu" Comment="Show Menu" />
+    <Text Key="tsbInfoPanelLeft" Text="Info Panel vpravo" Comment="Info Panel Right" />
+  </Texts>
+</TR>

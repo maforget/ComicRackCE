@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Matchers" CultureName="tr">
+  <Texts>
+    <Text Key="YesNoOperators" Text="Olumlu|Olumsuz|Bilinmiyor" Comment="is Yes|is No|is Unknown" />
+    <Text Key="ComicBookAddedMatcher" Text="Eklendi" Comment="Added" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="Hepsi" Comment="All" />
+    <Text Key="ComicBookCountMatcher" Text="Sayı" Comment="Count" />
+    <Text Key="ComicBookAlternateCountMatcher" Text="Diğer Sayı" Comment="Alternate Count" />
+    <Text Key="ComicBookAlternateNumberMatcher" Text="Diğer Fasikül Sayısı" Comment="Alternate Number" />
+    <Text Key="ComicBookAlternateSeriesMatcher" Text="Diğer Seriler" Comment="Alternate Series" />
+    <Text Key="ComicBookColoristMatcher" Text="Renklendirme" Comment="Colorist" />
+    <Text Key="ComicBookFileMatcher" Text="Dosya" Comment="File" />
+    <Text Key="ComicBookFullPathMatcher" Text="Dosya Konumu" Comment="File Path" />
+    <Text Key="ComicBookGenreMatcher" Text="Tür" Comment="Genre" />
+    <Text Key="ComicBookImprintMatcher" Text="Basım" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="Çizer" Comment="Inker" />
+    <Text Key="ComicBookLanguageMatcher" Text="Dil" Comment="Language" />
+    <Text Key="ComicBookMangaMatcher" Text="Manga " Comment="Manga" />
+    <Text Key="ComicBookBlackAndWhiteMatcher" Text="Siyah/Beyaz" Comment="Black and White" />
+    <Text Key="ComicBookMonthMatcher" Text="Ay" Comment="Month" />
+    <Text Key="ComicBookNumberMatcher" Text="Sayı" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="Açıldı" Comment="Opened" />
+    <Text Key="ComicBookPageCountMatcher" Text="Sayfa Sayısı" Comment="Page Count" />
+    <Text Key="ComicBookPencillerMatcher" Text="Karakalemci" Comment="Penciller" />
+    <Text Key="ComicBookPublisherMatcher" Text="Yayın Evi" Comment="Publisher" />
+    <Text Key="ComicBookCoverArtistMatcher" Text="Kapak Sanatçısı" Comment="Cover Artist" />
+    <Text Key="ComicBookRatingMatcher" Text="Puan" Comment="Rating" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="Okunma Oranı" Comment="Read Percentage" />
+    <Text Key="ComicBookSeriesMatcher" Text="Seriler" Comment="Series" />
+    <Text Key="ComicBookSummaryMatcher" Text="Özet" Comment="Summary" />
+    <Text Key="ComicBookTagsMatcher" Text="Künyeler" Comment="Tags" />
+    <Text Key="ComicBookTitleMatcher" Text="Başlık" Comment="Title" />
+    <Text Key="ComicBookVolumeMatcher" Text="Cilt" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="Yazar" Comment="Writer" />
+    <Text Key="ComicBookYearMatcher" Text="Yıl" Comment="Year" />
+    <Text Key="ComicBookFileFormatMatcher" Text="Dosya Formatı" Comment="File Format" />
+    <Text Key="DateOperators" Text="aynısı|sonrasında|öncesinde|sonunda|menzil içinde" Comment="is|is after|is before|is in the last|in in the range" />
+    <Text Key="Days" Text="Günler" Comment="Days" />
+    <Text Key="NumericOperators" Text="aynısı|daha büyük|daha küçük|menzil içinde" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="StringOperators" Text="aynısı|içeren|herhangi birini içeren|tümünü içeren|ile başlayan|ile biten|içeren liste|düzgün ifade" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
+    <Text Key="ComicBookAgeRatingMatcher" Text="Yaş Sınırı" Comment="Age Rating" />
+    <Text Key="ComicBookCharactersMatcher" Text="Karakterler" Comment="Characters" />
+    <Text Key="ComicBookEditorMatcher" Text="Düzenleyen" Comment="Editor" />
+    <Text Key="ComicBookPublishedMatcher" Text="Yayınlandı" Comment="Published" />
+    <Text Key="ComicBookDirectoryMatcher" Text="Dosya Konumu" Comment="File Directory" />
+    <Text Key="ComicBookPluginMatcher" Text="Kullanıcı Komutları" Comment="User Scripts" />
+    <Text Key="ComicBookModifiedMatcher" Text="Dosya Değiştirildi" Comment="File Modified" />
+    <Text Key="ComicBookCreationMatcher" Text="Dosya Oluşturuldu" Comment="File Created" />
+    <Text Key="ComicBookModifiedInfoMatcher" Text="Değiştirilmiş Bilgi" Comment="Modified Info" />
+  </Texts>
+</TR>

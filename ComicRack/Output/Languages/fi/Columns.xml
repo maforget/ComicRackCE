@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Columns" CultureName="fi">
+  <Texts>
+    <Text Key="AddedTimeAsText" Text="Lisätty" Comment="Added" />
+    <Text Key="AddedTimeAsText.Description" Text="Milloin eSarjis lisätty tietokantaan" Comment="Time the eComic was added to the Database" />
+    <Text Key="AlternateCountAsText" Text="Vaihtoehtoinen määrä" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="Julkaisujen määrä crossover/tarinassa" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="Vaihtoehtoinen luku" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="Julkaisun numero crossover/tarinassa" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="Vaihtoehtoissarja" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="Crossover/tarinan nimi" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="Kuvaus" Comment="Caption" />
+    <Text Key="Caption.Description" Text="eSarjiksen koko kuvaus" Comment="Complete caption of the eComic" />
+    <Text Key="Colorist" Text="Värittäjä" Comment="Colorist" />
+    <Text Key="Colorist.Description" Text="eSarjiksen värittäjä" Comment="Colorist of the eComic" />
+    <Text Key="CountAsText" Text="Määrä" Comment="Count" />
+    <Text Key="CountAsText.Description" Text="Osien määrä" Comment="Total number of issues in this series" />
+    <Text Key="Cover" Text="Kansi" Comment="Cover" />
+    <Text Key="Cover.Description" Text="eSarjiksen kansikuva" Comment="Cover image of the eComic" />
+    <Text Key="CoverArtist" Text="Kannen kuvittaja" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="Kansitaide" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="Toimittaja" Comment="Editor" />
+    <Text Key="Editor.Description" Text="eSarjiksen toimittaja" Comment="Editor of the eComic" />
+    <Text Key="FileModifiedTimeAsText" Text="Muokattu" Comment="File Modified" />
+    <Text Key="FileModifiedTimeAsText.Description" Text="Milloin eSarjista viimeksi muokattu" Comment="Time the eComic was modified the last time" />
+    <Text Key="FileName" Text="Tiedostonimi" Comment="File Name" />
+    <Text Key="FileName.Description" Text="Tiedostonimi ilman päätettä" Comment="Filename without the extension" />
+    <Text Key="FilePath" Text="Tiedostopolku" Comment="File Path" />
+    <Text Key="FilePath.Description" Text="eSarjiksen tallennussijainti" Comment="Location where the eComic is stored" />
+    <Text Key="FileFormat" Text="Tiedostomuoto" Comment="File Format" />
+    <Text Key="FileFormat.Description" Text="eSarjiksen tiedostotyyppi" Comment="File format of the eComic" />
+    <Text Key="FileSizeAsText" Text="Tiedoston koko" Comment="File Size" />
+    <Text Key="FileSizeAsText.Description" Text="eSarjiksen koko tavuina" Comment="Size of the eComic in bytes" />
+    <Text Key="Genre" Text="Laji" Comment="Genre" />
+    <Text Key="Genre.Description" Text="eSarjiksen laji" Comment="Genre of the eComic" />
+    <Text Key="ImageHeightAsText" Text="Korkeus" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="Sivukorkeus pikseleissä" Comment="Height of the page in pixels" />
+    <Text Key="ImageFileSizeAsText" Text="Koko" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="Sivun koko tavuina" Comment="Size of the page in bytes" />
+    <Text Key="ImageWidthAsText" Text="Leveys" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="Sivun leveys pikseleinä" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="Merkintä" Comment="Imprint" />
+    <Text Key="Imprint.Description" Text="eSarjiksen merkinnät" Comment="Imprint of the eComic" />
+    <Text Key="Inker" Text="Tussaaja" Comment="Inker" />
+    <Text Key="Inker.Description" Text="eSarjiksen tussaaja" Comment="Inker of the eComic" />
+    <Text Key="Key" Text="Nimi" Comment="Name" />
+    <Text Key="Key.Description" Text="Pikanäppäin eSarjiksen tälle sivulle" Comment="Unique key for this page in the eComic" />
+    <Text Key="LanguageAsText" Text="Kieli" Comment="Language" />
+    <Text Key="LanguageAsText.Description" Text="eSarjiksen kieli" Comment="Language of the eComic" />
+    <Text Key="Letterer" Text="Tekstinpiirtäjä" Comment="Letterer" />
+    <Text Key="Letterer.Description" Text="eSarjiksen tekstinpiirtäjä" Comment="Letterer of the eComic" />
+    <Text Key="MonthAsText" Text="Kuukausi" Comment="Month" />
+    <Text Key="MonthAsText.Description" Text="eSarjiksen julkaisukuukausi" Comment="Month the eComic was published" />
+    <Text Key="NumberAsText" Text="Numero" Comment="Number" />
+    <Text Key="NumberAsText.Description" Text="eSarjiksen albuminumero" Comment="Number of the eComic in the Series" />
+    <Text Key="OpenedCountAsText" Text="Avauskertoja" Comment="Opened Count" />
+    <Text Key="OpenedCountAsText.Description" Text="Montako avauskertaa eSarjiksella" Comment="Times the eComic has been opened" />
+    <Text Key="OpenedTimeAsText" Text="Avattu" Comment="Opened" />
+    <Text Key="OpenedTimeAsText.Description" Text="eSarjis avattu viimeksi" Comment="Last time the eComic was opened" />
+    <Text Key="Page" Text="Sivu" Comment="Page" />
+    <Text Key="Page.Description" Text="Kuvan sivunumero" Comment="The page number of the image" />
+    <Text Key="PagesAsTextSimple" Text="Sivuja" Comment="Pages" />
+    <Text Key="PagesAsTextSimple.Description" Text="Kokonaissivumäärä" Comment="The total count of pages" />
+    <Text Key="PageTypeAsText" Text="Laji" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="Sivulaji (esim. tarina, kansi)" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="Piirtäjä" Comment="Penciller" />
+    <Text Key="Penciller.Description" Text="eSarjiksen piirtäjä" Comment="Penciller of the eComic" />
+    <Text Key="Position" Text="Sijainti" Comment="Position" />
+    <Text Key="Position.Description" Text="eSarjiksen sijainti listalla" Comment="Position of the eComic in the list" />
+    <Text Key="Publisher" Text="Kustantaja" Comment="Publisher" />
+    <Text Key="Publisher.Description" Text="eSarjiksen kustantaja" Comment="Publisher of the eComic" />
+    <Text Key="Rating" Text="Oma arvio" Comment="My Rating" />
+    <Text Key="Rating.Description" Text="Arviosi eSarjiksesta" Comment="Your rating of the eComic" />
+    <Text Key="CommunityRating" Text="Yhteisön arvio" Comment="Community Rating" />
+    <Text Key="CommunityRating.Description" Text="Yhteisön arvio eSarjiksesta" Comment="Community Rating of the eComic" />
+    <Text Key="ReadPercentageAsText" Text="Lukuprosentti" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="Luetun osuus" Comment="How much has been read" />
+    <Text Key="Series" Text="Sarja" Comment="Series" />
+    <Text Key="Series.Description" Text="Sarjan nimi" Comment="Series name" />
+    <Text Key="State" Text="Tila" Comment="State" />
+    <Text Key="State.Description" Text="eSarjiksen tilanilmaisimet" Comment="State indicators for the eComic" />
+    <Text Key="Tags" Text="Välilehdet" Comment="Tags" />
+    <Text Key="Tags.Description" Text="eSarjiksen välilehdet" Comment="Tags of the eComic" />
+    <Text Key="Thumbnail" Text="Kuvake" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="Sivun kuvake" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="Nimike" Comment="Title" />
+    <Text Key="Title.Description" Text="eSarjiksen nimike" Comment="Title of the eComic" />
+    <Text Key="VolumeAsText" Text="Nidos" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="Sarjan nidosmäärä" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="Kirjoittaja" Comment="Writer" />
+    <Text Key="Writer.Description" Text="eSarjiksen kirjoittaja" Comment="Writer of the eComic" />
+    <Text Key="YearAsText" Text="Vuosi" Comment="Year" />
+    <Text Key="YearAsText.Description" Text="eSarjiksen julkaisuvuosi" Comment="Year the eComic was published" />
+    <Text Key="MangaAsText" Text="Manga" Comment="Manga" />
+    <Text Key="MangaAsText.Description" Text="Onko eSarjis manga" Comment="Yes if the eComic is a Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="MustaValkoinen" Comment="B&amp;W" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="Onko eSarjis mustavalkoinen" Comment="Yes if the eComic is black and white" />
+    <Text Key="Format" Text="Tiedostomuoto" Comment="Format" />
+    <Text Key="Format.Description" Text="eSarjiksen formaatti" Comment="Format of the eComic" />
+    <Text Key="Bookmark" Text="Kirjanmerkki" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="Kirjanmerkin kuvaus" Comment="Bookmark text" />
+    <Text Key="AgeRating" Text="Ikäsuositus" Comment="Age Rating" />
+    <Text Key="AgeRating.Description" Text="eSarjiksen ikäsuositus" Comment="Age rating of the eComic" />
+    <Text Key="PublishedAsText" Text="Julkaistu" Comment="Published" />
+    <Text Key="PublishedAsText.Description" Text="eSarjiksen julkaisupäivä" Comment="Publication date of the eComic" />
+    <Text Key="Characters" Text="Hahmot" Comment="Characters" />
+    <Text Key="Characters.Description" Text="eSarjiksen hahmot" Comment="Plot characters of the eComic" />
+    <Text Key="Teams" Text="Ryhmät" Comment="Teams" />
+    <Text Key="Teams.Description" Text="eSarjiksen hahmoasettelu" Comment="Plot teams of the eComic" />
+    <Text Key="Locations" Text="Sijainnit" Comment="Locations" />
+    <Text Key="Locations.Description" Text="eSarjiksen tapahtumapaikat" Comment="Plot locations of the eComic" />
+    <Text Key="RotationAsText" Text="Kierto" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="Pysyvä sivunkierto" Comment="Permanent rotation of the page" />
+    <Text Key="FileDirectory" Text="Kansio" Comment="File Directory" />
+    <Text Key="FileDirectory.Description" Text="eSarjiksen kansio" Comment="Directory of the eComic" />
+    <Text Key="FileCreationTimeAsText" Text="Tiedosto luotu" Comment="File Created" />
+    <Text Key="FileCreationTimeAsText.Description" Text="eSarjiksen luontiaika" Comment="Creation time of the eComic" />
+    <Text Key="BookmarkCountAsText" Text="Kirjanmerkkien määrä" Comment="Bookmark Count" />
+    <Text Key="BookmarkCountAsText.Description" Text="Kirjanmerkkien määrä tässä eSarjiksessa" Comment="Count of Bookmarks for this eComic" />
+    <Text Key="Web" Text="Netti" Comment="Web" />
+    <Text Key="Web.Description" Text="Nettilinkki" Comment="A Web Link" />
+    <Text Key="NewPagesAsText" Text="Uusia sivuja" Comment="New Pages" />
+    <Text Key="NewPagesAsText.Description" Text="Uusien sivujen määrä" Comment="Count of new Pages" />
+    <Text Key="Notes" Text="Merkinnät" Comment="Notes" />
+    <Text Key="Summary" Text="Kooste" Comment="Summary" />
+    <Text Key="Number" Text="Numero" Comment="Number" />
+    <Text Key="AlternateNumber" Text="Vaihtoehtoinen numero" Comment="Alternate Number" />
+    <Text Key="IsLinkedAsText" Text="Linkitetty tiedostoon" Comment="Linked to File" />
+    <Text Key="IsLinkedAsText.Description" Text="eSarjis on linkitetty tiedostoon" Comment="eComic is linked to a File" />
+    <Text Key="BookAge" Text="Kirjan ikä" Comment="Book Age" />
+    <Text Key="BookAge.Description" Text="Ikä" Comment="Age of the Book" />
+    <Text Key="BookPriceAsText" Text="Kirjan hinta" Comment="Book Price" />
+    <Text Key="BookPriceAsText.Description" Text="Kirjan hinta" Comment="Price of the Book" />
+    <Text Key="BookCondition" Text="Kirjan kunto" Comment="Book Condition" />
+    <Text Key="BookCondition.Description" Text="Kirjan kunto" Comment="Condition of the Book" />
+    <Text Key="BookStore" Text="Kirjakauppa" Comment="Book Store" />
+    <Text Key="BookStore.Description" Text="Kirjan myyjäliike" Comment="Store the Book was bought" />
+    <Text Key="BookOwner" Text="Kirjan omistaja" Comment="Book Owner" />
+    <Text Key="BookOwner.Description" Text="Kirjan omistaja" Comment="Owner of the Book" />
+    <Text Key="BookCollectionStatus" Text="Kirjakokoelman Tila" Comment="Book Collection Status" />
+    <Text Key="BookCollectionStatus.Description" Text="Kirjan tila kokoelmassa" Comment="Status of the Book in the Collection" />
+    <Text Key="BookLocation" Text="Kirjan sijainti" Comment="Book Location" />
+    <Text Key="BookLocationStatus.Description" Text="Kirjan sijainti" Comment="Location of the Book" />
+  </Texts>
+</TR>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.SearchAndReplace" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="Cancel" Text="取消" Comment="&amp;Cancel" />
+    <Text Key="OK" Text="确定" Comment="&amp;OK" />
+    <Text Key="Description" Text="查找和替换漫画中值的脚本" Comment="A script to to search and replace values in eComics" />
+    <Text Key="Caption" Text="搜索和替换..." Comment="Search and Replace..." />
+    <Text Key="Name" Text="搜索和替换..." Comment="Search and Replace..." />
+    <Text Key="labelField" Text="域:" Comment="Fields:" />
+    <Text Key="labelSearch" Text="搜索:" Comment="Search:" />
+    <Text Key="labelReplace" Text="替换" Comment="Replace" />
+  </Texts>
+</TR>

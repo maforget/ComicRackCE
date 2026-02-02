@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListLibraryBrowser" CultureName="nl-BE">
+  <Texts>
+    <Text Key="miEditSmartList" Text="&amp;Bewerken..." Comment="&amp;Edit..." />
+    <Text Key="miNewFolder" Text="Nieuwe &amp;Map" Comment="New &amp;Folder..." />
+    <Text Key="miNewList" Text="Nieuwe &amp;Lijst..." Comment="New &amp;List..." />
+    <Text Key="miNewSmartList" Text="&amp;Nieuwe 'Smart List'..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="&amp;Sorteer" Comment="&amp;Sort" />
+    <Text Key="miOpenWindow" Text="&amp;Open in een Nieuw Venster" Comment="&amp;Open in New Window" />
+    <Text Key="miQueryRename" Text="&amp;Hernoemen" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="Vernieuwen" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="Verwijderen" Comment="&amp;Re&amp;move..." />
+    <Text Key="NewFolder" Text="Nieuwe Map" Comment="New Folder" />
+    <Text Key="NewList" Text="Nieuwe Lijst" Comment="New List" />
+    <Text Key="NewSmartList" Text="Nieuwe 'Smart List'" Comment="New Smart List" />
+    <Text Key="tbNewFolder" Text="Nieuwe &amp;Map" Comment="New &amp;Folder" />
+    <Text Key="tbNewFolder.Tooltip" Text="Creëer een nieuwe map om je lijsten te organizeren" Comment="Create a new folder to organize your lists" />
+    <Text Key="tbNewList" Text="Nieuwe &amp;Lijst" Comment="New &amp;List" />
+    <Text Key="tbNewList.Tooltip" Text="Creëer een nieuwe Lijst" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="Nieuwe 'Smart List'" Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="Creëer een nieuwe 'Smart List'" Comment="Create a new Smart List" />
+    <Text Key="tbOpenWindow" Text="Nieuw Venster" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Open de huidige lijst in een nieuw Venster" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Vernieuwen" Comment="Refresh" />
+    <Text Key="miCopyList" Text="Kopieer de Lijst" Comment="Copy List" />
+    <Text Key="miPasteList" Text="Plak de Lijst" Comment="Paste List" />
+    <Text Key="miExportReadingList" Text="Exporteer Leeslijst..." Comment="Export Reading List..." />
+    <Text Key="miImportReadingList" Text="Importeer Leeslijst..." Comment="Import Reading List..." />
+    <Text Key="NewSmartListOption" Text="Snapshot (huidige weergave)" Comment="Snapshot of current view" />
+    <Text Key="miOpenTab" Text="&amp;Open in een Nieuwe Tab" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="Nieuwe Tab" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Open de huidige Lijst in een nieuwe Tab" Comment="Open current list in new Tab" />
+    <Text Key="miFavRemove" Text="Verwijder" Comment="Remove" />
+    <Text Key="tbFavorites" Text="Toon Favorieten" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Favorieten" Comment="Favorites" />
+    <Text Key="miAddToFavorites" Text="Voeg toe aan de Favorieten" Comment="Add to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Ververs" Comment="&amp;Refresh" />
+    <Text Key="tbExpandCollapseAll" Text="Alles Uit-/Inklappen" Comment="Expand/Collapse all" />
+    <Text Key="tbPreferences" Text="Instellingen" Comment="Preferences" />
+    <Text Key="SyncDevices" Text="Synchroniseer met" Comment="Sync with" />
+    <Text Key="SyncDevice" Text="Synchroniseer met {0}..." Comment="Sync with {0}..." />
+  </Texts>
+</TR>

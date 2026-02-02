@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPageType" CultureName="nl-BE">
+  <Texts>
+    <Text Key="BackCover" Text="Achterplat" Comment="Back Cover" />
+    <Text Key="Deleted" Text="Gewist" Comment="Deleted" />
+    <Text Key="Editorial" Text="Editoriaal" Comment="Editorial" />
+    <Text Key="FrontCover" Text="Voorkaft" Comment="Front Cover" />
+    <Text Key="InnerCover" Text="Binnenkaft" Comment="Inner Cover" />
+    <Text Key="Letters" Text="Brieven" Comment="Letters" />
+    <Text Key="Other" Text="Andere" Comment="Other" />
+    <Text Key="Preview" Text="Vooruitblik" Comment="Preview" />
+    <Text Key="Roundup" Text="Samenvatting" Comment="Roundup" />
+    <Text Key="Story" Text="Verhaal" Comment="Story" />
+    <Text Key="Advertisement" Text="Advertentie" Comment="Advertisement" />
+  </Texts>
+</TR>

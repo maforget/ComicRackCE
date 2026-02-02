@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SearchBrowser" CultureName="zh-CN">
+  <Texts>
+    <Text Key="AlternateSeries" Text="系列别名" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="配色" Comment="Colorists" />
+    <Text Key="Genre" Text="体裁" Comment="Genres" />
+    <Text Key="Imprint" Text="出版品牌" Comment="Imprints" />
+    <Text Key="Inker" Text="描线员" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="语言" Comment="Languages" />
+    <Text Key="MonthAsText" Text="月" Comment="Months" />
+    <Text Key="Penciller" Text="铅稿" Comment="Pencillers" />
+    <Text Key="Publisher" Text="出版社" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="系列" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="年" Comment="Years" />
+    <Text Key="Writer" Text="脚本" Comment="Writers" />
+    <Text Key="Unspecified" Text="未指定" Comment="Unspecified" />
+    <Text Key="AllItems" Text="所有 ({0} {1})" Comment="All ({0} {1})" />
+    <Text Key="ShadowTitle" Text="标题" Comment="Titles" />
+    <Text Key="ShadowFormat" Text="格式" Comment="Formats" />
+    <Text Key="Editor" Text="编辑" Comment="Editors" />
+    <Text Key="Characters" Text="角色" Comment="Characters" />
+    <Text Key="CoverArtist" Text="封面绘师" Comment="Cover Artists" />
+    <Text Key="AgeRating" Text="年龄分级" Comment="Age Ratings" />
+    <Text Key="Tags" Text="标签" Comment="Tags" />
+    <Text Key="ShadowVolumeAsText" Text="卷数" Comment="Volumes" />
+    <Text Key="Teams" Text="组织" Comment="Teams" />
+    <Text Key="Locations" Text="场景" Comment="Locations" />
+    <Text Key="Web" Text="网址" Comment="Web" />
+    <Text Key="Letterer" Text="嵌字" Comment="Letterer" />
+    <Text Key="RatingAsText" Text="我的评分" Comment="My Ratings" />
+    <Text Key="CommunityRatingAsText" Text="社群评分" Comment="Community Ratings" />
+    <Text Key="BookPriceAsText" Text="书籍价格" Comment="Book Prices" />
+    <Text Key="BookAge" Text="书籍年代" Comment="Book Ages" />
+    <Text Key="BookStore" Text="书店" Comment="Book Stores" />
+    <Text Key="BookOwner" Text="书籍所有者" Comment="Book Owners" />
+    <Text Key="BookCondition" Text="书籍状况" Comment="Book Conditions" />
+    <Text Key="BookCollectionStatus" Text="书籍收集状态" Comment="Book Collection Status" />
+    <Text Key="BookLocation" Text="书籍场所" Comment="Book Locations" />
+  </Texts>
+</TR>

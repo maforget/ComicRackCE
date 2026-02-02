@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Settings" CultureName="nl-BE">
+  <Texts>
+    <Text Key="Application" Text="Applicatie" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="Autoverberg 't Vergrootglas wanneer de Cursor de rand nadert." Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="Browser" Text="Browser" Comment="Browser" />
+    <Text Key="CloseMinimizesToTray" Text="[x] Minimaliseert ComicRack naar de Statusbalk" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="Nieuw geladen Miniaturen' faden' langzaam in." Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="Verberg muisaanwijzer in 'Volledig Scherm'-weergave" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="Toon Miniaturen in de beste kwaliteit (langzamer)" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="MinimizeToTray" Text="Verkleinen verplaatst ComicRack naar het Systeemvak" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="Controleer op ComicRack-Nieuws" Comment="Check for latest news on ComicRack" />
+    <Text Key="Reading" Text="Lezen" Comment="Reading" />
+    <Text Key="ShowSplash" Text="Toon het Opstartscherm" Comment="Show Splash Screen" />
+    <Text Key="Starting ComicRack" Text="Start ComicRack" Comment="Starting ComicRack" />
+    <Text Key="Manga" Text="Manga" Comment="Manga" />
+    <Text Key="TrueRightToLeftReading" Text="Rechts naar Links lezen" Comment="True right to left reading" />
+    <Text Key="LeftRightMovementReversed" Text="Links/rechts navigatie is ook omgekeerd" Comment="Left/right movement is also reversed" />
+    <Text Key="Right to Left" Text="Van Rechts naar Links" Comment="Right to Left" />
+    <Text Key="AutoMinimalGui" Text="'Volledig Scherm' schakelt ook de Minimum Gebruiksinterface" Comment="Fullscreen also toggles Minimal User Interface" />
+    <Text Key="PageChangeDelay" Text="Muiswiel en Cursor-toetsen vertragen bij bladwissel" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="AnimatePanels" Text="Animatie Panelen" Comment="Animate expanding and collapsing Panels" />
+    <Text Key="ResetZoomOnPageChange" Text="Zoem wordt herzet naar 100% bij pagina wissels" Comment="Zoom is reset to 100% on page change" />
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="Toon steeds de 'Browser Docking Grip'" Comment="Always display Browser Docking Grip" />
+    <Text Key="DogEarThumbnails" Text="Ezelsoor bij een geselecteerde Miniatuur" Comment="Selected Thumbnails have dog-ear" />
+    <Text Key="BlendWhilePaging" Text="Vermeng animatie ook tijdens snellere bladwisseling" Comment="Blend animation also while fast paging" />
+    <Text Key="ScrollingDoesBrowse" Text="Scrollen naar de paginarand linkt u naar nieuwe pagina's" Comment="Scrolling to page margin browses to new pages" />
+    <Text Key="Import &amp; Export" Text="Import &amp; Export" Comment="Import &amp; Export" />
+    <Text Key="UpdateWebComicsStartup" Text="Ververst Web Comics" Comment="Update Web Comics" />
+    <Text Key="ShowSearchLinks" Text="Toon Zoeklinks" Comment="Show Search Links" />
+    <Text Key="OpenInNewTab" Text="Opent dit in nieuweTab" Comment="Open in new Tab" />
+    <Text Key="LocalQuickSearch" Text="Elke Lijst heeft eigen 'Snel Zoek' instellingen" Comment="Each List has own Quick Search settings" />
+    <Text Key="NumericRatingThumbnails" Text="Miniaturen geven numerieke waarderingscijfers weer." Comment="Thumbnails display numeric ratings" />
+    <Text Key="ShowQuickOpen" Text="Toon 'Quick Open' indien geen boek werd geopend" Comment="Show Quick Open if no book is opened" />
+    <Text Key="AutoNavigateComics" Text="Lezen voorbij 1ste/Laatste blz. opent 't aangrenzende Boek" Comment="Reading beyond the start or end opens the next Book" />
+    <Text Key="CloseBrowserOnOpen" Text="Sluit de Browser " Comment="Close the Browser when a new Book is opened" />
+    <Text Key="CatalogOnlyForFileless" Text="Toon Catalogusvelden enkel voor lege Boeken" Comment="Show Catalog fields only for fileless Books" />
+    <Text Key="Opening a Book" Text="Bij opening van een Boek" Comment="Opening a Book" />
+    <Text Key="OpenLastFile" Text="Heropen de boeken van de laatste sessie" Comment="Reopen Books from last session" />
+    <Text Key="OpenLastPage" Text="Opent dit op de laatst gelezen bladzijde" Comment="Open the Book at the page where it was closed" />
+    <Text Key="ScanStartup" Text="Herscant de Bibliotheekfolders voor nieuwe Boeken" Comment="Rescan the Book Folders for new Books" />
+    <Text Key="ShowToolTips" Text="Toon 'Tool'-tips voor Boeken in de Browser" Comment="Show Tooltips for Books in the Browser" />
+    <Text Key="AddToLibraryOnOpen" Text="Voegt dit toe aan de Bibliotheek" Comment="Opened Files are added to the Library" />
+    <Text Key="ShowMainMenuNoComicOpen" Text="Toon Hoofdmenu als er geen Boek open is" Comment="Show Main Menu if no Book is open" />
+    <Text Key="InformationCover3D" Text="3D Voorkaftweergave in 't Boekinfo dialoogscherm" Comment="3D display of covers in Book Info Dialog" />
+    <Text Key="ExportedListsContainFilenames" Text="Geëxporteerde Boeklijsten bevatten Bestandnamen" Comment="Exported Book Lists contain filenames" />
+    <Text Key="ZoomInOutOnPageChange" Text="Zoem uit tijdens paginawissel" Comment="During page change a zoom out is done" />
+    <Text Key="CoverThumbnailsSameSize" Text="Alle Voorkaftminiaturen hebben dezelfde afmeting" Comment="All Cover Thumbnails have the same Size" />
+  </Texts>
+</TR>

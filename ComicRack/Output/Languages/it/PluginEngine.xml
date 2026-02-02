@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PluginEngine" CultureName="it">
+  <Texts>
+    <Text Key="EditUpdateBooksCommands" Text="Modifica/Aggiorna i Comandi Album" Comment="Edit/Update Books Commands" />
+    <Text Key="CreateNewBooksCommands" Text="Crea Nuovi Comandi Album" Comment="Create New Books Commands" />
+    <Text Key="ActionswhenBooksareopened" Text="Attività quando si apre un Album" Comment="Actions when Books are opened" />
+    <Text Key="ActionswhenReaderisresized" Text="Attività quando il Lettore è ingrandito/rimpicciolito" Comment="Actions when Reader is resized" />
+    <Text Key="AdditionalSearchProviders" Text="Motori di Ricerca aggiuntivi" Comment="Additional Search Providers" />
+    <Text Key="QuickOpenPanels" Text="Pannello Apertura Rapida" Comment="Quick Open Panels" />
+    <Text Key="BookPathParsers" Text="Parser percorso Album" Comment="Book Path Parsers" />
+    <Text Key="ActionswhenComicRackstarts" Text="Attività al lancio di ComicRack" Comment="Actions when ComicRack starts" />
+    <Text Key="BookInformationPanels" Text="Pannello Informazioni Album" Comment="Book Information Panels" />
+    <Text Key="CustomBookThumbnailOverlays" Text="Sovrapposizione Icone Album Personalizzati" Comment="Custom Book Thumbnail Overlays" />
+  </Texts>
+</TR>

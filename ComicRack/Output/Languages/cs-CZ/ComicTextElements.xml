@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicTextElements" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="Caption" Text="Titulek" Comment="Caption" />
+    <Text Key="CaptionWithoutTitle" Text="Titulek bez názvu" Comment="Caption without Title" />
+    <Text Key="AlternateCaption" Text="Alternativní titulek" Comment="Alternate Caption" />
+    <Text Key="Title" Text="Název" Comment="Title" />
+    <Text Key="ArtistInfo" Text="Umělci" Comment="Artists" />
+    <Text Key="Summary" Text="Obsah" Comment="Summary" />
+    <Text Key="FileSize" Text="Velikost souboru" Comment="File Size" />
+    <Text Key="Opened" Text="Otevřeno" Comment="Opened" />
+    <Text Key="FileName" Text="Jméno souboru" Comment="File Name" />
+    <Text Key="FileFormat" Text="Formát souboru" Comment="File Format" />
+    <Text Key="Added" Text="Přidáno" Comment="Added" />
+    <Text Key="PublisherAndImprint" Text="Vydavatel a imprint" Comment="Publischer and Imprint" />
+    <Text Key="AgeRating" Text="Věkové omezení" Comment="Age Rating" />
+    <Text Key="Genre" Text="Žánr" Comment="Genre" />
+    <Text Key="CharactersAndTeams" Text="Postavy a skupiny" Comment="Characters and Teams" />
+    <Text Key="Locations" Text="Lokace" Comment="Locations" />
+    <Text Key="Notes" Text="Poznámky" Comment="Notes" />
+    <Text Key="PurchaseInformation" Text="Informace o nákupu" Comment="Purchase Information" />
+    <Text Key="StorageInfoformation" Text="Informace o uložení" Comment="Storage Information" />
+    <Text Key="CollectionStatus" Text="Stav ve sbírce" Comment="Collection Status" />
+  </Texts>
+</TR>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SaveWorkspaceDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="SaveWorkspaceDialog" Text="保存工作区" Comment="Save Workspace" />
+    <Text Key="btCancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定(&amp;O)" Comment="&amp;OK" />
+    <Text Key="txtName" Text="名称:" Comment="Name:" />
+    <Text Key="labelSettings" Text="本工作区包含以下设置:" Comment="This workspace includes settings for:" />
+    <Text Key="chkWindowLayouts" Text="窗口布局" Comment="Window Layouts" />
+    <Text Key="chkListLayouts" Text="列表布局" Comment="List Layouts" />
+    <Text Key="chkComicDisplayLayout" Text="书籍显示布局" Comment="Book Display Layout" />
+    <Text Key="chkComicDisplaySettings" Text="书籍显示设置" Comment="Book Display Settings" />
+  </Texts>
+</TR>

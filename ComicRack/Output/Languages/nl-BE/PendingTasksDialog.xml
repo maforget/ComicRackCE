@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PendingTasksDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="btOk" Text="OK" Comment="OK" />
+    <Text Key="colTask" Text="Opdracht" Comment="Task" />
+    <Text Key="lblItemCount" Text="{0} Taken in afwachting" Comment="{0} Tasks are pending" />
+    <Text Key="PendingTasksDialog" Text="Er zijn nog open taken in de achtergrond" Comment="Pending Background Tasks" />
+    <Text Key="colState" Text="Status" Comment="State" />
+    <Text Key="btAbort" Text="Annuleer alle gebruikertaken" Comment="Abort all User Tasks" />
+  </Texts>
+</TR>

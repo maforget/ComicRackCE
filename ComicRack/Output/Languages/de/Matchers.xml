@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Matchers" CultureName="de">
+  <Texts>
+    <Text Key="YesNoOperators" Text="ist Ja|ist Nein|ist Unbekannt" Comment="is Yes|is No|is Unknown" />
+    <Text Key="MangaYesNoOperators" Text="ist Ja|ist Ja (Rechts nach Links)|ist Nein|ist Unbekannt" Comment="is Yes|is Yes (Right to Left)|is No|is Unknown" />
+    <Text Key="OnOffOperators" Text="Ein|Aus" Comment="On|Off"/>
+    <Text Key="TrueFalseOperators" Text="ist Wahr|ist Falsch" Comment="is True|is False"/>
+    <Text Key="ComicBookAddedMatcher" Text="Hinzugefügt" Comment="Added" />
+    <Text Key="ComicBookReleasedMatcher" Text="Veröffentlicht" Comment="Released" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="Alles" Comment="All" />
+    <Text Key="ComicBookCountMatcher" Text="Anzahl" Comment="Count" />
+    <Text Key="ComicBookAlternateCountMatcher" Text="Alternative Anzahl" Comment="Alternate Count" />
+    <Text Key="ComicBookAlternateNumberMatcher" Text="Alternative Nummer" Comment="Alternate Number" />
+    <Text Key="ComicBookAlternateSeriesMatcher" Text="Alternative Serie" Comment="Alternate Series" />
+    <Text Key="ComicBookColoristMatcher" Text="Kolorist" Comment="Colorist" />
+    <Text Key="ComicBookFileMatcher" Text="Datei" Comment="File" />
+    <Text Key="ComicBookFullPathMatcher" Text="Datei Pfad" Comment="File Path" />
+    <Text Key="ComicBookGenreMatcher" Text="Gattung" Comment="Genre" />
+    <Text Key="ComicBookImprintMatcher" Text="Verlagszeichen" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="Tinte" Comment="Inker" />
+    <Text Key="ComicBookLanguageMatcher" Text="Sprache" Comment="Language" />
+    <Text Key="ComicBookMangaMatcher" Text="Manga" Comment="Manga" />
+    <Text Key="ComicBookSeriesCompleteMatcher" Text="Serie komplett" Comment="Series complete" />
+    <Text Key="ComicBookBlackAndWhiteMatcher" Text="Schwarzweiss" Comment="Black and White" />
+    <Text Key="ComicBookMonthMatcher" Text="Monat" Comment="Month" />
+    <Text Key="ComicBookDayMatcher" Text="Tag" Comment="Day" />
+    <Text Key="ComicBookWeekMatcher" Text="Woche" Comment="Week" />
+    <Text Key="ComicBookNumberMatcher" Text="Nummer" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="Geöffnet" Comment="Opened" />
+    <Text Key="ComicBookPageCountMatcher" Text="Seitenzahl" Comment="Page Count" />
+    <Text Key="ComicBookPencillerMatcher" Text="Zeichner" Comment="Penciller" />
+    <Text Key="ComicBookPublisherMatcher" Text="Herausgeber" Comment="Publisher" />
+    <Text Key="ComicBookCoverArtistMatcher" Text="Cover Künstler" Comment="Cover Artist"/>
+    <Text Key="ComicBookRatingMatcher" Text="Meine Bewertung" Comment="My Rating" />
+    <Text Key="ComicBookCommunityRatingMatcher" Text="Allgemeine Bewertung" Comment="Community Rating" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="Prozent gelesen" Comment="Read Percentage" />
+    <Text Key="ComicBookSeriesMatcher" Text="Serie" Comment="Series" />
+    <Text Key="ComicBookSummaryMatcher" Text="Zusammenfassung" Comment="Summary" />
+    <Text Key="ComicBookNotesMatcher" Text="Notizen" Comment="Notes" />
+    <Text Key="ComicBookTagsMatcher" Text="Marken" Comment="Tags" />
+    <Text Key="ComicBookTitleMatcher" Text="Titel" Comment="Title" />
+    <Text Key="ComicBookVolumeMatcher" Text="Jahrgang" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="Autor" Comment="Writer" />
+    <Text Key="ComicBookYearMatcher" Text="Jahr" Comment="Year" />
+    <Text Key="ComicBookFileFormatMatcher" Text="Datei Format" Comment="File Format" />
+    <Text Key="DateOperators" Text="ist|ist nach|ist bevor|ist in den letzten|ist im Bereich von" Comment="is|is after|is before|is in the last|is in the range" />
+    <Text Key="Days" Text="Tage" Comment="Days" />
+    <Text Key="Name" Text="Name" Comment="Name" />
+    <Text Key="NumericOperators" Text="ist|ist größer|ist kleiner|ist im Bereich von" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="StringOperators" Text="ist|enthält|enthält einen|enthält alle|startet mit|endet mit|Liste enthält|Regular Expression" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
+    <Text Key="ComicBookAgeRatingMatcher" Text="Altersfreigabe" Comment="Age Rating"/>
+    <Text Key="ComicBookCharactersMatcher" Text="Charaktere" Comment="Characters"/>
+    <Text Key="ComicBookTeamsMatcher" Text="Teams" Comment="Teams"/>
+    <Text Key="ComicBookLocationsMatcher" Text="Schauplätze" Comment="Locations"/>
+    <Text Key="ComicBookEditorMatcher" Text="Editor" Comment="Editor"/>
+    <Text Key="ComicBookPublishedMatcher" Text="Publiziert" Comment="Published"/>
+    <Text Key="ComicBookDirectoryMatcher" Text="Datei Verzeichnis" Comment="File Directory"/>
+    <Text Key="ComicBookPluginMatcher" Text="Benutzer Scripts" Comment="User Scripts"/>
+    <Text Key="ComicBookExpressionMatcher" Text="Ausdruck" Comment="Expression"/>
+    <Text Key="ComicBookModifiedMatcher" Text="Datei Modifiziert" Comment="File Modified"/>
+    <Text Key="ComicBookCreationMatcher" Text="Datei Erzeugt" Comment="File Created"/>
+    <Text Key="ComicBookModifiedInfoMatcher" Text="Information verändert" Comment="Modified Info" />
+    <Text Key="ComicBookIsLinkedMatcher" Text="Mit Datei verknüpft" Comment="Linked to File" />
+    <Text Key="ComicBookCheckedMatcher" Text="Ist markiert" Comment="Is Checked" />
+    <Text Key="ComicBookBookmarkCountMatcher" Text="Lesezeichenanzahl" Comment="Bookmark Count"/>
+    <Text Key="ComicBookDuplicateMatcher" Text="Nur Doppelte" Comment="Only Duplicates"/>
+    <Text Key="ComicBookHasCustomValuesMatcher" Text="Hat Benutzer-Werte" Comment="Has Custom Values"/>
+    <Text Key="ComicBookCustomValuesMatcher" Text="Benutzer-Wert" Comment="Custom Value"/>
+    <Text Key="ComicBookNewPagesMatcher" Text="Neue Seiten" Comment="New Pages"/>
+    <Text Key="ComicBookFileSizeMatcher" Text="Datei Größe" Comment="File Size"/>
+    <Text Key="ComicBookBookPriceMatcher" Text="Buchpreis" Comment="Book Price"/>
+    <Text Key="ComicBookBookStoreMatcher" Text="Buchgeschäft" Comment="Book Store"/>
+    <Text Key="ComicBookBookOwnerMatcher" Text="Buchbesitzer" Comment="Book Owner"/>
+    <Text Key="ComicBookBookAgeMatcher" Text="Buchalter" Comment ="Book Age"/>
+    <Text Key="ComicBookBookConditionMatcher" Text="Buchzustand" Comment="Book Condition"/>
+    <Text Key="ComicBookBookCollectionStatusMatcher" Text="Buchsammlungsstatus" Comment="Book Collection Status"/>
+    <Text Key="ComicBookBookLocationMatcher" Text="Buchaufbewahrungsort" Comment="Book Location"/>
+    <Text Key="ComicBookBookNotesMatcher" Text="Buchnotizen" Comment="Book Notes"/>
+    <Text Key="MB" Text="MB" Comment="MB"/>
+    <Text Key="SmartListSeriesCountMatcher" Text="Serie: Bücher" Comment="Series: Books"/>
+    <Text Key="SmartListSeriesLastNumberMatcher" Text="Serie: Letzte Nummer" Comment="Series: Last Number"/>
+    <Text Key="SmartListSeriesFirstNumberMatcher" Text="Serie: Erste Nummer" Comment="Series: First Number"/>
+    <Text Key="SmartListSeriesMinYearMatcher" Text="Serie: Erstes Jahr" Comment="Series: First Year"/>
+    <Text Key="SmartListSeriesMaxYearMatcher" Text="Serie: Letztes Jahr" Comment="Series: Last Year"/>
+    <Text Key="SmartListSeriesPageCountMatcher" Text="Serie: Seiten" Comment="Series: Pages"/>
+    <Text Key="SmartListSeriesPagesReadMatcher" Text="Serie: Seiten gelesen" Comment="Series: Pages Read"/>
+    <Text Key="SmartListSeriesPercentReadMatcher" Text="Serie: Prozent gelesen" Comment="Series: Percent Read"/>
+    <Text Key="SmartListSeriesAverageRatingMatcher" Text="Serie: Meine durchschnittliche Bewertung" Comment="Series: My Average Rating"/>
+    <Text Key="SmartListSeriesAverageCommunityRatingMatcher" Text="Serie: Allgemeine durchschnittliche Bewertung" Comment="Series: Community Average Rating"/>
+    <Text Key="SmartListSeriesRunningTimeYearsMatcher" Text="Serie: Laufzeit Jahre" Comment="Series: Running Time Years"/>
+    <Text Key="SmartListSeriesGapsMatcher" Text="Serie: Lücken" Comment="Series: Gaps"/>
+    <Text Key="SmartListSeriesMaxGapSizeMatcher" Text="Serie: Größte Lücke" Comment="Series: Biggest Gap"/>
+    <Text Key="SmartListSeriesEndOfGapMatcher" Text="Serie: Lückenende" Comment="Series: Start of Gap"/>
+    <Text Key="SmartListSeriesStartOfGapMatcher" Text="Serie: Lückenstart" Comment="Series: End of Gap"/>
+    <Text Key="ComicBookISBNMatcher" Text="ISBN" Comment="ISBN"/>
+    <Text Key="SmartListSeriesLastAddedTimeMatcher" Text="Serie: Buch hinzugefügt" Comment="Series: Book added"/>
+    <Text Key="SmartListSeriesLastReleasedTimeMatcher" Text="Serie: Buch veröffentlicht" Comment="Series: Book released"/>
+    <Text Key="SmartListSeriesLastOpenedTimeMatcher" Text="Serie: Geöffnet" Comment="Series: Opened"/>
+    <Text Key="SmartListSeriesLastPublishedTimeMatcher" Text="Serie: Publiziert" Comment="Series: Published"/>
+    <Text Key="SmartListSeriesMaxCountMatcher" Text="Serie: Höchste Anzahl" Comment="Series: Highest Count"/>
+    <Text Key="SmartListSeriesMinCountMatcher" Text="Serie: Niedrigste Anzahl" Comment="Series: Lowest Count"/>
+    <Text Key="SmartListSeriesAllCompleteMatcher" Text="Serie: Alle komplett" Comment="Series: All compelte"/>
+    <Text Key="ComicBookScanInformationMatcher" Text="Scan Information" Comment="Scanning Information"/>
+    <Text Key="ComicBookStoryArcMatcher" Text="Handlungsbogen" Comment="Story Arc"/>
+    <Text Key="ComicBookSeriesGroupMatcher" Text="Serien Gruppe" Comment="Series Group"/>
+    <Text Key="ComicBookMainCharacterOrTeamMatcher" Text="Haupt-Charakter/Team" Comment="Main Character/Team"/>
+    <Text Key="ComicBookReviewMatcher" Text="Rezension" Comment="Review"/>
+  </Texts>
+</TR>

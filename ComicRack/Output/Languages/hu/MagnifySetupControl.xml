@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MagnifySetupControl" CultureName="hu">
+  <Texts>
+    <Text Key="labelHeight" Text="Magasság" Comment="Height" />
+    <Text Key="labelOpacity" Text="Átlátszóság" Comment="Opacity" />
+    <Text Key="labelWidth" Text="Szélesség" Comment="Width" />
+    <Text Key="labelZoom" Text="Nagyítás" Comment="Zoom" />
+    <Text Key="chkSimpleStyle" Text="Egyszerű stílus" Comment="Simple Style" />
+    <Text Key="chkAutoMagnifier" Text="Hosszú kattintással aktivál" Comment="Activate with 'long' Click" />
+    <Text Key="chkAutoHideMagnifier" Text="Oldal szélén elrejt" Comment="Hide at Page Border" />
+  </Texts>
+</TR>

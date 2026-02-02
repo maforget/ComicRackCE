@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FileFilter" CultureName="ru">
+  <Texts>
+    <Text Key="ReadingListSave" Text="Список к прочтению ComicRack|*.cbl|Xml файл|*.xml" Comment="ComicRack Reading List|*.crl|Xml File|*.xml" />
+    <Text Key="ReadingListLoad" Text="Список к прочтению ComicRack|*.cbl|Xml файл|*.xml|Все файлы|*.*" Comment="ComicRack Reading List|*.crl|Xml File|*.xml|All Files|*.*" />
+    <Text Key="PageImageSave" Text="изображение JPEG|*.jpg|изображение Windows Bitmap|*.bmp|изображение PNG|*.png|изображение GIF|*.gif|изображение TIFF|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif" />
+    <Text Key="ComicRackDatabase" Text="База данных ComicRack|*.xml" Comment="ComicRack Database|*.xml" />
+    <Text Key="AllFiles" Text="Все файлы" Comment="All Files" />
+    <Text Key="AllSupportedFiles" Text="Все поддерживаемые файлы" Comment="All supported Files" />
+  </Texts>
+</TR>

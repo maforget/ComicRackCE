@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PreferencesDialog" CultureName="tr">
+  <Texts>
+    <Text Key="btAddFolder" Text="&amp;Ekle..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="Klasör ekle..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="&amp;Uygula" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="&amp;İptal" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="&amp;Değiştir..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="Temizle" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="Temizle" Comment="Clear" />
+    <Text Key="btOK" Text="&amp;Tamam" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="&amp;Kaldır" Comment="&amp;Remove" />
+    <Text Key="btResetColor" Text="&amp;Sıfırla" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="Sıfırla" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="Varsayılan ayarlara &amp;dön" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="Tara" Comment="Scan" />
+    <Text Key="chkHighQualityDisplay" Text="&amp;Yüksek Kalite" Comment="&amp;High Quality" />
+    <Text Key="chkAnamorphicScaling" Text="&amp;Anamorfik Ölçekleme'yi etkinleştir" Comment="Enable &amp;Anamorphic Scaling" />
+    <Text Key="chkAutoBackgroundColor" Text="Mevcut &amp;sayfaya göre ayarla" Comment="Adjust to current &amp;Page" />
+    <Text Key="chkAutoContrast" Text="Otomatik &amp;Kontrast Geliştir" Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="Tarama esnasında bulunmayan dosyaları kütüphaneden sil" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="&amp;Sayfalar [MB]" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableScripting" Text="Komut Kullanımına izin ver" Comment="Enable Scripting" />
+    <Text Key="chkEnableThumbnailCache" Text="&amp;Küçük İkonlar [MB]" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkLookForShared" Text="Paylaşılan e-Çizgi Roman kitaplıklarına bak" Comment="Look for shared Comic Libraries" />
+    <Text Key="chkOverwriteAssociations" Text="'Birlikte aç...' komutu yerine var olan bağdaşlıkların üzerine yaz" Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="Şifre koruması sağla:" Comment="Require Password:" />
+    <Text Key="chkShareOwn" Text="e-Çizgi Roman Kütüphanemi Paylaş" Comment="Share my Comic Library" />
+    <Text Key="chkShareIsEditable" Text="Düzenlenebilir" Comment="Editable" />
+    <Text Key="chkUpdateComicFiles" Text="e-Çizgi Roman bilgilerini dosyalara yazmaya izin ver" Comment="Allow writing of eComic info into files" />
+    <Text Key="chkAutoUpdateComicFiles" Text="e-Çizgi Roman dosyaları otomatik olarak güncellenmektedir" Comment="eComic files are updated automatically" />
+    <Text Key="colOptions" Text="Seçenekler" Comment="Options" />
+    <Text Key="groupComicFolders" Text="e-Çizgi Roman Klasörleri" Comment="eComic Folders" />
+    <Text Key="groupDiskCache" Text="Disk Hafızası" Comment="Disk Cache" />
+    <Text Key="groupMessages" Text="Gizli Mesajlar" Comment="Hidden Messages" />
+    <Text Key="groupOtherComics" Text="e-Çizgi Romanlar" Comment="eComics" />
+    <Text Key="groupOverlays" Text="Kaplamalar" Comment="Overlays" />
+    <Text Key="grpIntegration" Text="Explorer Entegrasyonu" Comment="Explorer Integration" />
+    <Text Key="labelAdmin" Text="Ayarları değiştirmeye yetecek kadar kullanıcı hakkı yok. Lütfen ComicRack'ı yönetici hesabıyla çalıştırın." Comment="Not enough user rights to change settings. Run ComicRack with administrative privileges." />
+    <Text Key="labelBackgroundColor" Text="Renk:" Comment="Color:" />
+    <Text Key="labelCheckedFormats" Text="İşaretlenmiş formatlar ComicRack tarafından açılacaktır." Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelExcludeCover" Text="Noktalı Virgül ile ayrılan resimler listesi hiçbir zaman kaplama ikonu olarak kullanılmasın:" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelLanguage" Text="ComicRack için Kullanıcı Arayüzü Dilini Seç (Değişikliklerin uygulanabilmesi için ComicRack yeniden başlatılmalıdır):" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlaySize" Text="Boyut:" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="Gizlenmiş mesajları görmek için basın" Comment="To reshow hidden messages press" />
+    <Text Key="labelRestart" Text="Bu değişikliklerin tamamlanabilmesi için ComicRack'in yeniden başlatılması gerekmektedir." Comment="Changing these settings requires to restart ComicRack." />
+    <Text Key="labelScriptPaths" Text="Betik için noktalı virgül ile ayrılmış kütüphane yolları (Python kütüphaneleri vs.):" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="Paylaşılan İsim:" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="İşaretlenmiş klasörler, program çalıştığı sürece değişiklikler için (isim, yer değişimi vs.) gözaltında tutulacaktır." Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="Seçenekler" Comment="Preferences" />
+    <Text Key="rbShareAll" Text="Tümünü Paylaş" Comment="Share All" />
+    <Text Key="rbShareSelected" Text="Seçilen listeleri paylaş" Comment="Share selected Lists" />
+    <Text Key="Scan" Text="Tara" Comment="Scan" />
+    <Text Key="Scanning" Text="Taranıyor '{0}' ..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectComicFolder" Text="Lütfen e-Çizgi Roman içeren bir klasörü seçiniz" Comment="Please select a folder containing eComics" />
+    <Text Key="SelectScriptFolder" Text="Lütfen kod kütüphanesi içeren bir klasör seçiniz" Comment="Please select a script library folder" />
+    <Text Key="Stop" Text="Dur" Comment="Stop" />
+    <Text Key="labelMemOptmizeDescription" Text="Optimizasyonu etkinleştirmek hafıza tüketimini ciddi miktarda azaltabilir, diğer taraftan bu durumda performans kayıplarıyla karşılaşabilirsiniz." Comment="Turning on optimize can significantly reduce memory consumption, but may lead to some performance loss" />
+    <Text Key="labelMemPageCount" Text="Sayfalar [count]" Comment="Pages [count]" />
+    <Text Key="labelMemThumbSize" Text="Küçük İkonlar [MB]" Comment="Thumbnails [MB]" />
+    <Text Key="chkMemPageOptimized" Text="optimize" Comment="optimized" />
+    <Text Key="chkMemThumbOptimized" Text="optimize" Comment="optimized" />
+    <Text Key="groupMemoryCache" Text="Hafıza Önbelleği" Comment="Memory Cache" />
+    <Text Key="chkDoublePageSeparator" Text="Çift Sayfa Ayracı" Comment="Double Page Separator" />
+    <Text Key="grpDatabaseBackup" Text="Veritabanı Yedeği" Comment="Database Backup" />
+    <Text Key="btBackupDatabase" Text="Veritabanı Yedekle..." Comment="Backup Database..." />
+    <Text Key="btRestoreDatabase" Text="Veritabanı'nı eski haline getir..." Comment="Restore Database..." />
+    <Text Key="btTranslate" Text="ComicRack'ı yerel dilinize çevirmek için yardım edin..." Comment="Help localizing ComicRack..." />
+    <Text Key="labelSaturation" Text="Satürasyon Ayarları:" Comment="Saturation Adjustment:" />
+    <Text Key="labelBrightness" Text="Parlaklık Ayarı:" Comment="Brightness Adjustment:" />
+    <Text Key="labelContrast" Text="Kontrast Ayarları:" Comment="Contrast Adjustment:" />
+    <Text Key="groupPageDisplayGeneral" Text="Genel" Comment="General" />
+    <Text Key="groupColors" Text="Renk Ayarları" Comment="Color Adjustments" />
+    <Text Key="chkCurrentPageOverlay" Text="Mevct sayfa kaplaması" Comment="Current Page Overlay" />
+    <Text Key="chkVisiblePartOverlay" Text="Görünen sayfa parçalı kaplama" Comment="Visible Page Part Overlay" />
+    <Text Key="chkNavigationOverlay" Text="Fare kontrolleri" Comment="Mouse Navigation Overlays" />
+    <Text Key="chkStatusOverlay" Text="Durum Belirteci Görünümü" Comment="Status Indicator Overlays" />
+    <Text Key="chkEnableHardware" Text="Donanım İvmelendirmesini Etkinleştir" Comment="Enable Hardware Acceleration" />
+    <Text Key="chkEnablePageTransition" Text="Sayfa geçişlerine izin ver" Comment="Enable Page Transitions" />
+    <Text Key="chkEnableDisplayChangeAnimation" Text="Sayfa görünümü değişikliklerine şekil yap" Comment="Enable Animation of Page Display changes" />
+    <Text Key="chkEnableFlowScroll" Text="Süzülen fare geçişlerine izin ver" Comment="Enable flowing Mouse scrolling" />
+    <Text Key="groupHardwareAcceleration" Text="Donanım İvmelendirmesi" Comment="Hardware Acceleration" />
+    <Text Key="chkSmoothAutoScrolling" Text="Otomatik Yumuşak Geçişi Etkinleştir" Comment="Smooth Auto Scrolling" />
+    <Text Key="cbPageTransition.Item0" Text="Sayfa geçiş efekti yok" Comment="No Page Transition Effect" />
+    <Text Key="cbPageTransition.Item1" Text="Sayfa soluk girer" Comment="Page fades in" />
+    <Text Key="cbPageTransition.Item2" Text="Sayfalar yatay olarak geçer" Comment="Page scrolls in horizontally" />
+    <Text Key="cbPageTransition.Item3" Text="Sayfalar yatay olarak geçer" Comment="Page scrolls in vertically" />
+    <Text Key="lblFast" Text="hızlı" Comment="fast" />
+    <Text Key="lblSlow" Text="yavaş" Comment="slow" />
+    <Text Key="grpKeyboard" Text="Klavye" Comment="Keyboard" />
+    <Text Key="grpMouse" Text="Fare" Comment="Mouse" />
+    <Text Key="lblMouseWheel" Text="Fare Tekerleği ile Sayfa Geçişi:" Comment="Mouse Wheel scrolling:" />
+    <Text Key="grpSharing" Text="Paylaşım" Comment="Sharing" />
+    <Text Key="grpScanning" Text="Taranıyor" Comment="Scanning" />
+    <Text Key="grpLanguages" Text="Diller" Comment="Languages" />
+    <Text Key="grpScripting" Text="Betikleme" Comment="Scripting" />
+    <Text Key="tabOverlaysAndEffects" Text="Kaplamalar &amp;&amp; Efektler" Comment="Overlays &amp;&amp; Effects" />
+    <Text Key="tabReader" Text="Okuyucu" Comment="Reader" />
+    <Text Key="tabLibraries" Text="Kütüphaneler" Comment="Libraries" />
+    <Text Key="tabBehavior" Text="Tavır" Comment="Behavior" />
+    <Text Key="tabAdvanced" Text="Gelişmiş" Comment="Advanced" />
+  </Texts>
+</TR>

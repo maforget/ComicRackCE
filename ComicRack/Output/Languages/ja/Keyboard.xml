@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Keyboard" CultureName="ja">
+  <Texts>
+    <Text Key="Browse" Text="参照" Comment="Browse" />
+    <Text Key="Display Options" Text="オプションの表示" Comment="Display Options" />
+    <Text Key="Exit" Text="閉じる" Comment="Exit" />
+    <Text Key="FitAll" Text="すべてにフィット" Comment="Fit All" />
+    <Text Key="FitBest" Text="ベスト フィット" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="高さにフィット" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="横幅にフィット" Comment="Fit Width" />
+    <Text Key="FitWidthAdaptive" Text="横幅に単頁フィット（見開き表示）" Comment="Fit Width (adaptive)" />
+    <Text Key="Library" Text="ライブラリ" Comment="Library" />
+    <Text Key="MoveDown" Text="下へ" Comment="Down" />
+    <Text Key="MoveLeft" Text="左へ" Comment="Left" />
+    <Text Key="MoveNextPart" Text="次のパート" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="前のパート" Comment="Previous Part" />
+    <Text Key="MoveFirstPart" Text="ページ先頭" Comment="Page Start" />
+    <Text Key="MoveLastPart" Text="ページ末尾" Comment="Page End" />
+    <Text Key="MoveRight" Text="右へ" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="最初のページへ" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="最後のページ" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="次のページへ" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="前のページ" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="上へ" Comment="Up" />
+    <Text Key="NextComic" Text="次のコミックへ" Comment="Next eComic" />
+    <Text Key="NextTab" Text="次のタブへ" Comment="Next Tab" />
+    <Text Key="Other" Text="その他" Comment="Other" />
+    <Text Key="Page Display" Text="ページの表示" Comment="Page Display" />
+    <Text Key="Auto Scroll" Text="オート スクロール" Comment="Auto Scroll" />
+    <Text Key="PrevComic" Text="前のコミック" Comment="Previous eComic" />
+    <Text Key="PrevTab" Text="前のタブへ" Comment="Previous Tab" />
+    <Text Key="RotateC" Text="右回転" Comment="Rotate Right" />
+    <Text Key="RotateCC" Text="左に回転" Comment="Rotate Left" />
+    <Text Key="ZoomIn" Text="ズーム イン" Comment="Zoom In" />
+    <Text Key="ZoomOut" Text="ズーム アウト" Comment="Zoom Out" />
+    <Text Key="Scroll" Text="スクロール" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="ブラウザ バーの表示" Comment="Show Browser" />
+    <Text Key="ToggleUndockReader" Text="リーダーのロック/解除切換え" Comment="Toggle Undock Reader" />
+    <Text Key="ToggleFullScreen" Text="フルスクリーン切換え" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="倍率変更" Comment="Toggle Magnifier" />
+    <Text Key="ToggleAutoScrolling" Text="オート スクロールの切換え" Comment="Toggle Auto Scrolling" />
+    <Text Key="ToggleTwoPages" Text="見開き表示切替" Comment="Toggle Two Pages" />
+    <Text Key="Original" Text="オリジナル サイズ" Comment="Original Size" />
+    <Text Key="MovePartDown10" Text="10% 下へ移動" Comment="Move Part 10% down" />
+    <Text Key="MovePartUp10" Text="10% 上へ移動" Comment="Move Part 10% up" />
+    <Text Key="ToggleManga" Text="単ページ/見開きモード切換え" Comment="Toggle Manga for eComic" />
+    <Text Key="DoublePageAutoScroll" Text="見開き表示のオート スクロール" Comment="Double Page Auto Scroll" />
+    <Text Key="ToggleMenu" Text="メニュー切換え" Comment="Toggle Menu" />
+    <Text Key="MoveToPrevBookmark" Text="前のブックマークへ" Comment="Previous Bookmark" />
+    <Text Key="MoveToNextBookmark" Text="次のブックマークへ" Comment="Next Bookmark" />
+    <Text Key="MoveToPrevPageSingle" Text="一ページ戻る" Comment="Single Page Back" />
+    <Text Key="MoveToNextPageSingle" Text="一ページ進む" Comment="Single Page Forward" />
+    <Text Key="OnlyFitIfOversized" Text="オーバー サイズのみフィット" Comment="Only Fit if oversized" />
+    <Text Key="StepZoomIn" Text="ステップ ズーム イン" Comment="Step Zoom In" />
+    <Text Key="StepZoomOut" Text="ステップ ズーム アウト" Comment="Step Zoom Out" />
+    <Text Key="AutoRotate" Text="見開きページの回転" Comment="Autorotate Double Pages" />
+    <Text Key="PageRotateC" Text="ページの右回転" Comment="RotatePageRight" />
+    <Text Key="PageRotateCC" Text="ページの左回転" Comment="RotatePageLeft" />
+    <Text Key="ToggleRealisticPages" Text="リアリスティック ディスプレイの切換え" Comment="Toggle Realistic Display" />
+    <Text Key="Edit" Text="編集" Comment="Edit" />
+    <Text Key="SinglePage" Text="単ページ" Comment="Single Page" />
+    <Text Key="TwoPages" Text="見開き表示" Comment="Two Pages" />
+    <Text Key="TwoPagesAdaptive" Text="見開き表示 (旧式)" Comment="Two Pages (adaptive)" />
+    <Text Key="RightToLeft" Text="右から左へ" Comment="Right to Left" />
+    <Text Key="ZoomAndRotate" Text="ズームと回転" Comment="Zoom and Rotate" />
+    <Text Key="ToggleNavigationOverlay" Text="ナビゲート オーバーレイの切換え" Comment="Toggle Navigation Overlay" />
+    <Text Key="ToggleZoom" Text="ズームの切換え" Comment="Toggle Zoom" />
+    <Text Key="Exit" Text="終了" Comment="Exit" />
+    <Text Key="RandomComic" Text="ランダム eComic" Comment="Random eComic" />
+  </Texts>
+</TR>

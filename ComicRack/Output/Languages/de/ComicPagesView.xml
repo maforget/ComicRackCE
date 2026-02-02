@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPagesView" CultureName="de">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Sortiert nach {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Größe der Thumbnails ändern" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Gruppiert nach {0}" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="&amp;Details" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="T&amp;humbnails" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Kacheln" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Nichts" Comment="None" />
+    <Text Key="NotArranged" Text="Nicht sortiert" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Nicht gruppiert" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Gruppieren" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="Gruppiere Seiten nach verschiedenen Kriterien" Comment="Group Pages by different criteria" />
+    <Text Key="tbbSort" Text="Sortieren" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="Sortiere die Seiten nach verschiedenen Kriterien" Comment="Change the sort order of the Pages" />
+    <Text Key="tbbView" Text="Ansichten" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="Wechsle wie die Seiten angezeigt werden" Comment="Change how Pages are displayed" />
+    <Text Key="tbFilter" Text="Seiten Filter" Comment="Page Filter" />
+    <Text Key="miExpandAllGroups" Text="Zu/Aufklappen aller Gruppen" Comment="Collapse/Expand all Groups"/>
+  </Texts>
+</TR>

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Columns" CultureName="tr">
+  <Texts>
+    <Text Key="AddedTimeAsText" Text="Eklenen" Comment="Added" />
+    <Text Key="AddedTimeAsText.Description" Text="e-Çizgi Roman'ın veritabanına eklendiği tarih" Comment="Time the eComic was added to the Database" />
+    <Text Key="AlternateCountAsText" Text="Diğer Sayı" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="Paralel/Hikayedeki toplam fasikül sayısı" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="Diğer Fasikül Sayısı" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="Paralel/Hikaye fasikül sayısı" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="Diğer Seriler" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="Paralel/Hikaye adı " Comment="Crossover/story name" />
+    <Text Key="Caption" Text="Başlık" Comment="Caption" />
+    <Text Key="Caption.Description" Text="e-Çizgi Romanın tam başlığı" Comment="Complete caption of the eComic" />
+    <Text Key="Colorist" Text="Renklendirme" Comment="Colorist" />
+    <Text Key="Colorist.Description" Text="e-Çizgi Romanın Renklendirmesi" Comment="Colorist of the eComic" />
+    <Text Key="CountAsText" Text="Sayı" Comment="Count" />
+    <Text Key="CountAsText.Description" Text="Serinin toplam fasikül sasyısı" Comment="Total number of issued in this series" />
+    <Text Key="Cover" Text="Kapak" Comment="Cover" />
+    <Text Key="Cover.Description" Text="e-Çizgi Romanın kapak görseli" Comment="Cover image of the eComic" />
+    <Text Key="CoverArtist" Text="Kapak Sanatçısı" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="Kapaktan sorumlu sanatçı" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="Düzenleyen" Comment="Editor" />
+    <Text Key="Editor.Description" Text="e-Çizgi Romanı Düzenleyen" Comment="Editor of the eComic" />
+    <Text Key="FileModifiedTimeAsText" Text="Dosya Değiştirildi" Comment="File Modified" />
+    <Text Key="FileModifiedTimeAsText.Description" Text="e-Çizgi Romanın son değiştirilme tarihi" Comment="Time the eComic was modified the last time" />
+    <Text Key="FileName" Text="Dosya Adı" Comment="File Name" />
+    <Text Key="FileName.Description" Text="Türü olmadan Dosya Adı" Comment="Filename without the extension" />
+    <Text Key="FilePath" Text="Dosya Konumu" Comment="File Path" />
+    <Text Key="FilePath.Description" Text="e-Çizgi Romanın Bulunduğu yer" Comment="Location where the eComic is stored" />
+    <Text Key="FileFormat" Text="Dosya Formatı" Comment="File Format" />
+    <Text Key="FileFormat.Description" Text="e-Çizgi Romanın Dosya Formatı" Comment="File format of the eComic" />
+    <Text Key="FileSizeAsText" Text="Dosya Boyutu" Comment="File Size" />
+    <Text Key="FileSizeAsText.Description" Text="e-Çizgi Romanın bayt cinsinden boyutu" Comment="Size of the eComic in bytes" />
+    <Text Key="Genre" Text="Tür" Comment="Genre" />
+    <Text Key="Genre.Description" Text="e-Çizgi Roman Türü" Comment="Genre of the eComic" />
+    <Text Key="ImageHeightAsText" Text="Yükseklik" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="Sayfanın piksel olarak yüksekliği" Comment="Height of the page in pixels" />
+    <Text Key="ImageFileSizeAsText" Text="Boyut" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="Sayfanın bayt cinsinden boyutu" Comment="Size of the page in bytes" />
+    <Text Key="ImageWidthAsText" Text="Genişlik" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="Sayfanın piksel olarak genişliği" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="Basım" Comment="Imprint" />
+    <Text Key="Imprint.Description" Text="e-Çizgi Roman Basımı" Comment="Imprint of the eComic" />
+    <Text Key="Inker" Text="Çizer" Comment="Inker" />
+    <Text Key="Inker.Description" Text="e-Çizgi Romanın Çizeri" Comment="Inker of the eComic" />
+    <Text Key="Key" Text="İsim" Comment="Name" />
+    <Text Key="Key.Description" Text="e-Çizgi Romandaki bu sayfa için özel tuş" Comment="Unique key for this page in the eComic" />
+    <Text Key="LanguageAsText" Text="Dil" Comment="Language" />
+    <Text Key="LanguageAsText.Description" Text="e-Çizgi Romanın Dili" Comment="Language of the eComic" />
+    <Text Key="Letterer" Text="Baloncuk yazarı" Comment="Letterer" />
+    <Text Key="Letterer.Description" Text="e-Çizgi Romanın Baloncuk yazarı" Comment="Letterer of the eComic" />
+    <Text Key="MonthAsText" Text="Ay" Comment="Month" />
+    <Text Key="MonthAsText.Description" Text="e-Çizgi Romanın yayınlandığı Ay" Comment="Month the eComic was published" />
+    <Text Key="NumberAsText" Text="Sayı" Comment="Number" />
+    <Text Key="NumberAsText.Description" Text="Serideki e-Çizgi Roman sayısı" Comment="Number of the eComic in the Series" />
+    <Text Key="OpenedCountAsText" Text="Açılma sayımı" Comment="Opened Count" />
+    <Text Key="OpenedCountAsText.Description" Text="e-Çizgi Romanın okunma miktarı" Comment="Times the eComic has been opened" />
+    <Text Key="OpenedTimeAsText" Text="Açıldı" Comment="Opened" />
+    <Text Key="OpenedTimeAsText.Description" Text="e-Çizgi Romanın son okunma tarihi" Comment="Last time the eComic was opened" />
+    <Text Key="Page" Text="Sayfa" Comment="Page" />
+    <Text Key="Page.Description" Text="Görüntünün sayfa sayısı" Comment="The page number of the image" />
+    <Text Key="PagesAsText" Text="Sayfalar" Comment="Pages" />
+    <Text Key="PagesAsText.Description" Text="Toplam sayfa sayısı" Comment="The total count of pages" />
+    <Text Key="PageTypeAsText" Text="Tür" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="Sayfanın tipi (hikaye, kapak, vs.)" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="Karakalemci" Comment="Penciller" />
+    <Text Key="Penciller.Description" Text="e-Çizgi Romanın Karakalemcisi" Comment="Penciller of the eComic" />
+    <Text Key="Position" Text="Konum" Comment="Position" />
+    <Text Key="Position.Description" Text="Listedeki e-Çizgi Romanın konumu" Comment="Position of the eComic in the list" />
+    <Text Key="Publisher" Text="Yayın Evi" Comment="Publisher" />
+    <Text Key="Publisher.Description" Text="e-Çizgi Roman Yayımcısı" Comment="Publisher of the eComic" />
+    <Text Key="Rating" Text="Puanım" Comment="My Rating" />
+    <Text Key="Rating.Description" Text="e-Çizgi Romana verdiğiniz puan" Comment="Your rating of the eComic" />
+    <Text Key="ReadPercentageAsText" Text="Okunma Oranı" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="Ne kadar okundu" Comment="How much has been read" />
+    <Text Key="Series" Text="Seriler" Comment="Series" />
+    <Text Key="Series.Description" Text="Serilerin Adı" Comment="Series name" />
+    <Text Key="State" Text="Durum" Comment="State" />
+    <Text Key="State.Description" Text="e-Çizgi Roman için belirteçleri belirle" Comment="State indicators for the eComic" />
+    <Text Key="Tags" Text="Künyeler" Comment="Tags" />
+    <Text Key="Tags.Description" Text="e-Çizgi Romanın Künyeleri" Comment="Tags of the eComic" />
+    <Text Key="Thumbnail" Text="Küçük İkon" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="Sayfanın küçük resmi" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="Başlık" Comment="Title" />
+    <Text Key="Title.Description" Text="e-Çizgi Roman Başlığı" Comment="Title of the eComic" />
+    <Text Key="VolumeAsText" Text="Cilt" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="Serinin cilt sayısı" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="Yazar" Comment="Writer" />
+    <Text Key="Writer.Description" Text="e-Çizgi Romanın Yazarı" Comment="Writer of the eComic" />
+    <Text Key="YearAsText" Text="Yıl" Comment="Year" />
+    <Text Key="YearAsText.Description" Text="e-Çizgi Romanın yayınlandığı yıl" Comment="Year the eComic was published" />
+    <Text Key="MangaAsText" Text="Manga " Comment="Manga" />
+    <Text Key="MangaAsText.Description" Text="e-Çizgi Roman bir Japon Manga'sı ise Evet" Comment="Yes if the eComic is a Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="Siyah&amp;Beyaz" Comment="B&amp;W" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="e-Çizgi Roman Siyah/Beyaz ise Evet" Comment="Yes if the eComic is black and white" />
+    <Text Key="Format" Text="Format " Comment="Format" />
+    <Text Key="Format.Description" Text="e-Çizgi Roman Formatı" Comment="Format of the eComic" />
+    <Text Key="Bookmark" Text="Yer İmi" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="Yer İmi yazısı" Comment="Bookmark text" />
+    <Text Key="AgeRating" Text="Yaş Sınırı" Comment="Age Rating" />
+    <Text Key="AgeRating.Description" Text="e-Çizgi Romanın yaş sınırı" Comment="Age rating of the eComic" />
+    <Text Key="Published" Text="Yayınlandı" Comment="Published" />
+    <Text Key="Published.Description" Text="e-Çizgi Romanın yayınlanma tarihi" Comment="Publication date of the eComic" />
+    <Text Key="Characters" Text="Karakterler" Comment="Characters" />
+    <Text Key="Characters.Description" Text="e-Çizgi Romanın Ana karakterleri" Comment="Plot characters of the eComic" />
+    <Text Key="RotationAsText" Text="Döndürme" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="Sayfanın nihai döndürülmesi" Comment="Permanent rotation of the page" />
+    <Text Key="FileDirectory" Text="Dosya Konumu" Comment="File Directory" />
+    <Text Key="FileDirectory.Description" Text="e-Çizgi Romanın bulunduğu yer" Comment="Directory of the eComic" />
+    <Text Key="FileCreationTimeAsText" Text="Dosya Oluşturuldu" Comment="File Created" />
+    <Text Key="FileCreationTimeAsText.Description" Text="e-Çizgi Romanın oluşturulma tarihi" Comment="Creation time of the eComic" />
+  </Texts>
+</TR>

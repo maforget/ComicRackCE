@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Columns" CultureName="sk-SK">
+  <Texts>
+    <Text Key="AddedTimeAsText" Text="Pridané" Comment="Added" />
+    <Text Key="AddedTimeAsText.Description" Text="Čas, keď bol eComic pridaný do databázy" Comment="Time the eComic was added to the Database" />
+    <Text Key="AlternateCountAsText" Text="Iné počítadlo" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="Počet častí crossoveru/príbehu" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="Iné číslo" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="Číslo vydania crossoveru/príbehu" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="Iná séria" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="Názov crossoveru/príbehu" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="Zosnímať" Comment="Caption" />
+    <Text Key="Caption.Description" Text="Dokončiť snímanie eComicsu" Comment="Complete caption of the eComic" />
+    <Text Key="Colorist" Text="Vyfarbil" Comment="Colorist" />
+    <Text Key="Colorist.Description" Text="eComic vyfarbil" Comment="Colorist of the eComic" />
+    <Text Key="CountAsText" Text="Počítadlo" Comment="Count" />
+    <Text Key="Cover" Text="Počítadlo" Comment="Cover" />
+    <Text Key="Cover.Description" Text="Titulná strana eComicsu" Comment="Cover image of the eComic" />
+    <Text Key="CoverArtist" Text="Autor titulnej strany" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="Autor zodpovedný za obálku" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="Editoval" Comment="Editor" />
+    <Text Key="Editor.Description" Text="Editor eComcsu" Comment="Editor of the eComic" />
+    <Text Key="FileName" Text="Názov súboru" Comment="File Name" />
+    <Text Key="FileName.Description" Text="Názov súboru bez prípony" Comment="Filename without the extension" />
+    <Text Key="FilePath.Description" Text="Miesto, kde je eComic uložený" Comment="Location where the eComic is stored" />
+    <Text Key="FileSizeAsText.Description" Text="Veľkosť eComicsu v bytoch" Comment="Size of the eComic in bytes" />
+    <Text Key="Genre" Text="Žáner" Comment="Genre" />
+    <Text Key="Genre.Description" Text="Žáner eComicsu" Comment="Genre of the eComic" />
+    <Text Key="ImageHeightAsText" Text="Výška" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="Výška strany v pixeloch" Comment="Height of the page in pixels" />
+    <Text Key="ImageWidthAsText" Text="Šírka" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="Šírka strany v pixeloch" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="Známka" Comment="Imprint" />
+    <Text Key="Imprint.Description" Text="Známka eComicsu" Comment="Imprint of the eComic" />
+    <Text Key="Inker" Text="Tušoval" Comment="Inker" />
+    <Text Key="Inker.Description" Text="eComic tušoval" Comment="Inker of the eComic" />
+    <Text Key="Key" Text="Názov" Comment="Name" />
+    <Text Key="Key.Description" Text="Jedinečný kľúč tejto strany v eComicse" Comment="Unique key for this page in the eComic" />
+    <Text Key="LanguageAsText" Text="Jazyk" Comment="Language" />
+    <Text Key="LanguageAsText.Description" Text="Jazyk eComicsu" Comment="Language of the eComic" />
+    <Text Key="Letterer" Text="Text vložil" Comment="Letterer" />
+    <Text Key="MonthAsText" Text="Mesiac" Comment="Month" />
+    <Text Key="MonthAsText.Description" Text="Mesiac v ktorom bol eComic vydaný" Comment="Month the eComic was published" />
+    <Text Key="NumberAsText" Text="Číslo" Comment="Number" />
+    <Text Key="NumberAsText.Description" Text="Číslo eComicsu v sérii" Comment="Number of the eComic in the Series" />
+    <Text Key="OpenedCountAsText" Text="Počítadlo otvorených" Comment="Opened Count" />
+    <Text Key="OpenedCountAsText.Description" Text="Počet otvorení eComicsu" Comment="Times the eComic has been opened" />
+    <Text Key="OpenedTimeAsText" Text="Otvorené" Comment="Opened" />
+    <Text Key="OpenedTimeAsText.Description" Text="eComic bol naposledy otvorený" Comment="Last time the eComic was opened" />
+    <Text Key="Page" Text="Strana" Comment="Page" />
+    <Text Key="Page.Description" Text="Číslo strany obrázku" Comment="The page number of the image" />
+    <Text Key="PageTypeAsText" Text="Typ" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="Typ strany (príbeh, obálka, atď.)" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="Nakreslil" Comment="Penciller" />
+    <Text Key="Penciller.Description" Text="eComic kreslil" Comment="Penciller of the eComic" />
+    <Text Key="Position" Text="Pozícia" Comment="Position" />
+    <Text Key="Position.Description" Text="Pozícia eComicu v zozname" Comment="Position of the eComic in the list" />
+    <Text Key="Publisher" Text="Vydavateľ" Comment="Publisher" />
+    <Text Key="Rating" Text="Moje hodnotenie" Comment="My Rating" />
+    <Text Key="ReadPercentageAsText" Text="Načítať percentá" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="Koľko bolo prečítané" Comment="How much has been read" />
+    <Text Key="Series" Text="Séria" Comment="Series" />
+    <Text Key="Series.Description" Text="Meno série" Comment="Series name" />
+    <Text Key="State" Text="Stav" Comment="State" />
+    <Text Key="Tags" Text="Tagy" Comment="Tags" />
+    <Text Key="Tags.Description" Text="Tagy eComicsu" Comment="Tags of the eComic" />
+    <Text Key="Thumbnail" Text="Náhľad" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="Obrázok náhľadu strany" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="Titul" Comment="Title" />
+    <Text Key="Title.Description" Text="Titul eComicsu" Comment="Title of the eComic" />
+    <Text Key="VolumeAsText" Text="Diel" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="Číslo dielu v sérii" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="Napísal" Comment="Writer" />
+    <Text Key="Writer.Description" Text="eComic napísal" Comment="Writer of the eComic" />
+    <Text Key="YearAsText" Text="Rok" Comment="Year" />
+    <Text Key="YearAsText.Description" Text="Rok publikácie eComicsu" Comment="Year the eComic was published" />
+    <Text Key="MangaAsText" Text="Manga" Comment="Manga" />
+    <Text Key="MangaAsText.Description" Text="Áno ak eComic je manga" Comment="Yes if the eComic is a Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="B&amp;W (čiernobiele)" Comment="B&amp;W" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="Áno ak eComic je čiernobiely" Comment="Yes if the eComic is black and white" />
+    <Text Key="Format" Text="Formát" Comment="Format" />
+    <Text Key="Bookmark" Text="Záložka" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="Text záložky" Comment="Bookmark text" />
+    <Text Key="FileFormat" Text="Formát súboru" Comment="File Format" />
+    <Text Key="FileFormat.Description" Text="Formát eComic súboru" Comment="File format of the eComic" />
+    <Text Key="AgeRating" Text="Vekový rating" Comment="Age Rating" />
+    <Text Key="AgeRating.Description" Text="Vekový rating eComicsu" Comment="Age rating of the eComic" />
+    <Text Key="Format.Description" Text="Formát eComicsu" Comment="Format of the eComic" />
+    <Text Key="Characters" Text="Postavy" Comment="Characters" />
+    <Text Key="Characters.Description" Text="Postavy v eComicse" Comment="Plot characters of the eComic" />
+    <Text Key="RotationAsText" Text="Otáčanie" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="Permanentné otáčanie strany" Comment="Permanent rotation of the page" />
+    <Text Key="FileDirectory.Description" Text="Zložka eComicsu" Comment="Directory of the eComic" />
+    <Text Key="FileModifiedTimeAsText" Text="Súbor zmenený" Comment="File Modified" />
+    <Text Key="FileModifiedTimeAsText.Description" Text="Čas poslednej modifikácie eComicsu" Comment="Time the eComic was modified the last time" />
+    <Text Key="FilePath" Text="Cesta súboru" Comment="File Path" />
+    <Text Key="FileSizeAsText" Text="Veľkosť súboru" Comment="File Size" />
+    <Text Key="ImageFileSizeAsText" Text="Veľkosť" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="Veľkosť strany v bytoch" Comment="Size of the page in bytes" />
+    <Text Key="Letterer.Description" Text="Text do eComicsu vložil" Comment="Letterer of the eComic" />
+    <Text Key="Publisher.Description" Text="Vydavateľ eComicsu" Comment="Publisher of the eComic" />
+    <Text Key="Rating.Description" Text="Vaše hodnotenie eComicsu" Comment="Your rating of the eComic" />
+    <Text Key="State.Description" Text="Indikátory stavu eComicsu" Comment="State indicators for the eComic" />
+    <Text Key="FileDirectory" Text="Zložka súboru" Comment="File Directory" />
+    <Text Key="FileCreationTimeAsText" Text="Dátum vytvorenia súboru" Comment="File Created" />
+    <Text Key="FileCreationTimeAsText.Description" Text="Čas vytvorenia eComicsu" Comment="Creation time of the eComic" />
+    <Text Key="BookmarkCountAsText" Text="Počítadlo záložiek" Comment="Bookmark Count" />
+    <Text Key="BookmarkCountAsText.Description" Text="Počet záložiek tohto eComicsu" Comment="Count of Bookmarks for this eComic" />
+    <Text Key="Number" Text="Číslo" Comment="Number" />
+    <Text Key="AlternateNumber" Text="Alternatívne číslo" Comment="Alternate Number" />
+    <Text Key="Web" Text="Web" Comment="Web" />
+    <Text Key="Notes" Text="Poznámky" Comment="Notes" />
+    <Text Key="Summary" Text="Zhrnutie" Comment="Summary" />
+    <Text Key="PagesAsTextSimple" Text="Strany" Comment="Pages" />
+    <Text Key="PagesAsTextSimple.Description" Text="Celkový počet strán" Comment="The total count of pages" />
+    <Text Key="PublishedAsText" Text="Publikované" Comment="Published" />
+    <Text Key="PublishedAsText.Description" Text="Dátum publikácie eComicsu" Comment="Publication date of the eComic" />
+    <Text Key="NewPagesAsText" Text="Nové strany" Comment="New Pages" />
+    <Text Key="NewPagesAsText.Description" Text="Počet nových strán" Comment="Count of new Pages" />
+    <Text Key="Teams" Text="Tímy" Comment="Teams" />
+    <Text Key="Teams.Description" Text="Tímy príbehu eComicsu" Comment="Plot teams of the eComic" />
+    <Text Key="Locations" Text="Lokácie" Comment="Locations" />
+    <Text Key="Locations.Description" Text="Priestor príbehu eComicsu" Comment="Plot locations of the eComic" />
+    <Text Key="Web.Description" Text="Webový link" Comment="A Web Link" />
+    <Text Key="CountAsText.Description" Text="Celkový počet vydaných v sérii" Comment="Total number of issues in this series" />
+    <Text Key="CommunityRating" Text="Hodnotenie Komunity" Comment="Community Rating" />
+    <Text Key="CommunityRating.Description" Text="Hodnotenie eComicsu podľa komunity" Comment="Community Rating of the eComic" />
+    <Text Key="IsLinkedAsText" Text="Spojené so súborom" Comment="Linked to File" />
+    <Text Key="IsLinkedAsText.Description" Text="eComic je spojený so súborom" Comment="eComic is linked to a File" />
+    <Text Key="BookAge" Text="Vek knihy" Comment="Book Age" />
+    <Text Key="BookAge.Description" Text="Vek knihy" Comment="Age of the Book" />
+    <Text Key="BookPriceAsText" Text="Cena knihy" Comment="Book Price" />
+    <Text Key="BookPriceAsText.Description" Text="Cena knihy" Comment="Price of the Book" />
+    <Text Key="BookCondition" Text="Stav knihy" Comment="Book Condition" />
+    <Text Key="BookCondition.Description" Text="Stav knihy" Comment="Condition of the Book" />
+    <Text Key="BookStore" Text="Obchod s knihami" Comment="Book Store" />
+    <Text Key="BookStore.Description" Text="Obchod, v ktorom bola kniha kúpená" Comment="Store the Book was bought" />
+    <Text Key="BookOwner" Text="Vlastník knihy" Comment="Book Owner" />
+    <Text Key="BookOwner.Description" Text="Majiteľ knihy" Comment="Owner of the Book" />
+    <Text Key="BookCollectionStatus" Text="Stav zbierky kníh" Comment="Book Collection Status" />
+    <Text Key="BookCollectionStatus.Description" Text="Stav knihy v zbierke" Comment="Status of the Book in the Collection" />
+    <Text Key="BookLocation" Text="Poloha knihy" Comment="Book Location" />
+    <Text Key="BookLocationStatus.Description" Text="Miesto, kde je kniha" Comment="Location of the Book" />
+  </Texts>
+</TR>

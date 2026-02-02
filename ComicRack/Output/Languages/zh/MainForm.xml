@@ -1,0 +1,254 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainForm" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="browseMenu" Text="瀏覽" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="複製頁面" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="導出頁面..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="適合所有" Comment="Fit All" />
+    <Text Key="cmFitBest" Text="最佳大小" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="適合高度" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="適合寬度" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="放大鏡" Comment="&amp;Magnifier" />
+    <Text Key="cmNextFromList" Text="下一本漫畫" Comment="Ne&amp;xt eComic" />
+    <Text Key="cmNotifyExit" Text="退出" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="恢復" Comment="&amp;Restore" />
+    <Text Key="cmPrevFromList" Text="上一本漫畫" Comment="Pre&amp;vious eComic" />
+    <Text Key="cmRate0" Text="無" Comment="None" />
+    <Text Key="cmRate1" Text="* (一星)" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** (二星)" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** (三星)" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** (四星)" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** (五星)" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="我的評分" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="刷新" Comment="&amp;Refresh" />
+    <Text Key="cmSyncBrowser" Text="以瀏覽模式顯示" Comment="Show in &amp;Browser" />
+    <Text Key="displayMenu" Text="顯示" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="編輯" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="文件" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="幫助" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack" Comment="ComicRack" />
+    <Text Key="miAbout" Text="關於..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="將文件夾添加到媒體庫..." Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="新建標簽" Comment="New &amp;Tab" />
+    <Text Key="miBestFit" Text="最佳大小" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="關閉所有" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="關閉" Comment="&amp;Close" />
+    <Text Key="miDeleteListLayout" Text="刪除列表佈局..." Comment="&amp;Delete List Layout..." />
+    <Text Key="miDeleteWorkspace" Text="刪除工作空間..." Comment="&amp;Delete Workspace..." />
+    <Text Key="miEditListLayout" Text="編輯列表佈局" Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="退出" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="自動" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="第一頁" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="適合所有" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="適合高度" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="適合寬度" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="全屏" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="最末頁" Comment="&amp;Last Page" />
+    <Text Key="miLastPageRead" Text="上一個已讀頁面" Comment="L&amp;ast Page Read" />
+    <Text Key="miListLayouts" Text="列表佈局" Comment="List Layout" />
+    <Text Key="miNews" Text="更新..." Comment="&amp;News..." />
+    <Text Key="miNextFromList" Text="下一本漫畫" Comment="Ne&amp;xt eComic" />
+    <Text Key="miNextTab" Text="新建標簽" Comment="Next &amp;Tab" />
+    <Text Key="miOpenNow" Text="打開漫畫" Comment="Open eCo&amp;mics" />
+    <Text Key="miOpenRecent" Text="最近打開的漫畫" Comment="&amp;Recent eComics" />
+    <Text Key="miPageType" Text="頁面類型" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="選項..." Comment="&amp;Preferences..." />
+    <Text Key="miPrevFromList" Text="上一本漫畫" Comment="Pre&amp;vious eComic" />
+    <Text Key="miPrevPage" Text="前一頁" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="上一標簽" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="無" Comment="None" />
+    <Text Key="miRate1" Text="* (一星)" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** (二星)" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** (三星)" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** (四星)" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** (五星)" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="我的評分" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="重啟 ComicRack" Comment="Rest&amp;art" />
+    <Text Key="miRotate180" Text="180°" Comment="180°" />
+    <Text Key="miRotate270" Text="270°" Comment="270°" />
+    <Text Key="miRotate90" Text="90°" Comment="90°" />
+    <Text Key="miRotation" Text="旋轉" Comment="&amp;Rotation" />
+    <Text Key="miSaveListLayout" Text="保存列表佈局..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="保存工作空間..." Comment="&amp;Save Workspace..." />
+    <Text Key="miScan" Text="掃描漫畫文件夾" Comment="Scan eComic &amp;Folders" />
+    <Text Key="miAutoScroll" Text="自動滾動" Comment="Auto Scrolling" />
+    <Text Key="miSearchBrowser" Text="搜索框" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="將所有列表設置成當前佈局" Comment="Set all Lists to current Layout" />
+    <Text Key="miSidebar" Text="側邊欄" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="小頁預覽" Comment="S&amp;mall Preview" />
+    <Text Key="miSupport" Text="支持 ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miSyncBrowser" Text="以瀏覽模式顯示" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="瀏覽" Comment="&amp;Browser" />
+    <Text Key="miView100" Text="100 %" Comment="100 %" />
+    <Text Key="miView150" Text="150 %" Comment="150 %" />
+    <Text Key="miView200" Text="200 %" Comment="200 %" />
+    <Text Key="miView300" Text="300 %" Comment="300 %" />
+    <Text Key="miView400" Text="400 %" Comment="400 %" />
+    <Text Key="miViewFolders" Text="文件夾" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="媒體庫" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="頁面" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="刷新" Comment="&amp;Refresh" />
+    <Text Key="miWorkspaces" Text="工作空間" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="縮放" Comment="Zoom" />
+    <Text Key="readMenu" Text="閱讀" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="設置為 '{0}' 佈局" Comment="Set '{0}' Layout" />
+    <Text Key="tbBestFit" Text="最佳大小" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="顯示" Comment="Display" />
+    <Text Key="tbFit" Text="調整" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="更改適應模式" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="適合所有" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="適合高度" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="適合寬度" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="全屏" Comment="Full Screen" />
+    <Text Key="tbMagnify" Text="放大鏡" Comment="Magnifier" />
+    <Text Key="tbNextFromList" Text="列表中的下一本漫畫" Comment="Next eComic from List" />
+    <Text Key="tbNextPage" Text="下一頁" Comment="Next Page" />
+    <Text Key="tbNextTab" Text="新建標簽" Comment="Next &amp;Tab" />
+    <Text Key="tbNextTab.Tooltip" Text="下一標簽" Comment="Next Tab" />
+    <Text Key="tbPrevFromList" Text="列表中的上一本漫畫" Comment="Previous eComic from List" />
+    <Text Key="tbPrevTab" Text="上一標簽" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="上一標簽" Comment="Vorheriger Tab" />
+    <Text Key="tbReadLabel" Text="閱讀" Comment="Read" />
+    <Text Key="tbAutoScroll" Text="自動滾動" Comment="Auto Scrolling" />
+    <Text Key="tbTwoPages" Text="雙頁" Comment="Two Pages" />
+    <Text Key="tsBook" Text="書籍" Comment="Book" />
+    <Text Key="tsBook.Tooltip" Text="已打開的漫畫名稱" Comment="Name of the opened eComic" />
+    <Text Key="tsCurrentPage" Text="頁面" Comment="Page" />
+    <Text Key="tsCurrentPage.Tooltip" Text="已打開漫畫的當前頁" Comment="Current Page of the open eComic" />
+    <Text Key="tsDeleteWorkspace" Text="刪除工作空間..." Comment="&amp;Delete Workspace..." />
+    <Text Key="tsPageCount" Text="0 頁" Comment="0 Pages" />
+    <Text Key="tsPageCount.Tooltip" Text="此漫畫的頁數" Comment="Page count of the open eComic" />
+    <Text Key="tsSaveWorkspace" Text="保存工作空間..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsText" Text="準備就緒" Comment="Ready" />
+    <Text Key="tsWorkspaces" Text="工作空間" Comment="Workspaces" />
+    <Text Key="miReaderUndocked" Text="在單獨的窗口中閱讀" Comment="Reader in own Window" />
+    <Text Key="tbReaderUndocked" Text="在單獨的窗口中閱讀" Comment="Reader in own Window" />
+    <Text Key="miPageLayout" Text="頁面佈局" Comment="Page Layout" />
+    <Text Key="cmPageLayout" Text="頁面佈局" Comment="Page Layout" />
+    <Text Key="miAdaptiveTwoPageFitting" Text="適應雙頁面分佈" Comment="Adapt to double page spreads" />
+    <Text Key="cmAdaptiveTwoPageFitting" Text="適應雙頁面分佈" Comment="Adapt to double page spreads" />
+    <Text Key="tbAdaptiveTwoPageFitting" Text="適應雙頁面分佈" Comment="Adapt to double page spreads" />
+    <Text Key="miOriginal" Text="原始大小" Comment="Original Size" />
+    <Text Key="tbOriginal" Text="原始大小" Comment="Original Size" />
+    <Text Key="cmOriginal" Text="原始大小" Comment="Original Size" />
+    <Text Key="NotifyIconText" Text="雙擊以恢復" Comment="Double Click to restore" />
+    <Text Key="cmOnlyFitOversized" Text="只在頁面過大時調整" Comment="Only Fit if oversized" />
+    <Text Key="miOnlyFitOversized" Text="只在頁面過大時調整" Comment="Only Fit if oversized" />
+    <Text Key="tbOnlyFitOversized" Text="只在頁面過大時調整" Comment="Only Fit if oversized" />
+    <Text Key="ChangeItemSize" Text="更改列表項大小" Comment="Change size of the list items" />
+    <Text Key="miDoublePageAutoScroll" Text="雙頁自動滾屏" Comment="Double Page Auto Scrolling" />
+    <Text Key="cmFitWidthAdaptive" Text="適合寬度（自適應）" Comment="Fit Width (adaptive)" />
+    <Text Key="miFitWidthAdaptive" Text="適合寬度（自適應）" Comment="Fit Width (adaptive)" />
+    <Text Key="tbFitWidthAdaptive" Text="適合寬度（自適應）" Comment="Fit Width (adaptive)" />
+    <Text Key="cmRightToLeft" Text="從右至左" Comment="Right to Left" />
+    <Text Key="tbRightToLeft" Text="從右至左" Comment="Right to Left" />
+    <Text Key="miRightToLeft" Text="從右至左" Comment="Right to Left" />
+    <Text Key="miMinimalGui" Text="最小用戶界面" Comment="Minimal User Interface" />
+    <Text Key="tbMinimalGui" Text="最小用戶界面" Comment="Minimal User Interface" />
+    <Text Key="cmMinimalGui" Text="最小用戶界面" Comment="Minimal User Interface" />
+    <Text Key="miCopyPage" Text="複製頁面" Comment="&amp;Copy Page" />
+    <Text Key="miExportPage" Text="導出頁面" Comment="&amp;Export Page..." />
+    <Text Key="ExportingComics" Text="導出漫畫: {0} 隊列" Comment="Exporting eComics: {0} queued" />
+    <Text Key="ExportingErrors" Text="{0} 個錯誤. 點擊查看詳細信息。" Comment="{0} errors. Click for details" />
+    <Text Key="miOpenComic" Text="打開漫畫" Comment="&amp;Open eComic..." />
+    <Text Key="cmOpenComic" Text="打開漫畫" Comment="&amp;Open eComic..." />
+    <Text Key="cmPageType" Text="頁面類型" Comment="&amp;Page Type" />
+    <Text Key="cmRotate0" Text="不旋轉" Comment="&amp;No Rotation" />
+    <Text Key="cmRotate180" Text="180°" Comment="180°" />
+    <Text Key="cmRotate270" Text="270°" Comment="270°" />
+    <Text Key="cmRotate90" Text="90°" Comment="90°" />
+    <Text Key="miWebHome" Text="ComicRack 主頁" Comment="ComicRack Homepage..." />
+    <Text Key="miWebUserForum" Text="ComicRack 用戶論壇" Comment="ComicRack User Forum..." />
+    <Text Key="tsExportActivity" Text="導出" Comment="Exporting" />
+    <Text Key="tsPageActivity.Tooltip" Text="獲取頁面與縮略圖" Comment="Getting Pages and Thumbnails..." />
+    <Text Key="tsScanActivity.Tooltip" Text="後臺掃描中..." Comment="A scan is running..." />
+    <Text Key="tsWriteInfoActivity.Tooltip" Text="將信息寫入到文件中" Comment="Writing info data to files..." />
+    <Text Key="tsReadInfoActivity.Tooltip" Text="從文件中讀取信息" Comment="Reading info data from files..." />
+    <Text Key="miWebHelp" Text="ComicRack 文檔" Comment="ComicRack Documentation..." />
+    <Text Key="miBookmarks" Text="書簽" Comment="Bookmarks" />
+    <Text Key="miSetBookmark" Text="設置書簽..." Comment="Set Bookmark..." />
+    <Text Key="miRemoveBookmark" Text="刪除書簽" Comment="Remove Bookmark" />
+    <Text Key="tbBookmarks" Text="書簽" Comment="Bookmarks" />
+    <Text Key="tbSetBookmark" Text="設置書簽..." Comment="Set Bookmark..." />
+    <Text Key="tbRemoveBookmark" Text="刪除書簽" Comment="Remove Bookmark" />
+    <Text Key="tbLastPageRead" Text="上次閱讀頁面" Comment="Last Page Read" />
+    <Text Key="cmBookmarks" Text="書簽" Comment="Bookmarks" />
+    <Text Key="cmSetBookmark" Text="設置書簽..." Comment="Set Bookmark..." />
+    <Text Key="cmRemoveBookmark" Text="刪除書簽" Comment="Remove Bookmark" />
+    <Text Key="cmLastPageRead" Text="上次閱讀頁面" Comment="Last Page Read" />
+    <Text Key="miPrevBookmark" Text="上一個書簽" Comment="Previous Bookmark" />
+    <Text Key="miNextBookmark" Text="下一個書簽" Comment="Next Bookmark" />
+    <Text Key="tbPrevBookmark" Text="上一個書簽" Comment="Previous Bookmark" />
+    <Text Key="tbNextBookmark" Text="下一個書簽" Comment="Next Bookmark" />
+    <Text Key="cmPrevBookmark" Text="上一個書簽" Comment="Previous Bookmark" />
+    <Text Key="cmNextBookmark" Text="下一個書簽" Comment="Next Bookmark" />
+    <Text Key="miZoomIn" Text="放大" Comment="Zoom In" />
+    <Text Key="tbZoomIn" Text="放大" Comment="Zoom In" />
+    <Text Key="miZoomOut" Text="縮小" Comment="Zoom Out" />
+    <Text Key="tbZoomOut" Text="縮小" Comment="Zoom Out" />
+    <Text Key="miZoomCustom" Text="自定義..." Comment="Custom..." />
+    <Text Key="tbZoomCustom" Text="自定義..." Comment="Custom..." />
+    <Text Key="tbZoom.Tooltip" Text="更改頁面縮放" Comment="Change the page zoom" />
+    <Text Key="tbRotate.Tooltip" Text="更改頁面旋轉" Comment="Change the page rotation" />
+    <Text Key="miRotateLeft" Text="向左旋轉" Comment="Rotate Left" />
+    <Text Key="miRotateRight" Text="向右旋轉" Comment="Rotate Right" />
+    <Text Key="tbRotateLeft" Text="向左旋轉" Comment="Rotate Left" />
+    <Text Key="tbRotateRight" Text="向右旋轉" Comment="Rotate Right" />
+    <Text Key="tbRotate180" Text="180°" Comment="180°" />
+    <Text Key="tbRotate270" Text="270°" Comment="270°" />
+    <Text Key="tbRotate90" Text="90°" Comment="90°" />
+    <Text Key="tbAutoRotate" Text="調整大小並自動旋轉" Comment="Autorotate Double Pages" />
+    <Text Key="miAutoRotate" Text="調整大小並自動旋轉" Comment="Autorotate Double Pages" />
+    <Text Key="cmCloseAllButThis" Text="關閉其它所有" Comment="Close All But This" />
+    <Text Key="cmCopyPath" Text="複製完整路徑" Comment="Copy Full Path" />
+    <Text Key="cmRevealInExplorer" Text="在瀏覽器中顯示" Comment="Reveal in Explorer" />
+    <Text Key="cmClose" Text="關閉" Comment="Close" />
+    <Text Key="cmCloseComic" Text="關閉" Comment="Close" />
+    <Text Key="miPendingTasks" Text="任務掛起..." Comment="Pending Tasks..." />
+    <Text Key="SavePageTitle" Text="頁面另存為..." Comment="Save Page as..." />
+    <Text Key="cmPageRotate" Text="頁面旋轉" Comment="Page Rotation" />
+    <Text Key="miPageRotate" Text="頁面旋轉" Comment="Page Rotation" />
+    <Text Key="miOpenRemoteLibrary" Text="打開遠程庫..." Comment="Open Remote Library..." />
+    <Text Key="cmRandomFromList" Text="隨機漫畫" Comment="Random eComic" />
+    <Text Key="cmShowInfo" Text="獲取信息..." Comment="&amp;Info..." />
+    <Text Key="tbAbout" Text="關於..." Comment="&amp;About..." />
+    <Text Key="tbFirstPage" Text="首頁" Comment="&amp;First Page" />
+    <Text Key="tbLastPage" Text="末頁" Comment="&amp;Last Page" />
+    <Text Key="miRandomFromList" Text="隨機漫畫" Comment="Random eComic" />
+    <Text Key="miNextPage" Text="下一頁" Comment="Next Page" />
+    <Text Key="miMagnify" Text="放大鏡" Comment="Magnifier" />
+    <Text Key="tbOpenComic" Text="打開漫畫..." Comment="&amp;Open eComic..." />
+    <Text Key="tbPreferences" Text="選項..." Comment="&amp;Preferences..." />
+    <Text Key="tbTools" Text="工具" Comment="Tools" />
+    <Text Key="tbTools.Tooltip" Text="訪問重要命令" Comment="Access to important commands" />
+    <Text Key="tbShowMainMenu" Text="顯示主菜單" Comment="Show Main Menu" />
+    <Text Key="tbPrevPage" Text="上一頁" Comment="&amp;Previous Page" />
+    <Text Key="miRotate0" Text="不旋轉" Comment="0°" />
+    <Text Key="tbScan" Text="掃描漫畫 &amp;文件夾" Comment="Scan eComic &amp;Folders" />
+    <Text Key="miShowInfo" Text="獲取信息..." Comment="&amp;Info..." />
+    <Text Key="tbShowInfo" Text="信息" Comment="&amp;Info..." />
+    <Text Key="tbSupport" Text="支持 ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miTwoPages" Text="雙頁" Comment="Two Pages" />
+    <Text Key="cmTwoPages" Text="雙頁" Comment="Two Pages" />
+    <Text Key="miTwoPagesAdaptive" Text="雙頁 (自適應)" Comment="Two Pages (adaptive)" />
+    <Text Key="cmTwoPagesAdaptive" Text="雙頁 (自適應)" Comment="Two Pages (adaptive)" />
+    <Text Key="tbTwoPagesAdaptive" Text="雙頁 (自適應)" Comment="Two Pages (adaptive)" />
+    <Text Key="miSinglePage" Text="單頁" Comment="Single Page" />
+    <Text Key="cmSinglePage" Text="單頁" Comment="Single Page" />
+    <Text Key="tbSinglePage" Text="單頁" Comment="Single Page" />
+    <Text Key="tbRandomFromList" Text="隨機漫畫" Comment="Random eComic" />
+    <Text Key="cmComics" Text="漫畫" Comment="eComics" />
+    <Text Key="tbRotate0" Text="不旋轉" Comment="0°" />
+    <Text Key="tbOpenRemoteLibrary" Text="打開遠程庫..." Comment="Open Remote Library..." />
+    <Text Key="miUpdateAllComicFiles" Text="更新所有eComic文件" Comment="Update all eComic Files" />
+    <Text Key="tbUpdateAllComicFiles" Text="更新所有eComic文件" Comment="Update all eComic Files" />
+    <Text Key="miUndo" Text="撤銷" Comment="Undo" />
+    <Text Key="miRedo" Text="重做" Comment="Redo" />
+    <Text Key="miComicDisplaySettings" Text="漫畫顯示設置..." Comment="Comic Display Settings..." />
+    <Text Key="tbComicDisplaySettings" Text="漫畫顯示設置..." Comment="Comic Display Settings..." />
+    <Text Key="miPreviousList" Text="上個列表" Comment="Previous List" />
+    <Text Key="miNextList" Text="下一列表" Comment="Next List" />
+    <Text Key="miUpdateWebComics" Text="更新網絡漫畫" Comment="Update Web Comics" />
+    <Text Key="tbUpdateWebComics" Text="更新網絡漫畫" Comment="Update Web Comics" />
+  </Texts>
+</TR>

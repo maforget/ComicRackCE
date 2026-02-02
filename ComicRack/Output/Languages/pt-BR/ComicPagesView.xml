@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPagesView" CultureName="pt-BR">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Organizar por {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Muda o tamanho das miniaturas" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Agrupados por {0}" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="&amp;Detalhes" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="&amp;Miniaturas" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Faixas" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Nenhuma" Comment="None" />
+    <Text Key="NotArranged" Text="Não classificado" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Não agrupado" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Agrupar" Comment="Group" />
+    <Text Key="tbbSort" Text="Organizar" Comment="Arrange" />
+    <Text Key="tbbView" Text="Visualizações" Comment="Views" />
+    <Text Key="tbFilter" Text="Filtro de páginas" Comment="Page Filter" />
+    <Text Key="tbbGroup.Tooltip" Text="Agrupar Livros por diferentes critérios" Comment="Group Pages by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="Muda o critério de classificação das Páginas" Comment="Change the sort order of the Pages" />
+    <Text Key="tbbView.Tooltip" Text="Muda como as Páginas são exibidas" Comment="Change how Pages are displayed" />
+    <Text Key="miExpandAllGroups" Text="Contrair/Expandir todos os Grupos" Comment="Collapse/Expand all Groups" />
+  </Texts>
+</TR>

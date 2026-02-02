@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.CommitProposed" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="AskCommit" Text="你确定要永久使用建议值吗？\n建议值根据文件名生成并以灰色显示" Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
+    <Text Key="Name" Text="采用建议值..." Comment="Commit Proposed Values..." />
+    <Text Key="Overwrite" Text="同时更新当前值" Comment="&amp;Also overwrite existing values" />
+    <Text Key="Write" Text="写入" Comment="Write" />
+    <Text Key="Description" Text="为漫画永久设定建议值的脚本" Comment="A script to makes the proposed values for the eComics permanent" />
+  </Texts>
+</TR>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicDataPasteDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="btCancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btMarkAll" Text="所有(&amp;A)" Comment="&amp;All" />
+    <Text Key="btMarkDefined" Text="仅已设置(&amp;S)" Comment="Only &amp;Set" />
+    <Text Key="btMarkNone" Text="清除(&amp;C)" Comment="&amp;Clear" />
+    <Text Key="btOK" Text="确定(&amp;O)" Comment="&amp;OK" />
+    <Text Key="chkColor" Text="色彩调整" Comment="Color Adjustment" />
+    <Text Key="chkColorist" Text="配色" Comment="Colorist" />
+    <Text Key="chkCount" Text="总话数" Comment="Total Number" />
+    <Text Key="chkCover" Text="封面绘师" Comment="Cover Artist" />
+    <Text Key="chkEditor" Text="编辑" Comment="Editor" />
+    <Text Key="chkGenre" Text="体裁" Comment="Genre" />
+    <Text Key="chkImprint" Text="出版品牌" Comment="Imprint" />
+    <Text Key="chkInker" Text="描线员" Comment="Inker" />
+    <Text Key="chkLanguage" Text="语言" Comment="Language" />
+    <Text Key="chkLetterer" Text="嵌字" Comment="Letterer" />
+    <Text Key="chkMonth" Text="月" Comment="Month" />
+    <Text Key="chkNotes" Text="笔记" Comment="Notes" />
+    <Text Key="chkNumber" Text="话数" Comment="Number" />
+    <Text Key="chkPenciller" Text="铅稿" Comment="Penciller" />
+    <Text Key="chkPublisher" Text="出版社" Comment="Publisher" />
+    <Text Key="chkSeries" Text="系列" Comment="Series" />
+    <Text Key="chkSummary" Text="摘要" Comment="Summary" />
+    <Text Key="chkTags" Text="标签" Comment="Tags" />
+    <Text Key="chkTitle" Text="标题" Comment="Title" />
+    <Text Key="chkVolume" Text="卷数" Comment="Volume" />
+    <Text Key="chkWriter" Text="脚本" Comment="Writer" />
+    <Text Key="chkYear" Text="年" Comment="Year" />
+    <Text Key="chkManga" Text="漫画" Comment="Manga" />
+    <Text Key="chkFormat" Text="格式" Comment="Format" />
+    <Text Key="chkBlackAndWhite" Text="黑白" Comment="Black and White" />
+    <Text Key="grpArtists" Text="绘师 / 参与者" Comment="Artists / People Involved" />
+    <Text Key="grpMain" Text="主要" Comment="Main" />
+    <Text Key="chkAgeRating" Text="年龄分级" Comment="Age Rating" />
+    <Text Key="chkCharacters" Text="角色" Comment="Characters" />
+    <Text Key="chkWeb" Text="网址" Comment="Web" />
+    <Text Key="chkLocations" Text="场景" Comment="Locations" />
+    <Text Key="chkTeams" Text="组织" Comment="Teams" />
+    <Text Key="chkRating" Text="我的评分" Comment="My Rating" />
+    <Text Key="chkCommunityRating" Text="社群评分" Comment="Community Rating" />
+    <Text Key="chkAlternateCount" Text="备用总话数" Comment="Alt. Total Number" />
+    <Text Key="chkAlternateNumber" Text="备用话数" Comment="Alt. Number" />
+    <Text Key="chkAlternateSeries" Text="系列别名" Comment="Alt. Series" />
+    <Text Key="chkBookPrice" Text="价格" Comment="Price" />
+    <Text Key="chkBookAge" Text="书籍年代" Comment="Age" />
+    <Text Key="chkBookCondition" Text="状况" Comment="Condition" />
+    <Text Key="chkBookStore" Text="书店" Comment="Store" />
+    <Text Key="chkBookOwner" Text="所有者" Comment="Owner" />
+    <Text Key="chkBookLocation" Text="场所" Comment="Location" />
+    <Text Key="chkBookCollectionStatus" Text="收集状态" Comment="Collection Status" />
+    <Text Key="chkBookNotes" Text="笔记" Comment="Notes" />
+    <Text Key="grpPlotNotes" Text="情节与笔记" Comment="Plot &amp; Notes" />
+    <Text Key="grpCatalog" Text="概况" Comment="Catalog" />
+    <Text Key="chkISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ComicDataPasteDialog" Text="粘贴数据到 {0} 本书籍中" Comment="Paste Data into {0} Books" />
+    <Text Key="chkPageCount" Text="页面" Comment="Pages" />
+    <Text Key="chkOpenTime" Text="打开/阅读时间" Comment="Opened/Read" />
+    <Text Key="chkAddedTime" Text="已添加/已购买" Comment="Added/Purchased" />
+    <Text Key="labelSeriesComplete" Text="系列已完结" Comment="Series complete" />
+    <Text Key="chkStoryArc" Text="故事篇章" Comment="Story Arc" />
+    <Text Key="chkSeriesGroup" Text="系列集合" Comment="Series Group" />
+    <Text Key="chkMainCharacterOrTeam" Text="主要角色" Comment="Main Character" />
+    <Text Key="chkReview" Text="评论" Comment="Review" />
+  </Texts>
+</TR>

@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Columns" CultureName="zh-CN">
+  <Texts>
+    <Text Key="AlternateCountAsText" Text="备用总话数" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="在穿越/故事中的总发行话数" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="备用话数" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="在穿越/故事中的发行话数" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="系列别名" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="穿越/故事名" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="说明" Comment="Caption" />
+    <Text Key="Colorist" Text="配色" Comment="Colorist" />
+    <Text Key="CountAsText" Text="总话数" Comment="Count" />
+    <Text Key="Cover" Text="封面" Comment="Cover" />
+    <Text Key="CoverArtist" Text="封面绘师" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="负责绘制封面的绘师" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="编辑" Comment="Editor" />
+    <Text Key="FileName" Text="文件名" Comment="File Name" />
+    <Text Key="FileName.Description" Text="不包含扩展名的文件名" Comment="Filename without the extension" />
+    <Text Key="FileFormat" Text="文件格式" Comment="File Format" />
+    <Text Key="Genre" Text="体裁" Comment="Genre" />
+    <Text Key="ImageHeightAsText" Text="高度" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="页面像素高度" Comment="Height of the page in pixels" />
+    <Text Key="ImageWidthAsText" Text="宽" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="页面像素宽度" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="出版品牌" Comment="Imprint" />
+    <Text Key="Inker" Text="描线员" Comment="Inker" />
+    <Text Key="Key" Text="名称" Comment="Name" />
+    <Text Key="LanguageAsText" Text="语言" Comment="Language" />
+    <Text Key="Letterer" Text="嵌字" Comment="Letterer" />
+    <Text Key="MonthAsText" Text="月" Comment="Month" />
+    <Text Key="NumberAsText" Text="话数" Comment="Number" />
+    <Text Key="OpenedCountAsText" Text="打开次数" Comment="Opened Count" />
+    <Text Key="Page" Text="页面" Comment="Page" />
+    <Text Key="Page.Description" Text="图像的页码" Comment="The page number of the image" />
+    <Text Key="PageTypeAsText" Text="格式" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="页面类型 (如: 故事, 封面等等)" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="铅稿" Comment="Penciller" />
+    <Text Key="Position" Text="位置" Comment="Position" />
+    <Text Key="Publisher" Text="出版社" Comment="Publisher" />
+    <Text Key="Rating" Text="我的评分" Comment="My Rating" />
+    <Text Key="ReadPercentageAsText" Text="已读百分比" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="已经阅读了多少" Comment="How much has been read" />
+    <Text Key="Series" Text="系列" Comment="Series" />
+    <Text Key="Series.Description" Text="系列名" Comment="Series name" />
+    <Text Key="State" Text="状态" Comment="State" />
+    <Text Key="Tags" Text="标签" Comment="Tags" />
+    <Text Key="Thumbnail" Text="缩略图" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="页面的缩略图" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="标题" Comment="Title" />
+    <Text Key="VolumeAsText" Text="卷数" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="系列的卷数" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="脚本" Comment="Writer" />
+    <Text Key="YearAsText" Text="年" Comment="Year" />
+    <Text Key="MangaAsText" Text="漫画" Comment="Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="黑白" Comment="B&amp;W" />
+    <Text Key="Format" Text="版式" Comment="Format" />
+    <Text Key="Bookmark" Text="书签" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="书签文本" Comment="Bookmark text" />
+    <Text Key="AgeRating" Text="年龄分级" Comment="Age Rating" />
+    <Text Key="Characters" Text="角色" Comment="Characters" />
+    <Text Key="RotationAsText" Text="旋转" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="保持页面旋转" Comment="Permanent rotation of the page" />
+    <Text Key="FilePath" Text="文件路径" Comment="File Path" />
+    <Text Key="FileSizeAsText" Text="文件大小" Comment="File Size" />
+    <Text Key="ImageFileSizeAsText" Text="大小" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="页面大小(单位:byte)" Comment="Size of the page in bytes" />
+    <Text Key="FileDirectory" Text="文件目录" Comment="File Directory" />
+    <Text Key="BookmarkCountAsText" Text="书签数" Comment="Bookmark Count" />
+    <Text Key="Number" Text="话数" Comment="Number" />
+    <Text Key="AlternateNumber" Text="备用话数" Comment="Alternate Number" />
+    <Text Key="Web" Text="网址" Comment="Web" />
+    <Text Key="Notes" Text="笔记" Comment="Notes" />
+    <Text Key="Summary" Text="摘要" Comment="Summary" />
+    <Text Key="PagesAsTextSimple" Text="页数" Comment="Pages" />
+    <Text Key="PagesAsTextSimple.Description" Text="页面总数" Comment="The total count of pages" />
+    <Text Key="PublishedAsText" Text="出版时间" Comment="Published" />
+    <Text Key="NewPagesAsText" Text="新页面" Comment="New Pages" />
+    <Text Key="NewPagesAsText.Description" Text="新页面总数" Comment="Count of new Pages" />
+    <Text Key="Teams" Text="组织" Comment="Teams" />
+    <Text Key="Locations" Text="场景" Comment="Locations" />
+    <Text Key="Web.Description" Text="网络链接" Comment="A Web Link" />
+    <Text Key="CountAsText.Description" Text="该书籍在系统中的总话数" Comment="Total number of issues in this series" />
+    <Text Key="CommunityRating" Text="社群评分" Comment="Community Rating" />
+    <Text Key="IsLinkedAsText" Text="链接到文件" Comment="Linked to File" />
+    <Text Key="BookAge" Text="书籍年代" Comment="Book Age" />
+    <Text Key="BookAge.Description" Text="书籍的年代" Comment="Age of the Book" />
+    <Text Key="BookPriceAsText" Text="书籍价格" Comment="Book Price" />
+    <Text Key="BookPriceAsText.Description" Text="书籍的价格" Comment="Price of the Book" />
+    <Text Key="BookCondition" Text="书籍状况" Comment="Book Condition" />
+    <Text Key="BookCondition.Description" Text="书籍的状况" Comment="Condition of the Book" />
+    <Text Key="BookStore" Text="书店" Comment="Book Store" />
+    <Text Key="BookStore.Description" Text="购买该书籍的书店" Comment="Store the Book was bought" />
+    <Text Key="BookOwner" Text="书籍所有者" Comment="Book Owner" />
+    <Text Key="BookOwner.Description" Text="书籍所有者" Comment="Owner of the Book" />
+    <Text Key="BookCollectionStatus" Text="书籍收集状态" Comment="Book Collection Status" />
+    <Text Key="BookCollectionStatus.Description" Text="书籍的收集状态" Comment="Status of the Book in the Collection" />
+    <Text Key="BookLocation" Text="书籍场所" Comment="Book Location" />
+    <Text Key="BookLocationStatus.Description" Text="书籍的场所" Comment="Location of the Book" />
+    <Text Key="PagePositionAsText" Text="位置" Comment="Position" />
+    <Text Key="PagePositionAsText.Description" Text="页面的布局位置" Comment="Layout position of the page" />
+    <Text Key="ISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ISBN.Description" Text="ISBN号" Comment="ISBN Number" />
+    <Text Key="SeriesStatCountAsText" Text="系列: 书籍" Comment="Series: Books" />
+    <Text Key="SeriesStatCountAsText.Description" Text="该系列的书籍" Comment="Books in the Series" />
+    <Text Key="SeriesStatMinNumberAsText" Text="系列: 第一话" Comment="Series: First Number" />
+    <Text Key="SeriesStatMinNumberAsText.Description" Text="系列的第一话" Comment="First Number of the Series" />
+    <Text Key="SeriesStatMaxNumberAsText" Text="系列: 最后一话" Comment="Series: Last Number" />
+    <Text Key="SeriesStatMaxNumberAsText.Description" Text="系列的最后一话" Comment="Last Number of the Series" />
+    <Text Key="SeriesStatMinYearAsText" Text="系列: 第一年" Comment="Series: First Year" />
+    <Text Key="SeriesStatMinYearAsText.Description" Text="系列的第一年" Comment="First Year of the Series" />
+    <Text Key="SeriesStatMaxYearAsText" Text="系列: 最后一年" Comment="Series: Last Year" />
+    <Text Key="SeriesStatMaxYearAsText.Description" Text="系列的最后一年" Comment="last Year of the Series" />
+    <Text Key="SeriesStatPageCountAsText" Text="系列: 页数" Comment="Series: Pages" />
+    <Text Key="SeriesStatPageCountAsText.Description" Text="系列的总页数" Comment="Pages in the Series" />
+    <Text Key="SeriesStatPageReadCountAsText" Text="系列: 已读页数" Comment="Series: Pages Read" />
+    <Text Key="SeriesStatPageReadCountAsText.Description" Text="系列已阅页数" Comment="Pages of the Series read" />
+    <Text Key="SeriesStatReadPercentageAsText" Text="系列: 已读百分比" Comment="Series: Percent Read" />
+    <Text Key="SeriesStatReadPercentageAsText.Description" Text="该系列已阅百分比" Comment="Percent of the Series read" />
+    <Text Key="SeriesStatAverageRating" Text="系列: 我的平均评分" Comment="Series: My Average Rating" />
+    <Text Key="SeriesStatAverageRating.Description" Text="我给该系列的平均评分" Comment="My average Rating of the Series" />
+    <Text Key="SeriesStatAverageCommunityRating" Text="系列: 平均社群评分" Comment="Series: Community Average Rating" />
+    <Text Key="SeriesStatAverageCommunityRating.Description" Text="该系列的平均社群评分" Comment="Community average Rating of the Series" />
+    <Text Key="SeriesStatRunningTimeAsText" Text="系列: 持续年数" Comment="Series: Running Time Years" />
+    <Text Key="SeriesStatRunningTimeAsText.Description" Text="该系列的持续年数" Comment="Running time of the Series in years" />
+    <Text Key="SeriesStatGapCountAsText" Text="系列: 缺漏" Comment="Series: Gaps" />
+    <Text Key="SeriesStatGapCountAsText.Description" Text="系列中缺漏的" Comment="Gaps in the Series" />
+    <Text Key="Caption.Description" Text="书籍的完整说明" Comment="Complete caption of the Book" />
+    <Text Key="Colorist.Description" Text="书籍配色员(Colorist)" Comment="Colorist of the Book" />
+    <Text Key="Cover.Description" Text="书籍封面图片" Comment="Cover image of the Book" />
+    <Text Key="Editor.Description" Text="书籍的编辑" Comment="Editor of the Book" />
+    <Text Key="FilePath.Description" Text="书籍储存的位置" Comment="Location where the Book is stored" />
+    <Text Key="FileFormat.Description" Text="书籍的文件格式" Comment="File format of the Book" />
+    <Text Key="FileSizeAsText.Description" Text="书籍文件大小(单位:byte)" Comment="Size of the Book file in bytes" />
+    <Text Key="Genre.Description" Text="书籍体裁" Comment="Genre of the Book" />
+    <Text Key="Imprint.Description" Text="书籍使用的出版商的品牌名称(Imprint)" Comment="Imprint of the Book" />
+    <Text Key="Inker.Description" Text="书籍的描线员(Inker)" Comment="Inker of the Book" />
+    <Text Key="Key.Description" Text="页面在书籍中的唯一键值" Comment="Unique key for this page in the Book" />
+    <Text Key="LanguageAsText.Description" Text="书籍的语言" Comment="Language of the Book" />
+    <Text Key="Letterer.Description" Text="书籍的嵌字员(Letterer)" Comment="Letterer of the Book" />
+    <Text Key="MonthAsText.Description" Text="书籍的出版月份" Comment="Month the Book was published" />
+    <Text Key="NumberAsText.Description" Text="书籍在系列中的话数" Comment="Number of the Book in the Series" />
+    <Text Key="OpenedCountAsText.Description" Text="书籍的打开次数" Comment="Times the Book has been opened" />
+    <Text Key="Penciller.Description" Text="该书籍的铅稿绘师(Penciller)" Comment="Penciller of the Book" />
+    <Text Key="Position.Description" Text="书籍在列表中的位置" Comment="Position of the Book in the list" />
+    <Text Key="Publisher.Description" Text="书籍的出版社" Comment="Publisher of the Book" />
+    <Text Key="Rating.Description" Text="您给书籍的评分" Comment="Your rating of the Book" />
+    <Text Key="CommunityRating.Description" Text="书籍的社群评分" Comment="Community Rating of the Book" />
+    <Text Key="State.Description" Text="书籍的状态标志" Comment="State indicators for the Book" />
+    <Text Key="Tags.Description" Text="书籍标签" Comment="Tags of the Book" />
+    <Text Key="Title.Description" Text="书籍的标题" Comment="Title of the Book" />
+    <Text Key="Writer.Description" Text="书籍的脚本家" Comment="Writer of the Book" />
+    <Text Key="YearAsText.Description" Text="书籍出版的年份" Comment="Year the Book was published" />
+    <Text Key="MangaAsText.Description" Text="是,如果该书籍为漫画" Comment="Yes if the Book is a Manga" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="是,如果该书籍为黑白" Comment="Yes if the Book is black and white" />
+    <Text Key="Format.Description" Text="书籍版式" Comment="Format of the Book" />
+    <Text Key="AgeRating.Description" Text="书籍的年龄分级" Comment="Age rating of the Book" />
+    <Text Key="PublishedAsText.Description" Text="书籍的出版日期" Comment="Publication date of the Book" />
+    <Text Key="Characters.Description" Text="书籍剧情内的角色" Comment="Plot characters of the Book" />
+    <Text Key="Teams.Description" Text="书籍剧情内的组织" Comment="Plot teams of the Book" />
+    <Text Key="Locations.Description" Text="书籍剧情涉及的场所" Comment="Plot locations of the Book" />
+    <Text Key="FileDirectory.Description" Text="书籍所属目录" Comment="Directory of the Book" />
+    <Text Key="BookmarkCountAsText.Description" Text="该书籍的总书签数" Comment="Count of Bookmarks for this Book" />
+    <Text Key="IsLinkedAsText.Description" Text="书籍已链接到文件" Comment="Book is linked to a File" />
+    <Text Key="SeriesCompleteAsText" Text="系列已完结" Comment="Series complete" />
+    <Text Key="SeriesCompleteAsText.Description" Text="系列已经完结" Comment="Series is complete" />
+    <Text Key="EnableProposedAsText" Text="建议值" Comment="Proposed Values" />
+    <Text Key="EnableProposedAsText.Description" Text="使用从文件名产生的建议值" Comment="Uses proposed Values from Filename" />
+    <Text Key="GapInformation" Text="缺漏信息" Comment="Gap Information" />
+    <Text Key="GapInformation.Description" Text="该书籍是否是该系列中缺漏部分的前一本或后一本" Comment="Information if this issue is the end or start of a gap in the series" />
+    <Text Key="HasBeenReadAsText" Text="阅毕" Comment="Read" />
+    <Text Key="HasBeenReadAsText.Description" Text="书籍已阅读完毕" Comment="Book has been read" />
+    <Text Key="AddedTime" Text="添加时间" Comment="Added" />
+    <Text Key="AddedTime.Description" Text="书籍添加到数据库的时间" Comment="Time the Book was added to the Database" />
+    <Text Key="FileModifiedTime" Text="文件修改时间" Comment="File Modified" />
+    <Text Key="FileModifiedTime.Description" Text="书籍上次修改时间" Comment="Time the Book was modified the last time" />
+    <Text Key="OpenedTime" Text="打开时间" Comment="Opened" />
+    <Text Key="OpenedTime.Description" Text="书籍的上次打开时间" Comment="Last time the Book was opened" />
+    <Text Key="FileCreationTime" Text="文件创建时间" Comment="File Created" />
+    <Text Key="FileCreationTime.Description" Text="书籍文件的创建时间" Comment="Creation time of the Book-File" />
+    <Text Key="Icons" Text="图标" Comment="Icons" />
+    <Text Key="Icons.Description" Text="书籍的图标" Comment="Icons for this Book" />
+    <Text Key="ScanInformation" Text="扫描信息" Comment="Scan Information" />
+    <Text Key="ScanInformation.Description" Text="有关扫描书籍的额外信息" Comment="Additional iformation about the scan" />
+    <Text Key="SeriesStatLastOpenedTime" Text="系列: 打开时间" Comment="Series: Opened" />
+    <Text Key="SeriesStatLastOpenedTime.Description" Text="上次打开此系列中的书籍的时间" Comment="Last time a book from this Series has been opened" />
+    <Text Key="SeriesStatLastAddedTime" Text="系列: 已添加书籍" Comment="Series: Book added" />
+    <Text Key="SeriesStatLastAddedTime.Description" Text="上次添加书籍到此系列的时间" Comment="Last time a book was added to the Series" />
+    <Text Key="DateFormats" Text="长|短|相对" Comment="Long|Short|Relative" />
+    <Text Key="StoryArc" Text="故事篇章" Comment="Story Arc" />
+    <Text Key="StoryArc.Description" Text="书籍所属的故事篇章(Story Arc)" Comment="Story Arc the Book belongs to" />
+    <Text Key="SeriesGroup" Text="系列集合" Comment="Series Group" />
+    <Text Key="SeriesGroup.Description" Text="书籍所属的系列集合" Comment="Series Group the Book belongs to" />
+    <Text Key="MainCharacterOrTeam" Text="主要角色/组织" Comment="Main Character/Team" />
+    <Text Key="MainCharacterOrTeam.Description" Text="书籍的主要角色和组织" Comment="Main Character or Team of the Book" />
+    <Text Key="Review" Text="评论" Comment="Review" />
+    <Text Key="Review.Description" Text="关于书籍的简短评论" Comment="A short Review of the Book" />
+    <Text Key="Checked" Text="已检查" Comment="Checked" />
+    <Text Key="Checked.Description" Text="书籍已检查" Comment="Book is checked" />
+  </Texts>
+</TR>

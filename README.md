@@ -38,7 +38,7 @@ New Features are listed [here](https://github.com/maforget/ComicRackCE/wiki/New-
 ## Community Collaboration
 To collaborate, open an Issue on the tracker or use GitHub discussions. Start with small, focused Pull Requests, avoiding large, vague commits. ChatGPT can help with small code snippets but not with complete rewrites. Use Visual Studio 2022 Community Edition for development, as it's more suitable than VS Code.
 
-We also need the Localizer tool created by cYo for translations.
+To help translate the application, check out the [localization wiki page](https://github.com/maforget/ComicRackCE/wiki/Localization).
 
 ## Installation
 To install, download the [nightly installer](https://github.com/maforget/ComicRackCE/releases/download/nightly/ComicRackCESetup_nightly.exe "Nightly Release"), double-click it, and follow the instructions. <br />

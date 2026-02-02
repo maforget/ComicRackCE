@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PendingTasksDialog" CultureName="hu">
+  <Texts>
+    <Text Key="btOk" Text="OK" Comment="OK" />
+    <Text Key="colTask" Text="Feladatok" Comment="Task" />
+    <Text Key="lblItemCount" Text="{0} feladat van folyamatban" Comment="{0} Tasks are pending" />
+    <Text Key="PendingTasksDialog" Text="Folyamatban lévő feladatok a háttérben" Comment="Pending Background Tasks" />
+    <Text Key="colState" Text="Állapot" Comment="State" />
+    <Text Key="btAbort" Text="Minden feladat megszakítása" Comment="Abort all User Tasks" />
+  </Texts>
+</TR>

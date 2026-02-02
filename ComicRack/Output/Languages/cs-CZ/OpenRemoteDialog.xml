@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBookDialog" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Storno" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="ShowList" Text="Zobrazit veřejné" Comment="Show Public" />
+    <Text Key="RefreshList" Text="Aktualizovat" Comment="Refresh" />
+    <Text Key="colName" Text="Jméno" Comment="Name" />
+    <Text Key="colDescription" Text="Popis" Comment="Description" />
+    <Text Key="colEdit" Text="Změna" Comment="Edit" />
+    <Text Key="colExport" Text="Export" Comment="Export" />
+    <Text Key="labelListPassword" Text="Heslo pro privátní seznam:" Comment="Private List Password:" />
+    <Text Key="labelFailedServerList" Text="Nezdařilo se načít seznam serverů!" Comment="Failed to get Server List!" />
+    <Text Key="groupLocal" Text="Lokální sdílení" Comment="Local Shares" />
+    <Text Key="groupInternet" Text="Internetová sdílení" Comment="Internet Shares" />
+    <Text Key="OpenRemoteDialog" Text="Otevřít vzdálený server" Comment="Open Remote Library" />
+    <Text Key="labelServerAddress" Text="Adresa serveru:" Comment="Library Address:" />
+  </Texts>
+</TR>

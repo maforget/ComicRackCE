@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DonationDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="btCancel" Text="跳过" Comment="Skip for now" />
+    <Text Key="btOK" Text="确定" Comment="OK" />
+    <Text Key="DonationDialog" Text="支持ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="labelThankYou" Text="感谢您对ComicRack的支持!" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="捐助" Comment="Donate" />
+    <Text Key="labelStepOne" Text="第一步:\n访问ComicRack网站进行捐助" Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="labelStepTwo" Text="第二步:\n输入您捐助时填写的邮箱并验证.\n由于您的捐助信息可能需要花费几分钟才能被注册,所以您可以稍后再执行这一步." Comment="Step Two:\nEnter your dontation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+    <Text Key="btDonate" Text="捐助页面" Comment="Donation Page" />
+    <Text Key="btValidate" Text="验证" Comment="Validate" />
+    <Text Key="labelEmail" Text="邮箱地址:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="您已经启动ComicRack {0} 次了!" Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="您使用ComicRack管理了 {0} 本书籍!" Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="无法连接到ComicRack服务器验证邮箱地址.请检查您的网络连接!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+    <Text Key="labelDonationText" Text="ComicRack是数百小时工作的结晶,且没有任何大型软件公司的支持.如果您正在使用ComicRack并且觉得不错,请考虑给予ComicRack一点回报.\n\n最小捐助额度为5美元 - 让我可以喝杯啤酒. 在完成捐献后您可以使用您的邮箱激活本程序,激活后您将不会再看到这条信息.\n\n即使您决定不捐助,您也可以使用ComicRack的所有功能." Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nThe minimum donation is $5 - paying me a beer. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+  </Texts>
+</TR>

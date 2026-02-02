@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicPageType" CultureName="es">
+  <Texts>
+    <Text Key="BackCover" Text="Contraportada" Comment="Back Cover" />
+    <Text Key="Deleted" Text="Eliminada" Comment="Deleted" />
+    <Text Key="Editorial" Text="Editorial" Comment="Editorial" />
+    <Text Key="FrontCover" Text="Portada Frontal" Comment="Front Cover" />
+    <Text Key="InnerCover" Text="Portada Interior" Comment="Inner Cover" />
+    <Text Key="Letters" Text="Cartas" Comment="Letters" />
+    <Text Key="Other" Text="Otro" Comment="Other" />
+    <Text Key="Preview" Text="Preestreno" Comment="Preview" />
+    <Text Key="Roundup" Text="Resumen" Comment="Roundup" />
+    <Text Key="Story" Text="Relato" Comment="Story" />
+    <Text Key="Advertisement" Text="Publicidad" Comment="Advertisement" />
+  </Texts>
+</TR>

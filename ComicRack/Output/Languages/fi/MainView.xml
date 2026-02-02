@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainView" CultureName="fi">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="Ankkuroi pohjalle" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="Täytä" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="Ankkuroi vasemmalle" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="Ankkuroi oikealle" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="Sulje" Comment="Close" />
+    <Text Key="tsbFolders" Text="Kansiot" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="Selaa kansioita" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="Kirjasto" Comment="Library" />
+    <Text Key="tsbLibrary.Tooltip" Text="eSarjis-kirjasto" Comment="eComics Library" />
+    <Text Key="tsbPages" Text="Sivut" Comment="Pages" />
+    <Text Key="tsbPages.Tooltip" Text="Avoimen eSarjiksen sivut" Comment="Pages of the current eComic" />
+    <Text Key="tsbShowMenu" Text="Näytä valikko" Comment="Show Menu" />
+    <Text Key="tsbInfoPanelLeft" Text="Tietotaulu oikella" Comment="Info Panel Right" />
+  </Texts>
+</TR>

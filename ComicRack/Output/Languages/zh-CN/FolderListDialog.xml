@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FolderListDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="FolderListDialog" Text="编辑文件夹列表" Comment="Edit Folder List" />
+    <Text Key="btCancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定(&amp;O)" Comment="&amp;OK" />
+    <Text Key="labelName" Text="名称:" Comment="Name:" />
+    <Text Key="labelBooks" Text="eComics:" Comment="eComics:" />
+    <Text Key="CombineMode" Text="所有列表的所有eComics文件|仅所有列表都存在的eComics文件" Comment="All eComics from every list|Only eComics existing in every list" />
+    <Text Key="labelNotes" Text="笔记:" Comment="Notes:" />
+  </Texts>
+</TR>

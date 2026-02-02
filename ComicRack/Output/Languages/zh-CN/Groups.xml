@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Groups" CultureName="zh-CN">
+  <Texts>
+    <Text Key="AlphabetGroups" Text="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|其它" Comment="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Other" />
+    <Text Key="CountGroups" Text="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|未指定" Comment="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|Unspecified" />
+    <Text Key="RatingGroups" Text="未评|0 星|1 星|2 星|3 星|4 星|5 星" Comment="Not Rated|No Stars|1 Star|2 Stars|3 Stars|4 Stars|5 Stars" />
+    <Text Key="ReadPercentageGroups" Text="未读|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|阅毕" Comment="Not Read|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|Completed" />
+    <Text Key="SizeGroups" Text="空的|极小|较小|中等|较大|巨大" Comment="Empty|Very Small|Small|Medium|Big|Huge" />
+    <Text Key="VolumeGroups" Text="无|V{0}|其它" Comment="None|V{0}|Other" />
+    <Text Key="MangaGroups" Text="漫画|非漫画|未知" Comment="Manga|No Manga|Unknown" />
+    <Text Key="BWGroups" Text="黑白|彩色|未知" Comment="Black and White|Color|Unknown" />
+    <Text Key="LinkedGroups" Text="链接到文件|未链接到文件" Comment="Linked to File|Not linked to File" />
+    <Text Key="PriceGroups" Text="未知|免费|0-10|10-20|20-30|30-40|40-50|50-100|超过100" Comment="Unknown|Free|0-10|10-20|20-30|30-40|40-50|50-100|over 100" />
+    <Text Key="DateGroups" Text="从未|今天|昨天|前天|三天前|本周|上周|两周前|三周前|本月|上月|两个月前|三个月前|四个月前|五个月前|六个月前|今年|上年|前年|三年前|超过三年前|下年|未来" Comment="Never|Today|Yesterday|Two Days Ago|Three Days Ago|This Week|Last Week|Two Weeks Ago|Three Weeks Ago|This Month|Last Month|Two Months ago|Three Months ago|Four Months ago|Five Months ago|Six Months ago|This Year|Last Year|Two Years ago|Three Years ago|Older than Three Years|Next Year|In the Future" />
+    <Text Key="SeriesCompleteGroups" Text="系列已完结|系列未完结|未知" Comment="Series complete|Series not complete|Unknown" />
+    <Text Key="EnableProposedGroups" Text="已使用建议值|未使用建议值" Comment="Proposed Values used|Proposed Values no used" />
+    <Text Key="HasBeenReadGroups" Text="阅毕|未阅毕" Comment="Read|Unread" />
+    <Text Key="CheckedGroups" Text="已检查|未检查" Comment="Checked|Not Checked" />
+  </Texts>
+</TR>

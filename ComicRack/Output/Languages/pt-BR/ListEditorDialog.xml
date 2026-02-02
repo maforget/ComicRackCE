@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListEditorDialog" CultureName="pt-BR">
+  <Texts>
+    <Text Key="btMoveDown" Text="&amp;Descer" Comment="Move &amp;Down" />
+    <Text Key="btMoveUp" Text="S&amp;ubir" Comment="Move &amp;Up" />
+    <Text Key="btDelete" Text="Excluir" Comment="Delete" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Cancelar" Comment="&amp;Cancel" />
+    <Text Key="colName" Text="Nome" Comment="Name" />
+    <Text Key="colDescription" Text="Descrição" Comment="Description" />
+    <Text Key="btNew" Text="&amp;Novo..." Comment="&amp;New..." />
+    <Text Key="btEdit" Text="&amp;Editar..." Comment="&amp;Edit..." />
+    <Text Key="btActivate" Text="&amp;Ativar" Comment="&amp;Activate" />
+    <Text Key="btMoveTop" Text="Mover ao &amp;Topo" Comment="Move &amp;Top" />
+    <Text Key="btMoveBottom" Text="Mover ao &amp;Rodapé" Comment="Move &amp;Bottom" />
+    <Text Key="btSetAll" Text="Ajustar em Todos" Comment="Set to All" />
+  </Texts>
+</TR>

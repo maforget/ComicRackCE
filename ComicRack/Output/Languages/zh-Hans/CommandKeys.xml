@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CommandKeys" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="A" Text="A" Comment="A" />
+    <Text Key="Add" Text="加号（小键盘）" Comment="Add" />
+    <Text Key="Alt" Text="Alt" Comment="Alt" />
+    <Text Key="B" Text="B" Comment="B" />
+    <Text Key="C" Text="C" Comment="C" />
+    <Text Key="Ctrl" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="D" Text="D" Comment="D" />
+    <Text Key="D0" Text="D0" Comment="D0" />
+    <Text Key="D1" Text="D1" Comment="D1" />
+    <Text Key="D2" Text="D2" Comment="D2" />
+    <Text Key="D3" Text="D3" Comment="D3" />
+    <Text Key="D4" Text="D4" Comment="D4" />
+    <Text Key="D5" Text="D5" Comment="D5" />
+    <Text Key="D6" Text="D6" Comment="D6" />
+    <Text Key="D7" Text="D7" Comment="D7" />
+    <Text Key="D8" Text="D8" Comment="D8" />
+    <Text Key="D9" Text="D9" Comment="D9" />
+    <Text Key="Decimal" Text="小数点号" Comment="Decimal" />
+    <Text Key="Divide" Text="除号" Comment="Divide" />
+    <Text Key="Down" Text="下箭头" Comment="Down" />
+    <Text Key="E" Text="E" Comment="E" />
+    <Text Key="End" Text="End" Comment="End" />
+    <Text Key="Enter" Text="回车" Comment="Enter" />
+    <Text Key="Escape" Text="Esc键" Comment="Escape" />
+    <Text Key="F" Text="F" Comment="F" />
+    <Text Key="G" Text="G" Comment="G" />
+    <Text Key="H" Text="H" Comment="H" />
+    <Text Key="Home" Text="Home" Comment="Home" />
+    <Text Key="I" Text="I" Comment="I" />
+    <Text Key="J" Text="J" Comment="J" />
+    <Text Key="K" Text="K" Comment="K" />
+    <Text Key="L" Text="L" Comment="L" />
+    <Text Key="Left" Text="左箭头" Comment="Left" />
+    <Text Key="M" Text="M" Comment="M" />
+    <Text Key="MediaNextTrack" Text="MediaNextTrack" Comment="MediaNextTrack" />
+    <Text Key="MediaPlayPause" Text="MediaPlayPause" Comment="MediaPlayPause" />
+    <Text Key="MediaPreviousTrack" Text="MediaPreviousTrack" Comment="MediaPreviousTrack" />
+    <Text Key="MediaStop" Text="MediaStop" Comment="MediaStop" />
+    <Text Key="MouseButton4" Text="MouseButton4" Comment="MouseButton4" />
+    <Text Key="MouseButton5" Text="MouseButton5" Comment="MouseButton5" />
+    <Text Key="MouseDoubleButton4" Text="MouseDoubleButton4" Comment="MouseDoubleButton4" />
+    <Text Key="MouseDoubleButton5" Text="MouseDoubleButton5" Comment="MouseDoubleButton5" />
+    <Text Key="MouseDoubleLeft" Text="左键双击" Comment="MouseDoubleLeft" />
+    <Text Key="MouseDoubleMiddle" Text="中键双击" Comment="MouseDoubleMiddle" />
+    <Text Key="MouseDoubleRight" Text="右键双击" Comment="MouseDoubleRight" />
+    <Text Key="MouseLeft" Text="左键单击" Comment="MouseLeft" />
+    <Text Key="MouseMiddle" Text="MouseMiddle" Comment="MouseMiddle" />
+    <Text Key="MouseRight" Text="MouseRight" Comment="MouseRight" />
+    <Text Key="MouseTiltLeft" Text="滚轮左偏（仅纵横滚轮可用）" Comment="MouseTiltLeft" />
+    <Text Key="MouseTiltRight" Text="滚轮右偏（仅纵横滚轮可用）" Comment="MouseTiltRight" />
+    <Text Key="MouseWheelDown" Text="鼠标滚轮向下" Comment="MouseWheelDown" />
+    <Text Key="MouseWheelUp" Text="鼠标滚轮向上" Comment="MouseWheelUp" />
+    <Text Key="Multiply" Text="乘号" Comment="Multiply" />
+    <Text Key="N" Text="N" Comment="N" />
+    <Text Key="None" Text="无" Comment="None" />
+    <Text Key="NumPad0" Text="NumPad0" Comment="NumPad0" />
+    <Text Key="NumPad1" Text="NumPad1" Comment="NumPad1" />
+    <Text Key="NumPad2" Text="NumPad2" Comment="NumPad2" />
+    <Text Key="NumPad3" Text="NumPad3" Comment="NumPad3" />
+    <Text Key="NumPad4" Text="NumPad4" Comment="NumPad4" />
+    <Text Key="NumPad5" Text="NumPad5" Comment="NumPad5" />
+    <Text Key="NumPad6" Text="NumPad6" Comment="NumPad6" />
+    <Text Key="NumPad7" Text="NumPad7" Comment="NumPad7" />
+    <Text Key="NumPad8" Text="NumPad8" Comment="NumPad8" />
+    <Text Key="NumPad9" Text="NumPad9" Comment="NumPad9" />
+    <Text Key="O" Text="O" Comment="O" />
+    <Text Key="P" Text="P" Comment="P" />
+    <Text Key="PageDown" Text="PageDown" Comment="PageDown" />
+    <Text Key="PageUp" Text="PageUp" Comment="PageUp" />
+    <Text Key="Q" Text="Q" Comment="Q" />
+    <Text Key="R" Text="R" Comment="R" />
+    <Text Key="Right" Text="右箭头" Comment="Right" />
+    <Text Key="S" Text="S" Comment="S" />
+    <Text Key="Shift" Text="Shift" Comment="Shift" />
+    <Text Key="Space" Text="空格" Comment="Space" />
+    <Text Key="Subtract" Text="减号（小键盘）" Comment="Subtract" />
+    <Text Key="T" Text="T" Comment="T" />
+    <Text Key="Tab" Text="标签" Comment="Tab" />
+    <Text Key="U" Text="U" Comment="U" />
+    <Text Key="Up" Text="上箭头" Comment="Up" />
+    <Text Key="V" Text="V" Comment="V" />
+    <Text Key="W" Text="W" Comment="W" />
+    <Text Key="X" Text="X" Comment="X" />
+    <Text Key="Y" Text="Y" Comment="Y" />
+    <Text Key="Z" Text="Z" Comment="Z" />
+    <Text Key="Zoom" Text="缩放" Comment="Zoom" />
+    <Text Key="Gesture1" Text="手势 1" Comment="Gesture 1" />
+    <Text Key="Gesture2" Text="手势 2" Comment="Gesture 2" />
+    <Text Key="Gesture3" Text="手势 3" Comment="Gesture 3" />
+    <Text Key="Gesture4" Text="手势 4" Comment="Gesture 4" />
+    <Text Key="Gesture5" Text="手势 5" Comment="Gesture 5" />
+    <Text Key="Gesture6" Text="手势 6" Comment="Gesture 6" />
+    <Text Key="Gesture7" Text="手势 7" Comment="Gesture 7" />
+    <Text Key="Gesture8" Text="手势 8" Comment="Gesture 8" />
+    <Text Key="Gesture9" Text="手势 9" Comment="Gesture 9" />
+    <Text Key="Gesture10" Text="手势 10" Comment="Gesture 10" />
+    <Text Key="TouchPressAndTap" Text="Press and Tap" Comment="Press and Tap" />
+    <Text Key="TouchTwoFingerTap" Text="Two Finger Tap" Comment="Two Finger Tap" />
+  </Texts>
+</TR>

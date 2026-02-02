@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DeviceSelectDialog" CultureName="it">
+  <Texts>
+    <Text Key="DeviceSelectDialog" Text="Seleziona Dispositivo" Comment="Select Device" />
+    <Text Key="btCancel" Text="&amp;Annulla" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="colName" Text="Nome" Comment="Name" />
+    <Text Key="colModel" Text="Modello" Comment="Model" />
+    <Text Key="colSerial" Text="N. Seriale" Comment="Serial" />
+  </Texts>
+</TR>

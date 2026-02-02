@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SearchBrowser" CultureName="pl">
+  <Texts>
+    <Text Key="AlternateSeries" Text="Alternatywne Nazwy Serii" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="Osoby Nanoszące Kolory" Comment="Colorists" />
+    <Text Key="Genre" Text="Gatunki" Comment="Genres" />
+    <Text Key="Imprint" Text="Imprinty" Comment="Imprints" />
+    <Text Key="Inker" Text="Osoby Nanoszące Tusz" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="Języki" Comment="Languages" />
+    <Text Key="MonthAsText" Text="Miesiące Wydań" Comment="Months" />
+    <Text Key="Penciller" Text="Autorzy Rysunków" Comment="Pencillers" />
+    <Text Key="Publisher" Text="Wydawnictwa" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="Nazwy Serii" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="Lata Wydań" Comment="Years" />
+    <Text Key="Writer" Text="Scenarzyści" Comment="Writers" />
+    <Text Key="Unspecified" Text="Nieokreślone" Comment="Unspecified" />
+    <Text Key="AllItems" Text="Wszystkie ({0} {1})" Comment="All ({0} {1})" />
+    <Text Key="ShadowTitle" Text="Tytuły" Comment="Titles" />
+    <Text Key="ShadowFormat" Text="Formaty" Comment="Formats" />
+    <Text Key="Editor" Text="Edytorzy" Comment="Editors" />
+    <Text Key="Characters" Text="Postacie" Comment="Characters" />
+    <Text Key="CoverArtist" Text="Twórcy Okładek" Comment="Cover Artists" />
+    <Text Key="AgeRating" Text="Ograniczenia Wiekowe" Comment="Age Ratings" />
+    <Text Key="Tags" Text="Tagi" Comment="Tags" />
+    <Text Key="ShadowVolumeAsText" Text="Tomów" Comment="Volumes" />
+    <Text Key="Teams" Text="Drużyny" Comment="Teams" />
+    <Text Key="Locations" Text="Lokalizacje" Comment="Locations" />
+    <Text Key="Web" Text="Link" Comment="Web" />
+    <Text Key="Letterer" Text="Osoba Nanosząca Napisy" Comment="Letterer" />
+    <Text Key="RatingAsText" Text="Oceny" Comment="My Ratings" />
+    <Text Key="CommunityRatingAsText" Text="Oceny Społeczności" Comment="Community Ratings" />
+    <Text Key="BookPriceAsText" Text="Ceny Egzemplarzy" Comment="Book Prices" />
+    <Text Key="BookAge" Text="Wiek Egzemplarzy" Comment="Book Ages" />
+    <Text Key="BookStore" Text="Kupiono od" Comment="Book Stores" />
+    <Text Key="BookOwner" Text="Właściciele Egzemplarzy" Comment="Book Owners" />
+    <Text Key="BookCondition" Text="Stan Egzemplarza" Comment="Book Conditions" />
+    <Text Key="BookCollectionStatus" Text="Status Egzemplarzy" Comment="Book Collection Status" />
+    <Text Key="BookLocation" Text="Miejsca znajdowania się" Comment="Book Locations" />
+    <Text Key="MainCharacterOrTeam" Text="Główne Postacie / Drużyny" Comment="Main Characters/Teams" />
+    <Text Key="SeriesGroup" Text="Grupy Serii" Comment="Series Groups" />
+    <Text Key="StoryArc" Text="Linie Fabularne" Comment="Story Arcs" />
+  </Texts>
+</TR>

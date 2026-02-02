@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MainView" CultureName="de">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="Unten andocken" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="Vollansicht" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="Links andocken" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="Rechts andocken" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="Schließen" Comment="Close" />
+    <Text Key="tsbFolders" Text="Verzeichnisse" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="Verzeichnisse durchsuchen" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="Bibliothek" Comment="Library" />
+    <Text Key="tsbLibrary.Tooltip" Text="Bibliothek mit allen Büchern" Comment="Library with all Books" />
+    <Text Key="tsbPages" Text="Seiten" Comment="Pages" />
+    <Text Key="tsbPages.Tooltip" Text="Seiten des aktuell geöffneten Buches" Comment="Pages of the current Book" />
+    <Text Key="tsbShowMenu" Text="Menü zeigen" Comment="Show Menu" />
+    <Text Key="tsbInfoPanelLeft" Text="Info Panel Rechts" Comment="Info Panel Right"/>
+    <Text Key="tsbAlignment" Text="Dock Modus" Comment="Docking Mode"/>
+  </Texts>
+</TR>

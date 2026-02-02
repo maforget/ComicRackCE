@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.RenameBookFiles" CultureName="sk-SK">
+  <Texts>
+    <Text Key="Name" Text="Premenovať súbory na  'Séria Diel #číslo (Počet) (Rok)'" Comment="Rename Files to 'Series Volume #Number (of Count) (Year)'" />
+    <Text Key="Description" Text="Skript na premenovanie vybraných eComicsov podľa metadát" Comment="Script to rename the selected eComics based on the meta data" />
+  </Texts>
+</TR>

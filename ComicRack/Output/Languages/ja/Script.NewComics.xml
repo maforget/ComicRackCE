@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.NewComics" CultureName="ja">
+  <Texts>
+    <Text Key="Name" Text="新規コミック ブック シリーズ..." Comment="New Comics Book Series..." />
+    <Text Key="Description" Text="コミックの新しいシリーズを追加" Comment="Adds a new Series of Comic Books" />
+    <Text Key="Caption" Text="新規コミック ブック シリーズ" Comment="New Comics Book Series" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="labelSeries" Text="シリーズ:" Comment="Series:" />
+    <Text Key="labelFromNumber" Text="ナンバー:" Comment="Number:" />
+    <Text Key="labelToNumber" Text="～" Comment="to" />
+    <Text Key="labelVolume" Text="ボリューム:" Comment="Volume:" />
+  </Texts>
+</TR>

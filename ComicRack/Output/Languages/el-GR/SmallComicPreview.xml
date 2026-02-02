@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmallComicPreview" CultureName="el-GR">
+  <Texts>
+    <Text Key="tbClose" Text="Κλείσιμο" Comment="Close" />
+    <Text Key="tsbFirst" Text="Πρώτη" Comment="First" />
+    <Text Key="tsbFirst.Tooltip" Text="Μετάβαση στη πρώτη σελίδα" Comment="Go to first page" />
+    <Text Key="tsbLast" Text="Τελευταία " Comment="Last" />
+    <Text Key="tsbLast.Tooltip" Text="Μετάβαση στη τελευταία σελίδα" Comment="Go to last page" />
+    <Text Key="tsbNext" Text="Επόμενο" Comment="Next" />
+    <Text Key="tsbNext.Tooltip" Text="Μετάβαση στην επόμενη σελίδα" Comment="Go to next page" />
+    <Text Key="tsbPrev" Text="Προηγούμενη" Comment="Previous" />
+    <Text Key="tsbPrev.Tooltip" Text="Μετάβαση στη προηγούμενη σελίδα" Comment="Go to previous page" />
+    <Text Key="tsbRefresh" Text="Ανανέωση" Comment="Refresh" />
+    <Text Key="tsbTwoPages" Text="Δύο Σελίδες" Comment="Two Pages" />
+    <Text Key="tsbTwoPages.Tooltip" Text="Εμφάνιση μίας ή δύο σελίδων" Comment="Show one or two pages" />
+    <Text Key="pageViewer" Text="Τίποτα δεν έχει επιλεχθεί " Comment="Nothing Selected" />
+    <Text Key="tsbOpen" Text="Άνοιγμα" Comment="Open" />
+    <Text Key="PreviewOnlyForComics" Text="Η προεπισκόπηση είναι διαθέσιμη μόνο για τα eComics" Comment="Preview is only available for Books" />
+  </Texts>
+</TR>

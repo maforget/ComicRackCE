@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Columns" CultureName="el-GR">
+  <Texts>
+    <Text Key="AlternateCountAsText" Text="Εναλλακτική Αρίθμηση" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="Συνολικές εμφανίσεις της επικεφαλίδας" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="Εναλλακτικός Αριθμός" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="Αριθμός εμφανίσης της επικεφαλίδας" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="Εναλλακτική Σειρά" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="Υπερβατικός τίτλος" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="Λεζάντα" Comment="Caption" />
+    <Text Key="Colorist" Text="Βαφέας" Comment="Colorist" />
+    <Text Key="CountAsText" Text="Αρίθμηση" Comment="Count" />
+    <Text Key="Cover" Text="Εξώφυλλο" Comment="Cover" />
+    <Text Key="CoverArtist" Text="Καλλιτέχνης Εξώφυλλου" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="Ο υπεύθυνος επιμελητής του Εξώφυλλου" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="Συντάκτης" Comment="Editor" />
+    <Text Key="FileName" Text="Όνομα Αρχείου" Comment="File Name" />
+    <Text Key="FileName.Description" Text="Όνομα Αρχείου χωρίς επέκταση" Comment="Filename without the extension" />
+    <Text Key="Genre" Text="Είδος" Comment="Genre" />
+    <Text Key="ImageHeightAsText" Text="Ύψος" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="Ύψος σελίδας σε εικονοστοιχεία" Comment="Height of the page in pixels" />
+    <Text Key="ImageWidthAsText" Text="Πλάτος " Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="Πλάτος σελίδας σε pixels" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="Αποτύπωση" Comment="Imprint" />
+    <Text Key="Inker" Text="Μελανωτήρας" Comment="Inker" />
+    <Text Key="Key" Text="Όνομα" Comment="Name" />
+    <Text Key="LanguageAsText" Text="Γλώσσα" Comment="Language" />
+    <Text Key="Letterer" Text="Σεναριογράφος" Comment="Letterer" />
+    <Text Key="MonthAsText" Text="Μήνας" Comment="Month" />
+    <Text Key="NumberAsText" Text="Αριθμός" Comment="Number" />
+    <Text Key="OpenedCountAsText" Text="Πλήθος Ανοιγμένων" Comment="Opened Count" />
+    <Text Key="Page" Text="Σελίδα" Comment="Page" />
+    <Text Key="Page.Description" Text="Ο αριθμός σελίδας της εικόνας" Comment="The page number of the image" />
+    <Text Key="PageTypeAsText" Text="Τύπος" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="Ο τύπος της σελίδας (ιστορία, εξώφυλλο, κλπ.)" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="Σκιτσογράφος" Comment="Penciller" />
+    <Text Key="Position" Text="Τοποθεσία" Comment="Position" />
+    <Text Key="Publisher" Text="Εκδότης" Comment="Publisher" />
+    <Text Key="Rating" Text="Η Αξιολόγηση μου" Comment="My Rating" />
+    <Text Key="ReadPercentageAsText" Text="Ποσοστό Ανάγνωσης" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="Πόσο συχνά έχει αναγνωστεί" Comment="How much has been read" />
+    <Text Key="Series" Text="Σειρά" Comment="Series" />
+    <Text Key="Series.Description" Text="Όνομα Σειράς" Comment="Series name" />
+    <Text Key="State" Text="Κατάσταση" Comment="State" />
+    <Text Key="Tags" Text="Καρτέλες" Comment="Tags" />
+    <Text Key="Thumbnail" Text="Μικρογραφία" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="Η μικρογραφία της σελίδας" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="Τίτλος" Comment="Title" />
+    <Text Key="VolumeAsText" Text="Τόμος" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="Αριθμός Τόμου της Σειράς" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="Συγγραφέας" Comment="Writer" />
+    <Text Key="YearAsText" Text="Έτος" Comment="Year" />
+    <Text Key="MangaAsText" Text="Manga" Comment="Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="Ασπρόμαυρο" Comment="B&amp;W" />
+    <Text Key="Format" Text="Διαμόρφωση" Comment="Format" />
+    <Text Key="Bookmark" Text="Σελιδοδείκτης" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="Κείμενο Σελιδοδείκτη" Comment="Bookmark text" />
+    <Text Key="FileFormat" Text="Διαμόρφωση Αρχείου" Comment="File Format" />
+    <Text Key="AgeRating" Text="Αξιολόγηση Ηλικιακά" Comment="Age Rating" />
+    <Text Key="Characters" Text="Χαρακτήρες" Comment="Characters" />
+    <Text Key="RotationAsText" Text="Περιστροφή" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="Μόνιμη Περιστροφή της σελίδας" Comment="Permanent rotation of the page" />
+    <Text Key="FilePath" Text="Διαδρομή Αρχείου" Comment="File Path" />
+    <Text Key="FileSizeAsText" Text="Μέγεθος Αρχείου" Comment="File Size" />
+    <Text Key="ImageFileSizeAsText" Text="Μέγεθος" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="Μέγεθος της σελίδας σε bytes" Comment="Size of the page in bytes" />
+    <Text Key="FileDirectory" Text="Φάκελος Αρχείου" Comment="File Directory" />
+    <Text Key="BookmarkCountAsText" Text="Αρίθμηση Σελιδοδεικτών" Comment="Bookmark Count" />
+    <Text Key="PagesAsTextSimple" Text="Σελίδες" Comment="Pages" />
+    <Text Key="PagesAsTextSimple.Description" Text="Ο συνολικός αριθμός των σελίδων" Comment="The total count of pages" />
+    <Text Key="PublishedAsText" Text="Δημοσιεύτηκε" Comment="Published" />
+    <Text Key="Number" Text="Αριθμός" Comment="Number" />
+    <Text Key="AlternateNumber" Text="Εναλλακτικός Αριθμός" Comment="Alternate Number" />
+    <Text Key="Web" Text="Ιστός" Comment="Web" />
+    <Text Key="Notes" Text="Σημειώσεις" Comment="Notes" />
+    <Text Key="Summary" Text="Περίληψη" Comment="Summary" />
+    <Text Key="NewPagesAsText" Text="Νέες Σελίδες" Comment="New Pages" />
+    <Text Key="NewPagesAsText.Description" Text="Καταμέτρηση των νέων σελίδων" Comment="Count of new Pages" />
+    <Text Key="Teams" Text="Ομάδες" Comment="Teams" />
+    <Text Key="Locations" Text="Τοποθεσίες" Comment="Locations" />
+    <Text Key="Web.Description" Text="Μία σύνδεση στο Web" Comment="A Web Link" />
+    <Text Key="CountAsText.Description" Text="Συνολικός αριθμός εμφανίσεων για αυτή τη σειρά" Comment="Total number of issues in this series" />
+    <Text Key="CommunityRating" Text="Αξιολόγηση Κοινότητας" Comment="Community Rating" />
+    <Text Key="IsLinkedAsText" Text="Σύνδεση στο αρχείο" Comment="Linked to File" />
+    <Text Key="BookAge" Text="Ηλικία βιβλίου" Comment="Book Age" />
+    <Text Key="BookAge.Description" Text="Ηλικία βιβλίου" Comment="Age of the Book" />
+    <Text Key="BookPriceAsText" Text="Τιμή Βιβλίου" Comment="Book Price" />
+    <Text Key="BookPriceAsText.Description" Text="Τιμή βιβλίου" Comment="Price of the Book" />
+    <Text Key="BookCondition" Text="Συνθήκη βιβλίου" Comment="Book Condition" />
+    <Text Key="BookCondition.Description" Text="Η Κατάσταση του βιβλίου" Comment="Condition of the Book" />
+    <Text Key="BookStore" Text="Βιβλιοπωλείο" Comment="Book Store" />
+    <Text Key="BookStore.Description" Text="Βιβλιοπωλείο από το οποίο αγοράστηκε" Comment="Store the Book was bought" />
+    <Text Key="BookOwner" Text="Ιδιοκτήτης βιβλίου" Comment="Book Owner" />
+    <Text Key="BookOwner.Description" Text="Ο Ιδιοκτήτης του βιβλίου" Comment="Owner of the Book" />
+    <Text Key="BookCollectionStatus" Text="Κατάσταση συλλογής βιβλίου" Comment="Book Collection Status" />
+    <Text Key="BookCollectionStatus.Description" Text="Κατάσταση του Βιβλίου στη Συλλογή" Comment="Status of the Book in the Collection" />
+    <Text Key="BookLocation" Text="Τοποθεσία βιβλίου" Comment="Book Location" />
+    <Text Key="BookLocationStatus.Description" Text="Η Τοποθεσία του Βιβλίου" Comment="Location of the Book" />
+    <Text Key="Caption.Description" Text="Πλήρης Επικεφαλίδα του eComic" Comment="Complete caption of the Book" />
+    <Text Key="Colorist.Description" Text="Βαφέας του eComic" Comment="Colorist of the Book" />
+    <Text Key="Cover.Description" Text="Εικόνα εξώφυλλου του eComic" Comment="Cover image of the Book" />
+    <Text Key="Editor.Description" Text="Συντάκτης από το eComic" Comment="Editor of the Book" />
+    <Text Key="FilePath.Description" Text="Τοποθεσία που αποθηκεύτηκε το eComic" Comment="Location where the Book is stored" />
+    <Text Key="FileFormat.Description" Text="Διαμόρφωση Αρχείου του eComic" Comment="File format of the Book" />
+    <Text Key="FileSizeAsText.Description" Text="Μέγεθος του eComic σε bytes" Comment="Size of the Book file in bytes" />
+    <Text Key="Genre.Description" Text="Είδος του eComic" Comment="Genre of the Book" />
+    <Text Key="Imprint.Description" Text="Αποτύπωση από το eComic" Comment="Imprint of the Book" />
+    <Text Key="Inker.Description" Text="Μελανωτήρας του 'eComic" Comment="Inker of the Book" />
+    <Text Key="Key.Description" Text="Μοναδικό κλειδί αναγνώρισης γ΄αυτή τη σελίδα στο eComic" Comment="Unique key for this page in the Book" />
+    <Text Key="LanguageAsText.Description" Text="Γλώσσα του eComic" Comment="Language of the Book" />
+    <Text Key="Letterer.Description" Text="Σεναριογράφος του eComic" Comment="Letterer of the Book" />
+    <Text Key="MonthAsText.Description" Text="Μήνας έκδοσης του eComic" Comment="Month the Book was published" />
+    <Text Key="NumberAsText.Description" Text="Αριθμός του eComic στην Σειρά" Comment="Number of the Book in the Series" />
+    <Text Key="OpenedCountAsText.Description" Text="Πόσες φορές ανοίχθηκε το eComic " Comment="Times the Book has been opened" />
+    <Text Key="Penciller.Description" Text="Σκιτσογράφος του eComic" Comment="Penciller of the Book" />
+    <Text Key="Position.Description" Text="Θέση του eComic στη Λίστα" Comment="Position of the Book in the list" />
+    <Text Key="Publisher.Description" Text="Εκδότης αυτού του eComic" Comment="Publisher of the Book" />
+    <Text Key="Rating.Description" Text="Η Αξιολόγηση σας για το εν λόγω eComic" Comment="Your rating of the Book" />
+    <Text Key="CommunityRating.Description" Text="Η Αξιολόγηση της κοινότητας για το eComic" Comment="Community Rating of the Book" />
+    <Text Key="State.Description" Text="Ενδείξεις για την κατάσταση του eComic" Comment="State indicators for the Book" />
+    <Text Key="Tags.Description" Text="Καρτέλες του eComic" Comment="Tags of the Book" />
+    <Text Key="Title.Description" Text="Τίτλος του eComic" Comment="Title of the Book" />
+    <Text Key="Writer.Description" Text="Συγγραφέας του eComic" Comment="Writer of the Book" />
+    <Text Key="YearAsText.Description" Text="Έτος δημοσίευσης του eComic" Comment="Year the Book was published" />
+    <Text Key="MangaAsText.Description" Text="Ναι όταν το eComic είναι Manga" Comment="Yes if the Book is a Manga" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="Ναι όταν το eComic είναι Ασπρόμαυρο" Comment="Yes if the Book is black and white" />
+    <Text Key="Format.Description" Text="Διαμόρφωση από το eComic" Comment="Format of the Book" />
+    <Text Key="AgeRating.Description" Text="Αξιολόγηση Ηλικιακά του eComic" Comment="Age rating of the Book" />
+    <Text Key="PublishedAsText.Description" Text="Ημερομηνία δημοσίευσης του eComic" Comment="Publication date of the Book" />
+    <Text Key="Characters.Description" Text="Οι χαρακτήρες του eComic" Comment="Plot characters of the Book" />
+    <Text Key="Teams.Description" Text="Ομάδα Σχεδίασης του eComic" Comment="Plot teams of the Book" />
+    <Text Key="Locations.Description" Text="Plot locations of the eComic" Comment="Plot locations of the Book" />
+    <Text Key="FileDirectory.Description" Text="Φάκελος με eComic" Comment="Directory of the Book" />
+    <Text Key="BookmarkCountAsText.Description" Text="Αρίθμηση των Σελιδοδεικτών για αυτό eComic" Comment="Count of Bookmarks for this Book" />
+    <Text Key="IsLinkedAsText.Description" Text="Το eComic είναι συνδεμένο με ένα αρχείο" Comment="Book is linked to a File" />
+    <Text Key="PagePositionAsText" Text="Τοποθεσία" Comment="Position" />
+    <Text Key="PagePositionAsText.Description" Text="Διάταξη θέσης της σελίδας" Comment="Layout position of the page" />
+    <Text Key="ISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ISBN.Description" Text="Αριθμός ISBN" Comment="ISBN Number" />
+    <Text Key="SeriesCompleteAsText" Text="Πλήρης σειρά" Comment="Series complete" />
+    <Text Key="SeriesCompleteAsText.Description" Text="Πλήρης σειρά" Comment="Series is complete" />
+    <Text Key="EnableProposedAsText" Text="Προτεινόμενες Τιμές" Comment="Proposed Values" />
+    <Text Key="EnableProposedAsText.Description" Text="Χρήση προτεινόμενων τιμών από το αρχείο" Comment="Uses proposed Values from Filename" />
+    <Text Key="GapInformation" Text="Πληροφορίες Κενού" Comment="Gap Information" />
+    <Text Key="GapInformation.Description" Text="Πληροφορίες, σχετικές με το εάν αυτό το Θέμα είναι στο τέλος ή στην αρχή ενός κενού της σειράς" Comment="Information if this issue is the end or start of a gap in the series" />
+    <Text Key="HasBeenReadAsText" Text="Ανάγνωση" Comment="Read" />
+    <Text Key="HasBeenReadAsText.Description" Text="Το Βιβλίο έχει αναγνωσθεί" Comment="Book has been read" />
+    <Text Key="SeriesStatCountAsText" Text="Σειρά: Βιβλία" Comment="Series: Books" />
+    <Text Key="SeriesStatCountAsText.Description" Text="Βιβλία της σειράς" Comment="Books in the Series" />
+    <Text Key="SeriesStatMinNumberAsText" Text="Σειρά: Πρώτος Αριθμός" Comment="Series: First Number" />
+    <Text Key="SeriesStatMinNumberAsText.Description" Text="Πρώτος Αριθμός της Σειράς " Comment="First Number of the Series" />
+    <Text Key="SeriesStatMaxNumberAsText" Text="Σειρά: Τελευταίος Αριθμός" Comment="Series: Last Number" />
+    <Text Key="SeriesStatMaxNumberAsText.Description" Text="Τελευταίος Αριθμός της Σειράς" Comment="Last Number of the Series" />
+    <Text Key="SeriesStatMinYearAsText" Text="Σειρά: Πρώτο Έτος" Comment="Series: First Year" />
+    <Text Key="SeriesStatMinYearAsText.Description" Text="Πρώτο Έτος Κυκλοφορίας της Σειράς " Comment="First Year of the Series" />
+    <Text Key="SeriesStatMaxYearAsText" Text="Σειρά: Τελευταίο Έτος" Comment="Series: Last Year" />
+    <Text Key="SeriesStatMaxYearAsText.Description" Text="Τελευταίο έτος της Σειράς" Comment="last Year of the Series" />
+    <Text Key="SeriesStatPageCountAsText" Text="Σειρά: Σελίδες" Comment="Series: Pages" />
+    <Text Key="SeriesStatPageCountAsText.Description" Text="Σελίδες της Σειράς" Comment="Pages in the Series" />
+    <Text Key="SeriesStatPageReadCountAsText" Text="Σειρά: Σελίδες που Αναγνώστηκαν" Comment="Series: Pages Read" />
+    <Text Key="SeriesStatPageReadCountAsText.Description" Text="Σελίδες της Σειράς που αναγνώστηκαν" Comment="Pages of the Series read" />
+    <Text Key="SeriesStatReadPercentageAsText" Text="Σειρά: Ποσοστό Ανάγνωσης" Comment="Series: Percent Read" />
+    <Text Key="SeriesStatReadPercentageAsText.Description" Text="Ποσοστό της Σειράς που αναγνώστηκε" Comment="Percent of the Series read" />
+    <Text Key="SeriesStatAverageRating" Text="Σειρά: Μέσος Όρος βαθμολογίας μου" Comment="Series: My Average Rating" />
+    <Text Key="SeriesStatAverageRating.Description" Text="Ο Μέσος όρος βαθμολογίας μου για τη Σειρά" Comment="My average Rating of the Series" />
+    <Text Key="SeriesStatAverageCommunityRating" Text="Σειρά: Μέσος Όρος βαθμολογίας Κοινότητας" Comment="Series: Community Average Rating" />
+    <Text Key="SeriesStatAverageCommunityRating.Description" Text="Μέσος όρος βαθμολογίας της Σειράς\n" Comment="Community average Rating of the Series" />
+    <Text Key="SeriesStatRunningTimeAsText" Text="Series: Running Time Years" Comment="Series: Running Time Years" />
+    <Text Key="SeriesStatRunningTimeAsText.Description" Text="Διάρκεια της Σειράς σε έτη " Comment="Running time of the Series in years" />
+    <Text Key="SeriesStatGapCountAsText" Text="Series: Gaps" Comment="Series: Gaps" />
+    <Text Key="SeriesStatGapCountAsText.Description" Text="Κενά στη Σειρά" Comment="Gaps in the Series" />
+    <Text Key="Icons" Text="Εικόνες" Comment="Icons" />
+    <Text Key="AddedTime" Text="Προστέθηκε" Comment="Added" />
+    <Text Key="AddedTime.Description" Text="Χρόνος που το Βιβλίο προστέθηκε στη βάση δεδομένων" Comment="Time the Book was added to the Database" />
+    <Text Key="FileModifiedTime" Text="Τροποποιήθηκε" Comment="File Modified" />
+    <Text Key="FileModifiedTime.Description" Text="Χρόνος πού τροποποιήθηκε το Βιβλίο τελευταία φορά" Comment="Time the Book was modified the last time" />
+    <Text Key="OpenedTime" Text="Ανοίχθηκε" Comment="Opened" />
+    <Text Key="OpenedTime.Description" Text="Τελευταία φορά που το βιβλίο ανοίχθηκε" Comment="Last time the Book was opened" />
+    <Text Key="FileCreationTime" Text="Δημιουργήθηκε" Comment="File Created" />
+    <Text Key="FileCreationTime.Description" Text="Χρόνος δημιουργίας του Βιβλίου - Αρχείου" Comment="Creation time of the Book-File" />
+    <Text Key="Icons.Description" Text="Εικόνες για αυτό το Βιβλίο " Comment="Icons for this Book" />
+    <Text Key="ScanInformation" Text="Αναζήτηση Πληροφοριών" Comment="Scan Information" />
+    <Text Key="SeriesStatLastOpenedTime" Text="Σειρά: Ανοίχθηκε" Comment="Series: Opened" />
+    <Text Key="SeriesStatLastOpenedTime.Description" Text="Τελευταία φορά που ένα βιβλίο από τη Σειρά αυτή έχει ανοιχτεί" Comment="Last time a book from this Series has been opened" />
+    <Text Key="SeriesStatLastAddedTime" Text="Σειρά: Προστέθηκε" Comment="Series: Book added" />
+    <Text Key="SeriesStatLastAddedTime.Description" Text="Τελευταία φορά που ένα βιβλίο προστέθηκε στη Σειρά" Comment="Last time a book was added to the Series" />
+    <Text Key="DateFormats" Text="Μακρύ|Σύντομο|Σχετικό" Comment="Long|Short|Relative" />
+    <Text Key="Checked" Text="Ελέγχθηκε" Comment="Checked" />
+    <Text Key="Checked.Description" Text="Το Βιβλίο ελέγχθηκε" Comment="Book is checked" />
+    <Text Key="ScanInformation.Description" Text="Πρόσθετες πληροφορίες σχετικά με την αναζήτηση" Comment="Additional information about the scan" />
+    <Text Key="StoryArc" Text="Story Arc" Comment="Story Arc" />
+    <Text Key="StoryArc.Description" Text="Story Arc the Book belongs to" Comment="Story Arc the Book belongs to" />
+    <Text Key="SeriesGroup" Text="Series Group" Comment="Series Group" />
+    <Text Key="SeriesGroup.Description" Text="Series Group the Book belongs to" Comment="Series Group the Book belongs to" />
+    <Text Key="MainCharacterOrTeam" Text="Πρωταγωνιστής / Χαρακτήρες " Comment="Main Character/Team" />
+    <Text Key="MainCharacterOrTeam.Description" Text="Πρωταγωνιστής ή Χαρακτήρες του Βιβλίου" Comment="Main Character or Team of the Book" />
+    <Text Key="Review" Text="Αναθεώρηση" Comment="Review" />
+    <Text Key="Review.Description" Text="Μια σύντομη κριτική του βιβλίου" Comment="A short Review of the Book" />
+  </Texts>
+</TR>

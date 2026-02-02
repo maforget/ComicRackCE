@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SearchBrowser" CultureName="el-GR">
+  <Texts>
+    <Text Key="AlternateSeries" Text="Εναλλακτική Σειρά" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="Βαφείς" Comment="Colorists" />
+    <Text Key="Genre" Text="Είδη" Comment="Genres" />
+    <Text Key="Imprint" Text="Αποτυπώσεις" Comment="Imprints" />
+    <Text Key="Inker" Text="Μελανωτήρες" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="Γλώσσες" Comment="Languages" />
+    <Text Key="MonthAsText" Text="Μήνες" Comment="Months" />
+    <Text Key="Penciller" Text="Σκιτσογράφοι" Comment="Pencillers" />
+    <Text Key="Publisher" Text="Έκδοτες" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="Σειρά" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="Έτη" Comment="Years" />
+    <Text Key="Writer" Text="Συγγραφείς" Comment="Writers" />
+    <Text Key="Unspecified" Text="Ακαθόριστο" Comment="Unspecified" />
+    <Text Key="AllItems" Text="Όλα ({0} {1})" Comment="All ({0} {1})" />
+    <Text Key="ShadowTitle" Text="Τίτλοι" Comment="Titles" />
+    <Text Key="ShadowFormat" Text="Διαμορφώσεις" Comment="Formats" />
+    <Text Key="Editor" Text="Συντάκτες" Comment="Editors" />
+    <Text Key="Characters" Text="Χαρακτήρες" Comment="Characters" />
+    <Text Key="CoverArtist" Text="Καλλιτέχνες Εξώφυλλου" Comment="Cover Artists" />
+    <Text Key="AgeRating" Text="Αξιολογήσεις Ηλικιακά" Comment="Age Ratings" />
+    <Text Key="Tags" Text="Καρτέλες" Comment="Tags" />
+    <Text Key="ShadowVolumeAsText" Text="Τόμοι" Comment="Volumes" />
+    <Text Key="Teams" Text="Ομάδες" Comment="Teams" />
+    <Text Key="Locations" Text="Τοποθεσίες" Comment="Locations" />
+    <Text Key="Web" Text="Ιστός" Comment="Web" />
+    <Text Key="Letterer" Text="Σεναριογράφος" Comment="Letterer" />
+    <Text Key="RatingAsText" Text="Αξιολογήσεις" Comment="My Ratings" />
+    <Text Key="CommunityRatingAsText" Text="Αξιολογήσεις Κοινότητας" Comment="Community Ratings" />
+    <Text Key="BookPriceAsText" Text="Τιμές Βιβλίου" Comment="Book Prices" />
+    <Text Key="BookAge" Text="Ηλικίες βιβλίων" Comment="Book Ages" />
+    <Text Key="BookStore" Text="Βιβλιοπωλεία" Comment="Book Stores" />
+    <Text Key="BookOwner" Text="Ιδιοκτήτες βιβλίου" Comment="Book Owners" />
+    <Text Key="BookCondition" Text="Συνθήκες βιβλίου" Comment="Book Conditions" />
+    <Text Key="BookCollectionStatus" Text="Κατάσταση συλλογής βιβλίου" Comment="Book Collection Status" />
+    <Text Key="BookLocation" Text="Τοποθεσίες βιβλίου" Comment="Book Locations" />
+  </Texts>
+</TR>

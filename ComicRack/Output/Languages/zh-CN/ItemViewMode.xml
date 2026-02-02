@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ItemViewMode" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Thumbnail" Text="缩略图" Comment="Thumbnail" />
+    <Text Key="Tile" Text="平铺" Comment="Tile" />
+    <Text Key="Detail" Text="详细信息" Comment="Detail" />
+  </Texts>
+</TR>

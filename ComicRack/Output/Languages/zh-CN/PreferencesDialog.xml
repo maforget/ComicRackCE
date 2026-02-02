@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PreferencesDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="btAddFolder" Text="添加(&amp;A)..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="添加文件夹..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="应用(&amp;A)" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="更改(&amp;C)..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="清除" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="清除" Comment="Clear" />
+    <Text Key="btOK" Text="确定(&amp;O)" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="移除(&amp;R)" Comment="&amp;Remove" />
+    <Text Key="btResetColor" Text="重置(&amp;R)" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="重置" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="恢复默认(&amp;D)" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="扫描" Comment="Scan" />
+    <Text Key="chkAutoContrast" Text="自动增强对比(&amp;C)" Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="扫描时自动从书库移除不存在的文件" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="页面(&amp;P) [MB]" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableThumbnailCache" Text="缩略图(&amp;T) [MB]" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkOverwriteAssociations" Text="直接关联为默认打开程序而不是添加到'打开方式 ...'" Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="需要密码:" Comment="Require Password:" />
+    <Text Key="colOptions" Text="选项" Comment="Options" />
+    <Text Key="groupDiskCache" Text="磁盘缓存" Comment="Disk Cache" />
+    <Text Key="groupMessages" Text="隐藏的消息" Comment="Hidden Messages" />
+    <Text Key="groupOverlays" Text="图层" Comment="Overlays" />
+    <Text Key="grpIntegration" Text="浏览器集成" Comment="Explorer Integration" />
+    <Text Key="labelBrightness" Text="亮度:" Comment="Brightness Adjustment:" />
+    <Text Key="labelCheckedFormats" Text="ComicRack将关联选中的格式" Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelContrast" Text="对比度:" Comment="Contrast Adjustment:" />
+    <Text Key="labelExcludeCover" Text="下列名称的图像将不会作为封面缩略图(使用分号分隔多个名称):" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelLanguage" Text="选择ComicRack的用户界面语言(需要重启ComicRack才能使更改生效):" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlaySize" Text="大小:" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="点击重新显示隐藏信息" Comment="To reshow hidden messages press" />
+    <Text Key="labelSaturation" Text="饱和度:" Comment="Saturation Adjustment:" />
+    <Text Key="labelScriptPaths" Text="脚本库路径列表(使用分号分隔多个路径):" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="共享名:" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="程序运行时将监视选中文件夹的变化(重命名,移动)." Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="选项" Comment="Preferences" />
+    <Text Key="Scan" Text="扫描" Comment="Scan" />
+    <Text Key="tabAdvanced" Text="高级" Comment="Advanced" />
+    <Text Key="tabBehavior" Text="行为" Comment="Behavior" />
+    <Text Key="Scanning" Text="扫描 '{0}' 中..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectScriptFolder" Text="请选择脚本库文件夹" Comment="Please select a script library folder" />
+    <Text Key="Stop" Text="停止" Comment="Stop" />
+    <Text Key="labelMemPageCount" Text="页数 [总计]" Comment="Pages [count]" />
+    <Text Key="labelMemThumbSize" Text="缩略图 [MB]" Comment="Thumbnails [MB]" />
+    <Text Key="chkMemPageOptimized" Text="优化" Comment="optimized" />
+    <Text Key="chkMemThumbOptimized" Text="优化" Comment="optimized" />
+    <Text Key="groupMemoryCache" Text="内存缓存" Comment="Memory Cache" />
+    <Text Key="grpDatabaseBackup" Text="备份数据库" Comment="Database Backup" />
+    <Text Key="btBackupDatabase" Text="备份数据库..." Comment="Backup Database..." />
+    <Text Key="btRestoreDatabase" Text="还原数据库..." Comment="Restore Database..." />
+    <Text Key="btTranslate" Text="帮助ComicRack本地化..." Comment="Help localizing ComicRack..." />
+    <Text Key="tabReader" Text="阅读器" Comment="Reader" />
+    <Text Key="tabOverlaysAndEffects" Text="图层与效果" Comment="Overlays &amp;&amp; Effects" />
+    <Text Key="chkEnableHardware" Text="启用硬件加速" Comment="Enable Hardware Acceleration" />
+    <Text Key="chkEnablePageTransition" Text="启用页面过渡效果" Comment="Enable Page Transitions" />
+    <Text Key="chkEnableDisplayChangeAnimation" Text="启用页面显示更改时的动画" Comment="Enable Animation of Page Display changes" />
+    <Text Key="chkSmoothAutoScrolling" Text="平滑智能滚动" Comment="Smooth Auto Scrolling" />
+    <Text Key="lblFast" Text="快" Comment="fast" />
+    <Text Key="lblSlow" Text="慢" Comment="slow" />
+    <Text Key="grpKeyboard" Text="快捷键" Comment="Keyboard" />
+    <Text Key="lblMouseWheel" Text="鼠标滚轮滚动:" Comment="Mouse Wheel scrolling:" />
+    <Text Key="chkHighQualityDisplay" Text="高画质(&amp;H)" Comment="&amp;High Quality" />
+    <Text Key="chkEnableHardwareFiltering" Text="启用硬件滤镜" Comment="Enable Hardware Filters" />
+    <Text Key="chkEnableSoftwareFiltering" Text="启用软件滤镜" Comment="Enable Software Filters" />
+    <Text Key="groupHardwareAcceleration" Text="硬件加速" Comment="Hardware Acceleration" />
+    <Text Key="grpSharing" Text="共享" Comment="Sharing" />
+    <Text Key="grpScanning" Text="扫描" Comment="Scanning" />
+    <Text Key="grpLanguages" Text="语言" Comment="Languages" />
+    <Text Key="tabLibraries" Text="书库" Comment="Libraries" />
+    <Text Key="colName" Text="名称" Comment="Name" />
+    <Text Key="chkAnamorphicScaling" Text="有损缩放" Comment="Anamorphic Scaling" />
+    <Text Key="chkDisableScripting" Text="禁用所有脚本" Comment="Disable all Scripts" />
+    <Text Key="grpScripts" Text="可用的脚本" Comment="Available Scripts" />
+    <Text Key="grpPackages" Text="脚本包" Comment="Script Packages" />
+    <Text Key="grpScriptSettings" Text="脚本设置" Comment="Script Settings" />
+    <Text Key="tabScripts" Text="脚本" Comment="Scripts" />
+    <Text Key="btInstallPackage" Text="安装..." Comment="Install..." />
+    <Text Key="btRemovePackage" Text="移除" Comment="Remove" />
+    <Text Key="colPackage" Text="包" Comment="Package" />
+    <Text Key="colAuthor" Text="作者" Comment="Author" />
+    <Text Key="colDescription" Text="描述" Comment="Description" />
+    <Text Key="packageGroupInstalled" Text="已安装" Comment="Installed" />
+    <Text Key="packageGroupInstall" Text="将被安装(需要重启)" Comment="To be installed (needs restart)" />
+    <Text Key="packageGroupRemove" Text="将被移除(需要重启)" Comment="To be removed (needs restart)" />
+    <Text Key="btAssociateExtensions" Text="更改..." Comment="Change..." />
+    <Text Key="btClearInternetCache" Text="清除" Comment="Clear" />
+    <Text Key="chkEnableInternetCache" Text="网络(&amp;I) [MB]" Comment="&amp;Internet [MB]" />
+    <Text Key="grpServerSettings" Text="服务器设置" Comment="Server Settings" />
+    <Text Key="labelShareDescription" Text="描述:" Comment="Description:" />
+    <Text Key="chkPrivate" Text="私人" Comment="Private" />
+    <Text Key="chkShareInternet" Text="在网络上共享" Comment="Share on the Internet" />
+    <Text Key="btAddShare" Text="添加共享" Comment="Add Share" />
+    <Text Key="btRemoveShare" Text="移除" Comment="Remove" />
+    <Text Key="labelPrivateListPassword" Text="保护您的私人网络共享列表的密码:" Comment="Password used to protect your private Internet Share list entries:" />
+    <Text Key="labelSharpening" Text="锐化:" Comment="Sharpening:" />
+    <Text Key="labelPublicServerAddress" Text="你的服务器的外部访问地址(如果ComicRack无法正确识别):" Comment="External address of your server if ComicRack should not guess it correctly:" />
+    <Text Key="chkDontAddRemovedFiles" Text="手动从书库移除的文件不再次添加" Comment="Files manually removed from the Library will not be added again" />
+    <Text Key="btConfigScript" Text="配置..." Comment="Config..." />
+    <Text Key="btOpenFolder" Text="打开" Comment="Open" />
+    <Text Key="labelPageQuality" Text="页面质量:" Comment="Page Quality:" />
+    <Text Key="labelThumbQuality" Text="缩略图质量:" Comment="Thumb Quality:" />
+    <Text Key="chkAutoConnectShares" Text="自动连接" Comment="Connect automatically" />
+    <Text Key="btExportKeyboard" Text="导出..." Comment="Export..." />
+    <Text Key="btImportKeyboard" Text="导入..." Comment="Import..." />
+    <Text Key="miDefaultKeyboardLayout" Text="默认" Comment="Default" />
+    <Text Key="cbShare.Item0" Text="全不共享" Comment="Share None" />
+    <Text Key="cbShare.Item1" Text="共享所有" Comment="Share All" />
+    <Text Key="cbShare.Item2" Text="共享已选择" Comment="Share Selected" />
+    <Text Key="grpShareSettings" Text="设置" Comment="Settings" />
+    <Text Key="chkShowNavigationOverlay" Text="自动显示导航栏" Comment="Show Navigation automatically" />
+    <Text Key="chkShowCurrentPageOverlay" Text="显示当前页数" Comment="Show current Page" />
+    <Text Key="chkShowVisiblePartOverlay" Text="显示可见页面区域" Comment="Show visible Page Part" />
+    <Text Key="chkShowPageNames" Text="同时显示当前页面的文件名" Comment="Current Page also displays Page Name" />
+    <Text Key="chkShowStatusOverlay" Text="显示信息与状态" Comment="Show Messages and Status" />
+    <Text Key="labelPageOverlay" Text="页面" Comment="Page" />
+    <Text Key="labelVisiblePartOverlay" Text="可见区域" Comment="Visible Part" />
+    <Text Key="labelStatusOverlay" Text="信息与状态" Comment="Messages and Status" />
+    <Text Key="labelNavigationOverlay" Text="导航栏" Comment="Navigation" />
+    <Text Key="labelNavigationOverlayPosition" Text="导航栏:" Comment="Navigation:" />
+    <Text Key="cbNavigationOverlayPosition.Item0" Text="置底" Comment="at Bottom" />
+    <Text Key="cbNavigationOverlayPosition.Item1" Text="在顶部" Comment="on Top" />
+    <Text Key="PageNumberOnly" Text="页面" Comment="Page" />
+    <Text Key="PageNumberAndName" Text="页码\n页名" Comment="Page\nName" />
+    <Text Key="chkLookForShared" Text="查找本地的共享书籍" Comment="Look for local Book Shares" />
+    <Text Key="chkClientsCanEdit" Text="客户端可以编辑书籍" Comment="Clients can edit Books" />
+    <Text Key="chkClientsCanExport" Text="客户端可以导出书籍" Comment="Clients can export Books" />
+    <Text Key="chkUpdateComicFiles" Text="允许写入书籍信息到文件中" Comment="Allow writing of Book info into files" />
+    <Text Key="chkAutoUpdateComicFiles" Text="书籍文件已自动上传" Comment="Book files are updated automatically" />
+    <Text Key="groupComicFolders" Text="书籍文件夹" Comment="Book Folders" />
+    <Text Key="groupOtherComics" Text="书籍" Comment="Books" />
+    <Text Key="SelectComicFolder" Text="请选择一个包含书籍的文件夹" Comment="Please select a folder containing Books" />
+    <Text Key="labelGamma" Text="伽马:" Comment="Gamma Adjustment:" />
+    <Text Key="grpDisplay" Text="显示" Comment="Display" />
+    <Text Key="groupDisplay" Text="显示" Comment="Display" />
+    <Text Key="chkEnableInertialMouseScrolling" Text="启用鼠标惯性滚动" Comment="Enable Inertial Mouse scrolling" />
+    <Text Key="grpMouse" Text="鼠标与滚动" Comment="Mouse &amp; Scrolling" />
+    <Text Key="chkHideSampleScripts" Text="隐藏示例脚本" Comment="Hide sample Scripts" />
+  </Texts>
+</TR>

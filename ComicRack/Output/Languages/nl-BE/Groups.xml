@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Groups" CultureName="nl-BE">
+  <Texts>
+    <Text Key="AlphabetGroups" Text="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Andere" Comment="0-9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Other" />
+    <Text Key="CountGroups" Text="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|Niet gemeld" Comment="0-20|21-50|51-100|101-200|201-500|501-1000|&gt;1000|Unspecified" />
+    <Text Key="RatingGroups" Text="Niet beoordeeld|Geen Ster|1 Ster|2 Sterren|3 Sterren|4 Sterren|5 Sterren" Comment="Not Rated|No Stars|1 Star|2 Stars|3 Stars|4 Stars|5 Stars" />
+    <Text Key="ReadPercentageGroups" Text="Niet gelezen|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|Uitgelezen" Comment="Not Read|0%|10%|20%|30%|40%|50%|60%|70%|80%|90%|Completed" />
+    <Text Key="SizeGroups" Text="Leeg|Zeer klein|Klein|Medium|Groot|Zeer groot" Comment="Empty|Very Small|Small|Medium|Big|Huge" />
+    <Text Key="VolumeGroups" Text="Geen|V{0}|Andere" Comment="None|V{0}|Other" />
+    <Text Key="MangaGroups" Text="Manga|Geen Manga|Onbekend" Comment="Manga|No Manga|Unknown" />
+    <Text Key="BWGroups" Text="Zwart-wit|Kleur|Onbekend" Comment="Black and White|Color|Unknown" />
+    <Text Key="LinkedGroups" Text="Gekoppeld à Bestand|Niet gekoppeld" Comment="Linked to File|Not linked to File" />
+    <Text Key="PriceGroups" Text="Ongekend|Gratis|0-10|10-20|20-30|30-40|40-50|50-100|over 100" Comment="Unknown|Free|0-10|10-20|20-30|30-40|40-50|50-100|over 100" />
+    <Text Key="DateGroups" Text="Nooit|Heden|Gisteren|2 dagen geleden|3 dagen geleden|Deze Week|Vorige Week|14 dagen geleden|3 weken geleden|Deze Maand|Vorige Maand|2 Maand geleden|3 Maand geleden|4 Maand geleden|5 Maand geleden|Half jaar geleden|Dit jaar|Vorig Jaar|2 jaar geleden|3 jaar geleden|Langer dan 3 jaar" Comment="Never|Today|Yesterday|Two Days Ago|Three Days Ago|This Week|Last Week|Two Weeks Ago|Three Weeks Ago|This Month|Last Month|Two Months ago|Three Months ago|Four Months ago|Five Months ago|Six Months ago|This Year|Last Year|Two Years ago|Three Years ago|Older than Three Years|Next Year|In the Future" />
+    <Text Key="SeriesCompleteGroups" Text="Reeks volledig|Reeks onvolledig|Onbekend" Comment="Series complete|Series not complete|Unknown" />
+    <Text Key="EnableProposedGroups" Text="Voorgestelde waarden gebruikt|Voorgestelde waarden niet gebruikt" Comment="Proposed Values used|Proposed Values no used" />
+    <Text Key="HasBeenReadGroups" Text="Gelezen|Ongelezen" Comment="Read|Unread" />
+    <Text Key="CheckedGroups" Text="Gemarkeerd|Niet gemarkeerd" Comment="Checked|Not Checked" />
+  </Texts>
+</TR>

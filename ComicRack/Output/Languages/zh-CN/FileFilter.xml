@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FileFilter" CultureName="zh-CN">
+  <Texts>
+    <Text Key="PageImageSave" Text="JPEG 图像|*.jpg|BMP 图像|*.bmp|PNG 图像|*.png|GIF 图像|*.gif|TIFF 图像|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif" />
+    <Text Key="ComicRackDatabase" Text="ComicRack数据库|*.xml" Comment="ComicRack Database|*.xml" />
+    <Text Key="AllFiles" Text="所有文件" Comment="All Files" />
+    <Text Key="AllSupportedFiles" Text="所有支持的文件" Comment="All supported Files" />
+    <Text Key="ReadingListSave" Text="ComicRack阅读列表|*.cbl|Xml文件|*.xml" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml" />
+    <Text Key="ReadingListLoad" Text="ComicRack阅读列表|*.cbl|Xml文件|*.xml|所有文件|*.*" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml|All Files|*.*" />
+    <Text Key="FormatReadingList" Text="ComicRack阅读列表" Comment="ComicRack Reading List" />
+    <Text Key="ScriptPackageOpen" Text="ComicRack插件|*.crplugin|脚本包|*.zip" Comment="ComicRack Plugin|*.crplugin|Script Archive|*.zip" />
+    <Text Key="KeyboardLayout" Text="快捷键布局" Comment="Keyboard Layout" />
+    <Text Key="KeyboardLayoutFilter" Text="快捷键布局|*.xml" Comment="Keyboard Layout|*.xml" />
+    <Text Key="LoadThumbnail" Text="JPEG 图像|*.jpg|BMP 图像|*.bmp|PNG 图像|*.png|GIF 图像|*.gif|TIFF 图像|*.tif|图标图像|*.ico" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif|Icon Image|*.ico" />
+    <Text Key="ComicRackBackup" Text="ComicRack备份|*.zip" Comment="ComicRack Backup|*.zip" />
+  </Texts>
+</TR>

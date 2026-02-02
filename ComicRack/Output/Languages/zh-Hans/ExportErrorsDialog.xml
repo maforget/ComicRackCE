@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ExportErrorsDialog" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="btOk" Text="确定" Comment="OK" />
+    <Text Key="coleComic" Text="漫画" Comment="eComic" />
+    <Text Key="colProblem" Text="问题" Comment="Problem" />
+    <Text Key="ExportErrorsDialog" Text="漫画导出错误" Comment="Comic Export Errors" />
+  </Texts>
+</TR>

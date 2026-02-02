@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="KeyboardShortcutEditor" CultureName="ru">
+  <Texts>
+    <Text Key="chkAlt1" Text="Alt" Comment="Alt" />
+    <Text Key="chkAlt2" Text="Alt" Comment="Alt" />
+    <Text Key="chkCtrl1" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkCtrl2" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkShift1" Text="Shift" Comment="Shift" />
+    <Text Key="chkShift2" Text="Shift" Comment="Shift" />
+    <Text Key="colAction" Text="Действие" Comment="Action" />
+    <Text Key="colKeys" Text="Клавиши" Comment="Keys" />
+    <Text Key="labelAlternateKey" Text="Или:" Comment="Alternate:" />
+    <Text Key="labelMainKey" Text="Основная:" Comment="Main:" />
+    <Text Key="NothingSelected" Text="Действия не выбрано" Comment="No action selected" />
+  </Texts>
+</TR>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPageType" CultureName="hr">
+  <Texts>
+    <Text Key="Advertisment" Text="Oglas" Comment="Advertisment" />
+    <Text Key="BackCover" Text="Zadnja stranica korica" Comment="Back Cover" />
+    <Text Key="Deleted" Text="Obrisano" Comment="Deleted" />
+    <Text Key="Editorial" Text="Uredništvo" Comment="Editorial" />
+    <Text Key="FrontCover" Text="Omot" Comment="Front Cover" />
+    <Text Key="InnerCover" Text="Unutarnje korice" Comment="Inner Cover" />
+    <Text Key="Letters" Text="Tekstopisac" Comment="Letters" />
+    <Text Key="Other" Text="Ostalo" Comment="Other" />
+    <Text Key="Preview" Text="Privirivanje" Comment="Preview" />
+    <Text Key="Roundup" Text="Završetak" Comment="Roundup" />
+    <Text Key="Story" Text="Priča" Comment="Story" />
+  </Texts>
+</TR>

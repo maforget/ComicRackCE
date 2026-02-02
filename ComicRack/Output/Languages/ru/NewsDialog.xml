@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="NewsDialog" CultureName="ru">
+  <Texts>
+    <Text Key="btClose" Text="&amp;Закрыть" Comment="&amp;Close" />
+    <Text Key="btMarkRead" Text="Пометить все как прочтенные" Comment="Mark all as Read" />
+    <Text Key="btRefresh" Text="Обновить" Comment="Refresh" />
+    <Text Key="chkNewsStartup" Text="Проверка новостей при запуске" Comment="Check for News on Startup" />
+    <Text Key="colDate" Text="Дата" Comment="Date" />
+    <Text Key="colTitle" Text="Название" Comment="Title" />
+    <Text Key="colCategory" Text="Категория" Comment="Category" />
+    <Text Key="NewsDialog" Text="Последние новости от ComicRack" Comment="Latest ComicRack News" />
+  </Texts>
+</TR>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PagesView" CultureName="ru">
+  <Texts>
+    <Text Key="miCopy" Text="&amp;Копировать страницу" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Инверсия выделенного" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="Пометить на &amp;удаление" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="Тип страницы" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="&amp;Обновить" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="Выделить &amp;все" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="Создать закладку" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="Удалить закладку" Comment="Remove Bookmark" />
+    <Text Key="miMoveToStart" Text="В начало" Comment="Move to Start" />
+    <Text Key="miMoveToEnd" Text="В конец" Comment="Move to End" />
+    <Text Key="miResetOriginalOrder" Text="Сбросить порядок" Comment="Reset original Order" />
+  </Texts>
+</TR>

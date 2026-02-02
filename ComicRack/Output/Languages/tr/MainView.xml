@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MainView" CultureName="tr">
+  <Texts>
+    <Text Key="tsbAlignBottom" Text="Altına Yanaş" Comment="Dock Bottom" />
+    <Text Key="tsbAlignFill" Text="Doldur" Comment="Fill" />
+    <Text Key="tsbAlignLeft" Text="Sola Yanaş" Comment="Dock Left" />
+    <Text Key="tsbAlignRight" Text="Sağa Yanaş" Comment="Dock Right" />
+    <Text Key="tsbClose" Text="Kapat" Comment="Close" />
+    <Text Key="tsbFolders" Text="Klasörler" Comment="Folders" />
+    <Text Key="tsbFolders.Tooltip" Text="Kendi Klasörlerinize Gözatın" Comment="Browse your Folders" />
+    <Text Key="tsbLibrary" Text="Kütüphane" Comment="Library" />
+    <Text Key="tsbLibrary.Tooltip" Text="e-Çizgi Roman Kütüphanesi" Comment="eComics Library" />
+    <Text Key="tsbPages" Text="Sayfalar" Comment="Pages" />
+    <Text Key="tsbPages.Tooltip" Text="Mevcut Çizgiromanın sayfa sayısı" Comment="Pages of the current eComic" />
+    <Text Key="tsbShowMenu" Text="Menüyü Göster" Comment="Show Menu" />
+  </Texts>
+</TR>

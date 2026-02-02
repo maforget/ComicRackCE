@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBook" CultureName="ja">
+  <Texts>
+    <Text Key="Added" Text="追加:\t{0}" Comment="Added:\t{0}" />
+    <Text Key="Format" Text="フォーマット:\t{0}" Comment="Format:\t{0}" />
+    <Text Key="LastPageReadIs" Text="前回の閲覧ページ: {0}" Comment="Last page read is {0}" />
+    <Text Key="LastTimeOpenedAt" Text="前回の閲覧時間: {0}" Comment="Last time opened at {0}" />
+    <Text Key="Library" Text="ライブラリ" Comment="Library" />
+    <Text Key="MyFavoritesList" Text="お気に入り" Comment="My Favorites" />
+    <Text Key="Never" Text="未読" Comment="never" />
+    <Text Key="NeverReadList" Text="未読" Comment="Never Read" />
+    <Text Key="NoInformation" Text="情報なし" Comment="No information available" />
+    <Text Key="None" Text="なし" Comment="None" />
+    <Text Key="Of" Text="トータル" Comment="of" />
+    <Text Key="Opened" Text="閲覧\t{0}" Comment="Opened:\t{0}" />
+    <Text Key="Pages" Text="{0} ページ" Comment="{0} Page(s)" />
+    <Text Key="PageSize" Text="サイズ:\t{0}" Comment="Size:\t{0}" />
+    <Text Key="PageText" Text="ページ #{0}" Comment="Page #{0}" />
+    <Text Key="ReadingAtPage" Text="閲覧ページ: {0}" Comment="Reading at page {0}" />
+    <Text Key="ReadingList" Text="閲覧中..." Comment="Reading" />
+    <Text Key="ReadList" Text="既読" Comment="Read" />
+    <Text Key="RecentlyAddedList" Text="最近の追加" Comment="Recently Added" />
+    <Text Key="RecentlyReadList" Text="最近の閲覧" Comment="Recently Read" />
+    <Text Key="Resolution" Text="解像度:\t{0} x {1}" Comment="Resolution:\t{0} x {1}" />
+    <Text Key="Size" Text="サイズ:\t{0}/{1}" Comment="Size:\t{0}/{1}" />
+    <Text Key="SmartLists" Text="スマート リスト" Comment="Smart Lists" />
+    <Text Key="UnknownSize" Text="サイズ不明" Comment="Unknown Size" />
+    <Text Key="Unknown" Text="不祥" Comment="Unknown" />
+    <Text Key="Volume" Text="Vol.{0}" Comment="V{0}" />
+    <Text Key="FileName" Text="ファイル:\t{0}" Comment="File:\t{0}" />
+    <Text Key="Bookmark" Text="ブックマーク:\t{0}" Comment="Bookmark:\t{0}" />
+    <Text Key="Rotation" Text="回転:\t{0}" Comment="Rotation:\t{0}" />
+    <Text Key="FilesUpdateList" Text="更新ファイル" Comment="Files to update" />
+    <Text Key="TempLists" Text="テンポラリ リスト" Comment="Temporary Lists" />
+    <Text Key="BookCount" Text="冊数\t{0}" Comment="Books:\t{0}" />
+  </Texts>
+</TR>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="CrashDialog" CultureName="hu">
+  <Texts>
+    <Text Key="labelMessage" Text="Kérlek segíts, hogy jobbá válhasson a ComicRack, azzal, hogy elküldöd a következő jelentést. A jelentésben nincs olyan adat, ami azonosíthatna téged." Comment="Please help to make ComicRack a better application by submitting the follwing report. This report does not contain any data that could identify you." />
+    <Text Key="chkSubmit" Text="Elküld" Comment="Submit" />
+    <Text Key="btDetails" Text="Részletek" Comment="Details" />
+    <Text Key="btResume" Text="Kísérlet a folytatásra" Comment="Try Resume" />
+    <Text Key="btRestart" Text="Újraindítás" Comment="Restart" />
+    <Text Key="btExit" Text="Kilépés" Comment="Exit" />
+    <Text Key="CrashDialog" Text="A ComicRack hibát észlelt..." Comment="ComicRack encountered a Problem..." />
+  </Texts>
+</TR>

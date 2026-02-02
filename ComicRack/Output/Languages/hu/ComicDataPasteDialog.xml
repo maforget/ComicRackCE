@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicDataPasteDialog" CultureName="hu">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Mégse" Comment="&amp;Cancel" />
+    <Text Key="btMarkAll" Text="&amp;Mind" Comment="&amp;All" />
+    <Text Key="btMarkDefined" Text="Kitöltött" Comment="Only &amp;Set" />
+    <Text Key="btMarkNone" Text="&amp;Törlés" Comment="&amp;Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="chkColor" Text="Színbeállítás" Comment="Color Adjustment" />
+    <Text Key="chkColorist" Text="Színező" Comment="Colorist" />
+    <Text Key="chkCount" Text="Darab" Comment="Total Number" />
+    <Text Key="chkEditor" Text="Szerkesztő" Comment="Editor" />
+    <Text Key="chkGenre" Text="Típus" Comment="Genre" />
+    <Text Key="chkImprint" Text="Család" Comment="Imprint" />
+    <Text Key="chkInker" Text="Kihúzó" Comment="Inker" />
+    <Text Key="chkLanguage" Text="Nyelv" Comment="Language" />
+    <Text Key="chkLetterer" Text="Betűk" Comment="Letterer" />
+    <Text Key="chkManga" Text="Manga" Comment="Manga" />
+    <Text Key="chkMonth" Text="Hónap" Comment="Month" />
+    <Text Key="chkNotes" Text="Megjegyzések" Comment="Notes" />
+    <Text Key="chkNumber" Text="Szám" Comment="Number" />
+    <Text Key="chkPenciller" Text="Rajzoló" Comment="Penciller" />
+    <Text Key="chkPublisher" Text="Kiadó" Comment="Publisher" />
+    <Text Key="chkSeries" Text="Sorozat" Comment="Series" />
+    <Text Key="chkSummary" Text="Összefoglaló" Comment="Summary" />
+    <Text Key="chkTags" Text="Címkék" Comment="Tags" />
+    <Text Key="chkTitle" Text="Cím" Comment="Title" />
+    <Text Key="chkVolume" Text="Kötet" Comment="Volume" />
+    <Text Key="chkWriter" Text="Író" Comment="Writer" />
+    <Text Key="chkYear" Text="Év" Comment="Year" />
+    <Text Key="grpArtists" Text="Alkotók / közreműködők" Comment="Artists / People Involved" />
+    <Text Key="grpMain" Text="Fő információk" Comment="Main" />
+    <Text Key="chkFormat" Text="Formátum" Comment="Format" />
+    <Text Key="chkBlackAndWhite" Text="Fekete-fehér" Comment="Black and White" />
+    <Text Key="chkCover" Text="Borító" Comment="Cover Artist" />
+    <Text Key="chkAgeRating" Text="Kor besorolás" Comment="Age Rating" />
+    <Text Key="chkCharacters" Text="Szereplők" Comment="Characters" />
+    <Text Key="chkAlternateCount" Text="Darab" Comment="Alt. Total Number" />
+    <Text Key="chkAlternateNumber" Text="Szám" Comment="Alt. Number" />
+    <Text Key="chkAlternateSeries" Text="Sorozat" Comment="Alt. Series" />
+    <Text Key="chkRating" Text="Értékelés" Comment="My Rating" />
+    <Text Key="chkCommunityRating" Text="Közösség értékelése" Comment="Community Rating" />
+    <Text Key="ComicDataPasteDialog" Text="Adatok beillesztése {0} képregénybe" Comment="Paste Data into {0} Books" />
+    <Text Key="chkWeb" Text="Web" Comment="Web" />
+    <Text Key="chkLocations" Text="Helyszínek" Comment="Locations" />
+    <Text Key="chkTeams" Text="Csapatok" Comment="Teams" />
+    <Text Key="chkBookPrice" Text="Ár" Comment="Price" />
+    <Text Key="chkBookAge" Text="Kor" Comment="Age" />
+    <Text Key="chkBookCondition" Text="Állapot" Comment="Condition" />
+    <Text Key="chkBookStore" Text="Bolt" Comment="Store" />
+    <Text Key="chkBookOwner" Text="Tulajdonos" Comment="Owner" />
+    <Text Key="chkBookLocation" Text="Képregény helye" Comment="Location" />
+    <Text Key="chkBookCollectionStatus" Text="Beszerzés állapota" Comment="Collection Status" />
+    <Text Key="chkBookNotes" Text="Notes" Comment="Notes" />
+    <Text Key="chkISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="grpPlotNotes" Text="Cselekmény és Megjegyzések" Comment="Plot &amp; Notes" />
+    <Text Key="grpCatalog" Text="Katalógus" Comment="Catalog" />
+    <Text Key="chkPageCount" Text="Oldalak" Comment="Pages" />
+    <Text Key="chkOpenTime" Text="Megnyitva/Elolvasva" Comment="Opened/Read" />
+    <Text Key="chkAddedTime" Text="Hozzáadva/Megvásárolva" Comment="Added/Purchased" />
+    <Text Key="chkSeriesComplete" Text="Sorozat teljes" Comment="Series complete" />
+    <Text Key="chkStoryArc" Text="Történet szál" Comment="Story Arc" />
+    <Text Key="chkSeriesGroup" Text="Sorozat csoport" Comment="Series Group" />
+    <Text Key="chkMainCharacterOrTeam" Text="Főszereplő" Comment="Main Character" />
+    <Text Key="chkReview" Text="Kritika" Comment="Review" />
+  </Texts>
+</TR>

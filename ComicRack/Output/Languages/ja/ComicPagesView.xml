@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPagesView" CultureName="ja">
+  <Texts>
+    <Text Key="ArrangedBy" Text="整列方法: {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="サムネイル サイズの変更" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="グループ化: {0}" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="詳細(&amp;D)" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="サムネイル(&amp;H)" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="並べて表示(&amp;T)" Comment="&amp;Tiles" />
+    <Text Key="None" Text="なし" Comment="None" />
+    <Text Key="NotArranged" Text="ソートしない" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="グループ化しない" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="グループ" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="別分類によるコミック グループ" Comment="Group eComics by different criteria" />
+    <Text Key="tbbSort" Text="整列" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="コミックのソート順を変更" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbView" Text="表示" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="コミックの表示方法を変更" Comment="Change how eComics are displayed" />
+    <Text Key="tbFilter" Text="ページ フィルタ:" Comment="Page Filter" />
+    <Text Key="miExpandAllGroups" Text="すべてのグループを折畳む/展開" Comment="Collapse/Expand all Groups" />
+  </Texts>
+</TR>

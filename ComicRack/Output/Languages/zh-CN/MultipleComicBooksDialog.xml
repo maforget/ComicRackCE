@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MultipleComicBooksDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="btCancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定(&amp;O)" Comment="&amp;OK" />
+    <Text Key="labelAlternateSeries" Text="其他系列或故事名:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelColorist" Text="配色:" Comment="Colorist:" />
+    <Text Key="labelEditor" Text="编辑:" Comment="Editor:" />
+    <Text Key="labelGenre" Text="体裁:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="出版品牌:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="描线员:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="语言:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="嵌字:" Comment="Letterer:" />
+    <Text Key="labelManga" Text="漫画:" Comment="Manga:" />
+    <Text Key="labelMonth" Text="月:" Comment="Month:" />
+    <Text Key="labelNumber" Text="话数:" Comment="Number:" />
+    <Text Key="labelPenciller" Text="铅稿:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="出版社:" Comment="Publisher:" />
+    <Text Key="labelSeries" Text="系列:" Comment="Series:" />
+    <Text Key="labelSummary" Text="摘要:" Comment="Summary:" />
+    <Text Key="labelTags" Text="标签:" Comment="Tags:" />
+    <Text Key="labelTitle" Text="标题:" Comment="Title:" />
+    <Text Key="labelVolume" Text="卷数:" Comment="Volume:" />
+    <Text Key="labelWriter" Text="脚本:" Comment="Writer:" />
+    <Text Key="labelYear" Text="年:" Comment="Year:" />
+    <Text Key="labelBlackAndWhite" Text="黑白:" Comment="Black and White:" />
+    <Text Key="labelFormat" Text="格式:" Comment="Format:" />
+    <Text Key="labelEnableProposed" Text="启用建议值:" Comment="Enable Proposed:" />
+    <Text Key="labelAgeRating" Text="年龄分级:" Comment="Age Rating:" />
+    <Text Key="labelNotes" Text="笔记:" Comment="Notes:" />
+    <Text Key="labelCharacters" Text="角色:" Comment="Characters:" />
+    <Text Key="labelCount" Text="共:" Comment="of:" />
+    <Text Key="labelAlternateCount" Text="共:" Comment="of:" />
+    <Text Key="labelAlternateNumber" Text="话数:" Comment="Number:" />
+    <Text Key="labelCoverArtist" Text="封面绘师:" Comment="Cover Artist:" />
+    <Text Key="labelTeams" Text="组织:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="场景:" Comment="Locations:" />
+    <Text Key="labelRating" Text="我的评分:" Comment="My Rating:" />
+    <Text Key="labelCommunityRating" Text="社群评分:" Comment="Community Rating:" />
+    <Text Key="labelWeb" Text="网址:" Comment="Web:" />
+    <Text Key="labelBookStore" Text="书店:" Comment="Store:" />
+    <Text Key="labelBookOwner" Text="所有者:" Comment="Owner:" />
+    <Text Key="labelBookLocation" Text="场景:" Comment="Location:" />
+    <Text Key="labelBookAge" Text="书籍年代:" Comment="Age:" />
+    <Text Key="labelBookCondition" Text="状况:" Comment="Condition:" />
+    <Text Key="labelBookCollectionStatus" Text="收集状态:" Comment="Collection Status:" />
+    <Text Key="labelBookNotes" Text="笔记:" Comment="Notes:" />
+    <Text Key="labelBookPrice" Text="价格:" Comment="Price:" />
+    <Text Key="grpMain" Text="主要" Comment="Main" />
+    <Text Key="grpPlotNotes" Text="情节与笔记" Comment="Plot &amp; Notes" />
+    <Text Key="grpArtists" Text="绘师 / 参与者" Comment="Artists / People Involved" />
+    <Text Key="grpCatalog" Text="概况" Comment="Catalog" />
+    <Text Key="labelISBN" Text="ISBN:" Comment="ISBN:" />
+    <Text Key="labelPagesAsTextSimple" Text="页数:" Comment="Pages:" />
+    <Text Key="MultipleComicBooksDialog" Text="复数书籍信息({0})" Comment="Multiple Book Information ({0})" />
+    <Text Key="labelOpenedTime" Text="打开/阅读时间:" Comment="Opened/Read:" />
+    <Text Key="labelAddedTime" Text="已添加/已购买:" Comment="Added/Purchased:" />
+    <Text Key="labelSeriesComplete" Text="系列已完结:" Comment="Series complete:" />
+    <Text Key="labelScanInformation" Text="扫描信息:" Comment="Scan Information:" />
+    <Text Key="labelStoryArc" Text="故事篇章:" Comment="Story Arc:" />
+    <Text Key="labelSeriesGroup" Text="系列集合:" Comment="Series Group:" />
+    <Text Key="labelMainCharacterOrTeam" Text="主要角色/组织:" Comment="Main Character/Team:" />
+    <Text Key="labelReview" Text="评论:" Comment="Review:" />
+  </Texts>
+</TR>

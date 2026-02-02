@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicPageType" CultureName="tr">
+  <Texts>
+    <Text Key="Advertisment" Text="Reklam" Comment="Advertisment" />
+    <Text Key="BackCover" Text="Arka Kapak" Comment="Back Cover" />
+    <Text Key="Deleted" Text="Silindi" Comment="Deleted" />
+    <Text Key="Editorial" Text="Editör'den" Comment="Editorial" />
+    <Text Key="FrontCover" Text="Ön Kapak" Comment="Front Cover" />
+    <Text Key="InnerCover" Text="İç Kapak" Comment="Inner Cover" />
+    <Text Key="Letters" Text="Baloncuk yazıları" Comment="Letters" />
+    <Text Key="Other" Text="Diğer" Comment="Other" />
+    <Text Key="Preview" Text="Önizleme" Comment="Preview" />
+    <Text Key="Roundup" Text="Yuvarla" Comment="Roundup" />
+    <Text Key="Story" Text="Hikaye" Comment="Story" />
+  </Texts>
+</TR>

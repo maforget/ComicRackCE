@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListFolderFilesBrowser" CultureName="pt-BR">
+  <Texts>
+    <Text Key="miAddFolderLibrary" Text="&amp;Adicionar pasta à biblioteca" Comment="&amp;Add Folder to Library" />
+    <Text Key="miAddToFavorites" Text="&amp;Adicionar pasta a Favoritos" Comment="&amp;Add Folder to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Atualizar" Comment="&amp;Refresh" />
+    <Text Key="miOpenWindow" Text="&amp;Abrir em nova janela" Comment="&amp;Open in New Window" />
+    <Text Key="miRefresh" Text="&amp;Atualizar" Comment="&amp;Refresh" />
+    <Text Key="miRemove" Text="&amp;Remover..." Comment="&amp;Remove..." />
+    <Text Key="tbFavorites" Text="Exibir Favoritos" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Favoritos" Comment="Favorites" />
+    <Text Key="tbIncludeSubFolders" Text="Incluir todas as subpastas" Comment="Include all Subfolders" />
+    <Text Key="tbOpenWindow" Text="Nova Janela" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Abrir lista atual em nova janela" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Atualizar" Comment="Refresh" />
+    <Text Key="miOpenTab" Text="&amp;Abrir em Nova Aba" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="Nova Aba" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Abrir lista atual em nova Aba" Comment="Open current list in new Tab" />
+  </Texts>
+</TR>

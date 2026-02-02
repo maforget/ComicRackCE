@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MultipleComicBooksDialog" CultureName="ru">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelCount" Text="из:" Comment="of:" />
+    <Text Key="labelAlternateCount" Text="из:" Comment="of:" />
+    <Text Key="labelAlternateNumber" Text="Номер Комикса:" Comment="Number:" />
+    <Text Key="labelAlternateSeries" Text="Альтернативная серия или сюжетная линия:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="labelColorist" Text="Колорист:" Comment="Colorist:" />
+    <Text Key="labelCoverArtist" Text="Художник обложки:" Comment="Cover Artist:" />
+    <Text Key="labelEditor" Text="Редактор:" Comment="Editor:" />
+    <Text Key="labelGenre" Text="Жанр:" Comment="Genre:" />
+    <Text Key="labelImprint" Text="Imprint:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Прорисовщик:" Comment="Inker:" />
+    <Text Key="labelLanguage" Text="Язык:" Comment="Language:" />
+    <Text Key="labelLetterer" Text="Метранпаж:" Comment="Letterer:" />
+    <Text Key="labelManga" Text="Manga:" Comment="Manga:" />
+    <Text Key="labelMonth" Text="Месяц:" Comment="Month:" />
+    <Text Key="labelNumber" Text="Номер Комикса:" Comment="Number:" />
+    <Text Key="labelPenciller" Text="Художник:" Comment="Penciller:" />
+    <Text Key="labelPublisher" Text="Издатель Комикса:" Comment="Publisher:" />
+    <Text Key="labelRating" Text="Рейтинг:" Comment="Rating:" />
+    <Text Key="labelSeries" Text="Серия:" Comment="Series:" />
+    <Text Key="labelSummary" Text="Кратко:" Comment="Summary:" />
+    <Text Key="labelNotes" Text="Заметки:" Comment="Notes:" />
+    <Text Key="labelTags" Text="Метки:" Comment="Tags:" />
+    <Text Key="labelTitle" Text="Название:" Comment="Title:" />
+    <Text Key="labelVolume" Text="Выпуск в серии:" Comment="Volume:" />
+    <Text Key="labelWriter" Text="Автор:" Comment="Writer:" />
+    <Text Key="labelYear" Text="Год:" Comment="Year:" />
+    <Text Key="labelBlackAndWhite" Text="Черно-белый:" Comment="Black and White:" />
+    <Text Key="labelFormat" Text="Формат:" Comment="Format:" />
+    <Text Key="labelAgeRating" Text="Возрастной ценз" Comment="Age Rating:" />
+    <Text Key="labelEnableProposed" Text="Включить следующее:" Comment="Enable Proposed:" />
+    <Text Key="labelCharacters" Text="Персонажи:" Comment="Characters:" />
+    <Text Key="labelFormat" Text="Формат:" Comment="Format:" />
+    <Text Key="MultipleComicBooksDialog" Text="Информация о нескольких Комиксах ({0} книг)" Comment="Multiple eComic Information ({0} Books)" />
+  </Texts>
+</TR>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DonationDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="btCancel" Text="Sla voorlopig over" Comment="Skip for now" />
+    <Text Key="btOK" Text="OK" Comment="OK" />
+    <Text Key="DonationDialog" Text="Ondersteun ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="labelThankYou" Text="Bedankt voor uw steun aan ComicRack!" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="Doneer" Comment="Donate" />
+    <Text Key="labelStepOne" Text="Stap Een:\nBezoek ComicRack op het web voor een donatie" Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="btDonate" Text="Donatie Pagina" Comment="Donation Page" />
+    <Text Key="btValidate" Text="Valideer" Comment="Validate" />
+    <Text Key="labelEmail" Text="E-mail adres:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="U startte ComicRack {0} maal!" Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="U beheert {0} boeken met ComicRack!" Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="Er kon geen contact opgenomen worden met de ComicRack server voor de validatie van uw E-mail adres. Controleer uw internet connectie!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+    <Text Key="labelStepTwo" Text="Stap Twee:\nVoeg je donatie e-mail in en valideer.\nHet kan enkel minuten in beslag nemen alvorens je donatie geregistreerd is dus je kan deze stap best iets later uitvoeren." Comment="Step Two:\nEnter your donation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+    <Text Key="labelDonationText" Text="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.  The minimum donation is $5 - paying me a beer. After the donation is completed you can activate this copy with your donation email address and never see this message again.\nComicRack is fully functional even if you decide to not make a donation.\n\nComicRack is het produkt van honderden uren werk en er zit geen groot softwarebedrijf achter. Indien je ComicRack met plezier gebruikt overweeg dan alsjeblief om iets terug te geven.\nDe minimumgift is $5 - trakteert Cyo een pint. Nadat de gift afgerond is kan je met behulp van je 'gift'mailadres je copie activeren en verdwijnt dit bericht voorgoed.\nComicRack is trouwens steeds volledig functioneel zelfs als je beslist om geen donatie te doen.\n\n\n" Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nYou can think of this as paying me a few beers for all the work. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+  </Texts>
+</TR>

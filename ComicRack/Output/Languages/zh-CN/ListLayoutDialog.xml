@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ListLayoutDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="btCancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btHideAll" Text="全部隐藏(&amp;H)" Comment="&amp;Hide All" />
+    <Text Key="btMoveDown" Text="下移(&amp;D)" Comment="Move &amp;Down" />
+    <Text Key="btMoveUp" Text="上移(&amp;U)" Comment="Move &amp;Up" />
+    <Text Key="btOK" Text="确定(&amp;O)" Comment="&amp;OK" />
+    <Text Key="btShowAll" Text="显示所有(&amp;S)" Comment="&amp;Show All" />
+    <Text Key="chkHideCaption" Text="不再显示任何文本" Comment="Do not show any Text" />
+    <Text Key="labelSelectColumn" Text="请选择想要显示的列:" Comment="Please select the columns you want to show:" />
+    <Text Key="labelHint" Text="提示: 右击列标题以更改显示列." Comment="Hint: You can also change the displayed columns by right clicking on a column header." />
+    <Text Key="labelFirstLine" Text="首行:" Comment="First Line:" />
+    <Text Key="labelSecondLine" Text="第二行:" Comment="Second Line:" />
+    <Text Key="labelThirdLine" Text="第三行:" Comment="Third Line:" />
+    <Text Key="labelSelectThumbnailText" Text="请选择想要在缩略图下显示的文字:" Comment="Please select the text you want to display below the thumbnails:" />
+    <Text Key="ListLayoutDialog" Text="列表选项" Comment="List Options" />
+    <Text Key="tabDetails" Text="详细信息" Comment="Details" />
+    <Text Key="tabThumbnails" Text="缩略图" Comment="Thumbnails" />
+    <Text Key="colName" Text="名称" Comment="Name" />
+    <Text Key="colDescription" Text="描述" Comment="Description" />
+    <Text Key="btApply" Text="应用(&amp;A)" Comment="&amp;Apply" />
+    <Text Key="tabTiles" Text="平铺" Comment="Tiles" />
+    <Text Key="btTilesDefault" Text="默认" Comment="Default" />
+  </Texts>
+</TR>

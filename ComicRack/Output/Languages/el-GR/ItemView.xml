@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ItemView" CultureName="el-GR">
+  <Texts>
+    <Text Key="AutoFitAllColumns" Text="Αυτόματη Προσαρμογή όλων των Στηλών" Comment="Auto Fit All Columns" />
+    <Text Key="AutoSizeAllColumns" Text="Αυτόματο Μέγεθος σε όλες τις Στήλες" Comment="Auto Size All Columns" />
+    <Text Key="AutoSizeColumn" Text="Αυτόματο Μέγεθος Στήλης" Comment="Auto Size Column" />
+    <Text Key="miArrange" Text="Ταξινόμηση κατά" Comment="Arrange by" />
+    <Text Key="miGroup" Text="Ομαδοποίηση κατά" Comment="Group by" />
+    <Text Key="miStack" Text="Στοίβαγμα κατά" Comment="Stack by" />
+    <Text Key="miViewDetails" Text="Λεπτομέρειες" Comment="Details" />
+    <Text Key="miViewMode" Text="Προβολή" Comment="View" />
+    <Text Key="miViewThumbs" Text="Μικρογραφίες" Comment="Thumbnails" />
+    <Text Key="miViewTiles" Text="Πλακίδια" Comment="Tiles" />
+    <Text Key="NotGrouped" Text="Μη Ομαδοποιημένα" Comment="Not Grouped" />
+    <Text Key="NotSorted" Text="Μη Ταξινομημένα" Comment="Not Sorted" />
+    <Text Key="NotStacked" Text="Μη Στοιβαγμένα" Comment="Not Stacked" />
+    <Text Key="Layout" Text="Διάταξη" Comment="Layout" />
+  </Texts>
+</TR>

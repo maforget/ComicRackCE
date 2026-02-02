@@ -1,0 +1,68 @@
+﻿<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Keyboard" CultureName="zh-CHT">
+  <Texts>
+    <Text Key="Browse" Text="瀏覽" Comment="Browse" />
+    <Text Key="Display Options" Text="顯示選項" Comment="Display Options" />
+    <Text Key="Exit" Text="退出" Comment="Exit" />
+    <Text Key="FitAll" Text="適合所有" Comment="Fit All" />
+    <Text Key="FitBest" Text="最佳大小" Comment="Best Fit" />
+    <Text Key="FitHeight" Text="適合高度" Comment="Fit Height" />
+    <Text Key="FitWidth" Text="適合寬度" Comment="Fit Width" />
+    <Text Key="FitWidthAdaptive" Text="適合寬度（自適應）" Comment="Fit Width (adaptive)" />
+    <Text Key="Library" Text="媒體庫" Comment="Library" />
+    <Text Key="MoveDown" Text="向下" Comment="Down" />
+    <Text Key="MoveLeft" Text="向左" Comment="Left" />
+    <Text Key="MoveNextPart" Text="下一部分" Comment="Next Part" />
+    <Text Key="MovePrevPart" Text="上一部分" Comment="Previous Part" />
+    <Text Key="MoveFirstPart" Text="頁首" Comment="Page Start" />
+    <Text Key="MoveLastPart" Text="頁末" Comment="Page End" />
+    <Text Key="MoveRight" Text="向右" Comment="Right" />
+    <Text Key="MoveToFirstPage" Text="首頁" Comment="First Page" />
+    <Text Key="MoveToLastPage" Text="末頁" Comment="Last Page" />
+    <Text Key="MoveToNextPage" Text="下一頁" Comment="Next Page" />
+    <Text Key="MoveToPreviousPage" Text="上一頁" Comment="Previous Page" />
+    <Text Key="MoveUp" Text="向上" Comment="Up" />
+    <Text Key="NextComic" Text="下一本漫畫" Comment="Next eComic" />
+    <Text Key="NextTab" Text="下一個標簽" Comment="Next Tab" />
+    <Text Key="Other" Text="其它" Comment="Other" />
+    <Text Key="Page Display" Text="頁面顯示" Comment="Page Display" />
+    <Text Key="Auto Scroll" Text="自動滾動" Comment="Auto Scroll" />
+    <Text Key="PrevComic" Text="上一本漫畫" Comment="Previous eComic" />
+    <Text Key="PrevTab" Text="上一個標簽" Comment="Previous Tab" />
+    <Text Key="RotateC" Text="右旋" Comment="Rotate Right" />
+    <Text Key="RotateCC" Text="左旋" Comment="Rotate Left" />
+    <Text Key="ZoomIn" Text="放大" Comment="Zoom In" />
+    <Text Key="ZoomOut" Text="縮小" Comment="Zoom Out" />
+    <Text Key="Scroll" Text="滾動" Comment="Scroll" />
+    <Text Key="ShowBrowser" Text="顯示瀏覽器" Comment="Show Browser" />
+    <Text Key="ToggleUndockReader" Text="開啟或關閉獨立的閱讀器" Comment="Toggle Undock Reader" />
+    <Text Key="ToggleFullScreen" Text="開啟或關閉全屏" Comment="Toggle Full Screen" />
+    <Text Key="ToggleMagnify" Text="開啟或關閉放大鏡" Comment="Toggle Magnifier" />
+    <Text Key="ToggleAutoScrolling" Text="開啟或關閉自動翻頁" Comment="Toggle Auto Scrolling" />
+    <Text Key="ToggleTwoPages" Text="開啟或關閉雙頁" Comment="Toggle Two Pages" />
+    <Text Key="Original" Text="原始大小" Comment="Original Size" />
+    <Text Key="MovePartDown10" Text="向下移動 10%" Comment="Move Part 10% down" />
+    <Text Key="MovePartUp10" Text="向上移動 10%" Comment="Move Part 10% up" />
+    <Text Key="ToggleManga" Text="為漫畫打開或關閉漫畫" Comment="Toggle Manga for eComic" />
+    <Text Key="DoublePageAutoScroll" Text="雙頁自動滾屏" Comment="Double Page Auto Scroll" />
+    <Text Key="ToggleMenu" Text="顯示/隱藏菜單" Comment="Toggle Menu" />
+    <Text Key="MoveToPrevBookmark" Text="上一個書簽" Comment="Previous Bookmark" />
+    <Text Key="MoveToNextBookmark" Text="下一個書簽" Comment="Next Bookmark" />
+    <Text Key="MoveToPrevPageSingle" Text="上一頁" Comment="Single Page Back" />
+    <Text Key="MoveToNextPageSingle" Text="下一頁" Comment="Single Page Forward" />
+    <Text Key="AutoRotate" Text="雙頁面自動旋轉" Comment="Autorotate Double Pages" />
+    <Text Key="OnlyFitIfOversized" Text="只在頁面過大時調整" Comment="Only Fit if oversized" />
+    <Text Key="StepZoomIn" Text="Step Zoom In" Comment="Step Zoom In" />
+    <Text Key="StepZoomOut" Text="Step Zoom Out" Comment="Step Zoom Out" />
+    <Text Key="PageRotateC" Text="右旋頁" Comment="RotatePageRight" />
+    <Text Key="PageRotateCC" Text="左旋頁" Comment="RotatePageLeft" />
+    <Text Key="ToggleRealisticPages" Text="開/關真實顯示" Comment="Toggle Realistic Display" />
+    <Text Key="Edit" Text="編輯" Comment="Edit" />
+    <Text Key="SinglePage" Text="單頁" Comment="Single Page" />
+    <Text Key="TwoPages" Text="雙頁" Comment="Two Pages" />
+    <Text Key="TwoPagesAdaptive" Text="雙頁 (自適應)" Comment="Two Pages (adaptive)" />
+    <Text Key="RightToLeft" Text="從右至左" Comment="Right to Left" />
+    <Text Key="ZoomAndRotate" Text="縮放且翻轉" Comment="Zoom and Rotate" />
+    <Text Key="ToggleNavigationOverlay" Text="開/關導航圖層" Comment="Toggle Navigation Overlay" />
+  </Texts>
+</TR>

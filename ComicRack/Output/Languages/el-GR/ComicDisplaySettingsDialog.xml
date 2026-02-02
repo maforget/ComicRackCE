@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DisplaySetupDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="btApply" Text="&amp;Εφαρμογή" Comment="&amp;Apply" />
+    <Text Key="chkPageMargin" Text="Παραμονή των περιθωρίων γύρο από τη σελίδα" Comment="Leave margins around the pages" />
+    <Text Key="labelPaging" Text="Μετάβαση:" Comment="Page Transition:" />
+    <Text Key="labelBackgroundColor" Text="Χρώμα:" Comment="Color:" />
+    <Text Key="labelBackgroundType" Text="Τύπος:" Comment="Type:" />
+    <Text Key="labelBackgroundTexture" Text="Υφή:" Comment="Texture:" />
+    <Text Key="cbBackgroundType.Item0" Text="Προσαρμογή χρώματος στη τρέχουσα σελίδας" Comment="Adjust Color to current Page" />
+    <Text Key="cbBackgroundType.Item1" Text="Χρώμα" Comment="Color" />
+    <Text Key="cbBackgroundType.Item2" Text="Υφή" Comment="Texture" />
+    <Text Key="cbPageTransition.Item0" Text="Χωρίς εφέ μετάβασης σελίδων " Comment="No Page Transition Effect" />
+    <Text Key="cbPageTransition.Item1" Text="Άχνη προβολή σελίδας" Comment="Page fades in" />
+    <Text Key="cbPageTransition.Item2" Text="Κύλιση Σελίδας Οριζόντια" Comment="Page scrolls in horizontally" />
+    <Text Key="cbPageTransition.Item3" Text="Κύλιση Σελίδας Κάθετα" Comment="Page scrolls in vertically" />
+    <Text Key="cbPageTransition.Item4" Text="Εφέ περιστροφής σελίδας" Comment="Page Turn Effect" />
+    <Text Key="grpGeneral" Text="Γενικές" Comment="General" />
+    <Text Key="grpEffects" Text="Εφέ" Comment="Effects" />
+    <Text Key="grpBackground" Text="Υπόβαθρο" Comment="Background" />
+    <Text Key="labelPaper" Text="Χαρτί:" Comment="Paper:" />
+    <Text Key="labelPaperStrength" Text="Ισχύς:" Comment="Strength:" />
+    <Text Key="cbPaperLayout.Item0" Text="Κανένα" Comment="None" />
+    <Text Key="cbPaperLayout.Item1" Text="Παράθεση" Comment="Tile" />
+    <Text Key="cbPaperLayout.Item2" Text="Κέντρο" Comment="Center" />
+    <Text Key="cbPaperLayout.Item3" Text="Παραμόρφωση" Comment="Stretch" />
+    <Text Key="cbPaperLayout.Item4" Text="Μεγέθυνση" Comment="Zoom" />
+    <Text Key="cbTextureLayout.Item0" Text="Κανένα" Comment="None" />
+    <Text Key="cbTextureLayout.Item1" Text="Παράθεση" Comment="Tile" />
+    <Text Key="cbTextureLayout.Item2" Text="Κέντρο" Comment="Center" />
+    <Text Key="cbTextureLayout.Item3" Text="Παραμόρφωση" Comment="Stretch" />
+    <Text Key="cbTextureLayout.Item4" Text="Μεγέθυνση" Comment="Zoom" />
+    <Text Key="ComicDisplaySettingsDialog" Text="Ρυθμίσεις Εμφάνισης Κόμικς" Comment="Book Display Settings" />
+    <Text Key="chkRealisticPages" Text="Ρεαλιστική Εμφάνιση Κόμικς" Comment="Realistic Page Display" />
+  </Texts>
+</TR>

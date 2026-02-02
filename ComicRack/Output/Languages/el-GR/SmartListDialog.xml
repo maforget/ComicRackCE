@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmartListDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="labelMatch" Text="Ταίριασμα" Comment="Match" />
+    <Text Key="MatchMode" Text="Όλων|Οποιουδήποτε" Comment="All|Any" />
+    <Text Key="btApply" Text="&amp;Εφαρμογή" Comment="&amp;Apply" />
+    <Text Key="chkLimit" Text="Όριο" Comment="Limit to" />
+    <Text Key="cbLimitType.Item0" Text="Βιβλία" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="FullLibrary" Text="Πλήρης Βιβλιοθήκη" Comment="Full Library" />
+    <Text Key="labelSubRules" Text="με τους ακόλουθους όρους: " Comment="of the following rules:" />
+    <Text Key="btPrev" Text="&amp;Προηγούμενο" Comment="&amp;Previous" />
+    <Text Key="btNext" Text="&amp;Επόμενο" Comment="&amp;Next" />
+    <Text Key="SmartListDialog" Text="Επεξεργασία της Έξυπνης Λίστας" Comment="Edit Smart List" />
+    <Text Key="labelName" Text="Όνομα:" Comment="Name:" />
+    <Text Key="labelRules" Text="με τους ακόλουθους όρους" Comment="of the following rules on" />
+    <Text Key="chkQuickOpen" Text="Γρήγορο Άνοιγμα" Comment="Quick Open" />
+    <Text Key="labelNotes" Text="Σημειώσεις:" Comment="Notes:" />
+  </Texts>
+</TR>

@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Columns" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="AlternateCountAsText" Text="Alternativní počet" Comment="Alternate Count" />
+    <Text Key="AlternateCountAsText.Description" Text="Počet výtisků v alternativních sériích/příbězích" Comment="Total issues of the crossover/story" />
+    <Text Key="AlternateNumberAsText" Text="Alternativní číslo" Comment="Alternate Number" />
+    <Text Key="AlternateNumberAsText.Description" Text="Číslo výtisku v alternativní sérii/příběhu" Comment="Issue number in the crossover/story" />
+    <Text Key="AlternateSeries" Text="Alternativní série" Comment="Alternate Series" />
+    <Text Key="AlternateSeries.Description" Text="Jméno alternativní série/příběhu" Comment="Crossover/story name" />
+    <Text Key="Caption" Text="Titulek" Comment="Caption" />
+    <Text Key="Colorist" Text="Kolorista" Comment="Colorist" />
+    <Text Key="CountAsText" Text="Počet" Comment="Count" />
+    <Text Key="Cover" Text="Obal" Comment="Cover" />
+    <Text Key="CoverArtist" Text="Autor obálky" Comment="Cover Artist" />
+    <Text Key="CoverArtist.Description" Text="Autor, odpovědný za obal" Comment="The artist responsible for the cover" />
+    <Text Key="Editor" Text="Editor" Comment="Editor" />
+    <Text Key="FileName" Text="Jméno souboru" Comment="File Name" />
+    <Text Key="FileName.Description" Text="Jméno souboru bez přípony" Comment="Filename without the extension" />
+    <Text Key="FileFormat" Text="Formát souboru" Comment="File Format" />
+    <Text Key="Genre" Text="Žánr" Comment="Genre" />
+    <Text Key="ImageHeightAsText" Text="Výška" Comment="Height" />
+    <Text Key="ImageHeightAsText.Description" Text="Výška stránky v pixelech" Comment="Height of the page in pixels" />
+    <Text Key="ImageWidthAsText" Text="Šířka" Comment="Width" />
+    <Text Key="ImageWidthAsText.Description" Text="Šířka stránky v pixelech" Comment="Width of the page in pixels" />
+    <Text Key="Imprint" Text="Imprint" Comment="Imprint" />
+    <Text Key="Inker" Text="Konturista" Comment="Inker" />
+    <Text Key="Key" Text="Jméno" Comment="Name" />
+    <Text Key="LanguageAsText" Text="Jazyk" Comment="Language" />
+    <Text Key="Letterer" Text="Autor písma" Comment="Letterer" />
+    <Text Key="MonthAsText" Text="Měsíc" Comment="Month" />
+    <Text Key="NumberAsText" Text="Číslo" Comment="Number" />
+    <Text Key="OpenedCountAsText" Text="Počet otevření" Comment="Opened Count" />
+    <Text Key="Page" Text="Stránka" Comment="Page" />
+    <Text Key="Page.Description" Text="Číslo stránky" Comment="The page number of the image" />
+    <Text Key="PageTypeAsText" Text="Typ" Comment="Type" />
+    <Text Key="PageTypeAsText.Description" Text="Typ stránky (příběh, obálka, atd.)" Comment="The type of the page (story, cover, etc.)" />
+    <Text Key="Penciller" Text="Kreslíř" Comment="Penciller" />
+    <Text Key="Position" Text="Pozice" Comment="Position" />
+    <Text Key="Publisher" Text="Vydavatel" Comment="Publisher" />
+    <Text Key="Rating" Text="Moje hodnocení" Comment="My Rating" />
+    <Text Key="ReadPercentageAsText" Text="Přečteno procent" Comment="Read Percentage" />
+    <Text Key="ReadPercentageAsText.Description" Text="Kolik už bylo přečteno" Comment="How much has been read" />
+    <Text Key="Series" Text="Série" Comment="Series" />
+    <Text Key="Series.Description" Text="Jméno série" Comment="Series name" />
+    <Text Key="State" Text="Stav" Comment="State" />
+    <Text Key="Tags" Text="Značky" Comment="Tags" />
+    <Text Key="Thumbnail" Text="Miniatura" Comment="Thumbnail" />
+    <Text Key="Thumbnail.Description" Text="Náhled stránky" Comment="The thumbnail image of the page" />
+    <Text Key="Title" Text="Název" Comment="Title" />
+    <Text Key="VolumeAsText" Text="Díl" Comment="Volume" />
+    <Text Key="VolumeAsText.Description" Text="Číslo dílu dané série" Comment="Volume number of the Series" />
+    <Text Key="Writer" Text="Autor" Comment="Writer" />
+    <Text Key="YearAsText" Text="Rok" Comment="Year" />
+    <Text Key="MangaAsText" Text="Manga" Comment="Manga" />
+    <Text Key="BlackAndWhiteAsText" Text="Černobílý" Comment="B&amp;W" />
+    <Text Key="Format" Text="Formát" Comment="Format" />
+    <Text Key="Bookmark" Text="Záložka" Comment="Bookmark" />
+    <Text Key="Bookmark.Description" Text="Jméno záložky" Comment="Bookmark text" />
+    <Text Key="AgeRating" Text="Věkové omezení" Comment="Age Rating" />
+    <Text Key="Characters" Text="Postavy" Comment="Characters" />
+    <Text Key="RotationAsText" Text="Otočení" Comment="Rotation" />
+    <Text Key="RotationAsText.Description" Text="Trvalé otočení stránky" Comment="Permanent rotation of the page" />
+    <Text Key="FilePath" Text="Cesta k souboru" Comment="File Path" />
+    <Text Key="FileSizeAsText" Text="Velikost souboru" Comment="File Size" />
+    <Text Key="ImageFileSizeAsText" Text="Velikost" Comment="Size" />
+    <Text Key="ImageFileSizeAsText.Description" Text="Velikost stránky v bytech" Comment="Size of the page in bytes" />
+    <Text Key="FileDirectory" Text="Složka souboru" Comment="File Directory" />
+    <Text Key="PagesAsTextSimple" Text="Stránek" Comment="Pages" />
+    <Text Key="PagesAsTextSimple.Description" Text="Celkový počet stran" Comment="The total count of pages" />
+    <Text Key="PublishedAsText" Text="Vydáno" Comment="Published" />
+    <Text Key="BookmarkCountAsText" Text="Počet záložek" Comment="Bookmark Count" />
+    <Text Key="Number" Text="Číslo" Comment="Number" />
+    <Text Key="AlternateNumber" Text="Alternativní číslo" Comment="Alternate Number" />
+    <Text Key="Web" Text="Web" Comment="Web" />
+    <Text Key="Notes" Text="Poznámky" Comment="Notes" />
+    <Text Key="Summary" Text="Obsah" Comment="Summary" />
+    <Text Key="NewPagesAsText" Text="Nové stránky" Comment="New Pages" />
+    <Text Key="NewPagesAsText.Description" Text="Počet nových stránek" Comment="Count of new Pages" />
+    <Text Key="Teams" Text="Skupiny" Comment="Teams" />
+    <Text Key="Locations" Text="Lokace" Comment="Locations" />
+    <Text Key="Web.Description" Text="Webový odkaz" Comment="A Web Link" />
+    <Text Key="CountAsText.Description" Text="Celkový počet výtisků v této sérii" Comment="Total number of issues in this series" />
+    <Text Key="CommunityRating" Text="Hodnocení veřejnosti" Comment="Community Rating" />
+    <Text Key="IsLinkedAsText" Text="Navázáno na soubor" Comment="Linked to File" />
+    <Text Key="BookAge" Text="Komiksový věk knihy" Comment="Book Age" />
+    <Text Key="BookAge.Description" Text="Komiksový věk, do kterého tato kniha spadá" Comment="Age of the Book" />
+    <Text Key="BookPriceAsText" Text="Cena knihy" Comment="Book Price" />
+    <Text Key="BookPriceAsText.Description" Text="Informace o ceně této knihy" Comment="Price of the Book" />
+    <Text Key="BookCondition" Text="Fyzický stav knihy" Comment="Book Condition" />
+    <Text Key="BookCondition.Description" Text="Informace o fyzickém stavu této knihy" Comment="Condition of the Book" />
+    <Text Key="BookStore" Text="Nákupní obchod" Comment="Book Store" />
+    <Text Key="BookStore.Description" Text="Obchod ve kterém byla kniha koupena" Comment="Store the Book was bought" />
+    <Text Key="BookOwner" Text="Vlastník knihy" Comment="Book Owner" />
+    <Text Key="BookOwner.Description" Text="Vlastník této knihy" Comment="Owner of the Book" />
+    <Text Key="BookCollectionStatus" Text="Stav knihy ve sbírce" Comment="Book Collection Status" />
+    <Text Key="BookCollectionStatus.Description" Text="Stav této knihy ve sbírce" Comment="Status of the Book in the Collection" />
+    <Text Key="BookLocation" Text="Umístění knihy" Comment="Book Location" />
+    <Text Key="BookLocationStatus.Description" Text="Umístění této knihy" Comment="Location of the Book" />
+    <Text Key="PagePositionAsText" Text="Pozice" Comment="Position" />
+    <Text Key="PagePositionAsText.Description" Text="Umístění stránky při zobrazení" Comment="Layout position of the page" />
+    <Text Key="ISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ISBN.Description" Text="Číslo ISBN" Comment="ISBN Number" />
+    <Text Key="SeriesStatCountAsText" Text="Série: Knihy" Comment="Series: Books" />
+    <Text Key="SeriesStatCountAsText.Description" Text="Počet knih v této sérii" Comment="Books in the Series" />
+    <Text Key="SeriesStatMinNumberAsText" Text="Série: První číslo" Comment="Series: First Number" />
+    <Text Key="SeriesStatMinNumberAsText.Description" Text="První číslo této série" Comment="First Number of the Series" />
+    <Text Key="SeriesStatMaxNumberAsText" Text="Série: Poslední číslo" Comment="Series: Last Number" />
+    <Text Key="SeriesStatMaxNumberAsText.Description" Text="Poslední číslo této série" Comment="Last Number of the Series" />
+    <Text Key="SeriesStatMinYearAsText" Text="Série: První rok" Comment="Series: First Year" />
+    <Text Key="SeriesStatMinYearAsText.Description" Text="První rok této série" Comment="First Year of the Series" />
+    <Text Key="SeriesStatMaxYearAsText" Text="Série: Poslední rok" Comment="Series: Last Year" />
+    <Text Key="SeriesStatMaxYearAsText.Description" Text="Poslední rok této série" Comment="last Year of the Series" />
+    <Text Key="SeriesStatPageCountAsText" Text="Série: Stránky" Comment="Series: Pages" />
+    <Text Key="SeriesStatPageCountAsText.Description" Text="Počet stránek v této sérii" Comment="Pages in the Series" />
+    <Text Key="SeriesStatPageReadCountAsText" Text="Série: Přečteno stránek" Comment="Series: Pages Read" />
+    <Text Key="SeriesStatPageReadCountAsText.Description" Text="Počet přečtených stran této série" Comment="Pages of the Series read" />
+    <Text Key="SeriesStatReadPercentageAsText" Text="Série: Přečteno procent" Comment="Series: Percent Read" />
+    <Text Key="SeriesStatReadPercentageAsText.Description" Text="Procento přečtení této série" Comment="Percent of the Series read" />
+    <Text Key="SeriesStatAverageRating" Text="Série: Moje průměrné hodnocení" Comment="Series: My Average Rating" />
+    <Text Key="SeriesStatAverageRating.Description" Text="Moje průměrné hodnocení této série" Comment="My average Rating of the Series" />
+    <Text Key="SeriesStatAverageCommunityRating" Text="Série: Průměrné hodnocení veřejnosti" Comment="Series: Community Average Rating" />
+    <Text Key="SeriesStatAverageCommunityRating.Description" Text="Průměrné hodnocení této série veřejností" Comment="Community average Rating of the Series" />
+    <Text Key="SeriesStatRunningTimeAsText" Text="Série: Doba vycházení" Comment="Series: Running Time Years" />
+    <Text Key="SeriesStatRunningTimeAsText.Description" Text="Doba vycházení této série" Comment="Running time of the Series in years" />
+    <Text Key="SeriesStatGapCountAsText" Text="Série: Pauzy ve vycházení" Comment="Series: Gaps" />
+    <Text Key="SeriesStatGapCountAsText.Description" Text="Počet přerušení ve vycházení této série" Comment="Gaps in the Series" />
+    <Text Key="Caption.Description" Text="Kompletní titulek eKomiksu" Comment="Complete caption of the Book" />
+    <Text Key="Colorist.Description" Text="Kolorista eKomiksu" Comment="Colorist of the Book" />
+    <Text Key="Cover.Description" Text="Titulní obrázek eKomiksu" Comment="Cover image of the Book" />
+    <Text Key="Editor.Description" Text="Editor eKomiksu" Comment="Editor of the Book" />
+    <Text Key="FilePath.Description" Text="Umístění eKomiksu" Comment="Location where the Book is stored" />
+    <Text Key="FileFormat.Description" Text="Formát souboru eKomiksu" Comment="File format of the Book" />
+    <Text Key="FileSizeAsText.Description" Text="Velikost eKomiksu v bytech" Comment="Size of the Book file in bytes" />
+    <Text Key="Genre.Description" Text="Žánr eKomiksu" Comment="Genre of the Book" />
+    <Text Key="Imprint.Description" Text="Imprint eKomiksu" Comment="Imprint of the Book" />
+    <Text Key="Inker.Description" Text="Konturista eKomiksu" Comment="Inker of the Book" />
+    <Text Key="Key.Description" Text="Unikátní klíč této stránky v eKomiksu" Comment="Unique key for this page in the Book" />
+    <Text Key="LanguageAsText.Description" Text="Jazyk eKomiksu" Comment="Language of the Book" />
+    <Text Key="Letterer.Description" Text="Autor písma eKomiksu" Comment="Letterer of the Book" />
+    <Text Key="MonthAsText.Description" Text="Měsíc publikace eKomiksu" Comment="Month the Book was published" />
+    <Text Key="NumberAsText.Description" Text="Číslo eKomiksu v sérii" Comment="Number of the Book in the Series" />
+    <Text Key="OpenedCountAsText.Description" Text="Počet, kolikrát byl eKomiks otevřen" Comment="Times the Book has been opened" />
+    <Text Key="Penciller.Description" Text="Kreslíř eKomiksu" Comment="Penciller of the Book" />
+    <Text Key="Position.Description" Text="Pozice eKomiksu v seznamu" Comment="Position of the Book in the list" />
+    <Text Key="Publisher.Description" Text="Vydavatel eKomiksu" Comment="Publisher of the Book" />
+    <Text Key="Rating.Description" Text="Vaše hodnocení eKomiksu" Comment="Your rating of the Book" />
+    <Text Key="CommunityRating.Description" Text="Hodnocení veřejnosti pro tento eKomiks" Comment="Community Rating of the Book" />
+    <Text Key="State.Description" Text="Indikátor stavu eKomiksu" Comment="State indicators for the Book" />
+    <Text Key="Tags.Description" Text="Značky eKomiksu" Comment="Tags of the Book" />
+    <Text Key="Title.Description" Text="Název eKomiksu" Comment="Title of the Book" />
+    <Text Key="Writer.Description" Text="Autor eKomiksu" Comment="Writer of the Book" />
+    <Text Key="YearAsText.Description" Text="Rok vydání eKomiksu" Comment="Year the Book was published" />
+    <Text Key="MangaAsText.Description" Text="Ano pokud je eKomiks mangou" Comment="Yes if the Book is a Manga" />
+    <Text Key="BlackAndWhiteAsText.Description" Text="Ano pokud je eKomiks černobílý" Comment="Yes if the Book is black and white" />
+    <Text Key="Format.Description" Text="Formát eKomiksu" Comment="Format of the Book" />
+    <Text Key="AgeRating.Description" Text="Věkové omezení eKomiksu" Comment="Age rating of the Book" />
+    <Text Key="PublishedAsText.Description" Text="Datum vydání eKomiksu" Comment="Publication date of the Book" />
+    <Text Key="Characters.Description" Text="Hlavní postavy příběhu eKomiksu" Comment="Plot characters of the Book" />
+    <Text Key="Teams.Description" Text="Skupiny v ději eKomiksu" Comment="Plot teams of the Book" />
+    <Text Key="Locations.Description" Text="Umístění děje eKomiksu" Comment="Plot locations of the Book" />
+    <Text Key="FileDirectory.Description" Text="Složka s eKomiksem" Comment="Directory of the Book" />
+    <Text Key="BookmarkCountAsText.Description" Text="Počet záložek tohoto eKomiksu v oblíbených" Comment="Count of Bookmarks for this Book" />
+    <Text Key="IsLinkedAsText.Description" Text="eKomiks je navázán na soubor" Comment="Book is linked to a File" />
+    <Text Key="SeriesCompleteAsText" Text="Kompletní série" Comment="Series complete" />
+    <Text Key="SeriesCompleteAsText.Description" Text="Série je kompletní" Comment="Series is complete" />
+    <Text Key="EnableProposedAsText" Text="Navrhované hodnoty" Comment="Proposed Values" />
+    <Text Key="EnableProposedAsText.Description" Text="Používá navrhované hodnoty ze jména souboru" Comment="Uses proposed Values from Filename" />
+    <Text Key="GapInformation" Text="Pauza ve vycházení" Comment="Gap Information" />
+    <Text Key="GapInformation.Description" Text="Informace o tom, zda tímto číslem začíná či končí pauza ve vycházení série" Comment="Information if this issue is the end or start of a gap in the series" />
+    <Text Key="HasBeenReadAsText" Text="Přečteno" Comment="Read" />
+    <Text Key="HasBeenReadAsText.Description" Text="Kniha byla celá přečtena" Comment="Book has been read" />
+    <Text Key="Icons" Text="Ikony" Comment="Icons" />
+    <Text Key="AddedTime" Text="Přidáno" Comment="Added" />
+    <Text Key="AddedTime.Description" Text="Čas, kdy byl eKomiks přidán do databáze" Comment="Time the Book was added to the Database" />
+    <Text Key="FileModifiedTime" Text="Soubor upraven" Comment="File Modified" />
+    <Text Key="FileModifiedTime.Description" Text="Čas, kdy byl eKomiks naposledy změněn" Comment="Time the Book was modified the last time" />
+    <Text Key="OpenedTime" Text="Otevřeno" Comment="Opened" />
+    <Text Key="OpenedTime.Description" Text="Čas, kdy byl eKomiks naposledy otevřen" Comment="Last time the Book was opened" />
+    <Text Key="FileCreationTime" Text="Soubor vytvořen" Comment="File Created" />
+    <Text Key="FileCreationTime.Description" Text="Čas vytvoření souboru eKomiksu" Comment="Creation time of the Book-File" />
+    <Text Key="SeriesStatLastOpenedTime" Text="Série: Otevření knihy" Comment="Series: Opened" />
+    <Text Key="SeriesStatLastOpenedTime.Description" Text="Čas, kdy byl naposledy otevřen eKomiks z této série" Comment="Last time a book from this Series has been opened" />
+    <Text Key="SeriesStatLastAddedTime" Text="Série: Přidání knihy" Comment="Series: Book added" />
+    <Text Key="SeriesStatLastAddedTime.Description" Text="Čas, kdy byl naposledy přidán eKomiks do této série" Comment="Last time a book was added to the Series" />
+    <Text Key="DateFormats" Text="Dlouhý|Krátký|Popisný" Comment="Long|Short|Relative" />
+    <Text Key="Icons.Description" Text="Ikony této knihy" Comment="Icons for this Book" />
+    <Text Key="ScanInformation" Text="Informace o skenu" Comment="Scan Information" />
+    <Text Key="Checked" Text="Označeno" Comment="Checked" />
+    <Text Key="Checked.Description" Text="Kniha je označena" Comment="Book is checked" />
+    <Text Key="ScanInformation.Description" Text="Doplňující informace o skenu" Comment="Additional information about the scan" />
+    <Text Key="StoryArc" Text="Děková linie" Comment="Story Arc" />
+    <Text Key="StoryArc.Description" Text="Dějová linie, do které kniha spadá" Comment="Story Arc the Book belongs to" />
+    <Text Key="SeriesGroup" Text="Skupina sérií" Comment="Series Group" />
+    <Text Key="SeriesGroup.Description" Text="Skupina sérií, do které kniha spadá" Comment="Series Group the Book belongs to" />
+    <Text Key="MainCharacterOrTeam" Text="Hlavní postava/tým" Comment="Main Character/Team" />
+    <Text Key="MainCharacterOrTeam.Description" Text="Hlavní postava nebo tým v této knize" Comment="Main Character or Team of the Book" />
+    <Text Key="Review" Text="Recenze" Comment="Review" />
+    <Text Key="Review.Description" Text="Krátká recenze této knihy" Comment="A short Review of the Book" />
+  </Texts>
+</TR>

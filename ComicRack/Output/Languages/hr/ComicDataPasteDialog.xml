@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicDataPasteDialog" CultureName="hr">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Odustanak" Comment="&amp;Cancel" />
+    <Text Key="btMarkAll" Text="&amp;Sve" Comment="&amp;All" />
+    <Text Key="btMarkDefined" Text="&amp;Označavanje određenog" Comment="Only &amp;Set" />
+    <Text Key="btMarkNone" Text="&amp;Čišćenje" Comment="&amp;Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="chkAlternateCount" Text="Ukupan broj" Comment="Total Number" />
+    <Text Key="chkAlternateNumber" Text="Broj" Comment="Number" />
+    <Text Key="chkAlternateSeries" Text="Serija" Comment="Series" />
+    <Text Key="chkColor" Text="Podešavanje boja" Comment="Color Adjustment" />
+    <Text Key="chkColorist" Text="Obojio" Comment="Colorist" />
+    <Text Key="chkCount" Text="Ukupan broj" Comment="Total Number" />
+    <Text Key="chkCover" Text="Omot" Comment="Cover" />
+    <Text Key="chkEditor" Text="Urednik" Comment="Editor" />
+    <Text Key="chkGenre" Text="Žanr" Comment="Genre" />
+    <Text Key="chkImprint" Text="Tisak" Comment="Imprint" />
+    <Text Key="chkInker" Text="Tuš" Comment="Inker" />
+    <Text Key="chkLanguage" Text="jezik" Comment="Language" />
+    <Text Key="chkLetterer" Text="Letterer" Comment="Letterer" />
+    <Text Key="chkManga" Text="Manga" Comment="Manga" />
+    <Text Key="chkMonth" Text="Mjesec" Comment="Month" />
+    <Text Key="chkNotes" Text="Bilješke" Comment="Notes" />
+    <Text Key="chkNumber" Text="Broj" Comment="Number" />
+    <Text Key="chkPenciller" Text="Crtač" Comment="Penciller" />
+    <Text Key="chkPublisher" Text="Izdavač" Comment="Publisher" />
+    <Text Key="chkRating" Text="Ocjena" Comment="Rating" />
+    <Text Key="chkSeries" Text="Serija" Comment="Series" />
+    <Text Key="chkSummary" Text="Sažetak" Comment="Summary" />
+    <Text Key="chkTags" Text="Oznake" Comment="Tags" />
+    <Text Key="chkTitle" Text="Naslov" Comment="Title" />
+    <Text Key="chkVolume" Text="Svezak" Comment="Volume" />
+    <Text Key="chkWriter" Text="Autor" Comment="Writer" />
+    <Text Key="chkYear" Text="Godina" Comment="Year" />
+    <Text Key="ComicDataPasteDialog" Text="Umetanje podataka {0} u svezak" Comment="Paste Data to {0} eComics" />
+    <Text Key="grpAlternate" Text="Nastavak" Comment="Alternate" />
+    <Text Key="grpArtists" Text="Dizajner / suradnici" Comment="Artists / People Involved" />
+    <Text Key="grpLibrary" Text="Biblioteka" Comment="Library" />
+    <Text Key="grpMain" Text="Glavne informacije" Comment="Main" />
+  </Texts>
+</TR>

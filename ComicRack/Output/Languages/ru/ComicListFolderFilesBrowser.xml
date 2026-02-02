@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListFolderFilesBrowser" CultureName="ru">
+  <Texts>
+    <Text Key="miAddFolderLibrary" Text="&amp;Добавить папку в библиотеку" Comment="&amp;Add Folder to Library" />
+    <Text Key="miAddToFavorites" Text="&amp;Добавить папку в избранное" Comment="&amp;Add Folder to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Обновить" Comment="&amp;Refresh" />
+    <Text Key="miOpenWindow" Text="&amp;Открыть в новом окне" Comment="&amp;Open in New Window" />
+    <Text Key="miRefresh" Text="&amp;Обновить" Comment="&amp;Refresh" />
+    <Text Key="miRemove" Text="&amp;Удалить..." Comment="&amp;Remove..." />
+    <Text Key="tbFavorites" Text="Показать избранное" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Избранное" Comment="Favorites" />
+    <Text Key="tbIncludeSubFolders" Text="Включая подпапки" Comment="Include all Subfolders" />
+    <Text Key="tbOpenWindow" Text="Новое окно" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Открыть этот список в новом окне" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Обновить" Comment="Refresh" />
+  </Texts>
+</TR>

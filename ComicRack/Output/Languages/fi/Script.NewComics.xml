@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.NewComics" CultureName="fi">
+  <Texts>
+    <Text Key="Name" Text="Uusi sarjakuvasarja..." Comment="New Comics Book Series..." />
+    <Text Key="Description" Text="Lisää uusi sarja sarjakuviin" Comment="Adds a new Series of Comic Books" />
+    <Text Key="Caption" Text="Uusi sarjakuvasarja" Comment="New Comics Book Series" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Peruuta" Comment="&amp;Cancel" />
+    <Text Key="labelSeries" Text="Sarjat:" Comment="Series:" />
+    <Text Key="labelFromNumber" Text="Numero:" Comment="Number:" />
+    <Text Key="labelToNumber" Text="-&gt;" Comment="to" />
+    <Text Key="labelVolume" Text="Nidos:" Comment="Volume:" />
+  </Texts>
+</TR>

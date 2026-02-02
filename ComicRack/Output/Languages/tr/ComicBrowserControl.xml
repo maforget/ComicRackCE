@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBrowserControl" CultureName="tr">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Düzenleme kriteri {0}" Comment="Arranged by {0}" />
+    <Text Key="ComicFiltered" Text="{0} Filtrelendi" Comment="{0} filtered" />
+    <Text Key="ComicMulti" Text="{0} e-Çizgi Romanlar" Comment="{0} eComics" />
+    <Text Key="ComicSelected" Text="{0} Seçildi" Comment="{0} selected" />
+    <Text Key="ComicSingle" Text="{0} e-Çizgi Roman" Comment="{0} eComic" />
+    <Text Key="GroupedBy" Text="Gruplanma kriteri {0}" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="&amp;Kütüphaneye ekle" Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="Otomasyon" Comment="Automation" />
+    <Text Key="miCopyData" Text="&amp;Veri Kopyala" Comment="&amp;Copy Data" />
+    <Text Key="miInvertSelection" Text="&amp;Seçimi tersine çevir" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="&amp;İşaretle" Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="&amp;Oku" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="&amp;Okunmamış" Comment="&amp;Unread" />
+    <Text Key="miPasteData" Text="&amp;Veri Yapıştır..." Comment="&amp;Paste Data..." />
+    <Text Key="miProperties" Text="&amp;Bilgi Al..." Comment="&amp;Get Info..." />
+    <Text Key="miRateMenu" Text="P&amp;uanım" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="Yok" Comment="None" />
+    <Text Key="miRating1" Text="* (1 Yıldız)" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** (2 Yıldız)" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** (3 Yıldız)" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** (4 Yıldız)" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** (5 Yıldız)" Comment="***** (5 Stars)" />
+    <Text Key="miRead" Text="&amp;Aç" Comment="&amp;Open" />
+    <Text Key="miReadTab" Text="Yeni Sekmede aç" Comment="Open in new Tab" />
+    <Text Key="miRefreshInformation" Text="Tazele" Comment="Refresh" />
+    <Text Key="miRemove" Text="Ta&amp;zele..." Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="Kitabı &amp;Explorer içinde Görüntüle" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="Hepsi" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="Hızlı arama var olan bütün bilgileri tarıyor" Comment="Quick Search is checking all available data" />
+    <Text Key="miSearchArtists" Text="Sanatçılar" Comment="Artists" />
+    <Text Key="miSearchArtists.Tooltip" Text="Hızlı arama bütün Sanatçıları araştırıyor" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="Tanımlayıcı" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="Hızlı Arama var olan bütün notları ve özetleri tarıyor" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="Dosya Adı" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="Hızlı Arama sadece Dosya adlarını tarıyor" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="Seriler" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="Hızlı Arama sadece Seri isimlerini tarıyor" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="Yazar" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="Hızlı arama sadece Yazar adını tarıyor" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="Hepsini &amp;Seç" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="Yığının Başı Olarak Kaydet" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="&amp;e-Çizgi Romanlara Gözat" Comment="&amp;Browse Comics" />
+    <Text Key="miShowOnlyAllComics" Text="Tümünü Göster" Comment="Show All" />
+    <Text Key="miShowOnlyReadComics" Text="Okunmuş Olanları Göster" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="Okunanları Göster" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="Okunmamış Olanları Göster" Comment="Show not Read" />
+    <Text Key="miShowOnlyDuplicates" Text="Kopyalananları Göster" Comment="Show Duplicates" />
+    <Text Key="miViewDetails" Text="&amp;Detaylar" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="Küçük İ&amp;konlar" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Büyük İkonlar" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Yok" Comment="None" />
+    <Text Key="NotArranged" Text="Sıralanmamış" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Gruplanmadı" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="Yığınlanmamış" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="{0} tarafından gruplandırılmış" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="Grupla" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="e-Çizgi Romanları farklı bir kritere göre gruplandır" Comment="Group eComics by different criteria" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="Bu yığını kapat" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="Düzenle" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="e-Çizgi Romanların tür düzenlemesini değiştir" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbStack" Text="Yığın" Comment="Stack" />
+    <Text Key="tbbView" Text="Görüntülenme" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="Hangi e-Çizgi Romanların nasıl görüntüleneceklerini belirle" Comment="Change how and what eComics are displayed" />
+    <Text Key="tsDeleteListLayout" Text="&amp;Liste şablonunu sil..." Comment="&amp;Delete List Layout..." />
+    <Text Key="tsEditListLayout" Text="&amp;Liste şablonunu düzenle..." Comment="&amp;Edit List Layout..." />
+    <Text Key="tsSaveListLayout" Text="&amp;Liste şablonunu kaydet..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsListLayouts" Text="Liste Şablonları" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="Liste Şablonlarını Düzenle" Comment="Manage List Layouts" />
+    <Text Key="miExportComics" Text="e-Çizgi Romanların çıkışını al" Comment="Export eComics" />
+    <Text Key="miExportComicsAs" Text="e-Çizgi Romanların çıkışını al..." Comment="Export eComics..." />
+    <Text Key="ExportWithPrevious" Text="Öncekiyle çıkış al" Comment="Export with Previous" />
+    <Text Key="miSetListBackground" Text="Liste Arkaplanı olarak kaydet" Comment="Set as List Background" />
+    <Text Key="miResetListBackground" Text="Liste Arkaplanını sıfırla" Comment="Reset List Background" />
+    <Text Key="lblDisplayOptionText" Text="'Görüntüleme' kısmındaki tercihlerden dolayı bütün e-Çizgi Romanlar gösterilemiyor." Comment="Because of active options in 'Views', not all eComics are displayed" />
+    <Text Key="btDisplayAll" Text="Tümünü Göster" Comment="Display All" />
+    <Text Key="miUpdateComicFiles" Text="e-Çizgi Roman dosyalarını güncelle" Comment="Update eComic Files" />
+    <Text Key="OpenStackText" Text="Sadece '{0}' grubu gösterilsin" Comment="Only Stack '{0}' is shown." />
+    <Text Key="btCloseStack" Text="Yığını kapat" Comment="Close Stack" />
+    <Text Key="miAddList" Text="Listeye ekle" Comment="Add to List" />
+  </Texts>
+</TR>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DevicesEditDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="DevicesEditDialog" Text="Apparaten" Comment="Devices" />
+    <Text Key="btPairDevice" Text="Koppel apparaat..." Comment="Pair Device..." />
+    <Text Key="btCancel" Text="&amp;Annuleer" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btSelectAll" Text="Selecteer Alle" Comment="Select All" />
+    <Text Key="btSelectNone" Text="Selecteer Geen" Comment="Select None" />
+    <Text Key="chkOptimizeSize" Text="Optimaliseer Grootte" Comment="Optimize Size" />
+    <Text Key="chkOnlyUnread" Text="Enkel Ongelezen" Comment="Only Unread" />
+    <Text Key="labelHint" Text="Sluit je apparaat aan je computer en druk op 'Koppel apparaat...'" Comment="Connect your Device with your Computer and press 'Pair Device...'" />
+    <Text Key="btSelectList" Text="Selecteer Lijst" Comment="Select List" />
+    <Text Key="btDeselectList" Text="Deselecteer Lijst" Comment="Deselect List" />
+    <Text Key="chkOnlyChecked" Text="Alleen aangevinkt" Comment="Only Checked" />
+    <Text Key="cbLimitType.Item0" Text="Boeken" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="chkLimit" Text="Limiteer tot" Comment="Limit to" />
+    <Text Key="labelLimitSort" Text="Gesorteerd volgens" Comment="sorted by" />
+    <Text Key="cbLimitSort.Item0" Text="Willekeurig" Comment="Random" />
+    <Text Key="cbLimitSort.Item1" Text="Reeksen" Comment="Series" />
+    <Text Key="cbLimitSort.Item2" Text="Alternatieve Reeksnaam" Comment="Alternate Series" />
+    <Text Key="cbLimitSort.Item3" Text="Gepubliceerd" Comment="Published" />
+    <Text Key="cbLimitSort.Item4" Text="Toegevoegd" Comment="Added" />
+    <Text Key="chkSortBy" Text="Sorteer volgens" Comment="Sort by" />
+    <Text Key="chkKeepLastRead" Text="Maar behoud laatst gelezen" Comment="But keep last read" />
+    <Text Key="chkOnlyShowSelected" Text="Toon enkel selectie" Comment="Only show selected" />
+    <Text Key="btDevice" Text="Apparaat" Comment="Device" />
+    <Text Key="miDeviceCopy" Text="Kopieer" Comment="Copy" />
+    <Text Key="miDevicePaste" Text="Plak" Comment="Paste" />
+    <Text Key="miDeviceCopyToAll" Text="Kopieer naar Alle" Comment="Copy To All" />
+    <Text Key="miDeviceRename" Text="Hernoem..." Comment="Rename..." />
+    <Text Key="miDeviceUnpair" Text="Ontkoppel Apparaat" Comment="Unpair Device" />
+  </Texts>
+</TR>

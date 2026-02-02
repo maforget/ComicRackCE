@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Settings" CultureName="pt-BR">
+  <Texts>
+    <Text Key="Application" Text="Aplicativo" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="Autoesconder lupa com o cursor perto da borda" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="Browser" Text="Pesquisador" Comment="Browser" />
+    <Text Key="CloseMinimizesToTray" Text="Fechar move ComicRack para a Área de Notificação" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="Aparecimento gradual de Miniaturas recém carregadas" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="Ocultar cursor do mouse ao ler no modo de tela cheia" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="Exibir miniaturas com melhor qualidade (mais lento)" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="MinimizeToTray" Text="Minimizar move ComicRack para a Área de Notificação" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="Marque para obter as últimas notícias sobre o ComicRack" Comment="Check for latest news on ComicRack" />
+    <Text Key="Reading" Text="Lendo" Comment="Reading" />
+    <Text Key="ShowSplash" Text="Exibir tela de apresentação" Comment="Show Splash Screen" />
+    <Text Key="Starting ComicRack" Text="Iniciando ComicRack" Comment="Starting ComicRack" />
+    <Text Key="Manga" Text="Mangá" Comment="Manga" />
+    <Text Key="TrueRightToLeftReading" Text="Leitura invertida total" Comment="True right to left reading" />
+    <Text Key="LeftRightMovementReversed" Text="Esquerda e direita também ficam invertidos" Comment="Left/right movement is also reversed" />
+    <Text Key="Right to Left" Text="Direita para Esquerda" Comment="Right to Left" />
+    <Text Key="AutoMinimalGui" Text="Tela Cheia também ativa a Interface de Usuário Mínima" Comment="Fullscreen also toggles Minimal User Interface" />
+    <Text Key="PageChangeDelay" Text="Atraso na Roda do Mouse e Cursores na transição de página" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="AnimatePanels" Text="Animar expandir e contrair Painéis" Comment="Animate expanding and collapsing Panels" />
+    <Text Key="ResetZoomOnPageChange" Text="Zoom é restaurado a 100% na mudança de página" Comment="Zoom is reset to 100% on page change" />
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="Sempre mostrar Navegador de Atalhos de Apoio" Comment="Always display Browser Docking Grip" />
+    <Text Key="DogEarThumbnails" Text="Miniaturas selecionadas possuem orelhas" Comment="Selected Thumbnails have dog-ear" />
+    <Text Key="BlendWhilePaging" Text="Fundir animação também enquanto em paginação rápida" Comment="Blend animation also while fast paging" />
+    <Text Key="ScrollingDoesBrowse" Text="Rolar para as margens da página navega para novas páginas" Comment="Scrolling to page margin browses to new pages" />
+    <Text Key="Import &amp; Export" Text="Importar &amp; Exportar" Comment="Import &amp; Export" />
+    <Text Key="UpdateWebComicsStartup" Text="Atualizar Web HQs" Comment="Update Web Comics" />
+    <Text Key="ShowSearchLinks" Text="Exibir Links de Pesquisa" Comment="Show Search Links" />
+    <Text Key="OpenInNewTab" Text="Abrir em nova Aba" Comment="Open in new Tab" />
+    <Text Key="LocalQuickSearch" Text="Cada Lista possue configurações de Pesquisa Rápida própria" Comment="Each List has own Quick Search settings" />
+    <Text Key="NumericRatingThumbnails" Text="Miniaturas mostram avaliações numéricas" Comment="Thumbnails display numeric ratings" />
+    <Text Key="ShowQuickOpen" Text="Exibir Abertura Rápida se nenhum livro estiver aberto" Comment="Show Quick Open if no book is opened" />
+    <Text Key="AutoNavigateComics" Text="Ler além do início ou fim abre o próximo Livro" Comment="Reading beyond the start or end opens the next Book" />
+    <Text Key="CloseBrowserOnOpen" Text="Fechar o Navegador quando um novo Livro for aberto" Comment="Close the Browser when a new Book is opened" />
+    <Text Key="CatalogOnlyForFileless" Text="Exibir campos de Catálogo apenas para Livros sem arquivos" Comment="Show Catalog fields only for fileless Books" />
+    <Text Key="Opening a Book" Text="Abrindo um Livro" Comment="Opening a Book" />
+    <Text Key="OpenLastFile" Text="Reabrir Livros da última sessão" Comment="Reopen Books from last session" />
+    <Text Key="OpenLastPage" Text="Abrir o Livro na página onde foi fechado" Comment="Open the Book at the page where it was closed" />
+    <Text Key="ScanStartup" Text="Varrer novamente as Pastas de Livros por novos Livros" Comment="Rescan the Book Folders for new Books" />
+    <Text Key="ShowToolTips" Text="Exibir dicas para Livros no Navegador" Comment="Show Tooltips for Books in the Browser" />
+    <Text Key="AddToLibraryOnOpen" Text="Arquivos abertos são adicionados à biblioteca" Comment="Opened Files are added to the Library" />
+    <Text Key="ZoomInOutOnPageChange" Text="Durante a mudança de página uma diminuição de zoom é feita" Comment="During page change a zoom out is done" />
+    <Text Key="ShowMainMenuNoComicOpen" Text="Exibir Menu Principal se nenhum Livro estiver aberto" Comment="Show Main Menu if no Book is open" />
+    <Text Key="InformationCover3D" Text="Mostrar capas em 3D no Diálogo de Informações dos Livros" Comment="3D display of covers in Book Info Dialog" />
+    <Text Key="ExportedListsContainFilenames" Text="Listas de Livros exportadas contêm nomes de arquivos" Comment="Exported Book Lists contain filenames" />
+    <Text Key="CoverThumbnailsSameSize" Text="Todas as Miniaturas de Capas tem o mesmo Tamanho" Comment="All Cover Thumbnails have the same Size" />
+    <Text Key="ShowCustomBookFields" Text="Exibir campos personalizados de Livros" Comment="Show custom Book fields" />
+  </Texts>
+</TR>

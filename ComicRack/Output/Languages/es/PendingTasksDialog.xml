@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PendingTasksDialog" CultureName="es">
+  <Texts>
+    <Text Key="btAbort" Text="Abortar todas las tareas de Usuario" Comment="Abort all User Tasks" />
+    <Text Key="btOk" Text="Aceptar" Comment="OK" />
+    <Text Key="colState" Text="Estado" Comment="State" />
+    <Text Key="colTask" Text="Tarea" Comment="Task" />
+    <Text Key="lblItemCount" Text="Hay {0} tareas pendientes" Comment="{0} Tasks are pending" />
+    <Text Key="PendingTasksDialog" Text="Tareas pendientes en 2º plano" Comment="Pending Background Tasks" />
+  </Texts>
+</TR>

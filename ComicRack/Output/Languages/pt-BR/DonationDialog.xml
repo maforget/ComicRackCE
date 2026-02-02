@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DonationDialog" CultureName="pt-BR">
+  <Texts>
+    <Text Key="btCancel" Text="Agora não" Comment="Skip for now" />
+    <Text Key="btOK" Text="OK" Comment="OK" />
+    <Text Key="DonationDialog" Text="Apoiar ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="labelThankYou" Text="Obrigado por apoiar o ComicRack!" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="Doar" Comment="Donate" />
+    <Text Key="labelStepOne" Text="Passo Um:\nVisite ComicRack na web para doar" Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="btDonate" Text="Página de Doação" Comment="Donation Page" />
+    <Text Key="btValidate" Text="Validar" Comment="Validate" />
+    <Text Key="labelEmail" Text="Email:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="Você iniciou o ComicRack {0} vezes!" Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="Você está gerenciando {0} livros com o ComicRack!" Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="Não foi possível contatar o servidor do ComicRack para validar o endereço de Email. Por favor cheque sua conexão de internet!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+    <Text Key="labelStepTwo" Text="Passo Dois:\nInsira seu email de doação e o valide.\nPode levar alguns minutos para sua doação ser registrada então você pode fazer esse passo um pouco mais tarde." Comment="Step Two:\nEnter your donation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+    <Text Key="labelDonationText" Text="ComicRack é o produto de centenas de horas de trabalho e não há uma grande Compania de Software atrás dele. Por favor considere dar algo em retorno se você está usando o ComicRack e se divertindo com ele.\n\nVocê pode pensar nisso como o pagamento de algumas cervejas por todo o trabalho. Após a doação estiver completa você pode ativar esta cópia com seu endereço de email de doação e nunca mais ver esta mensagem novamente.\n\nComicRack é totalmente funcional mesmo se você decidir não fazer uma doação." Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nYou can think of this as paying me a few beers for all the work. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+  </Texts>
+</TR>

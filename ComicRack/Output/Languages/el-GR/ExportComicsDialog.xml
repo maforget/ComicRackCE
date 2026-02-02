@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ExportComicsDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="grpExportLocation" Text="Τοποθεσία Εξαγωγής" Comment="Export Location" />
+    <Text Key="grpFileFormat" Text="Διαμόρφωση Αρχείου" Comment="File Format" />
+    <Text Key="grpPageFormat" Text="Διαμόρφωση Σελίδας" Comment="Page Format" />
+    <Text Key="grpFileNaming" Text="Ονομασία Αρχείου" Comment="File Naming" />
+    <Text Key="grpImageProcessing" Text="Επεξεργασία Εικόνας" Comment="Image Processing" />
+    <Text Key="btRemovePreset" Text="Απομάκρυνση" Comment="Remove" />
+    <Text Key="labelExportTo" Text="Εξαγωγή στο:" Comment="Export to:" />
+    <Text Key="cbExport.Item0" Text="Επιλέξτε Φάκελο" Comment="Select a Folder" />
+    <Text Key="cbExport.Item2" Text="Στον ίδιο φάκελο και αντικατάσταση στη Βιβλιοθήκη" Comment="Same Folder and replace in Library" />
+    <Text Key="labelFolder" Text="Φάκελος:" Comment="Folder:" />
+    <Text Key="btChooseFolder" Text="Επιλογή..." Comment="Choose..." />
+    <Text Key="cbComicFormat.Item0" Text="Όπως το Αυθεντικό" Comment="Same as Original" />
+    <Text Key="labelCompression" Text="Συμπίεση" Comment="Compression" />
+    <Text Key="cbCompression.Item0" Text="Καμία" Comment="None" />
+    <Text Key="cbCompression.Item1" Text="Μεσαίο" Comment="Medium" />
+    <Text Key="cbCompression.Item2" Text="Έντονo" Comment="Strong" />
+    <Text Key="labelRemovePageFilter" Text="Απομάκρυνση Σελίδων:" Comment="Remove Pages:" />
+    <Text Key="cbPageFormat.Item0" Text="Διατήρηση Αυθεντικού" Comment="Preserve Original" />
+    <Text Key="labelPageQuality" Text="Ποιότητα:" Comment="Quality:" />
+    <Text Key="labelPageResize" Text="Αλλαγή μεγέθους:" Comment="Resize:" />
+    <Text Key="cbPageResize.Item0" Text="Διατήρηση Αυθεντικού" Comment="Preserve Original" />
+    <Text Key="cbPageResize.Item1" Text="Βέλτιστο ταίριασμα Πλάτους &amp; Ύψους" Comment="Best fit Width &amp; Height" />
+    <Text Key="cbPageResize.Item2" Text="Ορισμός Πλάτους" Comment="Set Width" />
+    <Text Key="cbPageResize.Item3" Text="Ορισμός Ύψους" Comment="Set Height" />
+    <Text Key="labelX" Text="x" Comment="x" />
+    <Text Key="chkDontEnlarge" Text="Να μη μεγεθυνθεί" Comment="Don't enlarge" />
+    <Text Key="chkSplitDouble" Text="Διαχωρισμός Διπλών Σελίδων" Comment="Split Double Pages" />
+    <Text Key="SelectExportFolder" Text="Παρακαλώ, επιλέξτε το Φάκελο Εξαγωγής" Comment="Please select the Export Folder" />
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="labelNamingTemplate" Text="Πρότυπο:" Comment="Template:" />
+    <Text Key="labelCustomNaming" Text="Προσαρμογή:" Comment="Custom:" />
+    <Text Key="labelCustomStartIndex" Text="Έναρξη:" Comment="Start:" />
+    <Text Key="cbNamingTemplate.Item0" Text="Διαμόρφωση Αρχείου" Comment="Filename" />
+    <Text Key="cbNamingTemplate.Item2" Text="Προσαρμογή" Comment="Custom" />
+    <Text Key="chkOverwrite" Text="Αντικατάσταση υπαρχόντων Αρχείων" Comment="Overwrite existing Files" />
+    <Text Key="ComicRackExportPresets" Text="Προκαθορισμένα του ComicRack" Comment="ComicRack Presets" />
+    <Text Key="UserExportPresets" Text="Προκαθορισμένα Χρήστη" Comment="User Presets" />
+    <Text Key="labelSharpening" Text="Όξυνση" Comment="Sharpening" />
+    <Text Key="chkAutoContrast" Text="Αυτόματη Βελτίωση της Αντίθεσης  " Comment="Automatic Contrast Enhancement" />
+    <Text Key="labelSaturation" Text="Κορεσμός" Comment="Saturation" />
+    <Text Key="labelBrightness" Text="Φωτεινότητα" Comment="Brightness" />
+    <Text Key="labelContrast" Text="Αντίθεση" Comment="Contrast" />
+    <Text Key="labelImagProcessingSource" Text="Προέλευση:" Comment="Source:" />
+    <Text Key="labelImageProcessingCustom" Text="Προσαρμογή:" Comment="Custom:" />
+    <Text Key="cbImageProcessingSource.Item0" Text="Ρυθμίσεις Προσαρμογής" Comment="Custom Settings" />
+    <Text Key="chkIgnoreErrorPages" Text="Παράβλεψη των Σελίδων με σφάλματα και συνέχιση της εξαγωγής" Comment="Ignore Pages with errors and continue export" />
+    <Text Key="cbExport.Item3" Text="Να ερωτηθώ πριν την Εξαγωγή" Comment="Ask before Export" />
+    <Text Key="chkCombine" Text="Συνδυασμός επιλεγμένων Αρχείων" Comment="Combine selected Files" />
+    <Text Key="btSavePreset" Text="Αποθήκευση Προκαθορισμένου..." Comment="Save Preset..." />
+    <Text Key="labelIncludePages" Text="Περιεχόμενες Σελίδες:" Comment="Include Pages:" />
+    <Text Key="ExportComicsDialog" Text="Εξαγωγή eComics" Comment="Export Books" />
+    <Text Key="cbExport.Item1" Text="Στον ίδιο φάκελο όπως και το Αυθεντικό eComic" Comment="Same Folder as the original Book" />
+    <Text Key="chkDeleteOriginal" Text="Διαγραφή του αυθεντικού eComic μετά από την επιτυχή Εξαγωγή του" Comment="Delete original Book after successful Export" />
+    <Text Key="chkAddNewToLibrary" Text="Προσθήκη του πιό πρόσφατα δημιουργημένου eComic στη Βιβλιοθήκη" Comment="Add newly created Book to Library" />
+    <Text Key="labelComicFormat" Text="Μορφή eComic" Comment="Format:" />
+    <Text Key="chkEmbedComicInfo" Text="Ενσωμάτωση Πληροφοριών Comic" Comment="Embed Book Info" />
+    <Text Key="labelPageFormat" Text="Διαμόρφωση Σελίδας" Comment="Format:" />
+    <Text Key="cbNamingTemplate.Item1" Text="Επικεφαλίδα eComic" Comment="Book Caption" />
+    <Text Key="labelGamma" Text="Gamma" Comment="Gamma" />
+    <Text Key="cbImageProcessingSource.Item1" Text="Εφαρμόστηκαν οι ρυθμίσεις στο eComic" Comment="Book settings are applied" />
+  </Texts>
+</TR>

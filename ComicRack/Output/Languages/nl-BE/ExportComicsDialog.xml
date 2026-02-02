@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ExportComicsDialog" CultureName="nl-BE">
+  <Texts>
+    <Text Key="grpExportLocation" Text="Export locatie" Comment="Export Location" />
+    <Text Key="grpFileFormat" Text="Bestandsformaat" Comment="File Format" />
+    <Text Key="grpPageFormat" Text="Pagina formaat" Comment="Page Format" />
+    <Text Key="grpFileNaming" Text="Bestand benoeming" Comment="File Naming" />
+    <Text Key="grpImageProcessing" Text="Beeldverwerking" Comment="Image Processing" />
+    <Text Key="btRemovePreset" Text="Verwijder" Comment="Remove" />
+    <Text Key="labelExportTo" Text="Exporteer naar:" Comment="Export to:" />
+    <Text Key="cbExport.Item0" Text="Selecteer een Folder" Comment="Select a Folder" />
+    <Text Key="cbExport.Item2" Text="Zelfde Map en vervang in de Bibliotheek" Comment="Same Folder and replace in Library" />
+    <Text Key="labelFolder" Text="Map:" Comment="Folder:" />
+    <Text Key="btChooseFolder" Text="Kies..." Comment="Choose..." />
+    <Text Key="cbComicFormat.Item0" Text="Idem als origineel" Comment="Same as Original" />
+    <Text Key="labelCompression" Text="Compressie" Comment="Compression" />
+    <Text Key="cbCompression.Item0" Text="Geen" Comment="None" />
+    <Text Key="cbCompression.Item1" Text="Gemiddeld" Comment="Medium" />
+    <Text Key="cbCompression.Item2" Text="Sterk" Comment="Strong" />
+    <Text Key="labelRemovePageFilter" Text="Verwijder Bladzijdes:" Comment="Remove Pages:" />
+    <Text Key="cbPageFormat.Item0" Text="Behoud huidige extensie" Comment="Preserve Original" />
+    <Text Key="labelPageQuality" Text="Kwaliteit:" Comment="Quality:" />
+    <Text Key="labelPageResize" Text="Herschalen:" Comment="Resize:" />
+    <Text Key="cbPageResize.Item0" Text="Behoud grootte" Comment="Preserve Original" />
+    <Text Key="cbPageResize.Item1" Text="Beste invulling (B &amp; H)" Comment="Best fit Width &amp; Height" />
+    <Text Key="cbPageResize.Item2" Text="Zet Breedte" Comment="Set Width" />
+    <Text Key="cbPageResize.Item3" Text="Zet Hoogte" Comment="Set Height" />
+    <Text Key="labelX" Text="x" Comment="x" />
+    <Text Key="chkDontEnlarge" Text="Niet vergroten" Comment="Don't enlarge" />
+    <Text Key="SelectExportFolder" Text="Selecteer de Export map aub" Comment="Please select the Export Folder" />
+    <Text Key="btCancel" Text="&amp;Annuleer" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelNamingTemplate" Text="Sjabloon:" Comment="Template:" />
+    <Text Key="labelCustomNaming" Text="Aangepast:" Comment="Custom:" />
+    <Text Key="labelCustomStartIndex" Text="Start:" Comment="Start:" />
+    <Text Key="cbNamingTemplate.Item0" Text="Bestandsnaam" Comment="Filename" />
+    <Text Key="cbNamingTemplate.Item2" Text="Aangepast" Comment="Custom" />
+    <Text Key="chkOverwrite" Text="Overschrijf bestaande Bestanden" Comment="Overwrite existing Files" />
+    <Text Key="ComicRackExportPresets" Text="ComicRack voorkeurlijst" Comment="ComicRack Presets" />
+    <Text Key="UserExportPresets" Text="Gebruiker voorkeur" Comment="User Presets" />
+    <Text Key="labelSharpening" Text="Scherpen" Comment="Sharpening" />
+    <Text Key="chkAutoContrast" Text="Automatische Contrastverbetering" Comment="Automatic Contrast Enhancement" />
+    <Text Key="labelSaturation" Text="Saturatie" Comment="Saturation" />
+    <Text Key="labelBrightness" Text="Helderheid" Comment="Brightness" />
+    <Text Key="labelContrast" Text="Contrast" Comment="Contrast" />
+    <Text Key="labelImagProcessingSource" Text="Bron:" Comment="Source:" />
+    <Text Key="labelImageProcessingCustom" Text="Aangepast:" Comment="Custom:" />
+    <Text Key="cbImageProcessingSource.Item0" Text="Aangepaste instellingen" Comment="Custom Settings" />
+    <Text Key="chkIgnoreErrorPages" Text="Negeer Bladzijdes met fouten en exporteer verder" Comment="Ignore Pages with errors and continue export" />
+    <Text Key="cbExport.Item3" Text="Vraag me vooraleer te exporteren" Comment="Ask before Export" />
+    <Text Key="chkCombine" Text="Combineer de geselecteerde bestanden" Comment="Combine selected Files" />
+    <Text Key="btSavePreset" Text="Bewaar Preset..." Comment="Save Preset..." />
+    <Text Key="labelIncludePages" Text="Pagina's bijvoegen:" Comment="Include Pages:" />
+    <Text Key="ExportComicsDialog" Text="Exporteer Boeken" Comment="Export Books" />
+    <Text Key="cbExport.Item1" Text="Zelfde Map als 't originele Boek" Comment="Same Folder as the original Book" />
+    <Text Key="chkDeleteOriginal" Text="Verwijder 't originele Boek na een succesvolle uitvoer" Comment="Delete original Book after successful Export" />
+    <Text Key="chkAddNewToLibrary" Text="Voeg het nieuw gecreëerde Boek toe aan de Bibliotheek" Comment="Add newly created Book to Library" />
+    <Text Key="labelComicFormat" Text="Formaat" Comment="Format:" />
+    <Text Key="chkEmbedComicInfo" Text="Boek Info inbedden" Comment="Embed Book Info" />
+    <Text Key="labelPageFormat" Text="Pagina formaat" Comment="Format:" />
+    <Text Key="cbNamingTemplate.Item1" Text="Boek Bijschrift" Comment="Book Caption" />
+    <Text Key="labelGamma" Text="Gamma" Comment="Gamma" />
+    <Text Key="cbImageProcessingSource.Item1" Text="Boek instellingen zijn toegepast" Comment="Book settings are applied" />
+    <Text Key="labelDoublePages" Text="Dubbele Pagina's:" Comment="Double Pages:" />
+    <Text Key="cbDoublePages.Item0" Text="Behoud" Comment="Keep" />
+    <Text Key="cbDoublePages.Item1" Text="Splits" Comment="Split" />
+    <Text Key="cbDoublePages.Item2" Text="Rotatie 90°" Comment="Roatete 90°" />
+  </Texts>
+</TR>

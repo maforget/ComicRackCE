@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Messages" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="AskRemoveComics" Text="Určitě chcete odstranit tyto knihy ze seznamu?" Comment="Are you sure you want to remove these books from the list?" />
+    <Text Key="AskRemoveFavorite" Text="Opravdu chcete odstranit tento oblíbený odkaz?" Comment="Do you really want to remove this Favorite Folder link?" />
+    <Text Key="AskRemoveFromLibrary" Text="Určitě chcete odstranit tyto knihy z Knihovny?\nVšechny informace neuložené v souborech budou ztraceny (počet otevření, procenta přečtení atd.)!" Comment="Are you sure you want to remove these books from the library?\nAll information not stored in the files will be lost (like Open Count, Last Read etc.)!" />
+    <Text Key="AskRemoveItem" Text="Opravdu chcete odstranit tuto položku?" Comment="Do you really want to remove this item?" />
+    <Text Key="Attention" Text="Upozornění" Comment="Attention" />
+    <Text Key="CloseComicRack" Text="Zavřít ComicRack" Comment="Close ComicRack" />
+    <Text Key="ClosingComicRack" Text="Zavírám ComicRack" Comment="Closing ComicRack" />
+    <Text Key="Export" Text="Export" Comment="Export" />
+    <Text Key="CouldNotSaveImage" Text="Obrázek nelze uložit!\nPříčina: {0}" Comment="Could not save the page image!\nReason: {0}" />
+    <Text Key="CreateMainWindow" Text="Vytvářím hlavní okno" Comment="Creating Main Window" />
+    <Text Key="Error" Text="Chyba" Comment="Error" />
+    <Text Key="ErrorShutDown" Text="ComicRack nebyl řádně ukončen:\n{0}" Comment="There was an error shutting down the application:\n{0}" />
+    <Text Key="FailedRetrieveDatabase" Text="Nepodařilo se získat databázi ze serveru!" Comment="Failed to retrieve the Database from the Server!" />
+    <Text Key="FailedToInitialize" Text="Nepodařilo se inicializovat ComicRack: {0}" Comment="Failed to initialize ComicRack: {0}" />
+    <Text Key="GetServerLibraryText" Text="Získávám sdílenou knihovnu ze serveru" Comment="Retrieving the shared Library from the Server" />
+    <Text Key="InitCache" Text="Inicializuji diskouvou cache" Comment="Initialize Disk Caches" />
+    <Text Key="InitGUI" Text="Inicializuji uživatelské rozhraní" Comment="Initalizing User Interface" />
+    <Text Key="InitScripts" Text="Inicializuji skripty" Comment="Initalizing Scripts" />
+    <Text Key="ListLayout" Text="Rozvržení seznamu" Comment="List Layout" />
+    <Text Key="LoadCustomSettings" Text="Načítám osobní nastavení" Comment="Loading custom settings" />
+    <Text Key="LoadingThumbnail" Text="Načítám miniaturu..." Comment="Loading Thumbnail..." />
+    <Text Key="LoadingPage" Text="Načítám stránku {0}..." Comment="Loading Page {0}..." />
+    <Text Key="MoveBin" Text="&amp;Přesunout také soubory do Koše" Comment="&amp;Also move the files to the Recycle Bin" />
+    <Text Key="NotAskAgain" Text="&amp;Znovu se už neptat" Comment="&amp;Do not ask me again" />
+    <Text Key="OpenDatabase" Text="Otevírám databázi" Comment="Opening Database" />
+    <Text Key="PasswordNeeded" Text="Pro vzdálenou Knihovnu '{0}' je zapotřebí heslo:" Comment="A password is needed for the remote Library '{0}':" />
+    <Text Key="ReadNewsFeed" Text="Načítám zdroj novinek" Comment="Reading News Feed" />
+    <Text Key="RefreshInfo" Text="Aktualizuji informace" Comment="Refreshing Information" />
+    <Text Key="RefreshServer" Text="Aktualizuji knihovnu ze serveru" Comment="Refreshing Server Library" />
+    <Text Key="Remove" Text="Odstranit" Comment="Remove" />
+    <Text Key="RetrieveNews" Text="Získávám novinky" Comment="Retrieving News" />
+    <Text Key="RetrieveNewsText" Text="Aktualizuji odebírané kanály novinek" Comment="Refreshing subscribed News Channels" />
+    <Text Key="SaveAllData" Text="Ukládám všechna dat na disk..." Comment="Saving all Data to Disk..." />
+    <Text Key="SaveListLayout" Text="Uložit rozvržení seznamu" Comment="Save List Layout" />
+    <Text Key="ScriptFailed" Text="Provedení skriptu selhalo!" Comment="Execution of the script failed!" />
+    <Text Key="WrongPassword" Text="Zadané heslo pro Knihovnu '{0}' není správné. Zkuste to prosím znovu:" Comment="The specified password for the Library'{0}' is not correct. Please try again:" />
+    <Text Key="Set" Text="Nastavit" Comment="Set" />
+    <Text Key="AskSetAllLists" Text="Určitě chcete nastavit všechny seznamy do aktuálního rozvržení?" Comment="Are you sure you want to set all Lists to the current layout?" />
+    <Text Key="OpenError" Text="Knihu '{0}'  nelze otevřít!" Comment="Could not open the book '{0}'!" />
+    <Text Key="PageFailedToLoad" Text="Načtení stránky selhalo.\nZkuste ji prosím načíst znovu..." Comment="Page failed to load.\nTry refresh to load again..." />
+    <Text Key="FastThumbanilQueueMessage" Text="Obnovit uchované náhledy pro stránku {0} v souboru '{1}'" Comment="Retrieve cached thumbnail for page {0} in file '{1}'" />
+    <Text Key="SlowThumbnailQueueMessage" Text="Vytvořit miniaturu pro stránku {0} v souboru '{1}'" Comment="Create thumbnail for page {0} in file '{1}'" />
+    <Text Key="GetImageQueueMessage" Text="Získat stránku {0} ze souboru '{1}'" Comment="Get page {0} in file '{1}'" />
+    <Text Key="OpeningComic" Text="Otevírám knihu '{0}'..." Comment="Opening the book '{0}'..." />
+    <Text Key="NoComicOpen" Text="Není otevřena žádná kniha" Comment="No book is open" />
+    <Text Key="DontShowAgain" Text="Znovu neukazovat tuto zprávu" Comment="Do not show this again" />
+    <Text Key="RestartQuestion" Text="K dokončení této operace je třeba restartovat ComicRack! Chcete restartovat nyní?" Comment="ComicRack needs to restart to complete the operation! Do you want to restart now?" />
+    <Text Key="DatabaseBackupError" Text="Během zálohování databáze došlo k chybě" Comment="There was an error saving the Database backup" />
+    <Text Key="DatabaseBackupRestored" Text="Předchozí databáze byla úspěšně obnovena!" Comment="A previous database backup has been successfully restored!" />
+    <Text Key="ScanComicQueueMessage" Text="Skenuji '{0}'" Comment="Scanning '{0}'" />
+    <Text Key="ErrorWritingReadingList" Text="Během exportu čtenářského seznamu '{0}' došlo k chybě!" Comment="There was an error exporting the Reading List '{0}'" />
+    <Text Key="ErrorOpeningReadingList" Text="Během importu čtenářského seznamu '{0}' došlo k chybě!" Comment="There was an error importing the Reading List '{0}'" />
+    <Text Key="OutputFileExists" Text="Výstupní soubor '{0}' už existuje!" Comment="Output File '{0}' already exists!" />
+    <Text Key="ConvertToCBZ" Text="Konverze do CBZ" Comment="Convert to CBZ" />
+    <Text Key="ConvertToCB7" Text="Konverze do CB7" Comment="Convert to CB7" />
+    <Text Key="ExportForPSP" Text="Exportovat pro PSP" Comment="Export for PSP" />
+    <Text Key="AbortScan" Text="Zrušit skenování" Comment="Abort Scanning" />
+    <Text Key="AbortExport" Text="Zrušit export" Comment="Abort Export" />
+    <Text Key="FailedToReadImage" Text="Obrázek {0} nelze načíst!" Comment="Failed to read Image {0}!" />
+    <Text Key="InvalidExportSettings" Text="Nastavení exportu není platné (např. přidáváte do knihovny nepodporovaný formát souboru)" Comment="The export settings are not valid (e.g. adding a not supported format to the library)" />
+    <Text Key="ComicRackMinimizedTitle" Text="ComicRack stále běží" Comment="ComicRack is still running" />
+    <Text Key="ComicRackMinimized" Text="ComicRack lze zavřít přes Soubor/Ukončit nebo můžete toto chování změnit v okně Nastavení.\nKlikněte zde pro zrušení zobrazování této zprávy." Comment="You either close ComicRack with File/Exit or you can change this behavior in the Preferences Dialog.\nClick here to not show this message again" />
+    <Text Key="ConnectRemoteError" Text="Nelze se připojit ke vzdálenému serveru '{0}'" Comment="Could not connect to Remote Server '{0}'" />
+    <Text Key="CheckingDatabase" Text="Kontroluji databázi" Comment="Checking Database" />
+    <Text Key="CheckingDatabaseText" Text="Kontroluji integritu a aktualizuji chybějící data" Comment="Checking integrity and updating any missing Data" />
+    <Text Key="SaveInfoText" Text="Prosím čekejte dokud nebudou uložena všechna data!" Comment="Please wait while all unsaved information is stored!" />
+    <Text Key="UndoScript" Text="Automatizace '{0}'" Comment="Automation '{0}'" />
+    <Text Key="UndoEditColumn" Text="Upravit sloupec '{0}'" Comment="Edit Column '{0}'" />
+    <Text Key="UndoRating" Text="Upravit hodnocení" Comment="Change Rating" />
+    <Text Key="ConnectToServer" Text="Připojuji se k serveru" Comment="Connecting to Server" />
+    <Text Key="GetShareInfoText" Text="Získávám informace o sdílené knihovně" Comment="Getting information about the shared Library" />
+    <Text Key="UpdateComicDynamicMessage" Text="Aktualizuji webový komiks '{0}'" Comment="Updating Web Comic '{0}'" />
+    <Text Key="ScriptPackageExists" Text="Balíček skriptů se stejným názvem již existuje! Chcete tento balíček přepsat?" Comment="A Script Package with the same name already exists! Do you want to overwrite this Package?" />
+    <Text Key="ServerActivity" Text="Běží {0} server(ů)" Comment="{0} Server(s) running" />
+    <Text Key="ConnectServerText" Text="Otevírám spojení na vzdálený server" Comment="Opening connection to the remote Server" />
+    <Text Key="ErrorFileUsed" Text="Tento soubor je již v Knihovně použitý" Comment="This file is already used in the Library" />
+    <Text Key="ImportReadingList" Text="Importovat čtenářský seznam" Comment="Import Reading List" />
+    <Text Key="MatchBooksWithLibrary" Text="Porovnávám seznam s Knihovnou" Comment="Matching list with Library" />
+    <Text Key="CouldNotExportKeyboardLayout" Text="Nelze exportovat rozvržení kláves!\nDůvod: {0}" Comment="Could not export Keyboard Layout!\nReason: {0}" />
+    <Text Key="CouldNotImportKeyboardLayout" Text="Nelze importovat rozvržení kláves!\nDůvod: {0}" Comment="Could not import Keyboard Layout!\nReason: {0}" />
+    <Text Key="CouldNotLoadThumbnail" Text="Nelze otevřít miniaturu!\nDůvod: {0}" Comment="Could not open Thumbnail!\nReason: {0}" />
+    <Text Key="ListLayouts" Text="Uložená rozvržení seznamu" Comment="List Layouts" />
+    <Text Key="AlwaysSaveDirty" Text="Vždy ukládat změny" Comment="Always save changes" />
+    <Text Key="ListMore" Text="{0} dalších..." Comment="{0} more..." />
+    <Text Key="TaskGroupLoadThumbnails" Text="Načtení miniatur" Comment="Load Thumbnails" />
+    <Text Key="TaskGroupCreateThumbnails" Text="Vytvoření miniatur" Comment="Create Thumbnails" />
+    <Text Key="TaskGroupLoadPages" Text="Načtení stránek" Comment="Load Pages" />
+    <Text Key="TaskGroupCreatePages" Text="Vytvoření stránek" Comment="Create Pages" />
+    <Text Key="TaskGroupReadInfo" Text="Čtení informací" Comment="Read Info" />
+    <Text Key="TaskGroupWriteInfo" Text="Zápis informací" Comment="Write Info" />
+    <Text Key="TaskGroupUpdateDynamic" Text="Aktualizace webových komiksů" Comment="Update Web Comics" />
+    <Text Key="TaskGroupScanning" Text="Skenování" Comment="Scanning" />
+    <Text Key="AlsoRemoveDatabase" Text="&amp;Odstranit tyto soubory i z databáze" Comment="&amp;Also remove the Books from the Database" />
+    <Text Key="AskExport" Text="Rozhodli jste se vymazat nebo nahradit existující eKomiksy během exportu? Chcete opravdu pokračovat?\nSmazané soubory budou během exportu přesunuty do Koše. Ujistěte se prosím, že máte dostatek volného místa na disku a že eKomiksy nejsou umístěny na síťovém disku!" Comment="You have chosen to delete or replace existing files during export. Are you sure you want to continue?\nThe deleted files will be moved to the Recycle Bin during export. Please make sure there is enough disk space available and the eComics are not located on a network drive!" />
+    <Text Key="AskMoveBin" Text="Určitě chcete odstranit tyto knihy do Koše?" Comment="Are you sure you want to move these files to the recycle bin?" />
+    <Text Key="CouldNotSaveComic" Text="eKomiks nelze uložit!\nPříčina: {0}" Comment="Could not save Book!\nReason: {0}" />
+    <Text Key="DatabaseNewEmpty" Text="Během otevírání databáze komiksů došlo k chybě. Byla vytvořena nová prázdná databáze." Comment="There was a problem opening the Database. A new empty Database has been created." />
+    <Text Key="DatabaseRestored" Text="V databázi komiksů došlo k chybě. Poslední funčkní verze byla obnovena. Některé položky mohou být ztraceny." Comment="There was a problem with the Database. The last version to be known good has been restored. You may have lost some entires." />
+    <Text Key="FailedDeleteBooks" Text="Některé knihy nemohly být odstraněny (možná se stále používají)!" Comment="Some files could not be deleted (maybe they are in use)!" />
+    <Text Key="GettingList" Text="Získávám seznam eKomiksů" Comment="Getting List of Books" />
+    <Text Key="GettingListText" Text="Získávám všechny eKomiksy z vybrané složky" Comment="Retrieving all Books from the selected folder" />
+    <Text Key="LoadComic" Text="Načítám eKomiks" Comment="Opening Files" />
+    <Text Key="RefreshInfoText" Text="Aktualizuji informace k vybraným eKomiksům" Comment="Refreshing information for selected Books" />
+    <Text Key="SavingNewComic" Text="Ukládám nový eKomiks..." Comment="Saving new Book..." />
+    <Text Key="WriteData" Text="Zapsat data" Comment="Pasting Data" />
+    <Text Key="WriteDataText" Text="Zapisuji data do vybraných eKomiksů" Comment="Pasting Data into selected Books" />
+    <Text Key="AddFolderLibrary" Text="eKomiksy z této složky i všech podsložek budou přidány do Knihovny." Comment="Books in this Folder and all sub Folders will be added to the library." />
+    <Text Key="ExportQueueMessage" Text="Exportovat eKomiks '{0}'" Comment="Export Book '{0}'" />
+    <Text Key="RefreshInfoQueueMessage" Text="Obnovit informace pro eKomiks '{0}'" Comment="Refresh information for Book '{0}'" />
+    <Text Key="WriteInfoQueueMessage" Text="Zapsat informace do eKomiksu '{0}'" Comment="Write information to Book file '{0}'" />
+    <Text Key="CloseExternalReader" Text="Tímto uzavřete pouze čtecí okno, ale ne otevřený eKomiks!" Comment="This will only close the reader Window and not the open Book(s)!" />
+    <Text Key="UnsolvedBookItems" Text="Následující eKomiksy nebyly v Knihovně nalezeny:\n{0}\nOpravdu chcete importovat čtenářský seznam?" Comment="The following Books were not found in the Library:\n{0}\nDo you still want to import the Reading List?" />
+    <Text Key="SourceComicNotValid" Text="Zdroj eKomiksu není platný" Comment="Source of Book is not valid" />
+    <Text Key="ExportComicTitle" Text="Exportovat eKomiks do" Comment="Export Book to" />
+    <Text Key="AskDirtyItems" Text="Uložit upravené informace o eKomiksech, které nejsou v databázi?\nVšechna nyní neuložená data budou ztracena!" Comment="Save changed information for Books that are not in the database?\nAll changes not saved now will be lost!" />
+    <Text Key="SaveInfo" Text="Ukládám eKomiksy" Comment="Saving Book Information" />
+    <Text Key="UndoEditMultipleComics" Text="Upravit eKomiksy dávkově" Comment="Edit multiple Books" />
+    <Text Key="UndoShowInfo" Text="Info o eKomiksu" Comment="Book Info" />
+    <Text Key="SelectLocalFolder" Text="Vyberte místní adresář pro uložení vzdálených eKomiksů" Comment="Select a local folder to store the remote Books" />
+    <Text Key="CreateMissingBooks" Text="Přidat do Knihovny chybějící eKomiksy" Comment="Add missing Books to Library" />
+    <Text Key="TaskGroupExport" Text="Export komiksů" Comment="Export Books" />
+    <Text Key="DatabaseBackup" Text="Záloha databáze" Comment="Database Backup" />
+    <Text Key="DatabaseBackupText" Text="Vytvářím a ukládám soubor se zálohou" Comment="Creating and saving the Backup File" />
+    <Text Key="DatabaseRestore" Text="Obnova databáze" Comment="Database Restore" />
+    <Text Key="DatabaseRestoreText" Text="Obnovuji databázi ze záložního souboru" Comment="Restoring Database from Backup File" />
+    <Text Key="DatabaseRestoreError" Text="Během obnovy databáze ze zálohy došlo k chybě" Comment="There was an error restoring the Database Backup" />
+    <Text Key="ClearComicData" Text="Vymazat data eKomiksů" Comment="Clear Books" />
+    <Text Key="ClearComicDataText" Text="Vymazávám všechna zadaná data o eKomiksech" Comment="Removing all entered data from the Books" />
+    <Text Key="AskClearComicData" Text="Chcete odstranit veškerá zadaná data z vybraných knih (lze vrátit pomocí volby Zpět)?" Comment="Do you want to remove all entered data from the selected Books (can be reverted with Undo)?" />
+    <Text Key="BackgroundConvert" Text="Na pozadí jsou stále upravovány/převáděny/synchronizovány soubory. Pokud skončíte nyní, některé informace nebudou zapsány!" Comment="Files are still being updated/converted/synchronized in the background. If you close now, some information will not be written!" />
+    <Text Key="DeviceSyncQueueMessage" Text="Synchronizuji zařízení '{0}'" Comment="Syncing Device '{0}'" />
+    <Text Key="AbortDeviceSync" Text="Zrušit synchronizaci zařízení" Comment="Abort syncinc Devices" />
+    <Text Key="TaskGroupDeviceSync" Text="Synchronizace zařízení" Comment="Syncing Devices" />
+    <Text Key="DiscoveringDevicesCaption" Text="Hledání zařízení" Comment="Discovering devices" />
+    <Text Key="DiscoveringDevicesDescription" Text="Hledání připojených zařízení" Comment="Searching for connected devices" />
+    <Text Key="DeviceOutOfSpace" Text="Na zařízení '{0}' není dostatek volného místa" Comment="Device '{0}' does not have enough free space" />
+    <Text Key="RenameDevice" Text="Přejmenovat zařízení" Comment="Rename Device" />
+  </Texts>
+</TR>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBookDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Ακύρωση" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Εντάξει" Comment="&amp;OK" />
+    <Text Key="colName" Text="Όνομα" Comment="Name" />
+    <Text Key="colDescription" Text="Περιγραφή" Comment="Description" />
+    <Text Key="ShowList" Text="Εμφάνιση Δημόσιου" Comment="Show Public" />
+    <Text Key="RefreshList" Text="Ανανέωση" Comment="Refresh" />
+    <Text Key="colEdit" Text="Επεξεργασία" Comment="Edit" />
+    <Text Key="colExport" Text="Εξαγωγή" Comment="Export" />
+    <Text Key="labelListPassword" Text="Κωδικός πρόσβασης Ιδιωτικής λίστας:" Comment="Private List Password:" />
+    <Text Key="labelFailedServerList" Text="Αποτυχία λήψης λίστας διαμεσολαβητή!" Comment="Failed to get Server List!" />
+    <Text Key="groupLocal" Text="Τοπικά Κοινόχρηστα" Comment="Local Shares" />
+    <Text Key="groupInternet" Text="Κοινόχρηστα Διαδικτύου" Comment="Internet Shares" />
+    <Text Key="OpenRemoteDialog" Text="Άνοιγμα Απομακρυσμένης Βιβλιοθήκης" Comment="Open Remote Library" />
+    <Text Key="labelServerAddress" Text="Διεύθυνση Βιβλιοθήκης:" Comment="Library Address:" />
+  </Texts>
+</TR>

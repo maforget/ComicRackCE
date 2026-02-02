@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicTextElements" CultureName="zh-CN">
+  <Texts>
+    <Text Key="Caption" Text="说明" Comment="Caption" />
+    <Text Key="CaptionWithoutTitle" Text="不包含标题的说明" Comment="Caption without Title" />
+    <Text Key="AlternateCaption" Text="备用说明文字" Comment="Alternate Caption" />
+    <Text Key="Title" Text="标题" Comment="Title" />
+    <Text Key="ArtistInfo" Text="绘师" Comment="Artists" />
+    <Text Key="Summary" Text="摘要" Comment="Summary" />
+    <Text Key="FileSize" Text="File Size" Comment="File Size" />
+    <Text Key="Opened" Text="打开时间" Comment="Opened" />
+    <Text Key="FileName" Text="File Name" Comment="File Name" />
+    <Text Key="FileFormat" Text="File Format" Comment="File Format" />
+    <Text Key="Added" Text="添加时间" Comment="Added" />
+    <Text Key="PublisherAndImprint" Text="出版社与出版品牌" Comment="Publischer and Imprint" />
+    <Text Key="AgeRating" Text="年龄分级" Comment="Age Rating" />
+    <Text Key="Genre" Text="Genre" Comment="Genre" />
+    <Text Key="CharactersAndTeams" Text="角色与组织" Comment="Characters and Teams" />
+    <Text Key="Locations" Text="场景" Comment="Locations" />
+    <Text Key="Notes" Text="笔记" Comment="Notes" />
+    <Text Key="PurchaseInformation" Text="购买信息" Comment="Purchase Information" />
+    <Text Key="StorageInfoformation" Text="存储信息" Comment="Storage Information" />
+    <Text Key="CollectionStatus" Text="收集状态" Comment="Collection Status" />
+  </Texts>
+</TR>

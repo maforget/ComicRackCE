@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.RenameBookFiles" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="Name" Text="按 '丛书名 卷名 序号（总计）（年代）' 格式重命名文件" Comment="Rename Files to 'Series Volume #Number (of Count) (Year)'" />
+    <Text Key="Description" Text="根据元数据重命名漫画的脚本" Comment="Script to rename the selected eComics based on the meta data" />
+  </Texts>
+</TR>

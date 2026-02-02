@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Messages" CultureName="tr">
+  <Texts>
+    <Text Key="AlsoRemoveDatabase" Text="&amp;Aynı zamanda dosyaları Veritabanından da kaldır" Comment="&amp;Also remove the files from the Database" />
+    <Text Key="AskExport" Text="Çıkış aldığınız e-Çizgi Romanları silmeye veya yerini değiştirmeye çalışıyorsunuz. Devam etmek istediğinize emin misiniz?\nÇıkış esnasında silinen dosyalar Geri Dönüşüm Kutusu'na gönderilecektir. Lütfen bunun için bilgisayarınızda yeterli alan olduğundan ve e-Çizgi Romanların yerel sürücüde bulunmadıklarından emin olun." Comment="You have chosen to delete or replace existing eComics during export? Are you sure you want to continue?\nThe deleted files will be moved to the Recycle Bin during export. Please make sure there is enough disk space available and the eComics are not located on a network drive!" />
+    <Text Key="AskMoveBin" Text="Bu çizgi romanları Geri Dönüşüm Kutusu'na yollamak istediğinizden emin misiniz?" Comment="Are you sure you want to move these books to the recycle bin?" />
+    <Text Key="AskRemoveComics" Text="Bu çizgi romanları listeden silmek istediğinize emin misiniz?" Comment="Are you sure you want to remove these books from the list?" />
+    <Text Key="AskRemoveFavorite" Text="Favori Klasör kısayolunu kaldırmak istediğinize emin misiniz?" Comment="Do you really want to remove this Favorite Folder link?" />
+    <Text Key="AskRemoveFromLibrary" Text="Bu çizgi romanları kütüphaneden çıkartmak istediğinize emin misiniz?\nDosyalarda saklanmamış bütün bilgiler (Okunma Sayısı, Son Okuma Tarihi vs.) kaybolacaktır!" Comment="Are you sure you want to remove these books from the library?\nAll information not stored in the files will be lost (like Open Count, Last Read etc.)!" />
+    <Text Key="AskRemoveItem" Text="Bunu gerçekten kaldırmak istediğinize emin misiniz?" Comment="Do you really want to remove this item?" />
+    <Text Key="Attention" Text="Dikkat" Comment="Attention" />
+    <Text Key="BackgroundConvert" Text="Arkaplanda dosyalar hala dönüştürülüyor/güncelleniyor. Şu anda programdan çıkacak olursanız bazı bilgiler e-Çizgi Romanlara yazılamayacaktır." Comment="Files are still being updated/converted in the background. If you close now, some information will not be written to the eComics!" />
+    <Text Key="CloseComicRack" Text="ComicRack'ı kapat" Comment="Close ComicRack" />
+    <Text Key="ClosingComicRack" Text="ComicRack kapatılıyor" Comment="Closing ComicRack" />
+    <Text Key="Export" Text="Çıkış al" Comment="Export" />
+    <Text Key="CouldNotSaveComic" Text="e-Çizgi Roman kaydedilemedi!\nReason: {0}" Comment="Could not save eComic!\nReason: {0}" />
+    <Text Key="CouldNotSaveImage" Text="Sayfa görüntüsü kaydedilemedi!\nReason: {0}" Comment="Could not save the page image!\nReason: {0}" />
+    <Text Key="CreateMainWindow" Text="Ana Pencere oluşturuluyor" Comment="Creating Main Window" />
+    <Text Key="DatabaseNewEmpty" Text="e-Çizgi Roman Veritabanı açılırken bir sorun çıktı. Yeni ve boş bir Veritabanı dosyası oluşturuldu." Comment="There was a problem opening the Comic Database. A new empty Database has been created." />
+    <Text Key="DatabaseRestored" Text="e-Çizgi Roman Veritabanı'nda bir sorun çıktı... Bulunan en güncel ve sağlam sürüm geri yüklendi. Bazı bilgileriniz bu süreçte kaybolmuş olabilir." Comment="There was a problem with the Comic Database. The last version to be known good has been restored. You may have lost some entires." />
+    <Text Key="Error" Text="Hata" Comment="Error" />
+    <Text Key="ErrorShutDown" Text="{0} adlı programı kapatırken bir sorun çıktı" Comment="There was an error shutting down the application:\n{0}" />
+    <Text Key="FailedDeleteBooks" Text="Bazı çizgi romanlar silinemiyor (Açık olan varsa kapatıp tekrar deneyiniz)" Comment="Some books could not be deleted (maybe they are in use)!" />
+    <Text Key="FailedRetrieveDatabase" Text="Olumsuz. Veritabanı sunucudan alınamadı!" Comment="Failed to retrieve the Database from the Server!" />
+    <Text Key="FailedToInitialize" Text="ComicRack başlatılamadı: {0}" Comment="Failed to initialize ComicRack: {0}" />
+    <Text Key="GetServerLibrary" Text="Sunucu kütühanesini alıyor" Comment="Getting Server Library" />
+    <Text Key="GetServerLibraryText" Text="Serverda paylaşılan kütüphaneyi alıyor" Comment="Retrieving the shared Library from the Server" />
+    <Text Key="GettingList" Text="e-Çizgi Roman listesi alınıyor" Comment="Getting eComics List" />
+    <Text Key="GettingListText" Text="Seçili klasördeki tüm e-Çizgi Romanları al" Comment="Retrieving all eComics from the selected folder" />
+    <Text Key="InitCache" Text="Disk Önbellekleri Etkinleştiriliyor" Comment="Initialize Disk Caches" />
+    <Text Key="InitGUI" Text="Kullanıcı Arayüzü Etkinleştiriliyor" Comment="Initalizing User Interface" />
+    <Text Key="InitScripts" Text="Komutlar etkinleştiriliyor" Comment="Initalizing Scripts" />
+    <Text Key="ListLayout" Text="Liste Şablonu" Comment="List Layout" />
+    <Text Key="LoadComic" Text="e-Çizgi Roman Yükleniyor" Comment="Loading eComic" />
+    <Text Key="LoadCustomSettings" Text="Kişisel ayarlar yükleniyor" Comment="Loading custom settings" />
+    <Text Key="LoadingThumbnail" Text="Küçük İkon yükleniyor..." Comment="Loading Thumbnail..." />
+    <Text Key="LoadingPage" Text="{0} numaralı sayfa yükleniyor..." Comment="Loading Page {0}..." />
+    <Text Key="MoveBin" Text="&amp;ve dosyaları çöpe at" Comment="&amp;Also move the files to the Recycle Bin" />
+    <Text Key="NotAskAgain" Text="&amp;Bir daha sorma" Comment="&amp;Do not ask me again" />
+    <Text Key="OpenDatabase" Text="Veritabanı açılıyor" Comment="Opening Database" />
+    <Text Key="PasswordNeeded" Text="Harici kütüphaneye giriş yapmak için bir şifre girmelisiniz '{0}':" Comment="A password is needed for the remote Library '{0}':" />
+    <Text Key="ReadNewsFeed" Text="Haberler Akışı Okunuyor" Comment="Reading News Feed" />
+    <Text Key="RefreshInfo" Text="Bilgilendirme Yenileniyor" Comment="Refreshing Information" />
+    <Text Key="RefreshInfoText" Text="Seçili e-Çizgi Romanların bilgileri tazeleniyor" Comment="Refreshing information for selected eComics" />
+    <Text Key="RefreshServer" Text="Server kütüphanesi tazeleniyor" Comment="Refreshing Server Library" />
+    <Text Key="Remove" Text="Kaldır" Comment="Remove" />
+    <Text Key="RetrieveNews" Text="Haberler Alınıyor" Comment="Retrieving News" />
+    <Text Key="RetrieveNewsText" Text="Abone olunmuş haber kanalları yenileniyor" Comment="Refreshing subscribed News Channels" />
+    <Text Key="SaveAllData" Text="Bütün verileri kaydet..." Comment="Saving all Data to Disk..." />
+    <Text Key="SaveListLayout" Text="Liste düzenini kaydet" Comment="Save List Layout" />
+    <Text Key="SaveWorkspace" Text="Çalışma alanını kaydet" Comment="Save Workspace" />
+    <Text Key="SavingNewComic" Text="Yeni e-Çizgi Roman kaydediliyor..." Comment="Saving new eComic..." />
+    <Text Key="ScriptFailed" Text="Komut çalıştırılamadı!" Comment="Execution of the script failed!" />
+    <Text Key="StartNetwork" Text="Network başlatılıyor" Comment="Starting Network" />
+    <Text Key="WriteData" Text="Veri Ekle" Comment="Write Data" />
+    <Text Key="WriteDataText" Text="Seçilen e-Çizgi Romanlara bilgi ekleniyor" Comment="Writing Data to selected eComics" />
+    <Text Key="WrongPassword" Text="'{0}' kütüphanesi için girdiğiniz şifre doğru değil. Lütfen yeniden deneyin:" Comment="The specified password for the Library'{0}' is not correct. Please try again:" />
+    <Text Key="AddFolderLibrary" Text="Bu ve tüm alt klasörlerdeki e-Çizgi Romanlar kütüphaneye eklenecek." Comment="eComics in this Folder and all sub Folders will be added to the library." />
+    <Text Key="Set" Text="Kaydet" Comment="Set" />
+    <Text Key="AskSetAllLists" Text="Bütün listeleri mevcut şablona göre düzenlemek istediğinize emin misiniz?" Comment="Are you sure you want to set all Lists to the current layout?" />
+    <Text Key="OpenError" Text="Kitap açılamıyor '{0}'!" Comment="Could not open the book '{0}'!" />
+    <Text Key="PageFailedToLoad" Text="Sayfa yüklemesi başarısız oldu\nYeniden yüklemeyi deneyin..." Comment="Page failed to load.\nTry refresh to load again..." />
+    <Text Key="ExportQueueMessage" Text="e-Çizgi Roman çıkışı al '{0}'" Comment="Export eComic '{0}'" />
+    <Text Key="RefreshInfoQueueMessage" Text="e-Çizgi Romanın bilgilerini yenile '{0}'" Comment="Refresh information for eComic '{0}'" />
+    <Text Key="WriteInfoQueueMessage" Text="e-Çizgi Romana bilgi ekle '{0}'" Comment="Write information to eComic '{0}'" />
+    <Text Key="FastThumbanilQueueMessage" Text="Sayfa {0} için kullanılan önizleme dosyası olarak '{1}' dosyasına kaydet" Comment="Retrieve cached thumbnail for page {0} in file '{1}'" />
+    <Text Key="SlowThumbnailQueueMessage" Text="'{1}' numaralı dosyanın {0} numaralı sayfası için küçük ikon oluştur" Comment="Create thumbnail for page {0} in file '{1}'" />
+    <Text Key="GetImageQueueMessage" Text="{0} numaralı sayfayı '{1}' numaralı dosyaya koy" Comment="Get page {0} in file '{1}'" />
+    <Text Key="OpeningComic" Text="'{0}' adlı Çizgi Roman açılıyor..." Comment="Opening the book '{0}'..." />
+    <Text Key="NoComicOpen" Text="Açık Çizgi Roman yok" Comment="No book is open" />
+    <Text Key="CloseExternalReader" Text="Bu sadece ana pencereyi kapatacaktır, açık e-Çizgi Roman(lar)ı değil!" Comment="This will only close the reader Window and not the open eComic(s)!" />
+    <Text Key="DontShowAgain" Text="Bunu bir daha gösterme" Comment="Do not show this again" />
+    <Text Key="RestartQuestion" Text="İşlemlerin tamamlanması için ComicRack'ın tekrar başlatılması gerekiyor. Yeniden başlatmak istiyor musunuz?" Comment="ComicRack needs to restart to complete the operation! Do you want to restart now?" />
+    <Text Key="DatabaseBackupError" Text="Veritabanı yedeklemesi yapılırken bir sorun oluştu" Comment="There was an error saving the Database backup" />
+    <Text Key="DatabaseBackupRestored" Text="Eski bir veritabanı yedeği başarıyla etkinleştirildi!" Comment="A previous database backup has been successfully restored!" />
+    <Text Key="ScanComicQueueMessage" Text="Taranıyor '{0}'" Comment="Scanning '{0}'" />
+    <Text Key="ErrorWritingReadingList" Text="'{0}' adlı okuma listesini açarken bir sorun oluştu" Comment="There was an error exporting the Reading List '{0}'" />
+    <Text Key="ErrorOpeningReadingList" Text="'{0}' adlı okuma listesini içe aktarırken bir sorun oluştu" Comment="There was an error importing the Reading List '{0}'" />
+    <Text Key="UnsolvedBookItems" Text="Aşağıdaki e-Çizgi Romanlar kütüphanede bulunamamıştır:\n{0}\nYine de okuma listesini kullanmayı istiyor musunuz?" Comment="The following eComics where not found in the Library:\n{0}\nDo you still want to import the Reading List?" />
+    <Text Key="OutputFileExists" Text="Çıkış Dosyası '{0}' halihazırda mevcut" Comment="Output File '{0}' already exists!" />
+    <Text Key="ConvertToCBZ" Text="CBZ formatına dönüştür" Comment="Convert to CBZ" />
+    <Text Key="ConvertToCB7" Text="CB7 formatına dönüştür" Comment="Convert to CB7" />
+    <Text Key="ExportForPSP" Text="PSP için çıkış al" Comment="Export for PSP" />
+    <Text Key="AbortScan" Text="Taramayı İptal Et" Comment="Abort Scanning" />
+    <Text Key="AbortExport" Text="Çıkışı İptal Et" Comment="Abort Export" />
+    <Text Key="FailedToReadImage" Text="Görsel okunamadı {0}!" Comment="Failed to read Image {0}!" />
+    <Text Key="InvalidExportSettings" Text="Çıkış ayarları geçerli değil (Örn: Desteklenmeyen bir dosya formatını kütüphaneye eklemeye çalışıyor olabilirsiniz)" Comment="The export settings are not valid (e.g. adding a not supported format to the library)" />
+    <Text Key="SourceComicNotValid" Text="e-Çizgi Roman kaynağı geçerli değil" Comment="Source eComic is not valid" />
+    <Text Key="ExportComicTitle" Text="e-Çizgi Roman çıkışı alınacak yer:" Comment="Export eComic to" />
+    <Text Key="ComicRackMinimizedTitle" Text="ComicRack hala çalışıyor" Comment="ComicRack is still running" />
+    <Text Key="ComicRackMinimized" Text="ComicRack'den çıkmak için Dosya-&gt;Çıkış yolunu kullanabilir veya Seçenekler kısmından çıkış tercihlerinizi değiştirebilirsiniz.\nBu mesajı bir daha görmemek için buraya tıklayınız" Comment="You either close ComicRack with File/Exit or you can change this behavior in the Preferences Dialog.\nClick here to not show this message again" />
+    <Text Key="OpenGlRecover" Text="ComicRack bir OpenGL hatası yüzünden çöktü. Donanım ivmelendirmesini devre dışı bırakmak istiyor musunuz?" Comment="ComicRack crashed because of an OpenGL error. Do you wan to disable hardware acceleration?" />
+    <Text Key="ConnectRemoteError" Text="Sunucuya bağlanılamadı '{0}'" Comment="Could not connect to Remote Server '{0}'" />
+    <Text Key="CheckingDatabase" Text="Veritabanı kontrol ediliyor" Comment="Checking Database" />
+    <Text Key="CheckingDatabaseText" Text="Bütünlük kontrolü ve kayıp veri yenilemesi" Comment="Checking integrity and updating any missing Data" />
+    <Text Key="AskDirtyItems" Text="Veritabanında olmayan e-Çizgi Romanların değiştirilmiş bilgilerini kaydetmek istiyor musunuz?\nÇıkmanız durumunda kaydedilmemiş bütün değişiklikler kaybolacaktır!" Comment="Save changed information for eComics that are not in the database?\nAll changes not saved now will be lost!" />
+    <Text Key="SaveInfo" Text="e-Çizgi Romanları kaydediyor" Comment="Saving eComics" />
+    <Text Key="SaveInfoText" Text="Lütfen bütün kayıt edilmemiş bilgiler kayıt edilirken bekleyin!" Comment="Please wait while all unsaved information is stored!" />
+    <Text Key="UndoEditMultipleComics" Text="Çok sayıda e-Çizgi Romanı düzenle" Comment="Edit multiple eComics" />
+    <Text Key="UndoShowInfo" Text="e-Çizgi Roman Bilgisi" Comment="eComic Info" />
+    <Text Key="UndoScript" Text="Otomasyon '{0}'" Comment="Automation '{0}'" />
+    <Text Key="UndoEditColumn" Text="Sütunu Düzenle '{0}'" Comment="Edit Column '{0}'" />
+    <Text Key="UndoRating" Text="Puanlamayı Değiştir" Comment="Change Rating" />
+  </Texts>
+</TR>

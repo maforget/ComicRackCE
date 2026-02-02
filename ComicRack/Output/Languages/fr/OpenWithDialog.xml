@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="OpenWithDialog" CultureName="fr">
+  <Texts>
+    <Text Key="btNew" Text="&amp;Ajouter..." Comment="&amp;New..." />
+    <Text Key="btEdit" Text="&amp;Éditer..." Comment="&amp;Edit..." />
+    <Text Key="btOverride" Text="&amp;Remplacer le lecteur" Comment="&amp;Toggle Override" />
+    <Text Key="btDelete" Text="Supprimer" Comment="Delete" />
+    <Text Key="btMoveTop" Text="Déplacer en haut" Comment="Move &amp;Top" />
+    <Text Key="btMoveUp" Text="Déplacer au dessus" Comment="Move &amp;Up" />
+    <Text Key="btMoveDown" Text="Déplacer en dessous" Comment="Move &amp;Down" />
+    <Text Key="btMoveBottom" Text="Déplacer en bas" Comment="Move &amp;Bottom" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Annuler" Comment="&amp;Cancel" />
+    <Text Key="colName" Text="Nom" Comment="Name" />
+    <Text Key="colPath" Text="Chemin" Comment="Path" />
+    <Text Key="colOverride Reader" Text="Remplacement du Lecteur" Comment="Override Reader" />
+    <Text Key="btSetAll" Text="Définir pour tout" Comment="Set to All" />
+  </Texts>
+</TR>

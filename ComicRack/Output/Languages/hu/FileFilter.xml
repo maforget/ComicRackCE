@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="FileFilter" CultureName="hu">
+  <Texts>
+    <Text Key="ReadingListLoad" Text="ComicRack olvasási lista|*.cbl|Xml Fájl|*.xml|Minden fájl|*.*" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml|All Files|*.*" />
+    <Text Key="PageImageSave" Text="JPEG kép|*.jpg|Windows Bitmap kép|*.bmp|PNG kép|*.png|GIF kép|*.gif|TIFF kép|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif" />
+    <Text Key="ComicRackDatabase" Text="ComicRack adatbázis|*.xml" Comment="ComicRack Database|*.xml" />
+    <Text Key="AllFiles" Text="Minden fájl" Comment="All Files" />
+    <Text Key="AllSupportedFiles" Text="Minden támogatott fájl" Comment="All supported Files" />
+    <Text Key="FormatReadingList" Text="ComicRack olvasási lista" Comment="ComicRack Reading List" />
+    <Text Key="ReadingListSaveFilter" Text="ComicRack olvasási lista|*.cbl|ComicRack olvasási lista (egyedi bejegyzések)|*.cbl" Comment="ComicRack Reading List|*.cbl|ComicRack Reading List (Single Entries)|*.cbl" />
+    <Text Key="LoadThumbnail" Text="JPEG kép|*.jpg|Windows Bitmap kép|*.bmp|PNG kép|*.png|GIF kép|*.gif|TIFF kép|*.tif|Icon kép|*.ico" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif|Icon Image|*.ico" />
+    <Text Key="ComicRackBackup" Text="ComicRack biztonsági másolat|*.zip" Comment="ComicRack Backup|*.zip" />
+    <Text Key="ScriptPackageOpen" Text="ComicRack Bővítmény|*.crplugin|Szkript archív fájl|*.zip" Comment="ComicRack Plugin|*.crplugin|Script Archive|*.zip" />
+    <Text Key="KeyboardLayout" Text="Billentyűzet kiosztás" Comment="Keyboard Layout" />
+    <Text Key="KeyboardLayoutFilter" Text="Billentyűzet kiosztás|*.xml" Comment="Keyboard Layout|*.xml" />
+  </Texts>
+</TR>

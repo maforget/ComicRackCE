@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Matchers" CultureName="fi">
+  <Texts>
+    <Text Key="YesNoOperators" Text="On|Ei Ole|Ei tietoa" Comment="is Yes|is No|is Unknown" />
+    <Text Key="OnOffOperators" Text="Päälle|Pois" Comment="On|Off" />
+    <Text Key="ComicBookAddedMatcher" Text="Lisätty" Comment="Added" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="Kaikki" Comment="All" />
+    <Text Key="ComicBookCountMatcher" Text="Määrä" Comment="Count" />
+    <Text Key="ComicBookAlternateCountMatcher" Text="Vaihtoehtoinen määrä" Comment="Alternate Count" />
+    <Text Key="ComicBookAlternateNumberMatcher" Text="Vaihtoehtoinen numero" Comment="Alternate Number" />
+    <Text Key="ComicBookAlternateSeriesMatcher" Text="Vaihtoehtoissarja" Comment="Alternate Series" />
+    <Text Key="ComicBookColoristMatcher" Text="Värittäjä" Comment="Colorist" />
+    <Text Key="ComicBookFileMatcher" Text="Tiedosto" Comment="File" />
+    <Text Key="ComicBookFullPathMatcher" Text="Polku" Comment="File Path" />
+    <Text Key="ComicBookGenreMatcher" Text="Genre" Comment="Genre" />
+    <Text Key="ComicBookImprintMatcher" Text="Merkintä" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="Tussaaja" Comment="Inker" />
+    <Text Key="ComicBookLanguageMatcher" Text="Kieli" Comment="Language" />
+    <Text Key="ComicBookMangaMatcher" Text="Manga" Comment="Manga" />
+    <Text Key="ComicBookBlackAndWhiteMatcher" Text="MustaValkoinen" Comment="Black and White" />
+    <Text Key="ComicBookMonthMatcher" Text="Kuukausi" Comment="Month" />
+    <Text Key="ComicBookNumberMatcher" Text="Numero" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="Avattu" Comment="Opened" />
+    <Text Key="ComicBookPageCountMatcher" Text="Sivumäärä" Comment="Page Count" />
+    <Text Key="ComicBookPencillerMatcher" Text="Piirtäjä" Comment="Penciller" />
+    <Text Key="ComicBookPublisherMatcher" Text="Kustantaja" Comment="Publisher" />
+    <Text Key="ComicBookCoverArtistMatcher" Text="Kannen kuvittaja" Comment="Cover Artist" />
+    <Text Key="ComicBookRatingMatcher" Text="Oma arvio" Comment="My Rating" />
+    <Text Key="ComicBookCommunityRatingMatcher" Text="Yhteisön arvio" Comment="Community Rating" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="Lukuprosentti" Comment="Read Percentage" />
+    <Text Key="ComicBookSeriesMatcher" Text="Sarjat" Comment="Series" />
+    <Text Key="ComicBookSummaryMatcher" Text="Kooste" Comment="Summary" />
+    <Text Key="ComicBookTagsMatcher" Text="Välilehdet" Comment="Tags" />
+    <Text Key="ComicBookTitleMatcher" Text="Nimike" Comment="Title" />
+    <Text Key="ComicBookVolumeMatcher" Text="Nidos" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="Kirjoittaja" Comment="Writer" />
+    <Text Key="ComicBookYearMatcher" Text="Vuosi" Comment="Year" />
+    <Text Key="ComicBookFileFormatMatcher" Text="Tiedostomuoto" Comment="File Format" />
+    <Text Key="DateOperators" Text="on|on jälkeen|on ennen|on viimeisessä|on välillä" Comment="is|is after|is before|is in the last|is in the range" />
+    <Text Key="Days" Text="Päivää" Comment="Days" />
+    <Text Key="NumericOperators" Text="on|on suurempi|on pienempi|on välillä" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="StringOperators" Text="on|sisältää|sisältää joitain|sisältää kaikki|alkaa|loppuu|lista sisältää|säännöllinen lauseke" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
+    <Text Key="ComicBookAgeRatingMatcher" Text="Ikäsuositus" Comment="Age Rating" />
+    <Text Key="ComicBookCharactersMatcher" Text="Hahmot" Comment="Characters" />
+    <Text Key="ComicBookTeamsMatcher" Text="Ryhmät" Comment="Teams" />
+    <Text Key="ComicBookLocationsMatcher" Text="Sijainnit" Comment="Locations" />
+    <Text Key="ComicBookEditorMatcher" Text="Toimittaja" Comment="Editor" />
+    <Text Key="ComicBookPublishedMatcher" Text="Julkaistu" Comment="Published" />
+    <Text Key="ComicBookDirectoryMatcher" Text="Tiedostokansio" Comment="File Directory" />
+    <Text Key="ComicBookPluginMatcher" Text="Omat skriptit" Comment="User Scripts" />
+    <Text Key="ComicBookModifiedMatcher" Text="Muokattu" Comment="File Modified" />
+    <Text Key="ComicBookCreationMatcher" Text="Tiedosto Luotu" Comment="File Created" />
+    <Text Key="ComicBookModifiedInfoMatcher" Text="Muokattu Tieto" Comment="Modified Info" />
+    <Text Key="ComicBookIsLinkedMatcher" Text="Linkitetty tiedostoon" Comment="Linked to File" />
+    <Text Key="ComicBookBookmarkCountMatcher" Text="Kirjanmerkkien määrä" Comment="Bookmark Count" />
+    <Text Key="ComicBookDuplicateMatcher" Text="Vain kaksoiskappaleet" Comment="Only Duplicates" />
+    <Text Key="ComicBookNewPagesMatcher" Text="Uusia sivuja" Comment="New Pages" />
+    <Text Key="ComicBookFileSizeMatcher" Text="Koko" Comment="File Size" />
+    <Text Key="ComicBookBookPriceMatcher" Text="Kirjan hinta" Comment="Book Price" />
+    <Text Key="ComicBookBookStoreMatcher" Text="Kirjakauppa" Comment="Book Store" />
+    <Text Key="ComicBookBookOwnerMatcher" Text="Kirjan omistaja" Comment="Book Owner" />
+    <Text Key="ComicBookBookAgeMatcher" Text="Kirjan ikä" Comment="Book Age" />
+    <Text Key="ComicBookBookConditionMatcher" Text="Kirjan kunto" Comment="Book Condition" />
+    <Text Key="ComicBookBookCollectionStatusMatcher" Text="Kirjakokoelman Tila" Comment="Book Collection Status" />
+    <Text Key="ComicBookBookLocationMatcher" Text="Kirjan sijainti" Comment="Book Location" />
+    <Text Key="ComicBookBookNotesMatcher" Text="Kirjojen muistiinpanoa" Comment="Book Notes" />
+    <Text Key="MB" Text="MB" Comment="MB" />
+  </Texts>
+</TR>

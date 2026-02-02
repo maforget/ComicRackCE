@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListLibraryBrowser" CultureName="fi">
+  <Texts>
+    <Text Key="miEditSmartList" Text="&amp;Muokkaa..." Comment="&amp;Edit..." />
+    <Text Key="miNewFolder" Text="Uusi &amp;kansio" Comment="New &amp;Folder..." />
+    <Text Key="miNewList" Text="Uusi &amp;lista..." Comment="New &amp;List..." />
+    <Text Key="miNewSmartList" Text="&amp;Uusi älylista..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="&amp;Lajittele" Comment="&amp;Sort" />
+    <Text Key="miOpenWindow" Text="&amp;Avaa uudessa ikkunassa" Comment="&amp;Open in New Window" />
+    <Text Key="miOpenTab" Text="&amp;Avaa uudelle välilehdelle" Comment="&amp;Open in New Tab" />
+    <Text Key="miQueryRename" Text="&amp;Uudelleennimeä" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="&amp;Virkistä" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="&amp;Poista..." Comment="&amp;Re&amp;move..." />
+    <Text Key="NewFolder" Text="Uusi kansio" Comment="New Folder" />
+    <Text Key="NewList" Text="Uusi lista" Comment="New List" />
+    <Text Key="NewSmartList" Text="Uusi älylista" Comment="New Smart List" />
+    <Text Key="NewSmartListOption" Text="Kuvaa nykyinen näkymä" Comment="Snapshot of current view" />
+    <Text Key="tbExpandCollapseAll" Text="Laajenna/Romauta Kaikki" Comment="Expand/Collapse all" />
+    <Text Key="tbNewFolder" Text="Uusi &amp;kansio" Comment="New &amp;Folder" />
+    <Text Key="tbNewFolder.Tooltip" Text="Luo uusi kansio järjestääksesi listat" Comment="Create a new folder to organize your lists" />
+    <Text Key="tbNewList" Text="Uusi &amp;lista" Comment="New &amp;List" />
+    <Text Key="tbNewList.Tooltip" Text="Luo uusi lista" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="&amp;Uusi älylista" Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="Luo uusi älylista" Comment="Create a new Smart List" />
+    <Text Key="tbOpenWindow" Text="Uusi ikkuna" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Avaa lista uuteen ikkunaan" Comment="Open current list in new Window" />
+    <Text Key="tbOpenTab" Text="Uusi välilehti" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Avaa lista uudelle välilehdelle" Comment="Open current list in new Tab" />
+    <Text Key="tbRefresh" Text="Virkistä" Comment="Refresh" />
+    <Text Key="miCopyList" Text="Kopioi lista" Comment="Copy List" />
+    <Text Key="miPasteList" Text="Liitä lista" Comment="Paste List" />
+    <Text Key="miExportReadingList" Text="Lähetä lukulista..." Comment="Export Reading List..." />
+    <Text Key="miImportReadingList" Text="Tuo lukulista..." Comment="Import Reading List..." />
+    <Text Key="miFavRemove" Text="Poista" Comment="Remove" />
+    <Text Key="tbFavorites" Text="Näytä suosikit" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Suosikit" Comment="Favorites" />
+    <Text Key="miAddToFavorites" Text="Lisää suosikkeihin" Comment="Add to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Virkistä" Comment="&amp;Refresh" />
+  </Texts>
+</TR>

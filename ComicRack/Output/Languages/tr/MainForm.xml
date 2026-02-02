@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MainForm" CultureName="tr">
+  <Texts>
+    <Text Key="browseMenu" Text="&amp;Gözat" Comment="&amp;Browse" />
+    <Text Key="cmCopyPage" Text="&amp;Sayfayı Kopyala" Comment="&amp;Copy Page" />
+    <Text Key="cmExportPage" Text="&amp;Sayfa çıkışı al..." Comment="&amp;Export Page..." />
+    <Text Key="miCopyPage" Text="&amp;Sayfayı Kopyala" Comment="&amp;Copy Page" />
+    <Text Key="miExportPage" Text="&amp;Sayfa çıkışı al..." Comment="&amp;Export Page..." />
+    <Text Key="cmFitAll" Text="Hepsini Sığdır" Comment="Fit All" />
+    <Text Key="cmFitBest" Text="En iyi şekilde sığdır" Comment="Fit Best" />
+    <Text Key="cmFitHeight" Text="Yükseklemesine Sığdır" Comment="Fit Height" />
+    <Text Key="cmFitWidth" Text="Genişlemesine Sığdır" Comment="Fit Width" />
+    <Text Key="cmMagnify" Text="&amp;Büyüteç" Comment="&amp;Magnifier" />
+    <Text Key="cmNextFromList" Text="So&amp;nraki e-Çizgi Roman" Comment="Ne&amp;xt eComic" />
+    <Text Key="cmRandomFromList" Text="Rastgele bir Çizgiroman" Comment="Random eComic" />
+    <Text Key="cmNotifyExit" Text="&amp;Çıkış" Comment="&amp;Exit" />
+    <Text Key="cmNotifyRestore" Text="&amp;Eski haline döndür" Comment="&amp;Restore" />
+    <Text Key="cmPrevFromList" Text="Ön&amp;ceki e-Çizgi Roman" Comment="Pre&amp;vious eComic" />
+    <Text Key="cmRate0" Text="Yok" Comment="None" />
+    <Text Key="cmRate1" Text="* (1 Yıldız)" Comment="* (1 Star)" />
+    <Text Key="cmRate2" Text="** (2 Yıldız)" Comment="** (2 Stars)" />
+    <Text Key="cmRate3" Text="*** (3 Yıldız)" Comment="*** (3 Stars)" />
+    <Text Key="cmRate4" Text="**** (4 Yıldız)" Comment="**** (4 Stars)" />
+    <Text Key="cmRate5" Text="***** (5 Yıldız)" Comment="***** (5 Stars)" />
+    <Text Key="cmRating" Text="P&amp;uanım" Comment="My R&amp;ating" />
+    <Text Key="cmRefreshPage" Text="&amp;Yenile" Comment="&amp;Refresh" />
+    <Text Key="cmShowInfo" Text="&amp;Bilgi Al..." Comment="&amp;Get Info..." />
+    <Text Key="cmSyncBrowser" Text="&amp;Tarayıcı içinde görüntüle" Comment="Show in &amp;Browser" />
+    <Text Key="ExportingComics" Text="e-Çizgi Romanlardan çıkış alınıyor: {0} adet sırada" Comment="Exporting eComics: {0} queued" />
+    <Text Key="ExportingErrors" Text="{0} Hatalar oluştu. Detaylar için tıklayın." Comment="{0} errors. Click for details" />
+    <Text Key="displayMenu" Text="&amp;Göster" Comment="&amp;Display" />
+    <Text Key="editMenu" Text="&amp;Düzenle" Comment="&amp;Edit" />
+    <Text Key="fileMenu" Text="&amp;Dosya" Comment="&amp;File" />
+    <Text Key="helpMenu" Text="&amp;Yardım" Comment="&amp;Help" />
+    <Text Key="MainForm" Text="ComicRack " Comment="ComicRack" />
+    <Text Key="miAbout" Text="&amp;Hakkında..." Comment="&amp;About..." />
+    <Text Key="miAddFolderToLibrary" Text="&amp;Klasörü Kütüphaneye ekle..." Comment="&amp;Add Folder to Library..." />
+    <Text Key="miAddTab" Text="Yeni &amp;Sekme" Comment="New &amp;Tab" />
+    <Text Key="miBestFit" Text="En iyi şekilde &amp;sığdır" Comment="Fit &amp;Best" />
+    <Text Key="miCloseAllComics" Text="Herşeyi Ka&amp;pat" Comment="Close A&amp;ll" />
+    <Text Key="miCloseComic" Text="&amp;Kapat" Comment="&amp;Close" />
+    <Text Key="miDeleteListLayout" Text="&amp;Liste şablonunu sil..." Comment="&amp;Delete List Layout..." />
+    <Text Key="miDeleteWorkspace" Text="&amp;Çalışma alanını sil..." Comment="&amp;Delete Workspace..." />
+    <Text Key="miEditListLayout" Text="&amp;Liste şablonunu düzenle..." Comment="&amp;Edit List Layout..." />
+    <Text Key="miExit" Text="&amp;Çıkış" Comment="&amp;Exit" />
+    <Text Key="miFileAutomation" Text="O&amp;tomasyon" Comment="A&amp;utomation" />
+    <Text Key="miFirstPage" Text="&amp;İlk Sayfa" Comment="&amp;First Page" />
+    <Text Key="miFitAll" Text="Hepsini &amp;Sığdır" Comment="Fit &amp;All" />
+    <Text Key="miFitHeight" Text="Yükseklemesine &amp;Sığdır" Comment="Fit &amp;Height" />
+    <Text Key="miFitWidth" Text="Genişlemesine &amp;Sığdır" Comment="Fit &amp;Width" />
+    <Text Key="miFullScreen" Text="&amp;Tam Ekran" Comment="&amp;Full Screen" />
+    <Text Key="miLastPage" Text="&amp;Son Sayfa" Comment="&amp;Last Page" />
+    <Text Key="miLastPageRead" Text="S&amp;on okunan sayfa" Comment="L&amp;ast Page Read" />
+    <Text Key="miListLayouts" Text="Liste Şablonu" Comment="List Layout" />
+    <Text Key="miNews" Text="&amp;Haberler..." Comment="&amp;News..." />
+    <Text Key="miNextFromList" Text="So&amp;nraki e-Çizgi Roman" Comment="Ne&amp;xt eComic" />
+    <Text Key="miRandomFromList" Text="Rastgele bir Çizgiroman" Comment="Random eComic" />
+    <Text Key="miNextPage" Text="&amp;Sonraki Sayfa" Comment="&amp;Next Page" />
+    <Text Key="miNextTab" Text="Sonraki &amp;Sekme" Comment="Next &amp;Tab" />
+    <Text Key="miMagnify" Text="&amp;Büyüteç" Comment="&amp;Magnifier" />
+    <Text Key="miOpenComic" Text="&amp;e-Çizgi Roman aç..." Comment="&amp;Open eComic..." />
+    <Text Key="cmOpenComic" Text="&amp;e-Çizgi Roman aç..." Comment="&amp;Open eComic..." />
+    <Text Key="miOpenNow" Text="e-Çiz&amp;gi Romanları aç" Comment="Open eCo&amp;mics" />
+    <Text Key="miOpenRecent" Text="&amp;Yeni e-Çizgi Romanlar" Comment="&amp;Recent eComics" />
+    <Text Key="miPageType" Text="&amp;Sayfa Türü" Comment="&amp;Page Type" />
+    <Text Key="cmPageType" Text="&amp;Sayfa Türü" Comment="&amp;Page Type" />
+    <Text Key="miPreferences" Text="&amp;Seçenekler..." Comment="&amp;Preferences..." />
+    <Text Key="miPrevFromList" Text="Ön&amp;ceki e-Çizgi Roman" Comment="Pre&amp;vious eComic" />
+    <Text Key="miPrevPage" Text="&amp;Önceki Sayfa" Comment="&amp;Previous Page" />
+    <Text Key="miPrevTab" Text="&amp;Önceki Sekme" Comment="&amp;Previous Tab" />
+    <Text Key="miRate0" Text="Yok" Comment="None" />
+    <Text Key="miRate1" Text="* (1 Yıldız)" Comment="* (1 Star)" />
+    <Text Key="miRate2" Text="** (2 Yıldız)" Comment="** (2 Stars)" />
+    <Text Key="miRate3" Text="*** (3 Yıldız)" Comment="*** (3 Stars)" />
+    <Text Key="miRate4" Text="**** (4 Yıldız)" Comment="**** (4 Stars)" />
+    <Text Key="miRate5" Text="***** (5 Yıldız)" Comment="***** (5 Stars)" />
+    <Text Key="miRating" Text="P&amp;uanım" Comment="My R&amp;ating" />
+    <Text Key="miRestart" Text="Yeniden Ba&amp;şlat" Comment="Rest&amp;art" />
+    <Text Key="miRotate0" Text="&amp;Dönme eylemi yok" Comment="&amp;No Rotation" />
+    <Text Key="miRotate180" Text="180° " Comment="180°" />
+    <Text Key="miRotate270" Text="270° " Comment="270°" />
+    <Text Key="miRotate90" Text="90° " Comment="90°" />
+    <Text Key="cmRotate0" Text="&amp;Dönme eylemi yok" Comment="&amp;No Rotation" />
+    <Text Key="cmRotate180" Text="180° " Comment="180°" />
+    <Text Key="cmRotate270" Text="270° " Comment="270°" />
+    <Text Key="cmRotate90" Text="90° " Comment="90°" />
+    <Text Key="miRotation" Text="&amp;Döndür" Comment="&amp;Rotation" />
+    <Text Key="miSaveListLayout" Text="&amp;Liste şablonunu kaydet..." Comment="&amp;Save List Layout..." />
+    <Text Key="miSaveWorkspace" Text="&amp;Çalışma alanını kaydet..." Comment="&amp;Save Workspace..." />
+    <Text Key="miScan" Text="e-Çizgi Romanların &amp;Klasörlerini tara" Comment="Scan eComic &amp;Folders" />
+    <Text Key="miAutoScroll" Text="Otomatik Kaydır" Comment="Auto Scrolling" />
+    <Text Key="miSearchBrowser" Text="Tarayıcıyı Araştır" Comment="S&amp;earch Browser" />
+    <Text Key="miSetAllListsSame" Text="Tüm listeleri seçili şablona göre kaydet" Comment="Set all Lists to current Layout" />
+    <Text Key="miShowInfo" Text="&amp;Bilgi Al..." Comment="&amp;Get Info..." />
+    <Text Key="miSidebar" Text="&amp;Yan Araç Çubuğu" Comment="&amp;Sidebar" />
+    <Text Key="miSmallPreview" Text="Kü&amp;çük Önizleme" Comment="S&amp;mall Preview" />
+    <Text Key="miSupport" Text="ComicRack'ı destekle..." Comment="Support ComicRack..." />
+    <Text Key="miSyncBrowser" Text="&amp;Tarayıcı içinde görüntüle" Comment="Show in &amp;Browser" />
+    <Text Key="miToggleBrowser" Text="&amp;Tarayıcı" Comment="&amp;Browser" />
+    <Text Key="miTwoPages" Text="&amp;Çift Sayfa" Comment="&amp;Two Pages" />
+    <Text Key="miView100" Text="100%" Comment="100 %" />
+    <Text Key="miView150" Text="150%" Comment="150 %" />
+    <Text Key="miView200" Text="200%" Comment="200 %" />
+    <Text Key="miView300" Text="300%" Comment="300 %" />
+    <Text Key="miView400" Text="400%" Comment="400 %" />
+    <Text Key="miViewFolders" Text="&amp;Klasörler" Comment="&amp;Folders" />
+    <Text Key="miViewLibrary" Text="Kü&amp;tüphane" Comment="Li&amp;brary" />
+    <Text Key="miViewPages" Text="&amp;Sayfalar" Comment="&amp;Pages" />
+    <Text Key="miViewRefresh" Text="&amp;Yenile" Comment="&amp;Refresh" />
+    <Text Key="miWebHome" Text="ComicRack Ana Sayfa..." Comment="ComicRack Homepage..." />
+    <Text Key="miWebUserForum" Text="ComicRack Kullanıcı Forumu..." Comment="ComicRack User Forum..." />
+    <Text Key="miWorkspaces" Text="&amp;Çalışma alanları" Comment="&amp;Workspaces" />
+    <Text Key="miZoom" Text="Odak" Comment="Zoom" />
+    <Text Key="readMenu" Text="&amp;Oku" Comment="&amp;Read" />
+    <Text Key="SetLayoutMenu" Text="'{0}' adlı şablonu kaydet" Comment="Set '{0}' Layout" />
+    <Text Key="tbBestFit" Text="En iyi şekilde sığdır" Comment="Fit Best" />
+    <Text Key="tbDisplayLabel" Text="Göster" Comment="Display" />
+    <Text Key="tbFirstPage" Text="İlk Sayfa" Comment="First Page" />
+    <Text Key="tbFirstPage.Tooltip" Text="İlk sayfaya git" Comment="Go to first page" />
+    <Text Key="tbFit" Text="Sığdır" Comment="Fit" />
+    <Text Key="tbFit.Tooltip" Text="Tam Uyum Moduna Geçiş Yap" Comment="Toggle Fit Mode" />
+    <Text Key="tbFitAll" Text="Hepsini Sığdır" Comment="Fit All" />
+    <Text Key="tbFitHeight" Text="Yükseklemesine Sığdır" Comment="Fit Height" />
+    <Text Key="tbFitWidth" Text="Genişlemesine Sığdır" Comment="Fit Width" />
+    <Text Key="tbFullScreen" Text="Tam Ekran" Comment="Full Screen" />
+    <Text Key="tbLastPage" Text="Son Sayfa" Comment="Last Page" />
+    <Text Key="tbLastPage.Tooltip" Text="Son sayfaya git" Comment="Go to last page" />
+    <Text Key="tbLock" Text="Kilitle" Comment="Lock" />
+    <Text Key="tbLock.Tooltip" Text="Araç çubuğunun her zaman göründüğünü kontrol et" Comment="Check to always display the Toolbar" />
+    <Text Key="tbMagnify" Text="Büyüteç" Comment="Magnifier" />
+    <Text Key="tbNextFromList" Text="Listede bir sonraki e-Çizgi Roman" Comment="Next eComic from List" />
+    <Text Key="tbNextFromList.Tooltip" Text="Listeden bir sonraki e-Çizgi Romanı aç" Comment="Open the next eComic in the list" />
+    <Text Key="tbRandomFromList" Text="Rastgele bir Çizgiroman" Comment="Random eComic" />
+    <Text Key="tbRandomFromList.Tooltip" Text="Listeden rastgele bir e-Çizgi Roman açar" Comment="Opens a random eComic from the list" />
+    <Text Key="tbNextPage" Text="Sonraki Sayfa" Comment="Next Page" />
+    <Text Key="tbNextPage.Tooltip" Text="Sonraki sayfaya git" Comment="Go to next page" />
+    <Text Key="tbNextTab" Text="Sonraki &amp;Sekme" Comment="Next &amp;Tab" />
+    <Text Key="tbNextTab.Tooltip" Text="Sonraki Sekme" Comment="Next Tab" />
+    <Text Key="tbPrevFromList" Text="Listeden bir önceki e-Çizgi Romanı seç" Comment="Previous eComic from List" />
+    <Text Key="tbPrevFromList.Tooltip" Text="Listeden bir önceki e-Çizgi Romanı aç" Comment="Open the previous eComic in the list" />
+    <Text Key="tbPrevPage" Text="Önceki sayfa" Comment="Previous Page" />
+    <Text Key="tbPrevPage.Tooltip" Text="Önceki sayfaya git" Comment="Go to previous page" />
+    <Text Key="tbPrevTab" Text="&amp;Önceki Sekme" Comment="&amp;Previous Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="Önceki Sekmeye" Comment="Vorheriger Tab" />
+    <Text Key="tbReadLabel" Text="Oku" Comment="Read" />
+    <Text Key="tbAutoScroll" Text="Otomatik Kaydır" Comment="Auto Scrolling" />
+    <Text Key="tbAutoScroll.Tooltip" Text="Otomatik kaydırmayı açıp kapatır" Comment="Toggles Auto scrolling on or off" />
+    <Text Key="tbShowInfo" Text="Bilgi" Comment="Info" />
+    <Text Key="tbShowInfo.Tooltip" Text="Bilgiyi göster" Comment="Show information" />
+    <Text Key="tbTwoPages" Text="Çift Sayfa" Comment="Two Pages" />
+    <Text Key="tbTwoPages.Tooltip" Text="Tek veya çift sayfa göster" Comment="Show one or two pages" />
+    <Text Key="cmTwoPages" Text="&amp;Çift Sayfa" Comment="&amp;Two Pages" />
+    <Text Key="toolStripSplitButton1" Text="Sayfa Düzeni" Comment="Page Layout" />
+    <Text Key="tsBook" Text="Kitap" Comment="Book" />
+    <Text Key="tsBook.Tooltip" Text="Açılmış e-Çizgi Romanın adı" Comment="Name of the opened eComic" />
+    <Text Key="tsExportActivity" Text="Çıkış alıyor" Comment="Exporting" />
+    <Text Key="tsCurrentPage" Text="Sayfa" Comment="Page" />
+    <Text Key="tsCurrentPage.Tooltip" Text="Şu anki sayfa" Comment="Current Page of the open eComic" />
+    <Text Key="tsDeleteWorkspace" Text="&amp;Çalışma alanını sil..." Comment="&amp;Delete Workspace..." />
+    <Text Key="tsPageActivity.Tooltip" Text="Sayfaları ve küçük resimleri alıyor..." Comment="Getting Pages and Thumbnails..." />
+    <Text Key="tsPageCount" Text="0 Sayfa" Comment="0 Pages" />
+    <Text Key="tsPageCount.Tooltip" Text="Açık e-Çizgi Romanın sayfa sayısı" Comment="Page count of the open eComic" />
+    <Text Key="tsSaveWorkspace" Text="&amp;Çalışma alanını kaydet..." Comment="&amp;Save Workspace..." />
+    <Text Key="tsScanActivity.Tooltip" Text="Tarama sürüyor..." Comment="A scan is running..." />
+    <Text Key="tsText" Text="Hazır" Comment="Ready" />
+    <Text Key="tsWriteInfoActivity.Tooltip" Text="Dosyalara gerekli bilgiler aktarılıyor..." Comment="Writing info data to files..." />
+    <Text Key="tsReadInfoActivity.Tooltip" Text="Dosyalardan bilgi alınıyor..." Comment="Reading info data from files..." />
+    <Text Key="tsWorkspaces" Text="Çalışma Alanları" Comment="Workspaces" />
+    <Text Key="tsWorkspaces.Tooltip" Text="Çalışma Alanlarını düzenle" Comment="Manage Workspaces" />
+    <Text Key="miReaderUndocked" Text="Okuyucuyu kendi penceresinde aç" Comment="Reader in own Window" />
+    <Text Key="tbReaderUndocked" Text="Okuyucuyu kendi penceresinde aç" Comment="Reader in own Window" />
+    <Text Key="miPageLayout" Text="Sayfa Düzeni" Comment="Page Layout" />
+    <Text Key="cmPageLayout" Text="Sayfa Düzeni" Comment="Page Layout" />
+    <Text Key="miAdaptiveTwoPageFitting" Text="Çift sayfa görüntüsüne uyarla" Comment="Adapt to double page spreads" />
+    <Text Key="cmAdaptiveTwoPageFitting" Text="Çift sayfa görüntüsüne uyarla" Comment="Adapt to double page spreads" />
+    <Text Key="tbAdaptiveTwoPageFitting" Text="Çift sayfa görüntüsüne uyarla" Comment="Adapt to double page spreads" />
+    <Text Key="miOriginal" Text="Orjinal Boyut" Comment="Original Size" />
+    <Text Key="tbOriginal" Text="Orjinal Boyut" Comment="Original Size" />
+    <Text Key="cmOriginal" Text="Orjinal Boyut" Comment="Original Size" />
+    <Text Key="NotifyIconText" Text="Eski hale dönmek için Çift Tıklayın" Comment="Double Click to restore" />
+    <Text Key="cmOnlyFitOversized" Text="Eğer çok büyükse yeniden boyutlandır" Comment="Only Fit if oversized" />
+    <Text Key="miOnlyFitOversized" Text="Eğer çok büyükse yeniden boyutlandır" Comment="Only Fit if oversized" />
+    <Text Key="tbOnlyFitOversized" Text="Eğer çok büyükse yeniden boyutlandır" Comment="Only Fit if oversized" />
+    <Text Key="ChangeItemSize" Text="Liste boyutunu değiştir" Comment="Change size of the list items" />
+    <Text Key="miDoublePageAutoScroll" Text="Otomatik Çift Sayfa Kaydırma" Comment="Double Page Auto Scrolling" />
+    <Text Key="cmFitWidthAdaptive" Text="Genişlemesine Sığdır (uyumlu)" Comment="Fit Width (adaptive)" />
+    <Text Key="miFitWidthAdaptive" Text="Genişlemesine Sığdır (uyumlu)" Comment="Fit Width (adaptive)" />
+    <Text Key="tbFitWidthAdaptive" Text="Genişlemesine Sığdır (uyumlu)" Comment="Fit Width (adaptive)" />
+    <Text Key="cmRightToLeft" Text="Sağdan sola" Comment="Right to Left" />
+    <Text Key="tbRightToLeft" Text="Sağdan sola" Comment="Right to Left" />
+    <Text Key="miRightToLeft" Text="Sağdan sola" Comment="Right to Left" />
+    <Text Key="miMinimalGui" Text="Minimal Kullanıcı Arayüzü" Comment="Minimal User Interface" />
+    <Text Key="tbMinimalGui" Text="Minimal Kullanıcı Arayüzü" Comment="Minimal User Interface" />
+    <Text Key="cmMinimalGui" Text="Minimal Kullanıcı Arayüzü" Comment="Minimal User Interface" />
+    <Text Key="miWebHelp" Text="ComicRack Dokümanları..." Comment="ComicRack Documentation..." />
+    <Text Key="miBookmarks" Text="Yer İmleri" Comment="Bookmarks" />
+    <Text Key="miSetBookmark" Text="Yer İmi Kaydet..." Comment="Set Bookmark..." />
+    <Text Key="miRemoveBookmark" Text="Yer İmini kaldır" Comment="Remove Bookmark" />
+    <Text Key="tbBookmarks" Text="Yer İmleri" Comment="Bookmarks" />
+    <Text Key="tbBookmarks.Tooltip" Text="Yer İmleri" Comment="Bookmarks" />
+    <Text Key="tbSetBookmark" Text="Yer İmi Kaydet..." Comment="Set Bookmark..." />
+    <Text Key="tbRemoveBookmark" Text="Yer İmini kaldır" Comment="Remove Bookmark" />
+    <Text Key="tbLastPageRead" Text="Son Sayfa Okuması" Comment="Last Page Read" />
+    <Text Key="cmBookmarks" Text="Yer İmleri" Comment="Bookmarks" />
+    <Text Key="cmSetBookmark" Text="Yer İmi Kaydet..." Comment="Set Bookmark..." />
+    <Text Key="cmRemoveBookmark" Text="Yer İmini kaldır" Comment="Remove Bookmark" />
+    <Text Key="cmLastPageRead" Text="Son Sayfa Okuması" Comment="Last Page Read" />
+    <Text Key="miPrevBookmark" Text="Önceki yer imi" Comment="Previous Bookmark" />
+    <Text Key="miNextBookmark" Text="Sonraki Yer İmi" Comment="Next Bookmark" />
+    <Text Key="tbPrevBookmark" Text="Önceki yer imi" Comment="Previous Bookmark" />
+    <Text Key="tbNextBookmark" Text="Sonraki Yer İmi" Comment="Next Bookmark" />
+    <Text Key="cmPrevBookmark" Text="Önceki yer imi" Comment="Previous Bookmark" />
+    <Text Key="cmNextBookmark" Text="Sonraki Yer İmi" Comment="Next Bookmark" />
+    <Text Key="miZoomIn" Text="Yaklaş" Comment="Zoom In" />
+    <Text Key="tbZoomIn" Text="Yaklaş" Comment="Zoom In" />
+    <Text Key="miZoomOut" Text="Uzaklaş" Comment="Zoom Out" />
+    <Text Key="tbZoomOut" Text="Uzaklaş" Comment="Zoom Out" />
+    <Text Key="miZoomCustom" Text="Modifikasyon..." Comment="Custom..." />
+    <Text Key="tbZoomCustom" Text="Modifikasyon..." Comment="Custom..." />
+    <Text Key="tbZoom.Tooltip" Text="Sayfa yakınlaştırmasını değiştir" Comment="Change the page zoom" />
+    <Text Key="tbRotate.Tooltip" Text="Sayfa dönüşünü değiştir" Comment="Change the page rotation" />
+    <Text Key="miRotateLeft" Text="Sola Döndür" Comment="Rotate Left" />
+    <Text Key="miRotateRight" Text="Sağa Çevir" Comment="Rotate Right" />
+    <Text Key="miRotate0" Text="&amp;Dönme eylemi yok" Comment="&amp;No Rotation" />
+    <Text Key="miRotate180" Text="180° " Comment="180°" />
+    <Text Key="miRotate270" Text="270° " Comment="270°" />
+    <Text Key="miRotate90" Text="90° " Comment="90°" />
+    <Text Key="tbRotateLeft" Text="Sola Döndür" Comment="Rotate Left" />
+    <Text Key="tbRotateRight" Text="Sağa Çevir" Comment="Rotate Right" />
+    <Text Key="tbRotate0" Text="&amp;Dönme eylemi yok" Comment="&amp;No Rotation" />
+    <Text Key="tbRotate180" Text="180° " Comment="180°" />
+    <Text Key="tbRotate270" Text="270° " Comment="270°" />
+    <Text Key="tbRotate90" Text="90° " Comment="90°" />
+    <Text Key="tbAutoRotate" Text="Çift sayfaları otomatik döndür" Comment="Autorotate Double Pages" />
+    <Text Key="miAutoRotate" Text="Çift sayfaları otomatik döndür" Comment="Autorotate Double Pages" />
+    <Text Key="cmCloseAllButThis" Text="Bu Hariç Her Şeyi Kapat" Comment="Close All But This" />
+    <Text Key="cmCopyPath" Text="Tüm yolu Kopyala" Comment="Copy Full Path" />
+    <Text Key="cmRevealInExplorer" Text="Explorer içinde Göster" Comment="Reveal in Explorer" />
+    <Text Key="cmClose" Text="Kapat" Comment="Close" />
+    <Text Key="cmCloseComic" Text="Kapat" Comment="Close" />
+    <Text Key="miPendingTasks" Text="Beklemede Kalan İşlemler..." Comment="Pending Tasks..." />
+    <Text Key="SavePageTitle" Text="Sayfayı farklı kaydet" Comment="Save Page as..." />
+    <Text Key="cmPageRotate" Text="Sayfa Döndürme" Comment="Page Rotation" />
+    <Text Key="miPageRotate" Text="Sayfa Döndürme" Comment="Page Rotation" />
+    <Text Key="miOpenRemoteLibrary" Text="Uzak kütüphane aç..." Comment="Open Remote Library..." />
+    <Text Key="miUpdateAllComicFiles" Text="Bütün e-Çizgi Roman dosyalarını güncelle" Comment="Update all eComic Files" />
+    <Text Key="miUndo" Text="Geri Al" Comment="Undo" />
+    <Text Key="miRedo" Text="Tekrarla" Comment="Redo" />
+  </Texts>
+</TR>

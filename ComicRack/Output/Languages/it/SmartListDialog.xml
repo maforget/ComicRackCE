@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SmartListDialog" CultureName="it">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Annulla" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelMatch" Text="Confronta" Comment="Match" />
+    <Text Key="MatchMode" Text="Tutti|Qualsiasi" Comment="All|Any" />
+    <Text Key="btApply" Text="&amp;Applica" Comment="&amp;Apply" />
+    <Text Key="btPrev" Text="&amp;Precedente" Comment="&amp;Previous" />
+    <Text Key="btNext" Text="&amp;Prossimo" Comment="&amp;Next" />
+    <Text Key="labelRules" Text="delle seguenti regole:" Comment="of the following rules on" />
+    <Text Key="SmartListDialog" Text="Modifica Lista Intelligente" Comment="Edit Smart List" />
+    <Text Key="chkLimit" Text="Limita a" Comment="Limit to" />
+    <Text Key="chkQuickOpen" Text="Apri Rapido" Comment="Quick Open" />
+    <Text Key="cbLimitType.Item0" Text="Album" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="MB" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="GB" Comment="GB" />
+    <Text Key="FullLibrary" Text="Libreria Completa" Comment="Full Library" />
+    <Text Key="labelSubRules" Text="delle Regole seguenti:" Comment="of the following rules:" />
+    <Text Key="labelName" Text="Nome:" Comment="Name:" />
+    <Text Key="labelNotes" Text="Note:" Comment="Notes:" />
+    <Text Key="SmartListQueryDialog" Text="Modifica Lista Intelligente" Comment="Edit Smart List" />
+    <Text Key="labelFilterReset" Text="Alcuni aAlbum sono stati rimossi manualmente dall Lista" Comment="Some Books have been manually remove from the list" />
+    <Text Key="btFilterReset" Text="Resetta" Comment="Reset" />
+    <Text Key="miInsertMatch" Text="Inserisci Paragone" Comment="Insert Match" />
+    <Text Key="miInsertValue" Text="Inserisci Valore" Comment="Insert Value" />
+  </Texts>
+</TR>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DisplaySetupDialog" CultureName="zh-CN">
+  <Texts>
+    <Text Key="btCancel" Text="取消(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="确定(&amp;O)" Comment="&amp;OK" />
+    <Text Key="btApply" Text="应用(&amp;A)" Comment="&amp;Apply" />
+    <Text Key="chkPageMargin" Text="页边留空" Comment="Leave margins around the pages" />
+    <Text Key="labelPaging" Text="页面过渡:" Comment="Page Transition:" />
+    <Text Key="labelBackgroundColor" Text="颜色:" Comment="Color:" />
+    <Text Key="labelBackgroundType" Text="类型:" Comment="Type:" />
+    <Text Key="labelBackgroundTexture" Text="材质:" Comment="Texture:" />
+    <Text Key="cbBackgroundType.Item0" Text="适应当前页面的颜色" Comment="Adjust Color to current Page" />
+    <Text Key="cbBackgroundType.Item1" Text="颜色" Comment="Color" />
+    <Text Key="cbBackgroundType.Item2" Text="材质" Comment="Texture" />
+    <Text Key="cbPageTransition.Item0" Text="无页面过渡效果" Comment="No Page Transition Effect" />
+    <Text Key="cbPageTransition.Item1" Text="淡入页面" Comment="Page fades in" />
+    <Text Key="cbPageTransition.Item2" Text="水平滚动页面" Comment="Page scrolls in horizontally" />
+    <Text Key="cbPageTransition.Item3" Text="垂直滚动页面" Comment="Page scrolls in vertically" />
+    <Text Key="cbPageTransition.Item4" Text="翻页效果" Comment="Page Turn Effect" />
+    <Text Key="grpGeneral" Text="常规" Comment="General" />
+    <Text Key="grpEffects" Text="特效" Comment="Effects" />
+    <Text Key="grpBackground" Text="背景" Comment="Background" />
+    <Text Key="labelPaper" Text="纸质:" Comment="Paper:" />
+    <Text Key="labelPaperStrength" Text="强度:" Comment="Strength:" />
+    <Text Key="cbPaperLayout.Item0" Text="无" Comment="None" />
+    <Text Key="cbPaperLayout.Item1" Text="平铺" Comment="Tile" />
+    <Text Key="cbPaperLayout.Item2" Text="居中" Comment="Center" />
+    <Text Key="cbPaperLayout.Item3" Text="强度" Comment="Stretch" />
+    <Text Key="cbPaperLayout.Item4" Text="缩放" Comment="Zoom" />
+    <Text Key="cbTextureLayout.Item0" Text="无" Comment="None" />
+    <Text Key="cbTextureLayout.Item1" Text="平铺" Comment="Tile" />
+    <Text Key="cbTextureLayout.Item2" Text="居中" Comment="Center" />
+    <Text Key="cbTextureLayout.Item3" Text="强度" Comment="Stretch" />
+    <Text Key="cbTextureLayout.Item4" Text="缩放" Comment="Zoom" />
+    <Text Key="ComicDisplaySettingsDialog" Text="书籍显示设置" Comment="Book Display Settings" />
+    <Text Key="chkRealisticPages" Text="显示真实页面效果" Comment="Realistic Page Display" />
+  </Texts>
+</TR>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="KeyboardShortcutEditor" CultureName="hu">
+  <Texts>
+    <Text Key="chkAlt1" Text="Alt" Comment="Alt" />
+    <Text Key="chkAlt2" Text="Alt" Comment="Alt" />
+    <Text Key="chkCtrl1" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkCtrl2" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkShift1" Text="Shift" Comment="Shift" />
+    <Text Key="chkShift2" Text="Shift" Comment="Shift" />
+    <Text Key="colAction" Text="Művelet" Comment="Action" />
+    <Text Key="colKeys" Text="Billentyűk" Comment="Keys" />
+    <Text Key="labelAlternateKey" Text="Másodlagos:" Comment="Alternate:" />
+    <Text Key="labelMainKey" Text="Elsődleges:" Comment="Main:" />
+    <Text Key="NothingSelected" Text="Nincs művelet kiválasztva" Comment="No action selected" />
+    <Text Key="chkAlt3" Text="Alt" Comment="Alt" />
+    <Text Key="chkCtrl3" Text="Ctrl" Comment="Ctrl" />
+    <Text Key="chkShift3" Text="Shift" Comment="Shift" />
+    <Text Key="labelAlternate2Key" Text="Alternate:" Comment="Alternate:" />
+    <Text Key="GetKeyCaption" Text="Nyomja le a billentyűt" Comment="Press Key" />
+    <Text Key="GetKeyDescription" Text="Nyomja le a kiválasztott kombinációt, vagy zárja be az ablakot" Comment="Press your key combination or close this window" />
+  </Texts>
+</TR>

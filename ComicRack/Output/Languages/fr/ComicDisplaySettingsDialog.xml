@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DisplaySetupDialog" CultureName="fr">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Annuler" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btApply" Text="&amp;Appliquer" Comment="&amp;Apply" />
+    <Text Key="chkPageMargin" Text="Laisser des marges autour des pages" Comment="Leave margins around the pages" />
+    <Text Key="labelPaging" Text="Transition :" Comment="Page Transition:" />
+    <Text Key="labelPaper" Text="Papier :" Comment="Paper:" />
+    <Text Key="labelBackgroundColor" Text="Couleur :" Comment="Color:" />
+    <Text Key="labelBackgroundType" Text="Type :" Comment="Type:" />
+    <Text Key="labelBackgroundTexture" Text="Texture :" Comment="Texture:" />
+    <Text Key="cbBackgroundType.Item0" Text="Ajuster la couleur à la page actuelle" Comment="Adjust Color to current Page" />
+    <Text Key="cbBackgroundType.Item1" Text="Couleur" Comment="Color" />
+    <Text Key="cbBackgroundType.Item2" Text="Texture" Comment="Texture" />
+    <Text Key="cbPageTransition.Item0" Text="Pas d'effet de transition" Comment="No Page Transition Effect" />
+    <Text Key="cbPageTransition.Item1" Text="La page apparaît en fondu" Comment="Page fades in" />
+    <Text Key="cbPageTransition.Item2" Text="La page apparaît horizontallement" Comment="Page scrolls in horizontally" />
+    <Text Key="cbPageTransition.Item3" Text="La page apparaît verticalement" Comment="Page scrolls in vertically" />
+    <Text Key="cbPageTransition.Item4" Text="Tourner la page" Comment="Page Turn Effect" />
+    <Text Key="grpGeneral" Text="Général" Comment="General" />
+    <Text Key="grpEffects" Text="Effets" Comment="Effects" />
+    <Text Key="grpBackground" Text="Fond" Comment="Background" />
+    <Text Key="labelPaperStrength" Text="Grain :" Comment="Strength:" />
+    <Text Key="cbPaperLayout.Item0" Text="Aucun" Comment="None" />
+    <Text Key="cbPaperLayout.Item1" Text="Mosaïque" Comment="Tile" />
+    <Text Key="cbPaperLayout.Item2" Text="Centre" Comment="Center" />
+    <Text Key="cbPaperLayout.Item3" Text="Étirer" Comment="Stretch" />
+    <Text Key="cbPaperLayout.Item4" Text="Zoom" Comment="Zoom" />
+    <Text Key="cbTextureLayout.Item0" Text="Aucune" Comment="None" />
+    <Text Key="cbTextureLayout.Item1" Text="Mosaïque" Comment="Tile" />
+    <Text Key="cbTextureLayout.Item2" Text="Centre" Comment="Center" />
+    <Text Key="cbTextureLayout.Item3" Text="Étirer" Comment="Stretch" />
+    <Text Key="cbTextureLayout.Item4" Text="Zoom" Comment="Zoom" />
+    <Text Key="ComicDisplaySettingsDialog" Text="Options d'affichage des Livres" Comment="Book Display Settings" />
+    <Text Key="chkRealisticPages" Text="Affichage réaliste des Livres" Comment="Realistic Page Display" />
+  </Texts>
+</TR>

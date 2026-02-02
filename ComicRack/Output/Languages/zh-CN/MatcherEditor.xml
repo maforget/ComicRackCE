@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MatcherEditor" CultureName="zh-CN">
+  <Texts>
+    <Text Key="miNewRule" Text="添加规则" Comment="New Rule" />
+    <Text Key="miNewGroup" Text="添加规则组" Comment="New Group" />
+    <Text Key="miDelete" Text="删除" Comment="Delete" />
+    <Text Key="miCut" Text="剪切" Comment="Cut" />
+    <Text Key="miCopy" Text="复制" Comment="Copy" />
+    <Text Key="miPaste" Text="粘贴" Comment="Paste" />
+    <Text Key="miMoveUp" Text="上移" Comment="Move Up" />
+    <Text Key="miMoveDown" Text="下移" Comment="Move Down" />
+  </Texts>
+</TR>

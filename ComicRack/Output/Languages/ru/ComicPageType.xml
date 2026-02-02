@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicPageType" CultureName="ru">
+  <Texts>
+    <Text Key="Advertisment" Text="Реклама" Comment="Advertisment" />
+    <Text Key="BackCover" Text="Задняя обложка" Comment="Back Cover" />
+    <Text Key="Deleted" Text="Удалено" Comment="Deleted" />
+    <Text Key="Editorial" Text="Редакционное" Comment="Editorial" />
+    <Text Key="FrontCover" Text="Обложка" Comment="Front Cover" />
+    <Text Key="InnerCover" Text="Обратная сторона обложки" Comment="Inner Cover" />
+    <Text Key="Letters" Text="Текст" Comment="Letters" />
+    <Text Key="Other" Text="Другое" Comment="Other" />
+    <Text Key="Preview" Text="Превью" Comment="Preview" />
+    <Text Key="Roundup" Text="Краткое содержание" Comment="Roundup" />
+    <Text Key="Story" Text="Сюжет" Comment="Story" />
+  </Texts>
+</TR>

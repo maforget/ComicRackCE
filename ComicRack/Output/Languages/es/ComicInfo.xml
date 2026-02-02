@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicInfo" CultureName="es">
+  <Texts>
+    <Text Key="YesRightToLeft" Text="Si (Derecha a Izquierda)" Comment="Yes (Right to Left)" />
+  </Texts>
+</TR>

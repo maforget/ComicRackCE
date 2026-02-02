@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBrowserControl" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="ArrangedBy" Text="按 {0} 整理" Comment="Arranged by {0}" />
+    <Text Key="ComicFiltered" Text="{0} 过滤结果" Comment="{0} filtered" />
+    <Text Key="ComicMulti" Text="{0} 漫画" Comment="{0} eComics" />
+    <Text Key="ComicSelected" Text="已选择{0}本" Comment="{0} selected" />
+    <Text Key="ComicSingle" Text="{0} 漫画" Comment="{0} eComic" />
+    <Text Key="GroupedBy" Text="根据 {0} 分组" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="添加到媒体库" Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="自动执行" Comment="Automation" />
+    <Text Key="miCopyData" Text="复制数据" Comment="&amp;Copy Data" />
+    <Text Key="miInvertSelection" Text="反选" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="标记为" Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="已读" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="未读" Comment="&amp;Unread" />
+    <Text Key="miPasteData" Text="粘贴数据..." Comment="&amp;Paste Data..." />
+    <Text Key="miProperties" Text="获取信息..." Comment="&amp;Get Info..." />
+    <Text Key="miRateMenu" Text="我的评价" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="无" Comment="None" />
+    <Text Key="miRating1" Text="* (一星)" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** (二星)" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** (三星)" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** (四星)" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** (五星)" Comment="***** (5 Stars)" />
+    <Text Key="miRead" Text="打开" Comment="&amp;Open" />
+    <Text Key="miReadTab" Text="在新标签中打开" Comment="Open in new Tab" />
+    <Text Key="miRefreshInformation" Text="刷新" Comment="Refresh" />
+    <Text Key="miRemove" Text="移除..." Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="在浏览器中显示书籍" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="所有" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="快速搜索正在检索所有可用数据" Comment="Quick Search is checking all available data" />
+    <Text Key="miSearchArtists" Text="艺术家" Comment="Artists" />
+    <Text Key="miSearchArtists.Tooltip" Text="快速搜索正在检索所有艺术家" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="描述性的" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="快速搜索正在检索所有的注解与摘要" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="文件名" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="快速搜索正在检索文件名" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="丛书" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="快速搜索正在检索丛书名" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="作者" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="快速搜索正在检索作者名" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="选择所有" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="放至汇总顶部" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="浏览漫画" Comment="&amp;Browse Comics" />
+    <Text Key="miShowOnlyAllComics" Text="显示所有" Comment="Show All" />
+    <Text Key="miShowOnlyReadComics" Text="显示已读" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="显示在读" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="显示未读" Comment="Show not Read" />
+    <Text Key="miViewDetails" Text="细节" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="缩略图" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="信息卡" Comment="&amp;Tiles" />
+    <Text Key="None" Text="无" Comment="None" />
+    <Text Key="NotArranged" Text="未排序" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="未分组" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="未汇总" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="按 {0} 汇总" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="组" Comment="Group" />
+    <Text Key="tbbGroup.Tooltip" Text="根据不同规范将漫画分组" Comment="Group eComics by different criteria" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="关闭此汇总" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="整理" Comment="Arrange" />
+    <Text Key="tbbSort.Tooltip" Text="更改漫画的排列顺序" Comment="Change the sort order of the eComics" />
+    <Text Key="tbbStack" Text="汇总" Comment="Stack" />
+    <Text Key="tbbView" Text="视图" Comment="Views" />
+    <Text Key="tbbView.Tooltip" Text="更改漫画的显示内容与方式" Comment="Change how and what eComics are displayed" />
+    <Text Key="tsDeleteListLayout" Text="删除列表布局..." Comment="&amp;Delete List Layout..." />
+    <Text Key="tsEditListLayout" Text="编辑列表布局" Comment="&amp;Edit List Layout..." />
+    <Text Key="tsSaveListLayout" Text="保存列表布局..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsListLayouts" Text="列表布局" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="管理列表布局" Comment="Manage List Layouts" />
+    <Text Key="miShowOnlyDuplicates" Text="显示重复" Comment="Show Duplicates" />
+    <Text Key="miExportComics" Text="导出漫画" Comment="Export eComics" />
+    <Text Key="miExportComicsAs" Text="导出漫画..." Comment="Export eComics..." />
+    <Text Key="miSetListBackground" Text="设为列表背景" Comment="Set as List Background" />
+    <Text Key="miResetListBackground" Text="重置列表背景" Comment="Reset List Background" />
+    <Text Key="lblDisplayOptionText" Text="“视图”中的过滤器已启用，只显示部分漫画。" Comment="Because of active options in 'Views', not all eComics are displayed" />
+    <Text Key="miEdit" Text="编辑" Comment="Edit" />
+    <Text Key="miExportComicsWithPrevious" Text="以前次导出" Comment="Export with Previous" />
+    <Text Key="btDisplayAll" Text="全部显示" Comment="Display &amp;All" />
+    <Text Key="miUpdateComicFiles" Text="更新eComic文件" Comment="Update eComic Files" />
+    <Text Key="btCloseStack" Text="关闭书库" Comment="&amp;Close Stack" />
+    <Text Key="miAddList" Text="加入列表" Comment="Add to List" />
+    <Text Key="miShowInList" Text="以列表显示" Comment="Show in List" />
+    <Text Key="tbbDuplicateList" Text="复制列表" Comment="Duplicate List" />
+    <Text Key="tbbDuplicateList.Tooltip" Text="复制当前列表" Comment="Duplicate current List" />
+    <Text Key="SearchingLists" Text="搜索列表..." Comment="Searching Lists..." />
+    <Text Key="tbUndo" Text="撤销" Comment="Undo" />
+    <Text Key="tbRedo" Text="重做" Comment="Redo" />
+    <Text Key="btPrevStack" Text="上一个" Comment="&amp;Previous" />
+    <Text Key="btNextStack" Text="下一个" Comment="&amp;Next" />
+  </Texts>
+</TR>

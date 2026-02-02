@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Textures" CultureName="hu">
+  <Texts>
+    <Text Key="WhitePaper" Text="Fehér papír" Comment="White Paper" />
+    <Text Key="WhitePaper2" Text="Fehér papír 2" Comment="White Paper 2" />
+    <Text Key="WhitePaper3" Text="Fehér papír 3" Comment="White Paper 3" />
+    <Text Key="Checkered" Text="Kockás" Comment="Checkered" />
+    <Text Key="Ceramic" Text="Kerámia" Comment="Cermamic" />
+    <Text Key="Ceramic2" Text="Kerámia 2" Comment="Cermamic 2" />
+    <Text Key="Glass" Text="Üveg" Comment="Glass" />
+    <Text Key="LightWood" Text="Világos fa" Comment="Light Wood" />
+    <Text Key="OrangeMetal" Text="Narancs fém" Comment="Orange Metal" />
+    <Text Key="PlankWood" Text="Fa deszkák" Comment="Plank Wood" />
+    <Text Key="BrickWall" Text="Tégla fal" Comment="Brick Wall" />
+    <Text Key="BrushedMetal" Text="Csiszolt fém" Comment="Brushed Metal" />
+    <Text Key="BrushedMetal2" Text="Csiszolt fém 2" Comment="Brushed Metal 2" />
+    <Text Key="ChalkBoard" Text="Tábla" Comment="Chalk Board" />
+    <Text Key="Circles" Text="Karikák" Comment="Circles" />
+    <Text Key="Grass" Text="Fű" Comment="Grass" />
+    <Text Key="Sketch" Text="Skicc" Comment="Sketch" />
+    <Text Key="Black" Text="Fekete" Comment="Black" />
+  </Texts>
+</TR>

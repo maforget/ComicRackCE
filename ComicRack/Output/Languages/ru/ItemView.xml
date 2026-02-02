@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ItemView" CultureName="ru">
+  <Texts>
+    <Text Key="AutoFitAllColumns" Text="Автоматически растянуть столбцы" Comment="Auto Fit All Columns" />
+    <Text Key="AutoSizeAllColumns" Text="Автоматически размер всех столбцов" Comment="Auto Size All Columns" />
+    <Text Key="AutoSizeColumn" Text="Автоматически размер столбца" Comment="Auto Size Column" />
+    <Text Key="miArrange" Text="Упорядочить по" Comment="Arrange by" />
+    <Text Key="miGroup" Text="Группировать по" Comment="Group by" />
+    <Text Key="miStack" Text="Скомпоновать по" Comment="Stack by" />
+    <Text Key="miViewDetails" Text="Подробно" Comment="Details" />
+    <Text Key="miViewMode" Text="Вид" Comment="View" />
+    <Text Key="miViewThumbs" Text="Эскизы" Comment="Thumbnails" />
+    <Text Key="miViewTiles" Text="Значки" Comment="Tiles" />
+    <Text Key="NotGrouped" Text="Не сгруппировано" Comment="Not Grouped" />
+    <Text Key="NotSorted" Text="Нет сортировки" Comment="Not Sorted" />
+    <Text Key="NotStacked" Text="Не скомпоновано" Comment="Not Stacked" />
+    <Text Key="Layout" Text="Формат" Comment="Layout" />
+  </Texts>
+</TR>

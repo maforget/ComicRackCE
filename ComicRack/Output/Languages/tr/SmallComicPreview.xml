@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SmallComicPreview" CultureName="tr">
+  <Texts>
+    <Text Key="tbClose" Text="Kapat" Comment="Close" />
+    <Text Key="tsbFirst" Text="İlk" Comment="First" />
+    <Text Key="tsbFirst.Tooltip" Text="İlk sayfaya git" Comment="Go to first page" />
+    <Text Key="tsbLast" Text="Son" Comment="Last" />
+    <Text Key="tsbLast.Tooltip" Text="Son sayfaya git" Comment="Go to last page" />
+    <Text Key="tsbNext" Text="Sonraki" Comment="Next" />
+    <Text Key="tsbNext.Tooltip" Text="Sonraki sayfaya git" Comment="Go to next page" />
+    <Text Key="tsbPrev" Text="Önceki" Comment="Previous" />
+    <Text Key="tsbPrev.Tooltip" Text="Önceki sayfaya git" Comment="Go to previous page" />
+    <Text Key="tsbRefresh" Text="Tazele" Comment="Refresh" />
+    <Text Key="tsbTwoPages" Text="Çift Sayfa" Comment="Two Pages" />
+    <Text Key="tsbTwoPages.Tooltip" Text="Tek veya çift sayfa göster" Comment="Show one or two pages" />
+    <Text Key="pageViewer" Text="Birşey Seçilmedi" Comment="Nothing Selected" />
+  </Texts>
+</TR>

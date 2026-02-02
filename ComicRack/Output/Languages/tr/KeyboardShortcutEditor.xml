@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="KeyboardShortcutEditor" CultureName="tr">
+  <Texts>
+    <Text Key="chkAlt1" Text="Alt " Comment="Alt" />
+    <Text Key="chkAlt2" Text="Alt " Comment="Alt" />
+    <Text Key="chkCtrl1" Text="Ctrl " Comment="Ctrl" />
+    <Text Key="chkCtrl2" Text="Ctrl " Comment="Ctrl" />
+    <Text Key="chkShift1" Text="Shift " Comment="Shift" />
+    <Text Key="chkShift2" Text="Shift " Comment="Shift" />
+    <Text Key="colAction" Text="Hareket" Comment="Action" />
+    <Text Key="colKeys" Text="Tuşlar" Comment="Keys" />
+    <Text Key="labelAlternateKey" Text="Alternatif:" Comment="Alternate:" />
+    <Text Key="labelMainKey" Text="Giriş:" Comment="Main:" />
+    <Text Key="NothingSelected" Text="Bir eylem seçilmedi" Comment="No action selected" />
+  </Texts>
+</TR>

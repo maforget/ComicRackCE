@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AddItemDialog" CultureName="el-GR">
+  <Texts>
+    <Text Key="btCheck" Text="&amp;Έλεγχος" Comment="&amp;Check" />
+    <Text Key="btLists" Text="&amp;Λίστες" Comment="&amp;Lists" />
+    <Text Key="btText" Text="&amp;Κείμενο" Comment="&amp;Text" />
+  </Texts>
+</TR>

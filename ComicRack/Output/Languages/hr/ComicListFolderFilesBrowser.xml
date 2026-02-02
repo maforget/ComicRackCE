@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListFolderFilesBrowser" CultureName="hr">
+  <Texts>
+    <Text Key="miAddFolderLibrary" Text="&amp;Dodavanje foldera u biblioteku" Comment="&amp;Add Folder to Library" />
+    <Text Key="miAddToFavorites" Text="&amp;Dodavanje foldera u omiljene" Comment="&amp;Add Folder to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Osvježavanje" Comment="&amp;Refresh" />
+    <Text Key="miOpenWindow" Text="&amp;Otvaranje u novom prozoru" Comment="&amp;Open in New Window" />
+    <Text Key="miRefresh" Text="&amp;Osvježavanje" Comment="&amp;Refresh" />
+    <Text Key="miRemove" Text="&amp;Uklanjanje..." Comment="&amp;Remove..." />
+    <Text Key="tbFavorites" Text="Prikaz omiljenih svezaka" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Omiljeni" Comment="Favorites" />
+    <Text Key="tbIncludeSubFolders" Text="Uključenje svih foldera" Comment="Include all Subfolders" />
+    <Text Key="tbOpenWindow" Text="Novi prozor" Comment="New Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Otvaranje trenutnog popisa u novom prozoru" Comment="Open current list in new Window" />
+    <Text Key="tbRefresh" Text="Osvježavanje" Comment="Refresh" />
+  </Texts>
+</TR>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.Autonumber" CultureName="ru">
+  <Texts>
+    <Text Key="Cancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="Caption" Text="Автонумерация" Comment="Autonumbering Wizard" />
+    <Text Key="chkTotal" Text="Сохранить Количество Номеров:" Comment="Save total Number:" />
+    <Text Key="labelBegin" Text="Начать с номера:" Comment="Begin at Number:" />
+    <Text Key="Name" Text="Автонумерация..." Comment="Autonumber Wizard..." />
+    <Text Key="NumberAltSeries" Text="Номера альтернативных серий" Comment="Number Alternate Series" />
+    <Text Key="NumberSeries" Text="Номера серий" Comment="Number Series" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+  </Texts>
+</TR>

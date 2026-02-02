@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ExportComicsDialog" CultureName="tr">
+  <Texts>
+    <Text Key="ExportComicsDialog" Text="e-Çizgi Romanların çıkışını al" Comment="Export eComics" />
+    <Text Key="grpExportLocation" Text="Kayıt Yeri:" Comment="Export Location" />
+    <Text Key="grpFileFormat" Text="Dosya Formatı" Comment="File Format" />
+    <Text Key="grpPageFormat" Text="Sayfa Formatı" Comment="Page Format" />
+    <Text Key="grpFileNaming" Text="Dosya İsimlendirme" Comment="File Naming" />
+    <Text Key="grpImageProcessing" Text="Görsel İşlemesi" Comment="Image Processing" />
+    <Text Key="btAddPreset" Text="Ön ayar ekle..." Comment="Add Preset..." />
+    <Text Key="btRemovePreset" Text="Kaldır" Comment="Remove" />
+    <Text Key="labelExportTo" Text="Kayıt Yeri:" Comment="Export to:" />
+    <Text Key="cbExport.Item0" Text="Bir Klasör Seç" Comment="Select a Folder" />
+    <Text Key="cbExport.Item1" Text="Orjinal e-Çizgi Roman klasörüne kaydet" Comment="Same Folder as the original eComic" />
+    <Text Key="cbExport.Item2" Text="Aynı klasöre kaydet ve Kütüphanedeki bilgilerin yerine koy" Comment="Same Folder and replace in Library" />
+    <Text Key="cbExport.Item3" Text="Çıkış almadan önce onayla" Comment="Ask before Export" />
+    <Text Key="labelFolder" Text="Klasör:" Comment="Folder:" />
+    <Text Key="btChooseFolder" Text="Seç..." Comment="Choose..." />
+    <Text Key="chkDeleteOriginal" Text="Başarılı bir çıkıştan sonra orjinal e-Çizgi Romanı sil" Comment="Delete original eComic after successful Export" />
+    <Text Key="chkAddNewToLibrary" Text="Yeni oluşturulmuş e-Çizgi Romanı kütüphaneye ekle" Comment="Add newly created eComic to Library" />
+    <Text Key="labelComicFormat" Text="e-Çizgi Roman Formatı" Comment="eComic Format" />
+    <Text Key="cbComicFormat.Item0" Text="Orijinaliyle aynı" Comment="Same as Original" />
+    <Text Key="labelCompression" Text="Sıkıştıma" Comment="Compression" />
+    <Text Key="cbCompression.Item0" Text="Yok" Comment="None" />
+    <Text Key="cbCompression.Item1" Text="Orta" Comment="Medium" />
+    <Text Key="cbCompression.Item2" Text="Güçlü" Comment="Strong" />
+    <Text Key="chkEmbedComicInfo" Text="Gömülü e-Çizgi Roman Bilgisi" Comment="Embed Comic Info" />
+    <Text Key="labelRemovePageFilter" Text="Kaldırılacak sayfalar" Comment="Remove Pages:" />
+    <Text Key="labelPageFormat" Text="Sayfa Formatı" Comment="Page Format" />
+    <Text Key="cbPageFormat.Item0" Text="Orjinalini sakla" Comment="Preserve Original" />
+    <Text Key="labelPageQuality" Text="Kalite:" Comment="Quality:" />
+    <Text Key="labelPageResize" Text="Boyutlandır:" Comment="Resize:" />
+    <Text Key="cbPageResize.Item0" Text="Orjinalini sakla" Comment="Preserve Original" />
+    <Text Key="cbPageResize.Item1" Text="İdeal ölçülerde En ve Boy" Comment="Best fit Width &amp; Height" />
+    <Text Key="cbPageResize.Item2" Text="Genişliği Ayarla" Comment="Set Width" />
+    <Text Key="cbPageResize.Item3" Text="Yüksekliği Ayarla" Comment="Set Height" />
+    <Text Key="labelX" Text="x " Comment="x" />
+    <Text Key="chkDontEnlarge" Text="Büyütme" Comment="Don't enlarge" />
+    <Text Key="chkSplitDouble" Text="Çift sayfaları böl" Comment="Split Double Pages" />
+    <Text Key="SelectExportFolder" Text="Lütfen çıkış klasörünü seçiniz" Comment="Please select the Export Folder" />
+    <Text Key="btCancel" Text="&amp;İptal" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;Tamam" Comment="&amp;OK" />
+    <Text Key="labelNamingTemplate" Text="Şablon:" Comment="Template:" />
+    <Text Key="labelCustomNaming" Text="Modifikasyon:" Comment="Custom:" />
+    <Text Key="labelCustomStartIndex" Text="Başla:" Comment="Start:" />
+    <Text Key="cbNamingTemplate.Item0" Text="Dosya Adı" Comment="Filename" />
+    <Text Key="cbNamingTemplate.Item1" Text="e-Çizgi Roman Başlığı" Comment="eComic Caption" />
+    <Text Key="cbNamingTemplate.Item2" Text="Modifikasyon" Comment="Custom" />
+    <Text Key="chkOverwrite" Text="Mevcut dosyaların üzerine yaz" Comment="Overwrite existing Files" />
+    <Text Key="chkCombine" Text="Seçilmiş dosyaları birleştir" Comment="Combine selected Files" />
+    <Text Key="ComicRackExportPresets" Text="ComicRack Önayarlar" Comment="ComicRack Presets" />
+    <Text Key="UserExportPresets" Text="Kullanıcı Standart Ayarları" Comment="User Presets" />
+    <Text Key="labelSharpening" Text="Sharpening" Comment="Sharpening" />
+    <Text Key="chkAutoContrast" Text="Otomatik Kontrast Geliştir" Comment="Automatic Contrast Enhancement" />
+    <Text Key="labelSaturation" Text="Satürasyon" Comment="Saturation" />
+    <Text Key="labelBrightness" Text="Parlaklık" Comment="Brightness" />
+    <Text Key="labelContrast" Text="Kontrast" Comment="Contrast" />
+    <Text Key="labelImagProcessingSource" Text="Kaynak:" Comment="Source:" />
+    <Text Key="labelImageProcessingCustom" Text="Modifikasyon:" Comment="Custom:" />
+    <Text Key="cbImageProcessingSource.Item0" Text="Modifiye Ayarlar" Comment="Custom Settings" />
+    <Text Key="cbImageProcessingSource.Item1" Text="e-Çizgi Roman ayarları uygulandı" Comment="eComic settings are applied" />
+    <Text Key="chkIgnoreErrorPages" Text="Hatalı sayfaları atlayarak çıkış almaya devam et" Comment="Ignore Pages with errors and continue export" />
+  </Texts>
+</TR>

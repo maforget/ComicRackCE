@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Messages" CultureName="ru">
+  <Texts>
+    <Text Key="AlsoRemoveDatabase" Text="&amp;Так же удалить файлы из базы данных" Comment="&amp;Also remove the files from the Database" />
+    <Text Key="AskExport" Text="Вы выбрали замену или удаление Комикса при экспорте. Вы уверены что хотите продолжить?\nУдаленные файлы будут перемещены в корзину во время экспорта. Пожалуйста проверьте достаточно ли места на диске и не находится ли комикс на Сетевом диске!?" Comment="You have chosen to delete or replace existing eComics during export? Are you sure you want to continue?\nThe deleted files will be moved to the Recycle Bin during export. Please make sure there is enough disk space available and the eComics are not located on a network drive!" />
+    <Text Key="AskMoveBin" Text="Вы уверены, что хотите удалить эти книги в корзину?" Comment="Are you sure you want to move these books to the recycle bin?" />
+    <Text Key="AskRemoveComics" Text="Вы уверены, что хотите удалить эти книги из списка?" Comment="Are you sure you want to remove these books from the list?" />
+    <Text Key="AskRemoveFavorite" Text="Вы действительно хотите удалить ссылку на избранную папку?" Comment="Do you really want to remove this Favorite Folder link?" />
+    <Text Key="AskRemoveFromLibrary" Text="Вы уверены, что нужно удалить данные книги из библиотеки?\nВся информация не сохраненная в файлах будет потеряна (например количество открытий, последняя дата прочтения и т.д.)!" Comment="Are you sure you want to remove these books from the library?\nAll information not stored in the files will be lost (like Open Count, Last Read etc.)!" />
+    <Text Key="AskRemoveItem" Text="Вы действительно хотите удалить этот объект?" Comment="Do you really want to remove this item?" />
+    <Text Key="Attention" Text="Внимание" Comment="Attention" />
+    <Text Key="BackgroundConvert" Text="Файлы все еще конвертируются/обновляются в фоновом режиме. Если закрыть сейчас, некоторые данные не будут записаны!" Comment="Files are still being updated/converted in the background. If you close now, some information will not be written to the eComics!" />
+    <Text Key="CloseComicRack" Text="Закрыть ComicRack" Comment="Close ComicRack" />
+    <Text Key="ClosingComicRack" Text="Закрытие ComicRack" Comment="Closing ComicRack" />
+    <Text Key="Export" Text="Экспорт" Comment="Export" />
+    <Text Key="CouldNotSaveComic" Text="Не возможно сохранить Комикс!\nПричина: {0}" Comment="Could not save eComic!\nReason: {0}" />
+    <Text Key="CouldNotSaveImage" Text="Не возможно сохранить ихзображение страницы!\nПричина: {0}" Comment="Could not save the page image!\nReason: {0}" />
+    <Text Key="CreateMainWindow" Text="Создание основного окна" Comment="Creating Main Window" />
+    <Text Key="DatabaseNewEmpty" Text="Проблема при открытии базы данных. Создана новая пустая база данных!" Comment="There was a problem opening the Comic Database. A new empty Database has been created." />
+    <Text Key="DatabaseRestored" Text="Проблемма с базой данных Комиксов. Последняя сохраненная версия была восстановлена.\nВозможно могли потеряться некоторые записи!" Comment="There was a problem with the Comic Database. The last version to be known good has been restored. You may have lost some entires." />
+    <Text Key="Error" Text="Ошибка" Comment="Error" />
+    <Text Key="ErrorShutDown" Text="Ошибка при закрытии приложения:\n{0}" Comment="There was an error shutting down the application:\n{0}" />
+    <Text Key="FailedDeleteBooks" Text="Некоторые книги не могут быть удалены. Возможно они используются!" Comment="Some books could not be deleted (maybe they are in use)!" />
+    <Text Key="FailedRetrieveDatabase" Text="Невозможно получить базу данных с сервера!" Comment="Failed to retrieve the Database from the Server!" />
+    <Text Key="FailedToInitialize" Text="Не удалось открыть ComicRack: {0}" Comment="Failed to initialize ComicRack: {0}" />
+    <Text Key="GetServerLibrary" Text="Соединение с сервером библиотеки" Comment="Getting Server Library" />
+    <Text Key="GetServerLibraryText" Text="Получение библиотеки с сервера" Comment="Retrieving the shared Library from the Server" />
+    <Text Key="GettingList" Text="Получение списка Комиксов" Comment="Getting eComics List" />
+    <Text Key="GettingListText" Text="Получить все Комиксы из выбранной папки" Comment="Retrieving all eComics from the selected folder" />
+    <Text Key="InitCache" Text="Инициализация кеша на диске" Comment="Initialize Disk Caches" />
+    <Text Key="InitGUI" Text="Инициализация интерфейса" Comment="Initalizing User Interface" />
+    <Text Key="InitialScan" Text="Инициализировать сканирование" Comment="Initial Scan" />
+    <Text Key="InitScripts" Text="Инициализация скриптов" Comment="Initalizing Scripts" />
+    <Text Key="ListLayout" Text="Формат списка" Comment="List Layout" />
+    <Text Key="LoadComic" Text="Загрузка Комикса" Comment="Loading eComic" />
+    <Text Key="LoadCustomSettings" Text="Загрузить настройки вручную" Comment="Loading custom settings" />
+    <Text Key="LoadingThumbnail" Text="Загружаются эскизы..." Comment="Loading Thumbnail..." />
+    <Text Key="LoadingPage" Text="Загрузка страницы {0}..." Comment="Loading Page {0}..." />
+    <Text Key="MoveBin" Text="&amp;Так же удалить файл из корзины" Comment="&amp;Also move the files to the Recycle Bin" />
+    <Text Key="NotAskAgain" Text="&amp;Не спрашивать снова" Comment="&amp;Do not ask me again" />
+    <Text Key="OpenDatabase" Text="Открытие базы данных" Comment="Opening Database" />
+    <Text Key="PasswordNeeded" Text="Для сетевой библиотеки нужен пароль '{0}' :" Comment="A password is needed for the remote Library '{0}':" />
+    <Text Key="ReadNewsFeed" Text="Чтение рассылки новостей" Comment="Reading News Feed" />
+    <Text Key="RefreshInfo" Text="Обновление информации" Comment="Refreshing Information" />
+    <Text Key="RefreshInfoText" Text="Обновление информации по выбранным комиксам" Comment="Refreshing information for selected eComics" />
+    <Text Key="RefreshServer" Text="Обновление сервера библиотеки" Comment="Refreshing Server Library" />
+    <Text Key="Remove" Text="Удалить" Comment="Remove" />
+    <Text Key="RetrieveNews" Text="Получение новостей" Comment="Retrieving News" />
+    <Text Key="RetrieveNewsText" Text="Обновление каналов новостей" Comment="Refreshing subscribed News Channels" />
+    <Text Key="SaveAllData" Text="Сохранение всех данных на диск..." Comment="Saving all Data to Disk..." />
+    <Text Key="SaveListLayout" Text="Сохранить формат списка" Comment="Save List Layout" />
+    <Text Key="SaveWorkspace" Text="Сохранить рабочую область" Comment="Save Workspace" />
+    <Text Key="SavingNewComic" Text="Сохранение нового Комикса..." Comment="Saving new eComic..." />
+    <Text Key="ScriptFailed" Text="Не удалось выполнить скрипт!" Comment="Execution of the script failed!" />
+    <Text Key="StartNetwork" Text="Установка сети" Comment="Starting Network" />
+    <Text Key="WriteData" Text="Записать данные" Comment="Write Data" />
+    <Text Key="WriteDataText" Text="Запись данных в выбранный Комикс" Comment="Writing Data to selected eComics" />
+    <Text Key="WrongPassword" Text="Указан неверный пароль для библиотеки '{0}'. Попробуйте еще раз:" Comment="The specified password for the Library'{0}' is not correct. Please try again:" />
+    <Text Key="AddFolderLibrary" Text="Комиксы в этой папке и всех подпапках будут добавлены в библиотеку." Comment="eComics in this Folder and all sub Folders will be added to the library." />
+    <Text Key="Set" Text="Установить" Comment="Set" />
+    <Text Key="AskSetAllLists" Text="Вы уверены, что хотите использовать данный формат для всех списков?" Comment="Are you sure you want to set all Lists to the current layout?" />
+    <Text Key="OpenError" Text="Невозможно открыть книгу '{0}'!" Comment="Could not open the book '{0}'!" />
+    <Text Key="PageFailedToLoad" Text="Страница не загружена.\nПопробуйте обновить для загрузки..." Comment="Page failed to load.\nTry refresh to load again..." />
+    <Text Key="ExportQueueMessage" Text="Экспорт Комикса '{0}'" Comment="Export cComic '{0}'" />
+    <Text Key="RefreshInfoQueueMessage" Text="Обновить данные для Комикса '{0}'" Comment="Refresh information for eComic '{0}'" />
+    <Text Key="WriteInfoQueueMessage" Text="Запись информации в Комикс '{0}'" Comment="Write information to eComic '{0}'" />
+    <Text Key="FastThumbanilQueueMessage" Text="Получить кэшированные эскизы страницы {0} в файл {1}" Comment="Retrieve cached thumbnail for page {0} in file '{1}'" />
+    <Text Key="SlowThumbnailQueueMessage" Text="Создать эскиз страницы {0} в файл {1}" Comment="Create thumbnail for page {0} in file '{1}'" />
+    <Text Key="GetImageQueueMessage" Text="Взять страницу {0} в файле {1}" Comment="Get page {0} in file '{1}'" />
+    <Text Key="OpeningComic" Text="Открытие книги {0}..." Comment="Opening the book '{0}'..." />
+    <Text Key="NoComicOpen" Text="Нет открытых книг" Comment="No book is open" />
+    <Text Key="CloseExternalReader" Text="Закрыть только просмотрщик, незакрывая Комикс(ы)!" Comment="This will only close the reader Window and not the open eComic(s)!" />
+    <Text Key="DontShowAgain" Text="Не показывать больше" Comment="Do not show this again" />
+    <Text Key="RestartQuestion" Text="Требуется перезапуск ComicRack для выполения операции! Хотите перезапустить его сейчас?" Comment="ComicRack needs to restart to complete the operation! Do you want to restart now?" />
+    <Text Key="DatabaseBackupError" Text="Ошибка при создании резервной копии базы данных!" Comment="There was an error saving the Database backup" />
+    <Text Key="DatabaseBackupRestored" Text="Предыдущая резервная копия базы данных успешно восстановлена!" Comment="A previous database backup has been successfully restored!" />
+    <Text Key="ScanComicQueueMessage" Text="Сканирование '{0}'" Comment="Scanning '{0}'" />
+    <Text Key="ErrorWritingReadingList" Text="Ошибка при экспорти списка к прочтению '{0}' !" Comment="There was an error exporting the Reading List '{0}'" />
+    <Text Key="ErrorOpeningReadingList" Text="Ошибка при импорте списка к прочтению '{0}'!" Comment="There was an error importing the Reading List '{0}'" />
+    <Text Key="UnsolvedBookItems" Text="Следующие Комиксы не найдены в библиотеке:\n{0}\nВы все еще хотите импортировать список к прочтению?" Comment="The following eComics where not found in the Library:\n{0}\nDo you still want to import the Reading List?" />
+    <Text Key="OutputFileExists" Text="Файл '{0}' уже существует!" Comment="Output File '{0}' already exists!" />
+    <Text Key="ConvertToCBZ" Text="Конвертировать в CBZ" Comment="Convert to CBZ" />
+    <Text Key="ConvertToCB7" Text="Конвертировать в CB7" Comment="Convert to CB7" />
+    <Text Key="ExportForPSP" Text="Экспорт для PSP" Comment="Export for PSP" />
+    <Text Key="AbortScan" Text="Прервать сканирование" Comment="Abort Scanning" />
+    <Text Key="AbortExport" Text="Прервать экспорт" Comment="Abort Export" />
+    <Text Key="FailedToReadImage" Text="Не удалось прочитать изображение {0}!" Comment="Failed to read Image {0}!" />
+    <Text Key="InvalidExportSettings" Text="Настройки экспорта не верны (т.к. добавляемый формат не поддерживается библиотекой)" Comment="The export settings are not valid (e.g. adding a not supported format to the library)" />
+    <Text Key="SourceComicNotValid" Text="Комикс источник не правельный" Comment="Source eComic is not valid" />
+    <Text Key="ExportComicTitle" Text="Экспортировать Комикс в" Comment="Export eComic to" />
+    <Text Key="ComicRackMinimizedTitle" Text="ComicRack все еще запущен" Comment="ComicRack is still running" />
+    <Text Key="ComicRackMinimized" Text="Вы можете также закрыть ComicRack в меню Файл/Выход или Вы можете изменить эту возможность в Настройках программы.\nКликните сюда, чтобы больше не показывать это сообщение." Comment="You either close ComicRack with File/Exit or you can change this behavior in the Preferences Dialog.\nClick here to not show this message again" />
+  </Texts>
+</TR>

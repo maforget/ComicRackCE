@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicPagesView" CultureName="cs-CZ">
+  <Texts>
+    <Text Key="ArrangedBy" Text="Uspořádat podle {0}" Comment="Arranged by {0}" />
+    <Text Key="ChangeItemSize" Text="Změnit velikost miniatur" Comment="Change size of thumbnails" />
+    <Text Key="GroupedBy" Text="Seskupit podle {0}" Comment="Grouped by {0}" />
+    <Text Key="miViewDetails" Text="&amp;Detaily" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="M&amp;iniatury" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Dlaždice" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Žádné" Comment="None" />
+    <Text Key="NotArranged" Text="Bez setřídění" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Bez seskupení" Comment="Not grouped" />
+    <Text Key="tbbGroup" Text="Seskupit" Comment="Group" />
+    <Text Key="tbbSort" Text="Uspořádat" Comment="Arrange" />
+    <Text Key="tbbView" Text="Zobrazení" Comment="Views" />
+    <Text Key="tbFilter" Text="Typy stránek" Comment="Page Filter" />
+    <Text Key="miExpandAllGroups" Text="Zabalit/rozbalit všechny skupiny" Comment="Collapse/Expand all Groups" />
+    <Text Key="tbbGroup.Tooltip" Text="Seskupit eKomiksy podle jiného kritéria" Comment="Group Pages by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="Změnit systém řazení eKomiksů" Comment="Change the sort order of the Pages" />
+    <Text Key="tbbView.Tooltip" Text="Změnit způsob zobrazení eKomiksů" Comment="Change how Pages are displayed" />
+  </Texts>
+</TR>

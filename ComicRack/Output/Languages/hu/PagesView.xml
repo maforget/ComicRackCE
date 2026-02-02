@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PagesView" CultureName="hu">
+  <Texts>
+    <Text Key="miCopy" Text="&amp;Oldal másolása" Comment="&amp;Copy Page" />
+    <Text Key="miInvertSelection" Text="&amp;Kiválasztás invertálása" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkDeleted" Text="Töröltnek jelöl" Comment="Mark as &amp;Deleted" />
+    <Text Key="miPageType" Text="Oldaltípus" Comment="Page Type" />
+    <Text Key="miRefreshThumbnail" Text="&amp;Frissítés" Comment="&amp;Refresh" />
+    <Text Key="miSelectAll" Text="Mindet kijelöli" Comment="Select &amp;All" />
+    <Text Key="miSetBookmark" Text="Könyvjelző elhelyezése" Comment="Set Bookmark" />
+    <Text Key="miRemoveBookmark" Text="Könyvjelző eltávolítása" Comment="Remove Bookmark" />
+    <Text Key="miResetOriginalOrder" Text="Eredeti sorrend visszaállítása" Comment="Reset original Order" />
+    <Text Key="cmPageRotate" Text="Oldal forgatása" Comment="Page Rotation" />
+    <Text Key="miMoveToTop" Text="Tetejére visz" Comment="Move to Top" />
+    <Text Key="miMoveToBottom" Text="Aljára visz" Comment="Move to Bottom" />
+    <Text Key="miPagePosition" Text="Oldal pozíció" Comment="Page Position" />
+    <Text Key="miPagePositionDefault" Text="Eredeti" Comment="Default" />
+    <Text Key="miPagePositionNear" Text="Közel" Comment="Near" />
+    <Text Key="miPagePositionFar" Text="Távol" Comment="Far" />
+  </Texts>
+</TR>

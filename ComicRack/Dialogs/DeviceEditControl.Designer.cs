@@ -206,7 +206,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.chkOnlyChecked.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
             this.chkOnlyChecked.Location = new System.Drawing.Point(15, 91);
             this.chkOnlyChecked.Name = "chkOnlyChecked";
-            this.chkOnlyChecked.Size = new System.Drawing.Size(102, 17);
+            this.chkOnlyChecked.Size = new System.Drawing.Size(204, 17);
             this.chkOnlyChecked.TabIndex = 7;
             this.chkOnlyChecked.Text = "Only Checked";
             this.chkOnlyChecked.UseVisualStyleBackColor = true;

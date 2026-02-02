@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PreferencesDialog" CultureName="ja">
+  <Texts>
+    <Text Key="btAddFolder" Text="追加(&amp;A)..." Comment="&amp;Add..." />
+    <Text Key="btAddLibraryFolder" Text="フォルダ追加..." Comment="Add Folder..." />
+    <Text Key="btApply" Text="適用(&amp;A)" Comment="&amp;Apply" />
+    <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="btChangeFolder" Text="変更(&amp;C)..." Comment="&amp;Change..." />
+    <Text Key="btClearPageCache" Text="消去" Comment="Clear" />
+    <Text Key="btClearThumbnailCache" Text="消去" Comment="Clear" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btRemoveFolder" Text="削除(&amp;R)" Comment="&amp;Remove" />
+    <Text Key="btResetColor" Text="リセット(&amp;R)" Comment="&amp;Reset" />
+    <Text Key="btResetMessages" Text="リセット" Comment="Reset" />
+    <Text Key="btRestoreDefault" Text="デフォルトに(&amp;D)" Comment="Restore &amp;Defaults" />
+    <Text Key="btScan" Text="スキャン" Comment="Scan" />
+    <Text Key="chkAutoContrast" Text="自動コントラスト調整(&amp;C)" Comment="Automatic &amp;Contrast Enhancement" />
+    <Text Key="chkAutoRemoveMissing" Text="スキャン時にライブラリに実在しないコミックを自動で登録解除" Comment="Automatically remove missing files from Library during Scan" />
+    <Text Key="chkEnablePageCache" Text="ページ [MB] (&amp;P)" Comment="&amp;Pages [MB]" />
+    <Text Key="chkEnableThumbnailCache" Text="サムネイル [MB] (&amp;T)" Comment="&amp;Thumbnails [MB]" />
+    <Text Key="chkOverwriteAssociations" Text="既定の関連付けに上書き..." Comment="Overwrite existing associations instead of 'Open With ...'" />
+    <Text Key="chkRequirePassword" Text="使用するパスワード:" Comment="Require Password:" />
+    <Text Key="colOptions" Text="オプション" Comment="Options" />
+    <Text Key="groupComicFolders" Text="コミック フォルダ" Comment="eComic Folders" />
+    <Text Key="groupDiskCache" Text="ディスク キャッシュ" Comment="Disk Cache" />
+    <Text Key="groupMessages" Text="隠しメッセージ" Comment="Hidden Messages" />
+    <Text Key="groupOtherComics" Text="コミック" Comment="eComics" />
+    <Text Key="groupOverlays" Text="オーバーレイ表示" Comment="Overlays" />
+    <Text Key="grpIntegration" Text="エクスプローラ との統合" Comment="Explorer Integration" />
+    <Text Key="labelBrightness" Text="明度の調整:" Comment="Brightness Adjustment:" />
+    <Text Key="labelCheckedFormats" Text="ComicRack に関連付ける &quot;ファイルの種類&quot; をチェック。" Comment="Checked formats will be associated with ComicRack" />
+    <Text Key="labelContrast" Text="コントラストの調整:" Comment="Contrast Adjustment:" />
+    <Text Key="labelExcludeCover" Text="カバーのサムネイルを表示しないファイルのリスト。セミコロンで区切る。" Comment="Semicolon separated list of image names never to be used as cover thumbnails:" />
+    <Text Key="labelLanguage" Text="ComicRack の表示言語を選択 （変更を有効化するには ComicRack を再起動する必要があります）。" Comment="Select the User Interface language for ComicRack (ComicRack must be restarted for any change to take effect):" />
+    <Text Key="labelOverlaySize" Text="サイズ:" Comment="Size:" />
+    <Text Key="labelReshowHidden" Text="ボタンクリックで隠しメッセージ表示" Comment="To reshow hidden messages press" />
+    <Text Key="labelSaturation" Text="彩度の調整:" Comment="Saturation Adjustment:" />
+    <Text Key="labelScriptPaths" Text="スクリプト ライブラリのパス。 複数パスはセミコロンで区切る。(z.B. fur Python):" Comment="Semicolon separated list of library paths for scripts (e.g. python libraries):" />
+    <Text Key="labelSharedName" Text="共有用の名称:" Comment="Shared Name:" />
+    <Text Key="labelWatchedFolders" Text="ComicRack 実行中はチェックのあるフォルダの内容の変更（移動、リネーム等）を監視します。" Comment="Checked folders will be watched for changes (rename, move) while the program is running." />
+    <Text Key="PreferencesDialog" Text="設定" Comment="Preferences" />
+    <Text Key="Scan" Text="スキャン" Comment="Scan" />
+    <Text Key="tabAdvanced" Text="拡張設定" Comment="Advanced" />
+    <Text Key="tabBehavior" Text="アクション" Comment="Behavior" />
+    <Text Key="Scanning" Text="'{0}' のスキャン中 ..." Comment="Scanning '{0}' ..." />
+    <Text Key="SelectComicFolder" Text="コミックの保存フォルダの選択" Comment="Please select a folder containing eComics" />
+    <Text Key="SelectScriptFolder" Text="スクリプト ライブラリ フォルダを選択" Comment="Please select a script library folder" />
+    <Text Key="Stop" Text="停止" Comment="Stop" />
+    <Text Key="labelMemPageCount" Text="ページ数" Comment="Pages [count]" />
+    <Text Key="labelMemThumbSize" Text="サムネイル [MB]" Comment="Thumbnails [MB]" />
+    <Text Key="chkMemPageOptimized" Text="最適化" Comment="optimized" />
+    <Text Key="chkMemThumbOptimized" Text="最適化" Comment="optimized" />
+    <Text Key="groupMemoryCache" Text="メモリ キャッシュ" Comment="Memory Cache" />
+    <Text Key="grpDatabaseBackup" Text="データベースのバックアップ" Comment="Database Backup" />
+    <Text Key="btBackupDatabase" Text="データベースのバックアップ..." Comment="Backup Database..." />
+    <Text Key="btRestoreDatabase" Text="データベースの復元..." Comment="Restore Database..." />
+    <Text Key="btClearInternetCache" Text="クリア" Comment="Clear" />
+    <Text Key="btOpenFolder" Text="開く" Comment="Open" />
+    <Text Key="chkHighQualityDisplay" Text="高品質(&amp;H)" Comment="&amp;High Quality" />
+    <Text Key="chkAnamorphicScaling" Text="オート スケーリング" Comment="Anamorphic Scaling" />
+    <Text Key="chkEnableInternetCache" Text="インターネット [MB] (&amp;I)" Comment="&amp;Internet [MB]" />
+    <Text Key="chkDisableScripting" Text="すべてのスクリプトを無効化" Comment="Disable all Scripts" />
+    <Text Key="chkClientsCanExport" Text="クライアントのエクスポートを許可" Comment="Clients can export eComics" />
+    <Text Key="chkUpdateComicFiles" Text="コミック情報のファイルへの書き込みを許可" Comment="Allow writing of eComic info into files" />
+    <Text Key="chkAutoUpdateComicFiles" Text="コミック ファイルの更新を自動チェック" Comment="eComic files are updated automatically" />
+    <Text Key="btTranslate" Text="ComicRack 翻訳のヘルプ..." Comment="Help localizing ComicRack..." />
+    <Text Key="labelSharpening" Text="シャープ:" Comment="Sharpening:" />
+    <Text Key="groupPageDisplayGeneral" Text="一般" Comment="General" />
+    <Text Key="groupColors" Text="カラー調整" Comment="Color Adjustments" />
+    <Text Key="chkEnableHardware" Text="ハードウェア アクセラレーションを有効化" Comment="Enable Hardware Acceleration" />
+    <Text Key="chkEnablePageTransition" Text="ページ送りエフェクトを使用" Comment="Enable Page Transitions" />
+    <Text Key="chkEnableDisplayChangeAnimation" Text="ページ表示の変更をアニメーション" Comment="Enable Animation of Page Display changes" />
+    <Text Key="chkEnableHardwareFiltering" Text="ハードウェア フィルタを使用" Comment="Enable Hardware Filters" />
+    <Text Key="chkEnableSoftwareFiltering" Text="ソフトウェア フィルタを使用" Comment="Enable Software Filters" />
+    <Text Key="chkEnableFlowScroll" Text="フローイング マウス スクロールを使用" Comment="Enable flowing Mouse scrolling" />
+    <Text Key="groupHardwareAcceleration" Text="ハードウェア アクセラレーション" Comment="Hardware Acceleration" />
+    <Text Key="chkSmoothAutoScrolling" Text="スムース オート スクロール" Comment="Smooth Auto Scrolling" />
+    <Text Key="lblFast" Text="高速" Comment="fast" />
+    <Text Key="lblSlow" Text="低速" Comment="slow" />
+    <Text Key="grpKeyboard" Text="キーボード" Comment="Keyboard" />
+    <Text Key="grpMouse" Text="マウス" Comment="Mouse" />
+    <Text Key="lblMouseWheel" Text="マウス ホイール スクロール:" Comment="Mouse Wheel scrolling:" />
+    <Text Key="grpSharing" Text="共有" Comment="Sharing" />
+    <Text Key="grpScanning" Text="スキャン中の動作" Comment="Scanning" />
+    <Text Key="grpLanguages" Text="言語" Comment="Languages" />
+    <Text Key="grpScripts" Text="使用可能なスクリプト" Comment="Available Scripts" />
+    <Text Key="grpPackages" Text="スクリプト パッケージ" Comment="Script Packages" />
+    <Text Key="grpScriptSettings" Text="スクリプトの設定" Comment="Script Settings" />
+    <Text Key="tabOverlaysAndEffects" Text="オーバーレイとエフェクト" Comment="Overlays &amp;&amp; Effects" />
+    <Text Key="tabReader" Text="リーダー" Comment="Reader" />
+    <Text Key="tabLibraries" Text="ライブラリ" Comment="Libraries" />
+    <Text Key="tabScripts" Text="スクリプト" Comment="Scripts" />
+    <Text Key="colName" Text="名称" Comment="Name" />
+    <Text Key="btInstallPackage" Text="インストール..." Comment="Install..." />
+    <Text Key="btRemovePackage" Text="削除" Comment="Remove" />
+    <Text Key="colPackage" Text="パッケージ" Comment="Package" />
+    <Text Key="colAuthor" Text="作者" Comment="Author" />
+    <Text Key="colDescription" Text="説明" Comment="Description" />
+    <Text Key="packageGroupInstalled" Text="インストール済み" Comment="Installed" />
+    <Text Key="packageGroupInstall" Text="インストールします （再起動が必要です）" Comment="To be installed (needs restart)" />
+    <Text Key="packageGroupRemove" Text="削除します （再起動が必要です）" Comment="To be removed (needs restart)" />
+    <Text Key="btAssociateExtensions" Text="変更..." Comment="Change..." />
+    <Text Key="grpServerSettings" Text="サーバー設定" Comment="Server Settings" />
+    <Text Key="labelShareDescription" Text="説明:" Comment="Description:" />
+    <Text Key="chkPrivate" Text="プライベート" Comment="Private" />
+    <Text Key="chkShareInternet" Text="インターネットで共有" Comment="Share on the Internet" />
+    <Text Key="btAddShare" Text="共有に追加" Comment="Add Share" />
+    <Text Key="btRemoveShare" Text="削除" Comment="Remove" />
+    <Text Key="labelPublicServerAddress" Text="ComicRack がユーザーのサーバーを認識できない場合の外部アドレス:" Comment="External address of your server if ComicRack should not guess it correctly:" />
+    <Text Key="labelPrivateListPassword" Text="インターネット共有リストの私的なエントリーの保護に使用するパスワード:" Comment="Password used to protect your private Internet Share list entries:" />
+    <Text Key="chkDontAddRemovedFiles" Text="ライブラリから手動削除したファイルを再度追加しない" Comment="Files manually removed from the Library will not be added again" />
+    <Text Key="btConfigScript" Text="構成..." Comment="Config..." />
+    <Text Key="labelPageQuality" Text="ページ品質:" Comment="Page Quality:" />
+    <Text Key="labelThumbQuality" Text="サムネイル品質:" Comment="Thumb Quality:" />
+    <Text Key="labelHelpSystem" Text="ComicRack コンテキスト ヘルプ:" Comment="Context Sensitive Help:" />
+    <Text Key="grpHelp" Text="システム ヘルプ" Comment="Help System" />
+    <Text Key="chkLookForShared" Text="ローカルの共有コミック を探す" Comment="Look for local Comic Shares" />
+    <Text Key="chkAutoConnectShares" Text="自動接続" Comment="Connect automatically" />
+    <Text Key="chkClientsCanEdit" Text="クライアントのコミック編集を許可" Comment="Clients can edit eComics" />
+    <Text Key="btExportKeyboard" Text="エクスポート..." Comment="Export..." />
+    <Text Key="btImportKeyboard" Text="インポート..." Comment="Import..." />
+    <Text Key="miDefaultKeyboardLayout" Text="デフォルト" Comment="Default" />
+    <Text Key="cbShare.Item0" Text="共有なし" Comment="Share None" />
+    <Text Key="cbShare.Item1" Text="すべて共有" Comment="Share All" />
+    <Text Key="cbShare.Item2" Text="選択のみ共有" Comment="Share Selected" />
+    <Text Key="grpShareSettings" Text="設定" Comment="Settings" />
+    <Text Key="chkShowNavigationOverlay" Text="ナビゲートを自動表示" Comment="Show Navigation automatically" />
+    <Text Key="chkShowCurrentPageOverlay" Text="現在のページを表示" Comment="Show current Page" />
+    <Text Key="chkShowVisiblePartOverlay" Text="ページ パートを表示" Comment="Show visible Page Part" />
+    <Text Key="chkShowPageNames" Text="現在のページに名称も表示" Comment="Current Page also displays Page Name" />
+    <Text Key="chkShowStatusOverlay" Text="メッセージとステータスを表示" Comment="Show Messages and Status" />
+    <Text Key="labelPageOverlay" Text="ページ" Comment="Page" />
+    <Text Key="labelVisiblePartOverlay" Text="ページ パート" Comment="Visible Part" />
+    <Text Key="labelStatusOverlay" Text="メッセージとステータス" Comment="Messages and Status" />
+    <Text Key="labelNavigationOverlay" Text="ナビゲート" Comment="Navigation" />
+    <Text Key="labelNavigationOverlayPosition" Text="ナビゲート:" Comment="Navigation:" />
+    <Text Key="cbNavigationOverlayPosition.Item0" Text="下部" Comment="at Bottom" />
+    <Text Key="cbNavigationOverlayPosition.Item1" Text="上部" Comment="on Top" />
+    <Text Key="PageNumberOnly" Text="ページ" Comment="Page" />
+    <Text Key="PageNumberAndName" Text="ページ\n名称" Comment="Page\nName" />
+  </Texts>
+</TR>

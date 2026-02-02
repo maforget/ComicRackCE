@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FileFilter" CultureName="sk-SK">
+  <Texts>
+    <Text Key="PageImageSave" Text="JPEG Obrázok|*.jpg|Windows Bitmap Obrázok|*.bmp|PNG Obrázok|*.png|GIF Obrázok|*.gif|TIFF Obrázok|*.tif" Comment="JPEG Image|*.jpg|Windows Bitmap Image|*.bmp|PNG Image|*.png|GIF Image|*.gif|TIFF Image|*.tif" />
+    <Text Key="ComicRackDatabase" Text="ComicRack databáza|*.xml" Comment="ComicRack Database|*.xml" />
+    <Text Key="AllFiles" Text="Všetky súbory" Comment="All Files" />
+    <Text Key="AllSupportedFiles" Text="Všetky podporované súbory" Comment="All supported Files" />
+    <Text Key="ReadingListSave" Text="ComicRack číta zoznam|*.crl|Xml súbor|*.xml" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml" />
+    <Text Key="ReadingListLoad" Text="ComicRack číta zoznam|*.crl|Xml súbor|*.xml|Všetky súbory|*.*" Comment="ComicRack Reading List|*.cbl|Xml File|*.xml|All Files|*.*" />
+    <Text Key="FormatReadingList" Text="ComicRack zoznam čítaných" Comment="ComicRack Reading List" />
+    <Text Key="ScriptPackageOpen" Text="ComicRack Plugin|*.crplugin|Script Archive|*.zip" Comment="ComicRack Plugin|*.crplugin|Script Archive|*.zip" />
+    <Text Key="KeyboardLayout" Text="Výpis klávesnice" Comment="Keyboard Layout" />
+    <Text Key="KeyboardLayoutFilter" Text="Výpis klávesnice|*.xml" Comment="Keyboard Layout|*.xml" />
+  </Texts>
+</TR>

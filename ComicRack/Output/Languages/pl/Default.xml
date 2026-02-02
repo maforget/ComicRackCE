@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Default" CultureName="pl">
+  <Texts>
+    <Text Key="ClearAll" Text="Wyczyść Wszystko" Comment="Clear all" />
+    <Text Key="Copy" Text="Kopiuj" Comment="Copy" />
+    <Text Key="Invert" Text="Odwróć Zaznaczenie" Comment="Invert" />
+    <Text Key="Layout" Text="Wygląd" Comment="Layout" />
+    <Text Key="None" Text="Brak" Comment="None" />
+    <Text Key="NotAvailable" Text="Niedostępne" Comment="NA" />
+    <Text Key="Paste" Text="Wklej" Comment="Paste" />
+    <Text Key="SetAll" Text="Zaznacz Wszystko" Comment="Set all" />
+    <Text Key="Unknown" Text="Nieznane" Comment="Unknown" />
+    <Text Key="Unspecified" Text="Niezdefiniowane" Comment="Unspecified" />
+    <Text Key="Workspace" Text="Obszar Roboczy" Comment="Workspace" />
+    <Text Key="System" Text="System" Comment="System" />
+    <Text Key="Books" Text="Komiksy" Comment="books" />
+    <Text Key="Book" Text="Komiks" Comment="book" />
+    <Text Key="Page" Text="Strona" Comment="page" />
+    <Text Key="Yes" Text="Tak" Comment="Yes" />
+    <Text Key="No" Text="Nie" Comment="No" />
+    <Text Key="Not" Text="Nie" Comment="Not" />
+    <Text Key="Cancel" Text="Anuluj" Comment="Cancel" />
+    <Text Key="Bookmark" Text="Zakładka" Comment="Bookmark" />
+    <Text Key="Restart" Text="Restartuj" Comment="Restart" />
+    <Text Key="All" Text="Wszystkie" Comment="All" />
+    <Text Key="Import" Text="Import" Comment="Import" />
+    <Text Key="New" Text="Nowy" Comment="New" />
+    <Text Key="Recent" Text="Ostatnio użyte" Comment="Recent" />
+    <Text Key="Waiting" Text="W kolejce" Comment="Waiting" />
+    <Text Key="Running" Text="Trwa teraz" Comment="Running" />
+    <Text Key="Completed" Text="Zakończono" Comment="Completed" />
+    <Text Key="Disable" Text="Wyłącz" Comment="Disable" />
+    <Text Key="Server" Text="Serwer" Comment="Server" />
+    <Text Key="Keep" Text="Utrzymaj" Comment="Keep" />
+    <Text Key="Save" Text="Zapisz" Comment="Save" />
+    <Text Key="Search" Text="Szukaj" Comment="Search" />
+    <Text Key="LogicNot" Text="Negacja" Comment="Negation" />
+    <Text Key="Default" Text="Przeźroczysty" Comment="Default" />
+    <Text Key="Connect" Text="Połącz" Comment="Connect" />
+    <Text Key="Workspaces" Text="Obszary Robocze" Comment="Workspaces" />
+    <Text Key="Windows" Text="Układ Okna" Comment="Windows" />
+    <Text Key="Lists" Text="Wygląd Listy" Comment="Lists" />
+    <Text Key="Display" Text="Wygląd Stron" Comment="Display" />
+    <Text Key="Start" Text="Start" Comment="Start" />
+    <Text Key="End" Text="Koniec" Comment="End" />
+    <Text Key="Configure" Text="Konfiguruj" Comment="Configure" />
+    <Text Key="Clear" Text="Wyczyść" Comment="Clear" />
+    <Text Key="Unlimited" Text="Bez Limitu" Comment="Unlimited" />
+  </Texts>
+</TR>

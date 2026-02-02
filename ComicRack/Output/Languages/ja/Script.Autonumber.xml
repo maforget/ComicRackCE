@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.Autonumber" CultureName="ja">
+  <Texts>
+    <Text Key="Cancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+    <Text Key="chkTotal" Text="トータル:" Comment="Save total Number:" />
+    <Text Key="labelBegin" Text="開始ナンバー:" Comment="Begin at Number:" />
+    <Text Key="Name" Text="オート ナンバー ウィザード..." Comment="Autonumber Wizard..." />
+    <Text Key="NumberAltSeries" Text="シリーズを別ナンバー化" Comment="Number Alternate Series" />
+    <Text Key="NumberSeries" Text="シリーズをナンバー化" Comment="Number Series" />
+    <Text Key="OK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="Caption" Text="オート ナンバー ウィザード" Comment="Autonumber Wizard" />
+    <Text Key="Description" Text="選択コミックのナンバー化スクリプト" Comment="A script to renumber the selected eComics" />
+       <Text Key="btCancel" Text="キャンセル(&amp;C)" Comment="&amp;Cancel" />
+  </Texts>
+</TR>

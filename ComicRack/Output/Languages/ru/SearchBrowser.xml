@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SearchBrowser" CultureName="ru">
+  <Texts>
+    <Text Key="AlternateSeries" Text="Альтернативная серия" Comment="Alternate Series" />
+    <Text Key="Colorist" Text="Колористы" Comment="Colorists" />
+    <Text Key="Genre" Text="Жанры" Comment="Genres" />
+    <Text Key="Imprint" Text="Imprints" Comment="Imprints" />
+    <Text Key="Inker" Text="Прорисовщики" Comment="Inkers" />
+    <Text Key="LanguageAsText" Text="Языки" Comment="Languages" />
+    <Text Key="MonthAsText" Text="Месяца" Comment="Months" />
+    <Text Key="Penciller" Text="Художники" Comment="Pencillers" />
+    <Text Key="Publisher" Text="Издатели Комикса" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="Серии" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="Года" Comment="Years" />
+    <Text Key="ShadowTitle" Text="Названия" Comment="Titles" />
+    <Text Key="ShadowFormat" Text="Форматы" Comment="Formats" />
+    <Text Key="Writer" Text="Авторы" Comment="Writers" />
+    <Text Key="Editor" Text="Редакторы" Comment="Editors" />
+    <Text Key="Characters" Text="Персонажи" Comment="Characters" />
+    <Text Key="CoverArtist" Text="Художники обложек" Comment="Cover Artists" />
+    <Text Key="AgeRating" Text="Возрастной ценз" Comment="Age Ratings" />
+    <Text Key="RatingAsText" Text="Рейтинги" Comment="Ratings" />
+    <Text Key="Tags" Text="Метки" Comment="Tags" />
+    <Text Key="Unspecified" Text="Неопределено" Comment="Unspecified" />
+    <Text Key="AllItems" Text="Все ({0} {1})" Comment="All ({0} {1})" />
+  </Texts>
+</TR>

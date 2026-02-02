@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ExportErrorsDialog" CultureName="sk-SK">
+  <Texts>
+    <Text Key="btOk" Text="OK" Comment="OK" />
+    <Text Key="coleComic" Text="eComic" Comment="eComic" />
+    <Text Key="colProblem" Text="Problém" Comment="Problem" />
+    <Text Key="ExportErrorsDialog" Text="Chyby pri exportovaní komiksu" Comment="Comic Export Errors" />
+  </Texts>
+</TR>

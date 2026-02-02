@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Settings" CultureName="zh-Hans">
+  <Texts>
+    <Text Key="Application" Text="应用" Comment="Application" />
+    <Text Key="AutoHideMagnifier" Text="当光标靠近边缘时自动隐藏放大镜" Comment="Autohide Magnifier when Cursor is near border" />
+    <Text Key="AutoNavigateComics" Text="超出页码范围时自动打开下一本 eComic" Comment="Reading beyond the start or end opens the next eComic " />
+    <Text Key="Browser" Text="浏览模式" Comment="Browser" />
+    <Text Key="CloseBrowserOnOpen" Text="当打开新的 eComic 时自动切换到阅读模式" Comment="Close the Browser when a new eComic is opened" />
+    <Text Key="CloseMinimizesToTray" Text="关闭 ComicRack 时放入系统栏" Comment="Close moves ComicRack into the Notification Area" />
+    <Text Key="FadeInThumbnails" Text="淡入新载入的缩略图" Comment="New loaded Thumbnails slowly fade in" />
+    <Text Key="HideCursorFullScreen" Text="全屏模式下隐藏光标" Comment="Hide the mouse cursor when reading in Full Screen Mode" />
+    <Text Key="HighQualityThumbnails" Text="以最好质量显示缩略图（较慢）" Comment="Display Thumbnails in best quality (slower)" />
+    <Text Key="MinimizeToTray" Text="最小化时放入系统栏" Comment="Minimize moves ComicRack into the Notification Area" />
+    <Text Key="NewsStartup" Text="检查 ComicRack 的最近更新" Comment="Check for latest news on ComicRack" />
+    <Text Key="Opening an eComic" Text="打开漫画时时" Comment="Opening an eComic" />
+    <Text Key="OpenLastFile" Text="重新打开上次阅读的漫画" Comment="Reopen the last eComics read" />
+    <Text Key="OpenLastPage" Text="在关闭漫画时所处的页面重新打开" Comment="Open the eComic at the page where it was closed" />
+    <Text Key="Reading" Text="阅读时" Comment="Reading" />
+    <Text Key="ScanStartup" Text="重新扫描媒体库文件夹获取新的 eComics" Comment="Rescan the Library Folders for new eComics" />
+    <Text Key="ShowSplash" Text="显示启动画面" Comment="Show Splash Screen" />
+    <Text Key="ShowToolTips" Text="在浏览模式下显示漫画提示" Comment="Show Tooltips for eComics in the Browser" />
+    <Text Key="Starting ComicRack" Text="启动 ComicRack 时" Comment="Starting ComicRack" />
+    <Text Key="AddToLibraryOnOpen" Text="将漫画添加到媒体库中" Comment="Add eComics to the Library" />
+    <Text Key="Manga" Text="日式漫画" Comment="Manga" />
+    <Text Key="TrueRightToLeftReading" Text="从右至左翻动页面（非镜像）" Comment="True right to left reading" />
+    <Text Key="LeftRightMovementReversed" Text="同时互换左右翻页" Comment="Left/right movement is also reversed" />
+    <Text Key="Right to Left" Text="从右至左" Comment="Right to Left" />
+    <Text Key="AutoMinimalGui" Text="在全屏模式下启用/关闭最小用户界面" Comment="Fullscreen also toggles Minimal User Interface" />
+    <Text Key="PageChangeDelay" Text="页面转换时延迟鼠标滚轮与光标" Comment="Mouse Wheel and Cursor Keys delay on page transitions" />
+    <Text Key="AnimatePanels" Text="动画展开与收拢面板" Comment="Animate expanding and collapsing Panels" />
+    <Text Key="ResetZoomOnPageChange" Text="翻页时重置为100%大小" Comment="Zoom is reset to 100% on page change" />
+    <Text Key="AlwaysDisplayBrowserDockingGrip" Text="总是显示浏览器停靠栏栅格" Comment="Always display Browser Docking Grip" />
+    <Text Key="OpenInNewTab" Text="在新标签中打开" Comment="Open in new Tab" />
+    <Text Key="UpdateWebComicsStartup" Text="更新网络漫画" Comment="Update Web Comics" />
+    <Text Key="ShowMainMenuNoComicOpen" Text="若没有eComic打开则显示主菜单" Comment="Show Main Menu if no eComic is open" />
+    <Text Key="InformationCover3D" Text="在信息框中 3D 显示封面" Comment="3D display of covers in Comic Info Dialog" />
+    <Text Key="DogEarThumbnails" Text="选中缩略图带卷角" Comment="Selected Thumbnails have dog-ear" />
+    <Text Key="BlendWhilePaging" Text="快速翻页也带淡入效果" Comment="Blend animation also while fast paging" />
+    <Text Key="LocalQuickSearch" Text="每个列表拥有自己的快速查找设置" Comment="Each List has own Quick Search settings" />
+    <Text Key="ScrollingDoesBrowse" Text="滚动到页底时在新页浏览" Comment="Scrolling to page margin browses to new pages" />
+    <Text Key="Import &amp; Export" Text="导入 &amp; 导出" Comment="Import &amp; Export" />
+    <Text Key="ExportedListsContainFilenames" Text="导出漫画列表包含文件名" Comment="Exported Comic Lists contain filenames" />
+    <Text Key="ShowSearchLinks" Text="显示搜索链接" Comment="Show Search Links" />
+  </Texts>
+</TR>

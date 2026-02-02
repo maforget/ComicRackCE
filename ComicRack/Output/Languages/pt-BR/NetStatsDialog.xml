@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="NetStatsDialog" CultureName="pt-BR">
+  <Texts>
+    <Text Key="NetStatsDialog" Text="Estatísticas de Servidor" Comment="Server Statistics" />
+    <Text Key="Clients" Text="Clientes: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="Pedidos de Info: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="Pedidos de Biblioteca: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="Pedidos de Página: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="Pedidos de Miniatura: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="Autenticações Falhas: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="Todos os Compartilhamentos" Comment="All Shares" />
+    <Text Key="LastMinute" Text="Último Minuto" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="Últimos 5 Minutos" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="Última Hora" Comment="Last Hour" />
+    <Text Key="Session" Text="Sessão" Comment="Session" />
+  </Texts>
+</TR>
