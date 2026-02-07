@@ -22,7 +22,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 			set
 			{
-				comicBrowser.BookList = value;
+                comicBrowser.SetExtraColumns();  // Ensure extra columns are set when adding a new window
+                comicBrowser.BookList = value;
 			}
 		}
 
