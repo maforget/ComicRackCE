@@ -141,7 +141,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                 public uint animation_have_timecodes;
                 public uint intrinsic_xsize;
                 public uint intrinsic_ysize;
-                [MarshalAs(UnmanagedType.ByValArray, SizeConst = 100)]
+                [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
                 public byte[] padding;
             }
         }
@@ -312,11 +312,33 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                 bool hasAlpha = bitmap.PixelFormat == PixelFormat.Format32bppArgb;
                 var info = new NativeMethods.JxlBasicInfo
                 {
-                    xsize = (uint)bitmap.Width,
-                    ysize = (uint)bitmap.Height,
-                    bits_per_sample = 8,
-                    num_color_channels = 3,
-                    num_extra_channels = hasAlpha ? 1u : 0u,
+                    have_container = 0,
+                    xsize = (uint)bitmap.Width, // required 
+                    ysize = (uint)bitmap.Height, // required 
+                    bits_per_sample = 8, // required 
+                    exponent_bits_per_sample = 0,
+                    intensity_target = 255.0f, //important for SDR images
+                    min_nits = 0.0f,
+                    relative_to_max_display = 0,
+                    linear_below = 0.0f,
+                    uses_original_profile = 0,
+                    have_preview = 0,
+                    have_animation = 0,
+                    orientation = 1, // required 
+                    num_color_channels = 3,// required  
+                    num_extra_channels = hasAlpha ? 1u : 0u, // required 
+                    alpha_bits = hasAlpha ? 8u : 0u, // important if hasAlpha is true
+                    alpha_exponent_bits = 0,
+                    alpha_premultiplied = 0,
+                    preview_xsize = 0,
+                    preview_ysize = 0,
+                    animation_tps_numerator = 0,
+                    animation_tps_denominator = 0,
+                    animation_num_loops = 0,
+                    animation_have_timecodes = 0,
+                    intrinsic_xsize = (uint)bitmap.Width,
+                    intrinsic_ysize = (uint)bitmap.Height,
+                    padding = new byte[4]
                 };
 
                 if (NativeMethods.JxlEncoderSetBasicInfo(encoder, ref info) != NativeMethods.JxlEncoderStatus.Success)
