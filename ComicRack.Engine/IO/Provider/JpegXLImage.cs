@@ -125,8 +125,20 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 
             public enum JxlEncoderFrameSettingId
             {
-                Effort = 0,          // 1-9, default 7 (higher = slower but better compression)
-                DecodingSpeed = 1,   // 0-4, default 0 (higher = faster decode but larger file)
+                /// <summary>
+                /// Sets encoder effort/speed level without affecting decoding speed. Valid
+                /// values are, from faster to slower speed: 1:lightning 2:thunder 3:falcon
+                /// 4:cheetah 5:hare 6:wombat 7:squirrel 8:kitten 9:tortoise.
+                /// Default: squirrel (7).
+                /// </summary>
+                Effort = 0,
+
+                /// <summary>
+                /// Sets the decoding speed tier for the provided options. Minimum is 0
+                /// (slowest to decode, best quality/density), and maximum is 4 (fastest to
+                /// decode, at the cost of some quality/density). Default is 0.
+                /// </summary>
+                DecodingSpeed = 1,
             }
 
             #endregion
@@ -460,7 +472,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                 min_nits = 0.0f,
                 relative_to_max_display = 0,
                 linear_below = 0.0f,
-                uses_original_profile = 0,
+                uses_original_profile = 0, // setting this to 1 when lossless will include the original color profile instead of simply sRGB. But it increases size by 250%, not sure it is worth it especially since it requires special decoding options
                 have_preview = 0,
                 have_animation = 0,
                 orientation = 1, // required to prevent "Failed to set basic info"
@@ -500,16 +512,17 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
         {
             if (lossless)
             {
+                // this overrides a set of existing options (such as distance, modular mode and color transform) that enables bit-for-bit lossless encoding.
                 NativeMethods.JxlEncoderSetFrameLossless(frameSettings, 1);
             }
             else
             {
                 // Convert quality (0-100) to distance (0.0-15.0)
-                // Lower distance = better quality
+                // 0.0 = mathematically lossless, 1.0 = visually lossless, recommended range: 0.5 to 3.0 (95% to 70%)
                 float distance = (100 - quality) * 0.1f;
                 CheckEncoderStatus(
                     NativeMethods.JxlEncoderSetFrameDistance(frameSettings, distance),
-                    "Failed to set frame distance");
+                   "Failed to set frame distance");
             }
 
             // Set compression effort (1-9)
@@ -518,7 +531,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                     frameSettings,
                     NativeMethods.JxlEncoderFrameSettingId.Effort,
                     effort),
-                "Failed to set effort");
+               "Failed to set effort");
         }
 
         /// <summary>
