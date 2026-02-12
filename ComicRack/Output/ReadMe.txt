@@ -4,10 +4,6 @@
 ComicRack is a Comic Reader / Manager for Windows Computers.
 You can think of it as an ITunes for electronic Comics.
 
-ComicRack is donation-ware.
-You are encouraged to donate a small amount to support this project and keep it running.
-ComicRack has no functional limitation whatsover if no donation is made.
-
 2) FEATURE LIST
 ===============
 
@@ -25,6 +21,7 @@ ComicRack has no functional limitation whatsover if no donation is made.
 * Batch converting of eComics to all supported formats
 * Scriptable and extendable
 * Android with syncinc capabilities
+* Dark mode
 * And much, much more....
 
 This is still a beta version.
@@ -67,7 +64,8 @@ Internally:
 	* WEBP
 	* HEIF & HEIC
 	* AVIF
-	* Jpeg2000
+	* Jpeg2000 (read only)
+	* JpegXl (Lossy & Lossless)
 
 4) NOTABLE UNSUPPORTED ITEMS
 ============================
