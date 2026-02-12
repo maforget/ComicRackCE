@@ -71,7 +71,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             public static extern void JxlEncoderCloseInput(IntPtr encoder);
 
             [DllImport(JxlLibrary, CallingConvention = CallingConvention.Cdecl)]
-            public static extern JxlEncoderStatus JxlEncoderProcessOutput(IntPtr encoder, out IntPtr nextOut, out UIntPtr availOut);
+            public static unsafe extern JxlEncoderStatus JxlEncoderProcessOutput(IntPtr encoder, byte** nextOut, UIntPtr* availOut);
 
             [DllImport(JxlLibrary, CallingConvention = CallingConvention.Cdecl)]
             public static extern void JxlColorEncodingSetToSRGB(ref JxlColorEncoding colorEncoding, int isGray);
@@ -407,28 +407,41 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                     NativeMethods.JxlEncoderCloseInput(encoder);   // Then close input
 
                     var outputList = new List<byte>();
-                    byte[] chunk = new byte[64 * 1024];
+                    byte[] outputBuffer = new byte[64 * 1024];
 
-                    while (true)
+                    GCHandle handle = GCHandle.Alloc(outputBuffer, GCHandleType.Pinned);
+                    try
                     {
-                        IntPtr nextOut;
-                        UIntPtr availOut;
-                        var status = NativeMethods.JxlEncoderProcessOutput(encoder, out nextOut, out availOut);
+                        unsafe
+                        {
+                            byte* bufferPtr = (byte*)handle.AddrOfPinnedObject();
 
-                        if (status == NativeMethods.JxlEncoderStatus.NeedMoreOutput)
-                        {
-                            int available = (int)availOut;
-                            Marshal.Copy(nextOut, chunk, 0, Math.Min(available, chunk.Length));
-                            outputList.AddRange(chunk.Take(available));
+                            while (true)
+                            {
+                                byte* nextOut = bufferPtr;
+                                UIntPtr availOut = new UIntPtr((ulong)outputBuffer.Length);
+
+                                var status = NativeMethods.JxlEncoderProcessOutput(encoder, &nextOut, &availOut);
+
+                                // Calculate how many bytes were written
+                                int bytesWritten = (int)(nextOut - bufferPtr);
+
+                                if (bytesWritten > 0)
+                                    outputList.AddRange(outputBuffer.Take(bytesWritten));
+
+
+                                if (status == NativeMethods.JxlEncoderStatus.Success)
+                                    break;
+                                else if (status == NativeMethods.JxlEncoderStatus.NeedMoreOutput) 
+                                    continue; // Continue processing with fresh buffer
+                                else
+                                    throw new Exception($"Encoder error: {status}");
+                            }
                         }
-                        else if (status == NativeMethods.JxlEncoderStatus.Success)
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            throw new Exception($"Encoder error: {status}");
-                        }
+                    }
+                    finally
+                    {
+                        handle.Free();
                     }
 
                     return outputList.ToArray();
