@@ -73,6 +73,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             [DllImport(JxlLibrary, CallingConvention = CallingConvention.Cdecl)]
             public static extern JxlEncoderStatus JxlEncoderProcessOutput(IntPtr encoder, out IntPtr nextOut, out UIntPtr availOut);
 
+            [DllImport(JxlLibrary, CallingConvention = CallingConvention.Cdecl)]
+            public static extern void JxlColorEncodingSetToSRGB(ref JxlColorEncoding colorEncoding, int isGray);
+
+            [DllImport(JxlLibrary, CallingConvention = CallingConvention.Cdecl)]
+            public static extern JxlEncoderStatus JxlEncoderSetColorEncoding(IntPtr encoder, ref JxlColorEncoding colorEncoding);
+
+            [DllImport(JxlLibrary, CallingConvention = CallingConvention.Cdecl)]
+            public static extern void JxlEncoderCloseFrames(IntPtr encoder);
+
             public enum JxlDecoderStatus
             {
                 Success = 0,
@@ -143,6 +152,16 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                 public uint intrinsic_ysize;
                 [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
                 public byte[] padding;
+            }
+
+            [StructLayout(LayoutKind.Sequential)]
+            public struct JxlColorEncoding
+            {
+                public uint color_space;        // JxlColorSpace
+                public uint white_point;        // JxlWhitePoint
+                public uint primaries;          // JxlPrimaries
+                public uint transfer_function;  // JxlTransferFunction
+                public uint rendering_intent;   // JxlRenderingIntent
             }
         }
 
@@ -294,21 +313,6 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 
             try
             {
-                IntPtr frameSettings = NativeMethods.JxlEncoderFrameSettingsCreate(encoder, IntPtr.Zero);
-
-                if (lossless)
-                {
-                    NativeMethods.JxlEncoderSetFrameLossless(frameSettings, 1);
-                }
-                else
-                {
-                    float distance = (100 - quality) * 0.1f;
-                    NativeMethods.JxlEncoderSetFrameDistance(frameSettings, distance);
-                }
-
-                // Set effort (1-9, default 7)
-                NativeMethods.JxlEncoderFrameSettingsSetOption(frameSettings, NativeMethods.JxlEncoderFrameSettingId.Effort, effort);
-
                 bool hasAlpha = bitmap.PixelFormat == PixelFormat.Format32bppArgb;
                 var info = new NativeMethods.JxlBasicInfo
                 {
@@ -344,8 +348,30 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                 if (NativeMethods.JxlEncoderSetBasicInfo(encoder, ref info) != NativeMethods.JxlEncoderStatus.Success)
                     throw new Exception("Failed to set basic info");
 
+                // Set color encoding to sRGB
+                var colorEncoding = new NativeMethods.JxlColorEncoding();
+                NativeMethods.JxlColorEncodingSetToSRGB(ref colorEncoding, 0);
+                if (NativeMethods.JxlEncoderSetColorEncoding(encoder, ref colorEncoding) != NativeMethods.JxlEncoderStatus.Success)
+                    throw new Exception("Failed to set color encoding");
+
+                IntPtr frameSettings = NativeMethods.JxlEncoderFrameSettingsCreate(encoder, IntPtr.Zero);
+
+                if (lossless)
+                {
+                    NativeMethods.JxlEncoderSetFrameLossless(frameSettings, 1);
+                }
+                else
+                {
+                    float distance = (100 - quality) * 0.1f;
+                    NativeMethods.JxlEncoderSetFrameDistance(frameSettings, distance);
+                }
+
+                // Set effort (1-9, default 7)
+                NativeMethods.JxlEncoderFrameSettingsSetOption(frameSettings, NativeMethods.JxlEncoderFrameSettingId.Effort, effort);
+
                 int bytesPerPixel = hasAlpha ? 4 : 3;
-                int bufferSize = bitmap.Width * bitmap.Height * bytesPerPixel;
+                int stride = bitmap.Width * bytesPerPixel;
+                int bufferSize = bitmap.Height * stride;
                 IntPtr pixels = Marshal.AllocHGlobal(bufferSize);
 
                 try
@@ -353,13 +379,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                     BitmapData bmpData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadOnly, bitmap.PixelFormat);
                     try
                     {
-                        int dstStride = bitmap.Width * bytesPerPixel;
                         int srcBytesPerPixel = hasAlpha ? 4 : 3;
 
                         unsafe
                         {
-                            CopyAndSwapChannels(bitmap.Width, bitmap.Height, bmpData.Stride, dstStride,
-                                (byte*)bmpData.Scan0, (byte*)pixels, hasAlpha, srcBytesPerPixel, bytesPerPixel, false);
+                            CopyAndSwapChannels(bitmap.Width, bitmap.Height, bmpData.Stride, stride, (byte*)bmpData.Scan0, (byte*)pixels, hasAlpha, srcBytesPerPixel, bytesPerPixel, false);
                         }
                     }
                     finally
@@ -372,13 +396,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                         num_channels = (uint)bytesPerPixel,
                         data_type = NativeMethods.JxlDataType.Uint8,
                         endianness = 0,
-                        align = UIntPtr.Zero
+                        align = new UIntPtr((ulong)stride)  // CRITICAL: Set to stride, not zero!
                     };
 
-                    if (NativeMethods.JxlEncoderAddImageFrame(frameSettings, ref format, pixels, new UIntPtr((ulong)bufferSize)) != NativeMethods.JxlEncoderStatus.Success)
-                        throw new Exception("Failed to add image frame");
+                    var addFrameStatus = NativeMethods.JxlEncoderAddImageFrame(frameSettings, ref format, pixels, new UIntPtr((ulong)bufferSize));
+                    if (addFrameStatus != NativeMethods.JxlEncoderStatus.Success)
+                        throw new Exception($"Failed to add image frame: {addFrameStatus}");
 
-                    NativeMethods.JxlEncoderCloseInput(encoder);
+                    NativeMethods.JxlEncoderCloseFrames(encoder);  // Close frames first!
+                    NativeMethods.JxlEncoderCloseInput(encoder);   // Then close input
 
                     var outputList = new List<byte>();
                     byte[] chunk = new byte[64 * 1024];
