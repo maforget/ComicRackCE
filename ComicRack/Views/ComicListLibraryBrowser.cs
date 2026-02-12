@@ -1335,7 +1335,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 		}
 
-		private void ExportList()
+		private string lastExportListPath = string.Empty;
+        private void ExportList()
 		{
 			if (tvQueries.SelectedNode == null)
 				return;
@@ -1347,15 +1348,19 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 			if (shareableComicListItem is ComicListItemFolder comicListItemFolder)
 			{
-				// TODO: Maybe add a way to also export the folder as a single list containing all items.
-				using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+				using (FolderBrowserDialogEx dialog = new FolderBrowserDialogEx())
 				{
 					dialog.Description = miExportReadingList.Text.Replace("&", "");
 					dialog.ShowNewFolderButton = true;
-					if (dialog.ShowDialog(this) == DialogResult.OK)
+					dialog.CheckboxText = TR.Load(base.Name)["ExportAsSingleEntries", "Export as single entries"];
+					dialog.CheckboxChecked = false;
+					dialog.InitialDirectory = lastExportListPath;
+                    if (dialog.ShowDialog(this) == DialogResult.OK)
 					{
 						string selectedPath = dialog.SelectedPath;
-						ExportFolderListsToFile(shareableComicListItem, true, selectedPath); // TODO: find a way to choose alwaysList
+						lastExportListPath = selectedPath;
+                        bool singleEntries = dialog.CheckboxChecked;
+                        ExportFolderListsToFile(shareableComicListItem, singleEntries, selectedPath);
 					}
 				}
 			}

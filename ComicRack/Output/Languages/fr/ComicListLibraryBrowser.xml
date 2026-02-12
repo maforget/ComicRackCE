@@ -40,5 +40,6 @@
     <Text Key="SyncDevices" Text="Synchroniser avec" Comment="Sync with" />
     <Text Key="SyncDevice" Text="Synchroniser avec {0}..." Comment="Sync with {0}..." />
     <Text Key="tsQuickSearch" Text="Recherche rapide (Ctrl+Alt+F)" Comment="Quick Search (Ctrl+Alt+F)" />
+    <Text Key="ExportAsSingleEntries" Text="Exporter les livres seuls" Comment="Export as single entries" />
   </Texts>
 </TR>
