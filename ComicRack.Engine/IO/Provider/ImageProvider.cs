@@ -259,7 +259,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 						array = WebpImage.ConvertToJpeg(array);
 						array = HeifAvifImage.ConvertToJpeg(array);
 						array = Jpeg2000Image.ConvertToJpeg(array);
-					}
+						array = JpegXLImage.ConvertToJpeg(array);
+                    }
 					return array;
 				}
 				catch (Exception)

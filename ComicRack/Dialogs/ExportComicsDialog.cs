@@ -163,7 +163,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		{
 			LocalizeUtility.UpdateRightToLeft(this);
 			InitializeComponent();
-			if (Environment.Is64BitProcess) this.cbPageFormat.Items.AddRange(new object[] { "HEIF", "AVIF" });
+			if (Environment.Is64BitProcess) this.cbPageFormat.Items.AddRange(new object[] { "HEIF", "AVIF", "JpegXL" });
 			LocalizeUtility.Localize(this, null);
 			foreach (ComboBox control in this.GetControls<ComboBox>())
 			{
@@ -202,7 +202,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			checkBox.Enabled = enabled;
 			txCustomStartIndex.Enabled = setting.Naming == ExportNaming.Custom;
 			txCustomName.Enabled = setting.Naming == ExportNaming.Custom || setting.Naming == ExportNaming.Caption;
-			tbQuality.Enabled = setting.PageType == StoragePageType.Jpeg || setting.PageType == StoragePageType.Webp || setting.PageType == StoragePageType.Heif || setting.PageType == StoragePageType.Avif;
+			tbQuality.Enabled = setting.PageType == StoragePageType.Jpeg || setting.PageType == StoragePageType.Webp || setting.PageType == StoragePageType.Heif || setting.PageType == StoragePageType.Avif || setting.PageType == StoragePageType.JpegXL;
 			txWidth.Enabled = setting.PageResize != StoragePageResize.Height && setting.PageResize != StoragePageResize.Original;
 			txHeight.Enabled = setting.PageResize != StoragePageResize.Width && setting.PageResize != StoragePageResize.Original;
 			chkDontEnlarge.Enabled = setting.PageResize != StoragePageResize.Original;

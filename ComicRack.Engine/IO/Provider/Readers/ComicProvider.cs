@@ -26,7 +26,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			"avif",
 			"jp2",
 			"j2k",
-			//"jxl",
+			"jxl",
 		};
 
 		public bool UpdateEnabled => GetType().GetAttributes<FileFormatAttribute>().FirstOrDefault((FileFormatAttribute f) => f.Format.Supports(base.Source))?.EnableUpdate ?? false;
