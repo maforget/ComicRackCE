@@ -110,7 +110,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 					IncludePages = txIncludePages.Text,
 					PageType = (StoragePageType)cbPageFormat.SelectedIndex,
 					PageCompression = tbQuality.Value,
-					PageResize = (StoragePageResize)cbPageResize.SelectedIndex,
+					Lossless = chkLossless.Checked,
+                    PageResize = (StoragePageResize)cbPageResize.SelectedIndex,
 					PageWidth = (int)txWidth.Value,
 					PageHeight = (int)txHeight.Value,
 					DontEnlarge = chkDontEnlarge.Checked,
@@ -141,7 +142,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				txIncludePages.Text = value.IncludePages;
 				cbPageFormat.SelectedIndex = (int)value.PageType < cbPageFormat.Items.Count ? (int)value.PageType : 0;
 				tbQuality.Value = value.PageCompression;
-				cbPageResize.SelectedIndex = (int)value.PageResize;
+				chkLossless.Checked = value.Lossless;
+                cbPageResize.SelectedIndex = (int)value.PageResize;
 				txWidth.Value = value.PageWidth;
 				txHeight.Value = value.PageHeight;
 				chkDontEnlarge.Checked = value.DontEnlarge;
@@ -202,8 +204,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			checkBox.Enabled = enabled;
 			txCustomStartIndex.Enabled = setting.Naming == ExportNaming.Custom;
 			txCustomName.Enabled = setting.Naming == ExportNaming.Custom || setting.Naming == ExportNaming.Caption;
-			tbQuality.Enabled = setting.PageType == StoragePageType.Jpeg || setting.PageType == StoragePageType.Webp || setting.PageType == StoragePageType.Heif || setting.PageType == StoragePageType.Avif || (setting.PageType == StoragePageType.JpegXL && !EngineConfiguration.Default.JpegXLEncoderLossless);
-			txWidth.Enabled = setting.PageResize != StoragePageResize.Height && setting.PageResize != StoragePageResize.Original;
+			chkLossless.Enabled = setting.PageType == StoragePageType.JpegXL; // Only enable Lossless option for JpegXL format, as it's the only one that supports it
+			chkLossless.Checked = setting.PageType == StoragePageType.JpegXL ? setting.Lossless : false; // Force Lossless to be unchecked for formats that don't support it
+            tbQuality.Enabled = setting.PageType == StoragePageType.Jpeg || setting.PageType == StoragePageType.Webp || setting.PageType == StoragePageType.Heif || setting.PageType == StoragePageType.Avif || (setting.PageType == StoragePageType.JpegXL && !setting.Lossless);
+            txWidth.Enabled = setting.PageResize != StoragePageResize.Height && setting.PageResize != StoragePageResize.Original;
 			txHeight.Enabled = setting.PageResize != StoragePageResize.Width && setting.PageResize != StoragePageResize.Original;
 			chkDontEnlarge.Enabled = setting.PageResize != StoragePageResize.Original;
 			btRemovePreset.Enabled = tvPresets.SelectedNode != null && tvPresets.SelectedNode.Parent != null && (bool)tvPresets.SelectedNode.Parent.Tag;

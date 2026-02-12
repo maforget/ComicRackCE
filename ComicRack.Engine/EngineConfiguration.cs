@@ -588,9 +588,6 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
-		[DefaultValue(false)]
-        public bool JpegXLEncoderLossless { get; set; }
-
         [DefaultValue(7)] // Valid value are 1-9
         public int JpegXLEncoderEffort { get; set; }
 
@@ -656,7 +653,6 @@ namespace cYo.Projects.ComicRack.Engine
 			PdfEngineToUse = PdfEngine.Pdfium;
             PdfiumImageSize = new Size(1920, 2540);
 			DisableNTFS = false;
-			JpegXLEncoderLossless = false;
 			JpegXLEncoderEffort = 7;
 		}
 

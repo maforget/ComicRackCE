@@ -68,5 +68,6 @@
     <Text Key="cbDoublePages.Item3" Text="Ajuster à la largeur" Comment="Adapt Width" />
     <Text Key="chkKeepOriginalNames" Text="Conserver le nom original des pages" Comment="Keep original page names" />
     <Text Key="labelTagToAppend" Text="Étiquettes : " Comment="Tags to Append: " />
+    <Text Key="chkLossless" Text="Compression sans perte" Comment="Lossless compression" />
   </Texts>
 </TR>

@@ -390,13 +390,12 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             StoragePageType.Heif => ".heif",
             StoragePageType.Avif => ".avif",
             //StoragePageType.Jpeg2000 => ".jp2",
-            StoragePageType.JpegXL => ".jxl",
+           StoragePageType.JpegXL => ".jxl", // We can't infer if it's lossless or lossy from the extension
             _ => ".jpg",
         };
 
         private static byte[] ConvertImage(StoragePageType storagePageType, Bitmap bitmap, StorageSetting setting)
         {
-            EngineConfiguration engineConfig = EngineConfiguration.Default;
             return storagePageType switch
             {
                 StoragePageType.Tiff => bitmap.ImageToBytes(ImageFormat.Tiff, 24),
@@ -408,7 +407,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                 StoragePageType.Heif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, false),
                 StoragePageType.Avif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, true),
                 //StoragePageType.Jpeg2000 => Jpeg2000Image.ConvertToJpeg2000(bitmap, setting.PageCompression, true),
-                StoragePageType.JpegXL => JpegXLImage.ConvertToJpegXL(bitmap, setting.PageCompression, engineConfig.JpegXLEncoderLossless, engineConfig.JpegXLEncoderEffort),
+                StoragePageType.JpegXL => JpegXLImage.ConvertToJpegXL(bitmap, setting.PageCompression, setting.Lossless, EngineConfiguration.Default.JpegXLEncoderEffort),
                 _ => bitmap.ImageToBytes(ImageFormat.Jpeg, 24, setting.PageCompression),
             };
         }

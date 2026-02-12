@@ -23,7 +23,14 @@ namespace cYo.Projects.ComicRack.Engine.IO
 			set;
 		}
 
-		[DefaultValue(true)]
+        [DefaultValue(false)]
+        public bool Lossless
+        {
+            get;
+            set;
+        }
+
+        [DefaultValue(true)]
 		public bool EmbedComicInfo
 		{
 			get;
@@ -156,7 +163,8 @@ namespace cYo.Projects.ComicRack.Engine.IO
 			PageWidth = 1000;
 			PageResize = StoragePageResize.Original;
 			PageCompression = 75;
-			PageType = StoragePageType.Original;
+			Lossless = false;
+            PageType = StoragePageType.Original;
 			RemovePages = true;
 			RemovePageFilter = ComicPageType.Deleted;
 			EmbedComicInfo = true;
