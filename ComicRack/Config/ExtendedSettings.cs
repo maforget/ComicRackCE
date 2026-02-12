@@ -308,7 +308,15 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set;
 		}
 
-		[DefaultValue(false)]
+        [CommandLineSwitch(ShortName = "dbm")]
+        [IniFile(false)]
+        public bool DisableBackupManager
+        {
+            get;
+            set;
+        }
+
+        [DefaultValue(false)]
 		public bool DisableMenuHideShowAnimation
 		{
 			get;

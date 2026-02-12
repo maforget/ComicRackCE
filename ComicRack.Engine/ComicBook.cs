@@ -2292,6 +2292,7 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 			ComicBook comicBook = CloneUtility.Clone(this);
 			comicBook.Id = Guid.NewGuid();
+			comicBook.UnparsedElements = null;
 			DataObject dataObject = new DataObject();
 			dataObject.SetData(DataFormats.UnicodeText, GetInfo().ToXml());
 			dataObject.SetData(ClipboardFormat, comicBook);

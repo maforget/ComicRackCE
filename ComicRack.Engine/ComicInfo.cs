@@ -830,6 +830,8 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
+		[ResetValue(0)]
+		[DefaultValue(null)]
         [XmlAnyElement]
         public System.Xml.XmlElement[] UnparsedElements { get; set; }
 
