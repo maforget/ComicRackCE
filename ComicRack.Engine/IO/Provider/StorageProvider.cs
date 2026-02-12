@@ -394,19 +394,23 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             _ => ".jpg",
         };
 
-        private static byte[] ConvertImage(StoragePageType storagePageType, Bitmap bitmap, StorageSetting setting) => storagePageType switch
+        private static byte[] ConvertImage(StoragePageType storagePageType, Bitmap bitmap, StorageSetting setting)
         {
-            StoragePageType.Tiff => bitmap.ImageToBytes(ImageFormat.Tiff, 24),
-            StoragePageType.Png => bitmap.ImageToBytes(ImageFormat.Png, 24),
-            StoragePageType.Bmp => bitmap.ImageToBytes(ImageFormat.Bmp, 24),
-            StoragePageType.Gif => bitmap.ImageToBytes(ImageFormat.Gif, 8),
-            StoragePageType.Djvu => DjVuImage.ConvertToDjVu(bitmap),
-            StoragePageType.Webp => WebpImage.ConvertoToWebp(bitmap, setting.PageCompression),
-            StoragePageType.Heif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, false),
-            StoragePageType.Avif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, true),
-            //StoragePageType.Jpeg2000 => Jpeg2000Image.ConvertToJpeg2000(bitmap, setting.PageCompression, true),
-            StoragePageType.JpegXL => JpegXLImage.ConvertToJpegXL(bitmap, setting.PageCompression),
-            _ => bitmap.ImageToBytes(ImageFormat.Jpeg, 24, setting.PageCompression),
-        };
+            EngineConfiguration engineConfig = EngineConfiguration.Default;
+            return storagePageType switch
+            {
+                StoragePageType.Tiff => bitmap.ImageToBytes(ImageFormat.Tiff, 24),
+                StoragePageType.Png => bitmap.ImageToBytes(ImageFormat.Png, 24),
+                StoragePageType.Bmp => bitmap.ImageToBytes(ImageFormat.Bmp, 24),
+                StoragePageType.Gif => bitmap.ImageToBytes(ImageFormat.Gif, 8),
+                StoragePageType.Djvu => DjVuImage.ConvertToDjVu(bitmap),
+                StoragePageType.Webp => WebpImage.ConvertoToWebp(bitmap, setting.PageCompression),
+                StoragePageType.Heif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, false),
+                StoragePageType.Avif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, true),
+                //StoragePageType.Jpeg2000 => Jpeg2000Image.ConvertToJpeg2000(bitmap, setting.PageCompression, true),
+                StoragePageType.JpegXL => JpegXLImage.ConvertToJpegXL(bitmap, setting.PageCompression, engineConfig.JpegXLEncoderLossless, engineConfig.JpegXLEncoderEffort),
+                _ => bitmap.ImageToBytes(ImageFormat.Jpeg, 24, setting.PageCompression),
+            };
+        }
     }
 }
