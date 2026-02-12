@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="FolderBrowserDialogEx" CultureName="fr">
+  <Texts>
+    <Text Key="SelectFolder" Text="Choisir un dossier" Comment="Select Folder" />
+    <Text Key="btCancel" Text="&amp;Annuler" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btNewFolder" Text="Créer un nouveau dossier" Comment="Make New Folder" />
+    <Text Key="NewFolder" Text="Nouveau dossier" Comment="New Folder" />
+  </Texts>
+</TR>
