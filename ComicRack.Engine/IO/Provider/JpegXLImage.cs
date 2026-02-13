@@ -518,8 +518,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             else
             {
                 // Convert quality (0-100) to distance (0.0-15.0)
-                // 0.0 = mathematically lossless, 1.0 = visually lossless, recommended range: 0.5 to 3.0 (95% to 70%)
-                float distance = (100 - quality) * 0.1f;
+                // 0.0 = mathematically lossless, 1.0 = visually lossless, recommended range: 0.5 to 3.0 (95% to 67%)
+                float distance = 0.1f + (100 - quality) * 0.09f;
                 CheckEncoderStatus(
                     NativeMethods.JxlEncoderSetFrameDistance(frameSettings, distance),
                    "Failed to set frame distance");
