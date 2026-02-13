@@ -316,10 +316,17 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
         /// <param name="lossless">Use lossless compression</param>
         /// <param name="effort">Compression effort 1-9 (higher = better compression but slower)</param>
         /// <returns>JPEG XL encoded data</returns>
-        public static byte[] ConvertToJpegXL(Bitmap bitmap, int quality = 70, bool lossless = true, int effort = 7)
+        public static byte[] ConvertToJpegXL(Bitmap bitmap, int quality = 70, bool lossless = true, int effort = 7, bool forceJpeg = false)
         {
             if (bitmap == null)
                 throw new ArgumentNullException(nameof(bitmap));
+
+            if (forceJpeg && lossless)
+            {
+                // If forcing JPEG, encode to JPEG first and then use lossless JPEG recompression
+                byte[] jpegData = bitmap.ImageToJpegBytes(quality);
+                return ConvertJpegToJpegXL(jpegData, effort);
+            }
 
             IntPtr encoder = NativeMethods.JxlEncoderCreate(IntPtr.Zero);
             if (encoder == IntPtr.Zero)

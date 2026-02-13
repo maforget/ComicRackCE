@@ -593,7 +593,11 @@ namespace cYo.Projects.ComicRack.Engine
 
         public static EngineConfiguration Default => defaultConfig ?? (defaultConfig = IniFile.Default.Register<EngineConfiguration>());
 
-		public EngineConfiguration()
+		[IniFile(false)]
+		[DefaultValue(false)]
+        public bool ForceJpegReconstruction { get; set; } // This is for the JpegXL encoder to force lossless reconstruction to JPEGs, tricks the conversion by saving the Bitmap to a Jpeg byte array so the resulting iamge is able to be reconstrutable. Only applies when using the lossless compression export setting. Should not be used as it will cause a quality loss because of the Jpeg conversion step.
+
+        public EngineConfiguration()
 		{
 			PageScrollingDuration = 1000;
 			AnimationDuration = 250;
@@ -654,7 +658,8 @@ namespace cYo.Projects.ComicRack.Engine
             PdfiumImageSize = new Size(1920, 2540);
 			DisableNTFS = false;
 			JpegXLEncoderEffort = 7;
-		}
+            ForceJpegReconstruction = false;
+        }
 
         public string GetTempFileName()
 		{
