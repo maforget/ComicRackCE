@@ -48,7 +48,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                 array = DjVuImage.ConvertToJpeg(data);
                 array = HeifAvifImage.ConvertToJpeg(data);
 				array = Jpeg2000Image.ConvertToJpeg(data);
-				return BitmapExtensions.BitmapFromBytes(array);
+				array = JpegXLImage.ConvertToJpeg(data);
+                return BitmapExtensions.BitmapFromBytes(array);
             }
 
             public byte[] GetThumbnailData(StorageSetting setting)
@@ -373,9 +374,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             ".webp" => StoragePageType.Webp,
             ".heif" or ".heic" => StoragePageType.Heif,
             ".avif" => StoragePageType.Avif,
-			//".jp2" or ".j2k" => StoragePageType.Jpeg2000,
-			//".jxl" => StoragePageType.JpegXL,
-			_ => StoragePageType.Jpeg,
+            //".jp2" or ".j2k" => StoragePageType.Jpeg2000,
+            ".jxl" => StoragePageType.JpegXL,
+            _ => StoragePageType.Jpeg,
         };
 
         private static string GetExtensionFromStoragePageType(StoragePageType storagePageType) => storagePageType switch
@@ -389,23 +390,27 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             StoragePageType.Heif => ".heif",
             StoragePageType.Avif => ".avif",
             //StoragePageType.Jpeg2000 => ".jp2",
-            //StoragePageType.JpegXL => ".jxl",
+           StoragePageType.JpegXL => ".jxl", // We can't infer if it's lossless or lossy from the extension
             _ => ".jpg",
         };
 
-        private static byte[] ConvertImage(StoragePageType storagePageType, Bitmap bitmap, StorageSetting setting) => storagePageType switch
+        private static byte[] ConvertImage(StoragePageType storagePageType, Bitmap bitmap, StorageSetting setting)
         {
-            StoragePageType.Tiff => bitmap.ImageToBytes(ImageFormat.Tiff, 24),
-            StoragePageType.Png => bitmap.ImageToBytes(ImageFormat.Png, 24),
-            StoragePageType.Bmp => bitmap.ImageToBytes(ImageFormat.Bmp, 24),
-            StoragePageType.Gif => bitmap.ImageToBytes(ImageFormat.Gif, 8),
-            StoragePageType.Djvu => DjVuImage.ConvertToDjVu(bitmap),
-            StoragePageType.Webp => WebpImage.ConvertoToWebp(bitmap, setting.PageCompression),
-            StoragePageType.Heif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, false),
-            StoragePageType.Avif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, true),
-            //StoragePageType.Jpeg2000 => Jpeg2000Image.ConvertToJpeg2000(bitmap, setting.PageCompression, true),
-            //StoragePageType.JpegXL => JpegXLImage.ConvertToJpegXL(bitmap),
-            _ => bitmap.ImageToBytes(ImageFormat.Jpeg, 24, setting.PageCompression),
-        };
+            EngineConfiguration ec = EngineConfiguration.Default;
+            return storagePageType switch
+            {
+                StoragePageType.Tiff => bitmap.ImageToBytes(ImageFormat.Tiff, 24),
+                StoragePageType.Png => bitmap.ImageToBytes(ImageFormat.Png, 24),
+                StoragePageType.Bmp => bitmap.ImageToBytes(ImageFormat.Bmp, 24),
+                StoragePageType.Gif => bitmap.ImageToBytes(ImageFormat.Gif, 8),
+                StoragePageType.Djvu => DjVuImage.ConvertToDjVu(bitmap),
+                StoragePageType.Webp => WebpImage.ConvertoToWebp(bitmap, setting.PageCompression),
+                StoragePageType.Heif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, false),
+                StoragePageType.Avif => HeifAvifImage.ConvertToHeif(bitmap, setting.PageCompression, true),
+                //StoragePageType.Jpeg2000 => Jpeg2000Image.ConvertToJpeg2000(bitmap, setting.PageCompression, true),
+                StoragePageType.JpegXL => JpegXLImage.ConvertToJpegXL(bitmap, setting.PageCompression, setting.Lossless, ec.JpegXLEncoderEffort, ec.ForceJpegReconstruction),
+                _ => bitmap.ImageToBytes(ImageFormat.Jpeg, 24, setting.PageCompression),
+            };
+        }
     }
 }
