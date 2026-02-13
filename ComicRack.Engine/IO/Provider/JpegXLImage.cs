@@ -97,6 +97,13 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             [DllImport(JxlLibrary, CallingConvention = CallingConvention.Cdecl)]
             public static extern JxlEncoderStatus JxlEncoderSetColorEncoding(IntPtr encoder, ref JxlColorEncoding colorEncoding);
 
+            [CLSCompliant(false)]
+            [DllImport(JxlLibrary, CallingConvention = CallingConvention.Cdecl)]
+            public static extern JxlEncoderStatus JxlEncoderAddJPEGFrame(IntPtr frameSettings, byte[] buffer, UIntPtr size);
+
+            [DllImport(JxlLibrary, CallingConvention = CallingConvention.Cdecl)]
+            public static extern JxlEncoderStatus JxlEncoderStoreJPEGMetadata(IntPtr encoder, int storeJpegMetadata);
+
             #endregion
 
             #region Enums
@@ -288,6 +295,19 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
             return false;
         }
 
+        private static bool IsJpeg(byte[] data)
+        {
+            if (data == null || data.Length < 2)
+                return false;
+
+            // Check for JPEG SOI marker
+            byte[] jxlSignature = { 0xFF, 0xD8 };
+            if (data.Take(2).SequenceEqual(jxlSignature))
+                return true;
+
+            return false;
+        }
+
         /// <summary>
         /// Converts a Bitmap to JPEG XL format.
         /// </summary>
@@ -318,6 +338,47 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
                 AddBitmapFrame(encoder, frameSettings, bitmap);
 
                 // Finalize and get encoded output
+                return GetEncodedOutput(encoder);
+            }
+            finally
+            {
+                NativeMethods.JxlEncoderDestroy(encoder);
+            }
+        }
+
+        /// <summary>
+        /// Converts JPEG data to JPEG XL using lossless JPEG recompression.
+        /// This preserves the original JPEG and allows perfect reconstruction.
+        /// </summary>
+        /// <param name="jpegData">Original JPEG file bytes</param>
+        /// <param name="effort">Compression effort 1-9</param>
+        /// <returns>JPEG XL encoded data that can be perfectly reconstructed to the original JPEG</returns>
+        public static byte[] ConvertJpegToJpegXL(byte[] jpegData, int effort = 7)
+        {
+            // Verify it's actually a JPEG
+            if (!IsJpeg(jpegData))
+                throw new ArgumentException("Input is not a valid JPEG file");
+
+            IntPtr encoder = NativeMethods.JxlEncoderCreate(IntPtr.Zero);
+            if (encoder == IntPtr.Zero)
+                throw new Exception("Failed to create JXL encoder");
+
+            try
+            {
+                // Enable JPEG metadata storage for perfect reconstruction
+                CheckEncoderStatus(
+                    NativeMethods.JxlEncoderStoreJPEGMetadata(encoder, 1),
+                    "Failed to enable JPEG metadata storage");
+
+                // Get frame settings and configure quality/effort
+                IntPtr frameSettings = NativeMethods.JxlEncoderFrameSettingsCreate(encoder, IntPtr.Zero);
+                ConfigureFrameSettings(frameSettings, quality: 100, lossless: true, effort);
+
+                // Add JPEG frame directly - this reads JPEG headers and sets basic info automatically
+                CheckEncoderStatus(
+                    NativeMethods.JxlEncoderAddJPEGFrame(frameSettings, jpegData, new UIntPtr((ulong)jpegData.Length)),
+                    "Failed to add JPEG frame");
+
                 return GetEncodedOutput(encoder);
             }
             finally
