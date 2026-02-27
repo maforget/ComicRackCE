@@ -1,8 +1,12 @@
+using System;
+
 namespace cYo.Projects.ComicRack.Engine.IO.Provider
 {
 	public interface IInfoStorage
 	{
-		bool StoreInfo(ComicInfo comicInfo);
+        event EventHandler<ErrorEventArgs> Error;
+
+        bool StoreInfo(ComicInfo comicInfo);
 
 		ComicInfo LoadInfo(InfoLoadingMethod method);
 	}

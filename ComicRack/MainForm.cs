@@ -3410,7 +3410,11 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				ShowErrorsDialog.ShowErrors(this, Program.QueueManager.ExportErrors, ShowErrorsDialog.ComicExporterConverter);
 			}
-			else
+			else if (Program.QueueManager.UpdateErrors.Count != 0)
+			{
+                ShowErrorsDialog.ShowErrors(this, Program.QueueManager.UpdateErrors, ShowErrorsDialog.UpdateErrorConverter);
+            }
+            else
 			{
 				ShowPendingTasks();
 			}
@@ -3890,7 +3894,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			tsBackupActivity.Visible = Program.BackupManager.IsInBackupProcess;
 			bool isInComicConversion = Program.QueueManager.IsInComicConversion;
 			int pendingComicConversions = Program.QueueManager.PendingComicConversions;
-			int count = Program.QueueManager.ExportErrors.Count;
+			int count = Program.QueueManager.ExportErrors.Count + Program.QueueManager.UpdateErrors.Count;
 			tsExportActivity.Visible = isInComicConversion || count > 0;
 			if (tsExportActivity.Visible)
 			{

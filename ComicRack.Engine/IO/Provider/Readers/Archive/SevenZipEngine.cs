@@ -25,6 +25,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
         private static readonly Regex rxList = new Regex("Path = (?<filename>.*)\\r\\n(Folder.*\\r\\n)*?Size = (?<size>\\d+)", RegexOptions.Compiled);
 
+        private static readonly Regex rxError = new Regex("Error:.+(^.+$)", RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Multiline | RegexOptions.Compiled);
+
         private bool libraryMode;
 
         private static SevenZipFactory sevenZipFactory;
@@ -199,9 +201,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
         {
             try
             {
-				return XmlInfoProviders.Readers.DeserializeAll(s => new MemoryStream(GetFileData(source, s)));
-			}
-			catch
+                return XmlInfoProviders.Readers.DeserializeAll(s => new MemoryStream(GetFileData(source, s)));
+            }
+            catch
             {
                 return null;
             }
@@ -257,10 +259,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                 if (flag)
                 {
                     string parameters = $"u -t{arg} -siComicInfo.xml \"{file}\"";
-                    if (ExecuteProcess.Execute(PackExe, parameters, comicInfo.ToArray(), null, ExecuteProcess.Options.None).ExitCode == 0)
-                    {
-                        return true;
-                    }
+                    return ExecuteUpdateProcess(parameters, comicInfo.ToArray());
                 }
                 else
                 {
@@ -274,10 +273,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                             comicInfo.Serialize(outStream);
                         }
                         string parameters2 = $"u -t{arg} \"{file}\" \"{text2}\"";
-                        if (ExecuteProcess.Execute(PackExe, parameters2, null, ExecuteProcess.Options.None).ExitCode == 0)
-                        {
-                            return true;
-                        }
+                        return ExecuteUpdateProcess(parameters2);
                     }
                     finally
                     {
@@ -292,10 +288,34 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                     }
                 }
             }
+            catch (WriteErrorException) // We only want the WriteErrorException to be propagated, so that it shows the error message to the user.
+            {
+                throw;
+            }
             catch (Exception)
             {
             }
             return false;
+        }
+
+        private static bool ExecuteUpdateProcess(string parameters, byte[] inputData = null)
+        {
+            ExecuteProcess.Result result = ExecuteProcess.Execute(PackExe, parameters, inputData, null, ExecuteProcess.Options.StoreOutput);
+            if (result.ExitCode == 0)
+            {
+                return true;
+            }
+            else // ExitCode 1 is a non fatal Error, so it might still have updated the ComicInfo.xml, but we want to check the error message to be sure.
+            {
+                //TODO: 7-Zip leaves .tmp files that should be cleaned up in the directory.
+                string t = result.ConsoleText;
+                string errorMessage = rxError.IsMatch(t) ? rxError.Match(t).Groups[1]?.Value.Trim() : string.Empty;
+
+                if (!string.IsNullOrEmpty(errorMessage))
+                    throw new WriteErrorException(errorMessage);
+
+                return false;
+            }
         }
     }
 }

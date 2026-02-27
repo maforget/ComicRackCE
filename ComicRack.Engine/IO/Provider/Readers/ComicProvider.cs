@@ -32,7 +32,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 		public bool UpdateEnabled => GetType().GetAttributes<FileFormatAttribute>().FirstOrDefault((FileFormatAttribute f) => f.Format.Supports(base.Source))?.EnableUpdate ?? false;
 
 		private bool disableNtfs = false;
-		protected bool DisableNtfs
+
+        public event EventHandler<ErrorEventArgs> Error;
+        public virtual void OnError(string errorMessage) => Error?.Invoke(this, new ErrorEventArgs(errorMessage));
+
+        protected bool DisableNtfs
 		{
 			get
 			{
@@ -73,24 +77,22 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 		{
 			bool flag = false;
 			using (LockSource(readOnly: false))
-			{
+            {
 				if (UpdateEnabled)
 				{
 					if (!OnStoreInfo(comicInfo))
-					{
 						return false;
-					}
+
 					flag = true;
 				}
-				if (!DisableNtfs)
-				{
-					flag |= NtfsInfoStorage.StoreInfo(base.Source, comicInfo);
-				}
-				return flag;
-			}
-		}
+                if (!DisableNtfs)
+                    flag |= NtfsInfoStorage.StoreInfo(base.Source, comicInfo);
 
-		protected virtual ComicInfo OnLoadInfo()
+                return flag;
+            }
+        }
+
+        protected virtual ComicInfo OnLoadInfo()
 		{
 			return null;
 		}
@@ -100,7 +102,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			return false;
 		}
 
-		protected virtual bool IsSupportedImage(ProviderImageInfo file)
+        protected virtual bool IsSupportedImage(ProviderImageInfo file)
         {
             if(IsImageThumbnailFolder(file.Name))
 				return false;

@@ -95,5 +95,14 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				Message = ce.Message
 			};
 		}
-	}
+
+        public static ErrorItem UpdateErrorConverter((string Item, string Message) ce)
+        {
+            return new ErrorItem
+            {
+                Item = ce.Item,
+                Message = ce.Message
+            };
+        }
+    }
 }

@@ -1631,6 +1631,9 @@ namespace cYo.Projects.ComicRack.Engine
 		[field: NonSerialized]
 		public event EventHandler<CreateComicProviderEventArgs> ComicProviderCreated;
 
+        [field: NonSerialized]
+        public event EventHandler<IO.Provider.ErrorEventArgs> WriteError;
+
 		public static event EventHandler<ParseFilePathEventArgs> ParseFilePath;
 
 		Dictionary<int, string> CachedVirtualTags = new Dictionary<int, string>();
@@ -2355,32 +2358,38 @@ namespace cYo.Projects.ComicRack.Engine
 		{
 			bool success = false;
 			if (!EditMode.IsLocalComic())
-			{
 				return false;
-			}
+
 			FileInfo fileInfo = new FileInfo(FilePath);
 			if (!fileInfo.Exists || fileInfo.IsReadOnly)
-			{
 				return false;
-			}
+
 			using (ImageProvider imageProvider = CreateImageProvider())
 			{
 				IInfoStorage infoStorage = imageProvider as IInfoStorage;
 				if (infoStorage == null)
-				{
 					return false;
+
+                EventHandler<IO.Provider.ErrorEventArgs> handler = (object s, IO.Provider.ErrorEventArgs e) => OnWriteError(e.Message);
+                infoStorage.Error += handler; // Trigger event if there's an error during writing info to file
+
+                try
+				{
+					success = infoStorage.StoreInfo(GetInfo());
+					FileInfoRetrieved = true;
 				}
-				success = infoStorage.StoreInfo(GetInfo());
-				FileInfoRetrieved = true;
+				finally
+				{
+					infoStorage.Error -= handler;
+                }
 			}
 			if (withRefreshFileProperties)
-			{
 				RefreshFileProperties();
-			}
+
 			return success;
 		}
 
-		public void ResetInfoRetrieved()
+        public void ResetInfoRetrieved()
 		{
 			FileInfoRetrieved = false;
 		}
@@ -2574,7 +2583,9 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		protected override void OnBookChanged(BookChangedEventArgs e)
+        protected virtual void OnWriteError(string errorMessage) => this.WriteError?.Invoke(this, new IO.Provider.ErrorEventArgs(errorMessage));
+
+        protected override void OnBookChanged(BookChangedEventArgs e)
 		{
 			base.OnBookChanged(e);
 			if (e.PropertyName == "FilePath" || e.PropertyName == "Number" || e.PropertyName == "EnableProposed")

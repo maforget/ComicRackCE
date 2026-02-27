@@ -40,7 +40,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
 		protected override bool OnStoreInfo(ComicInfo comicInfo)
 		{
-			return imageArchive.WriteInfo(base.Source, comicInfo);
+			try
+			{
+				return imageArchive.WriteInfo(base.Source, comicInfo);
+			}
+			catch (WriteErrorException ex)
+			{
+				OnError(ex.Message);
+				return false;
+            }
 		}
 
 		protected override bool OnFastFormatCheck(string source)
