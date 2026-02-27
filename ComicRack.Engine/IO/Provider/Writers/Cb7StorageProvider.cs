@@ -2,9 +2,8 @@ using System;
 using System.IO;
 using cYo.Common.Win32;
 using cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive;
-using cYo.Projects.ComicRack.Engine.IO.Provider.Writers;
 
-namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
+namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 {
 	[FileFormat("eComic (7z)", KnownFileFormats.CB7, ".cb7")]
 	public class Cb7StorageProvider : PackedStorageProvider
