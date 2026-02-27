@@ -324,13 +324,14 @@ namespace cYo.Projects.ComicRack.Engine
 			CacheManager = cacheManager;
 			Settings = settings;
 			Devices = devices;
+            int threadCount = Environment.ProcessorCount.Clamp(1, EngineConfiguration.Default.MaximumUpdateThreads);
 			UpdateComicBookDynamicQueue = new ProcessingQueue<ComicBook>("Update Dynamic Books", ThreadPriority.Lowest)
 			{
 				DefaultProcessingQueueAddMode = ProcessingQueueAddMode.AddToTop
 			};
 			ExportComicsQueue = new ProcessingQueue<ComicBook>("Export Books", ThreadPriority.Lowest);
 			ReadComicBookInfoFileQueue = new ProcessingQueue<ComicBook>("Read Book File Information", ThreadPriority.Lowest);
-			WriteComicBookInfoFileQueue = new ProcessingQueue<ComicBook>("Write Book File Information", ThreadPriority.Lowest)
+			WriteComicBookInfoFileQueue = new ProcessingQueue<ComicBook>(threadCount, "Write Book File Information", ThreadPriority.Lowest, int.MaxValue)
 			{
 				DefaultProcessingQueueAddMode = ProcessingQueueAddMode.AddToTop
 			};

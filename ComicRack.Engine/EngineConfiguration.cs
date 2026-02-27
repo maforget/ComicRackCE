@@ -36,7 +36,9 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private int maximumQueueThreads = 4;
 
-		private static EngineConfiguration defaultConfig;
+		private int maximumUpdateThreads = 4;
+
+        private static EngineConfiguration defaultConfig;
 
 		[DefaultValue(true)]
 		public bool EnableParallelQueries
@@ -318,7 +320,20 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		[DefaultValue(1)]
+        [DefaultValue(4)]
+        public int MaximumUpdateThreads
+        {
+            get
+            {
+                return maximumUpdateThreads;
+            }
+            set
+            {
+                maximumUpdateThreads = value.Clamp(1, 32);
+            }
+        }
+
+        [DefaultValue(1)]
 		public float PageShadowWidthPercentage
 		{
 			get;
