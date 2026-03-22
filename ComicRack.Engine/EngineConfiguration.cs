@@ -611,6 +611,9 @@ namespace cYo.Projects.ComicRack.Engine
 		[DefaultValue(false)]
         public bool ForceJpegReconstruction { get; set; } // This is for the JpegXL encoder to force lossless reconstruction to JPEGs, tricks the conversion by saving the Bitmap to a Jpeg byte array so the resulting image is reconstrutable. Only applies when using the lossless compression export setting. Should not be used as it will cause a quality loss because of the Jpeg conversion step.
 
+		[DefaultValue(false)]
+		public bool UseLegacyZipConfiguration { get; set; } // If true, will use the old configuration when creating CBZ files. When false, will use the new configuration which sets the NTFS extra field and sets the compression method to Stored when no compression is used.
+
         public EngineConfiguration()
 		{
 			PageScrollingDuration = 1000;
@@ -673,6 +676,7 @@ namespace cYo.Projects.ComicRack.Engine
 			DisableNTFS = false;
 			JpegXLEncoderEffort = 7;
             ForceJpegReconstruction = false;
+			UseLegacyZipConfiguration = false;
         }
 
         public string GetTempFileName()
