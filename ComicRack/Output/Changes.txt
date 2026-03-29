@@ -6,8 +6,19 @@ Community Edition Build 0.9.184:
 * NEW: Updating book info can now update multiple books at the same time. 
 * NEW: Added "MaximumUpdateThreads" setting in ComicRack.ini to configure the number of books that will update concurrently. Default is 4.
 
-* UPDATE: Updated French Translation. It is now the default localization used as a base when updating translations (See Wiki for instructions on updating other languages).
-* UPDATE: Updated Publisher icons. Thanks to all for their contributions.
+
+* CHANGE: Updated French Translation. It is now the default localization used as a base when updating translations (See Wiki for instructions on updating other languages).
+* CHANGE: Updated Publisher icons. Thanks to all for their contributions.
+* CHANGE: Moved settings in the ComicRack.ini that are used to return behavior to pre Community Edition (pre 0.9.180) to a new section called Legacy Behavior.
+* CHANGE: Exporting to CBZ without compression will now use Store instead of Deflate. It made the packed filesize bigger than the original file size. You can revert to the old behavior by setting "UseLegacyZipConfiguration" to true in ComicRack.ini.
+* CHANGE: Added NTFS datestamps to the stored files in the CBZ. This "may" help 7-zip when updating files since it seems to use the datestamps to determine if a file needs to be updated or not (needs testing). This setting can also be reverted to the old behavior by setting "UseLegacyZipConfiguration" to true in ComicRack.ini.
+
+
+* UPDATE: Updated PDFium to 148
+* UPDATE: Updated SharpCompress to 0.47.3
+* UPDATE: Updated System.Text.Json to 10.0.5
+* UPDATE: Updated various transient Microsoft packages to 10.0.5
+
 
 * BUGFIX: Fixed the Paste Data dialog failing to open when the book metadata contained unparsed elements.
 * BUGFIX: Potentially fixed crash to desktop that would occur when resizing images with some "fast" algorithms.
