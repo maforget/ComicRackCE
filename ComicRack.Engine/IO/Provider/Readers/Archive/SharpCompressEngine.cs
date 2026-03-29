@@ -27,7 +27,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             }
             try
             {
-                using (IArchive archive = ArchiveFactory.Open(source))
+                using (IArchive archive = ArchiveFactory.OpenArchive(source))
                 {
                     switch (archive.Type)
                     {
@@ -52,7 +52,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
         public override IEnumerable<ProviderImageInfo> GetEntryList(string source)
         {
-            using (IArchive archive = ArchiveFactory.Open(source))
+            using (IArchive archive = ArchiveFactory.OpenArchive(source))
             {
                 int i = 0;
                 foreach (IArchiveEntry entry in archive.Entries)
@@ -68,7 +68,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
         public override byte[] ReadByteImage(string source, ProviderImageInfo info)
         {
-            using (IArchive archive = ArchiveFactory.Open(source))
+            using (IArchive archive = ArchiveFactory.OpenArchive(source))
             {
                 IArchiveEntry archiveEntry = archive.Entries.Skip(info.Index).First();
                 MemoryStream memoryStream = new MemoryStream((int)archiveEntry.Size);
@@ -79,7 +79,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
         public override ComicInfo ReadInfo(string source)
         {
-            using (IArchive archive = ArchiveFactory.Open(source))
+            using (IArchive archive = ArchiveFactory.OpenArchive(source))
             {
                 return XmlInfoProviders.Readers.DeserializeAll(s =>
                 {
