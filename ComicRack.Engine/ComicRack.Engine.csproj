@@ -79,7 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="bblanchon.PDFium.Win32">
-      <Version>145.0.7578</Version>
+      <Version>148.0.7749</Version>
     </PackageReference>
     <PackageReference Include="CSJ2K" Version="3.0.0" />
     <PackageReference Include="LibHeifSharp" Version="3.2.0" />
