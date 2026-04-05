@@ -1052,6 +1052,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				ImagePool.Dispose();
 				DatabaseManager.Dispose();
 				if (!ExtendedSettings.DisableBackupManager && Settings.BackupManager.OnExit) BackupManager.RunBackup(false);
+				BackupManager.Dispose();
 			}
 			catch (Exception ex)
 			{

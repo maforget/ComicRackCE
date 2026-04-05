@@ -1130,7 +1130,7 @@ namespace cYo.Projects.ComicRack.Viewer
 					}, AutomaticProgressDialogOptions.EnableCancel);
 				}
 			}
-			if (Program.QueueManager.IsActive && !QuestionDialog.Ask(this, TR.Messages["BackgroundConvert", "Files are still being updated/converted/synchronized in the background. If you close now, some information will not be written!"], TR.Messages["CloseComicRack", "Close ComicRack"]))
+			if ((Program.QueueManager.IsActive || Program.BackupManager.IsBackupActive) && !QuestionDialog.Ask(this, TR.Messages["BackgroundConvert", "Files are still being updated/converted/synchronized in the background. If you close now, some information will not be written!"], TR.Messages["CloseComicRack", "Close ComicRack"]))
 			{
 				e.Cancel = true;
 				return;
@@ -3903,7 +3903,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			tsWriteInfoActivity.Visible = Program.QueueManager.IsInComicFileUpdate;
 			tsReadInfoActivity.Visible = Program.QueueManager.IsInComicFileRefresh;
 			tsPageActivity.Visible = Program.ImagePool.IsWorking;
-			tsBackupActivity.Visible = Program.BackupManager.IsInBackupProcess;
+			tsBackupActivity.Visible = Program.BackupManager.IsBackupActive;
 			bool isInComicConversion = Program.QueueManager.IsInComicConversion;
 			int pendingComicConversions = Program.QueueManager.PendingComicConversions;
 			int count = Program.QueueManager.ExportErrors.Count + Program.QueueManager.UpdateErrors.Count;

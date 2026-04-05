@@ -22,7 +22,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		private readonly BackupArchiveCreator archiveCreator = new BackupArchiveCreator();
 		private readonly BackupRetentionManager retentionManager = new BackupRetentionManager();
 
-		public bool IsInBackupProcess => backupQueue.IsActive;
+		public bool IsBackupActive => backupQueue.IsActive;
 
 		private readonly BackupManagerOptions options;
 
@@ -36,7 +36,10 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 			this.options = options ?? throw new ArgumentNullException(nameof(options));
 
 			locationProviderFactory = new BackupLocationProviderFactory(paths, configFile, defaultListsFile, defaultIconPackagesPath);
-			backupQueue = new ProcessingQueue<IEnumerable<BackupFileEntry>>("Backup Queue", ThreadPriority.Lowest);
+			backupQueue = new ProcessingQueue<IEnumerable<BackupFileEntry>>("Backup Queue", ThreadPriority.Lowest)
+			{
+				DefaultProcessingQueueAddMode = ProcessingQueueAddMode.AddToTop
+			};
 		}
 
 		public void RunBackup(bool useQueue = true)
@@ -95,6 +98,7 @@ namespace cYo.Projects.ComicRack.Engine.Backup
 		{
 			if (disposing)
 			{
+				backupQueue.Stop(abort: false, 180_000); // Will give the backup the time to finish (3 min) at shutdown.
 				backupQueue.Dispose();
 			}
 			base.Dispose(disposing);
