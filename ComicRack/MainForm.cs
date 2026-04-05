@@ -2929,91 +2929,97 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				mainMenuStrip.SuspendLayout();
 				fileTabs.SuspendLayout();
-				for (int num = fileTabs.Items.Count - 1; num >= 0; num--)
+
+				for (int index = fileTabs.Items.Count - 1; index >= 0; index--)
 				{
-					if (fileTabs.Items[num].Tag != null)
-					{
-						fileTabs.Items.RemoveAt(num);
-					}
+					if (fileTabs.Items[index].Tag != null)
+						fileTabs.Items.RemoveAt(index);
 				}
 				FormUtility.SafeToolStripClear(miOpenNow.DropDownItems);
 				FormUtility.SafeToolStripClear(cmComics.DropDownItems, cmComics.DropDownItems.IndexOf(cmComicsSep) + 1);
 				mainView.ClearFileTabs();
-				Bitmap thumb = default(Bitmap);
-				for (int i = 0; i < OpenBooks.Slots.Count; i++)
+				for (int index = 0; index < OpenBooks.Slots.Count; index++)
 				{
-					string text = FormUtility.FixAmpersand(OpenBooks.GetSlotCaption(i));
-					ComicBookNavigator nav = OpenBooks.Slots[i];
-					string text2 = text;
-					string text3 = null;
+					string captionText = FormUtility.FixAmpersand(OpenBooks.GetSlotCaption(index));
+					ComicBookNavigator nav = OpenBooks.Slots[index];
+					string tooltipText = captionText;
+					string shortcut = null;
 					KeysConverter keysConverter = new KeysConverter();
-					ToolStripMenuItem tmi = new ToolStripMenuItem(text);
+
+					// Create & Add menu item to the Open Books menu (File)
+					ToolStripMenuItem tmi = new ToolStripMenuItem(captionText);
 					tmi.Click += OpenBooks_Clicked;
-					tmi.Tag = i;
-					if (i < 12)
+					tmi.Tag = index;
+					if (index < 12)
 					{
-						tmi.ShortcutKeys = (Keys)(0x60000 | (112 + i));
-						text3 = keysConverter.ConvertToString(tmi.ShortcutKeys);
-						text2 = text2 + "\r\n(" + text3 + ")";
+						tmi.ShortcutKeys = Keys.Control | Keys.Alt | (Keys.F1 + index);
+						shortcut = keysConverter.ConvertToString(tmi.ShortcutKeys);
+						tooltipText = tooltipText + "\r\n(" + shortcut + ")";
 					}
 					miOpenNow.DropDownItems.Add(tmi);
-					ToolStripMenuItem tmi2 = new ToolStripMenuItem(text);
+
+					// Create & Add menu item to the Books context menu
+					ToolStripMenuItem tmi2 = new ToolStripMenuItem(captionText);
 					tmi2.Click += OpenBooks_Clicked;
-					tmi2.Tag = i;
+					tmi2.Tag = index;
 					tmi2.ShortcutKeys = tmi.ShortcutKeys;
 					cmComics.DropDownItems.Add(tmi2);
-					TabBar.TabBarItem tbi = new ComicReaderTab(text, nav, Font, text3)
+
+					// Create & Add tab items for the files (visible when not in Fill dock mode)
+					TabBar.TabBarItem tbi = new ComicReaderTab(captionText, nav, Font, shortcut)
 					{
-						Tag = i,
+						Tag = index,
 						MinimumWidth = 100,
 						CanClose = true,
-						ToolTipText = text2,
+						ToolTipText = tooltipText,
 						ContextMenu = tabContextMenu
 					};
 					if (nav == null)
-					{
 						tbi.Image = emptyTabImage;
-					}
+
 					tbi.Selected += OpenBooks_Selected;
 					tbi.CloseClick += btn_CloseClick;
 					tbi.CaptionClick += tbi_CaptionClick;
 					fileTabs.Items.Add(tbi);
-					TabBar.TabBarItem tbi2 = new ComicReaderTab(text, nav, Font, text3)
+
+					// Create & Add tab items for the MainView (files are hidden when not in Fill dock mode)
+					TabBar.TabBarItem tbi2 = new ComicReaderTab(captionText, nav, Font, shortcut)
 					{
 						Image = emptyTabImage,
-						Tag = i,
+						Tag = index,
 						MinimumWidth = 100,
 						CanClose = true,
-						ToolTipText = text2,
+						ToolTipText = tooltipText,
 						ContextMenu = tabContextMenu,
-						Visible = (ViewDock == DockStyle.Fill)
+						Visible = ViewDock == DockStyle.Fill
 					};
 					if (nav == null)
-					{
 						tbi2.Image = emptyTabImage;
-					}
+
 					tbi2.Selected += OpenBooks_Selected;
 					tbi2.CloseClick += btn_CloseClick;
 					tbi2.CaptionClick += tbi_CaptionClick;
 					mainView.AddFileTab(tbi2);
-					ThreadUtility.RunInBackground("Create tab thumbnails", delegate
+
+					// Create & assign thumbnails (via a background thread) to the tab & menu items
+					ThreadUtility.RunInBackground("Create tab thumbnails", () =>
 					{
 						try
 						{
-							using (IItemLock<ThumbnailImage> itemLock = Program.ImagePool.GetThumbnail(nav.Comic))
+							Bitmap thumb;
+							using (IItemLock<ThumbnailImage> thumbnail = Program.ImagePool.GetThumbnail(nav.Comic))
 							{
-								thumb = itemLock.Item.Bitmap.Resize(16, 16);
+								thumb = thumbnail.Item.Bitmap.Resize(16, 16);
 							}
-							this.Invoke(delegate
+
+							this.Invoke(() =>
 							{
 								if (!tmi.IsDisposed)
-								{
 									tmi.Image = thumb;
-								}
+
 								if (!tmi2.IsDisposed)
-								{
 									tmi2.Image = thumb;
-								}
+
 								tbi.Image = thumb;
 								tbi2.Image = thumb;
 							});
@@ -3023,38 +3029,44 @@ namespace cYo.Projects.ComicRack.Viewer
 						}
 					});
 				}
-				string text4 = miAddTab.Text.Replace("&", string.Empty);
-				TabBar.TabBarItem tabBarItem = new TabBar.TabBarItem(text4)
+
+				// Create & Add the New Tab icon to the files TabBar (used when dock isn't set to Fill)
+				string tabText = miAddTab.Text.Replace("&", string.Empty);
+				TabBar.TabBarItem tabBarItem = new TabBar.TabBarItem(tabText)
 				{
 					Tag = -1,
 					Image = addTabImage,
 					MinimumWidth = 32,
 					ShowText = false,
-					ToolTipText = text4,
+					ToolTipText = tabText,
 					AdjustWidth = false
 				};
-				tabBarItem.Click += delegate
+				tabBarItem.Click += (s, ea) =>
 				{
 					OpenBooks.AddSlot();
 					OpenBooks.CurrentSlot = OpenBooks.Slots.Count - 1;
 				};
 				fileTabs.Items.Add(tabBarItem);
-				tabBarItem = new TabBar.TabBarItem(text4)
+
+				// Create & Add the New Tab icon to MainView
+				tabBarItem = new TabBar.TabBarItem(tabText)
 				{
 					Tag = -1,
 					Image = addTabImage,
 					MinimumWidth = 32,
 					AdjustWidth = false,
 					ShowText = false,
-					ToolTipText = text4,
-					Visible = (ViewDock == DockStyle.Fill)
+					ToolTipText = tabText,
+					Visible = ViewDock == DockStyle.Fill
 				};
-				tabBarItem.Click += delegate
+				tabBarItem.Click += (s, ea) =>
 				{
 					OpenBooks.AddSlot();
 					OpenBooks.CurrentSlot = OpenBooks.Slots.Count - 1;
 				};
 				mainView.AddFileTab(tabBarItem);
+
+				// Resume & Perform Layout. 
 				fileTabs.ResumeLayout(performLayout: false);
 				fileTabs.PerformLayout();
 				mainMenuStrip.ResumeLayout(performLayout: false);
