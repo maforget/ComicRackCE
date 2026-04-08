@@ -6,6 +6,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using cYo.Common.ComponentModel;
 using cYo.Common.Runtime;
 
@@ -630,20 +631,28 @@ namespace cYo.Common.Drawing
 			}
         }
 
-		/// <summary>
-		/// Create a Icon that calls DestroyIcon() when the Destructor is called.
-		/// Unfortunatly Icon.FromHandle() initializes with the internal Icon-constructor Icon(handle, false), which sets the internal value "ownHandle" to false
-		/// This way because of the false, DestroyIcon() is not called as can be seen here:
-		/// https://referencesource.microsoft.com/#System.Drawing/commonui/System/Drawing/Icon.cs,f2697049dea34e7c,references
-		/// To get arround this we get the constructor internal Icon(IntPtr handle, bool takeOwnership) from Icon through reflection and initialize that way
-		/// </summary>
-		public static Icon BitmapToIcon(this Bitmap bitmap)
-		{
-			Type[] cargt = new[] { typeof(IntPtr), typeof(bool) };
-			ConstructorInfo ci = typeof(Icon).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, cargt, null);
-			object[] cargs = new[] { (object)bitmap.GetHicon(), true };
-			Icon icon = (Icon)ci.Invoke(cargs);
-			return icon;
-		}
-	}
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool DestroyIcon(IntPtr hIcon);
+
+        public static Icon BitmapToIcon(this Bitmap bitmap)
+        {
+            IntPtr hIcon = bitmap.GetHicon();
+            try
+            {
+                using (Icon temp = Icon.FromHandle(hIcon))
+                {
+                    return (Icon)temp.Clone();
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                DestroyIcon(hIcon);
+            }
+        }
+    }
 }
