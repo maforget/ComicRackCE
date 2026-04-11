@@ -210,7 +210,7 @@ namespace cYo.Common.IO
             indexSaver.SafeDispose();
             SaveCacheIndex(cacheIndex);
             lockFile?.Dispose();
-            cacheLock.Dispose();
+            //cacheLock.Dispose(); // Don't dispose the lock because the Cache might still be accessed. For example OnPaint calls IsAvailable while the form is closing during Cleanup.
             base.Dispose(disposing);
         }
 
