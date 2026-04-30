@@ -98,7 +98,7 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
-		[DefaultValue(typeof(Size), "512, \u00b4512")]
+		[DefaultValue(typeof(Size), "512, 512")]
 		public Size ListCoverSize
 		{
 			get;
