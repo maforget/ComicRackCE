@@ -149,7 +149,7 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
-		[DefaultValue(BitmapResampling.FastAndUgly)]
+		[DefaultValue(BitmapResampling.FastBilinear)]
 		public BitmapResampling ThumbnailResampling
 		{
 			get;
@@ -630,7 +630,7 @@ namespace cYo.Projects.ComicRack.Engine
 				Color.Red,
 				Color.Blue
 			};
-			ThumbnailResampling = BitmapResampling.FastAndUgly;
+			ThumbnailResampling = BitmapResampling.FastBilinear;
 			ThumbnailQuality = 60;
 			ThumbnailPageBow = true;
 			ExportResampling = BitmapResampling.GdiPlusHQ;
