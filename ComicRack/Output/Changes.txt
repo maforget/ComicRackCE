@@ -3,7 +3,7 @@ Community Edition Build 0.9.184:
 * NEW: Support for JpegXL image format. Supports Lossy & Lossless compression. Note: Lossless aren't reconstructible to Jpeg.
 * NEW: Using Export Reading List on a Folder will now let you choose to export the CBL as smart lists (default) or single entries (converts smart lists to regular reading lists).
 * NEW: Failure to update book info will now show an error message instead of silently failing.
-* NEW: Updating book info can now update multiple books at the same time. 
+* NEW: Updating book info can now update multiple books at the same time (from 1 to 4). 
 * NEW: Added "MaximumUpdateThreads" setting in ComicRack.ini to configure the number of books that will update concurrently. Default is 4.
 
 
@@ -12,6 +12,10 @@ Community Edition Build 0.9.184:
 * CHANGE: Moved settings in the ComicRack.ini that are used to return behavior to pre Community Edition (pre 0.9.180) to a new section called Legacy Behavior.
 * CHANGE: Exporting to CBZ without compression will now use Store instead of Deflate. It made the packed filesize bigger than the original file size. You can revert to the old behavior by setting "UseLegacyZipConfiguration" to true in ComicRack.ini.
 * CHANGE: Added NTFS datestamps to the stored files in the CBZ. This "may" help 7-zip when updating files since it seems to use the datestamps to determine if a file needs to be updated or not (needs testing). This setting can also be reverted to the old behavior by setting "UseLegacyZipConfiguration" to true in ComicRack.ini.
+* CHANGE: Ensure that the Backup Manager finishes if it's still running on shutdown. Added warning when closing the program while a backup is still running.
+* CHANGE: Updated the DiskCache to use better thread safety. Fixes potential deadlock (like when generating covers).
+* CHANGE: Updated BitmapToIcon (used to update the taskbar icon) so it uses proper Windows API instead of reflection to dispose of the icon handle.
+* CHANGE: Reverted default thumbnail resizing algorithm to "FastBilinear" (Bilinear). You can change it back in ComicRack.ini if you want to. The change to "FastAndUgly" (Nearest Neighbor) was to reduce access violation crashes caused by unsafe code, but it lowered image quality. "FastBilinear" no longer uses pointers directly and so should be safer and less crash prone. This is still an open issue, see #236 if it still occurs.
 
 
 * UPDATE: Updated PDFium to 148
@@ -22,6 +26,8 @@ Community Edition Build 0.9.184:
 
 * BUGFIX: Fixed the Paste Data dialog failing to open when the book metadata contained unparsed elements.
 * BUGFIX: Potentially fixed crash to desktop that would occur when resizing images with some "fast" algorithms.
+* BUGFIX: Fixed the same thumbnail being used in the reader tab for all open books.
+* BUGFIX: Paste Data dialog now remembers previous custom values.
 
 
 Community Edition Build 0.9.182:
@@ -58,7 +64,6 @@ Community Edition Build 0.9.182:
 * BUGFIX: Fixed an incorrect "operation would result in a duplicate entry in the database" error. File path comparison didn't ignore case.
 * BUGFIX: The program could sometimes become hung and the processor usage would be max will starting up, requiring to force close it.
 * BUGFIX: Fixed race conditions when using Virtual Tags in smart lists.
-
 
 Community Edition Build 0.9.180:
 
