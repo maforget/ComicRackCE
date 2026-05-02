@@ -14,8 +14,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 					SetArchive(new SevenZipEngine(KnownFileFormats.RAR5, libraryMode: true));
 					break;
 				case EngineConfiguration.CbEngines.SevenZipExe:
-					SetArchive(new SevenZipEngine(KnownFileFormats.RAR5, libraryMode: false));
-					break;
+					SetArchive(new SevenZipEngine(KnownFileFormats.RAR5, libraryMode: false, standalone: false)); // The standalone mode of SevenZip does not support RAR, so we set it to false to use the 32bit Console version instead.
+                    break;
 				case EngineConfiguration.CbEngines.SharpCompress:
 					SetArchive(new SharpCompressEngine(KnownFileFormats.RAR5));
 					break;

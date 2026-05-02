@@ -30,8 +30,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
 		public virtual bool WriteInfo(string source, ComicInfo info)
 		{
-			return SevenZipEngine.UpdateComicInfo(source, Format, info);
-		}
+			return SevenZipEngine.UpdateComicInfo(source, Format, standalone: false, comicInfo: info); // Since SevenZip is still used for updates when another engine is set and since the format might not be supported by the standalone exe, we need to use the console (32bit) version.
+        }
 
 		public virtual bool IsFormat(string source)
 		{
