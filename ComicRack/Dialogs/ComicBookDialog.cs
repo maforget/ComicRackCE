@@ -290,7 +290,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             bool canEdit = isFilelessOrInContainer || Program.Settings.UpdateComicFiles;
             bool canEditProperties = comic.EditMode.CanEditProperties();
             tabDetails.Enabled = tabPlot.Enabled = tabColors.Enabled = canEdit && canEditProperties;
-            tabPages.Enabled = canEdit && comic.EditMode.CanEditPages();
+            txCommunityRating.Enabled = tabPages.Enabled = canEdit && comic.EditMode.CanEditPages();
             tabCatalog.Enabled = tabCustom.Enabled = isFilelessOrInContainer && canEditProperties;
             EnableTabPage(tabPages, comic.IsLinked);
             EnableTabPage(tabColors, comic.IsLinked);
@@ -298,7 +298,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             EnableTabPage(tabCustom, Program.Settings.ShowCustomBookFields && isFilelessOrInContainer);
             labelEnableProposed.Visible = cbEnableProposed.Visible = labelScanInformation.Visible = txScanInformation.Visible = comic.IsLinked;
             labelOpenedTime.Visible = dtpOpenedTime.Visible = labelPagesAsTextSimple.Visible = txPagesAsTextSimple.Visible = !comic.IsLinked;
-            txCommunityRating.Enabled = txRating.Enabled = cbEnableProposed.Enabled = cbSeriesComplete.Enabled = isFilelessOrInContainer;
+            txRating.Enabled = cbEnableProposed.Enabled = cbSeriesComplete.Enabled = isFilelessOrInContainer;
             if (!canEditProperties)
             {
                 txCommunityRating.Enabled = txRating.Enabled = false;

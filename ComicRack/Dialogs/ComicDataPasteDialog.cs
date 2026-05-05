@@ -162,15 +162,14 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                     openedTime.Visible = pageCount.Visible = openedTime.Enabled = pageCount.Enabled = false;
                 }
 
-                // If books aren't in the library, disable the "Community Rating", "Rating", "Tags", "Color" and "Series Complete" checkboxes.
+                // If books aren't in the library, disable the "Rating", "Tags", "Color" and "Series Complete" checkboxes.
                 if (!books.Any((ComicBook cb) => cb.IsInContainer))
                 {
-                    CheckBox communityRarting = comicDataPasteDialog.chkCommunityRating;
                     CheckBox rating = comicDataPasteDialog.chkRating;
                     CheckBox tags = comicDataPasteDialog.chkTags;
                     CheckBox color = comicDataPasteDialog.chkColor;
                     CheckBox chkSeriesComplete = comicDataPasteDialog.chkSeriesComplete;
-                    communityRarting.Enabled = rating.Enabled = tags.Enabled = color.Enabled = chkSeriesComplete.Enabled = false;
+                    rating.Enabled = tags.Enabled = color.Enabled = chkSeriesComplete.Enabled = false;
                 }
 
                 // Show the dialog and get the list of properties to paste if the user clicks OK
