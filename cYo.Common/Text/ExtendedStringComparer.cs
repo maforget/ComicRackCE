@@ -74,7 +74,7 @@ namespace cYo.Common.Text
 			{
 				i1 = s1.IndexAfterArticle();
 				i2 = s2.IndexAfterArticle();
-				result = Math.Sign(i2 - i1);
+				result = Math.Sign(i1 - i2);
             }
 
 			int length = s1.Length;
