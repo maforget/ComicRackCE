@@ -141,17 +141,15 @@ namespace cYo.Common.ComponentModel
 		public static string CompressedName(string text)
 		{
 			if (string.IsNullOrEmpty(text))
-			{
 				return string.Empty;
-			}
+
 			StringBuilder stringBuilder = new StringBuilder();
 			string[] array = text.Split(StringUtility.CommonSeparators);
 			foreach (string text2 in array)
 			{
 				if (!string.IsNullOrEmpty(text2) && !text2.IsArticle())
-				{
 					stringBuilder.Append(text2);
-				}
+
 			}
 			return stringBuilder.ToString();
 		}
@@ -201,49 +199,40 @@ namespace cYo.Common.ComponentModel
 			return new GroupInfo(alphabetCaptions[num], num);
 		}
 
-		public static IGroupInfo GetFileSizeGroup(long size)
+        public static IGroupInfo GetFileSizeGroup(long size)
 		{
-			if (size <= 0)
-			{
-				return new GroupInfo(sizeGroups[0], 0);
-			}
-			if (size < 1048576)
-			{
-				return new GroupInfo(sizeGroups[1], 1);
-			}
-			if (size < 10485760)
-			{
-				return new GroupInfo(sizeGroups[2], 2);
-			}
-			if (size < 52428800)
-			{
-				return new GroupInfo(sizeGroups[3], 3);
-			}
-			if (size < 104857600)
-			{
-				return new GroupInfo(sizeGroups[4], 4);
-			}
-			return new GroupInfo(sizeGroups[5], 5);
-		}
+			if (size <= 0) // Empty
+                return new GroupInfo(sizeGroups[0], 0);
+
+			if (size < 1048576) // Very Small, 1 MB
+                return new GroupInfo(sizeGroups[1], 1);
+
+			if (size < 10485760) // Small, 10 MB
+                return new GroupInfo(sizeGroups[2], 2);
+
+			if (size < 52428800) // Medium, 52 MB
+                return new GroupInfo(sizeGroups[3], 3);
+
+			if (size < 104857600) // Big, 104 MB
+                return new GroupInfo(sizeGroups[4], 4);
+
+			return new GroupInfo(sizeGroups[5], 5); // Huge
+        }
 
 		public static int Compare(IGroupInfo x, IGroupInfo y)
 		{
 			if (x == null && y == null)
-			{
 				return 0;
-			}
+
 			if (x == null)
-			{
 				return -1;
-			}
+
 			if (y == null)
-			{
 				return 1;
-			}
+
 			if (x.Index == y.Index)
-			{
-				return ExtendedStringComparer.Compare(x.Caption, y.Caption, ExtendedStringComparison.IgnoreArticles);
-			}
+				return ExtendedStringComparer.Compare(x.Caption, y.Caption, ExtendedStringComparison.IgnoreArticles | ExtendedStringComparison.IgnoreCase);
+
 			return x.Index.CompareTo(y.Index);
 		}
 
