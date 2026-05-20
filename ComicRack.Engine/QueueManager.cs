@@ -161,7 +161,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private readonly SmartList<(string Item, string Message)> updateErrors = new SmartList<(string Item, string Message)>();
 
-        private static string refreshInfoQueueMessage;
+		private static string refreshInfoQueueMessage;
 
 		private static string writeInfoQueueMessage;
 
@@ -286,7 +286,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public SmartList<(string Item, string Message)> UpdateErrors => updateErrors;
 
-        public int PendingComicConversions => ExportComicsQueue.Count;
+		public int PendingComicConversions => ExportComicsQueue.Count;
 
 		public bool IsInComicConversion => ExportComicsQueue.IsActive;
 
@@ -328,8 +328,8 @@ namespace cYo.Projects.ComicRack.Engine
 			CacheManager = cacheManager;
 			Settings = settings;
 			Devices = devices;
-            int threadCount = Environment.ProcessorCount.Clamp(1, EngineConfiguration.Default.MaximumUpdateThreads);
-            UpdateComicBookDynamicQueue = new ProcessingQueue<ComicBook>("Update Dynamic Books", ThreadPriority.Lowest)
+			int threadCount = Environment.ProcessorCount.Clamp(1, EngineConfiguration.Default.MaximumUpdateThreads);
+			UpdateComicBookDynamicQueue = new ProcessingQueue<ComicBook>("Update Dynamic Books", ThreadPriority.Lowest)
 			{
 				DefaultProcessingQueueAddMode = ProcessingQueueAddMode.AddToTop
 			};
@@ -407,15 +407,24 @@ namespace cYo.Projects.ComicRack.Engine
 			string outPath = default(string);
 			ExportComicsQueue.AddItem(kcb, (IAsyncResult ar) =>
 			{
+				bool clearDirtyFlag = setting.EmbedComicInfo && kcb.ComicInfoIsDirty; // clear the dirty flag after export if we embedded the comic info
+				EventHandler<BookChangedEventArgs> keepDirtyOnComicInfoUpdate = (s, e) =>
+				{
+					if (e.IsComicInfo) // only clear the dirty flag when only the comic info has changed and not ComicBook properties
+						clearDirtyFlag = false;
+				};
+
 				foreach (ComicBook cb in cbs)
 				{
 					cb.RefreshInfoFromFile();
 				}
+
 				ComicExporter comicExporter = new ComicExporter(cbs, setting, sequence);
 				try
 				{
 					bool isLocal = kcb.EditMode.IsLocalComic();
-					bool replace = setting.Target == ExportTarget.ReplaceSource;
+					bool replaceSource = setting.Target == ExportTarget.ReplaceSource;
+					bool isLocalAndReplaceSource = isLocal && replaceSource;
 					ps = ar as IProgressState;
 					if (ps != null)
 					{
@@ -441,21 +450,28 @@ namespace cYo.Projects.ComicRack.Engine
 						return !targetPath.Equals(sourceFile, StringComparison.OrdinalIgnoreCase) && DatabaseManager.Database.Books.FindItemByFile(targetPath) != null;
 					};
 
+					// if the book data changes (manually) during export, we want to keep the dirty flag
+					// But only for cases when not using replaceSource, since that path will revert any changes made during export anyway. 
+					if (!isLocalAndReplaceSource)
+						kcb.BookChanged += keepDirtyOnComicInfoUpdate;
+
 					outPath = comicExporter.Export(CacheManager.ImagePool);
 					if (outPath != null)
 					{
-						source = source.Where((string p) => !string.Equals(p, outPath, StringComparison.OrdinalIgnoreCase));
-						if (isLocal && replace)
+						kcb.BookChanged -= keepDirtyOnComicInfoUpdate; // Unsubscribe from the event before changing values to avoid clearing the clearDirtyFlag when we change the book after export
+						source = source.Where((string p) => !string.Equals(p, outPath, StringComparison.OrdinalIgnoreCase)); // source file names that differ from the new outPath
+						bool wasReplaced = isLocalAndReplaceSource || kcb.FilePath.Equals(outPath, StringComparison.OrdinalIgnoreCase); // files can be replaced by simply exporting to the same location and overwriting
+						if (isLocalAndReplaceSource)
 						{
 							kcb.FilePath = outPath;
 							kcb.RefreshFileProperties();
-							kcb.SetInfo(comicExporter.ComicInfo, onlyUpdateEmpty: false);
+							kcb.SetInfo(comicExporter.ComicInfo, onlyUpdateEmpty: false); // info from the export is set back on the original book, discarding any (manual) changes we could have made during export.
 							kcb.LastPageRead = kcb.LastPageRead.Clamp(0, kcb.PageCount - 1);
 							kcb.CurrentPage = kcb.CurrentPage.Clamp(0, kcb.PageCount - 1);
 							if (setting.ImageProcessingSource == ExportImageProcessingSource.FromComic)
-							{
 								kcb.ColorAdjustment = default(BitmapAdjustment);
-							}
+
+							// Delete source files that are different from the new outPath, usually when combining multiple books we delete the rest of the old ones
 							foreach (string item in source)
 							{
 								ShellFile.DeleteFile(item);
@@ -472,11 +488,15 @@ namespace cYo.Projects.ComicRack.Engine
 									DatabaseManager.Database.Books.Remove(item2);
 								}
 							}
-							if (setting.AddToLibrary || replace)
+							if (setting.AddToLibrary || replaceSource)
 							{
 								DatabaseManager.BookFactory.Create(outPath, CreateBookOption.AddToStorage, RefreshInfoOptions.DontReadInformation)?.SetInfo(comicExporter.ComicInfo, onlyUpdateEmpty: false);
 							}
 						}
+
+						// We only want to clear the dirty flag if we replaced a file, otherwise it's a new file so clearing the flag would remove it from the original anyway
+						if (clearDirtyFlag && wasReplaced)
+							kcb.ComicInfoIsDirty = false; // clear the dirty flag since it was embeded during export
 					}
 				}
 				catch (OperationCanceledException) { } //Since we cancelled don't add it as an error, just ignore it.
@@ -538,40 +558,40 @@ namespace cYo.Projects.ComicRack.Engine
 		public void WriteInfoToFileWithCacheUpdate(ComicBook cb)
 		{
 			try
-            {
-                while (CacheManager.ImagePool.AreImagesPending(cb.FilePath))
-                {
-                    Thread.Sleep(1000);
-                }
-                long oldSize = cb.FileSize;
-                DateTime oldWrite = cb.FileModifiedTime;
-                cb.WriteError += (object s, IO.Provider.ErrorEventArgs e) => AddUpdateErrors(cb, e); // Write error to the list of update errors to be shown in the UI.
-                if (cb.WriteInfoToFile(withRefreshFileProperties: false))
-                {
-                    CacheManager.ImagePool.Pages.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), (ImageKey key) => key.UpdateFileInfo());
-                    CacheManager.ImagePool.Thumbs.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), (ImageKey key) => key.UpdateFileInfo());
+			{
+				while (CacheManager.ImagePool.AreImagesPending(cb.FilePath))
+				{
+					Thread.Sleep(1000);
+				}
+				long oldSize = cb.FileSize;
+				DateTime oldWrite = cb.FileModifiedTime;
+				cb.WriteError += (object s, IO.Provider.ErrorEventArgs e) => AddUpdateErrors(cb, e); // Write error to the list of update errors to be shown in the UI.
+				if (cb.WriteInfoToFile(withRefreshFileProperties: false))
+				{
+					CacheManager.ImagePool.Pages.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), (ImageKey key) => key.UpdateFileInfo());
+					CacheManager.ImagePool.Thumbs.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), (ImageKey key) => key.UpdateFileInfo());
 
-                    cb.RefreshFileProperties();
-                    cb.ComicInfoIsDirty = false;
-                }
-            }
-            catch (Exception)
+					cb.RefreshFileProperties();
+					cb.ComicInfoIsDirty = false;
+				}
+			}
+			catch (Exception)
 			{
 			}
 			finally
 			{
-                cb.WriteError -= (object s, IO.Provider.ErrorEventArgs e) => AddUpdateErrors(cb, e); // Remove the error handler since we only want to track errors for this specific update.
-            }
+				cb.WriteError -= (object s, IO.Provider.ErrorEventArgs e) => AddUpdateErrors(cb, e); // Remove the error handler since we only want to track errors for this specific update.
+			}
 
-            void AddUpdateErrors(ComicBook cb, IO.Provider.ErrorEventArgs e) => UpdateErrors.Add((cb.FileNameWithExtension, e.Message));
-        }
+			void AddUpdateErrors(ComicBook cb, IO.Provider.ErrorEventArgs e) => UpdateErrors.Add((cb.FileNameWithExtension, e.Message));
+		}
 
-        private void Cb_Error(object sender, IO.Provider.ErrorEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+		private void Cb_Error(object sender, IO.Provider.ErrorEventArgs e)
+		{
+			throw new NotImplementedException();
+		}
 
-        public bool SynchronizeDevices()
+		public bool SynchronizeDevices()
 		{
 			foreach (DeviceSyncSettings device in Devices)
 			{
