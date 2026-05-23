@@ -21,19 +21,21 @@ namespace cYo.Projects.ComicRack.Engine.IO
 
 		private ComicInfo comicInfo;
 
-		private volatile string lastError;
+		private ComicBook comicBook;
+
+        private volatile string lastError;
 
 		private readonly int sequence;
 
 		public ExportSetting Setting => setting;
 
-		public ComicBook ComicBook => comicBooks[0];
+		public ComicBook ComicBook => comicBook;
 
-		public List<ComicBook> ComicBooks => comicBooks;
+        public List<ComicBook> ComicBooks => comicBooks;
 
 		public ComicInfo ComicInfo => comicInfo;
 
-		public string LastError => lastError;
+        public string LastError => lastError;
 
 		public int Sequence => sequence;
 
@@ -46,9 +48,11 @@ namespace cYo.Projects.ComicRack.Engine.IO
 		public ComicExporter(IEnumerable<ComicBook> books, ExportSetting setting, int sequence)
 		{
 			comicBooks = books.ToList();
-			comicInfo = CombinedComics.GetComicInfo(comicBooks);
+            comicBook = comicBooks[0].Clone<ComicBook>();
+			comicInfo = CombinedComics.GetComicInfo(comicBooks); // This returns a new instance
 			comicInfo.Tags = comicInfo.Tags.AppendUniqueValueToList(setting.TagsToAppend);
-			this.setting = setting;
+            comicBook.SetInfo(comicInfo, onlyUpdateEmpty: false); // Replace values in the ComicBook with the new Combined ComicInfo
+            this.setting = setting;
 			this.sequence = sequence;
 		}
 
@@ -99,15 +103,16 @@ namespace cYo.Projects.ComicRack.Engine.IO
 								if (File.Exists(targetPath))
 								{
 									tempFile = EngineConfiguration.Default.GetTempFileName();
-									comicInfo = storageProvider.Store(provider, comicInfo, tempFile, setting);
-									ShellFile.DeleteFile(targetPath);
+                                    // Pass comicBook instead of comicInfo because it may export a ComicBook.xml and comicInfo is a new instance
+                                    comicInfo = storageProvider.Store(provider, comicBook, tempFile, setting); 
+                                    ShellFile.DeleteFile(targetPath);
 									File.Move(tempFile, targetPath);
 								}
 								else
 								{
-									comicInfo = storageProvider.Store(provider, comicInfo, targetPath, setting);
+                                    comicInfo = storageProvider.Store(provider, comicBook, targetPath, setting);
 								}
-							}
+                            }
 							finally
 							{
 								storageProvider.Progress -= writer_Progress;

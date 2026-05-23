@@ -1537,7 +1537,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public string ToXml()
+        public string ToXml()
 		{
 			return Encoding.Default.GetString(ToArray());
 		}

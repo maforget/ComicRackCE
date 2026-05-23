@@ -30,7 +30,7 @@ using SharpCompress.Common;
 
 namespace cYo.Projects.ComicRack.Engine
 {
-	[Serializable]
+    [Serializable]
 	[ComVisible(true)]
 	public class ComicBook : ComicInfo, IImageKeyProvider, ICloneable
 	{
@@ -1726,7 +1726,7 @@ namespace cYo.Projects.ComicRack.Engine
 			VirtualTagsCollection.TagsRefresh += VirtualTagsCollection_TagsRefresh;
 		}
 
-		public ComicBook(ComicBook cb)
+		public ComicBook(ComicBook cb) : this()
 		{
 			CopyFrom(cb);
 			if (cb.CreateComicProvider != null)
@@ -1739,7 +1739,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public static ComicBook Create(string file, RefreshInfoOptions options)
+        public static ComicBook Create(string file, RefreshInfoOptions options)
 		{
 			ComicBook comicBook = new ComicBook
 			{
@@ -2635,7 +2635,16 @@ namespace cYo.Projects.ComicRack.Engine
 			XmlUtility.Store(file, this, compressed: false);
 		}
 
-		public static string FormatPages(int pages)
+        public byte[] ToArrayFull()
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                SerializeFull(memoryStream);
+                return memoryStream.ToArray();
+            }
+        }
+
+        public static string FormatPages(int pages)
 		{
 			if (pages <= 0)
 			{
