@@ -2406,7 +2406,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 			DateTime d = FileModifiedTime;
 			long num = FileSize;
-			RefreshFileProperties();
+			RefreshFileProperties(); // Sets FileSize / Timestamps
 			if (FileIsMissing)
 			{
 				return;
@@ -2442,7 +2442,21 @@ namespace cYo.Projects.ComicRack.Engine
 				bool forceRefreshInfo = options.HasFlag(RefreshInfoOptions.ForceRefresh);
 				if (forceRefreshInfo || !ComicInfoIsDirty)
 				{
-					SetInfo(infoStorage.LoadInfo((dateIsModified || !FileInfoRetrieved) ? InfoLoadingMethod.Complete : InfoLoadingMethod.Fast), !forceRefreshInfo);
+                    InfoLoadingMethod method = (dateIsModified || !FileInfoRetrieved) ? InfoLoadingMethod.Complete : InfoLoadingMethod.Fast;
+                    ComicInfo ci = infoStorage.LoadInfo(method); // Read ComicInfo.xml
+                    SetInfo(ci, !forceRefreshInfo);
+
+                    bool preferComicBook = true; // TODO: connect to a setting
+                    if (preferComicBook)
+                    {
+						ComicBook cb = infoStorage.LoadBook(method); // Read ComicBook.xml
+						if (cb != null)
+						{
+							cb.SetInfo(ci, onlyUpdateEmpty: false); // Replace ComicBook properties with the ComicInfo ones. In case they differ, info should always have the most up to date information
+							SetBook(cb);  // Copy all properties from the file, not only the ComicInfo ones
+                        }
+                    }
+
 					if (forceRefreshInfo)
 						ComicInfoIsDirty = false;
 				}
@@ -2609,6 +2623,17 @@ namespace cYo.Projects.ComicRack.Engine
 			LastPageRead = Math.Min(base.PageCount - 1, LastPageRead);
 			CurrentPage = Math.Min(base.PageCount - 1, CurrentPage);
 		}
+
+		public void SetBook(ComicBook cb)
+		{
+            // Sets these so they are kept and not overwritten by CopyFrom, they are determined by the file and should not be embeded in the ComicBook.xml
+            if (!cb.LastOpenedFromListIdSpecified) cb.LastOpenedFromListId = LastOpenedFromListId; // Keep the same ID, unless specified
+            cb.FilePath = FilePath; // Keep the same file path
+            cb.FileSize = FileSize; // Keep the same file size
+            cb.FileModifiedTime = FileModifiedTime; // Keep the same modified time
+            cb.FileCreationTime = FileCreationTime; // Keep the same creation time
+            CopyFrom(cb);
+        }
 
 		protected override ComicPageInfo OnNewComicPageAdded(ComicPageInfo info)
 		{

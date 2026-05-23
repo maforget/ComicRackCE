@@ -9,5 +9,6 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
         bool StoreInfo(ComicInfo comicInfo);
 
 		ComicInfo LoadInfo(InfoLoadingMethod method);
+        ComicBook LoadBook(InfoLoadingMethod method);
 	}
 }

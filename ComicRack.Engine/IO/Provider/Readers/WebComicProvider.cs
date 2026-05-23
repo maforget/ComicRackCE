@@ -198,6 +198,12 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			}
 		}
 
+		// TODO: Add implementation for WebComics of OnLoadBook
+		protected override ComicBook OnLoadBook()
+		{
+			return null;
+        }
+
 		protected override bool OnStoreInfo(ComicInfo comicInfo)
 		{
 			try

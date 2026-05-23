@@ -38,6 +38,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 			return imageArchive.ReadInfo(base.Source);
 		}
 
+        protected override ComicBook OnLoadBook()
+        {
+            return imageArchive.ReadBook(base.Source);
+        }
+
 		protected override bool OnStoreInfo(ComicInfo comicInfo)
 		{
 			try

@@ -73,6 +73,16 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			}
 		}
 
+        public ComicBook LoadBook(InfoLoadingMethod method)
+		{
+			using (LockSource(readOnly: true))
+			{
+                // TODO: see adding support for ComicBook in NTFS & sidecar
+                return OnLoadBook();
+            }
+        }
+
+
 		public bool StoreInfo(ComicInfo comicInfo)
 		{
 			bool flag = false;
@@ -96,6 +106,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 		{
 			return null;
 		}
+
+        protected virtual ComicBook OnLoadBook()
+        {
+            return null;
+        }
 
 		protected virtual bool OnStoreInfo(ComicInfo comicInfo)
 		{
