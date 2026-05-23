@@ -242,7 +242,9 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		[XmlAttribute]
+        public bool ShouldSerializeId() => Id != Guid.Empty; // Don't serialize the Id if it's empty
+
+        [XmlAttribute]
 		public Guid Id
 		{
 			get
@@ -481,7 +483,9 @@ namespace cYo.Projects.ComicRack.Engine
 			set;
 		}
 
-		public bool LastOpenedFromListIdSpecified => LastOpenedFromListId != Guid.Empty;
+		public bool LastOpenedFromListIdSpecified => LastOpenedFromListId != Guid.Empty; // Know when the Id has been set to a non-empty value
+
+        public bool ShouldSerializeLastOpenedFromListId() => LastOpenedFromListId != Guid.Empty; // Don't serialize the Id if it's empty
 
 		[XmlAttribute]
 		[DefaultValue(true)]
@@ -2635,8 +2639,23 @@ namespace cYo.Projects.ComicRack.Engine
 			XmlUtility.Store(file, this, compressed: false);
 		}
 
-        public byte[] ToArrayFull()
+        public byte[] ToArrayFull(bool onlyPortable = false)
         {
+			if (onlyPortable)
+			{
+				// Don't include these properties in the exported ComicBook.xml
+				Id = Guid.Empty;
+				FilePath = string.Empty;
+				FileModifiedTime = DateTime.MinValue;
+				FileCreationTime = DateTime.MinValue;
+				AddedTime = DateTime.MinValue; // Keep or not?
+				FileSize = -1;
+				LastOpenedFromListId = Guid.Empty;
+				CustomThumbnailKey = null;
+				ComicInfoIsDirty = false;
+				// TODO: Also Ignore EnableProposed? 
+			}
+
             using (MemoryStream memoryStream = new MemoryStream())
             {
                 SerializeFull(memoryStream);

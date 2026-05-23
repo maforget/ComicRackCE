@@ -199,7 +199,10 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 
         protected virtual void AddBook(ComicBook comicBook)
         {
-            byte[] data = comicBook.ToArrayFull();
+            if (comicBook == null)
+                return;
+
+            byte[] data = comicBook.ToArrayFull(onlyPortable: true);
             if (data != null && data.Length > 0)
                 AddEntry("ComicBook.xml", data);
         }
