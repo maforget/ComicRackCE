@@ -196,11 +196,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             }
         }
 
-        public override ComicInfo ReadInfo(string source)
+        private T Read<T>(string source) where T : class
         {
             try
             {
-                return XmlInfoProviders.Readers.DeserializeAll(s => new MemoryStream(GetFileData(source, s)));
+                return XmlInfoProviders.Readers.DeserializeAll<T>(s => new MemoryStream(GetFileData(source, s))) as T;
             }
             catch
             {
@@ -208,7 +208,16 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             }
         }
 
+        public override ComicInfo ReadInfo(string source) => Read<ComicInfo>(source);
+
+        public override ComicBook ReadBook(string source) => Read<ComicBook>(source);
+
         public override bool WriteInfo(string source, ComicInfo comicInfo)
+        {
+            return UpdateComicInfo(source, base.Format, standalone, comicInfo);
+        }
+
+        public override bool WriteBook(string source, ComicBook comicInfo)
         {
             return UpdateComicInfo(source, base.Format, standalone, comicInfo);
         }

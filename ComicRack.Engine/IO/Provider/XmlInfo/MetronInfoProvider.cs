@@ -13,10 +13,10 @@ using cYo.Projects.ComicRack.Engine.Drawing;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo
 {
-	[XmlInfoFile("MetronInfo.xml", 1)]
-	public class MetronInfoProvider : XmlInfoProvider<MetronInfo>
+	[XmlInfoFile("MetronInfo.xml", 1, XmlInfoType.ComicInfo)]
+	public class MetronInfoProvider : XmlInfoProvider<MetronInfo, ComicInfo>
 	{
-		public override ComicInfo ToComicInfo(MetronInfo metronInfo)
+		public override ComicInfo ToXml(MetronInfo metronInfo)
 		{
 			if (metronInfo == null)
 				return null;

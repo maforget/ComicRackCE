@@ -11,7 +11,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 		byte[] ReadByteImage(string source, ProviderImageInfo info);
 
 		ComicInfo ReadInfo(string source);
+        ComicBook ReadBook(string source);
 
-		bool WriteInfo(string source, ComicInfo info);
+        bool WriteInfo(string source, ComicInfo info);
+        bool WriteBook(string source, ComicBook info);
 	}
 }

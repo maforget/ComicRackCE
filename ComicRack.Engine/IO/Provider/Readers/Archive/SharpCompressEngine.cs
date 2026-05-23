@@ -77,11 +77,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             }
         }
 
-        public override ComicInfo ReadInfo(string source)
+        private T Read<T>(string source) where T : class
         {
             using (IArchive archive = ArchiveFactory.OpenArchive(source))
             {
-                return XmlInfoProviders.Readers.DeserializeAll(s =>
+                return XmlInfoProviders.Readers.DeserializeAll<T>(s =>
                 {
                     IArchiveEntry archiveEntry = archive.Entries.FirstOrDefault((IArchiveEntry e) => Path.GetFileName(e.Key).Equals(s, StringComparison.OrdinalIgnoreCase));
 
@@ -89,8 +89,12 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                         return null;
 
                     return archiveEntry.OpenEntryStream();
-                });
+                }) as T;
             }
         }
+
+        public override ComicInfo ReadInfo(string source) => Read<ComicInfo>(source);
+
+        public override ComicBook ReadBook(string source) => Read<ComicBook>(source);
     }
 }

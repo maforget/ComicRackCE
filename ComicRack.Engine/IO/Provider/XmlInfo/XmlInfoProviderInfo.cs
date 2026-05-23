@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo
 {
-	public class XmlInfoProviderInfo : IProviderInfo
+    public class XmlInfoProviderInfo : IProviderInfo
 	{
 		public Type ProviderType
 		{
@@ -24,5 +24,5 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo
 		}
 	}
 
-	public record XmlInfoFile(string FileName, int Order);
+	public record XmlInfoFile(string FileName, int Order, XmlInfoType XmlInfoType = XmlInfoType.ComicInfo);
 }

@@ -86,7 +86,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             }
         }
 
-        public override ComicInfo ReadInfo(string source)
+        private T Read<T>(string source) where T : class
         {
             try
             {
@@ -95,7 +95,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                 using (FileStream inputStream = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read, BufferSize))
                 using (TarInputStream tarInputStream = new TarInputStream(inputStream, Encoding.UTF8))
                 {
-                    return XmlInfoProviders.Readers.DeserializeAll(s =>
+                    return XmlInfoProviders.Readers.DeserializeAll<T>(s =>
                     {
                         TarEntry nextEntry;
                         do
@@ -113,13 +113,16 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                         inStream.Position = 0;
 
                         return inStream;
-                    });
+                    }) as T;
                 }
             }
             catch
             {
-                return null;
+                return default;
             }
         }
+
+        public override ComicInfo ReadInfo(string source) => Read<ComicInfo>(source);
+        public override ComicBook ReadBook(string source) => Read<ComicBook>(source);
     }
 }
