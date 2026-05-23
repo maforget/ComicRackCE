@@ -37,7 +37,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 			set;
 		}
 
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         public bool EmbedComicBook
         {
             get;
@@ -175,7 +175,7 @@ namespace cYo.Projects.ComicRack.Engine.IO
 			RemovePages = true;
 			RemovePageFilter = ComicPageType.Deleted;
 			EmbedComicInfo = true;
-			EmbedComicBook = false;
+			EmbedComicBook = true;
             ComicCompression = ExportCompression.None;
 			ThumbnailSize = new Size(0, 256);
 			DoublePages = DoublePageHandling.Keep;
