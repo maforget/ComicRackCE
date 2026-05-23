@@ -24,5 +24,5 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo
 		}
 	}
 
-	public record XmlInfoFile(string FileName, int Order, XmlInfoType XmlInfoType = XmlInfoType.ComicInfo);
+	public record XmlInfoFile(string FileName, int Order);
 }

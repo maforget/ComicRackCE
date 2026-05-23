@@ -41,11 +41,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo
 
         public IEnumerable<XmlInfoProviderInfo> GetProviderInfos(Type type)
         {
-            //find the type via the attribute, if it exists, otherwise find it via the generic argument of the provider type
-            if (TryParse(type, out XmlInfoType xmlInfoType))
-                return GetProviderInfos<XmlInfoProviderInfo>().Where(x => x.XmlInfoFile.XmlInfoType == xmlInfoType).OrderBy(x => x.XmlInfoFile.Order);
-
-            return Enumerable.Empty<XmlInfoProviderInfo>();
+            // Get the provider info based on the generic argument of the provider type
+            return GetProviderInfos<XmlInfoProviderInfo>().Where(x => x.ProviderType.BaseType.GetGenericArguments().LastOrDefault(t => t == type) != null).OrderBy(x => x.XmlInfoFile.Order);
         }
 
         public IEnumerable<XmlInfoProviderInfo> GetProviderInfos()
@@ -75,11 +72,6 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo
                     return comicInfo;
             }
             return null;
-        }
-
-        private bool TryParse(Type type, out XmlInfoType xmlInfoType)
-        {
-            return Enum.TryParse(type.Name, out xmlInfoType);
         }
     }
 }

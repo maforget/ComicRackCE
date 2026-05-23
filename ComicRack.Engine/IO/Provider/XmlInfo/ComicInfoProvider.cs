@@ -8,7 +8,7 @@ using cYo.Common.Xml;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo
 {
-	[XmlInfoFile("ComicInfo.xml", 0, XmlInfoType.ComicInfo)]
+	[XmlInfoFile("ComicInfo.xml", 0)]
 	public class ComicInfoProvider : XmlInfoProvider<ComicInfo, ComicInfo>
 	{
 		public override ComicInfo ToXml(ComicInfo xmlInfo) => xmlInfo;
