@@ -202,7 +202,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
             if (comicBook == null)
                 return;
 
-            byte[] data = comicBook.ToArrayFull(onlyPortable: true);
+            byte[] data = comicBook.ToArray();
             if (data != null && data.Length > 0)
                 AddEntry("ComicBook.xml", data);
         }

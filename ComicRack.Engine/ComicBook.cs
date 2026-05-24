@@ -2661,10 +2661,10 @@ namespace cYo.Projects.ComicRack.Engine
 			return XmlUtility.Load<ComicBook>(file, compressed: false);
 		}
 
-		public void SerializeFull(Stream stream, bool onlyPortable = false)
-		{
-            if (onlyPortable)
-            {
+        public override void Serialize(Stream outStream)
+        {
+			try
+			{
                 // Don't include these properties in the exported ComicBook.xml
                 Id = Guid.Empty;
                 FilePath = string.Empty;
@@ -2675,25 +2675,26 @@ namespace cYo.Projects.ComicRack.Engine
                 LastOpenedFromListId = Guid.Empty;
                 CustomThumbnailKey = null;
                 ComicInfoIsDirty = false;
-                // TODO: Also Ignore EnableProposed? 
-            }
+                // TODO: Also Ignore EnableProposed?
 
+                XmlUtility.Store(outStream, this, compressed: false);
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+        }
+
+        public void SerializeFull(Stream stream)
+        {
             XmlUtility.Store(stream, this, compressed: false);
-		}
+        }
 
-		public void SerializeFull(string file)
+        public void SerializeFull(string file)
 		{
 			XmlUtility.Store(file, this, compressed: false);
 		}
-
-        public byte[] ToArrayFull(bool onlyPortable = false)
-        {
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                SerializeFull(memoryStream, onlyPortable);
-                return memoryStream.ToArray();
-            }
-        }
 
         public static string FormatPages(int pages)
 		{

@@ -262,15 +262,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
         {
             try
             {
-                ComicBook comicBook = comicInfo as ComicBook;
-                bool isComicBook = comicBook != null;
-                string filename = isComicBook ? "ComicBook.xml" : "ComicInfo.xml";
-
+                string filename = comicInfo is ComicBook ? "ComicBook.xml" : "ComicInfo.xml";
                 if (updateSetting.InlineUpdate)
                 {
-                    byte[] data = isComicBook ? comicBook?.ToArrayFull(onlyPortable: true) : comicInfo.ToArray();
                     string parameters = $"u -t{updateSetting.arg} -si{filename} \"{file}\"";
-                    return ExecuteUpdateProcess(parameters, standalone, data);
+                    return ExecuteUpdateProcess(parameters, standalone, comicInfo.ToArray());
                 }
                 else
                 {
@@ -282,10 +278,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                         XmlUtility.Store(tempPath, comicInfo);
                         using (Stream outStream = File.Create(tempPath))
                         {
-                            if (isComicBook)
-                                comicBook?.SerializeFull(outStream, onlyPortable: true);
-                            else
-                                comicInfo.Serialize(outStream);
+                            comicInfo.Serialize(outStream);
                         }
                         string parameters2 = $"u -t{updateSetting.arg} \"{file}\" \"{tempPath}\"";
                         return ExecuteUpdateProcess(parameters2, standalone);

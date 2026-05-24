@@ -1486,7 +1486,7 @@ namespace cYo.Projects.ComicRack.Engine
 			return false;
 		}
 
-		public void Serialize(Stream outStream)
+		public virtual void Serialize(Stream outStream)
 		{
 			try
 			{
