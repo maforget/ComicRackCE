@@ -9,6 +9,7 @@ using cYo.Common.ComponentModel;
 using cYo.Common.Compression.SevenZip;
 using cYo.Common.IO;
 using cYo.Common.Win32;
+using cYo.Common.Xml;
 using cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
@@ -241,54 +242,60 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             }
         }
 
+        // InlineUpdate: pass the byte[] directly to 7-Zip to update the archive without needing to create a temporary file. Only works with some formats, so for the others we need to create a temporary file.
+        record UpdateSettings(bool InlineUpdate, string arg);
+
         public static bool UpdateComicInfo(string file, int format, bool standalone, ComicInfo comicInfo)
         {
-            bool flag;
-            string arg;
-            switch (format)
+            UpdateSettings setting = format switch
             {
-                case KnownFileFormats.CBZ:
-                    flag = false;
-                    arg = "zip";
-                    break;
-                case KnownFileFormats.CB7:
-                    flag = true;
-                    arg = "7z";
-                    break;
-                case KnownFileFormats.CBT:
-                    flag = false;
-                    arg = "tar";
-                    break;
-                default:
-                    return false;
-            }
+                KnownFileFormats.CBZ => new UpdateSettings(InlineUpdate: false, arg: "zip"),
+                KnownFileFormats.CB7 => new UpdateSettings(InlineUpdate: true, arg: "7z"),
+                KnownFileFormats.CBT => new UpdateSettings(InlineUpdate: false, arg: "tar"),
+                _ => throw new NotSupportedException("Format not supported for updating ComicInfo.xml")
+            };
+
+            return Update(file, standalone, comicInfo, setting);
+        }
+
+        private static bool Update(string file, bool standalone, ComicInfo comicInfo, UpdateSettings updateSetting)
+        {
             try
             {
-                if (flag)
+                ComicBook comicBook = comicInfo as ComicBook;
+                bool isComicBook = comicBook != null;
+                string filename = isComicBook ? "ComicBook.xml" : "ComicInfo.xml";
+
+                if (updateSetting.InlineUpdate)
                 {
-                    string parameters = $"u -t{arg} -siComicInfo.xml \"{file}\"";
-                    return ExecuteUpdateProcess(parameters, standalone, comicInfo.ToArray());
+                    byte[] data = isComicBook ? comicBook?.ToArrayFull(onlyPortable: true) : comicInfo.ToArray();
+                    string parameters = $"u -t{updateSetting.arg} -si{filename} \"{file}\"";
+                    return ExecuteUpdateProcess(parameters, standalone, data);
                 }
                 else
                 {
-                    string text = Path.Combine(EngineConfiguration.Default.TempPath, Guid.NewGuid().ToString());
-                    string text2 = Path.Combine(text, "ComicInfo.xml");
+                    string tempDir = Path.Combine(EngineConfiguration.Default.TempPath, Guid.NewGuid().ToString());
+                    string tempPath = Path.Combine(tempDir, filename);
                     try
                     {
-                        Directory.CreateDirectory(text);
-                        using (Stream outStream = File.Create(text2))
+                        Directory.CreateDirectory(tempDir);
+                        XmlUtility.Store(tempPath, comicInfo);
+                        using (Stream outStream = File.Create(tempPath))
                         {
-                            comicInfo.Serialize(outStream);
+                            if (isComicBook)
+                                comicBook?.SerializeFull(outStream, onlyPortable: true);
+                            else
+                                comicInfo.Serialize(outStream);
                         }
-                        string parameters2 = $"u -t{arg} \"{file}\" \"{text2}\"";
+                        string parameters2 = $"u -t{updateSetting.arg} \"{file}\" \"{tempPath}\"";
                         return ExecuteUpdateProcess(parameters2, standalone);
                     }
                     finally
                     {
                         try
                         {
-                            FileUtility.SafeDelete(text2);
-                            Directory.Delete(text);
+                            FileUtility.SafeDelete(tempPath);
+                            Directory.Delete(tempDir);
                         }
                         catch
                         {

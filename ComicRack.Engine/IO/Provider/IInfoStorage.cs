@@ -7,8 +7,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
         event EventHandler<ErrorEventArgs> Error;
 
         bool StoreInfo(ComicInfo comicInfo);
+        bool StoreBook(ComicBook comicInfo);
 
-		ComicInfo LoadInfo(InfoLoadingMethod method);
+        ComicInfo LoadInfo(InfoLoadingMethod method);
         ComicBook LoadBook(InfoLoadingMethod method);
-	}
+    }
 }

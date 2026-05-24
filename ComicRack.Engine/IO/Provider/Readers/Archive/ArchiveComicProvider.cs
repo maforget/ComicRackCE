@@ -43,7 +43,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             return imageArchive.ReadBook(base.Source);
         }
 
-		protected override bool OnStoreInfo(ComicInfo comicInfo)
+        protected override bool OnStoreInfo(ComicInfo comicInfo)
 		{
 			try
 			{
@@ -56,7 +56,20 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             }
 		}
 
-		protected override bool OnFastFormatCheck(string source)
+		protected override bool OnStoreBook(ComicBook comicBook)
+		{
+			try
+			{
+				return imageArchive.WriteBook(base.Source, comicBook);
+			}
+			catch (WriteErrorException ex)
+			{
+				OnError(ex.Message);
+				return false;
+			}
+        }
+
+        protected override bool OnFastFormatCheck(string source)
 		{
 			return imageArchive.IsFormat(source);
 		}

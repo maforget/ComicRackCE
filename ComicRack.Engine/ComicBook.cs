@@ -487,7 +487,7 @@ namespace cYo.Projects.ComicRack.Engine
 
         public bool ShouldSerializeLastOpenedFromListId() => LastOpenedFromListId != Guid.Empty; // Don't serialize the Id if it's empty
 
-		[XmlAttribute]
+        [XmlAttribute]
 		[DefaultValue(true)]
 		public bool Checked
 		{
@@ -650,7 +650,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		[DefaultValue(null)]
+        [DefaultValue(null)]
 		[ResetValue(0)]
 		public string CustomThumbnailKey
 		{
@@ -2019,7 +2019,7 @@ namespace cYo.Projects.ComicRack.Engine
 			CustomValuesStore = cb.CustomValuesStore;
 		}
 
-		public void CopyTo(ComicBook cb)
+        public void CopyTo(ComicBook cb)
 		{
 			cb.CopyFrom(this);
 		}
@@ -2379,8 +2379,15 @@ namespace cYo.Projects.ComicRack.Engine
 
                 try
 				{
+					// TODO: find a way that both are updated a the same time
+					bool updateComicBook = true; // TODO: connect setting
 					success = infoStorage.StoreInfo(GetInfo());
-					FileInfoRetrieved = true;
+
+					// if option to save ComicBook is enabled update the ComicBook.xml
+					if (updateComicBook)
+                        success &= infoStorage.StoreBook(this.Clone<ComicBook>());
+
+                    FileInfoRetrieved = true;
 				}
 				finally
 				{
@@ -2457,7 +2464,7 @@ namespace cYo.Projects.ComicRack.Engine
                         }
                     }
 
-					if (forceRefreshInfo)
+                    if (forceRefreshInfo)
 						ComicInfoIsDirty = false;
 				}
 
@@ -2635,7 +2642,7 @@ namespace cYo.Projects.ComicRack.Engine
             CopyFrom(cb);
         }
 
-		protected override ComicPageInfo OnNewComicPageAdded(ComicPageInfo info)
+        protected override ComicPageInfo OnNewComicPageAdded(ComicPageInfo info)
 		{
 			if (proposed != null && info.ImageIndex < proposed.CoverCount)
 			{
@@ -2654,9 +2661,24 @@ namespace cYo.Projects.ComicRack.Engine
 			return XmlUtility.Load<ComicBook>(file, compressed: false);
 		}
 
-		public void SerializeFull(Stream stream)
+		public void SerializeFull(Stream stream, bool onlyPortable = false)
 		{
-			XmlUtility.Store(stream, this, compressed: false);
+            if (onlyPortable)
+            {
+                // Don't include these properties in the exported ComicBook.xml
+                Id = Guid.Empty;
+                FilePath = string.Empty;
+                FileModifiedTime = DateTime.MinValue;
+                FileCreationTime = DateTime.MinValue;
+                AddedTime = DateTime.MinValue; // Keep or not?
+                FileSize = -1;
+                LastOpenedFromListId = Guid.Empty;
+                CustomThumbnailKey = null;
+                ComicInfoIsDirty = false;
+                // TODO: Also Ignore EnableProposed? 
+            }
+
+            XmlUtility.Store(stream, this, compressed: false);
 		}
 
 		public void SerializeFull(string file)
@@ -2666,24 +2688,9 @@ namespace cYo.Projects.ComicRack.Engine
 
         public byte[] ToArrayFull(bool onlyPortable = false)
         {
-			if (onlyPortable)
-			{
-				// Don't include these properties in the exported ComicBook.xml
-				Id = Guid.Empty;
-				FilePath = string.Empty;
-				FileModifiedTime = DateTime.MinValue;
-				FileCreationTime = DateTime.MinValue;
-				AddedTime = DateTime.MinValue; // Keep or not?
-				FileSize = -1;
-				LastOpenedFromListId = Guid.Empty;
-				CustomThumbnailKey = null;
-				ComicInfoIsDirty = false;
-				// TODO: Also Ignore EnableProposed? 
-			}
-
             using (MemoryStream memoryStream = new MemoryStream())
             {
-                SerializeFull(memoryStream);
+                SerializeFull(memoryStream, onlyPortable);
                 return memoryStream.ToArray();
             }
         }

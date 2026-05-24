@@ -59,11 +59,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 		{
 			using (LockSource(readOnly: true))
 			{
-				ComicInfo comicInfo = (DisableNtfs ? null : NtfsInfoStorage.LoadInfo(base.Source));
+				ComicInfo comicInfo = (DisableNtfs ? null : NtfsInfoStorage.LoadInfo(base.Source)); 
 				if (comicInfo == null && !DisableSidecar)
 				{
 					comicInfo = ComicInfo.LoadFromSidecar(base.Source);
-				}
+                }
 				if (comicInfo != null && method == InfoLoadingMethod.Fast)
 				{
 					return comicInfo;
@@ -83,7 +83,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
         }
 
 
-		public bool StoreInfo(ComicInfo comicInfo)
+        public bool StoreInfo(ComicInfo comicInfo)
 		{
 			bool flag = false;
 			using (LockSource(readOnly: false))
@@ -102,6 +102,23 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
             }
         }
 
+		public bool StoreBook(ComicBook comicBook)
+		{
+			bool flag = false;
+			using (LockSource(readOnly: false))
+			{
+				if (UpdateEnabled)
+				{
+					if (!OnStoreBook(comicBook))
+						return false;
+
+					flag = true;
+				}
+
+				return flag;
+            }
+		}
+
         protected virtual ComicInfo OnLoadInfo()
 		{
 			return null;
@@ -112,10 +129,15 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
             return null;
         }
 
-		protected virtual bool OnStoreInfo(ComicInfo comicInfo)
+        protected virtual bool OnStoreInfo(ComicInfo comicInfo)
 		{
 			return false;
 		}
+
+        protected virtual bool OnStoreBook(ComicBook comicBook)
+        {
+            return false;
+        }
 
         protected virtual bool IsSupportedImage(ProviderImageInfo file)
         {
