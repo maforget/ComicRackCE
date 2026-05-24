@@ -6,95 +6,100 @@ using cYo.Common.Reflection;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 {
-	public abstract class ComicProvider : ImageProvider, IInfoStorage
-	{
-		private static readonly string[] supportedTypes = new string[]
-		{
-			"jpg",
-			"jpeg",
-			"jif",
-			"jiff",
-			"gif",
-			"png",
-			"tif",
-			"tiff",
-			"bmp",
-			"djvu",
-			"webp",
-			"heic",
-			"heif",
-			"avif",
-			"jp2",
-			"j2k",
-			"jxl",
-		};
+    public abstract class ComicProvider : ImageProvider, IInfoStorage
+    {
+        private static readonly string[] supportedTypes = new string[]
+        {
+            "jpg",
+            "jpeg",
+            "jif",
+            "jiff",
+            "gif",
+            "png",
+            "tif",
+            "tiff",
+            "bmp",
+            "djvu",
+            "webp",
+            "heic",
+            "heif",
+            "avif",
+            "jp2",
+            "j2k",
+            "jxl",
+        };
 
-		public bool UpdateEnabled => GetType().GetAttributes<FileFormatAttribute>().FirstOrDefault((FileFormatAttribute f) => f.Format.Supports(base.Source))?.EnableUpdate ?? false;
+        public bool UpdateEnabled => GetType().GetAttributes<FileFormatAttribute>().FirstOrDefault((FileFormatAttribute f) => f.Format.Supports(base.Source))?.EnableUpdate ?? false;
 
-		private bool disableNtfs = false;
+        private bool disableNtfs = false;
 
         public event EventHandler<ErrorEventArgs> Error;
         public virtual void OnError(string errorMessage) => Error?.Invoke(this, new ErrorEventArgs(errorMessage));
 
         protected bool DisableNtfs
-		{
-			get
-			{
-				if (disableNtfs)
-					return true;
+        {
+            get
+            {
+                if (disableNtfs)
+                    return true;
 
-				return EngineConfiguration.Default.DisableNTFS;
-			}
+                return EngineConfiguration.Default.DisableNTFS;
+            }
 
-			set => disableNtfs = value;
-		}
+            set => disableNtfs = value;
+        }
 
-		protected bool DisableSidecar
-		{
-			get;
-			set;
-		}
+        protected bool DisableSidecar
+        {
+            get;
+            set;
+        }
 
-		public ComicInfo LoadInfo(InfoLoadingMethod method)
-		{
-			using (LockSource(readOnly: true))
-			{
+        public ComicInfo LoadInfo(InfoLoadingMethod method)
+        {
+            using (LockSource(readOnly: true))
+            {
 				ComicInfo comicInfo = (DisableNtfs ? null : NtfsInfoStorage.LoadInfo(base.Source)); 
-				if (comicInfo == null && !DisableSidecar)
-				{
-					comicInfo = ComicInfo.LoadFromSidecar(base.Source);
-                }
-				if (comicInfo != null && method == InfoLoadingMethod.Fast)
-				{
-					return comicInfo;
-				}
-				ComicInfo comicInfo2 = OnLoadInfo();
-				return comicInfo2 ?? comicInfo;
-			}
-		}
+                if (comicInfo == null && !DisableSidecar)
+                    comicInfo = ComicInfo.LoadFromSidecar(base.Source, ComicInfo.Deserialize);
+
+                if (comicInfo != null && method == InfoLoadingMethod.Fast)
+                    return comicInfo;
+
+                ComicInfo comicInfo2 = OnLoadInfo();
+                return comicInfo2 ?? comicInfo;
+            }
+        }
 
         public ComicBook LoadBook(InfoLoadingMethod method)
-		{
-			using (LockSource(readOnly: true))
-			{
-                // TODO: see adding support for ComicBook in NTFS & sidecar
-                return OnLoadBook();
+        {
+            using (LockSource(readOnly: true))
+            {
+                ComicBook comicBook = (DisableNtfs ? null : NtfsInfoStorage.LoadBook(base.Source));
+                if (comicBook == null && !DisableSidecar)
+                    comicBook = ComicInfo.LoadFromSidecar(base.Source, ComicBook.DeserializeFull);
+
+                if (comicBook != null && method == InfoLoadingMethod.Fast)
+                    return comicBook;
+
+                ComicBook comicBook2 = OnLoadBook();
+                return comicBook2 ?? comicBook;
             }
         }
 
 
         public bool StoreInfo(ComicInfo comicInfo)
-		{
-			bool flag = false;
-			using (LockSource(readOnly: false))
+        {
+            bool flag = false;
+            using (LockSource(readOnly: false))
             {
-				if (UpdateEnabled)
-				{
-					if (!OnStoreInfo(comicInfo))
-						return false;
+                if (UpdateEnabled)
+                {
+                    if (!OnStoreInfo(comicInfo))
+                        return false;
 
-					flag = true;
-				}
+                    flag = true;
+                }
                 if (!DisableNtfs)
                     flag |= NtfsInfoStorage.StoreInfo(base.Source, comicInfo);
 
@@ -102,27 +107,29 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
             }
         }
 
-		public bool StoreBook(ComicBook comicBook)
-		{
-			bool flag = false;
-			using (LockSource(readOnly: false))
-			{
-				if (UpdateEnabled)
-				{
-					if (!OnStoreBook(comicBook))
-						return false;
+        public bool StoreBook(ComicBook comicBook)
+        {
+            bool flag = false;
+            using (LockSource(readOnly: false))
+            {
+                if (UpdateEnabled)
+                {
+                    if (!OnStoreBook(comicBook))
+                        return false;
 
-					flag = true;
-				}
+                    flag = true;
+                }
+                if (!DisableNtfs)
+                    flag |= NtfsInfoStorage.StoreBook(base.Source, comicBook);
 
-				return flag;
+                return flag;
             }
-		}
+        }
 
         protected virtual ComicInfo OnLoadInfo()
-		{
-			return null;
-		}
+        {
+            return null;
+        }
 
         protected virtual ComicBook OnLoadBook()
         {
@@ -130,9 +137,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
         }
 
         protected virtual bool OnStoreInfo(ComicInfo comicInfo)
-		{
-			return false;
-		}
+        {
+            return false;
+        }
 
         protected virtual bool OnStoreBook(ComicBook comicBook)
         {
@@ -142,7 +149,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
         protected virtual bool IsSupportedImage(ProviderImageInfo file)
         {
             if(IsImageThumbnailFolder(file.Name))
-				return false;
+                return false;
 
             string fileExt = Path.GetExtension(FileUtility.MakeValidFilename(file.Name));
             return supportedTypes.Any((string ext) => string.Equals(fileExt, "." + ext, StringComparison.OrdinalIgnoreCase));
@@ -156,7 +163,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 
         private static bool IsFileTooSmall(long size)
         {
-			long minSize = 256;
+            long minSize = 256;
             return size < minSize;
         }
     }
