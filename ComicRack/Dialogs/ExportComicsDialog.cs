@@ -106,7 +106,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 					FormatId = FormatId,
 					ComicCompression = (ExportCompression)cbCompression.SelectedIndex,
 					EmbedComicInfo = chkEmbedComicInfo.Checked,
-					RemovePageFilter = (ComicPageType)enumUtil.Value,
+					EmbedComicBook = chkEmbedComicBook.Checked,
+                    RemovePageFilter = (ComicPageType)enumUtil.Value,
 					IncludePages = txIncludePages.Text,
 					PageType = (StoragePageType)cbPageFormat.SelectedIndex,
 					PageCompression = tbQuality.Value,
@@ -138,7 +139,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				FormatId = value.FormatId;
 				cbCompression.SelectedIndex = (int)value.ComicCompression;
 				chkEmbedComicInfo.Checked = value.EmbedComicInfo;
-				enumUtil.Value = (int)value.RemovePageFilter;
+				chkEmbedComicBook.Checked = value.EmbedComicBook;
+                enumUtil.Value = (int)value.RemovePageFilter;
 				txIncludePages.Text = value.IncludePages;
 				cbPageFormat.SelectedIndex = (int)value.PageType < cbPageFormat.Items.Count ? (int)value.PageType : 0;
 				tbQuality.Value = value.PageCompression;
@@ -212,7 +214,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			chkDontEnlarge.Enabled = setting.PageResize != StoragePageResize.Original;
 			btRemovePreset.Enabled = tvPresets.SelectedNode != null && tvPresets.SelectedNode.Parent != null && (bool)tvPresets.SelectedNode.Parent.Tag;
 			grpCustomProcessing.Enabled = setting.ImageProcessingSource == ExportImageProcessingSource.Custom;
-		}
+			chkEmbedComicBook.Enabled = setting.EmbedComicInfo; // Only enable Embed Comic Book option if Embed Comic Info is checked, since it depends on it
+        }
 
 		private void tbQuality_ValueChanged(object sender, EventArgs e)
 		{

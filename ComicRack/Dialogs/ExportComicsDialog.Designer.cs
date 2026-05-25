@@ -98,6 +98,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.labelExportTo = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.chkLossless = new System.Windows.Forms.CheckBox();
+            this.chkEmbedComicBook = new System.Windows.Forms.CheckBox();
             this.exportSettings.SuspendLayout();
             this.grpImageProcessing.SuspendLayout();
             this.grpCustomProcessing.SuspendLayout();
@@ -592,6 +593,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.grpFileFormat.Controls.Add(this.cbCompression);
             this.grpFileFormat.Controls.Add(this.labelCompression);
             this.grpFileFormat.Controls.Add(this.chkEmbedComicInfo);
+            this.grpFileFormat.Controls.Add(this.chkEmbedComicBook);
             this.grpFileFormat.Controls.Add(this.cbComicFormat);
             this.grpFileFormat.Controls.Add(this.labelComicFormat);
             this.grpFileFormat.Controls.Add(this.txRemovedPages);
@@ -946,6 +948,17 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.chkLossless.TabIndex = 14;
             this.chkLossless.Text = "Lossless compression";
             this.chkLossless.UseVisualStyleBackColor = true;
+            //
+            // chkEmbedComicBook
+            // 
+            this.chkEmbedComicBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkEmbedComicBook.AutoSize = true;
+            this.chkEmbedComicBook.Location = new System.Drawing.Point(295, 89);
+            this.chkEmbedComicBook.Name = "chkEmbedComicBook";
+            this.chkEmbedComicBook.Size = new System.Drawing.Size(114, 17);
+            this.chkEmbedComicBook.TabIndex = 12;
+            this.chkEmbedComicBook.Text = "Embed Library Info";
+            this.chkEmbedComicBook.UseVisualStyleBackColor = true;
             // 
             // ExportComicsDialog
             // 
@@ -1059,5 +1072,6 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private TextBoxEx txTagsToAppend;
 		private Label labelTagToAppend;
         private CheckBox chkLossless;
+        private CheckBox chkEmbedComicBook;
     }
 }
