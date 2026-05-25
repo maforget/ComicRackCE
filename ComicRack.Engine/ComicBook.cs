@@ -2380,7 +2380,7 @@ namespace cYo.Projects.ComicRack.Engine
                 try
                 {
 					bool updateComicBook = settings.UpdateComicBookFiles; // Only update if enabled in the Settings
-                    ComicInfo info = updateComicBook ? this.Clone<ComicBook>() : GetInfo();
+                    ComicInfo info = updateComicBook ? this : GetInfo();
                     success = infoStorage.StoreInfo(info); 
                     FileInfoRetrieved = true;
                 }
@@ -2688,19 +2688,25 @@ namespace cYo.Projects.ComicRack.Engine
         {
             try
             {
-                // Don't include these properties in the exported ComicBook.xml
-                Id = Guid.Empty; // related to Library
-                FilePath = string.Empty; // file dependant
-                FileModifiedTime = DateTime.MinValue; // file dependant
-                FileCreationTime = DateTime.MinValue;  // file dependant
-                //AddedTime = DateTime.MinValue; // Keep or not? 
-                FileSize = -1;  // file dependant 
-                LastOpenedFromListId = Guid.Empty; // related to Library
-                CustomThumbnailKey = null; // related to Library
-                ComicInfoIsDirty = false;
-                // Also Ignore EnableProposed?
+                ComicBook cb = this.Clone<ComicBook>(); // Make sure to create a clone so we don't modify the current object by setting these properties to default values
 
-                XmlUtility.Store(outStream, this, compressed: false);
+                // Don't include these properties in the exported ComicBook.xml
+                cb.Id = Guid.Empty; // related to Library
+                cb.FilePath = string.Empty; // file dependant
+                cb.FileModifiedTime = DateTime.MinValue; // file dependant
+                cb.FileCreationTime = DateTime.MinValue;  // file dependant
+                // cb.AddedTime = DateTime.MinValue; // Keep or not? 
+                cb.FileSize = -1;  // file dependant 
+                cb.LastOpenedFromListId = Guid.Empty; // related to Library
+                cb.CustomThumbnailKey = null; // related to Library
+                cb.ComicInfoIsDirty = false;
+                cb.FileInfoRetrieved = false;
+                cb.FileIsMissing = false; // file dependant
+                cb.ExtraSyncInformation = null; // related to sync, probably always null anyway
+                cb.NewPages = 0; // related to dynamic page count, probably should not be included
+                // cb.EnableProposed = true // Also Ignore EnableProposed?
+
+                XmlUtility.Store(outStream, cb, compressed: false);
             }
             catch (Exception)
             {
