@@ -176,5 +176,6 @@
     <Text Key="chkBackupOnStartup" Text="Démarrage" Comment="Startup" />
     <Text Key="chkBackupOnExit" Text="Fermeture" Comment="Shut Down" />
     <Text Key="VirtualTag" Text="Étiquette Virtuelle" Comment="Virtual Tag" />
+    <Text Key="chkUpdateComicBookFiles" Text="Insérer les informations de la Bibliothèque dans le fichier." Comment="Allow writing of Library info into files" />
   </Texts>
 </TR>
