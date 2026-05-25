@@ -1989,31 +1989,43 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public void CopyFrom(ComicBook cb)
-		{
-			SetInfo(cb, onlyUpdateEmpty: false);
-			Id = cb.Id;
-			AddedTime = cb.AddedTime;
-			ReleasedTime = cb.ReleasedTime;
-			OpenedTime = cb.OpenedTime;
-			OpenedCount = cb.OpenedCount;
-			CurrentPage = cb.CurrentPage;
-			LastPageRead = cb.LastPageRead;
-			Rating = cb.Rating;
-			ColorAdjustment = cb.ColorAdjustment;
-			EnableDynamicUpdate = cb.EnableDynamicUpdate;
-			EnableProposed = cb.EnableProposed;
-			SeriesComplete = cb.SeriesComplete;
-			Checked = cb.Checked;
-			FilePath = cb.FilePath;
-			FileSize = cb.FileSize;
-			FileModifiedTime = cb.FileModifiedTime;
-			FileCreationTime = cb.FileCreationTime;
-			fileLocation = cb.FileLocation;
-			customThumbnailKey = cb.CustomThumbnailKey;
-			LastOpenedFromListId = cb.LastOpenedFromListId;
-			CustomValuesStore = cb.CustomValuesStore;
-		}
+        public void CopyFrom(ComicBook cb)
+        {
+            SetInfo(cb, onlyUpdateEmpty: false);
+            Id = cb.Id;
+            AddedTime = cb.AddedTime;
+            ReleasedTime = cb.ReleasedTime;
+            OpenedTime = cb.OpenedTime;
+            OpenedCount = cb.OpenedCount;
+            CurrentPage = cb.CurrentPage;
+            LastPageRead = cb.LastPageRead;
+            Rating = cb.Rating;
+            ColorAdjustment = cb.ColorAdjustment;
+            EnableDynamicUpdate = cb.EnableDynamicUpdate;
+            EnableProposed = cb.EnableProposed;
+            SeriesComplete = cb.SeriesComplete;
+            Checked = cb.Checked;
+            FilePath = cb.FilePath;
+            FileSize = cb.FileSize;
+            FileModifiedTime = cb.FileModifiedTime;
+            FileCreationTime = cb.FileCreationTime;
+            fileLocation = cb.FileLocation;
+            customThumbnailKey = cb.CustomThumbnailKey;
+            LastOpenedFromListId = cb.LastOpenedFromListId;
+            CustomValuesStore = cb.CustomValuesStore;
+
+            //Catalog data, unsure why it wasn't included
+            BookStore = cb.BookStore;
+            BookPrice = cb.BookPrice;
+            ISBN = cb.ISBN;
+            BookAge = cb.BookAge;
+            BookCondition = cb.BookCondition;
+            BookOwner = cb.BookOwner;
+            BookLocation = cb.BookLocation;
+            BookCondition = cb.BookCondition;
+            BookCollectionStatus = cb.BookCollectionStatus;
+            BookNotes = cb.BookNotes;
+        }
 
 		public void CopyTo(ComicBook cb)
 		{
