@@ -2448,8 +2448,7 @@ namespace cYo.Projects.ComicRack.Engine
                     ComicInfo ci = infoStorage.LoadInfo(method); // Read ComicInfo.xml
                     SetInfo(ci, !forceRefreshInfo);
 
-                    bool preferComicBook = true; // TODO: connect to a setting
-                    if (preferComicBook)
+                    if (!EngineConfiguration.Default.IgnoreEmbeddedComicBookXml)
                     {
                         ComicBook cb = infoStorage.LoadBook(method); // Read ComicBook.xml
                         if (cb != null)
