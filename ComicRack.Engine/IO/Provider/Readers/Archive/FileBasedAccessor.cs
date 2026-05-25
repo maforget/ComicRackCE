@@ -26,9 +26,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
 		public abstract byte[] ReadByteImage(string source, ProviderImageInfo info);
 
-		public abstract ComicInfo ReadInfo(string source);
-
-        public abstract ComicBook ReadBook(string source);
+		public abstract T ReadInfo<T>(string source) where T : ComicInfo;
 
 		public virtual bool WriteInfo(string source, ComicInfo info)
 		{

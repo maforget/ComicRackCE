@@ -186,11 +186,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			}
 		}
 
-		protected override ComicInfo OnLoadInfo()
+		protected override T OnLoadInfo<T>()
 		{
 			try
 			{
-				return Load(base.Source).Info;
+				return Load(base.Source).Info as T;
 			}
 			catch
 			{
@@ -198,11 +198,6 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			}
 		}
 
-		// TODO: Add implementation for WebComics of OnLoadBook
-		protected override ComicBook OnLoadBook()
-		{
-			return null;
-        }
 
 		protected override bool OnStoreInfo(ComicInfo comicInfo)
 		{

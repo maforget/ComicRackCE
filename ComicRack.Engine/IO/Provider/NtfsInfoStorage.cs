@@ -36,8 +36,16 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 		}
 
 
-		public static ComicInfo LoadInfo(string file) => Load(file, ComicBookInfoStream, comicInfoDeserializationDelegate);
-		public static ComicBook LoadBook(string file) => Load(file, ComicBookStream, comicBookDeserializationDelegate);
+		public static T LoadInfo<T>(string file) where T : ComicInfo
+		{
+			return typeof(T) switch
+			{
+				Type t when t == typeof(ComicInfo) => Load(file, ComicBookInfoStream, comicInfoDeserializationDelegate) as T,
+				Type t when t == typeof(ComicBook) => Load(file, ComicBookStream, comicBookDeserializationDelegate) as T,
+				_ => throw new NotSupportedException($"Type {typeof(T).FullName} is not supported for loading.")
+			};
+		}
+
 		public static T Load<T>(string file, string stream, Func<Stream, T> deserializationDelegate)
 		{
 			try

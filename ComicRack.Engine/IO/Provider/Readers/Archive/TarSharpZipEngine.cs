@@ -122,7 +122,6 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             }
         }
 
-        public override ComicInfo ReadInfo(string source) => Read<ComicInfo>(source);
-        public override ComicBook ReadBook(string source) => Read<ComicBook>(source);
+        public override T ReadInfo<T>(string source) => Read<T>(source);
     }
 }

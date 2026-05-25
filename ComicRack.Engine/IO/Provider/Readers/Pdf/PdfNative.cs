@@ -139,8 +139,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Pdf
 			return LoadBitmapData(source, (ImageStreamInfo)info);
 		}
 
-        public ComicInfo ReadInfo(string source) => null;
-        public ComicBook ReadBook(string source) => null;
+        public T ReadInfo<T>(string source) where T : ComicInfo => null;
 
         public bool WriteInfo(string source, ComicInfo info) => false;
         public bool WriteBook(string source, ComicBook info) => false;

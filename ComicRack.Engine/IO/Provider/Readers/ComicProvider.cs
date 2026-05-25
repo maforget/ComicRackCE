@@ -55,38 +55,29 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
             set;
         }
 
-        public ComicInfo LoadInfo(InfoLoadingMethod method)
+        public T Load<T>(InfoLoadingMethod method, Func<Stream, T> deserializeDelegate) where T : ComicInfo
         {
             using (LockSource(readOnly: true))
             {
-				ComicInfo comicInfo = (DisableNtfs ? null : NtfsInfoStorage.LoadInfo(base.Source)); 
+                T comicInfo = (DisableNtfs ? null : NtfsInfoStorage.LoadInfo<T>(base.Source));
                 if (comicInfo == null && !DisableSidecar)
-                    comicInfo = ComicInfo.LoadFromSidecar(base.Source, ComicInfo.Deserialize);
+                    comicInfo = ComicInfo.LoadFromSidecar(base.Source, deserializeDelegate);
 
                 if (comicInfo != null && method == InfoLoadingMethod.Fast)
                     return comicInfo;
 
-                ComicInfo comicInfo2 = OnLoadInfo();
+                T comicInfo2 = OnLoadInfo<T>();
                 return comicInfo2 ?? comicInfo;
             }
         }
 
-        public ComicBook LoadBook(InfoLoadingMethod method)
+        public ComicInfo LoadInfo(InfoLoadingMethod method) => Load(method, ComicInfo.Deserialize);
+        public ComicBook LoadBook(InfoLoadingMethod method) => Load(method, ComicBook.DeserializeFull);
+
+        protected virtual T OnLoadInfo<T>() where T : ComicInfo
         {
-            using (LockSource(readOnly: true))
-            {
-                ComicBook comicBook = (DisableNtfs ? null : NtfsInfoStorage.LoadBook(base.Source));
-                if (comicBook == null && !DisableSidecar)
-                    comicBook = ComicInfo.LoadFromSidecar(base.Source, ComicBook.DeserializeFull);
-
-                if (comicBook != null && method == InfoLoadingMethod.Fast)
-                    return comicBook;
-
-                ComicBook comicBook2 = OnLoadBook();
-                return comicBook2 ?? comicBook;
+            return default;
             }
-        }
-
 
         public bool StoreInfo(ComicInfo comicInfo)
         {
@@ -126,15 +117,6 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
             }
         }
 
-        protected virtual ComicInfo OnLoadInfo()
-        {
-            return null;
-        }
-
-        protected virtual ComicBook OnLoadBook()
-        {
-            return null;
-        }
 
         protected virtual bool OnStoreInfo(ComicInfo comicInfo)
         {
