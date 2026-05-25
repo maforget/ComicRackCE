@@ -2358,7 +2358,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
         }
 
-        public bool WriteInfoToFile(bool withRefreshFileProperties = true)
+        public bool WriteInfoToFile(IComicUpdateSettings settings, bool withRefreshFileProperties = true)
         {
             bool success = false;
             if (!EditMode.IsLocalComic())
@@ -2379,7 +2379,7 @@ namespace cYo.Projects.ComicRack.Engine
 
                 try
                 {
-					bool updateComicBook = true; // TODO: connect setting
+					bool updateComicBook = settings.UpdateComicBookFiles; // Only update if enabled in the Settings
                     ComicInfo info = updateComicBook ? this.Clone<ComicBook>() : GetInfo();
                     success = infoStorage.StoreInfo(info); 
                     FileInfoRetrieved = true;

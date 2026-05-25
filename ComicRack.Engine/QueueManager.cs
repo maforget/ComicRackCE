@@ -567,7 +567,7 @@ namespace cYo.Projects.ComicRack.Engine
 				long oldSize = cb.FileSize;
 				DateTime oldWrite = cb.FileModifiedTime;
 				cb.WriteError += writeErrorHandler; // Write error to the list of update errors to be shown in the UI.
-				if (cb.WriteInfoToFile(withRefreshFileProperties: false))
+				if (cb.WriteInfoToFile(Settings, withRefreshFileProperties: false))
 				{
 					CacheManager.ImagePool.Pages.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), (ImageKey key) => key.UpdateFileInfo());
 					CacheManager.ImagePool.Thumbs.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), (ImageKey key) => key.UpdateFileInfo());
