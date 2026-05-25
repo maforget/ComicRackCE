@@ -557,6 +557,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public void WriteInfoToFileWithCacheUpdate(ComicBook cb)
 		{
+			EventHandler<IO.Provider.ErrorEventArgs> writeErrorHandler = (s, e) => UpdateErrors.Add((cb.FileNameWithExtension, e.Message));
 			try
 			{
 				while (CacheManager.ImagePool.AreImagesPending(cb.FilePath))
@@ -565,7 +566,7 @@ namespace cYo.Projects.ComicRack.Engine
 				}
 				long oldSize = cb.FileSize;
 				DateTime oldWrite = cb.FileModifiedTime;
-				cb.WriteError += (object s, IO.Provider.ErrorEventArgs e) => AddUpdateErrors(cb, e); // Write error to the list of update errors to be shown in the UI.
+				cb.WriteError += writeErrorHandler; // Write error to the list of update errors to be shown in the UI.
 				if (cb.WriteInfoToFile(withRefreshFileProperties: false))
 				{
 					CacheManager.ImagePool.Pages.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), (ImageKey key) => key.UpdateFileInfo());
@@ -580,11 +581,9 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 			finally
 			{
-				cb.WriteError -= (object s, IO.Provider.ErrorEventArgs e) => AddUpdateErrors(cb, e); // Remove the error handler since we only want to track errors for this specific update.
+				cb.WriteError -= writeErrorHandler; // Remove the error handler since we only want to track errors for this specific update.
 			}
-
-			void AddUpdateErrors(ComicBook cb, IO.Provider.ErrorEventArgs e) => UpdateErrors.Add((cb.FileNameWithExtension, e.Message));
-		}
+        }
 
 		private void Cb_Error(object sender, IO.Provider.ErrorEventArgs e)
 		{
