@@ -290,7 +290,6 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                     try
                     {
                         Directory.CreateDirectory(tempDir);
-                        XmlUtility.Store(tempPath, comicInfo);
                         using (Stream outStream = File.Create(tempPath))
                         {
                             comicInfo.Serialize(outStream);
@@ -335,7 +334,6 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                         string filename = ci is ComicBook ? "ComicBook.xml" : "ComicInfo.xml";
                         string tempPath = Path.Combine(tempDir, filename);
                         tempsPaths.Add(tempPath);
-                        XmlUtility.Store(tempPath, ci);
                         using (Stream outStream = File.Create(tempPath))
                         {
                             ci.Serialize(outStream);
