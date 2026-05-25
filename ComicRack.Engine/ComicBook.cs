@@ -2017,6 +2017,18 @@ namespace cYo.Projects.ComicRack.Engine
             customThumbnailKey = cb.CustomThumbnailKey;
             LastOpenedFromListId = cb.LastOpenedFromListId;
             CustomValuesStore = cb.CustomValuesStore;
+
+            //Catalog data, unsure why it wasn't included
+            BookStore = cb.BookStore;
+            BookPrice = cb.BookPrice;
+            ISBN = cb.ISBN;
+            BookAge = cb.BookAge;
+            BookCondition = cb.BookCondition;
+            BookOwner = cb.BookOwner;
+            BookLocation = cb.BookLocation;
+            BookCondition = cb.BookCondition;
+            BookCollectionStatus = cb.BookCollectionStatus;
+            BookNotes = cb.BookNotes;
         }
 
         public void CopyTo(ComicBook cb)
