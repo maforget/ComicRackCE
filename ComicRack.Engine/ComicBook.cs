@@ -2379,14 +2379,9 @@ namespace cYo.Projects.ComicRack.Engine
 
                 try
                 {
-                    // TODO: find a way that both are updated a the same time
 					bool updateComicBook = true; // TODO: connect setting
-                    bool successBook = true; // Always true so that the final check passes even when updateComicBook is false, otherwise it will be set to the result of StoreBook
-
-                    if (updateComicBook)
-                        successBook = infoStorage.StoreBook(this.Clone<ComicBook>());
-
-                    success = successBook & infoStorage.StoreInfo(GetInfo()); // Do last so that the NTFS Stream of ComicInfo is the one kept. 7-Zip replaces the whole file when updating ComicInfo, so if ComicBook is updated after it, its NTFS Stream will be lost.
+                    ComicInfo info = updateComicBook ? this.Clone<ComicBook>() : GetInfo();
+                    success = infoStorage.StoreInfo(info); 
                     FileInfoRetrieved = true;
                 }
                 finally

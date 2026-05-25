@@ -12,7 +12,6 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 
 		T ReadInfo<T>(string source) where T : ComicInfo;
 
-        bool WriteInfo(string source, ComicInfo info);
-        bool WriteBook(string source, ComicBook info);
+		bool WriteInfo(string source, ComicInfo info);
 	}
 }

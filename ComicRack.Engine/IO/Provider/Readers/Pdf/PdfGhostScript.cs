@@ -60,6 +60,5 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Pdf
         public T ReadInfo<T>(string source) where T: ComicInfo => null;
 
         public bool WriteInfo(string source, ComicInfo info) => false;
-        public bool WriteBook(string source, ComicBook info) => false;
     }
 }

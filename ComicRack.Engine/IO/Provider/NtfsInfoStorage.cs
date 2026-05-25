@@ -12,8 +12,17 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 		private static Func<Stream, ComicInfo> comicInfoDeserializationDelegate => ComicInfo.Deserialize;
 		private static Func<Stream, ComicBook> comicBookDeserializationDelegate => ComicBook.DeserializeFull;
 
-		public static bool StoreInfo(string file, ComicInfo comicInfo) => Store(file, comicInfo, ComicBookInfoStream, comicInfoDeserializationDelegate);
-        public static bool StoreBook(string file, ComicBook comicbook) => Store(file, comicbook, ComicBookStream, comicBookDeserializationDelegate);
+
+		public static bool StoreInfo(string file, ComicInfo comicInfo)
+		{
+			bool success = false;
+            success = Store(file, new ComicInfo(comicInfo), ComicBookInfoStream, comicInfoDeserializationDelegate); // Store ComicInfo.xml
+            if (comicInfo is ComicBook) // When it's a ComicBook we also want to store the ComicBook stream
+                success &= Store(file, comicInfo, ComicBookStream, comicBookDeserializationDelegate); // ComicBook.xml
+
+			return success;
+        }
+
 		private static bool Store<T>(string file, T comicInfo, string stream, Func<Stream, T> deserializationDelegate, bool append = false) where T: ComicInfo
 		{
 			T ci = Load(file, stream, deserializationDelegate);

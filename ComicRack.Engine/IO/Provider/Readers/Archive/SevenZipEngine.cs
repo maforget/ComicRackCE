@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Text.RegularExpressions;
 using cYo.Common.ComponentModel;
 using cYo.Common.Compression.SevenZip;
@@ -213,12 +214,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
         public override bool WriteInfo(string source, ComicInfo comicInfo)
         {
-            return UpdateComicInfo(source, base.Format, standalone, comicInfo);
-        }
-
-        public override bool WriteBook(string source, ComicBook comicInfo)
-        {
-            return UpdateComicInfo(source, base.Format, standalone, comicInfo);
+            return UpdateComicInfos(source, base.Format, standalone, comicInfo);
         }
 
         private static KnownSevenZipFormat MapFileFormat(int format)
@@ -242,7 +238,6 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
         // InlineUpdate: pass the byte[] directly to 7-Zip to update the archive without needing to create a temporary file. Only works with some formats, so for the others we need to create a temporary file.
         record UpdateSettings(bool InlineUpdate, string arg);
-
         public static bool UpdateComicInfo(string file, int format, bool standalone, ComicInfo comicInfo)
         {
             UpdateSettings setting = format switch
@@ -254,6 +249,28 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             };
 
             return Update(file, standalone, comicInfo, setting);
+        }
+
+        /// <summary>
+        /// Will update both the ComicInfo.xml & ComicBook.xml at the same time if the provided <paramref name="comicInfo"/> is a <see cref="ComicBook"/>. Otherwise only the ComicInfo.xml will be updated.
+        /// </summary>
+        /// <exception cref="NotSupportedException"></exception>
+        public static bool UpdateComicInfos(string file, int format, bool standalone, ComicInfo comicInfo)
+        {
+            UpdateSettings setting = format switch
+            {
+                KnownFileFormats.CBZ => new UpdateSettings(InlineUpdate: false, arg: "zip"),
+                KnownFileFormats.CB7 => new UpdateSettings(InlineUpdate: false, arg: "7z"),
+                KnownFileFormats.CBT => new UpdateSettings(InlineUpdate: false, arg: "tar"),
+                _ => throw new NotSupportedException("Format not supported for updating ComicInfo.xml")
+            };
+
+            List<ComicInfo> infos = new List<ComicInfo>();
+            infos.Add(comicInfo.GetInfo());
+            if (comicInfo is ComicBook cb)
+                infos.Add(cb); // Do a Clone?
+
+            return UpdateAll(file, standalone, infos, setting);
         }
 
         private static bool Update(string file, bool standalone, ComicInfo comicInfo, UpdateSettings updateSetting)
@@ -302,6 +319,64 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             {
             }
             return false;
+        }
+
+        private static bool UpdateAll(string file, bool standalone, IEnumerable<ComicInfo> infos, UpdateSettings updateSetting)
+        {
+            try
+            {
+                string tempDir = Path.Combine(EngineConfiguration.Default.TempPath, Guid.NewGuid().ToString());
+                List<string> tempsPaths = new List<string>();
+                try
+                {
+                    Directory.CreateDirectory(tempDir);
+                    foreach (var ci in infos)
+                    {
+                        string filename = ci is ComicBook ? "ComicBook.xml" : "ComicInfo.xml";
+                        string tempPath = Path.Combine(tempDir, filename);
+                        tempsPaths.Add(tempPath);
+                        XmlUtility.Store(tempPath, ci);
+                        using (Stream outStream = File.Create(tempPath))
+                        {
+                            ci.Serialize(outStream);
+                        } 
+                    }
+                    string parameters = GetParameters(tempsPaths.ToArray(), updateSetting, file);
+                    return ExecuteUpdateProcess(parameters, standalone);
+                }
+                finally
+                {
+                    try
+                    {
+                        tempsPaths.ForEach(s => FileUtility.SafeDelete(s));
+                        Directory.Delete(tempDir);
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            catch (WriteErrorException) // We only want the WriteErrorException to be propagated, so that it shows the error message to the user.
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        private static string GetParameters(string[] tempPaths, UpdateSettings updateSetting, string file)
+        {
+            //string parameters2 = $"u -t{updateSetting.arg} \"{file}\" \"{tempPath}\"";
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"u -t{updateSetting.arg} \"{file}\"");
+            foreach (var tempPath in tempPaths)
+            {
+                sb.Append(" ");
+                sb.Append($"\"{tempPath}\"");
+            }
+            return sb.ToString().Trim();
         }
 
         private static bool ExecuteUpdateProcess(string parameters, bool standalone, byte[] inputData = null)

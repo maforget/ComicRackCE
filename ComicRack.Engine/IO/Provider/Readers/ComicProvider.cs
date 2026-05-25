@@ -77,7 +77,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
         protected virtual T OnLoadInfo<T>() where T : ComicInfo
         {
             return default;
-            }
+        }
 
         public bool StoreInfo(ComicInfo comicInfo)
         {
@@ -98,32 +98,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
             }
         }
 
-        public bool StoreBook(ComicBook comicBook)
-        {
-            bool flag = false;
-            using (LockSource(readOnly: false))
-            {
-                if (UpdateEnabled)
-                {
-                    if (!OnStoreBook(comicBook))
-                        return false;
-
-                    flag = true;
-                }
-                if (!DisableNtfs)
-                    flag |= NtfsInfoStorage.StoreBook(base.Source, comicBook);
-
-                return flag;
-            }
-        }
-
-
         protected virtual bool OnStoreInfo(ComicInfo comicInfo)
-        {
-            return false;
-        }
-
-        protected virtual bool OnStoreBook(ComicBook comicBook)
         {
             return false;
         }
