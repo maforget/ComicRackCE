@@ -2690,16 +2690,16 @@ namespace cYo.Projects.ComicRack.Engine
             try
             {
                 // Don't include these properties in the exported ComicBook.xml
-                Id = Guid.Empty;
-                FilePath = string.Empty;
-                FileModifiedTime = DateTime.MinValue;
-                FileCreationTime = DateTime.MinValue;
-                AddedTime = DateTime.MinValue; // Keep or not?
-                FileSize = -1;
-                LastOpenedFromListId = Guid.Empty;
-                CustomThumbnailKey = null;
+                Id = Guid.Empty; // related to Library
+                FilePath = string.Empty; // file dependant
+                FileModifiedTime = DateTime.MinValue; // file dependant
+                FileCreationTime = DateTime.MinValue;  // file dependant
+                //AddedTime = DateTime.MinValue; // Keep or not? 
+                FileSize = -1;  // file dependant 
+                LastOpenedFromListId = Guid.Empty; // related to Library
+                CustomThumbnailKey = null; // related to Library
                 ComicInfoIsDirty = false;
-                // TODO: Also Ignore EnableProposed?
+                // Also Ignore EnableProposed?
 
                 XmlUtility.Store(outStream, this, compressed: false);
             }
