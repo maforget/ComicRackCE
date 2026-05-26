@@ -285,7 +285,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			// Prevent Copy / Paste List commands from being executed while the user is editing a node so to let the default copy / paste behavior work (copying / pasting the node text instead of the list)
 			return keyData switch
-			{ 
+			{
 				(Keys.Control | Keys.V) when isEditingNode => false,
 				(Keys.Control | Keys.C) when isEditingNode => false,
 				_ => base.ProcessCmdKey(ref msg, keyData)
@@ -683,7 +683,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			if (dragNode == null)
 			{
 				if (mouseActivate)
-				{ 
+				{
 					UpdateBookList();
 				}
 				else
@@ -1109,17 +1109,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				if (comicListItem2 != null)
 				{
 					if (string.IsNullOrEmpty(comicListItem2.Name))
-					{
 						comicListItem2.Name = TR.Load(base.Name)["NewList", "New List"];
-					}
+
 					if (comicListItemFolder == null)
-					{
 						Library.ComicLists.Add(comicListItem2);
-					}
 					else
-					{
 						comicListItemFolder.Items.Add(comicListItem2);
-					}
 				}
 			}
 			else if (dragDropContainer.IsReadingListsContainer)
@@ -1383,6 +1378,20 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			if (currentNodeComicListCollection == null)
 				return;
 
+			// Since ComicListItemFolder is now a ShareableComicListItem it's was always enabled. So checking the folder before the ShareableComicListItem so AllowCopyListFolders is now relevant again
+			ComicListItemFolder comicListItemFolder = Clipboard.GetData(ShareableComicListItem.ClipboardFormat) as ComicListItemFolder;
+			if (comicListItemFolder != null)
+			{
+				if (Program.ExtendedSettings.AllowCopyListFolders)
+				{
+					comicListItemFolder = comicListItemFolder.Clone<ComicListItemFolder>();
+					if (comicListItemFolder != null)
+						currentNodeComicListCollection.Insert(currentNodeComicListCollection.IndexOf(currentNodeComicList) + 1, comicListItemFolder); 
+				}
+
+				return; // always return when it's a folder, otherwise it would be processed as a ShareableComicListItem and not take into account the AllowCopyListFolders setting
+			}
+
 			ShareableComicListItem shareableComicListItem = Clipboard.GetData(ShareableComicListItem.ClipboardFormat) as ShareableComicListItem;
 			if (shareableComicListItem != null)
 			{
@@ -1392,19 +1401,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 				return;
 			}
-			// TODO: No longer relevant since ComicListItemFolder is now a ShareableComicListItem it's always enabled. See to hook this setting back up
-			if (Program.ExtendedSettings.AllowCopyListFolders) 
-			{
-				ComicListItemFolder comicListItemFolder = Clipboard.GetData(ShareableComicListItem.ClipboardFormat) as ComicListItemFolder;
-				if (comicListItemFolder != null)
-				{
-					comicListItemFolder = comicListItemFolder.Clone<ComicListItemFolder>();
-					if (comicListItemFolder != null)
-						currentNodeComicListCollection.Insert(currentNodeComicListCollection.IndexOf(currentNodeComicList) + 1, comicListItemFolder);
 
-					return;
-				}
-			}
 			string text = Clipboard.GetText();
 			try
 			{
