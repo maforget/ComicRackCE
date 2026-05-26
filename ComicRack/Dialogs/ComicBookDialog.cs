@@ -298,7 +298,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             EnableTabPage(tabCustom, Program.Settings.ShowCustomBookFields && (isFilelessOrInContainer || Program.Settings.UpdateComicBookFiles));
             labelEnableProposed.Visible = cbEnableProposed.Visible = labelScanInformation.Visible = txScanInformation.Visible = comic.IsLinked;
             labelOpenedTime.Visible = dtpOpenedTime.Visible = labelPagesAsTextSimple.Visible = txPagesAsTextSimple.Visible = !comic.IsLinked;
-            txRating.Enabled = cbEnableProposed.Enabled = cbSeriesComplete.Enabled = isFilelessOrInContainer;
+            txRating.Enabled = cbEnableProposed.Enabled = cbSeriesComplete.Enabled = (isFilelessOrInContainer || Program.Settings.UpdateComicBookFiles);
             if (!canEditProperties)
             {
                 txCommunityRating.Enabled = txRating.Enabled = false;
