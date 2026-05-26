@@ -26,7 +26,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 		private static bool Store<T>(string file, T comicInfo, string stream, Func<Stream, T> deserializationDelegate, bool append = false) where T: ComicInfo
 		{
 			T ci = Load(file, stream, deserializationDelegate);
-			if (comicInfo.IsSameContent(ci))
+			if (comicInfo.IsSameContent(ci, onlyComicInfo: false))
 				return false;
 
 			try

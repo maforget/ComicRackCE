@@ -1725,7 +1725,7 @@ namespace cYo.Projects.ComicRack.Engine
             NewBooksChecked = true;
         }
 
-		public ComicBook()
+        public ComicBook()
         {
             VirtualTagsCollection.TagsRefresh += VirtualTagsCollection_TagsRefresh;
         }
@@ -2391,9 +2391,9 @@ namespace cYo.Projects.ComicRack.Engine
 
                 try
                 {
-					bool updateComicBook = settings.UpdateComicBookFiles; // Only update if enabled in the Settings
+                    bool updateComicBook = settings.UpdateComicBookFiles; // Only update if enabled in the Settings
                     ComicInfo info = updateComicBook ? this : GetInfo();
-                    success = infoStorage.StoreInfo(info); 
+                    success = infoStorage.StoreInfo(info);
                     FileInfoRetrieved = true;
                 }
                 finally
@@ -2654,10 +2654,14 @@ namespace cYo.Projects.ComicRack.Engine
             return info;
         }
 
-        public override bool IsSameContent(ComicInfo ci, bool withPages = true)
+        public override bool IsSameContent(ComicInfo ci, bool withPages = true, bool onlyComicInfo = true)
         {
+            // Used for SyncProvider, we don't want to match all properties for this
+            if (onlyComicInfo)
+                return base.IsSameContent(ci, withPages);
+
             ComicBook cb = ci as ComicBook;
-            // The commented poperties are not included in the comparison as they are determined by the file and should not be embeded in the ComicBook.xml, so they should not be compared when comparing the content of two ComicBook objects, as they can differ even if the content is the same
+            // The commented properties are not included in the comparison as they are determined by the file and should not be embeded in the ComicBook.xml, so they should not be compared when comparing the content of two ComicBook objects, as they can differ even if the content is the same
             return cb != null
                 && base.IsSameContent(cb, withPages)
                 //&& Id == cb.Id
@@ -2680,7 +2684,17 @@ namespace cYo.Projects.ComicRack.Engine
                 //&& fileLocation == cb.FileLocation
                 //&& customThumbnailKey == cb.CustomThumbnailKey
                 //&& LastOpenedFromListId == cb.LastOpenedFromListId
-                && CustomValuesStore == cb.CustomValuesStore;
+                && CustomValuesStore == cb.CustomValuesStore
+                && BookStore == cb.BookStore
+                && BookPrice == cb.BookPrice
+                && ISBN == cb.ISBN
+                && BookAge == cb.BookAge
+                && BookCondition == cb.BookCondition
+                && BookOwner == cb.BookOwner
+                && BookLocation == cb.BookLocation
+                && BookCondition == cb.BookCondition
+                && BookCollectionStatus == cb.BookCollectionStatus
+                && BookNotes == cb.BookNotes;
         }
 
         public static ComicBook DeserializeFull(Stream stream)
@@ -2704,7 +2718,7 @@ namespace cYo.Projects.ComicRack.Engine
                 cb.FilePath = string.Empty; // file dependant
                 cb.FileModifiedTime = DateTime.MinValue; // file dependant
                 cb.FileCreationTime = DateTime.MinValue;  // file dependant
-                // cb.AddedTime = DateTime.MinValue; // Keep or not? 
+                                                          // cb.AddedTime = DateTime.MinValue; // Keep or not? 
                 cb.FileSize = -1;  // file dependant 
                 cb.LastOpenedFromListId = Guid.Empty; // related to Library
                 cb.CustomThumbnailKey = null; // related to Library
@@ -2713,7 +2727,7 @@ namespace cYo.Projects.ComicRack.Engine
                 cb.FileIsMissing = false; // file dependant
                 cb.ExtraSyncInformation = null; // related to sync, probably always null anyway
                 cb.NewPages = 0; // related to dynamic page count, probably should not be included
-                // cb.EnableProposed = true // Also Ignore EnableProposed?
+                                 // cb.EnableProposed = true // Also Ignore EnableProposed?
 
                 XmlUtility.Store(outStream, cb, compressed: false);
             }
@@ -2930,18 +2944,18 @@ namespace cYo.Projects.ComicRack.Engine
             return GetWritableStringProperties().ToDictionary((string s) => tr[s].PascalToSpaced());
         }
 
-		public static IEnumerable<PropertyInfo> GetXmlWritableProperties(Type type)
-		{
-			return type
-				.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-				.Where(p =>
-					p.CanWrite &&
-					p.GetSetMethod() != null &&
-					!p.IsDefined(typeof(XmlIgnoreAttribute), inherit: false)
-				);
-		}
+        public static IEnumerable<PropertyInfo> GetXmlWritableProperties(Type type)
+        {
+            return type
+                .GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
+                .Where(p =>
+                    p.CanWrite &&
+                    p.GetSetMethod() != null &&
+                    !p.IsDefined(typeof(XmlIgnoreAttribute), inherit: false)
+                );
+        }
 
-		public static bool MapPropertyName(string propName, out string newName, ComicValueType cvt)
+        public static bool MapPropertyName(string propName, out string newName, ComicValueType cvt)
         {
             string text = propName.ToLower();
             if (text == "cover" || text == "rating")
