@@ -3,8 +3,8 @@ Community Edition Build 0.9.184:
 * NEW: Support for JpegXL image format. Supports Lossy & Lossless compression. Note: Lossless aren't reconstructible to Jpeg.
 * NEW: Using Export Reading List on a Folder will now let you choose to export the CBL as smart lists (default) or single entries (converts smart lists to regular reading lists).
 * NEW: Failure to update book info will now show an error message instead of silently failing.
-* NEW: Updating book info can now update multiple books at the same time (from 1 to 4). 
-* NEW: Added "MaximumUpdateThreads" setting in ComicRack.ini to configure the number of books that will update concurrently. Default is 4.
+* NEW: Updating book info can now update multiple books at the same time.
+* NEW: Added "MaximumUpdateThreads" setting in ComicRack.ini to configure the number of books that will update concurrently. Default is 2. (based on processor count and 32 as max)
 
 
 * CHANGE: Updated French Translation. It is now the default localization used as a base when updating translations (See Wiki for instructions on updating other languages).
