@@ -89,7 +89,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public const int MinTileHeight = 64;
 
-		public const int MaxTileHeight = 256;
+		public const int MaxTileHeight = 512;
 
 		public const int MinRowHeight = 12;
 
