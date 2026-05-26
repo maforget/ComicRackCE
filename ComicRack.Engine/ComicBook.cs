@@ -1725,7 +1725,7 @@ namespace cYo.Projects.ComicRack.Engine
             NewBooksChecked = true;
         }
 
-        public ComicBook()
+		public ComicBook()
         {
             VirtualTagsCollection.TagsRefresh += VirtualTagsCollection_TagsRefresh;
         }
@@ -2620,13 +2620,10 @@ namespace cYo.Projects.ComicRack.Engine
         {
             base.OnBookChanged(e);
             if (e.PropertyName == "FilePath" || e.PropertyName == "Number" || e.PropertyName == "EnableProposed")
-            {
                 compareNumber = null;
-            }
             else if (e.PropertyName == "AlternateNumber")
-            {
                 compareAlternateNumber = null;
-            }
+
             ClearVirtualTagsCache();
         }
 
@@ -2933,7 +2930,18 @@ namespace cYo.Projects.ComicRack.Engine
             return GetWritableStringProperties().ToDictionary((string s) => tr[s].PascalToSpaced());
         }
 
-        public static bool MapPropertyName(string propName, out string newName, ComicValueType cvt)
+		public static IEnumerable<PropertyInfo> GetXmlWritableProperties(Type type)
+		{
+			return type
+				.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
+				.Where(p =>
+					p.CanWrite &&
+					p.GetSetMethod() != null &&
+					!p.IsDefined(typeof(XmlIgnoreAttribute), inherit: false)
+				);
+		}
+
+		public static bool MapPropertyName(string propName, out string newName, ComicValueType cvt)
         {
             string text = propName.ToLower();
             if (text == "cover" || text == "rating")
