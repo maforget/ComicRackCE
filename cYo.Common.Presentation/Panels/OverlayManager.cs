@@ -223,7 +223,7 @@ namespace cYo.Common.Presentation.Panels
 
 		public OverlayPanel HitTest(Point pt)
 		{
-			return (from op in panels.ToArray().Reverse()
+			return (from op in panels.ToArray().AsEnumerable().Reverse()
 				select op.HitTest(pt)).FirstOrDefault((OverlayPanel hit) => hit != null);
 		}
 

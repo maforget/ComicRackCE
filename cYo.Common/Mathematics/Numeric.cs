@@ -258,7 +258,7 @@ namespace cYo.Common.Mathematics
 		public static int BinaryHash(params bool[] flags)
 		{
 			int num = 0;
-			foreach (bool item in flags.Reverse())
+			foreach (bool item in flags.AsEnumerable().Reverse())
 			{
 				num <<= 1;
 				num += (item ? 1 : 0);

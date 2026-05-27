@@ -194,7 +194,7 @@ namespace cYo.Common.Windows.Forms
 						Tag = text
 					});
 				}
-				foreach (ToolStripMenuItem item in array2.Reverse())
+				foreach (ToolStripMenuItem item in array2.AsEnumerable().Reverse())
 				{
 					item.Tag = cms.Text ?? text;
 					cm.Items.Insert((!top) ? cm.Items.Count : 0, item);

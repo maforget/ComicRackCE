@@ -253,7 +253,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                     int num2 = num / messageLines;
                     Rectangle messageBounds = MessageBounds;
                     stringFormat.LineAlignment = StringAlignment.Far;
-                    string[] array = message.Split('\n').Reverse().Take(messageLines)
+                    string[] array = message.Split('\n').AsEnumerable().Reverse().Take(messageLines)
                         .ToArray();
                     foreach (string s in array)
                     {
