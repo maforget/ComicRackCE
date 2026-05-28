@@ -3369,11 +3369,11 @@ namespace cYo.Projects.ComicRack.Viewer
 		{
 			if (e.IsComicInfo && e.Book.EditMode.IsLocalComic() && e.Book.FileInfoRetrieved)
 			{
-				e.Book.ComicInfoIsDirty = true;
+				if (e.IsComicInfo)
+					e.Book.ComicInfoIsDirty = true;
+
 				if (!books.IsOpen(e.Book))
-				{
 					Program.QueueManager.AddBookToFileUpdate(e.Book);
-				}
 			}
 		}
 

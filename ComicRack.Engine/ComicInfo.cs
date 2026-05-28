@@ -1173,13 +1173,14 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private void FireBookChanged(string name, object oldValue, object newValue)
 		{
-			OnBookChanged(new BookChangedEventArgs(name, isComicInfo: true, oldValue, newValue));
+			OnBookChanged(new BookChangedEventArgs(name, comicInfoType: ComicInfoType.ComicInfo, oldValue, newValue));
 		}
 
 		private void FirePageChanged(int page, bool updateComicInfo = true)
 		{
+			ComicInfoType infoType = updateComicInfo ? ComicInfoType.ComicInfo : ComicInfoType.None;
 			cachedFrontCoverPageIndex = (cachedFrontCoverCount = -1);
-			OnBookChanged(new BookChangedEventArgs("Pages", page, updateComicInfo));
+			OnBookChanged(new BookChangedEventArgs("Pages", page, infoType));
 		}
 
 		protected virtual void OnBookChanged(BookChangedEventArgs e)

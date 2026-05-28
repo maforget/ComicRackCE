@@ -302,7 +302,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("ReleasedTime", ref releasedTime, value, lockItem: true);
+                SetProperty("ReleasedTime", ref releasedTime, value, lockItem: true, includeInComicBook: true);
             }
         }
 
@@ -400,7 +400,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("Rating", ref rating, value.Clamp(0f, 5f));
+                SetProperty("Rating", ref rating, value.Clamp(0f, 5f), includeInComicBook: true);
             }
         }
 
@@ -426,7 +426,7 @@ namespace cYo.Projects.ComicRack.Engine
                     bitmapAdjustment = colorAdjustment;
                     colorAdjustment = value;
                 }
-                FireBookChanged("ColorAdjustment", bitmapAdjustment, colorAdjustment);
+                FireBookChanged("ColorAdjustment", bitmapAdjustment, colorAdjustment, includeInComicBook: true);
             }
         }
 
@@ -458,7 +458,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("SeriesComplete", ref seriesComplete, value);
+                SetProperty("SeriesComplete", ref seriesComplete, value, includeInComicBook: true);
             }
         }
 
@@ -679,7 +679,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("BookPrice", ref bookPrice, value);
+                SetProperty("BookPrice", ref bookPrice, value, includeInComicBook: true);
             }
         }
 
@@ -694,7 +694,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("BookAge", ref bookAge, value);
+                SetProperty("BookAge", ref bookAge, value, includeInComicBook: true);
             }
         }
 
@@ -709,7 +709,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("BookCondition", ref bookCondition, value);
+                SetProperty("BookCondition", ref bookCondition, value, includeInComicBook: true);
             }
         }
 
@@ -724,7 +724,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("BookStore", ref bookStore, value);
+                SetProperty("BookStore", ref bookStore, value, includeInComicBook: true);
             }
         }
 
@@ -739,7 +739,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("BookOwner", ref bookOwner, value);
+                SetProperty("BookOwner", ref bookOwner, value, includeInComicBook: true);
             }
         }
 
@@ -754,7 +754,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("BookCollectionStatus", ref bookCollectionStatus, value);
+                SetProperty("BookCollectionStatus", ref bookCollectionStatus, value, includeInComicBook: true);
             }
         }
 
@@ -769,7 +769,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("BookNotes", ref bookNotes, value);
+                SetProperty("BookNotes", ref bookNotes, value, includeInComicBook: true);
             }
         }
 
@@ -784,7 +784,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("BookLocation", ref bookLocation, value);
+                SetProperty("BookLocation", ref bookLocation, value, includeInComicBook: true);
             }
         }
 
@@ -799,7 +799,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("ISBN", ref isbn, value);
+                SetProperty("ISBN", ref isbn, value, includeInComicBook: true);
             }
         }
 
@@ -1367,7 +1367,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("NewPages", ref newPages, value);
+                SetProperty("NewPages", ref newPages, value, includeInComicBook: true);
             }
         }
 
@@ -1606,7 +1606,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("CustomValuesStore", ref customValuesStore, value);
+                SetProperty("CustomValuesStore", ref customValuesStore, value, includeInComicBook: true);
             }
         }
 
@@ -2550,7 +2550,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
         }
 
-        private bool SetProperty<T>(string name, ref T property, T value, bool lockItem = false, bool addUndo = true)
+        private bool SetProperty<T>(string name, ref T property, T value, bool lockItem = false, bool addUndo = true, bool includeInComicBook = false)
         {
             if (object.Equals(property, value))
                 return false;
@@ -2565,21 +2565,23 @@ namespace cYo.Projects.ComicRack.Engine
             }
 
             if (addUndo)
-                FireBookChanged(name, val, value);
+                FireBookChanged(name, val, value, includeInComicBook);
             else
-                FireBookChanged(name);
+                FireBookChanged(name, includeInComicBook);
 
             return true;
         }
 
-        private void FireBookChanged(string name)
+        private void FireBookChanged(string name, bool includeInComicBook = false)
         {
-            OnBookChanged(new BookChangedEventArgs(name, isComicInfo: false));
+            ComicInfoType infoType = includeInComicBook ? ComicInfoType.ComicBook : ComicInfoType.None;
+            OnBookChanged(new BookChangedEventArgs(name, comicInfoType: infoType));
         }
 
-        private void FireBookChanged(string name, object oldValue, object newValue)
+        private void FireBookChanged(string name, object oldValue, object newValue, bool includeInComicBook = false)
         {
-            OnBookChanged(new BookChangedEventArgs(name, isComicInfo: false, oldValue, newValue));
+            ComicInfoType infoType = includeInComicBook ? ComicInfoType.ComicBook : ComicInfoType.None;
+            OnBookChanged(new BookChangedEventArgs(name, comicInfoType: infoType, oldValue, newValue));
         }
 
         private void UpdateProposed()
