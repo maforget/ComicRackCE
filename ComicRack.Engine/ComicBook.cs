@@ -141,6 +141,8 @@ namespace cYo.Projects.ComicRack.Engine
 
         private volatile bool comicInfoIsDirty;
 
+        private volatile bool comicBookIsDirty;
+
         private volatile string filePath = string.Empty;
 
         private long fileSize = -1L;
@@ -529,6 +531,24 @@ namespace cYo.Projects.ComicRack.Engine
                 {
                     comicInfoIsDirty = value;
                     FireBookChanged("ComicInfoIsDirty");
+                }
+            }
+        }
+
+        [Browsable(true)]
+        [DefaultValue(false)]
+        public bool ComicBookIsDirty
+        {
+            get
+            {
+                return comicBookIsDirty;
+            }
+            set
+            {
+                if (comicBookIsDirty != value)
+                {
+                    comicBookIsDirty = value;
+                    FireBookChanged("ComicBookIsDirty");
                 }
             }
         }
@@ -1288,13 +1308,11 @@ namespace cYo.Projects.ComicRack.Engine
             {
                 int num = 0;
                 if (FileIsMissing && IsLinked)
-                {
                     num |= 1;
-                }
-                if (ComicInfoIsDirty)
-                {
+
+                if (ComicInfoIsDirty || ComicBookIsDirty)
                     num |= 2;
-                }
+
                 return num;
             }
         }
@@ -2454,7 +2472,7 @@ namespace cYo.Projects.ComicRack.Engine
                     return;
                 }
                 bool forceRefreshInfo = options.HasFlag(RefreshInfoOptions.ForceRefresh);
-                if (forceRefreshInfo || !ComicInfoIsDirty)
+                if (forceRefreshInfo || !(ComicInfoIsDirty || ComicBookIsDirty))
                 {
                     InfoLoadingMethod method = (dateIsModified || !FileInfoRetrieved) ? InfoLoadingMethod.Complete : InfoLoadingMethod.Fast;
                     ComicInfo ci = infoStorage.LoadInfo(method); // Read ComicInfo.xml
@@ -2471,7 +2489,10 @@ namespace cYo.Projects.ComicRack.Engine
                     }
 
                     if (forceRefreshInfo)
+                    {
                         ComicInfoIsDirty = false;
+                        ComicBookIsDirty = false;
+                    }
                 }
 
                 // Refresh page count info if:
@@ -2725,11 +2746,12 @@ namespace cYo.Projects.ComicRack.Engine
                 cb.LastOpenedFromListId = Guid.Empty; // related to Library
                 cb.CustomThumbnailKey = null; // related to Library
                 cb.ComicInfoIsDirty = false;
+                cb.ComicBookIsDirty = false;
                 cb.FileInfoRetrieved = false;
                 cb.FileIsMissing = false; // file dependant
                 cb.ExtraSyncInformation = null; // related to sync, probably always null anyway
                 cb.NewPages = 0; // related to dynamic page count, probably should not be included
-                                 // cb.EnableProposed = true // Also Ignore EnableProposed?
+                // cb.EnableProposed = true // Also Ignore EnableProposed?
 
                 XmlUtility.Store(outStream, cb, compressed: false);
             }

@@ -484,11 +484,10 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 			Rectangle rectangle = drawInfo.Bounds;
 			Font font = base.View.Font;
 			List<Image> list = null;
-			if (Comic.ComicInfoIsDirty && Comic.IsLinked && Program.Settings.UpdateComicFiles)
-			{
-				list = list.SafeAdd(IsDirtyImage);
-			}
-			switch (marker)
+            if (Comic.IsLinked && ((Comic.ComicInfoIsDirty && Program.Settings.UpdateComicFiles) || (Comic.ComicBookIsDirty && Program.Settings.UpdateComicBookFiles)))
+                list = list.SafeAdd(IsDirtyImage);
+
+            switch (marker)
 			{
 			case MarkerType.IsOpen:
 				list = list.SafeAdd(MarkerIsOpenImage);

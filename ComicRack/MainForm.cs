@@ -1109,7 +1109,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				e.Cancel = true;
 				return;
 			}
-			if (Program.Settings.UpdateComicFiles)
+			if (Program.Settings.UpdateComicFiles) // TODO: also add support for ComicBookIsDirty when UpdateComicBookFiles is true
 			{
 				IEnumerable<ComicBook> dirtyTempList = Program.BookFactory.TemporaryBooks.Where((ComicBook cb) => cb.ComicInfoIsDirty);
 				int dirtyCount = dirtyTempList.Count();
@@ -3367,12 +3367,15 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private void WatchedBookHasChanged(object sender, ContainerBookChangedEventArgs e)
 		{
-			if (e.IsComicInfo && e.Book.EditMode.IsLocalComic() && e.Book.FileInfoRetrieved)
+			if ((e.IsComicInfo || e.IsComicBook) && e.Book.EditMode.IsLocalComic() && e.Book.FileInfoRetrieved)
 			{
 				if (e.IsComicInfo)
 					e.Book.ComicInfoIsDirty = true;
 
-				if (!books.IsOpen(e.Book))
+                if (e.IsComicBook)
+                    e.Book.ComicBookIsDirty = true;
+
+                if (!books.IsOpen(e.Book))
 					Program.QueueManager.AddBookToFileUpdate(e.Book);
 			}
 		}

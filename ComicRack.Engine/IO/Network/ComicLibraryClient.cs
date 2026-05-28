@@ -103,6 +103,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Network
 				{
 					book.FileInfoRetrieved = true;
 					book.ComicInfoIsDirty = false;
+					book.ComicBookIsDirty = false;
 					book.SetFileLocation($"REMOTE:{comicLibrary.Id}\\{book.FilePath}");
 					book.CreateComicProvider += CreateComicProvider;
 					if (ShareInformation.IsEditable)
