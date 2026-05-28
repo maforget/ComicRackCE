@@ -271,8 +271,9 @@ namespace cYo.Projects.ComicRack.Engine.Database
 			comicListItemFolder.Items.Add(comicSmartListItem);
 			comicSmartListItem = new ComicSmartListItem(ComicBook.TR["FilesUpdateList", "Files to update"]);
 			comicSmartListItem.Matchers.Add(typeof(ComicBookModifiedInfoMatcher), 0, "", "");
-			comicListItemFolder.Items.Add(comicSmartListItem);
-		}
+            //comicSmartListItem.Matchers.Add(typeof(ComicBookModifiedLibraryInfoMatcher), 0, "", ""); // Disabled by default, can be added manually instead
+            comicListItemFolder.Items.Add(comicSmartListItem);
+        }
 
 		public static ShareableComicListItem DefaultReadingList(ComicLibrary lib = null)
 		{
