@@ -1385,7 +1385,7 @@ namespace cYo.Projects.ComicRack.Engine
             }
             set
             {
-                SetProperty("NewPages", ref newPages, value, includeInComicBook: true);
+                SetProperty("NewPages", ref newPages, value);
             }
         }
 
