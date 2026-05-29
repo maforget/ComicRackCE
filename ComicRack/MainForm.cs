@@ -3372,7 +3372,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				if (e.IsComicInfo)
 					e.Book.ComicInfoIsDirty = true;
 
-                if (e.IsComicBook)
+                if (e.IsComicBook && !e.Book.IsDynamicSource)
                     e.Book.ComicBookIsDirty = true;
 
                 if (!books.IsOpen(e.Book))
