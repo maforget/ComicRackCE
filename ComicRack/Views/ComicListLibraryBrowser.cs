@@ -1058,9 +1058,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				ComicListItem comicListItem = dragNode.Tag as ComicListItem;
 				RecursionCache.Items.RemoveReference(comicListItem.Id); // remove from recursion cache as we are moving it
 
-				// When copying a list and it is sharable, we clone it so that it can add a duplicate
-				if (e.Effect == DragDropEffects.Copy && comicListItem is ShareableComicListItem)
-					comicListItem = ((ShareableComicListItem)comicListItem).Clone<ShareableComicListItem>();
+                // When copying a list and it is sharable, we clone it so that it can add a duplicate
+                // Since comicListItem is now both a ComicListItemFolder & ShareableComicListItem to assure AllowCopyListFolders is respected we need to check for it here
+                if (e.Effect == DragDropEffects.Copy && comicListItem is ShareableComicListItem && (comicListItem is not ComicListItemFolder || Program.ExtendedSettings.AllowCopyListFolders))
+                    comicListItem = ((ShareableComicListItem)comicListItem).Clone<ShareableComicListItem>();
 
 				if (dropNode == null)
 				{
