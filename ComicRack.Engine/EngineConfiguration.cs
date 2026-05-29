@@ -36,7 +36,7 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private int maximumQueueThreads = 4;
 
-		private int maximumUpdateThreads = 4;
+		private int maximumUpdateThreads = 2;
 
         private static EngineConfiguration defaultConfig;
 
@@ -320,7 +320,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-        [DefaultValue(4)]
+        [DefaultValue(2)]
         public int MaximumUpdateThreads
         {
             get

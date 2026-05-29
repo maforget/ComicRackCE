@@ -107,7 +107,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 						deleteFromLibrary = ((filteredComicBookList != null) ? Program.Settings.AlsoRemoveFromLibraryFiltered : Program.Settings.AlsoRemoveFromLibrary);
 						if (ask)
 						{
-							QuestionResult questionResult2 = QuestionDialog.AskQuestion(parent, TR.Messages["AskRemoveComics", "Are you sure you want to remove these books from the list?"], TR.Messages["Remove", "Remove"], delegate(QuestionDialog qd)
+							QuestionResult questionResult2 = QuestionDialog.AskQuestion(parent, TR.Messages["AskRemoveComics", "Are you sure you want to remove these books from the list?"], TR.Messages["Remove", "Remove"], (QuestionDialog qd) =>
 							{
 								qd.OptionText = (deleteFromLibrary ? "!" : string.Empty) + TR.Messages["AlsoRemoveFromLibrary", "&Additionally remove the books from the Library (all information not stored in the files will be lost)"];
 								qd.Option2Text = moveToRecycleBin;
@@ -119,13 +119,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 							deleteFromLibrary = questionResult2.HasFlag(QuestionResult.Option);
 							if (filteredComicBookList != null)
-							{
 								Program.Settings.AlsoRemoveFromLibraryFiltered = deleteFromLibrary;
-							}
 							else
-							{
 								Program.Settings.AlsoRemoveFromLibrary = deleteFromLibrary;
-							}
 
 							if (!string.IsNullOrEmpty(moveToRecycleBin))
 								Program.Settings.MoveFilesToRecycleBin = questionResult2.HasFlag(QuestionResult.Option2);
@@ -145,9 +141,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					booksImage.SafeDispose();
 				}
 				if (!deleteFromLibrary)
-				{
 					return;
-				}
+
 				bool flag = false;
 				using (new WaitCursor())
 				{
@@ -199,6 +194,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private DragDropContainer dragBookContainer;
 
 		private IBitmapCursor dragCursor;
+
+		private bool isEditingNode; // Used to identify when the user is editing a node, so we can prevent Copy / Paste List commands from being executed
 
 		public ComicLibrary Library
 		{
@@ -268,20 +265,32 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			InitializeComponent();
 			tvQueries.SetSidePanelColor();
-            treeImages.ImageSize = treeImages.ImageSize.ScaleDpi();
+			treeImages.ImageSize = treeImages.ImageSize.ScaleDpi();
 			treeSkin = new LibraryTreeSkin
 			{
 				TreeView = tvQueries
 			};
 			tvQueries.Font = SystemFonts.IconTitleFont;
-            // we have to slam down the settings again
-            treeSkin.TreeView.SetSidePanelColor();
-            favContainer.Expanded = false;
+			// we have to slam down the settings again
+			treeSkin.TreeView.SetSidePanelColor();
+			favContainer.Expanded = false;
 			LocalizeUtility.Localize(this, components);
 			quickSearch.SetCueText(tsQuickSearch.Text);
 			queryCacheTimer.Interval = (ComicLibrary.IsQueryCacheInstantUpdate ? 100 : 2500);
 			miPasteList.Click += new EventHandler((sender, e) => PasteList());
-        }
+			tvQueries.Leave += (s, e) => isEditingNode = false; // In case the user clicks away while editing, we want to reset this flag
+		}
+
+		protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+		{
+			// Prevent Copy / Paste List commands from being executed while the user is editing a node so to let the default copy / paste behavior work (copying / pasting the node text instead of the list)
+			return keyData switch
+			{
+				(Keys.Control | Keys.V) when isEditingNode => false,
+				(Keys.Control | Keys.C) when isEditingNode => false,
+				_ => base.ProcessCmdKey(ref msg, keyData)
+			};
+		}
 
 		public ComicListLibraryBrowser(ComicLibrary library)
 			: this()
@@ -293,9 +302,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			FillListTree();
 			if (this.LibraryChanged != null)
-			{
 				this.LibraryChanged(this, EventArgs.Empty);
-			}
 		}
 
 		protected override void OnLoad(EventArgs e)
@@ -332,7 +339,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				commands.Add(CopyList, () => tvQueries.SelectedNode != null && (tvQueries.SelectedNode.Tag is ShareableComicListItem || (Program.ExtendedSettings.AllowCopyListFolders && tvQueries.SelectedNode.Tag is ComicListItemFolder)) && ComicEditMode.CanEditList(), miCopyList);
 				commands.Add(ExportList, () => tvQueries.SelectedNode != null && tvQueries.SelectedNode.Tag is ShareableComicListItem && ComicEditMode.CanEditList(), miExportReadingList);
 				commands.Add(ImportLists, () => ComicEditMode.CanEditList(), miImportReadingList);
-				//commands.Add(PasteList, () => (Clipboard.ContainsData(ShareableComicListItem.ClipboardFormat) || Clipboard.ContainsText()) && ComicEditMode.CanEditList(), miPasteList);
+				//commands.Add(PasteList, isPasteListEnabled, miPasteList); // Disabled because it could lead to a hard crash when checking what data the clipboard contains.
 				commands.Add(AddToFavorites, miAddToFavorites);
 				commands.Add(delegate
 				{
@@ -356,9 +363,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				IDisplayListConfig displayListConfig = senderList as IDisplayListConfig;
 				if (displayListConfig != null)
-				{
 					e.Service = new ViewConfigurationHandler(senderList.Id, displayListConfig);
-				}
 			}
 			if (e.Service == null && e.ServiceType == typeof(IRemoveBooks))
 			{
@@ -369,19 +374,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private TreeNode FindItemNode(Guid id)
 		{
 			if (!nodeMap.TryGetValue(id, out var value))
-			{
 				return null;
-			}
+
 			return value;
 		}
 
 		private TreeNode FindItemNode(IComicBookListProvider item)
 		{
-			if (item == null)
-			{
-				return null;
-			}
-			return FindItemNode(item.Id);
+			return item == null ? null : FindItemNode(item.Id);
 		}
 
 		[Conditional("BIGITEMS")]
@@ -404,17 +404,13 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			TreeNode treeNode = FindItemNode(item);
 			if (treeNode == null)
-			{
 				return false;
-			}
+
 			if (treeNode.Parent == null)
-			{
 				tvQueries.Nodes.Remove(treeNode);
-			}
 			else
-			{
 				treeNode.Parent.Nodes.Remove(treeNode);
-			}
+
 			nodeMap.Remove(item.Id);
 			return true;
 		}
@@ -422,17 +418,13 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private void FillListTree(TreeNodeCollection tnc, ICollection<ComicListItem> items, string filter = null)
 		{
 			if (!string.IsNullOrEmpty(filter))
-			{
 				items = items.Where((ComicListItem cli) => cli is ComicLibraryListItem || cli.Filter(filter)).ToArray();
-			}
+
 			ComicListItem[] list = (from tn in tnc.OfType<TreeNode>()
 									select tn.Tag as ComicListItem into cli
 									where !items.Contains(cli)
 									select cli).ToArray();
-			list.ForEach(delegate(ComicListItem cli)
-			{
-				RemoveNode(cli);
-			});
+			list.ForEach((ComicListItem cli) => RemoveNode(cli));
 			int num = 0;
 			foreach (ComicListItem item in items)
 			{
@@ -440,13 +432,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				bool flag = false;
 				ComicListItemFolder comicListItemFolder = item as ComicListItemFolder;
 				if (comicListItemFolder != null)
-				{
 					flag = !comicListItemFolder.Collapsed;
-				}
 				else if (item is ComicLibraryListItem)
-				{
 					flag = true;
-				}
+
 				if (treeNode == null)
 				{
 					treeNode = AddNode(tnc, item);
@@ -454,14 +443,11 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				else
 				{
 					if (item.Name != treeNode.Text)
-					{
 						treeNode.Text = item.Name;
-					}
+
 					string text = item.Description.LineBreak(60);
 					if (text != treeNode.ToolTipText)
-					{
 						treeNode.ToolTipText = text;
-					}
 				}
 				int num2 = tnc.IndexOf(treeNode);
 				if (num2 != num)
@@ -473,17 +459,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				num++;
 				treeNode.ForeColor = (item.RecursionTest() ? Color.Red : SystemColors.WindowText);
 				if (comicListItemFolder != null)
-				{
 					FillListTree(treeNode.Nodes, comicListItemFolder.Items, filter);
-				}
+
 				if (flag)
-				{
 					treeNode.Expand();
-				}
 				else
-				{
 					treeNode.Collapse();
-				}
 			}
 		}
 
@@ -510,22 +491,18 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private bool EditSelectedComicList()
 		{
 			if (!ComicEditMode.CanEditList())
-			{
 				return false;
-			}
+
 			TreeNode selectedNode = tvQueries.SelectedNode;
 			if (selectedNode == null)
-			{
 				return false;
-			}
+
 			if (selectedNode.Tag is ComicSmartListItem)
-			{
 				return EditSmartListItem(selectedNode, selectedNode.Tag as ComicSmartListItem);
-			}
+
 			if (selectedNode.Tag is ComicListItemFolder || selectedNode.Tag is ComicIdListItem)
-			{
 				return EditListItem(selectedNode.Tag as ComicListItem);
-			}
+
 			return false;
 		}
 
@@ -568,7 +545,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					getPrev = () => tnc.OfType<TreeNode>().Reverse().SkipWhile((TreeNode n) => n != tn)
 						.Skip(1)
 						.FirstOrDefault((TreeNode n) => n.Tag is ComicSmartListItem);
-					setItem = delegate(Func<TreeNode> get)
+					setItem = (Func<TreeNode> get) =>
 					{
 						TreeNode treeNode = get();
 						if (treeNode != null)
@@ -637,9 +614,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private ComicListItem GetCurrentNodeComicList()
 		{
 			if (tvQueries.SelectedNode != null)
-			{
 				return (ComicListItem)tvQueries.SelectedNode.Tag;
-			}
+
 			return null;
 		}
 
@@ -651,17 +627,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private ComicListItemCollection GetNodeComicListCollection(TreeNode sn)
 		{
 			if (sn == null)
-			{
 				return Library.ComicLists;
-			}
+
 			if (sn.Tag is ComicListItemFolder)
-			{
 				return ((ComicListItemFolder)sn.Tag).Items;
-			}
+
 			if (sn.Parent != null)
-			{
 				return ((ComicListItemFolder)sn.Parent.Tag).Items;
-			}
+
 			return Library.ComicLists;
 		}
 
@@ -693,22 +666,16 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			if (!treeDirty)
 			{
 				if (e.Change != ComicListItemChange.Statistic)
-				{
 					treeDirty = true;
-				}
 				else
-				{
 					tvQueries.Invalidate();
-				}
 			}
 		}
 
 		private void tvQueries_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
 		{
 			if (tvQueries.HitTest(e.Location).Location != TreeViewHitTestLocations.PlusMinus)
-			{
 				EditSelectedComicList();
-			}
 		}
 
 		private void tvQueries_AfterSelect(object sender, TreeViewEventArgs e)
@@ -739,48 +706,41 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			using (new WaitCursor())
 			{
 				if (tvQueries.SelectedNode != null)
-				{
 					BookList = tvQueries.SelectedNode.Tag as IComicBookListProvider;
-				}
 			}
 		}
 
 		private void tvQueries_BeforeLabelEdit(object sender, NodeLabelEditEventArgs e)
 		{
 			e.CancelEdit = !ComicEditMode.CanEditList();
+			isEditingNode = true;
 		}
 
 		private void tvQueries_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
 		{
 			ComicListItem comicListItem = ((e.Node == null) ? null : (e.Node.Tag as ComicListItem));
 			if (comicListItem == null || string.IsNullOrEmpty(e.Label))
-			{
 				e.CancelEdit = true;
-			}
 			else
-			{
 				comicListItem.Name = e.Label;
-			}
+
+			isEditingNode = false;
 		}
 
 		private void tvQueries_ItemDrag(object sender, ItemDragEventArgs e)
 		{
 			if (!ComicEditMode.CanEditList())
-			{
 				return;
-			}
+
 			if (e.Button == MouseButtons.Left)
-			{
 				dragNode = e.Item as TreeNode;
-			}
+
 			if (dragNode != null && dragNode.Tag is ComicLibraryListItem)
-			{
 				dragNode = null;
-			}
+
 			if (dragNode == null)
-			{
 				return;
-			}
+
 			Point cursorLocation = tvQueries.PointToClient(Cursor.Position);
 			dragCursor = treeSkin.GetDragCursor(dragNode, 64, cursorLocation);
 			try
@@ -790,7 +750,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				ShareableComicListItem sc = dragNode.Tag as ShareableComicListItem;
 				if (sc != null)
 				{
-					dataObjectEx.SetFile(FileUtility.MakeValidFilename(sc.Name + ".cbl"), delegate(Stream stream)
+					dataObjectEx.SetFile(FileUtility.MakeValidFilename(sc.Name + ".cbl"), (Stream stream) =>
 					{
 						try
 						{
@@ -807,10 +767,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			}
 			finally
 			{
-				if (dragCursor != null)
-				{
-					dragCursor.Dispose();
-				}
+				dragCursor?.Dispose();
 				dragCursor = null;
 				dragNode = null;
 			}
@@ -839,27 +796,21 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			ComicListItemFolder comicListItemFolder = e.Node.Tag as ComicListItemFolder;
 			if (comicListItemFolder != null)
-			{
 				comicListItemFolder.Collapsed = false;
-			}
 		}
 
 		private void tvQueries_AfterCollapse(object sender, TreeViewEventArgs e)
 		{
 			ComicListItemFolder comicListItemFolder = e.Node.Tag as ComicListItemFolder;
 			if (comicListItemFolder != null)
-			{
 				comicListItemFolder.Collapsed = true;
-			}
 		}
 
 		private void tvQueries_DrawNode(object sender, DrawTreeNodeEventArgs e)
 		{
 			ComicListItem comicListItem = e.Node.Tag as ComicListItem;
 			if (comicListItem != null && comicListItem.PendingCacheUpdate)
-			{
 				OnListCacheChanged();
-			}
 		}
 
 		private void treeContextMenu_Opening(object sender, CancelEventArgs e)
@@ -870,9 +821,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			cmEditDevices.DropDownItems.Clear();
 			cmEditDevices.Visible = flag;
 			if (!flag)
-			{
 				return;
-			}
+
 			if (Program.Settings.Devices.Count == 1)
 			{
 				string format = TR.Load(base.Name)["SyncDevice", "Sync with {0}..."];
@@ -931,9 +881,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private void FillFavorites(bool refreshThumbnails = false)
 		{
 			if (!favContainer.Expanded)
-			{
 				return;
-			}
+
 			favView.BeginUpdate();
 			try
 			{
@@ -946,9 +895,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					favoriteViewItem.Tag = item.Id;
 					favView.Items.Add(favoriteViewItem);
 					if (refreshThumbnails)
-					{
 						Program.ImagePool.Thumbs.RefreshImage(favoriteViewItem.ThumbnailKey);
-					}
 				}
 			}
 			finally
@@ -969,9 +916,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			{
 				ComicListItem comicListItem = selectedNode.Tag as ComicListItem;
 				if (comicListItem != null)
-				{
 					comicListItem.Favorite = true;
-				}
 			}
 		}
 
@@ -979,18 +924,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			FavoriteViewItem favoriteViewItem = favView.SelectedItems.OfType<FavoriteViewItem>().FirstOrDefault();
 			if (favoriteViewItem != null)
-			{
 				favoriteViewItem.ComicListItem.Favorite = false;
-			}
 		}
 
 		private void favView_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			ItemViewItem itemViewItem = favView.FocusedItem as ItemViewItem;
 			if (itemViewItem != null)
-			{
 				SelectList((Guid)itemViewItem.Tag);
-			}
 		}
 
 		private void favView_Resize(object sender, EventArgs e)
@@ -1002,17 +943,14 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private void favContainer_ExpandedChanged(object sender, EventArgs e)
 		{
 			if (favContainer.Expanded)
-			{
 				FillFavorites();
-			}
 		}
 
 		private bool CreateDragContainter(DragEventArgs e)
 		{
 			if (dragBookContainer == null)
-			{
 				dragBookContainer = DragDropContainer.Create(e.Data);
-			}
+
 			return dragBookContainer.IsValid;
 		}
 
@@ -1025,20 +963,15 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			else
 			{
 				if (list == null)
-				{
 					return;
-				}
+
 				foreach (ComicBook book in bookContainer.Books.GetBooks())
 				{
 					ComicBook comicBook = (book.IsLinked ? Program.BookFactory.Create(book.FilePath, CreateBookOption.AddToStorage) : book);
 					if (index != -1)
-					{
 						index = list.Insert(index, comicBook) + 1;
-					}
 					else
-					{
 						list.Add(comicBook);
-					}
 				}
 			}
 		}
@@ -1047,9 +980,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			e.Effect = DragDropEffects.None;
 			if (!ComicEditMode.CanEditList())
-			{
 				return;
-			}
+
 			CreateDragContainter(e);
 			Point point = tvQueries.PointToClient(new Point(e.X, e.Y));
 			TreeNode node = tvQueries.GetNodeAt(point);
@@ -1177,17 +1109,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				if (comicListItem2 != null)
 				{
 					if (string.IsNullOrEmpty(comicListItem2.Name))
-					{
 						comicListItem2.Name = TR.Load(base.Name)["NewList", "New List"];
-					}
+
 					if (comicListItemFolder == null)
-					{
 						Library.ComicLists.Add(comicListItem2);
-					}
 					else
-					{
 						comicListItemFolder.Items.Add(comicListItem2);
-					}
 				}
 			}
 			else if (dragDropContainer.IsReadingListsContainer)
@@ -1220,22 +1147,15 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 
 		private void RenameNode()
 		{
-			if (tvQueries.SelectedNode != null)
-			{
-				tvQueries.SelectedNode.BeginEdit();
-			}
+			tvQueries.SelectedNode?.BeginEdit();
 		}
 
 		private void ExpandCollapseAllNodes()
 		{
 			if (tvQueries.AllNodes().Any((TreeNode t) => t.IsExpanded))
-			{
 				tvQueries.CollapseAll();
-			}
 			else
-			{
 				tvQueries.ExpandAll();
-			}
 		}
 
 		private void SortList()
@@ -1243,7 +1163,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			ComicListItemCollection currentNodeComicListCollection = GetCurrentNodeComicListCollection();
 			if (currentNodeComicListCollection != null)
 			{
-				currentNodeComicListCollection.Sort(delegate(ComicListItem a, ComicListItem b)
+				currentNodeComicListCollection.Sort((ComicListItem a, ComicListItem b) =>
 				{
 					int num = ((a is ComicListItemFolder) ? 1 : 0);
 					int num2 = ((b is ComicListItemFolder) ? 1 : 0);
@@ -1308,25 +1228,21 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		private void CopyList()
 		{
 			if (tvQueries.SelectedNode == null)
-			{
 				return;
-			}
+
 			ComicListItem comicListItem = tvQueries.SelectedNode.Tag as ShareableComicListItem;
 			if (comicListItem == null && Program.ExtendedSettings.AllowCopyListFolders)
-			{
 				comicListItem = tvQueries.SelectedNode.Tag as ComicListItemFolder;
-			}
+
 			if (comicListItem == null)
-			{
 				return;
-			}
+
 			try
 			{
 				DataObject dataObject = new DataObject();
 				if (comicListItem is ComicSmartListItem)
-				{
 					dataObject.SetText(comicListItem.ToString());
-				}
+
 				dataObject.SetData(ShareableComicListItem.ClipboardFormat, comicListItem);
 				Clipboard.SetDataObject(dataObject);
 			}
@@ -1336,7 +1252,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		}
 
 		private string lastExportListPath = string.Empty;
-        private void ExportList()
+		private void ExportList()
 		{
 			if (tvQueries.SelectedNode == null)
 				return;
@@ -1355,12 +1271,12 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					dialog.CheckboxText = TR.Load(base.Name)["ExportAsSingleEntries", "Export as single entries"];
 					dialog.CheckboxChecked = false;
 					dialog.InitialDirectory = lastExportListPath;
-                    if (dialog.ShowDialog(this) == DialogResult.OK)
+					if (dialog.ShowDialog(this) == DialogResult.OK)
 					{
 						string selectedPath = dialog.SelectedPath;
 						lastExportListPath = selectedPath;
-                        bool singleEntries = dialog.CheckboxChecked;
-                        ExportFolderListsToFile(shareableComicListItem, singleEntries, selectedPath);
+						bool singleEntries = dialog.CheckboxChecked;
+						ExportFolderListsToFile(shareableComicListItem, singleEntries, selectedPath);
 					}
 				}
 			}
@@ -1376,11 +1292,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 					{
 						saveFileDialog.CustomPlaces.Add(favoritePath);
 					}
-					if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-					{
-						ExportListToFile(shareableComicListItem, alwaysList: saveFileDialog.FilterIndex != 1, saveFileDialog.FileName);
-					}
 
+					if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+						ExportListToFile(shareableComicListItem, alwaysList: saveFileDialog.FilterIndex != 1, saveFileDialog.FileName);
 				}
 			}
 		}
@@ -1444,7 +1358,9 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			//Check if the clipboard contains data, if so enable the paste button.
 			try
 			{
-				return (Clipboard.ContainsData(ShareableComicListItem.ClipboardFormat) || Clipboard.ContainsText()) && ComicEditMode.CanEditList();
+				return (Clipboard.ContainsData(ShareableComicListItem.ClipboardFormat) || Clipboard.ContainsText())
+					&& ComicEditMode.CanEditList()
+					&& !isEditingNode; // Make sure that it doesn't trigger when the user is editing a node label
 			}
 			catch (Exception)
 			{
@@ -1460,32 +1376,32 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 			ComicListItem currentNodeComicList = GetCurrentNodeComicList();
 			ComicListItemCollection currentNodeComicListCollection = GetCurrentNodeComicListCollection();
 			if (currentNodeComicListCollection == null)
-			{
 				return;
+
+			// Since ComicListItemFolder is now a ShareableComicListItem it's was always enabled. So checking the folder before the ShareableComicListItem so AllowCopyListFolders is now relevant again
+			ComicListItemFolder comicListItemFolder = Clipboard.GetData(ShareableComicListItem.ClipboardFormat) as ComicListItemFolder;
+			if (comicListItemFolder != null)
+			{
+				if (Program.ExtendedSettings.AllowCopyListFolders)
+				{
+					comicListItemFolder = comicListItemFolder.Clone<ComicListItemFolder>();
+					if (comicListItemFolder != null)
+						currentNodeComicListCollection.Insert(currentNodeComicListCollection.IndexOf(currentNodeComicList) + 1, comicListItemFolder); 
+				}
+
+				return; // always return when it's a folder, otherwise it would be processed as a ShareableComicListItem and not take into account the AllowCopyListFolders setting
 			}
+
 			ShareableComicListItem shareableComicListItem = Clipboard.GetData(ShareableComicListItem.ClipboardFormat) as ShareableComicListItem;
 			if (shareableComicListItem != null)
 			{
-				shareableComicListItem = ((ICloneable)shareableComicListItem).Clone<ShareableComicListItem>();
+				shareableComicListItem = shareableComicListItem.Clone<ShareableComicListItem>();
 				if (shareableComicListItem != null)
-				{
 					currentNodeComicListCollection.Insert(currentNodeComicListCollection.IndexOf(currentNodeComicList) + 1, shareableComicListItem);
-				}
+
 				return;
 			}
-			if (Program.ExtendedSettings.AllowCopyListFolders)
-			{
-				ComicListItemFolder comicListItemFolder = Clipboard.GetData(ShareableComicListItem.ClipboardFormat) as ComicListItemFolder;
-				if (comicListItemFolder != null)
-				{
-					comicListItemFolder = ((ICloneable)comicListItemFolder).Clone<ComicListItemFolder>();
-					if (comicListItemFolder != null)
-					{
-						currentNodeComicListCollection.Insert(currentNodeComicListCollection.IndexOf(currentNodeComicList) + 1, comicListItemFolder);
-					}
-					return;
-				}
-			}
+
 			string text = Clipboard.GetText();
 			try
 			{
@@ -1510,10 +1426,10 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 				{
 					openFileDialog.CustomPlaces.Add(favoritePath);
 				}
+
 				if (openFileDialog.ShowDialog(this) != DialogResult.OK)
-				{
 					return;
-				}
+
 				using (new WaitCursor(this))
 				{
 					string[] fileNames = openFileDialog.FileNames;
@@ -1586,7 +1502,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 						ComicIdListItem idli = null;
 						AutomaticProgressDialog.Process(this, TR.Messages["ImportReadingList", "Import Reading List"], TR.Messages["MatchBooksWithLibrary", "Matching list with Library"], 3000, delegate
 						{
-							li = (idli = ComicIdListItem.CreateFromReadingList(Library.Books, crlc.Items, newBooks, delegate(int x)
+							li = (idli = ComicIdListItem.CreateFromReadingList(Library.Books, crlc.Items, newBooks, (int x) =>
 							{
 								AutomaticProgressDialog.Value = x;
 								return !AutomaticProgressDialog.ShouldAbort;
@@ -1644,9 +1560,8 @@ namespace cYo.Projects.ComicRack.Viewer.Views
 		{
 			TreeNode treeNode = FindItemNode(listId);
 			if (treeNode == null)
-			{
 				return false;
-			}
+
 			tvQueries.SelectedNode = treeNode;
 			UpdateBookList();
 			return true;

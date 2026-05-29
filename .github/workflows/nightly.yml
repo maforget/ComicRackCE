@@ -13,22 +13,22 @@ on:
 
 jobs:
   build:
-    runs-on: windows-2022
+    runs-on: windows-latest
 
     outputs:
       sha_short: ${{ steps.vars.outputs.sha_short }}
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         submodules: recursive
 
     - name: setup-msbuild
-      uses: microsoft/setup-msbuild@v2
+      uses: microsoft/setup-msbuild@v3
 
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v2
+      uses: NuGet/setup-nuget@v4
 
     - name: Restore Packages
       run: nuget restore ComicRack.sln
@@ -52,7 +52,7 @@ jobs:
         curl -L -o ComicRack\bin\Release\net48\_CommonRedist\vc_redist.x64.exe https://aka.ms/vs/17/release/vc_redist.x64.exe
 
     - name: Compile installer
-      uses: Minionguyjpro/Inno-Setup-Action@v1.2.4
+      uses: Minionguyjpro/Inno-Setup-Action@v1.2.8
       with:
         path: Installer.iss
         options: /DMyAppVersion=nightly-${{ steps.vars.outputs.sha_short }} /DMyAppSetupFile=ComicRackCESetup_nightly

@@ -350,9 +350,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             EditControlUtility.SetText(cbManga, comic.Manga);
             EditControlUtility.SetText(cbBlackAndWhite, comic.BlackAndWhite);
             EditControlUtility.SetText(cbEnableProposed, comic.EnableProposed ? YesNo.Yes : YesNo.No);
-            ComboBox comboBox = cbEnableDynamicUpdate;
-            bool visible = (labelEnableDynamicUpdate.Visible = comic.IsDynamicSource);
-            comboBox.Visible = visible;
+            cbEnableDynamicUpdate.Visible = labelEnableDynamicUpdate.Visible = comic.IsDynamicSource;
             EditControlUtility.SetText(cbEnableDynamicUpdate, comic.EnableDynamicUpdate ? YesNo.Yes : YesNo.No);
             EditControlUtility.SetText(txAlternateSeries, comic.AlternateSeries);
             txAlternateNumber.Text = comic.AlternateNumber;
