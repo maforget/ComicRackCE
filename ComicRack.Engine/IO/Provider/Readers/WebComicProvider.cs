@@ -204,7 +204,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 			try
 			{
 				WebComic webComic = Load(base.Source);
-				webComic.Info = comicInfo;
+				webComic.Info = comicInfo.GetInfo(); // For now just force to be ComicInfo, it would create an error when it's a ComicBook
 				using (FileStream s = File.Create(base.Source))
 				{
 					XmlUtility.Store(s, webComic, compressed: false);
