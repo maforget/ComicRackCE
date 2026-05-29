@@ -2696,7 +2696,8 @@ namespace cYo.Projects.ComicRack.Engine
                 && LastPageRead == cb.LastPageRead
                 && Rating == cb.Rating
                 && ColorAdjustment == cb.ColorAdjustment
-                && EnableDynamicUpdate == cb.EnableDynamicUpdate
+                //&& EnableDynamicUpdate == cb.EnableDynamicUpdate
+                //&& IsDynamicSource == cb.IsDynamicSource
                 && EnableProposed == cb.EnableProposed
                 && SeriesComplete == cb.SeriesComplete
                 && Checked == cb.Checked
@@ -2751,6 +2752,8 @@ namespace cYo.Projects.ComicRack.Engine
                 cb.FileIsMissing = false; // file dependant
                 cb.ExtraSyncInformation = null; // related to sync, probably always null anyway
                 cb.NewPages = 0; // related to dynamic page count, probably should not be included
+                cb.IsDynamicSource = false; // related to dynamic source, probably should not be included
+                cb.EnableDynamicUpdate = true; // related to dynamic source, probably should not be included
                 // cb.EnableProposed = true // Also Ignore EnableProposed?
 
                 XmlUtility.Store(outStream, cb, compressed: false);
