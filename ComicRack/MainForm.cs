@@ -1109,9 +1109,12 @@ namespace cYo.Projects.ComicRack.Viewer
 				e.Cancel = true;
 				return;
 			}
-			if (Program.Settings.UpdateComicFiles) // TODO: also add support for ComicBookIsDirty when UpdateComicBookFiles is true
+			if (Program.Settings.UpdateComicFiles)
 			{
-				IEnumerable<ComicBook> dirtyTempList = Program.BookFactory.TemporaryBooks.Where((ComicBook cb) => cb.ComicInfoIsDirty);
+				HashSet<ComicBook> dirtyTempList = Program.BookFactory.TemporaryBooks.Where((ComicBook cb) => cb.ComicInfoIsDirty).ToHashSet();
+				if (Program.Settings.UpdateComicBookFiles)
+					dirtyTempList.AddRange(Program.BookFactory.TemporaryBooks.Where((ComicBook cb) => cb.ComicBookIsDirty));
+
 				int dirtyCount = dirtyTempList.Count();
 				if (dirtyCount != 0 && Program.AskQuestion(this, TR.Messages["AskDirtyItems", "Save changed information for Books that are not in the database?\nAll changes not saved now will be lost!"], TR.Default["Save", "Save"], HiddenMessageBoxes.AskDirtyItems, TR.Messages["AlwaysSaveDirty", "Always save changes"], TR.Default["No", "No"]))
 				{
