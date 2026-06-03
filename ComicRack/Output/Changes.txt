@@ -1,10 +1,19 @@
 Community Edition Build 0.9.184:
 
 * NEW: Support for JpegXL image format. Supports Lossy & Lossless compression. Note: Lossless aren't reconstructible to Jpeg.
+* NEW: Added a new "ComicBook.xml" metadata file that acts as a superset of "ComicInfo.xml", containing all the same fields plus library exclusive data such as read progress, custom values, and color adjustments.
+    - It lives alongside the "ComicInfo.xml" so it doesn't interfere with it.
+    - "ComicInfo.xml" always takes precedence when both exist, ensuring compatibility with other applications.
+    - Added an "IgnoreEmbeddedComicBookXml" setting in "ComicRack.ini" that disables reading of "ComicBook.xml".
+    - Added the "Embed Library Info" in export settings to write "ComicBook.xml" on export.
+    - Added the "Allow writing of Library info into files" option in Preferences, required for "ComicBook.xml" to be written during a file update.
+    - Added the "ComicBookIsDirty" flag to tracks changes to ComicBook exclusive fields (See list in PR #261).
+    - Added a "Modified Library Info" smart list that can filter on this flag (not part of the default "Files to Update" list).
 * NEW: Using Export Reading List on a Folder will now let you choose to export the CBL as smart lists (default) or single entries (converts smart lists to regular reading lists).
 * NEW: Failure to update book info will now show an error message instead of silently failing.
 * NEW: Updating book info can now update multiple books at the same time.
 * NEW: Added "MaximumUpdateThreads" setting in ComicRack.ini to configure the number of books that will update concurrently. Default is 2. (based on processor count and 32 as max)
+* NEW: Added the standalone 7-Zip executable for use on 64-bit system (this only affects updating, unless you've changed to use the 7-Zip exe in ComicRack.ini).
 
 
 * CHANGE: Updated French Translation. It is now the default localization used as a base when updating translations (See Wiki for instructions on updating other languages).
@@ -15,9 +24,13 @@ Community Edition Build 0.9.184:
 * CHANGE: Ensure that the Backup Manager finishes if it's still running on shutdown. Added warning when closing the program while a backup is still running.
 * CHANGE: Updated the DiskCache to use better thread safety. Fixes potential deadlock (like when generating covers).
 * CHANGE: Updated BitmapToIcon (used to update the taskbar icon) so it uses proper Windows API instead of reflection to dispose of the icon handle.
-* CHANGE: Reverted default thumbnail resizing algorithm to "FastBilinear" (Bilinear). You can change it back in ComicRack.ini if you want to. The change to "FastAndUgly" (Nearest Neighbor) was to reduce access violation crashes caused by unsafe code, but it lowered image quality. "FastBilinear" no longer uses pointers directly and so should be safer and less crash prone. This is still an open issue, see #236 if it still occurs.
+* CHANGE: Reverted default thumbnail resizing algorithm to "FastBilinear" (Bilinear). You can change it back in ComicRack.ini if you want to. The change to "FastAndUgly" (Nearest Neighbor) was to reduce access violation crashes caused by unsafe code, but it lowered image quality. Since these Fast resizing algorithm no longer uses pointers they should be safer and less crash prone. This is still an open issue, see #236 if it still occurs.
+* CHANGE: Group sorting is now case insensitive.
+* CHANGE: The dirty flag (orange update star) will be cleared upon exporting with the "Embed Info" options enabled and replacing the file.
+* CHANGE: Doubled maximum tile height from 256 to 512.
 
 
+* UPDATE: Updated 7-Zip to 26.01
 * UPDATE: Updated PDFium to 148
 * UPDATE: Updated SharpCompress to 0.48.0
 * UPDATE: Updated System.Text.Json to 10.0.5
@@ -27,7 +40,10 @@ Community Edition Build 0.9.184:
 * BUGFIX: Fixed the Paste Data dialog failing to open when the book metadata contained unparsed elements.
 * BUGFIX: Potentially fixed crash to desktop that would occur when resizing images with some "fast" algorithms.
 * BUGFIX: Fixed the same thumbnail being used in the reader tab for all open books.
-* BUGFIX: Paste Data dialog now remembers previous custom values.
+* BUGFIX: Paste Data dialog now remembers previous custom values and fixed some fields that weren't enabled correctly (like Tags).
+* BUGFIX: Fix missing catalog values in some instances (updating via SQL, remote library with selected list or script ran from the Info dialog.
+* BUGFIX: Fixed being unabled to Copy/Paste text while renaming a list in the Library.
+* BUGFIX: Copying of folders (via CTRL + drag or Copy/Paste List) will no longer ignore the "AllowCopyListFolders" setting (also added it to the ComicRack.ini, since it was misssing).
 
 
 Community Edition Build 0.9.182:
