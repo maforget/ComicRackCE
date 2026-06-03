@@ -614,6 +614,9 @@ namespace cYo.Projects.ComicRack.Engine
 		[DefaultValue(false)]
 		public bool UseLegacyZipConfiguration { get; set; } // If true, will use the old configuration when creating CBZ files. When false, will use the new configuration which sets the NTFS extra field and sets the compression method to Stored when no compression is used.
 
+        [DefaultValue(false)]
+        public bool IgnoreEmbeddedComicBookXml { get; set; } // If true, the embedded ComicBook.xml file in CBZ/CBR/CB7/CBT files will be ignored when reading comic books.
+
         public EngineConfiguration()
 		{
 			PageScrollingDuration = 1000;
@@ -677,6 +680,7 @@ namespace cYo.Projects.ComicRack.Engine
 			JpegXLEncoderEffort = 7;
             ForceJpegReconstruction = false;
 			UseLegacyZipConfiguration = false;
+            IgnoreEmbeddedComicBookXml = false;
         }
 
         public string GetTempFileName()

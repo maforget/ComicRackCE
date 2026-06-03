@@ -1173,13 +1173,14 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private void FireBookChanged(string name, object oldValue, object newValue)
 		{
-			OnBookChanged(new BookChangedEventArgs(name, isComicInfo: true, oldValue, newValue));
+			OnBookChanged(new BookChangedEventArgs(name, comicInfoType: ComicInfoType.ComicInfo, oldValue, newValue));
 		}
 
 		private void FirePageChanged(int page, bool updateComicInfo = true)
 		{
+			ComicInfoType infoType = updateComicInfo ? ComicInfoType.ComicInfo : ComicInfoType.None;
 			cachedFrontCoverPageIndex = (cachedFrontCoverCount = -1);
-			OnBookChanged(new BookChangedEventArgs("Pages", page, updateComicInfo));
+			OnBookChanged(new BookChangedEventArgs("Pages", page, infoType));
 		}
 
 		protected virtual void OnBookChanged(BookChangedEventArgs e)
@@ -1473,7 +1474,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public bool IsSameContent(ComicInfo ci, bool withPages = true)
+		public virtual bool IsSameContent(ComicInfo ci, bool withPages = true, bool onlyComicInfo = true)
 		{
 			if (ci != null && ci.Writer == Writer && ci.Publisher == Publisher && ci.Imprint == Imprint && ci.Inker == Inker && ci.Penciller == Penciller && ci.Title == Title && ci.Number == Number && ci.Count == Count && ci.Summary == Summary && ci.Series == Series && ci.Volume == Volume && ci.AlternateSeries == AlternateSeries && ci.AlternateNumber == AlternateNumber && ci.AlternateCount == AlternateCount && ci.StoryArc == StoryArc && ci.SeriesGroup == SeriesGroup && ci.Year == Year && ci.Month == Month && ci.Day == Day && ci.Notes == Notes && ci.Review == Review && ci.Genre == Genre && ci.Colorist == Colorist && ci.Editor == Editor && ci.Translator == Translator && ci.Letterer == Letterer && ci.CoverArtist == CoverArtist && ci.Web == Web && ci.LanguageISO == LanguageISO && ci.PageCount == PageCount && ci.Format == Format && ci.AgeRating == AgeRating && ci.BlackAndWhite == BlackAndWhite && ci.Manga == Manga && ci.Characters == Characters && ci.Teams == Teams && ci.MainCharacterOrTeam == MainCharacterOrTeam && ci.Locations == Locations && ci.ScanInformation == ScanInformation && ci.Tags == Tags)
 			{
@@ -1486,7 +1487,7 @@ namespace cYo.Projects.ComicRack.Engine
 			return false;
 		}
 
-		public void Serialize(Stream outStream)
+		public virtual void Serialize(Stream outStream)
 		{
 			try
 			{
@@ -1510,7 +1511,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public static ComicInfo LoadFromSidecar(string file)
+		public static T LoadFromSidecar<T>(string file, Func<Stream, T> deserializeDelegate)
 		{
 			try
 			{
@@ -1519,12 +1520,12 @@ namespace cYo.Projects.ComicRack.Engine
 				string sidecarFile = File.Exists(sidecar1) ? sidecar1 : sidecar2;
 				using (FileStream inStream = File.OpenRead(sidecarFile))
 				{
-					return Deserialize(inStream);
+					return deserializeDelegate(inStream);
 				} 
 			}
 			catch (Exception)
 			{
-				return null;
+				return default;
 			}
 		}
 
@@ -1537,7 +1538,7 @@ namespace cYo.Projects.ComicRack.Engine
 			}
 		}
 
-		public string ToXml()
+        public string ToXml()
 		{
 			return Encoding.Default.GetString(ToArray());
 		}

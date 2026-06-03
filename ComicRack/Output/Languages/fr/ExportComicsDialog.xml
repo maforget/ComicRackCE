@@ -57,6 +57,7 @@
     <Text Key="chkAddNewToLibrary" Text="Ajouter les nouveaux Livres à la Bibliothèque" Comment="Add newly created Book to Library" />
     <Text Key="labelComicFormat" Text="Type de fichier :" Comment="Format:" />
     <Text Key="chkEmbedComicInfo" Text="Intégrer Comicinfo.xml" Comment="Embed Book Info" />
+    <Text Key="chkEmbedComicBook" Text="Intégrer ComicBook.xml" Comment="Embed Library Info" />
     <Text Key="labelPageFormat" Text="Type de fichier :" Comment="Format:" />
     <Text Key="cbNamingTemplate.Item1" Text="Légende du Livre" Comment="Book Caption" />
     <Text Key="labelGamma" Text="Gamma" Comment="Gamma" />

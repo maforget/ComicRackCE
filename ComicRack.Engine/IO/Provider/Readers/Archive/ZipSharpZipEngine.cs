@@ -56,7 +56,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 			}
 		}
 
-		public override ComicInfo ReadInfo(string source)
+        private T Read<T>(string source) where T : class
 		{
 			try
 			{
@@ -64,7 +64,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 				{
 					using (ZipFile zipFile = new ZipFile(file))
 					{
-						return XmlInfoProviders.Readers.DeserializeAll(s =>
+						return XmlInfoProviders.Readers.DeserializeAll<T>(s =>
 						{
 							int num = zipFile.FindEntry(s, ignoreCase: true);
 							if (num != -1)
@@ -72,14 +72,16 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 								return zipFile.GetInputStream(num);
 							}
 							return null;
-						});
+						}) as T;
 					}
 				}
 			}
 			catch (Exception)
 			{
-			}
-			return null;
-		}
-	}
+				return null;
+            }
+        }
+
+        public override T ReadInfo<T>(string source) => Read<T>(source);
+    }
 }

@@ -57,14 +57,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Pdf
 			return pdfImages.GetPageData(index, currentDpi);
 		}
 
-		public ComicInfo ReadInfo(string source)
-		{
-			return null;
-		}
+        public T ReadInfo<T>(string source) where T: ComicInfo => null;
 
-		public bool WriteInfo(string source, ComicInfo info)
-		{
-			return false;
-		}
-	}
+        public bool WriteInfo(string source, ComicInfo info) => false;
+    }
 }

@@ -33,9 +33,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 			return imageArchive.ReadByteImage(base.Source, GetFile(index));
 		}
 
-		protected override ComicInfo OnLoadInfo()
+		protected override T OnLoadInfo<T>()
 		{
-			return imageArchive.ReadInfo(base.Source);
+			return imageArchive.ReadInfo<T>(base.Source);
 		}
 
 		protected override bool OnStoreInfo(ComicInfo comicInfo)
@@ -48,7 +48,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 			{
 				OnError(ex.Message);
 				return false;
-            }
+			}
 		}
 
 		protected override bool OnFastFormatCheck(string source)
@@ -61,8 +61,8 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 			using (IItemLock<List<ProviderImageInfo>> itemLock = GetCachedFileList())
 			{
 				List<ProviderImageInfo> list = new List<ProviderImageInfo>(itemLock.Item.Where((ProviderImageInfo ii) => IsSupportedImage(ii)));
-                list.Sort((a, b) => cYo.Common.Text.ExtendedStringComparer.Compare(a.Name, b.Name, ExtendedStringComparison.IgnoreCase));
-                foundImageList = list;
+				list.Sort((a, b) => cYo.Common.Text.ExtendedStringComparer.Compare(a.Name, b.Name, ExtendedStringComparison.IgnoreCase));
+				foundImageList = list;
 			}
 			foreach (ProviderImageInfo foundImage in foundImageList)
 			{

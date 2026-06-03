@@ -201,7 +201,9 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		private bool updateComicFiles;
 
-		private bool autoUpdateComicsFiles;
+		private bool updateComicBookFiles;
+
+        private bool autoUpdateComicsFiles;
 
 		private string helpSystem = DefaultHelpSystem;
 
@@ -996,7 +998,27 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			}
 		}
 
-		[Category("Behavior")]
+        [Category("Behavior")]
+        [Description("Update Book Files with extra information")]
+        [DefaultValue(false)]
+        [Browsable(false)]
+        public bool UpdateComicBookFiles
+        {
+            get
+            {
+                return updateComicBookFiles;
+            }
+            set
+            {
+                if (updateComicBookFiles != value)
+                {
+                    updateComicBookFiles = value;
+                    FireEvent(this.UpdateComicBookFilesChanged);
+                }
+            }
+        }
+
+        [Category("Behavior")]
 		[Description("Auto update of Book files")]
 		[DefaultValue(false)]
 		[Browsable(false)]
@@ -2517,7 +2539,10 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		[field: NonSerialized]
 		public event EventHandler UpdateComicFilesChanged;
 
-		[field: NonSerialized]
+        [field: NonSerialized]
+        public event EventHandler UpdateComicBookFilesChanged;
+
+        [field: NonSerialized]
 		public event EventHandler BlendWhilePagingChanged;
 
 		[field: NonSerialized]

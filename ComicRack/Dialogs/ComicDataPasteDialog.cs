@@ -162,8 +162,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                     openedTime.Visible = pageCount.Visible = openedTime.Enabled = pageCount.Enabled = false;
                 }
 
-                // If books aren't in the library, disable the "Rating", "Color" and "Series Complete" checkboxes.
-                if (!books.Any((ComicBook cb) => cb.IsInContainer))
+                // If books aren't in the library, disable the "Rating", "Color" and "Series Complete" checkboxes. Unless the UpdateComicBookFiles is enabled
+                if (!Program.Settings.UpdateComicBookFiles && !books.Any((ComicBook cb) => cb.IsInContainer))
                 {
                     CheckBox rating = comicDataPasteDialog.chkRating;
                     CheckBox color = comicDataPasteDialog.chkColor;

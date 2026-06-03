@@ -1111,7 +1111,10 @@ namespace cYo.Projects.ComicRack.Viewer
 			}
 			if (Program.Settings.UpdateComicFiles)
 			{
-				IEnumerable<ComicBook> dirtyTempList = Program.BookFactory.TemporaryBooks.Where((ComicBook cb) => cb.ComicInfoIsDirty);
+				HashSet<ComicBook> dirtyTempList = Program.BookFactory.TemporaryBooks.Where((ComicBook cb) => cb.ComicInfoIsDirty).ToHashSet();
+				if (Program.Settings.UpdateComicBookFiles)
+					dirtyTempList.AddRange(Program.BookFactory.TemporaryBooks.Where((ComicBook cb) => cb.ComicBookIsDirty));
+
 				int dirtyCount = dirtyTempList.Count();
 				if (dirtyCount != 0 && Program.AskQuestion(this, TR.Messages["AskDirtyItems", "Save changed information for Books that are not in the database?\nAll changes not saved now will be lost!"], TR.Default["Save", "Save"], HiddenMessageBoxes.AskDirtyItems, TR.Messages["AlwaysSaveDirty", "Always save changes"], TR.Default["No", "No"]))
 				{
@@ -3367,13 +3370,16 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		private void WatchedBookHasChanged(object sender, ContainerBookChangedEventArgs e)
 		{
-			if (e.IsComicInfo && e.Book.EditMode.IsLocalComic() && e.Book.FileInfoRetrieved)
+			if ((e.IsComicInfo || e.IsComicBook) && e.Book.EditMode.IsLocalComic() && e.Book.FileInfoRetrieved)
 			{
-				e.Book.ComicInfoIsDirty = true;
-				if (!books.IsOpen(e.Book))
-				{
+				if (e.IsComicInfo)
+					e.Book.ComicInfoIsDirty = true;
+
+                if (e.IsComicBook && !e.Book.IsDynamicSource)
+                    e.Book.ComicBookIsDirty = true;
+
+                if (!books.IsOpen(e.Book))
 					Program.QueueManager.AddBookToFileUpdate(e.Book);
-				}
 			}
 		}
 

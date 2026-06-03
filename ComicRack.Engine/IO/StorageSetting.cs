@@ -37,7 +37,14 @@ namespace cYo.Projects.ComicRack.Engine.IO
 			set;
 		}
 
-		[DefaultValue(true)]
+        [DefaultValue(false)]
+        public bool EmbedComicBook
+        {
+            get;
+            set;
+        }
+
+        [DefaultValue(true)]
 		public bool RemovePages
 		{
 			get;
@@ -168,7 +175,8 @@ namespace cYo.Projects.ComicRack.Engine.IO
 			RemovePages = true;
 			RemovePageFilter = ComicPageType.Deleted;
 			EmbedComicInfo = true;
-			ComicCompression = ExportCompression.None;
+			EmbedComicBook = false;
+            ComicCompression = ExportCompression.None;
 			ThumbnailSize = new Size(0, 256);
 			DoublePages = DoublePageHandling.Keep;
 			Resampling = EngineConfiguration.Default.ExportResampling;

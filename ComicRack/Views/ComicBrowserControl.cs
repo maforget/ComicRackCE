@@ -2929,7 +2929,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
                 }
             }
             miShowOnly.Visible = miShowOnly.DropDownItems.Count != 0;
-            miUpdateComicFiles.Visible = enumerable.Any((ComicBook cb) => cb.ComicInfoIsDirty);
+            miUpdateComicFiles.Visible = enumerable.Any((ComicBook cb) => cb.ComicInfoIsDirty ||cb.ComicBookIsDirty);
             contextMenuItems.FixSeparators();
             miPasteData.Enabled = isPasteComicDataEnabled();
         }

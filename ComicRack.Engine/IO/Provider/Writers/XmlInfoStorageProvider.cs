@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using cYo.Common;
 
 namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 {
@@ -9,16 +10,16 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Writers
 		protected override ComicInfo OnStore(IImageProvider provider, ComicInfo info, string target, StorageSetting setting)
 		{
 			if (info == null)
-			{
 				return info;
-			}
+
 			try
 			{
-				using (StreamWriter streamWriter = File.CreateText(target))
+				ComicInfo comicInfo = setting.EmbedComicInfo && setting.EmbedComicBook && info is ComicBook cb ? cb.Clone<ComicBook>() : info.GetInfo(); // Force the type depending on the settings
+                using (StreamWriter streamWriter = File.CreateText(target))
 				{
-					info.Serialize(streamWriter.BaseStream);
-				}
-				return info;
+                    comicInfo.Serialize(streamWriter.BaseStream);
+                }
+				return comicInfo;
 			}
 			catch (Exception)
 			{

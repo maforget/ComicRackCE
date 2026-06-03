@@ -139,17 +139,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Pdf
 			return LoadBitmapData(source, (ImageStreamInfo)info);
 		}
 
-		public ComicInfo ReadInfo(string source)
-		{
-			return null;
-		}
+        public T ReadInfo<T>(string source) where T : ComicInfo => null;
 
-		public bool WriteInfo(string source, ComicInfo info)
-		{
-			return false;
-		}
+        public bool WriteInfo(string source, ComicInfo info) => false;
 
-		private static byte[] LoadBitmapData(string file, ImageStreamInfo si)
+        private static byte[] LoadBitmapData(string file, ImageStreamInfo si)
 		{
 			try
 			{

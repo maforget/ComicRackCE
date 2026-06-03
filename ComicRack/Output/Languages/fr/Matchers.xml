@@ -44,7 +44,8 @@
     <Text Key="ComicBookPluginMatcher" Text="Scripts de l'utilisateur" Comment="User Scripts" />
     <Text Key="ComicBookModifiedMatcher" Text="Fichier Modifié le" Comment="File Modified" />
     <Text Key="ComicBookCreationMatcher" Text="Fichier créé le" Comment="File Created" />
-    <Text Key="ComicBookModifiedInfoMatcher" Text="Informations modifiées" Comment="Modified Info" />
+	<Text Key="ComicBookModifiedInfoMatcher" Text="Informations modifiées" Comment="Modified Info" />
+	<Text Key="ComicBookModifiedLibraryInfoMatcher" Text="Informations bibliothèque modifiées" Comment="Modified Library Info" />
     <Text Key="ComicBookBookmarkCountMatcher" Text="Nombre de favoris" Comment="Bookmark Count" />
     <Text Key="OnOffOperators" Text="Oui|Non" Comment="On|Off" />
     <Text Key="ComicBookTeamsMatcher" Text="Équipes" Comment="Teams" />

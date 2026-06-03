@@ -10,7 +10,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers
 
 		byte[] ReadByteImage(string source, ProviderImageInfo info);
 
-		ComicInfo ReadInfo(string source);
+		T ReadInfo<T>(string source) where T : ComicInfo;
 
 		bool WriteInfo(string source, ComicInfo info);
 	}

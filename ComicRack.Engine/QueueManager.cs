@@ -407,11 +407,14 @@ namespace cYo.Projects.ComicRack.Engine
 			string outPath = default(string);
 			ExportComicsQueue.AddItem(kcb, (IAsyncResult ar) =>
 			{
-				bool clearDirtyFlag = setting.EmbedComicInfo && kcb.ComicInfoIsDirty; // clear the dirty flag after export if we embedded the comic info
-				EventHandler<BookChangedEventArgs> keepDirtyOnComicInfoUpdate = (s, e) =>
+				bool clearDirtyInfoFlag = setting.EmbedComicInfo && kcb.ComicInfoIsDirty; // clear the dirty flag after export if we embedded the comic info
+				bool clearDirtyBookFlag = setting.EmbedComicBook && kcb.ComicBookIsDirty; // clear the dirty flag after export if we embedded the library info
+                EventHandler<BookChangedEventArgs> keepDirtyOnInfoUpdate = (s, e) =>
 				{
-					if (e.IsComicInfo) // only clear the dirty flag when only the comic info has changed and not ComicBook properties
-						clearDirtyFlag = false;
+					if (e.IsComicInfo) // only clear the dirty flag when info that can be dirty have changed
+						clearDirtyInfoFlag = false;
+					else if (e.IsComicBook)
+						clearDirtyBookFlag = false;
 				};
 
 				foreach (ComicBook cb in cbs)
@@ -453,12 +456,12 @@ namespace cYo.Projects.ComicRack.Engine
 					// if the book data changes (manually) during export, we want to keep the dirty flag
 					// But only for cases when not using replaceSource, since that path will revert any changes made during export anyway. 
 					if (!isLocalAndReplaceSource)
-						kcb.BookChanged += keepDirtyOnComicInfoUpdate;
+						kcb.BookChanged += keepDirtyOnInfoUpdate;
 
 					outPath = comicExporter.Export(CacheManager.ImagePool);
 					if (outPath != null)
 					{
-						kcb.BookChanged -= keepDirtyOnComicInfoUpdate; // Unsubscribe from the event before changing values to avoid clearing the clearDirtyFlag when we change the book after export
+						kcb.BookChanged -= keepDirtyOnInfoUpdate; // Unsubscribe from the event before changing values to avoid clearing the clearDirtyFlag when we change the book after export
 						source = source.Where((string p) => !string.Equals(p, outPath, StringComparison.OrdinalIgnoreCase)); // source file names that differ from the new outPath
 						bool wasReplaced = isLocalAndReplaceSource || kcb.FilePath.Equals(outPath, StringComparison.OrdinalIgnoreCase); // files can be replaced by simply exporting to the same location and overwriting
 						if (isLocalAndReplaceSource)
@@ -495,9 +498,12 @@ namespace cYo.Projects.ComicRack.Engine
 						}
 
 						// We only want to clear the dirty flag if we replaced a file, otherwise it's a new file so clearing the flag would remove it from the original anyway
-						if (clearDirtyFlag && wasReplaced)
-							kcb.ComicInfoIsDirty = false; // clear the dirty flag since it was embeded during export
-					}
+						if (clearDirtyInfoFlag && wasReplaced)
+							kcb.ComicInfoIsDirty = false; // clear the dirty info flag since it was embeded during export
+
+                        if (clearDirtyBookFlag && wasReplaced)
+                            kcb.ComicBookIsDirty = false; // clear the dirty book flag since it was embeded during export
+                    }
 				}
 				catch (OperationCanceledException) { } //Since we cancelled don't add it as an error, just ignore it.
 				catch
@@ -529,25 +535,29 @@ namespace cYo.Projects.ComicRack.Engine
 		private readonly ConcurrentDictionary<ComicBook, Timer> debounceTimers = new();
 		public void AddBookToFileUpdate(ComicBook cb, bool alwaysWrite)
 		{
-			if (cb == null || !cb.IsLinked || !cb.ComicInfoIsDirty || !cb.FileInfoRetrieved || !Settings.UpdateComicFiles || !(Settings.AutoUpdateComicsFiles || alwaysWrite))
+			if (cb == null || !cb.IsLinked || !cb.FileInfoRetrieved || !Settings.UpdateComicFiles || !(Settings.AutoUpdateComicsFiles || alwaysWrite))
 				return;
 
-			// Cancel existing timer if one is running
-			if (debounceTimers.TryRemove(cb, out var t))
-				t?.Dispose();
-
-			debounceTimers[cb] = new Timer(_ =>
+            // Only continue when cb.ComicInfoIsDirty is true OR cb.ComicBookIsDirty and UpdateComicBookFiles are both true
+            if (cb.ComicInfoIsDirty || (Settings.UpdateComicBookFiles && cb.ComicBookIsDirty))
 			{
-				// Removes timer since it just executed
+				// Cancel existing timer if one is running
 				if (debounceTimers.TryRemove(cb, out var t))
 					t?.Dispose();
 
-				WriteComicBookInfoFileQueue.AddItem(cb, delegate
+				debounceTimers[cb] = new Timer(_ =>
 				{
-					if (cb.ComicInfoIsDirty && Settings.UpdateComicFiles && (Settings.AutoUpdateComicsFiles || alwaysWrite))
-						WriteInfoToFileWithCacheUpdate(cb);
-				});
-			}, null, 100, Timeout.Infinite);
+					// Removes timer since it just executed
+					if (debounceTimers.TryRemove(cb, out var t))
+						t?.Dispose();
+
+					WriteComicBookInfoFileQueue.AddItem(cb, delegate
+					{
+						if (((cb.ComicInfoIsDirty && Settings.UpdateComicFiles) || (cb.ComicBookIsDirty && Settings.UpdateComicBookFiles)) && (Settings.AutoUpdateComicsFiles || alwaysWrite))
+							WriteInfoToFileWithCacheUpdate(cb);
+					});
+				}, null, 100, Timeout.Infinite); 
+			}
 		}
 
 		public void AddBookToFileUpdate(ComicBook cb)
@@ -567,13 +577,16 @@ namespace cYo.Projects.ComicRack.Engine
 				long oldSize = cb.FileSize;
 				DateTime oldWrite = cb.FileModifiedTime;
 				cb.WriteError += writeErrorHandler; // Write error to the list of update errors to be shown in the UI.
-				if (cb.WriteInfoToFile(withRefreshFileProperties: false))
+				if (cb.WriteInfoToFile(Settings, withRefreshFileProperties: false))
 				{
 					CacheManager.ImagePool.Pages.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), (ImageKey key) => key.UpdateFileInfo());
 					CacheManager.ImagePool.Thumbs.UpdateKeys((ImageKey key) => key.IsSameFile(cb.FilePath, oldSize, oldWrite), (ImageKey key) => key.UpdateFileInfo());
 
 					cb.RefreshFileProperties();
 					cb.ComicInfoIsDirty = false;
+
+					if (Settings.UpdateComicBookFiles) // This might be ran even when only the info is dirty, so we don't want 
+						cb.ComicBookIsDirty = false;
 				}
 			}
 			catch (Exception)

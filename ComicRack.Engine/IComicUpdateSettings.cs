@@ -13,5 +13,11 @@ namespace cYo.Projects.ComicRack.Engine
 			get;
 			set;
 		}
-	}
+
+		bool UpdateComicBookFiles
+		{
+			get;
+			set;
+        }
+    }
 }

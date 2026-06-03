@@ -13,10 +13,10 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.XmlInfo
 
 		public int Order { get; set; }
 
-		public XmlInfoFileAttribute(string xmlInfoFile, int order)
+        public XmlInfoFileAttribute(string xmlInfoFile, int order)
 		{
 			XmlInfoFile = xmlInfoFile;
 			Order = order;
-		}
+        }
 	}
 }
