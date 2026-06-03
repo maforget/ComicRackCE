@@ -46,7 +46,10 @@ jobs:
       uses: Minionguyjpro/Inno-Setup-Action@v1.2.8
       with:
         path: Installer.iss
-        options: /DMyAppVersion=v${{ github.event.inputs.version }} /DMyAppSetupFile=ComicRackCESetup_v${{ github.event.inputs.version }}
+        options: |
+          /O+
+          /DMyAppVersion=v${{ github.event.inputs.version }} 
+          /DMyAppSetupFile=ComicRackCESetup_v${{ github.event.inputs.version }}
 
     - name: Release
       uses: ncipollo/release-action@main
