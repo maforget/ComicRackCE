@@ -57,7 +57,8 @@
     <Text Key="ConvertToCB7" Text="Convertir en CB7" Comment="Convert to CB7" />
     <Text Key="ExportForPSP" Text="Convertir pour PSP" Comment="Export for PSP" />
     <Text Key="AbortScan" Text="Annuler le scan" Comment="Abort Scanning" />
-    <Text Key="AbortExport" Text="Annuler conversion" Comment="Abort Export" />
+	<Text Key="AbortExport" Text="Annuler conversion" Comment="Abort Export" />
+	<Text Key="AbortUpdate" Text="Annuler mise à jour" Comment="Abort Update" />
     <Text Key="FailedToReadImage" Text="Impossible de lire l'image {0} !" Comment="Failed to read Image {0}!" />
     <Text Key="InvalidExportSettings" Text="Les paramètres de conversion sont invalides (ex. : Type de fichier non supporté par la Bibliothèque)" Comment="The export settings are not valid (e.g. adding a not supported format to the library)" />
     <Text Key="DontShowAgain" Text="Ne plus afficher" Comment="Do not show this again" />

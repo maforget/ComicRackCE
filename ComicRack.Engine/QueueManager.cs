@@ -179,7 +179,9 @@ namespace cYo.Projects.ComicRack.Engine
 
 		private static string exportAbortText;
 
-		private static string scanComicQueueMessage;
+		private static string updateAbortText;
+
+        private static string scanComicQueueMessage;
 
 		private static string scanComicAbortText;
 
@@ -673,7 +675,8 @@ namespace cYo.Projects.ComicRack.Engine
 				deviceSyncQueueMessage = TR.Messages["DeviceSyncQueueMessage", "Syncing Device '{0}'"];
 				updateDynamicQueueMessage = TR.Messages["UpdateComicDynamicMessage", "Updating Web Comic '{0}'"];
 				exportAbortText = TR.Messages["AbortExport", "Abort Export"];
-				scanComicAbortText = TR.Messages["AbortScan", "Abort Scanning"];
+				updateAbortText = TR.Messages["AbortUpdate", "Abort Update"];
+                scanComicAbortText = TR.Messages["AbortScan", "Abort Scanning"];
 				deviceSyncAbortText = TR.Messages["AbortDeviceSync", "Abort syncinc Devices"];
 				taskGroupLoadThumbnails = TR.Messages["TaskGroupLoadThumbnails", "Load Thumbnails"];
 				taskGroupCreateThumbnails = TR.Messages["TaskGroupCreateThumbnails", "Create Thumbnails"];
@@ -692,7 +695,7 @@ namespace cYo.Projects.ComicRack.Engine
 			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupCreatePages, CacheManager.ImagePool.SlowPageQueue, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(getImageQueueMessage, ik.Item.Index + 1, Path.GetFileName(ik.Item.Location)))));
 			list.Add(new PendingTasksInfo<ImageKey>("ReadPagesAnimation", taskGroupLoadPages, CacheManager.ImagePool.FastPageQueue, (IProcessingItem<ImageKey> ik) => new TaskInfo(ik, StringUtility.Format(getImageQueueMessage, ik.Item.Index + 1, Path.GetFileName(ik.Item.Location)))));
 			list.Add(new PendingTasksInfo<ComicBook>("ReadInfoAnimation", taskGroupReadInfo, ReadComicBookInfoFileQueue, (IProcessingItem<ComicBook> cb) => new TaskInfo(cb, StringUtility.Format(refreshInfoQueueMessage, cb.Item.Caption))));
-			list.Add(new PendingTasksInfo<ComicBook>("UpdateInfoAnimation", taskGroupWriteInfo, WriteComicBookInfoFileQueue, (IProcessingItem<ComicBook> cb) => new TaskInfo(cb, StringUtility.Format(writeInfoQueueMessage, cb.Item.Caption))));
+			list.Add(new PendingTasksInfo<ComicBook>("UpdateInfoAnimation", taskGroupWriteInfo, WriteComicBookInfoFileQueue, (IProcessingItem<ComicBook> cb) => new TaskInfo(cb, StringUtility.Format(writeInfoQueueMessage, cb.Item.Caption)), updateAbortText, WriteComicBookInfoFileQueue.Clear));
 			list.Add(new PendingTasksInfo<ComicBook>("ReadInfoAnimation", taskGroupUpdateDynamic, UpdateComicBookDynamicQueue, (IProcessingItem<ComicBook> cb) => new TaskInfo(cb, StringUtility.Format(updateDynamicQueueMessage, cb.Item.Caption))));
 			list.Add(new PendingTasksInfo<ComicBook>("ExportAnimation", taskGroupExport, ExportComicsQueue, (IProcessingItem<ComicBook> cb) => new TaskInfo(cb, StringUtility.Format(exportQueueMessage, cb.Item.Caption)), exportAbortText, ExportComicsQueue.Clear));
 			list.Add(new PendingTasksInfo<DeviceSyncSettings>("DeviceSyncAnimation", taskGroupDeviceSync, DeviceSyncQueue, (IProcessingItem<DeviceSyncSettings> sds) => new TaskInfo(sds, StringUtility.Format(deviceSyncQueueMessage, sds.Item.DeviceName)), deviceSyncAbortText, DeviceSyncQueue.Clear));
