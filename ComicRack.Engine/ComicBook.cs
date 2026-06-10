@@ -1789,19 +1789,22 @@ namespace cYo.Projects.ComicRack.Engine
             return ValuesStore.GetValues(CustomValuesStore);
         }
 
-        public void SetCustomValue(string key, string value)
+        public static string SetCustomValueInStore(string key, string value, string valuesStoreString)
         {
             if (!string.IsNullOrEmpty(key))
             {
                 if (string.IsNullOrEmpty(value))
-                {
-                    DeleteCustomValue(key);
-                }
+                    valuesStoreString = DeleteCustomValueInStore(key, valuesStoreString);
                 else
-                {
-                    CustomValuesStore = new ValuesStore(CustomValuesStore).Add(key, value).ToString();
-                }
+                    valuesStoreString = new ValuesStore(valuesStoreString).Add(key, value).ToString();
             }
+
+            return valuesStoreString;
+        }
+
+        public void SetCustomValue(string key, string value)
+        {
+            CustomValuesStore = SetCustomValueInStore(key, value, CustomValuesStore);
         }
 
         public string GetCustomValue(string key)
@@ -1809,9 +1812,15 @@ namespace cYo.Projects.ComicRack.Engine
             return ValuesStore.GetValue(CustomValuesStore, key);
         }
 
+        public static string DeleteCustomValueInStore(string key, string valuesStoreString)
+        {
+            return new ValuesStore(valuesStoreString).Remove(key).ToString();
+        }
+
         public void DeleteCustomValue(string key)
         {
-            CustomValuesStore = new ValuesStore(CustomValuesStore).Remove(key).ToString();
+            if (!string.IsNullOrEmpty(key))
+                CustomValuesStore = DeleteCustomValueInStore(key, CustomValuesStore);
         }
 
         public ThumbnailKey GetThumbnailKey(int page)

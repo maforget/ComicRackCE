@@ -576,16 +576,18 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
                 comic.PageCount = pagesView.Book.Count;
                 comic.LastPageRead = Math.Min(comic.PageCount - 1, comic.LastPageRead);
             }
-            comic.CustomValuesStore = string.Empty;
+            // Use temporary custom value store so as not to trigger a ComicBookIsDirty when resetting it.
+            string valueStoreString = string.Empty;
             foreach (DataGridViewRow item in (IEnumerable)customValuesData.Rows)
             {
                 string text10 = (string)item.Cells[0].Value;
                 string value = (string)item.Cells[1].Value;
                 if (!string.IsNullOrEmpty(text10.SafeTrim()) && !string.IsNullOrEmpty(value))
                 {
-                    comic.SetCustomValue(text10, value);
+                    valueStoreString = ComicBook.SetCustomValueInStore(text10, value, valueStoreString);
                 }
             }
+            comic.CustomValuesStore = valueStoreString;
         }
 
         private void SaveBook()
