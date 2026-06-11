@@ -45,7 +45,7 @@ To install, download the [nightly installer](https://github.com/maforget/ComicRa
 You can also install it via winget `winget install ComicRackCE`.
 
 > [!CAUTION]
-> Because of a change with Microsoft Visual C++ Redistributable 2015-2022, if you use the HEIF/AVIF files you will need to have at a minimum version `14.40.33810.0` installed. This should be done automatically by the installer, but if you are using the ZIP file, please be advise that you will need to update it manually. More info [here](https://github.com/maforget/ComicRackCE/issues/106).
+> Because of a change with Microsoft Visual C++ Redistributable 2015-2022, if you use the HEIF/AVIF files you will need to have at a minimum version `14.44.35207.0` installed. This should be done automatically by the installer, but if you are using the ZIP file, please be advise that you will need to update it manually. More info [here](https://github.com/maforget/ComicRackCE/issues/106).
 >
 > Link to lastest Visual C++ Redistributable 2015-2022: https://aka.ms/vs/17/release/vc_redist.x64.exe
 

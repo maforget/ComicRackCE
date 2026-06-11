@@ -217,9 +217,9 @@ begin
        'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64', 'Version',
        Version) then
   begin
-    // Is the installed version at least 14.40 ? 
+    // Is the installed version at least 14.44 ? 
     Log('VC Redist Version check : found ' + Version);
-    Result := (CompareStr(Version, 'v14.40.33810.00')<0);
+    Result := (CompareStr(Version, 'v14.44.35207.00')<0);
   end
   else 
   begin
