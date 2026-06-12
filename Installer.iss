@@ -79,6 +79,8 @@ Source: "ComicRack\bin\Release\net48\ReadMe.txt"; DestDir: "{app}"; Flags: ignor
 Source: "ComicRack\bin\Release\net48\Help\*"; DestDir: "{app}\Help"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\net48\Languages\*"; DestDir: "{app}\Languages"; Flags: ignoreversion; Components: languages
 Source: "ComicRack\bin\Release\net48\Resources\*"; DestDir: "{app}\Resources"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\Resources\x86\*"; DestDir: "{app}\Resources\x86"; Flags: ignoreversion; Components: app
+Source: "ComicRack\bin\Release\net48\Resources\x64\*"; DestDir: "{app}\Resources\x64"; Flags: ignoreversion; Components: app
 Source: "ComicRack\bin\Release\net48\Resources\Icons\*"; DestDir: "{app}\Resources\Icons"; Flags: ignoreversion; Components: additional
 Source: "ComicRack\bin\Release\net48\Resources\Textures\*"; DestDir: "{app}\Resources\Textures"; Flags: ignoreversion recursesubdirs; Components: additional
 Source: "ComicRack\bin\Release\net48\Scripts\*"; DestDir: "{app}\Scripts"; Flags: ignoreversion; Components: app
@@ -139,6 +141,26 @@ Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}";                
 Name: "{group}\{cm:ProgramOnTheWeb,{#MyAppName}}"; Filename: "{#MyAppURL}";     Components: start_menu
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"; Components: start_menu
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}";          Components: desktop
+
+[InstallDelete]
+// Remove old dll's from old version before their location was changed
+Type: files; Name: "{app}\Resources\libwebp32.dll"
+Type: files; Name: "{app}\Resources\libwebp64.dll"
+Type: files; Name: "{app}\Resources\aom.dll"
+Type: files; Name: "{app}\Resources\libde265.dll"
+Type: files; Name: "{app}\Resources\libheif.dll"
+Type: files; Name: "{app}\Resources\libx265.dll"
+Type: files; Name: "{app}\Resources\7z.dll"
+Type: files; Name: "{app}\Resources\7z.exe"
+Type: files; Name: "{app}\Resources\7z64.dll"
+Type: files; Name: "{app}\Resources\7za64.exe"
+Type: files; Name: "{app}\Resources\jxl.dll"
+Type: files; Name: "{app}\Resources\jxl_cms.dll"
+Type: files; Name: "{app}\Resources\brotlienc.dll"
+Type: files; Name: "{app}\Resources\brotlidec.dll"
+Type: files; Name: "{app}\Resources\brotlicommon.dll"
+Type: files; Name: "{app}\Resources\pdfium_x86.dll"
+Type: files; Name: "{app}\Resources\pdfium_x64.dll"
 
 [Run]
 Filename: "{tmp}\VC_redist.x64.exe"; Parameters: "/install /passive /norestart"; \

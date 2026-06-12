@@ -19,20 +19,17 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
     {
         private const int SevenZipCheckSize = 131072;
 
-        public static readonly string ConsoleExe32 = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\7z.exe"); // uses the 7z.dll which is 32bit, so only runs in 32bit mode, but supports more formats than the standalone 64bit version.
-        public static readonly string StandaloneExe64 = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\7za64.exe"); // Required to use the standalone exe on 64bit systems because 7z.dll is 32bit so wouldn't work in 64bit processes.
-        public static readonly string PackExe = Environment.Is64BitProcess ? StandaloneExe64 : ConsoleExe32; // Provides proper executable based on architecture.
+        public static readonly string ConsoleExe32 = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\x86\\7z.exe");
+        public static readonly string ConsoleExe64 = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\x64\\7z.exe");
+        public static readonly string PackExe = Environment.Is64BitProcess ? ConsoleExe64 : ConsoleExe32; // Provides proper executable based on architecture.
 
-        public static readonly string PackDll32 = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\7z.dll");
-        public static readonly string PackDll64 = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\7z64.dll");
+        public static readonly string PackDll32 = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\x86\\7z.dll");
+        public static readonly string PackDll64 = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources\\x64\\7z.dll");
 
         private static readonly Regex rxList = new Regex("Path = (?<filename>.*)\\r\\n(Folder.*\\r\\n)*?Size = (?<size>\\d+)", RegexOptions.Compiled);
         private static readonly Regex rxError = new Regex("Error:.+(^.+$)", RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Multiline | RegexOptions.Compiled);
 
         private bool libraryMode;
-
-        private bool standalone = true;
-        public string SevenZipExe => standalone ? PackExe : ConsoleExe32; // Gets the architecture appropriate executable in standalone mode. Otherwise returns the 32bit console exe.
 
         private static SevenZipFactory sevenZipFactory;
         private static SevenZipFactory SevenZipFactory => sevenZipFactory ??= new SevenZipFactory(Environment.Is64BitProcess ? PackDll64 : PackDll32);
@@ -42,13 +39,11 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
         /// </summary>
         /// <param name="format">The format id from <see cref="KnownFileFormats"/></param>
         /// <param name="libraryMode">Will use the dll of 7-Zip instead of the executable</param>
-        /// <param name="standalone">Only applicable when <paramref name="libraryMode"/> is <c>false</c>.<br/><br/>Standalone mode is preferred for updating since it will run in 64bit mode on 64bit systems, while the console version only runs in 32bit mode. But that standalone mode has limited support for formats, so we need to use the console version for those formats.</param>
-        public SevenZipEngine(int format, bool libraryMode, bool standalone = true)
+        public SevenZipEngine(int format, bool libraryMode)
             : base(format)
         {
 
             this.libraryMode = libraryMode;
-            this.standalone = standalone;
         }
 
         public override bool IsFormat(string source)
@@ -90,7 +85,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                 }
                 yield break;
             }
-            ExecuteProcess.Result result = ExecuteProcess.Execute(SevenZipExe, "l -slt \"" + FileMethods.GetShortName(source) + "\"", ExecuteProcess.Options.StoreOutput);
+            ExecuteProcess.Result result = ExecuteProcess.Execute(PackExe, "l -slt \"" + FileMethods.GetShortName(source) + "\"", ExecuteProcess.Options.StoreOutput);
             MatchCollection source2 = rxList.Matches(result.ConsoleText);
             foreach (ProviderImageInfo item in from m in source2.OfType<Match>()
                                                select new ProviderImageInfo(0, m.Groups["filename"].Value, long.Parse(m.Groups["size"].Value)))
@@ -165,7 +160,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                 }
                 else
                 {
-                    ExecuteProcess.Result result = ExecuteProcess.Execute(SevenZipExe, "e -so \"" + FileMethods.GetShortName(source) + "\" \"" + file + "\"", ExecuteProcess.Options.StoreOutput);
+                    ExecuteProcess.Result result = ExecuteProcess.Execute(PackExe, "e -so \"" + FileMethods.GetShortName(source) + "\" \"" + file + "\"", ExecuteProcess.Options.StoreOutput);
                     if (result.ExitCode == 0)
                     {
                         return result.Output;
@@ -214,7 +209,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
         public override bool WriteInfo(string source, ComicInfo comicInfo)
         {
-            return UpdateComicInfos(source, base.Format, standalone, comicInfo);
+            return UpdateComicInfos(source, base.Format,  comicInfo);
         }
 
         private static KnownSevenZipFormat MapFileFormat(int format)
@@ -238,7 +233,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
 
         // InlineUpdate: pass the byte[] directly to 7-Zip to update the archive without needing to create a temporary file. Only works with some formats, so for the others we need to create a temporary file.
         record UpdateSettings(bool InlineUpdate, string arg);
-        public static bool UpdateComicInfo(string file, int format, bool standalone, ComicInfo comicInfo)
+        public static bool UpdateComicInfo(string file, int format, ComicInfo comicInfo)
         {
             UpdateSettings setting = format switch
             {
@@ -248,14 +243,14 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                 _ => throw new NotSupportedException("Format not supported for updating ComicInfo.xml")
             };
 
-            return Update(file, standalone, comicInfo, setting);
+            return Update(file, comicInfo, setting);
         }
 
         /// <summary>
         /// Will update both the ComicInfo.xml & ComicBook.xml at the same time if the provided <paramref name="comicInfo"/> is a <see cref="ComicBook"/>. Otherwise only the ComicInfo.xml will be updated.
         /// </summary>
         /// <exception cref="NotSupportedException"></exception>
-        public static bool UpdateComicInfos(string file, int format, bool standalone, ComicInfo comicInfo)
+        public static bool UpdateComicInfos(string file, int format, ComicInfo comicInfo)
         {
             UpdateSettings setting = format switch
             {
@@ -270,10 +265,10 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             if (comicInfo is ComicBook cb)
                 infos.Add(cb); // Do a Clone?
 
-            return UpdateAll(file, standalone, infos, setting);
+            return UpdateAll(file, infos, setting);
         }
 
-        private static bool Update(string file, bool standalone, ComicInfo comicInfo, UpdateSettings updateSetting)
+        private static bool Update(string file, ComicInfo comicInfo, UpdateSettings updateSetting)
         {
             try
             {
@@ -281,7 +276,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                 if (updateSetting.InlineUpdate)
                 {
                     string parameters = $"u -t{updateSetting.arg} -si{filename} \"{file}\"";
-                    return ExecuteUpdateProcess(parameters, standalone, comicInfo.ToArray());
+                    return ExecuteUpdateProcess(parameters, comicInfo.ToArray());
                 }
                 else
                 {
@@ -295,7 +290,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                             comicInfo.Serialize(outStream);
                         }
                         string parameters2 = $"u -t{updateSetting.arg} \"{file}\" \"{tempPath}\"";
-                        return ExecuteUpdateProcess(parameters2, standalone);
+                        return ExecuteUpdateProcess(parameters2);
                     }
                     finally
                     {
@@ -320,7 +315,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             return false;
         }
 
-        private static bool UpdateAll(string file, bool standalone, IEnumerable<ComicInfo> infos, UpdateSettings updateSetting)
+        private static bool UpdateAll(string file, IEnumerable<ComicInfo> infos, UpdateSettings updateSetting)
         {
             try
             {
@@ -340,7 +335,7 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
                         } 
                     }
                     string parameters = GetParameters(tempsPaths.ToArray(), updateSetting, file);
-                    return ExecuteUpdateProcess(parameters, standalone);
+                    return ExecuteUpdateProcess(parameters);
                 }
                 finally
                 {
@@ -377,10 +372,9 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider.Readers.Archive
             return sb.ToString().Trim();
         }
 
-        private static bool ExecuteUpdateProcess(string parameters, bool standalone, byte[] inputData = null)
+        private static bool ExecuteUpdateProcess(string parameters, byte[] inputData = null)
         {
-            string exe = standalone ? PackExe : ConsoleExe32; // standalone mode is preferred for updating since it will run in 64bit mode on 64bit systems, while the console version will run in 32bit mode (or otherwise unsupported formats). Standalone mode has limited support for formats, so we need to use the console version for those.
-            ExecuteProcess.Result result = ExecuteProcess.Execute(exe, parameters, inputData, null, ExecuteProcess.Options.StoreOutput);
+            ExecuteProcess.Result result = ExecuteProcess.Execute(PackExe, parameters, inputData, null, ExecuteProcess.Options.StoreOutput);
             if (result.ExitCode == 0)
             {
                 return true;

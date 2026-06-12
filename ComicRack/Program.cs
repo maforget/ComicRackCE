@@ -1143,7 +1143,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				return 0;
 			}
 			TR.ResourceFolder = new PackedLocalize(TR.ResourceFolder);
-            NativeLibraryHelper.RegisterDirectory(); //Add the resources directory to the search path for natives dll's
+			NativeLibraryHelper.RegisterDirectory($"Resources\\{(Environment.Is64BitProcess ? "x64" : "x86")}"); //Add the x86/x64 resources directory to the search path for natives dll's
             Control.CheckForIllegalCrossThreadCalls = false;
 			ItemMonitor.CatchThreadInterruptException = true;
 			SingleInstance singleInstance = new SingleInstance("ComicRackSingleInstance", StartNew, StartLast);

@@ -57,6 +57,7 @@ You can also install it via winget `winget install ComicRackCE`.
 >[!WARNING]
 >* This version introduces new smart list fields not found in classic ComicRack. Do not open a database that utilizes these fields in an older version, as it will reset your database.
 >* Always maintain backups.
+>* Some files have moved location, when using the installer the old files should be deleted automatically. If you aren't using the installer, it is recommended to delete the existing files before hand.
 
 >[!TIP]
 >* Before installing the Community Edition, uninstalling the original ComicRack is suggested to avoid duplicates in the Open With menu.
