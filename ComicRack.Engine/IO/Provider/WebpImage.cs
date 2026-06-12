@@ -13,46 +13,46 @@ namespace cYo.Projects.ComicRack.Engine.IO.Provider
 	{
 		private static class NativeMethods
 		{
-			[DllImport("Resources\\libwebp32.dll", EntryPoint = "WebPFree")]
+			[DllImport("Resources\\x86\\libwebp.dll", EntryPoint = "WebPFree")]
 			private static extern void WebPFree32(IntPtr toDeallocate);
 
-			[DllImport("Resources\\libwebp64.dll", EntryPoint = "WebPFree")]
+			[DllImport("Resources\\x64\\libwebp.dll", EntryPoint = "WebPFree")]
 			private static extern void WebPFree64(IntPtr toDeallocate);
 
-			[DllImport("Resources\\libwebp32.dll", EntryPoint = "WebPGetInfo")]
+			[DllImport("Resources\\x86\\libwebp.dll", EntryPoint = "WebPGetInfo")]
 			private static extern int WebPGetInfo32([In] IntPtr data, UIntPtr dataSize, ref int width, ref int height);
 
-			[DllImport("Resources\\libwebp64.dll", EntryPoint = "WebPGetInfo")]
+			[DllImport("Resources\\x64\\libwebp.dll", EntryPoint = "WebPGetInfo")]
 			private static extern int WebPGetInfo64([In] IntPtr data, UIntPtr dataSize, ref int width, ref int height);
 
-			[DllImport("Resources\\libwebp32.dll", EntryPoint = "WebPDecodeBGRAInto")]
+			[DllImport("Resources\\x86\\libwebp.dll", EntryPoint = "WebPDecodeBGRAInto")]
 			private static extern IntPtr WebPDecodeBGRAInto32([In] IntPtr data, UIntPtr dataSize, IntPtr outputBuffer, UIntPtr outputBufferSize, int outputStride);
 
-			[DllImport("Resources\\libwebp64.dll", EntryPoint = "WebPDecodeBGRAInto")]
+			[DllImport("Resources\\x64\\libwebp.dll", EntryPoint = "WebPDecodeBGRAInto")]
 			private static extern IntPtr WebPDecodeBGRAInto64([In] IntPtr data, UIntPtr dataSize, IntPtr outputBuffer, UIntPtr outputBufferSize, int outputStride);
 
-			[DllImport("Resources\\libwebp32.dll", EntryPoint = "WebPEncodeLosslessBGR")]
+			[DllImport("Resources\\x86\\libwebp.dll", EntryPoint = "WebPEncodeLosslessBGR")]
 			private static extern UIntPtr WebPEncodeLosslessBGR32([In] IntPtr bgr, int width, int height, int stride, ref IntPtr output);
 
-			[DllImport("Resources\\libwebp64.dll", EntryPoint = "WebPEncodeLosslessBGR")]
+			[DllImport("Resources\\x64\\libwebp.dll", EntryPoint = "WebPEncodeLosslessBGR")]
 			private static extern UIntPtr WebPEncodeLosslessBGR64([In] IntPtr bgr, int width, int height, int stride, ref IntPtr output);
 
-			[DllImport("Resources\\libwebp32.dll", EntryPoint = "WebPEncodeLosslessBGRA")]
+			[DllImport("Resources\\x86\\libwebp.dll", EntryPoint = "WebPEncodeLosslessBGRA")]
 			private static extern UIntPtr WebPEncodeLosslessBGRA32([In] IntPtr bgra, int width, int height, int stride, ref IntPtr output);
 
-			[DllImport("Resources\\libwebp64.dll", EntryPoint = "WebPEncodeLosslessBGRA")]
+			[DllImport("Resources\\x64\\libwebp.dll", EntryPoint = "WebPEncodeLosslessBGRA")]
 			private static extern UIntPtr WebPEncodeLosslessBGRA64([In] IntPtr bgra, int width, int height, int stride, ref IntPtr output);
 
-			[DllImport("Resources\\libwebp32.dll", EntryPoint = "WebPEncodeBGR")]
+			[DllImport("Resources\\x86\\libwebp.dll", EntryPoint = "WebPEncodeBGR")]
 			private static extern UIntPtr WebPEncodeBGR32([In] IntPtr bgr, int width, int height, int stride, float qualityFactor, ref IntPtr output);
 
-			[DllImport("Resources\\libwebp64.dll", EntryPoint = "WebPEncodeBGR")]
+			[DllImport("Resources\\x64\\libwebp.dll", EntryPoint = "WebPEncodeBGR")]
 			private static extern UIntPtr WebPEncodeBGR64([In] IntPtr bgr, int width, int height, int stride, float qualityFactor, ref IntPtr output);
 
-			[DllImport("Resources\\libwebp32.dll", EntryPoint = "WebPEncodeBGRA")]
+			[DllImport("Resources\\x86\\libwebp.dll", EntryPoint = "WebPEncodeBGRA")]
 			private static extern IntPtr WebPEncodeBGRA32([In] IntPtr bgra, int width, int height, int stride, float qualityFactor, ref IntPtr output);
 
-			[DllImport("Resources\\libwebp64.dll", EntryPoint = "WebPEncodeBGRA")]
+			[DllImport("Resources\\x64\\libwebp.dll", EntryPoint = "WebPEncodeBGRA")]
 			private static extern IntPtr WebPEncodeBGRA64([In] IntPtr bgra, int width, int height, int stride, float qualityFactor, ref IntPtr output);
 
 			public static int WebPGetInfo(IntPtr data, UIntPtr dataSize, ref int width, ref int height)
