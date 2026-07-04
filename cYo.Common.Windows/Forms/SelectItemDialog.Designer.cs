@@ -31,6 +31,7 @@ namespace cYo.Common.Windows.Forms
             this.cbName = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.chkOption = new System.Windows.Forms.CheckBox();
+            this.btBrowse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btCancel
@@ -93,14 +94,28 @@ namespace cYo.Common.Windows.Forms
             this.chkOption.Text = "Lorem Ipsum";
             this.chkOption.UseVisualStyleBackColor = true;
             this.chkOption.Visible = false;
-            // 
+            //
+            // btBrowse
+            //
+            this.btBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btBrowse.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btBrowse.Location = new System.Drawing.Point(244, 39);
+            this.btBrowse.Name = "btBrowse";
+            this.btBrowse.Size = new System.Drawing.Size(88, 23);
+            this.btBrowse.TabIndex = 6;
+            this.btBrowse.Text = "&Browse...";
+            this.btBrowse.UseVisualStyleBackColor = true;
+            this.btBrowse.Visible = false;
+            this.btBrowse.Click += new System.EventHandler(this.BrowseClick);
+            //
             // SelectItemDialog
-            // 
+            //
             this.AcceptButton = this.btOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btCancel;
             this.ClientSize = new System.Drawing.Size(344, 130);
+            this.Controls.Add(this.btBrowse);
             this.Controls.Add(this.chkOption);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.cbName);
@@ -126,5 +141,6 @@ namespace cYo.Common.Windows.Forms
 		private ComboBox cbName;
 		private TextBox txtName;
 		private CheckBox chkOption;
+		private Button btBrowse;
 	}
 }

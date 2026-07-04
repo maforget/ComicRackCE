@@ -1920,15 +1920,25 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public void AddFolderToLibrary()
 		{
+			string path = SelectItemDialog.GetName<string>(this, TR.Messages["AddFolderLibraryTitle", "Add Folder to Library"], string.Empty, null, TR.Messages["AddFolderLibraryManualPath", "Folder or network path"], BrowseForLibraryFolder);
+			if (!string.IsNullOrEmpty(path))
+			{
+				Program.Scanner.ScanFileOrFolder(path, all: true, removeMissing: false);
+			}
+		}
+
+		private string BrowseForLibraryFolder(IWin32Window parent)
+		{
 			using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
 			{
 				folderBrowserDialog.Description = TR.Messages["AddFolderLibrary", "Books in this Folder and all sub Folders will be added to the library."];
 				folderBrowserDialog.ShowNewFolderButton = true;
-				if (folderBrowserDialog.ShowDialog(this) == DialogResult.OK && !string.IsNullOrEmpty(folderBrowserDialog.SelectedPath))
+				if (folderBrowserDialog.ShowDialog(parent) == DialogResult.OK && !string.IsNullOrEmpty(folderBrowserDialog.SelectedPath))
 				{
-					Program.Scanner.ScanFileOrFolder(folderBrowserDialog.SelectedPath, all: true, removeMissing: false);
+					return folderBrowserDialog.SelectedPath;
 				}
 			}
+			return null;
 		}
 
 		public void StartFullScan()

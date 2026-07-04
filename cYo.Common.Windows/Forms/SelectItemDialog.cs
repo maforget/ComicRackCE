@@ -52,6 +52,12 @@ namespace cYo.Common.Windows.Forms
 		}
 
 		public List<string> SelectionItems => selectionItems;
+		
+		public Func<IWin32Window, string> BrowseAction
+		{
+			get;
+			set;
+		}
 
 		public SelectItemDialog()
 		{
@@ -71,6 +77,11 @@ namespace cYo.Common.Windows.Forms
 				chkOption.Text = CheckOptionText;
 				chkOption.Checked = DefaultCheckResult;
 				chkOption.Visible = true;
+			}
+			if (BrowseAction != null)
+			{
+				btBrowse.Visible = true;
+				cbName.Width = btBrowse.Left - cbName.Left - 8;
 			}
 			if (flag)
 			{
@@ -102,13 +113,30 @@ namespace cYo.Common.Windows.Forms
 			btOK.Enabled = !string.IsNullOrEmpty(cbName.Visible ? cbName.Text : txtName.Text);
 		}
 
-		public static string GetName<T>(IWin32Window parent, string caption, string itemValue, IEnumerable<T> list, string itemCaption = null)
+		private void BrowseClick(object sender, EventArgs e)
+		{
+			string text = BrowseAction?.Invoke(this);
+			if (!string.IsNullOrEmpty(text))
+			{
+				if (cbName.Visible)
+				{
+					cbName.Text = text;
+				}
+				else
+				{
+					txtName.Text = text;
+				}
+			}
+		}
+
+		public static string GetName<T>(IWin32Window parent, string caption, string itemValue, IEnumerable<T> list, string itemCaption = null, Func<IWin32Window, string> browseAction = null)
 		{
 			using (SelectItemDialog selectItemDialog = new SelectItemDialog())
 			{
 				selectItemDialog.Text = caption;
 				selectItemDialog.TextValue = itemValue;
 				selectItemDialog.TextCaption = itemCaption;
+				selectItemDialog.BrowseAction = browseAction;
 				if (list != null)
 				{
 					selectItemDialog.SelectionItems.AddRange(list.Select((T x) => x.ToString()).ToArray());
@@ -117,9 +145,9 @@ namespace cYo.Common.Windows.Forms
 			}
 		}
 
-		public static string GetName(IWin32Window parent, string caption, string itemValue)
+		public static string GetName(IWin32Window parent, string caption, string itemValue, Func<IWin32Window, string> browseAction = null)
 		{
-			return GetName<string>(parent, caption, itemValue, null);
+			return GetName<string>(parent, caption, itemValue, null, null, browseAction);
 		}
 	}
 }
