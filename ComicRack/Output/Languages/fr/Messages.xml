@@ -108,6 +108,8 @@
     <Text Key="WriteData" Text="Écrire données" Comment="Pasting Data" />
     <Text Key="WriteDataText" Text="Écriture des données dans les Livres sélectionnés" Comment="Pasting Data into selected Books" />
     <Text Key="AddFolderLibrary" Text="Tous les Livres de ce dossier et des sous-dossiers seront ajoutés à la Bibliothèque." Comment="Books in this Folder and all sub Folders will be added to the library." />
+	<Text Key="AddFolderLibraryTitle" Text="Ajouter un dossier à la Bibliothèque" Comment="Add Folder to Library" />
+	<Text Key="AddFolderLibraryManualPath" Text="Dossier ou chemin réseau" Comment="Folder or network path" />
     <Text Key="ExportQueueMessage" Text="Conversion du Livre '{0}'" Comment="Export Book '{0}'" />
     <Text Key="RefreshInfoQueueMessage" Text="Actualisation des informations du Livre '{0}'" Comment="Refresh information for Book '{0}'" />
     <Text Key="WriteInfoQueueMessage" Text="Écriture des informations dans le Livre '{0}'" Comment="Write information to Book file '{0}'" />
