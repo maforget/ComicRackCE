@@ -362,17 +362,13 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void btAddFolder_Click(object sender, EventArgs e)
 		{
-			using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+			string path = SelectItemDialog.GetName(this, LocalizeUtility.GetText(this, "SelectComicFolder", "Please select a folder containing Books"), string.Empty, BrowseForComicFolder);
+			if (!string.IsNullOrEmpty(path))
 			{
-				folderBrowserDialog.Description = LocalizeUtility.GetText(this, "SelectComicFolder", "Please select a folder containing Books");
-				folderBrowserDialog.ShowNewFolderButton = true;
-				if (folderBrowserDialog.ShowDialog(this) == DialogResult.OK && !string.IsNullOrEmpty(folderBrowserDialog.SelectedPath))
+				lbPaths.Items.Add(path);
+				if (lbPaths.SelectedIndex == -1)
 				{
-					lbPaths.Items.Add(folderBrowserDialog.SelectedPath);
-					if (lbPaths.SelectedIndex == -1)
-					{
-						lbPaths.SelectedIndex = 0;
-					}
+					lbPaths.SelectedIndex = 0;
 				}
 			}
 		}
@@ -384,16 +380,25 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			{
 				return;
 			}
+			string path = SelectItemDialog.GetName(this, LocalizeUtility.GetText(this, "SelectComicFolder", "Please select a folder containing Books"), text, BrowseForComicFolder);
+			if (!string.IsNullOrEmpty(path))
+			{
+				lbPaths.Items[lbPaths.SelectedIndex] = path;
+			}
+		}
+
+		private string BrowseForComicFolder(IWin32Window parent)
+		{
 			using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
 			{
 				folderBrowserDialog.Description = LocalizeUtility.GetText(this, "SelectComicFolder", "Please select a folder containing Books");
 				folderBrowserDialog.ShowNewFolderButton = true;
-				folderBrowserDialog.SelectedPath = text;
-				if (folderBrowserDialog.ShowDialog(this) == DialogResult.OK && !string.IsNullOrEmpty(folderBrowserDialog.SelectedPath))
+				if (folderBrowserDialog.ShowDialog(parent) == DialogResult.OK && !string.IsNullOrEmpty(folderBrowserDialog.SelectedPath))
 				{
-					lbPaths.Items[lbPaths.SelectedIndex] = folderBrowserDialog.SelectedPath;
+					return folderBrowserDialog.SelectedPath;
 				}
 			}
+			return null;
 		}
 
 		private void btAddLibraryFolder_Click(object sender, EventArgs e)
