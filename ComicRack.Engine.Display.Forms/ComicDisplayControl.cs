@@ -201,6 +201,8 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		public const int DefaultFadeTime = 100;
 
+		private const int ContinuousFallbackWidth = 1000;
+
 		private static readonly int NavigationOverlayDefaultHeight = FormUtility.ScaleDpiY(200);
 
 		private static readonly Size pageInfoSize = new Size(150, 25).ScaleDpi();
@@ -248,6 +250,20 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 		private bool leftRightMovementReversed;
 
 		private volatile PageLayoutMode pageLayout;
+
+		private readonly Dictionary<int, Size> continuousPageSizes = new Dictionary<int, Size>();
+
+		private ContinuousPageLayout continuousLayout;
+
+		private int continuousContentWidth;
+
+		private bool continuousLayoutPreservesSourceSize;
+
+		private ContinuousPageLayout.Anchor continuousViewportAnchor;
+
+		private bool continuousLayoutRebuildPending;
+
+		private bool continuousNavigationSync;
 
 		private volatile float doublePageOverlap;
 
@@ -314,6 +330,14 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 		private Point mouseDown;
 
 		private bool panMagnifier;
+
+		private Point continuousPanStartLocation;
+
+		private Point continuousPanStartOffset;
+
+		private bool continuousPanDirectionLocked;
+
+		private bool continuousPanVertical;
 
 		private int cachedPartOverlay = -1;
 
@@ -439,10 +463,13 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 					comicBookNavigator.PageFilterChanged -= book_PageFilterOrPagesChanged;
 					comicBookNavigator.PagesChanged -= book_PageFilterOrPagesChanged;
 					comicBookNavigator.Comic.BookChanged -= Comic_BookChanged;
-					comicBookNavigator.PagePart = base.ImageVisiblePart;
+					comicBookNavigator.PagePart = (PageLayout == PageLayoutMode.Continuous) ? ImagePartInfo.Empty : base.ImageVisiblePart;
 					comicBookNavigator.RightToLeftReading = (base.RightToLeftReading ? YesNo.Yes : YesNo.No);
 				}
 				book = value;
+				continuousPageSizes.Clear();
+				continuousLayout = null;
+				continuousContentWidth = 0;
 				OnBookChanged();
 				lastValidKey = null;
 				if (value != null)
@@ -457,11 +484,15 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 					value.PagesChanged += book_PageFilterOrPagesChanged;
 					value.Comic.BookChanged += Comic_BookChanged;
 					CurrentPage = value.CurrentPage;
-					base.ImageVisiblePart = value.PagePart;
+					base.ImageVisiblePart = (PageLayout == PageLayoutMode.Continuous) ? ImagePartInfo.Empty : value.PagePart;
 					if (value.RightToLeftReading != YesNo.Unknown)
 					{
 						base.RightToLeftReading = value.RightToLeftReading == YesNo.Yes;
 					}
+				}
+				if (PageLayout == PageLayoutMode.Continuous)
+				{
+					RebuildContinuousLayout(new ContinuousPageLayout.Anchor(CurrentPage, 0));
 				}
 				navigationOverlay.Provider = value;
 				navigationOverlay.ImageKeyProvider = value;
@@ -548,7 +579,17 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			{
 				if (pageLayout != value)
 				{
+					PageLayoutMode oldLayout = pageLayout;
 					pageLayout = value;
+					if (value == PageLayoutMode.Continuous)
+					{
+						RebuildContinuousLayout(new ContinuousPageLayout.Anchor(CurrentPage, 0));
+					}
+					else if (oldLayout == PageLayoutMode.Continuous)
+					{
+						continuousLayout = null;
+						base.ImageVisiblePart = ImagePartInfo.Empty;
+					}
 					OnDisplayChanged();
 					Invalidate();
 				}
@@ -790,7 +831,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 		{
 			get
 			{
-				if (LeftRightMovementReversed)
+				if (PageLayout != PageLayoutMode.Continuous && LeftRightMovementReversed)
 				{
 					return IsFlipped;
 				}
@@ -949,7 +990,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			}
 		}
 
-		public bool TwoPageDisplay => PageLayout != PageLayoutMode.Single;
+		public bool TwoPageDisplay => PageLayout == PageLayoutMode.Double || PageLayout == PageLayoutMode.DoubleAdaptive;
 
 		public bool ShouldPagingBlend
 		{
@@ -999,7 +1040,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			}
 		}
 
-		public override bool IsDoubleImage => GetImageInfo().IsDoubleImage;
+		public override bool IsDoubleImage => PageLayout != PageLayoutMode.Continuous && GetImageInfo().IsDoubleImage;
 
 		private int NavigationOverlayVisibleY
 		{
@@ -1448,6 +1489,157 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			return pageKey;
 		}
 
+		private Size GetContinuousPageSize(int page)
+		{
+			if (continuousPageSizes.TryGetValue(page, out Size size) && size.Width > 0 && size.Height > 0)
+			{
+				return size;
+			}
+			try
+			{
+				ComicPageInfo pageInfo = Book.Comic.GetPage(page);
+				size = new Size(pageInfo.ImageWidth, pageInfo.ImageHeight);
+				if (size.Width > 0 && size.Height > 0)
+				{
+					return size;
+				}
+			}
+			catch
+			{
+			}
+			return new Size(ContinuousFallbackWidth, ContinuousFallbackWidth);
+		}
+
+		private int GetContinuousContentWidth()
+		{
+			if (continuousContentWidth > 0)
+			{
+				return continuousContentWidth;
+			}
+			Size size = Size.Empty;
+			if (IsValid && CurrentPage >= 0 && CurrentPage < Book.ProviderPageCount)
+			{
+				using (IItemLock<PageImage> image = pagePool.GetPage(GetPageKey(CurrentPage), onlyMemory: true))
+				{
+					size = image?.Item?.Size ?? Size.Empty;
+				}
+			}
+			if (size.Width <= 0)
+			{
+				size = GetContinuousPageSize(CurrentPage);
+			}
+			continuousContentWidth = size.Width > 0 ? size.Width : ContinuousFallbackWidth;
+			return continuousContentWidth;
+		}
+
+		private ContinuousPageLayout.Anchor CaptureContinuousViewportAnchor()
+		{
+			if (continuousLayout != null)
+			{
+				return continuousLayout.CaptureAnchor(base.PagePartBounds.Top);
+			}
+			return new ContinuousPageLayout.Anchor(CurrentPage, 0);
+		}
+
+		private long CaptureContinuousHorizontalAnchor()
+		{
+			Rectangle viewport = base.PagePartBounds;
+			int contentWidth = continuousLayout?.TotalSize.Width ?? viewport.Width;
+			// Keep twice the center offset so odd source widths retain half-pixel alignment.
+			return 2L * viewport.Left + viewport.Width - contentWidth;
+		}
+
+		private int ResolveContinuousHorizontalAnchor(long anchor)
+		{
+			Rectangle viewport = base.PagePartBounds;
+			int contentWidth = continuousLayout?.TotalSize.Width ?? viewport.Width;
+			long position = (contentWidth + anchor - viewport.Width) / 2L;
+			long maximum = Math.Max(0L, (long)contentWidth - viewport.Width);
+			return (int)Math.Max(0L, Math.Min(position, maximum));
+		}
+
+		private void RebuildContinuousLayout(ContinuousPageLayout.Anchor anchor)
+		{
+			if (PageLayout != PageLayoutMode.Continuous)
+			{
+				return;
+			}
+			long horizontalAnchor = continuousLayout == null ? 0L : CaptureContinuousHorizontalAnchor();
+			List<ContinuousPageLayout.SourcePage> pages = new List<ContinuousPageLayout.SourcePage>();
+			if (Book != null)
+			{
+				try
+				{
+					foreach (int page in Book.GetPages())
+					{
+						pages.Add(new ContinuousPageLayout.SourcePage(page, GetContinuousPageSize(page)));
+					}
+				}
+				catch
+				{
+				}
+			}
+			bool preserveSourceSize = base.ImageFitMode == ImageFitMode.Original;
+			int contentWidth = preserveSourceSize
+				? pages.Where((ContinuousPageLayout.SourcePage page) => page.SourceSize.Width > 0).Select((ContinuousPageLayout.SourcePage page) => page.SourceSize.Width).DefaultIfEmpty(ContinuousFallbackWidth).Max()
+				: GetContinuousContentWidth();
+			continuousLayout = new ContinuousPageLayout(pages, contentWidth, preserveSourceSize);
+			continuousLayoutPreservesSourceSize = preserveSourceSize;
+			int y = continuousLayout.ResolveAnchor(anchor);
+			continuousViewportAnchor = continuousLayout.CaptureAnchor(y);
+			base.ImageVisiblePart = new ImagePartInfo(0, ResolveContinuousHorizontalAnchor(horizontalAnchor), y);
+			Invalidate();
+		}
+
+		private void ScheduleContinuousLayoutRebuild(ContinuousPageLayout.Anchor anchor)
+		{
+			if (continuousLayoutRebuildPending || PageLayout != PageLayoutMode.Continuous || IsDisposed)
+			{
+				return;
+			}
+			ContinuousPageLayout scheduledLayout = continuousLayout;
+			continuousLayoutRebuildPending = true;
+			MethodInvoker rebuild = delegate
+			{
+				continuousLayoutRebuildPending = false;
+				if (PageLayout == PageLayoutMode.Continuous && !IsDisposed && continuousLayout == scheduledLayout)
+				{
+					RebuildContinuousLayout(anchor);
+				}
+			};
+			if (!IsHandleCreated)
+			{
+				rebuild();
+				return;
+			}
+			try
+			{
+				BeginInvoke(rebuild);
+			}
+			catch (InvalidOperationException)
+			{
+				continuousLayoutRebuildPending = false;
+			}
+		}
+
+		private IItemLock<PageImage> GetContinuousImage(int page)
+		{
+			if (!IsValid || page < 0 || page >= Book.ProviderPageCount)
+			{
+				return new ItemLock<PageImage>(null);
+			}
+			PageKey pageKey = GetPageKey(page);
+			IItemLock<PageImage> image = pagePool.GetPage(pageKey, onlyMemory: true);
+			if (image == null)
+			{
+				pagePool.CachePage(pageKey, fastMem: true, Book, bottom: false);
+				return new ItemLock<PageImage>(null);
+			}
+			image.Tag = true;
+			firstPageHasBeenLoaded = true;
+			return image;
+		}
+
 		private bool IsPageInCache(int page, int offset = 0, bool fastMem = true, bool putInCache = true)
 		{
 			int num = SeekPage(page, offset);
@@ -1697,6 +1889,14 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		public override Bitmap CreatePageImage()
 		{
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				using (IItemLock<PageImage> image = GetContinuousImage(CurrentPage))
+				{
+					Bitmap bitmap = image?.Item?.Bitmap;
+					return bitmap == null ? null : new Bitmap(bitmap);
+				}
+			}
 			bool flag = RealisticPages;
 			RealisticPages = false;
 			try
@@ -1709,10 +1909,84 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			}
 		}
 
+		private void DrawContinuousImage(IBitmapRenderer gr, Rectangle destination, Rectangle source)
+		{
+			ContinuousPageLayout layout = continuousLayout;
+			if (layout == null || source.Width <= 0 || source.Height <= 0)
+			{
+				return;
+			}
+			continuousViewportAnchor = layout.CaptureAnchor(source.Top);
+			float destinationScaleX = (float)destination.Width / source.Width;
+			float destinationScaleY = (float)destination.Height / source.Height;
+			List<int> visiblePages = new List<int>();
+			List<Rectangle> visibleAreas = new List<Rectangle>();
+			int hash = 17;
+			foreach (ContinuousPageLayout.PageEntry page in layout.GetVisible(source))
+			{
+				Rectangle intersection = Rectangle.Intersect(page.Bounds, source);
+				if (intersection.Width <= 0 || intersection.Height <= 0)
+				{
+					continue;
+				}
+				RectangleF target = new RectangleF(destination.X + (intersection.X - source.X) * destinationScaleX, destination.Y + (intersection.Y - source.Y) * destinationScaleY, intersection.Width * destinationScaleX, intersection.Height * destinationScaleY);
+				using (IItemLock<PageImage> image = GetContinuousImage(page.Page))
+				{
+					if (image.Item == null)
+					{
+						DrawPage(gr, image, target, RectangleF.Empty);
+					}
+					else
+					{
+						Size actualSize = image.Item.Size;
+						if (actualSize.Width > 0 && actualSize.Height > 0)
+						{
+							if (actualSize != page.SourceSize)
+							{
+								continuousPageSizes[page.Page] = actualSize;
+								continuousContentWidth = 0;
+								ScheduleContinuousLayoutRebuild(continuousViewportAnchor);
+							}
+							float sourceScaleX = (float)actualSize.Width / page.Bounds.Width;
+							float sourceScaleY = (float)actualSize.Height / page.Bounds.Height;
+							RectangleF pageSource = new RectangleF((intersection.X - page.Bounds.X) * sourceScaleX, (intersection.Y - page.Bounds.Y) * sourceScaleY, intersection.Width * sourceScaleX, intersection.Height * sourceScaleY);
+							DrawPage(gr, image, target, pageSource);
+							hash = unchecked(hash * 31 + image.Item.GetHashCode());
+						}
+					}
+				}
+				visiblePages.Add(page.Page);
+				visibleAreas.Add(target.Round());
+			}
+			if (visiblePages.Count != 0)
+			{
+				CachePage(visiblePages[0], -1, fastMem: true, bottom: false);
+				CachePage(visiblePages[visiblePages.Count - 1], 1, fastMem: true, bottom: false);
+				int lastVisiblePage = visiblePages.Max();
+				if (Book != null && lastVisiblePage > Book.LastPageRead)
+				{
+					Book.LastPageRead = lastVisiblePage;
+				}
+			}
+			int previousHash = displayHash;
+			displayHash = hash;
+			displayedPages = visiblePages.ToArray();
+			displayedPageAreas = visibleAreas.ToArray();
+			if (previousHash != displayHash)
+			{
+				OnDisplayChanged();
+			}
+		}
+
 		protected override void DrawImage(IBitmapRenderer gr, Rectangle destination, Rectangle source, bool clipToDestination)
 		{
 			if (!IsValid)
 			{
+				return;
+			}
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				DrawContinuousImage(gr, destination, source);
 				return;
 			}
 			int num = displayHash;
@@ -1881,6 +2155,10 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		protected override void RenderImageEffect(IBitmapRenderer bitmapRenderer, DisplayOutput display)
 		{
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				return;
+			}
 			base.RenderImageEffect(bitmapRenderer, display);
 			if (bitmapRenderer.IsHardware && workingPaperTexture != null)
 			{
@@ -1989,6 +2267,10 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 				panMagnifier = true;
 				base.MouseActionHappened = true;
 			}
+			continuousPanStartLocation = base.GestureLocation;
+			continuousPanStartOffset = base.ImageVisiblePart.Offset;
+			continuousPanDirectionLocked = false;
+			continuousPanVertical = false;
 		}
 
 		protected override void OnPan()
@@ -2004,17 +2286,52 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 		protected override void OnPageDisplayModeChanged()
 		{
 			base.OnPageDisplayModeChanged();
+			if (PageLayout == PageLayoutMode.Continuous && continuousLayout != null && continuousLayoutPreservesSourceSize != (base.ImageFitMode == ImageFitMode.Original))
+			{
+				ScheduleContinuousLayoutRebuild(continuousViewportAnchor);
+			}
+			if (PageLayout == PageLayoutMode.Continuous && continuousLayout != null)
+			{
+				Rectangle viewport = base.PagePartBounds;
+				int centeredLeft = ResolveContinuousHorizontalAnchor(0L);
+				if (viewport.Left != centeredLeft)
+				{
+					base.ImageVisiblePart = new ImagePartInfo(0, centeredLeft, viewport.Top);
+				}
+			}
 			UpdatePartOverlay(always: true);
 		}
 
 		protected override void OnVisiblePartChanged()
 		{
 			base.OnVisiblePartChanged();
+			if (PageLayout == PageLayoutMode.Continuous && continuousLayout != null)
+			{
+				ContinuousPageLayout.PageEntry page = continuousLayout.HitTest(base.PagePartBounds.Top);
+				if (page != null)
+				{
+					continuousViewportAnchor = continuousLayout.CaptureAnchor(base.PagePartBounds.Top);
+					if (!continuousNavigationSync && Book != null && page.Page != CurrentPage)
+					{
+						continuousNavigationSync = true;
+						try
+						{
+							Book.Navigate(page.Page, PageSeekOrigin.Absolute);
+						}
+						finally
+						{
+							continuousNavigationSync = false;
+						}
+					}
+				}
+			}
 			UpdatePartOverlay(always: false);
 		}
 
 		protected override void OnResize(EventArgs e)
 		{
+			ContinuousPageLayout.Anchor anchor = CaptureContinuousViewportAnchor();
+			bool restoreContinuousAnchor = PageLayout == PageLayoutMode.Continuous && continuousLayout != null;
 			base.OnResize(e);
 			navigationOverlay.Size = CalcNavigationOverlaySize();
 			if (navigationOverlay.Visible)
@@ -2023,6 +2340,34 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 				navigationOverlay.X = (base.ClientRectangle.Width - navigationOverlay.Width) / 2;
 			}
 			UpdatePartOverlay(always: true);
+			if (restoreContinuousAnchor && continuousLayout != null)
+			{
+				int y = continuousLayout.ResolveAnchor(anchor);
+				base.ImageVisiblePart = new ImagePartInfo(0, ResolveContinuousHorizontalAnchor(0L), y);
+			}
+		}
+
+		protected override Point AdjustPanOffset(Point offset)
+		{
+			offset = base.AdjustPanOffset(offset);
+			if (PageLayout != PageLayoutMode.Continuous || panMagnifier)
+			{
+				return offset;
+			}
+
+			int horizontalDistance = Math.Abs(base.PanLocation.X - continuousPanStartLocation.X);
+			int verticalDistance = Math.Abs(base.PanLocation.Y - continuousPanStartLocation.Y);
+			if (!continuousPanDirectionLocked && Math.Max(horizontalDistance, verticalDistance) >= Math.Max(4, SystemInformation.DragSize.Width))
+			{
+				continuousPanDirectionLocked = true;
+				// Favor the strip's reading axis unless the gesture is clearly horizontal.
+				continuousPanVertical = verticalDistance * 4 >= horizontalDistance * 3;
+			}
+			if (!continuousPanDirectionLocked || continuousPanVertical)
+			{
+				offset.X = continuousPanStartOffset.X;
+			}
+			return offset;
 		}
 
 		protected override void OnRenderImageOverlay(RenderEventArgs e)
@@ -2105,11 +2450,39 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		protected override bool IsImageValid()
 		{
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				return continuousLayout != null && continuousLayout.TotalHeight > 0L;
+			}
 			return GetImageInfo().IsValid;
+		}
+
+		protected override DisplayOutputConfig GetEffectiveDisplayConfig(DisplayOutputConfig config)
+		{
+			if (PageLayout != PageLayoutMode.Continuous)
+			{
+				return config;
+			}
+			ImageFitMode imageDisplayMode = config.ImageDisplayMode;
+			bool fitOnlyIfOversized = config.FitOnlyIfOversized;
+			if (imageDisplayMode == ImageFitMode.FitWidth || imageDisplayMode == ImageFitMode.FitWidthAdaptive)
+			{
+				fitOnlyIfOversized = false;
+			}
+			else if (imageDisplayMode == ImageFitMode.BestFit)
+			{
+				imageDisplayMode = ImageFitMode.FitWidth;
+				fitOnlyIfOversized = true;
+			}
+			return new DisplayOutputConfig(config.ViewSize, config.ImageSize, imageDisplayMode, fitOnlyIfOversized, config.RightToLeftReadingMode, config.RightToLeftReading, config.Part, config.ImageZoom, config.ImageZoom, ImageRotation.None, twoPageAutoScroll: false);
 		}
 
 		protected override Size GetImageSize()
 		{
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				return continuousLayout?.TotalSize ?? Size.Empty;
+			}
 			return GetImageInfo().Size;
 		}
 
@@ -2194,6 +2567,11 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		private void UpdatePartOverlay(bool always)
 		{
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				visiblePartOverlay.Visible = false;
+				return;
+			}
 			int num = CurrentPage * 100 + base.ImageVisiblePart.Part;
 			Point offset = base.ImageVisiblePart.Offset;
 			if (num == cachedPartOverlay && cachedPartOffset == offset && !always)
@@ -2495,6 +2873,25 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		private void book_Navigation(object sender, BookPageEventArgs e)
 		{
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				Blender = null;
+				ShouldPagingBlend = false;
+				OnPageChange(e);
+				currentPage = Book.CurrentPage;
+				if (!continuousNavigationSync)
+				{
+					long horizontalAnchor = CaptureContinuousHorizontalAnchor();
+					int y = continuousLayout?.ResolveAnchor(new ContinuousPageLayout.Anchor(currentPage, 0)) ?? 0;
+					continuousViewportAnchor = new ContinuousPageLayout.Anchor(currentPage, 0);
+					base.ImageVisiblePart = new ImagePartInfo(0, ResolveContinuousHorizontalAnchor(horizontalAnchor), y);
+				}
+				Invalidate();
+				OnPageChanged(e);
+				UpdateNavigationOverlay(redraw: false);
+				lastBlend = Machine.Ticks;
+				return;
+			}
 			bool flag = e.OldPage < e.Page;
 			if (IsFlipped)
 			{
@@ -2567,6 +2964,12 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		private void book_PageFilterOrPagesChanged(object sender, EventArgs e)
 		{
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				continuousPageSizes.Clear();
+				continuousContentWidth = 0;
+				RebuildContinuousLayout(CaptureContinuousViewportAnchor());
+			}
 			Invalidate();
 			UpdateNavigationOverlay(redraw: true);
 		}
@@ -2594,6 +2997,11 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		private void book_IndexRetrievalCompleted(object sender, EventArgs e)
 		{
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				continuousContentWidth = 0;
+				RebuildContinuousLayout(CaptureContinuousViewportAnchor());
+			}
 			UpdateNavigationOverlay(redraw: true);
 			Invalidate();
 		}

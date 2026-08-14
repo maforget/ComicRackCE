@@ -26,7 +26,7 @@ namespace cYo.Projects.ComicRack.Viewer.Views
         {
             get
             {
-                return pageViewer.PageLayout != PageLayoutMode.Single;
+                return pageViewer.PageLayout == PageLayoutMode.Double || pageViewer.PageLayout == PageLayoutMode.DoubleAdaptive;
             }
             set
             {

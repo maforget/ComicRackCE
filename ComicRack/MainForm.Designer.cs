@@ -177,6 +177,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.miSinglePage = new System.Windows.Forms.ToolStripMenuItem();
 			this.miTwoPages = new System.Windows.Forms.ToolStripMenuItem();
 			this.miTwoPagesAdaptive = new System.Windows.Forms.ToolStripMenuItem();
+			this.miContinuous = new System.Windows.Forms.ToolStripMenuItem();
 			this.miRightToLeft = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem44 = new System.Windows.Forms.ToolStripSeparator();
 			this.miOnlyFitOversized = new System.Windows.Forms.ToolStripMenuItem();
@@ -279,6 +280,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.cmSinglePage = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmTwoPages = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmTwoPagesAdaptive = new System.Windows.Forms.ToolStripMenuItem();
+			this.cmContinuous = new System.Windows.Forms.ToolStripMenuItem();
 			this.cmRightToLeft = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem38 = new System.Windows.Forms.ToolStripSeparator();
 			this.cmRotate0 = new System.Windows.Forms.ToolStripMenuItem();
@@ -325,6 +327,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.tbSinglePage = new System.Windows.Forms.ToolStripMenuItem();
 			this.tbTwoPages = new System.Windows.Forms.ToolStripMenuItem();
 			this.tbTwoPagesAdaptive = new System.Windows.Forms.ToolStripMenuItem();
+			this.tbContinuous = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem54 = new System.Windows.Forms.ToolStripSeparator();
 			this.tbRightToLeft = new System.Windows.Forms.ToolStripMenuItem();
 			this.tbFit = new System.Windows.Forms.ToolStripSplitButton();
@@ -1356,6 +1359,7 @@ namespace cYo.Projects.ComicRack.Viewer
             this.miSinglePage,
             this.miTwoPages,
             this.miTwoPagesAdaptive,
+            this.miContinuous,
             this.miRightToLeft,
             this.toolStripMenuItem44,
             this.miOnlyFitOversized});
@@ -1440,6 +1444,13 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.miTwoPagesAdaptive.Size = new System.Drawing.Size(247, 22);
 			this.miTwoPagesAdaptive.Text = "Two Pages (adaptive)";
 			this.miTwoPagesAdaptive.ToolTipText = "Show one or two pages";
+			//
+			// miContinuous
+			//
+			this.miContinuous.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SinglePage;
+			this.miContinuous.Name = "miContinuous";
+			this.miContinuous.Size = new System.Drawing.Size(247, 22);
+			this.miContinuous.Text = "Long Form (Continuous)";
 			// 
 			// miRightToLeft
 			// 
@@ -2258,6 +2269,7 @@ namespace cYo.Projects.ComicRack.Viewer
             this.cmSinglePage,
             this.cmTwoPages,
             this.cmTwoPagesAdaptive,
+            this.cmContinuous,
             this.cmRightToLeft,
             this.toolStripMenuItem38,
             this.cmRotate0,
@@ -2349,6 +2361,13 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.cmTwoPagesAdaptive.Size = new System.Drawing.Size(241, 22);
 			this.cmTwoPagesAdaptive.Text = "Two Pages (adaptive)";
 			this.cmTwoPagesAdaptive.ToolTipText = "Show one or two pages";
+			//
+			// cmContinuous
+			//
+			this.cmContinuous.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SinglePage;
+			this.cmContinuous.Name = "cmContinuous";
+			this.cmContinuous.Size = new System.Drawing.Size(241, 22);
+			this.cmContinuous.Text = "Long Form (Continuous)";
 			// 
 			// cmRightToLeft
 			// 
@@ -2735,6 +2754,7 @@ namespace cYo.Projects.ComicRack.Viewer
             this.tbSinglePage,
             this.tbTwoPages,
             this.tbTwoPagesAdaptive,
+            this.tbContinuous,
             this.toolStripMenuItem54,
             this.tbRightToLeft});
 			this.tbPageLayout.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SinglePage;
@@ -2767,6 +2787,13 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.tbTwoPagesAdaptive.Size = new System.Drawing.Size(225, 22);
 			this.tbTwoPagesAdaptive.Text = "Two Pages (adaptive)";
 			this.tbTwoPagesAdaptive.ToolTipText = "Show one or two pages";
+			//
+			// tbContinuous
+			//
+			this.tbContinuous.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SinglePage;
+			this.tbContinuous.Name = "tbContinuous";
+			this.tbContinuous.Size = new System.Drawing.Size(225, 22);
+			this.tbContinuous.Text = "Long Form (Continuous)";
 			// 
 			// toolStripMenuItem54
 			// 
@@ -3781,12 +3808,15 @@ namespace cYo.Projects.ComicRack.Viewer
 		private ToolStripMenuItem tbTwoPagesAdaptive;
 		private ToolStripMenuItem tbSinglePage;
 		private ToolStripMenuItem tbTwoPages;
+		private ToolStripMenuItem tbContinuous;
 		private ToolStripSeparator toolStripMenuItem54;
 		private ToolStripMenuItem tbRightToLeft;
 		private ToolStripMenuItem miTwoPagesAdaptive;
 		private ToolStripMenuItem miTwoPages;
 		private ToolStripMenuItem miSinglePage;
+		private ToolStripMenuItem miContinuous;
 		private ToolStripMenuItem cmSinglePage;
+		private ToolStripMenuItem cmContinuous;
 		private ToolStripMenuItem cmTwoPages;
 		private ToolStripMenuItem cmTwoPagesAdaptive;
 		private ToolStripSeparator toolStripMenuItem55;

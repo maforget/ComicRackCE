@@ -1356,6 +1356,10 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				ComicDisplay.PageLayout = PageLayoutMode.DoubleAdaptive;
 			}, true, () => ComicDisplay.PageLayout == PageLayoutMode.DoubleAdaptive, miTwoPagesAdaptive, tbTwoPagesAdaptive, cmTwoPagesAdaptive);
+			commands.Add(delegate
+			{
+				ComicDisplay.PageLayout = PageLayoutMode.Continuous;
+			}, true, () => ComicDisplay.PageLayout == PageLayoutMode.Continuous, miContinuous, tbContinuous, cmContinuous);
 			commands.Add(ComicDisplay.TogglePageFit, tbFit);
 			commands.Add(ComicDisplay.SetPageOriginal, true, () => ComicDisplay.ImageFitMode == ImageFitMode.Original, miOriginal, cmOriginal, tbOriginal);
 			commands.Add(ComicDisplay.SetPageFitAll, true, () => ComicDisplay.ImageFitMode == ImageFitMode.Fit, miFitAll, tbFitAll, cmFitAll);
@@ -1410,34 +1414,35 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				ComicDisplay.ImageZoom = ZoomDialog.Show(this, ComicDisplay.ImageZoom);
 			}, miZoomCustom, tbZoomCustom);
+			UpdateHandler rotationAvailable = () => ComicDisplay.PageLayout != PageLayoutMode.Continuous;
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ImageRotation.None;
-			}, true, () => ComicDisplay.ImageRotation == ImageRotation.None, miRotate0, tbRotate0, cmRotate0);
+			}, rotationAvailable, () => ComicDisplay.ImageRotation == ImageRotation.None, miRotate0, tbRotate0, cmRotate0);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ImageRotation.Rotate90;
-			}, true, () => ComicDisplay.ImageRotation == ImageRotation.Rotate90, miRotate90, tbRotate90, cmRotate90);
+			}, rotationAvailable, () => ComicDisplay.ImageRotation == ImageRotation.Rotate90, miRotate90, tbRotate90, cmRotate90);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ImageRotation.Rotate180;
-			}, true, () => ComicDisplay.ImageRotation == ImageRotation.Rotate180, miRotate180, tbRotate180, cmRotate180);
+			}, rotationAvailable, () => ComicDisplay.ImageRotation == ImageRotation.Rotate180, miRotate180, tbRotate180, cmRotate180);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ImageRotation.Rotate270;
-			}, true, () => ComicDisplay.ImageRotation == ImageRotation.Rotate270, miRotate270, tbRotate270, cmRotate270);
+			}, rotationAvailable, () => ComicDisplay.ImageRotation == ImageRotation.Rotate270, miRotate270, tbRotate270, cmRotate270);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ComicDisplay.ImageRotation.RotateLeft();
-			}, miRotateLeft, tbRotateLeft);
+			}, rotationAvailable, miRotateLeft, tbRotateLeft);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ComicDisplay.ImageRotation.RotateRight();
-			}, miRotateRight, tbRotateRight, tbRotate);
+			}, rotationAvailable, miRotateRight, tbRotateRight, tbRotate);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageAutoRotate = !ComicDisplay.ImageAutoRotate;
-			}, true, () => ComicDisplay.ImageAutoRotate, miAutoRotate, tbAutoRotate);
+			}, rotationAvailable, () => ComicDisplay.ImageAutoRotate, miAutoRotate, tbAutoRotate);
 			commands.Add(ComicDisplay.ToggleMagnifier, true, () => ComicDisplay.MagnifierVisible, miMagnify, tbMagnify, cmMagnify);
 			commands.Add(delegate
 			{
@@ -1700,6 +1705,10 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				CommandKey.D9
 			}));
+			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miContinuous.Image, "Continuous", group, "Long Form (Continuous)", (Action)delegate
+			{
+				ComicDisplay.PageLayout = PageLayoutMode.Continuous;
+			}));
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miRightToLeft.Image, "RightToLeft", group, "Right to Left", (Action)delegate
 			{
 				ComicDisplay.RightToLeftReading = !ComicDisplay.RightToLeftReading;
@@ -1711,21 +1720,30 @@ namespace cYo.Projects.ComicRack.Viewer
 			group = "ZoomAndRotate";
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miRotateRight.Image, "RotateC", group, "Rotate Right", (Action)delegate
 			{
-				ComicDisplay.ImageRotation = ComicDisplay.ImageRotation.RotateRight();
+				if (ComicDisplay.PageLayout != PageLayoutMode.Continuous)
+				{
+					ComicDisplay.ImageRotation = ComicDisplay.ImageRotation.RotateRight();
+				}
 			}, new CommandKey[1]
 			{
 				CommandKey.R
 			}));
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miRotateLeft.Image, "RotateCC", group, "Rotate Left", (Action)delegate
 			{
-				ComicDisplay.ImageRotation = ComicDisplay.ImageRotation.RotateLeft();
+				if (ComicDisplay.PageLayout != PageLayoutMode.Continuous)
+				{
+					ComicDisplay.ImageRotation = ComicDisplay.ImageRotation.RotateLeft();
+				}
 			}, new CommandKey[1]
 			{
 				CommandKey.R | CommandKey.Shift
 			}));
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miAutoRotate.Image, "AutoRotate", group, "Autorotate Double Pages", (Action)delegate
 			{
-				ComicDisplay.ImageAutoRotate = !ComicDisplay.ImageAutoRotate;
+				if (ComicDisplay.PageLayout != PageLayoutMode.Continuous)
+				{
+					ComicDisplay.ImageAutoRotate = !ComicDisplay.ImageAutoRotate;
+				}
 			}, new CommandKey[1]
 			{
 				CommandKey.A
@@ -3363,6 +3381,8 @@ namespace cYo.Projects.ComicRack.Viewer
 						return miTwoPagesAdaptive.Image;
 					}
 					return TwoPagesAdaptiveRtl;
+				case PageLayoutMode.Continuous:
+					return miContinuous.Image;
 			}
 		}
 

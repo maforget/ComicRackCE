@@ -78,7 +78,7 @@ namespace cYo.Projects.ComicRack.Engine.Display
 
 		private float mouseWheelSpeed = 2f;
 
-		public bool TwoPageDisplay => PageLayout != PageLayoutMode.Single;
+		public bool TwoPageDisplay => PageLayout == PageLayoutMode.Double || PageLayout == PageLayoutMode.DoubleAdaptive;
 
 		public bool SupressContextMenu
 		{
@@ -744,6 +744,12 @@ namespace cYo.Projects.ComicRack.Engine.Display
 				{
 					return;
 				}
+				if (value == PageLayoutMode.Continuous || display.PageLayout == PageLayoutMode.Continuous)
+				{
+					display.PageLayout = value;
+					display.DoublePageOverlap = 0f;
+					return;
+				}
 				bool imageAutoRotate = display.ImageAutoRotate;
 				ImageRotation imageRotation = display.ImageRotation;
 				display.ImageAutoRotate = false;
@@ -1202,6 +1208,14 @@ namespace cYo.Projects.ComicRack.Engine.Display
 
 		public void DisplayNextPageOrPart(bool forceNewPage = false)
 		{
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				if (!EatScrolling() && !DisplayPart(PartPageToDisplay.Next))
+				{
+					OnLastPageReached();
+				}
+				return;
+			}
 			if (!EatScrolling() && (forceNewPage || !DisplayPart(PartPageToDisplay.Next)))
 			{
 				DisplayNextPage(PagingMode.Double | PagingMode.Walled);
@@ -1210,6 +1224,14 @@ namespace cYo.Projects.ComicRack.Engine.Display
 
 		public void DisplayPreviousPageOrPart(bool forceNewPage = false)
 		{
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				if (!EatScrolling() && !DisplayPart(PartPageToDisplay.Previous))
+				{
+					OnFirstPageReached();
+				}
+				return;
+			}
 			if (!EatScrolling() && (forceNewPage || !DisplayPart(PartPageToDisplay.Previous)))
 			{
 				DisplayPreviousPage(PagingMode.Double | PagingMode.Walled);
@@ -1362,7 +1384,11 @@ namespace cYo.Projects.ComicRack.Engine.Display
 		{
 			if (!EatScrolling())
 			{
-				if (AutoScrolling)
+				if (PageLayout == PageLayoutMode.Continuous)
+				{
+					ScrollUp(lines, withPageChange: false);
+				}
+				else if (AutoScrolling)
 				{
 					DisplayPreviousPageOrPart();
 				}
@@ -1382,7 +1408,11 @@ namespace cYo.Projects.ComicRack.Engine.Display
 		{
 			if (!EatScrolling())
 			{
-				if (AutoScrolling)
+				if (PageLayout == PageLayoutMode.Continuous)
+				{
+					ScrollDown(lines, withPageChange: false);
+				}
+				else if (AutoScrolling)
 				{
 					DisplayNextPageOrPart();
 				}
@@ -1435,6 +1465,9 @@ namespace cYo.Projects.ComicRack.Engine.Display
 				PageLayout = PageLayoutMode.DoubleAdaptive;
 				break;
 			case PageLayoutMode.DoubleAdaptive:
+				PageLayout = PageLayoutMode.Single;
+				break;
+			case PageLayoutMode.Continuous:
 				PageLayout = PageLayoutMode.Single;
 				break;
 			}
@@ -1600,6 +1633,11 @@ namespace cYo.Projects.ComicRack.Engine.Display
 		{
 			bool isDoubleImage = IsDoubleImage;
 			Size imageSize = ImageSize;
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				int line = Math.Max(1, imageSize.Width / 16);
+				return new Size(line, line);
+			}
 			return new Size(imageSize.Width / (isDoubleImage ? 32 : 16), imageSize.Height / 32);
 		}
 
@@ -1623,6 +1661,10 @@ namespace cYo.Projects.ComicRack.Engine.Display
 		private void display_PageChange(object sender, BookPageEventArgs e)
 		{
 			oldZoom = 0f;
+			if (PageLayout == PageLayoutMode.Continuous)
+			{
+				return;
+			}
 			if (ImageZoom != 1f)
 			{
 				if (resetZoomOnPageChange)

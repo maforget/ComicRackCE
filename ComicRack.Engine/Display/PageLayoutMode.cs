@@ -4,6 +4,7 @@ namespace cYo.Projects.ComicRack.Engine.Display
 	{
 		Single,
 		Double,
-		DoubleAdaptive
+		DoubleAdaptive,
+		Continuous
 	}
 }

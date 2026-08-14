@@ -1365,7 +1365,8 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 				Size imageSize = GetImageSize();
 				bool flag = imageSize.Width > imageSize.Height && !IsDoubleImage;
 				ImageRotation rotation = ((ImageAutoRotate && imageSize.Width > imageSize.Height) ? ImageRotation.RotateLeft() : ImageRotation);
-				return new DisplayOutputConfig(base.ClientRectangle.Size, imageSize, ImageFitMode, ImageFitOnlyIfOversized, (!flag) ? RightToLeftReadingMode : RightToLeftReadingMode.FlipParts, RightToLeftReading, ImageVisiblePart, ImageZoom, ImageZoom * (PageMargin ? (1f - PageMarginPercentWidth) : 1f), rotation, flag && TwoPageNavigation);
+				DisplayOutputConfig config = new DisplayOutputConfig(base.ClientRectangle.Size, imageSize, ImageFitMode, ImageFitOnlyIfOversized, (!flag) ? RightToLeftReadingMode : RightToLeftReadingMode.FlipParts, RightToLeftReading, ImageVisiblePart, ImageZoom, ImageZoom * (PageMargin ? (1f - PageMarginPercentWidth) : 1f), rotation, flag && TwoPageNavigation);
+				return GetEffectiveDisplayConfig(config);
 			}
 		}
 
@@ -2087,6 +2088,11 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			return false;
 		}
 
+		protected virtual DisplayOutputConfig GetEffectiveDisplayConfig(DisplayOutputConfig config)
+		{
+			return config;
+		}
+
 		protected virtual Size GetImageSize()
 		{
 			return Size.Empty;
@@ -2524,6 +2530,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 				Point point = ClientToImage(panStart);
 				Point point2 = ClientToImage(panLocation);
 				Point offset = new Point(panPart.Offset.X + (point.X - point2.X), panPart.Offset.Y + (point.Y - point2.Y));
+				offset = AdjustPanOffset(offset);
 				SetVisiblePart(new ImagePartInfo(panPart.Part, offset));
 			}
 		}
@@ -2590,6 +2597,11 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			{
 				this.Pan(this, EventArgs.Empty);
 			}
+		}
+
+		protected virtual Point AdjustPanOffset(Point offset)
+		{
+			return offset;
 		}
 
 		protected virtual void OnPanEnd()
