@@ -57,7 +57,8 @@
     <Text Key="ToggleRealisticPages" Text="Activer l'affichage réaliste" Comment="Toggle Realistic Display" />
     <Text Key="SinglePage" Text="Page seule" Comment="Single Page" />
     <Text Key="TwoPages" Text="Deux pages" Comment="Two Pages" />
-    <Text Key="TwoPagesAdaptive" Text="Deux pages (adaptatif)" Comment="Two Pages (adaptive)" />
+	<Text Key="TwoPagesAdaptive" Text="Deux pages (adaptatif)" Comment="Two Pages (adaptive)" />
+	<Text Key="Continuous" Text="Continu" Comment="Continuous" />
     <Text Key="RightToLeft" Text="Droite à Gauche" Comment="Right to Left" />
     <Text Key="ZoomAndRotate" Text="Zoom et rotation" Comment="Zoom and Rotate" />
     <Text Key="ToggleNavigationOverlay" Text="Activer Miniatures de Navigation" Comment="Toggle Navigation Overlay" />

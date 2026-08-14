@@ -212,6 +212,9 @@
     <Text Key="miTwoPagesAdaptive" Text="Deux pages (adaptatif)" Comment="Two Pages (adaptive)" />
     <Text Key="cmTwoPagesAdaptive" Text="Deux pages (adaptatif)" Comment="Two Pages (adaptive)" />
     <Text Key="tbTwoPagesAdaptive" Text="Deux pages (adaptatif)" Comment="Two Pages (adaptive)" />
+	<Text Key="miContinuous" Text="Continu" Comment="Continuous" />
+	<Text Key="cmContinuous" Text="Continu" Comment="Continuous" />
+	<Text Key="tbContinuous" Text="Continu" Comment="Continuous" />
     <Text Key="miSinglePage" Text="Page seule" Comment="Single Page" />
     <Text Key="cmSinglePage" Text="Page seule" Comment="Single Page" />
     <Text Key="tbSinglePage" Text="Page seule" Comment="Single Page" />
