@@ -1705,7 +1705,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				CommandKey.D9
 			}));
-			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miContinuous.Image, "Continuous", group, "Long Form (Continuous)", (Action)delegate
+			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miContinuous.Image, "Continuous", group, "Continuous", (Action)delegate
 			{
 				ComicDisplay.PageLayout = PageLayoutMode.Continuous;
 			}));

@@ -1450,7 +1450,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.miContinuous.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SinglePage;
 			this.miContinuous.Name = "miContinuous";
 			this.miContinuous.Size = new System.Drawing.Size(247, 22);
-			this.miContinuous.Text = "Long Form (Continuous)";
+			this.miContinuous.Text = "Continuous";
 			// 
 			// miRightToLeft
 			// 
@@ -2367,7 +2367,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.cmContinuous.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SinglePage;
 			this.cmContinuous.Name = "cmContinuous";
 			this.cmContinuous.Size = new System.Drawing.Size(241, 22);
-			this.cmContinuous.Text = "Long Form (Continuous)";
+			this.cmContinuous.Text = "Continuous";
 			// 
 			// cmRightToLeft
 			// 
@@ -2793,7 +2793,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.tbContinuous.Image = global::cYo.Projects.ComicRack.Viewer.Properties.Resources.SinglePage;
 			this.tbContinuous.Name = "tbContinuous";
 			this.tbContinuous.Size = new System.Drawing.Size(225, 22);
-			this.tbContinuous.Text = "Long Form (Continuous)";
+			this.tbContinuous.Text = "Continuous";
 			// 
 			// toolStripMenuItem54
 			// 
