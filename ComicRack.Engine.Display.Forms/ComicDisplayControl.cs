@@ -2469,7 +2469,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			{
 				fitOnlyIfOversized = false;
 			}
-			else if (imageDisplayMode == ImageFitMode.BestFit)
+			else if (imageDisplayMode == ImageFitMode.BestFit || imageDisplayMode == ImageFitMode.FitHeight || imageDisplayMode == ImageFitMode.Fit)
 			{
 				imageDisplayMode = ImageFitMode.FitWidth;
 				fitOnlyIfOversized = true;

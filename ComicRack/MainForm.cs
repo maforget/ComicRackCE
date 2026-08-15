@@ -1360,12 +1360,13 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				ComicDisplay.PageLayout = PageLayoutMode.Continuous;
 			}, true, () => ComicDisplay.PageLayout == PageLayoutMode.Continuous, miContinuous, tbContinuous, cmContinuous);
+			UpdateHandler notContinuousLayout = () => ComicDisplay.PageLayout != PageLayoutMode.Continuous;
 			commands.Add(ComicDisplay.TogglePageFit, tbFit);
 			commands.Add(ComicDisplay.SetPageOriginal, true, () => ComicDisplay.ImageFitMode == ImageFitMode.Original, miOriginal, cmOriginal, tbOriginal);
-			commands.Add(ComicDisplay.SetPageFitAll, true, () => ComicDisplay.ImageFitMode == ImageFitMode.Fit, miFitAll, tbFitAll, cmFitAll);
+			commands.Add(ComicDisplay.SetPageFitAll, notContinuousLayout, ComicDisplay.IsPageFitAll, miFitAll, tbFitAll, cmFitAll);
 			commands.Add(ComicDisplay.SetPageFitWidth, true, ComicDisplay.IsPageFitWidth, miFitWidth, tbFitWidth, cmFitWidth);
 			commands.Add(ComicDisplay.SetPageFitWidthAdaptive, true, ComicDisplay.IsPageFitWidthAdaptive, miFitWidthAdaptive, tbFitWidthAdaptive, cmFitWidthAdaptive);
-			commands.Add(ComicDisplay.SetPageFitHeight, true, ComicDisplay.IsPageFitHeight, miFitHeight, tbFitHeight, cmFitHeight);
+			commands.Add(ComicDisplay.SetPageFitHeight, notContinuousLayout, ComicDisplay.IsPageFitHeight, miFitHeight, tbFitHeight, cmFitHeight);
 			commands.Add(ComicDisplay.SetPageBestFit, true, ComicDisplay.IsPageFitBest, miBestFit, tbBestFit, cmFitBest);
 			commands.Add(ComicDisplay.ToggleFitOnlyIfOversized, true, () => ComicDisplay.ImageFitOnlyIfOversized, miOnlyFitOversized, tbOnlyFitOversized, cmOnlyFitOversized);
 			commands.Add(delegate
@@ -1414,35 +1415,34 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 				ComicDisplay.ImageZoom = ZoomDialog.Show(this, ComicDisplay.ImageZoom);
 			}, miZoomCustom, tbZoomCustom);
-			UpdateHandler rotationAvailable = () => ComicDisplay.PageLayout != PageLayoutMode.Continuous;
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ImageRotation.None;
-			}, rotationAvailable, () => ComicDisplay.ImageRotation == ImageRotation.None, miRotate0, tbRotate0, cmRotate0);
+			}, notContinuousLayout, () => ComicDisplay.ImageRotation == ImageRotation.None, miRotate0, tbRotate0, cmRotate0);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ImageRotation.Rotate90;
-			}, rotationAvailable, () => ComicDisplay.ImageRotation == ImageRotation.Rotate90, miRotate90, tbRotate90, cmRotate90);
+			}, notContinuousLayout, () => ComicDisplay.ImageRotation == ImageRotation.Rotate90, miRotate90, tbRotate90, cmRotate90);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ImageRotation.Rotate180;
-			}, rotationAvailable, () => ComicDisplay.ImageRotation == ImageRotation.Rotate180, miRotate180, tbRotate180, cmRotate180);
+			}, notContinuousLayout, () => ComicDisplay.ImageRotation == ImageRotation.Rotate180, miRotate180, tbRotate180, cmRotate180);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ImageRotation.Rotate270;
-			}, rotationAvailable, () => ComicDisplay.ImageRotation == ImageRotation.Rotate270, miRotate270, tbRotate270, cmRotate270);
+			}, notContinuousLayout, () => ComicDisplay.ImageRotation == ImageRotation.Rotate270, miRotate270, tbRotate270, cmRotate270);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ComicDisplay.ImageRotation.RotateLeft();
-			}, rotationAvailable, miRotateLeft, tbRotateLeft);
+			}, notContinuousLayout, miRotateLeft, tbRotateLeft);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageRotation = ComicDisplay.ImageRotation.RotateRight();
-			}, rotationAvailable, miRotateRight, tbRotateRight, tbRotate);
+			}, notContinuousLayout, miRotateRight, tbRotateRight, tbRotate);
 			commands.Add(delegate
 			{
 				ComicDisplay.ImageAutoRotate = !ComicDisplay.ImageAutoRotate;
-			}, rotationAvailable, () => ComicDisplay.ImageAutoRotate, miAutoRotate, tbAutoRotate);
+			}, notContinuousLayout, () => ComicDisplay.ImageAutoRotate, miAutoRotate, tbAutoRotate);
 			commands.Add(ComicDisplay.ToggleMagnifier, true, () => ComicDisplay.MagnifierVisible, miMagnify, tbMagnify, cmMagnify);
 			commands.Add(delegate
 			{
