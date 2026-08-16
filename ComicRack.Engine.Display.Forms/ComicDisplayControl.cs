@@ -2558,14 +2558,9 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			}
 			ImageFitMode imageDisplayMode = config.ImageDisplayMode;
 			bool fitOnlyIfOversized = config.FitOnlyIfOversized;
-			if (imageDisplayMode == ImageFitMode.FitWidth || imageDisplayMode == ImageFitMode.FitWidthAdaptive)
-			{
-				fitOnlyIfOversized = false;
-			}
-			else if (imageDisplayMode == ImageFitMode.BestFit || imageDisplayMode == ImageFitMode.FitHeight || imageDisplayMode == ImageFitMode.Fit)
+			if (imageDisplayMode == ImageFitMode.BestFit || imageDisplayMode == ImageFitMode.FitHeight || imageDisplayMode == ImageFitMode.Fit)
 			{
 				imageDisplayMode = ImageFitMode.FitWidth;
-				fitOnlyIfOversized = true;
 			}
 			// RTL still controls page navigation, but a vertical strip must not mirror
 			// its horizontal viewport.
