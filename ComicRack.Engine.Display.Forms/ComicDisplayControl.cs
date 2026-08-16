@@ -257,11 +257,19 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		private int continuousContentWidth;
 
-		private bool continuousLayoutPreservesSourceSize;
-
 		private ContinuousPageLayout.Anchor continuousViewportAnchor;
 
+		private ImageFitMode continuousImageFitMode;
+
+		private bool continuousFitOnlyIfOversized;
+
 		private bool continuousLayoutRebuildPending;
+
+		private ContinuousPageLayout.Anchor continuousLayoutRebuildAnchor;
+
+		private bool continuousViewportRestorePending;
+
+		private bool continuousFitResetPending;
 
 		private bool continuousNavigationSync;
 
@@ -1534,11 +1542,30 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		private ContinuousPageLayout.Anchor CaptureContinuousViewportAnchor()
 		{
+			if (continuousViewportRestorePending)
+			{
+				return continuousViewportAnchor;
+			}
+			if (TryGetContinuousViewport(out Rectangle viewport))
+			{
+				return continuousLayout.CaptureAnchor(viewport.Top);
+			}
 			if (continuousLayout != null)
 			{
-				return continuousLayout.CaptureAnchor(base.PagePartBounds.Top);
+				return continuousViewportAnchor;
 			}
 			return new ContinuousPageLayout.Anchor(CurrentPage, 0);
+		}
+
+		private bool TryGetContinuousViewport(out Rectangle viewport)
+		{
+			viewport = Rectangle.Empty;
+			if (continuousLayout == null || base.ClientSize.Width <= 0 || base.ClientSize.Height <= 0)
+			{
+				return false;
+			}
+			viewport = base.PagePartBounds;
+			return viewport.Width > 0 && viewport.Height > 0;
 		}
 
 		private long CaptureContinuousHorizontalAnchor()
@@ -1558,13 +1585,13 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			return (int)Math.Max(0L, Math.Min(position, maximum));
 		}
 
-		private void RebuildContinuousLayout(ContinuousPageLayout.Anchor anchor)
+		private void RebuildContinuousLayout(ContinuousPageLayout.Anchor anchor, bool centerHorizontally = false)
 		{
 			if (PageLayout != PageLayoutMode.Continuous)
 			{
 				return;
 			}
-			long horizontalAnchor = continuousLayout == null ? 0L : CaptureContinuousHorizontalAnchor();
+			long horizontalAnchor = centerHorizontally || continuousLayout == null ? 0L : CaptureContinuousHorizontalAnchor();
 			List<ContinuousPageLayout.SourcePage> pages = new List<ContinuousPageLayout.SourcePage>();
 			if (Book != null)
 			{
@@ -1584,7 +1611,8 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 				? pages.Where((ContinuousPageLayout.SourcePage page) => page.SourceSize.Width > 0).Select((ContinuousPageLayout.SourcePage page) => page.SourceSize.Width).DefaultIfEmpty(ContinuousFallbackWidth).Max()
 				: GetContinuousContentWidth();
 			continuousLayout = new ContinuousPageLayout(pages, contentWidth, preserveSourceSize);
-			continuousLayoutPreservesSourceSize = preserveSourceSize;
+			continuousImageFitMode = base.ImageFitMode;
+			continuousFitOnlyIfOversized = base.ImageFitOnlyIfOversized;
 			int y = continuousLayout.ResolveAnchor(anchor);
 			continuousViewportAnchor = continuousLayout.CaptureAnchor(y);
 			base.ImageVisiblePart = new ImagePartInfo(0, ResolveContinuousHorizontalAnchor(horizontalAnchor), y);
@@ -1593,7 +1621,13 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		private void ScheduleContinuousLayoutRebuild(ContinuousPageLayout.Anchor anchor)
 		{
-			if (continuousLayoutRebuildPending || PageLayout != PageLayoutMode.Continuous || IsDisposed)
+			if (PageLayout != PageLayoutMode.Continuous || IsDisposed)
+			{
+				return;
+			}
+			continuousLayoutRebuildAnchor = anchor;
+			continuousViewportRestorePending = true;
+			if (continuousLayoutRebuildPending)
 			{
 				return;
 			}
@@ -1602,9 +1636,16 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			MethodInvoker rebuild = delegate
 			{
 				continuousLayoutRebuildPending = false;
-				if (PageLayout == PageLayoutMode.Continuous && !IsDisposed && continuousLayout == scheduledLayout)
+				try
 				{
-					RebuildContinuousLayout(anchor);
+					if (PageLayout == PageLayoutMode.Continuous && !IsDisposed && continuousLayout == scheduledLayout)
+					{
+						RebuildContinuousLayout(continuousLayoutRebuildAnchor);
+					}
+				}
+				finally
+				{
+					continuousViewportRestorePending = false;
 				}
 			};
 			if (!IsHandleCreated)
@@ -1619,6 +1660,7 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			catch (InvalidOperationException)
 			{
 				continuousLayoutRebuildPending = false;
+				continuousViewportRestorePending = false;
 			}
 		}
 
@@ -1916,7 +1958,10 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			{
 				return;
 			}
-			continuousViewportAnchor = layout.CaptureAnchor(source.Top);
+			if (!continuousViewportRestorePending)
+			{
+				continuousViewportAnchor = layout.CaptureAnchor(source.Top);
+			}
 			float destinationScaleX = (float)destination.Width / source.Width;
 			float destinationScaleY = (float)destination.Height / source.Height;
 			List<int> visiblePages = new List<int>();
@@ -2285,12 +2330,38 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		protected override void OnPageDisplayModeChanged()
 		{
-			base.OnPageDisplayModeChanged();
-			if (PageLayout == PageLayoutMode.Continuous && continuousLayout != null && continuousLayoutPreservesSourceSize != (base.ImageFitMode == ImageFitMode.Original))
+			bool continuous = PageLayout == PageLayoutMode.Continuous && continuousLayout != null;
+			bool fitSettingsChanged = continuous && (continuousImageFitMode != base.ImageFitMode || continuousFitOnlyIfOversized != base.ImageFitOnlyIfOversized);
+			ContinuousPageLayout.Anchor anchor = fitSettingsChanged ? continuousViewportAnchor : default;
+			if (fitSettingsChanged)
 			{
-				ScheduleContinuousLayoutRebuild(continuousViewportAnchor);
+				continuousFitResetPending = false;
+				continuousViewportRestorePending = true;
 			}
-			if (PageLayout == PageLayoutMode.Continuous && continuousLayout != null)
+			if (continuous)
+			{
+				continuousImageFitMode = base.ImageFitMode;
+				continuousFitOnlyIfOversized = base.ImageFitOnlyIfOversized;
+			}
+			base.OnPageDisplayModeChanged();
+			if (fitSettingsChanged && PageLayout == PageLayoutMode.Continuous && continuousLayout != null)
+			{
+				RebuildContinuousLayout(anchor, centerHorizontally: true);
+				// ImageDisplayControl clears the visible part after this callback. If
+				// that would move the viewport, replace the reset synchronously in
+				// OnVisiblePartChanged so the page-start frame is never rendered.
+				continuousFitResetPending = base.ImageVisiblePart != Display.GetBestPartFit(ImagePartInfo.Empty);
+				if (!continuousFitResetPending)
+				{
+					continuousViewportRestorePending = continuousLayoutRebuildPending;
+				}
+			}
+			else if (fitSettingsChanged)
+			{
+				continuousFitResetPending = false;
+				continuousViewportRestorePending = false;
+			}
+			else if (PageLayout == PageLayoutMode.Continuous && continuousLayout != null && !continuousViewportRestorePending)
 			{
 				Rectangle viewport = base.PagePartBounds;
 				int centeredLeft = ResolveContinuousHorizontalAnchor(0L);
@@ -2304,13 +2375,25 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		protected override void OnVisiblePartChanged()
 		{
-			base.OnVisiblePartChanged();
-			if (PageLayout == PageLayoutMode.Continuous && continuousLayout != null)
+			if (continuousFitResetPending)
 			{
-				ContinuousPageLayout.PageEntry page = continuousLayout.HitTest(base.PagePartBounds.Top);
+				continuousFitResetPending = false;
+				if (PageLayout == PageLayoutMode.Continuous && continuousLayout != null)
+				{
+					int y = continuousLayout.ResolveAnchor(continuousViewportAnchor);
+					base.ImageVisiblePart = new ImagePartInfo(0, ResolveContinuousHorizontalAnchor(0L), y);
+					continuousViewportRestorePending = continuousLayoutRebuildPending;
+					return;
+				}
+				continuousViewportRestorePending = false;
+			}
+			base.OnVisiblePartChanged();
+			if (PageLayout == PageLayoutMode.Continuous && !continuousViewportRestorePending && TryGetContinuousViewport(out Rectangle viewport))
+			{
+				ContinuousPageLayout.PageEntry page = continuousLayout.HitTest(viewport.Top);
 				if (page != null)
 				{
-					continuousViewportAnchor = continuousLayout.CaptureAnchor(base.PagePartBounds.Top);
+					continuousViewportAnchor = continuousLayout.CaptureAnchor(viewport.Top);
 					if (!continuousNavigationSync && Book != null && page.Page != CurrentPage)
 					{
 						continuousNavigationSync = true;
@@ -2330,8 +2413,12 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 
 		protected override void OnResize(EventArgs e)
 		{
-			ContinuousPageLayout.Anchor anchor = CaptureContinuousViewportAnchor();
 			bool restoreContinuousAnchor = PageLayout == PageLayoutMode.Continuous && continuousLayout != null;
+			ContinuousPageLayout.Anchor anchor = restoreContinuousAnchor ? continuousViewportAnchor : default;
+			if (restoreContinuousAnchor)
+			{
+				continuousViewportRestorePending = true;
+			}
 			base.OnResize(e);
 			navigationOverlay.Size = CalcNavigationOverlaySize();
 			if (navigationOverlay.Visible)
@@ -2340,10 +2427,16 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 				navigationOverlay.X = (base.ClientRectangle.Width - navigationOverlay.Width) / 2;
 			}
 			UpdatePartOverlay(always: true);
-			if (restoreContinuousAnchor && continuousLayout != null)
+			if (restoreContinuousAnchor && TryGetContinuousViewport(out _))
 			{
 				int y = continuousLayout.ResolveAnchor(anchor);
+				continuousViewportAnchor = continuousLayout.CaptureAnchor(y);
 				base.ImageVisiblePart = new ImagePartInfo(0, ResolveContinuousHorizontalAnchor(0L), y);
+				continuousViewportRestorePending = continuousLayoutRebuildPending;
+			}
+			else if (!restoreContinuousAnchor)
+			{
+				continuousViewportRestorePending = false;
 			}
 		}
 
@@ -2474,7 +2567,9 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 				imageDisplayMode = ImageFitMode.FitWidth;
 				fitOnlyIfOversized = true;
 			}
-			return new DisplayOutputConfig(config.ViewSize, config.ImageSize, imageDisplayMode, fitOnlyIfOversized, config.RightToLeftReadingMode, config.RightToLeftReading, config.Part, config.ImageZoom, config.ImageZoom, ImageRotation.None, twoPageAutoScroll: false);
+			// RTL still controls page navigation, but a vertical strip must not mirror
+			// its horizontal viewport.
+			return new DisplayOutputConfig(config.ViewSize, config.ImageSize, imageDisplayMode, fitOnlyIfOversized, config.RightToLeftReadingMode, rightToLeftReading: false, config.Part, config.ImageZoom, config.ImageZoom, ImageRotation.None, twoPageAutoScroll: false);
 		}
 
 		protected override Size GetImageSize()

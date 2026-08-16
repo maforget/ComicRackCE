@@ -58,20 +58,20 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 		}
 
 		/// <summary>
-		/// A stable page-plus-pixel position that can be carried across a layout
-		/// rebuild.  Offset is relative to the rendered top of the page.
+		/// A stable page-plus-relative-position anchor that can be carried across a
+		/// layout rebuild, even when the page's rendered height changes.
 		/// </summary>
 		public readonly struct Anchor
 		{
-			public Anchor(int page, int offset)
+			public Anchor(int page, double relativeOffset)
 			{
 				Page = page;
-				Offset = offset;
+				RelativeOffset = double.IsNaN(relativeOffset) ? 0d : Math.Max(0d, Math.Min(relativeOffset, 1d));
 			}
 
 			public int Page { get; }
 
-			public int Offset { get; }
+			public double RelativeOffset { get; }
 		}
 
 		private readonly List<PageEntry> pages;
@@ -247,14 +247,15 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 				coordinate = totalHeight - 1L;
 			}
 
-			long offset = Clamp(coordinate - page.Top, 0L, page.Height);
-			return new Anchor(page.Page, ClampToInt(offset));
+			long offset = Clamp(coordinate - page.Top, 0L, Math.Max(0L, page.Height - 1L));
+			double relativeOffset = page.Height > 0L ? (double)offset / page.Height : 0d;
+			return new Anchor(page.Page, relativeOffset);
 		}
 
 		/// <summary>
 		/// Resolves an anchor to a clamped virtual y coordinate.  If the anchored
 		/// page is unavailable, the nearest available page by page number is used;
-		/// offsets are clamped to that page's rendered height.
+		/// relative positions are clamped within that page's rendered height.
 		/// </summary>
 		public int ResolveAnchor(Anchor anchor)
 		{
@@ -264,7 +265,8 @@ namespace cYo.Projects.ComicRack.Engine.Display.Forms
 			}
 
 			PageEntry page = FindPage(anchor.Page);
-			long offset = Clamp(anchor.Offset, 0L, page.Height);
+			long offset = (long)(anchor.RelativeOffset * page.Height);
+			offset = Clamp(offset, 0L, Math.Max(0L, page.Height - 1L));
 			long coordinate = SaturatingAdd(page.Top, offset);
 			if (totalHeight > 0L)
 			{
