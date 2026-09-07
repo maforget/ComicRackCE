@@ -805,14 +805,16 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
             PageViewItem secondPage = (reversed ? selectedPages[0] : selectedPages[^1]);
 
 			//Get the bitmaps and merge them
-			int firstImageIndex = firstPage.ImageIndex;
-			Bitmap firstImage = book.GetImage(firstImageIndex);
+			// Use ImageIndex here because GetImage uses the archive index and not the current page, which could have been reordered.
+			// Normally calls to GetImage will use PageKey/ThumbnailKey Index which already translates to the proper ImageIndex.
+			Bitmap firstImage = book.GetImage(firstPage.ImageIndex);
 			Bitmap secondImage = book.GetImage(secondPage.ImageIndex);
             Bitmap mergedImage = BitmapExtensions.Merge(firstImage, secondImage);
 
-            //Get the PageKey (includes color ajustements) & ThumbnailKey for future reference
-            PageKey pageKey = Book.GetPageKey(firstImageIndex);
-			ThumbnailKey thumbKey = Book.GetThumbnailKey(firstImageIndex);
+			//Get the PageKey (includes color ajustements) & ThumbnailKey for future reference
+			// This requires using Index and not ImageIndex. It will automatically translate to the proper ImageIndex.
+			PageKey pageKey = Book.GetPageKey(firstPage.Index);
+			ThumbnailKey thumbKey = Book.GetThumbnailKey(firstPage.Index);
 
 			//Remove the original cached version 
             Program.ImagePool.Pages.RefreshImage(pageKey);
