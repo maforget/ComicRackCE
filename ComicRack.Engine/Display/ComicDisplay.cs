@@ -1332,6 +1332,14 @@ namespace cYo.Projects.ComicRack.Engine.Display
 			}
 		}
 
+		public void GoToPage(int page)
+		{
+			if (IsValid && page >= 0 && page < Book.Comic.PageCount)
+			{
+				Book.Navigate(page, PageSeekOrigin.Absolute);
+			}
+		}
+
 		public void ScrollLeft(float lines)
 		{
 			if (!EatScrolling())
