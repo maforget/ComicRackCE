@@ -1607,6 +1607,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				CommandKey.FlickLeft
 			}));
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miLastPage.Image, "MoveToLastPage", group, "Last Page", ComicDisplay.DisplayLastPage, CommandKey.End | CommandKey.Ctrl, CommandKey.GestureDouble3));
+			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miGoToPage.Image, "GoToPage", group, "Go To Page", GoToPage));
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miPrevBookmark.Image, "MoveToPrevBookmark", group, "Previous Bookmark", ComicDisplay.DisplayPreviousBookmarkedPage, CommandKey.PageUp | CommandKey.Ctrl));
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miNextBookmark.Image, "MoveToNextBookmark", group, "Next Bookmark", ComicDisplay.DisplayNextBookmarkedPage, CommandKey.PageDown | CommandKey.Ctrl));
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miPrevTab.Image, "PrevTab", group, "Previous Tab", OpenBooks.PreviousSlot, CommandKey.Tab | CommandKey.Shift));
