@@ -318,6 +318,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.tbLastPage = new System.Windows.Forms.ToolStripMenuItem();
 			this.tbNextBookmark = new System.Windows.Forms.ToolStripMenuItem();
 			this.tbLastPageRead = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbGoToPage = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem28 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripMenuItem49 = new System.Windows.Forms.ToolStripSeparator();
 			this.tbNextFromList = new System.Windows.Forms.ToolStripMenuItem();
@@ -2675,6 +2676,7 @@ namespace cYo.Projects.ComicRack.Viewer
             this.tbLastPage,
             this.tbNextBookmark,
             this.tbLastPageRead,
+            this.tbGoToPage,
             this.toolStripMenuItem28,
             this.toolStripMenuItem49,
             this.tbNextFromList,
@@ -2712,6 +2714,12 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.tbLastPageRead.Size = new System.Drawing.Size(250, 22);
 			this.tbLastPageRead.Text = "L&ast Page Read";
 			// 
+            // tbGoToPage
+            // 
+            this.tbGoToPage.Name = "tbGoToPage";
+            this.tbGoToPage.Size = new System.Drawing.Size(249, 22);
+            this.tbGoToPage.Text = "&Go To Page...";
+            // 
 			// toolStripMenuItem28
 			// 
 			this.toolStripMenuItem28.Name = "toolStripMenuItem28";
@@ -3872,5 +3880,6 @@ namespace cYo.Projects.ComicRack.Viewer
 		private ToolStripMenuItem miCheckUpdate;
 		private ToolStripMenuItem miCacheThumbnails;
 		private ToolStripMenuItem tbCacheThumbnails;
+		private ToolStripMenuItem tbGoToPage;
 	}
 }
