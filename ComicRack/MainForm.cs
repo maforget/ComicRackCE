@@ -1310,7 +1310,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			commands.Add(SetBookmark, SetBookmarkAvailable, miSetBookmark, tbSetBookmark, cmSetBookmark);
 			commands.Add(RemoveBookmark, RemoveBookmarkAvailable, miRemoveBookmark, tbRemoveBookmark, cmRemoveBookmark);
 			commands.Add(ComicDisplay.DisplayLastPageRead, () => ComicDisplay.Book != null && ComicDisplay.Book.CurrentPage != ComicDisplay.Book.Comic.LastPageRead, miLastPageRead, tbLastPageRead, cmLastPageRead);
-			commands.Add(GoToPage, () => ComicDisplay.Book != null, tbGoToPage);
+			commands.Add(GoToPage, () => ComicDisplay.Book != null, miGoToPage, tbGoToPage);
 			commands.Add(OpenBooks.PreviousSlot, () => OpenBooks.Slots.Count > 1, miPrevTab);
 			commands.Add(OpenBooks.NextSlot, () => OpenBooks.Slots.Count > 1, miNextTab);
 			commands.AddService(this, (ILibraryBrowser s) =>

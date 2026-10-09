@@ -411,6 +411,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.mainView = new cYo.Projects.ComicRack.Viewer.Views.MainView();
 			this.updateActivityTimer = new System.Windows.Forms.Timer(this.components);
 			this.miCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
+			this.miGoToPage = new System.Windows.Forms.ToolStripMenuItem();
 			this.mainMenuStrip.SuspendLayout();
 			this.contextRating.SuspendLayout();
 			this.statusStrip.SuspendLayout();
@@ -1162,6 +1163,7 @@ namespace cYo.Projects.ComicRack.Viewer
             this.miPrevPage,
             this.miNextPage,
             this.miLastPage,
+            this.miGoToPage,
             this.toolStripMenuItem18,
             this.miPrevFromList,
             this.miNextFromList,
@@ -3488,6 +3490,12 @@ namespace cYo.Projects.ComicRack.Viewer
 			this.miCheckUpdate.Size = new System.Drawing.Size(256, 22);
 			this.miCheckUpdate.Text = "Check For Update...";
 			// 
+			// miGoToPage
+			// 
+			this.miGoToPage.Name = "miGoToPage";
+            this.miGoToPage.Size = new System.Drawing.Size(287, 22);
+            this.miGoToPage.Text = "Go To Page...";
+            // 
 			// MainForm
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -3881,5 +3889,6 @@ namespace cYo.Projects.ComicRack.Viewer
 		private ToolStripMenuItem miCacheThumbnails;
 		private ToolStripMenuItem tbCacheThumbnails;
 		private ToolStripMenuItem tbGoToPage;
+		private ToolStripMenuItem miGoToPage;
 	}
 }
