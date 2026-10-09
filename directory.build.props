@@ -2,6 +2,7 @@
  <PropertyGroup>
     <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
 	<LangVersion>14.0</LangVersion>
+	<Platform>AnyCPU</Platform>
  </PropertyGroup>
      <ItemGroup>
         <PackageReference Include="PolySharp">
