@@ -2187,7 +2187,7 @@ namespace cYo.Projects.ComicRack.Viewer
 		private void GoToPage()
 		{
 			int currentPage = ComicDisplay.CurrentPage + 1;
-			int page = SelectItemDialog.GetName<int>(this, TR.Messages["GoToPage", "Enter the page number to go to:"], currentPage, null, StringUtility.Format(TR.Messages["TotalPages", "Total Pages: {0}"], ComicDisplay.Book.Comic.PageCount));
+			int page = SelectItemDialog.GetName<int>(this, TR.Messages["GoToPage", "Enter the page number to go to:"], currentPage, null, StringUtility.Format(TR.Messages["TotalPages", "{0} total pages"], ComicDisplay.Book.Comic.PageCount));
 
 			if (page > 0 && page <= ComicDisplay.Book.Comic.PageCount && page != currentPage)
 			{
