@@ -35,7 +35,7 @@ jobs:
       run: nuget restore ComicRack.sln
 
     - name: Build solution
-      run: msbuild ComicRack\ComicRack.csproj -t:rebuild -property:Configuration=Release
+      run: msbuild ComicRack\ComicRack.csproj -t:rebuild -property:Configuration=Release -property:Platform=AnyCPU
 
     - name: Upload artifacts
       id: upload

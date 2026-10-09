@@ -37,7 +37,7 @@ jobs:
       run: nuget restore ComicRack.sln
 
     - name: Build solution
-      run: msbuild ComicRack\ComicRack.csproj -t:rebuild -property:Configuration=Release
+      run: msbuild ComicRack\ComicRack.csproj -t:rebuild -property:Configuration=Release -property:Platform=AnyCPU
 
     - name: Package Files
       run: powershell Compress-Archive -Path 'ComicRack\bin\Release\net48\*' -DestinationPath 'ComicRackCE_nightly.zip' -Force
