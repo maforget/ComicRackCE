@@ -2182,6 +2182,18 @@ namespace cYo.Projects.ComicRack.Viewer
 			return !string.IsNullOrEmpty(GetBookmarkEditor().Bookmark);
 		}
 
+		private void GoToPage()
+		{
+			int currentPage = ComicDisplay.CurrentPage + 1;
+			int page = SelectItemDialog.GetName<int>(this, TR.Messages["GoToPage", "Enter the page number to go to:"], currentPage, null, StringUtility.Format(TR.Messages["TotalPages", "Total Pages: {0}"], ComicDisplay.Book.Comic.PageCount));
+
+			if (page > 0 && page <= ComicDisplay.Book.Comic.PageCount && page != currentPage)
+			{
+				int gotoPage = page - 1;
+				ComicDisplay.GoToPage(gotoPage);
+			}
+		}
+
 		public void ExportImage(string name, Image image)
 		{
 			using (SaveFileDialog saveFileDialog = new SaveFileDialog())
