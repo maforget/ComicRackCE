@@ -219,9 +219,9 @@ namespace cYo.Common.Windows.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = SystemColors.Window;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.text);
-            this.Controls.Add(this.lbCheckList);
             this.Controls.Add(this.listPanel);
+            this.Controls.Add(this.lbCheckList);
+            this.Controls.Add(this.text);
             this.Controls.Add(this.btLists);
             this.Controls.Add(this.btCheck);
             this.Controls.Add(this.btText);
