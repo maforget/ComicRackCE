@@ -103,6 +103,16 @@ namespace cYo.Common.Windows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap DarkSmallCloseGray {
+            get {
+                object obj = ResourceManager.GetObject("DarkSmallCloseGray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap DarkSortDown {
             get {
                 object obj = ResourceManager.GetObject("DarkSortDown", resourceCulture);
@@ -186,6 +196,16 @@ namespace cYo.Common.Windows.Properties {
         public static System.Drawing.Bitmap SmallArrowDown {
             get {
                 object obj = ResourceManager.GetObject("SmallArrowDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap SmallCloseGray {
+            get {
+                object obj = ResourceManager.GetObject("SmallCloseGray", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

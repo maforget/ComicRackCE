@@ -21,6 +21,8 @@ namespace cYo.Common.Windows.Forms
 
 		private HashSet<string> pool;
 
+		private HashSet<string> currentPool;
+
 		private int tab;
 
 		private bool noUpdate;
@@ -40,6 +42,20 @@ namespace cYo.Common.Windows.Forms
 			set
 			{
 				pool = value;
+				currentPool = value;
+				OnPoolChanged();
+			}
+		}
+
+		public HashSet<string> CurrentPool
+		{
+			get
+			{
+				return currentPool;
+			}
+			set
+			{
+				currentPool = value;
 				OnPoolChanged();
 			}
 		}
@@ -55,30 +71,30 @@ namespace cYo.Common.Windows.Forms
 				tab = (lastTab = value);
 				switch (tab)
 				{
-				default:
-					btLists.BackColor = SystemColors.Control;
-					btCheck.BackColor = SystemColors.Window;
-					btText.BackColor = SystemColors.Window;
-					listPanel.Visible = true;
-					lbCheckList.Visible = false;
-					text.Visible = false;
-					break;
-				case 1:
-					btLists.BackColor = SystemColors.Window;
-					btCheck.BackColor = SystemColors.Control;
-					btText.BackColor = SystemColors.Window;
-					listPanel.Visible = false;
-					lbCheckList.Visible = true;
-					text.Visible = false;
-					break;
-				case 2:
-					btLists.BackColor = SystemColors.Window;
-					btCheck.BackColor = SystemColors.Window;
-					btText.BackColor = SystemColors.Control;
-					listPanel.Visible = false;
-					lbCheckList.Visible = false;
-					text.Visible = true;
-					break;
+					default:
+						btLists.BackColor = SystemColors.Control;
+						btCheck.BackColor = SystemColors.Window;
+						btText.BackColor = SystemColors.Window;
+						listPanel.Visible = true;
+						lbCheckList.Visible = false;
+						text.Visible = false;
+						break;
+					case 1:
+						btLists.BackColor = SystemColors.Window;
+						btCheck.BackColor = SystemColors.Control;
+						btText.BackColor = SystemColors.Window;
+						listPanel.Visible = false;
+						lbCheckList.Visible = true;
+						text.Visible = false;
+						break;
+					case 2:
+						btLists.BackColor = SystemColors.Window;
+						btCheck.BackColor = SystemColors.Window;
+						btText.BackColor = SystemColors.Control;
+						listPanel.Visible = false;
+						lbCheckList.Visible = false;
+						text.Visible = true;
+						break;
 				}
 			}
 		}
@@ -108,6 +124,7 @@ namespace cYo.Common.Windows.Forms
 			}
 			Tab = lastTab;
 			LocalizeUtility.Localize(this, null);
+			quickSearch.SetCueText(LocalizeUtility.GetText(this, "QuickSearchCueText", "Search..."));
 		}
 
 		private void RegisterSearch(IEnumerable<INetSearch> search)
@@ -121,13 +138,13 @@ namespace cYo.Common.Windows.Forms
 		private void OnPoolChanged()
 		{
 			HashSet<string> hashSet = Text.ListStringToSet(',');
-			if (pool == null)
+			if (currentPool == null)
 			{
-				pool = new HashSet<string>(hashSet);
+				currentPool = new HashSet<string>(hashSet);
 			}
 			else
 			{
-				pool.RemoveRange(hashSet);
+				currentPool.RemoveRange(hashSet);
 			}
 			lbOwn.BeginUpdate();
 			lbPool.BeginUpdate();
@@ -136,10 +153,10 @@ namespace cYo.Common.Windows.Forms
 			lbPool.Items.Clear();
 			lbCheckList.Items.Clear();
 			lbOwn.Items.AddRange(hashSet.ToArray());
-			lbPool.Items.AddRange(pool.ToArray());
+			lbPool.Items.AddRange(currentPool.ToArray());
 			lbCheckList.Items.AddRange(hashSet.ToArray());
 			CheckAll(lbCheckList, state: true);
-			lbCheckList.Items.AddRange(pool.ToArray());
+			lbCheckList.Items.AddRange(currentPool.ToArray());
 			lbOwn.EndUpdate();
 			lbPool.EndUpdate();
 			lbCheckList.EndUpdate();
@@ -275,6 +292,15 @@ namespace cYo.Common.Windows.Forms
 		{
 			text.Text = GetListboxItems(lbOwn, ", ");
 			Tab = 2;
+		}
+
+		private void quickSearch_TextChanged(object sender, EventArgs e)
+		{
+			string searchText = quickSearch.Text.Trim();
+			if (string.IsNullOrEmpty(searchText))
+				CurrentPool = pool;
+			else
+				CurrentPool = pool.Where(s => s.Contains(searchText, StringComparison.OrdinalIgnoreCase)).ToHashSet();
 		}
 
 		private void CheckAll(CheckedListBox clb, bool state)
@@ -458,7 +484,7 @@ namespace cYo.Common.Windows.Forms
 				value = ((IPromptText)textBox).Text;
 			}
 			ls.Text = value;
-			ls.Pool = SetFromAutoComplete(textBox);
+			ls.Pool = SetFromAutoComplete(textBox); // sets the pool & the current pool from the AutoCompleteCustomSource of the textbox
 			ls.RegisterSearch(search);
 			Popup popup = new Popup(ls, autoDispose: true)
 			{
