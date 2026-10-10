@@ -792,6 +792,8 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 
         private void MergePages()
         {
+			//BUG: When merging page via the ComicBookDialog and cancelling the dialog, the pages marked as deleted are restored, but the ImagePool still has the merged image.
+
 			//If any other quantity than 2 or any of the pages are marked as Deleted, abort
 			List<PageViewItem> selectedPages = itemView.SelectedItems.Cast<PageViewItem>().ToList();
             if (selectedPages?.Count() != 2 && selectedPages.Any((PageViewItem p) => p.PageInfo.PageType == ComicPageType.Deleted))
@@ -804,25 +806,26 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
             PageViewItem firstPage = (reversed ? selectedPages[^1] : selectedPages[0]);
             PageViewItem secondPage = (reversed ? selectedPages[0] : selectedPages[^1]);
 
-			//Get the bitmaps and merge them
-			// Use ImageIndex here because GetImage uses the archive index and not the current page, which could have been reordered.
-			// Normally calls to GetImage will use PageKey/ThumbnailKey Index which already translates to the proper ImageIndex.
-			Bitmap firstImage = book.GetImage(firstPage.ImageIndex);
-			Bitmap secondImage = book.GetImage(secondPage.ImageIndex);
+			// Get the PageKey and ThumbnailKey for the first and second page
+			// GetPageKey/GetThumbnailKey translates the page to the proper ImageIndex of the archive, since it could have been reordered.
+			PageKey firstPageKey = Book.GetPageKey(firstPage.Page);
+			PageKey secondPageKey = Book.GetPageKey(secondPage.Page);
+			ThumbnailKey firstThumbnailKey = Book.GetThumbnailKey(firstPage.Page); // Only need the first thumbnail key since the second page will be marked as deleted and won't be used anymore.
+
+			// Get the bitmaps and merge them
+			// GetImage uses the archive index and not the current page, so using a PageKey.Index since it correctly matches the correct archive index.
+			// Or you could use the PageViewItem.ImageIndex, but since we need the PageKey for the ImagePool anyway, we might as well use it to get the image.
+			Bitmap firstImage = book.GetImage(firstPageKey.Index);
+			Bitmap secondImage = book.GetImage(secondPageKey.Index);
             Bitmap mergedImage = BitmapExtensions.Merge(firstImage, secondImage);
 
-			//Get the PageKey (includes color ajustements) & ThumbnailKey for future reference
-			// This requires using Index and not ImageIndex. It will automatically translate to the proper ImageIndex.
-			PageKey pageKey = Book.GetPageKey(firstPage.Index);
-			ThumbnailKey thumbKey = Book.GetThumbnailKey(firstPage.Index);
-
 			//Remove the original cached version 
-            Program.ImagePool.Pages.RefreshImage(pageKey);
-            Program.ImagePool.Thumbs.RefreshImage(thumbKey);
+            Program.ImagePool.Pages.RefreshImage(firstPageKey);
+            Program.ImagePool.Thumbs.RefreshImage(firstThumbnailKey);
 
             //Add pages to the ImagePool because if they aren't the Export will retrieve the original image instead
-            using IItemLock<PageImage> itemLock = Program.ImagePool.Pages.AddImage(pageKey, p => PageImage.CreateFromMerged(mergedImage));
-            using IItemLock<ThumbnailImage> itemLock2 = Program.ImagePool.Thumbs.AddImage(thumbKey, p => ThumbnailImage.CreateFrom(mergedImage, mergedImage.Size));
+            using IItemLock<PageImage> itemLock = Program.ImagePool.Pages.AddImage(firstPageKey, p => PageImage.CreateFromMerged(mergedImage));
+            using IItemLock<ThumbnailImage> itemLock2 = Program.ImagePool.Thumbs.AddImage(firstThumbnailKey, p => ThumbnailImage.CreateFrom(mergedImage, mergedImage.Size));
 
 			//Mark the second image as Deleted
 			secondPage.SetPageType(ComicPageType.Deleted);
