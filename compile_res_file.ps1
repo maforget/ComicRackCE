@@ -85,17 +85,14 @@ function Find-RcExe {
     }
 
     # Run VsDevCmd.bat in a cmd.exe subshell (it's a batch file that mutates
-    # env vars) and ask that same shell where rc.exe ended up, then capture
-    # the single resulting path back into PowerShell.
-    $cmdLine = "`"$vsDevCmd`" -arch=$Arch -no_logo && where rc.exe"
-    $result = & cmd.exe /c $cmdLine 2>$null
-
-    $rcPath = $result | Where-Object { $_ -match '\\rc\.exe$' } | Select-Object -First 1
-    if (-not $rcPath -or -not (Test-Path $rcPath)) {
-        throw "rc.exe not found after running VsDevCmd.bat."
-    }
-
-    return $rcPath
+    # env vars) and set the env vars for the process.
+	$envDump = & cmd.exe /c "`"$vsDevCmd`" -arch=$Arch -no_logo && set"
+	foreach ($line in $envDump) {
+		if ($line -match '^([^=]+)=(.*)$') {
+			Set-Item -Path "Env:$($Matches[1])" -Value $Matches[2]
+		}
+	}
+	return (Get-Command rc.exe).Source
 }
 
 $rcExe = Find-RcExe

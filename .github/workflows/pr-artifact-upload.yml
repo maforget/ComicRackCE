@@ -25,9 +25,6 @@ jobs:
     - name: setup-msbuild
       uses: microsoft/setup-msbuild@v3
 
-    - name: Setup MSVC Dev Cmd
-      uses: ilammy/msvc-dev-cmd@v1
-
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v4
 
