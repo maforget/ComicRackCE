@@ -87,4 +87,7 @@ jobs:
             | Commit   | ${{ env.HEAD_SHA }}     |
             | Logs     | ${{ env.JOB_PATH }}     |
             | Download | ${{ env.ARTIFACT_URL }} |
+
+            > [!WARNING]
+            > Using this test build will prevent you from receiving notifications when a new update is released. 
             
