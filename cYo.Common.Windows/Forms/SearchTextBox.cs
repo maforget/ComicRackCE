@@ -188,6 +188,7 @@ namespace cYo.Common.Windows.Forms
 		{
 			Text = textBox.Text;
 			clearButton.Visible = !string.IsNullOrEmpty(Text);
+			PerformLayout(); // Force layout update to ensure the clear button visibility when pasting text into the textbox. This is necessary because the TextChanged event can be triggered by pasting text, which may not immediately update the layout.
 		}
 
 		private void textBox_KeyDown(object sender, KeyEventArgs e)
