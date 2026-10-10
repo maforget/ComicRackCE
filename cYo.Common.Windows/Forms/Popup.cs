@@ -14,6 +14,54 @@ namespace cYo.Common.Windows.Forms
 	[ToolboxItem(false)]
 	public class Popup : ToolStripDropDown
 	{
+		private class OutsideClickFilter : IMessageFilter
+		{
+			private const int WM_LBUTTONDOWN = 0x0201;
+			private const int WM_RBUTTONDOWN = 0x0204;
+			private const int WM_MBUTTONDOWN = 0x0207;
+			private const int WM_NCLBUTTONDOWN = 0x00A1;
+			private const int WM_NCRBUTTONDOWN = 0x00A4;
+
+			private readonly Popup popup;
+			public OutsideClickFilter(Popup popup) => this.popup = popup;
+
+			public bool PreFilterMessage(ref Message m)
+			{
+				if (m.Msg != WM_LBUTTONDOWN && m.Msg != WM_RBUTTONDOWN && m.Msg != WM_MBUTTONDOWN &&
+					m.Msg != WM_NCLBUTTONDOWN && m.Msg != WM_NCRBUTTONDOWN)
+					return false;
+
+				if (!popup.Visible)
+					return false;
+
+				// Ignore native windows we don't own as Controls (e.g. the AutoComplete list)
+				Control c = Control.FromHandle(m.HWnd);
+				if (c == null)
+					return false;
+
+				// Ignore clicks inside the popup itself
+				if (c == popup || popup.Contains(c))
+					return false;
+
+				// Ignore clicks in drop-downs owned by the popup (e.g. the search button's menu)
+				if (c is ToolStripDropDown dd)
+				{
+					ToolStrip owner = dd;
+					while (owner is ToolStripDropDown d && d.OwnerItem != null)
+						owner = d.OwnerItem.Owner;
+					if (owner == popup)
+						return false;
+				}
+
+				if (!popup.Bounds.Contains(Cursor.Position))
+					popup.Close(ToolStripDropDownCloseReason.AppClicked);
+
+				return false; // let the click go through, like normal dropdown behavior
+			}
+		}
+
+		private OutsideClickFilter clickFilter;
+
 		[Flags]
 		public enum PopupAnimations
 		{
@@ -486,10 +534,17 @@ namespace cYo.Common.Windows.Forms
 				content.Focus();
 			}
 			base.OnOpened(e);
+			clickFilter = new OutsideClickFilter(this);
+			Application.AddMessageFilter(clickFilter);
 		}
 
 		protected override void OnClosed(ToolStripDropDownClosedEventArgs e)
 		{
+			if (clickFilter != null)
+			{
+				Application.RemoveMessageFilter(clickFilter);
+				clickFilter = null;
+			}
 			if (ownerPopup != null)
 			{
 				ownerPopup._resizable = true;
