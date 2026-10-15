@@ -1310,6 +1310,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			commands.Add(SetBookmark, SetBookmarkAvailable, miSetBookmark, tbSetBookmark, cmSetBookmark);
 			commands.Add(RemoveBookmark, RemoveBookmarkAvailable, miRemoveBookmark, tbRemoveBookmark, cmRemoveBookmark);
 			commands.Add(ComicDisplay.DisplayLastPageRead, () => ComicDisplay.Book != null && ComicDisplay.Book.CurrentPage != ComicDisplay.Book.Comic.LastPageRead, miLastPageRead, tbLastPageRead, cmLastPageRead);
+			commands.Add(GoToPage, () => ComicDisplay.Book != null, miGoToPage, tbGoToPage);
 			commands.Add(OpenBooks.PreviousSlot, () => OpenBooks.Slots.Count > 1, miPrevTab);
 			commands.Add(OpenBooks.NextSlot, () => OpenBooks.Slots.Count > 1, miNextTab);
 			commands.AddService(this, (ILibraryBrowser s) =>
@@ -1606,6 +1607,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				CommandKey.FlickLeft
 			}));
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miLastPage.Image, "MoveToLastPage", group, "Last Page", ComicDisplay.DisplayLastPage, CommandKey.End | CommandKey.Ctrl, CommandKey.GestureDouble3));
+			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miGoToPage.Image, "GoToPage", group, "Go To Page", GoToPage));
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miPrevBookmark.Image, "MoveToPrevBookmark", group, "Previous Bookmark", ComicDisplay.DisplayPreviousBookmarkedPage, CommandKey.PageUp | CommandKey.Ctrl));
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miNextBookmark.Image, "MoveToNextBookmark", group, "Next Bookmark", ComicDisplay.DisplayNextBookmarkedPage, CommandKey.PageDown | CommandKey.Ctrl));
 			ComicDisplay.KeyboardMap.Commands.Add(new KeyboardCommand(miPrevTab.Image, "PrevTab", group, "Previous Tab", OpenBooks.PreviousSlot, CommandKey.Tab | CommandKey.Shift));
@@ -2180,6 +2182,18 @@ namespace cYo.Projects.ComicRack.Viewer
 		private bool RemoveBookmarkAvailable()
 		{
 			return !string.IsNullOrEmpty(GetBookmarkEditor().Bookmark);
+		}
+
+		private void GoToPage()
+		{
+			int currentPage = ComicDisplay.CurrentPage + 1;
+			int page = SelectItemDialog.GetName<int>(this, TR.Messages["GoToPage", "Enter the page number to go to:"], currentPage, null, StringUtility.Format(TR.Messages["TotalPages", "{0} total pages"], ComicDisplay.Book.Comic.PageCount));
+
+			if (page > 0 && page <= ComicDisplay.Book.Comic.PageCount && page != currentPage)
+			{
+				int gotoPage = page - 1;
+				ComicDisplay.GoToPage(gotoPage);
+			}
 		}
 
 		public void ExportImage(string name, Image image)

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -142,6 +143,25 @@ namespace cYo.Common.Windows.Forms
 					selectItemDialog.SelectionItems.AddRange(list.Select((T x) => x.ToString()).ToArray());
 				}
 				return selectItemDialog.GetName(parent);
+			}
+		}
+
+		public static T GetName<T>(IWin32Window parent, string caption, T itemValue, IEnumerable<T> list, string itemCaption = null, Func<IWin32Window, string> browseAction = null) where T : struct
+		{
+			string result = GetName(parent, caption, itemValue.ToString().Trim(), list, itemCaption, browseAction)?.Trim();
+			if(string.IsNullOrEmpty(result))
+				return itemValue;
+
+			try
+			{
+				//object parsed = (T)Convert.ChangeType(result, typeof(T));  // Alternative approach using Convert.ChangeType
+				TypeConverter converter = TypeDescriptor.GetConverter(typeof(T));
+				object parsed = (T)converter.ConvertFromString(result);
+				return parsed is T value ? value : itemValue;
+			}
+			catch (Exception)
+			{
+				return itemValue;
 			}
 		}
 

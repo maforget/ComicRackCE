@@ -202,7 +202,9 @@
     <Text Key="tbTools" Text="Outils" Comment="Tools" />
     <Text Key="tbTools.Tooltip" Text="Accéder à commandes importantes" Comment="Access to important commands" />
     <Text Key="tbShowMainMenu" Text="Afficher le menu principal" Comment="Show Main Menu" />
-    <Text Key="tbPrevPage" Text="Page précédente" Comment="&amp;Previous Page" />
+	<Text Key="tbPrevPage" Text="Page précédente" Comment="&amp;Previous Page" />
+	<Text Key="tbGoToPage" Text="Aller à la page..." Comment="&amp;Go To Page..." />
+	<Text Key="miGoToPage" Text="Aller à la page..." Comment="&amp;Go To Page..." />
     <Text Key="miRotate0" Text="&amp;Pas de rotation" Comment="0°" />
     <Text Key="miShowInfo" Text="&amp;Informations..." Comment="&amp;Info..." />
     <Text Key="tbShowInfo" Text="&amp;Informations" Comment="&amp;Info..." />

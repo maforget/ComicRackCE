@@ -67,5 +67,6 @@
     <Text Key="RandomComic" Text="Livre aléatoire" Comment="Random Book" />
     <Text Key="PrevComic" Text="Livre précédent" Comment="Previous Book" />
     <Text Key="ToggleManga" Text="Activer le mode Manga pour cet Livre" Comment="Toggle Manga for Book" />
+	<Text Key="GoToPage" Text="Aller à la page" Comment ="Go To Page" />"
   </Texts>
 </TR>

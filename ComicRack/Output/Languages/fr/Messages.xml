@@ -158,5 +158,7 @@
     <Text Key="ZipFileOption" Text="&amp;Télécharger le fichier zip au lieu du programme d'installation" Comment="&amp;Download zip file instead of installer" />
     <Text Key="SlowThumbnailQueueUnlimitedMessage" Text="Création d'une miniature pour la couverture du fichier '{0}'" Comment="Create thumbnail for cover in file '{0}'" />
     <Text Key="AlreadyExistsInDatabase" Text="Cette opération créerait un doublon dans la base de données. Le fichier de sortie '{0}' existe déjà dans la Bibliothèque." Comment="This operation would result in a duplicate entry in the database, Output file '{0}' already exists in the library" />
+	<Text Key="TotalPages" Text="{0} pages totales" Comment="{0} total pages" />
+	<Text Key="GoToPage" Text="Entrer le numéro de la page à laquelle aller:" Comment="Enter the page number to go to:" />
   </Texts>
 </TR>
