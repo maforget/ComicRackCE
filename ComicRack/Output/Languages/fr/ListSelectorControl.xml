@@ -4,5 +4,6 @@
     <Text Key="btCheck" Text="&amp;Cocher" Comment="&amp;Check" />
     <Text Key="btLists" Text="&amp;Listes" Comment="&amp;Lists" />
     <Text Key="btText" Text="&amp;Texte" Comment="&amp;Text" />
+	<Text Key="QuickSearchCueText" Text="Recherche..." Comment="Search..." />
   </Texts>
 </TR>

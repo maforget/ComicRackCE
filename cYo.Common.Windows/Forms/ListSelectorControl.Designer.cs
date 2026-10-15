@@ -37,6 +37,7 @@ namespace cYo.Common.Windows.Forms
             this.btSelectedToPool = new System.Windows.Forms.Button();
             this.btAllToPool = new System.Windows.Forms.Button();
             this.listPanel = new System.Windows.Forms.Panel();
+            this.quickSearch = new cYo.Common.Windows.Forms.SearchTextBox();
             this.btLists = new System.Windows.Forms.Button();
             this.btCheck = new System.Windows.Forms.Button();
             this.btText = new System.Windows.Forms.Button();
@@ -51,7 +52,7 @@ namespace cYo.Common.Windows.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbOwn.FormattingEnabled = true;
             this.lbOwn.IntegralHeight = false;
-            this.lbOwn.Location = new System.Drawing.Point(0, 0);
+            this.lbOwn.Location = new System.Drawing.Point(0, 25);
             this.lbOwn.MultiColumn = true;
             this.lbOwn.Name = "lbOwn";
             this.lbOwn.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
@@ -69,11 +70,11 @@ namespace cYo.Common.Windows.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPool.FormattingEnabled = true;
             this.lbPool.IntegralHeight = false;
-            this.lbPool.Location = new System.Drawing.Point(0, 101);
+            this.lbPool.Location = new System.Drawing.Point(0, 125);
             this.lbPool.MultiColumn = true;
             this.lbPool.Name = "lbPool";
             this.lbPool.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbPool.Size = new System.Drawing.Size(291, 142);
+            this.lbPool.Size = new System.Drawing.Size(291, 118);
             this.lbPool.Sorted = true;
             this.lbPool.TabIndex = 5;
             this.lbPool.SelectedIndexChanged += new System.EventHandler(this.lbOwn_SelectedIndexChanged);
@@ -83,10 +84,10 @@ namespace cYo.Common.Windows.Forms
             // btAllToOwn
             // 
             this.btAllToOwn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btAllToOwn.Location = new System.Drawing.Point(251, 0);
+            this.btAllToOwn.Location = new System.Drawing.Point(251, 25);
             this.btAllToOwn.Name = "btAllToOwn";
             this.btAllToOwn.Size = new System.Drawing.Size(40, 23);
-            this.btAllToOwn.TabIndex = 1;
+            this.btAllToOwn.TabIndex = 2;
             this.btAllToOwn.Text = "<<";
             this.btAllToOwn.UseVisualStyleBackColor = true;
             this.btAllToOwn.Click += new System.EventHandler(this.btAllToOwn_Click);
@@ -94,10 +95,10 @@ namespace cYo.Common.Windows.Forms
             // btSelectedToOwn
             // 
             this.btSelectedToOwn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSelectedToOwn.Location = new System.Drawing.Point(251, 25);
+            this.btSelectedToOwn.Location = new System.Drawing.Point(251, 49);
             this.btSelectedToOwn.Name = "btSelectedToOwn";
             this.btSelectedToOwn.Size = new System.Drawing.Size(40, 23);
-            this.btSelectedToOwn.TabIndex = 2;
+            this.btSelectedToOwn.TabIndex = 3;
             this.btSelectedToOwn.Text = "<";
             this.btSelectedToOwn.UseVisualStyleBackColor = true;
             this.btSelectedToOwn.Click += new System.EventHandler(this.btSelectedToOwn_Click);
@@ -105,10 +106,10 @@ namespace cYo.Common.Windows.Forms
             // btSelectedToPool
             // 
             this.btSelectedToPool.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSelectedToPool.Location = new System.Drawing.Point(251, 49);
+            this.btSelectedToPool.Location = new System.Drawing.Point(251, 73);
             this.btSelectedToPool.Name = "btSelectedToPool";
             this.btSelectedToPool.Size = new System.Drawing.Size(40, 23);
-            this.btSelectedToPool.TabIndex = 3;
+            this.btSelectedToPool.TabIndex = 4;
             this.btSelectedToPool.Text = ">";
             this.btSelectedToPool.UseVisualStyleBackColor = true;
             this.btSelectedToPool.Click += new System.EventHandler(this.btSelectedToPool_Click);
@@ -116,10 +117,10 @@ namespace cYo.Common.Windows.Forms
             // btAllToPool
             // 
             this.btAllToPool.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btAllToPool.Location = new System.Drawing.Point(251, 73);
+            this.btAllToPool.Location = new System.Drawing.Point(251, 97);
             this.btAllToPool.Name = "btAllToPool";
             this.btAllToPool.Size = new System.Drawing.Size(40, 23);
-            this.btAllToPool.TabIndex = 4;
+            this.btAllToPool.TabIndex = 5;
             this.btAllToPool.Text = ">>";
             this.btAllToPool.UseVisualStyleBackColor = true;
             this.btAllToPool.Click += new System.EventHandler(this.btAllToPool_Click);
@@ -129,6 +130,7 @@ namespace cYo.Common.Windows.Forms
             this.listPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listPanel.Controls.Add(this.quickSearch);
             this.listPanel.Controls.Add(this.lbOwn);
             this.listPanel.Controls.Add(this.btAllToPool);
             this.listPanel.Controls.Add(this.btSelectedToOwn);
@@ -140,17 +142,32 @@ namespace cYo.Common.Windows.Forms
             this.listPanel.Name = "listPanel";
             this.listPanel.Size = new System.Drawing.Size(291, 243);
             this.listPanel.TabIndex = 11;
-            // 
-            // btLists
-            // 
-            this.btLists.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			// 
+			// quickSearch
+			// 
+			this.quickSearch.ClearButtonImage = global::cYo.Common.Windows.Properties.Resources.SmallCloseGray;
+			this.quickSearch.Dock = System.Windows.Forms.DockStyle.Top;
+			this.quickSearch.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+			this.quickSearch.Location = new System.Drawing.Point(0, 0);
+            this.quickSearch.MinimumSize = new System.Drawing.Size(0, 24);
+            this.quickSearch.Name = "quickSearch";
+            this.quickSearch.Padding = new System.Windows.Forms.Padding(0);
+			this.quickSearch.SearchButtonImage = null;
+			this.quickSearch.SearchButtonVisible = false;
+			this.quickSearch.Size = new System.Drawing.Size(291, 24);
+            this.quickSearch.TabIndex = 0;
+			this.quickSearch.TextChanged += new System.EventHandler(this.quickSearch_TextChanged);
+			// 
+			// btLists
+			// 
+			this.btLists.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btLists.FlatAppearance.CheckedBackColor = SystemColors.ControlLight;
             this.btLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLists.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.btLists.Location = new System.Drawing.Point(11, 245);
             this.btLists.Name = "btLists";
             this.btLists.Size = new System.Drawing.Size(67, 24);
-            this.btLists.TabIndex = 14;
+            this.btLists.TabIndex = 15;
             this.btLists.Text = "&Lists";
             this.btLists.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btLists.UseVisualStyleBackColor = true;
@@ -165,7 +182,7 @@ namespace cYo.Common.Windows.Forms
             this.btCheck.Location = new System.Drawing.Point(79, 245);
             this.btCheck.Name = "btCheck";
             this.btCheck.Size = new System.Drawing.Size(67, 24);
-            this.btCheck.TabIndex = 15;
+            this.btCheck.TabIndex = 16;
             this.btCheck.Text = "&Check";
             this.btCheck.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btCheck.UseVisualStyleBackColor = true;
@@ -180,7 +197,7 @@ namespace cYo.Common.Windows.Forms
             this.btText.Location = new System.Drawing.Point(147, 245);
             this.btText.Name = "btText";
             this.btText.Size = new System.Drawing.Size(67, 24);
-            this.btText.TabIndex = 16;
+            this.btText.TabIndex = 17;
             this.btText.Text = "&Text";
             this.btText.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btText.UseVisualStyleBackColor = true;
@@ -196,7 +213,7 @@ namespace cYo.Common.Windows.Forms
             this.text.Multiline = true;
             this.text.Name = "text";
             this.text.Size = new System.Drawing.Size(291, 243);
-            this.text.TabIndex = 17;
+            this.text.TabIndex = 18;
             // 
             // lbCheckList
             // 
@@ -210,7 +227,7 @@ namespace cYo.Common.Windows.Forms
             this.lbCheckList.Name = "lbCheckList";
             this.lbCheckList.Size = new System.Drawing.Size(291, 243);
             this.lbCheckList.Sorted = true;
-            this.lbCheckList.TabIndex = 0;
+            this.lbCheckList.TabIndex = 1;
             this.lbCheckList.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lbCheckList_ItemCheck);
             // 
             // ListSelectorControl
@@ -219,9 +236,9 @@ namespace cYo.Common.Windows.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = SystemColors.Window;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.text);
-            this.Controls.Add(this.lbCheckList);
             this.Controls.Add(this.listPanel);
+            this.Controls.Add(this.lbCheckList);
+            this.Controls.Add(this.text);
             this.Controls.Add(this.btLists);
             this.Controls.Add(this.btCheck);
             this.Controls.Add(this.btText);
@@ -230,12 +247,13 @@ namespace cYo.Common.Windows.Forms
             this.Padding = new System.Windows.Forms.Padding(4);
             this.Size = new System.Drawing.Size(308, 278);
             this.listPanel.ResumeLayout(false);
+            this.listPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
 		}
 
-        private ListBox lbOwn;
+		private ListBox lbOwn;
         private ListBox lbPool;
         private Button btAllToOwn;
         private Button btSelectedToOwn;
@@ -247,5 +265,6 @@ namespace cYo.Common.Windows.Forms
         private Button btCheck;
         private Button btText;
         private TextBox text;
-    }
+		private SearchTextBox quickSearch;
+	}
 }
