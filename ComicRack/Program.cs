@@ -712,6 +712,7 @@ namespace cYo.Projects.ComicRack.Viewer
 			{
 			case PowerModes.Resume:
 				NetworkManager.Start();
+				WirelessSyncProvider.RestartListen();
 				break;
 			case PowerModes.Suspend:
 				NetworkManager.Stop();
