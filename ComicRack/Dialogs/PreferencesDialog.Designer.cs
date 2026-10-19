@@ -219,7 +219,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.tabBehavior = new System.Windows.Forms.CheckBox();
             this.tabScripts = new System.Windows.Forms.CheckBox();
             this.tabAdvanced = new System.Windows.Forms.CheckBox();
-            this.chkUpdateComicBookFiles = new System.Windows.Forms.CheckBox();
+			this.chkUpdateComicBookFiles = new System.Windows.Forms.CheckBox();
+			this.lblThemeOverride = new System.Windows.Forms.Label();
+			this.cbTheme = new System.Windows.Forms.ComboBox();
+            this.labelTheme = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numBackupsToKeep)).BeginInit();
             this.pageReader.SuspendLayout();
             this.groupHardwareAcceleration.SuspendLayout();
@@ -744,6 +747,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             // grpDisplay
             // 
+            this.grpDisplay.Controls.Add(this.lblThemeOverride);
+            this.grpDisplay.Controls.Add(this.cbTheme);
+            this.grpDisplay.Controls.Add(this.labelTheme);
             this.grpDisplay.Controls.Add(this.tbGamma);
             this.grpDisplay.Controls.Add(this.labelGamma);
             this.grpDisplay.Controls.Add(this.chkAnamorphicScaling);
@@ -2631,16 +2637,48 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.tabAdvanced.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.tabAdvanced.UseVisualStyleBackColor = true;
             this.tabAdvanced.CheckedChanged += new System.EventHandler(this.chkAdvanced_CheckedChanged);
+			// 
+			// chkUpdateComicBookFiles
+			// 
+			this.chkUpdateComicBookFiles.AutoSize = true;
+			this.chkUpdateComicBookFiles.Location = new System.Drawing.Point(9, 65);
+			this.chkUpdateComicBookFiles.Name = "chkUpdateComicBookFiles";
+			this.chkUpdateComicBookFiles.Size = new System.Drawing.Size(191, 17);
+			this.chkUpdateComicBookFiles.TabIndex = 4;
+			this.chkUpdateComicBookFiles.Text = "Allow writing of Library info into files";
+			this.chkUpdateComicBookFiles.UseVisualStyleBackColor = true;
+			// 
+			// lblThemeOverride
+			// 
+			this.lblThemeOverride.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblThemeOverride.AutoSize = true;
+            this.lblThemeOverride.Location = new System.Drawing.Point(343, 60);
+            this.lblThemeOverride.Name = "lblThemeOverride";
+            this.lblThemeOverride.Size = new System.Drawing.Size(137, 26);
+            this.lblThemeOverride.TabIndex = 15;
+            this.lblThemeOverride.Text = "Theme is being overwritten \r\nvia the command line";
+            this.lblThemeOverride.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			//
+			// cbTheme
+			// 
+			this.cbTheme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbTheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTheme.FormattingEnabled = true;
+            this.cbTheme.Location = new System.Drawing.Point(370, 33);
+            this.cbTheme.Name = "cbTheme";
+            this.cbTheme.Size = new System.Drawing.Size(121, 21);
+            this.cbTheme.TabIndex = 14;
             // 
-            // chkUpdateComicBookFiles
+            // labelTheme
             // 
-            this.chkUpdateComicBookFiles.AutoSize = true;
-            this.chkUpdateComicBookFiles.Location = new System.Drawing.Point(9, 65);
-            this.chkUpdateComicBookFiles.Name = "chkUpdateComicBookFiles";
-            this.chkUpdateComicBookFiles.Size = new System.Drawing.Size(191, 17);
-            this.chkUpdateComicBookFiles.TabIndex = 4;
-            this.chkUpdateComicBookFiles.Text = "Allow writing of Library info into files";
-            this.chkUpdateComicBookFiles.UseVisualStyleBackColor = true;
+            this.labelTheme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTheme.AutoSize = true;
+            this.labelTheme.Location = new System.Drawing.Point(321, 37);
+            this.labelTheme.Name = "labelTheme";
+            this.labelTheme.Size = new System.Drawing.Size(43, 13);
+            this.labelTheme.TabIndex = 13;
+            this.labelTheme.Text = "Theme:";
+            this.labelTheme.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // PreferencesDialog
             // 
@@ -2952,5 +2990,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private CheckBox chkBackupOnExit;
 		private CheckBox chkBackupOnStartup;
         private CheckBox chkUpdateComicBookFiles;
-    }
+		private ComboBox cbTheme;
+		private Label labelTheme;
+		private Label lblThemeOverride;
+	}
 }
