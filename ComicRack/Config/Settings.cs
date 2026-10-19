@@ -14,6 +14,7 @@ using cYo.Common.Cryptography;
 using cYo.Common.Drawing;
 using cYo.Common.Mathematics;
 using cYo.Common.Threading;
+using cYo.Common.Windows.Forms.Theme;
 using cYo.Common.Xml;
 using cYo.Projects.ComicRack.Engine;
 using cYo.Projects.ComicRack.Engine.Backup;
@@ -2366,6 +2367,12 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		public ExportSettingCollection ExportUserPresets => exportUserPresets;
 
 		public SmartList<DeviceSyncSettings> Devices => devices;
+
+		[DefaultValue(Themes.Default)]
+		public Themes Theme { get; set; } = Themes.Default;
+
+		[DefaultValue(false)]
+		public bool HasMigratedThemes { get; set; } = false;
 
 		[DefaultValue(null)]
 		public string UserEmail

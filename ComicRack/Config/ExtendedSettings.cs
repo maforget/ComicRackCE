@@ -451,6 +451,10 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		}
 
 		[DefaultValue(false)]
+		[CommandLineSwitch(ShortName = "ot")]
+		public bool OverrideTheme { get; set; } = false;
+
+		[DefaultValue(false)]
 		[CommandLineSwitch(ShortName = "dark")]
 		public bool UseDarkMode
 		{
@@ -458,17 +462,22 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			set;
 		}
 
-		private Themes theme = Themes.Default;
-		[DefaultValue(Themes.Default)]
+		private Themes? theme;
+		[DefaultValue(null)]
 		[CommandLineSwitch(ShortName = "theme")]
 		public Themes Theme
 		{
 			get
 			{
+				// If theme is set and OverrideTheme is true, return the set theme.
+				if (theme.HasValue && OverrideTheme)
+					return theme.Value;
+
+				// If UseDarkMode is true, return the Dark theme.
 				if (UseDarkMode)
 					return Themes.Dark;
 
-				return theme;
+				return theme ?? Themes.Default; // Return the set theme, otherwise return the default theme.
 			}
 			set => theme = value;
 		}
@@ -524,7 +533,6 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 			StartHidden = false;
 			DeleteAPI = FileOperationsAPI.IFileOperation;
 			OpenExplorerUsingAPI = true;
-			Theme = Themes.Default;
 		}
 	}
 }
