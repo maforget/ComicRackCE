@@ -129,6 +129,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			btResetMessages.Enabled = Program.Settings.HiddenMessageBoxes != HiddenMessageBoxes.None;
 			FillExtensionsList();
 			FillBackupOptions();
+			InitializeThemeOptions();
 			chkOverwriteAssociations.Checked = Program.Settings.OverwriteAssociations;
 			if (!FileFormat.CanRegisterShell)
 			{
@@ -146,6 +147,28 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			UpdateMemoryCacheStatus();
 			RefreshPackageList();
 			IdleProcess.Idle += OnIdle;
+		}
+
+		private void InitializeThemeOptions()
+		{
+			foreach (Themes theme in Enum.GetValues(typeof(Themes)))
+			{
+				cbTheme.Items.Add(theme);
+			}
+			cbTheme.SelectedItem = Program.Settings.Theme;
+
+			if (Program.ExtendedSettings.OverrideTheme)
+			{
+				cbTheme.Enabled = false;
+				labelTheme.Enabled = false;
+				lblThemeOverride.Visible = Program.Settings.Theme != Program.ExtendedSettings.Theme;
+			}
+			else
+			{
+				cbTheme.Enabled = true;
+				labelTheme.Enabled = true;
+				lblThemeOverride.Visible = false;
+			}
 		}
 
 		public static Size SafeSize { get; set; }
@@ -196,8 +219,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		{
 			chkUpdateComicBookFiles.Enabled = chkAutoUpdateComicFiles.Enabled = chkUpdateComicFiles.Checked;
 			if (!chkUpdateComicFiles.Checked)
-                chkAutoUpdateComicFiles.Checked = chkUpdateComicBookFiles.Checked = false;
-        }
+				chkAutoUpdateComicFiles.Checked = chkUpdateComicBookFiles.Checked = false;
+		}
 
 		protected override void OnShown(EventArgs e)
 		{
@@ -1016,6 +1039,13 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			}
 			Program.Settings.ExtraWifiDeviceAddresses = txWifiAddresses.Text;
 			Program.Settings.CurrentWorkspace.PreferencesOutputSize = SafeSize;
+
+			if (cbTheme.SelectedItem != null && cbTheme.SelectedItem is Themes theme)
+			{
+				NeedsRestart = theme != Program.Settings.Theme;
+				Program.Settings.Theme = theme;
+			}
+
 			SaveBackupManagerOptions();
 			SaveVirtualTags();
 			Program.RefreshAllWindows();
