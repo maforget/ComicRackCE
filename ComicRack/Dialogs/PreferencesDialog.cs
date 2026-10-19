@@ -149,13 +149,22 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			IdleProcess.Idle += OnIdle;
 		}
 
+		private record ThemeOption(string Name, Themes Theme);
+
 		private void InitializeThemeOptions()
 		{
+			List<ThemeOption> themeOptions = new List<ThemeOption>();
 			foreach (Themes theme in Enum.GetValues(typeof(Themes)))
 			{
-				cbTheme.Items.Add(theme);
+				string localizedText = LocalizeUtility.LocalizeEnum(typeof(Themes), (int)theme);
+				ThemeOption themeOption = new ThemeOption(localizedText, theme);
+				themeOptions.Add(themeOption);
+				cbTheme.Items.Add(themeOption);
 			}
-			cbTheme.SelectedItem = Program.Settings.Theme;
+			cbTheme.DataSource = themeOptions;
+			cbTheme.DisplayMember = nameof(ThemeOption.Name);
+			cbTheme.ValueMember = nameof(ThemeOption.Theme);
+			cbTheme.SelectedValue = Program.Settings.Theme;
 
 			if (Program.ExtendedSettings.OverrideTheme)
 			{
@@ -1040,10 +1049,10 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			Program.Settings.ExtraWifiDeviceAddresses = txWifiAddresses.Text;
 			Program.Settings.CurrentWorkspace.PreferencesOutputSize = SafeSize;
 
-			if (cbTheme.SelectedItem != null && cbTheme.SelectedItem is Themes theme)
+			if (cbTheme.SelectedItem != null && cbTheme.SelectedItem is ThemeOption themeOption)
 			{
-				NeedsRestart = theme != Program.Settings.Theme;
-				Program.Settings.Theme = theme;
+				NeedsRestart = themeOption.Theme != Program.Settings.Theme;
+				Program.Settings.Theme = themeOption.Theme;
 			}
 
 			SaveBackupManagerOptions();
