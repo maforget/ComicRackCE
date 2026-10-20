@@ -1,3 +1,15 @@
+Community Edition Build 0.9.186:
+
+* NEW: Migrate Dark theme setting to a drop-down inside the Preferences dialog (Edit → Preferences → Reader → Display).
+    - For those that are currently using dark mode via `UseDarkMode`/`Theme` ini/command line settings, they will be migrated on first launch.
+    - If you still want to force the theme via the ini/command line you will need to also set `OverrideTheme` (`-ot`) to true.
+* NEW: Added Go To page feature in the Reader. Accessible from the Main Menu -> Reader & when clicking the drop down arrow for the next page button.
+* NEW: Added a search box to the popup for fields that have the orange list selection button, like Writer, Tags, etc.
+
+* BUGFIX: Fixed search box clear icon not showing when pasting text into the search box.
+* BUGFIX: Keep the wireless sync discovery listener alive (by Fableton).
+
+
 Community Edition Build 0.9.184:
 
 * NEW: Support for JpegXL image format. Supports Lossy & Lossless compression. Note: Lossless aren't reconstructible to Jpeg.
