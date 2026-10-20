@@ -7,5 +7,8 @@
     <Text Key="colName" Text="Nombre" Comment="Name" />
     <Text Key="colModel" Text="Modelo" Comment="Model" />
     <Text Key="colSerial" Text="Número de Serie" Comment="Serial" />
+    <Text Key="colSync ID" Text="ID de Sincronización" Comment="Sync ID" />
+    <Text Key="lblSyncId" Text="Nuevo ID de sincronización para '{0}' (actual: {1}). Selecciona un dispositivo arriba o escríbelo:" Comment="New Sync ID for '{0}' (current: {1}). Select a device above or type it:" />
+    <Text Key="RepairDevice" Text="Volver a Emparejar Dispositivo" Comment="Re-pair Device" />
   </Texts>
 </TR>

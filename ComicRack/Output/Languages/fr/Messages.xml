@@ -160,5 +160,7 @@
     <Text Key="AlreadyExistsInDatabase" Text="Cette opération créerait un doublon dans la base de données. Le fichier de sortie '{0}' existe déjà dans la Bibliothèque." Comment="This operation would result in a duplicate entry in the database, Output file '{0}' already exists in the library" />
 	<Text Key="TotalPages" Text="{0} pages totales" Comment="{0} total pages" />
 	<Text Key="GoToPage" Text="Entrer le numéro de la page à laquelle aller:" Comment="Enter the page number to go to:" />
+    <Text Key="RepairDevice" Text="Relier à nouveau l'appareil" Comment="Re-pair Device" />
+    <Text Key="RepairDeviceConfirm" Text="Modifier l'ID de synchronisation de '{0}' ?\n\nAncien : {1}\nNouveau : {2}" Comment="Change the Sync ID of '{0}'?\n\nOld: {1}\nNew: {2}" />
   </Texts>
 </TR>

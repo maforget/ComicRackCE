@@ -146,5 +146,7 @@
     <Text Key="DataSourceProblem" Text="Hubo un problema ({0}) abriendo los datos de origen. ComicRack usará la base de datos local en su lugar." Comment="There was a problem ({0}) opening the data source. ComicRack is using the local database instead." />
     <Text Key="DataSourceConnected" Text="Conectado a la fuente de datos" Comment="Connected to data source" />
     <Text Key="DataSourceDisconnected" Text="Desconectado de la fuente de datos!" Comment="Disconnected from data source!" />
+    <Text Key="RepairDevice" Text="Volver a Emparejar Dispositivo" Comment="Re-pair Device" />
+    <Text Key="RepairDeviceConfirm" Text="¿Cambiar el ID de sincronización de '{0}'?\n\nAnterior: {1}\nNuevo: {2}" Comment="Change the Sync ID of '{0}'?\n\nOld: {1}\nNew: {2}" />
   </Texts>
 </TR>
