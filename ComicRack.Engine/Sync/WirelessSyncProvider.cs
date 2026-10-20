@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.ServiceModel;
 using System.Text;
@@ -79,15 +80,31 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 
 		private static readonly HashSet<IPAddress> foundDevices = new HashSet<IPAddress>();
 
-		private static UdpClient listener;
+		private const int ListenRetryDelay = 5000;
 
-		private static IPEndPoint listenerEP;
+		private const int NetworkChangeRestartDelay = 3000;
 
-		private static Socket controlSocket;
+		private const int MaxControlPortAttempts = 100;
+
+		private static readonly object listenLock = new object();
+
+		private static volatile UdpClient listener;
+
+		private static volatile Socket controlSocket;
 
 		private static int controlPort;
 
 		private static Timer serverAvailableTimer;
+
+		private static Timer restartTimer;
+
+		private static Timer membershipTimer;
+
+		private static bool networkChangeHooked;
+
+		private const int MembershipRenewInterval = 60000;
+
+		private static readonly IPAddress MulticastGroup = IPAddress.Parse("224.34.123.90");
 
 		public static event EventHandler<ClientSyncRequestArgs> ClientSyncRequest;
 
@@ -460,45 +477,161 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 
 		public static void StartListen()
 		{
+			lock (listenLock)
+			{
+				restartTimer?.Dispose();
+				restartTimer = null;
+				StopListenCore();
+				StartBroadcastListener();
+				StartControlListener();
+				if (serverAvailableTimer == null)
+				{
+					serverAvailableTimer = new Timer(NotifyDevicesServerAvailable, null, 10000, 10000);
+				}
+				if (membershipTimer == null)
+				{
+					membershipTimer = new Timer(RenewMulticastMembership, null, MembershipRenewInterval, MembershipRenewInterval);
+				}
+				if (!networkChangeHooked)
+				{
+					networkChangeHooked = true;
+					NetworkChange.NetworkAddressChanged += (object s, EventArgs e) => RestartListen(NetworkChangeRestartDelay);
+				}
+			}
+		}
+
+		// The multicast membership is bound to the interface that was active when we joined, so it is
+		// lost after a suspend/resume or a network change. Rebuild the listeners (debounced).
+		public static void RestartListen(int delay = NetworkChangeRestartDelay)
+		{
+			ScheduleRestart(delay);
+		}
+
+		private static void ScheduleRestart(int delay)
+		{
+			lock (listenLock)
+			{
+				restartTimer?.Dispose();
+				restartTimer = new Timer(delegate
+				{
+					try
+					{
+						StartListen();
+					}
+					catch (Exception)
+					{
+					}
+				}, null, delay, Timeout.Infinite);
+			}
+		}
+
+		private static void StopListenCore()
+		{
+			UdpClient udpClient = listener;
+			listener = null;
+			Socket socket = controlSocket;
+			controlSocket = null;
 			try
 			{
-				IPAddress group = IPAddress.Parse("224.34.123.90");
-				listener = new UdpClient();
-				Socket client = listener.Client;
-				listenerEP = new IPEndPoint(IPAddress.Any, BroadcastListenPort);
-				client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, 1);
-				client.Bind(listenerEP);
-				client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(group, IPAddress.Any));
-				listener.BeginReceive(OnReceivedBroadcastData, null);
+				udpClient?.Close();
 			}
 			catch (Exception)
 			{
 			}
-			controlPort = FirstServerControlPort;
-			controlSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-			while (true)
+			try
 			{
+				socket?.Close();
+			}
+			catch (Exception)
+			{
+			}
+		}
+
+		// Switches/access points with IGMP snooping forget a multicast membership after ~260 s unless
+		// the host keeps reporting it, and the OS only reports on join (or when a querier asks). Leaving
+		// and re-joining sends a fresh IGMP report, so the phone's announcements keep reaching us.
+		private static void RenewMulticastMembership(object state)
+		{
+			UdpClient udpClient = listener;
+			if (udpClient == null)
+			{
+				return;
+			}
+			try
+			{
+				MulticastOption option = new MulticastOption(MulticastGroup, IPAddress.Any);
+				Socket client = udpClient.Client;
+				client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.DropMembership, option);
+				client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, option);
+			}
+			catch (Exception)
+			{
+				// a restart may have replaced (and closed) the listener while we were renewing it;
+				// only a failure on the live listener justifies another restart
+				if (udpClient == listener)
+				{
+					ScheduleRestart(ListenRetryDelay);
+				}
+			}
+		}
+
+		private static void StartBroadcastListener()
+		{
+			try
+			{
+				IPAddress group = MulticastGroup;
+				UdpClient udpClient = new UdpClient();
 				try
 				{
-					IPEndPoint localEP = new IPEndPoint(IPAddress.Any, controlPort);
-					controlSocket.Bind(localEP);
-					controlSocket.Listen(25);
-					controlSocket.BeginAccept(OnAcceptControl, null);
-				}
-				catch (SocketException ex2)
-				{
-					if (ex2.ErrorCode == 10048)
-					{
-						controlPort++;
-						continue;
-					}
+					Socket client = udpClient.Client;
+					client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, 1);
+					client.Bind(new IPEndPoint(IPAddress.Any, BroadcastListenPort));
+					client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(group, IPAddress.Any));
+					listener = udpClient;
+					udpClient.BeginReceive(OnReceivedBroadcastData, udpClient);
 				}
 				catch (Exception)
 				{
+					listener = null;
+					udpClient.Close();
+					throw;
 				}
-				break;
 			}
-			serverAvailableTimer = new Timer(NotifyDevicesServerAvailable, null, 10000, 10000);
+			catch (Exception)
+			{
+				ScheduleRestart(ListenRetryDelay);
+			}
+		}
+
+		private static void StartControlListener()
+		{
+			for (int port = FirstServerControlPort; port < FirstServerControlPort + MaxControlPortAttempts; port++)
+			{
+				Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+				try
+				{
+					socket.Bind(new IPEndPoint(IPAddress.Any, port));
+					socket.Listen(25);
+					controlPort = port;
+					controlSocket = socket;
+					socket.BeginAccept(OnAcceptControl, socket);
+					return;
+				}
+				catch (SocketException ex) when (ex.SocketErrorCode == SocketError.AddressAlreadyInUse || ex.SocketErrorCode == SocketError.AccessDenied)
+				{
+					// port taken by another program, try the next one
+					socket.Close();
+				}
+				catch (Exception)
+				{
+					controlSocket = null;
+					socket.Close();
+					ScheduleRestart(ListenRetryDelay);
+					return;
+				}
+			}
+			// every port in the range is taken: keep trying instead of giving up silently
+			ScheduleRestart(ListenRetryDelay);
 		}
 
 		private static void NotifyDevicesServerAvailable(object state)
@@ -536,51 +669,96 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 
 		private static void OnAcceptControl(IAsyncResult ar)
 		{
+			Socket server = (Socket)ar.AsyncState;
+			Socket client = null;
 			try
 			{
-				using (Socket socket = controlSocket.EndAccept(ar))
-				{
-					byte[] array = new byte[2048];
-					int count = socket.Receive(array);
-					IPEndPoint iPEndPoint = socket.RemoteEndPoint as IPEndPoint;
-					HandleDeviceMessage(iPEndPoint.Address, array.Take(count).ToArray(), addAddress: false);
-				}
+				client = server.EndAccept(ar);
 			}
 			catch (Exception)
 			{
 			}
-			finally
+			if (server != controlSocket)
 			{
-				try
-				{
-					controlSocket.BeginAccept(OnAcceptControl, null);
-				}
-				catch (Exception)
-				{
-				}
+				// closed on purpose (listener restarted or stopped)
+				client?.Close();
+				return;
 			}
+			// re-arm first: reading from the client below must never keep us from accepting the next one
+			try
+			{
+				server.BeginAccept(OnAcceptControl, server);
+			}
+			catch (Exception)
+			{
+				ScheduleRestart(ListenRetryDelay);
+			}
+			if (client == null)
+			{
+				return;
+			}
+			ThreadPool.QueueUserWorkItem(delegate
+			{
+				using (client)
+				{
+					try
+					{
+						client.ReceiveTimeout = EngineConfiguration.Default.WifiSyncReceiveTimeout;
+						byte[] array = new byte[2048];
+						int count = client.Receive(array);
+						IPEndPoint iPEndPoint = client.RemoteEndPoint as IPEndPoint;
+						HandleDeviceMessage(iPEndPoint.Address, array.Take(count).ToArray(), addAddress: false);
+					}
+					catch (Exception)
+					{
+					}
+				}
+			});
 		}
 
 		private static void OnReceivedBroadcastData(IAsyncResult ar)
 		{
+			UdpClient udpClient = (UdpClient)ar.AsyncState;
+			IPAddress sender = null;
+			byte[] bytes = null;
 			try
 			{
-				byte[] bytes = listener.EndReceive(ar, ref listenerEP);
-				HandleDeviceMessage(listenerEP.Address, bytes, addAddress: true);
+				IPEndPoint remoteEP = new IPEndPoint(IPAddress.Any, 0);
+				bytes = udpClient.EndReceive(ar, ref remoteEP);
+				sender = remoteEP.Address;
 			}
-			catch
+			catch (Exception)
 			{
+				// receive failed or the socket was closed; fall through to the re-arm check
 			}
-			finally
+			if (udpClient != listener)
+			{
+				// closed on purpose (listener restarted or stopped)
+				return;
+			}
+			// re-arm first: handling a message can block (it may connect out to the device)
+			try
+			{
+				udpClient.BeginReceive(OnReceivedBroadcastData, udpClient);
+			}
+			catch (Exception)
+			{
+				ScheduleRestart(ListenRetryDelay);
+			}
+			if (bytes == null || sender == null)
+			{
+				return;
+			}
+			ThreadPool.QueueUserWorkItem(delegate
 			{
 				try
 				{
-					listener.BeginReceive(OnReceivedBroadcastData, null);
+					HandleDeviceMessage(sender, bytes, addAddress: true);
 				}
-				catch (SocketException)
+				catch (Exception)
 				{
 				}
-			}
+			});
 		}
 
 		private static bool HandleDeviceMessage(IPAddress address, byte[] bytes, bool addAddress)
