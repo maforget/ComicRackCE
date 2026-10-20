@@ -177,5 +177,7 @@
     <Text Key="chkBackupOnExit" Text="Fermeture" Comment="Shut Down" />
     <Text Key="VirtualTag" Text="Étiquette Virtuelle" Comment="Virtual Tag" />
     <Text Key="chkUpdateComicBookFiles" Text="Insérer les informations de la Bibliothèque dans le fichier." Comment="Allow writing of Library info into files" />
+	<Text Key="lblThemeOverride" Text="Le theme est remplacer \r\nvia la ligne de commande" Comment="Theme is being overwritten \r\nvia the command line" />
+	<Text Key="labelTheme" Text="Thème" Comment="Theme" />
   </Texts>
 </TR>
