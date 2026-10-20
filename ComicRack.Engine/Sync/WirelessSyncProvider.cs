@@ -566,7 +566,12 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			}
 			catch (Exception)
 			{
-				ScheduleRestart(ListenRetryDelay);
+				// a restart may have replaced (and closed) the listener while we were renewing it;
+				// only a failure on the live listener justifies another restart
+				if (udpClient == listener)
+				{
+					ScheduleRestart(ListenRetryDelay);
+				}
 			}
 		}
 
@@ -612,8 +617,9 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 					socket.BeginAccept(OnAcceptControl, socket);
 					return;
 				}
-				catch (SocketException ex) when (ex.ErrorCode == 10048)
+				catch (SocketException ex) when (ex.SocketErrorCode == SocketError.AddressAlreadyInUse || ex.SocketErrorCode == SocketError.AccessDenied)
 				{
+					// port taken by another program, try the next one
 					socket.Close();
 				}
 				catch (Exception)
@@ -624,6 +630,8 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 					return;
 				}
 			}
+			// every port in the range is taken: keep trying instead of giving up silently
+			ScheduleRestart(ListenRetryDelay);
 		}
 
 		private static void NotifyDevicesServerAvailable(object state)
@@ -662,15 +670,10 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 		private static void OnAcceptControl(IAsyncResult ar)
 		{
 			Socket server = (Socket)ar.AsyncState;
+			Socket client = null;
 			try
 			{
-				using (Socket socket = server.EndAccept(ar))
-				{
-					byte[] array = new byte[2048];
-					int count = socket.Receive(array);
-					IPEndPoint iPEndPoint = socket.RemoteEndPoint as IPEndPoint;
-					HandleDeviceMessage(iPEndPoint.Address, array.Take(count).ToArray(), addAddress: false);
-				}
+				client = server.EndAccept(ar);
 			}
 			catch (Exception)
 			{
@@ -678,8 +681,10 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			if (server != controlSocket)
 			{
 				// closed on purpose (listener restarted or stopped)
+				client?.Close();
 				return;
 			}
+			// re-arm first: reading from the client below must never keep us from accepting the next one
 			try
 			{
 				server.BeginAccept(OnAcceptControl, server);
@@ -688,25 +693,50 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			{
 				ScheduleRestart(ListenRetryDelay);
 			}
+			if (client == null)
+			{
+				return;
+			}
+			ThreadPool.QueueUserWorkItem(delegate
+			{
+				using (client)
+				{
+					try
+					{
+						client.ReceiveTimeout = EngineConfiguration.Default.WifiSyncReceiveTimeout;
+						byte[] array = new byte[2048];
+						int count = client.Receive(array);
+						IPEndPoint iPEndPoint = client.RemoteEndPoint as IPEndPoint;
+						HandleDeviceMessage(iPEndPoint.Address, array.Take(count).ToArray(), addAddress: false);
+					}
+					catch (Exception)
+					{
+					}
+				}
+			});
 		}
 
 		private static void OnReceivedBroadcastData(IAsyncResult ar)
 		{
 			UdpClient udpClient = (UdpClient)ar.AsyncState;
+			IPAddress sender = null;
+			byte[] bytes = null;
 			try
 			{
 				IPEndPoint remoteEP = new IPEndPoint(IPAddress.Any, 0);
-				byte[] bytes = udpClient.EndReceive(ar, ref remoteEP);
-				HandleDeviceMessage(remoteEP.Address, bytes, addAddress: true);
+				bytes = udpClient.EndReceive(ar, ref remoteEP);
+				sender = remoteEP.Address;
 			}
 			catch (Exception)
 			{
+				// receive failed or the socket was closed; fall through to the re-arm check
 			}
 			if (udpClient != listener)
 			{
 				// closed on purpose (listener restarted or stopped)
 				return;
 			}
+			// re-arm first: handling a message can block (it may connect out to the device)
 			try
 			{
 				udpClient.BeginReceive(OnReceivedBroadcastData, udpClient);
@@ -715,6 +745,20 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			{
 				ScheduleRestart(ListenRetryDelay);
 			}
+			if (bytes == null || sender == null)
+			{
+				return;
+			}
+			ThreadPool.QueueUserWorkItem(delegate
+			{
+				try
+				{
+					HandleDeviceMessage(sender, bytes, addAddress: true);
+				}
+				catch (Exception)
+				{
+				}
+			});
 		}
 
 		private static bool HandleDeviceMessage(IPAddress address, byte[] bytes, bool addAddress)
