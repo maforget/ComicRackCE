@@ -35,6 +35,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.miDeviceCopyToAll = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.miDeviceRename = new System.Windows.Forms.ToolStripMenuItem();
+            this.miDeviceRepair = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.miDeviceUnpair = new System.Windows.Forms.ToolStripMenuItem();
             this.cmDevice.SuspendLayout();
@@ -118,6 +119,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.miDeviceCopyToAll,
             this.toolStripMenuItem1,
             this.miDeviceRename,
+            this.miDeviceRepair,
             this.toolStripMenuItem2,
             this.miDeviceUnpair});
             this.cmDevice.Name = "cmDevice";
@@ -159,6 +161,13 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.miDeviceRename.Size = new System.Drawing.Size(133, 22);
             this.miDeviceRename.Text = "Rename...";
             this.miDeviceRename.Click += new System.EventHandler(this.miDeviceRename_Click);
+            // 
+            // miDeviceRepair
+            // 
+            this.miDeviceRepair.Name = "miDeviceRepair";
+            this.miDeviceRepair.Size = new System.Drawing.Size(133, 22);
+            this.miDeviceRepair.Text = "Re-pair...";
+            this.miDeviceRepair.Click += new System.EventHandler(this.miDeviceRepair_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -211,6 +220,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private ToolStripMenuItem miDeviceCopyToAll;
 		private ToolStripSeparator toolStripMenuItem1;
 		private ToolStripMenuItem miDeviceRename;
+		private ToolStripMenuItem miDeviceRepair;
 		private ToolStripSeparator toolStripMenuItem2;
 		private ToolStripMenuItem miDeviceUnpair;
 	}

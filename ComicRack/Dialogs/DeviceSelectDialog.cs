@@ -13,6 +13,11 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 {
 	public partial class DeviceSelectDialog : FormEx
 	{
+		private bool repairMode;
+
+		private string currentKey;
+
+		private HashSet<string> usedKeys = new HashSet<string>();
 
 		public DeviceSelectDialog()
 		{
@@ -24,8 +29,62 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void lvDevices_DoubleClick(object sender, EventArgs e)
 		{
+			if (!btOK.Enabled)
+			{
+				return;
+			}
 			base.DialogResult = DialogResult.OK;
 			Hide();
+		}
+
+		private void lvDevices_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (repairMode && lvDevices.SelectedItems.Count > 0)
+			{
+				txSyncId.Text = ((ISyncProvider)lvDevices.SelectedItems[0].Tag).Device.Key;
+			}
+		}
+
+		private void txSyncId_TextChanged(object sender, EventArgs e)
+		{
+			if (repairMode)
+			{
+				UpdateRepairOkState();
+			}
+		}
+
+		private void UpdateRepairOkState()
+		{
+			string key = txSyncId.Text.Trim();
+			btOK.Enabled = key.Length > 0 && key != currentKey && !usedKeys.Contains(key);
+		}
+
+		// The Sync ID column and the manual entry are only used to re-pair a device.
+		private void ConfigureForPairing()
+		{
+			lvDevices.Columns.Remove(colSyncId);
+			int height = pnlSyncId.Height;
+			pnlSyncId.Visible = false;
+			ClientSize = new Size(ClientSize.Width, ClientSize.Height - height);
+			lvDevices.Height += height;
+		}
+
+		private void ConfigureForRepair(string deviceName, string currentKey, IEnumerable<string> usedKeys)
+		{
+			repairMode = true;
+			this.currentKey = currentKey;
+			this.usedKeys = new HashSet<string>(usedKeys);
+			Text = TR.Load(base.Name)["RepairDevice", "Re-pair Device"];
+			lblSyncId.Text = string.Format(lblSyncId.Text, deviceName, currentKey);
+			// make room for the extra column, and for the whole serial (it is a GUID like the Sync ID)
+			colSerial.Width = colSyncId.Width;
+			int columnsWidth = lvDevices.Columns.Cast<ColumnHeader>().Sum((ColumnHeader c) => c.Width);
+			int missing = columnsWidth + SystemInformation.VerticalScrollBarWidth + 4 - lvDevices.ClientSize.Width;
+			if (missing > 0)
+			{
+				ClientSize = new Size(ClientSize.Width + missing, ClientSize.Height);
+			}
+			UpdateRepairOkState();
 		}
 
 		private void FillList(IEnumerable<ISyncProvider> syncProviders)
@@ -38,6 +97,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				};
 				listViewItem.SubItems.Add(syncProvider.Device.Model);
 				listViewItem.SubItems.Add(syncProvider.Device.SerialNumber);
+				listViewItem.SubItems.Add(syncProvider.Device.Key);
 				lvDevices.Items.Add(listViewItem);
 			}
 			if (lvDevices.Items.Count > 0)
@@ -49,15 +109,42 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			listView.Enabled = enabled;
 		}
 
+		private static List<ISyncProvider> DiscoverProviders(IWin32Window parent)
+		{
+			List<ISyncProvider> syncProviders = new List<ISyncProvider>();
+			AutomaticProgressDialog.Process(parent, TR.Messages["DiscoveringDevicesCaption", "Discovering connected devices"], TR.Messages["DiscoveringDevicesDescription", "Searching all connected Devices for installed ComicRack clients"], 1000, delegate
+			{
+				syncProviders.AddRange(DeviceSyncFactory.Discover());
+			}, AutomaticProgressDialogOptions.None);
+			return syncProviders;
+		}
+
+		/// <summary>
+		/// Lets the user pick the new Sync ID of an already paired device (e.g. after the device app
+		/// was reinstalled and generated a new ID), either from the devices currently found or by
+		/// typing it in. Returns null if the dialog was cancelled.
+		/// </summary>
+		/// <param name="usedKeys">Sync IDs already paired with the other devices.</param>
+		public static string SelectSyncId(IWin32Window parent, string deviceName, string currentKey, IEnumerable<string> usedKeys)
+		{
+			using (DeviceSelectDialog deviceSelectDialog = new DeviceSelectDialog())
+			{
+				deviceSelectDialog.ConfigureForRepair(deviceName, currentKey, usedKeys);
+				// devices already paired (including this one) are not valid targets, the one with the same name goes first
+				deviceSelectDialog.FillList(DiscoverProviders(parent)
+					.Where((ISyncProvider sd) => sd.Device.Key != currentKey && !deviceSelectDialog.usedKeys.Contains(sd.Device.Key))
+					.OrderByDescending((ISyncProvider sd) => string.Equals(sd.Device.Name, deviceName, StringComparison.OrdinalIgnoreCase)));
+				deviceSelectDialog.UpdateRepairOkState();
+				return (deviceSelectDialog.ShowDialog(parent) == DialogResult.OK) ? deviceSelectDialog.txSyncId.Text.Trim() : null;
+			}
+		}
+
 		public static ISyncProvider SelectProvider(IWin32Window parent, IEnumerable<DeviceSyncSettings> devices)
 		{
 			using (DeviceSelectDialog deviceSelectDialog = new DeviceSelectDialog())
 			{
-				List<ISyncProvider> syncProviders = new List<ISyncProvider>();
-				AutomaticProgressDialog.Process(parent, TR.Messages["DiscoveringDevicesCaption", "Discovering connected devices"], TR.Messages["DiscoveringDevicesDescription", "Searching all connected Devices for installed ComicRack clients"], 1000, delegate
-				{
-					syncProviders.AddRange(DeviceSyncFactory.Discover());
-				}, AutomaticProgressDialogOptions.None);
+				deviceSelectDialog.ConfigureForPairing();
+				List<ISyncProvider> syncProviders = DiscoverProviders(parent);
 				deviceSelectDialog.FillList(syncProviders.Where((ISyncProvider sd) => devices.All((DeviceSyncSettings d) => d.DeviceKey != sd.Device.Key)));
 				if (deviceSelectDialog.ShowDialog(parent) == DialogResult.Cancel)
 				{

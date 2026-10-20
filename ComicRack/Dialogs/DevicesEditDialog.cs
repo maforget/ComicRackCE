@@ -130,6 +130,30 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			}
 		}
 
+		private void miDeviceRepair_Click(object sender, EventArgs e)
+		{
+			DeviceEditControl device = CurrentDevice;
+			if (device == null)
+			{
+				return;
+			}
+			string oldKey = device.DeviceKey;
+			IEnumerable<string> usedKeys = from TabPage tp in tabDevices.TabPages
+				select (DeviceEditControl)tp.Tag into dec
+				where dec != device
+				select dec.DeviceKey;
+			string newKey = DeviceSelectDialog.SelectSyncId(this, device.DeviceName, oldKey, usedKeys);
+			if (string.IsNullOrEmpty(newKey) || newKey == oldKey)
+			{
+				return;
+			}
+			string question = string.Format(TR.Messages["RepairDeviceConfirm", "Change the Sync ID of '{0}'?\n\nOld: {1}\nNew: {2}"], device.DeviceName, oldKey, newKey);
+			if (MessageBox.Show(this, question, TR.Messages["RepairDevice", "Re-pair Device"], MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				device.DeviceKey = newKey;
+			}
+		}
+
 		private void miDeviceUnpair_Click(object sender, EventArgs e)
 		{
 			if (tabDevices.SelectedTab != null)
