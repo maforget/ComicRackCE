@@ -126,7 +126,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		/// </summary>
 		/// <param name="devices">List of <seealso cref="DeviceSyncSettings"/></param>
 		/// <param name="currentDevice">The device to repair</param>
-		public static string SelectSyncId(IWin32Window parent, IEnumerable<DeviceSyncSettings> devices, DeviceSyncSettings currentDevice)
+		public static (string Name, string DeviceKey) SelectSyncId(IWin32Window parent, IEnumerable<DeviceSyncSettings> devices, DeviceSyncSettings currentDevice)
 		{
 			using (DeviceSelectDialog deviceSelectDialog = new DeviceSelectDialog())
 			{
@@ -140,7 +140,15 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 					.Where((ISyncProvider sd) => sd.Device.Key != currentKey && !deviceSelectDialog.usedKeys.Contains(sd.Device.Key))
 					.OrderByDescending((ISyncProvider sd) => string.Equals(sd.Device.Name, deviceName, StringComparison.OrdinalIgnoreCase)));
 				deviceSelectDialog.UpdateRepairOkState();
-				return (deviceSelectDialog.ShowDialog(parent) == DialogResult.OK) ? deviceSelectDialog.txSyncId.Text.Trim() : null;
+
+				if (deviceSelectDialog.ShowDialog(parent) == DialogResult.OK)
+				{
+					ISyncProvider selectedProvider = deviceSelectDialog.lvDevices.SelectedItems[0].Tag as ISyncProvider;
+					string newKey = deviceSelectDialog.txSyncId.Text.Trim();
+					string newName = selectedProvider.Device.Name;
+					return (newName, newKey);
+				}
+				return (null, null);
 			}
 		}
 

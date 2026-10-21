@@ -138,7 +138,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				return;
 			}
 			string oldKey = device.DeviceKey;
-			string newKey = DeviceSelectDialog.SelectSyncId(this, Devices, device.Settings);
+			(string Name, string DeviceKey) newDevice = DeviceSelectDialog.SelectSyncId(this, Devices, device.Settings);
+			string newKey = newDevice.DeviceKey;
 			if (string.IsNullOrEmpty(newKey) || newKey == oldKey)
 			{
 				return;
@@ -147,6 +148,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			if (MessageBox.Show(this, question, TR.Messages["RepairDevice", "Re-pair Device"], MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 			{
 				device.DeviceKey = newKey;
+				device.DeviceName = newDevice.Name;
 			}
 		}
 
