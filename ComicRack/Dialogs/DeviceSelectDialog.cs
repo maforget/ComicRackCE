@@ -107,6 +107,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			ListView listView = lvDevices;
 			bool enabled = (btOK.Enabled = lvDevices.Items.Count > 0);
 			listView.Enabled = enabled;
+			ApplyTheme();
 		}
 
 		private static List<ISyncProvider> DiscoverProviders(IWin32Window parent)
