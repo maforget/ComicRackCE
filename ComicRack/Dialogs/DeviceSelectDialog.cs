@@ -144,13 +144,20 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 				if (deviceSelectDialog.ShowDialog(parent) == DialogResult.OK)
 				{
-					ISyncProvider selectedProvider = deviceSelectDialog.lvDevices.SelectedItems[0].Tag as ISyncProvider;
-					string newKey = deviceSelectDialog.txSyncId.Text.Trim();
-					string newName = selectedProvider.Device.Name;
-					return (newName, newKey);
+					return deviceSelectDialog.GetRepairResult(currentDevice);
 				}
 				return (null, null);
 			}
+		}
+
+		// The Sync ID can be typed without selecting a device (or after selecting a different one), so
+		// the list selection can be empty. The name only follows the selected device when the ID is its own.
+		private (string Name, string DeviceKey) GetRepairResult(DeviceSyncSettings currentDevice)
+		{
+			string newKey = txSyncId.Text.Trim();
+			ISyncProvider selectedProvider = lvDevices.SelectedItems.Count > 0 ? lvDevices.SelectedItems[0].Tag as ISyncProvider : null;
+			string newName = (selectedProvider != null && selectedProvider.Device.Key == newKey) ? selectedProvider.Device.Name : currentDevice.DeviceName;
+			return (newName, newKey);
 		}
 
 		public static ISyncProvider SelectProvider(IWin32Window parent, IEnumerable<DeviceSyncSettings> devices)
