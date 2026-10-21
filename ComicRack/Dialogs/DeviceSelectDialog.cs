@@ -47,6 +47,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			ListView listView = lvDevices;
 			bool enabled = (btOK.Enabled = lvDevices.Items.Count > 0);
 			listView.Enabled = enabled;
+			ApplyTheme();
 		}
 
 		public static ISyncProvider SelectProvider(IWin32Window parent, IEnumerable<DeviceSyncSettings> devices)

@@ -158,6 +158,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			tb.Tag = se;
 			tabDevices.TabPages.Add(tb);
 			SetVisibility();
+			ApplyTheme();
 			return tb;
 		}
 
