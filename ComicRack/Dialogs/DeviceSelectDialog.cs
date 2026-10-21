@@ -124,12 +124,17 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		/// was reinstalled and generated a new ID), either from the devices currently found or by
 		/// typing it in. Returns null if the dialog was cancelled.
 		/// </summary>
-		/// <param name="usedKeys">Sync IDs already paired with the other devices.</param>
-		public static string SelectSyncId(IWin32Window parent, string deviceName, string currentKey, IEnumerable<string> usedKeys)
+		/// <param name="devices">List of <seealso cref="DeviceSyncSettings"/></param>
+		/// <param name="currentDevice">The device to repair</param>
+		public static string SelectSyncId(IWin32Window parent, IEnumerable<DeviceSyncSettings> devices, DeviceSyncSettings currentDevice)
 		{
 			using (DeviceSelectDialog deviceSelectDialog = new DeviceSelectDialog())
 			{
-				deviceSelectDialog.ConfigureForRepair(deviceName, currentKey, usedKeys);
+				string currentKey = currentDevice.DeviceKey;
+				string deviceName = currentDevice.DeviceName;
+				var otherKeys = devices.Where(d => d.DeviceKey != currentDevice.DeviceKey).Select(d => d.DeviceKey);
+
+				deviceSelectDialog.ConfigureForRepair(deviceName, currentKey, otherKeys);
 				// devices already paired (including this one) are not valid targets, the one with the same name goes first
 				deviceSelectDialog.FillList(DiscoverProviders(parent)
 					.Where((ISyncProvider sd) => sd.Device.Key != currentKey && !deviceSelectDialog.usedKeys.Contains(sd.Device.Key))

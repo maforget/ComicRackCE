@@ -138,11 +138,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				return;
 			}
 			string oldKey = device.DeviceKey;
-			IEnumerable<string> usedKeys = from TabPage tp in tabDevices.TabPages
-				select (DeviceEditControl)tp.Tag into dec
-				where dec != device
-				select dec.DeviceKey;
-			string newKey = DeviceSelectDialog.SelectSyncId(this, device.DeviceName, oldKey, usedKeys);
+			string newKey = DeviceSelectDialog.SelectSyncId(this, Devices, device.Settings);
 			if (string.IsNullOrEmpty(newKey) || newKey == oldKey)
 			{
 				return;
