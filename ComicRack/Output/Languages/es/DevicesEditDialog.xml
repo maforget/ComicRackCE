@@ -31,6 +31,7 @@
     <Text Key="miDevicePaste" Text="Pegar" Comment="Paste" />
     <Text Key="miDeviceCopyToAll" Text="Copiar A Todos" Comment="Copy To All" />
     <Text Key="miDeviceRename" Text="Renombrar..." Comment="Rename..." />
+    <Text Key="miDeviceRepair" Text="Volver a Emparejar..." Comment="Re-pair..." />
     <Text Key="miDeviceUnpair" Text="Desvincular Dispositivo" Comment="Unpair Device" />
   </Texts>
 </TR>
