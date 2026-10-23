@@ -1051,7 +1051,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 			if (cbTheme.SelectedItem != null && cbTheme.SelectedItem is ThemeOption themeOption)
 			{
-				NeedsRestart = themeOption.Theme != Program.Settings.Theme;
+				NeedsRestart |= themeOption.Theme != Program.Settings.Theme;
 				Program.Settings.Theme = themeOption.Theme;
 			}
 
