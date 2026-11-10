@@ -14,26 +14,6 @@ using System.Xml.Serialization;
 
 namespace cYo.Projects.ComicRack.Plugins
 {
-	public interface IDotNetHook
-	{
-		string Hook { get; }
-		Type HookType { get; }
-		int PCount { get; }
-	}
-
-	public class DotNetHook<T> : IDotNetHook where T : IDotNetCommand
-	{
-		public string Hook { get; init; }
-		public Type HookType { get; init; }
-		public int PCount { get; init; }
-
-		public DotNetHook(string hook)
-		{
-			Hook = hook;
-			HookType = typeof(T);
-		}
-	}
-
 	public class DotNetCommand : Command
 	{
 		public Func<object[], object> ScriptHandler { get; init; }
@@ -41,28 +21,6 @@ namespace cYo.Projects.ComicRack.Plugins
 		public string LibPath { get; private set; }
 		private string ConfigFileName => ScriptFile + "-" + Key + ".config";
 		public DotNetPlugin Plugin { get; internal set; }
-
-		private static readonly Dictionary<string, IDotNetHook> hookTypes = new()
-		{
-			[PluginEngine.ScriptTypeCreateBookList] = new DotNetHook<ICreateBookList>(PluginEngine.ScriptTypeCreateBookList),
-			[PluginEngine.ScriptTypeParseComicPath] = new DotNetHook<IParseComicPath>(PluginEngine.ScriptTypeParseComicPath),
-			[PluginEngine.ScriptTypeLibrary] = new DotNetHook<ILibrary>(PluginEngine.ScriptTypeLibrary),
-			[PluginEngine.ScriptTypeEditor] = new DotNetHook<IEditor>(PluginEngine.ScriptTypeEditor),
-			[PluginEngine.ScriptTypeBooks] = new DotNetHook<IBooks>(PluginEngine.ScriptTypeBooks),
-			[PluginEngine.ScriptTypeNewBooks] = new DotNetHook<INewBooks>(PluginEngine.ScriptTypeNewBooks),
-			[PluginEngine.ScriptTypeBookOpened] = new DotNetHook<IBookOpened>(PluginEngine.ScriptTypeBookOpened),
-			[PluginEngine.ScriptTypeReaderResized] = new DotNetHook<IReaderResized>(PluginEngine.ScriptTypeReaderResized),
-			[PluginEngine.ScriptTypeSearch] = new DotNetHook<ISearch>(PluginEngine.ScriptTypeSearch),
-			[PluginEngine.ScriptTypeConfig] = new DotNetHook<IConfig>(PluginEngine.ScriptTypeConfig),
-			[PluginEngine.ScriptTypeStartup] = new DotNetHook<IStartup>(PluginEngine.ScriptTypeStartup),
-			[PluginEngine.ScriptTypeShutdown] = new DotNetHook<IShutdown>(PluginEngine.ScriptTypeShutdown),
-			[PluginEngine.ScriptTypeComicInfoUI] = new DotNetHook<IComicInfoUI>(PluginEngine.ScriptTypeComicInfoUI),
-			[PluginEngine.ScriptTypeQuickOpenHtml] = new DotNetHook<IQuickOpenHtml>(PluginEngine.ScriptTypeQuickOpenHtml),
-			[PluginEngine.ScriptTypeQuickOpenUI] = new DotNetHook<IQuickOpenUI>(PluginEngine.ScriptTypeQuickOpenUI),
-			[PluginEngine.ScriptTypeDrawThumbnailOverlay] = new DotNetHook<IDrawThumbnailOverlay>(PluginEngine.ScriptTypeDrawThumbnailOverlay)
-		};
-
-		internal static IDotNetHook GetHookFromType(Type interfaceType) => hookTypes.Values.FirstOrDefault(hook => hook.HookType == interfaceType);
 
 		protected override void Log(string text, params object[] o)
 		{
@@ -77,7 +35,7 @@ namespace cYo.Projects.ComicRack.Plugins
 			try
 			{
 				Log($"Calling '{Key}.{Hook}'...");
-				if (hookTypes.TryGetValue(Hook, out IDotNetHook options))
+				if (DotNetHookRegistry.TryGetHook(Hook, out IDotNetHook options))
 				{
 					return ScriptHandler(data);
 				}

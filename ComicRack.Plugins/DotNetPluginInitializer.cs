@@ -20,7 +20,7 @@ namespace cYo.Projects.ComicRack.Plugins
 				if (!".dll".Equals(Path.GetExtension(file), StringComparison.OrdinalIgnoreCase))
 					return list.ToArray();
 
-				// Load .NET commands that implement the BaseDotNetPlugin class. The class must also implement an IDotNetCommand interface that corresponds to it's HookType.
+				// Load .NET commands that implement the DotNetPlugin class. The class must also implement an IDotNetCommand interface that corresponds to it's HookType.
 				var assembly = Assembly.LoadFrom(file);
 				assembly?.GetTypes().Where(t => t.IsSubclassOf(typeof(DotNetPlugin))).ForEach(t =>
 				{
@@ -30,7 +30,7 @@ namespace cYo.Projects.ComicRack.Plugins
 
 					foreach (Type interfaceType in hooks)
 					{
-						IDotNetHook hook = DotNetCommand.GetHookFromType(interfaceType);
+						IDotNetHook hook = DotNetHookRegistry.GetHookFromType(interfaceType);
 						var executeMethod = interfaceType.GetMethod(Method);
 
 						if (hook == null || executeMethod == null)
