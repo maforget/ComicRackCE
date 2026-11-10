@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using cYo.Common.Collections;
 using cYo.Common.Drawing;
 using cYo.Common.IO;
 using cYo.Common.Windows.Forms.Theme;
@@ -122,6 +123,18 @@ namespace cYo.Projects.ComicRack.Plugins
 			}
 		}
 
+		public static bool EnableLog
+		{
+			get;
+			set;
+		}
+
+		protected static Stream Output
+		{
+			get;
+			private set;
+		}
+
 		public bool Initialize(IPluginEnvironment env, string path)
 		{
 			try
@@ -195,6 +208,22 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		protected virtual void Log(string text, params object[] o)
 		{
+		}
+
+		public static void LogDefault(string text, params object[] o)
+		{
+			if (Output != null && EnableLog)
+			{
+				using (StreamWriter streamWriter = new StreamWriter(Output))
+				{
+					streamWriter.WriteLine(text, o);
+				}
+			}
+		}
+
+		public static void SetLogOutput(Stream ts)
+		{
+			Output = ts;
 		}
 
 		protected virtual void OnInitialize(IPluginEnvironment env, string path)

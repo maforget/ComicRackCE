@@ -25,8 +25,7 @@ namespace cYo.Projects.ComicRack.Plugins
 		protected override void Log(string text, params object[] o)
 		{
 			base.Log(text, o);
-			// TODO: Implement proper logging for plugin command invocation.
-			// Need to fix how the script console is wired with python commands, so that we can log to the console for .NET commands as well.
+			LogDefault(text, o);
 			// Should check Nadiar fork to implement the new script console at the same time.
 		}
 

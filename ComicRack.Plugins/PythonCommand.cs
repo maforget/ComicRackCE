@@ -67,18 +67,6 @@ namespace cYo.Projects.ComicRack.Plugins
 			set;
 		}
 
-		public static Stream Output
-		{
-			get;
-			set;
-		}
-
-		public static bool EnableLog
-		{
-			get;
-			set;
-		}
-
 		public string ScriptFile
 		{
 			get;
@@ -257,17 +245,6 @@ namespace cYo.Projects.ComicRack.Plugins
 			catch (Exception)
 			{
 				return null;
-			}
-		}
-
-		public static void LogDefault(string text, params object[] o)
-		{
-			if (Output != null && EnableLog)
-			{
-				using (StreamWriter streamWriter = new StreamWriter(Output))
-				{
-					streamWriter.WriteLine(text, o);
-				}
 			}
 		}
 
