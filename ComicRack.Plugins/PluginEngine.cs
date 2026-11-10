@@ -11,11 +11,12 @@ namespace cYo.Projects.ComicRack.Plugins
 {
 	public class PluginEngine
 	{
-		private readonly PluginInitializer[] initializers = new PluginInitializer[2]
-		{
+		private readonly PluginInitializer[] initializers =
+		[
 			new XmlPluginInitializer(),
-			new PythonPluginInitializer()
-		};
+			new PythonPluginInitializer(),
+			new DotNetPluginInitializer()
+		];
 
 		public const string ScriptTypeCreateBookList = "CreateBookList";
 
@@ -194,10 +195,10 @@ namespace cYo.Projects.ComicRack.Plugins
 						}
 						else
 						{
-							if (commands.Exists((Command c) => c.Key == cmd.Key))
-							{
+							// Allow one command per key & hook for a plugin.
+							if (commands.Exists(c => c.Key == cmd.Key && c.Hook == cmd.Hook))
 								continue;
-							}
+
 							if (cmd.Enabled)
 							{
 								int num = commands.Count((Command c) => c.Enabled);
@@ -211,13 +212,11 @@ namespace cYo.Projects.ComicRack.Plugins
 					{
 					}
 				}
+				// Attach the plugin's config command to every matching command.
 				foreach (Command cfg in list)
 				{
-					Command command = commands.FirstOrDefault((Command c) => c.Key == cfg.Key);
-					if (command != null)
-					{
+					foreach (Command command in commands.Where(c => c.Key == cfg.Key))
 						command.Configure = cfg;
-					}
 				}
 			}
 		}
