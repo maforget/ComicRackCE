@@ -310,7 +310,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			Command command = e.Item.Tag as Command;
 			if (command != null)
 			{
-				command.Enabled = e.Item.Checked;
+				// The list shows one row per Key; a .NET plugin has one command per hook under that Key.
+				pluginEngine.SetEnabled(command.Key, e.Item.Checked);
 			}
 		}
 

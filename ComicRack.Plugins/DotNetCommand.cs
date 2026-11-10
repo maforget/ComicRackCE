@@ -88,7 +88,7 @@ namespace cYo.Projects.ComicRack.Plugins
 		protected override void OnInitialize(IPluginEnvironment env, string path)
 		{
 			base.OnInitialize(env, path);
-			Log($"\nInitializing script '{Key}.{Hook}' from '{pluginFile}'");
+			Log($"\nInitializing script '{Key}.{Hook}' from '{(Path.GetFileName(pluginFile))}'");
 			if (CommandImage == null && !string.IsNullOrEmpty(Plugin.Image))
 				CommandImage = LoadEmbeddedImage();
 

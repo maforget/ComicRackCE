@@ -1073,6 +1073,7 @@ namespace cYo.Projects.ComicRack.Viewer
 		{
 			try
 			{
+				ScriptUtility.Scripts?.Dispose();
 				NetworkManager.Dispose();
 				SystemEvents.PowerModeChanged -= SystemEventsPowerModeChanged;
 				QueueManager.Dispose();
