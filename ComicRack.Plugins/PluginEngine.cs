@@ -189,7 +189,7 @@ namespace cYo.Projects.ComicRack.Plugins
 			string[] hooks = ValidHooks.Keys.ToArray();
 			foreach (string file in FileUtility.GetFiles(path, SearchOption.AllDirectories))
 			{
-				foreach (Command cmd in initializers.SelectMany((PluginInitializer si) => si.GetCommands(file)))
+				foreach (Command cmd in initializers.SelectMany((PluginInitializer si) => si.GetCommands(file, env)))
 				{
 					try
 					{

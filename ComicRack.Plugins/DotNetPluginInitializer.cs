@@ -13,7 +13,9 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		private static readonly string pluginApiName = typeof(DotNetPlugin).Assembly.GetName().Name;
 
-		public override IEnumerable<Command> GetCommands(string file)
+		public override IEnumerable<Command> GetCommands(string file) => GetCommands(file, null);
+
+		public override IEnumerable<Command> GetCommands(string file, IPluginEnvironment env)
 		{
 			if (!".dll".Equals(Path.GetExtension(file), StringComparison.OrdinalIgnoreCase) || !ReferencesPluginApi(file))
 				return Enumerable.Empty<Command>();
@@ -21,6 +23,7 @@ namespace cYo.Projects.ComicRack.Plugins
 			try
 			{
 				Assembly assembly = Assembly.LoadFrom(file);
+				PluginAssemblyResolver.Register(Path.GetDirectoryName(file), env?.LibraryPaths);
 				if (!string.Equals(Path.GetFullPath(assembly.Location), Path.GetFullPath(file), StringComparison.OrdinalIgnoreCase))
 				{
 					Command.LogDefault($"Skipped .NET plugin '{file}': an assembly with the same identity is already loaded from '{assembly.Location}'");
@@ -45,19 +48,19 @@ namespace cYo.Projects.ComicRack.Plugins
 		{
 			try
 			{
-				return ReflectionOnlyLoad(file).GetReferencedAssemblies().Any(a => a.Name == pluginApiName);
+				AssemblyName name = AssemblyName.GetAssemblyName(file);
+				// A second ReflectionOnlyLoadFrom of an identity already loaded from another path throws, so reuse the first one.
+				Assembly assembly = AppDomain.CurrentDomain.ReflectionOnlyGetAssemblies().FirstOrDefault(a => a.FullName == name.FullName) ?? Assembly.ReflectionOnlyLoadFrom(file);
+				if (assembly.GetReferencedAssemblies().Any(a => a.Name == pluginApiName))
+					return true;
+
+				PluginAssemblyResolver.NoteLibrary(file, name);
+				return false;
 			}
 			catch (Exception)
 			{
 				return false;
 			}
-		}
-
-		// A second ReflectionOnlyLoadFrom of an identity already loaded from another path throws, so reuse the first one.
-		private static Assembly ReflectionOnlyLoad(string file)
-		{
-			string fullName = AssemblyName.GetAssemblyName(file).FullName;
-			return AppDomain.CurrentDomain.ReflectionOnlyGetAssemblies().FirstOrDefault(a => a.FullName == fullName) ?? Assembly.ReflectionOnlyLoadFrom(file);
 		}
 	}
 }
