@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace cYo.Projects.ComicRack.Plugins
 {
-	public static class DotNetHookRegistry
+	internal static class DotNetHookRegistry
 	{
 		private static readonly Dictionary<string, IDotNetHook> hookTypes = new()
 		{
@@ -30,20 +30,19 @@ namespace cYo.Projects.ComicRack.Plugins
 		public static bool TryGetHook(string hook, out IDotNetHook dotNetHook) => hookTypes.TryGetValue(hook, out dotNetHook);
 
 		public static IDotNetHook GetHookFromType(Type interfaceType) => hookTypes.Values.FirstOrDefault(hook => hook.HookType == interfaceType);
+		public static IEnumerable<IDotNetHook> GetHooks(DotNetPlugin plugin) => hookTypes.Values.Where(hook => hook.HookType.IsInstanceOfType(plugin));
 	}
 
-	public interface IDotNetHook
+	internal interface IDotNetHook
 	{
 		string Hook { get; }
 		Type HookType { get; }
-		int PCount { get; }
 	}
 
-	public class DotNetHook<T> : IDotNetHook where T : IDotNetCommand
+	internal sealed class DotNetHook<T> : IDotNetHook where T : IDotNetCommand
 	{
 		public string Hook { get; init; }
 		public Type HookType { get; init; }
-		public int PCount { get; init; }
 
 		public DotNetHook(string hook)
 		{

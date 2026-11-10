@@ -1,5 +1,7 @@
 ﻿using cYo.Common.ComponentModel;
+using cYo.Common.Drawing;
 using cYo.Common.Text;
+using cYo.Common.Windows.Forms.Theme;
 using cYo.Projects.ComicRack.Engine;
 using IronPython.Runtime;
 using Microsoft.Scripting.Hosting;
@@ -8,19 +10,41 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace cYo.Projects.ComicRack.Plugins
 {
-	public class DotNetCommand : Command
+	internal sealed class DotNetCommand : Command
 	{
-		public Func<object[], object> ScriptHandler { get; init; }
-		public string ScriptFile { get; set; }
-		public string LibPath { get; private set; }
-		private string ConfigFileName => ScriptFile + "-" + Key + ".config";
-		public DotNetPlugin Plugin { get; internal set; }
+		private const string Method = "Execute";
+		private readonly MethodInfo execute;
+		private readonly string pluginFile;
+		public DotNetPlugin Plugin { get; }
+		private string ConfigFileName => pluginFile + "-" + Key + ".config";
+
+		private DotNetCommand(DotNetPlugin plugin, IDotNetHook hook, string pluginFile)
+		{
+			Plugin = plugin;
+			this.pluginFile = pluginFile;
+			execute = hook.HookType.GetMethod(Method);
+			Key = plugin.Key;
+			Name = plugin.Name;
+			Description = plugin.Description;
+			Image = plugin.Image;
+			Enabled = plugin.Enabled;
+			PCount = hook.HookType.GetProperty("PCount")?.GetValue(plugin) as int? ?? 0;
+			Hook = hook.Hook;
+		}
+
+		// pluginFile is the file that stands for the plugin on disk: the DLL of a compiled plugin, the .csplugin file of a source plugin.
+		public static IEnumerable<DotNetCommand> CreateAll(DotNetPlugin plugin, string pluginFile)
+		{
+			return DotNetHookRegistry.GetHooks(plugin).Select(hook => new DotNetCommand(plugin, hook, pluginFile));
+		}
 
 		protected override void Log(string text, params object[] o)
 		{
@@ -31,18 +55,20 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		protected override object OnInvoke(object[] data)
 		{
+			Log($"Calling '{Key}.{Hook}'...");
 			try
 			{
-				Log($"Calling '{Key}.{Hook}'...");
-				if (DotNetHookRegistry.TryGetHook(Hook, out IDotNetHook options))
-				{
-					return ScriptHandler(data);
-				}
-				throw new NotImplementedException($"No handler found for hook {Hook} with type {options?.HookType?.Name ?? "Unknown"}");
+				return execute.Invoke(Plugin, data);
+			}
+			catch (TargetInvocationException e) when (e.InnerException != null)
+			{
+				Log($"{Key}.{Hook} failed: {e.InnerException.Message}");
+				ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+				throw;
 			}
 			catch (Exception e)
 			{
-				HandleException(e);
+				Log($"{Key}.{Hook} failed: {e.Message}");
 				throw;
 			}
 		}
@@ -53,7 +79,7 @@ namespace cYo.Projects.ComicRack.Plugins
 			{
 				if (base.IsValid && !string.IsNullOrEmpty(Hook))
 				{
-					return ScriptHandler != null;
+					return execute != null;
 				}
 				return false;
 			}
@@ -62,29 +88,52 @@ namespace cYo.Projects.ComicRack.Plugins
 		protected override void OnInitialize(IPluginEnvironment env, string path)
 		{
 			base.OnInitialize(env, path);
+			Log($"\nInitializing script '{Key}.{Hook}' from '{pluginFile}'");
+			if (CommandImage == null && !string.IsNullOrEmpty(Plugin.Image))
+				CommandImage = LoadEmbeddedImage();
+
 			try
 			{
-				LibPath = path;
-				Log($"\nInitializing script '{Key}.{Hook}' from '{ScriptFile}'");
-				ScriptFile = Command.GetFile(path, ScriptFile);
-				Plugin.SetPluginEnvironment(Environment);
-				if (!File.Exists(ScriptFile))
-				{
-					throw new FileNotFoundException("Script file not found");
-				}
+				Plugin.Load(Environment, path);
 			}
 			catch (Exception e)
 			{
-				HandleException(e);
+				Log($"Skipped '{Key}.{Hook}' from '{pluginFile}': OnLoad failed: {e.Message}");
 				throw;
 			}
 		}
 
-		protected override void MakeDefaults()
+		// The base class loads the image from the plugin folder; this fills in a missing file from the plugin assembly, so a single DLL can carry its image.
+		private System.Drawing.Image LoadEmbeddedImage()
 		{
-			// TODO: Implement proper default values for plugin command invocation.
-			// DotNetPlugin Enforces the Key to be set and the Name to default to the Key if not set.
-			base.MakeDefaults();
+			string file = Path.GetFileName(Plugin.Image);
+			var candidates = new List<string>();
+			if (Environment != null && Environment.Theme.CurrentTheme != Themes.Default)
+				candidates.Add(Environment.Theme.CurrentTheme + file);
+
+			candidates.Add(file);
+			Assembly assembly = Plugin.GetType().Assembly;
+			string[] resources = assembly.GetManifestResourceNames();
+			foreach (string candidate in candidates)
+			{
+				string resource = resources.FirstOrDefault(r => r.Equals(candidate, StringComparison.OrdinalIgnoreCase) || r.EndsWith("." + candidate, StringComparison.OrdinalIgnoreCase));
+				if (resource == null)
+					continue;
+
+				try
+				{
+					using (Stream stream = assembly.GetManifestResourceStream(resource))
+					using (System.Drawing.Image source = System.Drawing.Image.FromStream(stream))
+					{
+						return source.CreateCopy(alwaysTrueCopy: true);
+					}
+				}
+				catch
+				{
+					return null;
+				}
+			}
+			return null;
 		}
 
 		public override string LoadConfig()
