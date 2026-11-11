@@ -16,8 +16,6 @@ namespace cYo.Projects.ComicRack.Plugins
 	// resolver again. NoteLibrary warns about that. Versions of a strong-named assembly load side by side.
 	internal static class PluginAssemblyResolver
 	{
-		private const string LibraryFolder = "lib";
-
 		private static readonly object gate = new object();
 
 		private static readonly Dictionary<string, HashSet<string>> directoriesByPluginFolder = new Dictionary<string, HashSet<string>>(StringComparer.OrdinalIgnoreCase);
@@ -35,7 +33,7 @@ namespace cYo.Projects.ComicRack.Plugins
 			{
 				if (!directoriesByPluginFolder.TryGetValue(pluginFolder, out HashSet<string> directories))
 				{
-					directories = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { pluginFolder, Path.Combine(pluginFolder, LibraryFolder) };
+					directories = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { pluginFolder };
 					directoriesByPluginFolder.Add(pluginFolder, directories);
 				}
 				directories.UnionWith((moreDirectories ?? Enumerable.Empty<string>()).Select(Path.GetFullPath));
