@@ -105,6 +105,9 @@ namespace cYo.Projects.ComicRack.Plugins
 		}
 
 		[XmlIgnore]
+		public abstract PluginKind Kind { get; }
+
+		[XmlIgnore]
 		public Command Configure
 		{
 			get;

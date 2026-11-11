@@ -32,6 +32,9 @@ namespace cYo.Projects.ComicRack.Plugins
 			return commands;
 		}
 
+
+		public static PluginKind KindOf(string pluginFile) => CSharpSourcePluginInitializer.IsMarker(pluginFile) ? PluginKind.CSharpSource : PluginKind.CompiledDotNet;
+
 		// Abstract and open generic classes are base classes for other plugins, not plugins.
 		private static bool IsPluginClass(Type type)
 		{

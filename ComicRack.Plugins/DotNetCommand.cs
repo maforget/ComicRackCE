@@ -24,6 +24,7 @@ namespace cYo.Projects.ComicRack.Plugins
 		private readonly MethodInfo execute;
 		private readonly string pluginFile;
 		public DotNetPlugin Plugin { get; }
+		public override PluginKind Kind => DotNetPluginLoader.KindOf(pluginFile);
 		private string ConfigFileName => pluginFile + "-" + Key + ".config";
 
 		private DotNetCommand(DotNetPlugin plugin, IDotNetHook hook, string pluginFile)

@@ -59,6 +59,8 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		private ScriptScope scope;
 
+		public override PluginKind Kind => PluginKind.Python;
+
 		private ScriptCreateHandler hookType;
 
 		public static bool Optimized
