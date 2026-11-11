@@ -13,12 +13,9 @@ namespace cYo.Projects.ComicRack.Plugins
 {
 	public class PluginEngine : DisposableObject
 	{
-		private readonly PluginInitializer[] initializers =
-		[
-			new XmlPluginInitializer(),
-			new PythonPluginInitializer(),
-			new DotNetPluginInitializer()
-		];
+		private readonly PluginInitializer[] initializers;
+
+		private readonly CSharpSourcePluginInitializer sourceInitializer;
 
 		public const string ScriptTypeCreateBookList = "CreateBookList";
 
@@ -148,6 +145,19 @@ namespace cYo.Projects.ComicRack.Plugins
 			}
 		};
 
+		/// <param name="sourcePluginCachePath">The folder that keeps the compiled assemblies of source plugins (.csplugin). The default is a folder in the temporary files of the user.</param>
+		public PluginEngine(string sourcePluginCachePath = null)
+		{
+			sourceInitializer = new CSharpSourcePluginInitializer(sourcePluginCachePath ?? Path.Combine(Path.GetTempPath(), "ComicRack", "PluginCache"));
+			initializers =
+			[
+				new XmlPluginInitializer(),
+				new PythonPluginInitializer(),
+				new DotNetPluginInitializer(),
+				sourceInitializer
+			];
+		}
+
 		private readonly CommandCollection commands = new CommandCollection();
 
 		private CommandCollection Commands => commands;
@@ -187,7 +197,9 @@ namespace cYo.Projects.ComicRack.Plugins
 		{
 			List<Command> list = new List<Command>();
 			string[] hooks = ValidHooks.Keys.ToArray();
-			foreach (string file in FileUtility.GetFiles(path, SearchOption.AllDirectories))
+			List<string> files = FileUtility.GetFiles(path, SearchOption.AllDirectories).ToList();
+			List<string> sourcePluginFolders = files.Where(CSharpSourcePluginInitializer.IsMarker).Select(Path.GetDirectoryName).ToList();
+			foreach (string file in files.Where((string f) => !CSharpSourcePluginInitializer.IsShadowedBySource(f, sourcePluginFolders)))
 			{
 				foreach (Command cmd in initializers.SelectMany((PluginInitializer si) => si.GetCommands(file, env)))
 				{
@@ -241,6 +253,12 @@ namespace cYo.Projects.ComicRack.Plugins
 					}
 				}
 			}
+		}
+
+		/// <summary>Call once after Initialize has scanned every scripts folder. Deletes the compiled assemblies of source plugins that no folder uses any more.</summary>
+		public void CompleteInitialization()
+		{
+			sourceInitializer.SweepCache();
 		}
 
 		// A Key belongs to the first plugin that registers it. Only the hook commands of one .NET plugin class share their Key.

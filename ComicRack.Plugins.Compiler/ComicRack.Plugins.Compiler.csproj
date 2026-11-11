@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<OutputType>Library</OutputType>
+		<RootNamespace>cYo.Projects.ComicRack.Plugins.Compiler</RootNamespace>
+		<!-- Roslyn ships its messages in 13 languages; ComicRack logs the English ones. -->
+		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>none</DebugType>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- Roslyn has to stay visible to the application that references this project: MSBuild writes the binding redirects for the Roslyn dependencies into the .config of that application only then. -->
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\ComicRack.Plugins\ComicRack.Plugins.csproj" />
+	</ItemGroup>
+</Project>

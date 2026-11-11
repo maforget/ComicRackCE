@@ -19,3 +19,4 @@ using System.Runtime.Versioning;
 [assembly: CLSCompliant(true)]
 [assembly: NeutralResourcesLanguage("en")]
 [assembly: AssemblyVersion("1.0.*")]
+[assembly: InternalsVisibleTo("ComicRack.Plugins.Compiler")]

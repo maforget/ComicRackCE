@@ -70,13 +70,14 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public static bool Initialize(IWin32Window mainWindow, IApplication app, IBrowser browser, IComicDisplay comicDisplay, IPluginConfig config, IOpenBooksManager openBooks)
 		{
-			Scripts = new PluginEngine();
+			Scripts = new PluginEngine(Program.Paths.PluginCachePath);
 			if (!Enabled)
 				return false;
 
 			PluginEnvironment env = new PluginEnvironment(mainWindow, app, browser, comicDisplay, config, openBooks, ThemePlugin.Default);
 			Scripts.Initialize(env, Program.Paths.ScriptPath);
 			Scripts.Initialize(env, Program.Paths.ScriptPathSecondary);
+			Scripts.CompleteInitialization();
 			Scripts.CommandStates = Program.Settings.PluginsStates;
 			ComicBookDialog.ScriptEngine = Scripts;
 			ComicBookPluginMatcher.PluginEngine = Scripts;

@@ -26,6 +26,8 @@
         <UseWPF>true</UseWPF>
         <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
         <Deterministic>false</Deterministic>
+		<!-- Keeps the localized Roslyn resources of ComicRack.Plugins.Compiler out of the output folder. -->
+		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <DebugType>none</DebugType>
@@ -156,6 +158,8 @@
         <ProjectReference Include="..\ComicRack.Engine.Display.Forms\ComicRack.Engine.Display.Forms.csproj" />
         <ProjectReference Include="..\ComicRack.Engine\ComicRack.Engine.csproj" />
         <ProjectReference Include="..\ComicRack.Plugins\ComicRack.Plugins.csproj" />
+		<!-- Not used at compile time. ComicRack.Plugins loads it by name when a source plugin (.csplugin) has to be compiled. -->
+		<ProjectReference Include="..\ComicRack.Plugins.Compiler\ComicRack.Plugins.Compiler.csproj" />
         <ProjectReference Include="..\cYo.Common.Presentation\cYo.Common.Presentation.csproj" />
         <ProjectReference Include="..\cYo.Common.Windows\cYo.Common.Windows.csproj" />
         <ProjectReference Include="..\cYo.Common\cYo.Common.csproj" />

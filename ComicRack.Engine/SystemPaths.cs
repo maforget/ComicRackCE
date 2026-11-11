@@ -37,6 +37,8 @@ namespace cYo.Projects.ComicRack.Engine
 
 		public readonly string AlternateConfig;
 
+		public readonly string PluginCachePath;
+
 		public SystemPaths(bool useLocal, string alternateConfig, string databasePath, string cachePath)
 		{
 			UseLocal = useLocal; AlternateConfig = alternateConfig; 
@@ -48,6 +50,7 @@ namespace cYo.Projects.ComicRack.Engine
 			ImageCachePath = Path.Combine(string.IsNullOrEmpty(cachePath) ? Path.Combine(LocalApplicationDataPath, "Cache") : cachePath, "Images");
 			FileCachePath = Path.Combine(string.IsNullOrEmpty(cachePath) ? Path.Combine(LocalApplicationDataPath, "Cache") : cachePath, "Files");
 			CustomThumbnailPath = Path.Combine(string.IsNullOrEmpty(cachePath) ? Path.Combine(LocalApplicationDataPath, "Cache") : cachePath, "CustomThumbnails");
+			PluginCachePath = Path.Combine(string.IsNullOrEmpty(cachePath) ? Path.Combine(LocalApplicationDataPath, "Cache") : cachePath, "Plugins");
 			ScriptPath = Path.Combine(ApplicationPath, "Scripts");
 			ScriptPathSecondary = Path.Combine(ApplicationDataPath, "Scripts");
 			PendingScriptsPath = Path.Combine(ScriptPathSecondary, ".Pending");
