@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +79,11 @@ namespace cYo.Projects.ComicRack.Plugins
 				loadFailure = ExceptionDispatchInfo.Capture(e);
 				throw;
 			}
+		}
+
+		protected void Log(string message, [CallerMemberName] string caller = "")
+		{
+			Command.LogDefault($"[{Key}.{caller}] {message}");
 		}
 	}
 }
