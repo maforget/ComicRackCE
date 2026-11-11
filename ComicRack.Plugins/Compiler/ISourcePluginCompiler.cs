@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace cYo.Projects.ComicRack.Plugins
+namespace cYo.Projects.ComicRack.Plugins.Compiler
 {
 	internal sealed class SourcePluginCompilation
 	{

@@ -46,8 +46,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\release.yml = .github\workflows\release.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicRack.Plugins.Compiler", "ComicRack.Plugins.Compiler\ComicRack.Plugins.Compiler.csproj", "{6E61D8A4-A78D-41AD-B68B-F9B1CF6785E9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -112,14 +110,6 @@ Global
 		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}.Release|x64.ActiveCfg = Release|Any CPU
 		{A775E7F2-2D32-4F25-BF9B-F1C9EE5F5AF2}.Release|x64.Build.0 = Release|Any CPU
-		{6E61D8A4-A78D-41AD-B68B-F9B1CF6785E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E61D8A4-A78D-41AD-B68B-F9B1CF6785E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E61D8A4-A78D-41AD-B68B-F9B1CF6785E9}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{6E61D8A4-A78D-41AD-B68B-F9B1CF6785E9}.Debug|x64.Build.0 = Debug|Any CPU
-		{6E61D8A4-A78D-41AD-B68B-F9B1CF6785E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E61D8A4-A78D-41AD-B68B-F9B1CF6785E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E61D8A4-A78D-41AD-B68B-F9B1CF6785E9}.Release|x64.ActiveCfg = Release|Any CPU
-		{6E61D8A4-A78D-41AD-B68B-F9B1CF6785E9}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,7 +119,7 @@ Global
 		{F21BF3C0-2205-49BC-B1DE-09BA44BE8605} = {C335F5E2-2C66-465E-B59B-33F8E13B287E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C85D577B-A999-424A-B0EC-330EC759489F}
 		RESX_Rules = {"EnabledRules":["WhiteSpaceLead","WhiteSpaceTail","PunctuationLead","PunctuationTail"]}
+		SolutionGuid = {C85D577B-A999-424A-B0EC-330EC759489F}
 	EndGlobalSection
 EndGlobal

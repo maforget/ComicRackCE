@@ -9,6 +9,7 @@ using cYo.Common.IO;
 using cYo.Common.Runtime;
 using cYo.Common.Windows.Forms.Theme;
 using cYo.Projects.ComicRack.Engine;
+using cYo.Projects.ComicRack.Plugins.Compiler;
 
 namespace cYo.Projects.ComicRack.Plugins
 {
@@ -106,10 +107,6 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		public const string MarkerExtension = ".csplugin";
 
-		private const string CompilerAssemblyName = "ComicRack.Plugins.Compiler";
-
-		private const string CompilerTypeName = "cYo.Projects.ComicRack.Plugins.Compiler.RoslynSourcePluginCompiler";
-
 		private const int KeyLength = 16;
 
 		private const int FolderLength = 8;
@@ -170,8 +167,7 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		private string GetAssemblyFile(SourcePlugin plugin)
 		{
-			// Loads the small compiler assembly only. Roslyn is loaded when the compiler runs.
-			Assembly compilerAssembly = Assembly.Load(CompilerAssemblyName);
+			Assembly compilerAssembly = typeof(RoslynSourcePluginCompiler).Assembly;
 			List<Reference> references = GetReferences(plugin);
 			string key = ComputeKey(plugin, references, compilerAssembly).Substring(0, KeyLength);
 			string assemblyName = plugin.Name + "-" + key;
@@ -188,7 +184,7 @@ namespace cYo.Projects.ComicRack.Plugins
 			string staging = Directory.CreateDirectory(Path.Combine(cachePath, Guid.NewGuid().ToString("N") + ".tmp")).FullName;
 			try
 			{
-				var compiler = (ISourcePluginCompiler)Activator.CreateInstance(compilerAssembly.GetType(CompilerTypeName, throwOnError: true));
+				var compiler = new RoslynSourcePluginCompiler();
 				SourcePluginCompilationResult result = compiler.Compile(new SourcePluginCompilation
 				{
 					// The name carries the key, because the runtime loads only one assembly per name and tells assemblies apart by it.
