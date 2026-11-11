@@ -171,7 +171,11 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		public bool IsHook(params string[] hooks)
 		{
-			return hooks.Any((string hook) => Hook.Contains(hook));
+			if (string.IsNullOrEmpty(Hook))
+				return false;
+
+			string[] own = Hook.Split(',').Select((string h) => h.Trim()).ToArray();
+			return hooks.Any((string hook) => own.Contains(hook));
 		}
 
 		public void PreCompile(bool handleException = true)
