@@ -4150,10 +4150,15 @@ namespace cYo.Common.Windows.Forms
 			itemStates.Update(stateInfo);
 		}
 
+		private string GetItemToolTip(int x, int y)
+		{
+			return ItemHitTest(x, y, out int subItem) is IViewableItemToolTip item && subItem != -1 ? item.GetToolTip(subItem) ?? string.Empty : string.Empty;
+		}
+
 		protected override void OnMouseMove(MouseEventArgs e)
 		{
 			base.OnMouseMove(e);
-			string text = ((hotHeader == null || !HeaderToolTips) ? string.Empty : hotHeader.TooltipText);
+			string text = hotHeader != null ? (HeaderToolTips ? hotHeader.TooltipText : string.Empty) : GetItemToolTip(e.X, e.Y);
 			if (text != toolTip.GetToolTip(this))
 			{
 				toolTip.SetToolTip(this, text);

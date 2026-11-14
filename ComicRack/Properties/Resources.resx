@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -807,5 +807,23 @@
   </data>
   <data name="Backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Backup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StateDirty" xml:space="preserve">
+    <value>Changes are waiting to be written to the book file</value>
+  </data>
+  <data name="StateFileless" xml:space="preserve">
+    <value>Fileless book: it has no file</value>
+  </data>
+  <data name="StateFileMissing" xml:space="preserve">
+    <value>The book file is missing</value>
+  </data>
+  <data name="StateLastOpened" xml:space="preserve">
+    <value>Opened most recently of the books in this list</value>
+  </data>
+  <data name="StateNewPages" xml:space="preserve">
+    <value>{0} new pages since you last read it</value>
+  </data>
+  <data name="StateOpen" xml:space="preserve">
+    <value>Open in the reader</value>
   </data>
 </root>
