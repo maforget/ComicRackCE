@@ -424,7 +424,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 			case "Icons":
 				defaultSize.Width = FormUtility.ScaleDpiX(64);
 				break;
-			case "State":
+			case StateColumn:
 				defaultSize.Width = FormUtility.ScaleDpiX(24);
 				break;
 			case "Rating":
@@ -472,58 +472,97 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 			return defaultSize;
 		}
 
-		private readonly struct BookState
+		private const string StateColumn = "State";
+
+		private enum BookState
 		{
-			public BookState(Image image, string text)
-			{
-				Image = image;
-				Text = text;
-			}
-
-			public Image Image { get; }
-
-			public string Text { get; }
+			Dirty,
+			Open,
+			LastOpened,
+			NewPages,
+			Fileless,
+			FileMissing
 		}
 
 		// One list feeds both the icons of the State column and its tooltip, so they cannot disagree.
+		// It is null when the book has no state, which is the common case, so most draws allocate nothing.
 		private List<BookState> GetStates()
 		{
-			var states = new List<BookState>();
+			List<BookState> states = null;
 			if (Comic.IsLinked && ((Comic.ComicInfoIsDirty && Program.Settings.UpdateComicFiles) || (Comic.ComicBookIsDirty && Program.Settings.UpdateComicBookFiles)))
 			{
-				states.Add(new BookState(IsDirtyImage, TR.Messages["StateDirty", Resources.StateDirty]));
+				states = states.SafeAdd(BookState.Dirty);
 			}
 			switch (marker)
 			{
 			case MarkerType.IsOpen:
-				states.Add(new BookState(MarkerIsOpenImage, TR.Messages["StateOpen", Resources.StateOpen]));
+				states = states.SafeAdd(BookState.Open);
 				break;
 			case MarkerType.IsLast:
-				states.Add(new BookState(MarkerLastOpenedImage, TR.Messages["StateLastOpened", Resources.StateLastOpened]));
+				states = states.SafeAdd(BookState.LastOpened);
 				break;
 			}
 			if (Comic.NewPages > 0)
 			{
-				states.Add(new BookState(ThumbRenderer.GetNewPageStatusImage(Comic.NewPages), StringUtility.Format(TR.Messages["StateNewPages", Resources.StateNewPages], Comic.NewPages)));
+				states = states.SafeAdd(BookState.NewPages);
 			}
 			if (!Comic.IsLinked)
 			{
-				states.Add(new BookState(MarkerIsFileLessImage, TR.Messages["StateFileless", Resources.StateFileless]));
+				states = states.SafeAdd(BookState.Fileless);
 			}
 			if (Comic.EditMode.IsLocalComic() && Comic.IsLinked && Comic.FileIsMissing)
 			{
-				states.Add(new BookState(ThumbnailViewItem.DeletedStateImage, TR.Messages["StateFileMissing", Resources.StateFileMissing]));
+				states = states.SafeAdd(BookState.FileMissing);
 			}
 			return states;
 		}
 
-		public string GetToolTip(int subItem)
+		private Image GetStateImage(BookState state)
 		{
-			if (subItem < 0 || subItem >= base.View.Columns.Count || !(base.View.Columns[subItem].Tag is ComicListField field) || field.DisplayProperty != "State")
+			switch (state)
+			{
+			case BookState.Dirty:
+				return IsDirtyImage;
+			case BookState.Open:
+				return MarkerIsOpenImage;
+			case BookState.LastOpened:
+				return MarkerLastOpenedImage;
+			case BookState.NewPages:
+				return ThumbRenderer.GetNewPageStatusImage(Comic.NewPages);
+			case BookState.Fileless:
+				return MarkerIsFileLessImage;
+			default:
+				return ThumbnailViewItem.DeletedStateImage;
+			}
+		}
+
+		private string GetStateText(BookState state)
+		{
+			switch (state)
+			{
+			case BookState.Dirty:
+				return TR.Messages["StateDirty", Resources.StateDirty];
+			case BookState.Open:
+				return TR.Messages["StateOpen", Resources.StateOpen];
+			case BookState.LastOpened:
+				return TR.Messages["StateLastOpened", Resources.StateLastOpened];
+			case BookState.NewPages:
+				return StringUtility.Format(TR.Messages["StateNewPages", Resources.StateNewPages], Comic.NewPages);
+			case BookState.Fileless:
+				return TR.Messages["StateFileless", Resources.StateFileless];
+			default:
+				return TR.Messages["StateFileMissing", Resources.StateFileMissing];
+			}
+		}
+
+		public string GetToolTip(IColumn column)
+		{
+			if (!(column.Tag is ComicListField field) || field.DisplayProperty != StateColumn)
 			{
 				return null;
 			}
-			return string.Join(Environment.NewLine, GetStates().Select(state => state.Text));
+			List<BookState> states = GetStates();
+			return states == null ? null : string.Join(Environment.NewLine, states.Select(GetStateText));
 		}
 
 		public override void OnDraw(ItemDrawInformation drawInfo)
@@ -537,8 +576,16 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 			Color textColor = drawInfo.TextColor;
 			Rectangle rectangle = drawInfo.Bounds;
 			Font font = base.View.Font;
+			List<Image> list = null;
 			List<BookState> states = GetStates();
-			List<Image> list = states.Count == 0 ? null : states.Select(state => state.Image).ToList();
+			if (states != null)
+			{
+				list = new List<Image>(states.Count);
+				foreach (BookState state in states)
+				{
+					list.Add(GetStateImage(state));
+				}
+			}
 			ThumbnailRatingMode ratingMode = ((!Program.Settings.NumericRatingThumbnails) ? ((!EngineConfiguration.Default.RatingStarsBelowThumbnails) ? ThumbnailRatingMode.StarsOverlay : ThumbnailRatingMode.StarsBelow) : ThumbnailRatingMode.Tags);
 			using (StringFormat stringFormat = new StringFormat())
 			{
@@ -745,7 +792,7 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 									}
 									break;
 								}
-								case "State":
+								case StateColumn:
 									if (list != null && list.Count > 0)
 									{
 										rectangle = drawInfo.Bounds;

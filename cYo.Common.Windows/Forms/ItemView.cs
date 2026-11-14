@@ -1897,6 +1897,35 @@ namespace cYo.Common.Windows.Forms
 				stateInfo.Set(viewableItem, ItemViewStates.Hot, on: true);
 			}
 			itemStates.Update(stateInfo);
+			SetToolTip(hotHeader != null ? (HeaderToolTips ? hotHeader.TooltipText : string.Empty) : GetItemToolTip(viewableItem, x, y));
+		}
+
+		private string GetItemToolTip(IViewableItem item, int x, int y)
+		{
+			if (ItemViewMode != ItemViewMode.Detail || !(item is IViewableItemToolTip toolTipItem))
+			{
+				return string.Empty;
+			}
+			Point pt = Translate(new Point(x, y), fromClient: true);
+			using (ItemMonitor.Lock(columns.SyncRoot))
+			{
+				for (int i = 0; i < columns.Count; i++)
+				{
+					if (GetItemBounds(item, i).Contains(pt))
+					{
+						return toolTipItem.GetToolTip(columns[i]) ?? string.Empty;
+					}
+				}
+			}
+			return string.Empty;
+		}
+
+		private void SetToolTip(string text)
+		{
+			if (text != toolTip.GetToolTip(this))
+			{
+				toolTip.SetToolTip(this, text);
+			}
 		}
 
 		public void InvokeActivate()
@@ -4150,19 +4179,9 @@ namespace cYo.Common.Windows.Forms
 			itemStates.Update(stateInfo);
 		}
 
-		private string GetItemToolTip(int x, int y)
-		{
-			return ItemHitTest(x, y, out int subItem) is IViewableItemToolTip item && subItem != -1 ? item.GetToolTip(subItem) ?? string.Empty : string.Empty;
-		}
-
 		protected override void OnMouseMove(MouseEventArgs e)
 		{
 			base.OnMouseMove(e);
-			string text = hotHeader != null ? (HeaderToolTips ? hotHeader.TooltipText : string.Empty) : GetItemToolTip(e.X, e.Y);
-			if (text != toolTip.GetToolTip(this))
-			{
-				toolTip.SetToolTip(this, text);
-			}
 			if (longClickSubItem != -1 && (Math.Abs(e.X - mouseDownPoint.X) > 2 || Math.Abs(e.Y - mouseDownPoint.Y) > 2))
 			{
 				StopLongClick();
@@ -4277,6 +4296,7 @@ namespace cYo.Common.Windows.Forms
 		{
 			StopLongClick();
 			SetHotHeader(null);
+			SetToolTip(string.Empty);
 			StateInfo stateInfo = new StateInfo(itemStates);
 			IViewableItem item;
 			while ((item = stateInfo.FindFirst(ItemViewStates.Hot)) != null)
