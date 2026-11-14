@@ -1166,11 +1166,11 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
 		private void btCommitProposed_Click(object sender, EventArgs e)
 		{
-			QuestionResult qr = QuestionDialog.AskQuestion(this, TR.Load("Script.CommitProposed")["AskCommit", "Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray"], TR.Load("Script.CommitProposed")["Write", "Write"], TR.Load("Script.CommitProposed")["Overwrite", "&Also overwrite existing values"]);
+			QuestionResult qr = QuestionDialog.AskQuestion(this, TR.Load("Script.CommitProposed")["AskCommit", "Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray"], TR.Load("Script.CommitProposed")["Write", "Write"], showCancel: true);
 			if (qr.HasFlag(QuestionResult.Ok))
 			{
 				ComicBook comic = GetFromEditor();
-				comic.WriteProposedValues(qr.HasFlag(QuestionResult.OkWithOption));
+				comic.WriteProposedValues(false);
 				SetDataToEditor(comic);
 			}
 		}
