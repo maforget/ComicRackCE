@@ -17,8 +17,14 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		public override IEnumerable<Command> GetCommands(string file, IPluginEnvironment env)
 		{
-			if (!".dll".Equals(Path.GetExtension(file), StringComparison.OrdinalIgnoreCase) || !ReferencesPluginApi(file))
+			if (!".dll".Equals(Path.GetExtension(file), StringComparison.OrdinalIgnoreCase) || !ReferencesPluginApi(file, out string apiProblem))
 				return Enumerable.Empty<Command>();
+
+			if (apiProblem != null)
+			{
+				Command.LogDefault($"Skipped .NET plugin '{file}': {apiProblem}");
+				return Enumerable.Empty<Command>();
+			}
 
 			try
 			{
@@ -44,15 +50,19 @@ namespace cYo.Projects.ComicRack.Plugins
 		}
 
 		// A script folder also holds the libraries of plugins. Only a DLL that references the plugin API can contain a plugin, and only such a DLL gets loaded for execution.
-		private static bool ReferencesPluginApi(string file)
+		private static bool ReferencesPluginApi(string file, out string apiProblem)
 		{
+			apiProblem = null;
 			try
 			{
 				AssemblyName name = AssemblyName.GetAssemblyName(file);
 				// A second ReflectionOnlyLoadFrom of an identity already loaded from another path throws, so reuse the first one.
-				Assembly assembly = AppDomain.CurrentDomain.ReflectionOnlyGetAssemblies().FirstOrDefault(a => a.FullName == name.FullName) ?? Assembly.ReflectionOnlyLoadFrom(file);
+				Assembly assembly = PluginApiCheck.LoadReflectionOnly(file);
 				if (assembly.GetReferencedAssemblies().Any(a => a.Name == pluginApiName))
+				{
+					apiProblem = PluginApiCheck.FindProblem(assembly);
 					return true;
+				}
 
 				PluginAssemblyResolver.NoteLibrary(file, name);
 				return false;

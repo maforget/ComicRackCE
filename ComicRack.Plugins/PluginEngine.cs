@@ -208,7 +208,7 @@ namespace cYo.Projects.ComicRack.Plugins
 						// The Key of a .NET command is known before Initialize. Checking it first keeps OnLoad from running in a plugin that is skipped.
 						if (cmd is DotNetCommand && IsKeyTakenByAnotherPlugin(cmd))
 						{
-							Command.LogDefault("Skipped .NET plugin command '{0}.{1}': the Key is already used by another plugin", cmd.Key, cmd.Hook);
+							Command.LogDefault($"Skipped .NET plugin command '{cmd.Key}.{cmd.Hook}': the Key is already used by another plugin");
 							continue;
 						}
 						if (!cmd.IsHook(hooks) || !cmd.Initialize(env, Path.GetDirectoryName(file)))
@@ -284,7 +284,7 @@ namespace cYo.Projects.ComicRack.Plugins
 					}
 					catch (Exception e)
 					{
-						Command.LogDefault("Failed to dispose .NET plugin '{0}': {1}", plugin.Key, e.Message);
+						Command.LogDefault($"Failed to dispose .NET plugin '{plugin.Key}': {e.Message}");
 					}
 				}
 			}

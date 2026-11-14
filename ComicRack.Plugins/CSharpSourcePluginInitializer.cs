@@ -153,6 +153,13 @@ namespace cYo.Projects.ComicRack.Plugins
 				if (assemblyFile == null)
 					return Enumerable.Empty<Command>();
 
+				string apiProblem = PluginApiCheck.FindProblem(PluginApiCheck.LoadReflectionOnly(assemblyFile));
+				if (apiProblem != null)
+				{
+					Command.LogDefault($"Skipped source plugin '{file}': {apiProblem}");
+					return Enumerable.Empty<Command>();
+				}
+
 				PluginAssemblyResolver.Register(plugin.Folder, plugin.References.Select(Path.GetDirectoryName));
 				Assembly assembly = Assembly.LoadFrom(assemblyFile);
 				PluginAssemblyResolver.Register(assembly, plugin.Folder);
@@ -209,7 +216,7 @@ namespace cYo.Projects.ComicRack.Plugins
 					{
 						Command.LogDefault(warning);
 					}
-					Command.LogDefault("Source plugin '{0}' compiled with {1} warning(s)", plugin.MarkerFile, result.Warnings.Count);
+					Command.LogDefault($"Source plugin '{plugin.MarkerFile}' compiled with {result.Warnings.Count} warning(s)");
 				}
 				RemoveCachedVersions(plugin.Name, folderHash);
 				// The DLL moves last: its presence is what marks the cache entry as complete.
