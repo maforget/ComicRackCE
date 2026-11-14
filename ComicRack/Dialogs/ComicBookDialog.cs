@@ -296,9 +296,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             EnableTabPage(tabColors, comic.IsLinked);
             EnableTabPage(tabCatalog, (!comic.IsLinked || !Program.Settings.CatalogOnlyForFileless) && (isFilelessOrInContainer || Program.Settings.UpdateComicBookFiles));
             EnableTabPage(tabCustom, Program.Settings.ShowCustomBookFields && (isFilelessOrInContainer || Program.Settings.UpdateComicBookFiles));
-            labelEnableProposed.Visible = cbEnableProposed.Visible = labelScanInformation.Visible = txScanInformation.Visible = comic.IsLinked;
+            btCommitProposed.Visible = labelEnableProposed.Visible = cbEnableProposed.Visible = labelScanInformation.Visible = txScanInformation.Visible = comic.IsLinked;
             labelOpenedTime.Visible = dtpOpenedTime.Visible = labelPagesAsTextSimple.Visible = txPagesAsTextSimple.Visible = !comic.IsLinked;
-            txRating.Enabled = cbEnableProposed.Enabled = cbSeriesComplete.Enabled = (isFilelessOrInContainer || Program.Settings.UpdateComicBookFiles);
+            txRating.Enabled = btCommitProposed.Enabled = cbEnableProposed.Enabled = cbSeriesComplete.Enabled = (isFilelessOrInContainer || Program.Settings.UpdateComicBookFiles);
             if (!canEditProperties)
             {
                 txCommunityRating.Enabled = txRating.Enabled = false;
@@ -351,6 +351,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             EditControlUtility.SetText(cbBlackAndWhite, comic.BlackAndWhite);
             EditControlUtility.SetText(cbEnableProposed, comic.EnableProposed ? YesNo.Yes : YesNo.No);
             cbEnableDynamicUpdate.Visible = labelEnableDynamicUpdate.Visible = comic.IsDynamicSource;
+			if (!comic.IsDynamicSource) btCommitProposed.Location = new Point(btCommitProposed.Location.X, cbEnableDynamicUpdate.Location.Y);
             EditControlUtility.SetText(cbEnableDynamicUpdate, comic.EnableDynamicUpdate ? YesNo.Yes : YesNo.No);
             EditControlUtility.SetText(txAlternateSeries, comic.AlternateSeries);
             txAlternateNumber.Text = comic.AlternateNumber;
@@ -433,18 +434,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             }
             else
             {
-                TextBoxEx textBoxEx = txSeries;
-                TextBoxEx textBoxEx2 = txTitle;
-                TextBoxEx textBoxEx3 = txNumber;
-                TextBoxEx textBoxEx4 = txCount;
-                TextBoxEx textBoxEx5 = txYear;
-                TextBoxEx textBoxEx6 = txVolume;
-                string text = (cbFormat.PromptText = string.Empty);
-                string text3 = (textBoxEx6.PromptText = text);
-                string text5 = (textBoxEx5.PromptText = text3);
-                string text7 = (textBoxEx4.PromptText = text5);
-                string text9 = (textBoxEx3.PromptText = text7);
-                string text12 = (textBoxEx.PromptText = (textBoxEx2.PromptText = text9));
+				txSeries.PromptText = txTitle.PromptText = txNumber.PromptText = txCount.PromptText = txYear.PromptText = txVolume.PromptText = cbFormat.PromptText = string.Empty;
             }
         }
 
@@ -815,13 +805,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 
         private void btReset_Click(object sender, EventArgs e)
         {
-            TrackBarLite trackBarLite = tbSaturation;
-            TrackBarLite trackBarLite2 = tbBrightness;
-            TrackBarLite trackBarLite3 = tbContrast;
-            int num2 = (tbGamma.Value = 0);
-            int num4 = (trackBarLite3.Value = num2);
-            int num7 = (trackBarLite.Value = (trackBarLite2.Value = num4));
-            tbSharpening.Value = 0;
+			tbSaturation.Value = tbSaturation.Value = tbBrightness.Value = tbContrast.Value = tbGamma.Value = 0;
             SetCurrentColorAdjustment(pageViewer, Color.White);
         }
 
@@ -1179,5 +1163,16 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
         {
             return Show(parent, comicBook, null);
         }
-    }
+
+		private void btCommitProposed_Click(object sender, EventArgs e)
+		{
+			QuestionResult qr = QuestionDialog.AskQuestion(this, TR.Load("Script.CommitProposed")["AskCommit", "Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray"], TR.Load("Script.CommitProposed")["Write", "Write"], TR.Load("Script.CommitProposed")["Overwrite", "&Also overwrite existing values"]);
+			if (qr.HasFlag(QuestionResult.Ok))
+			{
+				ComicBook comic = GetFromEditor();
+				comic.WriteProposedValues(qr.HasFlag(QuestionResult.OkWithOption));
+				SetDataToEditor(comic);
+			}
+		}
+	}
 }
