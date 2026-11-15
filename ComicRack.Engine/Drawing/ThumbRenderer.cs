@@ -61,7 +61,7 @@ namespace cYo.Projects.ComicRack.Engine.Drawing
 
 		private static readonly Bitmap pageBowRight = PageRendering.CreatePageBow(new Size(32, 9), 0f).ToOptimized();
 
-		private static readonly string loadingThumbnail = TR.Messages["loadingThumbnail", "Loading Thumbnail..."];
+		private static readonly string loadingThumbnail = TR.Messages["LoadingThumbnail", "Loading Thumbnail..."];
 
 		private static Color cachedPageCurlColor;
 

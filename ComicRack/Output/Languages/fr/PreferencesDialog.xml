@@ -147,6 +147,13 @@
     <Text Key="msgNoDevicesFound" Text="Aucun appareil trouvé !" Comment="No devices found!" />
     <Text Key="msgDevicesFound" Text="{0} trouvé(s) !" Comment="{0} found!" />
     <Text Key="lblWifiAddresses" Text="IP des appareils sans fil non détectés automatiquement séparées par des points-virgules :" Comment="Semicolon separated list of IP addresses for Wireless Devices which where not detected automatically:" />
+    <Text Key="lblWifiInterface" Text="Carte réseau utilisée pour détecter les appareils :" Comment="Network adapter used to find devices:" />
+    <Text Key="wifiInterfaceAutomatic" Text="Automatique" Comment="Automatic" />
+    <Text Key="wifiInterfaceUnavailable" Text="Carte indisponible" Comment="Unavailable adapter" />
+    <Text Key="wifiInterfaceUsing" Text="Seule cette carte sera utilisée : {0}" Comment="Only this adapter will be used: {0}" />
+    <Text Key="wifiInterfaceNone" Text="aucune trouvée, le système choisira" Comment="none found, the system will choose" />
+    <Text Key="wifiInterfaceAuto" Text="Le mode automatique utilisera : {0}" Comment="Automatic will use: {0}" />
+    <Text Key="wifiInterfaceFallback" Text="Carte sélectionnée indisponible, le mode automatique utilisera : {0}" Comment="Selected adapter not available, automatic will use: {0}" />
     <Text Key="btTestWifi" Text="Test" Comment="Test" />
     <Text Key="grpWirelessSetup" Text="Configuration sans fil" Comment="Wireless Setup" />
     <Text Key="btResetTwitter" Text="Réinitialiser" Comment="Reset" />

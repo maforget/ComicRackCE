@@ -144,5 +144,12 @@
     <Text Key="chkLibraryGaugesUnread" Text="Para Libros No Leídos" Comment="For Unread Books" />
     <Text Key="chkLibraryGaugesTotal" Text="Para Total de Libros" Comment="For Total of Books" />
     <Text Key="chkLibraryGaugesNumeric" Text="Mostrar también números y no solo barras" Comment="Also show numbers and not only bars" />
+    <Text Key="lblWifiInterface" Text="Adaptador de red usado para encontrar dispositivos:" Comment="Network adapter used to find devices:" />
+    <Text Key="wifiInterfaceAutomatic" Text="Automático" Comment="Automatic" />
+    <Text Key="wifiInterfaceUnavailable" Text="Adaptador no disponible" Comment="Unavailable adapter" />
+    <Text Key="wifiInterfaceUsing" Text="Solo se usará este adaptador: {0}" Comment="Only this adapter will be used: {0}" />
+    <Text Key="wifiInterfaceNone" Text="ninguno encontrado, el sistema elegirá" Comment="none found, the system will choose" />
+    <Text Key="wifiInterfaceAuto" Text="El modo automático usará: {0}" Comment="Automatic will use: {0}" />
+    <Text Key="wifiInterfaceFallback" Text="El adaptador seleccionado no está disponible, el modo automático usará: {0}" Comment="Selected adapter not available, automatic will use: {0}" />
   </Texts>
 </TR>
