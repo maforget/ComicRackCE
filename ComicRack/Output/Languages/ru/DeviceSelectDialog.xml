@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DeviceSelectDialog" CultureName="ru">
+  <Texts>
+    <Text Key="DeviceSelectDialog" Text="Выбор устройства" Comment="Select Device" />
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="colName" Text="Имя" Comment="Name" />
+    <Text Key="colModel" Text="Модель" Comment="Model" />
+    <Text Key="colSerial" Text="Серийный номер" Comment="Serial" />
+    <Text Key="colSync ID" Text="ID синхронизации" Comment="Sync ID" />
+    <Text Key="lblSyncId" Text="Новый ID для '{0}' (текущий: {1}). Выберите устройство выше или введите его:" Comment="New Sync ID for '{0}' (current: {1}). Select a device above or type it:" />
+    <Text Key="RepairDevice" Text="Переподключить устройство" Comment="Re-pair Device" />
+  </Texts>
+</TR>

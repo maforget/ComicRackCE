@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="PluginEngine" CultureName="ru">
+  <Texts>
+    <Text Key="EditUpdateBooksCommands" Text="Команды изменения/обновления книг" Comment="Edit/Update Books Commands" />
+    <Text Key="CreateNewBooksCommands" Text="Команды создания новых книг" Comment="Create New Books Commands" />
+    <Text Key="ActionswhenBooksareopened" Text="Действия при открытии книг" Comment="Actions when Books are opened" />
+    <Text Key="ActionswhenReaderisresized" Text="Действия при изменении размера читалки" Comment="Actions when Reader is resized" />
+    <Text Key="AdditionalSearchProviders" Text="Дополнительные поисковые системы" Comment="Additional Search Providers" />
+    <Text Key="QuickOpenPanels" Text="Панели быстрого открытия" Comment="Quick Open Panels" />
+    <Text Key="BookPathParsers" Text="Обработчики путей к книгам" Comment="Book Path Parsers" />
+    <Text Key="ActionswhenComicRackstarts" Text="Действия при запуске ComicRack" Comment="Actions when ComicRack starts" />
+    <Text Key="BookInformationPanels" Text="Информационные панели книг" Comment="Book Information Panels" />
+    <Text Key="CustomBookThumbnailOverlays" Text="Пользовательские наложения на эскизы книг" Comment="Custom Book Thumbnail Overlays" />
+    <Text Key="ActionswhenComicRackshutsdown" Text="Действия при закрытии ComicRack" Comment="Actions when ComicRack shuts down" />
+  </Texts>
+</TR>

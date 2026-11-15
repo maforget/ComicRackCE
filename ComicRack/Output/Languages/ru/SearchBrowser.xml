@@ -1,27 +1,43 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SearchBrowser" CultureName="ru">
+<TR xmlns:xsd="http://w3.org" xmlns:xsi="http://w3.org-instance" Name="SearchBrowser" CultureName="ru">
   <Texts>
     <Text Key="AlternateSeries" Text="Альтернативная серия" Comment="Alternate Series" />
     <Text Key="Colorist" Text="Колористы" Comment="Colorists" />
     <Text Key="Genre" Text="Жанры" Comment="Genres" />
-    <Text Key="Imprint" Text="Imprints" Comment="Imprints" />
-    <Text Key="Inker" Text="Прорисовщики" Comment="Inkers" />
+    <Text Key="Imprint" Text="Импринты:" Comment="Imprints" />
+    <Text Key="Inker" Text="Контуровщики" Comment="Inkers" />
     <Text Key="LanguageAsText" Text="Языки" Comment="Languages" />
-    <Text Key="MonthAsText" Text="Месяца" Comment="Months" />
-    <Text Key="Penciller" Text="Художники" Comment="Pencillers" />
-    <Text Key="Publisher" Text="Издатели Комикса" Comment="Publishers" />
-    <Text Key="ShadowSeries" Text="Серии" Comment="Series" />
-    <Text Key="ShadowYearAsText" Text="Года" Comment="Years" />
+    <Text Key="MonthAsText" Text="Месяцы" Comment="Months" />
+    <Text Key="Penciller" Text="Художники:" Comment="Pencillers" />
+    <Text Key="Publisher" Text="Издатели" Comment="Publishers" />
+    <Text Key="ShadowSeries" Text="Серия" Comment="Series" />
+    <Text Key="ShadowYearAsText" Text="Годы" Comment="Years" />
+    <Text Key="Writer" Text="Сценаристы" Comment="Writers" />
+    <Text Key="Unspecified" Text="Не указано" Comment="Unspecified" />
+    <Text Key="AllItems" Text="Все ({0} {1})" Comment="All ({0} {1})" />
     <Text Key="ShadowTitle" Text="Названия" Comment="Titles" />
     <Text Key="ShadowFormat" Text="Форматы" Comment="Formats" />
-    <Text Key="Writer" Text="Авторы" Comment="Writers" />
-    <Text Key="Editor" Text="Редакторы" Comment="Editors" />
+    <Text Key="Editor" Text="Коллекции" Comment="Editors" />
     <Text Key="Characters" Text="Персонажи" Comment="Characters" />
     <Text Key="CoverArtist" Text="Художники обложек" Comment="Cover Artists" />
-    <Text Key="AgeRating" Text="Возрастной ценз" Comment="Age Ratings" />
-    <Text Key="RatingAsText" Text="Рейтинги" Comment="Ratings" />
-    <Text Key="Tags" Text="Метки" Comment="Tags" />
-    <Text Key="Unspecified" Text="Неопределено" Comment="Unspecified" />
-    <Text Key="AllItems" Text="Все ({0} {1})" Comment="All ({0} {1})" />
+    <Text Key="AgeRating" Text="Возрастные ограничения" Comment="Age Ratings" />
+    <Text Key="Tags" Text="Теги" Comment="Tags" />
+    <Text Key="ShadowVolumeAsText" Text="Тома" Comment="Volumes" />
+    <Text Key="Teams" Text="Команды" Comment="Teams" />
+    <Text Key="Locations" Text="Места" Comment="Locations" />
+    <Text Key="Web" Text="Веб" Comment="Web" />
+    <Text Key="Letterer" Text="Шрифтовик" Comment="Letterer" />
+    <Text Key="RatingAsText" Text="Мои оценки" Comment="My Ratings" />
+    <Text Key="CommunityRatingAsText" Text="Оценки сообщества" Comment="Community Ratings" />
+    <Text Key="BookPriceAsText" Text="Цены книг" Comment="Book Prices" />
+    <Text Key="BookAge" Text="Возраст книг" Comment="Book Ages" />
+    <Text Key="BookStore" Text="Книжные магазины" Comment="Book Stores" />
+    <Text Key="BookOwner" Text="Владелец книг" Comment="Book Owners" />
+    <Text Key="BookCondition" Text="Состояние книг" Comment="Book Conditions" />
+    <Text Key="BookCollectionStatus" Text="Состояние серии" Comment="Book Collection Status" />
+    <Text Key="BookLocation" Text="Места в книге" Comment="Book Locations" />
+    <Text Key="MainCharacterOrTeam" Text="Главные персонажи/команды" Comment="Main Characters/Teams" />
+    <Text Key="SeriesGroup" Text="Группы серий" Comment="Series Groups" />
+    <Text Key="StoryArc" Text="Сюжетные арки" Comment="Story Arcs" />
   </Texts>
 </TR>

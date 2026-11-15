@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://w3.org" xmlns:xsi="http://w3.org-instance" Name="ValueEditorDialog" CultureName="ru">
+  <Texts>
+    <Text Key="ValueEditorDialog" Text="Редактор значений" Comment="Value Editor" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="btInsertValue" Text="Вставить значение" Comment="Insert Value" />
+  </Texts>
+</TR>

@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MagnifySetupControl" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MagnifySetupControl" CultureName="ru">
   <Texts>
     <Text Key="labelHeight" Text="Высота" Comment="Height" />
-    <Text Key="labelOpacity" Text="Прозрачность" Comment="Opacity" />
+    <Text Key="labelOpacity" Text="Непрозрачность" Comment="Opacity" />
     <Text Key="labelWidth" Text="Ширина" Comment="Width" />
     <Text Key="labelZoom" Text="Масштаб" Comment="Zoom" />
+    <Text Key="chkSimpleStyle" Text="Простой стиль" Comment="Simple Style" />
+    <Text Key="chkAutoMagnifier" Text="Активировать &quot;долгим&quot; щелчком" Comment="Activate with 'long' Click" />
+    <Text Key="chkAutoHideMagnifier" Text="Скрывать у краёв страницы" Comment="Hide at Page Border" />
   </Texts>
 </TR>

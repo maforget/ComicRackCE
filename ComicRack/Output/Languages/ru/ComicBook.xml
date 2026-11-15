@@ -1,32 +1,38 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBook" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBook" CultureName="ru">
   <Texts>
     <Text Key="Added" Text="Добавлено:\t{0}" Comment="Added:\t{0}" />
     <Text Key="Format" Text="Формат:\t{0}" Comment="Format:\t{0}" />
     <Text Key="LastPageReadIs" Text="Последняя прочитанная страница: {0}" Comment="Last page read is {0}" />
-    <Text Key="LastTimeOpenedAt" Text="Последний раз открывалось: {0}" Comment="Last time opened at {0}" />
+    <Text Key="LastTimeOpenedAt" Text="Последний раз открыт: {0}" Comment="Last time opened at {0}" />
     <Text Key="Library" Text="Библиотека" Comment="Library" />
-    <Text Key="MyFavoritesList" Text="Мое избранное" Comment="My Favorites" />
+    <Text Key="MyFavoritesList" Text="Избранное" Comment="My Favorites" />
     <Text Key="Never" Text="никогда" Comment="never" />
-    <Text Key="NeverReadList" Text="Не читалось" Comment="Never Read" />
-    <Text Key="NoInformation" Text="Нет информации" Comment="No information available" />
-    <Text Key="None" Text="Не определено" Comment="None" />
+    <Text Key="NeverReadList" Text="Непрочитанные" Comment="Never Read" />
+    <Text Key="NoInformation" Text="Нет доступной информации" Comment="No information available" />
+    <Text Key="None" Text="Нет" Comment="None" />
     <Text Key="Of" Text="из" Comment="of" />
-    <Text Key="Opened" Text="Открыто:\t{0}" Comment="Opened:\t{0}" />
-    <Text Key="Pages" Text="{0} страниц" Comment="{0} Page(s)" />
+    <Text Key="Opened" Text="Открыт:\t{0}" Comment="Opened:\t{0}" />
+    <Text Key="Pages" Text="Стр.: {0}" Comment="{0} Page(s)" />
     <Text Key="PageSize" Text="Размер:\t{0}" Comment="Size:\t{0}" />
-    <Text Key="PageText" Text="Страница #{0}" Comment="Page #{0}" />
-    <Text Key="ReadingAtPage" Text="Текущая страница: {0}" Comment="Reading at page {0}" />
-    <Text Key="ReadingList" Text="Читается" Comment="Reading" />
-    <Text Key="ReadList" Text="Читать?" Comment="Read" />
-    <Text Key="RecentlyAddedList" Text="Недавно добавлено" Comment="Recently Added" />
-    <Text Key="RecentlyReadList" Text="Недавно прочитано" Comment="Recently Read" />
+    <Text Key="PageText" Text="Страница №{0}" Comment="Page #{0}" />
+    <Text Key="ReadingAtPage" Text="Чтение со страницы {0}" Comment="Reading at page {0}" />
+    <Text Key="ReadingList" Text="Читаю" Comment="Reading" />
+    <Text Key="ReadList" Text="Прочитано" Comment="Read" />
+    <Text Key="RecentlyAddedList" Text="Недавно добавленные" Comment="Recently Added" />
+    <Text Key="RecentlyReadList" Text="Недавно прочитанные" Comment="Recently Read" />
     <Text Key="Resolution" Text="Разрешение:\t{0} x {1}" Comment="Resolution:\t{0} x {1}" />
     <Text Key="Size" Text="Размер:\t{0}/{1}" Comment="Size:\t{0}/{1}" />
-    <Text Key="SmartLists" Text="Авто-списки" Comment="Smart Lists" />
+    <Text Key="SmartLists" Text="Умные списки" Comment="Smart Lists" />
     <Text Key="UnknownSize" Text="Неизвестный размер" Comment="Unknown Size" />
+    <Text Key="Volume" Text="Т.{0}" Comment="V{0}" />
     <Text Key="Unknown" Text="Неизвестно" Comment="Unknown" />
-    <Text Key="Volume" Text="В{0}" Comment="V{0}" />
-    <Text Key="Bookmark" Text="Закладка: {0}" Comment="Bookmark: {0}" />
+    <Text Key="FilesUpdateList" Text="Файлы для обновления" Comment="Files to update" />
+    <Text Key="TempLists" Text="Временные списки" Comment="Temporary Lists" />
+    <Text Key="FileName" Text="Файл:\t{0}" Comment="File:\t{0}" />
+    <Text Key="Bookmark" Text="Закладка:\t{0}" Comment="Bookmark:\t{0}" />
+    <Text Key="Rotation" Text="Поворот:\t{0}" Comment="Rotation:\t{0}" />
+    <Text Key="BookCount" Text="Книг:\t{0}" Comment="Books:\t{0}" />
+    <Text Key="Released" Text="Выпущено:\t{0}" Comment="Released:\t{0}" />
   </Texts>
 </TR>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DevicesEditDialog" CultureName="ru">
+  <Texts>
+    <Text Key="DevicesEditDialog" Text="Устройства" Comment="Devices" />
+    <Text Key="btPairDevice" Text="Подключить устройство..." Comment="Pair Device..." />
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btSelectAll" Text="Выделить всё" Comment="Select All" />
+    <Text Key="btSelectNone" Text="Снять выделение" Comment="Select None" />
+    <Text Key="chkOptimizeSize" Text="Оптимизировать размер" Comment="Optimize Size" />
+    <Text Key="chkOnlyUnread" Text="Только непрочитанные" Comment="Only Unread" />
+    <Text Key="labelHint" Text="Подключите устройство к компьютеру и нажмите 'Подключить устройство...'" Comment="Connect your Device with your Computer and press 'Pair Device...'" />
+    <Text Key="chkOnlyChecked" Text="Только отмеченные" Comment="Only Checked" />
+    <Text Key="btSelectList" Text="Выбрать список" Comment="Select List" />
+    <Text Key="btDeselectList" Text="Снять выбор со списка" Comment="Deselect List" />
+    <Text Key="cbLimitType.Item0" Text="Комиксов" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="МБ" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="ГБ" Comment="GB" />
+    <Text Key="chkLimit" Text="Ограничить до" Comment="Limit to" />
+    <Text Key="cbLimitSort.Item0" Text="Случайно" Comment="Random" />
+    <Text Key="cbLimitSort.Item1" Text="Серия" Comment="Series" />
+    <Text Key="cbLimitSort.Item2" Text="Альтернативная серия" Comment="Alternate Series" />
+    <Text Key="cbLimitSort.Item3" Text="Дата публикации" Comment="Published" />
+    <Text Key="cbLimitSort.Item4" Text="Дата добавления" Comment="Added" />
+    <Text Key="labelLimitSort" Text="сортировать по" Comment="sorted by" />
+    <Text Key="chkSortBy" Text="Упорядочить по" Comment="Sort by" />
+    <Text Key="chkKeepLastRead" Text="Но оставить последний прочитанный" Comment="But keep last read" />
+    <Text Key="chkOnlyShowSelected" Text="Показывать только выбранное" Comment="Only show selected" />
+    <Text Key="btDevice" Text="Устройство" Comment="Device" />
+    <Text Key="miDeviceCopy" Text="Копировать" Comment="Copy" />
+    <Text Key="miDevicePaste" Text="Вставить" Comment="Paste" />
+    <Text Key="miDeviceCopyToAll" Text="Копировать на все" Comment="Copy To All" />
+    <Text Key="miDeviceRename" Text="Переименовать..." Comment="Rename..." />
+    <Text Key="miDeviceRepair" Text="Переподключить..." Comment="Re-pair..." />
+    <Text Key="miDeviceUnpair" Text="Отключить устройство" Comment="Unpair Device" />
+    <Text Key="cbLimitSort.Item5" Text="Сюжетная арка" Comment="Story Arc" />
+    <Text Key="cbLimitSort.Item6" Text="Порядок в списке" Comment="List Order" />
+  </Texts>
+</TR>

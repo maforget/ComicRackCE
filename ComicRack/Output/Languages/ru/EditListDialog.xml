@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="EditListDialog" CultureName="ru">
+  <Texts>
+    <Text Key="EditListDialog" Text="Редактировать список" Comment="Edit List" />
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelName" Text="Имя:" Comment="Name:" />
+    <Text Key="labelBooks" Text="Комиксы:" Comment="Books:" />
+    <Text Key="labelNotes" Text="Заметки:" Comment="Notes:" />
+    <Text Key="chkQuickOpen" Text="Быстрое открытие" Comment="Quick Open" />
+    <Text Key="CombineMode" Text="Все комиксы из всех списков|Только комиксы, присутствующие во всех списках|Пустой список" Comment="All Books from every list|Only Books existing in every list|Empty list" />
+  </Texts>
+</TR>

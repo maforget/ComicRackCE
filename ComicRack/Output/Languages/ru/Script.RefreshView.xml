@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://w3.org" xmlns:xsi="http://w3.org-instance" Name="Script.RefreshView" CultureName="ru">
+  <Texts>
+    <Text Key="Name" Text="Обновить вид" Comment="Refresh View" />
+  </Texts>
+</TR>

@@ -1,44 +1,113 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Matchers" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Matchers" CultureName="ru">
   <Texts>
-    <Text Key="YesNoOperators" Text="Да|Нет|Неизвестно" Comment="is Yes|is No|is Unknown" />
-    <Text Key="ComicBookAddedMatcher" Text="Добавлен" Comment="Added" />
-    <Text Key="ComicBookAllPropertiesMatcher" Text="Все" Comment="All" />
-    <Text Key="ComicBookCountMatcher" Text="Количество" Comment="Count" />
+    <Text Key="ComicBookAddedMatcher" Text="Добавлено" Comment="Added" />
+    <Text Key="ComicBookAllPropertiesMatcher" Text="Любое поле" Comment="All" />
     <Text Key="ComicBookAlternateCountMatcher" Text="Альтернативное количество" Comment="Alternate Count" />
     <Text Key="ComicBookAlternateNumberMatcher" Text="Альтернативный номер" Comment="Alternate Number" />
     <Text Key="ComicBookAlternateSeriesMatcher" Text="Альтернативная серия" Comment="Alternate Series" />
     <Text Key="ComicBookColoristMatcher" Text="Колорист" Comment="Colorist" />
     <Text Key="ComicBookFileMatcher" Text="Файл" Comment="File" />
-    <Text Key="ComicBookFullPathMatcher" Text="Путь" Comment="Path" />
     <Text Key="ComicBookGenreMatcher" Text="Жанр" Comment="Genre" />
-    <Text Key="ComicBookImprintMatcher" Text="Imprint" Comment="Imprint" />
-    <Text Key="ComicBookInkerMatcher" Text="Прорисовщик" Comment="Inker" />
+    <Text Key="ComicBookImprintMatcher" Text="Импринт" Comment="Imprint" />
+    <Text Key="ComicBookInkerMatcher" Text="Контуровщик" Comment="Inker" />
     <Text Key="ComicBookLanguageMatcher" Text="Язык" Comment="Language" />
-    <Text Key="ComicBookMangaMatcher" Text="Manga" Comment="Manga" />
-    <Text Key="ComicBookBlackAndWhiteMatcher" Text="Черно-белый" Comment="Black and White" />
     <Text Key="ComicBookMonthMatcher" Text="Месяц" Comment="Month" />
-    <Text Key="ComicBookNumberMatcher" Text="Номер Комикса" Comment="Number" />
-    <Text Key="ComicBookOpenedMatcher" Text="Открыт" Comment="Opened" />
+    <Text Key="ComicBookNumberMatcher" Text="Номер" Comment="Number" />
+    <Text Key="ComicBookOpenedMatcher" Text="Открыто" Comment="Opened" />
     <Text Key="ComicBookPageCountMatcher" Text="Количество страниц" Comment="Page Count" />
     <Text Key="ComicBookPencillerMatcher" Text="Художник" Comment="Penciller" />
-    <Text Key="ComicBookPublisherMatcher" Text="Издатель Комикса" Comment="Publisher" />
-    <Text Key="ComicBookRatingMatcher" Text="Рейтинг" Comment="Rating" />
-    <Text Key="ComicBookReadPercentageMatcher" Text="Процентов прочтено" Comment="Read Percentage" />
+    <Text Key="ComicBookPublisherMatcher" Text="Издатель" Comment="Publisher" />
+    <Text Key="ComicBookReadPercentageMatcher" Text="Процент прочтения" Comment="Read Percentage" />
     <Text Key="ComicBookSeriesMatcher" Text="Серия" Comment="Series" />
-    <Text Key="ComicBookSummaryMatcher" Text="Кратко" Comment="Summary" />
-    <Text Key="ComicBookTagsMatcher" Text="Метки" Comment="Tags" />
+    <Text Key="ComicBookSummaryMatcher" Text="Описание" Comment="Summary" />
+    <Text Key="ComicBookTagsMatcher" Text="Теги" Comment="Tags" />
     <Text Key="ComicBookTitleMatcher" Text="Название" Comment="Title" />
-    <Text Key="ComicBookVolumeMatcher" Text="Выпуск в серии" Comment="Volume" />
-    <Text Key="ComicBookWriterMatcher" Text="Автор" Comment="Writer" />
+    <Text Key="ComicBookVolumeMatcher" Text="Том" Comment="Volume" />
+    <Text Key="ComicBookWriterMatcher" Text="Сценарист" Comment="Writer" />
     <Text Key="ComicBookYearMatcher" Text="Год" Comment="Year" />
+    <Text Key="Days" Text="дн." Comment="Days" />
+    <Text Key="NumericOperators" Text="равно|больше|меньше|в диапазоне" Comment="is|is greater|is smaller|is in the range" />
+    <Text Key="YesNoOperators" Text="Да|Нет|Неизвестно" Comment="is Yes|is No|is Unknown" />
+    <Text Key="ComicBookMangaMatcher" Text="Манга" Comment="Manga" />
+    <Text Key="ComicBookBlackAndWhiteMatcher" Text="Чёрно-белый" Comment="Black and White" />
+    <Text Key="ComicBookCountMatcher" Text="Количество выпусков" Comment="Count" />
+    <Text Key="StringOperators" Text="равно|содержит|содержит любое из|содержит все|начинается с|заканчивается на|список содержит|регулярное выражение" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
     <Text Key="ComicBookFileFormatMatcher" Text="Формат файла" Comment="File Format" />
-    <Text Key="DateOperators" Text="равен|перед|после|содержит|в диапазоне" Comment="is|is after|is before|is in the last|in in the range" />
-    <Text Key="Days" Text="Дни" Comment="Days" />
-    <Text Key="NumericOperators" Text="равен|больше|меньше|в диапазоне" Comment="is|is greater|is smaller|is in the range" />
-    <Text Key="StringOperators" Text="целиком|содержит|содержит любое из|содержит все из|начинается с|кончается на|список|регулярное выражение" Comment="is|contains|contains any of|contains all of|starts with|ends with|list contains|regular expression" />
-    <Text Key="ComicBookAgeRatingMatcher" Text="Возрастной ценз" Comment="Age Rating" />
+    <Text Key="ComicBookAgeRatingMatcher" Text="Возрастной рейтинг" Comment="Age Rating" />
     <Text Key="ComicBookCharactersMatcher" Text="Персонажи" Comment="Characters" />
     <Text Key="ComicBookEditorMatcher" Text="Редактор" Comment="Editor" />
+    <Text Key="ComicBookCoverArtistMatcher" Text="Художник обложки" Comment="Cover Artist" />
+    <Text Key="ComicBookPublishedMatcher" Text="Опубликовано" Comment="Published" />
+    <Text Key="ComicBookFullPathMatcher" Text="Путь к файлу" Comment="File Path" />
+    <Text Key="ComicBookDirectoryMatcher" Text="Каталог файла" Comment="File Directory" />
+    <Text Key="ComicBookPluginMatcher" Text="Пользовательские скрипты" Comment="User Scripts" />
+    <Text Key="ComicBookModifiedMatcher" Text="Файл изменён" Comment="File Modified" />
+    <Text Key="ComicBookCreationMatcher" Text="Файл создан" Comment="File Created" />
+    <Text Key="ComicBookModifiedInfoMatcher" Text="Информация изменена" Comment="Modified Info" />
+    <Text Key="ComicBookModifiedLibraryInfoMatcher" Text="Информация библиотеки изменена" Comment="Modified Library Info" />
+    <Text Key="ComicBookBookmarkCountMatcher" Text="Количество закладок" Comment="Bookmark Count" />
+    <Text Key="OnOffOperators" Text="Вкл.|Выкл." Comment="On|Off" />
+    <Text Key="ComicBookTeamsMatcher" Text="Команды" Comment="Teams" />
+    <Text Key="ComicBookLocationsMatcher" Text="Места" Comment="Locations" />
+    <Text Key="ComicBookDuplicateMatcher" Text="Только дубликаты" Comment="Only Duplicates" />
+    <Text Key="ComicBookNewPagesMatcher" Text="Новые страницы" Comment="New Pages" />
+    <Text Key="ComicBookFileSizeMatcher" Text="Размер файла" Comment="File Size" />
+    <Text Key="MB" Text="МБ" Comment="MB" />
+    <Text Key="ComicBookRatingMatcher" Text="Моя оценка" Comment="My Rating" />
+    <Text Key="ComicBookCommunityRatingMatcher" Text="Оценка сообщества" Comment="Community Rating" />
+    <Text Key="DateOperators" Text="равно|после|до|за последние|в диапазоне" Comment="is|is after|is before|is in the last|is in the range" />
+    <Text Key="ComicBookIsLinkedMatcher" Text="Привязан к файлу" Comment="Linked to File" />
+    <Text Key="ComicBookBookPriceMatcher" Text="Цена книги" Comment="Book Price" />
+    <Text Key="ComicBookBookStoreMatcher" Text="Магазин" Comment="Book Store" />
+    <Text Key="ComicBookBookOwnerMatcher" Text="Владелец книги" Comment="Book Owner" />
+    <Text Key="ComicBookBookAgeMatcher" Text="Возраст книги" Comment="Book Age" />
+    <Text Key="ComicBookBookConditionMatcher" Text="Состояние книги" Comment="Book Condition" />
+    <Text Key="ComicBookBookCollectionStatusMatcher" Text="Статус в коллекции" Comment="Book Collection Status" />
+    <Text Key="ComicBookBookLocationMatcher" Text="Местонахождение книги" Comment="Book Location" />
+    <Text Key="ComicBookBookNotesMatcher" Text="Заметки к книге" Comment="Book Notes" />
+    <Text Key="SmartListSeriesCountMatcher" Text="Серия: выпуски" Comment="Series: Books" />
+    <Text Key="SmartListSeriesPageCountMatcher" Text="Серия: страницы" Comment="Series: Pages" />
+    <Text Key="SmartListSeriesPagesReadMatcher" Text="Серия: прочитано страниц" Comment="Series: Pages Read" />
+    <Text Key="SmartListSeriesPercentReadMatcher" Text="Серия: процент прочтения" Comment="Series: Percent Read" />
+    <Text Key="SmartListSeriesAverageRatingMatcher" Text="Серия: моя средняя оценка" Comment="Series: My Average Rating" />
+    <Text Key="SmartListSeriesAverageCommunityRatingMatcher" Text="Серия: средняя оценка сообщества" Comment="Series: Community Average Rating" />
+    <Text Key="SmartListSeriesRunningTimeYearsMatcher" Text="Серия: длительность (лет)" Comment="Series: Running Time Years" />
+    <Text Key="SmartListSeriesGapsMatcher" Text="Серия: пропуски" Comment="Series: Gaps" />
+    <Text Key="SmartListSeriesEndOfGapMatcher" Text="Серия: начало пропуска" Comment="Series: Start of Gap" />
+    <Text Key="SmartListSeriesStartOfGapMatcher" Text="Серия: конец пропуска" Comment="Series: End of Gap" />
+    <Text Key="ComicBookISBNMatcher" Text="ISBN" Comment="ISBN" />
+    <Text Key="SmartListSeriesLastAddedTimeMatcher" Text="Серия: последняя добавленная книга" Comment="Series: Book added" />
+    <Text Key="SmartListSeriesLastOpenedTimeMatcher" Text="Серия: последнее открытие" Comment="Series: Opened" />
+    <Text Key="TrueFalseOperators" Text="Истина|Ложь" Comment="is True|is False" />
+    <Text Key="ComicBookSeriesCompleteMatcher" Text="Серия завершена" Comment="Series complete" />
+    <Text Key="ComicBookNotesMatcher" Text="Заметки" Comment="Notes" />
+    <Text Key="ComicBookExpressionMatcher" Text="Выражение" Comment="Expression" />
+    <Text Key="SmartListSeriesLastNumberMatcher" Text="Серия: последний номер" Comment="Series: Last Number" />
+    <Text Key="SmartListSeriesFirstNumberMatcher" Text="Серия: первый номер" Comment="Series: First Number" />
+    <Text Key="SmartListSeriesMaxGapSizeMatcher" Text="Серия: самый большой пропуск" Comment="Series: Biggest Gap" />
+    <Text Key="SmartListSeriesLastPublishedTimeMatcher" Text="Серия: опубликована" Comment="Series: Published" />
+    <Text Key="SmartListSeriesMaxCountMatcher" Text="Серия: максимум выпусков" Comment="Series: Highest Count" />
+    <Text Key="SmartListSeriesMinCountMatcher" Text="Серия: минимум выпусков" Comment="Series: Lowest Count" />
+    <Text Key="SmartListSeriesAllCompleteMatcher" Text="Серия: все завершены" Comment="Series: All compelte" />
+    <Text Key="MangaYesNoOperators" Text="Да|Да (справа налево)|Нет|Неизвестно" Comment="is Yes|is Yes (Right to Left)|is No|is Unknown" />
+    <Text Key="ComicBookScanInformationMatcher" Text="Информация о скане" Comment="Scanning Information" />
+    <Text Key="ComicBookCheckedMatcher" Text="Отмечена" Comment="Is Checked" />
+    <Text Key="ComicBookStoryArcMatcher" Text="Сюжетная арка" Comment="Story Arc" />
+    <Text Key="ComicBookSeriesGroupMatcher" Text="Группа серий" Comment="Series Group" />
+    <Text Key="ComicBookMainCharacterOrTeamMatcher" Text="Главный персонаж/команда" Comment="Main Character/Team" />
+    <Text Key="ComicBookReviewMatcher" Text="Рецензия" Comment="Review" />
+    <Text Key="SmartListSeriesMinYearMatcher" Text="Серия: первый год" Comment="Series: First Year" />
+    <Text Key="SmartListSeriesMaxYearMatcher" Text="Серия: последний год" Comment="Series: Last Year" />
+    <Text Key="ComicBookDayMatcher" Text="День" Comment="Day" />
+    <Text Key="ComicBookReleasedMatcher" Text="Выпущено" Comment="Released" />
+    <Text Key="ComicBookWeekMatcher" Text="Неделя" Comment="Week" />
+    <Text Key="SmartListSeriesLastReleasedTimeMatcher" Text="Серия: выпуск книги" Comment="Series: Book released" />
+    <Text Key="Name" Text="Имя" Comment="Name" />
+    <Text Key="ComicBookHasCustomValuesMatcher" Text="Есть пользовательские значения" Comment="Has Custom Values" />
+    <Text Key="ComicBookCustomValuesMatcher" Text="Пользовательское значение" Comment="Custom Value" />
+    <Text Key="ComicBookWebMatcher" Text="Веб-ссылка" Comment="Web" />
+    <Text Key="ComicBookIsMissingMatcher" Text="Отсутствует" Comment="Is Missing" />
+    <Text Key="ComicBookTranslatorMatcher" Text="Переводчик" Comment="Translator" />
   </Texts>
 </TR>

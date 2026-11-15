@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DonationDialog" CultureName="ru">
+  <Texts>
+    <Text Key="btCancel" Text="Не сейчас" Comment="Skip for now" />
+    <Text Key="btOK" Text="OK" Comment="OK" />
+    <Text Key="DonationDialog" Text="Поддержать ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="labelThankYou" Text="Спасибо за поддержку ComicRack!" Comment="Thank you for supporting ComicRack!" />
+    <Text Key="groupDonate" Text="Пожертвовать" Comment="Donate" />
+    <Text Key="labelStepOne" Text="Шаг первый:\nПерейдите на сайт ComicRack, чтобы сделать пожертвование" Comment="Step One:\nVisit ComicRack on the web to donate" />
+    <Text Key="btDonate" Text="Страница пожертвований" Comment="Donation Page" />
+    <Text Key="btValidate" Text="Проверить" Comment="Validate" />
+    <Text Key="labelEmail" Text="Электронная почта:" Comment="Email Address:" />
+    <Text Key="TriggerRun" Text="Вы запустили ComicRack {0} раз!" Comment="You have started ComicRack {0} times!" />
+    <Text Key="TriggerBooks" Text="Вы управляете {0} книгами с помощью ComicRack!" Comment="You are managing {0} books with ComicRack!" />
+    <Text Key="ServerError" Text="Не удалось связаться с сервером ComicRack для проверки адреса почты. Пожалуйста, проверьте подключение к интернету!" Comment="Could not contact the ComicRack server to validate the Email address. Please check your internet connection!" />
+    <Text Key="labelStepTwo" Text="Шаг второй:\nВведите адрес почты, указанный при пожертвовании, и нажмите «Проверить».\nРегистрация пожертвования может занять несколько минут, поэтому вы можете выполнить этот шаг чуть позже." Comment="Step Two:\nEnter your donation email and validate it.\nIt may take a few minutes for your donation to be registered so you can do this step a little later." />
+    <Text Key="labelDonationText" Text="ComicRack — это результат сотен часов работы, за которым не стоит крупная компания. Пожалуйста, рассмотрите возможность поддержать проект, если вы пользуетесь программой и она вам нравится.\n\nСчитайте это угощением парой кружек пива за проделанную работу. После завершения пожертвования вы сможете активировать свою копию с помощью указанного при оплате адреса почты и больше не увидите это сообщение.\n\nComicRack остаётся полностью функциональным, даже если вы решите не делать пожертвование." Comment="ComicRack is the product of hundreds of hours of work and there's no big Software Company behind it. Please consider giving something back if you're using ComicRack and having fun with it.\n\nYou can think of this as paying me a few beers for all the work. After the donation is completed you can activate this copy with your donation email address and never see this message again.\n\nComicRack is fully functional even if you decide to not make a donation." />
+  </Texts>
+</TR>

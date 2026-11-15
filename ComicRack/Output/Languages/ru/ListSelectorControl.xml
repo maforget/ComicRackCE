@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="AddItemDialog" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="AddItemDialog" CultureName="ru">
   <Texts>
-    <Text Key="btCheck" Text="&amp;Проверка" Comment="&amp;Check" />
-    <Text Key="btLists" Text="&amp;Список" Comment="&amp;Lists" />
+    <Text Key="btCheck" Text="&amp;Отметить" Comment="&amp;Check" />
+    <Text Key="btLists" Text="&amp;Списки" Comment="&amp;Lists" />
+    <Text Key="btText" Text="&amp;Текст" Comment="&amp;Text" />
+    <Text Key="QuickSearchCueText" Text="Поиск..." Comment="Search..." />
   </Texts>
 </TR>

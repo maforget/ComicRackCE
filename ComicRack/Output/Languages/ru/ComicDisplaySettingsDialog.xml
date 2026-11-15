@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="DisplaySetupDialog" CultureName="ru">
+  <Texts>
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btApply" Text="&amp;Применить" Comment="&amp;Apply" />
+    <Text Key="chkPageMargin" Text="Оставлять поля вокруг страниц" Comment="Leave margins around the pages" />
+    <Text Key="labelPaging" Text="Переход страниц:" Comment="Page Transition:" />
+    <Text Key="labelPaper" Text="Бумага:" Comment="Paper:" />
+    <Text Key="labelBackgroundColor" Text="Цвет:" Comment="Color:" />
+    <Text Key="labelBackgroundType" Text="Тип:" Comment="Type:" />
+    <Text Key="labelBackgroundTexture" Text="Текстура:" Comment="Texture:" />
+    <Text Key="cbBackgroundType.Item0" Text="Подстраивать цвет под текущую страницу" Comment="Adjust Color to current Page" />
+    <Text Key="cbBackgroundType.Item1" Text="Цвет" Comment="Color" />
+    <Text Key="cbBackgroundType.Item2" Text="Текстура" Comment="Texture" />
+    <Text Key="cbPageTransition.Item0" Text="Без эффекта перехода" Comment="No Page Transition Effect" />
+    <Text Key="cbPageTransition.Item1" Text="Плавное появление (затухание)" Comment="Page fades in" />
+    <Text Key="cbPageTransition.Item2" Text="Горизонтальная прокрутка" Comment="Page scrolls in horizontally" />
+    <Text Key="cbPageTransition.Item3" Text="Вертикальная прокрутка" Comment="Page scrolls in vertically" />
+    <Text Key="cbPageTransition.Item4" Text="Эффект перелистывания страницы" Comment="Page Turn Effect" />
+    <Text Key="grpGeneral" Text="Общие" Comment="General" />
+    <Text Key="grpEffects" Text="Эффекты" Comment="Effects" />
+    <Text Key="grpBackground" Text="Фон" Comment="Background" />
+    <Text Key="labelPaperStrength" Text="Зернистость:" Comment="Strength:" />
+    <Text Key="cbPaperLayout.Item0" Text="Нет" Comment="None" />
+    <Text Key="cbPaperLayout.Item1" Text="Плиткой" Comment="Tile" />
+    <Text Key="cbPaperLayout.Item2" Text="По центру" Comment="Center" />
+    <Text Key="cbPaperLayout.Item3" Text="Растянуть" Comment="Stretch" />
+    <Text Key="cbPaperLayout.Item4" Text="Масштаб" Comment="Zoom" />
+    <Text Key="cbTextureLayout.Item0" Text="Нет" Comment="None" />
+    <Text Key="cbTextureLayout.Item1" Text="Плиткой" Comment="Tile" />
+    <Text Key="cbTextureLayout.Item2" Text="По центру" Comment="Center" />
+    <Text Key="cbTextureLayout.Item3" Text="Растянуть" Comment="Stretch" />
+    <Text Key="cbTextureLayout.Item4" Text="Масштаб" Comment="Zoom" />
+    <Text Key="ComicDisplaySettingsDialog" Text="Настройки отображения комиксов" Comment="Book Display Settings" />
+    <Text Key="chkRealisticPages" Text="Реалистичное отображение страниц" Comment="Realistic Page Display" />
+  </Texts>
+</TR>

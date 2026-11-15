@@ -1,46 +1,70 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicDataPasteDialog" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicDataPasteDialog" CultureName="ru">
   <Texts>
     <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
     <Text Key="btMarkAll" Text="&amp;Все" Comment="&amp;All" />
-    <Text Key="btMarkDefined" Text="Отметить &amp;только" Comment="Only &amp;Set" />
+    <Text Key="btMarkDefined" Text="Только &amp;заданные" Comment="Only &amp;Set" />
     <Text Key="btMarkNone" Text="&amp;Очистить" Comment="&amp;Clear" />
-    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
-    <Text Key="chkAlternateCount" Text="Всего Номеров" Comment="Total Number" />
-    <Text Key="chkAlternateNumber" Text="Номер Комикса" Comment="Number" />
-    <Text Key="chkAlternateSeries" Text="Серии" Comment="Series" />
-    <Text Key="chkColor" Text="Гамма" Comment="Color Adjustment" />
+    <Text Key="btOK" Text="&amp;ОК" Comment="&amp;OK" />
+    <Text Key="chkColor" Text="Цветокоррекция" Comment="Color Adjustment" />
     <Text Key="chkColorist" Text="Колорист" Comment="Colorist" />
-    <Text Key="chkCount" Text="Всего Номеров" Comment="Total Number" />
-    <Text Key="chkCover" Text="Художник обложки" Comment="Cover Artist" />
+    <Text Key="chkCount" Text="Всего выпусков" Comment="Total Number" />
     <Text Key="chkEditor" Text="Редактор" Comment="Editor" />
     <Text Key="chkGenre" Text="Жанр" Comment="Genre" />
-    <Text Key="chkImprint" Text="Imprint" Comment="Imprint" />
-    <Text Key="chkInker" Text="Прорисовщик" Comment="Inker" />
+    <Text Key="chkImprint" Text="Импринт" Comment="Imprint" />
+    <Text Key="chkInker" Text="Контуровщик" Comment="Inker" />
     <Text Key="chkLanguage" Text="Язык" Comment="Language" />
-    <Text Key="chkLetterer" Text="Метранпаж" Comment="Letterer" />
+    <Text Key="chkLetterer" Text="Шрифтовик" Comment="Letterer" />
+    <Text Key="chkManga" Text="Манга" Comment="Manga" />
     <Text Key="chkMonth" Text="Месяц" Comment="Month" />
     <Text Key="chkNotes" Text="Заметки" Comment="Notes" />
-    <Text Key="chkNumber" Text="Номер Комикса" Comment="Number" />
+    <Text Key="chkNumber" Text="Номер" Comment="Number" />
     <Text Key="chkPenciller" Text="Художник" Comment="Penciller" />
-    <Text Key="chkPublisher" Text="Издатель Комикса" Comment="Publisher" />
-    <Text Key="chkRating" Text="Рейтинг" Comment="Rating" />
-    <Text Key="chkSeries" Text="Серии" Comment="Series" />
-    <Text Key="chkSummary" Text="Кратко" Comment="Summary" />
-    <Text Key="chkTags" Text="Метки" Comment="Tags" />
+    <Text Key="chkPublisher" Text="Издатель" Comment="Publisher" />
+    <Text Key="chkSeries" Text="Серия" Comment="Series" />
+    <Text Key="chkSummary" Text="Описание" Comment="Summary" />
+    <Text Key="chkTags" Text="Теги" Comment="Tags" />
     <Text Key="chkTitle" Text="Название" Comment="Title" />
-    <Text Key="chkVolume" Text="Выпуск в серии" Comment="Volume" />
-    <Text Key="chkWriter" Text="Автор" Comment="Writer" />
+    <Text Key="chkVolume" Text="Том" Comment="Volume" />
+    <Text Key="chkWriter" Text="Сценарист" Comment="Writer" />
     <Text Key="chkYear" Text="Год" Comment="Year" />
-    <Text Key="chkManga" Text="Manga" Comment="Manga" />
-    <Text Key="chkFormat" Text="Формат" Comment="Format" />
-    <Text Key="chkBlackAndWhite" Text="Черно-белый" Comment="Black and White" />
-    <Text Key="ComicDataPasteDialog" Text="Вставить данные в Комикс {0}" Comment="Paste Data to {0} eComics" />
-    <Text Key="grpAlternate" Text="Альтернативный" Comment="Alternate" />
-    <Text Key="grpArtists" Text="Художники / участвующие люди" Comment="Artists / People Involved" />
-    <Text Key="grpLibrary" Text="Библиотека" Comment="Library" />
+    <Text Key="grpArtists" Text="Авторы и художники" Comment="Artists / People Involved" />
     <Text Key="grpMain" Text="Основное" Comment="Main" />
-    <Text Key="chkAgeRating" Text="Возрастной ценз" Comment="Age Rating" />
+    <Text Key="chkFormat" Text="Формат" Comment="Format" />
+    <Text Key="chkBlackAndWhite" Text="Чёрно-белый" Comment="Black and White" />
+    <Text Key="chkAgeRating" Text="Возрастной рейтинг" Comment="Age Rating" />
+    <Text Key="chkCover" Text="Художник обложки" Comment="Cover Artist" />
     <Text Key="chkCharacters" Text="Персонажи" Comment="Characters" />
+    <Text Key="chkWeb" Text="Веб-ссылка" Comment="Web" />
+    <Text Key="chkLocations" Text="Места" Comment="Locations" />
+    <Text Key="chkTeams" Text="Команды" Comment="Teams" />
+    <Text Key="chkRating" Text="Моя оценка" Comment="My Rating" />
+    <Text Key="chkCommunityRating" Text="Оценка сообщества" Comment="Community Rating" />
+    <Text Key="chkAlternateCount" Text="Всего выпусков" Comment="Alt. Total Number" />
+    <Text Key="chkAlternateNumber" Text="Номер" Comment="Alt. Number" />
+    <Text Key="chkAlternateSeries" Text="Альт. серия" Comment="Alt. Series" />
+    <Text Key="chkBookPrice" Text="Цена" Comment="Price" />
+    <Text Key="chkBookAge" Text="Возраст" Comment="Age" />
+    <Text Key="chkBookCondition" Text="Состояние" Comment="Condition" />
+    <Text Key="chkBookStore" Text="Магазин" Comment="Store" />
+    <Text Key="chkBookOwner" Text="Владелец" Comment="Owner" />
+    <Text Key="chkBookLocation" Text="Местонахождение" Comment="Location" />
+    <Text Key="chkBookCollectionStatus" Text="Статус в коллекции" Comment="Collection Status" />
+    <Text Key="chkBookNotes" Text="Заметки" Comment="Notes" />
+    <Text Key="grpPlotNotes" Text="Сюжет и заметки" Comment="Plot &amp; Notes" />
+    <Text Key="grpCatalog" Text="Каталог" Comment="Catalog" />
+    <Text Key="chkISBN" Text="ISBN" Comment="ISBN" />
+    <Text Key="ComicDataPasteDialog" Text="Вставить данные в книги ({0})" Comment="Paste Data into {0} Books" />
+    <Text Key="chkPageCount" Text="Страницы" Comment="Pages" />
+    <Text Key="chkOpenTime" Text="Открыто/прочитано" Comment="Opened/Read" />
+    <Text Key="chkAddedTime" Text="Добавлено/куплено" Comment="Added/Purchased" />
+    <Text Key="chkSeriesComplete" Text="Серия завершена" Comment="Series complete" />
+    <Text Key="chkStoryArc" Text="Сюжетная арка" Comment="Story Arc" />
+    <Text Key="chkSeriesGroup" Text="Группа серий" Comment="Series Group" />
+    <Text Key="chkMainCharacterOrTeam" Text="Главный персонаж" Comment="Main Character" />
+    <Text Key="chkReview" Text="Рецензия" Comment="Review" />
+    <Text Key="chkReleasedTime" Text="Выпущено" Comment="Released" />
+    <Text Key="grpCustom" Text="Пользовательские" Comment="Custom" />
+    <Text Key="chkTranslator" Text="Переводчик" Comment="Translator" />
   </Texts>
 </TR>

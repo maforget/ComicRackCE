@@ -7,7 +7,7 @@
     <Text Key="btResetPages" Text="Сброс" Comment="Reset" />
     <Text Key="btResetColors" Text="Сброс" Comment="Reset" />
     <Text Key="btPrev" Text="&amp;Назад" Comment="&amp;Previous" />
-    <Text Key="chkMangaStyle" Text="Стиль Manga" Comment="Manga Style" />
+    <Text Key="chkMangaStyle" Text="Стиль манги" Comment="Manga Style" />
     <Text Key="colImage" Text="Изображение" Comment="Image" />
     <Text Key="colKey" Text="Ключ" Comment="Key" />
     <Text Key="colPage" Text="Страница" Comment="Page" />
@@ -17,18 +17,18 @@
     <Text Key="labelAlternateCount" Text="из:" Comment="of:" />
     <Text Key="labelAlternateSeries" Text="Альтернативная серия или сюжетная линия:" Comment="Alternate Series or Storyline Title:" />
     <Text Key="labelBrightness" Text="Яркость" Comment="Brightness" />
-    <Text Key="labelColorist" Text="Колорист" Comment="Colorist:" />
+    <Text Key="labelColorist" Text="Колорист:" Comment="Colorist:" />
     <Text Key="labelContrast" Text="Контраст" Comment="Contrast" />
     <Text Key="labelCoverArtist" Text="Обложка:" Comment="Cover Artist:" />
     <Text Key="labelEditor" Text="Редактор:" Comment="Editor:" />
     <Text Key="labelFormat" Text="Формат:" Comment="Format:" />
     <Text Key="labelGenre" Text="Жанр:" Comment="Genre:" />
-    <Text Key="labelImprint" Text="Imprint:" Comment="Imprint:" />
+    <Text Key="labelImprint" Text="Импринт (Лейбл):" Comment="Imprint:" />
     <Text Key="labelInker" Text="Прорисовщик:" Comment="Inker:" />
     <Text Key="labelLanguage" Text="Язык:" Comment="Language:" />
     <Text Key="labelLetterer" Text="Метранпаж:" Comment="Letterer:" />
     <Text Key="labelMonth" Text="Месяц:" Comment="Month:" />
-    <Text Key="labelNoPages" Text="Этот Комикс никогда не открывался и количество страниц не известно." Comment="This eComic has never been opened and the page count is still unknown." />
+    <Text Key="labelNoPages" Text="Этот комикс никогда не открывался и количество страниц неизвестно." Comment="This eComic has never been opened and the page count is still unknown." />
     <Text Key="labelNumber" Text="Номер:" Comment="Number:" />
     <Text Key="labelCount" Text="из:" Comment="of:" />
     <Text Key="labelOpened" Text="Открыт:" Comment="Opened:" />
@@ -47,12 +47,12 @@
     <Text Key="tabColors" Text="Картинка" Comment="Colors" />
     <Text Key="tabInfo" Text="Информация" Comment="Info" />
     <Text Key="tabPages" Text="Страницы" Comment="Pages" />
-    <Text Key="tabPlot" Text="Коментарии и заметки" Comment="Plot &amp; Notes" />
+    <Text Key="tabPlot" Text="Комментарии и заметки" Comment="Plot &amp; Notes" />
     <Text Key="tabSummary" Text="Кратко" Comment="Summary" />
-    <Text Key="pageViewer" Text="Сделайте двойной щелчек мышью на белом цвете" Comment="Double Click on Color to set White Point" />
+    <Text Key="pageViewer" Text="Сделайте двойной щелчок мышью на белом цвете" Comment="Double Click on Color to set White Point" />
     <Text Key="labelPagesInfo" Text="Измените порядок страниц путем перетаскивания или используйте контекстное меню для изменения типа страниц" Comment="Change the page order with drag &amp; drop or use the context menu to change page types:" />
     <Text Key="labelType" Text="Тип:" Comment="Type:" />
-    <Text Key="labelManga" Text="Manga:" Comment="Manga:" />
+    <Text Key="labelManga" Text="Манга:" Comment="Manga:" />
     <Text Key="labelEnableProposed" Text="Рекомендовать:" Comment="Enable Proposed:" />
     <Text Key="labelBlackAndWhite" Text="Черно-белый" Comment="Black and White" />
     <Text Key="btPageViews" Text="Вид..." Comment="Views" />
@@ -62,5 +62,48 @@
     <Text Key="labelNotes" Text="Заметки:" Comment="Notes:" />
     <Text Key="labelCharacters" Text="Персонажи:" Comment="Characters:" />
     <Text Key="labelSharpening" Text="Резкость" Comment="Sharpening" />
+        <Text Key="btPageView" Text="Страницы" Comment="Pages" />
+    <Text Key="labelTeams" Text="Команды:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="Локации:" Comment="Locations:" />
+    <Text Key="labelWeb" Text="Веб-ссылка:" Comment="Web:" />
+    <Text Key="labelEnableDynamicUpdate" Text="Включать в обновления:" Comment="Include in Updates:" />
+    <Text Key="tabDetails" Text="Детали" Comment="Details" />
+    <Text Key="btLinkFile" Text="Связать с файлом..." Comment="Link to File..." />
+    <Text Key="btThumbnail" Text="Эскиз..." Comment="Thumbnail..." />
+    <Text Key="labelMyRating" Text="Мой рейтинг:" Comment="My Rating:" />
+    <Text Key="labelCommunityRating" Text="Рейтинг сообщества:" Comment="Community Rating:" />
+    <Text Key="miResetThumbnail" Text="&amp;По умолчанию" Comment="&amp;Default" />
+    <Text Key="labelBookStore" Text="Магазин:" Comment="Store:" />
+    <Text Key="labelBookOwner" Text="Владелец:" Comment="Owner:" />
+    <Text Key="labelBookLocation" Text="Местонахождение:" Comment="Location:" />
+    <Text Key="labelBookAge" Text="Возраст:" Comment="Age:" />
+    <Text Key="labelBookCondition" Text="Состояние:" Comment="Condition:" />
+    <Text Key="labelBookCollectionStatus" Text="Статус в коллекции:" Comment="Collection Status:" />
+    <Text Key="labelBookNotes" Text="Заметки:" Comment="Notes:" />
+    <Text Key="labelBookPrice" Text="Цена:" Comment="Price:" />
+    <Text Key="tabCatalog" Text="Каталог" Comment="Catalog" />
+    <Text Key="labelISBN" Text="ISBN:" Comment="ISBN:" />
+    <Text Key="labelPagesAsTextSimple" Text="Страниц:" Comment="Pages:" />
+    <Text Key="labelGamma" Text="Гамма" Comment="Gamma" />
+    <Text Key="labelOpenedTime" Text="Открыт/прочитан:" Comment="Opened/Read:" />
+    <Text Key="labelAddedTime" Text="Добавлен/куплен:" Comment="Added/Purchased:" />
+    <Text Key="labelSeriesComplete" Text="Серия завершена:" Comment="Series complete:" />
+    <Text Key="chkShowImageControls" Text="Коррекция изображения" Comment="Image Controls" />
+    <Text Key="labelScanInformation" Text="Инфо о скане:" Comment="Scan Information:" />
+    <Text Key="labelStoryArc" Text="Сюжетная арка:" Comment="Story Arc:" />
+    <Text Key="labelSeriesGroup" Text="Группа серий:" Comment="Series Group:" />
+    <Text Key="labelMainCharacterOrTeam" Text="Главный герой/команда:" Comment="Main Character/Team:" />
+    <Text Key="tabPageReview" Text="Отзыв" Comment="Review" />
+    <Text Key="tabPageNotes" Text="Заметки" Comment="Notes" />
+    <Text Key="tabPageSummary" Text="Кратко" Comment="Summary" />
+    <Text Key="miOrderByName" Text="Упорядочить по имени" Comment="Order by Name" />
+    <Text Key="miOrderByNameNumeric" Text="Упорядочить по имени (числ.)" Comment="Order by Name (numeric)" />
+    <Text Key="btApply" Text="&amp;Применить" Comment="&amp;Apply" />
+    <Text Key="labelDay" Text="День:" Comment="Day:" />
+    <Text Key="labelReleasedTime" Text="Дата выхода:" Comment="Released:" />
+    <Text Key="tabCustom" Text="Дополнительно" Comment="Custom" />
+    <Text Key="CustomValueKey" Text="Имя" Comment="Name" />
+    <Text Key="CustomValueValue" Text="Значение" Comment="Value" />
+    <Text Key="labelTranslator" Text="Переводчик:" Comment="Translator:" />
   </Texts>
 </TR>

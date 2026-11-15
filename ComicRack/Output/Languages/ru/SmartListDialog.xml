@@ -1,12 +1,30 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SmartListDialog" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="SmartListDialog" CultureName="ru">
   <Texts>
     <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
-    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btOK" Text="&amp;ОК" Comment="&amp;OK" />
+    <Text Key="labelMatch" Text="Содержит" Comment="Match" />
+    <Text Key="MatchMode" Text="Все|Хотя бы одно" Comment="All|Any" />
     <Text Key="btApply" Text="&amp;Применить" Comment="&amp;Apply" />
-    <Text Key="labelMatch" Text="Проверка" Comment="Match" />
-    <Text Key="labelRules" Text="по следующим правилам:" Comment="of the following rules:" />
-    <Text Key="SmartListDialog" Text="Редактировать авто-список" Comment="Edit the Smart List" />
-    <Text Key="MatchMode" Text="Все|Любой" Comment="All|Any" />
+    <Text Key="chkLimit" Text="Ограничить до" Comment="Limit to" />
+    <Text Key="cbLimitType.Item0" Text="книг" Comment="Books" />
+    <Text Key="cbLimitType.Item1" Text="МБ" Comment="MB" />
+    <Text Key="cbLimitType.Item2" Text="ГБ" Comment="GB" />
+    <Text Key="FullLibrary" Text="Вся библиотека" Comment="Full Library" />
+    <Text Key="labelSubRules" Text="из следующих правил:" Comment="of the following rules:" />
+    <Text Key="btPrev" Text="&amp;Назад" Comment="&amp;Previous" />
+    <Text Key="btNext" Text="&amp;Далее" Comment="&amp;Next" />
+    <Text Key="SmartListDialog" Text="Изменить умный список" Comment="Edit Smart List" />
+    <Text Key="labelName" Text="Имя:" Comment="Name:" />
+    <Text Key="labelRules" Text="из правил в:" Comment="of the following rules on" />
+    <Text Key="chkQuickOpen" Text="Быстрое открытие" Comment="Quick Open" />
+    <Text Key="labelNotes" Text="Заметки:" Comment="Notes:" />
+    <Text Key="SmartListQueryDialog" Text="Изменить умный список" Comment="Edit Smart List" />
+    <Text Key="labelFilterReset" Text="Некоторые книги были вручную удалены из списка." Comment="Some Books have been manually remove from the list" />
+    <Text Key="btFilterReset" Text="Сбросить" Comment="Reset" />
+    <Text Key="miInsertMatch" Text="Вставить условие" Comment="Insert Match" />
+    <Text Key="miInsertValue" Text="Вставить значение" Comment="Insert Value" />
+    <Text Key="btQuery" Text="Запрос" Comment="Query" />
+    <Text Key="btDesigner" Text="Редактор" Comment="Designer" />
   </Texts>
 </TR>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="FolderListDialog" CultureName="ru">
+  <Texts>
+    <Text Key="FolderListDialog" Text="Редактировать список-папку" Comment="Edit Folder List" />
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="labelName" Text="Имя:" Comment="Name:" />
+    <Text Key="labelBooks" Text="Комиксы:" Comment="eComics:" />
+    <Text Key="CombineMode" Text="Все комиксы из каждого списка|Только комиксы, присутствующие во всех списках" Comment="All eComics from every list|Only eComics existing in every list" />
+    <Text Key="labelNotes" Text="Заметки:" Comment="Notes:" />
+  </Texts>
+</TR>
