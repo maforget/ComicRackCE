@@ -541,17 +541,17 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 			switch (state)
 			{
 			case BookState.Dirty:
-				return TR.Messages["StateDirty", Resources.StateDirty];
+				return TR.Messages["StateDirty", "Changes are waiting to be written to the book file"];
 			case BookState.Open:
-				return TR.Messages["StateOpen", Resources.StateOpen];
+				return TR.Messages["StateOpen", "Open in the reader"];
 			case BookState.LastOpened:
-				return TR.Messages["StateLastOpened", Resources.StateLastOpened];
+				return TR.Messages["StateLastOpened", "Opened most recently of the books in this list"];
 			case BookState.NewPages:
-				return StringUtility.Format(TR.Messages["StateNewPages", Resources.StateNewPages], Comic.NewPages);
+				return StringUtility.Format(TR.Messages["StateNewPages", "New pages since you last read it: {0}"], Comic.NewPages);
 			case BookState.Fileless:
-				return TR.Messages["StateFileless", Resources.StateFileless];
+				return TR.Messages["StateFileless", "Fileless book: it has no file"];
 			default:
-				return TR.Messages["StateFileMissing", Resources.StateFileMissing];
+				return TR.Messages["StateFileMissing", "The book file is missing"];
 			}
 		}
 

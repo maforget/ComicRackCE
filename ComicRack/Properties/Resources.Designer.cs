@@ -2091,60 +2091,6 @@ namespace cYo.Projects.ComicRack.Viewer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Changes are waiting to be written to the book file.
-        /// </summary>
-        internal static string StateDirty {
-            get {
-                return ResourceManager.GetString("StateDirty", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fileless book: it has no file.
-        /// </summary>
-        internal static string StateFileless {
-            get {
-                return ResourceManager.GetString("StateFileless", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The book file is missing.
-        /// </summary>
-        internal static string StateFileMissing {
-            get {
-                return ResourceManager.GetString("StateFileMissing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Opened most recently of the books in this list.
-        /// </summary>
-        internal static string StateLastOpened {
-            get {
-                return ResourceManager.GetString("StateLastOpened", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to New pages since you last read it: {0}.
-        /// </summary>
-        internal static string StateNewPages {
-            get {
-                return ResourceManager.GetString("StateNewPages", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Open in the reader.
-        /// </summary>
-        internal static string StateOpen {
-            get {
-                return ResourceManager.GetString("StateOpen", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap SyncBrowser {
