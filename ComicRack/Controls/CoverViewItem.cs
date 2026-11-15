@@ -490,70 +490,49 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 		{
 			List<BookState> states = null;
 			if (Comic.IsLinked && ((Comic.ComicInfoIsDirty && Program.Settings.UpdateComicFiles) || (Comic.ComicBookIsDirty && Program.Settings.UpdateComicBookFiles)))
-			{
 				states = states.SafeAdd(BookState.Dirty);
-			}
+
 			switch (marker)
 			{
-			case MarkerType.IsOpen:
-				states = states.SafeAdd(BookState.Open);
-				break;
-			case MarkerType.IsLast:
-				states = states.SafeAdd(BookState.LastOpened);
-				break;
+				case MarkerType.IsOpen:
+					states = states.SafeAdd(BookState.Open);
+					break;
+				case MarkerType.IsLast:
+					states = states.SafeAdd(BookState.LastOpened);
+					break;
 			}
+
 			if (Comic.NewPages > 0)
-			{
 				states = states.SafeAdd(BookState.NewPages);
-			}
+
 			if (!Comic.IsLinked)
-			{
 				states = states.SafeAdd(BookState.Fileless);
-			}
+
 			if (Comic.EditMode.IsLocalComic() && Comic.IsLinked && Comic.FileIsMissing)
-			{
 				states = states.SafeAdd(BookState.FileMissing);
-			}
+
 			return states;
 		}
 
-		private Image GetStateImage(BookState state)
+		private Image GetStateImage(BookState state) => state switch
 		{
-			switch (state)
-			{
-			case BookState.Dirty:
-				return IsDirtyImage;
-			case BookState.Open:
-				return MarkerIsOpenImage;
-			case BookState.LastOpened:
-				return MarkerLastOpenedImage;
-			case BookState.NewPages:
-				return ThumbRenderer.GetNewPageStatusImage(Comic.NewPages);
-			case BookState.Fileless:
-				return MarkerIsFileLessImage;
-			default:
-				return ThumbnailViewItem.DeletedStateImage;
-			}
-		}
+			BookState.Dirty => IsDirtyImage,
+			BookState.Open => MarkerIsOpenImage,
+			BookState.LastOpened => MarkerLastOpenedImage,
+			BookState.NewPages => ThumbRenderer.GetNewPageStatusImage(Comic.NewPages),
+			BookState.Fileless => MarkerIsFileLessImage,
+			_ => ThumbnailViewItem.DeletedStateImage,
+		};
 
-		private string GetStateText(BookState state)
+		private string GetStateText(BookState state) => state switch
 		{
-			switch (state)
-			{
-			case BookState.Dirty:
-				return TR.Messages["StateDirty", "Changes are waiting to be written to the book file"];
-			case BookState.Open:
-				return TR.Messages["StateOpen", "Open in the reader"];
-			case BookState.LastOpened:
-				return TR.Messages["StateLastOpened", "Opened most recently of the books in this list"];
-			case BookState.NewPages:
-				return StringUtility.Format(TR.Messages["StateNewPages", "New pages since you last read it: {0}"], Comic.NewPages);
-			case BookState.Fileless:
-				return TR.Messages["StateFileless", "Fileless book: it has no file"];
-			default:
-				return TR.Messages["StateFileMissing", "The book file is missing"];
-			}
-		}
+			BookState.Dirty => TR.Messages["StateDirty", "Changes are waiting to be written to the book file"],
+			BookState.Open => TR.Messages["StateOpen", "Open in the reader"],
+			BookState.LastOpened => TR.Messages["StateLastOpened", "Opened most recently of the books in this list"],
+			BookState.NewPages => StringUtility.Format(TR.Messages["StateNewPages", "New pages since you last read it: {0}"], Comic.NewPages),
+			BookState.Fileless => TR.Messages["StateFileless", "Fileless book: it has no file"],
+			_ => TR.Messages["StateFileMissing", "The book file is missing"],
+		};
 
 		public string GetToolTip(IColumn column)
 		{
