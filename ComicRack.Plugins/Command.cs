@@ -223,7 +223,11 @@ namespace cYo.Projects.ComicRack.Plugins
 			{
 				using (StreamWriter streamWriter = new StreamWriter(Output))
 				{
-					streamWriter.WriteLine(text, o);
+					// Without arguments the text is not a format string: compiler errors and exception messages contain braces.
+					if (o == null || o.Length == 0)
+						streamWriter.WriteLine(text);
+					else
+						streamWriter.WriteLine(text, o);
 				}
 			}
 		}

@@ -1,20 +1,11 @@
-﻿using cYo.Common.ComponentModel;
-using cYo.Common.Drawing;
-using cYo.Common.Text;
+﻿using cYo.Common.Drawing;
 using cYo.Common.Windows.Forms.Theme;
-using cYo.Projects.ComicRack.Engine;
-using IronPython.Runtime;
-using Microsoft.Scripting.Hosting;
-using Microsoft.Scripting.Runtime;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace cYo.Projects.ComicRack.Plugins
 {
@@ -156,20 +147,11 @@ namespace cYo.Projects.ComicRack.Plugins
 				File.WriteAllText(ConfigFileName, config);
 				return true;
 			}
-			catch
+			catch (Exception e)
 			{
+				Log($"Failed to save the config of '{Key}' to '{ConfigFileName}': {e.Message}");
 				return false;
 			}
-		}
-
-		private void HandleException(Exception e)
-		{
-			// TODO: Implement proper exception handling/logging for plugin command invocation
-			if (e.InnerException != null)
-				e = e.InnerException;
-
-			Log(e.Message);
-			return;
 		}
 	}
 }

@@ -13,9 +13,8 @@ using System.Reflection;
 
 namespace cYo.Projects.ComicRack.Plugins.Compiler
 {
-	// ComicRack.Plugins creates this class by name the first time a source plugin has to be compiled.
-	// Nothing else refers to this assembly, so Roslyn is not loaded when no plugin needs compiling.
-	internal sealed class RoslynSourcePluginCompiler : ISourcePluginCompiler
+	// Only CSharpSourcePluginInitializer.GetAssemblyFile uses this class. The runtime loads Roslyn when the JIT compiles that method.
+	internal sealed class RoslynSourcePluginCompiler
 	{
 		private sealed class SourceFile
 		{
