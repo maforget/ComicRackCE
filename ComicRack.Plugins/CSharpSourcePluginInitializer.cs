@@ -19,7 +19,7 @@ namespace cYo.Projects.ComicRack.Plugins
 	// The .csplugin file is an INI file. All entries are optional:
 	//   [Plugin]
 	//   LangVersion=latest
-	//   References=lib/Some.dll;lib/Other.dll              (relative to the plugin folder)
+	//   References=Some.dll;Other.dll              (relative to the plugin folder)
 	//   FrameworkReferences=System.Web;System.Runtime.Serialization
 	internal sealed class CSharpSourcePluginInitializer : PluginInitializer
 	{
