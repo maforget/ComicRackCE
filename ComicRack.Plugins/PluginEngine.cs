@@ -145,13 +145,9 @@ namespace cYo.Projects.ComicRack.Plugins
 			}
 		};
 
-		private readonly string pluginConfigPath;
-
 		/// <param name="sourcePluginCachePath">The folder that keeps the compiled assemblies of source plugins (.csplugin). The default is a folder in the temporary files of the user.</param>
-		/// <param name="pluginConfigPath">The folder that keeps the config files of .NET plugins. Null keeps each config next to its plugin file.</param>
-		public PluginEngine(string sourcePluginCachePath = null, string pluginConfigPath = null)
+		public PluginEngine(string sourcePluginCachePath = null)
 		{
-			this.pluginConfigPath = pluginConfigPath;
 			sourceInitializer = new CSharpSourcePluginInitializer(sourcePluginCachePath ?? Path.Combine(Path.GetTempPath(), "ComicRack", "PluginCache"));
 			initializers =
 			[
@@ -209,9 +205,6 @@ namespace cYo.Projects.ComicRack.Plugins
 				{
 					try
 					{
-						if (cmd is DotNetCommand dotNetCommand)
-							dotNetCommand.ConfigFolder = pluginConfigPath;
-
 						// The Key of a .NET command is known before Initialize. Checking it first keeps OnLoad from running in a plugin that is skipped.
 						if (cmd is DotNetCommand && IsKeyTakenByAnotherPlugin(cmd))
 						{

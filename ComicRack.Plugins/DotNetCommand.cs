@@ -16,17 +16,7 @@ namespace cYo.Projects.ComicRack.Plugins
 		private readonly string pluginFile;
 		public DotNetPlugin Plugin { get; }
 		public override PluginKind Kind => DotNetPluginLoader.KindOf(pluginFile);
-
-		/// <summary>The folder that holds a settings folder for each .NET plugin. Null keeps the settings in the plugin folder.</summary>
-		/// <remarks>The plugin folder can be read-only (Program Files), and the package installer replaces it on update.</remarks>
-		public string ConfigFolder { get; set; }
-
-		private string FileSafeKey => string.Concat(Key.Select(c => Path.GetInvalidFileNameChars().Contains(c) ? '_' : c));
-
-		// The Key is unique for each .NET plugin, so all hook commands of one plugin share this folder.
-		private string ConfigPath => ConfigFolder == null ? Path.GetDirectoryName(pluginFile) : Path.Combine(ConfigFolder, FileSafeKey);
-
-		private string ConfigFileName => Path.Combine(ConfigPath, FileSafeKey + ".config");
+		private string ConfigFileName => pluginFile + "-" + Key + ".config";
 
 		private DotNetCommand(DotNetPlugin plugin, IDotNetHook hook, string pluginFile)
 		{
@@ -96,7 +86,7 @@ namespace cYo.Projects.ComicRack.Plugins
 
 			try
 			{
-				Plugin.Load(Environment, path, ConfigPath);
+				Plugin.Load(Environment, path);
 			}
 			catch (Exception e)
 			{
@@ -154,7 +144,6 @@ namespace cYo.Projects.ComicRack.Plugins
 		{
 			try
 			{
-				Directory.CreateDirectory(Path.GetDirectoryName(ConfigFileName));
 				File.WriteAllText(ConfigFileName, config);
 				return true;
 			}
