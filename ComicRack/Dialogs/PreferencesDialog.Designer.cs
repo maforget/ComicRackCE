@@ -975,7 +975,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // lblWifiInterface
             // 
             this.lblWifiInterface.AutoSize = true;
-            this.lblWifiInterface.Location = new System.Drawing.Point(4, 20);
+            this.lblWifiInterface.Location = new System.Drawing.Point(4, 32);
             this.lblWifiInterface.Name = "lblWifiInterface";
             this.lblWifiInterface.Size = new System.Drawing.Size(200, 13);
             this.lblWifiInterface.TabIndex = 5;
@@ -987,7 +987,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbWifiInterface.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbWifiInterface.FormattingEnabled = true;
-            this.cbWifiInterface.Location = new System.Drawing.Point(6, 38);
+            this.cbWifiInterface.Location = new System.Drawing.Point(6, 50);
             this.cbWifiInterface.Name = "cbWifiInterface";
             this.cbWifiInterface.Size = new System.Drawing.Size(480, 21);
             this.cbWifiInterface.TabIndex = 4;
@@ -996,9 +996,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             this.lblWifiInterfaceInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblWifiInterfaceInfo.Location = new System.Drawing.Point(6, 62);
+            this.lblWifiInterfaceInfo.Location = new System.Drawing.Point(6, 74);
             this.lblWifiInterfaceInfo.Name = "lblWifiInterfaceInfo";
-            this.lblWifiInterfaceInfo.Size = new System.Drawing.Size(480, 26);
+            this.lblWifiInterfaceInfo.Size = new System.Drawing.Size(480, 21);
             this.lblWifiInterfaceInfo.TabIndex = 6;
             // 
             // btTestWifi
