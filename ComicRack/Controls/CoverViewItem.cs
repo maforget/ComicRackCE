@@ -537,11 +537,10 @@ namespace cYo.Projects.ComicRack.Viewer.Controls
 		public string GetToolTip(IColumn column)
 		{
 			if (!(column.Tag is ComicListField field) || field.DisplayProperty != StateColumn)
-			{
 				return null;
-			}
+
 			List<BookState> states = GetStates();
-			return states == null ? null : string.Join(Environment.NewLine, states.Select(GetStateText));
+			return states == null ? null : string.Join(Environment.NewLine, states.Select(s => $" - {GetStateText(s)}"));
 		}
 
 		public override void OnDraw(ItemDrawInformation drawInfo)
