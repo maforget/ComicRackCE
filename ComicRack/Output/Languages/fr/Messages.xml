@@ -167,7 +167,7 @@
     <Text Key="StateLastOpened" Text="Dernier Livre ouvert de cette liste" Comment="Opened most recently of the books in this list" />
     <Text Key="StateNewPages" Text="Nouvelles pages depuis votre dernière lecture : {0}" Comment="New pages since you last read it: {0}" />
     <Text Key="StateFileless" Text="Livre sans fichier : aucun fichier associé" Comment="Fileless book: it has no file" />
-    <Text Key="StateFileMissing" Text="Le fichier du Livre est introuvable" Comment="The book file is missing" />
+    <Text Key="StateFileMissing" Text="Le fichier du livre est introuvable" Comment="The book file is missing" />
     <Text Key="Books" Text="Livres" Comment="Books" />
     <Text Key="FailedRemovePackage" Text="Impossible de désinstaller le paquet. Veuillez redémarrer ComicRack et réessayer !" Comment="Failed to uninstall package. Please restart ComicRack and try again!" />
     <Text Key="OpenWithPrograms" Text="Gérer les programmes externes" Comment="Manage Open With Programs" />
