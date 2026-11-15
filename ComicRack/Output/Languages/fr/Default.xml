@@ -49,5 +49,7 @@
     <Text Key="Download" Text="Télécharger" Comment="Download" />
     <Text Key="Actual" Text="Réel" Comment="Actual" />
     <Text Key="Enabled" Text="Activé" Comment="Enabled" />
+    <Text Key="OK" Text="OK" Comment="OK" />
+    <Text Key="Ready" Text="Prêt" Comment="Ready" />
   </Texts>
 </TR>
