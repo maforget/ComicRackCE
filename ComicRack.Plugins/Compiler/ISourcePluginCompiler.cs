@@ -15,6 +15,8 @@ namespace cYo.Projects.ComicRack.Plugins.Compiler
 
 		// The DLL to write. The PDB is written next to it with the same name.
 		public string OutputFile { get; set; }
+
+		public bool Optimized { get; set; }
 	}
 
 	internal sealed class SourcePluginCompilationResult

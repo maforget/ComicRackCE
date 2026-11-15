@@ -146,9 +146,9 @@ namespace cYo.Projects.ComicRack.Plugins
 		};
 
 		/// <param name="sourcePluginCachePath">The folder that keeps the compiled assemblies of source plugins (.csplugin). The default is a folder in the temporary files of the user.</param>
-		public PluginEngine(string sourcePluginCachePath = null)
+		public PluginEngine(string sourcePluginCachePath = null, bool optimized = false)
 		{
-			sourceInitializer = new CSharpSourcePluginInitializer(sourcePluginCachePath ?? Path.Combine(Path.GetTempPath(), "ComicRack", "PluginCache"));
+			sourceInitializer = new CSharpSourcePluginInitializer(sourcePluginCachePath ?? Path.Combine(Path.GetTempPath(), "ComicRack", "PluginCache"), optimized);
 			initializers =
 			[
 				new XmlPluginInitializer(),
