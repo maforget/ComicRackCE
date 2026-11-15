@@ -162,5 +162,9 @@
 	<Text Key="GoToPage" Text="Entrer le numéro de la page à laquelle aller:" Comment="Enter the page number to go to:" />
     <Text Key="RepairDevice" Text="Relier à nouveau l'appareil" Comment="Re-pair Device" />
     <Text Key="RepairDeviceConfirm" Text="Modifier l'ID de synchronisation du '{0}' ?\n\nAncien : {1}\nNouveau : {2}" Comment="Change the Sync ID of '{0}'?\n\nOld: {1}\nNew: {2}" />
+    <Text Key="Books" Text="Livres" Comment="Books" />
+    <Text Key="FailedRemovePackage" Text="Impossible de désinstaller le paquet. Veuillez redémarrer ComicRack et réessayer !" Comment="Failed to uninstall package. Please restart ComicRack and try again!" />
+    <Text Key="loadingThumbnail" Text="Chargement des miniatures..." Comment="Loading Thumbnail..." />
+    <Text Key="OpenWithPrograms" Text="Gérer les Programmes « Ouvrir Avec »" Comment="Manage Open With Programs" />
   </Texts>
 </TR>
