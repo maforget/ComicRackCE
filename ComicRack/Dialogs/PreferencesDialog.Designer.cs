@@ -81,6 +81,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.labelContrast = new System.Windows.Forms.Label();
             this.pageAdvanced = new System.Windows.Forms.Panel();
             this.grpWirelessSetup = new cYo.Common.Windows.Forms.CollapsibleGroupBox();
+            this.lblWifiInterface = new System.Windows.Forms.Label();
+            this.cbWifiInterface = new System.Windows.Forms.ComboBox();
+            this.lblWifiInterfaceInfo = new System.Windows.Forms.Label();
             this.btTestWifi = new System.Windows.Forms.Button();
             this.lblWifiStatus = new System.Windows.Forms.Label();
             this.lblWifiAddresses = new System.Windows.Forms.Label();
@@ -954,6 +957,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             // grpWirelessSetup
             // 
+            this.grpWirelessSetup.Controls.Add(this.cbWifiInterface);
+            this.grpWirelessSetup.Controls.Add(this.lblWifiInterfaceInfo);
+            this.grpWirelessSetup.Controls.Add(this.lblWifiInterface);
             this.grpWirelessSetup.Controls.Add(this.btTestWifi);
             this.grpWirelessSetup.Controls.Add(this.lblWifiStatus);
             this.grpWirelessSetup.Controls.Add(this.lblWifiAddresses);
@@ -961,14 +967,43 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             this.grpWirelessSetup.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpWirelessSetup.Location = new System.Drawing.Point(0, 1618);
             this.grpWirelessSetup.Name = "grpWirelessSetup";
-            this.grpWirelessSetup.Size = new System.Drawing.Size(498, 136);
+            this.grpWirelessSetup.Size = new System.Drawing.Size(498, 194);
             this.grpWirelessSetup.TabIndex = 8;
             this.grpWirelessSetup.Text = "Wireless Setup";
+            // 
+            // lblWifiInterface
+            // 
+            this.lblWifiInterface.AutoSize = true;
+            this.lblWifiInterface.Location = new System.Drawing.Point(4, 20);
+            this.lblWifiInterface.Name = "lblWifiInterface";
+            this.lblWifiInterface.Size = new System.Drawing.Size(200, 13);
+            this.lblWifiInterface.TabIndex = 5;
+            this.lblWifiInterface.Text = "Network adapter used to find devices:";
+            // 
+            // cbWifiInterface
+            // 
+            this.cbWifiInterface.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbWifiInterface.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbWifiInterface.FormattingEnabled = true;
+            this.cbWifiInterface.Location = new System.Drawing.Point(6, 38);
+            this.cbWifiInterface.Name = "cbWifiInterface";
+            this.cbWifiInterface.Size = new System.Drawing.Size(480, 21);
+            this.cbWifiInterface.TabIndex = 4;
+            // 
+            // lblWifiInterfaceInfo
+            // 
+            this.lblWifiInterfaceInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWifiInterfaceInfo.Location = new System.Drawing.Point(6, 62);
+            this.lblWifiInterfaceInfo.Name = "lblWifiInterfaceInfo";
+            this.lblWifiInterfaceInfo.Size = new System.Drawing.Size(480, 26);
+            this.lblWifiInterfaceInfo.TabIndex = 6;
             // 
             // btTestWifi
             // 
             this.btTestWifi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btTestWifi.Location = new System.Drawing.Point(382, 63);
+            this.btTestWifi.Location = new System.Drawing.Point(382, 121);
             this.btTestWifi.Name = "btTestWifi";
             this.btTestWifi.Size = new System.Drawing.Size(104, 23);
             this.btTestWifi.TabIndex = 3;
@@ -978,7 +1013,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             // lblWifiStatus
             // 
-            this.lblWifiStatus.Location = new System.Drawing.Point(6, 93);
+            this.lblWifiStatus.Location = new System.Drawing.Point(6, 151);
             this.lblWifiStatus.Name = "lblWifiStatus";
             this.lblWifiStatus.Size = new System.Drawing.Size(370, 21);
             this.lblWifiStatus.TabIndex = 2;
@@ -987,7 +1022,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // lblWifiAddresses
             // 
             this.lblWifiAddresses.AutoSize = true;
-            this.lblWifiAddresses.Location = new System.Drawing.Point(4, 41);
+            this.lblWifiAddresses.Location = new System.Drawing.Point(4, 99);
             this.lblWifiAddresses.Name = "lblWifiAddresses";
             this.lblWifiAddresses.Size = new System.Drawing.Size(490, 13);
             this.lblWifiAddresses.TabIndex = 1;
@@ -998,7 +1033,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
             // 
             this.txWifiAddresses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txWifiAddresses.Location = new System.Drawing.Point(6, 65);
+            this.txWifiAddresses.Location = new System.Drawing.Point(6, 123);
             this.txWifiAddresses.Name = "txWifiAddresses";
             this.txWifiAddresses.Size = new System.Drawing.Size(370, 20);
             this.txWifiAddresses.TabIndex = 0;
@@ -2951,6 +2986,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 		private CheckBox tabScripts;
 		private CheckBox tabAdvanced;
 		private CollapsibleGroupBox grpWirelessSetup;
+		private Label lblWifiInterface;
+		private ComboBox cbWifiInterface;
+		private Label lblWifiInterfaceInfo;
 		private Label lblWifiStatus;
 		private Label lblWifiAddresses;
 		private TextBox txWifiAddresses;

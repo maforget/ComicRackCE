@@ -244,6 +244,46 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			}
 		}
 
+		private void InitializeWifiInterfaces()
+		{
+			string selected = Program.Settings.WirelessSyncInterface ?? string.Empty;
+			List<WirelessSyncProvider.NetworkInterfaceOption> options = new List<WirelessSyncProvider.NetworkInterfaceOption>();
+			options.Add(new WirelessSyncProvider.NetworkInterfaceOption(string.Empty, TR.Load(base.Name)["wifiInterfaceAutomatic", "Automatic"]));
+			options.AddRange(WirelessSyncProvider.GetSelectableInterfaces());
+			if (selected.Length != 0 && !options.Any((WirelessSyncProvider.NetworkInterfaceOption o) => o.Id == selected))
+			{
+				// keep the saved choice even if that adapter is currently down, so saving doesn't silently reset it
+				options.Add(new WirelessSyncProvider.NetworkInterfaceOption(selected, TR.Load(base.Name)["wifiInterfaceUnavailable", "Unavailable adapter"]));
+			}
+			cbWifiInterface.DataSource = options;
+			cbWifiInterface.DisplayMember = nameof(WirelessSyncProvider.NetworkInterfaceOption.Name);
+			cbWifiInterface.ValueMember = nameof(WirelessSyncProvider.NetworkInterfaceOption.Id);
+			cbWifiInterface.SelectedValue = selected;
+			cbWifiInterface.SelectedIndexChanged += delegate
+			{
+				UpdateWifiInterfaceInfo();
+			};
+			UpdateWifiInterfaceInfo();
+		}
+
+		private void UpdateWifiInterfaceInfo()
+		{
+			string selected = (cbWifiInterface.SelectedValue as string) ?? string.Empty;
+			WirelessSyncProvider.NetworkInterfaceOption chosen = (cbWifiInterface.SelectedItem as WirelessSyncProvider.NetworkInterfaceOption);
+			if (selected.Length != 0 && WirelessSyncProvider.GetSelectableInterfaces().Any((WirelessSyncProvider.NetworkInterfaceOption o) => o.Id == selected))
+			{
+				lblWifiInterfaceInfo.Text = TR.Load(base.Name)["wifiInterfaceUsing", "Only this adapter will be used: {0}"].SafeFormat(chosen.Name);
+				return;
+			}
+			string automatic = string.Join("; ", WirelessSyncProvider.GetAutomaticInterfaces().Select((WirelessSyncProvider.NetworkInterfaceOption o) => o.Name));
+			if (automatic.Length == 0)
+			{
+				automatic = TR.Load(base.Name)["wifiInterfaceNone", "none found, the system will choose"];
+			}
+			string format = (selected.Length == 0) ? TR.Load(base.Name)["wifiInterfaceAuto", "Automatic will use: {0}"] : TR.Load(base.Name)["wifiInterfaceFallback", "Selected adapter not available, automatic will use: {0}"];
+			lblWifiInterfaceInfo.Text = format.SafeFormat(automatic);
+		}
+
 		private void btTestWifi_Click(object sender, EventArgs e)
 		{
 			string text = string.Empty;
@@ -1047,6 +1087,9 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				Program.Settings.PrivateListingPassword = txPrivateListingPassword.Password;
 			}
 			Program.Settings.ExtraWifiDeviceAddresses = txWifiAddresses.Text;
+			string wifiInterface = (cbWifiInterface.SelectedValue as string) ?? string.Empty;
+			Program.Settings.WirelessSyncInterface = wifiInterface;
+			WirelessSyncProvider.PreferredInterfaceId = wifiInterface;
 			Program.Settings.CurrentWorkspace.PreferencesOutputSize = SafeSize;
 
 			if (cbTheme.SelectedItem != null && cbTheme.SelectedItem is ThemeOption themeOption)
@@ -1142,6 +1185,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 				AddSharePage(share);
 			}
 			txWifiAddresses.Text = Program.Settings.ExtraWifiDeviceAddresses;
+			InitializeWifiInterfaces();
 			AddVirtualTags();
 		}
 

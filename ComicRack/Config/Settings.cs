@@ -164,6 +164,8 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 
 		private string extraWifiDeviceAddresses = string.Empty;
 
+		private string wirelessSyncInterface = string.Empty;
+
 		private ImageDisplayOptions pageImageDisplayOptions = ImageDisplayOptions.HighQuality;
 
 		private volatile int overlayScaling = 100;
@@ -640,6 +642,22 @@ namespace cYo.Projects.ComicRack.Viewer.Config
 		[Description("cache for remote passwords")]
 		[XmlArrayItem("Item")]
 		public SmartList<PasswordCacheEntry> PasswordCache => passwordCache;
+
+		[DefaultValue("")]
+		public string WirelessSyncInterface
+		{
+			get
+			{
+				return wirelessSyncInterface;
+			}
+			set
+			{
+				if (!(wirelessSyncInterface == value))
+				{
+					wirelessSyncInterface = value;
+				}
+			}
+		}
 
 		[DefaultValue("")]
 		public string ExtraWifiDeviceAddresses

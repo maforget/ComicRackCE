@@ -755,6 +755,7 @@ namespace cYo.Projects.ComicRack.Viewer
 				StartupProgress(TR.Messages["OpenDatabase", "Opening Database"], -1);
 			};
 			DatabaseManager.BackgroundSaveInterval = ExtendedSettings.DatabaseBackgroundSaving;
+			WirelessSyncProvider.PreferredInterfaceId = Settings.WirelessSyncInterface;
 			WirelessSyncProvider.StartListen();
 			WirelessSyncProvider.ClientSyncRequest += (object s, WirelessSyncProvider.ClientSyncRequestArgs e) =>
 			{
