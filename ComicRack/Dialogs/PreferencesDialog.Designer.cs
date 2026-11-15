@@ -307,7 +307,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// numBackupsToKeep
 			// 
 			this.numBackupsToKeep.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.numBackupsToKeep.Location = new System.Drawing.Point(414, 154);
+			this.numBackupsToKeep.Location = new System.Drawing.Point(414, 214);
 			this.numBackupsToKeep.Name = "numBackupsToKeep";
 			this.numBackupsToKeep.Size = new System.Drawing.Size(69, 20);
 			this.numBackupsToKeep.TabIndex = 5;
@@ -1503,7 +1503,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			this.grpBackupManager.Dock = System.Windows.Forms.DockStyle.Top;
 			this.grpBackupManager.Location = new System.Drawing.Point(0, 665);
 			this.grpBackupManager.Name = "grpBackupManager";
-			this.grpBackupManager.Size = new System.Drawing.Size(498, 183);
+			this.grpBackupManager.Size = new System.Drawing.Size(498, 243);
 			this.grpBackupManager.TabIndex = 4;
 			this.grpBackupManager.Text = "Backup Manager";
 			// 
@@ -1559,7 +1559,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.chkIncludeAllAlternateConfigs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.chkIncludeAllAlternateConfigs.AutoSize = true;
-			this.chkIncludeAllAlternateConfigs.Location = new System.Drawing.Point(12, 154);
+			this.chkIncludeAllAlternateConfigs.Location = new System.Drawing.Point(12, 214);
 			this.chkIncludeAllAlternateConfigs.Name = "chkIncludeAllAlternateConfigs";
 			this.chkIncludeAllAlternateConfigs.Size = new System.Drawing.Size(157, 17);
 			this.chkIncludeAllAlternateConfigs.TabIndex = 6;
@@ -1570,7 +1570,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			// 
 			this.lblBackupsToKeep.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblBackupsToKeep.AutoSize = true;
-			this.lblBackupsToKeep.Location = new System.Drawing.Point(296, 156);
+			this.lblBackupsToKeep.Location = new System.Drawing.Point(296, 216);
 			this.lblBackupsToKeep.Name = "lblBackupsToKeep";
 			this.lblBackupsToKeep.Size = new System.Drawing.Size(117, 13);
 			this.lblBackupsToKeep.TabIndex = 4;
@@ -1583,14 +1583,11 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			| System.Windows.Forms.AnchorStyles.Left)
 			| System.Windows.Forms.AnchorStyles.Right)));
 			this.lbBackupOptions.CheckOnClick = true;
-			this.lbBackupOptions.ColumnWidth = 160;
 			this.lbBackupOptions.FormattingEnabled = true;
 			this.lbBackupOptions.Location = new System.Drawing.Point(12, 83);
-			this.lbBackupOptions.MultiColumn = true;
 			this.lbBackupOptions.Name = "lbBackupOptions";
-			this.lbBackupOptions.Size = new System.Drawing.Size(364, 64);
+			this.lbBackupOptions.Size = new System.Drawing.Size(364, 124);
 			this.lbBackupOptions.TabIndex = 3;
-			this.lbBackupOptions.Resize += new System.EventHandler(this.lbBackupOptions_Resize);
 			// 
 			// btBackupLocation
 			// 

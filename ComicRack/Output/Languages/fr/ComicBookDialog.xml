@@ -96,5 +96,6 @@
     <Text Key="CustomValueKey" Text="Nom" Comment="Name" />
     <Text Key="CustomValueValue" Text="Valeur" Comment="Value" />
     <Text Key="labelTranslator" Text="Traducteur :" Comment="Translator:" />
+	<Text Key="btCommitProposed" Text="Appliquer propositions" Comment="Commit Proposed" />
   </Texts>
 </TR>
