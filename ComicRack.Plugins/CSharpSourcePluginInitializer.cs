@@ -141,39 +141,6 @@ namespace cYo.Projects.ComicRack.Plugins
 				&& sourcePluginFolders.Any(folder => file.StartsWith(folder + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase));
 		}
 
-		// A source plugin compiles every .cs file below its folder and hides every DLL there. A marker directly in the scripts
-		// folder, or in a folder below another source plugin, would take in the files of other plugins, so it is ignored.
-		public static HashSet<string> FindMisplacedMarkers(string scriptsFolder, IEnumerable<string> markers)
-		{
-			string root = Path.GetFullPath(scriptsFolder).TrimEnd(Path.DirectorySeparatorChar);
-			var misplaced = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-			var placed = new List<string>();
-			foreach (string marker in markers)
-			{
-				if (string.Equals(Path.GetDirectoryName(Path.GetFullPath(marker)), root, StringComparison.OrdinalIgnoreCase))
-				{
-					Command.LogDefault($"Skipped source plugin '{marker}': it must be in its own folder below '{root}'");
-					misplaced.Add(marker);
-				}
-				else
-				{
-					placed.Add(marker);
-				}
-			}
-			List<string> folders = placed.Select(marker => Path.GetDirectoryName(Path.GetFullPath(marker))).ToList();
-			foreach (string marker in placed)
-			{
-				string folder = Path.GetDirectoryName(Path.GetFullPath(marker));
-				string parent = folders.FirstOrDefault(other => folder.StartsWith(other + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase));
-				if (parent != null)
-				{
-					Command.LogDefault($"Skipped source plugin '{marker}': it is inside the folder of the source plugin in '{parent}'");
-					misplaced.Add(marker);
-				}
-			}
-			return misplaced;
-		}
-
 		public override IEnumerable<Command> GetCommands(string file)
 		{
 			if (!IsMarker(file))

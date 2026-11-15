@@ -202,9 +202,8 @@ namespace cYo.Projects.ComicRack.Plugins
 			List<Command> list = new List<Command>();
 			string[] hooks = ValidHooks.Keys.ToArray();
 			List<string> files = FileUtility.GetFiles(path, SearchOption.AllDirectories).ToList();
-			HashSet<string> misplacedMarkers = CSharpSourcePluginInitializer.FindMisplacedMarkers(path, files.Where(CSharpSourcePluginInitializer.IsMarker));
-			List<string> sourcePluginFolders = files.Where((string f) => CSharpSourcePluginInitializer.IsMarker(f) && !misplacedMarkers.Contains(f)).Select(Path.GetDirectoryName).ToList();
-			foreach (string file in files.Where((string f) => !misplacedMarkers.Contains(f) && !CSharpSourcePluginInitializer.IsShadowedBySource(f, sourcePluginFolders)))
+			List<string> sourcePluginFolders = files.Where(CSharpSourcePluginInitializer.IsMarker).Select(Path.GetDirectoryName).ToList();
+			foreach (string file in files.Where((string f) => !CSharpSourcePluginInitializer.IsShadowedBySource(f, sourcePluginFolders)))
 			{
 				foreach (Command cmd in initializers.SelectMany((PluginInitializer si) => si.GetCommands(file, env)))
 				{
