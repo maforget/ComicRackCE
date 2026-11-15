@@ -76,11 +76,12 @@ namespace cYo.Projects.ComicRack.Plugins.Compiler
 
 		private static CSharpCompilation CreateCompilation(SourcePluginCompilation request, IEnumerable<SourceFile> sources, CSharpParseOptions parseOptions)
 		{
+			OptimizationLevel optimizationLevel = request.Optimized ? OptimizationLevel.Release : OptimizationLevel.Debug;
 			return CSharpCompilation.Create(
 				request.AssemblyName,
 				sources.Select(source => CSharpSyntaxTree.ParseText(source.Text, parseOptions, source.FilePath)),
 				request.References.Select(reference => MetadataReference.CreateFromFile(reference)),
-				new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, optimizationLevel: OptimizationLevel.Release, deterministic: true));
+				new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, optimizationLevel: optimizationLevel, deterministic: true));
 		}
 
 		// Runs PolySharp (and any other generator found next to the compiler) and returns the compilation with the generated polyfills.

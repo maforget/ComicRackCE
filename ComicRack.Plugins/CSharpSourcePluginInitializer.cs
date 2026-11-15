@@ -124,12 +124,16 @@ namespace cYo.Projects.ComicRack.Plugins
 		private static readonly Regex cacheEntry = new Regex("^(?<entry>.+-[0-9a-f]{" + FolderLength + "}-[0-9a-f]{" + KeyLength + @"})\.(dll|pdb)$", RegexOptions.IgnoreCase);
 
 		private readonly string cachePath;
+		private readonly bool optimized;
 
 		private readonly HashSet<string> usedCacheEntries = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-		public CSharpSourcePluginInitializer(string cachePath)
+		public CSharpSourcePluginInitializer(string cachePath, bool optimized = true)
 		{
 			this.cachePath = cachePath;
+			this.optimized = optimized;
+			if (!optimized)
+				Command.LogDefault("C# Source plugin optimization disabled");
 		}
 
 		public static bool IsMarker(string file) => MarkerExtension.Equals(Path.GetExtension(file), StringComparison.OrdinalIgnoreCase);
@@ -176,7 +180,7 @@ namespace cYo.Projects.ComicRack.Plugins
 		{
 			Assembly compilerAssembly = typeof(RoslynSourcePluginCompiler).Assembly;
 			List<Reference> references = GetReferences(plugin);
-			string key = ComputeKey(plugin, references, compilerAssembly).Substring(0, KeyLength);
+			string key = ComputeKey(plugin, references, compilerAssembly, optimized).Substring(0, KeyLength);
 			string assemblyName = plugin.Name + "-" + key;
 			string folderHash = ComputeFolderHash(plugin);
 			string cacheName = plugin.Name + "-" + folderHash + "-" + key;
@@ -199,7 +203,8 @@ namespace cYo.Projects.ComicRack.Plugins
 					LanguageVersion = plugin.LanguageVersion,
 					SourceFiles = plugin.SourceFiles,
 					References = references.Select(reference => reference.File).ToList(),
-					OutputFile = Path.Combine(staging, cacheName + ".dll")
+					OutputFile = Path.Combine(staging, cacheName + ".dll"),
+					Optimized = this.optimized,
 				});
 				if (result.Errors.Count > 0)
 				{
@@ -309,7 +314,7 @@ namespace cYo.Projects.ComicRack.Plugins
 			return file ?? throw new FileNotFoundException($"the framework reference '{name}' does not exist");
 		}
 
-		private static string ComputeKey(SourcePlugin plugin, List<Reference> references, Assembly compilerAssembly)
+		private static string ComputeKey(SourcePlugin plugin, List<Reference> references, Assembly compilerAssembly, bool optimized = true)
 		{
 			return Hex(Hash(writer =>
 			{
@@ -332,6 +337,7 @@ namespace cYo.Projects.ComicRack.Plugins
 				{
 					writer.Write(name.FullName);
 				}
+				writer.Write(optimized); // don't mix the debug/release builds
 			}));
 		}
 
