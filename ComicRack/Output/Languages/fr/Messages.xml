@@ -162,6 +162,12 @@
 	<Text Key="GoToPage" Text="Entrer le numéro de la page à laquelle aller:" Comment="Enter the page number to go to:" />
     <Text Key="RepairDevice" Text="Relier à nouveau l'appareil" Comment="Re-pair Device" />
     <Text Key="RepairDeviceConfirm" Text="Modifier l'ID de synchronisation du '{0}' ?\n\nAncien : {1}\nNouveau : {2}" Comment="Change the Sync ID of '{0}'?\n\nOld: {1}\nNew: {2}" />
+    <Text Key="StateDirty" Text="Des modifications attendent d'être écrites dans le fichier du Livre" Comment="Changes are waiting to be written to the book file" />
+    <Text Key="StateOpen" Text="Ouvert dans le lecteur" Comment="Open in the reader" />
+    <Text Key="StateLastOpened" Text="Dernier Livre ouvert de cette liste" Comment="Opened most recently of the books in this list" />
+    <Text Key="StateNewPages" Text="Nouvelles pages depuis votre dernière lecture : {0}" Comment="New pages since you last read it: {0}" />
+    <Text Key="StateFileless" Text="Livre sans fichier : aucun fichier associé" Comment="Fileless book: it has no file" />
+    <Text Key="StateFileMissing" Text="Le fichier du livre est introuvable" Comment="The book file is missing" />
     <Text Key="Books" Text="Livres" Comment="Books" />
     <Text Key="FailedRemovePackage" Text="Impossible de désinstaller le paquet. Veuillez redémarrer ComicRack et réessayer !" Comment="Failed to uninstall package. Please restart ComicRack and try again!" />
     <Text Key="OpenWithPrograms" Text="Gérer les programmes externes" Comment="Manage Open With Programs" />
