@@ -145,9 +145,13 @@ namespace cYo.Projects.ComicRack.Plugins
 			}
 		};
 
+		private readonly string pluginConfigPath;
+
 		/// <param name="sourcePluginCachePath">The folder that keeps the compiled assemblies of source plugins (.csplugin). The default is a folder in the temporary files of the user.</param>
-		public PluginEngine(string sourcePluginCachePath = null)
+		/// <param name="pluginConfigPath">The folder that keeps the config files of .NET plugins. Null keeps each config next to its plugin file.</param>
+		public PluginEngine(string sourcePluginCachePath = null, string pluginConfigPath = null)
 		{
+			this.pluginConfigPath = pluginConfigPath;
 			sourceInitializer = new CSharpSourcePluginInitializer(sourcePluginCachePath ?? Path.Combine(Path.GetTempPath(), "ComicRack", "PluginCache"));
 			initializers =
 			[
@@ -198,13 +202,17 @@ namespace cYo.Projects.ComicRack.Plugins
 			List<Command> list = new List<Command>();
 			string[] hooks = ValidHooks.Keys.ToArray();
 			List<string> files = FileUtility.GetFiles(path, SearchOption.AllDirectories).ToList();
-			List<string> sourcePluginFolders = files.Where(CSharpSourcePluginInitializer.IsMarker).Select(Path.GetDirectoryName).ToList();
-			foreach (string file in files.Where((string f) => !CSharpSourcePluginInitializer.IsShadowedBySource(f, sourcePluginFolders)))
+			HashSet<string> misplacedMarkers = CSharpSourcePluginInitializer.FindMisplacedMarkers(path, files.Where(CSharpSourcePluginInitializer.IsMarker));
+			List<string> sourcePluginFolders = files.Where((string f) => CSharpSourcePluginInitializer.IsMarker(f) && !misplacedMarkers.Contains(f)).Select(Path.GetDirectoryName).ToList();
+			foreach (string file in files.Where((string f) => !misplacedMarkers.Contains(f) && !CSharpSourcePluginInitializer.IsShadowedBySource(f, sourcePluginFolders)))
 			{
 				foreach (Command cmd in initializers.SelectMany((PluginInitializer si) => si.GetCommands(file, env)))
 				{
 					try
 					{
+						if (cmd is DotNetCommand dotNetCommand)
+							dotNetCommand.ConfigFolder = pluginConfigPath;
+
 						// The Key of a .NET command is known before Initialize. Checking it first keeps OnLoad from running in a plugin that is skipped.
 						if (cmd is DotNetCommand && IsKeyTakenByAnotherPlugin(cmd))
 						{

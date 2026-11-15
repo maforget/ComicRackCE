@@ -15,7 +15,7 @@ namespace cYo.Projects.ComicRack.Plugins
 	/// void ILibrary.Execute(ComicBook[] books) { ... }
 	/// void IBooks.Execute(ComicBook[] books) { ... }
 	/// </code>
-	/// </remarks
+	/// </remarks>
 	public interface IDotNetCommand;
 
 	/// <summary>Supplies the books of a smart list rule.</summary>

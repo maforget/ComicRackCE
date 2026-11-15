@@ -1,20 +1,11 @@
-﻿using cYo.Common.ComponentModel;
-using cYo.Common.Drawing;
-using cYo.Common.Text;
+﻿using cYo.Common.Drawing;
 using cYo.Common.Windows.Forms.Theme;
-using cYo.Projects.ComicRack.Engine;
-using IronPython.Runtime;
-using Microsoft.Scripting.Hosting;
-using Microsoft.Scripting.Runtime;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace cYo.Projects.ComicRack.Plugins
 {
@@ -25,7 +16,15 @@ namespace cYo.Projects.ComicRack.Plugins
 		private readonly string pluginFile;
 		public DotNetPlugin Plugin { get; }
 		public override PluginKind Kind => DotNetPluginLoader.KindOf(pluginFile);
-		private string ConfigFileName => pluginFile + "-" + Key + ".config";
+
+		/// <summary>The folder for the config files of .NET plugins. Null keeps the config next to the plugin file.</summary>
+		/// <remarks>The plugin folder can be read-only (Program Files), and the package installer replaces it on update.</remarks>
+		public string ConfigFolder { get; set; }
+
+		// The Key is unique for each .NET plugin, and all hook commands of one plugin share the config.
+		private string ConfigFileName => ConfigFolder == null
+			? pluginFile + "-" + Key + ".config"
+			: Path.Combine(ConfigFolder, string.Concat(Key.Select(c => Path.GetInvalidFileNameChars().Contains(c) ? '_' : c)) + ".config");
 
 		private DotNetCommand(DotNetPlugin plugin, IDotNetHook hook, string pluginFile)
 		{
@@ -153,23 +152,15 @@ namespace cYo.Projects.ComicRack.Plugins
 		{
 			try
 			{
+				Directory.CreateDirectory(Path.GetDirectoryName(ConfigFileName));
 				File.WriteAllText(ConfigFileName, config);
 				return true;
 			}
-			catch
+			catch (Exception e)
 			{
+				Log($"Failed to save the config of '{Key}' to '{ConfigFileName}': {e.Message}");
 				return false;
 			}
-		}
-
-		private void HandleException(Exception e)
-		{
-			// TODO: Implement proper exception handling/logging for plugin command invocation
-			if (e.InnerException != null)
-				e = e.InnerException;
-
-			Log(e.Message);
-			return;
 		}
 	}
 }

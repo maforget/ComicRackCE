@@ -70,7 +70,7 @@ namespace cYo.Projects.ComicRack.Viewer
 
 		public static bool Initialize(IWin32Window mainWindow, IApplication app, IBrowser browser, IComicDisplay comicDisplay, IPluginConfig config, IOpenBooksManager openBooks)
 		{
-			Scripts = new PluginEngine(Program.Paths.PluginCachePath);
+			Scripts = new PluginEngine(Program.Paths.PluginCachePath, Program.Paths.PluginConfigPath);
 			if (!Enabled)
 				return false;
 
