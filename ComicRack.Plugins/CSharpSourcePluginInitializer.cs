@@ -132,6 +132,8 @@ namespace cYo.Projects.ComicRack.Plugins
 		{
 			this.cachePath = cachePath;
 			this.optimized = optimized;
+			if (!optimized)
+				Command.LogDefault("C# Source plugin optimization disabled");
 		}
 
 		public static bool IsMarker(string file) => MarkerExtension.Equals(Path.GetExtension(file), StringComparison.OrdinalIgnoreCase);
@@ -178,9 +180,6 @@ namespace cYo.Projects.ComicRack.Plugins
 		{
 			Assembly compilerAssembly = typeof(RoslynSourcePluginCompiler).Assembly;
 			List<Reference> references = GetReferences(plugin);
-			if (!optimized)
-				Command.LogDefault($"Plugin {plugin.Name} optimization disabled");
-
 			string key = ComputeKey(plugin, references, compilerAssembly, optimized).Substring(0, KeyLength);
 			string assemblyName = plugin.Name + "-" + key;
 			string folderHash = ComputeFolderHash(plugin);
