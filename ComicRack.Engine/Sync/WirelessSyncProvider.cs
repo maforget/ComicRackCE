@@ -102,6 +102,53 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 
 		private static bool networkChangeHooked;
 
+		private static string preferredInterfaceId = string.Empty;
+
+		// names/descriptions of adapters that are virtual, VPNs or tunnels and are never the LAN of a device
+		private static readonly string[] VirtualAdapterMarkers = new string[]
+		{
+			"vpn", "tap-", "tap ", "wintun", "wireguard", "tailscale", "zerotier", "openvpn", "anyconnect", "nordlynx",
+			"fortinet", "globalprotect", "pangp", "hyper-v", "vethernet", "wsl", "virtualbox", "vmware", "vmnet", "docker",
+			"bluetooth", "pseudo", "miniport", "teredo", "isatap", "6to4"
+		};
+
+		public class NetworkInterfaceOption
+		{
+			public string Id { get; }
+
+			public string Name { get; }
+
+			public NetworkInterfaceOption(string id, string name)
+			{
+				Id = id;
+				Name = name;
+			}
+		}
+
+		/// <summary>
+		/// The id of the network interface the multicast group is joined on, or empty to choose
+		/// the physical LAN interfaces automatically. Changing it rebuilds the listeners.
+		/// </summary>
+		public static string PreferredInterfaceId
+		{
+			get
+			{
+				return preferredInterfaceId;
+			}
+			set
+			{
+				value = value ?? string.Empty;
+				if (!(value == preferredInterfaceId))
+				{
+					preferredInterfaceId = value;
+					if (listener != null)
+					{
+						RestartListen(0);
+					}
+				}
+			}
+		}
+
 		private const int MembershipRenewInterval = 60000;
 
 		private static readonly IPAddress MulticastGroup = IPAddress.Parse("224.34.123.90");
@@ -559,10 +606,9 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			}
 			try
 			{
-				MulticastOption option = new MulticastOption(MulticastGroup, IPAddress.Any);
 				Socket client = udpClient.Client;
-				client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.DropMembership, option);
-				client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, option);
+				ChangeMulticastMembership(client, SocketOptionName.DropMembership);
+				ChangeMulticastMembership(client, SocketOptionName.AddMembership);
 			}
 			catch (Exception)
 			{
@@ -575,18 +621,190 @@ namespace cYo.Projects.ComicRack.Engine.Sync
 			}
 		}
 
+		private static bool IsPhysicalLanInterface(NetworkInterface nic)
+		{
+			if (nic.OperationalStatus != OperationalStatus.Up || !nic.SupportsMulticast)
+			{
+				return false;
+			}
+			switch (nic.NetworkInterfaceType)
+			{
+			case NetworkInterfaceType.Ethernet:
+			case NetworkInterfaceType.GigabitEthernet:
+			case NetworkInterfaceType.FastEthernetT:
+			case NetworkInterfaceType.Wireless80211:
+				break;
+			default:
+				return false;
+			}
+			string text = (nic.Name + " " + nic.Description).ToLowerInvariant();
+			string[] virtualAdapterMarkers = VirtualAdapterMarkers;
+			foreach (string value in virtualAdapterMarkers)
+			{
+				if (text.Contains(value))
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
+		private static IPAddress GetFirstIPv4Address(NetworkInterface nic)
+		{
+			foreach (UnicastIPAddressInformation unicast in nic.GetIPProperties().UnicastAddresses)
+			{
+				IPAddress address = unicast.Address;
+				if (address.AddressFamily == AddressFamily.InterNetwork && !IPAddress.IsLoopback(address) && !address.ToString().StartsWith("169.254."))
+				{
+					return address;
+				}
+			}
+			return null;
+		}
+
+		private static string DescribeInterface(NetworkInterface nic, IPAddress address)
+		{
+			return nic.Name + " - " + nic.Description + " (" + address + ")";
+		}
+
+		/// <summary>
+		/// The interfaces that are used when the selection is automatic.
+		/// </summary>
+		public static List<NetworkInterfaceOption> GetAutomaticInterfaces()
+		{
+			List<NetworkInterfaceOption> list = new List<NetworkInterfaceOption>();
+			try
+			{
+				foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
+				{
+					if (IsPhysicalLanInterface(nic))
+					{
+						IPAddress address = GetFirstIPv4Address(nic);
+						if (address != null)
+						{
+							list.Add(new NetworkInterfaceOption(nic.Id, DescribeInterface(nic, address)));
+						}
+					}
+				}
+			}
+			catch (Exception)
+			{
+			}
+			return list;
+		}
+
+		/// <summary>
+		/// All the network interfaces with an IPv4 address that the user can choose to listen on.
+		/// </summary>
+		public static List<NetworkInterfaceOption> GetSelectableInterfaces()
+		{
+			List<NetworkInterfaceOption> list = new List<NetworkInterfaceOption>();
+			try
+			{
+				foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
+				{
+					if (nic.OperationalStatus == OperationalStatus.Up && nic.SupportsMulticast && nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+					{
+						IPAddress address = GetFirstIPv4Address(nic);
+						if (address != null)
+						{
+							list.Add(new NetworkInterfaceOption(nic.Id, DescribeInterface(nic, address)));
+						}
+					}
+				}
+			}
+			catch (Exception)
+			{
+			}
+			return list;
+		}
+
+		// Joining with IPAddress.Any lets Windows pick the interface from the routing table, which on a
+		// multi-NIC machine (VirtualBox host-only, VPN, WSL, Hyper-V...) may not be the LAN the device is on.
+		// Join the interface chosen in the preferences or, when set to automatic (or when the chosen one is
+		// gone), every physical LAN interface; the socket is bound to 0.0.0.0 so it receives the
+		// announcements from whichever one they arrive on.
+		private static List<IPAddress> GetMulticastInterfaceAddresses()
+		{
+			List<IPAddress> addresses = new List<IPAddress>();
+			try
+			{
+				NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces();
+				string preferred = preferredInterfaceId;
+				if (!string.IsNullOrEmpty(preferred))
+				{
+					foreach (NetworkInterface nic in interfaces)
+					{
+						if (nic.Id == preferred && nic.OperationalStatus == OperationalStatus.Up)
+						{
+							IPAddress address = GetFirstIPv4Address(nic);
+							if (address != null)
+							{
+								addresses.Add(address);
+								return addresses;
+							}
+						}
+					}
+				}
+				foreach (NetworkInterface nic in interfaces)
+				{
+					if (IsPhysicalLanInterface(nic))
+					{
+						IPAddress address = GetFirstIPv4Address(nic);
+						if (address != null)
+						{
+							addresses.Add(address);
+						}
+					}
+				}
+			}
+			catch (Exception)
+			{
+			}
+			return addresses;
+		}
+
+		// Adds or drops the group membership on every usable interface. Falls back to IPAddress.Any
+		// (OS-chosen interface) when none is found. A failure on one interface doesn't affect the others
+		// (e.g. dropping a membership we never had); it only throws if no interface could be handled at all.
+		private static void ChangeMulticastMembership(Socket socket, SocketOptionName option)
+		{
+			List<IPAddress> addresses = GetMulticastInterfaceAddresses();
+			if (addresses.Count == 0)
+			{
+				addresses.Add(IPAddress.Any);
+			}
+			int succeeded = 0;
+			Exception last = null;
+			foreach (IPAddress address in addresses)
+			{
+				try
+				{
+					socket.SetSocketOption(SocketOptionLevel.IP, option, new MulticastOption(MulticastGroup, address));
+					succeeded++;
+				}
+				catch (Exception ex)
+				{
+					last = ex;
+				}
+			}
+			if (succeeded == 0 && last != null)
+			{
+				throw last;
+			}
+		}
+
 		private static void StartBroadcastListener()
 		{
 			try
 			{
-				IPAddress group = MulticastGroup;
 				UdpClient udpClient = new UdpClient();
 				try
 				{
 					Socket client = udpClient.Client;
 					client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, 1);
 					client.Bind(new IPEndPoint(IPAddress.Any, BroadcastListenPort));
-					client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(group, IPAddress.Any));
+					ChangeMulticastMembership(client, SocketOptionName.AddMembership);
 					listener = udpClient;
 					udpClient.BeginReceive(OnReceivedBroadcastData, udpClient);
 				}
