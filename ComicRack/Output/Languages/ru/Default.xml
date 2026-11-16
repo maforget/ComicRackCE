@@ -1,33 +1,53 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Default" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Default" CultureName="ru">
   <Texts>
-    <Text Key="ClearAll" Text="Очистить выделение" Comment="Clear all" />
+    <Text Key="ClearAll" Text="Очистить всё" Comment="Clear all" />
     <Text Key="Copy" Text="Копировать" Comment="Copy" />
     <Text Key="Invert" Text="Инвертировать" Comment="Invert" />
-    <Text Key="Layout" Text="Формат" Comment="Layout" />
-    <Text Key="None" Text="Ничего" Comment="None" />
-    <Text Key="NotAvailable" Text="-" Comment="NA" />
+    <Text Key="Layout" Text="Макет" Comment="Layout" />
+    <Text Key="None" Text="Нет" Comment="None" />
+    <Text Key="NotAvailable" Text="Н/Д" Comment="NA" />
     <Text Key="Paste" Text="Вставить" Comment="Paste" />
-    <Text Key="SetAll" Text="Выделить &amp;все" Comment="Set all" />
+    <Text Key="SetAll" Text="Выбрать всё" Comment="Set all" />
     <Text Key="Unknown" Text="Неизвестно" Comment="Unknown" />
-    <Text Key="Unspecified" Text="Неопределено" Comment="Unspecified" />
+    <Text Key="Unspecified" Text="Не указано" Comment="Unspecified" />
     <Text Key="Workspace" Text="Рабочая область" Comment="Workspace" />
     <Text Key="System" Text="Система" Comment="System" />
-    <Text Key="Books" Text="Книги" Comment="books" />
-    <Text Key="Book" Text="Книга" Comment="book" />
-    <Text Key="Page" Text="Страница" Comment="page" />
+    <Text Key="Books" Text="книг" Comment="books" />
+    <Text Key="Book" Text="книга" Comment="book" />
+    <Text Key="Page" Text="страница" Comment="page" />
     <Text Key="Yes" Text="Да" Comment="Yes" />
     <Text Key="No" Text="Нет" Comment="No" />
-    <Text Key="Not" Text="Нет" Comment="Not" />
+    <Text Key="Not" Text="Не" Comment="Not" />
     <Text Key="Cancel" Text="Отмена" Comment="Cancel" />
     <Text Key="Bookmark" Text="Закладка" Comment="Bookmark" />
-    <Text Key="Restart" Text="Перезапуск" Comment="Restart" />
+    <Text Key="Restart" Text="Перезапустить ComicRack" Comment="Restart" />
     <Text Key="All" Text="Все" Comment="All" />
-    <Text Key="Import" Text="Импортировать" Comment="Import" />
+    <Text Key="Import" Text="Импорт" Comment="Import" />
     <Text Key="New" Text="Новый" Comment="New" />
-    <Text Key="Recent" Text="Повторить" Comment="Recent" />
-    <Text Key="Waiting" Text="Подождите" Comment="Waiting" />
+    <Text Key="Recent" Text="Недавние" Comment="Recent" />
+    <Text Key="Waiting" Text="Ожидание" Comment="Waiting" />
     <Text Key="Running" Text="Выполняется" Comment="Running" />
-    <Text Key="Completed" Text="Выполнено" Comment="Completed" />
+    <Text Key="Completed" Text="Завершено" Comment="Completed" />
+    <Text Key="Disable" Text="Отключить" Comment="Disable" />
+    <Text Key="Server" Text="Сервер" Comment="Server" />
+    <Text Key="Keep" Text="Сохранить" Comment="Keep" />
+    <Text Key="Save" Text="Сохранить" Comment="Save" />
+    <Text Key="Search" Text="Поиск" Comment="Search" />
+    <Text Key="LogicNot" Text="Отрицание" Comment="Negation" />
+    <Text Key="Default" Text="По умолчанию" Comment="Default" />
+    <Text Key="Workspaces" Text="Рабочие области" Comment="Workspaces" />
+    <Text Key="Connect" Text="Подключить" Comment="Connect" />
+    <Text Key="Windows" Text="Окна" Comment="Windows" />
+    <Text Key="Lists" Text="Списки" Comment="Lists" />
+    <Text Key="Display" Text="Отображение" Comment="Display" />
+    <Text Key="Start" Text="Начало" Comment="Start" />
+    <Text Key="End" Text="Конец" Comment="End" />
+    <Text Key="Configure" Text="Настроить" Comment="Configure" />
+    <Text Key="Clear" Text="Очистить" Comment="Clear" />
+    <Text Key="Unlimited" Text="Неограниченно" Comment="Unlimited" />
+    <Text Key="Download" Text="Скачать" Comment="Download" />
+    <Text Key="Actual" Text="Исходный" Comment="Actual" />
+    <Text Key="Enabled" Text="Включено" Comment="Enabled" />
   </Texts>
 </TR>

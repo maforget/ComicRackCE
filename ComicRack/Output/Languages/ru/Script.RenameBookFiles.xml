@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.RenameBookFiles" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Script.RenameBookFiles" CultureName="ru">
   <Texts>
-    <Text Key="Name" Text="Переименовать файлы в 'Series Vol #Nummer (из *) (Год)'" Comment="Rename Files to 'Series Volume #Number (of Count) (Year)'" />
+    <Text Key="Name" Text="Переименовать файлы в «Серия Том #Номер (из Всего) (Год)»" Comment="Rename Files to 'Series Volume #Number (of Count) (Year)'" />
+    <Text Key="Description" Text="Скрипт для переименования выбранных книг на основе метаданных" Comment="Script to rename the selected Books based on the meta data" />
   </Texts>
 </TR>

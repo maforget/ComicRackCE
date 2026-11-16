@@ -1,40 +1,69 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="MultipleComicBooksDialog" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="MultipleComicBooksDialog" CultureName="ru">
   <Texts>
     <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
-    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
-    <Text Key="labelCount" Text="из:" Comment="of:" />
-    <Text Key="labelAlternateCount" Text="из:" Comment="of:" />
-    <Text Key="labelAlternateNumber" Text="Номер Комикса:" Comment="Number:" />
-    <Text Key="labelAlternateSeries" Text="Альтернативная серия или сюжетная линия:" Comment="Alternate Series or Storyline Title:" />
+    <Text Key="btOK" Text="&amp;ОК" Comment="&amp;OK" />
+    <Text Key="labelAlternateSeries" Text="Название альтернативной серии/сюжета:" Comment="Alternate Series or Storyline Title:" />
     <Text Key="labelColorist" Text="Колорист:" Comment="Colorist:" />
-    <Text Key="labelCoverArtist" Text="Художник обложки:" Comment="Cover Artist:" />
     <Text Key="labelEditor" Text="Редактор:" Comment="Editor:" />
     <Text Key="labelGenre" Text="Жанр:" Comment="Genre:" />
-    <Text Key="labelImprint" Text="Imprint:" Comment="Imprint:" />
-    <Text Key="labelInker" Text="Прорисовщик:" Comment="Inker:" />
+    <Text Key="labelImprint" Text="Импринт:" Comment="Imprint:" />
+    <Text Key="labelInker" Text="Контуровщик:" Comment="Inker:" />
     <Text Key="labelLanguage" Text="Язык:" Comment="Language:" />
-    <Text Key="labelLetterer" Text="Метранпаж:" Comment="Letterer:" />
-    <Text Key="labelManga" Text="Manga:" Comment="Manga:" />
+    <Text Key="labelLetterer" Text="Шрифтовик:" Comment="Letterer:" />
     <Text Key="labelMonth" Text="Месяц:" Comment="Month:" />
-    <Text Key="labelNumber" Text="Номер Комикса:" Comment="Number:" />
+    <Text Key="labelNumber" Text="Номер:" Comment="Number:" />
     <Text Key="labelPenciller" Text="Художник:" Comment="Penciller:" />
-    <Text Key="labelPublisher" Text="Издатель Комикса:" Comment="Publisher:" />
-    <Text Key="labelRating" Text="Рейтинг:" Comment="Rating:" />
+    <Text Key="labelPublisher" Text="Издатель:" Comment="Publisher:" />
     <Text Key="labelSeries" Text="Серия:" Comment="Series:" />
-    <Text Key="labelSummary" Text="Кратко:" Comment="Summary:" />
-    <Text Key="labelNotes" Text="Заметки:" Comment="Notes:" />
-    <Text Key="labelTags" Text="Метки:" Comment="Tags:" />
+    <Text Key="labelSummary" Text="Описание:" Comment="Summary:" />
+    <Text Key="labelTags" Text="Теги:" Comment="Tags:" />
     <Text Key="labelTitle" Text="Название:" Comment="Title:" />
-    <Text Key="labelVolume" Text="Выпуск в серии:" Comment="Volume:" />
-    <Text Key="labelWriter" Text="Автор:" Comment="Writer:" />
+    <Text Key="labelVolume" Text="Том:" Comment="Volume:" />
+    <Text Key="labelWriter" Text="Сценарист:" Comment="Writer:" />
     <Text Key="labelYear" Text="Год:" Comment="Year:" />
-    <Text Key="labelBlackAndWhite" Text="Черно-белый:" Comment="Black and White:" />
+    <Text Key="labelManga" Text="Манга:" Comment="Manga:" />
+    <Text Key="labelBlackAndWhite" Text="Чёрно-белый:" Comment="Black and White:" />
     <Text Key="labelFormat" Text="Формат:" Comment="Format:" />
-    <Text Key="labelAgeRating" Text="Возрастной ценз" Comment="Age Rating:" />
-    <Text Key="labelEnableProposed" Text="Включить следующее:" Comment="Enable Proposed:" />
+    <Text Key="labelEnableProposed" Text="Предлагаемые значения:" Comment="Enable Proposed:" />
+    <Text Key="labelAgeRating" Text="Возрастной рейтинг:" Comment="Age Rating:" />
+    <Text Key="labelNotes" Text="Заметки:" Comment="Notes:" />
     <Text Key="labelCharacters" Text="Персонажи:" Comment="Characters:" />
-    <Text Key="labelFormat" Text="Формат:" Comment="Format:" />
-    <Text Key="MultipleComicBooksDialog" Text="Информация о нескольких Комиксах ({0} книг)" Comment="Multiple eComic Information ({0} Books)" />
+    <Text Key="labelCount" Text="из:" Comment="of:" />
+    <Text Key="labelAlternateCount" Text="из:" Comment="of:" />
+    <Text Key="labelAlternateNumber" Text="Альтернативный номер:" Comment="Number:" />
+    <Text Key="labelCoverArtist" Text="Художник обложки:" Comment="Cover Artist:" />
+    <Text Key="labelTeams" Text="Команды:" Comment="Teams:" />
+    <Text Key="labelLocations" Text="Места:" Comment="Locations:" />
+    <Text Key="labelRating" Text="Моя оценка:" Comment="My Rating:" />
+    <Text Key="labelCommunityRating" Text="Оценка сообщества:" Comment="Community Rating:" />
+    <Text Key="labelWeb" Text="Веб-ссылка:" Comment="Web:" />
+    <Text Key="labelBookStore" Text="Магазин:" Comment="Store:" />
+    <Text Key="labelBookOwner" Text="Владелец:" Comment="Owner:" />
+    <Text Key="labelBookLocation" Text="Местонахождение:" Comment="Location:" />
+    <Text Key="labelBookAge" Text="Возраст:" Comment="Age:" />
+    <Text Key="labelBookCondition" Text="Состояние:" Comment="Condition:" />
+    <Text Key="labelBookCollectionStatus" Text="Статус в коллекции:" Comment="Collection Status:" />
+    <Text Key="labelBookNotes" Text="Заметки:" Comment="Notes:" />
+    <Text Key="labelBookPrice" Text="Цена:" Comment="Price:" />
+    <Text Key="grpMain" Text="Основное" Comment="Main" />
+    <Text Key="grpPlotNotes" Text="Сюжет и заметки" Comment="Plot &amp; Notes" />
+    <Text Key="grpArtists" Text="Авторы и художники" Comment="Artists / People Involved" />
+    <Text Key="grpCatalog" Text="Каталог" Comment="Catalog" />
+    <Text Key="labelISBN" Text="ISBN:" Comment="ISBN:" />
+    <Text Key="labelPagesAsTextSimple" Text="Страницы:" Comment="Pages:" />
+    <Text Key="MultipleComicBooksDialog" Text="Сведения о нескольких книгах ({0})" Comment="Multiple Book Information ({0})" />
+    <Text Key="labelOpenedTime" Text="Открыто/прочитано:" Comment="Opened/Read:" />
+    <Text Key="labelAddedTime" Text="Добавлено/куплено:" Comment="Added/Purchased:" />
+    <Text Key="labelSeriesComplete" Text="Серия завершена:" Comment="Series complete:" />
+    <Text Key="labelScanInformation" Text="Информация о скане:" Comment="Scan Information:" />
+    <Text Key="labelStoryArc" Text="Сюжетная арка:" Comment="Story Arc:" />
+    <Text Key="labelSeriesGroup" Text="Группа серий:" Comment="Series Group:" />
+    <Text Key="labelMainCharacterOrTeam" Text="Главный персонаж/команда:" Comment="Main Character/Team:" />
+    <Text Key="labelReview" Text="Рецензия:" Comment="Review:" />
+    <Text Key="labelDay" Text="День:" Comment="Day:" />
+    <Text Key="labelReleasedTime" Text="Выпущено:" Comment="Veröffentlicht:" />
+    <Text Key="grpCustom" Text="Пользовательские" Comment="Custom" />
+    <Text Key="labelTranslator" Text="Переводчик:" Comment="Translator:" />
   </Texts>
 </TR>

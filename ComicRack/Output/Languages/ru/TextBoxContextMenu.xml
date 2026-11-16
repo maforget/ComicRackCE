@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="TextBoxContextMenu" CultureName="ru">
+  <Texts>
+    <Text Key="miUndo" Text="Отменить" Comment="Undo" />
+    <Text Key="miCut" Text="Вырезать" Comment="Cut" />
+    <Text Key="miCopy" Text="Копировать" Comment="Copy" />
+    <Text Key="miPaste" Text="Вставить" Comment="Paste" />
+    <Text Key="miDelete" Text="Удалить" Comment="Delete" />
+    <Text Key="miSelectAll" Text="Выделить всё" Comment="Select All" />
+    <Text Key="miRedo" Text="Повторить" Comment="Redo" />
+  </Texts>
+</TR>

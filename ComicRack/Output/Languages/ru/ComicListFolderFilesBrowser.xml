@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListFolderFilesBrowser" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicListFolderFilesBrowser" CultureName="ru">
   <Texts>
     <Text Key="miAddFolderLibrary" Text="&amp;Добавить папку в библиотеку" Comment="&amp;Add Folder to Library" />
     <Text Key="miAddToFavorites" Text="&amp;Добавить папку в избранное" Comment="&amp;Add Folder to Favorites" />
@@ -9,9 +9,12 @@
     <Text Key="miRemove" Text="&amp;Удалить..." Comment="&amp;Remove..." />
     <Text Key="tbFavorites" Text="Показать избранное" Comment="Show Favorites" />
     <Text Key="tbFavorites.Tooltip" Text="Избранное" Comment="Favorites" />
-    <Text Key="tbIncludeSubFolders" Text="Включая подпапки" Comment="Include all Subfolders" />
+    <Text Key="tbIncludeSubFolders" Text="Включая все подпапки" Comment="Include all Subfolders" />
     <Text Key="tbOpenWindow" Text="Новое окно" Comment="New Window" />
-    <Text Key="tbOpenWindow.Tooltip" Text="Открыть этот список в новом окне" Comment="Open current list in new Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Открыть текущий список в новом окне" Comment="Open current list in new Window" />
     <Text Key="tbRefresh" Text="Обновить" Comment="Refresh" />
+    <Text Key="miOpenTab" Text="&amp;Открыть в новой вкладке" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="Новая вкладка" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Открыть текущий список в новой вкладке" Comment="Open current list in new Tab" />
   </Texts>
 </TR>

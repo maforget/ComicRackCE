@@ -1,63 +1,74 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ExportComicsDialog" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ExportComicsDialog" CultureName="ru">
   <Texts>
-    <Text Key="ExportComicsDialog" Text="Экспорт Комикса" Comment="Export eComics" />
-    <Text Key="grpExportLocation" Text="Путь для экспорта" Comment="Export Location" />
+    <Text Key="grpExportLocation" Text="Место сохранения" Comment="Export Location" />
     <Text Key="grpFileFormat" Text="Формат файла" Comment="File Format" />
-    <Text Key="grpPageFormat" Text="Формат страницы" Comment="Page Format" />
-    <Text Key="grpFileNaming" Text="Именование файла" Comment="File Naming" />
-    <Text Key="grpImageProcessing" Text="Обработка изображения" Comment="Image Processing" />
-    <Text Key="btAddPreset" Text="Добавить профиль..." Comment="Add Preset..." />
-    <Text Key="btRemovePreset" Text="Удалить" Comment="Remove" />
-    <Text Key="labelExportTo" Text="Экспорт в:" Comment="Export to:" />
-    <Text Key="cbExport.Item0" Text="Выберите папку" Comment="Select a Folder" />
-    <Text Key="cbExport.Item1" Text="Папка  как оригинальный Комикс" Comment="Same Folder as the original eComic" />
-    <Text Key="cbExport.Item2" Text="Как папка и заменить в библиотеке" Comment="Same Folder and replace in Library" />
-    <Text Key="cbExport.Item3" Text="Спрашивать перед экспортом" Comment="Ask before Export" />
+    <Text Key="grpPageFormat" Text="Формат изображений" Comment="Page Format" />
+    <Text Key="grpFileNaming" Text="Именование файлов" Comment="File Naming" />
+    <Text Key="grpImageProcessing" Text="Обработка изображений" Comment="Image Processing" />
+    <Text Key="btRemovePreset" Text="Удалить..." Comment="Remove" />
+    <Text Key="labelExportTo" Text="Экспортировать в:" Comment="Export to:" />
+    <Text Key="cbExport.Item0" Text="Выбрать папку" Comment="Select a Folder" />
+    <Text Key="cbExport.Item2" Text="В ту же папку с заменой в библиотеке" Comment="Same Folder and replace in Library" />
     <Text Key="labelFolder" Text="Папка:" Comment="Folder:" />
-    <Text Key="btChooseFolder" Text="Выбор..." Comment="Choose..." />
-    <Text Key="chkDeleteOriginal" Text="Удалить оригинальный Комикс после удачного экспорта" Comment="Delete original eComic after successful Export" />
-    <Text Key="chkAddNewToLibrary" Text="Добавить новые Комиксы в библиотеку" Comment="Add newly created eComic to Library" />
-    <Text Key="labelComicFormat" Text="Формат Комикса:" Comment="eComic Format" />
+    <Text Key="btChooseFolder" Text="Обзор..." Comment="Choose..." />
     <Text Key="cbComicFormat.Item0" Text="Как в оригинале" Comment="Same as Original" />
     <Text Key="labelCompression" Text="Сжатие" Comment="Compression" />
-    <Text Key="cbCompression.Item0" Text="Ничего" Comment="None" />
+    <Text Key="cbCompression.Item0" Text="Без сжатия" Comment="None" />
     <Text Key="cbCompression.Item1" Text="Среднее" Comment="Medium" />
-    <Text Key="cbCompression.Item2" Text="Жирный" Comment="Strong" />
-    <Text Key="chkEmbedComicInfo" Text="Информация о Комиксе" Comment="Embed Comic Info" />
+    <Text Key="cbCompression.Item2" Text="Сильное" Comment="Strong" />
     <Text Key="labelRemovePageFilter" Text="Удалить страницы:" Comment="Remove Pages:" />
-    <Text Key="labelPageFormat" Text="Формат страницы" Comment="Page Format" />
     <Text Key="cbPageFormat.Item0" Text="Сохранить оригинал" Comment="Preserve Original" />
     <Text Key="labelPageQuality" Text="Качество:" Comment="Quality:" />
-    <Text Key="labelPageResize" Text="Изменить:" Comment="Resize:" />
+    <Text Key="labelPageResize" Text="Размер:" Comment="Resize:" />
     <Text Key="cbPageResize.Item0" Text="Сохранить оригинал" Comment="Preserve Original" />
-    <Text Key="cbPageResize.Item1" Text="Подогнать по высоте и ширине" Comment="Best fit Width &amp; Height" />
-    <Text Key="cbPageResize.Item2" Text="Ширина" Comment="Set Width" />
-    <Text Key="cbPageResize.Item3" Text="Высота" Comment="Set Height" />
+    <Text Key="cbPageResize.Item1" Text="Вписать по ширине и высоте" Comment="Best fit Width &amp; Height" />
+    <Text Key="cbPageResize.Item2" Text="Задать ширину" Comment="Set Width" />
+    <Text Key="cbPageResize.Item3" Text="Задать высоту" Comment="Set Height" />
     <Text Key="labelX" Text="x" Comment="x" />
-    <Text Key="chkDontEnlarge" Text="Не расширять" Comment="Don't enlarge" />
-    <Text Key="chkSplitDouble" Text="Разделить двойные страницы" Comment="Split Double Pages" />
-    <Text Key="SelectExportFolder" Text="Пожалуйста выберите папку для экспорта" Comment="Please select the Export Folder" />
+    <Text Key="chkDontEnlarge" Text="Не увеличивать" Comment="Don't enlarge" />
+    <Text Key="SelectExportFolder" Text="Пожалуйста, выберите папку для экспорта" Comment="Please select the Export Folder" />
     <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
-    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btOK" Text="&amp;ОК" Comment="&amp;OK" />
     <Text Key="labelNamingTemplate" Text="Шаблон:" Comment="Template:" />
-    <Text Key="labelCustomNaming" Text="Вручную:" Comment="Custom:" />
-    <Text Key="labelCustomStartIndex" Text="Старт:" Comment="Start:" />
+    <Text Key="labelCustomNaming" Text="Свой шаблон:" Comment="Custom:" />
+    <Text Key="labelCustomStartIndex" Text="Начать с:" Comment="Start:" />
     <Text Key="cbNamingTemplate.Item0" Text="Имя файла" Comment="Filename" />
-    <Text Key="cbNamingTemplate.Item1" Text="Заголовок Комикса" Comment="eComic Caption" />
-    <Text Key="cbNamingTemplate.Item2" Text="Вручную" Comment="Custom" />
-    <Text Key="chkOverwrite" Text="Заменить существующие файлы" Comment="Overwrite existing Files" />
-    <Text Key="ComicRackExportPresets" Text="Профиль ComicRack" Comment="ComicRack Presets" />
-    <Text Key="UserExportPresets" Text="Профиль пользователя" Comment="User Presets" />
+    <Text Key="cbNamingTemplate.Item2" Text="Пользовательский" Comment="Custom" />
+    <Text Key="chkOverwrite" Text="Перезаписывать существующие файлы" Comment="Overwrite existing Files" />
+    <Text Key="ComicRackExportPresets" Text="Пресеты ComicRack" Comment="ComicRack Presets" />
+    <Text Key="UserExportPresets" Text="Пользовательские пресеты" Comment="User Presets" />
     <Text Key="labelSharpening" Text="Резкость" Comment="Sharpening" />
-    <Text Key="chkAutoContrast" Text="Автоматические настройки контраста" Comment="Automatic Contrast Enhancement" />
-    <Text Key="labelSaturation" Text="Насыщение" Comment="Saturation" />
+    <Text Key="chkAutoContrast" Text="Автоулучшение контраста" Comment="Automatic Contrast Enhancement" />
+    <Text Key="labelSaturation" Text="Насыщенность" Comment="Saturation" />
     <Text Key="labelBrightness" Text="Яркость" Comment="Brightness" />
-    <Text Key="labelContrast" Text="Контраст" Comment="Contrast" />
+    <Text Key="labelContrast" Text="Контрастность" Comment="Contrast" />
     <Text Key="labelImagProcessingSource" Text="Источник:" Comment="Source:" />
-    <Text Key="labelImageProcessingCustom" Text="Вручную:" Comment="Custom:" />
-    <Text Key="cbImageProcessingSource.Item0" Text="Настройки вручную" Comment="Custom Settings" />
-    <Text Key="cbImageProcessingSource.Item1" Text="Установки Комикса применены" Comment="eComic settings are applied" />
-    <Text Key="chkIgnoreErrorPages" Text="Игнорировать страницы с ошибками и продолжить экспорт" Comment="Ignore Pages with errors and continue export" />
+    <Text Key="labelImageProcessingCustom" Text="Настройки:" Comment="Custom:" />
+    <Text Key="cbImageProcessingSource.Item0" Text="Пользовательские настройки" Comment="Custom Settings" />
+    <Text Key="chkIgnoreErrorPages" Text="Игнорировать страницы с ошибками и продолжать" Comment="Ignore Pages with errors and continue export" />
+    <Text Key="cbExport.Item3" Text="Спрашивать перед экспортом" Comment="Ask before Export" />
+    <Text Key="chkCombine" Text="Объединить выбранные файлы" Comment="Combine selected Files" />
+    <Text Key="btSavePreset" Text="Сохранить пресет..." Comment="Save Preset..." />
+    <Text Key="labelIncludePages" Text="Включить страницы:" Comment="Include Pages:" />
+    <Text Key="ExportComicsDialog" Text="Экспорт книг" Comment="Export Books" />
+    <Text Key="cbExport.Item1" Text="В ту же папку, где лежит оригинал" Comment="Same Folder as the original Book" />
+    <Text Key="chkDeleteOriginal" Text="Удалить исходную книгу после экспорта" Comment="Delete original Book after successful Export" />
+    <Text Key="chkAddNewToLibrary" Text="Добавить созданные книги в библиотеку" Comment="Add newly created Book to Library" />
+    <Text Key="labelComicFormat" Text="Формат:" Comment="Format:" />
+    <Text Key="chkEmbedComicInfo" Text="Встроить данные книги (ComicInfo.xml)" Comment="Embed Book Info" />
+    <Text Key="chkEmbedComicBook" Text="Встроить данные библиотеки (ComicBook.xml)" Comment="Embed Library Info" />
+    <Text Key="labelPageFormat" Text="Формат:" Comment="Format:" />
+    <Text Key="cbNamingTemplate.Item1" Text="Заголовок книги" Comment="Book Caption" />
+    <Text Key="labelGamma" Text="Гамма" Comment="Gamma" />
+    <Text Key="cbImageProcessingSource.Item1" Text="Применить настройки книги" Comment="Book settings are applied" />
+    <Text Key="labelDoublePages" Text="Развороты:" Comment="Double Pages:" />
+    <Text Key="cbDoublePages.Item0" Text="Оставить" Comment="Keep" />
+    <Text Key="cbDoublePages.Item1" Text="Разрезать" Comment="Split" />
+    <Text Key="cbDoublePages.Item2" Text="Повернуть на 90°" Comment="Roatete 90°" />
+    <Text Key="cbDoublePages.Item3" Text="Подогнать по ширине" Comment="Adapt Width" />
+    <Text Key="chkKeepOriginalNames" Text="Сохранять исходные имена страниц" Comment="Keep original page names" />
+    <Text Key="labelTagToAppend" Text="Добавить теги: " Comment="Tags to Append: " />
+    <Text Key="chkLossless" Text="Сжатие без потерь" Comment="Lossless compression" />
   </Texts>
 </TR>

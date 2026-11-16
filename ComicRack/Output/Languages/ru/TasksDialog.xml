@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="TasksDialog" CultureName="ru">
+  <Texts>
+    <Text Key="btClose" Text="Закрыть" Comment="Close" />
+    <Text Key="tabTasks" Text="Фоновые задачи" Comment="Background Tasks" />
+    <Text Key="tabNetwork" Text="Статистика сервера" Comment="Server Statistics" />
+    <Text Key="colTask" Text="Задача" Comment="Task" />
+    <Text Key="colState" Text="Состояние" Comment="State" />
+    <Text Key="lblItemCount" Text="Задач в очереди: {0}" Comment="{0} Tasks are pending" />
+    <Text Key="TasksDialog" Text="Задачи" Comment="Tasks" />
+    <Text Key="btAbort" Text="Прервать все задачи" Comment="Abort all User Tasks" />
+    <Text Key="Clients" Text="Клиенты: {0}" Comment="Clients: {0}" />
+    <Text Key="Info" Text="Запросы информации: {0}" Comment="Info Requests: {0}" />
+    <Text Key="Library" Text="Запросы библиотеки: {0}/{1}" Comment="Library Requests: {0}/{1}" />
+    <Text Key="Page" Text="Запросы страниц: {0}/{1}" Comment="Page Requests: {0}/{1}" />
+    <Text Key="Thumbnail" Text="Запросы эскизов: {0}/{1}" Comment="Thumbnail Requests: {0}/{1}" />
+    <Text Key="FailedAuth" Text="Ошибки авторизации: {0}" Comment="Failed Authentications: {0}" />
+    <Text Key="AllShares" Text="Все общие библиотеки" Comment="All Shares" />
+    <Text Key="LastMinute" Text="Последняя минута" Comment="Last Minute" />
+    <Text Key="Last5Minutes" Text="Последние 5 минут" Comment="Last 5 Minutes" />
+    <Text Key="LastHour" Text="Последний час" Comment="Last Hour" />
+    <Text Key="Session" Text="Сеанс" Comment="Session" />
+  </Texts>
+</TR>

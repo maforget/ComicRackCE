@@ -133,7 +133,7 @@
     <Text Key="tbPrevPage" Text="Предыдущая страница" Comment="Previous Page" />
     <Text Key="tbPrevPage.Tooltip" Text="Предыдущая страница" Comment="Go to previous page" />
     <Text Key="tbPrevTab" Text="&amp;Предыдущая вкладка" Comment="&amp;Previous Tab" />
-    <Text Key="tbPrevTab.Tooltip" Text="Vorheriger Tab" Comment="Vorheriger Tab" />
+    <Text Key="tbPrevTab.Tooltip" Text="Предыдущая вкладка" Comment="Vorheriger Tab" />
     <Text Key="tbReadLabel" Text="Читать" Comment="Read" />
     <Text Key="tbAutoScroll" Text="Автопрокрутка" Comment="Auto Scrolling" />
     <Text Key="tbAutoScroll.Tooltip" Text="Включить/выключить автопрокрутку" Comment="Toggles Auto scrolling on or off" />
@@ -169,7 +169,7 @@
     <Text Key="miOriginal" Text="Оригинальный Размер" Comment="Original Size" />
     <Text Key="tbOriginal" Text="Оригинальный Размер" Comment="Original Size" />
     <Text Key="cmOriginal" Text="Оригинальный Размер" Comment="Original Size" />
-    <Text Key="NotifyIconText" Text="Двойной щелчек для восстановления" Comment="Double Click to restore" />
+    <Text Key="NotifyIconText" Text="Двойной щелчок для восстановления" Comment="Double Click to restore" />
     <Text Key="cmOnlyFitOversized" Text="Подгонять если больше размера экрана" Comment="Only Fit if oversized" />
     <Text Key="miOnlyFitOversized" Text="Подгонять если больше размера экрана" Comment="Only Fit if oversized" />
     <Text Key="tbOnlyFitOversized" Text="Подгонять если больше размера экрана" Comment="Only Fit if oversized" />
@@ -232,5 +232,74 @@
     <Text Key="cmCloseComic" Text="Закрыть" Comment="Close" />
     <Text Key="miPendingTasks" Text="Незаконченные задания..." Comment="Pending Tasks..." />
     <Text Key="SavePageTitle" Text="Сохранить страницу как..." Comment="Save Page as..." />
+	<Text Key="cmRotate0" Text="&amp;Не вращать" Comment="&amp;No Rotation" />
+    <Text Key="cmRotate180" Text="180°" Comment="180°" />
+    <Text Key="cmRotate270" Text="270°" Comment="270°" />
+    <Text Key="cmRotate90" Text="90°" Comment="90°" />
+    <Text Key="cmPageRotate" Text="Поворот страницы" Comment="Page Rotation" />
+    <Text Key="miPageRotate" Text="Поворот страницы" Comment="Page Rotation" />
+    <Text Key="miOpenRemoteLibrary" Text="Открыть удалённую библиотеку..." Comment="Open Remote Library..." />
+    <Text Key="miUndo" Text="Отменить" Comment="Undo" />
+    <Text Key="miRedo" Text="Повторить" Comment="Redo" />
+    <Text Key="tbAbout" Text="&amp;О программе..." Comment="&amp;About..." />
+    <Text Key="tbPreferences" Text="&amp;Настройки..." Comment="&amp;Preferences..." />
+    <Text Key="tbTools" Text="Инструменты" Comment="Tools" />
+    <Text Key="tbTools.Tooltip" Text="Доступ к важным командам" Comment="Access to important commands" />
+    <Text Key="tbShowMainMenu" Text="Показать главное меню" Comment="Show Main Menu" />
+    <Text Key="tbGoToPage" Text="Перейти на страницу..." Comment="&amp;Go To Page..." />
+    <Text Key="miGoToPage" Text="Перейти на страницу..." Comment="&amp;Go To Page..." />
+    <Text Key="tbSupport" Text="Поддержать ComicRack..." Comment="Support ComicRack..." />
+    <Text Key="miTwoPagesAdaptive" Text="Две страницы (адаптивно)" Comment="Two Pages (adaptive)" />
+    <Text Key="cmTwoPagesAdaptive" Text="Две страницы (адаптивно)" Comment="Two Pages (adaptive)" />
+    <Text Key="tbTwoPagesAdaptive" Text="Две страницы (адаптивно)" Comment="Two Pages (adaptive)" />
+    <Text Key="miContinuous" Text="Непрерывно" Comment="Continuous" />
+    <Text Key="cmContinuous" Text="Непрерывно" Comment="Continuous" />
+    <Text Key="tbContinuous" Text="Непрерывно" Comment="Continuous" />
+    <Text Key="miSinglePage" Text="Одна страница" Comment="Single Page" />
+    <Text Key="cmSinglePage" Text="Одна страница" Comment="Single Page" />
+    <Text Key="tbSinglePage" Text="Одна страница" Comment="Single Page" />
+    <Text Key="tbRotate0" Text="Не вращать" Comment="0°" />
+    <Text Key="miPreviousList" Text="Предыдущий список" Comment="Previous List" />
+    <Text Key="miNextList" Text="Следующий список" Comment="Next List" />
+    <Text Key="miUpdateWebComics" Text="Обновить веб-комиксы" Comment="Update Web Comics" />
+    <Text Key="tbUpdateWebComics" Text="Обновить веб-комиксы" Comment="Update Web Comics" />
+    <Text Key="tbOpenRemoteLibrary" Text="Открыть удалённую библиотеку..." Comment="Open Remote Library..." />
+    <Text Key="miEditLayouts" Text="&amp;Редактировать макеты..." Comment="&amp;Edit Layouts..." />
+    <Text Key="miEditWorkspaces" Text="&amp;Редактировать рабочие области..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="miToggleZoom" Text="Переключить масштаб" Comment="Toggle Zoom" />
+    <Text Key="tsEditWorkspaces" Text="&amp;Редактировать рабочие области..." Comment="&amp;Edit Workspaces..." />
+    <Text Key="miTasks" Text="Задачи..." Comment="Tasks..." />
+    <Text Key="quickOpenView" Text="Быстрое открытие" Comment="Quick Open" />
+    <Text Key="cmCloseAllToTheRight" Text="Закрыть все справа" Comment="Close All to the Right" />
+    <Text Key="cmNextFromList" Text="С&amp;ледующий комикс" Comment="Ne&amp;xt Book" />
+    <Text Key="cmRandomFromList" Text="Случайный комикс" Comment="Random Book" />
+    <Text Key="cmPrevFromList" Text="Пре&amp;дыдущий комикс" Comment="Pre&amp;vious Book" />
+    <Text Key="miRandomFromList" Text="Случайный комикс" Comment="Random Book" />
+    <Text Key="tbOpenComic" Text="&amp;Открыть файл..." Comment="&amp;Open File..." />
+    <Text Key="tbScan" Text="Сканировать &amp;папки с комиксами" Comment="Scan Book &amp;Folders" />
+    <Text Key="tbRandomFromList" Text="Случайный комикс" Comment="Random Book" />
+    <Text Key="tbPageLayout" Text="Макет страницы" Comment="Page Layout" />
+    <Text Key="cmComics" Text="Комиксы" Comment="Books" />
+    <Text Key="miUpdateAllComicFiles" Text="Обновить все файлы комиксов" Comment="Update all Book Files" />
+    <Text Key="tbUpdateAllComicFiles" Text="Обновить все файлы комиксов" Comment="Update all Book Files" />
+    <Text Key="miComicDisplaySettings" Text="Настройки отображения комиксов..." Comment="Book Display Settings..." />
+    <Text Key="tbComicDisplaySettings" Text="Настройки отображения комиксов..." Comment="Book Display Settings..." />
+    <Text Key="miHelp" Text="Справка" Comment="Help" />
+    <Text Key="miNewComic" Text="Новая запись без файла..." Comment="New fileless Book Entry..." />
+    <Text Key="miChooseHelpSystem" Text="Выбор системы справки" Comment="Choose Help System" />
+    <Text Key="miHelpPlugins" Text="Плагины" Comment="Plugins" />
+    <Text Key="miHelpQuickIntro" Text="Краткое руководство" Comment="Quick Introduction" />
+    <Text Key="DeviceSyncing" Text="Синхронизация устройств: {0} в очереди" Comment="Syncing Devices: {0} queued" />
+    <Text Key="DeviceSyncingErrors" Text="Ошибок: {0}. Нажмите для просмотра деталей" Comment="{0} errors. Click for details" />
+    <Text Key="miDevices" Text="Устройства..." Comment="Devices..." />
+    <Text Key="miSynchronizeDevices" Text="Синхронизировать устройства" Comment="Synchronize Devices" />
+    <Text Key="tsSynchronizeDevices" Text="Синхронизировать устройства" Comment="Synchronize Devices" />
+    <Text Key="miTrackCurrentPage" Text="Запоминать текущую страницу" Comment="Track current Page" />
+    <Text Key="miQuickRating" Text="Быстрая оценка и отзыв..." Comment="Quickly Rate and Review..." />
+    <Text Key="cmQuickRating" Text="Быстрая оценка и отзыв..." Comment="Quickly Rate and Review..." />
+    <Text Key="miCheckUpdate" Text="Проверить обновления" Comment="Check For Update" />
+    <Text Key="miCacheThumbnails" Text="Создать эскизы обложек" Comment="Generate Cover Thumbnails" />
+    <Text Key="tbCacheThumbnails" Text="Создать эскизы обложек" Comment="Generate Cover Thumbnails" />
+    <Text Key="miInfoPanel" Text="Информационная панель" Comment="Info Panel" />
   </Texts>
 </TR>

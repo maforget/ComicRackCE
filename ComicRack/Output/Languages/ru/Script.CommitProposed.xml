@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Script.CommitProposed" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Script.CommitProposed" CultureName="ru">
   <Texts>
-    <Text Key="AskCommit" Text="Вы действительно хотите перезаписать существующие данные?\nНовые данные генерируются из имени файла и показаны серым цветом." Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
-    <Text Key="Name" Text="Использовать данные..." Comment="Commit Proposed Values..." />
-    <Text Key="Overwrite" Text="&amp;Перезаписать существующие данные" Comment="&amp;Also overwrite existing values" />
+    <Text Key="AskCommit" Text="Вы действительно хотите сохранить предлагаемые значения как постоянные?\nПредлагаемые значения формируются из имени файла и отображаются серым цветом." Comment="Do you really want to make the proposed values permanent?\nProposed values are generated from the filename and are displayed in gray" />
+    <Text Key="Name" Text="Применить предлагаемые значения..." Comment="Commit Proposed Values..." />
+    <Text Key="Overwrite" Text="&amp;Также перезаписать существующие значения" Comment="&amp;Also overwrite existing values" />
     <Text Key="Write" Text="Записать" Comment="Write" />
+    <Text Key="Description" Text="Скрипт для сохранения предлагаемых значений книги как постоянных" Comment="A script to makes the proposed values for the Book permanent" />
   </Texts>
 </TR>

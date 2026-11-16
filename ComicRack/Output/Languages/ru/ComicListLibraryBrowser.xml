@@ -1,30 +1,45 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicListLibraryBrowser" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicListLibraryBrowser" CultureName="ru">
   <Texts>
-    <Text Key="miEditSmartList" Text="&amp;Редактировать..." Comment="&amp;Edit..." />
+    <Text Key="miEditSmartList" Text="&amp;Изменить..." Comment="&amp;Edit..." />
     <Text Key="miNewFolder" Text="Новая &amp;папка..." Comment="New &amp;Folder..." />
     <Text Key="miNewList" Text="Новый &amp;список..." Comment="New &amp;List..." />
-    <Text Key="miNewSmartList" Text="Создать &amp;авто-список..." Comment="&amp;New Smart List..." />
-    <Text Key="miNodeSort" Text="Сор&amp;тировать" Comment="&amp;Sort" />
+    <Text Key="miNewSmartList" Text="&amp;Новый умный список..." Comment="&amp;New Smart List..." />
+    <Text Key="miNodeSort" Text="&amp;Сортировать" Comment="&amp;Sort" />
     <Text Key="miOpenWindow" Text="&amp;Открыть в новом окне" Comment="&amp;Open in New Window" />
-    <Text Key="miQueryRename" Text="Пере&amp;именовать" Comment="&amp;Rename" />
-    <Text Key="miRefresh" Text="Обновить" Comment="Re&amp;fresh" />
-    <Text Key="miRemoveListOrFolder" Text="&amp;Удалить" Comment="&amp;Re&amp;move..." />
+    <Text Key="miQueryRename" Text="&amp;Переименовать" Comment="&amp;Rename" />
+    <Text Key="miRefresh" Text="Об&amp;новить" Comment="Re&amp;fresh" />
+    <Text Key="miRemoveListOrFolder" Text="&amp;Удалить..." Comment="&amp;Re&amp;move..." />
     <Text Key="NewFolder" Text="Новая папка" Comment="New Folder" />
-    <Text Key="NewList" Text="Новый &amp;список" Comment="New List" />
-    <Text Key="NewSmartList" Text="Создать авто-список" Comment="New Smart List" />
+    <Text Key="NewList" Text="Новый список" Comment="New List" />
+    <Text Key="NewSmartList" Text="Новый умный список" Comment="New Smart List" />
     <Text Key="tbNewFolder" Text="Новая &amp;папка" Comment="New &amp;Folder" />
     <Text Key="tbNewFolder.Tooltip" Text="Создать новую папку для организации списков" Comment="Create a new folder to organize your lists" />
     <Text Key="tbNewList" Text="Новый &amp;список" Comment="New &amp;List" />
-    <Text Key="tbNewList.Tooltip" Text="Создать новый настраиваемый список" Comment="Create a new custom List" />
-    <Text Key="tbNewSmartList" Text="Создать &amp;авто-список" Comment="&amp;New Smart List" />
-    <Text Key="tbNewSmartList.Tooltip" Text="Создать авто-список" Comment="Create a new Smart List" />
+    <Text Key="tbNewList.Tooltip" Text="Создать новый пользовательский список" Comment="Create a new custom List" />
+    <Text Key="tbNewSmartList" Text="&amp;Новый умный список" Comment="&amp;New Smart List" />
+    <Text Key="tbNewSmartList.Tooltip" Text="Создать новый умный список" Comment="Create a new Smart List" />
     <Text Key="tbOpenWindow" Text="Новое окно" Comment="New Window" />
-    <Text Key="tbOpenWindow.Tooltip" Text="Открыть этот список в новом окне" Comment="Open current list in new Window" />
+    <Text Key="tbOpenWindow.Tooltip" Text="Открыть текущий список в новом окне" Comment="Open current list in new Window" />
     <Text Key="tbRefresh" Text="Обновить" Comment="Refresh" />
     <Text Key="miCopyList" Text="Копировать список" Comment="Copy List" />
     <Text Key="miPasteList" Text="Вставить список" Comment="Paste List" />
-    <Text Key="miExportReadingList" Text="Экспортировать список к прочтению..." Comment="Export Reading List..." />
-    <Text Key="miImportReadingList" Text="Импортировать список к прочтению..." Comment="Import Reading List..." />
+    <Text Key="miExportReadingList" Text="Экспортировать список чтения..." Comment="Export Reading List..." />
+    <Text Key="miImportReadingList" Text="Импортировать список чтения..." Comment="Import Reading List..." />
+    <Text Key="NewSmartListOption" Text="Снимок текущего представления" Comment="Snapshot of current view" />
+    <Text Key="miOpenTab" Text="&amp;Открыть в новой вкладке" Comment="&amp;Open in New Tab" />
+    <Text Key="tbOpenTab" Text="Новая вкладка" Comment="New Tab" />
+    <Text Key="tbOpenTab.Tooltip" Text="Открыть текущий список в новой вкладке" Comment="Open current list in new Tab" />
+    <Text Key="miFavRemove" Text="Удалить" Comment="Remove" />
+    <Text Key="tbFavorites" Text="Показать избранное" Comment="Show Favorites" />
+    <Text Key="tbFavorites.Tooltip" Text="Избранное" Comment="Favorites" />
+    <Text Key="miAddToFavorites" Text="Добавить в избранное" Comment="Add to Favorites" />
+    <Text Key="miFavRefresh" Text="&amp;Обновить" Comment="&amp;Refresh" />
+    <Text Key="tbExpandCollapseAll" Text="Свернуть/развернуть все" Comment="Expand/Collapse all" />
+    <Text Key="tbPreferences" Text="Настройки" Comment="Preferences" />
+    <Text Key="SyncDevices" Text="Синхронизировать с" Comment="Sync with" />
+    <Text Key="SyncDevice" Text="Синхронизировать с {0}..." Comment="Sync with {0}..." />
+    <Text Key="tsQuickSearch" Text="Быстрый поиск (Ctrl+Alt+F)" Comment="Quick Search (Ctrl+Alt+F)" />
+    <Text Key="ExportAsSingleEntries" Text="Экспортировать как отдельные записи" Comment="Export as single entries" />
   </Texts>
 </TR>

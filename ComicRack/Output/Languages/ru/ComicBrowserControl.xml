@@ -1,76 +1,115 @@
 <?xml version="1.0"?>
-<TR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ComicBrowserControl" CultureName="ru">
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ComicBrowserControl" CultureName="ru">
   <Texts>
-    <Text Key="ArrangedBy" Text="Упорядочено по {0}" Comment="Arranged by {0}" />
-    <Text Key="ComicFiltered" Text="{0} найдено" Comment="{0} filtered" />
-    <Text Key="ComicMulti" Text="{0} Комиксов" Comment="{0} eComics" />
-    <Text Key="ComicSelected" Text="{0} выбрано" Comment="{0} selected" />
-    <Text Key="ComicSingle" Text="{0} Комикс" Comment="{0} eComic" />
-    <Text Key="GroupedBy" Text="Сгруппировано по {0}" Comment="Grouped by {0}" />
-    <Text Key="miAddLibrary" Text="&amp;Добавить в библиотеку..." Comment="&amp;Add to Library" />
-    <Text Key="miAutomation" Text="Автоматически" Comment="Automation" />
+    <Text Key="ArrangedBy" Text="Сортировка: {0}" Comment="Arranged by {0}" />
+    <Text Key="ComicFiltered" Text="Отфильтровано: {0}" Comment="{0} filtered" />
+    <Text Key="ComicSelected" Text="Выбрано: {0}" Comment="{0} selected" />
+    <Text Key="GroupedBy" Text="Группировка: {0}" Comment="Grouped by {0}" />
+    <Text Key="miAddLibrary" Text="&amp;Добавить в библиотеку" Comment="&amp;Add to Library" />
+    <Text Key="miAutomation" Text="Автоматизация" Comment="Automation" />
     <Text Key="miCopyData" Text="&amp;Копировать данные" Comment="&amp;Copy Data" />
-    <Text Key="miInvertSelection" Text="&amp;Инверсия выделенного" Comment="&amp;Invert Selection" />
-    <Text Key="miMarkAs" Text="&amp;Пометить как" Comment="&amp;Mark as" />
-    <Text Key="miMarkRead" Text="&amp;Читать" Comment="&amp;Read" />
-    <Text Key="miMarkUnread" Text="&amp;Не прочитано" Comment="&amp;Unread" />
+    <Text Key="miInvertSelection" Text="&amp;Инвертировать выделение" Comment="&amp;Invert Selection" />
+    <Text Key="miMarkAs" Text="&amp;Отметить как" Comment="&amp;Mark as" />
+    <Text Key="miMarkRead" Text="&amp;Прочитанное" Comment="&amp;Read" />
+    <Text Key="miMarkUnread" Text="&amp;Непрочитанное" Comment="&amp;Unread" />
     <Text Key="miPasteData" Text="&amp;Вставить данные..." Comment="&amp;Paste Data..." />
-    <Text Key="miProperties" Text="&amp;Информация..." Comment="&amp;Get Info..." />
-    <Text Key="miRateMenu" Text="Мой &amp;рейтинг" Comment="My &amp;Rating" />
-    <Text Key="miRating0" Text="Ничего" Comment="None" />
-    <Text Key="miRating1" Text="* (1 Звезда)" Comment="* (1 Star)" />
-    <Text Key="miRating2" Text="** (2 Звезды)" Comment="** (2 Stars)" />
-    <Text Key="miRating3" Text="*** (3 Звезды)" Comment="*** (3 Stars)" />
-    <Text Key="miRating4" Text="**** (4 Звезды)" Comment="**** (4 Stars)" />
-    <Text Key="miRating5" Text="***** (5 Звезд)" Comment="***** (5 Stars)" />
+    <Text Key="miProperties" Text="&amp;Свойства..." Comment="&amp;Get Info..." />
+    <Text Key="miRateMenu" Text="Моя &amp;оценка" Comment="My &amp;Rating" />
+    <Text Key="miRating0" Text="Без оценки" Comment="None" />
+    <Text Key="miRating1" Text="* (1 звезда)" Comment="* (1 Star)" />
+    <Text Key="miRating2" Text="** (2 звезды)" Comment="** (2 Stars)" />
+    <Text Key="miRating3" Text="*** (3 звезды)" Comment="*** (3 Stars)" />
+    <Text Key="miRating4" Text="**** (4 звезды)" Comment="**** (4 Stars)" />
+    <Text Key="miRating5" Text="***** (5 звёзд)" Comment="***** (5 Stars)" />
     <Text Key="miRead" Text="&amp;Открыть" Comment="&amp;Open" />
     <Text Key="miReadTab" Text="Открыть в новой вкладке" Comment="Open in new Tab" />
     <Text Key="miRefreshInformation" Text="Обновить" Comment="Refresh" />
-    <Text Key="miRemove" Text="&amp;Удалить..." Comment="Re&amp;move..." />
-    <Text Key="miRevealBrowser" Text="Показать книгу в &amp;обозревателе" Comment="Reveal Book in &amp;Explorer" />
-    <Text Key="miSearchAll" Text="Все" Comment="All" />
-    <Text Key="miSearchAll.Tooltip" Text="Быстрый поиск по всему" Comment="Quick Search is checking all available data" />
+    <Text Key="miRemove" Text="Уд&amp;алить..." Comment="Re&amp;move..." />
+    <Text Key="miRevealBrowser" Text="Показать в &amp;Проводнике" Comment="Reveal Book in &amp;Explorer" />
+    <Text Key="miSearchAll" Text="Везде" Comment="All" />
+    <Text Key="miSearchAll.Tooltip" Text="Быстрый поиск проверяет все доступные данные" Comment="Quick Search is checking all available data" />
     <Text Key="miSearchArtists" Text="Художники" Comment="Artists" />
-    <Text Key="miSearchArtists.Tooltip" Text="Быстрый поиск по всем художникам" Comment="Quick Search is checking all Artists" />
-    <Text Key="miSearchDescriptive" Text="Описательный" Comment="Descriptive" />
-    <Text Key="miSearchDescriptive.Tooltip" Text="Быстрый поиск по комментариям и заметкам" Comment="Quick Search is checking all notes and summaries" />
-    <Text Key="miSearchFile" Text="Имя файла" Comment="Filename" />
-    <Text Key="miSearchFile.Tooltip" Text="Быстрый поиск по имени файла" Comment="Quick Search is only checking the Filename" />
-    <Text Key="miSearchSeries" Text="Серии" Comment="Series" />
-    <Text Key="miSearchSeries.Tooltip" Text="Быстрый поиск по имени серии" Comment="Quick Search is only checking the Series name" />
-    <Text Key="miSearchWriter" Text="Автор" Comment="Writer" />
-    <Text Key="miSearchWriter.Tooltip" Text="Быстрый поиск по автору" Comment="Quick Search is only checking the Writer" />
-    <Text Key="miSelectAll" Text="Выделить &amp;все" Comment="Select &amp;All" />
-    <Text Key="miSetTopOfStack" Text="Установить как начало компоновки" Comment="Set as Top of Stack" />
-    <Text Key="miShowOnly" Text="&amp;Обзор Комиксов" Comment="&amp;Browse Comics" />
+    <Text Key="miSearchArtists.Tooltip" Text="Быстрый поиск проверяет всех художников" Comment="Quick Search is checking all Artists" />
+    <Text Key="miSearchDescriptive" Text="Описания" Comment="Descriptive" />
+    <Text Key="miSearchDescriptive.Tooltip" Text="Быстрый поиск проверяет все заметки и описания" Comment="Quick Search is checking all notes and summaries" />
+    <Text Key="miSearchFile" Text="Имена файлов" Comment="Filename" />
+    <Text Key="miSearchFile.Tooltip" Text="Быстрый поиск проверяет только имена файлов" Comment="Quick Search is only checking the Filename" />
+    <Text Key="miSearchSeries" Text="Серия" Comment="Series" />
+    <Text Key="miSearchSeries.Tooltip" Text="Быстрый поиск проверяет только названия серий" Comment="Quick Search is only checking the Series name" />
+    <Text Key="miSearchWriter" Text="Сценаристы" Comment="Writer" />
+    <Text Key="miSearchWriter.Tooltip" Text="Быстрый поиск проверяет только сценаристов" Comment="Quick Search is only checking the Writer" />
+    <Text Key="miSelectAll" Text="Выделить &amp;всё" Comment="Select &amp;All" />
+    <Text Key="miSetTopOfStack" Text="Сделать обложкой стопки" Comment="Set as Top of Stack" />
+    <Text Key="miShowOnly" Text="&amp;Показать книги" Comment="&amp;Browse Comics" />
     <Text Key="miShowOnlyAllComics" Text="Показать все" Comment="Show All" />
-    <Text Key="miShowOnlyReadComics" Text="Показать прочитанное" Comment="Show Read" />
-    <Text Key="miShowOnlyReadingComics" Text="Показать читаемое" Comment="Show Reading" />
-    <Text Key="miShowOnlyUnreadComics" Text="Показать непрочитанное" Comment="Show not Read" />
-    <Text Key="miViewDetails" Text="&amp;Подробно" Comment="&amp;Details" />
-    <Text Key="miViewThumbnails" Text="&amp;Эскизы" Comment="T&amp;humbnails" />
-    <Text Key="miViewTiles" Text="&amp;Значки" Comment="&amp;Tiles" />
-    <Text Key="None" Text="Ничего" Comment="None" />
-    <Text Key="NotArranged" Text="Нет сортировки" Comment="Not sorted" />
-    <Text Key="NotGrouped" Text="Не сгруппировано" Comment="Not grouped" />
-    <Text Key="NotStacked" Text="Не скомпоновано" Comment="Not stacked" />
-    <Text Key="StackedBy" Text="Скомпоновано по {0}" Comment="Stacked by {0}" />
-    <Text Key="tbbGroup" Text="Группировать" Comment="Group" />
-    <Text Key="tbbGroup.Tooltip" Text="Группировать Комиксы по разным параметрам" Comment="Group eComics by different criteria" />
-    <Text Key="tbbGroupFilter" Text="Все" Comment="All" />
-    <Text Key="tbbGroupFilter.Tooltip" Text="Убрать компоновку" Comment="Close this Stack" />
-    <Text Key="tbbSort" Text="Упорядочить" Comment="Arrange" />
-    <Text Key="tbbSort.Tooltip" Text="Изменить порядок сортировки Комиксов" Comment="Change the sort order of the eComics" />
-    <Text Key="tbbStack" Text="Скомпоновать" Comment="Stack" />
+    <Text Key="miShowOnlyReadComics" Text="Показать отмеченные как &quot;прочитанные&quot;" Comment="Show Read" />
+    <Text Key="miShowOnlyReadingComics" Text="Показать отмеченные как &quot;читаемые&quot;" Comment="Show Reading" />
+    <Text Key="miShowOnlyUnreadComics" Text="Показать отмеченные как &quot;непрочитанные&quot;" Comment="Show not Read" />
+    <Text Key="miViewDetails" Text="&amp;Таблица" Comment="&amp;Details" />
+    <Text Key="miViewThumbnails" Text="&amp;Миниатюры" Comment="T&amp;humbnails" />
+    <Text Key="miViewTiles" Text="&amp;Плитка" Comment="&amp;Tiles" />
+    <Text Key="None" Text="Нет" Comment="None" />
+    <Text Key="NotArranged" Text="Без сортировки" Comment="Not sorted" />
+    <Text Key="NotGrouped" Text="Без группировки" Comment="Not grouped" />
+    <Text Key="NotStacked" Text="Не сложено в стопки" Comment="Not stacked" />
+    <Text Key="StackedBy" Text="Стопки: {0}" Comment="Stacked by {0}" />
+    <Text Key="tbbGroup" Text="Группа" Comment="Group" />
+    <Text Key="tbbGroupFilter.Tooltip" Text="Закрыть эту стопку" Comment="Close this Stack" />
+    <Text Key="tbbSort" Text="Сортировка" Comment="Arrange" />
+    <Text Key="tbbStack" Text="Стопка" Comment="Stack" />
     <Text Key="tbbView" Text="Вид" Comment="Views" />
-    <Text Key="tbbView.Tooltip" Text="Изменить отображение Комиксов" Comment="Change how and what eComics are displayed" />
-    <Text Key="tsDeleteListLayout" Text="&amp;Удалить формат списка..." Comment="&amp;Delete List Layout..." />
-    <Text Key="tsEditListLayout" Text="&amp;Редактировать формат списка..." Comment="&amp;Edit List Layout..." />
-    <Text Key="tsSaveListLayout" Text="&amp;Сохранить формат списка..." Comment="&amp;Save List Layout..." />
-    <Text Key="tsListLayouts" Text="Список форматов" Comment="List Layouts" />
-    <Text Key="tsListLayouts.Tooltip" Text="Управление форматом списка" Comment="Manage List Layouts" />
-    <Text Key="miExportComics" Text="Экспорт Комикса" Comment="Export eComics" />
-    <Text Key="miExportComicsAs" Text="Экспорт Комикса..." Comment="Export eComics..." />
-    <Text Key="ExportWithPrevious" Text="Экспортировать как предыдущий" Comment="Export with Previous" />
+    <Text Key="tsEditListLayout" Text="&amp;Изменить макет списка..." Comment="&amp;Edit List Layout..." />
+    <Text Key="tsSaveListLayout" Text="&amp;Сохранить макет списка..." Comment="&amp;Save List Layout..." />
+    <Text Key="tsListLayouts" Text="Макеты списков" Comment="List Layouts" />
+    <Text Key="tsListLayouts.Tooltip" Text="Управление макетами отображения списков" Comment="Manage List Layouts" />
+    <Text Key="miSetListBackground" Text="Сделать фоном списка" Comment="Set as List Background" />
+    <Text Key="miResetListBackground" Text="Сбросить фон списка" Comment="Reset List Background" />
+    <Text Key="miShowOnlyDuplicates" Text="Показать дубликаты" Comment="Show Duplicates" />
+    <Text Key="miAddList" Text="Добавить в список" Comment="Add to List" />
+    <Text Key="miEdit" Text="Изменить" Comment="Edit" />
+    <Text Key="miShowInList" Text="Показать в списке" Comment="Show in List" />
+    <Text Key="tbbDuplicateList" Text="Дублировать список" Comment="Duplicate List" />
+    <Text Key="tbbDuplicateList.Tooltip" Text="Дублировать текущий список" Comment="Duplicate current List" />
+    <Text Key="miExportComicsWithPrevious" Text="Экспортировать с предыдущими" Comment="Export with Previous" />
+    <Text Key="SearchingLists" Text="Поиск в списках..." Comment="Searching Lists..." />
+    <Text Key="tbUndo" Text="Отменить" Comment="Undo" />
+    <Text Key="tbRedo" Text="Повторить" Comment="Redo" />
+    <Text Key="btDisplayAll" Text="Показать &amp;все" Comment="Display &amp;All" />
+    <Text Key="btCloseStack" Text="&amp;Закрыть стопку" Comment="&amp;Close Stack" />
+    <Text Key="btPrevStack" Text="&amp;Назад" Comment="&amp;Previous" />
+    <Text Key="btNextStack" Text="&amp;Далее" Comment="&amp;Next" />
+    <Text Key="miShowOnlyFileless" Text="Показать только записи без файлов" Comment="Show only fileless Entries" />
+    <Text Key="tsEditLayouts" Text="&amp;Изменить макеты..." Comment="&amp;Edit Layouts..." />
+    <Text Key="btBrowseNext" Text="Вперёд" Comment="Next" />
+    <Text Key="btBrowsePrev" Text="Назад" Comment="Back" />
+    <Text Key="miSearchCatalog" Text="Каталог" Comment="Catalog" />
+    <Text Key="miSearchCatalog.Tooltip" Text="Быстрый поиск проверяет только записи в каталоге" Comment="Quick Search is only checking Catalog entries" />
+    <Text Key="miSetStackThumbnail" Text="Задать обложку стопки..." Comment="Set custom Stack Thumbnail..." />
+    <Text Key="miRemoveStackThumbnail" Text="Удалить обложку стопки..." Comment="Remove custom Stack Thumbnail..." />
+    <Text Key="miExpandAllGroups" Text="Свернуть/развернуть все группы" Comment="Collapse/Expand all Groups" />
+    <Text Key="ComicMulti" Text="{0} книг" Comment="{0} Books" />
+    <Text Key="ComicSingle" Text="{0} книга" Comment="{0} Book" />
+    <Text Key="miShowOnlyComics" Text="Показать только книги" Comment="Show only Books" />
+    <Text Key="tbbGroup.Tooltip" Text="Группировать книги по различным критериям" Comment="Group Books by different criteria" />
+    <Text Key="tbbSort.Tooltip" Text="Изменить порядок сортировки книг" Comment="Change the sort order of the Books" />
+    <Text Key="tbbView.Tooltip" Text="Изменить способ и фильтр отображения книг" Comment="Change how and what Books are displayed" />
+    <Text Key="miExportComics" Text="Экспортировать в..." Comment="Export Books" />
+    <Text Key="miExportComicsAs" Text="Экспортировать..." Comment="Export Books..." />
+    <Text Key="lblDisplayOptionText" Text="Из-за активных настроек в меню «Вид» отображаются не все книги." Comment="Because of active options in 'Views', not all Books are displayed" />
+    <Text Key="miUpdateComicFiles" Text="Обновить файлы книг" Comment="Update Book Files" />
+    <Text Key="tbSidebar" Text="Боковая панель" Comment="Sidebar" />
+    <Text Key="miEditList" Text="Изменить список" Comment="Edit List" />
+    <Text Key="miEditListMoveToTop" Text="Переместить в начало" Comment="Move to Top" />
+    <Text Key="miEditListMoveToBottom" Text="Переместить в конец" Comment="Move to Bottom" />
+    <Text Key="miEditListApplyOrder" Text="Применить текущий порядок" Comment="Apply current Order" />
+    <Text Key="miClearData" Text="Очистить данные" Comment="Clear Data" />
+    <Text Key="miShowWeb" Text="Веб-ссылка..." Comment="Web..." />
+    <Text Key="miMarkChecked" Text="Отмеченная" Comment="Checked" />
+    <Text Key="miMarkUnchecked" Text="Неотмеченная" Comment="Unchecked" />
+    <Text Key="CustomFieldDescription" Text="Показывает значение пользовательского поля «{0}»" Comment="Shows the value of the custom field '{0}'" />
+    <Text Key="miQuickRating" Text="Быстрая оценка и рецензия..." Comment="Quickly Rate and Review..." />
+    <Text Key="miShowGroupHeaders" Text="Показывать заголовки групп" Comment="Show Group Headers" />
+    <Text Key="miOpenWith" Text="Открыть с помощью" Comment="Open With" />
+    <Text Key="miOpenWithManager" Text="Управление программами..." Comment="Manage Programs..." />
   </Texts>
 </TR>

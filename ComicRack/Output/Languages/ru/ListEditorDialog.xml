@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="ListEditorDialog" CultureName="ru">
+  <Texts>
+    <Text Key="btNew" Text="&amp;Создать..." Comment="&amp;New..." />
+    <Text Key="btEdit" Text="&amp;Изменить..." Comment="&amp;Edit..." />
+    <Text Key="btActivate" Text="&amp;Активировать" Comment="&amp;Activate" />
+    <Text Key="btDelete" Text="Удалить" Comment="Delete" />
+    <Text Key="btMoveTop" Text="В &amp;самый верх" Comment="Move &amp;Top" />
+    <Text Key="btMoveUp" Text="Переместить &amp;вверх" Comment="Move &amp;Up" />
+    <Text Key="btMoveDown" Text="Переместить в&amp;низ" Comment="Move &amp;Down" />
+    <Text Key="btMoveBottom" Text="В са&amp;мый низ" Comment="Move &amp;Bottom" />
+    <Text Key="btOK" Text="&amp;OK" Comment="&amp;OK" />
+    <Text Key="btCancel" Text="&amp;Отмена" Comment="&amp;Cancel" />
+    <Text Key="colName" Text="Имя" Comment="Name" />
+    <Text Key="colDescription" Text="Описание" Comment="Description" />
+    <Text Key="btSetAll" Text="Применить ко всем" Comment="Set to All" />
+  </Texts>
+</TR>

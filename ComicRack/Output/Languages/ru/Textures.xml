@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<TR xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="Textures" CultureName="ru">
+  <Texts>
+    <Text Key="WhitePaper" Text="Белая бумага" Comment="White Paper" />
+    <Text Key="WhitePaper2" Text="Белая бумага 2" Comment="White Paper 2" />
+    <Text Key="WhitePaper3" Text="Белая бумага 3" Comment="White Paper 3" />
+    <Text Key="Checkered" Text="Клетка" Comment="Checkered" />
+    <Text Key="Ceramic" Text="Керамика" Comment="Cermamic" />
+    <Text Key="Ceramic2" Text="Керамика 2" Comment="Cermamic 2" />
+    <Text Key="Glass" Text="Стекло" Comment="Glass" />
+    <Text Key="LightWood" Text="Светлое дерево" Comment="Light Wood" />
+    <Text Key="OrangeMetal" Text="Оранжевый металл" Comment="Orange Metal" />
+    <Text Key="PlankWood" Text="Доски" Comment="Plank Wood" />
+    <Text Key="BrickWall" Text="Кирпичная стена" Comment="Brick Wall" />
+    <Text Key="BrushedMetal" Text="Шлифованный металл" Comment="Brushed Metal" />
+    <Text Key="BrushedMetal2" Text="Шлифованный металл 2" Comment="Brushed Metal 2" />
+    <Text Key="ChalkBoard" Text="Грифельная доска" Comment="Chalk Board" />
+    <Text Key="Circles" Text="Круги" Comment="Circles" />
+    <Text Key="Grass" Text="Трава" Comment="Grass" />
+    <Text Key="Sketch" Text="Эскиз" Comment="Sketch" />
+    <Text Key="Black" Text="Чёрный" Comment="Black" />
+  </Texts>
+</TR>
