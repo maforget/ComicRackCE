@@ -125,6 +125,7 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		private readonly string cachePath;
 		private readonly bool optimized;
+		private static IEnumerable<string> libraryPaths = Enumerable.Empty<string>();
 
 		private readonly HashSet<string> usedCacheEntries = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
@@ -145,13 +146,16 @@ namespace cYo.Projects.ComicRack.Plugins
 				&& sourcePluginFolders.Any(folder => file.StartsWith(folder + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase));
 		}
 
-		public override IEnumerable<Command> GetCommands(string file)
+		public override IEnumerable<Command> GetCommands(string file) => GetCommands(file, null);
+
+		public override IEnumerable<Command> GetCommands(string file, IPluginEnvironment env)
 		{
 			if (!IsMarker(file))
 				return Enumerable.Empty<Command>();
 
 			try
 			{
+				libraryPaths = env?.LibraryPaths ?? Enumerable.Empty<string>();
 				SourcePlugin plugin = SourcePlugin.Read(file);
 				string assemblyFile = GetAssemblyFile(plugin);
 				if (assemblyFile == null)
@@ -164,7 +168,7 @@ namespace cYo.Projects.ComicRack.Plugins
 					return Enumerable.Empty<Command>();
 				}
 
-				PluginAssemblyResolver.Register(plugin.Folder, plugin.References.Select(Path.GetDirectoryName));
+				PluginAssemblyResolver.Register(plugin.Folder, [.. plugin.References.Select(Path.GetDirectoryName), .. libraryPaths]);
 				Assembly assembly = Assembly.LoadFrom(assemblyFile);
 				PluginAssemblyResolver.Register(assembly, plugin.Folder);
 				return DotNetPluginLoader.CreateCommands(assembly, file);
@@ -309,6 +313,7 @@ namespace cYo.Projects.ComicRack.Plugins
 		{
 			string runtime = Path.GetDirectoryName(typeof(object).Assembly.Location);
 			string file = new[] { runtime, Path.Combine(runtime, "WPF"), AppDomain.CurrentDomain.BaseDirectory }
+				.Concat(libraryPaths)
 				.Select(directory => Path.Combine(directory, name + ".dll"))
 				.FirstOrDefault(File.Exists);
 			return file ?? throw new FileNotFoundException($"the framework reference '{name}' does not exist");
