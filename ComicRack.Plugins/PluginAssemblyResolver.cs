@@ -69,7 +69,7 @@ namespace cYo.Projects.ComicRack.Plugins
 				}
 				else if (first.Key != name.Version)
 				{
-					Command.LogDefault("Warning: plugins ship different versions of the assembly '{0}': '{1}' (version {2}) and '{3}' (version {4}). The assembly has no strong name, so only the one that is needed first is loaded and every plugin uses it.", name.Name, first.Value, first.Key, file, name.Version);
+					Command.LogDefault($"Warning: plugins ship different versions of the assembly '{name.Name}': '{first.Value}' (version {first.Key}) and '{file}' (version {name.Version}). The assembly has no strong name, so only the one that is needed first is loaded and every plugin uses it.");
 				}
 			}
 		}
@@ -99,18 +99,18 @@ namespace cYo.Projects.ComicRack.Plugins
 				string requester = args.RequestingAssembly?.GetName().Name ?? "a plugin";
 				if (requested.Version != null && best.Name.Version != requested.Version)
 				{
-					Command.LogDefault("Resolved '{0}' for {1} to '{2}'. Warning: version {3} was requested, version {4} was found.", requested.Name, requester, assembly.Location, requested.Version, best.Name.Version);
+					Command.LogDefault($"Resolved '{requested.Name}' for {requester} to '{assembly.Location}'. Warning: version {requested.Version} was requested, version {best.Name.Version} was found.");
 				}
 				else
 				{
-					Command.LogDefault("Resolved '{0}' for {1} to '{2}'", requested.Name, requester, assembly.Location);
+					Command.LogDefault($"Resolved '{requested.Name}' for {requester} to '{assembly.Location}'");
 				}
 				return assembly;
 			}
 			catch (Exception e)
 			{
 				// An exception here would surface in unrelated code that happened to trigger the assembly load.
-				Command.LogDefault("Failed to resolve '{0}' for a plugin: {1}", args.Name, e.Message);
+				Command.LogDefault($"Failed to resolve '{args.Name}' for a plugin: {e.Message}");
 				return null;
 			}
 		}
