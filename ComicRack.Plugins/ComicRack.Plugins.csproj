@@ -7,6 +7,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <Deterministic>false</Deterministic>
+	<!-- Roslyn ships its messages in 13 languages; ComicRack logs the English ones. -->
+	<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -22,12 +24,22 @@
     <PackageReference Include="IronPython">
       <Version>2.7.4</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" />
     <PackageReference Include="Microsoft.CSharp">
       <Version>4.7.0</Version>
     </PackageReference>
+	<!-- Reuses the PolySharp reference (and version) from Directory.Build.props -->
+	<PackageReference Update="PolySharp" GeneratePathProperty="true" ExcludeAssets="all" />
+    <None Include="$(PkgPolySharp)\analyzers\dotnet\cs\PolySharp.SourceGenerators.dll"
+		Link="PolySharp.SourceGenerators.dll" CopyToOutputDirectory="PreserveNewest" Condition="'$(PkgPolySharp)' != ''" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ComicRack.Engine\ComicRack.Engine.csproj" />
     <ProjectReference Include="..\cYo.Common\cYo.Common.csproj" />
   </ItemGroup>
+	<!-- Verify that the PolySharp dll exists at the usual location -->
+	<Target Name="CheckPolySharpPath" BeforeTargets="BeforeBuild">
+		<Error Condition="!Exists('$(PkgPolySharp)\analyzers\dotnet\cs\PolySharp.SourceGenerators.dll')"
+			Text="PolySharp generator DLL not found. Check the package layout after a version update." />
+	</Target>
 </Project>
