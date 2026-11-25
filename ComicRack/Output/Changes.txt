@@ -1,14 +1,25 @@
 Community Edition Build 0.9.186:
 
+* NEW: Added dotnet plugins support (both C# source & compiled DLLs). (Thanks to jafin for his contribution). See wiki for details.
 * NEW: Migrate Dark theme setting to a drop-down inside the Preferences dialog (Edit → Preferences → Reader → Display).
     - For those that are currently using dark mode via `UseDarkMode`/`Theme` ini/command line settings, they will be migrated on first launch.
     - If you still want to force the theme via the ini/command line you will need to also set `OverrideTheme` (`-ot`) to true.
 * NEW: Added Go To page feature in the Reader. Accessible from the Main Menu -> Reader & when clicking the drop down arrow for the next page button.
 * NEW: Added a search box to the popup for fields that have the orange list selection button, like Writer, Tags, etc.
 * NEW: Add a Re-pair option to the device settings (by Fableton)
+* NEW: Added a dropdown to choose the interface that will be used by the wireless sync (by Fableton). 
+* NEW: Added a commit proposed button to the Info dialog.
+* NEW: Added description of states icons in detail view. (by jafin)
+
+
+* CHANGE: Update Russian localization (by nedoskazannost).
+* CHANGE: Backup Manager items are now in a single column. (by jafin)
+
 
 * BUGFIX: Fixed search box clear icon not showing when pasting text into the search box.
 * BUGFIX: Keep the wireless sync discovery listener alive (by Fableton).
+* BUGFIX: Wireless syncing will now automatically attach to all physical interfaces available (filtering out known virtual/VPN adapters). Previously it would only use the default interface which could be a virtual adapter (for example from virtualbox), which would prevent syncing from your Android device (by Fableton).
+* BUGFIX: Fix Wikipedia search outputting incorrect/empty entries.
 
 
 Community Edition Build 0.9.184:
