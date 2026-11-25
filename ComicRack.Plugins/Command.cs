@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using cYo.Common.Collections;
 using cYo.Common.Drawing;
 using cYo.Common.IO;
 using cYo.Common.Windows.Forms.Theme;
@@ -104,6 +105,9 @@ namespace cYo.Projects.ComicRack.Plugins
 		}
 
 		[XmlIgnore]
+		public abstract PluginKind Kind { get; }
+
+		[XmlIgnore]
 		public Command Configure
 		{
 			get;
@@ -120,6 +124,18 @@ namespace cYo.Projects.ComicRack.Plugins
 				}
 				return false;
 			}
+		}
+
+		public static bool EnableLog
+		{
+			get;
+			set;
+		}
+
+		protected static Stream Output
+		{
+			get;
+			private set;
 		}
 
 		public bool Initialize(IPluginEnvironment env, string path)
@@ -158,7 +174,11 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		public bool IsHook(params string[] hooks)
 		{
-			return hooks.Any((string hook) => Hook.Contains(hook));
+			if (string.IsNullOrEmpty(Hook))
+				return false;
+
+			string[] own = Hook.Split(',').Select((string h) => h.Trim()).ToArray();
+			return hooks.Any((string hook) => own.Contains(hook));
 		}
 
 		public void PreCompile(bool handleException = true)
@@ -195,6 +215,26 @@ namespace cYo.Projects.ComicRack.Plugins
 
 		protected virtual void Log(string text, params object[] o)
 		{
+		}
+
+		public static void LogDefault(string text, params object[] o)
+		{
+			if (Output != null && EnableLog)
+			{
+				using (StreamWriter streamWriter = new StreamWriter(Output))
+				{
+					// Without arguments the text is not a format string: compiler errors and exception messages contain braces.
+					if (o == null || o.Length == 0)
+						streamWriter.WriteLine(text);
+					else
+						streamWriter.WriteLine(text, o);
+				}
+			}
+		}
+
+		public static void SetLogOutput(Stream ts)
+		{
+			Output = ts;
 		}
 
 		protected virtual void OnInitialize(IPluginEnvironment env, string path)

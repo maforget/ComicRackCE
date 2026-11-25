@@ -350,7 +350,8 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			Command command = e.Item.Tag as Command;
 			if (command != null)
 			{
-				command.Enabled = e.Item.Checked;
+				// The list shows one row per Key; a .NET plugin has one command per hook under that Key.
+				pluginEngine.SetEnabled(command.Key, e.Item.Checked);
 			}
 		}
 
@@ -888,6 +889,7 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 						string hookDescription = PluginEngine.GetHookDescription(allCommand.Hook);
 						ListViewGroup group = lvScripts.Groups[hookDescription] ?? lvScripts.Groups.Add(hookDescription, hookDescription);
 						ListViewItem listViewItem = lvScripts.Items.Add(allCommand.Key, allCommand.GetLocalizedName(), allCommand.Key);
+						listViewItem.SubItems.Add(GetKindText(allCommand.Kind));
 						listViewItem.SubItems.Add(value);
 						listViewItem.Tag = allCommand;
 						listViewItem.Checked = allCommand.Enabled;
@@ -906,6 +908,16 @@ namespace cYo.Projects.ComicRack.Viewer.Dialogs
 			{
 				lvScripts.EndUpdate();
 			}
+		}
+
+		private string GetKindText(PluginKind kind)
+		{
+			return kind switch
+			{
+				PluginKind.CSharpSource => LocalizeUtility.GetText(this, "ScriptTypeCSharpSource", "C# source"),
+				PluginKind.CompiledDotNet => LocalizeUtility.GetText(this, "ScriptTypeCompiledDotNet", "Compiled .NET"),
+				_ => LocalizeUtility.GetText(this, "ScriptTypePython", "Python"),
+			};
 		}
 
 		private void LoadKeyboard(string f)

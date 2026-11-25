@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.9.12120.119 stable
+VisualStudioVersion = 18.9.12120.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComicRack", "ComicRack\ComicRack.csproj", "{6C2CE78B-4674-4DE2-91C6-2C5DBCFEE066}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -119,7 +119,7 @@ Global
 		{F21BF3C0-2205-49BC-B1DE-09BA44BE8605} = {C335F5E2-2C66-465E-B59B-33F8E13B287E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C85D577B-A999-424A-B0EC-330EC759489F}
 		RESX_Rules = {"EnabledRules":["WhiteSpaceLead","WhiteSpaceTail","PunctuationLead","PunctuationTail"]}
+		SolutionGuid = {C85D577B-A999-424A-B0EC-330EC759489F}
 	EndGlobalSection
 EndGlobal

@@ -26,6 +26,8 @@
         <UseWPF>true</UseWPF>
         <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
         <Deterministic>false</Deterministic>
+		<!-- Keeps the localized Roslyn resources of ComicRack.Plugins.Compiler out of the output folder. -->
+		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <DebugType>none</DebugType>

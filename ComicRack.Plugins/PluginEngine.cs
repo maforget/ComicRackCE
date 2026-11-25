@@ -1,21 +1,21 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using cYo.Common.Collections;
+using cYo.Common.ComponentModel;
 using cYo.Common.IO;
 using cYo.Common.Localize;
 using cYo.Common.Text;
 
 namespace cYo.Projects.ComicRack.Plugins
 {
-	public class PluginEngine
+	public class PluginEngine : DisposableObject
 	{
-		private readonly PluginInitializer[] initializers = new PluginInitializer[2]
-		{
-			new XmlPluginInitializer(),
-			new PythonPluginInitializer()
-		};
+		private readonly PluginInitializer[] initializers;
+
+		private readonly CSharpSourcePluginInitializer sourceInitializer;
 
 		public const string ScriptTypeCreateBookList = "CreateBookList";
 
@@ -76,74 +76,87 @@ namespace cYo.Projects.ComicRack.Plugins
 		public static readonly Dictionary<string, string> ValidHooks = new Dictionary<string, string>
 		{
 			{
-                ScriptTypeCreateBookList,
-                ScriptDescEditBooks
-            },
-			{
-                ScriptTypeParseComicPath,
-                ScriptDescParsePath
-            },
-			{
-                ScriptTypeLibrary,
-                ScriptDescEditBooks
-            },
-			{
-                ScriptTypeEditor,
+				ScriptTypeCreateBookList,
 				ScriptDescEditBooks
 			},
 			{
-                ScriptTypeBooks,
+				ScriptTypeParseComicPath,
+				ScriptDescParsePath
+			},
+			{
+				ScriptTypeLibrary,
 				ScriptDescEditBooks
 			},
 			{
-                ScriptTypeNewBooks,
-                ScriptDescNewBooks
-            },
+				ScriptTypeEditor,
+				ScriptDescEditBooks
+			},
 			{
-                ScriptTypeBookOpened,
-                ScriptDescBookOpened
-            },
+				ScriptTypeBooks,
+				ScriptDescEditBooks
+			},
 			{
-                ScriptTypeReaderResized,
-                ScriptDescReaderResized
-            },
+				ScriptTypeNewBooks,
+				ScriptDescNewBooks
+			},
 			{
-                ScriptTypeSearch,
-                ScriptDescSearch
-            },
+				ScriptTypeBookOpened,
+				ScriptDescBookOpened
+			},
 			{
-                ScriptTypeConfig,
+				ScriptTypeReaderResized,
+				ScriptDescReaderResized
+			},
+			{
+				ScriptTypeSearch,
+				ScriptDescSearch
+			},
+			{
+				ScriptTypeConfig,
 				string.Empty
 			},
 			{
-                ScriptTypeStartup,
-                ScriptDescStartup
-            },
+				ScriptTypeStartup,
+				ScriptDescStartup
+			},
 			{
-                ScriptTypeShutdown,
-                ScriptDescShutdown
-            },
+				ScriptTypeShutdown,
+				ScriptDescShutdown
+			},
 			{
-                ScriptTypeComicInfoHtml,
-                ScriptDescInfo
-            },
+				ScriptTypeComicInfoHtml,
+				ScriptDescInfo
+			},
 			{
-                ScriptTypeComicInfoUI,
-                ScriptDescInfo
-            },
+				ScriptTypeComicInfoUI,
+				ScriptDescInfo
+			},
 			{
-                ScriptTypeQuickOpenHtml,
-                ScriptDescQuickOpen
-            },
+				ScriptTypeQuickOpenHtml,
+				ScriptDescQuickOpen
+			},
 			{
-                ScriptTypeQuickOpenUI,
-                ScriptDescQuickOpen
-            },
+				ScriptTypeQuickOpenUI,
+				ScriptDescQuickOpen
+			},
 			{
-                ScriptTypeDrawThumbnailOverlay,
-                ScriptDescThumbOverlay
-            }
+				ScriptTypeDrawThumbnailOverlay,
+				ScriptDescThumbOverlay
+			}
 		};
+
+		/// <param name="sourcePluginCachePath">The folder that keeps the compiled assemblies of source plugins (.csplugin). The default is a folder in the temporary files of the user.</param>
+		public PluginEngine(string sourcePluginCachePath = null, bool optimized = false)
+		{
+			sourceInitializer = new CSharpSourcePluginInitializer(sourcePluginCachePath ?? Path.Combine(Path.GetTempPath(), "ComicRack", "PluginCache"), optimized);
+			initializers =
+			[
+				new XmlPluginInitializer(),
+				new PythonPluginInitializer(),
+				new DotNetPluginInitializer(),
+				sourceInitializer
+			];
+		}
 
 		private readonly CommandCollection commands = new CommandCollection();
 
@@ -153,14 +166,20 @@ namespace cYo.Projects.ComicRack.Plugins
 		{
 			get
 			{
-				return Commands.Select((Command cmd) => (cmd.Enabled ? "+" : "-") + cmd.Key).ToListString(",");
+				// The hook commands of one .NET plugin class share a Key, and the state belongs to the Key.
+				return Commands.GroupBy((Command cmd) => cmd.Key).Select((IGrouping<string, Command> g) => (g.First().Enabled ? "+" : "-") + g.Key).ToListString(",");
 			}
 			set
 			{
-				value.FromListString(',').SafeForEach(delegate(string s)
-				{
-					Commands[s.Substring(1)].Enabled = s[0] == '+';
-				});
+				value.FromListString(',').SafeForEach((string s) => SetEnabled(s.Substring(1), s[0] == '+'));
+			}
+		}
+
+		public void SetEnabled(string key, bool enabled)
+		{
+			foreach (Command command in Commands.Where((Command cmd) => cmd.Key == key))
+			{
+				command.Enabled = enabled;
 			}
 		}
 
@@ -178,26 +197,32 @@ namespace cYo.Projects.ComicRack.Plugins
 		{
 			List<Command> list = new List<Command>();
 			string[] hooks = ValidHooks.Keys.ToArray();
-			foreach (string file in FileUtility.GetFiles(path, SearchOption.AllDirectories))
+			List<string> files = FileUtility.GetFiles(path, SearchOption.AllDirectories).ToList();
+			List<string> sourcePluginFolders = files.Where(CSharpSourcePluginInitializer.IsMarker).Select(Path.GetDirectoryName).ToList();
+			foreach (string file in files.Where((string f) => !CSharpSourcePluginInitializer.IsShadowedBySource(f, sourcePluginFolders)))
 			{
-				foreach (Command cmd in initializers.SelectMany((PluginInitializer si) => si.GetCommands(file)))
+				foreach (Command cmd in initializers.SelectMany((PluginInitializer si) => si.GetCommands(file, env)))
 				{
 					try
 					{
-						if (!cmd.IsHook(hooks) || !cmd.Initialize(env, Path.GetDirectoryName(file)))
+						// The Key of a .NET command is known before Initialize. Checking it first keeps OnLoad from running in a plugin that is skipped.
+						if (cmd is DotNetCommand && IsKeyTakenByAnotherPlugin(cmd))
 						{
+							Command.LogDefault($"Skipped .NET plugin command '{cmd.Key}.{cmd.Hook}': the Key is already used by another plugin");
 							continue;
 						}
+						if (!cmd.IsHook(hooks) || !cmd.Initialize(env, Path.GetDirectoryName(file)))
+							continue;
+
 						if (cmd.Hook == ScriptTypeConfig)
 						{
 							list.Add(cmd);
 						}
 						else
 						{
-							if (commands.Exists((Command c) => c.Key == cmd.Key))
-							{
+							if (IsKeyTakenByAnotherPlugin(cmd))
 								continue;
-							}
+
 							if (cmd.Enabled)
 							{
 								int num = commands.Count((Command c) => c.Enabled);
@@ -213,21 +238,63 @@ namespace cYo.Projects.ComicRack.Plugins
 				}
 				foreach (Command cfg in list)
 				{
-					Command command = commands.FirstOrDefault((Command c) => c.Key == cfg.Key);
-					if (command != null)
+					if (cfg is DotNetCommand)
 					{
-						command.Configure = cfg;
+						foreach (Command command in commands.Where((Command c) => IsSamePlugin(c, cfg)))
+						{
+							command.Configure = cfg;
+						}
+						continue;
+					}
+					Command first = commands.FirstOrDefault((Command c) => c.Key == cfg.Key && !(c is DotNetCommand));
+					if (first != null)
+					{
+						first.Configure = cfg;
 					}
 				}
 			}
 		}
 
+		/// <summary>Call once after Initialize has scanned every scripts folder. Deletes the compiled assemblies of source plugins that no folder uses any more.</summary>
+		public void CompleteInitialization()
+		{
+			sourceInitializer.SweepCache();
+		}
+
+		// A Key belongs to the first plugin that registers it. Only the hook commands of one .NET plugin class share their Key.
+		private bool IsKeyTakenByAnotherPlugin(Command cmd) => commands.Exists((Command c) => c.Key == cmd.Key && !IsSamePlugin(c, cmd));
+
+		private static bool IsSamePlugin(Command a, Command b) => a is DotNetCommand x && b is DotNetCommand y && x.Plugin == y.Plugin;
+
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				IEnumerable<DotNetPlugin> plugins = commands
+					.SelectMany((Command c) => new[] { c, c.Configure })
+					.OfType<DotNetCommand>()
+					.Select((DotNetCommand c) => c.Plugin)
+					.Distinct();
+
+				foreach (DotNetPlugin plugin in plugins)
+				{
+					try
+					{
+						(plugin as IDisposable)?.Dispose();
+					}
+					catch (Exception e)
+					{
+						Command.LogDefault($"Failed to dispose .NET plugin '{plugin.Key}': {e.Message}");
+					}
+				}
+			}
+
+			base.Dispose(disposing);
+		}
+
 		public void Invoke(string hook, object[] data)
 		{
-			GetCommands(hook).ForEach(delegate(Command c)
-			{
-				c.Invoke(data);
-			});
+			GetCommands(hook).ForEach((Command c) => c.Invoke(data));
 		}
 
 		public static string GetHookDescription(string hook)
